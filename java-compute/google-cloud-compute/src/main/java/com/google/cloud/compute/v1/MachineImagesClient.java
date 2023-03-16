@@ -293,8 +293,7 @@ public class MachineImagesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified machine image. Gets a list of available machine images by making a list()
-   * request.
+   * Returns the specified machine image.
    *
    * <p>Sample code:
    *
@@ -326,8 +325,7 @@ public class MachineImagesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified machine image. Gets a list of available machine images by making a list()
-   * request.
+   * Returns the specified machine image.
    *
    * <p>Sample code:
    *
@@ -356,8 +354,7 @@ public class MachineImagesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified machine image. Gets a list of available machine images by making a list()
-   * request.
+   * Returns the specified machine image.
    *
    * <p>Sample code:
    *

@@ -78,7 +78,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The Action to perform when the rule is matched. The following are the valid actions: - allow: allow access to target. - deny(): deny access to target, returns the HTTP response code specified (valid values are 403, 404, and 502). - rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rate_limit_options to be set. - redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. - throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rate_limit_options to be set for this.
+   * The Action to perform when the rule is matched. The following are the valid actions: - allow: allow access to target. - deny(STATUS): deny access to target, returns the HTTP response code specified. Valid values for `STATUS` are 403, 404, and 502. - rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rate_limit_options to be set. - redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. - throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rate_limit_options to be set for this.
    * </pre>
    *
    * <code>optional string action = 187661878;</code>
@@ -93,7 +93,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The Action to perform when the rule is matched. The following are the valid actions: - allow: allow access to target. - deny(): deny access to target, returns the HTTP response code specified (valid values are 403, 404, and 502). - rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rate_limit_options to be set. - redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. - throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rate_limit_options to be set for this.
+   * The Action to perform when the rule is matched. The following are the valid actions: - allow: allow access to target. - deny(STATUS): deny access to target, returns the HTTP response code specified. Valid values for `STATUS` are 403, 404, and 502. - rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rate_limit_options to be set. - redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. - throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rate_limit_options to be set for this.
    * </pre>
    *
    * <code>optional string action = 187661878;</code>
@@ -116,7 +116,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The Action to perform when the rule is matched. The following are the valid actions: - allow: allow access to target. - deny(): deny access to target, returns the HTTP response code specified (valid values are 403, 404, and 502). - rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rate_limit_options to be set. - redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. - throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rate_limit_options to be set for this.
+   * The Action to perform when the rule is matched. The following are the valid actions: - allow: allow access to target. - deny(STATUS): deny access to target, returns the HTTP response code specified. Valid values for `STATUS` are 403, 404, and 502. - rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rate_limit_options to be set. - redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. - throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rate_limit_options to be set for this.
    * </pre>
    *
    * <code>optional string action = 187661878;</code>
@@ -375,6 +375,65 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         : match_;
   }
 
+  public static final int PRECONFIGURED_WAF_CONFIG_FIELD_NUMBER = 117805027;
+  private com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig
+      preconfiguredWafConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Preconfigured WAF configuration to be applied for the rule. If the rule does not evaluate preconfigured WAF rules, i.e., if evaluatePreconfiguredWaf() is not used, this field will have no effect.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig preconfigured_waf_config = 117805027;
+   * </code>
+   *
+   * @return Whether the preconfiguredWafConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasPreconfiguredWafConfig() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Preconfigured WAF configuration to be applied for the rule. If the rule does not evaluate preconfigured WAF rules, i.e., if evaluatePreconfiguredWaf() is not used, this field will have no effect.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig preconfigured_waf_config = 117805027;
+   * </code>
+   *
+   * @return The preconfiguredWafConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig
+      getPreconfiguredWafConfig() {
+    return preconfiguredWafConfig_ == null
+        ? com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig.getDefaultInstance()
+        : preconfiguredWafConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Preconfigured WAF configuration to be applied for the rule. If the rule does not evaluate preconfigured WAF rules, i.e., if evaluatePreconfiguredWaf() is not used, this field will have no effect.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig preconfigured_waf_config = 117805027;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfigOrBuilder
+      getPreconfiguredWafConfigOrBuilder() {
+    return preconfiguredWafConfig_ == null
+        ? com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig.getDefaultInstance()
+        : preconfiguredWafConfig_;
+  }
+
   public static final int PREVIEW_FIELD_NUMBER = 218686408;
   private boolean preview_ = false;
   /**
@@ -390,7 +449,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasPreview() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -423,7 +482,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasPriority() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -458,7 +517,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasRateLimitOptions() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    *
@@ -515,7 +574,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasRedirectOptions() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    *
@@ -572,19 +631,22 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(67544315, getRateLimitOptions());
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(103668165, getMatch());
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(117805027, getPreconfiguredWafConfig());
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(163285307, getRedirectOptions());
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 187661878, action_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeBool(218686408, preview_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
@@ -593,7 +655,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeInt32(445151652, priority_);
     }
     getUnknownFields().writeTo(output);
@@ -608,21 +670,26 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(67544315, getRateLimitOptions());
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(103668165, getMatch());
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              117805027, getPreconfiguredWafConfig());
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(163285307, getRedirectOptions());
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187661878, action_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(218686408, preview_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
@@ -632,7 +699,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(445151652, priority_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -670,6 +737,10 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     if (hasMatch() != other.hasMatch()) return false;
     if (hasMatch()) {
       if (!getMatch().equals(other.getMatch())) return false;
+    }
+    if (hasPreconfiguredWafConfig() != other.hasPreconfiguredWafConfig()) return false;
+    if (hasPreconfiguredWafConfig()) {
+      if (!getPreconfiguredWafConfig().equals(other.getPreconfiguredWafConfig())) return false;
     }
     if (hasPreview() != other.hasPreview()) return false;
     if (hasPreview()) {
@@ -717,6 +788,10 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     if (hasMatch()) {
       hash = (37 * hash) + MATCH_FIELD_NUMBER;
       hash = (53 * hash) + getMatch().hashCode();
+    }
+    if (hasPreconfiguredWafConfig()) {
+      hash = (37 * hash) + PRECONFIGURED_WAF_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getPreconfiguredWafConfig().hashCode();
     }
     if (hasPreview()) {
       hash = (37 * hash) + PREVIEW_FIELD_NUMBER;
@@ -876,6 +951,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getHeaderActionFieldBuilder();
         getMatchFieldBuilder();
+        getPreconfiguredWafConfigFieldBuilder();
         getRateLimitOptionsFieldBuilder();
         getRedirectOptionsFieldBuilder();
       }
@@ -897,6 +973,11 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       if (matchBuilder_ != null) {
         matchBuilder_.dispose();
         matchBuilder_ = null;
+      }
+      preconfiguredWafConfig_ = null;
+      if (preconfiguredWafConfigBuilder_ != null) {
+        preconfiguredWafConfigBuilder_.dispose();
+        preconfiguredWafConfigBuilder_ = null;
       }
       preview_ = false;
       priority_ = 0;
@@ -969,22 +1050,29 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.preview_ = preview_;
+        result.preconfiguredWafConfig_ =
+            preconfiguredWafConfigBuilder_ == null
+                ? preconfiguredWafConfig_
+                : preconfiguredWafConfigBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.priority_ = priority_;
+        result.preview_ = preview_;
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.rateLimitOptions_ =
-            rateLimitOptionsBuilder_ == null ? rateLimitOptions_ : rateLimitOptionsBuilder_.build();
+        result.priority_ = priority_;
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.rateLimitOptions_ =
+            rateLimitOptionsBuilder_ == null ? rateLimitOptions_ : rateLimitOptionsBuilder_.build();
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.redirectOptions_ =
             redirectOptionsBuilder_ == null ? redirectOptions_ : redirectOptionsBuilder_.build();
-        to_bitField0_ |= 0x00000100;
+        to_bitField0_ |= 0x00000200;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1055,6 +1143,9 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       if (other.hasMatch()) {
         mergeMatch(other.getMatch());
       }
+      if (other.hasPreconfiguredWafConfig()) {
+        mergePreconfiguredWafConfig(other.getPreconfiguredWafConfig());
+      }
       if (other.hasPreview()) {
         setPreview(other.getPreview());
       }
@@ -1103,7 +1194,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
               {
                 input.readMessage(
                     getRateLimitOptionsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 540354522
             case 829345322:
@@ -1112,10 +1203,17 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000010;
                 break;
               } // case 829345322
+            case 942440218:
+              {
+                input.readMessage(
+                    getPreconfiguredWafConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 942440218
             case 1306282458:
               {
                 input.readMessage(getRedirectOptionsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 1306282458
             case 1501295026:
@@ -1127,7 +1225,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
             case 1749491264:
               {
                 preview_ = input.readBool();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 1749491264
             case -1670348478:
@@ -1145,7 +1243,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
             case -733754080:
               {
                 priority_ = input.readInt32();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case -733754080
             default:
@@ -1172,7 +1270,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Action to perform when the rule is matched. The following are the valid actions: - allow: allow access to target. - deny(): deny access to target, returns the HTTP response code specified (valid values are 403, 404, and 502). - rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rate_limit_options to be set. - redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. - throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rate_limit_options to be set for this.
+     * The Action to perform when the rule is matched. The following are the valid actions: - allow: allow access to target. - deny(STATUS): deny access to target, returns the HTTP response code specified. Valid values for `STATUS` are 403, 404, and 502. - rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rate_limit_options to be set. - redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. - throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rate_limit_options to be set for this.
      * </pre>
      *
      * <code>optional string action = 187661878;</code>
@@ -1186,7 +1284,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Action to perform when the rule is matched. The following are the valid actions: - allow: allow access to target. - deny(): deny access to target, returns the HTTP response code specified (valid values are 403, 404, and 502). - rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rate_limit_options to be set. - redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. - throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rate_limit_options to be set for this.
+     * The Action to perform when the rule is matched. The following are the valid actions: - allow: allow access to target. - deny(STATUS): deny access to target, returns the HTTP response code specified. Valid values for `STATUS` are 403, 404, and 502. - rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rate_limit_options to be set. - redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. - throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rate_limit_options to be set for this.
      * </pre>
      *
      * <code>optional string action = 187661878;</code>
@@ -1208,7 +1306,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Action to perform when the rule is matched. The following are the valid actions: - allow: allow access to target. - deny(): deny access to target, returns the HTTP response code specified (valid values are 403, 404, and 502). - rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rate_limit_options to be set. - redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. - throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rate_limit_options to be set for this.
+     * The Action to perform when the rule is matched. The following are the valid actions: - allow: allow access to target. - deny(STATUS): deny access to target, returns the HTTP response code specified. Valid values for `STATUS` are 403, 404, and 502. - rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rate_limit_options to be set. - redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. - throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rate_limit_options to be set for this.
      * </pre>
      *
      * <code>optional string action = 187661878;</code>
@@ -1230,7 +1328,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Action to perform when the rule is matched. The following are the valid actions: - allow: allow access to target. - deny(): deny access to target, returns the HTTP response code specified (valid values are 403, 404, and 502). - rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rate_limit_options to be set. - redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. - throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rate_limit_options to be set for this.
+     * The Action to perform when the rule is matched. The following are the valid actions: - allow: allow access to target. - deny(STATUS): deny access to target, returns the HTTP response code specified. Valid values for `STATUS` are 403, 404, and 502. - rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rate_limit_options to be set. - redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. - throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rate_limit_options to be set for this.
      * </pre>
      *
      * <code>optional string action = 187661878;</code>
@@ -1251,7 +1349,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Action to perform when the rule is matched. The following are the valid actions: - allow: allow access to target. - deny(): deny access to target, returns the HTTP response code specified (valid values are 403, 404, and 502). - rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rate_limit_options to be set. - redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. - throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rate_limit_options to be set for this.
+     * The Action to perform when the rule is matched. The following are the valid actions: - allow: allow access to target. - deny(STATUS): deny access to target, returns the HTTP response code specified. Valid values for `STATUS` are 403, 404, and 502. - rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rate_limit_options to be set. - redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. - throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rate_limit_options to be set for this.
      * </pre>
      *
      * <code>optional string action = 187661878;</code>
@@ -1268,7 +1366,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The Action to perform when the rule is matched. The following are the valid actions: - allow: allow access to target. - deny(): deny access to target, returns the HTTP response code specified (valid values are 403, 404, and 502). - rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rate_limit_options to be set. - redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. - throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rate_limit_options to be set for this.
+     * The Action to perform when the rule is matched. The following are the valid actions: - allow: allow access to target. - deny(STATUS): deny access to target, returns the HTTP response code specified. Valid values for `STATUS` are 403, 404, and 502. - rate_based_ban: limit client traffic to the configured threshold and ban the client if the traffic exceeds the threshold. Configure parameters for this action in RateLimitOptions. Requires rate_limit_options to be set. - redirect: redirect to a different target. This can either be an internal reCAPTCHA redirect, or an external URL-based redirect via a 302 response. Parameters for this action can be configured via redirectOptions. - throttle: limit client traffic to the configured threshold. Configure parameters for this action in rateLimitOptions. Requires rate_limit_options to be set for this.
      * </pre>
      *
      * <code>optional string action = 187661878;</code>
@@ -1920,6 +2018,219 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       return matchBuilder_;
     }
 
+    private com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig
+        preconfiguredWafConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig,
+            com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig.Builder,
+            com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfigOrBuilder>
+        preconfiguredWafConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Preconfigured WAF configuration to be applied for the rule. If the rule does not evaluate preconfigured WAF rules, i.e., if evaluatePreconfiguredWaf() is not used, this field will have no effect.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig preconfigured_waf_config = 117805027;
+     * </code>
+     *
+     * @return Whether the preconfiguredWafConfig field is set.
+     */
+    public boolean hasPreconfiguredWafConfig() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preconfigured WAF configuration to be applied for the rule. If the rule does not evaluate preconfigured WAF rules, i.e., if evaluatePreconfiguredWaf() is not used, this field will have no effect.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig preconfigured_waf_config = 117805027;
+     * </code>
+     *
+     * @return The preconfiguredWafConfig.
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig
+        getPreconfiguredWafConfig() {
+      if (preconfiguredWafConfigBuilder_ == null) {
+        return preconfiguredWafConfig_ == null
+            ? com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig
+                .getDefaultInstance()
+            : preconfiguredWafConfig_;
+      } else {
+        return preconfiguredWafConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preconfigured WAF configuration to be applied for the rule. If the rule does not evaluate preconfigured WAF rules, i.e., if evaluatePreconfiguredWaf() is not used, this field will have no effect.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig preconfigured_waf_config = 117805027;
+     * </code>
+     */
+    public Builder setPreconfiguredWafConfig(
+        com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig value) {
+      if (preconfiguredWafConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        preconfiguredWafConfig_ = value;
+      } else {
+        preconfiguredWafConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preconfigured WAF configuration to be applied for the rule. If the rule does not evaluate preconfigured WAF rules, i.e., if evaluatePreconfiguredWaf() is not used, this field will have no effect.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig preconfigured_waf_config = 117805027;
+     * </code>
+     */
+    public Builder setPreconfiguredWafConfig(
+        com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig.Builder
+            builderForValue) {
+      if (preconfiguredWafConfigBuilder_ == null) {
+        preconfiguredWafConfig_ = builderForValue.build();
+      } else {
+        preconfiguredWafConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preconfigured WAF configuration to be applied for the rule. If the rule does not evaluate preconfigured WAF rules, i.e., if evaluatePreconfiguredWaf() is not used, this field will have no effect.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig preconfigured_waf_config = 117805027;
+     * </code>
+     */
+    public Builder mergePreconfiguredWafConfig(
+        com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig value) {
+      if (preconfiguredWafConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && preconfiguredWafConfig_ != null
+            && preconfiguredWafConfig_
+                != com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig
+                    .getDefaultInstance()) {
+          getPreconfiguredWafConfigBuilder().mergeFrom(value);
+        } else {
+          preconfiguredWafConfig_ = value;
+        }
+      } else {
+        preconfiguredWafConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preconfigured WAF configuration to be applied for the rule. If the rule does not evaluate preconfigured WAF rules, i.e., if evaluatePreconfiguredWaf() is not used, this field will have no effect.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig preconfigured_waf_config = 117805027;
+     * </code>
+     */
+    public Builder clearPreconfiguredWafConfig() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      preconfiguredWafConfig_ = null;
+      if (preconfiguredWafConfigBuilder_ != null) {
+        preconfiguredWafConfigBuilder_.dispose();
+        preconfiguredWafConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preconfigured WAF configuration to be applied for the rule. If the rule does not evaluate preconfigured WAF rules, i.e., if evaluatePreconfiguredWaf() is not used, this field will have no effect.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig preconfigured_waf_config = 117805027;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig.Builder
+        getPreconfiguredWafConfigBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getPreconfiguredWafConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preconfigured WAF configuration to be applied for the rule. If the rule does not evaluate preconfigured WAF rules, i.e., if evaluatePreconfiguredWaf() is not used, this field will have no effect.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig preconfigured_waf_config = 117805027;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfigOrBuilder
+        getPreconfiguredWafConfigOrBuilder() {
+      if (preconfiguredWafConfigBuilder_ != null) {
+        return preconfiguredWafConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return preconfiguredWafConfig_ == null
+            ? com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig
+                .getDefaultInstance()
+            : preconfiguredWafConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Preconfigured WAF configuration to be applied for the rule. If the rule does not evaluate preconfigured WAF rules, i.e., if evaluatePreconfiguredWaf() is not used, this field will have no effect.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig preconfigured_waf_config = 117805027;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig,
+            com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig.Builder,
+            com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfigOrBuilder>
+        getPreconfiguredWafConfigFieldBuilder() {
+      if (preconfiguredWafConfigBuilder_ == null) {
+        preconfiguredWafConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig,
+                com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfig.Builder,
+                com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfigOrBuilder>(
+                getPreconfiguredWafConfig(), getParentForChildren(), isClean());
+        preconfiguredWafConfig_ = null;
+      }
+      return preconfiguredWafConfigBuilder_;
+    }
+
     private boolean preview_;
     /**
      *
@@ -1934,7 +2245,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public boolean hasPreview() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1966,7 +2277,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     public Builder setPreview(boolean value) {
 
       preview_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1982,7 +2293,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearPreview() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       preview_ = false;
       onChanged();
       return this;
@@ -2002,7 +2313,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public boolean hasPriority() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2034,7 +2345,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     public Builder setPriority(int value) {
 
       priority_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2050,7 +2361,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearPriority() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       priority_ = 0;
       onChanged();
       return this;
@@ -2076,7 +2387,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return Whether the rateLimitOptions field is set.
      */
     public boolean hasRateLimitOptions() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2121,7 +2432,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       } else {
         rateLimitOptionsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2143,7 +2454,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       } else {
         rateLimitOptionsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2161,7 +2472,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     public Builder mergeRateLimitOptions(
         com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions value) {
       if (rateLimitOptionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && rateLimitOptions_ != null
             && rateLimitOptions_
                 != com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions
@@ -2173,7 +2484,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       } else {
         rateLimitOptionsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2189,7 +2500,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearRateLimitOptions() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       rateLimitOptions_ = null;
       if (rateLimitOptionsBuilder_ != null) {
         rateLimitOptionsBuilder_.dispose();
@@ -2211,7 +2522,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      */
     public com.google.cloud.compute.v1.SecurityPolicyRuleRateLimitOptions.Builder
         getRateLimitOptionsBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getRateLimitOptionsFieldBuilder().getBuilder();
     }
@@ -2284,7 +2595,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return Whether the redirectOptions field is set.
      */
     public boolean hasRedirectOptions() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -2329,7 +2640,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       } else {
         redirectOptionsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2351,7 +2662,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       } else {
         redirectOptionsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2369,7 +2680,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     public Builder mergeRedirectOptions(
         com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions value) {
       if (redirectOptionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && redirectOptions_ != null
             && redirectOptions_
                 != com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions
@@ -2381,7 +2692,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
       } else {
         redirectOptionsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2397,7 +2708,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearRedirectOptions() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       redirectOptions_ = null;
       if (redirectOptionsBuilder_ != null) {
         redirectOptionsBuilder_.dispose();
@@ -2419,7 +2730,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      */
     public com.google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions.Builder
         getRedirectOptionsBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getRedirectOptionsFieldBuilder().getBuilder();
     }

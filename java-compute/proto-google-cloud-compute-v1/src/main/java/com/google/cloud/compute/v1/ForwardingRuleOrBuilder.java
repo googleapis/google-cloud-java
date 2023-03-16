@@ -191,6 +191,43 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * <pre>
+   * [Output Only] The URL for the corresponding base Forwarding Rule. By base Forwarding Rule, we mean the Forwarding Rule that has the same IP address, protocol, and port settings with the current Forwarding Rule, but without sourceIPRanges specified. Always empty if the current Forwarding Rule does not have sourceIPRanges specified.
+   * </pre>
+   *
+   * <code>optional string base_forwarding_rule = 524873104;</code>
+   *
+   * @return Whether the baseForwardingRule field is set.
+   */
+  boolean hasBaseForwardingRule();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The URL for the corresponding base Forwarding Rule. By base Forwarding Rule, we mean the Forwarding Rule that has the same IP address, protocol, and port settings with the current Forwarding Rule, but without sourceIPRanges specified. Always empty if the current Forwarding Rule does not have sourceIPRanges specified.
+   * </pre>
+   *
+   * <code>optional string base_forwarding_rule = 524873104;</code>
+   *
+   * @return The baseForwardingRule.
+   */
+  java.lang.String getBaseForwardingRule();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The URL for the corresponding base Forwarding Rule. By base Forwarding Rule, we mean the Forwarding Rule that has the same IP address, protocol, and port settings with the current Forwarding Rule, but without sourceIPRanges specified. Always empty if the current Forwarding Rule does not have sourceIPRanges specified.
+   * </pre>
+   *
+   * <code>optional string base_forwarding_rule = 524873104;</code>
+   *
+   * @return The bytes for baseForwardingRule.
+   */
+  com.google.protobuf.ByteString getBaseForwardingRuleBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *
@@ -1117,6 +1154,57 @@ public interface ForwardingRuleOrBuilder
    * @return The bytes for serviceName.
    */
   com.google.protobuf.ByteString getServiceNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * If not empty, this Forwarding Rule will only forward the traffic when the source IP address matches one of the IP addresses or CIDR ranges set here. Note that a Forwarding Rule can only have up to 64 source IP ranges, and this field can only be used with a regional Forwarding Rule whose scheme is EXTERNAL. Each source_ip_range entry should be either an IP address (for example, 1.2.3.4) or a CIDR range (for example, 1.2.3.0/24).
+   * </pre>
+   *
+   * <code>repeated string source_ip_ranges = 111563210;</code>
+   *
+   * @return A list containing the sourceIpRanges.
+   */
+  java.util.List<java.lang.String> getSourceIpRangesList();
+  /**
+   *
+   *
+   * <pre>
+   * If not empty, this Forwarding Rule will only forward the traffic when the source IP address matches one of the IP addresses or CIDR ranges set here. Note that a Forwarding Rule can only have up to 64 source IP ranges, and this field can only be used with a regional Forwarding Rule whose scheme is EXTERNAL. Each source_ip_range entry should be either an IP address (for example, 1.2.3.4) or a CIDR range (for example, 1.2.3.0/24).
+   * </pre>
+   *
+   * <code>repeated string source_ip_ranges = 111563210;</code>
+   *
+   * @return The count of sourceIpRanges.
+   */
+  int getSourceIpRangesCount();
+  /**
+   *
+   *
+   * <pre>
+   * If not empty, this Forwarding Rule will only forward the traffic when the source IP address matches one of the IP addresses or CIDR ranges set here. Note that a Forwarding Rule can only have up to 64 source IP ranges, and this field can only be used with a regional Forwarding Rule whose scheme is EXTERNAL. Each source_ip_range entry should be either an IP address (for example, 1.2.3.4) or a CIDR range (for example, 1.2.3.0/24).
+   * </pre>
+   *
+   * <code>repeated string source_ip_ranges = 111563210;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The sourceIpRanges at the given index.
+   */
+  java.lang.String getSourceIpRanges(int index);
+  /**
+   *
+   *
+   * <pre>
+   * If not empty, this Forwarding Rule will only forward the traffic when the source IP address matches one of the IP addresses or CIDR ranges set here. Note that a Forwarding Rule can only have up to 64 source IP ranges, and this field can only be used with a regional Forwarding Rule whose scheme is EXTERNAL. Each source_ip_range entry should be either an IP address (for example, 1.2.3.4) or a CIDR range (for example, 1.2.3.0/24).
+   * </pre>
+   *
+   * <code>repeated string source_ip_ranges = 111563210;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the sourceIpRanges at the given index.
+   */
+  com.google.protobuf.ByteString getSourceIpRangesBytes(int index);
 
   /**
    *

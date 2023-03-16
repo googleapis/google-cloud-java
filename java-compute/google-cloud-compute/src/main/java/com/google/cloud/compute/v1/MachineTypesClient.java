@@ -310,8 +310,7 @@ public class MachineTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified machine type. Gets a list of available machine types by making a list()
-   * request.
+   * Returns the specified machine type.
    *
    * <p>Sample code:
    *
@@ -346,8 +345,7 @@ public class MachineTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified machine type. Gets a list of available machine types by making a list()
-   * request.
+   * Returns the specified machine type.
    *
    * <p>Sample code:
    *
@@ -377,8 +375,7 @@ public class MachineTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified machine type. Gets a list of available machine types by making a list()
-   * request.
+   * Returns the specified machine type.
    *
    * <p>Sample code:
    *

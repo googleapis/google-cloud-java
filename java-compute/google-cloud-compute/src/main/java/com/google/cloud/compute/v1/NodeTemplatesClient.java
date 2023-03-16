@@ -446,8 +446,7 @@ public class NodeTemplatesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified node template. Gets a list of available node templates by making a list()
-   * request.
+   * Returns the specified node template.
    *
    * <p>Sample code:
    *
@@ -482,8 +481,7 @@ public class NodeTemplatesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified node template. Gets a list of available node templates by making a list()
-   * request.
+   * Returns the specified node template.
    *
    * <p>Sample code:
    *
@@ -513,8 +511,7 @@ public class NodeTemplatesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified node template. Gets a list of available node templates by making a list()
-   * request.
+   * Returns the specified node template.
    *
    * <p>Sample code:
    *

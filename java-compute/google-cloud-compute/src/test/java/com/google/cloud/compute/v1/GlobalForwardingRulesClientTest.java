@@ -156,6 +156,7 @@ public class GlobalForwardingRulesClientTest {
             .setAllPorts(true)
             .setAllowGlobalAccess(true)
             .setBackendService("backendService-1884714623")
+            .setBaseForwardingRule("baseForwardingRule124102858")
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
             .setFingerprint("fingerprint-1375934236")
@@ -181,6 +182,7 @@ public class GlobalForwardingRulesClientTest {
                 new ArrayList<ForwardingRuleServiceDirectoryRegistration>())
             .setServiceLabel("serviceLabel341946687")
             .setServiceName("serviceName-1928572192")
+            .addAllSourceIpRanges(new ArrayList<String>())
             .setSubnetwork("subnetwork-1302785042")
             .setTarget("target-880905839")
             .build();

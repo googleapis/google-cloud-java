@@ -164,8 +164,7 @@ public class RegionDiskTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified regional disk type. Gets a list of available disk types by making a
-   * list() request.
+   * Returns the specified regional disk type.
    *
    * <p>Sample code:
    *
@@ -200,8 +199,7 @@ public class RegionDiskTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified regional disk type. Gets a list of available disk types by making a
-   * list() request.
+   * Returns the specified regional disk type.
    *
    * <p>Sample code:
    *
@@ -231,8 +229,7 @@ public class RegionDiskTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified regional disk type. Gets a list of available disk types by making a
-   * list() request.
+   * Returns the specified regional disk type.
    *
    * <p>Sample code:
    *

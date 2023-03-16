@@ -22,6 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
+ * [Output Only] Contains output only fields.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.AllocationResourceStatus}
@@ -69,6 +70,12 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
   private com.google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocation
       specificSkuAllocation_;
   /**
+   *
+   *
+   * <pre>
+   * Allocation Properties of this reservation.
+   * </pre>
+   *
    * <code>
    * optional .google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocation specific_sku_allocation = 196231151;
    * </code>
@@ -80,6 +87,12 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
+   *
+   *
+   * <pre>
+   * Allocation Properties of this reservation.
+   * </pre>
+   *
    * <code>
    * optional .google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocation specific_sku_allocation = 196231151;
    * </code>
@@ -95,6 +108,12 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
         : specificSkuAllocation_;
   }
   /**
+   *
+   *
+   * <pre>
+   * Allocation Properties of this reservation.
+   * </pre>
+   *
    * <code>
    * optional .google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocation specific_sku_allocation = 196231151;
    * </code>
@@ -278,6 +297,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
    *
    *
    * <pre>
+   * [Output Only] Contains output only fields.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.AllocationResourceStatus}
@@ -482,6 +502,12 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
             com.google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocationOrBuilder>
         specificSkuAllocationBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * Allocation Properties of this reservation.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocation specific_sku_allocation = 196231151;
      * </code>
@@ -492,6 +518,12 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
+     *
+     *
+     * <pre>
+     * Allocation Properties of this reservation.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocation specific_sku_allocation = 196231151;
      * </code>
@@ -510,6 +542,12 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Allocation Properties of this reservation.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocation specific_sku_allocation = 196231151;
      * </code>
@@ -529,6 +567,12 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Allocation Properties of this reservation.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocation specific_sku_allocation = 196231151;
      * </code>
@@ -546,6 +590,12 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Allocation Properties of this reservation.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocation specific_sku_allocation = 196231151;
      * </code>
@@ -570,6 +620,12 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Allocation Properties of this reservation.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocation specific_sku_allocation = 196231151;
      * </code>
@@ -585,6 +641,12 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * Allocation Properties of this reservation.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocation specific_sku_allocation = 196231151;
      * </code>
@@ -596,6 +658,12 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
       return getSpecificSkuAllocationFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * Allocation Properties of this reservation.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocation specific_sku_allocation = 196231151;
      * </code>
@@ -612,6 +680,12 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * Allocation Properties of this reservation.
+     * </pre>
+     *
      * <code>
      * optional .google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocation specific_sku_allocation = 196231151;
      * </code>

@@ -157,7 +157,7 @@ public class ZonesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified Zone resource. Gets a list of available zones by making a list() request.
+   * Returns the specified Zone resource.
    *
    * <p>Sample code:
    *
@@ -185,7 +185,7 @@ public class ZonesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified Zone resource. Gets a list of available zones by making a list() request.
+   * Returns the specified Zone resource.
    *
    * <p>Sample code:
    *
@@ -214,7 +214,7 @@ public class ZonesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified Zone resource. Gets a list of available zones by making a list() request.
+   * Returns the specified Zone resource.
    *
    * <p>Sample code:
    *

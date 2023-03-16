@@ -440,8 +440,7 @@ public class RoutersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified Router resource. Gets a list of available routers by making a list()
-   * request.
+   * Returns the specified Router resource.
    *
    * <p>Sample code:
    *
@@ -476,8 +475,7 @@ public class RoutersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified Router resource. Gets a list of available routers by making a list()
-   * request.
+   * Returns the specified Router resource.
    *
    * <p>Sample code:
    *
@@ -507,8 +505,7 @@ public class RoutersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified Router resource. Gets a list of available routers by making a list()
-   * request.
+   * Returns the specified Router resource.
    *
    * <p>Sample code:
    *

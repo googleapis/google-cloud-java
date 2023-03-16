@@ -242,6 +242,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     N2_CPUS(416465286),
     /** <code>NETWORKS = 485481477;</code> */
     NETWORKS(485481477),
+    /** <code>NETWORK_ATTACHMENTS = 149028575;</code> */
+    NETWORK_ATTACHMENTS(149028575),
     /** <code>NETWORK_ENDPOINT_GROUPS = 102144909;</code> */
     NETWORK_ENDPOINT_GROUPS(102144909),
     /** <code>NETWORK_FIREWALL_POLICIES = 101117374;</code> */
@@ -553,6 +555,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int N2_CPUS_VALUE = 416465286;
     /** <code>NETWORKS = 485481477;</code> */
     public static final int NETWORKS_VALUE = 485481477;
+    /** <code>NETWORK_ATTACHMENTS = 149028575;</code> */
+    public static final int NETWORK_ATTACHMENTS_VALUE = 149028575;
     /** <code>NETWORK_ENDPOINT_GROUPS = 102144909;</code> */
     public static final int NETWORK_ENDPOINT_GROUPS_VALUE = 102144909;
     /** <code>NETWORK_FIREWALL_POLICIES = 101117374;</code> */
@@ -871,6 +875,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return N2_CPUS;
         case 485481477:
           return NETWORKS;
+        case 149028575:
+          return NETWORK_ATTACHMENTS;
         case 102144909:
           return NETWORK_ENDPOINT_GROUPS;
         case 101117374:

@@ -352,6 +352,17 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     return ((InstancesStubSettings) getStubSettings()).setMinCpuPlatformOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to setName. */
+  public UnaryCallSettings<SetNameInstanceRequest, Operation> setNameSettings() {
+    return ((InstancesStubSettings) getStubSettings()).setNameSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setName. */
+  public OperationCallSettings<SetNameInstanceRequest, Operation, Operation>
+      setNameOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).setNameOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setScheduling. */
   public UnaryCallSettings<SetSchedulingInstanceRequest, Operation> setSchedulingSettings() {
     return ((InstancesStubSettings) getStubSettings()).setSchedulingSettings();
@@ -899,6 +910,17 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     public OperationCallSettings.Builder<SetMinCpuPlatformInstanceRequest, Operation, Operation>
         setMinCpuPlatformOperationSettings() {
       return getStubSettingsBuilder().setMinCpuPlatformOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setName. */
+    public UnaryCallSettings.Builder<SetNameInstanceRequest, Operation> setNameSettings() {
+      return getStubSettingsBuilder().setNameSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setName. */
+    public OperationCallSettings.Builder<SetNameInstanceRequest, Operation, Operation>
+        setNameOperationSettings() {
+      return getStubSettingsBuilder().setNameOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setScheduling. */

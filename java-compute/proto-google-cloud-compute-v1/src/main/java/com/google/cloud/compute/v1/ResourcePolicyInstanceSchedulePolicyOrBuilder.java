@@ -101,7 +101,7 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the time zone to be used in interpreting Schedule.schedule. The value of this field must be a time zone name from the tz database: http://en.wikipedia.org/wiki/Tz_database.
+   * Specifies the time zone to be used in interpreting Schedule.schedule. The value of this field must be a time zone name from the tz database: https://wikipedia.org/wiki/Tz_database.
    * </pre>
    *
    * <code>optional string time_zone = 36848094;</code>
@@ -113,7 +113,7 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the time zone to be used in interpreting Schedule.schedule. The value of this field must be a time zone name from the tz database: http://en.wikipedia.org/wiki/Tz_database.
+   * Specifies the time zone to be used in interpreting Schedule.schedule. The value of this field must be a time zone name from the tz database: https://wikipedia.org/wiki/Tz_database.
    * </pre>
    *
    * <code>optional string time_zone = 36848094;</code>
@@ -125,7 +125,7 @@ public interface ResourcePolicyInstanceSchedulePolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the time zone to be used in interpreting Schedule.schedule. The value of this field must be a time zone name from the tz database: http://en.wikipedia.org/wiki/Tz_database.
+   * Specifies the time zone to be used in interpreting Schedule.schedule. The value of this field must be a time zone name from the tz database: https://wikipedia.org/wiki/Tz_database.
    * </pre>
    *
    * <code>optional string time_zone = 36848094;</code>

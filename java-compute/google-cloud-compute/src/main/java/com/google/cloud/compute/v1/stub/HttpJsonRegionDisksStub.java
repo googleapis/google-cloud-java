@@ -50,6 +50,7 @@ import com.google.cloud.compute.v1.SetIamPolicyRegionDiskRequest;
 import com.google.cloud.compute.v1.SetLabelsRegionDiskRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsRegionDiskRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
+import com.google.cloud.compute.v1.UpdateRegionDiskRequest;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -669,6 +670,67 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<UpdateRegionDiskRequest, Operation>
+      updateMethodDescriptor =
+          ApiMethodDescriptor.<UpdateRegionDiskRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.RegionDisks/Update")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateRegionDiskRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/disks/{disk}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateRegionDiskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "disk", request.getDisk());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateRegionDiskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasPaths()) {
+                              serializer.putQueryParam(fields, "paths", request.getPaths());
+                            }
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            if (request.hasUpdateMask()) {
+                              serializer.putQueryParam(
+                                  fields, "updateMask", request.getUpdateMask());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("diskResource", request.getDiskResource(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateRegionDiskRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private final UnaryCallable<AddResourcePoliciesRegionDiskRequest, Operation>
       addResourcePoliciesCallable;
   private final OperationCallable<AddResourcePoliciesRegionDiskRequest, Operation, Operation>
@@ -699,6 +761,9 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
       setLabelsOperationCallable;
   private final UnaryCallable<TestIamPermissionsRegionDiskRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
+  private final UnaryCallable<UpdateRegionDiskRequest, Operation> updateCallable;
+  private final OperationCallable<UpdateRegionDiskRequest, Operation, Operation>
+      updateOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
@@ -809,6 +874,11 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<UpdateRegionDiskRequest, Operation> updateTransportSettings =
+        HttpJsonCallSettings.<UpdateRegionDiskRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
 
     this.addResourcePoliciesCallable =
         callableFactory.createUnaryCallable(
@@ -897,6 +967,15 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
             clientContext);
+    this.updateCallable =
+        callableFactory.createUnaryCallable(
+            updateTransportSettings, settings.updateSettings(), clientContext);
+    this.updateOperationCallable =
+        callableFactory.createOperationCallable(
+            updateTransportSettings,
+            settings.updateOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -917,6 +996,7 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
     methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(setLabelsMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
+    methodDescriptors.add(updateMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -1028,6 +1108,17 @@ public class HttpJsonRegionDisksStub extends RegionDisksStub {
   public UnaryCallable<TestIamPermissionsRegionDiskRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateRegionDiskRequest, Operation> updateCallable() {
+    return updateCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateRegionDiskRequest, Operation, Operation>
+      updateOperationCallable() {
+    return updateOperationCallable;
   }
 
   @Override

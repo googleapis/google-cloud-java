@@ -358,7 +358,7 @@ public interface NodeTemplateOrBuilder
    *
    *
    * <pre>
-   * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties. This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
+   * Do not use. Instead, use the node_type property.
    * </pre>
    *
    * <code>
@@ -372,7 +372,7 @@ public interface NodeTemplateOrBuilder
    *
    *
    * <pre>
-   * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties. This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
+   * Do not use. Instead, use the node_type property.
    * </pre>
    *
    * <code>
@@ -386,7 +386,7 @@ public interface NodeTemplateOrBuilder
    *
    *
    * <pre>
-   * The flexible properties of the desired node type. Node groups that use this node template will create nodes of a type that matches these properties. This field is mutually exclusive with the node_type property; you can only define one or the other, but not both.
+   * Do not use. Instead, use the node_type property.
    * </pre>
    *
    * <code>

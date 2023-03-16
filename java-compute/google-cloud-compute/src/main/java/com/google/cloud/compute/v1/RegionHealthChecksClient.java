@@ -299,8 +299,7 @@ public class RegionHealthChecksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified HealthCheck resource. Gets a list of available health checks by making a
-   * list() request.
+   * Returns the specified HealthCheck resource.
    *
    * <p>Sample code:
    *
@@ -335,8 +334,7 @@ public class RegionHealthChecksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified HealthCheck resource. Gets a list of available health checks by making a
-   * list() request.
+   * Returns the specified HealthCheck resource.
    *
    * <p>Sample code:
    *
@@ -366,8 +364,7 @@ public class RegionHealthChecksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified HealthCheck resource. Gets a list of available health checks by making a
-   * list() request.
+   * Returns the specified HealthCheck resource.
    *
    * <p>Sample code:
    *

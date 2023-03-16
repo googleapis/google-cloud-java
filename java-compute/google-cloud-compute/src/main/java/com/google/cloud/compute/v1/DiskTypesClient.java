@@ -307,8 +307,7 @@ public class DiskTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified disk type. Gets a list of available disk types by making a list()
-   * request.
+   * Returns the specified disk type.
    *
    * <p>Sample code:
    *
@@ -343,8 +342,7 @@ public class DiskTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified disk type. Gets a list of available disk types by making a list()
-   * request.
+   * Returns the specified disk type.
    *
    * <p>Sample code:
    *
@@ -374,8 +372,7 @@ public class DiskTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified disk type. Gets a list of available disk types by making a list()
-   * request.
+   * Returns the specified disk type.
    *
    * <p>Sample code:
    *

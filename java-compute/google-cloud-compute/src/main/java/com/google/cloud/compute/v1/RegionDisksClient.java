@@ -1733,6 +1733,157 @@ public class RegionDisksClient implements BackgroundResource {
     return stub.testIamPermissionsCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update the specified disk with the data included in the request. Update is performed only on
+   * selected fields included as part of update-mask. Only the following fields can be modified:
+   * user_license.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String disk = "disk3083677";
+   *   Disk diskResource = Disk.newBuilder().build();
+   *   Operation response = regionDisksClient.updateAsync(project, region, disk, diskResource).get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region The name of the region for this request.
+   * @param disk The disk name for this request.
+   * @param diskResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> updateAsync(
+      String project, String region, String disk, Disk diskResource) {
+    UpdateRegionDiskRequest request =
+        UpdateRegionDiskRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setDisk(disk)
+            .setDiskResource(diskResource)
+            .build();
+    return updateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update the specified disk with the data included in the request. Update is performed only on
+   * selected fields included as part of update-mask. Only the following fields can be modified:
+   * user_license.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
+   *   UpdateRegionDiskRequest request =
+   *       UpdateRegionDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setDiskResource(Disk.newBuilder().build())
+   *           .setPaths("paths106438894")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setUpdateMask("updateMask-296147115")
+   *           .build();
+   *   Operation response = regionDisksClient.updateAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> updateAsync(UpdateRegionDiskRequest request) {
+    return updateOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update the specified disk with the data included in the request. Update is performed only on
+   * selected fields included as part of update-mask. Only the following fields can be modified:
+   * user_license.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
+   *   UpdateRegionDiskRequest request =
+   *       UpdateRegionDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setDiskResource(Disk.newBuilder().build())
+   *           .setPaths("paths106438894")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setUpdateMask("updateMask-296147115")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionDisksClient.updateOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateRegionDiskRequest, Operation, Operation>
+      updateOperationCallable() {
+    return stub.updateOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update the specified disk with the data included in the request. Update is performed only on
+   * selected fields included as part of update-mask. Only the following fields can be modified:
+   * user_license.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionDisksClient regionDisksClient = RegionDisksClient.create()) {
+   *   UpdateRegionDiskRequest request =
+   *       UpdateRegionDiskRequest.newBuilder()
+   *           .setDisk("disk3083677")
+   *           .setDiskResource(Disk.newBuilder().build())
+   *           .setPaths("paths106438894")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .setUpdateMask("updateMask-296147115")
+   *           .build();
+   *   ApiFuture<Operation> future = regionDisksClient.updateCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateRegionDiskRequest, Operation> updateCallable() {
+    return stub.updateCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();

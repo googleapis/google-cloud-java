@@ -52,6 +52,97 @@ public interface BackendServiceLogConfigOrBuilder
    *
    *
    * <pre>
+   * This field can only be specified if logging is enabled for this backend service and "logConfig.optionalMode" was set to CUSTOM. Contains a list of optional fields you want to include in the logs. For example: serverInstance, serverGkeDetails.cluster, serverGkeDetails.pod.podNamespace
+   * </pre>
+   *
+   * <code>repeated string optional_fields = 528589944;</code>
+   *
+   * @return A list containing the optionalFields.
+   */
+  java.util.List<java.lang.String> getOptionalFieldsList();
+  /**
+   *
+   *
+   * <pre>
+   * This field can only be specified if logging is enabled for this backend service and "logConfig.optionalMode" was set to CUSTOM. Contains a list of optional fields you want to include in the logs. For example: serverInstance, serverGkeDetails.cluster, serverGkeDetails.pod.podNamespace
+   * </pre>
+   *
+   * <code>repeated string optional_fields = 528589944;</code>
+   *
+   * @return The count of optionalFields.
+   */
+  int getOptionalFieldsCount();
+  /**
+   *
+   *
+   * <pre>
+   * This field can only be specified if logging is enabled for this backend service and "logConfig.optionalMode" was set to CUSTOM. Contains a list of optional fields you want to include in the logs. For example: serverInstance, serverGkeDetails.cluster, serverGkeDetails.pod.podNamespace
+   * </pre>
+   *
+   * <code>repeated string optional_fields = 528589944;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The optionalFields at the given index.
+   */
+  java.lang.String getOptionalFields(int index);
+  /**
+   *
+   *
+   * <pre>
+   * This field can only be specified if logging is enabled for this backend service and "logConfig.optionalMode" was set to CUSTOM. Contains a list of optional fields you want to include in the logs. For example: serverInstance, serverGkeDetails.cluster, serverGkeDetails.pod.podNamespace
+   * </pre>
+   *
+   * <code>repeated string optional_fields = 528589944;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the optionalFields at the given index.
+   */
+  com.google.protobuf.ByteString getOptionalFieldsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * This field can only be specified if logging is enabled for this backend service. Configures whether all, none or a subset of optional fields should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL, EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
+   * Check the OptionalMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string optional_mode = 128697122;</code>
+   *
+   * @return Whether the optionalMode field is set.
+   */
+  boolean hasOptionalMode();
+  /**
+   *
+   *
+   * <pre>
+   * This field can only be specified if logging is enabled for this backend service. Configures whether all, none or a subset of optional fields should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL, EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
+   * Check the OptionalMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string optional_mode = 128697122;</code>
+   *
+   * @return The optionalMode.
+   */
+  java.lang.String getOptionalMode();
+  /**
+   *
+   *
+   * <pre>
+   * This field can only be specified if logging is enabled for this backend service. Configures whether all, none or a subset of optional fields should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL, EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
+   * Check the OptionalMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string optional_mode = 128697122;</code>
+   *
+   * @return The bytes for optionalMode.
+   */
+  com.google.protobuf.ByteString getOptionalModeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * This field can only be specified if logging is enabled for this backend service. The value of the field must be in [0, 1]. This configures the sampling rate of requests to the load balancer where 1.0 means all logged requests are reported and 0.0 means no logged requests are reported. The default value is 1.0.
    * </pre>
    *

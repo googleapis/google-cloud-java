@@ -22,6 +22,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
+ * Contains Properties set for the reservation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocation}
@@ -75,6 +76,12 @@ public final class AllocationResourceStatusSpecificSKUAllocation
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceInstanceTemplateId_ = "";
   /**
+   *
+   *
+   * <pre>
+   * ID of the instance template used to populate reservation properties.
+   * </pre>
+   *
    * <code>optional string source_instance_template_id = 111196154;</code>
    *
    * @return Whether the sourceInstanceTemplateId field is set.
@@ -84,6 +91,12 @@ public final class AllocationResourceStatusSpecificSKUAllocation
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
+   *
+   *
+   * <pre>
+   * ID of the instance template used to populate reservation properties.
+   * </pre>
+   *
    * <code>optional string source_instance_template_id = 111196154;</code>
    *
    * @return The sourceInstanceTemplateId.
@@ -101,6 +114,12 @@ public final class AllocationResourceStatusSpecificSKUAllocation
     }
   }
   /**
+   *
+   *
+   * <pre>
+   * ID of the instance template used to populate reservation properties.
+   * </pre>
+   *
    * <code>optional string source_instance_template_id = 111196154;</code>
    *
    * @return The bytes for sourceInstanceTemplateId.
@@ -292,6 +311,7 @@ public final class AllocationResourceStatusSpecificSKUAllocation
    *
    *
    * <pre>
+   * Contains Properties set for the reservation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocation}
@@ -486,6 +506,12 @@ public final class AllocationResourceStatusSpecificSKUAllocation
 
     private java.lang.Object sourceInstanceTemplateId_ = "";
     /**
+     *
+     *
+     * <pre>
+     * ID of the instance template used to populate reservation properties.
+     * </pre>
+     *
      * <code>optional string source_instance_template_id = 111196154;</code>
      *
      * @return Whether the sourceInstanceTemplateId field is set.
@@ -494,6 +520,12 @@ public final class AllocationResourceStatusSpecificSKUAllocation
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
+     *
+     *
+     * <pre>
+     * ID of the instance template used to populate reservation properties.
+     * </pre>
+     *
      * <code>optional string source_instance_template_id = 111196154;</code>
      *
      * @return The sourceInstanceTemplateId.
@@ -510,6 +542,12 @@ public final class AllocationResourceStatusSpecificSKUAllocation
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * ID of the instance template used to populate reservation properties.
+     * </pre>
+     *
      * <code>optional string source_instance_template_id = 111196154;</code>
      *
      * @return The bytes for sourceInstanceTemplateId.
@@ -526,6 +564,12 @@ public final class AllocationResourceStatusSpecificSKUAllocation
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * ID of the instance template used to populate reservation properties.
+     * </pre>
+     *
      * <code>optional string source_instance_template_id = 111196154;</code>
      *
      * @param value The sourceInstanceTemplateId to set.
@@ -541,6 +585,12 @@ public final class AllocationResourceStatusSpecificSKUAllocation
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * ID of the instance template used to populate reservation properties.
+     * </pre>
+     *
      * <code>optional string source_instance_template_id = 111196154;</code>
      *
      * @return This builder for chaining.
@@ -552,6 +602,12 @@ public final class AllocationResourceStatusSpecificSKUAllocation
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * ID of the instance template used to populate reservation properties.
+     * </pre>
+     *
      * <code>optional string source_instance_template_id = 111196154;</code>
      *
      * @param value The bytes for sourceInstanceTemplateId to set.

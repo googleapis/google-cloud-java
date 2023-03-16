@@ -65,6 +65,7 @@ import com.google.cloud.compute.v1.SetIamPolicyDiskRequest;
 import com.google.cloud.compute.v1.SetLabelsDiskRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsDiskRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
+import com.google.cloud.compute.v1.UpdateDiskRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -153,6 +154,9 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
       setLabelsOperationSettings;
   private final UnaryCallSettings<TestIamPermissionsDiskRequest, TestPermissionsResponse>
       testIamPermissionsSettings;
+  private final UnaryCallSettings<UpdateDiskRequest, Operation> updateSettings;
+  private final OperationCallSettings<UpdateDiskRequest, Operation, Operation>
+      updateOperationSettings;
 
   private static final PagedListDescriptor<
           AggregatedListDisksRequest, DiskAggregatedList, Map.Entry<String, DisksScopedList>>
@@ -375,6 +379,16 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
     return testIamPermissionsSettings;
   }
 
+  /** Returns the object with the settings used for calls to update. */
+  public UnaryCallSettings<UpdateDiskRequest, Operation> updateSettings() {
+    return updateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to update. */
+  public OperationCallSettings<UpdateDiskRequest, Operation, Operation> updateOperationSettings() {
+    return updateOperationSettings;
+  }
+
   public DisksStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -472,6 +486,8 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
     setLabelsSettings = settingsBuilder.setLabelsSettings().build();
     setLabelsOperationSettings = settingsBuilder.setLabelsOperationSettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+    updateSettings = settingsBuilder.updateSettings().build();
+    updateOperationSettings = settingsBuilder.updateOperationSettings().build();
   }
 
   /** Builder for DisksStubSettings. */
@@ -513,6 +529,9 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
         setLabelsOperationSettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsDiskRequest, TestPermissionsResponse>
         testIamPermissionsSettings;
+    private final UnaryCallSettings.Builder<UpdateDiskRequest, Operation> updateSettings;
+    private final OperationCallSettings.Builder<UpdateDiskRequest, Operation, Operation>
+        updateOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -583,6 +602,8 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
       setLabelsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setLabelsOperationSettings = OperationCallSettings.newBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -598,7 +619,8 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
               resizeSettings,
               setIamPolicySettings,
               setLabelsSettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              updateSettings);
       initDefaults(this);
     }
 
@@ -627,6 +649,8 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
       setLabelsSettings = settings.setLabelsSettings.toBuilder();
       setLabelsOperationSettings = settings.setLabelsOperationSettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+      updateSettings = settings.updateSettings.toBuilder();
+      updateOperationSettings = settings.updateOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -642,7 +666,8 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
               resizeSettings,
               setIamPolicySettings,
               setLabelsSettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              updateSettings);
     }
 
     private static Builder createDefault() {
@@ -721,6 +746,11 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
 
       builder
           .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -890,6 +920,29 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
                       .setTotalTimeout(Duration.ofMillis(600000L))
                       .build()));
 
+      builder
+          .updateOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<UpdateDiskRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1033,6 +1086,19 @@ public class DisksStubSettings extends StubSettings<DisksStubSettings> {
     public UnaryCallSettings.Builder<TestIamPermissionsDiskRequest, TestPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to update. */
+    public UnaryCallSettings.Builder<UpdateDiskRequest, Operation> updateSettings() {
+      return updateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to update. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<UpdateDiskRequest, Operation, Operation>
+        updateOperationSettings() {
+      return updateOperationSettings;
     }
 
     @Override

@@ -444,8 +444,7 @@ public class VpnGatewaysClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified VPN gateway. Gets a list of available VPN gateways by making a list()
-   * request.
+   * Returns the specified VPN gateway.
    *
    * <p>Sample code:
    *
@@ -480,8 +479,7 @@ public class VpnGatewaysClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified VPN gateway. Gets a list of available VPN gateways by making a list()
-   * request.
+   * Returns the specified VPN gateway.
    *
    * <p>Sample code:
    *
@@ -511,8 +509,7 @@ public class VpnGatewaysClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified VPN gateway. Gets a list of available VPN gateways by making a list()
-   * request.
+   * Returns the specified VPN gateway.
    *
    * <p>Sample code:
    *

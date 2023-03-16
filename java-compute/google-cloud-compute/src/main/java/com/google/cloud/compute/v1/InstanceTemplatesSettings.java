@@ -16,6 +16,7 @@
 
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.InstanceTemplatesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.InstanceTemplatesClient.ListPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -74,6 +75,15 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public class InstanceTemplatesSettings extends ClientSettings<InstanceTemplatesSettings> {
+
+  /** Returns the object with the settings used for calls to aggregatedList. */
+  public PagedCallSettings<
+          AggregatedListInstanceTemplatesRequest,
+          InstanceTemplateAggregatedList,
+          AggregatedListPagedResponse>
+      aggregatedListSettings() {
+    return ((InstanceTemplatesStubSettings) getStubSettings()).aggregatedListSettings();
+  }
 
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteInstanceTemplateRequest, Operation> deleteSettings() {
@@ -220,6 +230,15 @@ public class InstanceTemplatesSettings extends ClientSettings<InstanceTemplatesS
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
+    }
+
+    /** Returns the builder for the settings used for calls to aggregatedList. */
+    public PagedCallSettings.Builder<
+            AggregatedListInstanceTemplatesRequest,
+            InstanceTemplateAggregatedList,
+            AggregatedListPagedResponse>
+        aggregatedListSettings() {
+      return getStubSettingsBuilder().aggregatedListSettings();
     }
 
     /** Returns the builder for the settings used for calls to delete. */

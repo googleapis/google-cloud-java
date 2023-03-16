@@ -294,8 +294,7 @@ public class SnapshotsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified Snapshot resource. Gets a list of available snapshots by making a list()
-   * request.
+   * Returns the specified Snapshot resource.
    *
    * <p>Sample code:
    *
@@ -324,8 +323,7 @@ public class SnapshotsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified Snapshot resource. Gets a list of available snapshots by making a list()
-   * request.
+   * Returns the specified Snapshot resource.
    *
    * <p>Sample code:
    *
@@ -354,8 +352,7 @@ public class SnapshotsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified Snapshot resource. Gets a list of available snapshots by making a list()
-   * request.
+   * Returns the specified Snapshot resource.
    *
    * <p>Sample code:
    *

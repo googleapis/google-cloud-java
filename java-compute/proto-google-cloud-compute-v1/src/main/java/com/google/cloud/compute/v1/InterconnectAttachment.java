@@ -3263,7 +3263,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] Set to true if the resource satisfies the zone separation organization policy constraints and false otherwise. Defaults to false if the field is not present.
+   * [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -3278,7 +3278,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] Set to true if the resource satisfies the zone separation organization policy constraints and false otherwise. Defaults to false if the field is not present.
+   * [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -3569,7 +3569,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The IEEE 802.1Q VLAN tag for this attachment, in the range 2-4094. Only specified at creation time.
+   * The IEEE 802.1Q VLAN tag for this attachment, in the range 2-4093. Only specified at creation time.
    * </pre>
    *
    * <code>optional int32 vlan_tag8021q = 119927836;</code>
@@ -3584,7 +3584,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The IEEE 802.1Q VLAN tag for this attachment, in the range 2-4094. Only specified at creation time.
+   * The IEEE 802.1Q VLAN tag for this attachment, in the range 2-4093. Only specified at creation time.
    * </pre>
    *
    * <code>optional int32 vlan_tag8021q = 119927836;</code>
@@ -8621,7 +8621,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Set to true if the resource satisfies the zone separation organization policy constraints and false otherwise. Defaults to false if the field is not present.
+     * [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -8636,7 +8636,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Set to true if the resource satisfies the zone separation organization policy constraints and false otherwise. Defaults to false if the field is not present.
+     * [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -8651,7 +8651,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Set to true if the resource satisfies the zone separation organization policy constraints and false otherwise. Defaults to false if the field is not present.
+     * [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -8670,7 +8670,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Set to true if the resource satisfies the zone separation organization policy constraints and false otherwise. Defaults to false if the field is not present.
+     * [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -9187,7 +9187,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The IEEE 802.1Q VLAN tag for this attachment, in the range 2-4094. Only specified at creation time.
+     * The IEEE 802.1Q VLAN tag for this attachment, in the range 2-4093. Only specified at creation time.
      * </pre>
      *
      * <code>optional int32 vlan_tag8021q = 119927836;</code>
@@ -9202,7 +9202,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The IEEE 802.1Q VLAN tag for this attachment, in the range 2-4094. Only specified at creation time.
+     * The IEEE 802.1Q VLAN tag for this attachment, in the range 2-4093. Only specified at creation time.
      * </pre>
      *
      * <code>optional int32 vlan_tag8021q = 119927836;</code>
@@ -9217,7 +9217,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The IEEE 802.1Q VLAN tag for this attachment, in the range 2-4094. Only specified at creation time.
+     * The IEEE 802.1Q VLAN tag for this attachment, in the range 2-4093. Only specified at creation time.
      * </pre>
      *
      * <code>optional int32 vlan_tag8021q = 119927836;</code>
@@ -9236,7 +9236,7 @@ public final class InterconnectAttachment extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The IEEE 802.1Q VLAN tag for this attachment, in the range 2-4094. Only specified at creation time.
+     * The IEEE 802.1Q VLAN tag for this attachment, in the range 2-4093. Only specified at creation time.
      * </pre>
      *
      * <code>optional int32 vlan_tag8021q = 119927836;</code>

@@ -76,6 +76,7 @@ import com.google.cloud.compute.v1.SetMachineResourcesInstanceRequest;
 import com.google.cloud.compute.v1.SetMachineTypeInstanceRequest;
 import com.google.cloud.compute.v1.SetMetadataInstanceRequest;
 import com.google.cloud.compute.v1.SetMinCpuPlatformInstanceRequest;
+import com.google.cloud.compute.v1.SetNameInstanceRequest;
 import com.google.cloud.compute.v1.SetSchedulingInstanceRequest;
 import com.google.cloud.compute.v1.SetServiceAccountInstanceRequest;
 import com.google.cloud.compute.v1.SetShieldedInstanceIntegrityPolicyInstanceRequest;
@@ -1631,6 +1632,63 @@ public class HttpJsonInstancesStub extends InstancesStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<SetNameInstanceRequest, Operation>
+      setNameMethodDescriptor =
+          ApiMethodDescriptor.<SetNameInstanceRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Instances/SetName")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetNameInstanceRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/setName",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetNameInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetNameInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "instancesSetNameRequestResource",
+                                      request.getInstancesSetNameRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (SetNameInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private static final ApiMethodDescriptor<SetSchedulingInstanceRequest, Operation>
       setSchedulingMethodDescriptor =
           ApiMethodDescriptor.<SetSchedulingInstanceRequest, Operation>newBuilder()
@@ -2550,6 +2608,9 @@ public class HttpJsonInstancesStub extends InstancesStub {
       setMinCpuPlatformCallable;
   private final OperationCallable<SetMinCpuPlatformInstanceRequest, Operation, Operation>
       setMinCpuPlatformOperationCallable;
+  private final UnaryCallable<SetNameInstanceRequest, Operation> setNameCallable;
+  private final OperationCallable<SetNameInstanceRequest, Operation, Operation>
+      setNameOperationCallable;
   private final UnaryCallable<SetSchedulingInstanceRequest, Operation> setSchedulingCallable;
   private final OperationCallable<SetSchedulingInstanceRequest, Operation, Operation>
       setSchedulingOperationCallable;
@@ -2818,6 +2879,11 @@ public class HttpJsonInstancesStub extends InstancesStub {
                 .setMethodDescriptor(setMinCpuPlatformMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<SetNameInstanceRequest, Operation> setNameTransportSettings =
+        HttpJsonCallSettings.<SetNameInstanceRequest, Operation>newBuilder()
+            .setMethodDescriptor(setNameMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
     HttpJsonCallSettings<SetSchedulingInstanceRequest, Operation> setSchedulingTransportSettings =
         HttpJsonCallSettings.<SetSchedulingInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(setSchedulingMethodDescriptor)
@@ -3137,6 +3203,15 @@ public class HttpJsonInstancesStub extends InstancesStub {
             settings.setMinCpuPlatformOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.setNameCallable =
+        callableFactory.createUnaryCallable(
+            setNameTransportSettings, settings.setNameSettings(), clientContext);
+    this.setNameOperationCallable =
+        callableFactory.createOperationCallable(
+            setNameTransportSettings,
+            settings.setNameOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.setSchedulingCallable =
         callableFactory.createUnaryCallable(
             setSchedulingTransportSettings, settings.setSchedulingSettings(), clientContext);
@@ -3322,6 +3397,7 @@ public class HttpJsonInstancesStub extends InstancesStub {
     methodDescriptors.add(setMachineTypeMethodDescriptor);
     methodDescriptors.add(setMetadataMethodDescriptor);
     methodDescriptors.add(setMinCpuPlatformMethodDescriptor);
+    methodDescriptors.add(setNameMethodDescriptor);
     methodDescriptors.add(setSchedulingMethodDescriptor);
     methodDescriptors.add(setServiceAccountMethodDescriptor);
     methodDescriptors.add(setShieldedInstanceIntegrityPolicyMethodDescriptor);
@@ -3621,6 +3697,17 @@ public class HttpJsonInstancesStub extends InstancesStub {
   public OperationCallable<SetMinCpuPlatformInstanceRequest, Operation, Operation>
       setMinCpuPlatformOperationCallable() {
     return setMinCpuPlatformOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetNameInstanceRequest, Operation> setNameCallable() {
+    return setNameCallable;
+  }
+
+  @Override
+  public OperationCallable<SetNameInstanceRequest, Operation, Operation>
+      setNameOperationCallable() {
+    return setNameOperationCallable;
   }
 
   @Override

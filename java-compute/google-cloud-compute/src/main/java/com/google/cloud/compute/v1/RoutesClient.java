@@ -281,8 +281,7 @@ public class RoutesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified Route resource. Gets a list of available routes by making a list()
-   * request.
+   * Returns the specified Route resource.
    *
    * <p>Sample code:
    *
@@ -311,8 +310,7 @@ public class RoutesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified Route resource. Gets a list of available routes by making a list()
-   * request.
+   * Returns the specified Route resource.
    *
    * <p>Sample code:
    *
@@ -341,8 +339,7 @@ public class RoutesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified Route resource. Gets a list of available routes by making a list()
-   * request.
+   * Returns the specified Route resource.
    *
    * <p>Sample code:
    *

@@ -32,6 +32,7 @@ import com.google.cloud.compute.v1.stub.InstanceTemplatesStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -162,6 +163,159 @@ public class InstanceTemplatesClient implements BackgroundResource {
 
   public InstanceTemplatesStub getStub() {
     return stub;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the list of all InstanceTemplates resources, regional and global, available to the
+   * specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
+   *   String project = "project-309310695";
+   *   for (Map.Entry<String, InstanceTemplatesScopedList> element :
+   *       instanceTemplatesClient.aggregatedList(project).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param project Name of the project scoping this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AggregatedListPagedResponse aggregatedList(String project) {
+    AggregatedListInstanceTemplatesRequest request =
+        AggregatedListInstanceTemplatesRequest.newBuilder().setProject(project).build();
+    return aggregatedList(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the list of all InstanceTemplates resources, regional and global, available to the
+   * specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
+   *   AggregatedListInstanceTemplatesRequest request =
+   *       AggregatedListInstanceTemplatesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   for (Map.Entry<String, InstanceTemplatesScopedList> element :
+   *       instanceTemplatesClient.aggregatedList(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AggregatedListPagedResponse aggregatedList(
+      AggregatedListInstanceTemplatesRequest request) {
+    return aggregatedListPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the list of all InstanceTemplates resources, regional and global, available to the
+   * specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
+   *   AggregatedListInstanceTemplatesRequest request =
+   *       AggregatedListInstanceTemplatesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   ApiFuture<Map.Entry<String, InstanceTemplatesScopedList>> future =
+   *       instanceTemplatesClient.aggregatedListPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Map.Entry<String, InstanceTemplatesScopedList> element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AggregatedListInstanceTemplatesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return stub.aggregatedListPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the list of all InstanceTemplates resources, regional and global, available to the
+   * specified project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
+   *   AggregatedListInstanceTemplatesRequest request =
+   *       AggregatedListInstanceTemplatesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setIncludeAllScopes(true)
+   *           .setMaxResults(1128457243)
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageToken("pageToken873572522")
+   *           .setProject("project-309310695")
+   *           .setReturnPartialSuccess(true)
+   *           .build();
+   *   while (true) {
+   *     InstanceTemplateAggregatedList response =
+   *         instanceTemplatesClient.aggregatedListCallable().call(request);
+   *     for (Map.Entry<String, InstanceTemplatesScopedList> element : response.getItemsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AggregatedListInstanceTemplatesRequest, InstanceTemplateAggregatedList>
+      aggregatedListCallable() {
+    return stub.aggregatedListCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -300,8 +454,7 @@ public class InstanceTemplatesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified instance template. Gets a list of available instance templates by making
-   * a list() request.
+   * Returns the specified instance template.
    *
    * <p>Sample code:
    *
@@ -333,8 +486,7 @@ public class InstanceTemplatesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified instance template. Gets a list of available instance templates by making
-   * a list() request.
+   * Returns the specified instance template.
    *
    * <p>Sample code:
    *
@@ -363,8 +515,7 @@ public class InstanceTemplatesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified instance template. Gets a list of available instance templates by making
-   * a list() request.
+   * Returns the specified instance template.
    *
    * <p>Sample code:
    *
@@ -990,6 +1141,101 @@ public class InstanceTemplatesClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class AggregatedListPagedResponse
+      extends AbstractPagedListResponse<
+          AggregatedListInstanceTemplatesRequest,
+          InstanceTemplateAggregatedList,
+          Map.Entry<String, InstanceTemplatesScopedList>,
+          AggregatedListPage,
+          AggregatedListFixedSizeCollection> {
+
+    public static ApiFuture<AggregatedListPagedResponse> createAsync(
+        PageContext<
+                AggregatedListInstanceTemplatesRequest,
+                InstanceTemplateAggregatedList,
+                Map.Entry<String, InstanceTemplatesScopedList>>
+            context,
+        ApiFuture<InstanceTemplateAggregatedList> futureResponse) {
+      ApiFuture<AggregatedListPage> futurePage =
+          AggregatedListPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new AggregatedListPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private AggregatedListPagedResponse(AggregatedListPage page) {
+      super(page, AggregatedListFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class AggregatedListPage
+      extends AbstractPage<
+          AggregatedListInstanceTemplatesRequest,
+          InstanceTemplateAggregatedList,
+          Map.Entry<String, InstanceTemplatesScopedList>,
+          AggregatedListPage> {
+
+    private AggregatedListPage(
+        PageContext<
+                AggregatedListInstanceTemplatesRequest,
+                InstanceTemplateAggregatedList,
+                Map.Entry<String, InstanceTemplatesScopedList>>
+            context,
+        InstanceTemplateAggregatedList response) {
+      super(context, response);
+    }
+
+    private static AggregatedListPage createEmptyPage() {
+      return new AggregatedListPage(null, null);
+    }
+
+    @Override
+    protected AggregatedListPage createPage(
+        PageContext<
+                AggregatedListInstanceTemplatesRequest,
+                InstanceTemplateAggregatedList,
+                Map.Entry<String, InstanceTemplatesScopedList>>
+            context,
+        InstanceTemplateAggregatedList response) {
+      return new AggregatedListPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<AggregatedListPage> createPageAsync(
+        PageContext<
+                AggregatedListInstanceTemplatesRequest,
+                InstanceTemplateAggregatedList,
+                Map.Entry<String, InstanceTemplatesScopedList>>
+            context,
+        ApiFuture<InstanceTemplateAggregatedList> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class AggregatedListFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          AggregatedListInstanceTemplatesRequest,
+          InstanceTemplateAggregatedList,
+          Map.Entry<String, InstanceTemplatesScopedList>,
+          AggregatedListPage,
+          AggregatedListFixedSizeCollection> {
+
+    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static AggregatedListFixedSizeCollection createEmptyCollection() {
+      return new AggregatedListFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected AggregatedListFixedSizeCollection createCollection(
+        List<AggregatedListPage> pages, int collectionSize) {
+      return new AggregatedListFixedSizeCollection(pages, collectionSize);
+    }
   }
 
   public static class ListPagedResponse

@@ -444,8 +444,7 @@ public class AutoscalersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified autoscaler resource. Gets a list of available autoscalers by making a
-   * list() request.
+   * Returns the specified autoscaler resource.
    *
    * <p>Sample code:
    *
@@ -480,8 +479,7 @@ public class AutoscalersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified autoscaler resource. Gets a list of available autoscalers by making a
-   * list() request.
+   * Returns the specified autoscaler resource.
    *
    * <p>Sample code:
    *
@@ -511,8 +509,7 @@ public class AutoscalersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified autoscaler resource. Gets a list of available autoscalers by making a
-   * list() request.
+   * Returns the specified autoscaler resource.
    *
    * <p>Sample code:
    *

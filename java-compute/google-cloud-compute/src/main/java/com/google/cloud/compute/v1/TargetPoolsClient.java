@@ -741,8 +741,7 @@ public class TargetPoolsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified target pool. Gets a list of available target pools by making a list()
-   * request.
+   * Returns the specified target pool.
    *
    * <p>Sample code:
    *
@@ -777,8 +776,7 @@ public class TargetPoolsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified target pool. Gets a list of available target pools by making a list()
-   * request.
+   * Returns the specified target pool.
    *
    * <p>Sample code:
    *
@@ -808,8 +806,7 @@ public class TargetPoolsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified target pool. Gets a list of available target pools by making a list()
-   * request.
+   * Returns the specified target pool.
    *
    * <p>Sample code:
    *

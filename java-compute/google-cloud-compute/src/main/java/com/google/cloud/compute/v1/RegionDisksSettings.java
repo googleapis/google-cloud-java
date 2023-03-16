@@ -179,6 +179,17 @@ public class RegionDisksSettings extends ClientSettings<RegionDisksSettings> {
     return ((RegionDisksStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
+  /** Returns the object with the settings used for calls to update. */
+  public UnaryCallSettings<UpdateRegionDiskRequest, Operation> updateSettings() {
+    return ((RegionDisksStubSettings) getStubSettings()).updateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to update. */
+  public OperationCallSettings<UpdateRegionDiskRequest, Operation, Operation>
+      updateOperationSettings() {
+    return ((RegionDisksStubSettings) getStubSettings()).updateOperationSettings();
+  }
+
   public static final RegionDisksSettings create(RegionDisksStubSettings stub) throws IOException {
     return new RegionDisksSettings.Builder(stub.toBuilder()).build();
   }
@@ -382,6 +393,17 @@ public class RegionDisksSettings extends ClientSettings<RegionDisksSettings> {
     public UnaryCallSettings.Builder<TestIamPermissionsRegionDiskRequest, TestPermissionsResponse>
         testIamPermissionsSettings() {
       return getStubSettingsBuilder().testIamPermissionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to update. */
+    public UnaryCallSettings.Builder<UpdateRegionDiskRequest, Operation> updateSettings() {
+      return getStubSettingsBuilder().updateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to update. */
+    public OperationCallSettings.Builder<UpdateRegionDiskRequest, Operation, Operation>
+        updateOperationSettings() {
+      return getStubSettingsBuilder().updateOperationSettings();
     }
 
     @Override

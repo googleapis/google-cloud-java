@@ -309,8 +309,7 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified TargetHttpsProxy resource in the specified region. Gets a list of
-   * available target HTTP proxies by making a list() request.
+   * Returns the specified TargetHttpsProxy resource in the specified region.
    *
    * <p>Sample code:
    *
@@ -347,8 +346,7 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified TargetHttpsProxy resource in the specified region. Gets a list of
-   * available target HTTP proxies by making a list() request.
+   * Returns the specified TargetHttpsProxy resource in the specified region.
    *
    * <p>Sample code:
    *
@@ -379,8 +377,7 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified TargetHttpsProxy resource in the specified region. Gets a list of
-   * available target HTTP proxies by making a list() request.
+   * Returns the specified TargetHttpsProxy resource in the specified region.
    *
    * <p>Sample code:
    *

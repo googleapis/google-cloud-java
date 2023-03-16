@@ -408,7 +408,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
+   * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.
    * </pre>
    *
    * <code>optional string external_ipv6 = 532703707;</code>
@@ -423,7 +423,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
+   * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.
    * </pre>
    *
    * <code>optional string external_ipv6 = 532703707;</code>
@@ -446,7 +446,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
+   * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.
    * </pre>
    *
    * <code>optional string external_ipv6 = 532703707;</code>
@@ -1526,7 +1526,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
+     * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.
      * </pre>
      *
      * <code>optional string external_ipv6 = 532703707;</code>
@@ -1540,7 +1540,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
+     * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.
      * </pre>
      *
      * <code>optional string external_ipv6 = 532703707;</code>
@@ -1562,7 +1562,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
+     * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.
      * </pre>
      *
      * <code>optional string external_ipv6 = 532703707;</code>
@@ -1584,7 +1584,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
+     * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.
      * </pre>
      *
      * <code>optional string external_ipv6 = 532703707;</code>
@@ -1605,7 +1605,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
+     * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.
      * </pre>
      *
      * <code>optional string external_ipv6 = 532703707;</code>
@@ -1622,7 +1622,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
+     * The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.
      * </pre>
      *
      * <code>optional string external_ipv6 = 532703707;</code>

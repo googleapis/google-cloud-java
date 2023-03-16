@@ -52,7 +52,7 @@ public interface GetFromFamilyImageRequestOrBuilder
    *
    *
    * <pre>
-   * Project ID for this request.
+   * The image project that the image belongs to. For example, to get a CentOS image, specify centos-cloud as the image project.
    * </pre>
    *
    * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -64,7 +64,7 @@ public interface GetFromFamilyImageRequestOrBuilder
    *
    *
    * <pre>
-   * Project ID for this request.
+   * The image project that the image belongs to. For example, to get a CentOS image, specify centos-cloud as the image project.
    * </pre>
    *
    * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>

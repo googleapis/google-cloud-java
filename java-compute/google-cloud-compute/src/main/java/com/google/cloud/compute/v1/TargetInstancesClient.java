@@ -449,8 +449,7 @@ public class TargetInstancesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified TargetInstance resource. Gets a list of available target instances by
-   * making a list() request.
+   * Returns the specified TargetInstance resource.
    *
    * <p>Sample code:
    *
@@ -485,8 +484,7 @@ public class TargetInstancesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified TargetInstance resource. Gets a list of available target instances by
-   * making a list() request.
+   * Returns the specified TargetInstance resource.
    *
    * <p>Sample code:
    *
@@ -516,8 +514,7 @@ public class TargetInstancesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified TargetInstance resource. Gets a list of available target instances by
-   * making a list() request.
+   * Returns the specified TargetInstance resource.
    *
    * <p>Sample code:
    *

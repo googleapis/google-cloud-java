@@ -37,7 +37,10 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     super(builder);
   }
 
-  private BackendServiceLogConfig() {}
+  private BackendServiceLogConfig() {
+    optionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    optionalMode_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -63,6 +66,187 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.BackendServiceLogConfig.class,
             com.google.cloud.compute.v1.BackendServiceLogConfig.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * This field can only be specified if logging is enabled for this backend service. Configures whether all, none or a subset of optional fields should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL, EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.BackendServiceLogConfig.OptionalMode}
+   */
+  public enum OptionalMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_OPTIONAL_MODE = 0;</code>
+     */
+    UNDEFINED_OPTIONAL_MODE(0),
+    /**
+     *
+     *
+     * <pre>
+     * A subset of optional fields.
+     * </pre>
+     *
+     * <code>CUSTOM = 388595569;</code>
+     */
+    CUSTOM(388595569),
+    /**
+     *
+     *
+     * <pre>
+     * None optional fields.
+     * </pre>
+     *
+     * <code>EXCLUDE_ALL_OPTIONAL = 168636099;</code>
+     */
+    EXCLUDE_ALL_OPTIONAL(168636099),
+    /**
+     *
+     *
+     * <pre>
+     * All optional fields.
+     * </pre>
+     *
+     * <code>INCLUDE_ALL_OPTIONAL = 535606965;</code>
+     */
+    INCLUDE_ALL_OPTIONAL(535606965),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_OPTIONAL_MODE = 0;</code>
+     */
+    public static final int UNDEFINED_OPTIONAL_MODE_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * A subset of optional fields.
+     * </pre>
+     *
+     * <code>CUSTOM = 388595569;</code>
+     */
+    public static final int CUSTOM_VALUE = 388595569;
+    /**
+     *
+     *
+     * <pre>
+     * None optional fields.
+     * </pre>
+     *
+     * <code>EXCLUDE_ALL_OPTIONAL = 168636099;</code>
+     */
+    public static final int EXCLUDE_ALL_OPTIONAL_VALUE = 168636099;
+    /**
+     *
+     *
+     * <pre>
+     * All optional fields.
+     * </pre>
+     *
+     * <code>INCLUDE_ALL_OPTIONAL = 535606965;</code>
+     */
+    public static final int INCLUDE_ALL_OPTIONAL_VALUE = 535606965;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static OptionalMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static OptionalMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_OPTIONAL_MODE;
+        case 388595569:
+          return CUSTOM;
+        case 168636099:
+          return EXCLUDE_ALL_OPTIONAL;
+        case 535606965:
+          return INCLUDE_ALL_OPTIONAL;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<OptionalMode> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<OptionalMode> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<OptionalMode>() {
+          public OptionalMode findValueByNumber(int number) {
+            return OptionalMode.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.BackendServiceLogConfig.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final OptionalMode[] VALUES = values();
+
+    public static OptionalMode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private OptionalMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.BackendServiceLogConfig.OptionalMode)
   }
 
   private int bitField0_;
@@ -99,6 +283,138 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     return enable_;
   }
 
+  public static final int OPTIONAL_FIELDS_FIELD_NUMBER = 528589944;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringList optionalFields_;
+  /**
+   *
+   *
+   * <pre>
+   * This field can only be specified if logging is enabled for this backend service and "logConfig.optionalMode" was set to CUSTOM. Contains a list of optional fields you want to include in the logs. For example: serverInstance, serverGkeDetails.cluster, serverGkeDetails.pod.podNamespace
+   * </pre>
+   *
+   * <code>repeated string optional_fields = 528589944;</code>
+   *
+   * @return A list containing the optionalFields.
+   */
+  public com.google.protobuf.ProtocolStringList getOptionalFieldsList() {
+    return optionalFields_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field can only be specified if logging is enabled for this backend service and "logConfig.optionalMode" was set to CUSTOM. Contains a list of optional fields you want to include in the logs. For example: serverInstance, serverGkeDetails.cluster, serverGkeDetails.pod.podNamespace
+   * </pre>
+   *
+   * <code>repeated string optional_fields = 528589944;</code>
+   *
+   * @return The count of optionalFields.
+   */
+  public int getOptionalFieldsCount() {
+    return optionalFields_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field can only be specified if logging is enabled for this backend service and "logConfig.optionalMode" was set to CUSTOM. Contains a list of optional fields you want to include in the logs. For example: serverInstance, serverGkeDetails.cluster, serverGkeDetails.pod.podNamespace
+   * </pre>
+   *
+   * <code>repeated string optional_fields = 528589944;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The optionalFields at the given index.
+   */
+  public java.lang.String getOptionalFields(int index) {
+    return optionalFields_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field can only be specified if logging is enabled for this backend service and "logConfig.optionalMode" was set to CUSTOM. Contains a list of optional fields you want to include in the logs. For example: serverInstance, serverGkeDetails.cluster, serverGkeDetails.pod.podNamespace
+   * </pre>
+   *
+   * <code>repeated string optional_fields = 528589944;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the optionalFields at the given index.
+   */
+  public com.google.protobuf.ByteString getOptionalFieldsBytes(int index) {
+    return optionalFields_.getByteString(index);
+  }
+
+  public static final int OPTIONAL_MODE_FIELD_NUMBER = 128697122;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object optionalMode_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * This field can only be specified if logging is enabled for this backend service. Configures whether all, none or a subset of optional fields should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL, EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
+   * Check the OptionalMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string optional_mode = 128697122;</code>
+   *
+   * @return Whether the optionalMode field is set.
+   */
+  @java.lang.Override
+  public boolean hasOptionalMode() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field can only be specified if logging is enabled for this backend service. Configures whether all, none or a subset of optional fields should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL, EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
+   * Check the OptionalMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string optional_mode = 128697122;</code>
+   *
+   * @return The optionalMode.
+   */
+  @java.lang.Override
+  public java.lang.String getOptionalMode() {
+    java.lang.Object ref = optionalMode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      optionalMode_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field can only be specified if logging is enabled for this backend service. Configures whether all, none or a subset of optional fields should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL, EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
+   * Check the OptionalMode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string optional_mode = 128697122;</code>
+   *
+   * @return The bytes for optionalMode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getOptionalModeBytes() {
+    java.lang.Object ref = optionalMode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      optionalMode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int SAMPLE_RATE_FIELD_NUMBER = 153193045;
   private float sampleRate_ = 0F;
   /**
@@ -114,7 +430,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public boolean hasSampleRate() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    *
@@ -147,10 +463,17 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 128697122, optionalMode_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeFloat(153193045, sampleRate_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(311764355, enable_);
+    }
+    for (int i = 0; i < optionalFields_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 528589944, optionalFields_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -162,10 +485,21 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
 
     size = 0;
     if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(128697122, optionalMode_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(153193045, sampleRate_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(311764355, enable_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < optionalFields_.size(); i++) {
+        dataSize += computeStringSizeNoTag(optionalFields_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getOptionalFieldsList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -187,6 +521,11 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     if (hasEnable()) {
       if (getEnable() != other.getEnable()) return false;
     }
+    if (!getOptionalFieldsList().equals(other.getOptionalFieldsList())) return false;
+    if (hasOptionalMode() != other.hasOptionalMode()) return false;
+    if (hasOptionalMode()) {
+      if (!getOptionalMode().equals(other.getOptionalMode())) return false;
+    }
     if (hasSampleRate() != other.hasSampleRate()) return false;
     if (hasSampleRate()) {
       if (java.lang.Float.floatToIntBits(getSampleRate())
@@ -206,6 +545,14 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     if (hasEnable()) {
       hash = (37 * hash) + ENABLE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnable());
+    }
+    if (getOptionalFieldsCount() > 0) {
+      hash = (37 * hash) + OPTIONAL_FIELDS_FIELD_NUMBER;
+      hash = (53 * hash) + getOptionalFieldsList().hashCode();
+    }
+    if (hasOptionalMode()) {
+      hash = (37 * hash) + OPTIONAL_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + getOptionalMode().hashCode();
     }
     if (hasSampleRate()) {
       hash = (37 * hash) + SAMPLE_RATE_FIELD_NUMBER;
@@ -351,6 +698,9 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       super.clear();
       bitField0_ = 0;
       enable_ = false;
+      optionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      optionalMode_ = "";
       sampleRate_ = 0F;
       return this;
     }
@@ -379,11 +729,21 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     public com.google.cloud.compute.v1.BackendServiceLogConfig buildPartial() {
       com.google.cloud.compute.v1.BackendServiceLogConfig result =
           new com.google.cloud.compute.v1.BackendServiceLogConfig(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.BackendServiceLogConfig result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        optionalFields_ = optionalFields_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.optionalFields_ = optionalFields_;
     }
 
     private void buildPartial0(com.google.cloud.compute.v1.BackendServiceLogConfig result) {
@@ -393,9 +753,13 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
         result.enable_ = enable_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.sampleRate_ = sampleRate_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.optionalMode_ = optionalMode_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.sampleRate_ = sampleRate_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -449,6 +813,21 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       if (other.hasEnable()) {
         setEnable(other.getEnable());
       }
+      if (!other.optionalFields_.isEmpty()) {
+        if (optionalFields_.isEmpty()) {
+          optionalFields_ = other.optionalFields_;
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ensureOptionalFieldsIsMutable();
+          optionalFields_.addAll(other.optionalFields_);
+        }
+        onChanged();
+      }
+      if (other.hasOptionalMode()) {
+        optionalMode_ = other.optionalMode_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       if (other.hasSampleRate()) {
         setSampleRate(other.getSampleRate());
       }
@@ -478,10 +857,16 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
             case 0:
               done = true;
               break;
+            case 1029576978:
+              {
+                optionalMode_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 1029576978
             case 1225544365:
               {
                 sampleRate_ = input.readFloat();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 1225544365
             case -1800852456:
@@ -490,6 +875,13 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
                 bitField0_ |= 0x00000001;
                 break;
               } // case -1800852456
+            case -66247742:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureOptionalFieldsIsMutable();
+                optionalFields_.add(s);
+                break;
+              } // case -66247742
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -577,6 +969,300 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
       return this;
     }
 
+    private com.google.protobuf.LazyStringList optionalFields_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureOptionalFieldsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        optionalFields_ = new com.google.protobuf.LazyStringArrayList(optionalFields_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field can only be specified if logging is enabled for this backend service and "logConfig.optionalMode" was set to CUSTOM. Contains a list of optional fields you want to include in the logs. For example: serverInstance, serverGkeDetails.cluster, serverGkeDetails.pod.podNamespace
+     * </pre>
+     *
+     * <code>repeated string optional_fields = 528589944;</code>
+     *
+     * @return A list containing the optionalFields.
+     */
+    public com.google.protobuf.ProtocolStringList getOptionalFieldsList() {
+      return optionalFields_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field can only be specified if logging is enabled for this backend service and "logConfig.optionalMode" was set to CUSTOM. Contains a list of optional fields you want to include in the logs. For example: serverInstance, serverGkeDetails.cluster, serverGkeDetails.pod.podNamespace
+     * </pre>
+     *
+     * <code>repeated string optional_fields = 528589944;</code>
+     *
+     * @return The count of optionalFields.
+     */
+    public int getOptionalFieldsCount() {
+      return optionalFields_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field can only be specified if logging is enabled for this backend service and "logConfig.optionalMode" was set to CUSTOM. Contains a list of optional fields you want to include in the logs. For example: serverInstance, serverGkeDetails.cluster, serverGkeDetails.pod.podNamespace
+     * </pre>
+     *
+     * <code>repeated string optional_fields = 528589944;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The optionalFields at the given index.
+     */
+    public java.lang.String getOptionalFields(int index) {
+      return optionalFields_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field can only be specified if logging is enabled for this backend service and "logConfig.optionalMode" was set to CUSTOM. Contains a list of optional fields you want to include in the logs. For example: serverInstance, serverGkeDetails.cluster, serverGkeDetails.pod.podNamespace
+     * </pre>
+     *
+     * <code>repeated string optional_fields = 528589944;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the optionalFields at the given index.
+     */
+    public com.google.protobuf.ByteString getOptionalFieldsBytes(int index) {
+      return optionalFields_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field can only be specified if logging is enabled for this backend service and "logConfig.optionalMode" was set to CUSTOM. Contains a list of optional fields you want to include in the logs. For example: serverInstance, serverGkeDetails.cluster, serverGkeDetails.pod.podNamespace
+     * </pre>
+     *
+     * <code>repeated string optional_fields = 528589944;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The optionalFields to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOptionalFields(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureOptionalFieldsIsMutable();
+      optionalFields_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field can only be specified if logging is enabled for this backend service and "logConfig.optionalMode" was set to CUSTOM. Contains a list of optional fields you want to include in the logs. For example: serverInstance, serverGkeDetails.cluster, serverGkeDetails.pod.podNamespace
+     * </pre>
+     *
+     * <code>repeated string optional_fields = 528589944;</code>
+     *
+     * @param value The optionalFields to add.
+     * @return This builder for chaining.
+     */
+    public Builder addOptionalFields(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureOptionalFieldsIsMutable();
+      optionalFields_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field can only be specified if logging is enabled for this backend service and "logConfig.optionalMode" was set to CUSTOM. Contains a list of optional fields you want to include in the logs. For example: serverInstance, serverGkeDetails.cluster, serverGkeDetails.pod.podNamespace
+     * </pre>
+     *
+     * <code>repeated string optional_fields = 528589944;</code>
+     *
+     * @param values The optionalFields to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllOptionalFields(java.lang.Iterable<java.lang.String> values) {
+      ensureOptionalFieldsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, optionalFields_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field can only be specified if logging is enabled for this backend service and "logConfig.optionalMode" was set to CUSTOM. Contains a list of optional fields you want to include in the logs. For example: serverInstance, serverGkeDetails.cluster, serverGkeDetails.pod.podNamespace
+     * </pre>
+     *
+     * <code>repeated string optional_fields = 528589944;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOptionalFields() {
+      optionalFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field can only be specified if logging is enabled for this backend service and "logConfig.optionalMode" was set to CUSTOM. Contains a list of optional fields you want to include in the logs. For example: serverInstance, serverGkeDetails.cluster, serverGkeDetails.pod.podNamespace
+     * </pre>
+     *
+     * <code>repeated string optional_fields = 528589944;</code>
+     *
+     * @param value The bytes of the optionalFields to add.
+     * @return This builder for chaining.
+     */
+    public Builder addOptionalFieldsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureOptionalFieldsIsMutable();
+      optionalFields_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object optionalMode_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * This field can only be specified if logging is enabled for this backend service. Configures whether all, none or a subset of optional fields should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL, EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
+     * Check the OptionalMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string optional_mode = 128697122;</code>
+     *
+     * @return Whether the optionalMode field is set.
+     */
+    public boolean hasOptionalMode() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field can only be specified if logging is enabled for this backend service. Configures whether all, none or a subset of optional fields should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL, EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
+     * Check the OptionalMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string optional_mode = 128697122;</code>
+     *
+     * @return The optionalMode.
+     */
+    public java.lang.String getOptionalMode() {
+      java.lang.Object ref = optionalMode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        optionalMode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field can only be specified if logging is enabled for this backend service. Configures whether all, none or a subset of optional fields should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL, EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
+     * Check the OptionalMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string optional_mode = 128697122;</code>
+     *
+     * @return The bytes for optionalMode.
+     */
+    public com.google.protobuf.ByteString getOptionalModeBytes() {
+      java.lang.Object ref = optionalMode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        optionalMode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field can only be specified if logging is enabled for this backend service. Configures whether all, none or a subset of optional fields should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL, EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
+     * Check the OptionalMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string optional_mode = 128697122;</code>
+     *
+     * @param value The optionalMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOptionalMode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      optionalMode_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field can only be specified if logging is enabled for this backend service. Configures whether all, none or a subset of optional fields should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL, EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
+     * Check the OptionalMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string optional_mode = 128697122;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOptionalMode() {
+      optionalMode_ = getDefaultInstance().getOptionalMode();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field can only be specified if logging is enabled for this backend service. Configures whether all, none or a subset of optional fields should be added to the reported logs. One of [INCLUDE_ALL_OPTIONAL, EXCLUDE_ALL_OPTIONAL, CUSTOM]. Default is EXCLUDE_ALL_OPTIONAL.
+     * Check the OptionalMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string optional_mode = 128697122;</code>
+     *
+     * @param value The bytes for optionalMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOptionalModeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      optionalMode_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private float sampleRate_;
     /**
      *
@@ -591,7 +1277,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      */
     @java.lang.Override
     public boolean hasSampleRate() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -623,7 +1309,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     public Builder setSampleRate(float value) {
 
       sampleRate_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -639,7 +1325,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearSampleRate() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       sampleRate_ = 0F;
       onChanged();
       return this;

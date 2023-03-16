@@ -720,7 +720,7 @@ public class BackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified BackendService resource. Gets a list of available backend services.
+   * Returns the specified BackendService resource.
    *
    * <p>Sample code:
    *
@@ -752,7 +752,7 @@ public class BackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified BackendService resource. Gets a list of available backend services.
+   * Returns the specified BackendService resource.
    *
    * <p>Sample code:
    *
@@ -781,7 +781,7 @@ public class BackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified BackendService resource. Gets a list of available backend services.
+   * Returns the specified BackendService resource.
    *
    * <p>Sample code:
    *

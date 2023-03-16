@@ -563,8 +563,7 @@ public class BackendBucketsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified BackendBucket resource. Gets a list of available backend buckets by
-   * making a list() request.
+   * Returns the specified BackendBucket resource.
    *
    * <p>Sample code:
    *
@@ -596,8 +595,7 @@ public class BackendBucketsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified BackendBucket resource. Gets a list of available backend buckets by
-   * making a list() request.
+   * Returns the specified BackendBucket resource.
    *
    * <p>Sample code:
    *
@@ -626,8 +624,7 @@ public class BackendBucketsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified BackendBucket resource. Gets a list of available backend buckets by
-   * making a list() request.
+   * Returns the specified BackendBucket resource.
    *
    * <p>Sample code:
    *

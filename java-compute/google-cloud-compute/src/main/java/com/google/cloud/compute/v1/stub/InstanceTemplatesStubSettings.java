@@ -16,6 +16,7 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.InstanceTemplatesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.InstanceTemplatesClient.ListPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -44,12 +45,15 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AggregatedListInstanceTemplatesRequest;
 import com.google.cloud.compute.v1.DeleteInstanceTemplateRequest;
 import com.google.cloud.compute.v1.GetIamPolicyInstanceTemplateRequest;
 import com.google.cloud.compute.v1.GetInstanceTemplateRequest;
 import com.google.cloud.compute.v1.InsertInstanceTemplateRequest;
 import com.google.cloud.compute.v1.InstanceTemplate;
+import com.google.cloud.compute.v1.InstanceTemplateAggregatedList;
 import com.google.cloud.compute.v1.InstanceTemplateList;
+import com.google.cloud.compute.v1.InstanceTemplatesScopedList;
 import com.google.cloud.compute.v1.ListInstanceTemplatesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Policy;
@@ -61,7 +65,9 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -112,6 +118,11 @@ public class InstanceTemplatesStubSettings extends StubSettings<InstanceTemplate
           .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
+  private final PagedCallSettings<
+          AggregatedListInstanceTemplatesRequest,
+          InstanceTemplateAggregatedList,
+          AggregatedListPagedResponse>
+      aggregatedListSettings;
   private final UnaryCallSettings<DeleteInstanceTemplateRequest, Operation> deleteSettings;
   private final OperationCallSettings<DeleteInstanceTemplateRequest, Operation, Operation>
       deleteOperationSettings;
@@ -127,6 +138,55 @@ public class InstanceTemplatesStubSettings extends StubSettings<InstanceTemplate
   private final UnaryCallSettings<
           TestIamPermissionsInstanceTemplateRequest, TestPermissionsResponse>
       testIamPermissionsSettings;
+
+  private static final PagedListDescriptor<
+          AggregatedListInstanceTemplatesRequest,
+          InstanceTemplateAggregatedList,
+          Map.Entry<String, InstanceTemplatesScopedList>>
+      AGGREGATED_LIST_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              AggregatedListInstanceTemplatesRequest,
+              InstanceTemplateAggregatedList,
+              Map.Entry<String, InstanceTemplatesScopedList>>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public AggregatedListInstanceTemplatesRequest injectToken(
+                AggregatedListInstanceTemplatesRequest payload, String token) {
+              return AggregatedListInstanceTemplatesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public AggregatedListInstanceTemplatesRequest injectPageSize(
+                AggregatedListInstanceTemplatesRequest payload, int pageSize) {
+              return AggregatedListInstanceTemplatesRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(AggregatedListInstanceTemplatesRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(InstanceTemplateAggregatedList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Map.Entry<String, InstanceTemplatesScopedList>> extractResources(
+                InstanceTemplateAggregatedList payload) {
+              return payload.getItemsMap() == null
+                  ? Collections.<Map.Entry<String, InstanceTemplatesScopedList>>emptySet()
+                  : payload.getItemsMap().entrySet();
+            }
+          };
 
   private static final PagedListDescriptor<
           ListInstanceTemplatesRequest, InstanceTemplateList, InstanceTemplate>
@@ -171,6 +231,33 @@ public class InstanceTemplatesStubSettings extends StubSettings<InstanceTemplate
           };
 
   private static final PagedListResponseFactory<
+          AggregatedListInstanceTemplatesRequest,
+          InstanceTemplateAggregatedList,
+          AggregatedListPagedResponse>
+      AGGREGATED_LIST_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              AggregatedListInstanceTemplatesRequest,
+              InstanceTemplateAggregatedList,
+              AggregatedListPagedResponse>() {
+            @Override
+            public ApiFuture<AggregatedListPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        AggregatedListInstanceTemplatesRequest, InstanceTemplateAggregatedList>
+                    callable,
+                AggregatedListInstanceTemplatesRequest request,
+                ApiCallContext context,
+                ApiFuture<InstanceTemplateAggregatedList> futureResponse) {
+              PageContext<
+                      AggregatedListInstanceTemplatesRequest,
+                      InstanceTemplateAggregatedList,
+                      Map.Entry<String, InstanceTemplatesScopedList>>
+                  pageContext =
+                      PageContext.create(callable, AGGREGATED_LIST_PAGE_STR_DESC, request, context);
+              return AggregatedListPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListInstanceTemplatesRequest, InstanceTemplateList, ListPagedResponse>
       LIST_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -186,6 +273,15 @@ public class InstanceTemplatesStubSettings extends StubSettings<InstanceTemplate
               return ListPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
+
+  /** Returns the object with the settings used for calls to aggregatedList. */
+  public PagedCallSettings<
+          AggregatedListInstanceTemplatesRequest,
+          InstanceTemplateAggregatedList,
+          AggregatedListPagedResponse>
+      aggregatedListSettings() {
+    return aggregatedListSettings;
+  }
 
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteInstanceTemplateRequest, Operation> deleteSettings() {
@@ -312,6 +408,7 @@ public class InstanceTemplatesStubSettings extends StubSettings<InstanceTemplate
   protected InstanceTemplatesStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    aggregatedListSettings = settingsBuilder.aggregatedListSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
     deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
@@ -326,6 +423,11 @@ public class InstanceTemplatesStubSettings extends StubSettings<InstanceTemplate
   /** Builder for InstanceTemplatesStubSettings. */
   public static class Builder extends StubSettings.Builder<InstanceTemplatesStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
+    private final PagedCallSettings.Builder<
+            AggregatedListInstanceTemplatesRequest,
+            InstanceTemplateAggregatedList,
+            AggregatedListPagedResponse>
+        aggregatedListSettings;
     private final UnaryCallSettings.Builder<DeleteInstanceTemplateRequest, Operation>
         deleteSettings;
     private final OperationCallSettings.Builder<DeleteInstanceTemplateRequest, Operation, Operation>
@@ -353,12 +455,12 @@ public class InstanceTemplatesStubSettings extends StubSettings<InstanceTemplate
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -367,14 +469,6 @@ public class InstanceTemplatesStubSettings extends StubSettings<InstanceTemplate
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
@@ -386,6 +480,14 @@ public class InstanceTemplatesStubSettings extends StubSettings<InstanceTemplate
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -396,6 +498,7 @@ public class InstanceTemplatesStubSettings extends StubSettings<InstanceTemplate
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
+      aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -408,6 +511,7 @@ public class InstanceTemplatesStubSettings extends StubSettings<InstanceTemplate
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              aggregatedListSettings,
               deleteSettings,
               getSettings,
               getIamPolicySettings,
@@ -421,6 +525,7 @@ public class InstanceTemplatesStubSettings extends StubSettings<InstanceTemplate
     protected Builder(InstanceTemplatesStubSettings settings) {
       super(settings);
 
+      aggregatedListSettings = settings.aggregatedListSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
       deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
@@ -433,6 +538,7 @@ public class InstanceTemplatesStubSettings extends StubSettings<InstanceTemplate
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              aggregatedListSettings,
               deleteSettings,
               getSettings,
               getIamPolicySettings,
@@ -456,6 +562,11 @@ public class InstanceTemplatesStubSettings extends StubSettings<InstanceTemplate
     }
 
     private static Builder initDefaults(Builder builder) {
+      builder
+          .aggregatedListSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
       builder
           .deleteSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
@@ -555,6 +666,15 @@ public class InstanceTemplatesStubSettings extends StubSettings<InstanceTemplate
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to aggregatedList. */
+    public PagedCallSettings.Builder<
+            AggregatedListInstanceTemplatesRequest,
+            InstanceTemplateAggregatedList,
+            AggregatedListPagedResponse>
+        aggregatedListSettings() {
+      return aggregatedListSettings;
     }
 
     /** Returns the builder for the settings used for calls to delete. */

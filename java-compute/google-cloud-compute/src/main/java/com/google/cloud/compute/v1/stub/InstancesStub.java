@@ -64,6 +64,7 @@ import com.google.cloud.compute.v1.SetMachineResourcesInstanceRequest;
 import com.google.cloud.compute.v1.SetMachineTypeInstanceRequest;
 import com.google.cloud.compute.v1.SetMetadataInstanceRequest;
 import com.google.cloud.compute.v1.SetMinCpuPlatformInstanceRequest;
+import com.google.cloud.compute.v1.SetNameInstanceRequest;
 import com.google.cloud.compute.v1.SetSchedulingInstanceRequest;
 import com.google.cloud.compute.v1.SetServiceAccountInstanceRequest;
 import com.google.cloud.compute.v1.SetShieldedInstanceIntegrityPolicyInstanceRequest;
@@ -330,6 +331,15 @@ public abstract class InstancesStub implements BackgroundResource {
 
   public UnaryCallable<SetMinCpuPlatformInstanceRequest, Operation> setMinCpuPlatformCallable() {
     throw new UnsupportedOperationException("Not implemented: setMinCpuPlatformCallable()");
+  }
+
+  public OperationCallable<SetNameInstanceRequest, Operation, Operation>
+      setNameOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setNameOperationCallable()");
+  }
+
+  public UnaryCallable<SetNameInstanceRequest, Operation> setNameCallable() {
+    throw new UnsupportedOperationException("Not implemented: setNameCallable()");
   }
 
   public OperationCallable<SetSchedulingInstanceRequest, Operation, Operation>
