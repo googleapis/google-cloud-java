@@ -16,6 +16,7 @@
 
 package com.google.cloud.optimization.v1.stub;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -36,6 +37,7 @@ import com.google.cloud.optimization.v1.BatchOptimizeToursRequest;
 import com.google.cloud.optimization.v1.BatchOptimizeToursResponse;
 import com.google.cloud.optimization.v1.OptimizeToursRequest;
 import com.google.cloud.optimization.v1.OptimizeToursResponse;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -189,7 +191,21 @@ public class HttpJsonFleetRoutingStub extends FleetRoutingStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet("/v1/{name=projects/*/operations/*}")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1/{name=projects/*/locations/*/operations/*}")
+                                .build())
+                        .build())
+                .build());
 
     HttpJsonCallSettings<OptimizeToursRequest, OptimizeToursResponse>
         optimizeToursTransportSettings =

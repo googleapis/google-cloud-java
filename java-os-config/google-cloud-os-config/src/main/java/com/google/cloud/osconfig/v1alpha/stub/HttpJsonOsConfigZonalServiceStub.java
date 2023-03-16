@@ -23,6 +23,7 @@ import static com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceClient.ListO
 import static com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceClient.ListOSPolicyAssignmentsPagedResponse;
 import static com.google.cloud.osconfig.v1alpha.OsConfigZonalServiceClient.ListVulnerabilityReportsPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -64,6 +65,7 @@ import com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentOperationMetadata;
 import com.google.cloud.osconfig.v1alpha.OSPolicyAssignmentReport;
 import com.google.cloud.osconfig.v1alpha.UpdateOSPolicyAssignmentRequest;
 import com.google.cloud.osconfig.v1alpha.VulnerabilityReport;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
@@ -743,7 +745,24 @@ public class HttpJsonOsConfigZonalServiceStub extends OsConfigZonalServiceStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.CancelOperation",
+                    HttpRule.newBuilder()
+                        .setPost(
+                            "/v1alpha/{name=projects/*/locations/*/osPolicyAssignments/*/operations/*}:cancel")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet(
+                            "/v1alpha/{name=projects/*/locations/*/osPolicyAssignments/*/operations/*}")
+                        .build())
+                .build());
 
     HttpJsonCallSettings<CreateOSPolicyAssignmentRequest, Operation>
         createOSPolicyAssignmentTransportSettings =

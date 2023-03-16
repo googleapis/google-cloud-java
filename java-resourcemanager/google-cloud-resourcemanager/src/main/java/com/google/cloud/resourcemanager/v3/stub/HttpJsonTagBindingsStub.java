@@ -18,6 +18,7 @@ package com.google.cloud.resourcemanager.v3.stub;
 
 import static com.google.cloud.resourcemanager.v3.TagBindingsClient.ListTagBindingsPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -40,6 +41,7 @@ import com.google.cloud.resourcemanager.v3.DeleteTagBindingRequest;
 import com.google.cloud.resourcemanager.v3.ListTagBindingsRequest;
 import com.google.cloud.resourcemanager.v3.ListTagBindingsResponse;
 import com.google.cloud.resourcemanager.v3.TagBinding;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
@@ -236,7 +238,15 @@ public class HttpJsonTagBindingsStub extends TagBindingsStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder().setGet("/v3/{name=operations/**}").build())
+                .build());
 
     HttpJsonCallSettings<ListTagBindingsRequest, ListTagBindingsResponse>
         listTagBindingsTransportSettings =

@@ -19,6 +19,7 @@ package com.google.cloud.recommendationengine.v1beta1.stub;
 import static com.google.cloud.recommendationengine.v1beta1.UserEventServiceClient.ListUserEventsPagedResponse;
 
 import com.google.api.HttpBody;
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -45,6 +46,7 @@ import com.google.cloud.recommendationengine.v1beta1.PurgeUserEventsRequest;
 import com.google.cloud.recommendationengine.v1beta1.PurgeUserEventsResponse;
 import com.google.cloud.recommendationengine.v1beta1.UserEvent;
 import com.google.cloud.recommendationengine.v1beta1.WriteUserEventRequest;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -324,7 +326,32 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet("/v1beta1/{name=projects/*/locations/*/catalogs/*/operations/*}")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta1/{name=projects/*/locations/*/catalogs/*/eventStores/*/operations/*}")
+                                .build())
+                        .build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder()
+                        .setGet("/v1beta1/{name=projects/*/locations/*/catalogs/*}/operations")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta1/{name=projects/*/locations/*/catalogs/*/eventStores/*}/operations")
+                                .build())
+                        .build())
+                .build());
 
     HttpJsonCallSettings<WriteUserEventRequest, UserEvent> writeUserEventTransportSettings =
         HttpJsonCallSettings.<WriteUserEventRequest, UserEvent>newBuilder()

@@ -16,6 +16,7 @@
 
 package com.google.cloud.speech.v1.stub;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -39,6 +40,7 @@ import com.google.cloud.speech.v1.RecognizeRequest;
 import com.google.cloud.speech.v1.RecognizeResponse;
 import com.google.cloud.speech.v1.StreamingRecognizeRequest;
 import com.google.cloud.speech.v1.StreamingRecognizeResponse;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -185,7 +187,18 @@ public class HttpJsonSpeechStub extends SpeechStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder().setGet("/v1/operations/{name=**}").build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder().setGet("/v1/operations").build())
+                .build());
 
     HttpJsonCallSettings<RecognizeRequest, RecognizeResponse> recognizeTransportSettings =
         HttpJsonCallSettings.<RecognizeRequest, RecognizeResponse>newBuilder()

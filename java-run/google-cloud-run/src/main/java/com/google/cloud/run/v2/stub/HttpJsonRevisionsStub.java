@@ -18,6 +18,7 @@ package com.google.cloud.run.v2.stub;
 
 import static com.google.cloud.run.v2.RevisionsClient.ListRevisionsPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -38,6 +39,7 @@ import com.google.cloud.run.v2.GetRevisionRequest;
 import com.google.cloud.run.v2.ListRevisionsRequest;
 import com.google.cloud.run.v2.ListRevisionsResponse;
 import com.google.cloud.run.v2.Revision;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -222,7 +224,32 @@ public class HttpJsonRevisionsStub extends RevisionsStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.DeleteOperation",
+                    HttpRule.newBuilder()
+                        .setDelete("/v2/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet("/v2/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder()
+                        .setGet("/v2/{name=projects/*/locations/*}/operations")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.WaitOperation",
+                    HttpRule.newBuilder()
+                        .setPost("/v2/{name=projects/*/locations/*/operations/*}:wait")
+                        .build())
+                .build());
 
     HttpJsonCallSettings<GetRevisionRequest, Revision> getRevisionTransportSettings =
         HttpJsonCallSettings.<GetRevisionRequest, Revision>newBuilder()

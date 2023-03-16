@@ -21,6 +21,7 @@ import static com.google.cloud.networksecurity.v1beta1.NetworkSecurityClient.Lis
 import static com.google.cloud.networksecurity.v1beta1.NetworkSecurityClient.ListLocationsPagedResponse;
 import static com.google.cloud.networksecurity.v1beta1.NetworkSecurityClient.ListServerTlsPoliciesPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -62,6 +63,7 @@ import com.google.cloud.networksecurity.v1beta1.ServerTlsPolicy;
 import com.google.cloud.networksecurity.v1beta1.UpdateAuthorizationPolicyRequest;
 import com.google.cloud.networksecurity.v1beta1.UpdateClientTlsPolicyRequest;
 import com.google.cloud.networksecurity.v1beta1.UpdateServerTlsPolicyRequest;
+import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -998,7 +1000,32 @@ public class HttpJsonNetworkSecurityStub extends NetworkSecurityStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.CancelOperation",
+                    HttpRule.newBuilder()
+                        .setPost("/v1beta1/{name=projects/*/locations/*/operations/*}:cancel")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.DeleteOperation",
+                    HttpRule.newBuilder()
+                        .setDelete("/v1beta1/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet("/v1beta1/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder()
+                        .setGet("/v1beta1/{name=projects/*/locations/*}/operations")
+                        .build())
+                .build());
 
     HttpJsonCallSettings<ListAuthorizationPoliciesRequest, ListAuthorizationPoliciesResponse>
         listAuthorizationPoliciesTransportSettings =

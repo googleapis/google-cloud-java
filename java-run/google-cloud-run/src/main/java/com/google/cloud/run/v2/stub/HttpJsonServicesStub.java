@@ -18,6 +18,7 @@ package com.google.cloud.run.v2.stub;
 
 import static com.google.cloud.run.v2.ServicesClient.ListServicesPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -40,6 +41,7 @@ import com.google.cloud.run.v2.ListServicesRequest;
 import com.google.cloud.run.v2.ListServicesResponse;
 import com.google.cloud.run.v2.Service;
 import com.google.cloud.run.v2.UpdateServiceRequest;
+import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -435,7 +437,32 @@ public class HttpJsonServicesStub extends ServicesStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.DeleteOperation",
+                    HttpRule.newBuilder()
+                        .setDelete("/v2/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet("/v2/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder()
+                        .setGet("/v2/{name=projects/*/locations/*}/operations")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.WaitOperation",
+                    HttpRule.newBuilder()
+                        .setPost("/v2/{name=projects/*/locations/*/operations/*}:wait")
+                        .build())
+                .build());
 
     HttpJsonCallSettings<CreateServiceRequest, Operation> createServiceTransportSettings =
         HttpJsonCallSettings.<CreateServiceRequest, Operation>newBuilder()

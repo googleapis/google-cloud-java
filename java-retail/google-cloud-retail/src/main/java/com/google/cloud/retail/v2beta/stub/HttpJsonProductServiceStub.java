@@ -18,6 +18,7 @@ package com.google.cloud.retail.v2beta.stub;
 
 import static com.google.cloud.retail.v2beta.ProductServiceClient.ListProductsPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -58,6 +59,7 @@ import com.google.cloud.retail.v2beta.SetInventoryMetadata;
 import com.google.cloud.retail.v2beta.SetInventoryRequest;
 import com.google.cloud.retail.v2beta.SetInventoryResponse;
 import com.google.cloud.retail.v2beta.UpdateProductRequest;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
@@ -599,7 +601,44 @@ public class HttpJsonProductServiceStub extends ProductServiceStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet(
+                            "/v2beta/{name=projects/*/locations/*/catalogs/*/branches/*/operations/*}")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v2beta/{name=projects/*/locations/*/catalogs/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v2beta/{name=projects/*/locations/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v2beta/{name=projects/*/operations/*}")
+                                .build())
+                        .build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder()
+                        .setGet("/v2beta/{name=projects/*/locations/*/catalogs/*}/operations")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v2beta/{name=projects/*/locations/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v2beta/{name=projects/*}/operations")
+                                .build())
+                        .build())
+                .build());
 
     HttpJsonCallSettings<CreateProductRequest, Product> createProductTransportSettings =
         HttpJsonCallSettings.<CreateProductRequest, Product>newBuilder()

@@ -18,6 +18,7 @@ package com.google.cloud.resourcemanager.v3.stub;
 
 import static com.google.cloud.resourcemanager.v3.TagValuesClient.ListTagValuesPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -43,6 +44,7 @@ import com.google.cloud.resourcemanager.v3.ListTagValuesResponse;
 import com.google.cloud.resourcemanager.v3.TagValue;
 import com.google.cloud.resourcemanager.v3.UpdateTagValueMetadata;
 import com.google.cloud.resourcemanager.v3.UpdateTagValueRequest;
+import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -441,7 +443,15 @@ public class HttpJsonTagValuesStub extends TagValuesStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder().setGet("/v3/{name=operations/**}").build())
+                .build());
 
     HttpJsonCallSettings<ListTagValuesRequest, ListTagValuesResponse>
         listTagValuesTransportSettings =

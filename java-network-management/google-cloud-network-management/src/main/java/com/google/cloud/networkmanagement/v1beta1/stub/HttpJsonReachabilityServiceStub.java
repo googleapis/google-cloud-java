@@ -18,6 +18,7 @@ package com.google.cloud.networkmanagement.v1beta1.stub;
 
 import static com.google.cloud.networkmanagement.v1beta1.ReachabilityServiceClient.ListConnectivityTestsPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -42,6 +43,7 @@ import com.google.cloud.networkmanagement.v1beta1.ListConnectivityTestsResponse;
 import com.google.cloud.networkmanagement.v1beta1.OperationMetadata;
 import com.google.cloud.networkmanagement.v1beta1.RerunConnectivityTestRequest;
 import com.google.cloud.networkmanagement.v1beta1.UpdateConnectivityTestRequest;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
@@ -379,7 +381,32 @@ public class HttpJsonReachabilityServiceStub extends ReachabilityServiceStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.CancelOperation",
+                    HttpRule.newBuilder()
+                        .setPost("/v1beta1/{name=projects/*/locations/global/operations/*}:cancel")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.DeleteOperation",
+                    HttpRule.newBuilder()
+                        .setDelete("/v1beta1/{name=projects/*/locations/global/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet("/v1beta1/{name=projects/*/locations/global/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder()
+                        .setGet("/v1beta1/{name=projects/*/locations/global}/operations")
+                        .build())
+                .build());
 
     HttpJsonCallSettings<ListConnectivityTestsRequest, ListConnectivityTestsResponse>
         listConnectivityTestsTransportSettings =

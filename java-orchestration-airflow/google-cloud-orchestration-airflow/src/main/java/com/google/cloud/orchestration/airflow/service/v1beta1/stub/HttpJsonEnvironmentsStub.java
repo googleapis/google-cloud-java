@@ -18,6 +18,7 @@ package com.google.cloud.orchestration.airflow.service.v1beta1.stub;
 
 import static com.google.cloud.orchestration.airflow.service.v1beta1.EnvironmentsClient.ListEnvironmentsPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -48,6 +49,7 @@ import com.google.cloud.orchestration.airflow.service.v1beta1.RestartWebServerRe
 import com.google.cloud.orchestration.airflow.service.v1beta1.SaveSnapshotRequest;
 import com.google.cloud.orchestration.airflow.service.v1beta1.SaveSnapshotResponse;
 import com.google.cloud.orchestration.airflow.service.v1beta1.UpdateEnvironmentRequest;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
@@ -511,7 +513,27 @@ public class HttpJsonEnvironmentsStub extends EnvironmentsStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.DeleteOperation",
+                    HttpRule.newBuilder()
+                        .setDelete("/v1beta1/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet("/v1beta1/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder()
+                        .setGet("/v1beta1/{name=projects/*/locations/*}/operations")
+                        .build())
+                .build());
 
     HttpJsonCallSettings<CreateEnvironmentRequest, Operation> createEnvironmentTransportSettings =
         HttpJsonCallSettings.<CreateEnvironmentRequest, Operation>newBuilder()

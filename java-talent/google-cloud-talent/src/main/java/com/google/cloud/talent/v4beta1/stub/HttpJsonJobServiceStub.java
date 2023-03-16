@@ -20,6 +20,7 @@ import static com.google.cloud.talent.v4beta1.JobServiceClient.ListJobsPagedResp
 import static com.google.cloud.talent.v4beta1.JobServiceClient.SearchJobsForAlertPagedResponse;
 import static com.google.cloud.talent.v4beta1.JobServiceClient.SearchJobsPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -49,6 +50,7 @@ import com.google.cloud.talent.v4beta1.ListJobsResponse;
 import com.google.cloud.talent.v4beta1.SearchJobsRequest;
 import com.google.cloud.talent.v4beta1.SearchJobsResponse;
 import com.google.cloud.talent.v4beta1.UpdateJobRequest;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
@@ -516,7 +518,15 @@ public class HttpJsonJobServiceStub extends JobServiceStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder().setGet("/v4beta1/{name=projects/*/operations/*}").build())
+                .build());
 
     HttpJsonCallSettings<CreateJobRequest, Job> createJobTransportSettings =
         HttpJsonCallSettings.<CreateJobRequest, Job>newBuilder()

@@ -23,6 +23,7 @@ import static com.google.cloud.securitycenter.v1p1beta1.SecurityCenterClient.Lis
 import static com.google.cloud.securitycenter.v1p1beta1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1p1beta1.SecurityCenterClient.ListSourcesPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -70,6 +71,7 @@ import com.google.cloud.securitycenter.v1p1beta1.UpdateNotificationConfigRequest
 import com.google.cloud.securitycenter.v1p1beta1.UpdateOrganizationSettingsRequest;
 import com.google.cloud.securitycenter.v1p1beta1.UpdateSecurityMarksRequest;
 import com.google.cloud.securitycenter.v1p1beta1.UpdateSourceRequest;
+import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -1109,7 +1111,32 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.CancelOperation",
+                    HttpRule.newBuilder()
+                        .setPost("/v1p1beta1/{name=organizations/*/operations/*}:cancel")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.DeleteOperation",
+                    HttpRule.newBuilder()
+                        .setDelete("/v1p1beta1/{name=organizations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet("/v1p1beta1/{name=organizations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder()
+                        .setGet("/v1p1beta1/{name=organizations/*/operations}")
+                        .build())
+                .build());
 
     HttpJsonCallSettings<CreateSourceRequest, Source> createSourceTransportSettings =
         HttpJsonCallSettings.<CreateSourceRequest, Source>newBuilder()

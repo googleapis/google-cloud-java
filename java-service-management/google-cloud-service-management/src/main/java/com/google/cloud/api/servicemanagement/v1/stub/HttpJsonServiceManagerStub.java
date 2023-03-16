@@ -20,6 +20,7 @@ import static com.google.cloud.api.servicemanagement.v1.ServiceManagerClient.Lis
 import static com.google.cloud.api.servicemanagement.v1.ServiceManagerClient.ListServiceRolloutsPagedResponse;
 import static com.google.cloud.api.servicemanagement.v1.ServiceManagerClient.ListServicesPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.Service;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
@@ -58,6 +59,7 @@ import com.google.api.servicemanagement.v1.SubmitConfigSourceRequest;
 import com.google.api.servicemanagement.v1.SubmitConfigSourceResponse;
 import com.google.api.servicemanagement.v1.UndeleteServiceRequest;
 import com.google.api.servicemanagement.v1.UndeleteServiceResponse;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
@@ -668,7 +670,15 @@ public class HttpJsonServiceManagerStub extends ServiceManagerStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder().setGet("/v1/operations").build())
+                .build());
 
     HttpJsonCallSettings<ListServicesRequest, ListServicesResponse> listServicesTransportSettings =
         HttpJsonCallSettings.<ListServicesRequest, ListServicesResponse>newBuilder()
