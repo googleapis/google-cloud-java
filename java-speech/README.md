@@ -20,20 +20,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-speech</artifactId>
-  <version>4.7.0</version>
+  <version>4.8.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-speech:4.7.0'
+implementation 'com.google.cloud:google-cloud-speech:4.8.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-speech" % "4.7.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-speech" % "4.8.0"
 ```
 <!-- {x-version-update-end} -->
 
