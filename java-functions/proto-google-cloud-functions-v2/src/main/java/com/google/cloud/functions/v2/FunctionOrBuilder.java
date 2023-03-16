@@ -54,7 +54,7 @@ public interface FunctionOrBuilder
    *
    *
    * <pre>
-   * Describe whether the function is gen1 or gen2.
+   * Describe whether the function is 1st Gen or 2nd Gen.
    * </pre>
    *
    * <code>.google.cloud.functions.v2.Environment environment = 10;</code>
@@ -66,7 +66,7 @@ public interface FunctionOrBuilder
    *
    *
    * <pre>
-   * Describe whether the function is gen1 or gen2.
+   * Describe whether the function is 1st Gen or 2nd Gen.
    * </pre>
    *
    * <code>.google.cloud.functions.v2.Environment environment = 10;</code>
@@ -400,4 +400,60 @@ public interface FunctionOrBuilder
    * </code>
    */
   com.google.cloud.functions.v2.StateMessageOrBuilder getStateMessagesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Resource name of a KMS crypto key (managed by the user) used to
+   * encrypt/decrypt function resources.
+   * It must match the pattern
+   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   * </pre>
+   *
+   * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The kmsKeyName.
+   */
+  java.lang.String getKmsKeyName();
+  /**
+   *
+   *
+   * <pre>
+   * Resource name of a KMS crypto key (managed by the user) used to
+   * encrypt/decrypt function resources.
+   * It must match the pattern
+   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   * </pre>
+   *
+   * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for kmsKeyName.
+   */
+  com.google.protobuf.ByteString getKmsKeyNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The deployed url for the function.
+   * </pre>
+   *
+   * <code>string url = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The url.
+   */
+  java.lang.String getUrl();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The deployed url for the function.
+   * </pre>
+   *
+   * <code>string url = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for url.
+   */
+  com.google.protobuf.ByteString getUrlBytes();
 }

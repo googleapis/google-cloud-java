@@ -43,6 +43,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
     runtime_ = "";
     entryPoint_ = "";
     workerPool_ = "";
+    dockerRegistry_ = 0;
     dockerRepository_ = "";
   }
 
@@ -83,6 +84,173 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.functions.v2.BuildConfig.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Docker Registry to use for storing function Docker images.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.functions.v2.BuildConfig.DockerRegistry}
+   */
+  public enum DockerRegistry implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified.
+     * </pre>
+     *
+     * <code>DOCKER_REGISTRY_UNSPECIFIED = 0;</code>
+     */
+    DOCKER_REGISTRY_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Docker images will be stored in multi-regional Container Registry
+     * repositories named `gcf`.
+     * </pre>
+     *
+     * <code>CONTAINER_REGISTRY = 1;</code>
+     */
+    CONTAINER_REGISTRY(1),
+    /**
+     *
+     *
+     * <pre>
+     * Docker images will be stored in regional Artifact Registry repositories.
+     * By default, GCF will create and use repositories named `gcf-artifacts`
+     * in every region in which a function is deployed. But the repository to
+     * use can also be specified by the user using the `docker_repository`
+     * field.
+     * </pre>
+     *
+     * <code>ARTIFACT_REGISTRY = 2;</code>
+     */
+    ARTIFACT_REGISTRY(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified.
+     * </pre>
+     *
+     * <code>DOCKER_REGISTRY_UNSPECIFIED = 0;</code>
+     */
+    public static final int DOCKER_REGISTRY_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Docker images will be stored in multi-regional Container Registry
+     * repositories named `gcf`.
+     * </pre>
+     *
+     * <code>CONTAINER_REGISTRY = 1;</code>
+     */
+    public static final int CONTAINER_REGISTRY_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Docker images will be stored in regional Artifact Registry repositories.
+     * By default, GCF will create and use repositories named `gcf-artifacts`
+     * in every region in which a function is deployed. But the repository to
+     * use can also be specified by the user using the `docker_repository`
+     * field.
+     * </pre>
+     *
+     * <code>ARTIFACT_REGISTRY = 2;</code>
+     */
+    public static final int ARTIFACT_REGISTRY_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static DockerRegistry valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static DockerRegistry forNumber(int value) {
+      switch (value) {
+        case 0:
+          return DOCKER_REGISTRY_UNSPECIFIED;
+        case 1:
+          return CONTAINER_REGISTRY;
+        case 2:
+          return ARTIFACT_REGISTRY;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<DockerRegistry> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<DockerRegistry> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<DockerRegistry>() {
+          public DockerRegistry findValueByNumber(int number) {
+            return DockerRegistry.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.functions.v2.BuildConfig.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final DockerRegistry[] VALUES = values();
+
+    public static DockerRegistry valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private DockerRegistry(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.functions.v2.BuildConfig.DockerRegistry)
+  }
+
   public static final int BUILD_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -91,8 +259,8 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The Cloud Build name of the latest successful deployment of the
-   * function.
+   * Output only. The Cloud Build name of the latest successful deployment of
+   * the function.
    * </pre>
    *
    * <code>
@@ -117,8 +285,8 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The Cloud Build name of the latest successful deployment of the
-   * function.
+   * Output only. The Cloud Build name of the latest successful deployment of
+   * the function.
    * </pre>
    *
    * <code>
@@ -539,6 +707,59 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int DOCKER_REGISTRY_FIELD_NUMBER = 10;
+  private int dockerRegistry_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Docker Registry to use for this deployment. This configuration is
+   * only applicable to 1st Gen functions, 2nd Gen functions can only use
+   * Artifact Registry.
+   * If `docker_repository` field is specified, this field will be automatically
+   * set as `ARTIFACT_REGISTRY`.
+   * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
+   * This field may be overridden by the backend for eligible deployments.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for dockerRegistry.
+   */
+  @java.lang.Override
+  public int getDockerRegistryValue() {
+    return dockerRegistry_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Docker Registry to use for this deployment. This configuration is
+   * only applicable to 1st Gen functions, 2nd Gen functions can only use
+   * Artifact Registry.
+   * If `docker_repository` field is specified, this field will be automatically
+   * set as `ARTIFACT_REGISTRY`.
+   * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
+   * This field may be overridden by the backend for eligible deployments.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dockerRegistry.
+   */
+  @java.lang.Override
+  public com.google.cloud.functions.v2.BuildConfig.DockerRegistry getDockerRegistry() {
+    com.google.cloud.functions.v2.BuildConfig.DockerRegistry result =
+        com.google.cloud.functions.v2.BuildConfig.DockerRegistry.forNumber(dockerRegistry_);
+    return result == null
+        ? com.google.cloud.functions.v2.BuildConfig.DockerRegistry.UNRECOGNIZED
+        : result;
+  }
+
   public static final int DOCKER_REPOSITORY_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
@@ -547,7 +768,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. User managed repository created in Artifact Registry optionally with a
+   * User managed repository created in Artifact Registry optionally with a
    * customer managed encryption key. This is the repository to which the
    * function docker image will be pushed after it is built by Cloud Build.
    * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
@@ -559,9 +780,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
    * Repository format must be 'DOCKER'.
    * </pre>
    *
-   * <code>
-   * string docker_repository = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string docker_repository = 7 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The dockerRepository.
    */
@@ -581,7 +800,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. User managed repository created in Artifact Registry optionally with a
+   * User managed repository created in Artifact Registry optionally with a
    * customer managed encryption key. This is the repository to which the
    * function docker image will be pushed after it is built by Cloud Build.
    * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
@@ -593,9 +812,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
    * Repository format must be 'DOCKER'.
    * </pre>
    *
-   * <code>
-   * string docker_repository = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string docker_repository = 7 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for dockerRepository.
    */
@@ -652,6 +869,11 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
     if (sourceProvenance_ != null) {
       output.writeMessage(8, getSourceProvenance());
     }
+    if (dockerRegistry_
+        != com.google.cloud.functions.v2.BuildConfig.DockerRegistry.DOCKER_REGISTRY_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(10, dockerRegistry_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -692,6 +914,11 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
     if (sourceProvenance_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getSourceProvenance());
     }
+    if (dockerRegistry_
+        != com.google.cloud.functions.v2.BuildConfig.DockerRegistry.DOCKER_REGISTRY_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, dockerRegistry_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -722,6 +949,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
     if (!getWorkerPool().equals(other.getWorkerPool())) return false;
     if (!internalGetEnvironmentVariables().equals(other.internalGetEnvironmentVariables()))
       return false;
+    if (dockerRegistry_ != other.dockerRegistry_) return false;
     if (!getDockerRepository().equals(other.getDockerRepository())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -754,6 +982,8 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ENVIRONMENT_VARIABLES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetEnvironmentVariables().hashCode();
     }
+    hash = (37 * hash) + DOCKER_REGISTRY_FIELD_NUMBER;
+    hash = (53 * hash) + dockerRegistry_;
     hash = (37 * hash) + DOCKER_REPOSITORY_FIELD_NUMBER;
     hash = (53 * hash) + getDockerRepository().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -931,6 +1161,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       }
       workerPool_ = "";
       internalGetMutableEnvironmentVariables().clear();
+      dockerRegistry_ = 0;
       dockerRepository_ = "";
       return this;
     }
@@ -992,6 +1223,9 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
         result.environmentVariables_.makeImmutable();
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.dockerRegistry_ = dockerRegistry_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.dockerRepository_ = dockerRepository_;
       }
     }
@@ -1069,9 +1303,12 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableEnvironmentVariables().mergeFrom(other.internalGetEnvironmentVariables());
       bitField0_ |= 0x00000040;
+      if (other.dockerRegistry_ != 0) {
+        setDockerRegistryValue(other.getDockerRegistryValue());
+      }
       if (!other.getDockerRepository().isEmpty()) {
         dockerRepository_ = other.dockerRepository_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1146,7 +1383,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
             case 58:
               {
                 dockerRepository_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 58
             case 66:
@@ -1156,6 +1393,12 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 66
+            case 80:
+              {
+                dockerRegistry_ = input.readEnum();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 80
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1180,8 +1423,8 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Cloud Build name of the latest successful deployment of the
-     * function.
+     * Output only. The Cloud Build name of the latest successful deployment of
+     * the function.
      * </pre>
      *
      * <code>
@@ -1205,8 +1448,8 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Cloud Build name of the latest successful deployment of the
-     * function.
+     * Output only. The Cloud Build name of the latest successful deployment of
+     * the function.
      * </pre>
      *
      * <code>
@@ -1230,8 +1473,8 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Cloud Build name of the latest successful deployment of the
-     * function.
+     * Output only. The Cloud Build name of the latest successful deployment of
+     * the function.
      * </pre>
      *
      * <code>
@@ -1254,8 +1497,8 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Cloud Build name of the latest successful deployment of the
-     * function.
+     * Output only. The Cloud Build name of the latest successful deployment of
+     * the function.
      * </pre>
      *
      * <code>
@@ -1274,8 +1517,8 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Cloud Build name of the latest successful deployment of the
-     * function.
+     * Output only. The Cloud Build name of the latest successful deployment of
+     * the function.
      * </pre>
      *
      * <code>
@@ -2265,12 +2508,145 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int dockerRegistry_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Docker Registry to use for this deployment. This configuration is
+     * only applicable to 1st Gen functions, 2nd Gen functions can only use
+     * Artifact Registry.
+     * If `docker_repository` field is specified, this field will be automatically
+     * set as `ARTIFACT_REGISTRY`.
+     * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
+     * This field may be overridden by the backend for eligible deployments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for dockerRegistry.
+     */
+    @java.lang.Override
+    public int getDockerRegistryValue() {
+      return dockerRegistry_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Docker Registry to use for this deployment. This configuration is
+     * only applicable to 1st Gen functions, 2nd Gen functions can only use
+     * Artifact Registry.
+     * If `docker_repository` field is specified, this field will be automatically
+     * set as `ARTIFACT_REGISTRY`.
+     * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
+     * This field may be overridden by the backend for eligible deployments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for dockerRegistry to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDockerRegistryValue(int value) {
+      dockerRegistry_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Docker Registry to use for this deployment. This configuration is
+     * only applicable to 1st Gen functions, 2nd Gen functions can only use
+     * Artifact Registry.
+     * If `docker_repository` field is specified, this field will be automatically
+     * set as `ARTIFACT_REGISTRY`.
+     * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
+     * This field may be overridden by the backend for eligible deployments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The dockerRegistry.
+     */
+    @java.lang.Override
+    public com.google.cloud.functions.v2.BuildConfig.DockerRegistry getDockerRegistry() {
+      com.google.cloud.functions.v2.BuildConfig.DockerRegistry result =
+          com.google.cloud.functions.v2.BuildConfig.DockerRegistry.forNumber(dockerRegistry_);
+      return result == null
+          ? com.google.cloud.functions.v2.BuildConfig.DockerRegistry.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Docker Registry to use for this deployment. This configuration is
+     * only applicable to 1st Gen functions, 2nd Gen functions can only use
+     * Artifact Registry.
+     * If `docker_repository` field is specified, this field will be automatically
+     * set as `ARTIFACT_REGISTRY`.
+     * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
+     * This field may be overridden by the backend for eligible deployments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The dockerRegistry to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDockerRegistry(
+        com.google.cloud.functions.v2.BuildConfig.DockerRegistry value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000080;
+      dockerRegistry_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Docker Registry to use for this deployment. This configuration is
+     * only applicable to 1st Gen functions, 2nd Gen functions can only use
+     * Artifact Registry.
+     * If `docker_repository` field is specified, this field will be automatically
+     * set as `ARTIFACT_REGISTRY`.
+     * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
+     * This field may be overridden by the backend for eligible deployments.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDockerRegistry() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      dockerRegistry_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object dockerRepository_ = "";
     /**
      *
      *
      * <pre>
-     * Optional. User managed repository created in Artifact Registry optionally with a
+     * User managed repository created in Artifact Registry optionally with a
      * customer managed encryption key. This is the repository to which the
      * function docker image will be pushed after it is built by Cloud Build.
      * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
@@ -2282,9 +2658,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * Repository format must be 'DOCKER'.
      * </pre>
      *
-     * <code>
-     * string docker_repository = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string docker_repository = 7 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The dockerRepository.
      */
@@ -2303,7 +2677,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User managed repository created in Artifact Registry optionally with a
+     * User managed repository created in Artifact Registry optionally with a
      * customer managed encryption key. This is the repository to which the
      * function docker image will be pushed after it is built by Cloud Build.
      * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
@@ -2315,9 +2689,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * Repository format must be 'DOCKER'.
      * </pre>
      *
-     * <code>
-     * string docker_repository = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string docker_repository = 7 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for dockerRepository.
      */
@@ -2336,7 +2708,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User managed repository created in Artifact Registry optionally with a
+     * User managed repository created in Artifact Registry optionally with a
      * customer managed encryption key. This is the repository to which the
      * function docker image will be pushed after it is built by Cloud Build.
      * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
@@ -2348,9 +2720,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * Repository format must be 'DOCKER'.
      * </pre>
      *
-     * <code>
-     * string docker_repository = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string docker_repository = 7 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The dockerRepository to set.
      * @return This builder for chaining.
@@ -2360,7 +2730,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       dockerRepository_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2368,7 +2738,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User managed repository created in Artifact Registry optionally with a
+     * User managed repository created in Artifact Registry optionally with a
      * customer managed encryption key. This is the repository to which the
      * function docker image will be pushed after it is built by Cloud Build.
      * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
@@ -2380,15 +2750,13 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * Repository format must be 'DOCKER'.
      * </pre>
      *
-     * <code>
-     * string docker_repository = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string docker_repository = 7 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearDockerRepository() {
       dockerRepository_ = getDefaultInstance().getDockerRepository();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2396,7 +2764,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User managed repository created in Artifact Registry optionally with a
+     * User managed repository created in Artifact Registry optionally with a
      * customer managed encryption key. This is the repository to which the
      * function docker image will be pushed after it is built by Cloud Build.
      * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
@@ -2408,9 +2776,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
      * Repository format must be 'DOCKER'.
      * </pre>
      *
-     * <code>
-     * string docker_repository = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string docker_repository = 7 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for dockerRepository to set.
      * @return This builder for chaining.
@@ -2421,7 +2787,7 @@ public final class BuildConfig extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       dockerRepository_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

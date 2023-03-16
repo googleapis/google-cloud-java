@@ -27,8 +27,8 @@ public interface GenerateDownloadUrlRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of function for which source code Google Cloud Storage signed
-   * URL should be generated.
+   * Required. The name of function for which source code Google Cloud Storage
+   * signed URL should be generated.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface GenerateDownloadUrlRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of function for which source code Google Cloud Storage signed
-   * URL should be generated.
+   * Required. The name of function for which source code Google Cloud Storage
+   * signed URL should be generated.
    * </pre>
    *
    * <code>

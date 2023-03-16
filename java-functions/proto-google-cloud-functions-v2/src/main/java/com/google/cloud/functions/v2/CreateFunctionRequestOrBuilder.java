@@ -27,8 +27,8 @@ public interface CreateFunctionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project and location in which the function should be created, specified
-   * in the format `projects/&#42;&#47;locations/&#42;`
+   * Required. The project and location in which the function should be created,
+   * specified in the format `projects/&#42;&#47;locations/&#42;`
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface CreateFunctionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project and location in which the function should be created, specified
-   * in the format `projects/&#42;&#47;locations/&#42;`
+   * Required. The project and location in which the function should be created,
+   * specified in the format `projects/&#42;&#47;locations/&#42;`
    * </pre>
    *
    * <code>

@@ -110,6 +110,39 @@ public interface ServiceConfigOrBuilder
    *
    *
    * <pre>
+   * The number of CPUs used in a single container instance.
+   * Default value is calculated from available memory.
+   * Supports the same values as Cloud Run, see
+   * https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements
+   * Example: "1" indicates 1 vCPU
+   * </pre>
+   *
+   * <code>string available_cpu = 22;</code>
+   *
+   * @return The availableCpu.
+   */
+  java.lang.String getAvailableCpu();
+  /**
+   *
+   *
+   * <pre>
+   * The number of CPUs used in a single container instance.
+   * Default value is calculated from available memory.
+   * Supports the same values as Cloud Run, see
+   * https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements
+   * Example: "1" indicates 1 vCPU
+   * </pre>
+   *
+   * <code>string available_cpu = 22;</code>
+   *
+   * @return The bytes for availableCpu.
+   */
+  com.google.protobuf.ByteString getAvailableCpuBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Environment variables that shall be available during function execution.
    * </pre>
    *
@@ -495,4 +528,49 @@ public interface ServiceConfigOrBuilder
    * @return The bytes for revision.
    */
   com.google.protobuf.ByteString getRevisionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Sets the maximum number of concurrent requests that each instance can
+   * receive. Defaults to 1.
+   * </pre>
+   *
+   * <code>int32 max_instance_request_concurrency = 20;</code>
+   *
+   * @return The maxInstanceRequestConcurrency.
+   */
+  int getMaxInstanceRequestConcurrency();
+
+  /**
+   *
+   *
+   * <pre>
+   * Security level configure whether the function only accepts https.
+   * This configuration is only applicable to 1st Gen functions with Http
+   * trigger. By default https is optional for 1st Gen functions; 2nd Gen
+   * functions are https ONLY.
+   * </pre>
+   *
+   * <code>.google.cloud.functions.v2.ServiceConfig.SecurityLevel security_level = 21;</code>
+   *
+   * @return The enum numeric value on the wire for securityLevel.
+   */
+  int getSecurityLevelValue();
+  /**
+   *
+   *
+   * <pre>
+   * Security level configure whether the function only accepts https.
+   * This configuration is only applicable to 1st Gen functions with Http
+   * trigger. By default https is optional for 1st Gen functions; 2nd Gen
+   * functions are https ONLY.
+   * </pre>
+   *
+   * <code>.google.cloud.functions.v2.ServiceConfig.SecurityLevel security_level = 21;</code>
+   *
+   * @return The securityLevel.
+   */
+  com.google.cloud.functions.v2.ServiceConfig.SecurityLevel getSecurityLevel();
 }
