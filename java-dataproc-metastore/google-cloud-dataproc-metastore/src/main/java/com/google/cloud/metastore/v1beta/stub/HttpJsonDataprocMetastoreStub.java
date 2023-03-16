@@ -20,6 +20,7 @@ import static com.google.cloud.metastore.v1beta.DataprocMetastoreClient.ListBack
 import static com.google.cloud.metastore.v1beta.DataprocMetastoreClient.ListMetadataImportsPagedResponse;
 import static com.google.cloud.metastore.v1beta.DataprocMetastoreClient.ListServicesPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -67,6 +68,7 @@ import com.google.cloud.metastore.v1beta.RestoreServiceRequest;
 import com.google.cloud.metastore.v1beta.Service;
 import com.google.cloud.metastore.v1beta.UpdateMetadataImportRequest;
 import com.google.cloud.metastore.v1beta.UpdateServiceRequest;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
@@ -949,7 +951,27 @@ public class HttpJsonDataprocMetastoreStub extends DataprocMetastoreStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.DeleteOperation",
+                    HttpRule.newBuilder()
+                        .setDelete("/v1beta/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet("/v1beta/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder()
+                        .setGet("/v1beta/{name=projects/*/locations/*}/operations")
+                        .build())
+                .build());
 
     HttpJsonCallSettings<ListServicesRequest, ListServicesResponse> listServicesTransportSettings =
         HttpJsonCallSettings.<ListServicesRequest, ListServicesResponse>newBuilder()

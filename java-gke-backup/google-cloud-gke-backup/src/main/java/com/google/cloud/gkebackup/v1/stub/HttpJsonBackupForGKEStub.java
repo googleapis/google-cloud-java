@@ -23,6 +23,7 @@ import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListRestoresPaged
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListVolumeBackupsPagedResponse;
 import static com.google.cloud.gkebackup.v1.BackupForGKEClient.ListVolumeRestoresPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -75,6 +76,7 @@ import com.google.cloud.gkebackup.v1.UpdateRestorePlanRequest;
 import com.google.cloud.gkebackup.v1.UpdateRestoreRequest;
 import com.google.cloud.gkebackup.v1.VolumeBackup;
 import com.google.cloud.gkebackup.v1.VolumeRestore;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
@@ -1132,7 +1134,32 @@ public class HttpJsonBackupForGKEStub extends BackupForGKEStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.CancelOperation",
+                    HttpRule.newBuilder()
+                        .setPost("/v1/{name=projects/*/locations/*/operations/*}:cancel")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.DeleteOperation",
+                    HttpRule.newBuilder()
+                        .setDelete("/v1/{name=projects/*/locations/*}/operations")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet("/v1/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder()
+                        .setGet("/v1/{name=projects/*/locations/*}/operations")
+                        .build())
+                .build());
 
     HttpJsonCallSettings<CreateBackupPlanRequest, Operation> createBackupPlanTransportSettings =
         HttpJsonCallSettings.<CreateBackupPlanRequest, Operation>newBuilder()

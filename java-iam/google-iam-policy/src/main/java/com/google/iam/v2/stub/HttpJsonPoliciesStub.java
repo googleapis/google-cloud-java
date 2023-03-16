@@ -18,6 +18,7 @@ package com.google.iam.v2.stub;
 
 import static com.google.iam.v2.PoliciesClient.ListPoliciesPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -33,6 +34,7 @@ import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.common.collect.ImmutableMap;
 import com.google.iam.v2.CreatePolicyRequest;
 import com.google.iam.v2.DeletePolicyRequest;
 import com.google.iam.v2.GetPolicyRequest;
@@ -311,7 +313,15 @@ public class HttpJsonPoliciesStub extends PoliciesStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder().setGet("/v2/{name=policies/*/*/*/operations/*}").build())
+                .build());
 
     HttpJsonCallSettings<ListPoliciesRequest, ListPoliciesResponse> listPoliciesTransportSettings =
         HttpJsonCallSettings.<ListPoliciesRequest, ListPoliciesResponse>newBuilder()

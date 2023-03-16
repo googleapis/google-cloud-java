@@ -18,6 +18,7 @@ package com.google.cloud.discoveryengine.v1beta.stub;
 
 import static com.google.cloud.discoveryengine.v1beta.DocumentServiceClient.ListDocumentsPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -43,6 +44,7 @@ import com.google.cloud.discoveryengine.v1beta.ImportDocumentsResponse;
 import com.google.cloud.discoveryengine.v1beta.ListDocumentsRequest;
 import com.google.cloud.discoveryengine.v1beta.ListDocumentsResponse;
 import com.google.cloud.discoveryengine.v1beta.UpdateDocumentRequest;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
@@ -351,7 +353,60 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet(
+                            "/v1beta/{name=projects/*/locations/*/dataStores/*/branches/*/operations/*}")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/dataStores/*/models/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/dataStores/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1beta/{name=projects/*/locations/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1beta/{name=projects/*/operations/*}")
+                                .build())
+                        .build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder()
+                        .setGet(
+                            "/v1beta/{name=projects/*/locations/*/dataStores/*/branches/*}/operations")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/dataStores/*/models/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/dataStores/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1beta/{name=projects/*/locations/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1beta/{name=projects/*}/operations")
+                                .build())
+                        .build())
+                .build());
 
     HttpJsonCallSettings<GetDocumentRequest, Document> getDocumentTransportSettings =
         HttpJsonCallSettings.<GetDocumentRequest, Document>newBuilder()

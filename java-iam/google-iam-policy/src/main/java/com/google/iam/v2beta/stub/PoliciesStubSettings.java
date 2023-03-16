@@ -92,7 +92,10 @@ import org.threeten.bp.Duration;
  * policiesSettingsBuilder
  *     .getPolicySettings()
  *     .setRetrySettings(
- *         policiesSettingsBuilder.getPolicySettings().getRetrySettings().toBuilder()
+ *         policiesSettingsBuilder
+ *             .getPolicySettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * PoliciesStubSettings policiesSettings = policiesSettingsBuilder.build();

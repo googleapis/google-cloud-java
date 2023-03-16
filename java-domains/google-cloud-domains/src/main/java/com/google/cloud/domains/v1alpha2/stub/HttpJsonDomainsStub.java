@@ -18,6 +18,7 @@ package com.google.cloud.domains.v1alpha2.stub;
 
 import static com.google.cloud.domains.v1alpha2.DomainsClient.ListRegistrationsPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -55,6 +56,7 @@ import com.google.cloud.domains.v1alpha2.SearchDomainsRequest;
 import com.google.cloud.domains.v1alpha2.SearchDomainsResponse;
 import com.google.cloud.domains.v1alpha2.TransferDomainRequest;
 import com.google.cloud.domains.v1alpha2.UpdateRegistrationRequest;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
@@ -744,7 +746,22 @@ public class HttpJsonDomainsStub extends DomainsStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet("/v1alpha2/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder()
+                        .setGet("/v1alpha2/{name=projects/*/locations/*}/operations")
+                        .build())
+                .build());
 
     HttpJsonCallSettings<SearchDomainsRequest, SearchDomainsResponse>
         searchDomainsTransportSettings =
