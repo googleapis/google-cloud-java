@@ -82,6 +82,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     AZURE(11),
     CLOUD_SPANNER(21),
     CLOUD_RESOURCE(22),
+    SPARK(23),
     PROPERTIES_NOT_SET(0);
     private final int value;
 
@@ -110,6 +111,8 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
           return CLOUD_SPANNER;
         case 22:
           return CLOUD_RESOURCE;
+        case 23:
+          return SPARK;
         case 0:
           return PROPERTIES_NOT_SET;
         default:
@@ -539,6 +542,57 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.bigquery.connection.v1.CloudResourceProperties.getDefaultInstance();
   }
 
+  public static final int SPARK_FIELD_NUMBER = 23;
+  /**
+   *
+   *
+   * <pre>
+   * Spark properties.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.SparkProperties spark = 23;</code>
+   *
+   * @return Whether the spark field is set.
+   */
+  @java.lang.Override
+  public boolean hasSpark() {
+    return propertiesCase_ == 23;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Spark properties.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.SparkProperties spark = 23;</code>
+   *
+   * @return The spark.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.connection.v1.SparkProperties getSpark() {
+    if (propertiesCase_ == 23) {
+      return (com.google.cloud.bigquery.connection.v1.SparkProperties) properties_;
+    }
+    return com.google.cloud.bigquery.connection.v1.SparkProperties.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Spark properties.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.SparkProperties spark = 23;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.connection.v1.SparkPropertiesOrBuilder getSparkOrBuilder() {
+    if (propertiesCase_ == 23) {
+      return (com.google.cloud.bigquery.connection.v1.SparkProperties) properties_;
+    }
+    return com.google.cloud.bigquery.connection.v1.SparkProperties.getDefaultInstance();
+  }
+
   public static final int CREATION_TIME_FIELD_NUMBER = 5;
   private long creationTime_ = 0L;
   /**
@@ -644,6 +698,10 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           22, (com.google.cloud.bigquery.connection.v1.CloudResourceProperties) properties_);
     }
+    if (propertiesCase_ == 23) {
+      output.writeMessage(
+          23, (com.google.cloud.bigquery.connection.v1.SparkProperties) properties_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -696,6 +754,11 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               22, (com.google.cloud.bigquery.connection.v1.CloudResourceProperties) properties_);
     }
+    if (propertiesCase_ == 23) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              23, (com.google.cloud.bigquery.connection.v1.SparkProperties) properties_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -734,6 +797,9 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
         break;
       case 22:
         if (!getCloudResource().equals(other.getCloudResource())) return false;
+        break;
+      case 23:
+        if (!getSpark().equals(other.getSpark())) return false;
         break;
       case 0:
       default:
@@ -781,6 +847,10 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       case 22:
         hash = (37 * hash) + CLOUD_RESOURCE_FIELD_NUMBER;
         hash = (53 * hash) + getCloudResource().hashCode();
+        break;
+      case 23:
+        hash = (37 * hash) + SPARK_FIELD_NUMBER;
+        hash = (53 * hash) + getSpark().hashCode();
         break;
       case 0:
       default:
@@ -943,6 +1013,9 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       if (cloudResourceBuilder_ != null) {
         cloudResourceBuilder_.clear();
       }
+      if (sparkBuilder_ != null) {
+        sparkBuilder_.clear();
+      }
       creationTime_ = 0L;
       lastModifiedTime_ = 0L;
       hasCredential_ = false;
@@ -994,13 +1067,13 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.description_ = description_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.creationTime_ = creationTime_;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.lastModifiedTime_ = lastModifiedTime_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.hasCredential_ = hasCredential_;
       }
     }
@@ -1022,6 +1095,9 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       }
       if (propertiesCase_ == 22 && cloudResourceBuilder_ != null) {
         result.properties_ = cloudResourceBuilder_.build();
+      }
+      if (propertiesCase_ == 23 && sparkBuilder_ != null) {
+        result.properties_ = sparkBuilder_.build();
       }
     }
 
@@ -1121,6 +1197,11 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             mergeCloudResource(other.getCloudResource());
             break;
           }
+        case SPARK:
+          {
+            mergeSpark(other.getSpark());
+            break;
+          }
         case PROPERTIES_NOT_SET:
           {
             break;
@@ -1179,19 +1260,19 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
             case 40:
               {
                 creationTime_ = input.readInt64();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 40
             case 48:
               {
                 lastModifiedTime_ = input.readInt64();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 48
             case 56:
               {
                 hasCredential_ = input.readBool();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 56
             case 66:
@@ -1218,6 +1299,12 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
                 propertiesCase_ = 22;
                 break;
               } // case 178
+            case 186:
+              {
+                input.readMessage(getSparkFieldBuilder().getBuilder(), extensionRegistry);
+                propertiesCase_ = 23;
+                break;
+              } // case 186
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2649,6 +2736,217 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
       return cloudResourceBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.connection.v1.SparkProperties,
+            com.google.cloud.bigquery.connection.v1.SparkProperties.Builder,
+            com.google.cloud.bigquery.connection.v1.SparkPropertiesOrBuilder>
+        sparkBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Spark properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.SparkProperties spark = 23;</code>
+     *
+     * @return Whether the spark field is set.
+     */
+    @java.lang.Override
+    public boolean hasSpark() {
+      return propertiesCase_ == 23;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Spark properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.SparkProperties spark = 23;</code>
+     *
+     * @return The spark.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.connection.v1.SparkProperties getSpark() {
+      if (sparkBuilder_ == null) {
+        if (propertiesCase_ == 23) {
+          return (com.google.cloud.bigquery.connection.v1.SparkProperties) properties_;
+        }
+        return com.google.cloud.bigquery.connection.v1.SparkProperties.getDefaultInstance();
+      } else {
+        if (propertiesCase_ == 23) {
+          return sparkBuilder_.getMessage();
+        }
+        return com.google.cloud.bigquery.connection.v1.SparkProperties.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Spark properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.SparkProperties spark = 23;</code>
+     */
+    public Builder setSpark(com.google.cloud.bigquery.connection.v1.SparkProperties value) {
+      if (sparkBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        properties_ = value;
+        onChanged();
+      } else {
+        sparkBuilder_.setMessage(value);
+      }
+      propertiesCase_ = 23;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Spark properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.SparkProperties spark = 23;</code>
+     */
+    public Builder setSpark(
+        com.google.cloud.bigquery.connection.v1.SparkProperties.Builder builderForValue) {
+      if (sparkBuilder_ == null) {
+        properties_ = builderForValue.build();
+        onChanged();
+      } else {
+        sparkBuilder_.setMessage(builderForValue.build());
+      }
+      propertiesCase_ = 23;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Spark properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.SparkProperties spark = 23;</code>
+     */
+    public Builder mergeSpark(com.google.cloud.bigquery.connection.v1.SparkProperties value) {
+      if (sparkBuilder_ == null) {
+        if (propertiesCase_ == 23
+            && properties_
+                != com.google.cloud.bigquery.connection.v1.SparkProperties.getDefaultInstance()) {
+          properties_ =
+              com.google.cloud.bigquery.connection.v1.SparkProperties.newBuilder(
+                      (com.google.cloud.bigquery.connection.v1.SparkProperties) properties_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          properties_ = value;
+        }
+        onChanged();
+      } else {
+        if (propertiesCase_ == 23) {
+          sparkBuilder_.mergeFrom(value);
+        } else {
+          sparkBuilder_.setMessage(value);
+        }
+      }
+      propertiesCase_ = 23;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Spark properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.SparkProperties spark = 23;</code>
+     */
+    public Builder clearSpark() {
+      if (sparkBuilder_ == null) {
+        if (propertiesCase_ == 23) {
+          propertiesCase_ = 0;
+          properties_ = null;
+          onChanged();
+        }
+      } else {
+        if (propertiesCase_ == 23) {
+          propertiesCase_ = 0;
+          properties_ = null;
+        }
+        sparkBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Spark properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.SparkProperties spark = 23;</code>
+     */
+    public com.google.cloud.bigquery.connection.v1.SparkProperties.Builder getSparkBuilder() {
+      return getSparkFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Spark properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.SparkProperties spark = 23;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.connection.v1.SparkPropertiesOrBuilder getSparkOrBuilder() {
+      if ((propertiesCase_ == 23) && (sparkBuilder_ != null)) {
+        return sparkBuilder_.getMessageOrBuilder();
+      } else {
+        if (propertiesCase_ == 23) {
+          return (com.google.cloud.bigquery.connection.v1.SparkProperties) properties_;
+        }
+        return com.google.cloud.bigquery.connection.v1.SparkProperties.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Spark properties.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.connection.v1.SparkProperties spark = 23;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.connection.v1.SparkProperties,
+            com.google.cloud.bigquery.connection.v1.SparkProperties.Builder,
+            com.google.cloud.bigquery.connection.v1.SparkPropertiesOrBuilder>
+        getSparkFieldBuilder() {
+      if (sparkBuilder_ == null) {
+        if (!(propertiesCase_ == 23)) {
+          properties_ =
+              com.google.cloud.bigquery.connection.v1.SparkProperties.getDefaultInstance();
+        }
+        sparkBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.connection.v1.SparkProperties,
+                com.google.cloud.bigquery.connection.v1.SparkProperties.Builder,
+                com.google.cloud.bigquery.connection.v1.SparkPropertiesOrBuilder>(
+                (com.google.cloud.bigquery.connection.v1.SparkProperties) properties_,
+                getParentForChildren(),
+                isClean());
+        properties_ = null;
+      }
+      propertiesCase_ = 23;
+      onChanged();
+      return sparkBuilder_;
+    }
+
     private long creationTime_;
     /**
      *
@@ -2680,7 +2978,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public Builder setCreationTime(long value) {
 
       creationTime_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2696,7 +2994,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCreationTime() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       creationTime_ = 0L;
       onChanged();
       return this;
@@ -2733,7 +3031,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public Builder setLastModifiedTime(long value) {
 
       lastModifiedTime_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2749,7 +3047,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearLastModifiedTime() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       lastModifiedTime_ = 0L;
       onChanged();
       return this;
@@ -2786,7 +3084,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
     public Builder setHasCredential(boolean value) {
 
       hasCredential_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2802,7 +3100,7 @@ public final class Connection extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearHasCredential() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       hasCredential_ = false;
       onChanged();
       return this;

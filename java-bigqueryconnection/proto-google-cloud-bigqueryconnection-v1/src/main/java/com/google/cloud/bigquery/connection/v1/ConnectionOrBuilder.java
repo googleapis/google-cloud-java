@@ -281,6 +281,41 @@ public interface ConnectionOrBuilder
    *
    *
    * <pre>
+   * Spark properties.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.SparkProperties spark = 23;</code>
+   *
+   * @return Whether the spark field is set.
+   */
+  boolean hasSpark();
+  /**
+   *
+   *
+   * <pre>
+   * Spark properties.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.SparkProperties spark = 23;</code>
+   *
+   * @return The spark.
+   */
+  com.google.cloud.bigquery.connection.v1.SparkProperties getSpark();
+  /**
+   *
+   *
+   * <pre>
+   * Spark properties.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.connection.v1.SparkProperties spark = 23;</code>
+   */
+  com.google.cloud.bigquery.connection.v1.SparkPropertiesOrBuilder getSparkOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The creation timestamp of the connection.
    * </pre>
    *
