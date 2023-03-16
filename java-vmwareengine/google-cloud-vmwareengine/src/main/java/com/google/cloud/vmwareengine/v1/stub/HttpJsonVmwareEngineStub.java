@@ -25,6 +25,7 @@ import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListPrivateClo
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListSubnetsPagedResponse;
 import static com.google.cloud.vmwareengine.v1.VmwareEngineClient.ListVmwareEngineNetworksPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -90,6 +91,7 @@ import com.google.cloud.vmwareengine.v1.UpdateNetworkPolicyRequest;
 import com.google.cloud.vmwareengine.v1.UpdatePrivateCloudRequest;
 import com.google.cloud.vmwareengine.v1.UpdateVmwareEngineNetworkRequest;
 import com.google.cloud.vmwareengine.v1.VmwareEngineNetwork;
+import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -1683,7 +1685,27 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.DeleteOperation",
+                    HttpRule.newBuilder()
+                        .setDelete("/v1/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet("/v1/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder()
+                        .setGet("/v1/{name=projects/*/locations/*}/operations")
+                        .build())
+                .build());
 
     HttpJsonCallSettings<ListPrivateCloudsRequest, ListPrivateCloudsResponse>
         listPrivateCloudsTransportSettings =

@@ -16,6 +16,7 @@
 
 package com.google.cloud.vision.v1.stub;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -40,6 +41,7 @@ import com.google.cloud.vision.v1.BatchAnnotateFilesResponse;
 import com.google.cloud.vision.v1.BatchAnnotateImagesRequest;
 import com.google.cloud.vision.v1.BatchAnnotateImagesResponse;
 import com.google.cloud.vision.v1.OperationMetadata;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -290,7 +292,27 @@ public class HttpJsonImageAnnotatorStub extends ImageAnnotatorStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet("/v1/{name=projects/*/operations/*}")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1/{name=projects/*/locations/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder().setGet("/v1/{name=operations/*}").build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1/{name=locations/*/operations/*}")
+                                .build())
+                        .build())
+                .build());
 
     HttpJsonCallSettings<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
         batchAnnotateImagesTransportSettings =
