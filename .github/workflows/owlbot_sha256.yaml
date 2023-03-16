@@ -17,22 +17,19 @@ on:
   schedule:
   # every hour
   - cron: '0 * * * *'
-name: readme
+name: owlbot_lock_update
 jobs:
   update:
-    runs-on: ubuntu-latest
+    # ubuntu-22.04 has gcloud command
+    # https://github.com/actions/runner-images/blob/main/images/linux/Ubuntu2204-Readme.md#cli-tools
+    runs-on: ubuntu-22.04
     if: github.repository_owner == 'googleapis'
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-python@v4
-      with:
-        python-version: '3.7'
-        architecture: 'x64'
-    - run: python3 -m pip install --require-hashes -r .github/requirements.txt
-    - run: python3 generate-readme.py
     - name: Replace sha256 value in OwlBot to the latest value
       shell: bash
       run: |
+        # https://cloud.google.com/kubernetes-engine/docs/archive/using-container-images#container_registry
         sha256=$(gcloud container images describe gcr.io/cloud-devrel-public-resources/owlbot-java --format 'value(image_summary.digest)')
         echo "The latest sha256 is ${sha256}"
         sed -i.bak -e "s/digest: sha256.*/digest: ${sha256}/" .github/.OwlBot.lock.yaml
