@@ -27,8 +27,8 @@ public interface BuildConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. The Cloud Build name of the latest successful deployment of the
-   * function.
+   * Output only. The Cloud Build name of the latest successful deployment of
+   * the function.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface BuildConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. The Cloud Build name of the latest successful deployment of the
-   * function.
+   * Output only. The Cloud Build name of the latest successful deployment of
+   * the function.
    * </pre>
    *
    * <code>
@@ -305,7 +305,48 @@ public interface BuildConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. User managed repository created in Artifact Registry optionally with a
+   * Optional. Docker Registry to use for this deployment. This configuration is
+   * only applicable to 1st Gen functions, 2nd Gen functions can only use
+   * Artifact Registry.
+   * If `docker_repository` field is specified, this field will be automatically
+   * set as `ARTIFACT_REGISTRY`.
+   * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
+   * This field may be overridden by the backend for eligible deployments.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for dockerRegistry.
+   */
+  int getDockerRegistryValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Docker Registry to use for this deployment. This configuration is
+   * only applicable to 1st Gen functions, 2nd Gen functions can only use
+   * Artifact Registry.
+   * If `docker_repository` field is specified, this field will be automatically
+   * set as `ARTIFACT_REGISTRY`.
+   * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
+   * This field may be overridden by the backend for eligible deployments.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.functions.v2.BuildConfig.DockerRegistry docker_registry = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dockerRegistry.
+   */
+  com.google.cloud.functions.v2.BuildConfig.DockerRegistry getDockerRegistry();
+
+  /**
+   *
+   *
+   * <pre>
+   * User managed repository created in Artifact Registry optionally with a
    * customer managed encryption key. This is the repository to which the
    * function docker image will be pushed after it is built by Cloud Build.
    * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
@@ -317,9 +358,7 @@ public interface BuildConfigOrBuilder
    * Repository format must be 'DOCKER'.
    * </pre>
    *
-   * <code>
-   * string docker_repository = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string docker_repository = 7 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The dockerRepository.
    */
@@ -328,7 +367,7 @@ public interface BuildConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. User managed repository created in Artifact Registry optionally with a
+   * User managed repository created in Artifact Registry optionally with a
    * customer managed encryption key. This is the repository to which the
    * function docker image will be pushed after it is built by Cloud Build.
    * If unspecified, GCF will create and use a repository named 'gcf-artifacts'
@@ -340,9 +379,7 @@ public interface BuildConfigOrBuilder
    * Repository format must be 'DOCKER'.
    * </pre>
    *
-   * <code>
-   * string docker_repository = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string docker_repository = 7 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for dockerRepository.
    */

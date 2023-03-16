@@ -75,7 +75,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
    *
    *
    * <pre>
-   * The name of a locality load balancer policy to be used. The value should be one of the predefined ones as supported by localityLbPolicy, although at the moment only ROUND_ROBIN is supported. This field should only be populated when the customPolicy field is not used. Note that specifying the same policy more than once for a backend is not a valid configuration and will be rejected.
+   * The name of a locality load-balancing policy. Valid values include ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information about these values, see the description of localityLbPolicy. Do not specify the same policy more than once for a backend. If you do, the configuration is rejected.
    * </pre>
    *
    * Protobuf enum {@code
@@ -154,6 +154,16 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      * <code>ROUND_ROBIN = 153895801;</code>
      */
     ROUND_ROBIN(153895801),
+    /**
+     *
+     *
+     * <pre>
+     * Per-instance weighted Load Balancing via health check reported weights. If set, the Backend Service must configure a non legacy HTTP-based Health Check, and health check replies are expected to contain non-standard HTTP response header field X-Load-Balancing-Endpoint-Weight to specify the per-instance weights. If set, Load Balancing is weighted based on the per-instance weights reported in the last processed health check replies, as long as every instance either reported a valid weight or had UNAVAILABLE_WEIGHT. Otherwise, Load Balancing remains equal-weight. This option is only supported in Network Load Balancing.
+     * </pre>
+     *
+     * <code>WEIGHTED_MAGLEV = 254930962;</code>
+     */
+    WEIGHTED_MAGLEV(254930962),
     UNRECOGNIZED(-1),
     ;
 
@@ -229,6 +239,16 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      * <code>ROUND_ROBIN = 153895801;</code>
      */
     public static final int ROUND_ROBIN_VALUE = 153895801;
+    /**
+     *
+     *
+     * <pre>
+     * Per-instance weighted Load Balancing via health check reported weights. If set, the Backend Service must configure a non legacy HTTP-based Health Check, and health check replies are expected to contain non-standard HTTP response header field X-Load-Balancing-Endpoint-Weight to specify the per-instance weights. If set, Load Balancing is weighted based on the per-instance weights reported in the last processed health check replies, as long as every instance either reported a valid weight or had UNAVAILABLE_WEIGHT. Otherwise, Load Balancing remains equal-weight. This option is only supported in Network Load Balancing.
+     * </pre>
+     *
+     * <code>WEIGHTED_MAGLEV = 254930962;</code>
+     */
+    public static final int WEIGHTED_MAGLEV_VALUE = 254930962;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -270,6 +290,8 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
           return RING_HASH;
         case 153895801:
           return ROUND_ROBIN;
+        case 254930962:
+          return WEIGHTED_MAGLEV;
         default:
           return null;
       }
@@ -335,7 +357,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
    *
    *
    * <pre>
-   * The name of a locality load balancer policy to be used. The value should be one of the predefined ones as supported by localityLbPolicy, although at the moment only ROUND_ROBIN is supported. This field should only be populated when the customPolicy field is not used. Note that specifying the same policy more than once for a backend is not a valid configuration and will be rejected.
+   * The name of a locality load-balancing policy. Valid values include ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information about these values, see the description of localityLbPolicy. Do not specify the same policy more than once for a backend. If you do, the configuration is rejected.
    * Check the Name enum for the list of possible values.
    * </pre>
    *
@@ -351,7 +373,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
    *
    *
    * <pre>
-   * The name of a locality load balancer policy to be used. The value should be one of the predefined ones as supported by localityLbPolicy, although at the moment only ROUND_ROBIN is supported. This field should only be populated when the customPolicy field is not used. Note that specifying the same policy more than once for a backend is not a valid configuration and will be rejected.
+   * The name of a locality load-balancing policy. Valid values include ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information about these values, see the description of localityLbPolicy. Do not specify the same policy more than once for a backend. If you do, the configuration is rejected.
    * Check the Name enum for the list of possible values.
    * </pre>
    *
@@ -375,7 +397,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
    *
    *
    * <pre>
-   * The name of a locality load balancer policy to be used. The value should be one of the predefined ones as supported by localityLbPolicy, although at the moment only ROUND_ROBIN is supported. This field should only be populated when the customPolicy field is not used. Note that specifying the same policy more than once for a backend is not a valid configuration and will be rejected.
+   * The name of a locality load-balancing policy. Valid values include ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information about these values, see the description of localityLbPolicy. Do not specify the same policy more than once for a backend. If you do, the configuration is rejected.
    * Check the Name enum for the list of possible values.
    * </pre>
    *
@@ -777,7 +799,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * The name of a locality load balancer policy to be used. The value should be one of the predefined ones as supported by localityLbPolicy, although at the moment only ROUND_ROBIN is supported. This field should only be populated when the customPolicy field is not used. Note that specifying the same policy more than once for a backend is not a valid configuration and will be rejected.
+     * The name of a locality load-balancing policy. Valid values include ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information about these values, see the description of localityLbPolicy. Do not specify the same policy more than once for a backend. If you do, the configuration is rejected.
      * Check the Name enum for the list of possible values.
      * </pre>
      *
@@ -792,7 +814,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * The name of a locality load balancer policy to be used. The value should be one of the predefined ones as supported by localityLbPolicy, although at the moment only ROUND_ROBIN is supported. This field should only be populated when the customPolicy field is not used. Note that specifying the same policy more than once for a backend is not a valid configuration and will be rejected.
+     * The name of a locality load-balancing policy. Valid values include ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information about these values, see the description of localityLbPolicy. Do not specify the same policy more than once for a backend. If you do, the configuration is rejected.
      * Check the Name enum for the list of possible values.
      * </pre>
      *
@@ -815,7 +837,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * The name of a locality load balancer policy to be used. The value should be one of the predefined ones as supported by localityLbPolicy, although at the moment only ROUND_ROBIN is supported. This field should only be populated when the customPolicy field is not used. Note that specifying the same policy more than once for a backend is not a valid configuration and will be rejected.
+     * The name of a locality load-balancing policy. Valid values include ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information about these values, see the description of localityLbPolicy. Do not specify the same policy more than once for a backend. If you do, the configuration is rejected.
      * Check the Name enum for the list of possible values.
      * </pre>
      *
@@ -838,7 +860,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * The name of a locality load balancer policy to be used. The value should be one of the predefined ones as supported by localityLbPolicy, although at the moment only ROUND_ROBIN is supported. This field should only be populated when the customPolicy field is not used. Note that specifying the same policy more than once for a backend is not a valid configuration and will be rejected.
+     * The name of a locality load-balancing policy. Valid values include ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information about these values, see the description of localityLbPolicy. Do not specify the same policy more than once for a backend. If you do, the configuration is rejected.
      * Check the Name enum for the list of possible values.
      * </pre>
      *
@@ -860,7 +882,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * The name of a locality load balancer policy to be used. The value should be one of the predefined ones as supported by localityLbPolicy, although at the moment only ROUND_ROBIN is supported. This field should only be populated when the customPolicy field is not used. Note that specifying the same policy more than once for a backend is not a valid configuration and will be rejected.
+     * The name of a locality load-balancing policy. Valid values include ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information about these values, see the description of localityLbPolicy. Do not specify the same policy more than once for a backend. If you do, the configuration is rejected.
      * Check the Name enum for the list of possible values.
      * </pre>
      *
@@ -878,7 +900,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      *
      *
      * <pre>
-     * The name of a locality load balancer policy to be used. The value should be one of the predefined ones as supported by localityLbPolicy, although at the moment only ROUND_ROBIN is supported. This field should only be populated when the customPolicy field is not used. Note that specifying the same policy more than once for a backend is not a valid configuration and will be rejected.
+     * The name of a locality load-balancing policy. Valid values include ROUND_ROBIN and, for Java clients, LEAST_REQUEST. For information about these values, see the description of localityLbPolicy. Do not specify the same policy more than once for a backend. If you do, the configuration is rejected.
      * Check the Name enum for the list of possible values.
      * </pre>
      *

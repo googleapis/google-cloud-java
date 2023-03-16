@@ -44,6 +44,8 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
     description_ = "";
     state_ = 0;
     stateMessages_ = java.util.Collections.emptyList();
+    kmsKeyName_ = "";
+    url_ = "";
   }
 
   @java.lang.Override
@@ -367,7 +369,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Describe whether the function is gen1 or gen2.
+   * Describe whether the function is 1st Gen or 2nd Gen.
    * </pre>
    *
    * <code>.google.cloud.functions.v2.Environment environment = 10;</code>
@@ -382,7 +384,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Describe whether the function is gen1 or gen2.
+   * Describe whether the function is 1st Gen or 2nd Gen.
    * </pre>
    *
    * <code>.google.cloud.functions.v2.Environment environment = 10;</code>
@@ -877,6 +879,114 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
     return stateMessages_.get(index);
   }
 
+  public static final int KMS_KEY_NAME_FIELD_NUMBER = 25;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKeyName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Resource name of a KMS crypto key (managed by the user) used to
+   * encrypt/decrypt function resources.
+   * It must match the pattern
+   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   * </pre>
+   *
+   * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The kmsKeyName.
+   */
+  @java.lang.Override
+  public java.lang.String getKmsKeyName() {
+    java.lang.Object ref = kmsKeyName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      kmsKeyName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Resource name of a KMS crypto key (managed by the user) used to
+   * encrypt/decrypt function resources.
+   * It must match the pattern
+   * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+   * </pre>
+   *
+   * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for kmsKeyName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getKmsKeyNameBytes() {
+    java.lang.Object ref = kmsKeyName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      kmsKeyName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int URL_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object url_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The deployed url for the function.
+   * </pre>
+   *
+   * <code>string url = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The url.
+   */
+  @java.lang.Override
+  public java.lang.String getUrl() {
+    java.lang.Object ref = url_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      url_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The deployed url for the function.
+   * </pre>
+   *
+   * <code>string url = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for url.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getUrlBytes() {
+    java.lang.Object ref = url_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      url_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -920,6 +1030,12 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
     if (environment_
         != com.google.cloud.functions.v2.Environment.ENVIRONMENT_UNSPECIFIED.getNumber()) {
       output.writeEnum(10, environment_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, url_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 25, kmsKeyName_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -968,6 +1084,12 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.functions.v2.Environment.ENVIRONMENT_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, environment_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(url_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, url_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, kmsKeyName_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1005,6 +1127,8 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getStateMessagesList().equals(other.getStateMessagesList())) return false;
+    if (!getKmsKeyName().equals(other.getKmsKeyName())) return false;
+    if (!getUrl().equals(other.getUrl())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1048,6 +1172,10 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + STATE_MESSAGES_FIELD_NUMBER;
       hash = (53 * hash) + getStateMessagesList().hashCode();
     }
+    hash = (37 * hash) + KMS_KEY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getKmsKeyName().hashCode();
+    hash = (37 * hash) + URL_FIELD_NUMBER;
+    hash = (53 * hash) + getUrl().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1240,6 +1368,8 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
         stateMessagesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000200);
+      kmsKeyName_ = "";
+      url_ = "";
       return this;
     }
 
@@ -1319,6 +1449,12 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.kmsKeyName_ = kmsKeyName_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.url_ = url_;
       }
     }
 
@@ -1424,6 +1560,16 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (!other.getKmsKeyName().isEmpty()) {
+        kmsKeyName_ = other.kmsKeyName_;
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      if (!other.getUrl().isEmpty()) {
+        url_ = other.url_;
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1523,6 +1669,18 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 80
+            case 114:
+              {
+                url_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 114
+            case 202:
+              {
+                kmsKeyName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 202
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1658,7 +1816,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describe whether the function is gen1 or gen2.
+     * Describe whether the function is 1st Gen or 2nd Gen.
      * </pre>
      *
      * <code>.google.cloud.functions.v2.Environment environment = 10;</code>
@@ -1673,7 +1831,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describe whether the function is gen1 or gen2.
+     * Describe whether the function is 1st Gen or 2nd Gen.
      * </pre>
      *
      * <code>.google.cloud.functions.v2.Environment environment = 10;</code>
@@ -1691,7 +1849,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describe whether the function is gen1 or gen2.
+     * Describe whether the function is 1st Gen or 2nd Gen.
      * </pre>
      *
      * <code>.google.cloud.functions.v2.Environment environment = 10;</code>
@@ -1708,7 +1866,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describe whether the function is gen1 or gen2.
+     * Describe whether the function is 1st Gen or 2nd Gen.
      * </pre>
      *
      * <code>.google.cloud.functions.v2.Environment environment = 10;</code>
@@ -1729,7 +1887,7 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Describe whether the function is gen1 or gen2.
+     * Describe whether the function is 1st Gen or 2nd Gen.
      * </pre>
      *
      * <code>.google.cloud.functions.v2.Environment environment = 10;</code>
@@ -3281,6 +3439,233 @@ public final class Function extends com.google.protobuf.GeneratedMessageV3
         stateMessages_ = null;
       }
       return stateMessagesBuilder_;
+    }
+
+    private java.lang.Object kmsKeyName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of a KMS crypto key (managed by the user) used to
+     * encrypt/decrypt function resources.
+     * It must match the pattern
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     * </pre>
+     *
+     * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The kmsKeyName.
+     */
+    public java.lang.String getKmsKeyName() {
+      java.lang.Object ref = kmsKeyName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kmsKeyName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of a KMS crypto key (managed by the user) used to
+     * encrypt/decrypt function resources.
+     * It must match the pattern
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     * </pre>
+     *
+     * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for kmsKeyName.
+     */
+    public com.google.protobuf.ByteString getKmsKeyNameBytes() {
+      java.lang.Object ref = kmsKeyName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kmsKeyName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of a KMS crypto key (managed by the user) used to
+     * encrypt/decrypt function resources.
+     * It must match the pattern
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     * </pre>
+     *
+     * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The kmsKeyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      kmsKeyName_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of a KMS crypto key (managed by the user) used to
+     * encrypt/decrypt function resources.
+     * It must match the pattern
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     * </pre>
+     *
+     * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKmsKeyName() {
+      kmsKeyName_ = getDefaultInstance().getKmsKeyName();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of a KMS crypto key (managed by the user) used to
+     * encrypt/decrypt function resources.
+     * It must match the pattern
+     * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+     * </pre>
+     *
+     * <code>string kms_key_name = 25 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for kmsKeyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      kmsKeyName_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object url_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The deployed url for the function.
+     * </pre>
+     *
+     * <code>string url = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The url.
+     */
+    public java.lang.String getUrl() {
+      java.lang.Object ref = url_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        url_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The deployed url for the function.
+     * </pre>
+     *
+     * <code>string url = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for url.
+     */
+    public com.google.protobuf.ByteString getUrlBytes() {
+      java.lang.Object ref = url_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        url_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The deployed url for the function.
+     * </pre>
+     *
+     * <code>string url = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The url to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUrl(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      url_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The deployed url for the function.
+     * </pre>
+     *
+     * <code>string url = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUrl() {
+      url_ = getDefaultInstance().getUrl();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The deployed url for the function.
+     * </pre>
+     *
+     * <code>string url = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for url to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUrlBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      url_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

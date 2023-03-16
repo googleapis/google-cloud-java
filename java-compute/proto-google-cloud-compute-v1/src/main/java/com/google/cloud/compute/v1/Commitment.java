@@ -367,7 +367,15 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     UNDEFINED_STATUS(0),
     /** <code>ACTIVE = 314733318;</code> */
     ACTIVE(314733318),
-    /** <code>CANCELLED = 41957681;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Deprecate CANCELED status. Will use separate status to differentiate cancel by mergeCud or manual cancellation.
+     * </pre>
+     *
+     * <code>CANCELLED = 41957681;</code>
+     */
     CANCELLED(41957681),
     /** <code>CREATING = 455564985;</code> */
     CREATING(455564985),
@@ -390,7 +398,15 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     public static final int UNDEFINED_STATUS_VALUE = 0;
     /** <code>ACTIVE = 314733318;</code> */
     public static final int ACTIVE_VALUE = 314733318;
-    /** <code>CANCELLED = 41957681;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Deprecate CANCELED status. Will use separate status to differentiate cancel by mergeCud or manual cancellation.
+     * </pre>
+     *
+     * <code>CANCELLED = 41957681;</code>
+     */
     public static final int CANCELLED_VALUE = 41957681;
     /** <code>CREATING = 455564985;</code> */
     public static final int CREATING_VALUE = 455564985;
@@ -514,6 +530,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     COMPUTE_OPTIMIZED(158349023),
     /** <code>COMPUTE_OPTIMIZED_C2D = 383246453;</code> */
     COMPUTE_OPTIMIZED_C2D(383246453),
+    /** <code>COMPUTE_OPTIMIZED_C3 = 428004784;</code> */
+    COMPUTE_OPTIMIZED_C3(428004784),
     /** <code>GENERAL_PURPOSE = 299793543;</code> */
     GENERAL_PURPOSE(299793543),
     /** <code>GENERAL_PURPOSE_E2 = 301911877;</code> */
@@ -549,6 +567,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     public static final int COMPUTE_OPTIMIZED_VALUE = 158349023;
     /** <code>COMPUTE_OPTIMIZED_C2D = 383246453;</code> */
     public static final int COMPUTE_OPTIMIZED_C2D_VALUE = 383246453;
+    /** <code>COMPUTE_OPTIMIZED_C3 = 428004784;</code> */
+    public static final int COMPUTE_OPTIMIZED_C3_VALUE = 428004784;
     /** <code>GENERAL_PURPOSE = 299793543;</code> */
     public static final int GENERAL_PURPOSE_VALUE = 299793543;
     /** <code>GENERAL_PURPOSE_E2 = 301911877;</code> */
@@ -598,6 +618,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
           return COMPUTE_OPTIMIZED;
         case 383246453:
           return COMPUTE_OPTIMIZED_C2D;
+        case 428004784:
+          return COMPUTE_OPTIMIZED_C3;
         case 299793543:
           return GENERAL_PURPOSE;
         case 301911877:

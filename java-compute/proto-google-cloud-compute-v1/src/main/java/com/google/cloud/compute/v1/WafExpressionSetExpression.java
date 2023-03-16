@@ -133,6 +133,39 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
     }
   }
 
+  public static final int SENSITIVITY_FIELD_NUMBER = 27532959;
+  private int sensitivity_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * The sensitivity value associated with the WAF rule ID. This corresponds to the ModSecurity paranoia level, ranging from 1 to 4. 0 is reserved for opt-in only rules.
+   * </pre>
+   *
+   * <code>optional int32 sensitivity = 27532959;</code>
+   *
+   * @return Whether the sensitivity field is set.
+   */
+  @java.lang.Override
+  public boolean hasSensitivity() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The sensitivity value associated with the WAF rule ID. This corresponds to the ModSecurity paranoia level, ranging from 1 to 4. 0 is reserved for opt-in only rules.
+   * </pre>
+   *
+   * <code>optional int32 sensitivity = 27532959;</code>
+   *
+   * @return The sensitivity.
+   */
+  @java.lang.Override
+  public int getSensitivity() {
+    return sensitivity_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -150,6 +183,9 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeInt32(27532959, sensitivity_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -161,6 +197,9 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(27532959, sensitivity_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -182,6 +221,10 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
     if (hasId()) {
       if (!getId().equals(other.getId())) return false;
     }
+    if (hasSensitivity() != other.hasSensitivity()) return false;
+    if (hasSensitivity()) {
+      if (getSensitivity() != other.getSensitivity()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -196,6 +239,10 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
     if (hasId()) {
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
+    }
+    if (hasSensitivity()) {
+      hash = (37 * hash) + SENSITIVITY_FIELD_NUMBER;
+      hash = (53 * hash) + getSensitivity();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -337,6 +384,7 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
       super.clear();
       bitField0_ = 0;
       id_ = "";
+      sensitivity_ = 0;
       return this;
     }
 
@@ -377,6 +425,10 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.id_ = id_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sensitivity_ = sensitivity_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -432,6 +484,9 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.hasSensitivity()) {
+        setSensitivity(other.getSensitivity());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -464,6 +519,12 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
                 bitField0_ |= 0x00000001;
                 break;
               } // case 26842
+            case 220263672:
+              {
+                sensitivity_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 220263672
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -599,6 +660,74 @@ public final class WafExpressionSetExpression extends com.google.protobuf.Genera
       checkByteStringIsUtf8(value);
       id_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private int sensitivity_;
+    /**
+     *
+     *
+     * <pre>
+     * The sensitivity value associated with the WAF rule ID. This corresponds to the ModSecurity paranoia level, ranging from 1 to 4. 0 is reserved for opt-in only rules.
+     * </pre>
+     *
+     * <code>optional int32 sensitivity = 27532959;</code>
+     *
+     * @return Whether the sensitivity field is set.
+     */
+    @java.lang.Override
+    public boolean hasSensitivity() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The sensitivity value associated with the WAF rule ID. This corresponds to the ModSecurity paranoia level, ranging from 1 to 4. 0 is reserved for opt-in only rules.
+     * </pre>
+     *
+     * <code>optional int32 sensitivity = 27532959;</code>
+     *
+     * @return The sensitivity.
+     */
+    @java.lang.Override
+    public int getSensitivity() {
+      return sensitivity_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The sensitivity value associated with the WAF rule ID. This corresponds to the ModSecurity paranoia level, ranging from 1 to 4. 0 is reserved for opt-in only rules.
+     * </pre>
+     *
+     * <code>optional int32 sensitivity = 27532959;</code>
+     *
+     * @param value The sensitivity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSensitivity(int value) {
+
+      sensitivity_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The sensitivity value associated with the WAF rule ID. This corresponds to the ModSecurity paranoia level, ranging from 1 to 4. 0 is reserved for opt-in only rules.
+     * </pre>
+     *
+     * <code>optional int32 sensitivity = 27532959;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSensitivity() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      sensitivity_ = 0;
       onChanged();
       return this;
     }

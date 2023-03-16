@@ -626,8 +626,7 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified network endpoint group. Gets a list of available network endpoint groups
-   * by making a list() request.
+   * Returns the specified network endpoint group.
    *
    * <p>Sample code:
    *
@@ -662,8 +661,7 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified network endpoint group. Gets a list of available network endpoint groups
-   * by making a list() request.
+   * Returns the specified network endpoint group.
    *
    * <p>Sample code:
    *
@@ -693,8 +691,7 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified network endpoint group. Gets a list of available network endpoint groups
-   * by making a list() request.
+   * Returns the specified network endpoint group.
    *
    * <p>Sample code:
    *

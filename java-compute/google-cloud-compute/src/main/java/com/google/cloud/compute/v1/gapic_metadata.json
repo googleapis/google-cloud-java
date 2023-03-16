@@ -228,6 +228,9 @@
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "Update": {
+              "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
             }
           }
         }
@@ -727,6 +730,9 @@
         "grpc": {
           "libraryClient": "InstanceTemplatesClient",
           "rpcs": {
+            "AggregatedList": {
+              "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
+            },
             "Delete": {
               "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
@@ -846,6 +852,9 @@
             },
             "SetMinCpuPlatform": {
               "methods": ["setMinCpuPlatformAsync", "setMinCpuPlatformAsync", "setMinCpuPlatformOperationCallable", "setMinCpuPlatformCallable"]
+            },
+            "SetName": {
+              "methods": ["setNameAsync", "setNameAsync", "setNameOperationCallable", "setNameCallable"]
             },
             "SetScheduling": {
               "methods": ["setSchedulingAsync", "setSchedulingAsync", "setSchedulingOperationCallable", "setSchedulingCallable"]
@@ -1626,6 +1635,9 @@
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "Update": {
+              "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
             }
           }
         }
@@ -1764,6 +1776,27 @@
             },
             "SetNamedPorts": {
               "methods": ["setNamedPortsAsync", "setNamedPortsAsync", "setNamedPortsOperationCallable", "setNamedPortsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "RegionInstanceTemplates": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RegionInstanceTemplatesClient",
+          "rpcs": {
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
             }
           }
         }

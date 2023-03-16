@@ -233,22 +233,62 @@ public interface ReservationOrBuilder
    */
   com.google.protobuf.ByteString getNameBytes();
 
-  /** <code>map&lt;string, string&gt; resource_policies = 22220385;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
+   */
   int getResourcePoliciesCount();
-  /** <code>map&lt;string, string&gt; resource_policies = 22220385;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
+   */
   boolean containsResourcePolicies(java.lang.String key);
   /** Use {@link #getResourcePoliciesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getResourcePolicies();
-  /** <code>map&lt;string, string&gt; resource_policies = 22220385;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
+   */
   java.util.Map<java.lang.String, java.lang.String> getResourcePoliciesMap();
-  /** <code>map&lt;string, string&gt; resource_policies = 22220385;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
+   */
   /* nullable */
   java.lang.String getResourcePoliciesOrDefault(
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
-  /** <code>map&lt;string, string&gt; resource_policies = 22220385;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
+   */
   java.lang.String getResourcePoliciesOrThrow(java.lang.String key);
 
   /**

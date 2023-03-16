@@ -38,6 +38,7 @@ import com.google.cloud.compute.v1.SetIamPolicyRegionDiskRequest;
 import com.google.cloud.compute.v1.SetLabelsRegionDiskRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsRegionDiskRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
+import com.google.cloud.compute.v1.UpdateRegionDiskRequest;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -139,6 +140,15 @@ public abstract class RegionDisksStub implements BackgroundResource {
   public UnaryCallable<TestIamPermissionsRegionDiskRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
     throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
+  }
+
+  public OperationCallable<UpdateRegionDiskRequest, Operation, Operation>
+      updateOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateRegionDiskRequest, Operation> updateCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateCallable()");
   }
 
   @Override

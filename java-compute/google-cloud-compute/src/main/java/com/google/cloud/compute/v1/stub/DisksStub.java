@@ -41,6 +41,7 @@ import com.google.cloud.compute.v1.SetIamPolicyDiskRequest;
 import com.google.cloud.compute.v1.SetLabelsDiskRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsDiskRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
+import com.google.cloud.compute.v1.UpdateDiskRequest;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -147,6 +148,14 @@ public abstract class DisksStub implements BackgroundResource {
   public UnaryCallable<TestIamPermissionsDiskRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
     throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
+  }
+
+  public OperationCallable<UpdateDiskRequest, Operation, Operation> updateOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateDiskRequest, Operation> updateCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateCallable()");
   }
 
   @Override

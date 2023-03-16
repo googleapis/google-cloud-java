@@ -1368,8 +1368,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns all of the details about the specified managed instance group. Gets a list of available
-   * managed instance groups by making a list() request.
+   * Returns all of the details about the specified managed instance group.
    *
    * <p>Sample code:
    *
@@ -1406,8 +1405,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns all of the details about the specified managed instance group. Gets a list of available
-   * managed instance groups by making a list() request.
+   * Returns all of the details about the specified managed instance group.
    *
    * <p>Sample code:
    *
@@ -1438,8 +1436,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns all of the details about the specified managed instance group. Gets a list of available
-   * managed instance groups by making a list() request.
+   * Returns all of the details about the specified managed instance group.
    *
    * <p>Sample code:
    *

@@ -446,8 +446,7 @@ public class TargetHttpProxiesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified TargetHttpProxy resource. Gets a list of available target HTTP proxies by
-   * making a list() request.
+   * Returns the specified TargetHttpProxy resource.
    *
    * <p>Sample code:
    *
@@ -479,8 +478,7 @@ public class TargetHttpProxiesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified TargetHttpProxy resource. Gets a list of available target HTTP proxies by
-   * making a list() request.
+   * Returns the specified TargetHttpProxy resource.
    *
    * <p>Sample code:
    *
@@ -509,8 +507,7 @@ public class TargetHttpProxiesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified TargetHttpProxy resource. Gets a list of available target HTTP proxies by
-   * making a list() request.
+   * Returns the specified TargetHttpProxy resource.
    *
    * <p>Sample code:
    *

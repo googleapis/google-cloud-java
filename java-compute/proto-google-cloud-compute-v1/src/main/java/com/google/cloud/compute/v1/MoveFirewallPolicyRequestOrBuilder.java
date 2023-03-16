@@ -52,7 +52,7 @@ public interface MoveFirewallPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * The new parent of the firewall policy.
+   * The new parent of the firewall policy. The ID can be either be "folders/[FOLDER_ID]" if the parent is a folder or "organizations/[ORGANIZATION_ID]" if the parent is an organization.
    * </pre>
    *
    * <code>
@@ -66,7 +66,7 @@ public interface MoveFirewallPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * The new parent of the firewall policy.
+   * The new parent of the firewall policy. The ID can be either be "folders/[FOLDER_ID]" if the parent is a folder or "organizations/[ORGANIZATION_ID]" if the parent is an organization.
    * </pre>
    *
    * <code>

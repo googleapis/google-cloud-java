@@ -19,6 +19,7 @@ package com.google.cloud.functions.v2beta.stub;
 import static com.google.cloud.functions.v2beta.FunctionServiceClient.ListFunctionsPagedResponse;
 import static com.google.cloud.functions.v2beta.FunctionServiceClient.ListLocationsPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -50,6 +51,7 @@ import com.google.cloud.functions.v2beta.OperationMetadata;
 import com.google.cloud.functions.v2beta.UpdateFunctionRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
+import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -595,7 +597,22 @@ public class HttpJsonFunctionServiceStub extends FunctionServiceStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet("/v2beta/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder()
+                        .setGet("/v2beta/{name=projects/*/locations/*}/operations")
+                        .build())
+                .build());
 
     HttpJsonCallSettings<GetFunctionRequest, Function> getFunctionTransportSettings =
         HttpJsonCallSettings.<GetFunctionRequest, Function>newBuilder()

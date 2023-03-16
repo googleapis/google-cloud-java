@@ -16,16 +16,19 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.InstanceTemplatesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.InstanceTemplatesClient.ListPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AggregatedListInstanceTemplatesRequest;
 import com.google.cloud.compute.v1.DeleteInstanceTemplateRequest;
 import com.google.cloud.compute.v1.GetIamPolicyInstanceTemplateRequest;
 import com.google.cloud.compute.v1.GetInstanceTemplateRequest;
 import com.google.cloud.compute.v1.InsertInstanceTemplateRequest;
 import com.google.cloud.compute.v1.InstanceTemplate;
+import com.google.cloud.compute.v1.InstanceTemplateAggregatedList;
 import com.google.cloud.compute.v1.InstanceTemplateList;
 import com.google.cloud.compute.v1.ListInstanceTemplatesRequest;
 import com.google.cloud.compute.v1.Operation;
@@ -43,6 +46,16 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public abstract class InstanceTemplatesStub implements BackgroundResource {
+
+  public UnaryCallable<AggregatedListInstanceTemplatesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: aggregatedListPagedCallable()");
+  }
+
+  public UnaryCallable<AggregatedListInstanceTemplatesRequest, InstanceTemplateAggregatedList>
+      aggregatedListCallable() {
+    throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
+  }
 
   public OperationCallable<DeleteInstanceTemplateRequest, Operation, Operation>
       deleteOperationCallable() {

@@ -163,7 +163,7 @@ public interface ListFirewallPoliciesRequestOrBuilder
    *
    *
    * <pre>
-   * Parent ID for this request.
+   * Parent ID for this request. The ID can be either be "folders/[FOLDER_ID]" if the parent is a folder or "organizations/[ORGANIZATION_ID]" if the parent is an organization.
    * </pre>
    *
    * <code>optional string parent_id = 459714768;</code>
@@ -175,7 +175,7 @@ public interface ListFirewallPoliciesRequestOrBuilder
    *
    *
    * <pre>
-   * Parent ID for this request.
+   * Parent ID for this request. The ID can be either be "folders/[FOLDER_ID]" if the parent is a folder or "organizations/[ORGANIZATION_ID]" if the parent is an organization.
    * </pre>
    *
    * <code>optional string parent_id = 459714768;</code>
@@ -187,7 +187,7 @@ public interface ListFirewallPoliciesRequestOrBuilder
    *
    *
    * <pre>
-   * Parent ID for this request.
+   * Parent ID for this request. The ID can be either be "folders/[FOLDER_ID]" if the parent is a folder or "organizations/[ORGANIZATION_ID]" if the parent is an organization.
    * </pre>
    *
    * <code>optional string parent_id = 459714768;</code>

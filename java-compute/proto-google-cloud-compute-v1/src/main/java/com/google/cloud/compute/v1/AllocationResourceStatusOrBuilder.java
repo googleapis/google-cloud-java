@@ -24,6 +24,12 @@ public interface AllocationResourceStatusOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
+   * <pre>
+   * Allocation Properties of this reservation.
+   * </pre>
+   *
    * <code>
    * optional .google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocation specific_sku_allocation = 196231151;
    * </code>
@@ -32,6 +38,12 @@ public interface AllocationResourceStatusOrBuilder
    */
   boolean hasSpecificSkuAllocation();
   /**
+   *
+   *
+   * <pre>
+   * Allocation Properties of this reservation.
+   * </pre>
+   *
    * <code>
    * optional .google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocation specific_sku_allocation = 196231151;
    * </code>
@@ -41,6 +53,12 @@ public interface AllocationResourceStatusOrBuilder
   com.google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocation
       getSpecificSkuAllocation();
   /**
+   *
+   *
+   * <pre>
+   * Allocation Properties of this reservation.
+   * </pre>
+   *
    * <code>
    * optional .google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocation specific_sku_allocation = 196231151;
    * </code>

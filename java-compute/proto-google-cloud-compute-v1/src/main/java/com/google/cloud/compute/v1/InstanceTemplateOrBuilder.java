@@ -235,6 +235,43 @@ public interface InstanceTemplateOrBuilder
    *
    *
    * <pre>
+   * [Output Only] URL of the region where the instance template resides. Only applicable for regional resources.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  boolean hasRegion();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the instance template resides. Only applicable for regional resources.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return The region.
+   */
+  java.lang.String getRegion();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URL of the region where the instance template resides. Only applicable for regional resources.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return The bytes for region.
+   */
+  com.google.protobuf.ByteString getRegionBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The URL for this instance template. The server defines this URL.
    * </pre>
    *

@@ -16,6 +16,7 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.InstanceTemplatesClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.InstanceTemplatesClient.ListPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -32,11 +33,13 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.AggregatedListInstanceTemplatesRequest;
 import com.google.cloud.compute.v1.DeleteInstanceTemplateRequest;
 import com.google.cloud.compute.v1.GetIamPolicyInstanceTemplateRequest;
 import com.google.cloud.compute.v1.GetInstanceTemplateRequest;
 import com.google.cloud.compute.v1.InsertInstanceTemplateRequest;
 import com.google.cloud.compute.v1.InstanceTemplate;
+import com.google.cloud.compute.v1.InstanceTemplateAggregatedList;
 import com.google.cloud.compute.v1.InstanceTemplateList;
 import com.google.cloud.compute.v1.ListInstanceTemplatesRequest;
 import com.google.cloud.compute.v1.Operation;
@@ -65,6 +68,64 @@ import javax.annotation.Generated;
 public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
+  private static final ApiMethodDescriptor<
+          AggregatedListInstanceTemplatesRequest, InstanceTemplateAggregatedList>
+      aggregatedListMethodDescriptor =
+          ApiMethodDescriptor
+              .<AggregatedListInstanceTemplatesRequest, InstanceTemplateAggregatedList>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.InstanceTemplates/AggregatedList")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AggregatedListInstanceTemplatesRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/aggregated/instanceTemplates",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListInstanceTemplatesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AggregatedListInstanceTemplatesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasFilter()) {
+                              serializer.putQueryParam(fields, "filter", request.getFilter());
+                            }
+                            if (request.hasIncludeAllScopes()) {
+                              serializer.putQueryParam(
+                                  fields, "includeAllScopes", request.getIncludeAllScopes());
+                            }
+                            if (request.hasMaxResults()) {
+                              serializer.putQueryParam(
+                                  fields, "maxResults", request.getMaxResults());
+                            }
+                            if (request.hasOrderBy()) {
+                              serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            }
+                            if (request.hasPageToken()) {
+                              serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            }
+                            if (request.hasReturnPartialSuccess()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "returnPartialSuccess",
+                                  request.getReturnPartialSuccess());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<InstanceTemplateAggregatedList>newBuilder()
+                      .setDefaultInstance(InstanceTemplateAggregatedList.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<DeleteInstanceTemplateRequest, Operation>
       deleteMethodDescriptor =
@@ -380,6 +441,11 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
                       .build())
               .build();
 
+  private final UnaryCallable<
+          AggregatedListInstanceTemplatesRequest, InstanceTemplateAggregatedList>
+      aggregatedListCallable;
+  private final UnaryCallable<AggregatedListInstanceTemplatesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable;
   private final UnaryCallable<DeleteInstanceTemplateRequest, Operation> deleteCallable;
   private final OperationCallable<DeleteInstanceTemplateRequest, Operation, Operation>
       deleteOperationCallable;
@@ -439,6 +505,14 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
     this.httpJsonOperationsStub =
         HttpJsonGlobalOperationsStub.create(clientContext, callableFactory);
 
+    HttpJsonCallSettings<AggregatedListInstanceTemplatesRequest, InstanceTemplateAggregatedList>
+        aggregatedListTransportSettings =
+            HttpJsonCallSettings
+                .<AggregatedListInstanceTemplatesRequest, InstanceTemplateAggregatedList>
+                    newBuilder()
+                .setMethodDescriptor(aggregatedListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<DeleteInstanceTemplateRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteInstanceTemplateRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteMethodDescriptor)
@@ -479,6 +553,12 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
                 .setTypeRegistry(typeRegistry)
                 .build();
 
+    this.aggregatedListCallable =
+        callableFactory.createUnaryCallable(
+            aggregatedListTransportSettings, settings.aggregatedListSettings(), clientContext);
+    this.aggregatedListPagedCallable =
+        callableFactory.createPagedCallable(
+            aggregatedListTransportSettings, settings.aggregatedListSettings(), clientContext);
     this.deleteCallable =
         callableFactory.createUnaryCallable(
             deleteTransportSettings, settings.deleteSettings(), clientContext);
@@ -525,6 +605,7 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
   @InternalApi
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(aggregatedListMethodDescriptor);
     methodDescriptors.add(deleteMethodDescriptor);
     methodDescriptors.add(getMethodDescriptor);
     methodDescriptors.add(getIamPolicyMethodDescriptor);
@@ -533,6 +614,18 @@ public class HttpJsonInstanceTemplatesStub extends InstanceTemplatesStub {
     methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
+  }
+
+  @Override
+  public UnaryCallable<AggregatedListInstanceTemplatesRequest, InstanceTemplateAggregatedList>
+      aggregatedListCallable() {
+    return aggregatedListCallable;
+  }
+
+  @Override
+  public UnaryCallable<AggregatedListInstanceTemplatesRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    return aggregatedListPagedCallable;
   }
 
   @Override

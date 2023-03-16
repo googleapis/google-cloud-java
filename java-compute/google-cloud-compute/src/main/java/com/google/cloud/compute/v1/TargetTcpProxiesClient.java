@@ -446,8 +446,7 @@ public class TargetTcpProxiesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified TargetTcpProxy resource. Gets a list of available target TCP proxies by
-   * making a list() request.
+   * Returns the specified TargetTcpProxy resource.
    *
    * <p>Sample code:
    *
@@ -479,8 +478,7 @@ public class TargetTcpProxiesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified TargetTcpProxy resource. Gets a list of available target TCP proxies by
-   * making a list() request.
+   * Returns the specified TargetTcpProxy resource.
    *
    * <p>Sample code:
    *
@@ -509,8 +507,7 @@ public class TargetTcpProxiesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified TargetTcpProxy resource. Gets a list of available target TCP proxies by
-   * making a list() request.
+   * Returns the specified TargetTcpProxy resource.
    *
    * <p>Sample code:
    *

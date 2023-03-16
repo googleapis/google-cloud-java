@@ -184,6 +184,16 @@ public class DisksSettings extends ClientSettings<DisksSettings> {
     return ((DisksStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
+  /** Returns the object with the settings used for calls to update. */
+  public UnaryCallSettings<UpdateDiskRequest, Operation> updateSettings() {
+    return ((DisksStubSettings) getStubSettings()).updateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to update. */
+  public OperationCallSettings<UpdateDiskRequest, Operation, Operation> updateOperationSettings() {
+    return ((DisksStubSettings) getStubSettings()).updateOperationSettings();
+  }
+
   public static final DisksSettings create(DisksStubSettings stub) throws IOException {
     return new DisksSettings.Builder(stub.toBuilder()).build();
   }
@@ -392,6 +402,17 @@ public class DisksSettings extends ClientSettings<DisksSettings> {
     public UnaryCallSettings.Builder<TestIamPermissionsDiskRequest, TestPermissionsResponse>
         testIamPermissionsSettings() {
       return getStubSettingsBuilder().testIamPermissionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to update. */
+    public UnaryCallSettings.Builder<UpdateDiskRequest, Operation> updateSettings() {
+      return getStubSettingsBuilder().updateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to update. */
+    public OperationCallSettings.Builder<UpdateDiskRequest, Operation, Operation>
+        updateOperationSettings() {
+      return getStubSettingsBuilder().updateOperationSettings();
     }
 
     @Override

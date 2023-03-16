@@ -296,8 +296,7 @@ public class RegionUrlMapsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified UrlMap resource. Gets a list of available URL maps by making a list()
-   * request.
+   * Returns the specified UrlMap resource.
    *
    * <p>Sample code:
    *
@@ -332,8 +331,7 @@ public class RegionUrlMapsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified UrlMap resource. Gets a list of available URL maps by making a list()
-   * request.
+   * Returns the specified UrlMap resource.
    *
    * <p>Sample code:
    *
@@ -363,8 +361,7 @@ public class RegionUrlMapsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified UrlMap resource. Gets a list of available URL maps by making a list()
-   * request.
+   * Returns the specified UrlMap resource.
    *
    * <p>Sample code:
    *

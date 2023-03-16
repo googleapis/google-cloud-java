@@ -341,6 +341,8 @@ public class SecurityPoliciesClientTest {
             .setHeaderAction(SecurityPolicyRuleHttpHeaderAction.newBuilder().build())
             .setKind("kind3292052")
             .setMatch(SecurityPolicyRuleMatcher.newBuilder().build())
+            .setPreconfiguredWafConfig(
+                SecurityPolicyRulePreconfiguredWafConfig.newBuilder().build())
             .setPreview(true)
             .setPriority(-1165461084)
             .setRateLimitOptions(SecurityPolicyRuleRateLimitOptions.newBuilder().build())

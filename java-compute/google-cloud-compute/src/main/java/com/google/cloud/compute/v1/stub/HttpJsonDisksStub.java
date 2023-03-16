@@ -53,6 +53,7 @@ import com.google.cloud.compute.v1.SetIamPolicyDiskRequest;
 import com.google.cloud.compute.v1.SetLabelsDiskRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsDiskRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
+import com.google.cloud.compute.v1.UpdateDiskRequest;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -726,6 +727,65 @@ public class HttpJsonDisksStub extends DisksStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<UpdateDiskRequest, Operation> updateMethodDescriptor =
+      ApiMethodDescriptor.<UpdateDiskRequest, Operation>newBuilder()
+          .setFullMethodName("google.cloud.compute.v1.Disks/Update")
+          .setHttpMethod("PATCH")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<UpdateDiskRequest>newBuilder()
+                  .setPath(
+                      "/compute/v1/projects/{project}/zones/{zone}/disks/{disk}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<UpdateDiskRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "disk", request.getDisk());
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        serializer.putPathParam(fields, "zone", request.getZone());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<UpdateDiskRequest> serializer =
+                            ProtoRestSerializer.create();
+                        if (request.hasPaths()) {
+                          serializer.putQueryParam(fields, "paths", request.getPaths());
+                        }
+                        if (request.hasRequestId()) {
+                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                        }
+                        if (request.hasUpdateMask()) {
+                          serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                        }
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("diskResource", request.getDiskResource(), false))
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Operation>newBuilder()
+                  .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .setOperationSnapshotFactory(
+              (UpdateDiskRequest request, Operation response) -> {
+                StringBuilder opName = new StringBuilder(response.getName());
+                opName.append(":").append(request.getProject());
+                opName.append(":").append(request.getZone());
+                return HttpJsonOperationSnapshot.newBuilder()
+                    .setName(opName.toString())
+                    .setMetadata(response)
+                    .setDone(Status.DONE.equals(response.getStatus()))
+                    .setResponse(response)
+                    .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                    .build();
+              })
+          .build();
+
   private final UnaryCallable<AddResourcePoliciesDiskRequest, Operation>
       addResourcePoliciesCallable;
   private final OperationCallable<AddResourcePoliciesDiskRequest, Operation, Operation>
@@ -757,6 +817,8 @@ public class HttpJsonDisksStub extends DisksStub {
       setLabelsOperationCallable;
   private final UnaryCallable<TestIamPermissionsDiskRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
+  private final UnaryCallable<UpdateDiskRequest, Operation> updateCallable;
+  private final OperationCallable<UpdateDiskRequest, Operation, Operation> updateOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonZoneOperationsStub httpJsonOperationsStub;
@@ -869,6 +931,11 @@ public class HttpJsonDisksStub extends DisksStub {
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<UpdateDiskRequest, Operation> updateTransportSettings =
+        HttpJsonCallSettings.<UpdateDiskRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
 
     this.addResourcePoliciesCallable =
         callableFactory.createUnaryCallable(
@@ -963,6 +1030,15 @@ public class HttpJsonDisksStub extends DisksStub {
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
             clientContext);
+    this.updateCallable =
+        callableFactory.createUnaryCallable(
+            updateTransportSettings, settings.updateSettings(), clientContext);
+    this.updateOperationCallable =
+        callableFactory.createOperationCallable(
+            updateTransportSettings,
+            settings.updateOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -984,6 +1060,7 @@ public class HttpJsonDisksStub extends DisksStub {
     methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(setLabelsMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
+    methodDescriptors.add(updateMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -1102,6 +1179,16 @@ public class HttpJsonDisksStub extends DisksStub {
   public UnaryCallable<TestIamPermissionsDiskRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateDiskRequest, Operation> updateCallable() {
+    return updateCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateDiskRequest, Operation, Operation> updateOperationCallable() {
+    return updateOperationCallable;
   }
 
   @Override

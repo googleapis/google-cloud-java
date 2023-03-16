@@ -1336,8 +1336,7 @@ public class InstancesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified Instance resource. Gets a list of available instances by making a list()
-   * request.
+   * Returns the specified Instance resource.
    *
    * <p>Sample code:
    *
@@ -1372,8 +1371,7 @@ public class InstancesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified Instance resource. Gets a list of available instances by making a list()
-   * request.
+   * Returns the specified Instance resource.
    *
    * <p>Sample code:
    *
@@ -1403,8 +1401,7 @@ public class InstancesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified Instance resource. Gets a list of available instances by making a list()
-   * request.
+   * Returns the specified Instance resource.
    *
    * <p>Sample code:
    *
@@ -4131,6 +4128,150 @@ public class InstancesClient implements BackgroundResource {
   public final UnaryCallable<SetMinCpuPlatformInstanceRequest, Operation>
       setMinCpuPlatformCallable() {
     return stub.setMinCpuPlatformCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets name of an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
+   *   InstancesSetNameRequest instancesSetNameRequestResource =
+   *       InstancesSetNameRequest.newBuilder().build();
+   *   Operation response =
+   *       instancesClient
+   *           .setNameAsync(project, zone, instance, instancesSetNameRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of the zone for this request.
+   * @param instance The instance name for this request.
+   * @param instancesSetNameRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> setNameAsync(
+      String project,
+      String zone,
+      String instance,
+      InstancesSetNameRequest instancesSetNameRequestResource) {
+    SetNameInstanceRequest request =
+        SetNameInstanceRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setInstance(instance)
+            .setInstancesSetNameRequestResource(instancesSetNameRequestResource)
+            .build();
+    return setNameAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets name of an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   SetNameInstanceRequest request =
+   *       SetNameInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstancesSetNameRequestResource(InstancesSetNameRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Operation response = instancesClient.setNameAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> setNameAsync(SetNameInstanceRequest request) {
+    return setNameOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets name of an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   SetNameInstanceRequest request =
+   *       SetNameInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstancesSetNameRequestResource(InstancesSetNameRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.setNameOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetNameInstanceRequest, Operation, Operation>
+      setNameOperationCallable() {
+    return stub.setNameOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets name of an instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   SetNameInstanceRequest request =
+   *       SetNameInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setInstancesSetNameRequestResource(InstancesSetNameRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future = instancesClient.setNameCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetNameInstanceRequest, Operation> setNameCallable() {
+    return stub.setNameCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

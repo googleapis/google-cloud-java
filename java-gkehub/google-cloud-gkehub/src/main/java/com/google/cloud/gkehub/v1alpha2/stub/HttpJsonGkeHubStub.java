@@ -18,6 +18,7 @@ package com.google.cloud.gkehub.v1alpha2.stub;
 
 import static com.google.cloud.gkehub.v1alpha2.GkeHubClient.ListMembershipsPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -45,6 +46,7 @@ import com.google.cloud.gkehub.v1alpha2.ListMembershipsResponse;
 import com.google.cloud.gkehub.v1alpha2.Membership;
 import com.google.cloud.gkehub.v1alpha2.OperationMetadata;
 import com.google.cloud.gkehub.v1alpha2.UpdateMembershipRequest;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
@@ -404,7 +406,32 @@ public class HttpJsonGkeHubStub extends GkeHubStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.CancelOperation",
+                    HttpRule.newBuilder()
+                        .setPost("/v1alpha2/{name=projects/*/locations/*/operations/*}:cancel")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.DeleteOperation",
+                    HttpRule.newBuilder()
+                        .setDelete("/v1alpha2/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet("/v1alpha2/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder()
+                        .setGet("/v1alpha2/{name=projects/*/locations/*}/operations")
+                        .build())
+                .build());
 
     HttpJsonCallSettings<ListMembershipsRequest, ListMembershipsResponse>
         listMembershipsTransportSettings =

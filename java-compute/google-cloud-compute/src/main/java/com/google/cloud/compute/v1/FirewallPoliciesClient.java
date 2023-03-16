@@ -1376,7 +1376,9 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * }</pre>
    *
    * @param firewallPolicy Name of the firewall policy to update.
-   * @param parentId The new parent of the firewall policy.
+   * @param parentId The new parent of the firewall policy. The ID can be either be
+   *     "folders/[FOLDER_ID]" if the parent is a folder or "organizations/[ORGANIZATION_ID]" if the
+   *     parent is an organization.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Operation, Operation> moveAsync(

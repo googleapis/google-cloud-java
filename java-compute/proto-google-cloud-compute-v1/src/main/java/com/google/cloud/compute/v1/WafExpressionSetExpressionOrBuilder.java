@@ -59,4 +59,29 @@ public interface WafExpressionSetExpressionOrBuilder
    * @return The bytes for id.
    */
   com.google.protobuf.ByteString getIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The sensitivity value associated with the WAF rule ID. This corresponds to the ModSecurity paranoia level, ranging from 1 to 4. 0 is reserved for opt-in only rules.
+   * </pre>
+   *
+   * <code>optional int32 sensitivity = 27532959;</code>
+   *
+   * @return Whether the sensitivity field is set.
+   */
+  boolean hasSensitivity();
+  /**
+   *
+   *
+   * <pre>
+   * The sensitivity value associated with the WAF rule ID. This corresponds to the ModSecurity paranoia level, ranging from 1 to 4. 0 is reserved for opt-in only rules.
+   * </pre>
+   *
+   * <code>optional int32 sensitivity = 27532959;</code>
+   *
+   * @return The sensitivity.
+   */
+  int getSensitivity();
 }

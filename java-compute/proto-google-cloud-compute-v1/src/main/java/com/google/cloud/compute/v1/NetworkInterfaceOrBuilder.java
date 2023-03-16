@@ -285,7 +285,7 @@ public interface NetworkInterfaceOrBuilder
    *
    *
    * <pre>
-   * An IPv6 internal network address for this network interface.
+   * An IPv6 internal network address for this network interface. To use a static internal IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an internal IPv6 address from the instance's subnetwork.
    * </pre>
    *
    * <code>optional string ipv6_address = 341563804;</code>
@@ -297,7 +297,7 @@ public interface NetworkInterfaceOrBuilder
    *
    *
    * <pre>
-   * An IPv6 internal network address for this network interface.
+   * An IPv6 internal network address for this network interface. To use a static internal IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an internal IPv6 address from the instance's subnetwork.
    * </pre>
    *
    * <code>optional string ipv6_address = 341563804;</code>
@@ -309,7 +309,7 @@ public interface NetworkInterfaceOrBuilder
    *
    *
    * <pre>
-   * An IPv6 internal network address for this network interface.
+   * An IPv6 internal network address for this network interface. To use a static internal IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an internal IPv6 address from the instance's subnetwork.
    * </pre>
    *
    * <code>optional string ipv6_address = 341563804;</code>

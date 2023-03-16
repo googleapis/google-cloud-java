@@ -684,7 +684,15 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
   public int getResourcePoliciesCount() {
     return internalGetResourcePolicies().getMap().size();
   }
-  /** <code>map&lt;string, string&gt; resource_policies = 22220385;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
+   */
   @java.lang.Override
   public boolean containsResourcePolicies(java.lang.String key) {
     if (key == null) {
@@ -698,12 +706,28 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getResourcePolicies() {
     return getResourcePoliciesMap();
   }
-  /** <code>map&lt;string, string&gt; resource_policies = 22220385;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
+   */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getResourcePoliciesMap() {
     return internalGetResourcePolicies().getMap();
   }
-  /** <code>map&lt;string, string&gt; resource_policies = 22220385;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
+   */
   @java.lang.Override
   public /* nullable */ java.lang.String getResourcePoliciesOrDefault(
       java.lang.String key,
@@ -715,7 +739,15 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetResourcePolicies().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
-  /** <code>map&lt;string, string&gt; resource_policies = 22220385;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
+   */
   @java.lang.Override
   public java.lang.String getResourcePoliciesOrThrow(java.lang.String key) {
     if (key == null) {
@@ -2677,7 +2709,15 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     public int getResourcePoliciesCount() {
       return internalGetResourcePolicies().getMap().size();
     }
-    /** <code>map&lt;string, string&gt; resource_policies = 22220385;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
+     */
     @java.lang.Override
     public boolean containsResourcePolicies(java.lang.String key) {
       if (key == null) {
@@ -2691,12 +2731,28 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getResourcePolicies() {
       return getResourcePoliciesMap();
     }
-    /** <code>map&lt;string, string&gt; resource_policies = 22220385;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
+     */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getResourcePoliciesMap() {
       return internalGetResourcePolicies().getMap();
     }
-    /** <code>map&lt;string, string&gt; resource_policies = 22220385;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
+     */
     @java.lang.Override
     public /* nullable */ java.lang.String getResourcePoliciesOrDefault(
         java.lang.String key,
@@ -2709,7 +2765,15 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
           internalGetResourcePolicies().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
-    /** <code>map&lt;string, string&gt; resource_policies = 22220385;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
+     */
     @java.lang.Override
     public java.lang.String getResourcePoliciesOrThrow(java.lang.String key) {
       if (key == null) {
@@ -2728,7 +2792,15 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableResourcePolicies().getMutableMap().clear();
       return this;
     }
-    /** <code>map&lt;string, string&gt; resource_policies = 22220385;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
+     */
     public Builder removeResourcePolicies(java.lang.String key) {
       if (key == null) {
         throw new NullPointerException("map key");
@@ -2742,7 +2814,15 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000040;
       return internalGetMutableResourcePolicies().getMutableMap();
     }
-    /** <code>map&lt;string, string&gt; resource_policies = 22220385;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
+     */
     public Builder putResourcePolicies(java.lang.String key, java.lang.String value) {
       if (key == null) {
         throw new NullPointerException("map key");
@@ -2754,7 +2834,15 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000040;
       return this;
     }
-    /** <code>map&lt;string, string&gt; resource_policies = 22220385;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; resource_policies = 22220385;</code>
+     */
     public Builder putAllResourcePolicies(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableResourcePolicies().getMutableMap().putAll(values);

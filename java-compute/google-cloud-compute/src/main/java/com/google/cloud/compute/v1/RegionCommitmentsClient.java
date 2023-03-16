@@ -317,8 +317,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified commitment resource. Gets a list of available commitments by making a
-   * list() request.
+   * Returns the specified commitment resource.
    *
    * <p>Sample code:
    *
@@ -353,8 +352,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified commitment resource. Gets a list of available commitments by making a
-   * list() request.
+   * Returns the specified commitment resource.
    *
    * <p>Sample code:
    *
@@ -384,8 +382,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified commitment resource. Gets a list of available commitments by making a
-   * list() request.
+   * Returns the specified commitment resource.
    *
    * <p>Sample code:
    *

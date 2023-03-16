@@ -17,6 +17,7 @@
 package com.google.cloud.discoveryengine.v1beta.stub;
 
 import com.google.api.HttpBody;
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -38,6 +39,7 @@ import com.google.cloud.discoveryengine.v1beta.ImportUserEventsRequest;
 import com.google.cloud.discoveryengine.v1beta.ImportUserEventsResponse;
 import com.google.cloud.discoveryengine.v1beta.UserEvent;
 import com.google.cloud.discoveryengine.v1beta.WriteUserEventRequest;
+import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -234,7 +236,60 @@ public class HttpJsonUserEventServiceStub extends UserEventServiceStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet(
+                            "/v1beta/{name=projects/*/locations/*/dataStores/*/branches/*/operations/*}")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/dataStores/*/models/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/dataStores/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1beta/{name=projects/*/locations/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1beta/{name=projects/*/operations/*}")
+                                .build())
+                        .build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder()
+                        .setGet(
+                            "/v1beta/{name=projects/*/locations/*/dataStores/*/branches/*}/operations")
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/dataStores/*/models/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/dataStores/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1beta/{name=projects/*/locations/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet("/v1beta/{name=projects/*}/operations")
+                                .build())
+                        .build())
+                .build());
 
     HttpJsonCallSettings<WriteUserEventRequest, UserEvent> writeUserEventTransportSettings =
         HttpJsonCallSettings.<WriteUserEventRequest, UserEvent>newBuilder()

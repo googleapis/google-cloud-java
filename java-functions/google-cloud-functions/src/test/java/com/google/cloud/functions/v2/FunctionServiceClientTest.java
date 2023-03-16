@@ -118,6 +118,10 @@ public class FunctionServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllStateMessages(new ArrayList<StateMessage>())
+            .setKmsKeyName(
+                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+                    .toString())
+            .setUrl("url116079")
             .build();
     mockFunctionService.addResponse(expectedResponse);
 
@@ -164,6 +168,10 @@ public class FunctionServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllStateMessages(new ArrayList<StateMessage>())
+            .setKmsKeyName(
+                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+                    .toString())
+            .setUrl("url116079")
             .build();
     mockFunctionService.addResponse(expectedResponse);
 
@@ -298,6 +306,10 @@ public class FunctionServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllStateMessages(new ArrayList<StateMessage>())
+            .setKmsKeyName(
+                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+                    .toString())
+            .setUrl("url116079")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -358,6 +370,10 @@ public class FunctionServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllStateMessages(new ArrayList<StateMessage>())
+            .setKmsKeyName(
+                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+                    .toString())
+            .setUrl("url116079")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -418,6 +434,10 @@ public class FunctionServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllStateMessages(new ArrayList<StateMessage>())
+            .setKmsKeyName(
+                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+                    .toString())
+            .setUrl("url116079")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -558,6 +578,9 @@ public class FunctionServiceClientTest {
     GenerateUploadUrlRequest request =
         GenerateUploadUrlRequest.newBuilder()
             .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setKmsKeyName(
+                CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+                    .toString())
             .build();
 
     GenerateUploadUrlResponse actualResponse = client.generateUploadUrl(request);
@@ -568,6 +591,7 @@ public class FunctionServiceClientTest {
     GenerateUploadUrlRequest actualRequest = ((GenerateUploadUrlRequest) actualRequests.get(0));
 
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getKmsKeyName(), actualRequest.getKmsKeyName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -583,6 +607,9 @@ public class FunctionServiceClientTest {
       GenerateUploadUrlRequest request =
           GenerateUploadUrlRequest.newBuilder()
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setKmsKeyName(
+                  CryptoKeyName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]")
+                      .toString())
               .build();
       client.generateUploadUrl(request);
       Assert.fail("No exception raised");

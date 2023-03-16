@@ -307,8 +307,7 @@ public class NodeTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified node type. Gets a list of available node types by making a list()
-   * request.
+   * Returns the specified node type.
    *
    * <p>Sample code:
    *
@@ -343,8 +342,7 @@ public class NodeTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified node type. Gets a list of available node types by making a list()
-   * request.
+   * Returns the specified node type.
    *
    * <p>Sample code:
    *
@@ -374,8 +372,7 @@ public class NodeTypesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified node type. Gets a list of available node types by making a list()
-   * request.
+   * Returns the specified node type.
    *
    * <p>Sample code:
    *

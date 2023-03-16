@@ -441,8 +441,7 @@ public class VpnTunnelsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified VpnTunnel resource. Gets a list of available VPN tunnels by making a
-   * list() request.
+   * Returns the specified VpnTunnel resource.
    *
    * <p>Sample code:
    *
@@ -477,8 +476,7 @@ public class VpnTunnelsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified VpnTunnel resource. Gets a list of available VPN tunnels by making a
-   * list() request.
+   * Returns the specified VpnTunnel resource.
    *
    * <p>Sample code:
    *
@@ -508,8 +506,7 @@ public class VpnTunnelsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the specified VpnTunnel resource. Gets a list of available VPN tunnels by making a
-   * list() request.
+   * Returns the specified VpnTunnel resource.
    *
    * <p>Sample code:
    *

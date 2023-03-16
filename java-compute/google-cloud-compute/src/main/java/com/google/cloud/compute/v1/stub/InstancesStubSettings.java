@@ -89,6 +89,7 @@ import com.google.cloud.compute.v1.SetMachineResourcesInstanceRequest;
 import com.google.cloud.compute.v1.SetMachineTypeInstanceRequest;
 import com.google.cloud.compute.v1.SetMetadataInstanceRequest;
 import com.google.cloud.compute.v1.SetMinCpuPlatformInstanceRequest;
+import com.google.cloud.compute.v1.SetNameInstanceRequest;
 import com.google.cloud.compute.v1.SetSchedulingInstanceRequest;
 import com.google.cloud.compute.v1.SetServiceAccountInstanceRequest;
 import com.google.cloud.compute.v1.SetShieldedInstanceIntegrityPolicyInstanceRequest;
@@ -249,6 +250,9 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       setMinCpuPlatformSettings;
   private final OperationCallSettings<SetMinCpuPlatformInstanceRequest, Operation, Operation>
       setMinCpuPlatformOperationSettings;
+  private final UnaryCallSettings<SetNameInstanceRequest, Operation> setNameSettings;
+  private final OperationCallSettings<SetNameInstanceRequest, Operation, Operation>
+      setNameOperationSettings;
   private final UnaryCallSettings<SetSchedulingInstanceRequest, Operation> setSchedulingSettings;
   private final OperationCallSettings<SetSchedulingInstanceRequest, Operation, Operation>
       setSchedulingOperationSettings;
@@ -762,6 +766,17 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     return setMinCpuPlatformOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to setName. */
+  public UnaryCallSettings<SetNameInstanceRequest, Operation> setNameSettings() {
+    return setNameSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setName. */
+  public OperationCallSettings<SetNameInstanceRequest, Operation, Operation>
+      setNameOperationSettings() {
+    return setNameOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to setScheduling. */
   public UnaryCallSettings<SetSchedulingInstanceRequest, Operation> setSchedulingSettings() {
     return setSchedulingSettings;
@@ -1061,6 +1076,8 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     setMinCpuPlatformSettings = settingsBuilder.setMinCpuPlatformSettings().build();
     setMinCpuPlatformOperationSettings =
         settingsBuilder.setMinCpuPlatformOperationSettings().build();
+    setNameSettings = settingsBuilder.setNameSettings().build();
+    setNameOperationSettings = settingsBuilder.setNameOperationSettings().build();
     setSchedulingSettings = settingsBuilder.setSchedulingSettings().build();
     setSchedulingOperationSettings = settingsBuilder.setSchedulingOperationSettings().build();
     setServiceAccountSettings = settingsBuilder.setServiceAccountSettings().build();
@@ -1208,6 +1225,9 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     private final OperationCallSettings.Builder<
             SetMinCpuPlatformInstanceRequest, Operation, Operation>
         setMinCpuPlatformOperationSettings;
+    private final UnaryCallSettings.Builder<SetNameInstanceRequest, Operation> setNameSettings;
+    private final OperationCallSettings.Builder<SetNameInstanceRequest, Operation, Operation>
+        setNameOperationSettings;
     private final UnaryCallSettings.Builder<SetSchedulingInstanceRequest, Operation>
         setSchedulingSettings;
     private final OperationCallSettings.Builder<SetSchedulingInstanceRequest, Operation, Operation>
@@ -1369,6 +1389,8 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       setMetadataOperationSettings = OperationCallSettings.newBuilder();
       setMinCpuPlatformSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setMinCpuPlatformOperationSettings = OperationCallSettings.newBuilder();
+      setNameSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setNameOperationSettings = OperationCallSettings.newBuilder();
       setSchedulingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setSchedulingOperationSettings = OperationCallSettings.newBuilder();
       setServiceAccountSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1431,6 +1453,7 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
               setMachineTypeSettings,
               setMetadataSettings,
               setMinCpuPlatformSettings,
+              setNameSettings,
               setSchedulingSettings,
               setServiceAccountSettings,
               setShieldedInstanceIntegrityPolicySettings,
@@ -1506,6 +1529,8 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
       setMetadataOperationSettings = settings.setMetadataOperationSettings.toBuilder();
       setMinCpuPlatformSettings = settings.setMinCpuPlatformSettings.toBuilder();
       setMinCpuPlatformOperationSettings = settings.setMinCpuPlatformOperationSettings.toBuilder();
+      setNameSettings = settings.setNameSettings.toBuilder();
+      setNameOperationSettings = settings.setNameOperationSettings.toBuilder();
       setSchedulingSettings = settings.setSchedulingSettings.toBuilder();
       setSchedulingOperationSettings = settings.setSchedulingOperationSettings.toBuilder();
       setServiceAccountSettings = settings.setServiceAccountSettings.toBuilder();
@@ -1577,6 +1602,7 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
               setMachineTypeSettings,
               setMetadataSettings,
               setMinCpuPlatformSettings,
+              setNameSettings,
               setSchedulingSettings,
               setServiceAccountSettings,
               setShieldedInstanceIntegrityPolicySettings,
@@ -1755,6 +1781,11 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
 
       builder
           .setMinCpuPlatformSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setNameSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -2253,6 +2284,30 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
               UnaryCallSettings
                   .<SetMinCpuPlatformInstanceRequest, OperationSnapshot>
                       newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setNameOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetNameInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -2950,6 +3005,19 @@ public class InstancesStubSettings extends StubSettings<InstancesStubSettings> {
     public OperationCallSettings.Builder<SetMinCpuPlatformInstanceRequest, Operation, Operation>
         setMinCpuPlatformOperationSettings() {
       return setMinCpuPlatformOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setName. */
+    public UnaryCallSettings.Builder<SetNameInstanceRequest, Operation> setNameSettings() {
+      return setNameSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setName. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<SetNameInstanceRequest, Operation, Operation>
+        setNameOperationSettings() {
+      return setNameOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to setScheduling. */

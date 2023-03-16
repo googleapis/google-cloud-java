@@ -24,18 +24,36 @@ public interface AllocationResourceStatusSpecificSKUAllocationOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
+   * <pre>
+   * ID of the instance template used to populate reservation properties.
+   * </pre>
+   *
    * <code>optional string source_instance_template_id = 111196154;</code>
    *
    * @return Whether the sourceInstanceTemplateId field is set.
    */
   boolean hasSourceInstanceTemplateId();
   /**
+   *
+   *
+   * <pre>
+   * ID of the instance template used to populate reservation properties.
+   * </pre>
+   *
    * <code>optional string source_instance_template_id = 111196154;</code>
    *
    * @return The sourceInstanceTemplateId.
    */
   java.lang.String getSourceInstanceTemplateId();
   /**
+   *
+   *
+   * <pre>
+   * ID of the instance template used to populate reservation properties.
+   * </pre>
+   *
    * <code>optional string source_instance_template_id = 111196154;</code>
    *
    * @return The bytes for sourceInstanceTemplateId.

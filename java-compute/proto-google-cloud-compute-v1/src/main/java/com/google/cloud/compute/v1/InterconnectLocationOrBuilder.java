@@ -602,7 +602,7 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Set to true for locations that support physical zone separation. Defaults to false if the field is not present.
+   * [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool supports_pzs = 83983214;</code>
@@ -614,7 +614,7 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Set to true for locations that support physical zone separation. Defaults to false if the field is not present.
+   * [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool supports_pzs = 83983214;</code>

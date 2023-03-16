@@ -61,6 +61,7 @@ import com.google.cloud.compute.v1.SetIamPolicyRegionDiskRequest;
 import com.google.cloud.compute.v1.SetLabelsRegionDiskRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsRegionDiskRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
+import com.google.cloud.compute.v1.UpdateRegionDiskRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -146,6 +147,9 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
       setLabelsOperationSettings;
   private final UnaryCallSettings<TestIamPermissionsRegionDiskRequest, TestPermissionsResponse>
       testIamPermissionsSettings;
+  private final UnaryCallSettings<UpdateRegionDiskRequest, Operation> updateSettings;
+  private final OperationCallSettings<UpdateRegionDiskRequest, Operation, Operation>
+      updateOperationSettings;
 
   private static final PagedListDescriptor<ListRegionDisksRequest, DiskList, Disk>
       LIST_PAGE_STR_DESC =
@@ -305,6 +309,17 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
     return testIamPermissionsSettings;
   }
 
+  /** Returns the object with the settings used for calls to update. */
+  public UnaryCallSettings<UpdateRegionDiskRequest, Operation> updateSettings() {
+    return updateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to update. */
+  public OperationCallSettings<UpdateRegionDiskRequest, Operation, Operation>
+      updateOperationSettings() {
+    return updateOperationSettings;
+  }
+
   public RegionDisksStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -402,6 +417,8 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
     setLabelsSettings = settingsBuilder.setLabelsSettings().build();
     setLabelsOperationSettings = settingsBuilder.setLabelsOperationSettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+    updateSettings = settingsBuilder.updateSettings().build();
+    updateOperationSettings = settingsBuilder.updateOperationSettings().build();
   }
 
   /** Builder for RegionDisksStubSettings. */
@@ -445,6 +462,9 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
     private final UnaryCallSettings.Builder<
             TestIamPermissionsRegionDiskRequest, TestPermissionsResponse>
         testIamPermissionsSettings;
+    private final UnaryCallSettings.Builder<UpdateRegionDiskRequest, Operation> updateSettings;
+    private final OperationCallSettings.Builder<UpdateRegionDiskRequest, Operation, Operation>
+        updateOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -514,6 +534,8 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
       setLabelsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setLabelsOperationSettings = OperationCallSettings.newBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -528,7 +550,8 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
               resizeSettings,
               setIamPolicySettings,
               setLabelsSettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              updateSettings);
       initDefaults(this);
     }
 
@@ -556,6 +579,8 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
       setLabelsSettings = settings.setLabelsSettings.toBuilder();
       setLabelsOperationSettings = settings.setLabelsOperationSettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+      updateSettings = settings.updateSettings.toBuilder();
+      updateOperationSettings = settings.updateOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -570,7 +595,8 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
               resizeSettings,
               setIamPolicySettings,
               setLabelsSettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              updateSettings);
     }
 
     private static Builder createDefault() {
@@ -644,6 +670,11 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
 
       builder
           .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -817,6 +848,30 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
                       .setTotalTimeout(Duration.ofMillis(600000L))
                       .build()));
 
+      builder
+          .updateOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateRegionDiskRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
       return builder;
     }
 
@@ -955,6 +1010,19 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
     public UnaryCallSettings.Builder<TestIamPermissionsRegionDiskRequest, TestPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to update. */
+    public UnaryCallSettings.Builder<UpdateRegionDiskRequest, Operation> updateSettings() {
+      return updateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to update. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<UpdateRegionDiskRequest, Operation, Operation>
+        updateOperationSettings() {
+      return updateOperationSettings;
     }
 
     @Override
