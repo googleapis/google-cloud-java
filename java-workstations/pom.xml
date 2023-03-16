@@ -50,4 +50,5 @@
     <module>proto-google-cloud-workstations-v1beta</module>
     <module>google-cloud-workstations-bom</module>
   </modules>
-</project>
+
+  </project>

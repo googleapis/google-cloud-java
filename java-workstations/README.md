@@ -17,7 +17,6 @@ Java idiomatic client for [Cloud Workstations][product-docs].
 
 If you are using Maven, add this to your pom.xml file:
 
-<!-- {x-version-update-start:google-cloud-workstations:released} -->
 
 ```xml
 <dependency>
@@ -38,7 +37,6 @@ If you are using SBT, add this to your dependencies:
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-workstations" % "0.0.0"
 ```
-<!-- {x-version-update-end} -->
 
 ## Authentication
 
