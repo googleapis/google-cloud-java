@@ -1,5 +1,85 @@
 # Changelog
 
+## [1.7.0](https://github.com/googleapis/google-cloud-java/compare/v1.6.0...v1.7.0) (2023-03-16)
+
+
+### Features
+
+* [aiplatform] add disable_container_logging to BatchPredictionJob in aiplatform v1,v1beta1 batch_prediction_job.proto ([#9184](https://github.com/googleapis/google-cloud-java/issues/9184)) ([7044b6c](https://github.com/googleapis/google-cloud-java/commit/7044b6c54b503b5120b6fe1434eed504c89c30c0))
+* [aiplatform] add TPU_V4_POD to AcceleratorType in aiplatform v1 accelerator_type.proto ([7044b6c](https://github.com/googleapis/google-cloud-java/commit/7044b6c54b503b5120b6fe1434eed504c89c30c0))
+* [aiplatform] add TPU_V4_POD to AcceleratorType in aiplatform v1beta1 accelerator_type.proto ([7044b6c](https://github.com/googleapis/google-cloud-java/commit/7044b6c54b503b5120b6fe1434eed504c89c30c0))
+* [batch] added StatusEvent.task_state ([#9177](https://github.com/googleapis/google-cloud-java/issues/9177)) ([e9caf21](https://github.com/googleapis/google-cloud-java/commit/e9caf2145612488be4fd39c96ecefd765ef0db15))
+* [batch] resource usage ([e9caf21](https://github.com/googleapis/google-cloud-java/commit/e9caf2145612488be4fd39c96ecefd765ef0db15))
+* [biglake] new module for biglake ([#9237](https://github.com/googleapis/google-cloud-java/issues/9237)) ([c92a33e](https://github.com/googleapis/google-cloud-java/commit/c92a33e43c63537057d9b3fedd371d0f3ed37bca))
+* [bigqueryconnection] add spark connection properties type ([#9242](https://github.com/googleapis/google-cloud-java/issues/9242)) ([b2fd7e3](https://github.com/googleapis/google-cloud-java/commit/b2fd7e3bd44baaf025ef9efab711604e38102de1))
+* [cloudbuild] Add DefaultLogsBucketBehavior to BuildOptions ([#9196](https://github.com/googleapis/google-cloud-java/issues/9196)) ([fb87690](https://github.com/googleapis/google-cloud-java/commit/fb876902cb6ad7b19688d66df091d362a43f80f9))
+* [cloudchannel] add show_future_offers to ListOffers ([#9212](https://github.com/googleapis/google-cloud-java/issues/9212)) ([752495f](https://github.com/googleapis/google-cloud-java/commit/752495fe41d7594c83b7c9e87f3851b0e3b423ae))
+* [cloudfunctions] add `available_cpu ` field ([#9231](https://github.com/googleapis/google-cloud-java/issues/9231)) ([8e44284](https://github.com/googleapis/google-cloud-java/commit/8e44284d33ff8f43f28cea98dda509b5a798e543))
+* [cloudkms] add support for Coordinated External Keys ([#9197](https://github.com/googleapis/google-cloud-java/issues/9197)) ([8f2119d](https://github.com/googleapis/google-cloud-java/commit/8f2119d35384184b1d3d8de850b195daefcf98a3))
+* [cloudscheduler] Location API methods ([#9181](https://github.com/googleapis/google-cloud-java/issues/9181)) ([d9c7ee5](https://github.com/googleapis/google-cloud-java/commit/d9c7ee510a1c128584f4ce41644e125c33f156dc))
+* [compute] Update Compute Engine API to revision 20230307 ([#770](https://github.com/googleapis/google-cloud-java/issues/770)) ([#9230](https://github.com/googleapis/google-cloud-java/issues/9230)) ([405cb92](https://github.com/googleapis/google-cloud-java/commit/405cb92007e1539c319460faecac743f7c38c54b))
+* [contactcenterinsights] add a way to specify the conversation automatic analysis percentage for the UploadConversation API when creating Analyses in Insights ([a9bffaa](https://github.com/googleapis/google-cloud-java/commit/a9bffaa4fdefa1195a7da01c0c3c32406e5f265c))
+* [containeranalysis] Add VULNERABILITY_ASSESSMENT Note type to grafeas v1 API, adds Vex_Assessment derived from the Note to resources' occurrences, VEX notes now be written to add CVE assessments ([#9183](https://github.com/googleapis/google-cloud-java/issues/9183)) ([460b25b](https://github.com/googleapis/google-cloud-java/commit/460b25be090ea2d1125bf0729eced9d632bd995d))
+* [containeranalysis] Import of Grafeas from Github ([460b25b](https://github.com/googleapis/google-cloud-java/commit/460b25be090ea2d1125bf0729eced9d632bd995d))
+* [datacatalog] add support for new ImportEntries() API, including format of the dump ([#9214](https://github.com/googleapis/google-cloud-java/issues/9214)) ([1cd532f](https://github.com/googleapis/google-cloud-java/commit/1cd532f0c79eb9627f4532a1aabb92969492393d))
+* [dialogflow] added support for custom content types ([4e9b04a](https://github.com/googleapis/google-cloud-java/commit/4e9b04ae2cf2b6120bc186728797c63448f1e4e2))
+* [dialogflow] added support for custom content types ([#9185](https://github.com/googleapis/google-cloud-java/issues/9185)) ([4e9b04a](https://github.com/googleapis/google-cloud-java/commit/4e9b04ae2cf2b6120bc186728797c63448f1e4e2))
+* [documentai] added hints.language_hints field in OcrConfig ([a293c4e](https://github.com/googleapis/google-cloud-java/commit/a293c4e636aa2b7223e439900578ca086c04e5d4))
+* [recaptchaenterprise] add reCAPTCHA Enterprise Fraud Prevention API ([#9241](https://github.com/googleapis/google-cloud-java/issues/9241)) ([dd84904](https://github.com/googleapis/google-cloud-java/commit/dd8490483ed36ac134c5e6f159e11bf6a231ea6b))
+* [workstations] new module for workstations ([#9233](https://github.com/googleapis/google-cloud-java/issues/9233)) ([d7010bd](https://github.com/googleapis/google-cloud-java/commit/d7010bdbe1092c4ab9b39b30690c5c297f405d26))
+* add BatchImportEvaluatedAnnotations rpc to aiplatform v1 model_service.proto ([7044b6c](https://github.com/googleapis/google-cloud-java/commit/7044b6c54b503b5120b6fe1434eed504c89c30c0))
+* add BatchImportEvaluatedAnnotations rpc to aiplatform v1beta1 model_service.proto ([7044b6c](https://github.com/googleapis/google-cloud-java/commit/7044b6c54b503b5120b6fe1434eed504c89c30c0))
+* add cpu_utilization_target to Featurestore.OnlineServingConfig.Scaling in aiplatform v1 featurestore.proto ([7044b6c](https://github.com/googleapis/google-cloud-java/commit/7044b6c54b503b5120b6fe1434eed504c89c30c0))
+* add cpu_utilization_target to Featurestore.OnlineServingConfig.Scaling in aiplatform v1beta1 featurestore.proto ([7044b6c](https://github.com/googleapis/google-cloud-java/commit/7044b6c54b503b5120b6fe1434eed504c89c30c0))
+* add evaluated_annotation.proto to aiplatform v1 ([7044b6c](https://github.com/googleapis/google-cloud-java/commit/7044b6c54b503b5120b6fe1434eed504c89c30c0))
+* add evaluated_annotation.proto to aiplatform v1beta1 ([7044b6c](https://github.com/googleapis/google-cloud-java/commit/7044b6c54b503b5120b6fe1434eed504c89c30c0))
+* add large_model_reference to Model in aiplatform v1beta1 model.proto ([7044b6c](https://github.com/googleapis/google-cloud-java/commit/7044b6c54b503b5120b6fe1434eed504c89c30c0))
+* add offline_storage_ttl_days to EntityType in aiplatform v1 entity_type.proto ([7044b6c](https://github.com/googleapis/google-cloud-java/commit/7044b6c54b503b5120b6fe1434eed504c89c30c0))
+* add online_storage_ttl_days to Featurestore in aiplatform v1 featurestore.proto ([7044b6c](https://github.com/googleapis/google-cloud-java/commit/7044b6c54b503b5120b6fe1434eed504c89c30c0))
+* add slice_spec to ModelEvaluationSlice in aiplatform v1 model_evaluation_slice.proto ([7044b6c](https://github.com/googleapis/google-cloud-java/commit/7044b6c54b503b5120b6fe1434eed504c89c30c0))
+* add slice_spec to ModelEvaluationSlice in aiplatform v1beta1 model_evaluation_slice.proto ([7044b6c](https://github.com/googleapis/google-cloud-java/commit/7044b6c54b503b5120b6fe1434eed504c89c30c0))
+* add split to ExportDataConfig in aiplatform v1 dataset.proto ([7044b6c](https://github.com/googleapis/google-cloud-java/commit/7044b6c54b503b5120b6fe1434eed504c89c30c0))
+* add split to ExportDataConfig in aiplatform v1beta1 dataset.proto ([7044b6c](https://github.com/googleapis/google-cloud-java/commit/7044b6c54b503b5120b6fe1434eed504c89c30c0))
+* added enable_image_quality_scores field in OcrConfig ([a293c4e](https://github.com/googleapis/google-cloud-java/commit/a293c4e636aa2b7223e439900578ca086c04e5d4))
+* added enable_symbol field in OcrConfig ([a293c4e](https://github.com/googleapis/google-cloud-java/commit/a293c4e636aa2b7223e439900578ca086c04e5d4))
+
+
+### Bug Fixes
+
+* [cloudbuild] Add service_yaml_parameters to `java_gapic_library` targets ([fb87690](https://github.com/googleapis/google-cloud-java/commit/fb876902cb6ad7b19688d66df091d362a43f80f9))
+* [cloudbuild] change java package of Cloud Build v2 ([fb87690](https://github.com/googleapis/google-cloud-java/commit/fb876902cb6ad7b19688d66df091d362a43f80f9))
+* [cloudbuild] change java package of Cloud Build v2 ([#9218](https://github.com/googleapis/google-cloud-java/issues/9218)) ([49da4af](https://github.com/googleapis/google-cloud-java/commit/49da4af1edcdafa021a57c395bff2a5ef04cac74))
+* [contactcenterinsights] Add service_yaml_parameters to `java_gapic_library` targets ([#9176](https://github.com/googleapis/google-cloud-java/issues/9176)) ([a9bffaa](https://github.com/googleapis/google-cloud-java/commit/a9bffaa4fdefa1195a7da01c0c3c32406e5f265c))
+* [dialogflow-cx] change java package of Cloud Build v2 ([#9195](https://github.com/googleapis/google-cloud-java/issues/9195)) ([aa813d5](https://github.com/googleapis/google-cloud-java/commit/aa813d581bb092cce53b067181c75d499040cbb7))
+* [distributedcloudedge] Add service_yaml parameters to edgecontainer GAPIC targets ([#9189](https://github.com/googleapis/google-cloud-java/issues/9189)) ([b0d4320](https://github.com/googleapis/google-cloud-java/commit/b0d43200dd35d2311ed2a35658142b829266e56a))
+* [documentai] Add service_yaml_parameters to `java_gapic_library` targets ([#9200](https://github.com/googleapis/google-cloud-java/issues/9200)) ([a293c4e](https://github.com/googleapis/google-cloud-java/commit/a293c4e636aa2b7223e439900578ca086c04e5d4))
+* [file] set longer polling timeouts for filestore DeleteBackup ([#9216](https://github.com/googleapis/google-cloud-java/issues/9216)) ([2a51320](https://github.com/googleapis/google-cloud-java/commit/2a513204fd642de8023a2e231e5269a2fd8f4c63))
+* [Many APIs] Add service_yaml_parameters to `java_gapic_library` targets ([#9203](https://github.com/googleapis/google-cloud-java/issues/9203)) ([6eca244](https://github.com/googleapis/google-cloud-java/commit/6eca244f800e84ac88cabe01982529074d6621b8))
+* [Many APIs] Add service_yaml_parameters to `java_gapic_library` targets ([#9204](https://github.com/googleapis/google-cloud-java/issues/9204)) ([a98abeb](https://github.com/googleapis/google-cloud-java/commit/a98abeb76665699b84110a9b41c57c86c68ea455))
+* [Many APIs] Add service_yaml_parameters to `java_gapic_library` targets ([#9205](https://github.com/googleapis/google-cloud-java/issues/9205)) ([ecb1a13](https://github.com/googleapis/google-cloud-java/commit/ecb1a1348db6835b277f2e81c10b75d7f8249600))
+* [workflows] Add service_yaml_parameters to `java_gapic_library` targets ([#9206](https://github.com/googleapis/google-cloud-java/issues/9206)) ([64dc942](https://github.com/googleapis/google-cloud-java/commit/64dc942b7e813612980301d0863c5ebc1f0c60b9))
+* **deps:** update dependency com.google.api:gapic-generator-java-bom to v2.15.3 ([#9217](https://github.com/googleapis/google-cloud-java/issues/9217)) ([0fbe3d1](https://github.com/googleapis/google-cloud-java/commit/0fbe3d1823285222b94b34c63cc50c8ee25a6971))
+* **deps:** update dependency com.google.apis:google-api-services-storage to v1-rev20230301-2.0.0 ([#9224](https://github.com/googleapis/google-cloud-java/issues/9224)) ([531fd2b](https://github.com/googleapis/google-cloud-java/commit/531fd2b98259bad6a897364c0a8932221738be6c))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.123.5 ([#9191](https://github.com/googleapis/google-cloud-java/issues/9191)) ([f58e887](https://github.com/googleapis/google-cloud-java/commit/f58e8872cc17dc0be53de90b133ae09fcfff9539))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.123.6 ([#9240](https://github.com/googleapis/google-cloud-java/issues/9240)) ([8ea4ea3](https://github.com/googleapis/google-cloud-java/commit/8ea4ea35c9cf2d5aacb0bbbd3379cb1743871c41))
+* **deps:** update dependency com.google.cloud:google-cloud-storage to v2.20.1 ([#9198](https://github.com/googleapis/google-cloud-java/issues/9198)) ([ca26089](https://github.com/googleapis/google-cloud-java/commit/ca260891703447a8129c250fa8e64aa05ce7a5d9))
+* **deps:** update dependency com.google.http-client:google-http-client-bom to v1.43.1 ([#9213](https://github.com/googleapis/google-cloud-java/issues/9213)) ([f31a54d](https://github.com/googleapis/google-cloud-java/commit/f31a54d9dd334c89c82dac907a1b9efaa0f5a5d3))
+* **deps:** update dependency org.checkerframework:checker-qual to v3.32.0 ([#9182](https://github.com/googleapis/google-cloud-java/issues/9182)) ([8c47ddc](https://github.com/googleapis/google-cloud-java/commit/8c47ddc92677997e4fb511a716a38753ebdad990))
+* **speech:** increment retry setting values and test timeout values in IT ([#9188](https://github.com/googleapis/google-cloud-java/issues/9188)) ([b72fe9d](https://github.com/googleapis/google-cloud-java/commit/b72fe9d68c5892b587a5be36ba12b33165a71be9))
+
+
+### Documentation
+
+* [container] minor typo fix ([169bba9](https://github.com/googleapis/google-cloud-java/commit/169bba9c956cd2c30dd32cd89d7408a69bd77345))
+* [container] minor typo fix ([#9190](https://github.com/googleapis/google-cloud-java/issues/9190)) ([169bba9](https://github.com/googleapis/google-cloud-java/commit/169bba9c956cd2c30dd32cd89d7408a69bd77345))
+* [dialogflow-cx] clarified wording around quota usage ([#9209](https://github.com/googleapis/google-cloud-java/issues/9209)) ([bcb6df2](https://github.com/googleapis/google-cloud-java/commit/bcb6df25961316c739ab275e3538240a37aec5e7))
+* [maps-routing] clarify usage of compute_alternative_routes in proto comment ([#9201](https://github.com/googleapis/google-cloud-java/issues/9201)) ([51bca7c](https://github.com/googleapis/google-cloud-java/commit/51bca7cc03768ee6e1064c184393ac914b5f013f))
+* clarified wording around quota usage ([4e9b04a](https://github.com/googleapis/google-cloud-java/commit/4e9b04ae2cf2b6120bc186728797c63448f1e4e2))
+* clarified wording around quota usage ([4e9b04a](https://github.com/googleapis/google-cloud-java/commit/4e9b04ae2cf2b6120bc186728797c63448f1e4e2))
+* deprecated enable_restricted_image_training in NasJob in aiplatform v1beta1 nas_job.proto ([7044b6c](https://github.com/googleapis/google-cloud-java/commit/7044b6c54b503b5120b6fe1434eed504c89c30c0))
+* update comments ([e9caf21](https://github.com/googleapis/google-cloud-java/commit/e9caf2145612488be4fd39c96ecefd765ef0db15))
+* updated comments ([e9caf21](https://github.com/googleapis/google-cloud-java/commit/e9caf2145612488be4fd39c96ecefd765ef0db15))
+
 ## [1.6.0](https://github.com/googleapis/google-cloud-java/compare/v1.5.0...v1.6.0) (2023-03-01)
 
 

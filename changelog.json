@@ -5,6 +5,2696 @@
       "changes": [
         {
           "type": "feat",
+          "sha": "8e44284d33ff8f43f28cea98dda509b5a798e543",
+          "message": "[cloudfunctions] add `available_cpu ` field",
+          "issues": [
+            "9231"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-functions",
+      "id": "d3af740f-99ff-453c-b589-5df9a9b1ec2e",
+      "createTime": "2023-03-16T23:38:34.048Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "405cb92007e1539c319460faecac743f7c38c54b",
+          "message": "[compute] Update Compute Engine API to revision 20230307 (#770)",
+          "issues": [
+            "9230"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-compute",
+      "id": "e1fa7442-1a9d-42c0-b7da-31398c9547b5",
+      "createTime": "2023-03-16T23:38:34.047Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-workstations",
+      "id": "7e7b0192-7ce1-474b-bfe2-67a465109aa2",
+      "createTime": "2023-03-16T23:38:34.045Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "64dc942b7e813612980301d0863c5ebc1f0c60b9",
+          "message": "[workflows] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9206"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-workflows",
+      "id": "afd639ce-8995-47d4-8e05-c85aaada7c1c",
+      "createTime": "2023-03-16T23:38:34.044Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "ecb1a1348db6835b277f2e81c10b75d7f8249600",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9205"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-workflow-executions",
+      "id": "c01f770e-84b2-454b-a29e-71ae753120bb",
+      "createTime": "2023-03-16T23:38:34.043Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "ecb1a1348db6835b277f2e81c10b75d7f8249600",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9205"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-websecurityscanner",
+      "id": "53f232c2-645e-465f-8a36-9e5aef1034ba",
+      "createTime": "2023-03-16T23:38:34.042Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-vpcaccess",
+      "id": "a94906ac-7906-49b4-980a-fc595c0bb9ff",
+      "createTime": "2023-03-16T23:38:34.041Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-vmwareengine",
+      "id": "237df56b-3a1a-403a-889a-474ddc719315",
+      "createTime": "2023-03-16T23:38:34.040Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-vmmigration",
+      "id": "b6215578-1893-41f4-924e-fb081f8fc31c",
+      "createTime": "2023-03-16T23:38:34.039Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "ecb1a1348db6835b277f2e81c10b75d7f8249600",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9205"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-vision",
+      "id": "5c5563f7-4d26-4461-8861-93f97f8d850a",
+      "createTime": "2023-03-16T23:38:34.038Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "ecb1a1348db6835b277f2e81c10b75d7f8249600",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9205"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-video-transcoder",
+      "id": "fa1e4c2f-976f-4cf4-b4f1-a842626e5330",
+      "createTime": "2023-03-16T23:38:34.037Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-live-stream",
+      "id": "ac9d655c-f75d-4c13-bdd2-da265c05e2be",
+      "createTime": "2023-03-16T23:38:34.036Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "ecb1a1348db6835b277f2e81c10b75d7f8249600",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9205"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-video-intelligence",
+      "id": "40bea5f0-0f76-4f0f-9a02-4bd943aec306",
+      "createTime": "2023-03-16T23:38:34.035Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-translate",
+      "id": "37fc8da6-edb1-49a7-bbac-74c04293b8fe",
+      "createTime": "2023-03-16T23:38:34.034Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "ecb1a1348db6835b277f2e81c10b75d7f8249600",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9205"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-trace",
+      "id": "9e620927-e437-454c-8ce3-1187aaf4d547",
+      "createTime": "2023-03-16T23:38:34.033Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-tpu",
+      "id": "76079abc-0b45-4898-b579-a441782004cb",
+      "createTime": "2023-03-16T23:38:34.032Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "ecb1a1348db6835b277f2e81c10b75d7f8249600",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9205"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-tasks",
+      "id": "ed356250-842a-4250-bcc0-9cfc95829e99",
+      "createTime": "2023-03-16T23:38:34.031Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "ecb1a1348db6835b277f2e81c10b75d7f8249600",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9205"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-talent",
+      "id": "e62cb0b8-cc3e-4dc7-b5d2-17094861f752",
+      "createTime": "2023-03-16T23:38:34.030Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-storage-transfer",
+      "id": "0ab6e32e-0aa0-46f0-81f0-e2a7a1d76a49",
+      "createTime": "2023-03-16T23:38:34.029Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "ecb1a1348db6835b277f2e81c10b75d7f8249600",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9205"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "b72fe9d68c5892b587a5be36ba12b33165a71be9",
+          "message": "increment retry setting values and test timeout values in IT",
+          "issues": [
+            "9188"
+          ],
+          "scope": "speech"
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-speech",
+      "id": "bef5cab4-b686-49c7-bc20-a45cd94552ee",
+      "createTime": "2023-03-16T23:38:34.028Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "ecb1a1348db6835b277f2e81c10b75d7f8249600",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9205"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-shell",
+      "id": "19a71038-c010-466c-adb7-917c5dea3266",
+      "createTime": "2023-03-16T23:38:34.027Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "ecb1a1348db6835b277f2e81c10b75d7f8249600",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9205"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-servicedirectory",
+      "id": "02bc7be4-6a5e-446f-97d5-c0eda6bd201d",
+      "createTime": "2023-03-16T23:38:34.026Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "ecb1a1348db6835b277f2e81c10b75d7f8249600",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9205"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-service-usage",
+      "id": "b683c8cf-67ac-4b24-bd25-f1b672d45da1",
+      "createTime": "2023-03-16T23:38:34.025Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-service-management",
+      "id": "f55eba56-36cf-4b32-b2a4-4c3d1044ec36",
+      "createTime": "2023-03-16T23:38:34.024Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "ecb1a1348db6835b277f2e81c10b75d7f8249600",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9205"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-service-control",
+      "id": "abd5a1c8-d14c-4806-a7f3-5ad2a1cf61c8",
+      "createTime": "2023-03-16T23:38:34.024Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "ecb1a1348db6835b277f2e81c10b75d7f8249600",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9205"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-securitycenter",
+      "id": "02273f32-92f2-4991-8d21-7855b46acff3",
+      "createTime": "2023-03-16T23:38:34.022Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "ecb1a1348db6835b277f2e81c10b75d7f8249600",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9205"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-securitycenter-settings",
+      "id": "7b22fb3e-ab7b-448e-a958-d9083209c4ef",
+      "createTime": "2023-03-16T23:38:34.020Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "ecb1a1348db6835b277f2e81c10b75d7f8249600",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9205"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-security-private-ca",
+      "id": "56946eb5-7e14-4632-a388-11c86d6996d4",
+      "createTime": "2023-03-16T23:38:34.019Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "ecb1a1348db6835b277f2e81c10b75d7f8249600",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9205"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-secretmanager",
+      "id": "f5124306-82a9-48af-8451-a8bb4c39964f",
+      "createTime": "2023-03-16T23:38:34.018Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "d9c7ee510a1c128584f4ce41644e125c33f156dc",
+          "message": "[cloudscheduler] Location API methods",
+          "issues": [
+            "9181"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-scheduler",
+      "id": "43a47c2a-427b-4c4b-8b3f-b4863b53804e",
+      "createTime": "2023-03-16T23:38:34.018Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-run",
+      "id": "674ac1ae-34fb-4554-823e-0e3218ebddc9",
+      "createTime": "2023-03-16T23:38:34.017Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-retail",
+      "id": "7907ce2a-e141-412e-a7a0-d7fc223508f9",
+      "createTime": "2023-03-16T23:38:34.016Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "ecb1a1348db6835b277f2e81c10b75d7f8249600",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9205"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-resourcemanager",
+      "id": "d4ea6b94-514b-457d-9c32-4a850346d8e8",
+      "createTime": "2023-03-16T23:38:34.015Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "ecb1a1348db6835b277f2e81c10b75d7f8249600",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9205"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-resource-settings",
+      "id": "16ceb954-f840-4ae6-81d1-1106fae2699c",
+      "createTime": "2023-03-16T23:38:34.015Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-redis",
+      "id": "2d6de9c1-c639-441f-a1fa-e129dd4bc920",
+      "createTime": "2023-03-16T23:38:34.014Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "ecb1a1348db6835b277f2e81c10b75d7f8249600",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9205"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-recommendations-ai",
+      "id": "afcd6115-06da-470a-82e3-b8240aa96223",
+      "createTime": "2023-03-16T23:38:34.013Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-publicca",
+      "id": "83f7231d-2389-4c2e-86f5-b511cde140cc",
+      "createTime": "2023-03-16T23:38:34.012Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-profiler",
+      "id": "7012636f-d7d6-4617-9b09-8a5fdd107088",
+      "createTime": "2023-03-16T23:38:34.011Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "a98abeb76665699b84110a9b41c57c86c68ea455",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9204"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-private-catalog",
+      "id": "a5734a13-50bb-429b-8c92-deaa2326eee0",
+      "createTime": "2023-03-16T23:38:34.010Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "a98abeb76665699b84110a9b41c57c86c68ea455",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9204"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-policy-troubleshooter",
+      "id": "8700584e-9b02-4a09-a4db-b2da1a3d21ad",
+      "createTime": "2023-03-16T23:38:34.010Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "a98abeb76665699b84110a9b41c57c86c68ea455",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9204"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-phishingprotection",
+      "id": "c9bceea3-e253-4be0-badc-d6c5243f6a21",
+      "createTime": "2023-03-16T23:38:34.008Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "a98abeb76665699b84110a9b41c57c86c68ea455",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9204"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-os-login",
+      "id": "dcd373fa-aefe-4eac-a136-9c1075236655",
+      "createTime": "2023-03-16T23:38:34.007Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-os-config",
+      "id": "c564e50e-9775-4518-beff-bf28e5b3ca85",
+      "createTime": "2023-03-16T23:38:34.006Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "a98abeb76665699b84110a9b41c57c86c68ea455",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9204"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-orchestration-airflow",
+      "id": "032a6c74-eadf-4036-9033-c782a224e9a9",
+      "createTime": "2023-03-16T23:38:34.005Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-optimization",
+      "id": "a939225e-7567-4d90-87f7-f4b9b865bd89",
+      "createTime": "2023-03-16T23:38:34.005Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-notebooks",
+      "id": "e7baf590-2df5-4b8c-b669-a6ca38e1925c",
+      "createTime": "2023-03-16T23:38:34.004Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "a98abeb76665699b84110a9b41c57c86c68ea455",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9204"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-networkconnectivity",
+      "id": "78474228-731e-4163-8a4e-fe8bc2d4fb6c",
+      "createTime": "2023-03-16T23:38:34.003Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "a98abeb76665699b84110a9b41c57c86c68ea455",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9204"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-network-security",
+      "id": "273e36a7-6bad-46a1-8ca2-08966c52bcbe",
+      "createTime": "2023-03-16T23:38:34.003Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "a98abeb76665699b84110a9b41c57c86c68ea455",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9204"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-network-management",
+      "id": "2794a6aa-7fde-4745-bd66-bbbf1fa10f67",
+      "createTime": "2023-03-16T23:38:34.002Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-memcache",
+      "id": "86bda6e4-4978-4a20-80ed-94ec0bab9fa6",
+      "createTime": "2023-03-16T23:38:34.001Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "a98abeb76665699b84110a9b41c57c86c68ea455",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9204"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-mediatranslation",
+      "id": "70a3d7aa-c070-4365-bb9c-a3a8e9d4403c",
+      "createTime": "2023-03-16T23:38:34.000Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "51bca7cc03768ee6e1064c184393ac914b5f013f",
+          "message": "[maps-routing] clarify usage of compute_alternative_routes in proto comment",
+          "issues": [
+            "9201"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.maps:google-maps-routing",
+      "id": "f6c7e858-ba55-4817-bb00-2b47a44fbcd2",
+      "createTime": "2023-03-16T23:38:33.999Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "a98abeb76665699b84110a9b41c57c86c68ea455",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9204"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-managed-identities",
+      "id": "4a2c4cd3-ff51-4431-ac00-368caebeb401",
+      "createTime": "2023-03-16T23:38:33.998Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-life-sciences",
+      "id": "9523840c-6515-4416-b69e-71af4b5f7fad",
+      "createTime": "2023-03-16T23:38:33.997Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "8f2119d35384184b1d3d8de850b195daefcf98a3",
+          "message": "[cloudkms] add support for Coordinated External Keys",
+          "issues": [
+            "9197"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-kms",
+      "id": "6e135b1e-616d-4524-9f82-0bef2b9dd92a",
+      "createTime": "2023-03-16T23:38:33.997Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "a98abeb76665699b84110a9b41c57c86c68ea455",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9204"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-iot",
+      "id": "0e044520-23c3-436e-8d39-ca5bb1beab47",
+      "createTime": "2023-03-16T23:38:33.996Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "a98abeb76665699b84110a9b41c57c86c68ea455",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9204"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-iamcredentials",
+      "id": "f104ef0c-96d1-4326-ac35-95565a13870f",
+      "createTime": "2023-03-16T23:38:33.995Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "a98abeb76665699b84110a9b41c57c86c68ea455",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9204"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-gsuite-addons",
+      "id": "6c2500ed-e7b6-44df-9dae-c7b0b3743427",
+      "createTime": "2023-03-16T23:38:33.994Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "460b25be090ea2d1125bf0729eced9d632bd995d",
+          "message": "[containeranalysis] Add VULNERABILITY_ASSESSMENT Note type to grafeas v1 API, adds Vex_Assessment derived from the Note to resources' occurrences, VEX notes now be written to add CVE assessments",
+          "issues": [
+            "9183"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "460b25be090ea2d1125bf0729eced9d632bd995d",
+          "message": "[containeranalysis] Import of Grafeas from Github",
+          "issues": []
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "io.grafeas:grafeas",
+      "id": "0cb51db2-b3a7-49ee-8bee-ca6b031617f8",
+      "createTime": "2023-03-16T23:38:33.993Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "a98abeb76665699b84110a9b41c57c86c68ea455",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9204"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-gkehub",
+      "id": "4a1f3606-cb13-411a-815c-32fc9c232d59",
+      "createTime": "2023-03-16T23:38:33.993Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "a98abeb76665699b84110a9b41c57c86c68ea455",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9204"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-gke-connect-gateway",
+      "id": "bd8ffd51-a1c4-4cbd-b858-564001879883",
+      "createTime": "2023-03-16T23:38:33.992Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "a98abeb76665699b84110a9b41c57c86c68ea455",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9204"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-game-servers",
+      "id": "309a1bf2-1723-4f2b-bee2-4fa79d22d41e",
+      "createTime": "2023-03-16T23:38:33.991Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "2a513204fd642de8023a2e231e5269a2fd8f4c63",
+          "message": "[file] set longer polling timeouts for filestore DeleteBackup",
+          "issues": [
+            "9216"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "a98abeb76665699b84110a9b41c57c86c68ea455",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9204"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-filestore",
+      "id": "d98c1871-721e-4554-9377-e67d970458f9",
+      "createTime": "2023-03-16T23:38:33.991Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "a98abeb76665699b84110a9b41c57c86c68ea455",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9204"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-essential-contacts",
+      "id": "1a621fa5-4424-4e5e-b1e4-5568ea29ea38",
+      "createTime": "2023-03-16T23:38:33.990Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "a98abeb76665699b84110a9b41c57c86c68ea455",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9204"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-errorreporting",
+      "id": "0e221f0a-8e75-4a54-b6fa-53ae344fbc0c",
+      "createTime": "2023-03-16T23:38:33.989Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "a293c4e636aa2b7223e439900578ca086c04e5d4",
+          "message": "[documentai] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9200"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "a293c4e636aa2b7223e439900578ca086c04e5d4",
+          "message": "added enable_image_quality_scores field in OcrConfig",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "a293c4e636aa2b7223e439900578ca086c04e5d4",
+          "message": "added enable_symbol field in OcrConfig",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "a293c4e636aa2b7223e439900578ca086c04e5d4",
+          "message": "[documentai] added hints.language_hints field in OcrConfig",
+          "issues": []
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-document-ai",
+      "id": "b4140a26-3191-4f98-9046-ed00a5fe34cf",
+      "createTime": "2023-03-16T23:38:33.988Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "6eca244f800e84ac88cabe01982529074d6621b8",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9203"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dms",
+      "id": "85b69007-8dce-4d72-860c-e37a7ea591a2",
+      "createTime": "2023-03-16T23:38:33.988Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "6eca244f800e84ac88cabe01982529074d6621b8",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9203"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dlp",
+      "id": "b4e5cb23-f6c6-476b-b7fe-d0372ac0fc4d",
+      "createTime": "2023-03-16T23:38:33.987Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "b0d43200dd35d2311ed2a35658142b829266e56a",
+          "message": "[distributedcloudedge] Add service_yaml parameters to edgecontainer GAPIC targets",
+          "issues": [
+            "9189"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-distributedcloudedge",
+      "id": "6edcd1de-a7f2-4852-88b6-39e690722831",
+      "createTime": "2023-03-16T23:38:33.987Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "4e9b04ae2cf2b6120bc186728797c63448f1e4e2",
+          "message": "clarified wording around quota usage",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "4e9b04ae2cf2b6120bc186728797c63448f1e4e2",
+          "message": "[dialogflow] added support for custom content types",
+          "issues": [
+            "9185"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "4e9b04ae2cf2b6120bc186728797c63448f1e4e2",
+          "message": "clarified wording around quota usage",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "4e9b04ae2cf2b6120bc186728797c63448f1e4e2",
+          "message": "[dialogflow] added support for custom content types",
+          "issues": []
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dialogflow",
+      "id": "cbcef136-a404-424e-aa63-aa204fbc90ce",
+      "createTime": "2023-03-16T23:38:33.986Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "bcb6df25961316c739ab275e3538240a37aec5e7",
+          "message": "[dialogflow-cx] clarified wording around quota usage",
+          "issues": [
+            "9209"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "aa813d581bb092cce53b067181c75d499040cbb7",
+          "message": "[dialogflow-cx] change java package of Cloud Build v2",
+          "issues": [
+            "9195"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dialogflow-cx",
+      "id": "4d049571-4aaa-47a4-a4f6-b7bba2f01da7",
+      "createTime": "2023-03-16T23:38:33.985Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "6eca244f800e84ac88cabe01982529074d6621b8",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9203"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-debugger-client",
+      "id": "28dd80b4-3e3e-4854-abe8-835780dde857",
+      "createTime": "2023-03-16T23:38:33.985Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "6eca244f800e84ac88cabe01982529074d6621b8",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9203"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-datastream",
+      "id": "49d55166-aa65-478f-b3f8-fcd0a6d23105",
+      "createTime": "2023-03-16T23:38:33.984Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "6eca244f800e84ac88cabe01982529074d6621b8",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9203"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataproc",
+      "id": "83aa11a7-0648-422f-b0ed-4464f9d7aeb7",
+      "createTime": "2023-03-16T23:38:33.984Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "6eca244f800e84ac88cabe01982529074d6621b8",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9203"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataproc-metastore",
+      "id": "04d44e89-10ce-459a-91a4-a89576bfdeba",
+      "createTime": "2023-03-16T23:38:33.983Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataplex",
+      "id": "42939554-a6bf-45fb-bb10-673f3c178e11",
+      "createTime": "2023-03-16T23:38:33.981Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-datalineage",
+      "id": "6feb3fbd-8658-4ab3-a240-a9c644054083",
+      "createTime": "2023-03-16T23:38:33.980Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "6eca244f800e84ac88cabe01982529074d6621b8",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9203"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-datalabeling",
+      "id": "db3ec02e-e4d9-4f32-a78a-04bd6711b7da",
+      "createTime": "2023-03-16T23:38:33.980Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "1cd532f0c79eb9627f4532a1aabb92969492393d",
+          "message": "[datacatalog] add support for new ImportEntries() API, including format of the dump",
+          "issues": [
+            "9214"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "6eca244f800e84ac88cabe01982529074d6621b8",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9203"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-datacatalog",
+      "id": "5222a7bc-47a5-4e8e-bcaf-95df19748956",
+      "createTime": "2023-03-16T23:38:33.979Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "6eca244f800e84ac88cabe01982529074d6621b8",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9203"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-data-fusion",
+      "id": "83725232-2133-46f8-873e-d874a5c09958",
+      "createTime": "2023-03-16T23:38:33.979Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "169bba9c956cd2c30dd32cd89d7408a69bd77345",
+          "message": "[container] minor typo fix",
+          "issues": [
+            "9190"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "169bba9c956cd2c30dd32cd89d7408a69bd77345",
+          "message": "[container] minor typo fix",
+          "issues": []
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-container",
+      "id": "cc9f1c2e-a869-416a-afc3-6470c77736dc",
+      "createTime": "2023-03-16T23:38:33.979Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "a9bffaa4fdefa1195a7da01c0c3c32406e5f265c",
+          "message": "[contactcenterinsights] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9176"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "a9bffaa4fdefa1195a7da01c0c3c32406e5f265c",
+          "message": "[contactcenterinsights] add a way to specify the conversation automatic analysis percentage for the UploadConversation API when creating Analyses in Insights",
+          "issues": []
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-contact-center-insights",
+      "id": "f03a05ce-be58-4ead-899b-eeca9f01125e",
+      "createTime": "2023-03-16T23:38:33.978Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-cloudcommerceconsumerprocurement",
+      "id": "97ea6da6-b298-4cb0-9e17-aa8bb21a9341",
+      "createTime": "2023-03-16T23:38:33.978Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "49da4af1edcdafa021a57c395bff2a5ef04cac74",
+          "message": "[cloudbuild] change java package of Cloud Build v2",
+          "issues": [
+            "9218"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "fb876902cb6ad7b19688d66df091d362a43f80f9",
+          "message": "[cloudbuild] Add DefaultLogsBucketBehavior to BuildOptions",
+          "issues": [
+            "9196"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "fb876902cb6ad7b19688d66df091d362a43f80f9",
+          "message": "[cloudbuild] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": []
+        },
+        {
+          "type": "fix",
+          "sha": "fb876902cb6ad7b19688d66df091d362a43f80f9",
+          "message": "[cloudbuild] change java package of Cloud Build v2",
+          "issues": []
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-build",
+      "id": "2db948fc-703c-40a8-9c7d-2a39f3d688fb",
+      "createTime": "2023-03-16T23:38:33.977Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "752495fe41d7594c83b7c9e87f3851b0e3b423ae",
+          "message": "[cloudchannel] add show_future_offers to ListOffers",
+          "issues": [
+            "9212"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-channel",
+      "id": "351dc212-2490-4e7c-a6a0-a7814abf5e20",
+      "createTime": "2023-03-16T23:38:33.977Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-certificate-manager",
+      "id": "6003dbec-4c53-430a-98f7-a627d1afd39f",
+      "createTime": "2023-03-16T23:38:33.976Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "6eca244f800e84ac88cabe01982529074d6621b8",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9203"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-binary-authorization",
+      "id": "b2e14eac-3c1a-434a-a75d-d526c18721a3",
+      "createTime": "2023-03-16T23:38:33.976Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "6eca244f800e84ac88cabe01982529074d6621b8",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9203"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-billingbudgets",
+      "id": "2b2f43b1-2ea8-4070-93f8-2c789a4f4721",
+      "createTime": "2023-03-16T23:38:33.976Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-billing",
+      "id": "a2845bb0-e223-458f-b25c-f46719d899c8",
+      "createTime": "2023-03-16T23:38:33.975Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "6eca244f800e84ac88cabe01982529074d6621b8",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9203"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigquerymigration",
+      "id": "6d80af19-b9ee-465c-82b1-b8ef814fc416",
+      "createTime": "2023-03-16T23:38:33.975Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigquerydatatransfer",
+      "id": "edc29bcf-5d37-421e-9bce-728c70851d77",
+      "createTime": "2023-03-16T23:38:33.974Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "e9caf2145612488be4fd39c96ecefd765ef0db15",
+          "message": "updated comments",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "e9caf2145612488be4fd39c96ecefd765ef0db15",
+          "message": "[batch] added StatusEvent.task_state",
+          "issues": [
+            "9177"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "e9caf2145612488be4fd39c96ecefd765ef0db15",
+          "message": "update comments",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "e9caf2145612488be4fd39c96ecefd765ef0db15",
+          "message": "[batch] resource usage",
+          "issues": []
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-batch",
+      "id": "2ed6f365-4c06-43bd-aac8-c823f1c22d43",
+      "createTime": "2023-03-16T23:38:33.974Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "6eca244f800e84ac88cabe01982529074d6621b8",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9203"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-automl",
+      "id": "41cafd22-b0ea-417f-a6e6-779b268156eb",
+      "createTime": "2023-03-16T23:38:33.974Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-assured-workloads",
+      "id": "d3d18863-e4d3-472a-abe8-6bd4ddabbf53",
+      "createTime": "2023-03-16T23:38:33.973Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "6eca244f800e84ac88cabe01982529074d6621b8",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9203"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-asset",
+      "id": "b274b14d-663b-41e9-a5e5-ba0499f66c6d",
+      "createTime": "2023-03-16T23:38:33.973Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-artifact-registry",
+      "id": "4dc3d007-df25-47be-a9dd-cd563e8dfc1e",
+      "createTime": "2023-03-16T23:38:33.973Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "6eca244f800e84ac88cabe01982529074d6621b8",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9203"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.area120:google-area120-tables",
+      "id": "aaa4e766-0ed1-4598-a7bc-e0abcc6fbebc",
+      "createTime": "2023-03-16T23:38:33.972Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "6eca244f800e84ac88cabe01982529074d6621b8",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9203"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-appengine-admin",
+      "id": "3a5da1b7-5234-4c1a-8a76-7adce6ec1ef7",
+      "createTime": "2023-03-16T23:38:33.972Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-apikeys",
+      "id": "9f25e847-eb7f-4b01-b4a0-498ea19c0c87",
+      "createTime": "2023-03-16T23:38:33.971Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-apigee-registry",
+      "id": "e3c64f1c-2e71-4769-81f9-07e1a7f71478",
+      "createTime": "2023-03-16T23:38:33.969Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "6eca244f800e84ac88cabe01982529074d6621b8",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9203"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-apigee-connect",
+      "id": "36e3ee99-4f75-436a-9f9a-9cbc2cc1d75e",
+      "createTime": "2023-03-16T23:38:33.969Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "6eca244f800e84ac88cabe01982529074d6621b8",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9203"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-api-gateway",
+      "id": "b64edf55-4a46-4064-91b4-acd6591e9b12",
+      "createTime": "2023-03-16T23:38:33.969Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-alloydb",
+      "id": "cd05db82-d4f3-41b0-9fd3-2a40a92dcba5",
+      "createTime": "2023-03-16T23:38:33.968Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "7044b6c54b503b5120b6fe1434eed504c89c30c0",
+          "message": "[aiplatform] add disable_container_logging to BatchPredictionJob in aiplatform v1,v1beta1 batch_prediction_job.proto",
+          "issues": [
+            "9184"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "7044b6c54b503b5120b6fe1434eed504c89c30c0",
+          "message": "add split to ExportDataConfig in aiplatform v1 dataset.proto",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "7044b6c54b503b5120b6fe1434eed504c89c30c0",
+          "message": "add offline_storage_ttl_days to EntityType in aiplatform v1 entity_type.proto",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "7044b6c54b503b5120b6fe1434eed504c89c30c0",
+          "message": "add evaluated_annotation.proto to aiplatform v1",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "7044b6c54b503b5120b6fe1434eed504c89c30c0",
+          "message": "add cpu_utilization_target to Featurestore.OnlineServingConfig.Scaling in aiplatform v1 featurestore.proto",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "7044b6c54b503b5120b6fe1434eed504c89c30c0",
+          "message": "add online_storage_ttl_days to Featurestore in aiplatform v1 featurestore.proto",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "7044b6c54b503b5120b6fe1434eed504c89c30c0",
+          "message": "add slice_spec to ModelEvaluationSlice in aiplatform v1 model_evaluation_slice.proto",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "7044b6c54b503b5120b6fe1434eed504c89c30c0",
+          "message": "add BatchImportEvaluatedAnnotations rpc to aiplatform v1 model_service.proto",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "7044b6c54b503b5120b6fe1434eed504c89c30c0",
+          "message": "[aiplatform] add TPU_V4_POD to AcceleratorType in aiplatform v1 accelerator_type.proto",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "7044b6c54b503b5120b6fe1434eed504c89c30c0",
+          "message": "add split to ExportDataConfig in aiplatform v1beta1 dataset.proto",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "7044b6c54b503b5120b6fe1434eed504c89c30c0",
+          "message": "add evaluated_annotation.proto to aiplatform v1beta1",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "7044b6c54b503b5120b6fe1434eed504c89c30c0",
+          "message": "add cpu_utilization_target to Featurestore.OnlineServingConfig.Scaling in aiplatform v1beta1 featurestore.proto",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "7044b6c54b503b5120b6fe1434eed504c89c30c0",
+          "message": "add large_model_reference to Model in aiplatform v1beta1 model.proto",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "7044b6c54b503b5120b6fe1434eed504c89c30c0",
+          "message": "add slice_spec to ModelEvaluationSlice in aiplatform v1beta1 model_evaluation_slice.proto",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "7044b6c54b503b5120b6fe1434eed504c89c30c0",
+          "message": "add BatchImportEvaluatedAnnotations rpc to aiplatform v1beta1 model_service.proto",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "7044b6c54b503b5120b6fe1434eed504c89c30c0",
+          "message": "deprecated enable_restricted_image_training in NasJob in aiplatform v1beta1 nas_job.proto",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "7044b6c54b503b5120b6fe1434eed504c89c30c0",
+          "message": "[aiplatform] add TPU_V4_POD to AcceleratorType in aiplatform v1beta1 accelerator_type.proto",
+          "issues": []
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-aiplatform",
+      "id": "3744c1df-c73a-47c0-971d-94589934ff68",
+      "createTime": "2023-03-16T23:38:33.968Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-identity-accesscontextmanager",
+      "id": "d54302e9-e5a4-443d-9d5c-b50240cbc2a1",
+      "createTime": "2023-03-16T23:38:33.968Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "6eca244f800e84ac88cabe01982529074d6621b8",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9203"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-accessapproval",
+      "id": "151d6848-9cc1-4a49-86d0-214e0a61195d",
+      "createTime": "2023-03-16T23:38:33.968Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "c92a33e43c63537057d9b3fedd371d0f3ed37bca",
+          "message": "[biglake] new module for biglake",
+          "issues": [
+            "9237"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-biglake",
+      "id": "eaa0a77e-a470-4d78-a39d-a2e768dbe5fe",
+      "createTime": "2023-03-16T23:38:33.967Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "dd8490483ed36ac134c5e6f159e11bf6a231ea6b",
+          "message": "[recaptchaenterprise] add reCAPTCHA Enterprise Fraud Prevention API",
+          "issues": [
+            "9241"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "a98abeb76665699b84110a9b41c57c86c68ea455",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9204"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-recaptchaenterprise",
+      "id": "260c1413-af43-4b20-b70b-eea05b8dc314",
+      "createTime": "2023-03-16T23:38:33.967Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "b2fd7e3bd44baaf025ef9efab711604e38102de1",
+          "message": "[bigqueryconnection] add spark connection properties type",
+          "issues": [
+            "9242"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "d7010bdbe1092c4ab9b39b30690c5c297f405d26",
+          "message": "[workstations] new module for workstations",
+          "issues": [
+            "9233"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "6eca244f800e84ac88cabe01982529074d6621b8",
+          "message": "[Many APIs] Add service_yaml_parameters to `java_gapic_library` targets",
+          "issues": [
+            "9203"
+          ]
+        }
+      ],
+      "version": "1.7.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigqueryconnection",
+      "id": "4aff544f-9f75-4440-a0d0-ad7ce38ed4f4",
+      "createTime": "2023-03-16T23:38:33.966Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
           "sha": "bbc7ce43f3e03ac5ecef99b88054c0762c865f32",
           "message": "[speech] Voice Activity Detection: adding speech event time and speech event type",
           "issues": [
@@ -759,5 +3449,5 @@
       "createTime": "2023-02-03T16:27:23.198Z"
     }
   ],
-  "updateTime": "2023-03-01T18:30:24.953Z"
+  "updateTime": "2023-03-16T23:38:34.048Z"
 }
