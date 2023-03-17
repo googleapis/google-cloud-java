@@ -1,0 +1,10 @@
+{
+  "api_shortname": "google-cloud-core",
+  "name_pretty": "Google Cloud Core",
+  "release_level": "stable",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-core",
+  "library_type": "CORE",
+  "distribution_name": "com.google.cloud:google-cloud-core"
+}
