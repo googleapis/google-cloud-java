@@ -18,6 +18,7 @@ package com.google.cloud.datastore.admin.v1.stub;
 
 import static com.google.cloud.datastore.admin.v1.DatastoreAdminClient.ListIndexesPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -33,6 +34,7 @@ import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.common.collect.ImmutableMap;
 import com.google.datastore.admin.v1.CreateIndexRequest;
 import com.google.datastore.admin.v1.DeleteIndexRequest;
 import com.google.datastore.admin.v1.ExportEntitiesMetadata;
@@ -365,7 +367,26 @@ public class HttpJsonDatastoreAdminStub extends DatastoreAdminStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.httpJsonOperationsStub =
-        HttpJsonOperationsStub.create(clientContext, callableFactory, typeRegistry);
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.CancelOperation",
+                    HttpRule.newBuilder()
+                        .setPost("/v1/{name=projects/*/operations/*}:cancel")
+                        .build())
+                .put(
+                    "google.longrunning.Operations.DeleteOperation",
+                    HttpRule.newBuilder().setDelete("/v1/{name=projects/*/operations/*}").build())
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder().setGet("/v1/{name=projects/*/operations/*}").build())
+                .put(
+                    "google.longrunning.Operations.ListOperations",
+                    HttpRule.newBuilder().setGet("/v1/{name=projects/*}/operations").build())
+                .build());
 
     HttpJsonCallSettings<ExportEntitiesRequest, Operation> exportEntitiesTransportSettings =
         HttpJsonCallSettings.<ExportEntitiesRequest, Operation>newBuilder()
