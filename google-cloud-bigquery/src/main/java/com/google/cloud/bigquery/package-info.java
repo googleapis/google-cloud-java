@@ -18,30 +18,26 @@
  * A client for BigQuery – A fully managed, petabyte scale, low cost enterprise data warehouse for
  * analytics.
  *
- * <p>A simple usage example showing how to create a table if it does not exist and load data into
- * it. For the complete source code see <a
- * href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/bigquery/snippets/CreateTableAndLoadData.java">
- * CreateTableAndLoadData.java</a>.
+ * <p>A simple usage example showing how to create a table in Bigquery. For the complete source code see <a
+ * href="https://github.com/googleapis/java-bigquery/blob/main/samples/snippets/src/main/java/com/example/bigquery/CreateTable.java">
+ * CreateTable.java</a>.
  *
  * <pre>{@code
- * BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
- * TableId tableId = TableId.of("dataset", "table");
- * Table table = bigquery.getTable(tableId);
- * if (table == null) {
- *   System.out.println("Creating table " + tableId);
- *   Field integerField = Field.of("fieldName", Field.Type.integer());
- *   Schema schema = Schema.of(integerField);
- *   table = bigquery.create(TableInfo.of(tableId, StandardTableDefinition.of(schema)));
- * }
- * System.out.println("Loading data into table " + tableId);
- * Job loadJob = table.load(FormatOptions.csv(), "gs://bucket/path");
- * loadJob = loadJob.waitFor();
- * if (loadJob.getStatus().getError() != null) {
- *   System.out.println("Job completed with errors");
- * } else {
- *   System.out.println("Job succeeded");
- * }
- * }</pre>
+ *  try {
+ *       // Initialize client that will be used to send requests. This client only needs to be created
+ *       // once, and can be reused for multiple requests.
+ *       BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
+ *
+ *       TableId tableId = TableId.of(datasetName, tableName);
+ *       TableDefinition tableDefinition = StandardTableDefinition.of(schema);
+ *       TableInfo tableInfo = TableInfo.newBuilder(tableId, tableDefinition).build();
+ *
+ *       bigquery.create(tableInfo);
+ *       System.out.println("Table created successfully");
+ *     } catch (BigQueryException e) {
+ *       System.out.println("Table was not created. \n" + e.toString());
+ *     }
+ * </pre>
  *
  * @see <a href="https://cloud.google.com/bigquery/">Google Cloud BigQuery</a>
  */
