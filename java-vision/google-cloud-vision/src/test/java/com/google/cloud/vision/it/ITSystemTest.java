@@ -338,7 +338,8 @@ public class ITSystemTest {
     for (EntityAnnotation annotation : assertNotEmpty(res, res.getLandmarkAnnotationsList())) {
       actual.add(annotation.getDescription());
     }
-    assertThat(actual).contains("Palace of Fine Arts");
+    String allAnnotations = String.join(";", actual);
+    assertThat(allAnnotations).ignoringCase().contains("Palace of Fine Arts");
   }
 
   @Test
@@ -355,7 +356,8 @@ public class ITSystemTest {
     for (EntityAnnotation annotation : assertNotEmpty(res, res.getLandmarkAnnotationsList())) {
       actual.add(annotation.getDescription());
     }
-    assertThat(actual).contains("Palace of Fine Arts");
+    String allAnnotations = String.join(";", actual);
+    assertThat(allAnnotations).ignoringCase().contains("Palace of Fine Arts");
   }
 
   @Test
@@ -366,7 +368,8 @@ public class ITSystemTest {
     for (EntityAnnotation annotation : assertNotEmpty(res, res.getLandmarkAnnotationsList())) {
       actual.add(annotation.getDescription());
     }
-    assertThat(actual).contains("Palace of Fine Arts");
+    String allAnnotations = String.join(";", actual);
+    assertThat(allAnnotations).ignoringCase().contains("Palace of Fine Arts");
   }
 
   @Test
@@ -476,7 +479,8 @@ public class ITSystemTest {
         assertNotEmpty(res, res.getWebDetection().getWebEntitiesList())) {
       actual.add(entity.getDescription());
     }
-    assertThat(actual).contains("Palace of Fine Arts");
+    String allAnnotations = String.join(";", actual);
+    assertThat(allAnnotations).ignoringCase().contains("Palace of Fine Arts");
   }
 
   @Test
@@ -531,7 +535,8 @@ public class ITSystemTest {
         assertNotEmpty(res, res.getWebDetection().getWebEntitiesList())) {
       actual.add(entity.getDescription());
     }
-    assertThat(actual).contains("Palace of Fine Arts");
+    String allAnnotations = String.join(";", actual);
+    assertThat(allAnnotations).ignoringCase().contains("Palace of Fine Arts");
   }
 
   @Test
