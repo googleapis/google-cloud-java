@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.14.1](https://github.com/googleapis/java-datastore/compare/v2.14.0...v2.14.1) (2023-03-20)
+
+
+### Documentation
+
+* Fix broken link to UpdateEntity snippet ([#1022](https://github.com/googleapis/java-datastore/issues/1022)) ([6880604](https://github.com/googleapis/java-datastore/commit/6880604b6b88caf8e03449349d0815d388cfb1a3)), closes [#1010](https://github.com/googleapis/java-datastore/issues/1010)
+* Fix broken README links ([#1011](https://github.com/googleapis/java-datastore/issues/1011)) ([276174e](https://github.com/googleapis/java-datastore/commit/276174e26ff92be2bdeb24f733278d2042519cfd))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.5.0 ([#1024](https://github.com/googleapis/java-datastore/issues/1024)) ([4a57e95](https://github.com/googleapis/java-datastore/commit/4a57e959dbac14d395ff202fd479f776c84b25e5))
+* Upgrade gapic-generator-java to 2.15.3 ([091d197](https://github.com/googleapis/java-datastore/commit/091d1976c24c1bec7a7974bcffb246d2a16d790c))
+
 ## [2.14.0](https://github.com/googleapis/java-datastore/compare/v2.13.6...v2.14.0) (2023-03-08)
 
 
