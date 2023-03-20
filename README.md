@@ -64,6 +64,7 @@ If you are using SBT, add this to your dependencies:
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-datastore" % "2.14.0"
 ```
+<!-- {x-version-update-end} -->
 
 ## Authentication
 
