@@ -213,7 +213,14 @@ def generate(
 
     # Initialize workdir
     workdir = Path(f"{sys.path[0]}/../../java-{output_name}").resolve()
-    subprocess.run(["rm", "-fr", workdir])
+    if os.path.isdir(workdir):
+      sys.exit(
+          "Couldn't create the module because "
+          f"the module {workdir} already exists. In Java client library "
+          "generation, a new API version of an existing module does not "
+          "require new-client.py invocation. "
+          "See go/yoshi-java-new-client#adding-a-new-service-version-by-owlbot."
+      )
     print(f"Creating a new module {workdir}")
     os.makedirs(workdir, exist_ok=False)
     # write .repo-metadata.json file
