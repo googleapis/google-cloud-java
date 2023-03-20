@@ -64,6 +64,7 @@ If you are using SBT, add this to your dependencies:
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-bigtable" % "2.20.0"
 ```
+<!-- {x-version-update-end} -->
 
 ## Authentication
 
