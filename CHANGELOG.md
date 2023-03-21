@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.24.0](https://github.com/googleapis/java-bigquery/compare/v2.23.2...v2.24.0) (2023-03-21)
+
+
+### Features
+
+* Add support for clone ([#2553](https://github.com/googleapis/java-bigquery/issues/2553)) ([2186c64](https://github.com/googleapis/java-bigquery/commit/2186c64e523e030a777eec447bc1f22802f56617))
+
+
+### Dependencies
+
+* Update actions/checkout action to v3.4.0 ([#2575](https://github.com/googleapis/java-bigquery/issues/2575)) ([6935a1e](https://github.com/googleapis/java-bigquery/commit/6935a1e353d496e6de656de3431563b3527456e5))
+* Update actions/upload-artifact action to v3.1.2 ([#2571](https://github.com/googleapis/java-bigquery/issues/2571)) ([aa0c70e](https://github.com/googleapis/java-bigquery/commit/aa0c70ec6fe0ae859b0944101373ebabb0bb4600))
+* Update cloud client dependencies ([#2583](https://github.com/googleapis/java-bigquery/issues/2583)) ([dcacc31](https://github.com/googleapis/java-bigquery/commit/dcacc3150b3dbcd9c54038035cec3a7b1946af6c))
+* Update dependency com.google.api.grpc:proto-google-cloud-bigqueryconnection-v1 to v2.15.0 ([#2577](https://github.com/googleapis/java-bigquery/issues/2577)) ([eaf09d6](https://github.com/googleapis/java-bigquery/commit/eaf09d65c00a742732b918478021dde3b12ac1bd))
+* Update dependency com.google.apis:google-api-services-bigquery to v2-rev20230311-2.0.0 ([#2578](https://github.com/googleapis/java-bigquery/issues/2578)) ([aab037c](https://github.com/googleapis/java-bigquery/commit/aab037c8eb676b42231c99b5890c991095d2f8c2))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.5.0 ([#2580](https://github.com/googleapis/java-bigquery/issues/2580)) ([1764eeb](https://github.com/googleapis/java-bigquery/commit/1764eeb8d56ab3e5bda9b554414b5fe4d022fb72))
+* Update dependency com.google.cloud:google-cloud-storage to v2.20.0 ([#2559](https://github.com/googleapis/java-bigquery/issues/2559)) ([8a854db](https://github.com/googleapis/java-bigquery/commit/8a854dbdcb676e2b2873ddfadf514f2e401fe987))
+* Update github/codeql-action action to v2.2.7 ([#2572](https://github.com/googleapis/java-bigquery/issues/2572)) ([105f5ee](https://github.com/googleapis/java-bigquery/commit/105f5ee8d8882f79688dec685f20f44817bf313a))
+
 ## [2.23.2](https://github.com/googleapis/java-bigquery/compare/v2.23.1...v2.23.2) (2023-03-07)
 
 
