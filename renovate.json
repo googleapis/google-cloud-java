@@ -52,7 +52,8 @@
         "^junit:junit",
         "^com.google.truth:truth",
         "^org.mockito:mockito-core",
-        "^org.objenesis:objenesis"
+        "^org.objenesis:objenesis",
+        "^com.google.cloud:google-cloud-storage"
       ],
       "semanticCommitType": "test",
       "semanticCommitScope": "deps"
@@ -68,15 +69,6 @@
         "^com.fasterxml.jackson.core"
       ],
       "groupName": "jackson dependencies"
-    },
-    {
-      "packagePatterns": [
-        "^com.google.api.grpc:proto-google-cloud-datacatalog",
-        "^com.google.cloud:google-cloud-datacatalog",
-        "^com.google.cloud:google-cloud-bigquerystorage-bom",
-        "^com.google.cloud:google-cloud-storage"
-      ],
-      "groupName": "cloud client dependencies"
     }
   ],
   "semanticCommits": true,
