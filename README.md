@@ -16,6 +16,7 @@ Java idiomatic client for [Cloud Logging Logback Appender][product-docs].
 
 
 If you are using Maven, add this to your pom.xml file:
+<!-- {x-version-update-start:google-cloud-logging-logback:released} -->
 
 
 ```xml
@@ -37,6 +38,7 @@ If you are using SBT, add this to your dependencies:
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-logging-logback" % "0.130.7-alpha"
 ```
+<!-- {x-version-update-end} -->
 
 ## Authentication
 
