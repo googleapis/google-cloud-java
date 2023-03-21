@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.24.1](https://github.com/googleapis/java-bigquery/compare/v2.24.0...v2.24.1) (2023-03-21)
+
+
+### Dependencies
+
+* Update cloud client dependencies ([7b07779](https://github.com/googleapis/java-bigquery/commit/7b0777924103a711f9e3066c0a52adc551f24fca))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.23.2 ([7b07779](https://github.com/googleapis/java-bigquery/commit/7b0777924103a711f9e3066c0a52adc551f24fca))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.24.0 ([7b07779](https://github.com/googleapis/java-bigquery/commit/7b0777924103a711f9e3066c0a52adc551f24fca))
+* Update dependency com.google.cloud:google-cloud-bigquerystorage-bom to v2.34.1 ([7b07779](https://github.com/googleapis/java-bigquery/commit/7b0777924103a711f9e3066c0a52adc551f24fca))
+* Update dependency com.google.cloud:google-cloud-bigtable to v2.20.1 ([7b07779](https://github.com/googleapis/java-bigquery/commit/7b0777924103a711f9e3066c0a52adc551f24fca))
+* Update dependency com.google.cloud:libraries-bom to v26.10.0 ([7b07779](https://github.com/googleapis/java-bigquery/commit/7b0777924103a711f9e3066c0a52adc551f24fca))
+
 ## [2.24.0](https://github.com/googleapis/java-bigquery/compare/v2.23.2...v2.24.0) (2023-03-21)
 
 
