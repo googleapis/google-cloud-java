@@ -48,7 +48,8 @@ public abstract class CloseStream implements ChangeStreamRecord, Serializable {
           !changeStreamContinuationTokens.isEmpty(),
           "A non-OK CloseStream should have continuation token(s).");
       Preconditions.checkState(
-          changeStreamContinuationTokens.size() == newPartitions.size(),
+          newPartitions.size() == 0
+              || changeStreamContinuationTokens.size() == newPartitions.size(),
           "Number of continuation tokens does not match number of new partitions.");
     }
     return new AutoValue_CloseStream(

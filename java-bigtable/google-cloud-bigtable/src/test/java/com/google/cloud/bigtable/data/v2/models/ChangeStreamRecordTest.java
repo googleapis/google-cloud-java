@@ -236,9 +236,45 @@ public class ChangeStreamRecordTest {
                 StreamContinuationToken.newBuilder()
                     .setPartition(StreamPartition.newBuilder().setRowRange(rowRange))
                     .setToken(token))
+            .addNewPartitions(StreamPartition.newBuilder().setRowRange(rowRange))
+            .addNewPartitions(StreamPartition.newBuilder().setRowRange(rowRange))
             .setStatus(status)
             .build();
     Assert.assertThrows(
         IllegalStateException.class, (ThrowingRunnable) CloseStream.fromProto(closeStreamProto));
+  }
+
+  // Tests that number of continuation tokens and new partitions don't need to match if new
+  // partitions is empty.
+  @Test
+  public void closeStreamTokenAndZeroNewPartitionMismatchNoExceptionTest()
+      throws IOException, ClassNotFoundException {
+    Status status = Status.newBuilder().setCode(11).build();
+    RowRange rowRange =
+        RowRange.newBuilder()
+            .setStartKeyClosed(ByteString.copyFromUtf8(""))
+            .setEndKeyOpen(ByteString.copyFromUtf8("apple"))
+            .build();
+    String token = "close-stream-token-1";
+    ReadChangeStreamResponse.CloseStream closeStreamProto =
+        ReadChangeStreamResponse.CloseStream.newBuilder()
+            .addContinuationTokens(
+                StreamContinuationToken.newBuilder()
+                    .setPartition(StreamPartition.newBuilder().setRowRange(rowRange))
+                    .setToken(token))
+            .setStatus(status)
+            .build();
+    CloseStream closeStream = CloseStream.fromProto(closeStreamProto);
+
+    ByteArrayOutputStream bos = new ByteArrayOutputStream();
+    ObjectOutputStream oos = new ObjectOutputStream(bos);
+    oos.writeObject(closeStream);
+    oos.close();
+    ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(bos.toByteArray()));
+    CloseStream actual = (CloseStream) ois.readObject();
+    assertThat(actual.getChangeStreamContinuationTokens())
+        .isEqualTo(closeStream.getChangeStreamContinuationTokens());
+    assertThat(actual.getStatus()).isEqualTo(closeStream.getStatus());
+    assertThat(actual.getNewPartitions()).isEqualTo(closeStream.getNewPartitions());
   }
 }
