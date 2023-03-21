@@ -60,6 +60,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -488,7 +489,8 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
   /**
    * Helper method to convert row from type com.google.cloud.bigtable.data.v2.models.Row to type
    * com.google.bigtable.v2.Row. After conversion, row cells within the same column and family are
-   * grouped and ordered; but the ordering of family and qualifier is not preserved.
+   * grouped and ordered; the ordering of qualifiers within the same family is preserved; but the
+   * ordering of families is not (the original order is not specified after all).
    *
    * @param row Logical row of type com.google.cloud.bigtable.data.v2.models.Row
    * @return the converted row in RowResult Builder
@@ -502,7 +504,9 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
         row.getCells().stream()
             .collect(
                 Collectors.groupingBy(
-                    RowCell::getFamily, Collectors.groupingBy(RowCell::getQualifier)));
+                    RowCell::getFamily,
+                    Collectors.groupingBy(
+                        RowCell::getQualifier, LinkedHashMap::new, Collectors.toList())));
     for (Map.Entry<String, Map<ByteString, List<RowCell>>> e : grouped.entrySet()) {
       Family.Builder family = rowBuilder.addFamiliesBuilder().setName(e.getKey());
 
