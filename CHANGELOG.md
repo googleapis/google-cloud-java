@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.34.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.34.0...v2.34.1) (2023-03-21)
+
+
+### Bug Fixes
+
+* Add service_yaml_parameters to `java_gapic_library` targets ([#2034](https://github.com/googleapis/java-bigquerystorage/issues/2034)) ([8dae87c](https://github.com/googleapis/java-bigquerystorage/commit/8dae87cff06c7d08b9d597be9c66de570739abf4))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.23.2 ([#2029](https://github.com/googleapis/java-bigquerystorage/issues/2029)) ([e9c0152](https://github.com/googleapis/java-bigquerystorage/commit/e9c0152c2b098d7fb2d1de4d535d636a3ac9f90e))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.5.0 ([#2050](https://github.com/googleapis/java-bigquerystorage/issues/2050)) ([349092f](https://github.com/googleapis/java-bigquerystorage/commit/349092f28f6017b1df5b325e9a9036c311e70546))
+* Update dependency com.google.http-client:google-http-client to v1.43.1 ([#2038](https://github.com/googleapis/java-bigquerystorage/issues/2038)) ([5e865c9](https://github.com/googleapis/java-bigquerystorage/commit/5e865c9b3779f0d20080eead241f1b5858156880))
+
 ## [2.34.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.33.1...v2.34.0) (2023-03-10)
 
 
