@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.20.1](https://github.com/googleapis/java-bigtable/compare/v2.20.0...v2.20.1) (2023-03-21)
+
+
+### Bug Fixes
+
+* If new_partitions is size 0, do not enforce size check ([#1673](https://github.com/googleapis/java-bigtable/issues/1673)) ([07bcfd9](https://github.com/googleapis/java-bigtable/commit/07bcfd9a0967f781fb8e5e0d764654dbf7bcda91))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-monitoring-bom to v3.14.0 ([#1668](https://github.com/googleapis/java-bigtable/issues/1668)) ([06f9615](https://github.com/googleapis/java-bigtable/commit/06f96156705a2a7897a31d11dad864afe94de693))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.5.0 ([#1670](https://github.com/googleapis/java-bigtable/issues/1670)) ([74cebf3](https://github.com/googleapis/java-bigtable/commit/74cebf3a5ab58f3fd3ae95583ba2421b733deda8))
+
 ## [2.20.0](https://github.com/googleapis/java-bigtable/compare/v2.19.2...v2.20.0) (2023-03-02)
 
 
