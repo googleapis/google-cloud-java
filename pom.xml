@@ -58,7 +58,6 @@
     <module>java-containeranalysis</module>
     <module>java-container</module>
     <module>java-contentwarehouse</module>
-    <module>java-core</module>
     <module>java-datacatalog</module>
     <module>java-dataflow</module>
     <module>java-dataform</module>
@@ -144,7 +143,6 @@
     <module>java-servicedirectory</module>
     <module>java-service-management</module>
     <module>java-service-usage</module>
-    <module>java-shared-dependencies</module>
     <module>java-shell</module>
     <module>java-speech</module>
     <module>java-storage-transfer</module>
