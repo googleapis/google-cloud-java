@@ -23,9 +23,6 @@
  * CreateTable.java</a>.
  *
  * <pre>{@code
- *  try {
- *       // Initialize client that will be used to send requests. This client only needs to be created
- *       // once, and can be reused for multiple requests.
  *       BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
  *
  *       TableId tableId = TableId.of(datasetName, tableName);
@@ -34,9 +31,6 @@
  *
  *       bigquery.create(tableInfo);
  *       System.out.println("Table created successfully");
- *     } catch (BigQueryException e) {
- *       System.out.println("Table was not created. \n" + e.toString());
- *     }
  * </pre>
  *
  * @see <a href="https://cloud.google.com/bigquery/">Google Cloud BigQuery</a>
