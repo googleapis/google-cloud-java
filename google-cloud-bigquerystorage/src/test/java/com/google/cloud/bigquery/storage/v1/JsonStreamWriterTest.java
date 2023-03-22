@@ -36,7 +36,7 @@ import com.google.cloud.bigquery.storage.test.Test.FooType;
 import com.google.cloud.bigquery.storage.test.Test.RepetitionType;
 import com.google.cloud.bigquery.storage.test.Test.UpdatedFooType;
 import com.google.cloud.bigquery.storage.v1.ConnectionWorkerPool.Settings;
-import com.google.cloud.bigquery.storage.v1.Exceptions.AppendSerializtionError;
+import com.google.cloud.bigquery.storage.v1.Exceptions.AppendSerializationError;
 import com.google.cloud.bigquery.storage.v1.TableFieldSchema.Mode;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
@@ -1096,7 +1096,7 @@ public class JsonStreamWriterTest {
       try {
         ApiFuture<AppendRowsResponse> appendFuture = writer.append(jsonArr);
         Assert.fail("expected ExecutionException");
-      } catch (AppendSerializtionError ex) {
+      } catch (AppendSerializationError ex) {
         assertEquals(
             "JSONObject has fields unknown to BigQuery: root.test_unknown.",
             ex.getRowIndexToErrorMessage().get(1));
@@ -1188,7 +1188,7 @@ public class JsonStreamWriterTest {
   }
 
   @Test
-  public void testMultipleAppendSerializtionErrors()
+  public void testMultipleAppendSerializationErrors()
       throws DescriptorValidationException, IOException, InterruptedException {
     FooType expectedProto = FooType.newBuilder().setFoo("allen").build();
     JSONObject foo = new JSONObject();
@@ -1213,10 +1213,10 @@ public class JsonStreamWriterTest {
         getTestJsonStreamWriterBuilder(TEST_STREAM, TABLE_SCHEMA).build()) {
       try {
         ApiFuture<AppendRowsResponse> appendFuture = writer.append(jsonArr);
-        Assert.fail("expected AppendSerializtionError");
-      } catch (AppendSerializtionError appendSerializtionError) {
+        Assert.fail("expected AppendSerializationError");
+      } catch (AppendSerializationError appendSerializationError) {
         Map<Integer, String> rowIndexToErrorMessage =
-            appendSerializtionError.getRowIndexToErrorMessage();
+            appendSerializationError.getRowIndexToErrorMessage();
         assertEquals(2, rowIndexToErrorMessage.size());
         assertEquals(
             "JSONObject has fields unknown to BigQuery: root.not_foo.",
@@ -1253,10 +1253,10 @@ public class JsonStreamWriterTest {
         getTestJsonStreamWriterBuilder(TEST_STREAM, TABLE_SCHEMA).build()) {
       try {
         ApiFuture<AppendRowsResponse> appendFuture = writer.append(jsonArr);
-        Assert.fail("expected AppendSerializtionError");
-      } catch (AppendSerializtionError appendSerializtionError) {
+        Assert.fail("expected AppendSerializationError");
+      } catch (AppendSerializationError appendSerializationError) {
         Map<Integer, String> rowIndexToErrorMessage =
-            appendSerializtionError.getRowIndexToErrorMessage();
+            appendSerializationError.getRowIndexToErrorMessage();
         assertEquals(1, rowIndexToErrorMessage.size());
         assertTrue(
             rowIndexToErrorMessage

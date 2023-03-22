@@ -28,7 +28,7 @@ import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.storage.v1.AppendRowsResponse;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
 import com.google.cloud.bigquery.storage.v1.Exceptions;
-import com.google.cloud.bigquery.storage.v1.Exceptions.AppendSerializtionError;
+import com.google.cloud.bigquery.storage.v1.Exceptions.AppendSerializationError;
 import com.google.cloud.bigquery.storage.v1.Exceptions.StorageException;
 import com.google.cloud.bigquery.storage.v1.JsonStreamWriter;
 import com.google.cloud.bigquery.storage.v1.TableName;
@@ -218,8 +218,8 @@ public class WriteToDefaultStream {
           }
         }
 
-        if (throwable instanceof AppendSerializtionError) {
-          AppendSerializtionError ase = (AppendSerializtionError) throwable;
+        if (throwable instanceof AppendSerializationError) {
+          AppendSerializationError ase = (AppendSerializationError) throwable;
           Map<Integer, String> rowIndexToErrorMessage = ase.getRowIndexToErrorMessage();
           if (rowIndexToErrorMessage.size() > 0) {
             // Omit the faulty rows

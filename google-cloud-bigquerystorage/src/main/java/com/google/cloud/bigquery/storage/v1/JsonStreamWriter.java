@@ -20,7 +20,7 @@ import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
-import com.google.cloud.bigquery.storage.v1.Exceptions.AppendSerializtionError;
+import com.google.cloud.bigquery.storage.v1.Exceptions.AppendSerializationError;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.Descriptors;
 import com.google.protobuf.Descriptors.Descriptor;
@@ -194,7 +194,8 @@ public class JsonStreamWriter implements AutoCloseable {
       // Any error in convertJsonToProtoMessage will throw an
       // IllegalArgumentException/IllegalStateException/NullPointerException.
       // IllegalArgumentException will be collected into a Map of row indexes to error messages.
-      // After the conversion is finished an AppendSerializtionError exception that contains all the
+      // After the conversion is finished an AppendSerializationError exception that contains all
+      // the
       // conversion errors will be thrown.
       long currentRequestSize = 0;
       Map<Integer, String> rowIndexToErrorMessage = new HashMap<>();
@@ -224,7 +225,7 @@ public class JsonStreamWriter implements AutoCloseable {
       }
 
       if (!rowIndexToErrorMessage.isEmpty()) {
-        throw new AppendSerializtionError(
+        throw new AppendSerializationError(
             Code.INVALID_ARGUMENT.getNumber(),
             "Append serialization failed for writer: " + streamName,
             streamName,
