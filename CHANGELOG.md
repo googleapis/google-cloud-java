@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.24.2](https://github.com/googleapis/java-bigquery/compare/v2.24.1...v2.24.2) (2023-03-22)
+
+
+### Dependencies
+
+* Update github/codeql-action action to v2.2.8 ([#2593](https://github.com/googleapis/java-bigquery/issues/2593)) ([d306ad8](https://github.com/googleapis/java-bigquery/commit/d306ad8189a44c066ad5305596c86fae71251055))
+
 ## [2.24.1](https://github.com/googleapis/java-bigquery/compare/v2.24.0...v2.24.1) (2023-03-21)
 
 
