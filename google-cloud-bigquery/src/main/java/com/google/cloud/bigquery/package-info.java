@@ -18,20 +18,19 @@
  * A client for BigQuery – A fully managed, petabyte scale, low cost enterprise data warehouse for
  * analytics.
  *
- * <p>A simple usage example showing how to create a table in Bigquery. For the complete source code see <a
+ * <p>A simple usage example showing how to create a table in Bigquery. For the complete source code
+ * see <a
  * href="https://github.com/googleapis/java-bigquery/blob/main/samples/snippets/src/main/java/com/example/bigquery/CreateTable.java">
  * CreateTable.java</a>.
  *
  * <pre>{@code
- *       BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
- *
- *       TableId tableId = TableId.of(datasetName, tableName);
- *       TableDefinition tableDefinition = StandardTableDefinition.of(schema);
- *       TableInfo tableInfo = TableInfo.newBuilder(tableId, tableDefinition).build();
- *
- *       bigquery.create(tableInfo);
- *       System.out.println("Table created successfully");
- * </pre>
+ * BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService(); *
+ * TableId tableId = TableId.of(datasetName, tableName);
+ * TableDefinition tableDefinition = StandardTableDefinition.of(schema);
+ * TableInfo tableInfo = TableInfo.newBuilder(tableId, tableDefinition).build(); *
+ * bigquery.create(tableInfo);
+ * System.out.println("Table created successfully");
+ * }</pre>
  *
  * @see <a href="https://cloud.google.com/bigquery/">Google Cloud BigQuery</a>
  */
