@@ -55,7 +55,7 @@ class BuiltinMetricsTracer extends BigtableTracer {
   // Total server latency needs to be atomic because it's accessed from different threads. E.g.
   // request() from user thread and attempt failed from grpc thread. We're only measuring the extra
   // time application spent blocking grpc buffer, which will be operationLatency - serverLatency.
-  private final AtomicLong totalServerLatency = new AtomicLong(0);
+  private final AtomicLong totalServerLatencyNano = new AtomicLong(0);
   // Stopwatch is not thread safe so this is a workaround to check if the stopwatch changes is
   // flushed to memory.
   private final Stopwatch serverLatencyTimer = Stopwatch.createUnstarted();
@@ -171,7 +171,7 @@ class BuiltinMetricsTracer extends BigtableTracer {
     // In all the cases, we want to stop the serverLatencyTimer here.
     synchronized (timerLock) {
       if (serverLatencyTimerIsRunning) {
-        totalServerLatency.addAndGet(serverLatencyTimer.elapsed(TimeUnit.MILLISECONDS));
+        totalServerLatencyNano.addAndGet(serverLatencyTimer.elapsed(TimeUnit.NANOSECONDS));
         serverLatencyTimer.reset();
         serverLatencyTimerIsRunning = false;
       }
@@ -233,6 +233,7 @@ class BuiltinMetricsTracer extends BigtableTracer {
     }
     operationTimer.stop();
     long operationLatency = operationTimer.elapsed(TimeUnit.MILLISECONDS);
+    long operationLatencyNano = operationTimer.elapsed(TimeUnit.NANOSECONDS);
 
     // Only record when retry count is greater than 0 so the retry
     // graph will be less confusing
@@ -242,7 +243,8 @@ class BuiltinMetricsTracer extends BigtableTracer {
 
     // serverLatencyTimer should already be stopped in recordAttemptCompletion
     recorder.putOperationLatencies(operationLatency);
-    recorder.putApplicationLatencies(operationLatency - totalServerLatency.get());
+    recorder.putApplicationLatencies(
+        Duration.ofNanos(operationLatencyNano - totalServerLatencyNano.get()).toMillis());
 
     if (operationType == OperationType.ServerStreaming
         && spanName.getMethodName().equals("ReadRows")) {
@@ -258,7 +260,7 @@ class BuiltinMetricsTracer extends BigtableTracer {
     synchronized (timerLock) {
       if (serverLatencyTimerIsRunning) {
         requestLeft.decrementAndGet();
-        totalServerLatency.addAndGet(serverLatencyTimer.elapsed(TimeUnit.MILLISECONDS));
+        totalServerLatencyNano.addAndGet(serverLatencyTimer.elapsed(TimeUnit.NANOSECONDS));
         serverLatencyTimer.reset();
         serverLatencyTimerIsRunning = false;
       }
