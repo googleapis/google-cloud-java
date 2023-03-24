@@ -395,13 +395,13 @@ public class EnhancedBigtableStub implements AutoCloseable {
     ReadRowsUserCallable<RowT> readRowCallable =
         new ReadRowsUserCallable<>(readRowsCallable, requestContext);
 
-    ServerStreamingCallable<Query, RowT> traced =
-        new TracedServerStreamingCallable<>(
-            readRowCallable, clientContext.getTracerFactory(), getSpanName("ReadRow"));
+    ReadRowsFirstCallable<RowT> firstRow = new ReadRowsFirstCallable<>(readRowCallable);
 
-    ReadRowsFirstCallable<RowT> firstRow = new ReadRowsFirstCallable<>(traced);
+    UnaryCallable<Query, RowT> traced =
+        new TracedUnaryCallable<>(
+            firstRow, clientContext.getTracerFactory(), getSpanName("ReadRow"));
 
-    return firstRow.withDefaultCallContext(clientContext.getDefaultCallContext());
+    return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
 
   /**
