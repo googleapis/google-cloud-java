@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.24.3](https://github.com/googleapis/java-bigquery/compare/v2.24.2...v2.24.3) (2023-03-24)
+
+
+### Dependencies
+
+* Update actions/checkout action to v3.5.0 ([#2600](https://github.com/googleapis/java-bigquery/issues/2600)) ([f38d9f1](https://github.com/googleapis/java-bigquery/commit/f38d9f17fdc067392631ee3c2d2a6c658985f68d))
+
 ## [2.24.2](https://github.com/googleapis/java-bigquery/compare/v2.24.1...v2.24.2) (2023-03-22)
 
 
