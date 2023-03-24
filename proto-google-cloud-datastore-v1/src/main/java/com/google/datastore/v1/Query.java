@@ -345,6 +345,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    * The properties to make distinct. The query results will contain the first
    * result for each distinct combination of values for the given properties
    * (if empty, all results are returned).
+   * Requires:
+   * * If `order` is specified, the set of distinct on properties must appear
+   * before the non-distinct on properties in `order`.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
@@ -360,6 +363,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    * The properties to make distinct. The query results will contain the first
    * result for each distinct combination of values for the given properties
    * (if empty, all results are returned).
+   * Requires:
+   * * If `order` is specified, the set of distinct on properties must appear
+   * before the non-distinct on properties in `order`.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
@@ -376,6 +382,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    * The properties to make distinct. The query results will contain the first
    * result for each distinct combination of values for the given properties
    * (if empty, all results are returned).
+   * Requires:
+   * * If `order` is specified, the set of distinct on properties must appear
+   * before the non-distinct on properties in `order`.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
@@ -391,6 +400,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    * The properties to make distinct. The query results will contain the first
    * result for each distinct combination of values for the given properties
    * (if empty, all results are returned).
+   * Requires:
+   * * If `order` is specified, the set of distinct on properties must appear
+   * before the non-distinct on properties in `order`.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
@@ -406,6 +418,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    * The properties to make distinct. The query results will contain the first
    * result for each distinct combination of values for the given properties
    * (if empty, all results are returned).
+   * Requires:
+   * * If `order` is specified, the set of distinct on properties must appear
+   * before the non-distinct on properties in `order`.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
@@ -2509,6 +2524,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     * Requires:
+     * * If `order` is specified, the set of distinct on properties must appear
+     * before the non-distinct on properties in `order`.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
@@ -2527,6 +2545,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     * Requires:
+     * * If `order` is specified, the set of distinct on properties must appear
+     * before the non-distinct on properties in `order`.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
@@ -2545,6 +2566,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     * Requires:
+     * * If `order` is specified, the set of distinct on properties must appear
+     * before the non-distinct on properties in `order`.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
@@ -2563,6 +2587,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     * Requires:
+     * * If `order` is specified, the set of distinct on properties must appear
+     * before the non-distinct on properties in `order`.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
@@ -2587,6 +2614,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     * Requires:
+     * * If `order` is specified, the set of distinct on properties must appear
+     * before the non-distinct on properties in `order`.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
@@ -2609,6 +2639,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     * Requires:
+     * * If `order` is specified, the set of distinct on properties must appear
+     * before the non-distinct on properties in `order`.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
@@ -2633,6 +2666,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     * Requires:
+     * * If `order` is specified, the set of distinct on properties must appear
+     * before the non-distinct on properties in `order`.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
@@ -2657,6 +2693,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     * Requires:
+     * * If `order` is specified, the set of distinct on properties must appear
+     * before the non-distinct on properties in `order`.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
@@ -2679,6 +2718,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     * Requires:
+     * * If `order` is specified, the set of distinct on properties must appear
+     * before the non-distinct on properties in `order`.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
@@ -2701,6 +2743,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     * Requires:
+     * * If `order` is specified, the set of distinct on properties must appear
+     * before the non-distinct on properties in `order`.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
@@ -2723,6 +2768,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     * Requires:
+     * * If `order` is specified, the set of distinct on properties must appear
+     * before the non-distinct on properties in `order`.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
@@ -2744,6 +2792,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     * Requires:
+     * * If `order` is specified, the set of distinct on properties must appear
+     * before the non-distinct on properties in `order`.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
@@ -2765,6 +2816,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     * Requires:
+     * * If `order` is specified, the set of distinct on properties must appear
+     * before the non-distinct on properties in `order`.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
@@ -2779,6 +2833,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     * Requires:
+     * * If `order` is specified, the set of distinct on properties must appear
+     * before the non-distinct on properties in `order`.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
@@ -2797,6 +2854,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     * Requires:
+     * * If `order` is specified, the set of distinct on properties must appear
+     * before the non-distinct on properties in `order`.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
@@ -2816,6 +2876,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     * Requires:
+     * * If `order` is specified, the set of distinct on properties must appear
+     * before the non-distinct on properties in `order`.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
@@ -2831,6 +2894,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     * Requires:
+     * * If `order` is specified, the set of distinct on properties must appear
+     * before the non-distinct on properties in `order`.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
@@ -2846,6 +2912,9 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
      * (if empty, all results are returned).
+     * Requires:
+     * * If `order` is specified, the set of distinct on properties must appear
+     * before the non-distinct on properties in `order`.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>

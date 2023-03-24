@@ -121,7 +121,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *   COUNT_UP_TO(1) AS count_up_to_1,
      *   COUNT_UP_TO(2),
      *   COUNT_UP_TO(3) AS count_up_to_3,
-     *   COUNT_UP_TO(4)
+     *   COUNT(*)
      * OVER (
      *   ...
      * );
@@ -132,7 +132,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *   COUNT_UP_TO(1) AS count_up_to_1,
      *   COUNT_UP_TO(2) AS property_1,
      *   COUNT_UP_TO(3) AS count_up_to_3,
-     *   COUNT_UP_TO(4) AS property_2
+     *   COUNT(*) AS property_2
      * OVER (
      *   ...
      * );
@@ -161,7 +161,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *   COUNT_UP_TO(1) AS count_up_to_1,
      *   COUNT_UP_TO(2),
      *   COUNT_UP_TO(3) AS count_up_to_3,
-     *   COUNT_UP_TO(4)
+     *   COUNT(*)
      * OVER (
      *   ...
      * );
@@ -172,7 +172,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *   COUNT_UP_TO(1) AS count_up_to_1,
      *   COUNT_UP_TO(2) AS property_1,
      *   COUNT_UP_TO(3) AS count_up_to_3,
-     *   COUNT_UP_TO(4) AS property_2
+     *   COUNT(*) AS property_2
      * OVER (
      *   ...
      * );
@@ -195,7 +195,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Defines a aggregation that produces a single result.
+   * Defines an aggregation that produces a single result.
    * </pre>
    *
    * Protobuf type {@code google.datastore.v1.AggregationQuery.Aggregation}
@@ -252,7 +252,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        * Optional. Optional constraint on the maximum number of entities to
        * count.
        * This provides a way to set an upper bound on the number of entities
-       * to scan, limiting latency and cost.
+       * to scan, limiting latency, and cost.
        * Unspecified is interpreted as no bound.
        * If a zero value is provided, a count result of zero should always be
        * expected.
@@ -277,7 +277,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        * Optional. Optional constraint on the maximum number of entities to
        * count.
        * This provides a way to set an upper bound on the number of entities
-       * to scan, limiting latency and cost.
+       * to scan, limiting latency, and cost.
        * Unspecified is interpreted as no bound.
        * If a zero value is provided, a count result of zero should always be
        * expected.
@@ -302,7 +302,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        * Optional. Optional constraint on the maximum number of entities to
        * count.
        * This provides a way to set an upper bound on the number of entities
-       * to scan, limiting latency and cost.
+       * to scan, limiting latency, and cost.
        * Unspecified is interpreted as no bound.
        * If a zero value is provided, a count result of zero should always be
        * expected.
@@ -377,7 +377,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        * Optional. Optional constraint on the maximum number of entities to
        * count.
        * This provides a way to set an upper bound on the number of entities
-       * to scan, limiting latency and cost.
+       * to scan, limiting latency, and cost.
        * Unspecified is interpreted as no bound.
        * If a zero value is provided, a count result of zero should always be
        * expected.
@@ -405,7 +405,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        * Optional. Optional constraint on the maximum number of entities to
        * count.
        * This provides a way to set an upper bound on the number of entities
-       * to scan, limiting latency and cost.
+       * to scan, limiting latency, and cost.
        * Unspecified is interpreted as no bound.
        * If a zero value is provided, a count result of zero should always be
        * expected.
@@ -433,7 +433,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        * Optional. Optional constraint on the maximum number of entities to
        * count.
        * This provides a way to set an upper bound on the number of entities
-       * to scan, limiting latency and cost.
+       * to scan, limiting latency, and cost.
        * Unspecified is interpreted as no bound.
        * If a zero value is provided, a count result of zero should always be
        * expected.
@@ -825,7 +825,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
          * Optional. Optional constraint on the maximum number of entities to
          * count.
          * This provides a way to set an upper bound on the number of entities
-         * to scan, limiting latency and cost.
+         * to scan, limiting latency, and cost.
          * Unspecified is interpreted as no bound.
          * If a zero value is provided, a count result of zero should always be
          * expected.
@@ -852,7 +852,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
          * Optional. Optional constraint on the maximum number of entities to
          * count.
          * This provides a way to set an upper bound on the number of entities
-         * to scan, limiting latency and cost.
+         * to scan, limiting latency, and cost.
          * Unspecified is interpreted as no bound.
          * If a zero value is provided, a count result of zero should always be
          * expected.
@@ -883,7 +883,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
          * Optional. Optional constraint on the maximum number of entities to
          * count.
          * This provides a way to set an upper bound on the number of entities
-         * to scan, limiting latency and cost.
+         * to scan, limiting latency, and cost.
          * Unspecified is interpreted as no bound.
          * If a zero value is provided, a count result of zero should always be
          * expected.
@@ -918,7 +918,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
          * Optional. Optional constraint on the maximum number of entities to
          * count.
          * This provides a way to set an upper bound on the number of entities
-         * to scan, limiting latency and cost.
+         * to scan, limiting latency, and cost.
          * Unspecified is interpreted as no bound.
          * If a zero value is provided, a count result of zero should always be
          * expected.
@@ -950,7 +950,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
          * Optional. Optional constraint on the maximum number of entities to
          * count.
          * This provides a way to set an upper bound on the number of entities
-         * to scan, limiting latency and cost.
+         * to scan, limiting latency, and cost.
          * Unspecified is interpreted as no bound.
          * If a zero value is provided, a count result of zero should always be
          * expected.
@@ -988,7 +988,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
          * Optional. Optional constraint on the maximum number of entities to
          * count.
          * This provides a way to set an upper bound on the number of entities
-         * to scan, limiting latency and cost.
+         * to scan, limiting latency, and cost.
          * Unspecified is interpreted as no bound.
          * If a zero value is provided, a count result of zero should always be
          * expected.
@@ -1020,7 +1020,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
          * Optional. Optional constraint on the maximum number of entities to
          * count.
          * This provides a way to set an upper bound on the number of entities
-         * to scan, limiting latency and cost.
+         * to scan, limiting latency, and cost.
          * Unspecified is interpreted as no bound.
          * If a zero value is provided, a count result of zero should always be
          * expected.
@@ -1047,7 +1047,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
          * Optional. Optional constraint on the maximum number of entities to
          * count.
          * This provides a way to set an upper bound on the number of entities
-         * to scan, limiting latency and cost.
+         * to scan, limiting latency, and cost.
          * Unspecified is interpreted as no bound.
          * If a zero value is provided, a count result of zero should always be
          * expected.
@@ -1076,7 +1076,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
          * Optional. Optional constraint on the maximum number of entities to
          * count.
          * This provides a way to set an upper bound on the number of entities
-         * to scan, limiting latency and cost.
+         * to scan, limiting latency, and cost.
          * Unspecified is interpreted as no bound.
          * If a zero value is provided, a count result of zero should always be
          * expected.
@@ -1287,7 +1287,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *   COUNT_UP_TO(1) AS count_up_to_1,
      *   COUNT_UP_TO(2),
      *   COUNT_UP_TO(3) AS count_up_to_3,
-     *   COUNT_UP_TO(4)
+     *   COUNT(*)
      * OVER (
      *   ...
      * );
@@ -1298,7 +1298,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *   COUNT_UP_TO(1) AS count_up_to_1,
      *   COUNT_UP_TO(2) AS property_1,
      *   COUNT_UP_TO(3) AS count_up_to_3,
-     *   COUNT_UP_TO(4) AS property_2
+     *   COUNT(*) AS property_2
      * OVER (
      *   ...
      * );
@@ -1338,7 +1338,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *   COUNT_UP_TO(1) AS count_up_to_1,
      *   COUNT_UP_TO(2),
      *   COUNT_UP_TO(3) AS count_up_to_3,
-     *   COUNT_UP_TO(4)
+     *   COUNT(*)
      * OVER (
      *   ...
      * );
@@ -1349,7 +1349,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *   COUNT_UP_TO(1) AS count_up_to_1,
      *   COUNT_UP_TO(2) AS property_1,
      *   COUNT_UP_TO(3) AS count_up_to_3,
-     *   COUNT_UP_TO(4) AS property_2
+     *   COUNT(*) AS property_2
      * OVER (
      *   ...
      * );
@@ -1567,7 +1567,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Defines a aggregation that produces a single result.
+     * Defines an aggregation that produces a single result.
      * </pre>
      *
      * Protobuf type {@code google.datastore.v1.AggregationQuery.Aggregation}
@@ -2021,7 +2021,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        *   COUNT_UP_TO(1) AS count_up_to_1,
        *   COUNT_UP_TO(2),
        *   COUNT_UP_TO(3) AS count_up_to_3,
-       *   COUNT_UP_TO(4)
+       *   COUNT(*)
        * OVER (
        *   ...
        * );
@@ -2032,7 +2032,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        *   COUNT_UP_TO(1) AS count_up_to_1,
        *   COUNT_UP_TO(2) AS property_1,
        *   COUNT_UP_TO(3) AS count_up_to_3,
-       *   COUNT_UP_TO(4) AS property_2
+       *   COUNT(*) AS property_2
        * OVER (
        *   ...
        * );
@@ -2071,7 +2071,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        *   COUNT_UP_TO(1) AS count_up_to_1,
        *   COUNT_UP_TO(2),
        *   COUNT_UP_TO(3) AS count_up_to_3,
-       *   COUNT_UP_TO(4)
+       *   COUNT(*)
        * OVER (
        *   ...
        * );
@@ -2082,7 +2082,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        *   COUNT_UP_TO(1) AS count_up_to_1,
        *   COUNT_UP_TO(2) AS property_1,
        *   COUNT_UP_TO(3) AS count_up_to_3,
-       *   COUNT_UP_TO(4) AS property_2
+       *   COUNT(*) AS property_2
        * OVER (
        *   ...
        * );
@@ -2121,7 +2121,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        *   COUNT_UP_TO(1) AS count_up_to_1,
        *   COUNT_UP_TO(2),
        *   COUNT_UP_TO(3) AS count_up_to_3,
-       *   COUNT_UP_TO(4)
+       *   COUNT(*)
        * OVER (
        *   ...
        * );
@@ -2132,7 +2132,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        *   COUNT_UP_TO(1) AS count_up_to_1,
        *   COUNT_UP_TO(2) AS property_1,
        *   COUNT_UP_TO(3) AS count_up_to_3,
-       *   COUNT_UP_TO(4) AS property_2
+       *   COUNT(*) AS property_2
        * OVER (
        *   ...
        * );
@@ -2170,7 +2170,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        *   COUNT_UP_TO(1) AS count_up_to_1,
        *   COUNT_UP_TO(2),
        *   COUNT_UP_TO(3) AS count_up_to_3,
-       *   COUNT_UP_TO(4)
+       *   COUNT(*)
        * OVER (
        *   ...
        * );
@@ -2181,7 +2181,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        *   COUNT_UP_TO(1) AS count_up_to_1,
        *   COUNT_UP_TO(2) AS property_1,
        *   COUNT_UP_TO(3) AS count_up_to_3,
-       *   COUNT_UP_TO(4) AS property_2
+       *   COUNT(*) AS property_2
        * OVER (
        *   ...
        * );
@@ -2215,7 +2215,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        *   COUNT_UP_TO(1) AS count_up_to_1,
        *   COUNT_UP_TO(2),
        *   COUNT_UP_TO(3) AS count_up_to_3,
-       *   COUNT_UP_TO(4)
+       *   COUNT(*)
        * OVER (
        *   ...
        * );
@@ -2226,7 +2226,7 @@ public final class AggregationQuery extends com.google.protobuf.GeneratedMessage
        *   COUNT_UP_TO(1) AS count_up_to_1,
        *   COUNT_UP_TO(2) AS property_1,
        *   COUNT_UP_TO(3) AS count_up_to_3,
-       *   COUNT_UP_TO(4) AS property_2
+       *   COUNT(*) AS property_2
        * OVER (
        *   ...
        * );
