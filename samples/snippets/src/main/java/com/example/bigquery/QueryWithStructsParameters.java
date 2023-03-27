@@ -40,15 +40,13 @@ public class QueryWithStructsParameters {
 
       // Create struct
       Map<String, QueryParameterValue> struct = new HashMap<>();
-      struct.put("booleanField", QueryParameterValue.bool(true));
-      struct.put("integerField", QueryParameterValue.string("test-stringField"));
-      struct.put("stringField", QueryParameterValue.int64(10));
+      struct.put("x", QueryParameterValue.int64(1));
+      struct.put("y", QueryParameterValue.string("foo"));
       QueryParameterValue recordValue = QueryParameterValue.struct(struct);
 
-      String query = "SELECT STRUCT(@recordField) AS record";
+      String query = "SELECT STRUCT(@recordField) AS s";
       QueryJobConfiguration queryConfig =
           QueryJobConfiguration.newBuilder(query)
-              .setUseLegacySql(false)
               .addNamedParameter("recordField", recordValue)
               .build();
 
