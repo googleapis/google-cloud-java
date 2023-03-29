@@ -139,6 +139,26 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      * <code>LOW_CONFIDENCE_SCORE = 5;</code>
      */
     LOW_CONFIDENCE_SCORE(5),
+    /**
+     *
+     *
+     * <pre>
+     * The request matches behavioral characteristics of a carding attack.
+     * </pre>
+     *
+     * <code>SUSPECTED_CARDING = 6;</code>
+     */
+    SUSPECTED_CARDING(6),
+    /**
+     *
+     *
+     * <pre>
+     * The request matches behavioral characteristics of chargebacks for fraud.
+     * </pre>
+     *
+     * <code>SUSPECTED_CHARGEBACK = 7;</code>
+     */
+    SUSPECTED_CHARGEBACK(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -204,6 +224,26 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
      * <code>LOW_CONFIDENCE_SCORE = 5;</code>
      */
     public static final int LOW_CONFIDENCE_SCORE_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * The request matches behavioral characteristics of a carding attack.
+     * </pre>
+     *
+     * <code>SUSPECTED_CARDING = 6;</code>
+     */
+    public static final int SUSPECTED_CARDING_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * The request matches behavioral characteristics of chargebacks for fraud.
+     * </pre>
+     *
+     * <code>SUSPECTED_CHARGEBACK = 7;</code>
+     */
+    public static final int SUSPECTED_CHARGEBACK_VALUE = 7;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -241,6 +281,10 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessageV3
           return UNEXPECTED_USAGE_PATTERNS;
         case 5:
           return LOW_CONFIDENCE_SCORE;
+        case 6:
+          return SUSPECTED_CARDING;
+        case 7:
+          return SUSPECTED_CHARGEBACK;
         default:
           return null;
       }

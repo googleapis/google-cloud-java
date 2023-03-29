@@ -29,6 +29,7 @@ import com.google.cloud.recaptchaenterprise.v1.stub.RecaptchaEnterpriseServiceSt
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse;
 import com.google.recaptchaenterprise.v1.Assessment;
@@ -417,6 +418,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *           .setName(AssessmentName.of("[PROJECT]", "[ASSESSMENT]").toString())
    *           .addAllReasons(new ArrayList<AnnotateAssessmentRequest.Reason>())
    *           .setHashedAccountId(ByteString.EMPTY)
+   *           .setTransactionEvent(TransactionEvent.newBuilder().build())
    *           .build();
    *   AnnotateAssessmentResponse response =
    *       recaptchaEnterpriseServiceClient.annotateAssessment(request);
@@ -450,6 +452,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *           .setName(AssessmentName.of("[PROJECT]", "[ASSESSMENT]").toString())
    *           .addAllReasons(new ArrayList<AnnotateAssessmentRequest.Reason>())
    *           .setHashedAccountId(ByteString.EMPTY)
+   *           .setTransactionEvent(TransactionEvent.newBuilder().build())
    *           .build();
    *   ApiFuture<AnnotateAssessmentResponse> future =
    *       recaptchaEnterpriseServiceClient.annotateAssessmentCallable().futureCall(request);
@@ -461,6 +464,70 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
   public final UnaryCallable<AnnotateAssessmentRequest, AnnotateAssessmentResponse>
       annotateAssessmentCallable() {
     return stub.annotateAssessmentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new reCAPTCHA Enterprise key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   Key key = Key.newBuilder().build();
+   *   Key response = recaptchaEnterpriseServiceClient.createKey(parent, key);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the project in which the key will be created, in the format
+   *     "projects/{project}".
+   * @param key Required. Information to create a reCAPTCHA Enterprise key.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Key createKey(ProjectName parent, Key key) {
+    CreateKeyRequest request =
+        CreateKeyRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setKey(key)
+            .build();
+    return createKey(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new reCAPTCHA Enterprise key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   Key key = Key.newBuilder().build();
+   *   Key response = recaptchaEnterpriseServiceClient.createKey(parent, key);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the project in which the key will be created, in the format
+   *     "projects/{project}".
+   * @param key Required. Information to create a reCAPTCHA Enterprise key.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Key createKey(String parent, Key key) {
+    CreateKeyRequest request = CreateKeyRequest.newBuilder().setParent(parent).setKey(key).build();
+    return createKey(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -521,6 +588,67 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateKeyRequest, Key> createKeyCallable() {
     return stub.createKeyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the list of all keys that belong to a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   for (Key element : recaptchaEnterpriseServiceClient.listKeys(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the project that contains the keys that will be listed, in
+   *     the format "projects/{project}".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListKeysPagedResponse listKeys(ProjectName parent) {
+    ListKeysRequest request =
+        ListKeysRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listKeys(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the list of all keys that belong to a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   for (Key element : recaptchaEnterpriseServiceClient.listKeys(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the project that contains the keys that will be listed, in
+   *     the format "projects/{project}".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListKeysPagedResponse listKeys(String parent) {
+    ListKeysRequest request = ListKeysRequest.newBuilder().setParent(parent).build();
+    return listKeys(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -770,6 +898,63 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
    *     RecaptchaEnterpriseServiceClient.create()) {
+   *   KeyName name = KeyName.of("[PROJECT]", "[KEY]");
+   *   Key response = recaptchaEnterpriseServiceClient.getKey(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the requested key, in the format
+   *     "projects/{project}/keys/{key}".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Key getKey(KeyName name) {
+    GetKeyRequest request =
+        GetKeyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getKey(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the specified key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   String name = KeyName.of("[PROJECT]", "[KEY]").toString();
+   *   Key response = recaptchaEnterpriseServiceClient.getKey(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the requested key, in the format
+   *     "projects/{project}/keys/{key}".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Key getKey(String name) {
+    GetKeyRequest request = GetKeyRequest.newBuilder().setName(name).build();
+    return getKey(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the specified key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
    *   GetKeyRequest request =
    *       GetKeyRequest.newBuilder().setName(KeyName.of("[PROJECT]", "[KEY]").toString()).build();
    *   Key response = recaptchaEnterpriseServiceClient.getKey(request);
@@ -807,6 +992,37 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<GetKeyRequest, Key> getKeyCallable() {
     return stub.getKeyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   Key key = Key.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Key response = recaptchaEnterpriseServiceClient.updateKey(key, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param key Required. The key to update.
+   * @param updateMask Optional. The mask to control which fields of the key get updated. If the
+   *     mask is not present, all fields will be updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Key updateKey(Key key, FieldMask updateMask) {
+    UpdateKeyRequest request =
+        UpdateKeyRequest.newBuilder().setKey(key).setUpdateMask(updateMask).build();
+    return updateKey(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -867,6 +1083,63 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateKeyRequest, Key> updateKeyCallable() {
     return stub.updateKeyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   KeyName name = KeyName.of("[PROJECT]", "[KEY]");
+   *   recaptchaEnterpriseServiceClient.deleteKey(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the key to be deleted, in the format
+   *     "projects/{project}/keys/{key}".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteKey(KeyName name) {
+    DeleteKeyRequest request =
+        DeleteKeyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteKey(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the specified key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   String name = KeyName.of("[PROJECT]", "[KEY]").toString();
+   *   recaptchaEnterpriseServiceClient.deleteKey(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the key to be deleted, in the format
+   *     "projects/{project}/keys/{key}".
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteKey(String name) {
+    DeleteKeyRequest request = DeleteKeyRequest.newBuilder().setName(name).build();
+    deleteKey(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

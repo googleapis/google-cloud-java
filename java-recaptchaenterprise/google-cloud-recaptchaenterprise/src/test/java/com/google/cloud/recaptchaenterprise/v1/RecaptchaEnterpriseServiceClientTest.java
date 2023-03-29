@@ -45,6 +45,7 @@ import com.google.recaptchaenterprise.v1.CreateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.CreateKeyRequest;
 import com.google.recaptchaenterprise.v1.DeleteKeyRequest;
 import com.google.recaptchaenterprise.v1.Event;
+import com.google.recaptchaenterprise.v1.FraudPreventionAssessment;
 import com.google.recaptchaenterprise.v1.GetKeyRequest;
 import com.google.recaptchaenterprise.v1.GetMetricsRequest;
 import com.google.recaptchaenterprise.v1.Key;
@@ -139,6 +140,7 @@ public class RecaptchaEnterpriseServiceClientTest {
             .setAccountDefenderAssessment(AccountDefenderAssessment.newBuilder().build())
             .setPrivatePasswordLeakVerification(
                 PrivatePasswordLeakVerification.newBuilder().build())
+            .setFraudPreventionAssessment(FraudPreventionAssessment.newBuilder().build())
             .build();
     mockRecaptchaEnterpriseService.addResponse(expectedResponse);
 
@@ -187,6 +189,7 @@ public class RecaptchaEnterpriseServiceClientTest {
             .setAccountDefenderAssessment(AccountDefenderAssessment.newBuilder().build())
             .setPrivatePasswordLeakVerification(
                 PrivatePasswordLeakVerification.newBuilder().build())
+            .setFraudPreventionAssessment(FraudPreventionAssessment.newBuilder().build())
             .build();
     mockRecaptchaEnterpriseService.addResponse(expectedResponse);
 
@@ -316,21 +319,18 @@ public class RecaptchaEnterpriseServiceClientTest {
             .build();
     mockRecaptchaEnterpriseService.addResponse(expectedResponse);
 
-    CreateKeyRequest request =
-        CreateKeyRequest.newBuilder()
-            .setParent(ProjectName.of("[PROJECT]").toString())
-            .setKey(Key.newBuilder().build())
-            .build();
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    Key key = Key.newBuilder().build();
 
-    Key actualResponse = client.createKey(request);
+    Key actualResponse = client.createKey(parent, key);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateKeyRequest actualRequest = ((CreateKeyRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getParent(), actualRequest.getParent());
-    Assert.assertEquals(request.getKey(), actualRequest.getKey());
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(key, actualRequest.getKey());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -343,12 +343,55 @@ public class RecaptchaEnterpriseServiceClientTest {
     mockRecaptchaEnterpriseService.addException(exception);
 
     try {
-      CreateKeyRequest request =
-          CreateKeyRequest.newBuilder()
-              .setParent(ProjectName.of("[PROJECT]").toString())
-              .setKey(Key.newBuilder().build())
-              .build();
-      client.createKey(request);
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      Key key = Key.newBuilder().build();
+      client.createKey(parent, key);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createKeyTest2() throws Exception {
+    Key expectedResponse =
+        Key.newBuilder()
+            .setName(KeyName.of("[PROJECT]", "[KEY]").toString())
+            .setDisplayName("displayName1714148973")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setTestingOptions(TestingOptions.newBuilder().build())
+            .setWafSettings(WafSettings.newBuilder().build())
+            .build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    Key key = Key.newBuilder().build();
+
+    Key actualResponse = client.createKey(parent, key);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateKeyRequest actualRequest = ((CreateKeyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(key, actualRequest.getKey());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createKeyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Key key = Key.newBuilder().build();
+      client.createKey(parent, key);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -365,14 +408,9 @@ public class RecaptchaEnterpriseServiceClientTest {
             .build();
     mockRecaptchaEnterpriseService.addResponse(expectedResponse);
 
-    ListKeysRequest request =
-        ListKeysRequest.newBuilder()
-            .setParent(ProjectName.of("[PROJECT]").toString())
-            .setPageSize(883849137)
-            .setPageToken("pageToken873572522")
-            .build();
+    ProjectName parent = ProjectName.of("[PROJECT]");
 
-    ListKeysPagedResponse pagedListResponse = client.listKeys(request);
+    ListKeysPagedResponse pagedListResponse = client.listKeys(parent);
 
     List<Key> resources = Lists.newArrayList(pagedListResponse.iterateAll());
 
@@ -383,9 +421,7 @@ public class RecaptchaEnterpriseServiceClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListKeysRequest actualRequest = ((ListKeysRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getParent(), actualRequest.getParent());
-    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
-    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -398,13 +434,52 @@ public class RecaptchaEnterpriseServiceClientTest {
     mockRecaptchaEnterpriseService.addException(exception);
 
     try {
-      ListKeysRequest request =
-          ListKeysRequest.newBuilder()
-              .setParent(ProjectName.of("[PROJECT]").toString())
-              .setPageSize(883849137)
-              .setPageToken("pageToken873572522")
-              .build();
-      client.listKeys(request);
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      client.listKeys(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listKeysTest2() throws Exception {
+    Key responsesElement = Key.newBuilder().build();
+    ListKeysResponse expectedResponse =
+        ListKeysResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllKeys(Arrays.asList(responsesElement))
+            .build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListKeysPagedResponse pagedListResponse = client.listKeys(parent);
+
+    List<Key> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getKeysList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListKeysRequest actualRequest = ((ListKeysRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listKeysExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listKeys(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -502,17 +577,16 @@ public class RecaptchaEnterpriseServiceClientTest {
             .build();
     mockRecaptchaEnterpriseService.addResponse(expectedResponse);
 
-    GetKeyRequest request =
-        GetKeyRequest.newBuilder().setName(KeyName.of("[PROJECT]", "[KEY]").toString()).build();
+    KeyName name = KeyName.of("[PROJECT]", "[KEY]");
 
-    Key actualResponse = client.getKey(request);
+    Key actualResponse = client.getKey(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetKeyRequest actualRequest = ((GetKeyRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -525,9 +599,51 @@ public class RecaptchaEnterpriseServiceClientTest {
     mockRecaptchaEnterpriseService.addException(exception);
 
     try {
-      GetKeyRequest request =
-          GetKeyRequest.newBuilder().setName(KeyName.of("[PROJECT]", "[KEY]").toString()).build();
-      client.getKey(request);
+      KeyName name = KeyName.of("[PROJECT]", "[KEY]");
+      client.getKey(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getKeyTest2() throws Exception {
+    Key expectedResponse =
+        Key.newBuilder()
+            .setName(KeyName.of("[PROJECT]", "[KEY]").toString())
+            .setDisplayName("displayName1714148973")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setTestingOptions(TestingOptions.newBuilder().build())
+            .setWafSettings(WafSettings.newBuilder().build())
+            .build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Key actualResponse = client.getKey(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetKeyRequest actualRequest = ((GetKeyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getKeyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getKey(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -547,21 +663,18 @@ public class RecaptchaEnterpriseServiceClientTest {
             .build();
     mockRecaptchaEnterpriseService.addResponse(expectedResponse);
 
-    UpdateKeyRequest request =
-        UpdateKeyRequest.newBuilder()
-            .setKey(Key.newBuilder().build())
-            .setUpdateMask(FieldMask.newBuilder().build())
-            .build();
+    Key key = Key.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
 
-    Key actualResponse = client.updateKey(request);
+    Key actualResponse = client.updateKey(key, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateKeyRequest actualRequest = ((UpdateKeyRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getKey(), actualRequest.getKey());
-    Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
+    Assert.assertEquals(key, actualRequest.getKey());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -574,12 +687,9 @@ public class RecaptchaEnterpriseServiceClientTest {
     mockRecaptchaEnterpriseService.addException(exception);
 
     try {
-      UpdateKeyRequest request =
-          UpdateKeyRequest.newBuilder()
-              .setKey(Key.newBuilder().build())
-              .setUpdateMask(FieldMask.newBuilder().build())
-              .build();
-      client.updateKey(request);
+      Key key = Key.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateKey(key, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -591,16 +701,15 @@ public class RecaptchaEnterpriseServiceClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockRecaptchaEnterpriseService.addResponse(expectedResponse);
 
-    DeleteKeyRequest request =
-        DeleteKeyRequest.newBuilder().setName(KeyName.of("[PROJECT]", "[KEY]").toString()).build();
+    KeyName name = KeyName.of("[PROJECT]", "[KEY]");
 
-    client.deleteKey(request);
+    client.deleteKey(name);
 
     List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteKeyRequest actualRequest = ((DeleteKeyRequest) actualRequests.get(0));
 
-    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -613,11 +722,42 @@ public class RecaptchaEnterpriseServiceClientTest {
     mockRecaptchaEnterpriseService.addException(exception);
 
     try {
-      DeleteKeyRequest request =
-          DeleteKeyRequest.newBuilder()
-              .setName(KeyName.of("[PROJECT]", "[KEY]").toString())
-              .build();
-      client.deleteKey(request);
+      KeyName name = KeyName.of("[PROJECT]", "[KEY]");
+      client.deleteKey(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteKeyTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteKey(name);
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteKeyRequest actualRequest = ((DeleteKeyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteKeyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteKey(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

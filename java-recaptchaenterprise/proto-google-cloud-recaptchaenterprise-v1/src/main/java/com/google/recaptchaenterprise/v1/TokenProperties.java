@@ -18,7 +18,15 @@
 
 package com.google.recaptchaenterprise.v1;
 
-/** Protobuf type {@code google.cloud.recaptchaenterprise.v1.TokenProperties} */
+/**
+ *
+ *
+ * <pre>
+ * Properties of the provided event token.
+ * </pre>
+ *
+ * Protobuf type {@code google.cloud.recaptchaenterprise.v1.TokenProperties}
+ */
 public final class TokenProperties extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.TokenProperties)
@@ -851,7 +859,15 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.cloud.recaptchaenterprise.v1.TokenProperties} */
+  /**
+   *
+   *
+   * <pre>
+   * Properties of the provided event token.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.recaptchaenterprise.v1.TokenProperties}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.recaptchaenterprise.v1.TokenProperties)

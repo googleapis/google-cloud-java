@@ -182,4 +182,48 @@ public interface AnnotateAssessmentRequestOrBuilder
    * @return The hashedAccountId.
    */
   com.google.protobuf.ByteString getHashedAccountId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If the assessment is part of a payment transaction, provide
+   * details on payment lifecycle events that occur in the transaction.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TransactionEvent transaction_event = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the transactionEvent field is set.
+   */
+  boolean hasTransactionEvent();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If the assessment is part of a payment transaction, provide
+   * details on payment lifecycle events that occur in the transaction.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TransactionEvent transaction_event = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The transactionEvent.
+   */
+  com.google.recaptchaenterprise.v1.TransactionEvent getTransactionEvent();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If the assessment is part of a payment transaction, provide
+   * details on payment lifecycle events that occur in the transaction.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TransactionEvent transaction_event = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.recaptchaenterprise.v1.TransactionEventOrBuilder getTransactionEventOrBuilder();
 }

@@ -719,8 +719,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
    * Service to determine the likelihood an event is legitimate.
    * </pre>
    */
-  public abstract static class RecaptchaEnterpriseServiceImplBase
-      implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -729,7 +728,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * Creates an Assessment of the likelihood an event is legitimate.
      * </pre>
      */
-    public void createAssessment(
+    default void createAssessment(
         com.google.recaptchaenterprise.v1.CreateAssessmentRequest request,
         io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.Assessment>
             responseObserver) {
@@ -745,7 +744,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * on whether the event turned out to be authentic or fraudulent.
      * </pre>
      */
-    public void annotateAssessment(
+    default void annotateAssessment(
         com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest request,
         io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse>
             responseObserver) {
@@ -760,7 +759,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * Creates a new reCAPTCHA Enterprise key.
      * </pre>
      */
-    public void createKey(
+    default void createKey(
         com.google.recaptchaenterprise.v1.CreateKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.Key> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateKeyMethod(), responseObserver);
@@ -773,7 +772,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * Returns the list of all keys that belong to a project.
      * </pre>
      */
-    public void listKeys(
+    default void listKeys(
         com.google.recaptchaenterprise.v1.ListKeysRequest request,
         io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.ListKeysResponse>
             responseObserver) {
@@ -789,7 +788,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * legacy reCAPTCHA.
      * </pre>
      */
-    public void retrieveLegacySecretKey(
+    default void retrieveLegacySecretKey(
         com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse>
@@ -805,7 +804,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * Returns the specified key.
      * </pre>
      */
-    public void getKey(
+    default void getKey(
         com.google.recaptchaenterprise.v1.GetKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.Key> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetKeyMethod(), responseObserver);
@@ -818,7 +817,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * Updates the specified key.
      * </pre>
      */
-    public void updateKey(
+    default void updateKey(
         com.google.recaptchaenterprise.v1.UpdateKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.Key> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateKeyMethod(), responseObserver);
@@ -831,7 +830,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * Deletes the specified key.
      * </pre>
      */
-    public void deleteKey(
+    default void deleteKey(
         com.google.recaptchaenterprise.v1.DeleteKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteKeyMethod(), responseObserver);
@@ -849,7 +848,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * destination project.
      * </pre>
      */
-    public void migrateKey(
+    default void migrateKey(
         com.google.recaptchaenterprise.v1.MigrateKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.Key> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMigrateKeyMethod(), responseObserver);
@@ -863,7 +862,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * dashboards.
      * </pre>
      */
-    public void getMetrics(
+    default void getMetrics(
         com.google.recaptchaenterprise.v1.GetMetricsRequest request,
         io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.Metrics> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetMetricsMethod(), responseObserver);
@@ -876,7 +875,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * List groups of related accounts.
      * </pre>
      */
-    public void listRelatedAccountGroups(
+    default void listRelatedAccountGroups(
         com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse>
@@ -892,7 +891,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * Get memberships in a group of related accounts.
      * </pre>
      */
-    public void listRelatedAccountGroupMemberships(
+    default void listRelatedAccountGroupMemberships(
         com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsResponse>
@@ -908,7 +907,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
      * Search group memberships related to a given account.
      * </pre>
      */
-    public void searchRelatedAccountGroupMemberships(
+    default void searchRelatedAccountGroupMemberships(
         com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse>
@@ -916,102 +915,26 @@ public final class RecaptchaEnterpriseServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSearchRelatedAccountGroupMembershipsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service RecaptchaEnterpriseService.
+   *
+   * <pre>
+   * Service to determine the likelihood an event is legitimate.
+   * </pre>
+   */
+  public abstract static class RecaptchaEnterpriseServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateAssessmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.recaptchaenterprise.v1.CreateAssessmentRequest,
-                      com.google.recaptchaenterprise.v1.Assessment>(
-                      this, METHODID_CREATE_ASSESSMENT)))
-          .addMethod(
-              getAnnotateAssessmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest,
-                      com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse>(
-                      this, METHODID_ANNOTATE_ASSESSMENT)))
-          .addMethod(
-              getCreateKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.recaptchaenterprise.v1.CreateKeyRequest,
-                      com.google.recaptchaenterprise.v1.Key>(this, METHODID_CREATE_KEY)))
-          .addMethod(
-              getListKeysMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.recaptchaenterprise.v1.ListKeysRequest,
-                      com.google.recaptchaenterprise.v1.ListKeysResponse>(
-                      this, METHODID_LIST_KEYS)))
-          .addMethod(
-              getRetrieveLegacySecretKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest,
-                      com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse>(
-                      this, METHODID_RETRIEVE_LEGACY_SECRET_KEY)))
-          .addMethod(
-              getGetKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.recaptchaenterprise.v1.GetKeyRequest,
-                      com.google.recaptchaenterprise.v1.Key>(this, METHODID_GET_KEY)))
-          .addMethod(
-              getUpdateKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.recaptchaenterprise.v1.UpdateKeyRequest,
-                      com.google.recaptchaenterprise.v1.Key>(this, METHODID_UPDATE_KEY)))
-          .addMethod(
-              getDeleteKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.recaptchaenterprise.v1.DeleteKeyRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_KEY)))
-          .addMethod(
-              getMigrateKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.recaptchaenterprise.v1.MigrateKeyRequest,
-                      com.google.recaptchaenterprise.v1.Key>(this, METHODID_MIGRATE_KEY)))
-          .addMethod(
-              getGetMetricsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.recaptchaenterprise.v1.GetMetricsRequest,
-                      com.google.recaptchaenterprise.v1.Metrics>(this, METHODID_GET_METRICS)))
-          .addMethod(
-              getListRelatedAccountGroupsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest,
-                      com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse>(
-                      this, METHODID_LIST_RELATED_ACCOUNT_GROUPS)))
-          .addMethod(
-              getListRelatedAccountGroupMembershipsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest,
-                      com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsResponse>(
-                      this, METHODID_LIST_RELATED_ACCOUNT_GROUP_MEMBERSHIPS)))
-          .addMethod(
-              getSearchRelatedAccountGroupMembershipsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest,
-                      com.google.recaptchaenterprise.v1
-                          .SearchRelatedAccountGroupMembershipsResponse>(
-                      this, METHODID_SEARCH_RELATED_ACCOUNT_GROUP_MEMBERSHIPS)))
-          .build();
+      return RecaptchaEnterpriseServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service RecaptchaEnterpriseService.
    *
    * <pre>
    * Service to determine the likelihood an event is legitimate.
@@ -1246,7 +1169,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service RecaptchaEnterpriseService.
    *
    * <pre>
    * Service to determine the likelihood an event is legitimate.
@@ -1449,7 +1372,8 @@ public final class RecaptchaEnterpriseServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * RecaptchaEnterpriseService.
    *
    * <pre>
    * Service to determine the likelihood an event is legitimate.
@@ -1680,10 +1604,10 @@ public final class RecaptchaEnterpriseServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final RecaptchaEnterpriseServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(RecaptchaEnterpriseServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1790,6 +1714,96 @@ public final class RecaptchaEnterpriseServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateAssessmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.recaptchaenterprise.v1.CreateAssessmentRequest,
+                    com.google.recaptchaenterprise.v1.Assessment>(
+                    service, METHODID_CREATE_ASSESSMENT)))
+        .addMethod(
+            getAnnotateAssessmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest,
+                    com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse>(
+                    service, METHODID_ANNOTATE_ASSESSMENT)))
+        .addMethod(
+            getCreateKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.recaptchaenterprise.v1.CreateKeyRequest,
+                    com.google.recaptchaenterprise.v1.Key>(service, METHODID_CREATE_KEY)))
+        .addMethod(
+            getListKeysMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.recaptchaenterprise.v1.ListKeysRequest,
+                    com.google.recaptchaenterprise.v1.ListKeysResponse>(
+                    service, METHODID_LIST_KEYS)))
+        .addMethod(
+            getRetrieveLegacySecretKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest,
+                    com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse>(
+                    service, METHODID_RETRIEVE_LEGACY_SECRET_KEY)))
+        .addMethod(
+            getGetKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.recaptchaenterprise.v1.GetKeyRequest,
+                    com.google.recaptchaenterprise.v1.Key>(service, METHODID_GET_KEY)))
+        .addMethod(
+            getUpdateKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.recaptchaenterprise.v1.UpdateKeyRequest,
+                    com.google.recaptchaenterprise.v1.Key>(service, METHODID_UPDATE_KEY)))
+        .addMethod(
+            getDeleteKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.recaptchaenterprise.v1.DeleteKeyRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_KEY)))
+        .addMethod(
+            getMigrateKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.recaptchaenterprise.v1.MigrateKeyRequest,
+                    com.google.recaptchaenterprise.v1.Key>(service, METHODID_MIGRATE_KEY)))
+        .addMethod(
+            getGetMetricsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.recaptchaenterprise.v1.GetMetricsRequest,
+                    com.google.recaptchaenterprise.v1.Metrics>(service, METHODID_GET_METRICS)))
+        .addMethod(
+            getListRelatedAccountGroupsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest,
+                    com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse>(
+                    service, METHODID_LIST_RELATED_ACCOUNT_GROUPS)))
+        .addMethod(
+            getListRelatedAccountGroupMembershipsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest,
+                    com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsResponse>(
+                    service, METHODID_LIST_RELATED_ACCOUNT_GROUP_MEMBERSHIPS)))
+        .addMethod(
+            getSearchRelatedAccountGroupMembershipsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest,
+                    com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse>(
+                    service, METHODID_SEARCH_RELATED_ACCOUNT_GROUP_MEMBERSHIPS)))
+        .build();
   }
 
   private abstract static class RecaptchaEnterpriseServiceBaseDescriptorSupplier

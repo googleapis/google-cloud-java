@@ -16,22 +16,18 @@
 
 package com.google.cloud.recaptchaenterprise.v1.samples;
 
-// [START recaptchaenterprise_v1_generated_RecaptchaEnterpriseService_AnnotateAssessment_sync]
+// [START recaptchaenterprise_v1_generated_RecaptchaEnterpriseService_ListKeys_Projectname_sync]
 import com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient;
-import com.google.protobuf.ByteString;
-import com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest;
-import com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse;
-import com.google.recaptchaenterprise.v1.AssessmentName;
-import com.google.recaptchaenterprise.v1.TransactionEvent;
-import java.util.ArrayList;
+import com.google.recaptchaenterprise.v1.Key;
+import com.google.recaptchaenterprise.v1.ProjectName;
 
-public class SyncAnnotateAssessment {
+public class SyncListKeysProjectname {
 
   public static void main(String[] args) throws Exception {
-    syncAnnotateAssessment();
+    syncListKeysProjectname();
   }
 
-  public static void syncAnnotateAssessment() throws Exception {
+  public static void syncListKeysProjectname() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
@@ -39,16 +35,11 @@ public class SyncAnnotateAssessment {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
         RecaptchaEnterpriseServiceClient.create()) {
-      AnnotateAssessmentRequest request =
-          AnnotateAssessmentRequest.newBuilder()
-              .setName(AssessmentName.of("[PROJECT]", "[ASSESSMENT]").toString())
-              .addAllReasons(new ArrayList<AnnotateAssessmentRequest.Reason>())
-              .setHashedAccountId(ByteString.EMPTY)
-              .setTransactionEvent(TransactionEvent.newBuilder().build())
-              .build();
-      AnnotateAssessmentResponse response =
-          recaptchaEnterpriseServiceClient.annotateAssessment(request);
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      for (Key element : recaptchaEnterpriseServiceClient.listKeys(parent).iterateAll()) {
+        // doThingsWith(element);
+      }
     }
   }
 }
-// [END recaptchaenterprise_v1_generated_RecaptchaEnterpriseService_AnnotateAssessment_sync]
+// [END recaptchaenterprise_v1_generated_RecaptchaEnterpriseService_ListKeys_Projectname_sync]
