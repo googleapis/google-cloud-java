@@ -123,6 +123,16 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      * <code>ML_EXTERNAL = 3;</code>
      */
     ML_EXTERNAL(3),
+    /**
+     *
+     *
+     * <pre>
+     * Background jobs that BigQuery runs for the customers in the background.
+     * </pre>
+     *
+     * <code>BACKGROUND = 4;</code>
+     */
+    BACKGROUND(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -168,6 +178,16 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
      * <code>ML_EXTERNAL = 3;</code>
      */
     public static final int ML_EXTERNAL_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Background jobs that BigQuery runs for the customers in the background.
+     * </pre>
+     *
+     * <code>BACKGROUND = 4;</code>
+     */
+    public static final int BACKGROUND_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -201,6 +221,8 @@ public final class Assignment extends com.google.protobuf.GeneratedMessageV3
           return QUERY;
         case 3:
           return ML_EXTERNAL;
+        case 4:
+          return BACKGROUND;
         default:
           return null;
       }

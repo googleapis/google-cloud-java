@@ -27,8 +27,8 @@ public interface SearchAllAssignmentsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name with location (project name could be the wildcard '-'),
-   * e.g.:
+   * Required. The resource name with location (project name could be the
+   * wildcard '-'), e.g.:
    *   `projects/-/locations/US`.
    * </pre>
    *
@@ -43,8 +43,8 @@ public interface SearchAllAssignmentsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name with location (project name could be the wildcard '-'),
-   * e.g.:
+   * Required. The resource name with location (project name could be the
+   * wildcard '-'), e.g.:
    *   `projects/-/locations/US`.
    * </pre>
    *

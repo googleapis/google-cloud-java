@@ -80,8 +80,8 @@ public final class SearchAllAssignmentsRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The resource name with location (project name could be the wildcard '-'),
-   * e.g.:
+   * Required. The resource name with location (project name could be the
+   * wildcard '-'), e.g.:
    *   `projects/-/locations/US`.
    * </pre>
    *
@@ -107,8 +107,8 @@ public final class SearchAllAssignmentsRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The resource name with location (project name could be the wildcard '-'),
-   * e.g.:
+   * Required. The resource name with location (project name could be the
+   * wildcard '-'), e.g.:
    *   `projects/-/locations/US`.
    * </pre>
    *
@@ -688,8 +688,8 @@ public final class SearchAllAssignmentsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The resource name with location (project name could be the wildcard '-'),
-     * e.g.:
+     * Required. The resource name with location (project name could be the
+     * wildcard '-'), e.g.:
      *   `projects/-/locations/US`.
      * </pre>
      *
@@ -714,8 +714,8 @@ public final class SearchAllAssignmentsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The resource name with location (project name could be the wildcard '-'),
-     * e.g.:
+     * Required. The resource name with location (project name could be the
+     * wildcard '-'), e.g.:
      *   `projects/-/locations/US`.
      * </pre>
      *
@@ -740,8 +740,8 @@ public final class SearchAllAssignmentsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The resource name with location (project name could be the wildcard '-'),
-     * e.g.:
+     * Required. The resource name with location (project name could be the
+     * wildcard '-'), e.g.:
      *   `projects/-/locations/US`.
      * </pre>
      *
@@ -765,8 +765,8 @@ public final class SearchAllAssignmentsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The resource name with location (project name could be the wildcard '-'),
-     * e.g.:
+     * Required. The resource name with location (project name could be the
+     * wildcard '-'), e.g.:
      *   `projects/-/locations/US`.
      * </pre>
      *
@@ -786,8 +786,8 @@ public final class SearchAllAssignmentsRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The resource name with location (project name could be the wildcard '-'),
-     * e.g.:
+     * Required. The resource name with location (project name could be the
+     * wildcard '-'), e.g.:
      *   `projects/-/locations/US`.
      * </pre>
      *

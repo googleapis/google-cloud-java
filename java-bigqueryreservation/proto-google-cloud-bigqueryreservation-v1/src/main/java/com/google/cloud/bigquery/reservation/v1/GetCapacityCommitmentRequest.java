@@ -22,7 +22,8 @@ package com.google.cloud.bigquery.reservation.v1;
  *
  *
  * <pre>
- * The request for [ReservationService.GetCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.GetCapacityCommitment].
+ * The request for
+ * [ReservationService.GetCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.GetCapacityCommitment].
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.reservation.v1.GetCapacityCommitmentRequest}
@@ -289,7 +290,8 @@ public final class GetCapacityCommitmentRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The request for [ReservationService.GetCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.GetCapacityCommitment].
+   * The request for
+   * [ReservationService.GetCapacityCommitment][google.cloud.bigquery.reservation.v1.ReservationService.GetCapacityCommitment].
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.reservation.v1.GetCapacityCommitmentRequest}

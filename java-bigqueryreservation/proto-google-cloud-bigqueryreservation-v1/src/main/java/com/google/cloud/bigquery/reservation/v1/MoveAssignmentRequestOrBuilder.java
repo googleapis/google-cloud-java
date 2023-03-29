@@ -82,4 +82,35 @@ public interface MoveAssignmentRequestOrBuilder
    * @return The bytes for destinationId.
    */
   com.google.protobuf.ByteString getDestinationIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The optional assignment ID. A new assignment name is generated if this
+   * field is empty.
+   * This field can contain only lowercase alphanumeric characters or dashes.
+   * Max length is 64 characters.
+   * </pre>
+   *
+   * <code>string assignment_id = 5;</code>
+   *
+   * @return The assignmentId.
+   */
+  java.lang.String getAssignmentId();
+  /**
+   *
+   *
+   * <pre>
+   * The optional assignment ID. A new assignment name is generated if this
+   * field is empty.
+   * This field can contain only lowercase alphanumeric characters or dashes.
+   * Max length is 64 characters.
+   * </pre>
+   *
+   * <code>string assignment_id = 5;</code>
+   *
+   * @return The bytes for assignmentId.
+   */
+  com.google.protobuf.ByteString getAssignmentIdBytes();
 }

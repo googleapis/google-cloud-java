@@ -22,7 +22,8 @@ package com.google.cloud.bigquery.reservation.v1;
  *
  *
  * <pre>
- * The request for [ReservationService.UpdateAssignment][google.cloud.bigquery.reservation.v1.ReservationService.UpdateAssignment].
+ * The request for
+ * [ReservationService.UpdateAssignment][google.cloud.bigquery.reservation.v1.ReservationService.UpdateAssignment].
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest}
@@ -344,7 +345,8 @@ public final class UpdateAssignmentRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The request for [ReservationService.UpdateAssignment][google.cloud.bigquery.reservation.v1.ReservationService.UpdateAssignment].
+   * The request for
+   * [ReservationService.UpdateAssignment][google.cloud.bigquery.reservation.v1.ReservationService.UpdateAssignment].
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest}

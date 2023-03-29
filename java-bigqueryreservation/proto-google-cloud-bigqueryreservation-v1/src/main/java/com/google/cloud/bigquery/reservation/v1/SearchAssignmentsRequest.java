@@ -80,8 +80,8 @@ public final class SearchAssignmentsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The resource name of the admin project(containing project and location),
-   * e.g.:
+   * Required. The resource name of the admin project(containing project and
+   * location), e.g.:
    *   `projects/myproject/locations/US`.
    * </pre>
    *
@@ -107,8 +107,8 @@ public final class SearchAssignmentsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The resource name of the admin project(containing project and location),
-   * e.g.:
+   * Required. The resource name of the admin project(containing project and
+   * location), e.g.:
    *   `projects/myproject/locations/US`.
    * </pre>
    *
@@ -686,8 +686,8 @@ public final class SearchAssignmentsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The resource name of the admin project(containing project and location),
-     * e.g.:
+     * Required. The resource name of the admin project(containing project and
+     * location), e.g.:
      *   `projects/myproject/locations/US`.
      * </pre>
      *
@@ -712,8 +712,8 @@ public final class SearchAssignmentsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The resource name of the admin project(containing project and location),
-     * e.g.:
+     * Required. The resource name of the admin project(containing project and
+     * location), e.g.:
      *   `projects/myproject/locations/US`.
      * </pre>
      *
@@ -738,8 +738,8 @@ public final class SearchAssignmentsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The resource name of the admin project(containing project and location),
-     * e.g.:
+     * Required. The resource name of the admin project(containing project and
+     * location), e.g.:
      *   `projects/myproject/locations/US`.
      * </pre>
      *
@@ -763,8 +763,8 @@ public final class SearchAssignmentsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The resource name of the admin project(containing project and location),
-     * e.g.:
+     * Required. The resource name of the admin project(containing project and
+     * location), e.g.:
      *   `projects/myproject/locations/US`.
      * </pre>
      *
@@ -784,8 +784,8 @@ public final class SearchAssignmentsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The resource name of the admin project(containing project and location),
-     * e.g.:
+     * Required. The resource name of the admin project(containing project and
+     * location), e.g.:
      *   `projects/myproject/locations/US`.
      * </pre>
      *

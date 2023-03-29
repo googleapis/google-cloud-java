@@ -127,8 +127,8 @@ public interface CapacityCommitmentOrBuilder
    *
    *
    * <pre>
-   * Output only. The start of the current commitment period. It is applicable only for
-   * ACTIVE capacity commitments.
+   * Output only. The start of the current commitment period. It is applicable
+   * only for ACTIVE capacity commitments.
    * </pre>
    *
    * <code>
@@ -142,8 +142,8 @@ public interface CapacityCommitmentOrBuilder
    *
    *
    * <pre>
-   * Output only. The start of the current commitment period. It is applicable only for
-   * ACTIVE capacity commitments.
+   * Output only. The start of the current commitment period. It is applicable
+   * only for ACTIVE capacity commitments.
    * </pre>
    *
    * <code>
@@ -157,8 +157,8 @@ public interface CapacityCommitmentOrBuilder
    *
    *
    * <pre>
-   * Output only. The start of the current commitment period. It is applicable only for
-   * ACTIVE capacity commitments.
+   * Output only. The start of the current commitment period. It is applicable
+   * only for ACTIVE capacity commitments.
    * </pre>
    *
    * <code>
@@ -171,8 +171,8 @@ public interface CapacityCommitmentOrBuilder
    *
    *
    * <pre>
-   * Output only. The end of the current commitment period. It is applicable only for ACTIVE
-   * capacity commitments.
+   * Output only. The end of the current commitment period. It is applicable
+   * only for ACTIVE capacity commitments.
    * </pre>
    *
    * <code>
@@ -186,8 +186,8 @@ public interface CapacityCommitmentOrBuilder
    *
    *
    * <pre>
-   * Output only. The end of the current commitment period. It is applicable only for ACTIVE
-   * capacity commitments.
+   * Output only. The end of the current commitment period. It is applicable
+   * only for ACTIVE capacity commitments.
    * </pre>
    *
    * <code>
@@ -201,8 +201,8 @@ public interface CapacityCommitmentOrBuilder
    *
    *
    * <pre>
-   * Output only. The end of the current commitment period. It is applicable only for ACTIVE
-   * capacity commitments.
+   * Output only. The end of the current commitment period. It is applicable
+   * only for ACTIVE capacity commitments.
    * </pre>
    *
    * <code>
@@ -289,6 +289,8 @@ public interface CapacityCommitmentOrBuilder
    * If set to true, this commitment is placed in the organization's
    * secondary region which is designated for disaster recovery purposes.
    * If false, this commitment is placed in the organization's default region.
+   * NOTE: this is a preview feature. Project must be allow-listed in order to
+   * set this field.
    * </pre>
    *
    * <code>bool multi_region_auxiliary = 10;</code>
@@ -296,4 +298,29 @@ public interface CapacityCommitmentOrBuilder
    * @return The multiRegionAuxiliary.
    */
   boolean getMultiRegionAuxiliary();
+
+  /**
+   *
+   *
+   * <pre>
+   * Edition of the capacity commitment.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 12;</code>
+   *
+   * @return The enum numeric value on the wire for edition.
+   */
+  int getEditionValue();
+  /**
+   *
+   *
+   * <pre>
+   * Edition of the capacity commitment.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 12;</code>
+   *
+   * @return The edition.
+   */
+  com.google.cloud.bigquery.reservation.v1.Edition getEdition();
 }

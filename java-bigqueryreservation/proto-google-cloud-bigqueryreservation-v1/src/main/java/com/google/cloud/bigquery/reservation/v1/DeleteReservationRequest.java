@@ -22,7 +22,8 @@ package com.google.cloud.bigquery.reservation.v1;
  *
  *
  * <pre>
- * The request for [ReservationService.DeleteReservation][google.cloud.bigquery.reservation.v1.ReservationService.DeleteReservation].
+ * The request for
+ * [ReservationService.DeleteReservation][google.cloud.bigquery.reservation.v1.ReservationService.DeleteReservation].
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.reservation.v1.DeleteReservationRequest}
@@ -289,7 +290,8 @@ public final class DeleteReservationRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The request for [ReservationService.DeleteReservation][google.cloud.bigquery.reservation.v1.ReservationService.DeleteReservation].
+   * The request for
+   * [ReservationService.DeleteReservation][google.cloud.bigquery.reservation.v1.ReservationService.DeleteReservation].
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.reservation.v1.DeleteReservationRequest}

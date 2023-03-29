@@ -22,7 +22,8 @@ package com.google.cloud.bigquery.reservation.v1;
  *
  *
  * <pre>
- * The request for [ReservationService.CreateAssignment][google.cloud.bigquery.reservation.v1.ReservationService.CreateAssignment].
+ * The request for
+ * [ReservationService.CreateAssignment][google.cloud.bigquery.reservation.v1.ReservationService.CreateAssignment].
  * Note: "bigquery.reservationAssignments.create" permission is required on the
  * related assignee.
  * </pre>
@@ -421,7 +422,8 @@ public final class CreateAssignmentRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The request for [ReservationService.CreateAssignment][google.cloud.bigquery.reservation.v1.ReservationService.CreateAssignment].
+   * The request for
+   * [ReservationService.CreateAssignment][google.cloud.bigquery.reservation.v1.ReservationService.CreateAssignment].
    * Note: "bigquery.reservationAssignments.create" permission is required on the
    * related assignee.
    * </pre>
