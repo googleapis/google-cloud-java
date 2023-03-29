@@ -292,7 +292,7 @@ public final class MetricsServiceV2Grpc {
    * Service for configuring logs-based metrics.
    * </pre>
    */
-  public abstract static class MetricsServiceV2ImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -301,7 +301,7 @@ public final class MetricsServiceV2Grpc {
      * Lists logs-based metrics.
      * </pre>
      */
-    public void listLogMetrics(
+    default void listLogMetrics(
         com.google.logging.v2.ListLogMetricsRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.ListLogMetricsResponse>
             responseObserver) {
@@ -316,7 +316,7 @@ public final class MetricsServiceV2Grpc {
      * Gets a logs-based metric.
      * </pre>
      */
-    public void getLogMetric(
+    default void getLogMetric(
         com.google.logging.v2.GetLogMetricRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogMetric> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -330,7 +330,7 @@ public final class MetricsServiceV2Grpc {
      * Creates a logs-based metric.
      * </pre>
      */
-    public void createLogMetric(
+    default void createLogMetric(
         com.google.logging.v2.CreateLogMetricRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogMetric> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -344,7 +344,7 @@ public final class MetricsServiceV2Grpc {
      * Creates or updates a logs-based metric.
      * </pre>
      */
-    public void updateLogMetric(
+    default void updateLogMetric(
         com.google.logging.v2.UpdateLogMetricRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.LogMetric> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -358,53 +358,32 @@ public final class MetricsServiceV2Grpc {
      * Deletes a logs-based metric.
      * </pre>
      */
-    public void deleteLogMetric(
+    default void deleteLogMetric(
         com.google.logging.v2.DeleteLogMetricRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteLogMetricMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service MetricsServiceV2.
+   *
+   * <pre>
+   * Service for configuring logs-based metrics.
+   * </pre>
+   */
+  public abstract static class MetricsServiceV2ImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListLogMetricsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.logging.v2.ListLogMetricsRequest,
-                      com.google.logging.v2.ListLogMetricsResponse>(
-                      this, METHODID_LIST_LOG_METRICS)))
-          .addMethod(
-              getGetLogMetricMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.logging.v2.GetLogMetricRequest, com.google.logging.v2.LogMetric>(
-                      this, METHODID_GET_LOG_METRIC)))
-          .addMethod(
-              getCreateLogMetricMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.logging.v2.CreateLogMetricRequest,
-                      com.google.logging.v2.LogMetric>(this, METHODID_CREATE_LOG_METRIC)))
-          .addMethod(
-              getUpdateLogMetricMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.logging.v2.UpdateLogMetricRequest,
-                      com.google.logging.v2.LogMetric>(this, METHODID_UPDATE_LOG_METRIC)))
-          .addMethod(
-              getDeleteLogMetricMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.logging.v2.DeleteLogMetricRequest, com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_LOG_METRIC)))
-          .build();
+      return MetricsServiceV2Grpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service MetricsServiceV2.
    *
    * <pre>
    * Service for configuring logs-based metrics.
@@ -504,7 +483,7 @@ public final class MetricsServiceV2Grpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service MetricsServiceV2.
    *
    * <pre>
    * Service for configuring logs-based metrics.
@@ -589,7 +568,7 @@ public final class MetricsServiceV2Grpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service MetricsServiceV2.
    *
    * <pre>
    * Service for configuring logs-based metrics.
@@ -685,10 +664,10 @@ public final class MetricsServiceV2Grpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final MetricsServiceV2ImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(MetricsServiceV2ImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -737,6 +716,42 @@ public final class MetricsServiceV2Grpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListLogMetricsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.logging.v2.ListLogMetricsRequest,
+                    com.google.logging.v2.ListLogMetricsResponse>(
+                    service, METHODID_LIST_LOG_METRICS)))
+        .addMethod(
+            getGetLogMetricMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.logging.v2.GetLogMetricRequest, com.google.logging.v2.LogMetric>(
+                    service, METHODID_GET_LOG_METRIC)))
+        .addMethod(
+            getCreateLogMetricMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.logging.v2.CreateLogMetricRequest, com.google.logging.v2.LogMetric>(
+                    service, METHODID_CREATE_LOG_METRIC)))
+        .addMethod(
+            getUpdateLogMetricMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.logging.v2.UpdateLogMetricRequest, com.google.logging.v2.LogMetric>(
+                    service, METHODID_UPDATE_LOG_METRIC)))
+        .addMethod(
+            getDeleteLogMetricMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.logging.v2.DeleteLogMetricRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_LOG_METRIC)))
+        .build();
   }
 
   private abstract static class MetricsServiceV2BaseDescriptorSupplier

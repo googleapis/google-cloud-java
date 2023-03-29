@@ -348,7 +348,7 @@ public final class LoggingServiceV2Grpc {
    * Service for ingesting and querying logs.
    * </pre>
    */
-  public abstract static class LoggingServiceV2ImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -360,7 +360,7 @@ public final class LoggingServiceV2Grpc {
      * delete operation with a timestamp before the operation will be deleted.
      * </pre>
      */
-    public void deleteLog(
+    default void deleteLog(
         com.google.logging.v2.DeleteLogRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteLogMethod(), responseObserver);
@@ -379,7 +379,7 @@ public final class LoggingServiceV2Grpc {
      * folders)
      * </pre>
      */
-    public void writeLogEntries(
+    default void writeLogEntries(
         com.google.logging.v2.WriteLogEntriesRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.WriteLogEntriesResponse>
             responseObserver) {
@@ -397,7 +397,7 @@ public final class LoggingServiceV2Grpc {
      * Logs](https://cloud.google.com/logging/docs/export).
      * </pre>
      */
-    public void listLogEntries(
+    default void listLogEntries(
         com.google.logging.v2.ListLogEntriesRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.ListLogEntriesResponse>
             responseObserver) {
@@ -412,7 +412,7 @@ public final class LoggingServiceV2Grpc {
      * Lists the descriptors for monitored resource types used by Logging.
      * </pre>
      */
-    public void listMonitoredResourceDescriptors(
+    default void listMonitoredResourceDescriptors(
         com.google.logging.v2.ListMonitoredResourceDescriptorsRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.ListMonitoredResourceDescriptorsResponse>
             responseObserver) {
@@ -428,7 +428,7 @@ public final class LoggingServiceV2Grpc {
      * Only logs that have entries are listed.
      * </pre>
      */
-    public void listLogs(
+    default void listLogs(
         com.google.logging.v2.ListLogsRequest request,
         io.grpc.stub.StreamObserver<com.google.logging.v2.ListLogsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListLogsMethod(), responseObserver);
@@ -442,62 +442,32 @@ public final class LoggingServiceV2Grpc {
      * terminated, it will continue reading logs.
      * </pre>
      */
-    public io.grpc.stub.StreamObserver<com.google.logging.v2.TailLogEntriesRequest> tailLogEntries(
+    default io.grpc.stub.StreamObserver<com.google.logging.v2.TailLogEntriesRequest> tailLogEntries(
         io.grpc.stub.StreamObserver<com.google.logging.v2.TailLogEntriesResponse>
             responseObserver) {
       return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(
           getTailLogEntriesMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service LoggingServiceV2.
+   *
+   * <pre>
+   * Service for ingesting and querying logs.
+   * </pre>
+   */
+  public abstract static class LoggingServiceV2ImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getDeleteLogMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.logging.v2.DeleteLogRequest, com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_LOG)))
-          .addMethod(
-              getWriteLogEntriesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.logging.v2.WriteLogEntriesRequest,
-                      com.google.logging.v2.WriteLogEntriesResponse>(
-                      this, METHODID_WRITE_LOG_ENTRIES)))
-          .addMethod(
-              getListLogEntriesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.logging.v2.ListLogEntriesRequest,
-                      com.google.logging.v2.ListLogEntriesResponse>(
-                      this, METHODID_LIST_LOG_ENTRIES)))
-          .addMethod(
-              getListMonitoredResourceDescriptorsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.logging.v2.ListMonitoredResourceDescriptorsRequest,
-                      com.google.logging.v2.ListMonitoredResourceDescriptorsResponse>(
-                      this, METHODID_LIST_MONITORED_RESOURCE_DESCRIPTORS)))
-          .addMethod(
-              getListLogsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.logging.v2.ListLogsRequest,
-                      com.google.logging.v2.ListLogsResponse>(this, METHODID_LIST_LOGS)))
-          .addMethod(
-              getTailLogEntriesMethod(),
-              io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
-                  new MethodHandlers<
-                      com.google.logging.v2.TailLogEntriesRequest,
-                      com.google.logging.v2.TailLogEntriesResponse>(
-                      this, METHODID_TAIL_LOG_ENTRIES)))
-          .build();
+      return LoggingServiceV2Grpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service LoggingServiceV2.
    *
    * <pre>
    * Service for ingesting and querying logs.
@@ -623,7 +593,7 @@ public final class LoggingServiceV2Grpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service LoggingServiceV2.
    *
    * <pre>
    * Service for ingesting and querying logs.
@@ -721,7 +691,7 @@ public final class LoggingServiceV2Grpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service LoggingServiceV2.
    *
    * <pre>
    * Service for ingesting and querying logs.
@@ -836,10 +806,10 @@ public final class LoggingServiceV2Grpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final LoggingServiceV2ImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(LoggingServiceV2ImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -897,6 +867,51 @@ public final class LoggingServiceV2Grpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getDeleteLogMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.logging.v2.DeleteLogRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_LOG)))
+        .addMethod(
+            getWriteLogEntriesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.logging.v2.WriteLogEntriesRequest,
+                    com.google.logging.v2.WriteLogEntriesResponse>(
+                    service, METHODID_WRITE_LOG_ENTRIES)))
+        .addMethod(
+            getListLogEntriesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.logging.v2.ListLogEntriesRequest,
+                    com.google.logging.v2.ListLogEntriesResponse>(
+                    service, METHODID_LIST_LOG_ENTRIES)))
+        .addMethod(
+            getListMonitoredResourceDescriptorsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.logging.v2.ListMonitoredResourceDescriptorsRequest,
+                    com.google.logging.v2.ListMonitoredResourceDescriptorsResponse>(
+                    service, METHODID_LIST_MONITORED_RESOURCE_DESCRIPTORS)))
+        .addMethod(
+            getListLogsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.logging.v2.ListLogsRequest, com.google.logging.v2.ListLogsResponse>(
+                    service, METHODID_LIST_LOGS)))
+        .addMethod(
+            getTailLogEntriesMethod(),
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+                new MethodHandlers<
+                    com.google.logging.v2.TailLogEntriesRequest,
+                    com.google.logging.v2.TailLogEntriesResponse>(
+                    service, METHODID_TAIL_LOG_ENTRIES)))
+        .build();
   }
 
   private abstract static class LoggingServiceV2BaseDescriptorSupplier
