@@ -1390,7 +1390,7 @@ public final class AccessContextManagerGrpc {
    * AccessPolicies
    * </pre>
    */
-  public abstract static class AccessContextManagerImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -1401,7 +1401,7 @@ public final class AccessContextManagerGrpc {
      * organization.
      * </pre>
      */
-    public void listAccessPolicies(
+    default void listAccessPolicies(
         com.google.identity.accesscontextmanager.v1.ListAccessPoliciesRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.identity.accesscontextmanager.v1.ListAccessPoliciesResponse>
@@ -1418,7 +1418,7 @@ public final class AccessContextManagerGrpc {
      * [google.identity.accesscontextmanager.v1.AccessPolicy] based on the name.
      * </pre>
      */
-    public void getAccessPolicy(
+    default void getAccessPolicy(
         com.google.identity.accesscontextmanager.v1.GetAccessPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.identity.accesscontextmanager.v1.AccessPolicy>
             responseObserver) {
@@ -1437,7 +1437,7 @@ public final class AccessContextManagerGrpc {
      * BadRequest proto.
      * </pre>
      */
-    public void createAccessPolicy(
+    default void createAccessPolicy(
         com.google.identity.accesscontextmanager.v1.AccessPolicy request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1456,7 +1456,7 @@ public final class AccessContextManagerGrpc {
      * to long-lasting storage.
      * </pre>
      */
-    public void updateAccessPolicy(
+    default void updateAccessPolicy(
         com.google.identity.accesscontextmanager.v1.UpdateAccessPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1474,7 +1474,7 @@ public final class AccessContextManagerGrpc {
      * is removed from long-lasting storage.
      * </pre>
      */
-    public void deleteAccessPolicy(
+    default void deleteAccessPolicy(
         com.google.identity.accesscontextmanager.v1.DeleteAccessPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1490,7 +1490,7 @@ public final class AccessContextManagerGrpc {
      * policy.
      * </pre>
      */
-    public void listAccessLevels(
+    default void listAccessLevels(
         com.google.identity.accesscontextmanager.v1.ListAccessLevelsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.identity.accesscontextmanager.v1.ListAccessLevelsResponse>
@@ -1508,7 +1508,7 @@ public final class AccessContextManagerGrpc {
      * name.
      * </pre>
      */
-    public void getAccessLevel(
+    default void getAccessLevel(
         com.google.identity.accesscontextmanager.v1.GetAccessLevelRequest request,
         io.grpc.stub.StreamObserver<com.google.identity.accesscontextmanager.v1.AccessLevel>
             responseObserver) {
@@ -1529,7 +1529,7 @@ public final class AccessContextManagerGrpc {
      * errors, an error response is returned for the first error encountered.
      * </pre>
      */
-    public void createAccessLevel(
+    default void createAccessLevel(
         com.google.identity.accesscontextmanager.v1.CreateAccessLevelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1550,7 +1550,7 @@ public final class AccessContextManagerGrpc {
      * errors, an error response is returned for the first error encountered.
      * </pre>
      */
-    public void updateAccessLevel(
+    default void updateAccessLevel(
         com.google.identity.accesscontextmanager.v1.UpdateAccessLevelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1569,7 +1569,7 @@ public final class AccessContextManagerGrpc {
      * from long-lasting storage.
      * </pre>
      */
-    public void deleteAccessLevel(
+    default void deleteAccessLevel(
         com.google.identity.accesscontextmanager.v1.DeleteAccessLevelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1599,7 +1599,7 @@ public final class AccessContextManagerGrpc {
      * error.
      * </pre>
      */
-    public void replaceAccessLevels(
+    default void replaceAccessLevels(
         com.google.identity.accesscontextmanager.v1.ReplaceAccessLevelsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1615,7 +1615,7 @@ public final class AccessContextManagerGrpc {
      * access policy.
      * </pre>
      */
-    public void listServicePerimeters(
+    default void listServicePerimeters(
         com.google.identity.accesscontextmanager.v1.ListServicePerimetersRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.identity.accesscontextmanager.v1.ListServicePerimetersResponse>
@@ -1633,7 +1633,7 @@ public final class AccessContextManagerGrpc {
      * resource name.
      * </pre>
      */
-    public void getServicePerimeter(
+    default void getServicePerimeter(
         com.google.identity.accesscontextmanager.v1.GetServicePerimeterRequest request,
         io.grpc.stub.StreamObserver<com.google.identity.accesscontextmanager.v1.ServicePerimeter>
             responseObserver) {
@@ -1655,7 +1655,7 @@ public final class AccessContextManagerGrpc {
      * errors, an error response is returned for the first error encountered.
      * </pre>
      */
-    public void createServicePerimeter(
+    default void createServicePerimeter(
         com.google.identity.accesscontextmanager.v1.CreateServicePerimeterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1676,7 +1676,7 @@ public final class AccessContextManagerGrpc {
      * errors, an error response is returned for the first error encountered.
      * </pre>
      */
-    public void updateServicePerimeter(
+    default void updateServicePerimeter(
         com.google.identity.accesscontextmanager.v1.UpdateServicePerimeterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1695,7 +1695,7 @@ public final class AccessContextManagerGrpc {
      * long-lasting storage.
      * </pre>
      */
-    public void deleteServicePerimeter(
+    default void deleteServicePerimeter(
         com.google.identity.accesscontextmanager.v1.DeleteServicePerimeterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1721,7 +1721,7 @@ public final class AccessContextManagerGrpc {
      * ReplaceServicePerimetersResponse.
      * </pre>
      */
-    public void replaceServicePerimeters(
+    default void replaceServicePerimeters(
         com.google.identity.accesscontextmanager.v1.ReplaceServicePerimetersRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1749,7 +1749,7 @@ public final class AccessContextManagerGrpc {
      * cleared after a successful commit operation.
      * </pre>
      */
-    public void commitServicePerimeters(
+    default void commitServicePerimeters(
         com.google.identity.accesscontextmanager.v1.CommitServicePerimetersRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1765,7 +1765,7 @@ public final class AccessContextManagerGrpc {
      * Google Cloud organization.
      * </pre>
      */
-    public void listGcpUserAccessBindings(
+    default void listGcpUserAccessBindings(
         com.google.identity.accesscontextmanager.v1.ListGcpUserAccessBindingsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.identity.accesscontextmanager.v1.ListGcpUserAccessBindingsResponse>
@@ -1783,7 +1783,7 @@ public final class AccessContextManagerGrpc {
      * the given name.
      * </pre>
      */
-    public void getGcpUserAccessBinding(
+    default void getGcpUserAccessBinding(
         com.google.identity.accesscontextmanager.v1.GetGcpUserAccessBindingRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding>
@@ -1808,7 +1808,7 @@ public final class AccessContextManagerGrpc {
      * time.
      * </pre>
      */
-    public void createGcpUserAccessBinding(
+    default void createGcpUserAccessBinding(
         com.google.identity.accesscontextmanager.v1.CreateGcpUserAccessBindingRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1826,7 +1826,7 @@ public final class AccessContextManagerGrpc {
      * more time.
      * </pre>
      */
-    public void updateGcpUserAccessBinding(
+    default void updateGcpUserAccessBinding(
         com.google.identity.accesscontextmanager.v1.UpdateGcpUserAccessBindingRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1844,7 +1844,7 @@ public final class AccessContextManagerGrpc {
      * more time.
      * </pre>
      */
-    public void deleteGcpUserAccessBinding(
+    default void deleteGcpUserAccessBinding(
         com.google.identity.accesscontextmanager.v1.DeleteGcpUserAccessBindingRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1863,7 +1863,7 @@ public final class AccessContextManagerGrpc {
      * policy][google.identity.accesscontextmanager.v1.AccessPolicy].
      * </pre>
      */
-    public void setIamPolicy(
+    default void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1878,7 +1878,7 @@ public final class AccessContextManagerGrpc {
      * [access policy][google.identity.accesscontextmanager.v1.AccessPolicy].
      * </pre>
      */
-    public void getIamPolicy(
+    default void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1897,192 +1897,43 @@ public final class AccessContextManagerGrpc {
      * ]. This method does not support other resources.
      * </pre>
      */
-    public void testIamPermissions(
+    default void testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getTestIamPermissionsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service AccessContextManager.
+   *
+   * <pre>
+   * API for setting [access levels]
+   * [google.identity.accesscontextmanager.v1.AccessLevel] and [service
+   * perimeters] [google.identity.accesscontextmanager.v1.ServicePerimeter]
+   * for Google Cloud projects. Each organization has one [access policy]
+   * [google.identity.accesscontextmanager.v1.AccessPolicy] that contains the
+   * [access levels] [google.identity.accesscontextmanager.v1.AccessLevel]
+   * and [service perimeters]
+   * [google.identity.accesscontextmanager.v1.ServicePerimeter]. This
+   * [access policy] [google.identity.accesscontextmanager.v1.AccessPolicy] is
+   * applicable to all resources in the organization.
+   * AccessPolicies
+   * </pre>
+   */
+  public abstract static class AccessContextManagerImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListAccessPoliciesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.identity.accesscontextmanager.v1.ListAccessPoliciesRequest,
-                      com.google.identity.accesscontextmanager.v1.ListAccessPoliciesResponse>(
-                      this, METHODID_LIST_ACCESS_POLICIES)))
-          .addMethod(
-              getGetAccessPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.identity.accesscontextmanager.v1.GetAccessPolicyRequest,
-                      com.google.identity.accesscontextmanager.v1.AccessPolicy>(
-                      this, METHODID_GET_ACCESS_POLICY)))
-          .addMethod(
-              getCreateAccessPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.identity.accesscontextmanager.v1.AccessPolicy,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_ACCESS_POLICY)))
-          .addMethod(
-              getUpdateAccessPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.identity.accesscontextmanager.v1.UpdateAccessPolicyRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_ACCESS_POLICY)))
-          .addMethod(
-              getDeleteAccessPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.identity.accesscontextmanager.v1.DeleteAccessPolicyRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_ACCESS_POLICY)))
-          .addMethod(
-              getListAccessLevelsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.identity.accesscontextmanager.v1.ListAccessLevelsRequest,
-                      com.google.identity.accesscontextmanager.v1.ListAccessLevelsResponse>(
-                      this, METHODID_LIST_ACCESS_LEVELS)))
-          .addMethod(
-              getGetAccessLevelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.identity.accesscontextmanager.v1.GetAccessLevelRequest,
-                      com.google.identity.accesscontextmanager.v1.AccessLevel>(
-                      this, METHODID_GET_ACCESS_LEVEL)))
-          .addMethod(
-              getCreateAccessLevelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.identity.accesscontextmanager.v1.CreateAccessLevelRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_ACCESS_LEVEL)))
-          .addMethod(
-              getUpdateAccessLevelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.identity.accesscontextmanager.v1.UpdateAccessLevelRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_ACCESS_LEVEL)))
-          .addMethod(
-              getDeleteAccessLevelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.identity.accesscontextmanager.v1.DeleteAccessLevelRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_ACCESS_LEVEL)))
-          .addMethod(
-              getReplaceAccessLevelsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.identity.accesscontextmanager.v1.ReplaceAccessLevelsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_REPLACE_ACCESS_LEVELS)))
-          .addMethod(
-              getListServicePerimetersMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.identity.accesscontextmanager.v1.ListServicePerimetersRequest,
-                      com.google.identity.accesscontextmanager.v1.ListServicePerimetersResponse>(
-                      this, METHODID_LIST_SERVICE_PERIMETERS)))
-          .addMethod(
-              getGetServicePerimeterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.identity.accesscontextmanager.v1.GetServicePerimeterRequest,
-                      com.google.identity.accesscontextmanager.v1.ServicePerimeter>(
-                      this, METHODID_GET_SERVICE_PERIMETER)))
-          .addMethod(
-              getCreateServicePerimeterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.identity.accesscontextmanager.v1.CreateServicePerimeterRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_SERVICE_PERIMETER)))
-          .addMethod(
-              getUpdateServicePerimeterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.identity.accesscontextmanager.v1.UpdateServicePerimeterRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_SERVICE_PERIMETER)))
-          .addMethod(
-              getDeleteServicePerimeterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.identity.accesscontextmanager.v1.DeleteServicePerimeterRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_SERVICE_PERIMETER)))
-          .addMethod(
-              getReplaceServicePerimetersMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.identity.accesscontextmanager.v1.ReplaceServicePerimetersRequest,
-                      com.google.longrunning.Operation>(this, METHODID_REPLACE_SERVICE_PERIMETERS)))
-          .addMethod(
-              getCommitServicePerimetersMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.identity.accesscontextmanager.v1.CommitServicePerimetersRequest,
-                      com.google.longrunning.Operation>(this, METHODID_COMMIT_SERVICE_PERIMETERS)))
-          .addMethod(
-              getListGcpUserAccessBindingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.identity.accesscontextmanager.v1.ListGcpUserAccessBindingsRequest,
-                      com.google.identity.accesscontextmanager.v1
-                          .ListGcpUserAccessBindingsResponse>(
-                      this, METHODID_LIST_GCP_USER_ACCESS_BINDINGS)))
-          .addMethod(
-              getGetGcpUserAccessBindingMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.identity.accesscontextmanager.v1.GetGcpUserAccessBindingRequest,
-                      com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding>(
-                      this, METHODID_GET_GCP_USER_ACCESS_BINDING)))
-          .addMethod(
-              getCreateGcpUserAccessBindingMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.identity.accesscontextmanager.v1.CreateGcpUserAccessBindingRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_CREATE_GCP_USER_ACCESS_BINDING)))
-          .addMethod(
-              getUpdateGcpUserAccessBindingMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.identity.accesscontextmanager.v1.UpdateGcpUserAccessBindingRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_UPDATE_GCP_USER_ACCESS_BINDING)))
-          .addMethod(
-              getDeleteGcpUserAccessBindingMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.identity.accesscontextmanager.v1.DeleteGcpUserAccessBindingRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_DELETE_GCP_USER_ACCESS_BINDING)))
-          .addMethod(
-              getSetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_SET_IAM_POLICY)))
-          .addMethod(
-              getGetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_GET_IAM_POLICY)))
-          .addMethod(
-              getTestIamPermissionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.TestIamPermissionsRequest,
-                      com.google.iam.v1.TestIamPermissionsResponse>(
-                      this, METHODID_TEST_IAM_PERMISSIONS)))
-          .build();
+      return AccessContextManagerGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service AccessContextManager.
    *
    * <pre>
    * API for setting [access levels]
@@ -2677,7 +2528,7 @@ public final class AccessContextManagerGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service AccessContextManager.
    *
    * <pre>
    * API for setting [access levels]
@@ -3182,7 +3033,7 @@ public final class AccessContextManagerGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service AccessContextManager.
    *
    * <pre>
    * API for setting [access levels]
@@ -3747,10 +3598,10 @@ public final class AccessContextManagerGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final AccessContextManagerImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(AccessContextManagerImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -3924,6 +3775,178 @@ public final class AccessContextManagerGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListAccessPoliciesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.identity.accesscontextmanager.v1.ListAccessPoliciesRequest,
+                    com.google.identity.accesscontextmanager.v1.ListAccessPoliciesResponse>(
+                    service, METHODID_LIST_ACCESS_POLICIES)))
+        .addMethod(
+            getGetAccessPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.identity.accesscontextmanager.v1.GetAccessPolicyRequest,
+                    com.google.identity.accesscontextmanager.v1.AccessPolicy>(
+                    service, METHODID_GET_ACCESS_POLICY)))
+        .addMethod(
+            getCreateAccessPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.identity.accesscontextmanager.v1.AccessPolicy,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_ACCESS_POLICY)))
+        .addMethod(
+            getUpdateAccessPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.identity.accesscontextmanager.v1.UpdateAccessPolicyRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_ACCESS_POLICY)))
+        .addMethod(
+            getDeleteAccessPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.identity.accesscontextmanager.v1.DeleteAccessPolicyRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_ACCESS_POLICY)))
+        .addMethod(
+            getListAccessLevelsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.identity.accesscontextmanager.v1.ListAccessLevelsRequest,
+                    com.google.identity.accesscontextmanager.v1.ListAccessLevelsResponse>(
+                    service, METHODID_LIST_ACCESS_LEVELS)))
+        .addMethod(
+            getGetAccessLevelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.identity.accesscontextmanager.v1.GetAccessLevelRequest,
+                    com.google.identity.accesscontextmanager.v1.AccessLevel>(
+                    service, METHODID_GET_ACCESS_LEVEL)))
+        .addMethod(
+            getCreateAccessLevelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.identity.accesscontextmanager.v1.CreateAccessLevelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_ACCESS_LEVEL)))
+        .addMethod(
+            getUpdateAccessLevelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.identity.accesscontextmanager.v1.UpdateAccessLevelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_ACCESS_LEVEL)))
+        .addMethod(
+            getDeleteAccessLevelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.identity.accesscontextmanager.v1.DeleteAccessLevelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_ACCESS_LEVEL)))
+        .addMethod(
+            getReplaceAccessLevelsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.identity.accesscontextmanager.v1.ReplaceAccessLevelsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_REPLACE_ACCESS_LEVELS)))
+        .addMethod(
+            getListServicePerimetersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.identity.accesscontextmanager.v1.ListServicePerimetersRequest,
+                    com.google.identity.accesscontextmanager.v1.ListServicePerimetersResponse>(
+                    service, METHODID_LIST_SERVICE_PERIMETERS)))
+        .addMethod(
+            getGetServicePerimeterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.identity.accesscontextmanager.v1.GetServicePerimeterRequest,
+                    com.google.identity.accesscontextmanager.v1.ServicePerimeter>(
+                    service, METHODID_GET_SERVICE_PERIMETER)))
+        .addMethod(
+            getCreateServicePerimeterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.identity.accesscontextmanager.v1.CreateServicePerimeterRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_SERVICE_PERIMETER)))
+        .addMethod(
+            getUpdateServicePerimeterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.identity.accesscontextmanager.v1.UpdateServicePerimeterRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_SERVICE_PERIMETER)))
+        .addMethod(
+            getDeleteServicePerimeterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.identity.accesscontextmanager.v1.DeleteServicePerimeterRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_SERVICE_PERIMETER)))
+        .addMethod(
+            getReplaceServicePerimetersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.identity.accesscontextmanager.v1.ReplaceServicePerimetersRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_REPLACE_SERVICE_PERIMETERS)))
+        .addMethod(
+            getCommitServicePerimetersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.identity.accesscontextmanager.v1.CommitServicePerimetersRequest,
+                    com.google.longrunning.Operation>(service, METHODID_COMMIT_SERVICE_PERIMETERS)))
+        .addMethod(
+            getListGcpUserAccessBindingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.identity.accesscontextmanager.v1.ListGcpUserAccessBindingsRequest,
+                    com.google.identity.accesscontextmanager.v1.ListGcpUserAccessBindingsResponse>(
+                    service, METHODID_LIST_GCP_USER_ACCESS_BINDINGS)))
+        .addMethod(
+            getGetGcpUserAccessBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.identity.accesscontextmanager.v1.GetGcpUserAccessBindingRequest,
+                    com.google.identity.accesscontextmanager.v1.GcpUserAccessBinding>(
+                    service, METHODID_GET_GCP_USER_ACCESS_BINDING)))
+        .addMethod(
+            getCreateGcpUserAccessBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.identity.accesscontextmanager.v1.CreateGcpUserAccessBindingRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_GCP_USER_ACCESS_BINDING)))
+        .addMethod(
+            getUpdateGcpUserAccessBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.identity.accesscontextmanager.v1.UpdateGcpUserAccessBindingRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_GCP_USER_ACCESS_BINDING)))
+        .addMethod(
+            getDeleteGcpUserAccessBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.identity.accesscontextmanager.v1.DeleteGcpUserAccessBindingRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_GCP_USER_ACCESS_BINDING)))
+        .addMethod(
+            getSetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_SET_IAM_POLICY)))
+        .addMethod(
+            getGetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_GET_IAM_POLICY)))
+        .addMethod(
+            getTestIamPermissionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.v1.TestIamPermissionsRequest,
+                    com.google.iam.v1.TestIamPermissionsResponse>(
+                    service, METHODID_TEST_IAM_PERMISSIONS)))
+        .build();
   }
 
   private abstract static class AccessContextManagerBaseDescriptorSupplier
