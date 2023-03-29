@@ -16,10 +16,11 @@
 package com.google.cloud.bigtable.data.v2.models;
 
 import com.google.api.core.InternalApi;
+import java.io.Serializable;
 
 /**
  * Default representation of a change stream record, which can be a Heartbeat, a CloseStream, or a
  * logical mutation.
  */
 @InternalApi("Intended for use by the BigtableIO in apache/beam only.")
-public interface ChangeStreamRecord {}
+public interface ChangeStreamRecord extends Serializable {}
