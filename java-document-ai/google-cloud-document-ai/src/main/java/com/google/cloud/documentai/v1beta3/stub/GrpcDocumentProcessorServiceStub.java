@@ -57,6 +57,9 @@ import com.google.cloud.documentai.v1beta3.GetEvaluationRequest;
 import com.google.cloud.documentai.v1beta3.GetProcessorRequest;
 import com.google.cloud.documentai.v1beta3.GetProcessorTypeRequest;
 import com.google.cloud.documentai.v1beta3.GetProcessorVersionRequest;
+import com.google.cloud.documentai.v1beta3.ImportProcessorVersionMetadata;
+import com.google.cloud.documentai.v1beta3.ImportProcessorVersionRequest;
+import com.google.cloud.documentai.v1beta3.ImportProcessorVersionResponse;
 import com.google.cloud.documentai.v1beta3.ListEvaluationsRequest;
 import com.google.cloud.documentai.v1beta3.ListEvaluationsResponse;
 import com.google.cloud.documentai.v1beta3.ListProcessorTypesRequest;
@@ -349,6 +352,17 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   ProtoUtils.marshaller(ListEvaluationsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ImportProcessorVersionRequest, Operation>
+      importProcessorVersionMethodDescriptor =
+          MethodDescriptor.<ImportProcessorVersionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.documentai.v1beta3.DocumentProcessorService/ImportProcessorVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ImportProcessorVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -450,6 +464,13 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
       listEvaluationsCallable;
   private final UnaryCallable<ListEvaluationsRequest, ListEvaluationsPagedResponse>
       listEvaluationsPagedCallable;
+  private final UnaryCallable<ImportProcessorVersionRequest, Operation>
+      importProcessorVersionCallable;
+  private final OperationCallable<
+          ImportProcessorVersionRequest,
+          ImportProcessorVersionResponse,
+          ImportProcessorVersionMetadata>
+      importProcessorVersionOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -734,6 +755,17 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<ImportProcessorVersionRequest, Operation>
+        importProcessorVersionTransportSettings =
+            GrpcCallSettings.<ImportProcessorVersionRequest, Operation>newBuilder()
+                .setMethodDescriptor(importProcessorVersionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -925,6 +957,17 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
     this.listEvaluationsPagedCallable =
         callableFactory.createPagedCallable(
             listEvaluationsTransportSettings, settings.listEvaluationsSettings(), clientContext);
+    this.importProcessorVersionCallable =
+        callableFactory.createUnaryCallable(
+            importProcessorVersionTransportSettings,
+            settings.importProcessorVersionSettings(),
+            clientContext);
+    this.importProcessorVersionOperationCallable =
+        callableFactory.createOperationCallable(
+            importProcessorVersionTransportSettings,
+            settings.importProcessorVersionOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1164,6 +1207,20 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
   public UnaryCallable<ListEvaluationsRequest, ListEvaluationsPagedResponse>
       listEvaluationsPagedCallable() {
     return listEvaluationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportProcessorVersionRequest, Operation> importProcessorVersionCallable() {
+    return importProcessorVersionCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          ImportProcessorVersionRequest,
+          ImportProcessorVersionResponse,
+          ImportProcessorVersionMetadata>
+      importProcessorVersionOperationCallable() {
+    return importProcessorVersionOperationCallable;
   }
 
   @Override

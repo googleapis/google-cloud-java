@@ -2176,6 +2176,112 @@ public class DocumentProcessorServiceClientHttpJsonTest {
   }
 
   @Test
+  public void importProcessorVersionTest() throws Exception {
+    ImportProcessorVersionResponse expectedResponse =
+        ImportProcessorVersionResponse.newBuilder()
+            .setProcessorVersion(
+                ProcessorVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+                    .toString())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importProcessorVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ProcessorName parent = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+
+    ImportProcessorVersionResponse actualResponse =
+        client.importProcessorVersionAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void importProcessorVersionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProcessorName parent = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+      client.importProcessorVersionAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void importProcessorVersionTest2() throws Exception {
+    ImportProcessorVersionResponse expectedResponse =
+        ImportProcessorVersionResponse.newBuilder()
+            .setProcessorVersion(
+                ProcessorVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+                    .toString())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importProcessorVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-3198/locations/location-3198/processors/processor-3198";
+
+    ImportProcessorVersionResponse actualResponse =
+        client.importProcessorVersionAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void importProcessorVersionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-3198/locations/location-3198/processors/processor-3198";
+      client.importProcessorVersionAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void listLocationsTest() throws Exception {
     Location responsesElement = Location.newBuilder().build();
     ListLocationsResponse expectedResponse =

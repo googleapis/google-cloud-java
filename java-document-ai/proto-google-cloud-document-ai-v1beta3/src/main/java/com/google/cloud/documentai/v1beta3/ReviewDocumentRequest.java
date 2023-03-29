@@ -371,7 +371,7 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ReviewDocumentRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=967
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=981
    * @return Whether the document field is set.
    */
   @java.lang.Override
@@ -389,7 +389,7 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ReviewDocumentRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=967
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=981
    * @return The document.
    */
   @java.lang.Override
@@ -1389,7 +1389,7 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.ReviewDocumentRequest.document is deprecated. See
-     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=967
+     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=981
      * @return Whether the document field is set.
      */
     @java.lang.Deprecated
@@ -1406,7 +1406,7 @@ public final class ReviewDocumentRequest extends com.google.protobuf.GeneratedMe
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.ReviewDocumentRequest.document is deprecated. See
-     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=967
+     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=981
      * @return The document.
      */
     @java.lang.Deprecated

@@ -140,8 +140,7 @@ public final class DocumentUnderstandingServiceGrpc {
    * computer vision, and translation.
    * </pre>
    */
-  public abstract static class DocumentUnderstandingServiceImplBase
-      implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -150,28 +149,34 @@ public final class DocumentUnderstandingServiceGrpc {
      * LRO endpoint to batch process many documents.
      * </pre>
      */
-    public void batchProcessDocuments(
+    default void batchProcessDocuments(
         com.google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getBatchProcessDocumentsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service DocumentUnderstandingService.
+   *
+   * <pre>
+   * Service to parse structured information from unstructured or semi-structured
+   * documents using state-of-the-art Google AI such as natural language,
+   * computer vision, and translation.
+   * </pre>
+   */
+  public abstract static class DocumentUnderstandingServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getBatchProcessDocumentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_BATCH_PROCESS_DOCUMENTS)))
-          .build();
+      return DocumentUnderstandingServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service DocumentUnderstandingService.
    *
    * <pre>
    * Service to parse structured information from unstructured or semi-structured
@@ -210,7 +215,7 @@ public final class DocumentUnderstandingServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service DocumentUnderstandingService.
    *
    * <pre>
    * Service to parse structured information from unstructured or semi-structured
@@ -246,7 +251,8 @@ public final class DocumentUnderstandingServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * DocumentUnderstandingService.
    *
    * <pre>
    * Service to parse structured information from unstructured or semi-structured
@@ -289,10 +295,10 @@ public final class DocumentUnderstandingServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final DocumentUnderstandingServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(DocumentUnderstandingServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -320,6 +326,17 @@ public final class DocumentUnderstandingServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getBatchProcessDocumentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_BATCH_PROCESS_DOCUMENTS)))
+        .build();
   }
 
   private abstract static class DocumentUnderstandingServiceBaseDescriptorSupplier
