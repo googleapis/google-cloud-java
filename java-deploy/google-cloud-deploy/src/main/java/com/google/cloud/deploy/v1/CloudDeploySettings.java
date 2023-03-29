@@ -218,6 +218,16 @@ public class CloudDeploySettings extends ClientSettings<CloudDeploySettings> {
     return ((CloudDeployStubSettings) getStubSettings()).approveRolloutSettings();
   }
 
+  /** Returns the object with the settings used for calls to advanceRollout. */
+  public UnaryCallSettings<AdvanceRolloutRequest, AdvanceRolloutResponse> advanceRolloutSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).advanceRolloutSettings();
+  }
+
+  /** Returns the object with the settings used for calls to cancelRollout. */
+  public UnaryCallSettings<CancelRolloutRequest, CancelRolloutResponse> cancelRolloutSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).cancelRolloutSettings();
+  }
+
   /** Returns the object with the settings used for calls to listRollouts. */
   public PagedCallSettings<ListRolloutsRequest, ListRolloutsResponse, ListRolloutsPagedResponse>
       listRolloutsSettings() {
@@ -240,6 +250,11 @@ public class CloudDeploySettings extends ClientSettings<CloudDeploySettings> {
     return ((CloudDeployStubSettings) getStubSettings()).createRolloutOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to ignoreJob. */
+  public UnaryCallSettings<IgnoreJobRequest, IgnoreJobResponse> ignoreJobSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).ignoreJobSettings();
+  }
+
   /** Returns the object with the settings used for calls to retryJob. */
   public UnaryCallSettings<RetryJobRequest, RetryJobResponse> retryJobSettings() {
     return ((CloudDeployStubSettings) getStubSettings()).retryJobSettings();
@@ -254,6 +269,12 @@ public class CloudDeploySettings extends ClientSettings<CloudDeploySettings> {
   /** Returns the object with the settings used for calls to getJobRun. */
   public UnaryCallSettings<GetJobRunRequest, JobRun> getJobRunSettings() {
     return ((CloudDeployStubSettings) getStubSettings()).getJobRunSettings();
+  }
+
+  /** Returns the object with the settings used for calls to terminateJobRun. */
+  public UnaryCallSettings<TerminateJobRunRequest, TerminateJobRunResponse>
+      terminateJobRunSettings() {
+    return ((CloudDeployStubSettings) getStubSettings()).terminateJobRunSettings();
   }
 
   /** Returns the object with the settings used for calls to getConfig. */
@@ -535,6 +556,18 @@ public class CloudDeploySettings extends ClientSettings<CloudDeploySettings> {
       return getStubSettingsBuilder().approveRolloutSettings();
     }
 
+    /** Returns the builder for the settings used for calls to advanceRollout. */
+    public UnaryCallSettings.Builder<AdvanceRolloutRequest, AdvanceRolloutResponse>
+        advanceRolloutSettings() {
+      return getStubSettingsBuilder().advanceRolloutSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelRollout. */
+    public UnaryCallSettings.Builder<CancelRolloutRequest, CancelRolloutResponse>
+        cancelRolloutSettings() {
+      return getStubSettingsBuilder().cancelRolloutSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listRollouts. */
     public PagedCallSettings.Builder<
             ListRolloutsRequest, ListRolloutsResponse, ListRolloutsPagedResponse>
@@ -558,6 +591,11 @@ public class CloudDeploySettings extends ClientSettings<CloudDeploySettings> {
       return getStubSettingsBuilder().createRolloutOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to ignoreJob. */
+    public UnaryCallSettings.Builder<IgnoreJobRequest, IgnoreJobResponse> ignoreJobSettings() {
+      return getStubSettingsBuilder().ignoreJobSettings();
+    }
+
     /** Returns the builder for the settings used for calls to retryJob. */
     public UnaryCallSettings.Builder<RetryJobRequest, RetryJobResponse> retryJobSettings() {
       return getStubSettingsBuilder().retryJobSettings();
@@ -573,6 +611,12 @@ public class CloudDeploySettings extends ClientSettings<CloudDeploySettings> {
     /** Returns the builder for the settings used for calls to getJobRun. */
     public UnaryCallSettings.Builder<GetJobRunRequest, JobRun> getJobRunSettings() {
       return getStubSettingsBuilder().getJobRunSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to terminateJobRun. */
+    public UnaryCallSettings.Builder<TerminateJobRunRequest, TerminateJobRunResponse>
+        terminateJobRunSettings() {
+      return getStubSettingsBuilder().terminateJobRunSettings();
     }
 
     /** Returns the builder for the settings used for calls to getConfig. */

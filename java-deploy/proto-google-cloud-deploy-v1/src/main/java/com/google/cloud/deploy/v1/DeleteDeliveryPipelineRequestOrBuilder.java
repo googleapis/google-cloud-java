@@ -117,8 +117,8 @@ public interface DeleteDeliveryPipelineRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If set, validate the request and preview the review, but do not actually
-   * post it.
+   * Optional. If set, validate the request and preview the review, but do not
+   * actually post it.
    * </pre>
    *
    * <code>bool validate_only = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -131,9 +131,9 @@ public interface DeleteDeliveryPipelineRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If set to true, all child resources under this pipeline will also be
-   * deleted. Otherwise, the request will only work if the pipeline has
-   * no child resources.
+   * Optional. If set to true, all child resources under this pipeline will also
+   * be deleted. Otherwise, the request will only work if the pipeline has no
+   * child resources.
    * </pre>
    *
    * <code>bool force = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -146,8 +146,8 @@ public interface DeleteDeliveryPipelineRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. This checksum is computed by the server based on the value of other
-   * fields, and may be sent on update and delete requests to ensure the
+   * Optional. This checksum is computed by the server based on the value of
+   * other fields, and may be sent on update and delete requests to ensure the
    * client has an up-to-date value before proceeding.
    * </pre>
    *
@@ -160,8 +160,8 @@ public interface DeleteDeliveryPipelineRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. This checksum is computed by the server based on the value of other
-   * fields, and may be sent on update and delete requests to ensure the
+   * Optional. This checksum is computed by the server based on the value of
+   * other fields, and may be sent on update and delete requests to ensure the
    * client has an up-to-date value before proceeding.
    * </pre>
    *

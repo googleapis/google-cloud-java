@@ -32,8 +32,12 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.deploy.v1.AbandonReleaseRequest;
 import com.google.cloud.deploy.v1.AbandonReleaseResponse;
+import com.google.cloud.deploy.v1.AdvanceRolloutRequest;
+import com.google.cloud.deploy.v1.AdvanceRolloutResponse;
 import com.google.cloud.deploy.v1.ApproveRolloutRequest;
 import com.google.cloud.deploy.v1.ApproveRolloutResponse;
+import com.google.cloud.deploy.v1.CancelRolloutRequest;
+import com.google.cloud.deploy.v1.CancelRolloutResponse;
 import com.google.cloud.deploy.v1.Config;
 import com.google.cloud.deploy.v1.CreateDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.CreateReleaseRequest;
@@ -48,6 +52,8 @@ import com.google.cloud.deploy.v1.GetJobRunRequest;
 import com.google.cloud.deploy.v1.GetReleaseRequest;
 import com.google.cloud.deploy.v1.GetRolloutRequest;
 import com.google.cloud.deploy.v1.GetTargetRequest;
+import com.google.cloud.deploy.v1.IgnoreJobRequest;
+import com.google.cloud.deploy.v1.IgnoreJobResponse;
 import com.google.cloud.deploy.v1.JobRun;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesRequest;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesResponse;
@@ -65,6 +71,8 @@ import com.google.cloud.deploy.v1.RetryJobRequest;
 import com.google.cloud.deploy.v1.RetryJobResponse;
 import com.google.cloud.deploy.v1.Rollout;
 import com.google.cloud.deploy.v1.Target;
+import com.google.cloud.deploy.v1.TerminateJobRunRequest;
+import com.google.cloud.deploy.v1.TerminateJobRunResponse;
 import com.google.cloud.deploy.v1.UpdateDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.UpdateTargetRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -240,6 +248,28 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   ProtoUtils.marshaller(ApproveRolloutResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<AdvanceRolloutRequest, AdvanceRolloutResponse>
+      advanceRolloutMethodDescriptor =
+          MethodDescriptor.<AdvanceRolloutRequest, AdvanceRolloutResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/AdvanceRollout")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AdvanceRolloutRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AdvanceRolloutResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<CancelRolloutRequest, CancelRolloutResponse>
+      cancelRolloutMethodDescriptor =
+          MethodDescriptor.<CancelRolloutRequest, CancelRolloutResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/CancelRollout")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CancelRolloutRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(CancelRolloutResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListRolloutsRequest, ListRolloutsResponse>
       listRolloutsMethodDescriptor =
           MethodDescriptor.<ListRolloutsRequest, ListRolloutsResponse>newBuilder()
@@ -268,6 +298,15 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<IgnoreJobRequest, IgnoreJobResponse>
+      ignoreJobMethodDescriptor =
+          MethodDescriptor.<IgnoreJobRequest, IgnoreJobResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/IgnoreJob")
+              .setRequestMarshaller(ProtoUtils.marshaller(IgnoreJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(IgnoreJobResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<RetryJobRequest, RetryJobResponse>
       retryJobMethodDescriptor =
           MethodDescriptor.<RetryJobRequest, RetryJobResponse>newBuilder()
@@ -294,6 +333,17 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetJobRunRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(JobRun.getDefaultInstance()))
           .build();
+
+  private static final MethodDescriptor<TerminateJobRunRequest, TerminateJobRunResponse>
+      terminateJobRunMethodDescriptor =
+          MethodDescriptor.<TerminateJobRunRequest, TerminateJobRunResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/TerminateJobRun")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TerminateJobRunRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(TerminateJobRunResponse.getDefaultInstance()))
+              .build();
 
   private static final MethodDescriptor<GetConfigRequest, Config> getConfigMethodDescriptor =
       MethodDescriptor.<GetConfigRequest, Config>newBuilder()
@@ -391,6 +441,8 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
       createReleaseOperationCallable;
   private final UnaryCallable<AbandonReleaseRequest, AbandonReleaseResponse> abandonReleaseCallable;
   private final UnaryCallable<ApproveRolloutRequest, ApproveRolloutResponse> approveRolloutCallable;
+  private final UnaryCallable<AdvanceRolloutRequest, AdvanceRolloutResponse> advanceRolloutCallable;
+  private final UnaryCallable<CancelRolloutRequest, CancelRolloutResponse> cancelRolloutCallable;
   private final UnaryCallable<ListRolloutsRequest, ListRolloutsResponse> listRolloutsCallable;
   private final UnaryCallable<ListRolloutsRequest, ListRolloutsPagedResponse>
       listRolloutsPagedCallable;
@@ -398,11 +450,14 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
   private final UnaryCallable<CreateRolloutRequest, Operation> createRolloutCallable;
   private final OperationCallable<CreateRolloutRequest, Rollout, OperationMetadata>
       createRolloutOperationCallable;
+  private final UnaryCallable<IgnoreJobRequest, IgnoreJobResponse> ignoreJobCallable;
   private final UnaryCallable<RetryJobRequest, RetryJobResponse> retryJobCallable;
   private final UnaryCallable<ListJobRunsRequest, ListJobRunsResponse> listJobRunsCallable;
   private final UnaryCallable<ListJobRunsRequest, ListJobRunsPagedResponse>
       listJobRunsPagedCallable;
   private final UnaryCallable<GetJobRunRequest, JobRun> getJobRunCallable;
+  private final UnaryCallable<TerminateJobRunRequest, TerminateJobRunResponse>
+      terminateJobRunCallable;
   private final UnaryCallable<GetConfigRequest, Config> getConfigCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
@@ -615,6 +670,27 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<AdvanceRolloutRequest, AdvanceRolloutResponse>
+        advanceRolloutTransportSettings =
+            GrpcCallSettings.<AdvanceRolloutRequest, AdvanceRolloutResponse>newBuilder()
+                .setMethodDescriptor(advanceRolloutMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<CancelRolloutRequest, CancelRolloutResponse> cancelRolloutTransportSettings =
+        GrpcCallSettings.<CancelRolloutRequest, CancelRolloutResponse>newBuilder()
+            .setMethodDescriptor(cancelRolloutMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<ListRolloutsRequest, ListRolloutsResponse> listRolloutsTransportSettings =
         GrpcCallSettings.<ListRolloutsRequest, ListRolloutsResponse>newBuilder()
             .setMethodDescriptor(listRolloutsMethodDescriptor)
@@ -642,6 +718,16 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                 request -> {
                   ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                   params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<IgnoreJobRequest, IgnoreJobResponse> ignoreJobTransportSettings =
+        GrpcCallSettings.<IgnoreJobRequest, IgnoreJobResponse>newBuilder()
+            .setMethodDescriptor(ignoreJobMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("rollout", String.valueOf(request.getRollout()));
                   return params.build();
                 })
             .build();
@@ -675,6 +761,17 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<TerminateJobRunRequest, TerminateJobRunResponse>
+        terminateJobRunTransportSettings =
+            GrpcCallSettings.<TerminateJobRunRequest, TerminateJobRunResponse>newBuilder()
+                .setMethodDescriptor(terminateJobRunMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<GetConfigRequest, Config> getConfigTransportSettings =
         GrpcCallSettings.<GetConfigRequest, Config>newBuilder()
             .setMethodDescriptor(getConfigMethodDescriptor)
@@ -845,6 +942,12 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
     this.approveRolloutCallable =
         callableFactory.createUnaryCallable(
             approveRolloutTransportSettings, settings.approveRolloutSettings(), clientContext);
+    this.advanceRolloutCallable =
+        callableFactory.createUnaryCallable(
+            advanceRolloutTransportSettings, settings.advanceRolloutSettings(), clientContext);
+    this.cancelRolloutCallable =
+        callableFactory.createUnaryCallable(
+            cancelRolloutTransportSettings, settings.cancelRolloutSettings(), clientContext);
     this.listRolloutsCallable =
         callableFactory.createUnaryCallable(
             listRolloutsTransportSettings, settings.listRolloutsSettings(), clientContext);
@@ -863,6 +966,9 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
             settings.createRolloutOperationSettings(),
             clientContext,
             operationsStub);
+    this.ignoreJobCallable =
+        callableFactory.createUnaryCallable(
+            ignoreJobTransportSettings, settings.ignoreJobSettings(), clientContext);
     this.retryJobCallable =
         callableFactory.createUnaryCallable(
             retryJobTransportSettings, settings.retryJobSettings(), clientContext);
@@ -875,6 +981,9 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
     this.getJobRunCallable =
         callableFactory.createUnaryCallable(
             getJobRunTransportSettings, settings.getJobRunSettings(), clientContext);
+    this.terminateJobRunCallable =
+        callableFactory.createUnaryCallable(
+            terminateJobRunTransportSettings, settings.terminateJobRunSettings(), clientContext);
     this.getConfigCallable =
         callableFactory.createUnaryCallable(
             getConfigTransportSettings, settings.getConfigSettings(), clientContext);
@@ -1042,6 +1151,16 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
   }
 
   @Override
+  public UnaryCallable<AdvanceRolloutRequest, AdvanceRolloutResponse> advanceRolloutCallable() {
+    return advanceRolloutCallable;
+  }
+
+  @Override
+  public UnaryCallable<CancelRolloutRequest, CancelRolloutResponse> cancelRolloutCallable() {
+    return cancelRolloutCallable;
+  }
+
+  @Override
   public UnaryCallable<ListRolloutsRequest, ListRolloutsResponse> listRolloutsCallable() {
     return listRolloutsCallable;
   }
@@ -1068,6 +1187,11 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
   }
 
   @Override
+  public UnaryCallable<IgnoreJobRequest, IgnoreJobResponse> ignoreJobCallable() {
+    return ignoreJobCallable;
+  }
+
+  @Override
   public UnaryCallable<RetryJobRequest, RetryJobResponse> retryJobCallable() {
     return retryJobCallable;
   }
@@ -1085,6 +1209,11 @@ public class GrpcCloudDeployStub extends CloudDeployStub {
   @Override
   public UnaryCallable<GetJobRunRequest, JobRun> getJobRunCallable() {
     return getJobRunCallable;
+  }
+
+  @Override
+  public UnaryCallable<TerminateJobRunRequest, TerminateJobRunResponse> terminateJobRunCallable() {
+    return terminateJobRunCallable;
   }
 
   @Override

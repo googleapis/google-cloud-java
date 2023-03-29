@@ -128,12 +128,10 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. All supported versions of Skaffold.
+   * All supported versions of Skaffold.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.deploy.v1.SkaffoldVersion> getSupportedVersionsList() {
@@ -143,12 +141,10 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. All supported versions of Skaffold.
+   * All supported versions of Skaffold.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.deploy.v1.SkaffoldVersionOrBuilder>
@@ -159,12 +155,10 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. All supported versions of Skaffold.
+   * All supported versions of Skaffold.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
    */
   @java.lang.Override
   public int getSupportedVersionsCount() {
@@ -174,12 +168,10 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. All supported versions of Skaffold.
+   * All supported versions of Skaffold.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.SkaffoldVersion getSupportedVersions(int index) {
@@ -189,12 +181,10 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. All supported versions of Skaffold.
+   * All supported versions of Skaffold.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
    */
   @java.lang.Override
   public com.google.cloud.deploy.v1.SkaffoldVersionOrBuilder getSupportedVersionsOrBuilder(
@@ -210,11 +200,11 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Default Skaffold version that is assigned when a Release is created without
+   * Default Skaffold version that is assigned when a Release is created without
    * specifying a Skaffold version.
    * </pre>
    *
-   * <code>string default_skaffold_version = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string default_skaffold_version = 3;</code>
    *
    * @return The defaultSkaffoldVersion.
    */
@@ -234,11 +224,11 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Default Skaffold version that is assigned when a Release is created without
+   * Default Skaffold version that is assigned when a Release is created without
    * specifying a Skaffold version.
    * </pre>
    *
-   * <code>string default_skaffold_version = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string default_skaffold_version = 3;</code>
    *
    * @return The bytes for defaultSkaffoldVersion.
    */
@@ -816,12 +806,10 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. All supported versions of Skaffold.
+     * All supported versions of Skaffold.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
      */
     public java.util.List<com.google.cloud.deploy.v1.SkaffoldVersion> getSupportedVersionsList() {
       if (supportedVersionsBuilder_ == null) {
@@ -834,12 +822,10 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. All supported versions of Skaffold.
+     * All supported versions of Skaffold.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
      */
     public int getSupportedVersionsCount() {
       if (supportedVersionsBuilder_ == null) {
@@ -852,12 +838,10 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. All supported versions of Skaffold.
+     * All supported versions of Skaffold.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
      */
     public com.google.cloud.deploy.v1.SkaffoldVersion getSupportedVersions(int index) {
       if (supportedVersionsBuilder_ == null) {
@@ -870,12 +854,10 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. All supported versions of Skaffold.
+     * All supported versions of Skaffold.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
      */
     public Builder setSupportedVersions(
         int index, com.google.cloud.deploy.v1.SkaffoldVersion value) {
@@ -895,12 +877,10 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. All supported versions of Skaffold.
+     * All supported versions of Skaffold.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
      */
     public Builder setSupportedVersions(
         int index, com.google.cloud.deploy.v1.SkaffoldVersion.Builder builderForValue) {
@@ -917,12 +897,10 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. All supported versions of Skaffold.
+     * All supported versions of Skaffold.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
      */
     public Builder addSupportedVersions(com.google.cloud.deploy.v1.SkaffoldVersion value) {
       if (supportedVersionsBuilder_ == null) {
@@ -941,12 +919,10 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. All supported versions of Skaffold.
+     * All supported versions of Skaffold.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
      */
     public Builder addSupportedVersions(
         int index, com.google.cloud.deploy.v1.SkaffoldVersion value) {
@@ -966,12 +942,10 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. All supported versions of Skaffold.
+     * All supported versions of Skaffold.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
      */
     public Builder addSupportedVersions(
         com.google.cloud.deploy.v1.SkaffoldVersion.Builder builderForValue) {
@@ -988,12 +962,10 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. All supported versions of Skaffold.
+     * All supported versions of Skaffold.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
      */
     public Builder addSupportedVersions(
         int index, com.google.cloud.deploy.v1.SkaffoldVersion.Builder builderForValue) {
@@ -1010,12 +982,10 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. All supported versions of Skaffold.
+     * All supported versions of Skaffold.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
      */
     public Builder addAllSupportedVersions(
         java.lang.Iterable<? extends com.google.cloud.deploy.v1.SkaffoldVersion> values) {
@@ -1032,12 +1002,10 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. All supported versions of Skaffold.
+     * All supported versions of Skaffold.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
      */
     public Builder clearSupportedVersions() {
       if (supportedVersionsBuilder_ == null) {
@@ -1053,12 +1021,10 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. All supported versions of Skaffold.
+     * All supported versions of Skaffold.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
      */
     public Builder removeSupportedVersions(int index) {
       if (supportedVersionsBuilder_ == null) {
@@ -1074,12 +1040,10 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. All supported versions of Skaffold.
+     * All supported versions of Skaffold.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
      */
     public com.google.cloud.deploy.v1.SkaffoldVersion.Builder getSupportedVersionsBuilder(
         int index) {
@@ -1089,12 +1053,10 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. All supported versions of Skaffold.
+     * All supported versions of Skaffold.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
      */
     public com.google.cloud.deploy.v1.SkaffoldVersionOrBuilder getSupportedVersionsOrBuilder(
         int index) {
@@ -1108,12 +1070,10 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. All supported versions of Skaffold.
+     * All supported versions of Skaffold.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
      */
     public java.util.List<? extends com.google.cloud.deploy.v1.SkaffoldVersionOrBuilder>
         getSupportedVersionsOrBuilderList() {
@@ -1127,12 +1087,10 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. All supported versions of Skaffold.
+     * All supported versions of Skaffold.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
      */
     public com.google.cloud.deploy.v1.SkaffoldVersion.Builder addSupportedVersionsBuilder() {
       return getSupportedVersionsFieldBuilder()
@@ -1142,12 +1100,10 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. All supported versions of Skaffold.
+     * All supported versions of Skaffold.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
      */
     public com.google.cloud.deploy.v1.SkaffoldVersion.Builder addSupportedVersionsBuilder(
         int index) {
@@ -1158,12 +1114,10 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. All supported versions of Skaffold.
+     * All supported versions of Skaffold.
      * </pre>
      *
-     * <code>
-     * repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
      */
     public java.util.List<com.google.cloud.deploy.v1.SkaffoldVersion.Builder>
         getSupportedVersionsBuilderList() {
@@ -1195,12 +1149,11 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Default Skaffold version that is assigned when a Release is created without
+     * Default Skaffold version that is assigned when a Release is created without
      * specifying a Skaffold version.
      * </pre>
      *
-     * <code>string default_skaffold_version = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>string default_skaffold_version = 3;</code>
      *
      * @return The defaultSkaffoldVersion.
      */
@@ -1219,12 +1172,11 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Default Skaffold version that is assigned when a Release is created without
+     * Default Skaffold version that is assigned when a Release is created without
      * specifying a Skaffold version.
      * </pre>
      *
-     * <code>string default_skaffold_version = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>string default_skaffold_version = 3;</code>
      *
      * @return The bytes for defaultSkaffoldVersion.
      */
@@ -1243,12 +1195,11 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Default Skaffold version that is assigned when a Release is created without
+     * Default Skaffold version that is assigned when a Release is created without
      * specifying a Skaffold version.
      * </pre>
      *
-     * <code>string default_skaffold_version = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>string default_skaffold_version = 3;</code>
      *
      * @param value The defaultSkaffoldVersion to set.
      * @return This builder for chaining.
@@ -1266,12 +1217,11 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Default Skaffold version that is assigned when a Release is created without
+     * Default Skaffold version that is assigned when a Release is created without
      * specifying a Skaffold version.
      * </pre>
      *
-     * <code>string default_skaffold_version = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>string default_skaffold_version = 3;</code>
      *
      * @return This builder for chaining.
      */
@@ -1285,12 +1235,11 @@ public final class Config extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Default Skaffold version that is assigned when a Release is created without
+     * Default Skaffold version that is assigned when a Release is created without
      * specifying a Skaffold version.
      * </pre>
      *
-     * <code>string default_skaffold_version = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
+     * <code>string default_skaffold_version = 3;</code>
      *
      * @param value The bytes for defaultSkaffoldVersion to set.
      * @return This builder for chaining.

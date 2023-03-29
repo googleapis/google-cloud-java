@@ -123,6 +123,26 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
      * <code>FAILED = 3;</code>
      */
     FAILED(3),
+    /**
+     *
+     *
+     * <pre>
+     * The `JobRun` is terminating.
+     * </pre>
+     *
+     * <code>TERMINATING = 4;</code>
+     */
+    TERMINATING(4),
+    /**
+     *
+     *
+     * <pre>
+     * The `JobRun` was terminated.
+     * </pre>
+     *
+     * <code>TERMINATED = 5;</code>
+     */
+    TERMINATED(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -166,6 +186,26 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
      * <code>FAILED = 3;</code>
      */
     public static final int FAILED_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * The `JobRun` is terminating.
+     * </pre>
+     *
+     * <code>TERMINATING = 4;</code>
+     */
+    public static final int TERMINATING_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * The `JobRun` was terminated.
+     * </pre>
+     *
+     * <code>TERMINATED = 5;</code>
+     */
+    public static final int TERMINATED_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -199,6 +239,10 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
           return SUCCEEDED;
         case 3:
           return FAILED;
+        case 4:
+          return TERMINATING;
+        case 5:
+          return TERMINATED;
         default:
           return null;
       }
@@ -261,6 +305,8 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DEPLOY_JOB_RUN(9),
     VERIFY_JOB_RUN(10),
+    CREATE_CHILD_ROLLOUT_JOB_RUN(12),
+    ADVANCE_CHILD_ROLLOUT_JOB_RUN(13),
     JOBRUN_NOT_SET(0);
     private final int value;
 
@@ -283,6 +329,10 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
           return DEPLOY_JOB_RUN;
         case 10:
           return VERIFY_JOB_RUN;
+        case 12:
+          return CREATE_CHILD_ROLLOUT_JOB_RUN;
+        case 13:
+          return ADVANCE_CHILD_ROLLOUT_JOB_RUN;
         case 0:
           return JOBRUN_NOT_SET;
         default:
@@ -307,7 +357,8 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Name of the `JobRun`. Format is projects/{project}/locations/{location}/
+   * Optional. Name of the `JobRun`. Format is
+   * projects/{project}/locations/{location}/
    * deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/
    * {rollouts}/jobRuns/{uuid}.
    * </pre>
@@ -332,7 +383,8 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Name of the `JobRun`. Format is projects/{project}/locations/{location}/
+   * Optional. Name of the `JobRun`. Format is
+   * projects/{project}/locations/{location}/
    * deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/
    * {rollouts}/jobRuns/{uuid}.
    * </pre>
@@ -807,6 +859,122 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.deploy.v1.VerifyJobRun.getDefaultInstance();
   }
 
+  public static final int CREATE_CHILD_ROLLOUT_JOB_RUN_FIELD_NUMBER = 12;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information specific to a createChildRollout `JobRun`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CreateChildRolloutJobRun create_child_rollout_job_run = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createChildRolloutJobRun field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreateChildRolloutJobRun() {
+    return jobRunCase_ == 12;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information specific to a createChildRollout `JobRun`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CreateChildRolloutJobRun create_child_rollout_job_run = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createChildRolloutJobRun.
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.CreateChildRolloutJobRun getCreateChildRolloutJobRun() {
+    if (jobRunCase_ == 12) {
+      return (com.google.cloud.deploy.v1.CreateChildRolloutJobRun) jobRun_;
+    }
+    return com.google.cloud.deploy.v1.CreateChildRolloutJobRun.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information specific to a createChildRollout `JobRun`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CreateChildRolloutJobRun create_child_rollout_job_run = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.CreateChildRolloutJobRunOrBuilder
+      getCreateChildRolloutJobRunOrBuilder() {
+    if (jobRunCase_ == 12) {
+      return (com.google.cloud.deploy.v1.CreateChildRolloutJobRun) jobRun_;
+    }
+    return com.google.cloud.deploy.v1.CreateChildRolloutJobRun.getDefaultInstance();
+  }
+
+  public static final int ADVANCE_CHILD_ROLLOUT_JOB_RUN_FIELD_NUMBER = 13;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information specific to an advanceChildRollout `JobRun`
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.AdvanceChildRolloutJobRun advance_child_rollout_job_run = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the advanceChildRolloutJobRun field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdvanceChildRolloutJobRun() {
+    return jobRunCase_ == 13;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information specific to an advanceChildRollout `JobRun`
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.AdvanceChildRolloutJobRun advance_child_rollout_job_run = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The advanceChildRolloutJobRun.
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun getAdvanceChildRolloutJobRun() {
+    if (jobRunCase_ == 13) {
+      return (com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun) jobRun_;
+    }
+    return com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information specific to an advanceChildRollout `JobRun`
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.AdvanceChildRolloutJobRun advance_child_rollout_job_run = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.AdvanceChildRolloutJobRunOrBuilder
+      getAdvanceChildRolloutJobRunOrBuilder() {
+    if (jobRunCase_ == 13) {
+      return (com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun) jobRun_;
+    }
+    return com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun.getDefaultInstance();
+  }
+
   public static final int ETAG_FIELD_NUMBER = 11;
 
   @SuppressWarnings("serial")
@@ -815,8 +983,8 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. This checksum is computed by the server based on the value of other
-   * fields, and may be sent on update and delete requests to ensure the
+   * Output only. This checksum is computed by the server based on the value of
+   * other fields, and may be sent on update and delete requests to ensure the
    * client has an up-to-date value before proceeding.
    * </pre>
    *
@@ -840,8 +1008,8 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. This checksum is computed by the server based on the value of other
-   * fields, and may be sent on update and delete requests to ensure the
+   * Output only. This checksum is computed by the server based on the value of
+   * other fields, and may be sent on update and delete requests to ensure the
    * client has an up-to-date value before proceeding.
    * </pre>
    *
@@ -909,6 +1077,12 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, etag_);
     }
+    if (jobRunCase_ == 12) {
+      output.writeMessage(12, (com.google.cloud.deploy.v1.CreateChildRolloutJobRun) jobRun_);
+    }
+    if (jobRunCase_ == 13) {
+      output.writeMessage(13, (com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun) jobRun_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -955,6 +1129,16 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, etag_);
     }
+    if (jobRunCase_ == 12) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, (com.google.cloud.deploy.v1.CreateChildRolloutJobRun) jobRun_);
+    }
+    if (jobRunCase_ == 13) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13, (com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun) jobRun_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -995,6 +1179,14 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
         break;
       case 10:
         if (!getVerifyJobRun().equals(other.getVerifyJobRun())) return false;
+        break;
+      case 12:
+        if (!getCreateChildRolloutJobRun().equals(other.getCreateChildRolloutJobRun()))
+          return false;
+        break;
+      case 13:
+        if (!getAdvanceChildRolloutJobRun().equals(other.getAdvanceChildRolloutJobRun()))
+          return false;
         break;
       case 0:
       default:
@@ -1042,6 +1234,14 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
       case 10:
         hash = (37 * hash) + VERIFY_JOB_RUN_FIELD_NUMBER;
         hash = (53 * hash) + getVerifyJobRun().hashCode();
+        break;
+      case 12:
+        hash = (37 * hash) + CREATE_CHILD_ROLLOUT_JOB_RUN_FIELD_NUMBER;
+        hash = (53 * hash) + getCreateChildRolloutJobRun().hashCode();
+        break;
+      case 13:
+        hash = (37 * hash) + ADVANCE_CHILD_ROLLOUT_JOB_RUN_FIELD_NUMBER;
+        hash = (53 * hash) + getAdvanceChildRolloutJobRun().hashCode();
         break;
       case 0:
       default:
@@ -1211,6 +1411,12 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
       if (verifyJobRunBuilder_ != null) {
         verifyJobRunBuilder_.clear();
       }
+      if (createChildRolloutJobRunBuilder_ != null) {
+        createChildRolloutJobRunBuilder_.clear();
+      }
+      if (advanceChildRolloutJobRunBuilder_ != null) {
+        advanceChildRolloutJobRunBuilder_.clear();
+      }
       etag_ = "";
       jobRunCase_ = 0;
       jobRun_ = null;
@@ -1274,7 +1480,7 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.state_ = state_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.etag_ = etag_;
       }
     }
@@ -1287,6 +1493,12 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
       }
       if (jobRunCase_ == 10 && verifyJobRunBuilder_ != null) {
         result.jobRun_ = verifyJobRunBuilder_.build();
+      }
+      if (jobRunCase_ == 12 && createChildRolloutJobRunBuilder_ != null) {
+        result.jobRun_ = createChildRolloutJobRunBuilder_.build();
+      }
+      if (jobRunCase_ == 13 && advanceChildRolloutJobRunBuilder_ != null) {
+        result.jobRun_ = advanceChildRolloutJobRunBuilder_.build();
       }
     }
 
@@ -1369,7 +1581,7 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       switch (other.getJobRunCase()) {
@@ -1381,6 +1593,16 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
         case VERIFY_JOB_RUN:
           {
             mergeVerifyJobRun(other.getVerifyJobRun());
+            break;
+          }
+        case CREATE_CHILD_ROLLOUT_JOB_RUN:
+          {
+            mergeCreateChildRolloutJobRun(other.getCreateChildRolloutJobRun());
+            break;
+          }
+        case ADVANCE_CHILD_ROLLOUT_JOB_RUN:
+          {
+            mergeAdvanceChildRolloutJobRun(other.getAdvanceChildRolloutJobRun());
             break;
           }
         case JOBRUN_NOT_SET:
@@ -1477,9 +1699,23 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
             case 90:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 90
+            case 98:
+              {
+                input.readMessage(
+                    getCreateChildRolloutJobRunFieldBuilder().getBuilder(), extensionRegistry);
+                jobRunCase_ = 12;
+                break;
+              } // case 98
+            case 106:
+              {
+                input.readMessage(
+                    getAdvanceChildRolloutJobRunFieldBuilder().getBuilder(), extensionRegistry);
+                jobRunCase_ = 13;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1518,7 +1754,8 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `JobRun`. Format is projects/{project}/locations/{location}/
+     * Optional. Name of the `JobRun`. Format is
+     * projects/{project}/locations/{location}/
      * deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/
      * {rollouts}/jobRuns/{uuid}.
      * </pre>
@@ -1542,7 +1779,8 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `JobRun`. Format is projects/{project}/locations/{location}/
+     * Optional. Name of the `JobRun`. Format is
+     * projects/{project}/locations/{location}/
      * deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/
      * {rollouts}/jobRuns/{uuid}.
      * </pre>
@@ -1566,7 +1804,8 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `JobRun`. Format is projects/{project}/locations/{location}/
+     * Optional. Name of the `JobRun`. Format is
+     * projects/{project}/locations/{location}/
      * deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/
      * {rollouts}/jobRuns/{uuid}.
      * </pre>
@@ -1589,7 +1828,8 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `JobRun`. Format is projects/{project}/locations/{location}/
+     * Optional. Name of the `JobRun`. Format is
+     * projects/{project}/locations/{location}/
      * deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/
      * {rollouts}/jobRuns/{uuid}.
      * </pre>
@@ -1608,7 +1848,8 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Name of the `JobRun`. Format is projects/{project}/locations/{location}/
+     * Optional. Name of the `JobRun`. Format is
+     * projects/{project}/locations/{location}/
      * deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/
      * {rollouts}/jobRuns/{uuid}.
      * </pre>
@@ -3078,13 +3319,477 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
       return verifyJobRunBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.CreateChildRolloutJobRun,
+            com.google.cloud.deploy.v1.CreateChildRolloutJobRun.Builder,
+            com.google.cloud.deploy.v1.CreateChildRolloutJobRunOrBuilder>
+        createChildRolloutJobRunBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to a createChildRollout `JobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CreateChildRolloutJobRun create_child_rollout_job_run = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the createChildRolloutJobRun field is set.
+     */
+    @java.lang.Override
+    public boolean hasCreateChildRolloutJobRun() {
+      return jobRunCase_ == 12;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to a createChildRollout `JobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CreateChildRolloutJobRun create_child_rollout_job_run = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The createChildRolloutJobRun.
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.CreateChildRolloutJobRun getCreateChildRolloutJobRun() {
+      if (createChildRolloutJobRunBuilder_ == null) {
+        if (jobRunCase_ == 12) {
+          return (com.google.cloud.deploy.v1.CreateChildRolloutJobRun) jobRun_;
+        }
+        return com.google.cloud.deploy.v1.CreateChildRolloutJobRun.getDefaultInstance();
+      } else {
+        if (jobRunCase_ == 12) {
+          return createChildRolloutJobRunBuilder_.getMessage();
+        }
+        return com.google.cloud.deploy.v1.CreateChildRolloutJobRun.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to a createChildRollout `JobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CreateChildRolloutJobRun create_child_rollout_job_run = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateChildRolloutJobRun(
+        com.google.cloud.deploy.v1.CreateChildRolloutJobRun value) {
+      if (createChildRolloutJobRunBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        jobRun_ = value;
+        onChanged();
+      } else {
+        createChildRolloutJobRunBuilder_.setMessage(value);
+      }
+      jobRunCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to a createChildRollout `JobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CreateChildRolloutJobRun create_child_rollout_job_run = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateChildRolloutJobRun(
+        com.google.cloud.deploy.v1.CreateChildRolloutJobRun.Builder builderForValue) {
+      if (createChildRolloutJobRunBuilder_ == null) {
+        jobRun_ = builderForValue.build();
+        onChanged();
+      } else {
+        createChildRolloutJobRunBuilder_.setMessage(builderForValue.build());
+      }
+      jobRunCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to a createChildRollout `JobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CreateChildRolloutJobRun create_child_rollout_job_run = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCreateChildRolloutJobRun(
+        com.google.cloud.deploy.v1.CreateChildRolloutJobRun value) {
+      if (createChildRolloutJobRunBuilder_ == null) {
+        if (jobRunCase_ == 12
+            && jobRun_
+                != com.google.cloud.deploy.v1.CreateChildRolloutJobRun.getDefaultInstance()) {
+          jobRun_ =
+              com.google.cloud.deploy.v1.CreateChildRolloutJobRun.newBuilder(
+                      (com.google.cloud.deploy.v1.CreateChildRolloutJobRun) jobRun_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          jobRun_ = value;
+        }
+        onChanged();
+      } else {
+        if (jobRunCase_ == 12) {
+          createChildRolloutJobRunBuilder_.mergeFrom(value);
+        } else {
+          createChildRolloutJobRunBuilder_.setMessage(value);
+        }
+      }
+      jobRunCase_ = 12;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to a createChildRollout `JobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CreateChildRolloutJobRun create_child_rollout_job_run = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCreateChildRolloutJobRun() {
+      if (createChildRolloutJobRunBuilder_ == null) {
+        if (jobRunCase_ == 12) {
+          jobRunCase_ = 0;
+          jobRun_ = null;
+          onChanged();
+        }
+      } else {
+        if (jobRunCase_ == 12) {
+          jobRunCase_ = 0;
+          jobRun_ = null;
+        }
+        createChildRolloutJobRunBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to a createChildRollout `JobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CreateChildRolloutJobRun create_child_rollout_job_run = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.CreateChildRolloutJobRun.Builder
+        getCreateChildRolloutJobRunBuilder() {
+      return getCreateChildRolloutJobRunFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to a createChildRollout `JobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CreateChildRolloutJobRun create_child_rollout_job_run = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.CreateChildRolloutJobRunOrBuilder
+        getCreateChildRolloutJobRunOrBuilder() {
+      if ((jobRunCase_ == 12) && (createChildRolloutJobRunBuilder_ != null)) {
+        return createChildRolloutJobRunBuilder_.getMessageOrBuilder();
+      } else {
+        if (jobRunCase_ == 12) {
+          return (com.google.cloud.deploy.v1.CreateChildRolloutJobRun) jobRun_;
+        }
+        return com.google.cloud.deploy.v1.CreateChildRolloutJobRun.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to a createChildRollout `JobRun`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CreateChildRolloutJobRun create_child_rollout_job_run = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.CreateChildRolloutJobRun,
+            com.google.cloud.deploy.v1.CreateChildRolloutJobRun.Builder,
+            com.google.cloud.deploy.v1.CreateChildRolloutJobRunOrBuilder>
+        getCreateChildRolloutJobRunFieldBuilder() {
+      if (createChildRolloutJobRunBuilder_ == null) {
+        if (!(jobRunCase_ == 12)) {
+          jobRun_ = com.google.cloud.deploy.v1.CreateChildRolloutJobRun.getDefaultInstance();
+        }
+        createChildRolloutJobRunBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.deploy.v1.CreateChildRolloutJobRun,
+                com.google.cloud.deploy.v1.CreateChildRolloutJobRun.Builder,
+                com.google.cloud.deploy.v1.CreateChildRolloutJobRunOrBuilder>(
+                (com.google.cloud.deploy.v1.CreateChildRolloutJobRun) jobRun_,
+                getParentForChildren(),
+                isClean());
+        jobRun_ = null;
+      }
+      jobRunCase_ = 12;
+      onChanged();
+      return createChildRolloutJobRunBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun,
+            com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun.Builder,
+            com.google.cloud.deploy.v1.AdvanceChildRolloutJobRunOrBuilder>
+        advanceChildRolloutJobRunBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to an advanceChildRollout `JobRun`
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.AdvanceChildRolloutJobRun advance_child_rollout_job_run = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the advanceChildRolloutJobRun field is set.
+     */
+    @java.lang.Override
+    public boolean hasAdvanceChildRolloutJobRun() {
+      return jobRunCase_ == 13;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to an advanceChildRollout `JobRun`
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.AdvanceChildRolloutJobRun advance_child_rollout_job_run = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The advanceChildRolloutJobRun.
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun getAdvanceChildRolloutJobRun() {
+      if (advanceChildRolloutJobRunBuilder_ == null) {
+        if (jobRunCase_ == 13) {
+          return (com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun) jobRun_;
+        }
+        return com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun.getDefaultInstance();
+      } else {
+        if (jobRunCase_ == 13) {
+          return advanceChildRolloutJobRunBuilder_.getMessage();
+        }
+        return com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to an advanceChildRollout `JobRun`
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.AdvanceChildRolloutJobRun advance_child_rollout_job_run = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAdvanceChildRolloutJobRun(
+        com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun value) {
+      if (advanceChildRolloutJobRunBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        jobRun_ = value;
+        onChanged();
+      } else {
+        advanceChildRolloutJobRunBuilder_.setMessage(value);
+      }
+      jobRunCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to an advanceChildRollout `JobRun`
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.AdvanceChildRolloutJobRun advance_child_rollout_job_run = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAdvanceChildRolloutJobRun(
+        com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun.Builder builderForValue) {
+      if (advanceChildRolloutJobRunBuilder_ == null) {
+        jobRun_ = builderForValue.build();
+        onChanged();
+      } else {
+        advanceChildRolloutJobRunBuilder_.setMessage(builderForValue.build());
+      }
+      jobRunCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to an advanceChildRollout `JobRun`
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.AdvanceChildRolloutJobRun advance_child_rollout_job_run = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeAdvanceChildRolloutJobRun(
+        com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun value) {
+      if (advanceChildRolloutJobRunBuilder_ == null) {
+        if (jobRunCase_ == 13
+            && jobRun_
+                != com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun.getDefaultInstance()) {
+          jobRun_ =
+              com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun.newBuilder(
+                      (com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun) jobRun_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          jobRun_ = value;
+        }
+        onChanged();
+      } else {
+        if (jobRunCase_ == 13) {
+          advanceChildRolloutJobRunBuilder_.mergeFrom(value);
+        } else {
+          advanceChildRolloutJobRunBuilder_.setMessage(value);
+        }
+      }
+      jobRunCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to an advanceChildRollout `JobRun`
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.AdvanceChildRolloutJobRun advance_child_rollout_job_run = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearAdvanceChildRolloutJobRun() {
+      if (advanceChildRolloutJobRunBuilder_ == null) {
+        if (jobRunCase_ == 13) {
+          jobRunCase_ = 0;
+          jobRun_ = null;
+          onChanged();
+        }
+      } else {
+        if (jobRunCase_ == 13) {
+          jobRunCase_ = 0;
+          jobRun_ = null;
+        }
+        advanceChildRolloutJobRunBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to an advanceChildRollout `JobRun`
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.AdvanceChildRolloutJobRun advance_child_rollout_job_run = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun.Builder
+        getAdvanceChildRolloutJobRunBuilder() {
+      return getAdvanceChildRolloutJobRunFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to an advanceChildRollout `JobRun`
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.AdvanceChildRolloutJobRun advance_child_rollout_job_run = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.AdvanceChildRolloutJobRunOrBuilder
+        getAdvanceChildRolloutJobRunOrBuilder() {
+      if ((jobRunCase_ == 13) && (advanceChildRolloutJobRunBuilder_ != null)) {
+        return advanceChildRolloutJobRunBuilder_.getMessageOrBuilder();
+      } else {
+        if (jobRunCase_ == 13) {
+          return (com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun) jobRun_;
+        }
+        return com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information specific to an advanceChildRollout `JobRun`
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.AdvanceChildRolloutJobRun advance_child_rollout_job_run = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun,
+            com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun.Builder,
+            com.google.cloud.deploy.v1.AdvanceChildRolloutJobRunOrBuilder>
+        getAdvanceChildRolloutJobRunFieldBuilder() {
+      if (advanceChildRolloutJobRunBuilder_ == null) {
+        if (!(jobRunCase_ == 13)) {
+          jobRun_ = com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun.getDefaultInstance();
+        }
+        advanceChildRolloutJobRunBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun,
+                com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun.Builder,
+                com.google.cloud.deploy.v1.AdvanceChildRolloutJobRunOrBuilder>(
+                (com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun) jobRun_,
+                getParentForChildren(),
+                isClean());
+        jobRun_ = null;
+      }
+      jobRunCase_ = 13;
+      onChanged();
+      return advanceChildRolloutJobRunBuilder_;
+    }
+
     private java.lang.Object etag_ = "";
     /**
      *
      *
      * <pre>
-     * Output only. This checksum is computed by the server based on the value of other
-     * fields, and may be sent on update and delete requests to ensure the
+     * Output only. This checksum is computed by the server based on the value of
+     * other fields, and may be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
      * </pre>
      *
@@ -3107,8 +3812,8 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This checksum is computed by the server based on the value of other
-     * fields, and may be sent on update and delete requests to ensure the
+     * Output only. This checksum is computed by the server based on the value of
+     * other fields, and may be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
      * </pre>
      *
@@ -3131,8 +3836,8 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This checksum is computed by the server based on the value of other
-     * fields, and may be sent on update and delete requests to ensure the
+     * Output only. This checksum is computed by the server based on the value of
+     * other fields, and may be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
      * </pre>
      *
@@ -3146,7 +3851,7 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3154,8 +3859,8 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This checksum is computed by the server based on the value of other
-     * fields, and may be sent on update and delete requests to ensure the
+     * Output only. This checksum is computed by the server based on the value of
+     * other fields, and may be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
      * </pre>
      *
@@ -3165,7 +3870,7 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -3173,8 +3878,8 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. This checksum is computed by the server based on the value of other
-     * fields, and may be sent on update and delete requests to ensure the
+     * Output only. This checksum is computed by the server based on the value of
+     * other fields, and may be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
      * </pre>
      *
@@ -3189,7 +3894,7 @@ public final class JobRun extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }

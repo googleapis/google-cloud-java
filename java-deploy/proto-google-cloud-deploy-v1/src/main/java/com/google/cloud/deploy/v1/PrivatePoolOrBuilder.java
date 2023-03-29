@@ -27,8 +27,8 @@ public interface PrivatePoolOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the Cloud Build worker pool to use. The format is
-   * `projects/{project}/locations/{location}/workerPools/{pool}`.
+   * Required. Resource name of the Cloud Build worker pool to use. The format
+   * is `projects/{project}/locations/{location}/workerPools/{pool}`.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface PrivatePoolOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name of the Cloud Build worker pool to use. The format is
-   * `projects/{project}/locations/{location}/workerPools/{pool}`.
+   * Required. Resource name of the Cloud Build worker pool to use. The format
+   * is `projects/{project}/locations/{location}/workerPools/{pool}`.
    * </pre>
    *
    * <code>
@@ -87,8 +87,8 @@ public interface PrivatePoolOrBuilder
    *
    *
    * <pre>
-   * Optional. Cloud Storage location where execution outputs should be stored. This can
-   * either be a bucket ("gs://my-bucket") or a path within a bucket
+   * Optional. Cloud Storage location where execution outputs should be stored.
+   * This can either be a bucket ("gs://my-bucket") or a path within a bucket
    * ("gs://my-bucket/my-dir").
    * If unspecified, a default bucket located in the same region will be used.
    * </pre>
@@ -102,8 +102,8 @@ public interface PrivatePoolOrBuilder
    *
    *
    * <pre>
-   * Optional. Cloud Storage location where execution outputs should be stored. This can
-   * either be a bucket ("gs://my-bucket") or a path within a bucket
+   * Optional. Cloud Storage location where execution outputs should be stored.
+   * This can either be a bucket ("gs://my-bucket") or a path within a bucket
    * ("gs://my-bucket/my-dir").
    * If unspecified, a default bucket located in the same region will be used.
    * </pre>

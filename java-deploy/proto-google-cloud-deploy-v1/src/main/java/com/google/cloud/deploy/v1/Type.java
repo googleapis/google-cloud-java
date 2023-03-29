@@ -52,11 +52,12 @@ public enum Type implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Release render status changed notification.
+   * Deprecated: This field is never used. Use release_render log type instead.
    * </pre>
    *
-   * <code>TYPE_RENDER_STATUES_CHANGE = 2;</code>
+   * <code>TYPE_RENDER_STATUES_CHANGE = 2 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   TYPE_RENDER_STATUES_CHANGE(2),
   UNRECOGNIZED(-1),
   ;
@@ -85,12 +86,12 @@ public enum Type implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Release render status changed notification.
+   * Deprecated: This field is never used. Use release_render log type instead.
    * </pre>
    *
-   * <code>TYPE_RENDER_STATUES_CHANGE = 2;</code>
+   * <code>TYPE_RENDER_STATUES_CHANGE = 2 [deprecated = true];</code>
    */
-  public static final int TYPE_RENDER_STATUES_CHANGE_VALUE = 2;
+  @java.lang.Deprecated public static final int TYPE_RENDER_STATUES_CHANGE_VALUE = 2;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {

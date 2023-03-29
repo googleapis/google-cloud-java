@@ -40,7 +40,7 @@ public interface TargetsPresentConditionOrBuilder
    *
    *
    * <pre>
-   * The list of Target names that are missing. For example,
+   * The list of Target names that do not exist. For example,
    * projects/{project_id}/locations/{location_name}/targets/{target_name}.
    * </pre>
    *
@@ -53,7 +53,7 @@ public interface TargetsPresentConditionOrBuilder
    *
    *
    * <pre>
-   * The list of Target names that are missing. For example,
+   * The list of Target names that do not exist. For example,
    * projects/{project_id}/locations/{location_name}/targets/{target_name}.
    * </pre>
    *
@@ -66,7 +66,7 @@ public interface TargetsPresentConditionOrBuilder
    *
    *
    * <pre>
-   * The list of Target names that are missing. For example,
+   * The list of Target names that do not exist. For example,
    * projects/{project_id}/locations/{location_name}/targets/{target_name}.
    * </pre>
    *
@@ -80,7 +80,7 @@ public interface TargetsPresentConditionOrBuilder
    *
    *
    * <pre>
-   * The list of Target names that are missing. For example,
+   * The list of Target names that do not exist. For example,
    * projects/{project_id}/locations/{location_name}/targets/{target_name}.
    * </pre>
    *

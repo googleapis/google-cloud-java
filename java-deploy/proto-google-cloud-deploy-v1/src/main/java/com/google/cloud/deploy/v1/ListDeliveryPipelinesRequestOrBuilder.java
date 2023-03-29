@@ -27,8 +27,8 @@ public interface ListDeliveryPipelinesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent, which owns this collection of pipelines. Format must be
-   * projects/{project_id}/locations/{location_name}.
+   * Required. The parent, which owns this collection of pipelines. Format must
+   * be projects/{project_id}/locations/{location_name}.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface ListDeliveryPipelinesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent, which owns this collection of pipelines. Format must be
-   * projects/{project_id}/locations/{location_name}.
+   * Required. The parent, which owns this collection of pipelines. Format must
+   * be projects/{project_id}/locations/{location_name}.
    * </pre>
    *
    * <code>

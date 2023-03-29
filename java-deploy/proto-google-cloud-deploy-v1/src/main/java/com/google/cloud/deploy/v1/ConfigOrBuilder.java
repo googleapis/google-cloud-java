@@ -52,48 +52,40 @@ public interface ConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. All supported versions of Skaffold.
+   * All supported versions of Skaffold.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
    */
   java.util.List<com.google.cloud.deploy.v1.SkaffoldVersion> getSupportedVersionsList();
   /**
    *
    *
    * <pre>
-   * Output only. All supported versions of Skaffold.
+   * All supported versions of Skaffold.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
    */
   com.google.cloud.deploy.v1.SkaffoldVersion getSupportedVersions(int index);
   /**
    *
    *
    * <pre>
-   * Output only. All supported versions of Skaffold.
+   * All supported versions of Skaffold.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
    */
   int getSupportedVersionsCount();
   /**
    *
    *
    * <pre>
-   * Output only. All supported versions of Skaffold.
+   * All supported versions of Skaffold.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
    */
   java.util.List<? extends com.google.cloud.deploy.v1.SkaffoldVersionOrBuilder>
       getSupportedVersionsOrBuilderList();
@@ -101,12 +93,10 @@ public interface ConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. All supported versions of Skaffold.
+   * All supported versions of Skaffold.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>repeated .google.cloud.deploy.v1.SkaffoldVersion supported_versions = 2;</code>
    */
   com.google.cloud.deploy.v1.SkaffoldVersionOrBuilder getSupportedVersionsOrBuilder(int index);
 
@@ -114,11 +104,11 @@ public interface ConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Default Skaffold version that is assigned when a Release is created without
+   * Default Skaffold version that is assigned when a Release is created without
    * specifying a Skaffold version.
    * </pre>
    *
-   * <code>string default_skaffold_version = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string default_skaffold_version = 3;</code>
    *
    * @return The defaultSkaffoldVersion.
    */
@@ -127,11 +117,11 @@ public interface ConfigOrBuilder
    *
    *
    * <pre>
-   * Output only. Default Skaffold version that is assigned when a Release is created without
+   * Default Skaffold version that is assigned when a Release is created without
    * specifying a Skaffold version.
    * </pre>
    *
-   * <code>string default_skaffold_version = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string default_skaffold_version = 3;</code>
    *
    * @return The bytes for defaultSkaffoldVersion.
    */

@@ -134,6 +134,17 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      * <code>VERIFICATION_CONFIG_NOT_FOUND = 4;</code>
      */
     VERIFICATION_CONFIG_NOT_FOUND(4),
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Build failed to fulfill Google Cloud Deploy's request. See
+     * failure_message for additional details.
+     * </pre>
+     *
+     * <code>CLOUD_BUILD_REQUEST_FAILED = 5;</code>
+     */
+    CLOUD_BUILD_REQUEST_FAILED(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -190,6 +201,17 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      * <code>VERIFICATION_CONFIG_NOT_FOUND = 4;</code>
      */
     public static final int VERIFICATION_CONFIG_NOT_FOUND_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Build failed to fulfill Google Cloud Deploy's request. See
+     * failure_message for additional details.
+     * </pre>
+     *
+     * <code>CLOUD_BUILD_REQUEST_FAILED = 5;</code>
+     */
+    public static final int CLOUD_BUILD_REQUEST_FAILED_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -225,6 +247,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
           return DEADLINE_EXCEEDED;
         case 4:
           return VERIFICATION_CONFIG_NOT_FOUND;
+        case 5:
+          return CLOUD_BUILD_REQUEST_FAILED;
         default:
           return null;
       }
@@ -286,8 +310,9 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name of the Cloud Build `Build` object that is used to verify.
-   * Format is projects/{project}/locations/{location}/builds/{build}.
+   * Output only. The resource name of the Cloud Build `Build` object that is
+   * used to verify. Format is
+   * projects/{project}/locations/{location}/builds/{build}.
    * </pre>
    *
    * <code>
@@ -312,8 +337,9 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name of the Cloud Build `Build` object that is used to verify.
-   * Format is projects/{project}/locations/{location}/builds/{build}.
+   * Output only. The resource name of the Cloud Build `Build` object that is
+   * used to verify. Format is
+   * projects/{project}/locations/{location}/builds/{build}.
    * </pre>
    *
    * <code>
@@ -343,8 +369,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. URI of a directory containing the verify artifacts. This contains the
-   * Skaffold event log.
+   * Output only. URI of a directory containing the verify artifacts. This
+   * contains the Skaffold event log.
    * </pre>
    *
    * <code>string artifact_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -367,8 +393,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. URI of a directory containing the verify artifacts. This contains the
-   * Skaffold event log.
+   * Output only. URI of a directory containing the verify artifacts. This
+   * contains the Skaffold event log.
    * </pre>
    *
    * <code>string artifact_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -396,7 +422,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. File path of the Skaffold event log relative to the artifact URI.
+   * Output only. File path of the Skaffold event log relative to the artifact
+   * URI.
    * </pre>
    *
    * <code>string event_log_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -419,7 +446,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. File path of the Skaffold event log relative to the artifact URI.
+   * Output only. File path of the Skaffold event log relative to the artifact
+   * URI.
    * </pre>
    *
    * <code>string event_log_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -445,8 +473,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The reason the verify failed. This will always be unspecified while the
-   * verify is in progress or if it succeeded.
+   * Output only. The reason the verify failed. This will always be unspecified
+   * while the verify is in progress or if it succeeded.
    * </pre>
    *
    * <code>
@@ -463,8 +491,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The reason the verify failed. This will always be unspecified while the
-   * verify is in progress or if it succeeded.
+   * Output only. The reason the verify failed. This will always be unspecified
+   * while the verify is in progress or if it succeeded.
    * </pre>
    *
    * <code>
@@ -976,8 +1004,9 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Cloud Build `Build` object that is used to verify.
-     * Format is projects/{project}/locations/{location}/builds/{build}.
+     * Output only. The resource name of the Cloud Build `Build` object that is
+     * used to verify. Format is
+     * projects/{project}/locations/{location}/builds/{build}.
      * </pre>
      *
      * <code>
@@ -1001,8 +1030,9 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Cloud Build `Build` object that is used to verify.
-     * Format is projects/{project}/locations/{location}/builds/{build}.
+     * Output only. The resource name of the Cloud Build `Build` object that is
+     * used to verify. Format is
+     * projects/{project}/locations/{location}/builds/{build}.
      * </pre>
      *
      * <code>
@@ -1026,8 +1056,9 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Cloud Build `Build` object that is used to verify.
-     * Format is projects/{project}/locations/{location}/builds/{build}.
+     * Output only. The resource name of the Cloud Build `Build` object that is
+     * used to verify. Format is
+     * projects/{project}/locations/{location}/builds/{build}.
      * </pre>
      *
      * <code>
@@ -1050,8 +1081,9 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Cloud Build `Build` object that is used to verify.
-     * Format is projects/{project}/locations/{location}/builds/{build}.
+     * Output only. The resource name of the Cloud Build `Build` object that is
+     * used to verify. Format is
+     * projects/{project}/locations/{location}/builds/{build}.
      * </pre>
      *
      * <code>
@@ -1070,8 +1102,9 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Cloud Build `Build` object that is used to verify.
-     * Format is projects/{project}/locations/{location}/builds/{build}.
+     * Output only. The resource name of the Cloud Build `Build` object that is
+     * used to verify. Format is
+     * projects/{project}/locations/{location}/builds/{build}.
      * </pre>
      *
      * <code>
@@ -1097,8 +1130,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URI of a directory containing the verify artifacts. This contains the
-     * Skaffold event log.
+     * Output only. URI of a directory containing the verify artifacts. This
+     * contains the Skaffold event log.
      * </pre>
      *
      * <code>string artifact_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1120,8 +1153,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URI of a directory containing the verify artifacts. This contains the
-     * Skaffold event log.
+     * Output only. URI of a directory containing the verify artifacts. This
+     * contains the Skaffold event log.
      * </pre>
      *
      * <code>string artifact_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1143,8 +1176,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URI of a directory containing the verify artifacts. This contains the
-     * Skaffold event log.
+     * Output only. URI of a directory containing the verify artifacts. This
+     * contains the Skaffold event log.
      * </pre>
      *
      * <code>string artifact_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1165,8 +1198,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URI of a directory containing the verify artifacts. This contains the
-     * Skaffold event log.
+     * Output only. URI of a directory containing the verify artifacts. This
+     * contains the Skaffold event log.
      * </pre>
      *
      * <code>string artifact_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1183,8 +1216,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. URI of a directory containing the verify artifacts. This contains the
-     * Skaffold event log.
+     * Output only. URI of a directory containing the verify artifacts. This
+     * contains the Skaffold event log.
      * </pre>
      *
      * <code>string artifact_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1208,7 +1241,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. File path of the Skaffold event log relative to the artifact URI.
+     * Output only. File path of the Skaffold event log relative to the artifact
+     * URI.
      * </pre>
      *
      * <code>string event_log_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1230,7 +1264,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. File path of the Skaffold event log relative to the artifact URI.
+     * Output only. File path of the Skaffold event log relative to the artifact
+     * URI.
      * </pre>
      *
      * <code>string event_log_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1252,7 +1287,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. File path of the Skaffold event log relative to the artifact URI.
+     * Output only. File path of the Skaffold event log relative to the artifact
+     * URI.
      * </pre>
      *
      * <code>string event_log_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1273,7 +1309,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. File path of the Skaffold event log relative to the artifact URI.
+     * Output only. File path of the Skaffold event log relative to the artifact
+     * URI.
      * </pre>
      *
      * <code>string event_log_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1290,7 +1327,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. File path of the Skaffold event log relative to the artifact URI.
+     * Output only. File path of the Skaffold event log relative to the artifact
+     * URI.
      * </pre>
      *
      * <code>string event_log_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1314,8 +1352,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The reason the verify failed. This will always be unspecified while the
-     * verify is in progress or if it succeeded.
+     * Output only. The reason the verify failed. This will always be unspecified
+     * while the verify is in progress or if it succeeded.
      * </pre>
      *
      * <code>
@@ -1332,8 +1370,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The reason the verify failed. This will always be unspecified while the
-     * verify is in progress or if it succeeded.
+     * Output only. The reason the verify failed. This will always be unspecified
+     * while the verify is in progress or if it succeeded.
      * </pre>
      *
      * <code>
@@ -1353,8 +1391,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The reason the verify failed. This will always be unspecified while the
-     * verify is in progress or if it succeeded.
+     * Output only. The reason the verify failed. This will always be unspecified
+     * while the verify is in progress or if it succeeded.
      * </pre>
      *
      * <code>
@@ -1375,8 +1413,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The reason the verify failed. This will always be unspecified while the
-     * verify is in progress or if it succeeded.
+     * Output only. The reason the verify failed. This will always be unspecified
+     * while the verify is in progress or if it succeeded.
      * </pre>
      *
      * <code>
@@ -1399,8 +1437,8 @@ public final class VerifyJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The reason the verify failed. This will always be unspecified while the
-     * verify is in progress or if it succeeded.
+     * Output only. The reason the verify failed. This will always be unspecified
+     * while the verify is in progress or if it succeeded.
      * </pre>
      *
      * <code>

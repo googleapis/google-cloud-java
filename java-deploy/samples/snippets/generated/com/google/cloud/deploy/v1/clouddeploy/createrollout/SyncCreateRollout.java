@@ -44,6 +44,7 @@ public class SyncCreateRollout {
               .setRollout(Rollout.newBuilder().build())
               .setRequestId("requestId693933066")
               .setValidateOnly(true)
+              .setStartingPhaseId("startingPhaseId-326529130")
               .build();
       Rollout response = cloudDeployClient.createRolloutAsync(request).get();
     }

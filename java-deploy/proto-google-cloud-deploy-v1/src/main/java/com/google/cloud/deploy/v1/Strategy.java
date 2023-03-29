@@ -73,6 +73,7 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     STANDARD(1),
+    CANARY(2),
     DEPLOYMENTSTRATEGY_NOT_SET(0);
     private final int value;
 
@@ -93,6 +94,8 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 1:
           return STANDARD;
+        case 2:
+          return CANARY;
         case 0:
           return DEPLOYMENTSTRATEGY_NOT_SET;
         default:
@@ -163,6 +166,60 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.deploy.v1.Standard.getDefaultInstance();
   }
 
+  public static final int CANARY_FIELD_NUMBER = 2;
+  /**
+   *
+   *
+   * <pre>
+   * Canary deployment strategy provides progressive percentage based
+   * deployments to a Target.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.Canary canary = 2;</code>
+   *
+   * @return Whether the canary field is set.
+   */
+  @java.lang.Override
+  public boolean hasCanary() {
+    return deploymentStrategyCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Canary deployment strategy provides progressive percentage based
+   * deployments to a Target.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.Canary canary = 2;</code>
+   *
+   * @return The canary.
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.Canary getCanary() {
+    if (deploymentStrategyCase_ == 2) {
+      return (com.google.cloud.deploy.v1.Canary) deploymentStrategy_;
+    }
+    return com.google.cloud.deploy.v1.Canary.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Canary deployment strategy provides progressive percentage based
+   * deployments to a Target.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.Canary canary = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.CanaryOrBuilder getCanaryOrBuilder() {
+    if (deploymentStrategyCase_ == 2) {
+      return (com.google.cloud.deploy.v1.Canary) deploymentStrategy_;
+    }
+    return com.google.cloud.deploy.v1.Canary.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -180,6 +237,9 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
     if (deploymentStrategyCase_ == 1) {
       output.writeMessage(1, (com.google.cloud.deploy.v1.Standard) deploymentStrategy_);
     }
+    if (deploymentStrategyCase_ == 2) {
+      output.writeMessage(2, (com.google.cloud.deploy.v1.Canary) deploymentStrategy_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -193,6 +253,11 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               1, (com.google.cloud.deploy.v1.Standard) deploymentStrategy_);
+    }
+    if (deploymentStrategyCase_ == 2) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.cloud.deploy.v1.Canary) deploymentStrategy_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -214,6 +279,9 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
       case 1:
         if (!getStandard().equals(other.getStandard())) return false;
         break;
+      case 2:
+        if (!getCanary().equals(other.getCanary())) return false;
+        break;
       case 0:
       default:
     }
@@ -232,6 +300,10 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
       case 1:
         hash = (37 * hash) + STANDARD_FIELD_NUMBER;
         hash = (53 * hash) + getStandard().hashCode();
+        break;
+      case 2:
+        hash = (37 * hash) + CANARY_FIELD_NUMBER;
+        hash = (53 * hash) + getCanary().hashCode();
         break;
       case 0:
       default:
@@ -377,6 +449,9 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
       if (standardBuilder_ != null) {
         standardBuilder_.clear();
       }
+      if (canaryBuilder_ != null) {
+        canaryBuilder_.clear();
+      }
       deploymentStrategyCase_ = 0;
       deploymentStrategy_ = null;
       return this;
@@ -422,6 +497,9 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
       result.deploymentStrategy_ = this.deploymentStrategy_;
       if (deploymentStrategyCase_ == 1 && standardBuilder_ != null) {
         result.deploymentStrategy_ = standardBuilder_.build();
+      }
+      if (deploymentStrategyCase_ == 2 && canaryBuilder_ != null) {
+        result.deploymentStrategy_ = canaryBuilder_.build();
       }
     }
 
@@ -476,6 +554,11 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
             mergeStandard(other.getStandard());
             break;
           }
+        case CANARY:
+          {
+            mergeCanary(other.getCanary());
+            break;
+          }
         case DEPLOYMENTSTRATEGY_NOT_SET:
           {
             break;
@@ -513,6 +596,12 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
                 deploymentStrategyCase_ = 1;
                 break;
               } // case 10
+            case 18:
+              {
+                input.readMessage(getCanaryFieldBuilder().getBuilder(), extensionRegistry);
+                deploymentStrategyCase_ = 2;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -761,6 +850,223 @@ public final class Strategy extends com.google.protobuf.GeneratedMessageV3
       deploymentStrategyCase_ = 1;
       onChanged();
       return standardBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.Canary,
+            com.google.cloud.deploy.v1.Canary.Builder,
+            com.google.cloud.deploy.v1.CanaryOrBuilder>
+        canaryBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Canary deployment strategy provides progressive percentage based
+     * deployments to a Target.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.Canary canary = 2;</code>
+     *
+     * @return Whether the canary field is set.
+     */
+    @java.lang.Override
+    public boolean hasCanary() {
+      return deploymentStrategyCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Canary deployment strategy provides progressive percentage based
+     * deployments to a Target.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.Canary canary = 2;</code>
+     *
+     * @return The canary.
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.Canary getCanary() {
+      if (canaryBuilder_ == null) {
+        if (deploymentStrategyCase_ == 2) {
+          return (com.google.cloud.deploy.v1.Canary) deploymentStrategy_;
+        }
+        return com.google.cloud.deploy.v1.Canary.getDefaultInstance();
+      } else {
+        if (deploymentStrategyCase_ == 2) {
+          return canaryBuilder_.getMessage();
+        }
+        return com.google.cloud.deploy.v1.Canary.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Canary deployment strategy provides progressive percentage based
+     * deployments to a Target.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.Canary canary = 2;</code>
+     */
+    public Builder setCanary(com.google.cloud.deploy.v1.Canary value) {
+      if (canaryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        deploymentStrategy_ = value;
+        onChanged();
+      } else {
+        canaryBuilder_.setMessage(value);
+      }
+      deploymentStrategyCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Canary deployment strategy provides progressive percentage based
+     * deployments to a Target.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.Canary canary = 2;</code>
+     */
+    public Builder setCanary(com.google.cloud.deploy.v1.Canary.Builder builderForValue) {
+      if (canaryBuilder_ == null) {
+        deploymentStrategy_ = builderForValue.build();
+        onChanged();
+      } else {
+        canaryBuilder_.setMessage(builderForValue.build());
+      }
+      deploymentStrategyCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Canary deployment strategy provides progressive percentage based
+     * deployments to a Target.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.Canary canary = 2;</code>
+     */
+    public Builder mergeCanary(com.google.cloud.deploy.v1.Canary value) {
+      if (canaryBuilder_ == null) {
+        if (deploymentStrategyCase_ == 2
+            && deploymentStrategy_ != com.google.cloud.deploy.v1.Canary.getDefaultInstance()) {
+          deploymentStrategy_ =
+              com.google.cloud.deploy.v1.Canary.newBuilder(
+                      (com.google.cloud.deploy.v1.Canary) deploymentStrategy_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          deploymentStrategy_ = value;
+        }
+        onChanged();
+      } else {
+        if (deploymentStrategyCase_ == 2) {
+          canaryBuilder_.mergeFrom(value);
+        } else {
+          canaryBuilder_.setMessage(value);
+        }
+      }
+      deploymentStrategyCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Canary deployment strategy provides progressive percentage based
+     * deployments to a Target.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.Canary canary = 2;</code>
+     */
+    public Builder clearCanary() {
+      if (canaryBuilder_ == null) {
+        if (deploymentStrategyCase_ == 2) {
+          deploymentStrategyCase_ = 0;
+          deploymentStrategy_ = null;
+          onChanged();
+        }
+      } else {
+        if (deploymentStrategyCase_ == 2) {
+          deploymentStrategyCase_ = 0;
+          deploymentStrategy_ = null;
+        }
+        canaryBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Canary deployment strategy provides progressive percentage based
+     * deployments to a Target.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.Canary canary = 2;</code>
+     */
+    public com.google.cloud.deploy.v1.Canary.Builder getCanaryBuilder() {
+      return getCanaryFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Canary deployment strategy provides progressive percentage based
+     * deployments to a Target.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.Canary canary = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.CanaryOrBuilder getCanaryOrBuilder() {
+      if ((deploymentStrategyCase_ == 2) && (canaryBuilder_ != null)) {
+        return canaryBuilder_.getMessageOrBuilder();
+      } else {
+        if (deploymentStrategyCase_ == 2) {
+          return (com.google.cloud.deploy.v1.Canary) deploymentStrategy_;
+        }
+        return com.google.cloud.deploy.v1.Canary.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Canary deployment strategy provides progressive percentage based
+     * deployments to a Target.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.Canary canary = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.Canary,
+            com.google.cloud.deploy.v1.Canary.Builder,
+            com.google.cloud.deploy.v1.CanaryOrBuilder>
+        getCanaryFieldBuilder() {
+      if (canaryBuilder_ == null) {
+        if (!(deploymentStrategyCase_ == 2)) {
+          deploymentStrategy_ = com.google.cloud.deploy.v1.Canary.getDefaultInstance();
+        }
+        canaryBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.deploy.v1.Canary,
+                com.google.cloud.deploy.v1.Canary.Builder,
+                com.google.cloud.deploy.v1.CanaryOrBuilder>(
+                (com.google.cloud.deploy.v1.Canary) deploymentStrategy_,
+                getParentForChildren(),
+                isClean());
+        deploymentStrategy_ = null;
+      }
+      deploymentStrategyCase_ = 2;
+      onChanged();
+      return canaryBuilder_;
     }
 
     @java.lang.Override

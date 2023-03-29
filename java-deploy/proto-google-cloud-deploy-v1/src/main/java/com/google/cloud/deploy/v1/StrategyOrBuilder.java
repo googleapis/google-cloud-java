@@ -61,5 +61,43 @@ public interface StrategyOrBuilder
    */
   com.google.cloud.deploy.v1.StandardOrBuilder getStandardOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Canary deployment strategy provides progressive percentage based
+   * deployments to a Target.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.Canary canary = 2;</code>
+   *
+   * @return Whether the canary field is set.
+   */
+  boolean hasCanary();
+  /**
+   *
+   *
+   * <pre>
+   * Canary deployment strategy provides progressive percentage based
+   * deployments to a Target.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.Canary canary = 2;</code>
+   *
+   * @return The canary.
+   */
+  com.google.cloud.deploy.v1.Canary getCanary();
+  /**
+   *
+   *
+   * <pre>
+   * Canary deployment strategy provides progressive percentage based
+   * deployments to a Target.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.Canary canary = 2;</code>
+   */
+  com.google.cloud.deploy.v1.CanaryOrBuilder getCanaryOrBuilder();
+
   public com.google.cloud.deploy.v1.Strategy.DeploymentStrategyCase getDeploymentStrategyCase();
 }

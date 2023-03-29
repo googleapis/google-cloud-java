@@ -56,9 +56,10 @@ public interface ListRolloutsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The maximum number of `Rollout` objects to return. The service may return
-   * fewer than this value. If unspecified, at most 50 `Rollout` objects will be
-   * returned. The maximum value is 1000; values above 1000 will be set to 1000.
+   * Optional. The maximum number of `Rollout` objects to return. The service
+   * may return fewer than this value. If unspecified, at most 50 `Rollout`
+   * objects will be returned. The maximum value is 1000; values above 1000 will
+   * be set to 1000.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -102,8 +103,8 @@ public interface ListRolloutsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Filter rollouts to be returned. See https://google.aip.dev/160 for more
-   * details.
+   * Optional. Filter rollouts to be returned. See https://google.aip.dev/160
+   * for more details.
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -115,8 +116,8 @@ public interface ListRolloutsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Filter rollouts to be returned. See https://google.aip.dev/160 for more
-   * details.
+   * Optional. Filter rollouts to be returned. See https://google.aip.dev/160
+   * for more details.
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -129,7 +130,8 @@ public interface ListRolloutsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Field to sort by. See https://google.aip.dev/132#ordering for more details.
+   * Optional. Field to sort by. See https://google.aip.dev/132#ordering for
+   * more details.
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -141,7 +143,8 @@ public interface ListRolloutsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Field to sort by. See https://google.aip.dev/132#ordering for more details.
+   * Optional. Field to sort by. See https://google.aip.dev/132#ordering for
+   * more details.
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -77,11 +77,14 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The name of the Cloud Run Service that is associated with a `Rollout`.
-   * Format is projects/{project}/locations/{location}/services/{service}.
+   * Output only. The name of the Cloud Run Service that is associated with a
+   * `Rollout`. Format is
+   * projects/{project}/locations/{location}/services/{service}.
    * </pre>
    *
-   * <code>string service = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string service = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The service.
    */
@@ -101,11 +104,14 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The name of the Cloud Run Service that is associated with a `Rollout`.
-   * Format is projects/{project}/locations/{location}/services/{service}.
+   * Output only. The name of the Cloud Run Service that is associated with a
+   * `Rollout`. Format is
+   * projects/{project}/locations/{location}/services/{service}.
    * </pre>
    *
-   * <code>string service = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string service = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for service.
    */
@@ -130,7 +136,8 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The Cloud Run Service urls that are associated with a `Rollout`.
+   * Output only. The Cloud Run Service urls that are associated with a
+   * `Rollout`.
    * </pre>
    *
    * <code>repeated string service_urls = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -144,7 +151,8 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The Cloud Run Service urls that are associated with a `Rollout`.
+   * Output only. The Cloud Run Service urls that are associated with a
+   * `Rollout`.
    * </pre>
    *
    * <code>repeated string service_urls = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -158,7 +166,8 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The Cloud Run Service urls that are associated with a `Rollout`.
+   * Output only. The Cloud Run Service urls that are associated with a
+   * `Rollout`.
    * </pre>
    *
    * <code>repeated string service_urls = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -173,7 +182,8 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The Cloud Run Service urls that are associated with a `Rollout`.
+   * Output only. The Cloud Run Service urls that are associated with a
+   * `Rollout`.
    * </pre>
    *
    * <code>repeated string service_urls = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -650,11 +660,14 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The name of the Cloud Run Service that is associated with a `Rollout`.
-     * Format is projects/{project}/locations/{location}/services/{service}.
+     * Output only. The name of the Cloud Run Service that is associated with a
+     * `Rollout`. Format is
+     * projects/{project}/locations/{location}/services/{service}.
      * </pre>
      *
-     * <code>string service = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string service = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The service.
      */
@@ -673,11 +686,14 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The name of the Cloud Run Service that is associated with a `Rollout`.
-     * Format is projects/{project}/locations/{location}/services/{service}.
+     * Output only. The name of the Cloud Run Service that is associated with a
+     * `Rollout`. Format is
+     * projects/{project}/locations/{location}/services/{service}.
      * </pre>
      *
-     * <code>string service = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string service = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for service.
      */
@@ -696,11 +712,14 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The name of the Cloud Run Service that is associated with a `Rollout`.
-     * Format is projects/{project}/locations/{location}/services/{service}.
+     * Output only. The name of the Cloud Run Service that is associated with a
+     * `Rollout`. Format is
+     * projects/{project}/locations/{location}/services/{service}.
      * </pre>
      *
-     * <code>string service = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string service = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The service to set.
      * @return This builder for chaining.
@@ -718,11 +737,14 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The name of the Cloud Run Service that is associated with a `Rollout`.
-     * Format is projects/{project}/locations/{location}/services/{service}.
+     * Output only. The name of the Cloud Run Service that is associated with a
+     * `Rollout`. Format is
+     * projects/{project}/locations/{location}/services/{service}.
      * </pre>
      *
-     * <code>string service = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string service = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -736,11 +758,14 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The name of the Cloud Run Service that is associated with a `Rollout`.
-     * Format is projects/{project}/locations/{location}/services/{service}.
+     * Output only. The name of the Cloud Run Service that is associated with a
+     * `Rollout`. Format is
+     * projects/{project}/locations/{location}/services/{service}.
      * </pre>
      *
-     * <code>string service = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string service = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for service to set.
      * @return This builder for chaining.
@@ -769,7 +794,8 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The Cloud Run Service urls that are associated with a `Rollout`.
+     * Output only. The Cloud Run Service urls that are associated with a
+     * `Rollout`.
      * </pre>
      *
      * <code>repeated string service_urls = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -783,7 +809,8 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The Cloud Run Service urls that are associated with a `Rollout`.
+     * Output only. The Cloud Run Service urls that are associated with a
+     * `Rollout`.
      * </pre>
      *
      * <code>repeated string service_urls = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -797,7 +824,8 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The Cloud Run Service urls that are associated with a `Rollout`.
+     * Output only. The Cloud Run Service urls that are associated with a
+     * `Rollout`.
      * </pre>
      *
      * <code>repeated string service_urls = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -812,7 +840,8 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The Cloud Run Service urls that are associated with a `Rollout`.
+     * Output only. The Cloud Run Service urls that are associated with a
+     * `Rollout`.
      * </pre>
      *
      * <code>repeated string service_urls = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -827,7 +856,8 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The Cloud Run Service urls that are associated with a `Rollout`.
+     * Output only. The Cloud Run Service urls that are associated with a
+     * `Rollout`.
      * </pre>
      *
      * <code>repeated string service_urls = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -849,7 +879,8 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The Cloud Run Service urls that are associated with a `Rollout`.
+     * Output only. The Cloud Run Service urls that are associated with a
+     * `Rollout`.
      * </pre>
      *
      * <code>repeated string service_urls = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -870,7 +901,8 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The Cloud Run Service urls that are associated with a `Rollout`.
+     * Output only. The Cloud Run Service urls that are associated with a
+     * `Rollout`.
      * </pre>
      *
      * <code>repeated string service_urls = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -888,7 +920,8 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The Cloud Run Service urls that are associated with a `Rollout`.
+     * Output only. The Cloud Run Service urls that are associated with a
+     * `Rollout`.
      * </pre>
      *
      * <code>repeated string service_urls = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -905,7 +938,8 @@ public final class CloudRunMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The Cloud Run Service urls that are associated with a `Rollout`.
+     * Output only. The Cloud Run Service urls that are associated with a
+     * `Rollout`.
      * </pre>
      *
      * <code>repeated string service_urls = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

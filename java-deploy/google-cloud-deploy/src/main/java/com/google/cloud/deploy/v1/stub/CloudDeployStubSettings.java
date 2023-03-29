@@ -54,8 +54,12 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.deploy.v1.AbandonReleaseRequest;
 import com.google.cloud.deploy.v1.AbandonReleaseResponse;
+import com.google.cloud.deploy.v1.AdvanceRolloutRequest;
+import com.google.cloud.deploy.v1.AdvanceRolloutResponse;
 import com.google.cloud.deploy.v1.ApproveRolloutRequest;
 import com.google.cloud.deploy.v1.ApproveRolloutResponse;
+import com.google.cloud.deploy.v1.CancelRolloutRequest;
+import com.google.cloud.deploy.v1.CancelRolloutResponse;
 import com.google.cloud.deploy.v1.Config;
 import com.google.cloud.deploy.v1.CreateDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.CreateReleaseRequest;
@@ -70,6 +74,8 @@ import com.google.cloud.deploy.v1.GetJobRunRequest;
 import com.google.cloud.deploy.v1.GetReleaseRequest;
 import com.google.cloud.deploy.v1.GetRolloutRequest;
 import com.google.cloud.deploy.v1.GetTargetRequest;
+import com.google.cloud.deploy.v1.IgnoreJobRequest;
+import com.google.cloud.deploy.v1.IgnoreJobResponse;
 import com.google.cloud.deploy.v1.JobRun;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesRequest;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesResponse;
@@ -87,6 +93,8 @@ import com.google.cloud.deploy.v1.RetryJobRequest;
 import com.google.cloud.deploy.v1.RetryJobResponse;
 import com.google.cloud.deploy.v1.Rollout;
 import com.google.cloud.deploy.v1.Target;
+import com.google.cloud.deploy.v1.TerminateJobRunRequest;
+import com.google.cloud.deploy.v1.TerminateJobRunResponse;
 import com.google.cloud.deploy.v1.UpdateDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.UpdateTargetRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -196,6 +204,10 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
       abandonReleaseSettings;
   private final UnaryCallSettings<ApproveRolloutRequest, ApproveRolloutResponse>
       approveRolloutSettings;
+  private final UnaryCallSettings<AdvanceRolloutRequest, AdvanceRolloutResponse>
+      advanceRolloutSettings;
+  private final UnaryCallSettings<CancelRolloutRequest, CancelRolloutResponse>
+      cancelRolloutSettings;
   private final PagedCallSettings<
           ListRolloutsRequest, ListRolloutsResponse, ListRolloutsPagedResponse>
       listRolloutsSettings;
@@ -203,10 +215,13 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
   private final UnaryCallSettings<CreateRolloutRequest, Operation> createRolloutSettings;
   private final OperationCallSettings<CreateRolloutRequest, Rollout, OperationMetadata>
       createRolloutOperationSettings;
+  private final UnaryCallSettings<IgnoreJobRequest, IgnoreJobResponse> ignoreJobSettings;
   private final UnaryCallSettings<RetryJobRequest, RetryJobResponse> retryJobSettings;
   private final PagedCallSettings<ListJobRunsRequest, ListJobRunsResponse, ListJobRunsPagedResponse>
       listJobRunsSettings;
   private final UnaryCallSettings<GetJobRunRequest, JobRun> getJobRunSettings;
+  private final UnaryCallSettings<TerminateJobRunRequest, TerminateJobRunResponse>
+      terminateJobRunSettings;
   private final UnaryCallSettings<GetConfigRequest, Config> getConfigSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
@@ -674,6 +689,16 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     return approveRolloutSettings;
   }
 
+  /** Returns the object with the settings used for calls to advanceRollout. */
+  public UnaryCallSettings<AdvanceRolloutRequest, AdvanceRolloutResponse> advanceRolloutSettings() {
+    return advanceRolloutSettings;
+  }
+
+  /** Returns the object with the settings used for calls to cancelRollout. */
+  public UnaryCallSettings<CancelRolloutRequest, CancelRolloutResponse> cancelRolloutSettings() {
+    return cancelRolloutSettings;
+  }
+
   /** Returns the object with the settings used for calls to listRollouts. */
   public PagedCallSettings<ListRolloutsRequest, ListRolloutsResponse, ListRolloutsPagedResponse>
       listRolloutsSettings() {
@@ -696,6 +721,11 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     return createRolloutOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to ignoreJob. */
+  public UnaryCallSettings<IgnoreJobRequest, IgnoreJobResponse> ignoreJobSettings() {
+    return ignoreJobSettings;
+  }
+
   /** Returns the object with the settings used for calls to retryJob. */
   public UnaryCallSettings<RetryJobRequest, RetryJobResponse> retryJobSettings() {
     return retryJobSettings;
@@ -710,6 +740,12 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
   /** Returns the object with the settings used for calls to getJobRun. */
   public UnaryCallSettings<GetJobRunRequest, JobRun> getJobRunSettings() {
     return getJobRunSettings;
+  }
+
+  /** Returns the object with the settings used for calls to terminateJobRun. */
+  public UnaryCallSettings<TerminateJobRunRequest, TerminateJobRunResponse>
+      terminateJobRunSettings() {
+    return terminateJobRunSettings;
   }
 
   /** Returns the object with the settings used for calls to getConfig. */
@@ -875,13 +911,17 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     createReleaseOperationSettings = settingsBuilder.createReleaseOperationSettings().build();
     abandonReleaseSettings = settingsBuilder.abandonReleaseSettings().build();
     approveRolloutSettings = settingsBuilder.approveRolloutSettings().build();
+    advanceRolloutSettings = settingsBuilder.advanceRolloutSettings().build();
+    cancelRolloutSettings = settingsBuilder.cancelRolloutSettings().build();
     listRolloutsSettings = settingsBuilder.listRolloutsSettings().build();
     getRolloutSettings = settingsBuilder.getRolloutSettings().build();
     createRolloutSettings = settingsBuilder.createRolloutSettings().build();
     createRolloutOperationSettings = settingsBuilder.createRolloutOperationSettings().build();
+    ignoreJobSettings = settingsBuilder.ignoreJobSettings().build();
     retryJobSettings = settingsBuilder.retryJobSettings().build();
     listJobRunsSettings = settingsBuilder.listJobRunsSettings().build();
     getJobRunSettings = settingsBuilder.getJobRunSettings().build();
+    terminateJobRunSettings = settingsBuilder.terminateJobRunSettings().build();
     getConfigSettings = settingsBuilder.getConfigSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
@@ -939,6 +979,10 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
         abandonReleaseSettings;
     private final UnaryCallSettings.Builder<ApproveRolloutRequest, ApproveRolloutResponse>
         approveRolloutSettings;
+    private final UnaryCallSettings.Builder<AdvanceRolloutRequest, AdvanceRolloutResponse>
+        advanceRolloutSettings;
+    private final UnaryCallSettings.Builder<CancelRolloutRequest, CancelRolloutResponse>
+        cancelRolloutSettings;
     private final PagedCallSettings.Builder<
             ListRolloutsRequest, ListRolloutsResponse, ListRolloutsPagedResponse>
         listRolloutsSettings;
@@ -946,11 +990,14 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     private final UnaryCallSettings.Builder<CreateRolloutRequest, Operation> createRolloutSettings;
     private final OperationCallSettings.Builder<CreateRolloutRequest, Rollout, OperationMetadata>
         createRolloutOperationSettings;
+    private final UnaryCallSettings.Builder<IgnoreJobRequest, IgnoreJobResponse> ignoreJobSettings;
     private final UnaryCallSettings.Builder<RetryJobRequest, RetryJobResponse> retryJobSettings;
     private final PagedCallSettings.Builder<
             ListJobRunsRequest, ListJobRunsResponse, ListJobRunsPagedResponse>
         listJobRunsSettings;
     private final UnaryCallSettings.Builder<GetJobRunRequest, JobRun> getJobRunSettings;
+    private final UnaryCallSettings.Builder<TerminateJobRunRequest, TerminateJobRunResponse>
+        terminateJobRunSettings;
     private final UnaryCallSettings.Builder<GetConfigRequest, Config> getConfigSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
@@ -1034,13 +1081,17 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
       createReleaseOperationSettings = OperationCallSettings.newBuilder();
       abandonReleaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       approveRolloutSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      advanceRolloutSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      cancelRolloutSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listRolloutsSettings = PagedCallSettings.newBuilder(LIST_ROLLOUTS_PAGE_STR_FACT);
       getRolloutSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createRolloutSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createRolloutOperationSettings = OperationCallSettings.newBuilder();
+      ignoreJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       retryJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listJobRunsSettings = PagedCallSettings.newBuilder(LIST_JOB_RUNS_PAGE_STR_FACT);
       getJobRunSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      terminateJobRunSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1065,12 +1116,16 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
               createReleaseSettings,
               abandonReleaseSettings,
               approveRolloutSettings,
+              advanceRolloutSettings,
+              cancelRolloutSettings,
               listRolloutsSettings,
               getRolloutSettings,
               createRolloutSettings,
+              ignoreJobSettings,
               retryJobSettings,
               listJobRunsSettings,
               getJobRunSettings,
+              terminateJobRunSettings,
               getConfigSettings,
               listLocationsSettings,
               getLocationSettings,
@@ -1108,13 +1163,17 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
       createReleaseOperationSettings = settings.createReleaseOperationSettings.toBuilder();
       abandonReleaseSettings = settings.abandonReleaseSettings.toBuilder();
       approveRolloutSettings = settings.approveRolloutSettings.toBuilder();
+      advanceRolloutSettings = settings.advanceRolloutSettings.toBuilder();
+      cancelRolloutSettings = settings.cancelRolloutSettings.toBuilder();
       listRolloutsSettings = settings.listRolloutsSettings.toBuilder();
       getRolloutSettings = settings.getRolloutSettings.toBuilder();
       createRolloutSettings = settings.createRolloutSettings.toBuilder();
       createRolloutOperationSettings = settings.createRolloutOperationSettings.toBuilder();
+      ignoreJobSettings = settings.ignoreJobSettings.toBuilder();
       retryJobSettings = settings.retryJobSettings.toBuilder();
       listJobRunsSettings = settings.listJobRunsSettings.toBuilder();
       getJobRunSettings = settings.getJobRunSettings.toBuilder();
+      terminateJobRunSettings = settings.terminateJobRunSettings.toBuilder();
       getConfigSettings = settings.getConfigSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
@@ -1139,12 +1198,16 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
               createReleaseSettings,
               abandonReleaseSettings,
               approveRolloutSettings,
+              advanceRolloutSettings,
+              cancelRolloutSettings,
               listRolloutsSettings,
               getRolloutSettings,
               createRolloutSettings,
+              ignoreJobSettings,
               retryJobSettings,
               listJobRunsSettings,
               getJobRunSettings,
+              terminateJobRunSettings,
               getConfigSettings,
               listLocationsSettings,
               getLocationSettings,
@@ -1256,6 +1319,16 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .advanceRolloutSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .cancelRolloutSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .listRolloutsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -1267,6 +1340,11 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
 
       builder
           .createRolloutSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .ignoreJobSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -1284,6 +1362,11 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
           .getJobRunSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .terminateJobRunSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .getConfigSettings()
@@ -1672,6 +1755,18 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
       return approveRolloutSettings;
     }
 
+    /** Returns the builder for the settings used for calls to advanceRollout. */
+    public UnaryCallSettings.Builder<AdvanceRolloutRequest, AdvanceRolloutResponse>
+        advanceRolloutSettings() {
+      return advanceRolloutSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to cancelRollout. */
+    public UnaryCallSettings.Builder<CancelRolloutRequest, CancelRolloutResponse>
+        cancelRolloutSettings() {
+      return cancelRolloutSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listRollouts. */
     public PagedCallSettings.Builder<
             ListRolloutsRequest, ListRolloutsResponse, ListRolloutsPagedResponse>
@@ -1697,6 +1792,11 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
       return createRolloutOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to ignoreJob. */
+    public UnaryCallSettings.Builder<IgnoreJobRequest, IgnoreJobResponse> ignoreJobSettings() {
+      return ignoreJobSettings;
+    }
+
     /** Returns the builder for the settings used for calls to retryJob. */
     public UnaryCallSettings.Builder<RetryJobRequest, RetryJobResponse> retryJobSettings() {
       return retryJobSettings;
@@ -1712,6 +1812,12 @@ public class CloudDeployStubSettings extends StubSettings<CloudDeployStubSetting
     /** Returns the builder for the settings used for calls to getJobRun. */
     public UnaryCallSettings.Builder<GetJobRunRequest, JobRun> getJobRunSettings() {
       return getJobRunSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to terminateJobRun. */
+    public UnaryCallSettings.Builder<TerminateJobRunRequest, TerminateJobRunResponse>
+        terminateJobRunSettings() {
+      return terminateJobRunSettings;
     }
 
     /** Returns the builder for the settings used for calls to getConfig. */

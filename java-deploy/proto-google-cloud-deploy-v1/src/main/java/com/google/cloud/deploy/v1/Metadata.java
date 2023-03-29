@@ -71,7 +71,8 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The name of the Cloud Run Service that is associated with a `Rollout`.
+   * Output only. The name of the Cloud Run Service that is associated with a
+   * `Rollout`.
    * </pre>
    *
    * <code>
@@ -88,7 +89,8 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The name of the Cloud Run Service that is associated with a `Rollout`.
+   * Output only. The name of the Cloud Run Service that is associated with a
+   * `Rollout`.
    * </pre>
    *
    * <code>
@@ -107,7 +109,8 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The name of the Cloud Run Service that is associated with a `Rollout`.
+   * Output only. The name of the Cloud Run Service that is associated with a
+   * `Rollout`.
    * </pre>
    *
    * <code>
@@ -476,7 +479,8 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the Cloud Run Service that is associated with a `Rollout`.
+     * Output only. The name of the Cloud Run Service that is associated with a
+     * `Rollout`.
      * </pre>
      *
      * <code>
@@ -492,7 +496,8 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the Cloud Run Service that is associated with a `Rollout`.
+     * Output only. The name of the Cloud Run Service that is associated with a
+     * `Rollout`.
      * </pre>
      *
      * <code>
@@ -514,7 +519,8 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the Cloud Run Service that is associated with a `Rollout`.
+     * Output only. The name of the Cloud Run Service that is associated with a
+     * `Rollout`.
      * </pre>
      *
      * <code>
@@ -538,7 +544,8 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the Cloud Run Service that is associated with a `Rollout`.
+     * Output only. The name of the Cloud Run Service that is associated with a
+     * `Rollout`.
      * </pre>
      *
      * <code>
@@ -560,7 +567,8 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the Cloud Run Service that is associated with a `Rollout`.
+     * Output only. The name of the Cloud Run Service that is associated with a
+     * `Rollout`.
      * </pre>
      *
      * <code>
@@ -587,7 +595,8 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the Cloud Run Service that is associated with a `Rollout`.
+     * Output only. The name of the Cloud Run Service that is associated with a
+     * `Rollout`.
      * </pre>
      *
      * <code>
@@ -608,7 +617,8 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the Cloud Run Service that is associated with a `Rollout`.
+     * Output only. The name of the Cloud Run Service that is associated with a
+     * `Rollout`.
      * </pre>
      *
      * <code>
@@ -624,7 +634,8 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the Cloud Run Service that is associated with a `Rollout`.
+     * Output only. The name of the Cloud Run Service that is associated with a
+     * `Rollout`.
      * </pre>
      *
      * <code>
@@ -644,7 +655,8 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the Cloud Run Service that is associated with a `Rollout`.
+     * Output only. The name of the Cloud Run Service that is associated with a
+     * `Rollout`.
      * </pre>
      *
      * <code>

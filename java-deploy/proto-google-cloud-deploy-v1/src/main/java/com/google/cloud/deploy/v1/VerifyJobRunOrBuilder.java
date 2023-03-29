@@ -27,8 +27,9 @@ public interface VerifyJobRunOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the Cloud Build `Build` object that is used to verify.
-   * Format is projects/{project}/locations/{location}/builds/{build}.
+   * Output only. The resource name of the Cloud Build `Build` object that is
+   * used to verify. Format is
+   * projects/{project}/locations/{location}/builds/{build}.
    * </pre>
    *
    * <code>
@@ -42,8 +43,9 @@ public interface VerifyJobRunOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the Cloud Build `Build` object that is used to verify.
-   * Format is projects/{project}/locations/{location}/builds/{build}.
+   * Output only. The resource name of the Cloud Build `Build` object that is
+   * used to verify. Format is
+   * projects/{project}/locations/{location}/builds/{build}.
    * </pre>
    *
    * <code>
@@ -58,8 +60,8 @@ public interface VerifyJobRunOrBuilder
    *
    *
    * <pre>
-   * Output only. URI of a directory containing the verify artifacts. This contains the
-   * Skaffold event log.
+   * Output only. URI of a directory containing the verify artifacts. This
+   * contains the Skaffold event log.
    * </pre>
    *
    * <code>string artifact_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -71,8 +73,8 @@ public interface VerifyJobRunOrBuilder
    *
    *
    * <pre>
-   * Output only. URI of a directory containing the verify artifacts. This contains the
-   * Skaffold event log.
+   * Output only. URI of a directory containing the verify artifacts. This
+   * contains the Skaffold event log.
    * </pre>
    *
    * <code>string artifact_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -85,7 +87,8 @@ public interface VerifyJobRunOrBuilder
    *
    *
    * <pre>
-   * Output only. File path of the Skaffold event log relative to the artifact URI.
+   * Output only. File path of the Skaffold event log relative to the artifact
+   * URI.
    * </pre>
    *
    * <code>string event_log_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -97,7 +100,8 @@ public interface VerifyJobRunOrBuilder
    *
    *
    * <pre>
-   * Output only. File path of the Skaffold event log relative to the artifact URI.
+   * Output only. File path of the Skaffold event log relative to the artifact
+   * URI.
    * </pre>
    *
    * <code>string event_log_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -110,8 +114,8 @@ public interface VerifyJobRunOrBuilder
    *
    *
    * <pre>
-   * Output only. The reason the verify failed. This will always be unspecified while the
-   * verify is in progress or if it succeeded.
+   * Output only. The reason the verify failed. This will always be unspecified
+   * while the verify is in progress or if it succeeded.
    * </pre>
    *
    * <code>
@@ -125,8 +129,8 @@ public interface VerifyJobRunOrBuilder
    *
    *
    * <pre>
-   * Output only. The reason the verify failed. This will always be unspecified while the
-   * verify is in progress or if it succeeded.
+   * Output only. The reason the verify failed. This will always be unspecified
+   * while the verify is in progress or if it succeeded.
    * </pre>
    *
    * <code>

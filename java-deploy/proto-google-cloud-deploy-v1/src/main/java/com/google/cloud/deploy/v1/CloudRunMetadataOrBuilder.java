@@ -27,11 +27,14 @@ public interface CloudRunMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the Cloud Run Service that is associated with a `Rollout`.
-   * Format is projects/{project}/locations/{location}/services/{service}.
+   * Output only. The name of the Cloud Run Service that is associated with a
+   * `Rollout`. Format is
+   * projects/{project}/locations/{location}/services/{service}.
    * </pre>
    *
-   * <code>string service = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string service = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The service.
    */
@@ -40,11 +43,14 @@ public interface CloudRunMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the Cloud Run Service that is associated with a `Rollout`.
-   * Format is projects/{project}/locations/{location}/services/{service}.
+   * Output only. The name of the Cloud Run Service that is associated with a
+   * `Rollout`. Format is
+   * projects/{project}/locations/{location}/services/{service}.
    * </pre>
    *
-   * <code>string service = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string service = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for service.
    */
@@ -54,7 +60,8 @@ public interface CloudRunMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The Cloud Run Service urls that are associated with a `Rollout`.
+   * Output only. The Cloud Run Service urls that are associated with a
+   * `Rollout`.
    * </pre>
    *
    * <code>repeated string service_urls = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -66,7 +73,8 @@ public interface CloudRunMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The Cloud Run Service urls that are associated with a `Rollout`.
+   * Output only. The Cloud Run Service urls that are associated with a
+   * `Rollout`.
    * </pre>
    *
    * <code>repeated string service_urls = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -78,7 +86,8 @@ public interface CloudRunMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The Cloud Run Service urls that are associated with a `Rollout`.
+   * Output only. The Cloud Run Service urls that are associated with a
+   * `Rollout`.
    * </pre>
    *
    * <code>repeated string service_urls = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -91,7 +100,8 @@ public interface CloudRunMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The Cloud Run Service urls that are associated with a `Rollout`.
+   * Output only. The Cloud Run Service urls that are associated with a
+   * `Rollout`.
    * </pre>
    *
    * <code>repeated string service_urls = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

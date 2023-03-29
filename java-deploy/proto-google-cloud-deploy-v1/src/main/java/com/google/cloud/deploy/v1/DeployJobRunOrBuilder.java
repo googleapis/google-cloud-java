@@ -27,8 +27,9 @@ public interface DeployJobRunOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the Cloud Build `Build` object that is used to deploy.
-   * Format is projects/{project}/locations/{location}/builds/{build}.
+   * Output only. The resource name of the Cloud Build `Build` object that is
+   * used to deploy. Format is
+   * projects/{project}/locations/{location}/builds/{build}.
    * </pre>
    *
    * <code>
@@ -42,8 +43,9 @@ public interface DeployJobRunOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the Cloud Build `Build` object that is used to deploy.
-   * Format is projects/{project}/locations/{location}/builds/{build}.
+   * Output only. The resource name of the Cloud Build `Build` object that is
+   * used to deploy. Format is
+   * projects/{project}/locations/{location}/builds/{build}.
    * </pre>
    *
    * <code>
@@ -58,8 +60,8 @@ public interface DeployJobRunOrBuilder
    *
    *
    * <pre>
-   * Output only. The reason the deploy failed. This will always be unspecified while the
-   * deploy is in progress or if it succeeded.
+   * Output only. The reason the deploy failed. This will always be unspecified
+   * while the deploy is in progress or if it succeeded.
    * </pre>
    *
    * <code>
@@ -73,8 +75,8 @@ public interface DeployJobRunOrBuilder
    *
    *
    * <pre>
-   * Output only. The reason the deploy failed. This will always be unspecified while the
-   * deploy is in progress or if it succeeded.
+   * Output only. The reason the deploy failed. This will always be unspecified
+   * while the deploy is in progress or if it succeeded.
    * </pre>
    *
    * <code>

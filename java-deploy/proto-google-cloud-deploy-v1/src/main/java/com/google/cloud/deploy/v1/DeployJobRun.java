@@ -122,6 +122,28 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      * <code>DEADLINE_EXCEEDED = 3;</code>
      */
     DEADLINE_EXCEEDED(3),
+    /**
+     *
+     *
+     * <pre>
+     * There were missing resources in the runtime environment required for a
+     * canary deployment. Check the Cloud Build logs for more information.
+     * </pre>
+     *
+     * <code>MISSING_RESOURCES_FOR_CANARY = 4;</code>
+     */
+    MISSING_RESOURCES_FOR_CANARY(4),
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Build failed to fulfill Google Cloud Deploy's request. See
+     * failure_message for additional details.
+     * </pre>
+     *
+     * <code>CLOUD_BUILD_REQUEST_FAILED = 5;</code>
+     */
+    CLOUD_BUILD_REQUEST_FAILED(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -168,6 +190,28 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      * <code>DEADLINE_EXCEEDED = 3;</code>
      */
     public static final int DEADLINE_EXCEEDED_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * There were missing resources in the runtime environment required for a
+     * canary deployment. Check the Cloud Build logs for more information.
+     * </pre>
+     *
+     * <code>MISSING_RESOURCES_FOR_CANARY = 4;</code>
+     */
+    public static final int MISSING_RESOURCES_FOR_CANARY_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Build failed to fulfill Google Cloud Deploy's request. See
+     * failure_message for additional details.
+     * </pre>
+     *
+     * <code>CLOUD_BUILD_REQUEST_FAILED = 5;</code>
+     */
+    public static final int CLOUD_BUILD_REQUEST_FAILED_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -201,6 +245,10 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
           return EXECUTION_FAILED;
         case 3:
           return DEADLINE_EXCEEDED;
+        case 4:
+          return MISSING_RESOURCES_FOR_CANARY;
+        case 5:
+          return CLOUD_BUILD_REQUEST_FAILED;
         default:
           return null;
       }
@@ -262,8 +310,9 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name of the Cloud Build `Build` object that is used to deploy.
-   * Format is projects/{project}/locations/{location}/builds/{build}.
+   * Output only. The resource name of the Cloud Build `Build` object that is
+   * used to deploy. Format is
+   * projects/{project}/locations/{location}/builds/{build}.
    * </pre>
    *
    * <code>
@@ -288,8 +337,9 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name of the Cloud Build `Build` object that is used to deploy.
-   * Format is projects/{project}/locations/{location}/builds/{build}.
+   * Output only. The resource name of the Cloud Build `Build` object that is
+   * used to deploy. Format is
+   * projects/{project}/locations/{location}/builds/{build}.
    * </pre>
    *
    * <code>
@@ -317,8 +367,8 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The reason the deploy failed. This will always be unspecified while the
-   * deploy is in progress or if it succeeded.
+   * Output only. The reason the deploy failed. This will always be unspecified
+   * while the deploy is in progress or if it succeeded.
    * </pre>
    *
    * <code>
@@ -335,8 +385,8 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The reason the deploy failed. This will always be unspecified while the
-   * deploy is in progress or if it succeeded.
+   * Output only. The reason the deploy failed. This will always be unspecified
+   * while the deploy is in progress or if it succeeded.
    * </pre>
    *
    * <code>
@@ -887,8 +937,9 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Cloud Build `Build` object that is used to deploy.
-     * Format is projects/{project}/locations/{location}/builds/{build}.
+     * Output only. The resource name of the Cloud Build `Build` object that is
+     * used to deploy. Format is
+     * projects/{project}/locations/{location}/builds/{build}.
      * </pre>
      *
      * <code>
@@ -912,8 +963,9 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Cloud Build `Build` object that is used to deploy.
-     * Format is projects/{project}/locations/{location}/builds/{build}.
+     * Output only. The resource name of the Cloud Build `Build` object that is
+     * used to deploy. Format is
+     * projects/{project}/locations/{location}/builds/{build}.
      * </pre>
      *
      * <code>
@@ -937,8 +989,9 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Cloud Build `Build` object that is used to deploy.
-     * Format is projects/{project}/locations/{location}/builds/{build}.
+     * Output only. The resource name of the Cloud Build `Build` object that is
+     * used to deploy. Format is
+     * projects/{project}/locations/{location}/builds/{build}.
      * </pre>
      *
      * <code>
@@ -961,8 +1014,9 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Cloud Build `Build` object that is used to deploy.
-     * Format is projects/{project}/locations/{location}/builds/{build}.
+     * Output only. The resource name of the Cloud Build `Build` object that is
+     * used to deploy. Format is
+     * projects/{project}/locations/{location}/builds/{build}.
      * </pre>
      *
      * <code>
@@ -981,8 +1035,9 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Cloud Build `Build` object that is used to deploy.
-     * Format is projects/{project}/locations/{location}/builds/{build}.
+     * Output only. The resource name of the Cloud Build `Build` object that is
+     * used to deploy. Format is
+     * projects/{project}/locations/{location}/builds/{build}.
      * </pre>
      *
      * <code>
@@ -1008,8 +1063,8 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The reason the deploy failed. This will always be unspecified while the
-     * deploy is in progress or if it succeeded.
+     * Output only. The reason the deploy failed. This will always be unspecified
+     * while the deploy is in progress or if it succeeded.
      * </pre>
      *
      * <code>
@@ -1026,8 +1081,8 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The reason the deploy failed. This will always be unspecified while the
-     * deploy is in progress or if it succeeded.
+     * Output only. The reason the deploy failed. This will always be unspecified
+     * while the deploy is in progress or if it succeeded.
      * </pre>
      *
      * <code>
@@ -1047,8 +1102,8 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The reason the deploy failed. This will always be unspecified while the
-     * deploy is in progress or if it succeeded.
+     * Output only. The reason the deploy failed. This will always be unspecified
+     * while the deploy is in progress or if it succeeded.
      * </pre>
      *
      * <code>
@@ -1069,8 +1124,8 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The reason the deploy failed. This will always be unspecified while the
-     * deploy is in progress or if it succeeded.
+     * Output only. The reason the deploy failed. This will always be unspecified
+     * while the deploy is in progress or if it succeeded.
      * </pre>
      *
      * <code>
@@ -1093,8 +1148,8 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The reason the deploy failed. This will always be unspecified while the
-     * deploy is in progress or if it succeeded.
+     * Output only. The reason the deploy failed. This will always be unspecified
+     * while the deploy is in progress or if it succeeded.
      * </pre>
      *
      * <code>

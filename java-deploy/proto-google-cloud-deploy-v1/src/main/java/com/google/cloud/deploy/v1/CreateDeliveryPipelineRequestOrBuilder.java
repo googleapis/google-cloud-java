@@ -27,8 +27,8 @@ public interface CreateDeliveryPipelineRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent collection in which the `DeliveryPipeline` should be created.
-   * Format should be projects/{project_id}/locations/{location_name}.
+   * Required. The parent collection in which the `DeliveryPipeline` should be
+   * created. Format should be projects/{project_id}/locations/{location_name}.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface CreateDeliveryPipelineRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent collection in which the `DeliveryPipeline` should be created.
-   * Format should be projects/{project_id}/locations/{location_name}.
+   * Required. The parent collection in which the `DeliveryPipeline` should be
+   * created. Format should be projects/{project_id}/locations/{location_name}.
    * </pre>
    *
    * <code>
@@ -169,8 +169,8 @@ public interface CreateDeliveryPipelineRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If set to true, the request is validated and the user is provided with
-   * an expected result, but no actual change is made.
+   * Optional. If set to true, the request is validated and the user is provided
+   * with an expected result, but no actual change is made.
    * </pre>
    *
    * <code>bool validate_only = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -118,6 +118,106 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int MAINTENANCE_MODE_TIME_FIELD_NUMBER = 3;
+  private com.google.protobuf.Timestamp maintenanceModeTime_;
+  /**
+   *
+   *
+   * <pre>
+   * The time at which this version of skaffold will enter maintenance mode.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp maintenance_mode_time = 3;</code>
+   *
+   * @return Whether the maintenanceModeTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaintenanceModeTime() {
+    return maintenanceModeTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The time at which this version of skaffold will enter maintenance mode.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp maintenance_mode_time = 3;</code>
+   *
+   * @return The maintenanceModeTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getMaintenanceModeTime() {
+    return maintenanceModeTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : maintenanceModeTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The time at which this version of skaffold will enter maintenance mode.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp maintenance_mode_time = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getMaintenanceModeTimeOrBuilder() {
+    return maintenanceModeTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : maintenanceModeTime_;
+  }
+
+  public static final int SUPPORT_EXPIRATION_TIME_FIELD_NUMBER = 4;
+  private com.google.protobuf.Timestamp supportExpirationTime_;
+  /**
+   *
+   *
+   * <pre>
+   * The time at which this version of skaffold will no longer be supported.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp support_expiration_time = 4;</code>
+   *
+   * @return Whether the supportExpirationTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasSupportExpirationTime() {
+    return supportExpirationTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The time at which this version of skaffold will no longer be supported.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp support_expiration_time = 4;</code>
+   *
+   * @return The supportExpirationTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getSupportExpirationTime() {
+    return supportExpirationTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : supportExpirationTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The time at which this version of skaffold will no longer be supported.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp support_expiration_time = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getSupportExpirationTimeOrBuilder() {
+    return supportExpirationTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : supportExpirationTime_;
+  }
+
   public static final int SUPPORT_END_DATE_FIELD_NUMBER = 2;
   private com.google.type.Date supportEndDate_;
   /**
@@ -184,6 +284,12 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
     if (supportEndDate_ != null) {
       output.writeMessage(2, getSupportEndDate());
     }
+    if (maintenanceModeTime_ != null) {
+      output.writeMessage(3, getMaintenanceModeTime());
+    }
+    if (supportExpirationTime_ != null) {
+      output.writeMessage(4, getSupportExpirationTime());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -198,6 +304,13 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
     }
     if (supportEndDate_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getSupportEndDate());
+    }
+    if (maintenanceModeTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getMaintenanceModeTime());
+    }
+    if (supportExpirationTime_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(4, getSupportExpirationTime());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -216,6 +329,14 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
         (com.google.cloud.deploy.v1.SkaffoldVersion) obj;
 
     if (!getVersion().equals(other.getVersion())) return false;
+    if (hasMaintenanceModeTime() != other.hasMaintenanceModeTime()) return false;
+    if (hasMaintenanceModeTime()) {
+      if (!getMaintenanceModeTime().equals(other.getMaintenanceModeTime())) return false;
+    }
+    if (hasSupportExpirationTime() != other.hasSupportExpirationTime()) return false;
+    if (hasSupportExpirationTime()) {
+      if (!getSupportExpirationTime().equals(other.getSupportExpirationTime())) return false;
+    }
     if (hasSupportEndDate() != other.hasSupportEndDate()) return false;
     if (hasSupportEndDate()) {
       if (!getSupportEndDate().equals(other.getSupportEndDate())) return false;
@@ -233,6 +354,14 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getVersion().hashCode();
+    if (hasMaintenanceModeTime()) {
+      hash = (37 * hash) + MAINTENANCE_MODE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getMaintenanceModeTime().hashCode();
+    }
+    if (hasSupportExpirationTime()) {
+      hash = (37 * hash) + SUPPORT_EXPIRATION_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getSupportExpirationTime().hashCode();
+    }
     if (hasSupportEndDate()) {
       hash = (37 * hash) + SUPPORT_END_DATE_FIELD_NUMBER;
       hash = (53 * hash) + getSupportEndDate().hashCode();
@@ -377,6 +506,16 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
       super.clear();
       bitField0_ = 0;
       version_ = "";
+      maintenanceModeTime_ = null;
+      if (maintenanceModeTimeBuilder_ != null) {
+        maintenanceModeTimeBuilder_.dispose();
+        maintenanceModeTimeBuilder_ = null;
+      }
+      supportExpirationTime_ = null;
+      if (supportExpirationTimeBuilder_ != null) {
+        supportExpirationTimeBuilder_.dispose();
+        supportExpirationTimeBuilder_ = null;
+      }
       supportEndDate_ = null;
       if (supportEndDateBuilder_ != null) {
         supportEndDateBuilder_.dispose();
@@ -422,6 +561,18 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
         result.version_ = version_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.maintenanceModeTime_ =
+            maintenanceModeTimeBuilder_ == null
+                ? maintenanceModeTime_
+                : maintenanceModeTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.supportExpirationTime_ =
+            supportExpirationTimeBuilder_ == null
+                ? supportExpirationTime_
+                : supportExpirationTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.supportEndDate_ =
             supportEndDateBuilder_ == null ? supportEndDate_ : supportEndDateBuilder_.build();
       }
@@ -477,6 +628,12 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.hasMaintenanceModeTime()) {
+        mergeMaintenanceModeTime(other.getMaintenanceModeTime());
+      }
+      if (other.hasSupportExpirationTime()) {
+        mergeSupportExpirationTime(other.getSupportExpirationTime());
+      }
       if (other.hasSupportEndDate()) {
         mergeSupportEndDate(other.getSupportEndDate());
       }
@@ -515,9 +672,23 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
             case 18:
               {
                 input.readMessage(getSupportEndDateFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getMaintenanceModeTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getSupportExpirationTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -643,6 +814,372 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private com.google.protobuf.Timestamp maintenanceModeTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        maintenanceModeTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The time at which this version of skaffold will enter maintenance mode.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp maintenance_mode_time = 3;</code>
+     *
+     * @return Whether the maintenanceModeTime field is set.
+     */
+    public boolean hasMaintenanceModeTime() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which this version of skaffold will enter maintenance mode.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp maintenance_mode_time = 3;</code>
+     *
+     * @return The maintenanceModeTime.
+     */
+    public com.google.protobuf.Timestamp getMaintenanceModeTime() {
+      if (maintenanceModeTimeBuilder_ == null) {
+        return maintenanceModeTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : maintenanceModeTime_;
+      } else {
+        return maintenanceModeTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which this version of skaffold will enter maintenance mode.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp maintenance_mode_time = 3;</code>
+     */
+    public Builder setMaintenanceModeTime(com.google.protobuf.Timestamp value) {
+      if (maintenanceModeTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maintenanceModeTime_ = value;
+      } else {
+        maintenanceModeTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which this version of skaffold will enter maintenance mode.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp maintenance_mode_time = 3;</code>
+     */
+    public Builder setMaintenanceModeTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (maintenanceModeTimeBuilder_ == null) {
+        maintenanceModeTime_ = builderForValue.build();
+      } else {
+        maintenanceModeTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which this version of skaffold will enter maintenance mode.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp maintenance_mode_time = 3;</code>
+     */
+    public Builder mergeMaintenanceModeTime(com.google.protobuf.Timestamp value) {
+      if (maintenanceModeTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && maintenanceModeTime_ != null
+            && maintenanceModeTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getMaintenanceModeTimeBuilder().mergeFrom(value);
+        } else {
+          maintenanceModeTime_ = value;
+        }
+      } else {
+        maintenanceModeTimeBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which this version of skaffold will enter maintenance mode.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp maintenance_mode_time = 3;</code>
+     */
+    public Builder clearMaintenanceModeTime() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      maintenanceModeTime_ = null;
+      if (maintenanceModeTimeBuilder_ != null) {
+        maintenanceModeTimeBuilder_.dispose();
+        maintenanceModeTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which this version of skaffold will enter maintenance mode.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp maintenance_mode_time = 3;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getMaintenanceModeTimeBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getMaintenanceModeTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which this version of skaffold will enter maintenance mode.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp maintenance_mode_time = 3;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getMaintenanceModeTimeOrBuilder() {
+      if (maintenanceModeTimeBuilder_ != null) {
+        return maintenanceModeTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return maintenanceModeTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : maintenanceModeTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which this version of skaffold will enter maintenance mode.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp maintenance_mode_time = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getMaintenanceModeTimeFieldBuilder() {
+      if (maintenanceModeTimeBuilder_ == null) {
+        maintenanceModeTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getMaintenanceModeTime(), getParentForChildren(), isClean());
+        maintenanceModeTime_ = null;
+      }
+      return maintenanceModeTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp supportExpirationTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        supportExpirationTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The time at which this version of skaffold will no longer be supported.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp support_expiration_time = 4;</code>
+     *
+     * @return Whether the supportExpirationTime field is set.
+     */
+    public boolean hasSupportExpirationTime() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which this version of skaffold will no longer be supported.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp support_expiration_time = 4;</code>
+     *
+     * @return The supportExpirationTime.
+     */
+    public com.google.protobuf.Timestamp getSupportExpirationTime() {
+      if (supportExpirationTimeBuilder_ == null) {
+        return supportExpirationTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : supportExpirationTime_;
+      } else {
+        return supportExpirationTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which this version of skaffold will no longer be supported.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp support_expiration_time = 4;</code>
+     */
+    public Builder setSupportExpirationTime(com.google.protobuf.Timestamp value) {
+      if (supportExpirationTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        supportExpirationTime_ = value;
+      } else {
+        supportExpirationTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which this version of skaffold will no longer be supported.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp support_expiration_time = 4;</code>
+     */
+    public Builder setSupportExpirationTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (supportExpirationTimeBuilder_ == null) {
+        supportExpirationTime_ = builderForValue.build();
+      } else {
+        supportExpirationTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which this version of skaffold will no longer be supported.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp support_expiration_time = 4;</code>
+     */
+    public Builder mergeSupportExpirationTime(com.google.protobuf.Timestamp value) {
+      if (supportExpirationTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && supportExpirationTime_ != null
+            && supportExpirationTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getSupportExpirationTimeBuilder().mergeFrom(value);
+        } else {
+          supportExpirationTime_ = value;
+        }
+      } else {
+        supportExpirationTimeBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which this version of skaffold will no longer be supported.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp support_expiration_time = 4;</code>
+     */
+    public Builder clearSupportExpirationTime() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      supportExpirationTime_ = null;
+      if (supportExpirationTimeBuilder_ != null) {
+        supportExpirationTimeBuilder_.dispose();
+        supportExpirationTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which this version of skaffold will no longer be supported.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp support_expiration_time = 4;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getSupportExpirationTimeBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getSupportExpirationTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which this version of skaffold will no longer be supported.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp support_expiration_time = 4;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getSupportExpirationTimeOrBuilder() {
+      if (supportExpirationTimeBuilder_ != null) {
+        return supportExpirationTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return supportExpirationTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : supportExpirationTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which this version of skaffold will no longer be supported.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp support_expiration_time = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getSupportExpirationTimeFieldBuilder() {
+      if (supportExpirationTimeBuilder_ == null) {
+        supportExpirationTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getSupportExpirationTime(), getParentForChildren(), isClean());
+        supportExpirationTime_ = null;
+      }
+      return supportExpirationTimeBuilder_;
+    }
+
     private com.google.type.Date supportEndDate_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
@@ -659,7 +1196,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
      * @return Whether the supportEndDate field is set.
      */
     public boolean hasSupportEndDate() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -699,7 +1236,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
       } else {
         supportEndDateBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -718,7 +1255,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
       } else {
         supportEndDateBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -733,7 +1270,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeSupportEndDate(com.google.type.Date value) {
       if (supportEndDateBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && supportEndDate_ != null
             && supportEndDate_ != com.google.type.Date.getDefaultInstance()) {
           getSupportEndDateBuilder().mergeFrom(value);
@@ -743,7 +1280,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
       } else {
         supportEndDateBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -757,7 +1294,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
      * <code>.google.type.Date support_end_date = 2;</code>
      */
     public Builder clearSupportEndDate() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       supportEndDate_ = null;
       if (supportEndDateBuilder_ != null) {
         supportEndDateBuilder_.dispose();
@@ -776,7 +1313,7 @@ public final class SkaffoldVersion extends com.google.protobuf.GeneratedMessageV
      * <code>.google.type.Date support_end_date = 2;</code>
      */
     public com.google.type.Date.Builder getSupportEndDateBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getSupportEndDateFieldBuilder().getBuilder();
     }

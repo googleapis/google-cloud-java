@@ -283,8 +283,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Cloud Build `Build` object that is used to
-     * render the manifest for this target. Format is
+     * Output only. The resource name of the Cloud Build `Build` object that is
+     * used to render the manifest for this target. Format is
      * `projects/{project}/locations/{location}/builds/{build}`.
      * </pre>
      *
@@ -299,8 +299,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Cloud Build `Build` object that is used to
-     * render the manifest for this target. Format is
+     * Output only. The resource name of the Cloud Build `Build` object that is
+     * used to render the manifest for this target. Format is
      * `projects/{project}/locations/{location}/builds/{build}`.
      * </pre>
      *
@@ -345,8 +345,49 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Reason this render failed. This will always be unspecified while the
-     * render in progress.
+     * Output only. Metadata related to the `Release` render for this Target.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.RenderMetadata metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the metadata field is set.
+     */
+    boolean hasMetadata();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata related to the `Release` render for this Target.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.RenderMetadata metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The metadata.
+     */
+    com.google.cloud.deploy.v1.RenderMetadata getMetadata();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata related to the `Release` render for this Target.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.RenderMetadata metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.deploy.v1.RenderMetadataOrBuilder getMetadataOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reason this render failed. This will always be unspecified
+     * while the render in progress.
      * </pre>
      *
      * <code>
@@ -360,8 +401,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Reason this render failed. This will always be unspecified while the
-     * render in progress.
+     * Output only. Reason this render failed. This will always be unspecified
+     * while the render in progress.
      * </pre>
      *
      * <code>
@@ -376,7 +417,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Additional information about the render failure, if available.
+     * Output only. Additional information about the render failure, if
+     * available.
      * </pre>
      *
      * <code>string failure_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -388,7 +430,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Additional information about the render failure, if available.
+     * Output only. Additional information about the render failure, if
+     * available.
      * </pre>
      *
      * <code>string failure_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -676,6 +719,17 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        * <code>EXECUTION_FAILED = 2;</code>
        */
       EXECUTION_FAILED(2),
+      /**
+       *
+       *
+       * <pre>
+       * Cloud Build failed to fulfill Google Cloud Deploy's request. See
+       * failure_message for additional details.
+       * </pre>
+       *
+       * <code>CLOUD_BUILD_REQUEST_FAILED = 3;</code>
+       */
+      CLOUD_BUILD_REQUEST_FAILED(3),
       UNRECOGNIZED(-1),
       ;
 
@@ -712,6 +766,17 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        * <code>EXECUTION_FAILED = 2;</code>
        */
       public static final int EXECUTION_FAILED_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * Cloud Build failed to fulfill Google Cloud Deploy's request. See
+       * failure_message for additional details.
+       * </pre>
+       *
+       * <code>CLOUD_BUILD_REQUEST_FAILED = 3;</code>
+       */
+      public static final int CLOUD_BUILD_REQUEST_FAILED_VALUE = 3;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -743,6 +808,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
             return CLOUD_BUILD_UNAVAILABLE;
           case 2:
             return EXECUTION_FAILED;
+          case 3:
+            return CLOUD_BUILD_REQUEST_FAILED;
           default:
             return null;
         }
@@ -806,8 +873,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Cloud Build `Build` object that is used to
-     * render the manifest for this target. Format is
+     * Output only. The resource name of the Cloud Build `Build` object that is
+     * used to render the manifest for this target. Format is
      * `projects/{project}/locations/{location}/builds/{build}`.
      * </pre>
      *
@@ -833,8 +900,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Cloud Build `Build` object that is used to
-     * render the manifest for this target. Format is
+     * Output only. The resource name of the Cloud Build `Build` object that is
+     * used to render the manifest for this target. Format is
      * `projects/{project}/locations/{location}/builds/{build}`.
      * </pre>
      *
@@ -899,14 +966,70 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
           : result;
     }
 
+    public static final int METADATA_FIELD_NUMBER = 6;
+    private com.google.cloud.deploy.v1.RenderMetadata metadata_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata related to the `Release` render for this Target.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.RenderMetadata metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the metadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMetadata() {
+      return metadata_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata related to the `Release` render for this Target.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.RenderMetadata metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The metadata.
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.RenderMetadata getMetadata() {
+      return metadata_ == null
+          ? com.google.cloud.deploy.v1.RenderMetadata.getDefaultInstance()
+          : metadata_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata related to the `Release` render for this Target.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.RenderMetadata metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.RenderMetadataOrBuilder getMetadataOrBuilder() {
+      return metadata_ == null
+          ? com.google.cloud.deploy.v1.RenderMetadata.getDefaultInstance()
+          : metadata_;
+    }
+
     public static final int FAILURE_CAUSE_FIELD_NUMBER = 4;
     private int failureCause_ = 0;
     /**
      *
      *
      * <pre>
-     * Output only. Reason this render failed. This will always be unspecified while the
-     * render in progress.
+     * Output only. Reason this render failed. This will always be unspecified
+     * while the render in progress.
      * </pre>
      *
      * <code>
@@ -923,8 +1046,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Reason this render failed. This will always be unspecified while the
-     * render in progress.
+     * Output only. Reason this render failed. This will always be unspecified
+     * while the render in progress.
      * </pre>
      *
      * <code>
@@ -950,7 +1073,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Additional information about the render failure, if available.
+     * Output only. Additional information about the render failure, if
+     * available.
      * </pre>
      *
      * <code>string failure_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -973,7 +1097,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Additional information about the render failure, if available.
+     * Output only. Additional information about the render failure, if
+     * available.
      * </pre>
      *
      * <code>string failure_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1024,6 +1149,9 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(failureMessage_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, failureMessage_);
       }
+      if (metadata_ != null) {
+        output.writeMessage(6, getMetadata());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1050,6 +1178,9 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(failureMessage_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, failureMessage_);
       }
+      if (metadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getMetadata());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1068,6 +1199,10 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
 
       if (!getRenderingBuild().equals(other.getRenderingBuild())) return false;
       if (renderingState_ != other.renderingState_) return false;
+      if (hasMetadata() != other.hasMetadata()) return false;
+      if (hasMetadata()) {
+        if (!getMetadata().equals(other.getMetadata())) return false;
+      }
       if (failureCause_ != other.failureCause_) return false;
       if (!getFailureMessage().equals(other.getFailureMessage())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -1085,6 +1220,10 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getRenderingBuild().hashCode();
       hash = (37 * hash) + RENDERING_STATE_FIELD_NUMBER;
       hash = (53 * hash) + renderingState_;
+      if (hasMetadata()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMetadata().hashCode();
+      }
       hash = (37 * hash) + FAILURE_CAUSE_FIELD_NUMBER;
       hash = (53 * hash) + failureCause_;
       hash = (37 * hash) + FAILURE_MESSAGE_FIELD_NUMBER;
@@ -1232,6 +1371,11 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = 0;
         renderingBuild_ = "";
         renderingState_ = 0;
+        metadata_ = null;
+        if (metadataBuilder_ != null) {
+          metadataBuilder_.dispose();
+          metadataBuilder_ = null;
+        }
         failureCause_ = 0;
         failureMessage_ = "";
         return this;
@@ -1277,9 +1421,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
           result.renderingState_ = renderingState_;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.failureCause_ = failureCause_;
+          result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.failureCause_ = failureCause_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           result.failureMessage_ = failureMessage_;
         }
       }
@@ -1340,12 +1487,15 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
         if (other.renderingState_ != 0) {
           setRenderingStateValue(other.getRenderingStateValue());
         }
+        if (other.hasMetadata()) {
+          mergeMetadata(other.getMetadata());
+        }
         if (other.failureCause_ != 0) {
           setFailureCauseValue(other.getFailureCauseValue());
         }
         if (!other.getFailureMessage().isEmpty()) {
           failureMessage_ = other.failureMessage_;
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1389,15 +1539,21 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
               case 32:
                 {
                   failureCause_ = input.readEnum();
-                  bitField0_ |= 0x00000004;
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 32
               case 42:
                 {
                   failureMessage_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000008;
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 42
+              case 50:
+                {
+                  input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1422,8 +1578,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The resource name of the Cloud Build `Build` object that is used to
-       * render the manifest for this target. Format is
+       * Output only. The resource name of the Cloud Build `Build` object that is
+       * used to render the manifest for this target. Format is
        * `projects/{project}/locations/{location}/builds/{build}`.
        * </pre>
        *
@@ -1448,8 +1604,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The resource name of the Cloud Build `Build` object that is used to
-       * render the manifest for this target. Format is
+       * Output only. The resource name of the Cloud Build `Build` object that is
+       * used to render the manifest for this target. Format is
        * `projects/{project}/locations/{location}/builds/{build}`.
        * </pre>
        *
@@ -1474,8 +1630,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The resource name of the Cloud Build `Build` object that is used to
-       * render the manifest for this target. Format is
+       * Output only. The resource name of the Cloud Build `Build` object that is
+       * used to render the manifest for this target. Format is
        * `projects/{project}/locations/{location}/builds/{build}`.
        * </pre>
        *
@@ -1499,8 +1655,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The resource name of the Cloud Build `Build` object that is used to
-       * render the manifest for this target. Format is
+       * Output only. The resource name of the Cloud Build `Build` object that is
+       * used to render the manifest for this target. Format is
        * `projects/{project}/locations/{location}/builds/{build}`.
        * </pre>
        *
@@ -1520,8 +1676,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The resource name of the Cloud Build `Build` object that is used to
-       * render the manifest for this target. Format is
+       * Output only. The resource name of the Cloud Build `Build` object that is
+       * used to render the manifest for this target. Format is
        * `projects/{project}/locations/{location}/builds/{build}`.
        * </pre>
        *
@@ -1647,13 +1803,215 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private com.google.cloud.deploy.v1.RenderMetadata metadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.deploy.v1.RenderMetadata,
+              com.google.cloud.deploy.v1.RenderMetadata.Builder,
+              com.google.cloud.deploy.v1.RenderMetadataOrBuilder>
+          metadataBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Metadata related to the `Release` render for this Target.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.RenderMetadata metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the metadata field is set.
+       */
+      public boolean hasMetadata() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Metadata related to the `Release` render for this Target.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.RenderMetadata metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The metadata.
+       */
+      public com.google.cloud.deploy.v1.RenderMetadata getMetadata() {
+        if (metadataBuilder_ == null) {
+          return metadata_ == null
+              ? com.google.cloud.deploy.v1.RenderMetadata.getDefaultInstance()
+              : metadata_;
+        } else {
+          return metadataBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Metadata related to the `Release` render for this Target.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.RenderMetadata metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setMetadata(com.google.cloud.deploy.v1.RenderMetadata value) {
+        if (metadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          metadata_ = value;
+        } else {
+          metadataBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Metadata related to the `Release` render for this Target.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.RenderMetadata metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setMetadata(
+          com.google.cloud.deploy.v1.RenderMetadata.Builder builderForValue) {
+        if (metadataBuilder_ == null) {
+          metadata_ = builderForValue.build();
+        } else {
+          metadataBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Metadata related to the `Release` render for this Target.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.RenderMetadata metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeMetadata(com.google.cloud.deploy.v1.RenderMetadata value) {
+        if (metadataBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && metadata_ != null
+              && metadata_ != com.google.cloud.deploy.v1.RenderMetadata.getDefaultInstance()) {
+            getMetadataBuilder().mergeFrom(value);
+          } else {
+            metadata_ = value;
+          }
+        } else {
+          metadataBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Metadata related to the `Release` render for this Target.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.RenderMetadata metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearMetadata() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        metadata_ = null;
+        if (metadataBuilder_ != null) {
+          metadataBuilder_.dispose();
+          metadataBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Metadata related to the `Release` render for this Target.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.RenderMetadata metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.deploy.v1.RenderMetadata.Builder getMetadataBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Metadata related to the `Release` render for this Target.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.RenderMetadata metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.deploy.v1.RenderMetadataOrBuilder getMetadataOrBuilder() {
+        if (metadataBuilder_ != null) {
+          return metadataBuilder_.getMessageOrBuilder();
+        } else {
+          return metadata_ == null
+              ? com.google.cloud.deploy.v1.RenderMetadata.getDefaultInstance()
+              : metadata_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Metadata related to the `Release` render for this Target.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.RenderMetadata metadata = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.deploy.v1.RenderMetadata,
+              com.google.cloud.deploy.v1.RenderMetadata.Builder,
+              com.google.cloud.deploy.v1.RenderMetadataOrBuilder>
+          getMetadataFieldBuilder() {
+        if (metadataBuilder_ == null) {
+          metadataBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.deploy.v1.RenderMetadata,
+                  com.google.cloud.deploy.v1.RenderMetadata.Builder,
+                  com.google.cloud.deploy.v1.RenderMetadataOrBuilder>(
+                  getMetadata(), getParentForChildren(), isClean());
+          metadata_ = null;
+        }
+        return metadataBuilder_;
+      }
+
       private int failureCause_ = 0;
       /**
        *
        *
        * <pre>
-       * Output only. Reason this render failed. This will always be unspecified while the
-       * render in progress.
+       * Output only. Reason this render failed. This will always be unspecified
+       * while the render in progress.
        * </pre>
        *
        * <code>
@@ -1670,8 +2028,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Reason this render failed. This will always be unspecified while the
-       * render in progress.
+       * Output only. Reason this render failed. This will always be unspecified
+       * while the render in progress.
        * </pre>
        *
        * <code>
@@ -1683,7 +2041,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder setFailureCauseValue(int value) {
         failureCause_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1691,8 +2049,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Reason this render failed. This will always be unspecified while the
-       * render in progress.
+       * Output only. Reason this render failed. This will always be unspecified
+       * while the render in progress.
        * </pre>
        *
        * <code>
@@ -1713,8 +2071,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Reason this render failed. This will always be unspecified while the
-       * render in progress.
+       * Output only. Reason this render failed. This will always be unspecified
+       * while the render in progress.
        * </pre>
        *
        * <code>
@@ -1729,7 +2087,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         failureCause_ = value.getNumber();
         onChanged();
         return this;
@@ -1738,8 +2096,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Reason this render failed. This will always be unspecified while the
-       * render in progress.
+       * Output only. Reason this render failed. This will always be unspecified
+       * while the render in progress.
        * </pre>
        *
        * <code>
@@ -1749,7 +2107,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearFailureCause() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         failureCause_ = 0;
         onChanged();
         return this;
@@ -1760,7 +2118,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Additional information about the render failure, if available.
+       * Output only. Additional information about the render failure, if
+       * available.
        * </pre>
        *
        * <code>string failure_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1782,7 +2141,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Additional information about the render failure, if available.
+       * Output only. Additional information about the render failure, if
+       * available.
        * </pre>
        *
        * <code>string failure_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1804,7 +2164,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Additional information about the render failure, if available.
+       * Output only. Additional information about the render failure, if
+       * available.
        * </pre>
        *
        * <code>string failure_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1817,7 +2178,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         failureMessage_ = value;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1825,7 +2186,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Additional information about the render failure, if available.
+       * Output only. Additional information about the render failure, if
+       * available.
        * </pre>
        *
        * <code>string failure_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1834,7 +2196,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearFailureMessage() {
         failureMessage_ = getDefaultInstance().getFailureMessage();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -1842,7 +2204,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. Additional information about the render failure, if available.
+       * Output only. Additional information about the render failure, if
+       * available.
        * </pre>
        *
        * <code>string failure_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1856,7 +2219,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
         }
         checkByteStringIsUtf8(value);
         failureMessage_ = value;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1921,6 +2284,3076 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.cloud.deploy.v1.Release.TargetRender getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ReleaseReadyConditionOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.deploy.v1.Release.ReleaseReadyCondition)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * True if the Release is in a valid state. Otherwise at least one condition
+     * in `ReleaseCondition` is in an invalid state. Iterate over those
+     * conditions and see which condition(s) has status = false to find out what
+     * is wrong with the Release.
+     * </pre>
+     *
+     * <code>bool status = 1;</code>
+     *
+     * @return The status.
+     */
+    boolean getStatus();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * ReleaseReadyCondition contains information around the status of the
+   * Release. If a release is not ready, you cannot create a rollout with the
+   * release.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.deploy.v1.Release.ReleaseReadyCondition}
+   */
+  public static final class ReleaseReadyCondition extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.Release.ReleaseReadyCondition)
+      ReleaseReadyConditionOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ReleaseReadyCondition.newBuilder() to construct.
+    private ReleaseReadyCondition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ReleaseReadyCondition() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ReleaseReadyCondition();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.deploy.v1.CloudDeployProto
+          .internal_static_google_cloud_deploy_v1_Release_ReleaseReadyCondition_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.deploy.v1.CloudDeployProto
+          .internal_static_google_cloud_deploy_v1_Release_ReleaseReadyCondition_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.deploy.v1.Release.ReleaseReadyCondition.class,
+              com.google.cloud.deploy.v1.Release.ReleaseReadyCondition.Builder.class);
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 1;
+    private boolean status_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * True if the Release is in a valid state. Otherwise at least one condition
+     * in `ReleaseCondition` is in an invalid state. Iterate over those
+     * conditions and see which condition(s) has status = false to find out what
+     * is wrong with the Release.
+     * </pre>
+     *
+     * <code>bool status = 1;</code>
+     *
+     * @return The status.
+     */
+    @java.lang.Override
+    public boolean getStatus() {
+      return status_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (status_ != false) {
+        output.writeBool(1, status_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (status_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, status_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.deploy.v1.Release.ReleaseReadyCondition)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.deploy.v1.Release.ReleaseReadyCondition other =
+          (com.google.cloud.deploy.v1.Release.ReleaseReadyCondition) obj;
+
+      if (getStatus() != other.getStatus()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getStatus());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.deploy.v1.Release.ReleaseReadyCondition parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.ReleaseReadyCondition parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.ReleaseReadyCondition parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.ReleaseReadyCondition parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.ReleaseReadyCondition parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.ReleaseReadyCondition parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.ReleaseReadyCondition parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.ReleaseReadyCondition parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.ReleaseReadyCondition parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.ReleaseReadyCondition parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.ReleaseReadyCondition parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.ReleaseReadyCondition parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.deploy.v1.Release.ReleaseReadyCondition prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ReleaseReadyCondition contains information around the status of the
+     * Release. If a release is not ready, you cannot create a rollout with the
+     * release.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.deploy.v1.Release.ReleaseReadyCondition}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.deploy.v1.Release.ReleaseReadyCondition)
+        com.google.cloud.deploy.v1.Release.ReleaseReadyConditionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.deploy.v1.CloudDeployProto
+            .internal_static_google_cloud_deploy_v1_Release_ReleaseReadyCondition_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.deploy.v1.CloudDeployProto
+            .internal_static_google_cloud_deploy_v1_Release_ReleaseReadyCondition_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.deploy.v1.Release.ReleaseReadyCondition.class,
+                com.google.cloud.deploy.v1.Release.ReleaseReadyCondition.Builder.class);
+      }
+
+      // Construct using com.google.cloud.deploy.v1.Release.ReleaseReadyCondition.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        status_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.deploy.v1.CloudDeployProto
+            .internal_static_google_cloud_deploy_v1_Release_ReleaseReadyCondition_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.deploy.v1.Release.ReleaseReadyCondition getDefaultInstanceForType() {
+        return com.google.cloud.deploy.v1.Release.ReleaseReadyCondition.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.deploy.v1.Release.ReleaseReadyCondition build() {
+        com.google.cloud.deploy.v1.Release.ReleaseReadyCondition result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.deploy.v1.Release.ReleaseReadyCondition buildPartial() {
+        com.google.cloud.deploy.v1.Release.ReleaseReadyCondition result =
+            new com.google.cloud.deploy.v1.Release.ReleaseReadyCondition(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.deploy.v1.Release.ReleaseReadyCondition result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.status_ = status_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.deploy.v1.Release.ReleaseReadyCondition) {
+          return mergeFrom((com.google.cloud.deploy.v1.Release.ReleaseReadyCondition) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.deploy.v1.Release.ReleaseReadyCondition other) {
+        if (other == com.google.cloud.deploy.v1.Release.ReleaseReadyCondition.getDefaultInstance())
+          return this;
+        if (other.getStatus() != false) {
+          setStatus(other.getStatus());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  status_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean status_;
+      /**
+       *
+       *
+       * <pre>
+       * True if the Release is in a valid state. Otherwise at least one condition
+       * in `ReleaseCondition` is in an invalid state. Iterate over those
+       * conditions and see which condition(s) has status = false to find out what
+       * is wrong with the Release.
+       * </pre>
+       *
+       * <code>bool status = 1;</code>
+       *
+       * @return The status.
+       */
+      @java.lang.Override
+      public boolean getStatus() {
+        return status_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * True if the Release is in a valid state. Otherwise at least one condition
+       * in `ReleaseCondition` is in an invalid state. Iterate over those
+       * conditions and see which condition(s) has status = false to find out what
+       * is wrong with the Release.
+       * </pre>
+       *
+       * <code>bool status = 1;</code>
+       *
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(boolean value) {
+
+        status_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * True if the Release is in a valid state. Otherwise at least one condition
+       * in `ReleaseCondition` is in an invalid state. Iterate over those
+       * conditions and see which condition(s) has status = false to find out what
+       * is wrong with the Release.
+       * </pre>
+       *
+       * <code>bool status = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        status_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.deploy.v1.Release.ReleaseReadyCondition)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.deploy.v1.Release.ReleaseReadyCondition)
+    private static final com.google.cloud.deploy.v1.Release.ReleaseReadyCondition DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.deploy.v1.Release.ReleaseReadyCondition();
+    }
+
+    public static com.google.cloud.deploy.v1.Release.ReleaseReadyCondition getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ReleaseReadyCondition> PARSER =
+        new com.google.protobuf.AbstractParser<ReleaseReadyCondition>() {
+          @java.lang.Override
+          public ReleaseReadyCondition parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ReleaseReadyCondition> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ReleaseReadyCondition> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.Release.ReleaseReadyCondition getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface SkaffoldSupportedConditionOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.deploy.v1.Release.SkaffoldSupportedCondition)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * True if the version of skaffold used by this release is supported.
+     * </pre>
+     *
+     * <code>bool status = 1;</code>
+     *
+     * @return The status.
+     */
+    boolean getStatus();
+
+    /**
+     *
+     *
+     * <pre>
+     * The skaffold support state for this release's version of skaffold.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.SkaffoldSupportState skaffold_support_state = 2;</code>
+     *
+     * @return The enum numeric value on the wire for skaffoldSupportState.
+     */
+    int getSkaffoldSupportStateValue();
+    /**
+     *
+     *
+     * <pre>
+     * The skaffold support state for this release's version of skaffold.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.SkaffoldSupportState skaffold_support_state = 2;</code>
+     *
+     * @return The skaffoldSupportState.
+     */
+    com.google.cloud.deploy.v1.SkaffoldSupportState getSkaffoldSupportState();
+
+    /**
+     *
+     *
+     * <pre>
+     * The time at which this release's version of skaffold will enter
+     * maintenance mode.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp maintenance_mode_time = 3;</code>
+     *
+     * @return Whether the maintenanceModeTime field is set.
+     */
+    boolean hasMaintenanceModeTime();
+    /**
+     *
+     *
+     * <pre>
+     * The time at which this release's version of skaffold will enter
+     * maintenance mode.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp maintenance_mode_time = 3;</code>
+     *
+     * @return The maintenanceModeTime.
+     */
+    com.google.protobuf.Timestamp getMaintenanceModeTime();
+    /**
+     *
+     *
+     * <pre>
+     * The time at which this release's version of skaffold will enter
+     * maintenance mode.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp maintenance_mode_time = 3;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getMaintenanceModeTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * The time at which this release's version of skaffold will no longer be
+     * supported.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp support_expiration_time = 4;</code>
+     *
+     * @return Whether the supportExpirationTime field is set.
+     */
+    boolean hasSupportExpirationTime();
+    /**
+     *
+     *
+     * <pre>
+     * The time at which this release's version of skaffold will no longer be
+     * supported.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp support_expiration_time = 4;</code>
+     *
+     * @return The supportExpirationTime.
+     */
+    com.google.protobuf.Timestamp getSupportExpirationTime();
+    /**
+     *
+     *
+     * <pre>
+     * The time at which this release's version of skaffold will no longer be
+     * supported.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp support_expiration_time = 4;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getSupportExpirationTimeOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * SkaffoldSupportedCondition contains information about when support for the
+   * release's version of skaffold ends.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.deploy.v1.Release.SkaffoldSupportedCondition}
+   */
+  public static final class SkaffoldSupportedCondition
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.Release.SkaffoldSupportedCondition)
+      SkaffoldSupportedConditionOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use SkaffoldSupportedCondition.newBuilder() to construct.
+    private SkaffoldSupportedCondition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SkaffoldSupportedCondition() {
+      skaffoldSupportState_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SkaffoldSupportedCondition();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.deploy.v1.CloudDeployProto
+          .internal_static_google_cloud_deploy_v1_Release_SkaffoldSupportedCondition_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.deploy.v1.CloudDeployProto
+          .internal_static_google_cloud_deploy_v1_Release_SkaffoldSupportedCondition_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition.class,
+              com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition.Builder.class);
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 1;
+    private boolean status_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * True if the version of skaffold used by this release is supported.
+     * </pre>
+     *
+     * <code>bool status = 1;</code>
+     *
+     * @return The status.
+     */
+    @java.lang.Override
+    public boolean getStatus() {
+      return status_;
+    }
+
+    public static final int SKAFFOLD_SUPPORT_STATE_FIELD_NUMBER = 2;
+    private int skaffoldSupportState_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The skaffold support state for this release's version of skaffold.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.SkaffoldSupportState skaffold_support_state = 2;</code>
+     *
+     * @return The enum numeric value on the wire for skaffoldSupportState.
+     */
+    @java.lang.Override
+    public int getSkaffoldSupportStateValue() {
+      return skaffoldSupportState_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The skaffold support state for this release's version of skaffold.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.SkaffoldSupportState skaffold_support_state = 2;</code>
+     *
+     * @return The skaffoldSupportState.
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.SkaffoldSupportState getSkaffoldSupportState() {
+      com.google.cloud.deploy.v1.SkaffoldSupportState result =
+          com.google.cloud.deploy.v1.SkaffoldSupportState.forNumber(skaffoldSupportState_);
+      return result == null ? com.google.cloud.deploy.v1.SkaffoldSupportState.UNRECOGNIZED : result;
+    }
+
+    public static final int MAINTENANCE_MODE_TIME_FIELD_NUMBER = 3;
+    private com.google.protobuf.Timestamp maintenanceModeTime_;
+    /**
+     *
+     *
+     * <pre>
+     * The time at which this release's version of skaffold will enter
+     * maintenance mode.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp maintenance_mode_time = 3;</code>
+     *
+     * @return Whether the maintenanceModeTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaintenanceModeTime() {
+      return maintenanceModeTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which this release's version of skaffold will enter
+     * maintenance mode.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp maintenance_mode_time = 3;</code>
+     *
+     * @return The maintenanceModeTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getMaintenanceModeTime() {
+      return maintenanceModeTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : maintenanceModeTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which this release's version of skaffold will enter
+     * maintenance mode.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp maintenance_mode_time = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getMaintenanceModeTimeOrBuilder() {
+      return maintenanceModeTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : maintenanceModeTime_;
+    }
+
+    public static final int SUPPORT_EXPIRATION_TIME_FIELD_NUMBER = 4;
+    private com.google.protobuf.Timestamp supportExpirationTime_;
+    /**
+     *
+     *
+     * <pre>
+     * The time at which this release's version of skaffold will no longer be
+     * supported.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp support_expiration_time = 4;</code>
+     *
+     * @return Whether the supportExpirationTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasSupportExpirationTime() {
+      return supportExpirationTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which this release's version of skaffold will no longer be
+     * supported.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp support_expiration_time = 4;</code>
+     *
+     * @return The supportExpirationTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getSupportExpirationTime() {
+      return supportExpirationTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : supportExpirationTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time at which this release's version of skaffold will no longer be
+     * supported.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp support_expiration_time = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getSupportExpirationTimeOrBuilder() {
+      return supportExpirationTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : supportExpirationTime_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (status_ != false) {
+        output.writeBool(1, status_);
+      }
+      if (skaffoldSupportState_
+          != com.google.cloud.deploy.v1.SkaffoldSupportState.SKAFFOLD_SUPPORT_STATE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(2, skaffoldSupportState_);
+      }
+      if (maintenanceModeTime_ != null) {
+        output.writeMessage(3, getMaintenanceModeTime());
+      }
+      if (supportExpirationTime_ != null) {
+        output.writeMessage(4, getSupportExpirationTime());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (status_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, status_);
+      }
+      if (skaffoldSupportState_
+          != com.google.cloud.deploy.v1.SkaffoldSupportState.SKAFFOLD_SUPPORT_STATE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, skaffoldSupportState_);
+      }
+      if (maintenanceModeTime_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(3, getMaintenanceModeTime());
+      }
+      if (supportExpirationTime_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(4, getSupportExpirationTime());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition other =
+          (com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition) obj;
+
+      if (getStatus() != other.getStatus()) return false;
+      if (skaffoldSupportState_ != other.skaffoldSupportState_) return false;
+      if (hasMaintenanceModeTime() != other.hasMaintenanceModeTime()) return false;
+      if (hasMaintenanceModeTime()) {
+        if (!getMaintenanceModeTime().equals(other.getMaintenanceModeTime())) return false;
+      }
+      if (hasSupportExpirationTime() != other.hasSupportExpirationTime()) return false;
+      if (hasSupportExpirationTime()) {
+        if (!getSupportExpirationTime().equals(other.getSupportExpirationTime())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getStatus());
+      hash = (37 * hash) + SKAFFOLD_SUPPORT_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + skaffoldSupportState_;
+      if (hasMaintenanceModeTime()) {
+        hash = (37 * hash) + MAINTENANCE_MODE_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getMaintenanceModeTime().hashCode();
+      }
+      if (hasSupportExpirationTime()) {
+        hash = (37 * hash) + SUPPORT_EXPIRATION_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getSupportExpirationTime().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * SkaffoldSupportedCondition contains information about when support for the
+     * release's version of skaffold ends.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.deploy.v1.Release.SkaffoldSupportedCondition}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.deploy.v1.Release.SkaffoldSupportedCondition)
+        com.google.cloud.deploy.v1.Release.SkaffoldSupportedConditionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.deploy.v1.CloudDeployProto
+            .internal_static_google_cloud_deploy_v1_Release_SkaffoldSupportedCondition_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.deploy.v1.CloudDeployProto
+            .internal_static_google_cloud_deploy_v1_Release_SkaffoldSupportedCondition_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition.class,
+                com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition.Builder.class);
+      }
+
+      // Construct using com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        status_ = false;
+        skaffoldSupportState_ = 0;
+        maintenanceModeTime_ = null;
+        if (maintenanceModeTimeBuilder_ != null) {
+          maintenanceModeTimeBuilder_.dispose();
+          maintenanceModeTimeBuilder_ = null;
+        }
+        supportExpirationTime_ = null;
+        if (supportExpirationTimeBuilder_ != null) {
+          supportExpirationTimeBuilder_.dispose();
+          supportExpirationTimeBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.deploy.v1.CloudDeployProto
+            .internal_static_google_cloud_deploy_v1_Release_SkaffoldSupportedCondition_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition
+          getDefaultInstanceForType() {
+        return com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition build() {
+        com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition buildPartial() {
+        com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition result =
+            new com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.status_ = status_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.skaffoldSupportState_ = skaffoldSupportState_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.maintenanceModeTime_ =
+              maintenanceModeTimeBuilder_ == null
+                  ? maintenanceModeTime_
+                  : maintenanceModeTimeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.supportExpirationTime_ =
+              supportExpirationTimeBuilder_ == null
+                  ? supportExpirationTime_
+                  : supportExpirationTimeBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition) {
+          return mergeFrom((com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition other) {
+        if (other
+            == com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition.getDefaultInstance())
+          return this;
+        if (other.getStatus() != false) {
+          setStatus(other.getStatus());
+        }
+        if (other.skaffoldSupportState_ != 0) {
+          setSkaffoldSupportStateValue(other.getSkaffoldSupportStateValue());
+        }
+        if (other.hasMaintenanceModeTime()) {
+          mergeMaintenanceModeTime(other.getMaintenanceModeTime());
+        }
+        if (other.hasSupportExpirationTime()) {
+          mergeSupportExpirationTime(other.getSupportExpirationTime());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  status_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  skaffoldSupportState_ = input.readEnum();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 26:
+                {
+                  input.readMessage(
+                      getMaintenanceModeTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  input.readMessage(
+                      getSupportExpirationTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean status_;
+      /**
+       *
+       *
+       * <pre>
+       * True if the version of skaffold used by this release is supported.
+       * </pre>
+       *
+       * <code>bool status = 1;</code>
+       *
+       * @return The status.
+       */
+      @java.lang.Override
+      public boolean getStatus() {
+        return status_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * True if the version of skaffold used by this release is supported.
+       * </pre>
+       *
+       * <code>bool status = 1;</code>
+       *
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(boolean value) {
+
+        status_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * True if the version of skaffold used by this release is supported.
+       * </pre>
+       *
+       * <code>bool status = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        status_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int skaffoldSupportState_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The skaffold support state for this release's version of skaffold.
+       * </pre>
+       *
+       * <code>.google.cloud.deploy.v1.SkaffoldSupportState skaffold_support_state = 2;</code>
+       *
+       * @return The enum numeric value on the wire for skaffoldSupportState.
+       */
+      @java.lang.Override
+      public int getSkaffoldSupportStateValue() {
+        return skaffoldSupportState_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The skaffold support state for this release's version of skaffold.
+       * </pre>
+       *
+       * <code>.google.cloud.deploy.v1.SkaffoldSupportState skaffold_support_state = 2;</code>
+       *
+       * @param value The enum numeric value on the wire for skaffoldSupportState to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSkaffoldSupportStateValue(int value) {
+        skaffoldSupportState_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The skaffold support state for this release's version of skaffold.
+       * </pre>
+       *
+       * <code>.google.cloud.deploy.v1.SkaffoldSupportState skaffold_support_state = 2;</code>
+       *
+       * @return The skaffoldSupportState.
+       */
+      @java.lang.Override
+      public com.google.cloud.deploy.v1.SkaffoldSupportState getSkaffoldSupportState() {
+        com.google.cloud.deploy.v1.SkaffoldSupportState result =
+            com.google.cloud.deploy.v1.SkaffoldSupportState.forNumber(skaffoldSupportState_);
+        return result == null
+            ? com.google.cloud.deploy.v1.SkaffoldSupportState.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The skaffold support state for this release's version of skaffold.
+       * </pre>
+       *
+       * <code>.google.cloud.deploy.v1.SkaffoldSupportState skaffold_support_state = 2;</code>
+       *
+       * @param value The skaffoldSupportState to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSkaffoldSupportState(
+          com.google.cloud.deploy.v1.SkaffoldSupportState value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        skaffoldSupportState_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The skaffold support state for this release's version of skaffold.
+       * </pre>
+       *
+       * <code>.google.cloud.deploy.v1.SkaffoldSupportState skaffold_support_state = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSkaffoldSupportState() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        skaffoldSupportState_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp maintenanceModeTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          maintenanceModeTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The time at which this release's version of skaffold will enter
+       * maintenance mode.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp maintenance_mode_time = 3;</code>
+       *
+       * @return Whether the maintenanceModeTime field is set.
+       */
+      public boolean hasMaintenanceModeTime() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time at which this release's version of skaffold will enter
+       * maintenance mode.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp maintenance_mode_time = 3;</code>
+       *
+       * @return The maintenanceModeTime.
+       */
+      public com.google.protobuf.Timestamp getMaintenanceModeTime() {
+        if (maintenanceModeTimeBuilder_ == null) {
+          return maintenanceModeTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : maintenanceModeTime_;
+        } else {
+          return maintenanceModeTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time at which this release's version of skaffold will enter
+       * maintenance mode.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp maintenance_mode_time = 3;</code>
+       */
+      public Builder setMaintenanceModeTime(com.google.protobuf.Timestamp value) {
+        if (maintenanceModeTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          maintenanceModeTime_ = value;
+        } else {
+          maintenanceModeTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time at which this release's version of skaffold will enter
+       * maintenance mode.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp maintenance_mode_time = 3;</code>
+       */
+      public Builder setMaintenanceModeTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (maintenanceModeTimeBuilder_ == null) {
+          maintenanceModeTime_ = builderForValue.build();
+        } else {
+          maintenanceModeTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time at which this release's version of skaffold will enter
+       * maintenance mode.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp maintenance_mode_time = 3;</code>
+       */
+      public Builder mergeMaintenanceModeTime(com.google.protobuf.Timestamp value) {
+        if (maintenanceModeTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && maintenanceModeTime_ != null
+              && maintenanceModeTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getMaintenanceModeTimeBuilder().mergeFrom(value);
+          } else {
+            maintenanceModeTime_ = value;
+          }
+        } else {
+          maintenanceModeTimeBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time at which this release's version of skaffold will enter
+       * maintenance mode.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp maintenance_mode_time = 3;</code>
+       */
+      public Builder clearMaintenanceModeTime() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        maintenanceModeTime_ = null;
+        if (maintenanceModeTimeBuilder_ != null) {
+          maintenanceModeTimeBuilder_.dispose();
+          maintenanceModeTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time at which this release's version of skaffold will enter
+       * maintenance mode.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp maintenance_mode_time = 3;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getMaintenanceModeTimeBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getMaintenanceModeTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time at which this release's version of skaffold will enter
+       * maintenance mode.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp maintenance_mode_time = 3;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getMaintenanceModeTimeOrBuilder() {
+        if (maintenanceModeTimeBuilder_ != null) {
+          return maintenanceModeTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return maintenanceModeTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : maintenanceModeTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time at which this release's version of skaffold will enter
+       * maintenance mode.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp maintenance_mode_time = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getMaintenanceModeTimeFieldBuilder() {
+        if (maintenanceModeTimeBuilder_ == null) {
+          maintenanceModeTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getMaintenanceModeTime(), getParentForChildren(), isClean());
+          maintenanceModeTime_ = null;
+        }
+        return maintenanceModeTimeBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp supportExpirationTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          supportExpirationTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The time at which this release's version of skaffold will no longer be
+       * supported.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp support_expiration_time = 4;</code>
+       *
+       * @return Whether the supportExpirationTime field is set.
+       */
+      public boolean hasSupportExpirationTime() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time at which this release's version of skaffold will no longer be
+       * supported.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp support_expiration_time = 4;</code>
+       *
+       * @return The supportExpirationTime.
+       */
+      public com.google.protobuf.Timestamp getSupportExpirationTime() {
+        if (supportExpirationTimeBuilder_ == null) {
+          return supportExpirationTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : supportExpirationTime_;
+        } else {
+          return supportExpirationTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time at which this release's version of skaffold will no longer be
+       * supported.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp support_expiration_time = 4;</code>
+       */
+      public Builder setSupportExpirationTime(com.google.protobuf.Timestamp value) {
+        if (supportExpirationTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          supportExpirationTime_ = value;
+        } else {
+          supportExpirationTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time at which this release's version of skaffold will no longer be
+       * supported.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp support_expiration_time = 4;</code>
+       */
+      public Builder setSupportExpirationTime(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (supportExpirationTimeBuilder_ == null) {
+          supportExpirationTime_ = builderForValue.build();
+        } else {
+          supportExpirationTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time at which this release's version of skaffold will no longer be
+       * supported.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp support_expiration_time = 4;</code>
+       */
+      public Builder mergeSupportExpirationTime(com.google.protobuf.Timestamp value) {
+        if (supportExpirationTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)
+              && supportExpirationTime_ != null
+              && supportExpirationTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getSupportExpirationTimeBuilder().mergeFrom(value);
+          } else {
+            supportExpirationTime_ = value;
+          }
+        } else {
+          supportExpirationTimeBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time at which this release's version of skaffold will no longer be
+       * supported.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp support_expiration_time = 4;</code>
+       */
+      public Builder clearSupportExpirationTime() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        supportExpirationTime_ = null;
+        if (supportExpirationTimeBuilder_ != null) {
+          supportExpirationTimeBuilder_.dispose();
+          supportExpirationTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time at which this release's version of skaffold will no longer be
+       * supported.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp support_expiration_time = 4;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getSupportExpirationTimeBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getSupportExpirationTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time at which this release's version of skaffold will no longer be
+       * supported.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp support_expiration_time = 4;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getSupportExpirationTimeOrBuilder() {
+        if (supportExpirationTimeBuilder_ != null) {
+          return supportExpirationTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return supportExpirationTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : supportExpirationTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The time at which this release's version of skaffold will no longer be
+       * supported.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp support_expiration_time = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getSupportExpirationTimeFieldBuilder() {
+        if (supportExpirationTimeBuilder_ == null) {
+          supportExpirationTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getSupportExpirationTime(), getParentForChildren(), isClean());
+          supportExpirationTime_ = null;
+        }
+        return supportExpirationTimeBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.deploy.v1.Release.SkaffoldSupportedCondition)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.deploy.v1.Release.SkaffoldSupportedCondition)
+    private static final com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition();
+    }
+
+    public static com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SkaffoldSupportedCondition> PARSER =
+        new com.google.protobuf.AbstractParser<SkaffoldSupportedCondition>() {
+          @java.lang.Override
+          public SkaffoldSupportedCondition parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SkaffoldSupportedCondition> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SkaffoldSupportedCondition> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ReleaseConditionOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.deploy.v1.Release.ReleaseCondition)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Details around the Releases's overall status.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.Release.ReleaseReadyCondition release_ready_condition = 1;
+     * </code>
+     *
+     * @return Whether the releaseReadyCondition field is set.
+     */
+    boolean hasReleaseReadyCondition();
+    /**
+     *
+     *
+     * <pre>
+     * Details around the Releases's overall status.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.Release.ReleaseReadyCondition release_ready_condition = 1;
+     * </code>
+     *
+     * @return The releaseReadyCondition.
+     */
+    com.google.cloud.deploy.v1.Release.ReleaseReadyCondition getReleaseReadyCondition();
+    /**
+     *
+     *
+     * <pre>
+     * Details around the Releases's overall status.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.Release.ReleaseReadyCondition release_ready_condition = 1;
+     * </code>
+     */
+    com.google.cloud.deploy.v1.Release.ReleaseReadyConditionOrBuilder
+        getReleaseReadyConditionOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Details around the support state of the release's skaffold
+     * version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Release.SkaffoldSupportedCondition skaffold_supported_condition = 2;
+     * </code>
+     *
+     * @return Whether the skaffoldSupportedCondition field is set.
+     */
+    boolean hasSkaffoldSupportedCondition();
+    /**
+     *
+     *
+     * <pre>
+     * Details around the support state of the release's skaffold
+     * version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Release.SkaffoldSupportedCondition skaffold_supported_condition = 2;
+     * </code>
+     *
+     * @return The skaffoldSupportedCondition.
+     */
+    com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition getSkaffoldSupportedCondition();
+    /**
+     *
+     *
+     * <pre>
+     * Details around the support state of the release's skaffold
+     * version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Release.SkaffoldSupportedCondition skaffold_supported_condition = 2;
+     * </code>
+     */
+    com.google.cloud.deploy.v1.Release.SkaffoldSupportedConditionOrBuilder
+        getSkaffoldSupportedConditionOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * ReleaseCondition contains all conditions relevant to a Release.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.deploy.v1.Release.ReleaseCondition}
+   */
+  public static final class ReleaseCondition extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.Release.ReleaseCondition)
+      ReleaseConditionOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ReleaseCondition.newBuilder() to construct.
+    private ReleaseCondition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ReleaseCondition() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ReleaseCondition();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.deploy.v1.CloudDeployProto
+          .internal_static_google_cloud_deploy_v1_Release_ReleaseCondition_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.deploy.v1.CloudDeployProto
+          .internal_static_google_cloud_deploy_v1_Release_ReleaseCondition_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.deploy.v1.Release.ReleaseCondition.class,
+              com.google.cloud.deploy.v1.Release.ReleaseCondition.Builder.class);
+    }
+
+    public static final int RELEASE_READY_CONDITION_FIELD_NUMBER = 1;
+    private com.google.cloud.deploy.v1.Release.ReleaseReadyCondition releaseReadyCondition_;
+    /**
+     *
+     *
+     * <pre>
+     * Details around the Releases's overall status.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.Release.ReleaseReadyCondition release_ready_condition = 1;
+     * </code>
+     *
+     * @return Whether the releaseReadyCondition field is set.
+     */
+    @java.lang.Override
+    public boolean hasReleaseReadyCondition() {
+      return releaseReadyCondition_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details around the Releases's overall status.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.Release.ReleaseReadyCondition release_ready_condition = 1;
+     * </code>
+     *
+     * @return The releaseReadyCondition.
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.Release.ReleaseReadyCondition getReleaseReadyCondition() {
+      return releaseReadyCondition_ == null
+          ? com.google.cloud.deploy.v1.Release.ReleaseReadyCondition.getDefaultInstance()
+          : releaseReadyCondition_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details around the Releases's overall status.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.Release.ReleaseReadyCondition release_ready_condition = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.Release.ReleaseReadyConditionOrBuilder
+        getReleaseReadyConditionOrBuilder() {
+      return releaseReadyCondition_ == null
+          ? com.google.cloud.deploy.v1.Release.ReleaseReadyCondition.getDefaultInstance()
+          : releaseReadyCondition_;
+    }
+
+    public static final int SKAFFOLD_SUPPORTED_CONDITION_FIELD_NUMBER = 2;
+    private com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition
+        skaffoldSupportedCondition_;
+    /**
+     *
+     *
+     * <pre>
+     * Details around the support state of the release's skaffold
+     * version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Release.SkaffoldSupportedCondition skaffold_supported_condition = 2;
+     * </code>
+     *
+     * @return Whether the skaffoldSupportedCondition field is set.
+     */
+    @java.lang.Override
+    public boolean hasSkaffoldSupportedCondition() {
+      return skaffoldSupportedCondition_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details around the support state of the release's skaffold
+     * version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Release.SkaffoldSupportedCondition skaffold_supported_condition = 2;
+     * </code>
+     *
+     * @return The skaffoldSupportedCondition.
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition
+        getSkaffoldSupportedCondition() {
+      return skaffoldSupportedCondition_ == null
+          ? com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition.getDefaultInstance()
+          : skaffoldSupportedCondition_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details around the support state of the release's skaffold
+     * version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Release.SkaffoldSupportedCondition skaffold_supported_condition = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.Release.SkaffoldSupportedConditionOrBuilder
+        getSkaffoldSupportedConditionOrBuilder() {
+      return skaffoldSupportedCondition_ == null
+          ? com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition.getDefaultInstance()
+          : skaffoldSupportedCondition_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (releaseReadyCondition_ != null) {
+        output.writeMessage(1, getReleaseReadyCondition());
+      }
+      if (skaffoldSupportedCondition_ != null) {
+        output.writeMessage(2, getSkaffoldSupportedCondition());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (releaseReadyCondition_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(1, getReleaseReadyCondition());
+      }
+      if (skaffoldSupportedCondition_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                2, getSkaffoldSupportedCondition());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.deploy.v1.Release.ReleaseCondition)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.deploy.v1.Release.ReleaseCondition other =
+          (com.google.cloud.deploy.v1.Release.ReleaseCondition) obj;
+
+      if (hasReleaseReadyCondition() != other.hasReleaseReadyCondition()) return false;
+      if (hasReleaseReadyCondition()) {
+        if (!getReleaseReadyCondition().equals(other.getReleaseReadyCondition())) return false;
+      }
+      if (hasSkaffoldSupportedCondition() != other.hasSkaffoldSupportedCondition()) return false;
+      if (hasSkaffoldSupportedCondition()) {
+        if (!getSkaffoldSupportedCondition().equals(other.getSkaffoldSupportedCondition()))
+          return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasReleaseReadyCondition()) {
+        hash = (37 * hash) + RELEASE_READY_CONDITION_FIELD_NUMBER;
+        hash = (53 * hash) + getReleaseReadyCondition().hashCode();
+      }
+      if (hasSkaffoldSupportedCondition()) {
+        hash = (37 * hash) + SKAFFOLD_SUPPORTED_CONDITION_FIELD_NUMBER;
+        hash = (53 * hash) + getSkaffoldSupportedCondition().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.deploy.v1.Release.ReleaseCondition parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.ReleaseCondition parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.ReleaseCondition parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.ReleaseCondition parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.ReleaseCondition parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.ReleaseCondition parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.ReleaseCondition parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.ReleaseCondition parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.ReleaseCondition parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.ReleaseCondition parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.ReleaseCondition parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.deploy.v1.Release.ReleaseCondition parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.deploy.v1.Release.ReleaseCondition prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * ReleaseCondition contains all conditions relevant to a Release.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.deploy.v1.Release.ReleaseCondition}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.deploy.v1.Release.ReleaseCondition)
+        com.google.cloud.deploy.v1.Release.ReleaseConditionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.deploy.v1.CloudDeployProto
+            .internal_static_google_cloud_deploy_v1_Release_ReleaseCondition_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.deploy.v1.CloudDeployProto
+            .internal_static_google_cloud_deploy_v1_Release_ReleaseCondition_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.deploy.v1.Release.ReleaseCondition.class,
+                com.google.cloud.deploy.v1.Release.ReleaseCondition.Builder.class);
+      }
+
+      // Construct using com.google.cloud.deploy.v1.Release.ReleaseCondition.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        releaseReadyCondition_ = null;
+        if (releaseReadyConditionBuilder_ != null) {
+          releaseReadyConditionBuilder_.dispose();
+          releaseReadyConditionBuilder_ = null;
+        }
+        skaffoldSupportedCondition_ = null;
+        if (skaffoldSupportedConditionBuilder_ != null) {
+          skaffoldSupportedConditionBuilder_.dispose();
+          skaffoldSupportedConditionBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.deploy.v1.CloudDeployProto
+            .internal_static_google_cloud_deploy_v1_Release_ReleaseCondition_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.deploy.v1.Release.ReleaseCondition getDefaultInstanceForType() {
+        return com.google.cloud.deploy.v1.Release.ReleaseCondition.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.deploy.v1.Release.ReleaseCondition build() {
+        com.google.cloud.deploy.v1.Release.ReleaseCondition result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.deploy.v1.Release.ReleaseCondition buildPartial() {
+        com.google.cloud.deploy.v1.Release.ReleaseCondition result =
+            new com.google.cloud.deploy.v1.Release.ReleaseCondition(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.deploy.v1.Release.ReleaseCondition result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.releaseReadyCondition_ =
+              releaseReadyConditionBuilder_ == null
+                  ? releaseReadyCondition_
+                  : releaseReadyConditionBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.skaffoldSupportedCondition_ =
+              skaffoldSupportedConditionBuilder_ == null
+                  ? skaffoldSupportedCondition_
+                  : skaffoldSupportedConditionBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.deploy.v1.Release.ReleaseCondition) {
+          return mergeFrom((com.google.cloud.deploy.v1.Release.ReleaseCondition) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.deploy.v1.Release.ReleaseCondition other) {
+        if (other == com.google.cloud.deploy.v1.Release.ReleaseCondition.getDefaultInstance())
+          return this;
+        if (other.hasReleaseReadyCondition()) {
+          mergeReleaseReadyCondition(other.getReleaseReadyCondition());
+        }
+        if (other.hasSkaffoldSupportedCondition()) {
+          mergeSkaffoldSupportedCondition(other.getSkaffoldSupportedCondition());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getReleaseReadyConditionFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getSkaffoldSupportedConditionFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.cloud.deploy.v1.Release.ReleaseReadyCondition releaseReadyCondition_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.deploy.v1.Release.ReleaseReadyCondition,
+              com.google.cloud.deploy.v1.Release.ReleaseReadyCondition.Builder,
+              com.google.cloud.deploy.v1.Release.ReleaseReadyConditionOrBuilder>
+          releaseReadyConditionBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Details around the Releases's overall status.
+       * </pre>
+       *
+       * <code>.google.cloud.deploy.v1.Release.ReleaseReadyCondition release_ready_condition = 1;
+       * </code>
+       *
+       * @return Whether the releaseReadyCondition field is set.
+       */
+      public boolean hasReleaseReadyCondition() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Details around the Releases's overall status.
+       * </pre>
+       *
+       * <code>.google.cloud.deploy.v1.Release.ReleaseReadyCondition release_ready_condition = 1;
+       * </code>
+       *
+       * @return The releaseReadyCondition.
+       */
+      public com.google.cloud.deploy.v1.Release.ReleaseReadyCondition getReleaseReadyCondition() {
+        if (releaseReadyConditionBuilder_ == null) {
+          return releaseReadyCondition_ == null
+              ? com.google.cloud.deploy.v1.Release.ReleaseReadyCondition.getDefaultInstance()
+              : releaseReadyCondition_;
+        } else {
+          return releaseReadyConditionBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Details around the Releases's overall status.
+       * </pre>
+       *
+       * <code>.google.cloud.deploy.v1.Release.ReleaseReadyCondition release_ready_condition = 1;
+       * </code>
+       */
+      public Builder setReleaseReadyCondition(
+          com.google.cloud.deploy.v1.Release.ReleaseReadyCondition value) {
+        if (releaseReadyConditionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          releaseReadyCondition_ = value;
+        } else {
+          releaseReadyConditionBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Details around the Releases's overall status.
+       * </pre>
+       *
+       * <code>.google.cloud.deploy.v1.Release.ReleaseReadyCondition release_ready_condition = 1;
+       * </code>
+       */
+      public Builder setReleaseReadyCondition(
+          com.google.cloud.deploy.v1.Release.ReleaseReadyCondition.Builder builderForValue) {
+        if (releaseReadyConditionBuilder_ == null) {
+          releaseReadyCondition_ = builderForValue.build();
+        } else {
+          releaseReadyConditionBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Details around the Releases's overall status.
+       * </pre>
+       *
+       * <code>.google.cloud.deploy.v1.Release.ReleaseReadyCondition release_ready_condition = 1;
+       * </code>
+       */
+      public Builder mergeReleaseReadyCondition(
+          com.google.cloud.deploy.v1.Release.ReleaseReadyCondition value) {
+        if (releaseReadyConditionBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && releaseReadyCondition_ != null
+              && releaseReadyCondition_
+                  != com.google.cloud.deploy.v1.Release.ReleaseReadyCondition
+                      .getDefaultInstance()) {
+            getReleaseReadyConditionBuilder().mergeFrom(value);
+          } else {
+            releaseReadyCondition_ = value;
+          }
+        } else {
+          releaseReadyConditionBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Details around the Releases's overall status.
+       * </pre>
+       *
+       * <code>.google.cloud.deploy.v1.Release.ReleaseReadyCondition release_ready_condition = 1;
+       * </code>
+       */
+      public Builder clearReleaseReadyCondition() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        releaseReadyCondition_ = null;
+        if (releaseReadyConditionBuilder_ != null) {
+          releaseReadyConditionBuilder_.dispose();
+          releaseReadyConditionBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Details around the Releases's overall status.
+       * </pre>
+       *
+       * <code>.google.cloud.deploy.v1.Release.ReleaseReadyCondition release_ready_condition = 1;
+       * </code>
+       */
+      public com.google.cloud.deploy.v1.Release.ReleaseReadyCondition.Builder
+          getReleaseReadyConditionBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getReleaseReadyConditionFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Details around the Releases's overall status.
+       * </pre>
+       *
+       * <code>.google.cloud.deploy.v1.Release.ReleaseReadyCondition release_ready_condition = 1;
+       * </code>
+       */
+      public com.google.cloud.deploy.v1.Release.ReleaseReadyConditionOrBuilder
+          getReleaseReadyConditionOrBuilder() {
+        if (releaseReadyConditionBuilder_ != null) {
+          return releaseReadyConditionBuilder_.getMessageOrBuilder();
+        } else {
+          return releaseReadyCondition_ == null
+              ? com.google.cloud.deploy.v1.Release.ReleaseReadyCondition.getDefaultInstance()
+              : releaseReadyCondition_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Details around the Releases's overall status.
+       * </pre>
+       *
+       * <code>.google.cloud.deploy.v1.Release.ReleaseReadyCondition release_ready_condition = 1;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.deploy.v1.Release.ReleaseReadyCondition,
+              com.google.cloud.deploy.v1.Release.ReleaseReadyCondition.Builder,
+              com.google.cloud.deploy.v1.Release.ReleaseReadyConditionOrBuilder>
+          getReleaseReadyConditionFieldBuilder() {
+        if (releaseReadyConditionBuilder_ == null) {
+          releaseReadyConditionBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.deploy.v1.Release.ReleaseReadyCondition,
+                  com.google.cloud.deploy.v1.Release.ReleaseReadyCondition.Builder,
+                  com.google.cloud.deploy.v1.Release.ReleaseReadyConditionOrBuilder>(
+                  getReleaseReadyCondition(), getParentForChildren(), isClean());
+          releaseReadyCondition_ = null;
+        }
+        return releaseReadyConditionBuilder_;
+      }
+
+      private com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition
+          skaffoldSupportedCondition_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition,
+              com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition.Builder,
+              com.google.cloud.deploy.v1.Release.SkaffoldSupportedConditionOrBuilder>
+          skaffoldSupportedConditionBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Details around the support state of the release's skaffold
+       * version.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.Release.SkaffoldSupportedCondition skaffold_supported_condition = 2;
+       * </code>
+       *
+       * @return Whether the skaffoldSupportedCondition field is set.
+       */
+      public boolean hasSkaffoldSupportedCondition() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Details around the support state of the release's skaffold
+       * version.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.Release.SkaffoldSupportedCondition skaffold_supported_condition = 2;
+       * </code>
+       *
+       * @return The skaffoldSupportedCondition.
+       */
+      public com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition
+          getSkaffoldSupportedCondition() {
+        if (skaffoldSupportedConditionBuilder_ == null) {
+          return skaffoldSupportedCondition_ == null
+              ? com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition.getDefaultInstance()
+              : skaffoldSupportedCondition_;
+        } else {
+          return skaffoldSupportedConditionBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Details around the support state of the release's skaffold
+       * version.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.Release.SkaffoldSupportedCondition skaffold_supported_condition = 2;
+       * </code>
+       */
+      public Builder setSkaffoldSupportedCondition(
+          com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition value) {
+        if (skaffoldSupportedConditionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          skaffoldSupportedCondition_ = value;
+        } else {
+          skaffoldSupportedConditionBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Details around the support state of the release's skaffold
+       * version.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.Release.SkaffoldSupportedCondition skaffold_supported_condition = 2;
+       * </code>
+       */
+      public Builder setSkaffoldSupportedCondition(
+          com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition.Builder builderForValue) {
+        if (skaffoldSupportedConditionBuilder_ == null) {
+          skaffoldSupportedCondition_ = builderForValue.build();
+        } else {
+          skaffoldSupportedConditionBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Details around the support state of the release's skaffold
+       * version.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.Release.SkaffoldSupportedCondition skaffold_supported_condition = 2;
+       * </code>
+       */
+      public Builder mergeSkaffoldSupportedCondition(
+          com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition value) {
+        if (skaffoldSupportedConditionBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && skaffoldSupportedCondition_ != null
+              && skaffoldSupportedCondition_
+                  != com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition
+                      .getDefaultInstance()) {
+            getSkaffoldSupportedConditionBuilder().mergeFrom(value);
+          } else {
+            skaffoldSupportedCondition_ = value;
+          }
+        } else {
+          skaffoldSupportedConditionBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Details around the support state of the release's skaffold
+       * version.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.Release.SkaffoldSupportedCondition skaffold_supported_condition = 2;
+       * </code>
+       */
+      public Builder clearSkaffoldSupportedCondition() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        skaffoldSupportedCondition_ = null;
+        if (skaffoldSupportedConditionBuilder_ != null) {
+          skaffoldSupportedConditionBuilder_.dispose();
+          skaffoldSupportedConditionBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Details around the support state of the release's skaffold
+       * version.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.Release.SkaffoldSupportedCondition skaffold_supported_condition = 2;
+       * </code>
+       */
+      public com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition.Builder
+          getSkaffoldSupportedConditionBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getSkaffoldSupportedConditionFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Details around the support state of the release's skaffold
+       * version.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.Release.SkaffoldSupportedCondition skaffold_supported_condition = 2;
+       * </code>
+       */
+      public com.google.cloud.deploy.v1.Release.SkaffoldSupportedConditionOrBuilder
+          getSkaffoldSupportedConditionOrBuilder() {
+        if (skaffoldSupportedConditionBuilder_ != null) {
+          return skaffoldSupportedConditionBuilder_.getMessageOrBuilder();
+        } else {
+          return skaffoldSupportedCondition_ == null
+              ? com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition.getDefaultInstance()
+              : skaffoldSupportedCondition_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Details around the support state of the release's skaffold
+       * version.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.deploy.v1.Release.SkaffoldSupportedCondition skaffold_supported_condition = 2;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition,
+              com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition.Builder,
+              com.google.cloud.deploy.v1.Release.SkaffoldSupportedConditionOrBuilder>
+          getSkaffoldSupportedConditionFieldBuilder() {
+        if (skaffoldSupportedConditionBuilder_ == null) {
+          skaffoldSupportedConditionBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition,
+                  com.google.cloud.deploy.v1.Release.SkaffoldSupportedCondition.Builder,
+                  com.google.cloud.deploy.v1.Release.SkaffoldSupportedConditionOrBuilder>(
+                  getSkaffoldSupportedCondition(), getParentForChildren(), isClean());
+          skaffoldSupportedCondition_ = null;
+        }
+        return skaffoldSupportedConditionBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.deploy.v1.Release.ReleaseCondition)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.deploy.v1.Release.ReleaseCondition)
+    private static final com.google.cloud.deploy.v1.Release.ReleaseCondition DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.deploy.v1.Release.ReleaseCondition();
+    }
+
+    public static com.google.cloud.deploy.v1.Release.ReleaseCondition getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ReleaseCondition> PARSER =
+        new com.google.protobuf.AbstractParser<ReleaseCondition>() {
+          @java.lang.Override
+          public ReleaseCondition parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ReleaseCondition> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ReleaseCondition> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.Release.ReleaseCondition getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
   }
@@ -2693,7 +6126,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Snapshot of the parent pipeline taken at release creation time.
+   * Output only. Snapshot of the parent pipeline taken at release creation
+   * time.
    * </pre>
    *
    * <code>
@@ -2710,7 +6144,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Snapshot of the parent pipeline taken at release creation time.
+   * Output only. Snapshot of the parent pipeline taken at release creation
+   * time.
    * </pre>
    *
    * <code>
@@ -2729,7 +6164,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Snapshot of the parent pipeline taken at release creation time.
+   * Output only. Snapshot of the parent pipeline taken at release creation
+   * time.
    * </pre>
    *
    * <code>
@@ -3139,7 +6575,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Map from target ID to details of the render operation for that target.
+   * Output only. Map from target ID to details of the render operation for that
+   * target.
    * </pre>
    *
    * <code>
@@ -3164,7 +6601,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Map from target ID to details of the render operation for that target.
+   * Output only. Map from target ID to details of the render operation for that
+   * target.
    * </pre>
    *
    * <code>
@@ -3180,7 +6618,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Map from target ID to details of the render operation for that target.
+   * Output only. Map from target ID to details of the render operation for that
+   * target.
    * </pre>
    *
    * <code>
@@ -3203,7 +6642,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Map from target ID to details of the render operation for that target.
+   * Output only. Map from target ID to details of the render operation for that
+   * target.
    * </pre>
    *
    * <code>
@@ -3222,6 +6662,62 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       throw new java.lang.IllegalArgumentException();
     }
     return map.get(key);
+  }
+
+  public static final int CONDITION_FIELD_NUMBER = 24;
+  private com.google.cloud.deploy.v1.Release.ReleaseCondition condition_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information around the state of the Release.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Release.ReleaseCondition condition = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the condition field is set.
+   */
+  @java.lang.Override
+  public boolean hasCondition() {
+    return condition_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information around the state of the Release.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Release.ReleaseCondition condition = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The condition.
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.Release.ReleaseCondition getCondition() {
+    return condition_ == null
+        ? com.google.cloud.deploy.v1.Release.ReleaseCondition.getDefaultInstance()
+        : condition_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information around the state of the Release.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Release.ReleaseCondition condition = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.Release.ReleaseConditionOrBuilder getConditionOrBuilder() {
+    return condition_ == null
+        ? com.google.cloud.deploy.v1.Release.ReleaseCondition.getDefaultInstance()
+        : condition_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3291,6 +6787,9 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
         output, internalGetTargetRenders(), TargetRendersDefaultEntryHolder.defaultEntry, 22);
     if (abandoned_ != false) {
       output.writeBool(23, abandoned_);
+    }
+    if (condition_ != null) {
+      output.writeMessage(24, getCondition());
     }
     getUnknownFields().writeTo(output);
   }
@@ -3392,6 +6891,9 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     if (abandoned_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(23, abandoned_);
     }
+    if (condition_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getCondition());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3438,6 +6940,10 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     if (!getSkaffoldVersion().equals(other.getSkaffoldVersion())) return false;
     if (!internalGetTargetArtifacts().equals(other.internalGetTargetArtifacts())) return false;
     if (!internalGetTargetRenders().equals(other.internalGetTargetRenders())) return false;
+    if (hasCondition() != other.hasCondition()) return false;
+    if (hasCondition()) {
+      if (!getCondition().equals(other.getCondition())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3506,6 +7012,10 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetTargetRenders().getMap().isEmpty()) {
       hash = (37 * hash) + TARGET_RENDERS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetTargetRenders().hashCode();
+    }
+    if (hasCondition()) {
+      hash = (37 * hash) + CONDITION_FIELD_NUMBER;
+      hash = (53 * hash) + getCondition().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -3726,6 +7236,11 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       skaffoldVersion_ = "";
       internalGetMutableTargetArtifacts().clear();
       internalGetMutableTargetRenders().clear();
+      condition_ = null;
+      if (conditionBuilder_ != null) {
+        conditionBuilder_.dispose();
+        conditionBuilder_ = null;
+      }
       return this;
     }
 
@@ -3842,6 +7357,9 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00040000) != 0)) {
         result.targetRenders_ = internalGetTargetRenders();
         result.targetRenders_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.condition_ = conditionBuilder_ == null ? condition_ : conditionBuilder_.build();
       }
     }
 
@@ -4005,6 +7523,9 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00020000;
       internalGetMutableTargetRenders().mergeFrom(other.internalGetTargetRenders());
       bitField0_ |= 0x00040000;
+      if (other.hasCondition()) {
+        mergeCondition(other.getCondition());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -4188,6 +7709,12 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 184
+            case 194:
+              {
+                input.readMessage(getConditionFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 194
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6180,7 +9707,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Snapshot of the parent pipeline taken at release creation time.
+     * Output only. Snapshot of the parent pipeline taken at release creation
+     * time.
      * </pre>
      *
      * <code>
@@ -6196,7 +9724,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Snapshot of the parent pipeline taken at release creation time.
+     * Output only. Snapshot of the parent pipeline taken at release creation
+     * time.
      * </pre>
      *
      * <code>
@@ -6218,7 +9747,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Snapshot of the parent pipeline taken at release creation time.
+     * Output only. Snapshot of the parent pipeline taken at release creation
+     * time.
      * </pre>
      *
      * <code>
@@ -6242,7 +9772,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Snapshot of the parent pipeline taken at release creation time.
+     * Output only. Snapshot of the parent pipeline taken at release creation
+     * time.
      * </pre>
      *
      * <code>
@@ -6264,7 +9795,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Snapshot of the parent pipeline taken at release creation time.
+     * Output only. Snapshot of the parent pipeline taken at release creation
+     * time.
      * </pre>
      *
      * <code>
@@ -6293,7 +9825,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Snapshot of the parent pipeline taken at release creation time.
+     * Output only. Snapshot of the parent pipeline taken at release creation
+     * time.
      * </pre>
      *
      * <code>
@@ -6314,7 +9847,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Snapshot of the parent pipeline taken at release creation time.
+     * Output only. Snapshot of the parent pipeline taken at release creation
+     * time.
      * </pre>
      *
      * <code>
@@ -6331,7 +9865,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Snapshot of the parent pipeline taken at release creation time.
+     * Output only. Snapshot of the parent pipeline taken at release creation
+     * time.
      * </pre>
      *
      * <code>
@@ -6352,7 +9887,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Snapshot of the parent pipeline taken at release creation time.
+     * Output only. Snapshot of the parent pipeline taken at release creation
+     * time.
      * </pre>
      *
      * <code>
@@ -7338,7 +10874,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map from target ID to details of the render operation for that target.
+     * Output only. Map from target ID to details of the render operation for that
+     * target.
      * </pre>
      *
      * <code>
@@ -7363,7 +10900,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map from target ID to details of the render operation for that target.
+     * Output only. Map from target ID to details of the render operation for that
+     * target.
      * </pre>
      *
      * <code>
@@ -7379,7 +10917,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map from target ID to details of the render operation for that target.
+     * Output only. Map from target ID to details of the render operation for that
+     * target.
      * </pre>
      *
      * <code>
@@ -7402,7 +10941,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map from target ID to details of the render operation for that target.
+     * Output only. Map from target ID to details of the render operation for that
+     * target.
      * </pre>
      *
      * <code>
@@ -7432,7 +10972,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map from target ID to details of the render operation for that target.
+     * Output only. Map from target ID to details of the render operation for that
+     * target.
      * </pre>
      *
      * <code>
@@ -7457,7 +10998,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map from target ID to details of the render operation for that target.
+     * Output only. Map from target ID to details of the render operation for that
+     * target.
      * </pre>
      *
      * <code>
@@ -7480,7 +11022,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map from target ID to details of the render operation for that target.
+     * Output only. Map from target ID to details of the render operation for that
+     * target.
      * </pre>
      *
      * <code>
@@ -7492,6 +11035,209 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableTargetRenders().getMutableMap().putAll(values);
       bitField0_ |= 0x00040000;
       return this;
+    }
+
+    private com.google.cloud.deploy.v1.Release.ReleaseCondition condition_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.Release.ReleaseCondition,
+            com.google.cloud.deploy.v1.Release.ReleaseCondition.Builder,
+            com.google.cloud.deploy.v1.Release.ReleaseConditionOrBuilder>
+        conditionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information around the state of the Release.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Release.ReleaseCondition condition = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the condition field is set.
+     */
+    public boolean hasCondition() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information around the state of the Release.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Release.ReleaseCondition condition = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The condition.
+     */
+    public com.google.cloud.deploy.v1.Release.ReleaseCondition getCondition() {
+      if (conditionBuilder_ == null) {
+        return condition_ == null
+            ? com.google.cloud.deploy.v1.Release.ReleaseCondition.getDefaultInstance()
+            : condition_;
+      } else {
+        return conditionBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information around the state of the Release.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Release.ReleaseCondition condition = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCondition(com.google.cloud.deploy.v1.Release.ReleaseCondition value) {
+      if (conditionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        condition_ = value;
+      } else {
+        conditionBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information around the state of the Release.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Release.ReleaseCondition condition = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCondition(
+        com.google.cloud.deploy.v1.Release.ReleaseCondition.Builder builderForValue) {
+      if (conditionBuilder_ == null) {
+        condition_ = builderForValue.build();
+      } else {
+        conditionBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information around the state of the Release.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Release.ReleaseCondition condition = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCondition(com.google.cloud.deploy.v1.Release.ReleaseCondition value) {
+      if (conditionBuilder_ == null) {
+        if (((bitField0_ & 0x00080000) != 0)
+            && condition_ != null
+            && condition_
+                != com.google.cloud.deploy.v1.Release.ReleaseCondition.getDefaultInstance()) {
+          getConditionBuilder().mergeFrom(value);
+        } else {
+          condition_ = value;
+        }
+      } else {
+        conditionBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information around the state of the Release.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Release.ReleaseCondition condition = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCondition() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      condition_ = null;
+      if (conditionBuilder_ != null) {
+        conditionBuilder_.dispose();
+        conditionBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information around the state of the Release.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Release.ReleaseCondition condition = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.Release.ReleaseCondition.Builder getConditionBuilder() {
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return getConditionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information around the state of the Release.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Release.ReleaseCondition condition = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.Release.ReleaseConditionOrBuilder getConditionOrBuilder() {
+      if (conditionBuilder_ != null) {
+        return conditionBuilder_.getMessageOrBuilder();
+      } else {
+        return condition_ == null
+            ? com.google.cloud.deploy.v1.Release.ReleaseCondition.getDefaultInstance()
+            : condition_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information around the state of the Release.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.Release.ReleaseCondition condition = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.Release.ReleaseCondition,
+            com.google.cloud.deploy.v1.Release.ReleaseCondition.Builder,
+            com.google.cloud.deploy.v1.Release.ReleaseConditionOrBuilder>
+        getConditionFieldBuilder() {
+      if (conditionBuilder_ == null) {
+        conditionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.deploy.v1.Release.ReleaseCondition,
+                com.google.cloud.deploy.v1.Release.ReleaseCondition.Builder,
+                com.google.cloud.deploy.v1.Release.ReleaseConditionOrBuilder>(
+                getCondition(), getParentForChildren(), isClean());
+        condition_ = null;
+      }
+      return conditionBuilder_;
     }
 
     @java.lang.Override

@@ -517,7 +517,8 @@ public interface ReleaseOrBuilder
    *
    *
    * <pre>
-   * Output only. Snapshot of the parent pipeline taken at release creation time.
+   * Output only. Snapshot of the parent pipeline taken at release creation
+   * time.
    * </pre>
    *
    * <code>
@@ -531,7 +532,8 @@ public interface ReleaseOrBuilder
    *
    *
    * <pre>
-   * Output only. Snapshot of the parent pipeline taken at release creation time.
+   * Output only. Snapshot of the parent pipeline taken at release creation
+   * time.
    * </pre>
    *
    * <code>
@@ -545,7 +547,8 @@ public interface ReleaseOrBuilder
    *
    *
    * <pre>
-   * Output only. Snapshot of the parent pipeline taken at release creation time.
+   * Output only. Snapshot of the parent pipeline taken at release creation
+   * time.
    * </pre>
    *
    * <code>
@@ -783,7 +786,8 @@ public interface ReleaseOrBuilder
    *
    *
    * <pre>
-   * Output only. Map from target ID to details of the render operation for that target.
+   * Output only. Map from target ID to details of the render operation for that
+   * target.
    * </pre>
    *
    * <code>
@@ -795,7 +799,8 @@ public interface ReleaseOrBuilder
    *
    *
    * <pre>
-   * Output only. Map from target ID to details of the render operation for that target.
+   * Output only. Map from target ID to details of the render operation for that
+   * target.
    * </pre>
    *
    * <code>
@@ -811,7 +816,8 @@ public interface ReleaseOrBuilder
    *
    *
    * <pre>
-   * Output only. Map from target ID to details of the render operation for that target.
+   * Output only. Map from target ID to details of the render operation for that
+   * target.
    * </pre>
    *
    * <code>
@@ -824,7 +830,8 @@ public interface ReleaseOrBuilder
    *
    *
    * <pre>
-   * Output only. Map from target ID to details of the render operation for that target.
+   * Output only. Map from target ID to details of the render operation for that
+   * target.
    * </pre>
    *
    * <code>
@@ -840,7 +847,8 @@ public interface ReleaseOrBuilder
    *
    *
    * <pre>
-   * Output only. Map from target ID to details of the render operation for that target.
+   * Output only. Map from target ID to details of the render operation for that
+   * target.
    * </pre>
    *
    * <code>
@@ -848,4 +856,45 @@ public interface ReleaseOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.Release.TargetRender getTargetRendersOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information around the state of the Release.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Release.ReleaseCondition condition = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the condition field is set.
+   */
+  boolean hasCondition();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information around the state of the Release.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Release.ReleaseCondition condition = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The condition.
+   */
+  com.google.cloud.deploy.v1.Release.ReleaseCondition getCondition();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information around the state of the Release.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.Release.ReleaseCondition condition = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.Release.ReleaseConditionOrBuilder getConditionOrBuilder();
 }
