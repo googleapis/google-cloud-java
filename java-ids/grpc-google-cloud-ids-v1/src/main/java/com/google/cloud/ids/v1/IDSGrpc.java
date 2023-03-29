@@ -247,7 +247,7 @@ public final class IDSGrpc {
    * The IDS Service
    * </pre>
    */
-  public abstract static class IDSImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -256,7 +256,7 @@ public final class IDSGrpc {
      * Lists Endpoints in a given project and location.
      * </pre>
      */
-    public void listEndpoints(
+    default void listEndpoints(
         com.google.cloud.ids.v1.ListEndpointsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.ids.v1.ListEndpointsResponse>
             responseObserver) {
@@ -271,7 +271,7 @@ public final class IDSGrpc {
      * Gets details of a single Endpoint.
      * </pre>
      */
-    public void getEndpoint(
+    default void getEndpoint(
         com.google.cloud.ids.v1.GetEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.ids.v1.Endpoint> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -285,7 +285,7 @@ public final class IDSGrpc {
      * Creates a new Endpoint in a given project and location.
      * </pre>
      */
-    public void createEndpoint(
+    default void createEndpoint(
         com.google.cloud.ids.v1.CreateEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -299,47 +299,31 @@ public final class IDSGrpc {
      * Deletes a single Endpoint.
      * </pre>
      */
-    public void deleteEndpoint(
+    default void deleteEndpoint(
         com.google.cloud.ids.v1.DeleteEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteEndpointMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service IDS.
+   *
+   * <pre>
+   * The IDS Service
+   * </pre>
+   */
+  public abstract static class IDSImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListEndpointsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.ids.v1.ListEndpointsRequest,
-                      com.google.cloud.ids.v1.ListEndpointsResponse>(
-                      this, METHODID_LIST_ENDPOINTS)))
-          .addMethod(
-              getGetEndpointMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.ids.v1.GetEndpointRequest, com.google.cloud.ids.v1.Endpoint>(
-                      this, METHODID_GET_ENDPOINT)))
-          .addMethod(
-              getCreateEndpointMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.ids.v1.CreateEndpointRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_ENDPOINT)))
-          .addMethod(
-              getDeleteEndpointMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.ids.v1.DeleteEndpointRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_ENDPOINT)))
-          .build();
+      return IDSGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service IDS.
    *
    * <pre>
    * The IDS Service
@@ -422,7 +406,7 @@ public final class IDSGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service IDS.
    *
    * <pre>
    * The IDS Service
@@ -493,7 +477,7 @@ public final class IDSGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service IDS.
    *
    * <pre>
    * The IDS Service
@@ -573,10 +557,10 @@ public final class IDSGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final IDSImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(IDSImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -620,6 +604,36 @@ public final class IDSGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListEndpointsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.ids.v1.ListEndpointsRequest,
+                    com.google.cloud.ids.v1.ListEndpointsResponse>(
+                    service, METHODID_LIST_ENDPOINTS)))
+        .addMethod(
+            getGetEndpointMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.ids.v1.GetEndpointRequest, com.google.cloud.ids.v1.Endpoint>(
+                    service, METHODID_GET_ENDPOINT)))
+        .addMethod(
+            getCreateEndpointMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.ids.v1.CreateEndpointRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_ENDPOINT)))
+        .addMethod(
+            getDeleteEndpointMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.ids.v1.DeleteEndpointRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_ENDPOINT)))
+        .build();
   }
 
   private abstract static class IDSBaseDescriptorSupplier

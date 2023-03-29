@@ -50,4 +50,5 @@
     <module>proto-google-maps-mapsplatformdatasets-v1alpha</module>
     <module>google-maps-mapsplatformdatasets-bom</module>
   </modules>
-</project>
+
+  </project>

@@ -1471,7 +1471,7 @@ public final class IAMGrpc {
    * received.
    * </pre>
    */
-  public abstract static class IAMImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -1480,7 +1480,7 @@ public final class IAMGrpc {
      * Lists every [ServiceAccount][google.iam.admin.v1.ServiceAccount] that belongs to a specific project.
      * </pre>
      */
-    public void listServiceAccounts(
+    default void listServiceAccounts(
         com.google.iam.admin.v1.ListServiceAccountsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.admin.v1.ListServiceAccountsResponse>
             responseObserver) {
@@ -1495,7 +1495,7 @@ public final class IAMGrpc {
      * Gets a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      * </pre>
      */
-    public void getServiceAccount(
+    default void getServiceAccount(
         com.google.iam.admin.v1.GetServiceAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.admin.v1.ServiceAccount> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1509,7 +1509,7 @@ public final class IAMGrpc {
      * Creates a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      * </pre>
      */
-    public void createServiceAccount(
+    default void createServiceAccount(
         com.google.iam.admin.v1.CreateServiceAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.admin.v1.ServiceAccount> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1526,7 +1526,7 @@ public final class IAMGrpc {
      * You can update only the `display_name` field.
      * </pre>
      */
-    public void updateServiceAccount(
+    default void updateServiceAccount(
         com.google.iam.admin.v1.ServiceAccount request,
         io.grpc.stub.StreamObserver<com.google.iam.admin.v1.ServiceAccount> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1540,7 +1540,7 @@ public final class IAMGrpc {
      * Patches a [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      * </pre>
      */
-    public void patchServiceAccount(
+    default void patchServiceAccount(
         com.google.iam.admin.v1.PatchServiceAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.admin.v1.ServiceAccount> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1565,7 +1565,7 @@ public final class IAMGrpc {
      * service account.
      * </pre>
      */
-    public void deleteServiceAccount(
+    default void deleteServiceAccount(
         com.google.iam.admin.v1.DeleteServiceAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1584,7 +1584,7 @@ public final class IAMGrpc {
      * that has been permanently removed.
      * </pre>
      */
-    public void undeleteServiceAccount(
+    default void undeleteServiceAccount(
         com.google.iam.admin.v1.UndeleteServiceAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.admin.v1.UndeleteServiceAccountResponse>
             responseObserver) {
@@ -1604,7 +1604,7 @@ public final class IAMGrpc {
      * method to enable the service account.
      * </pre>
      */
-    public void enableServiceAccount(
+    default void enableServiceAccount(
         com.google.iam.admin.v1.EnableServiceAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1630,7 +1630,7 @@ public final class IAMGrpc {
      * with [DeleteServiceAccount][google.iam.admin.v1.IAM.DeleteServiceAccount].
      * </pre>
      */
-    public void disableServiceAccount(
+    default void disableServiceAccount(
         com.google.iam.admin.v1.DisableServiceAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1644,7 +1644,7 @@ public final class IAMGrpc {
      * Lists every [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey] for a service account.
      * </pre>
      */
-    public void listServiceAccountKeys(
+    default void listServiceAccountKeys(
         com.google.iam.admin.v1.ListServiceAccountKeysRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.admin.v1.ListServiceAccountKeysResponse>
             responseObserver) {
@@ -1659,7 +1659,7 @@ public final class IAMGrpc {
      * Gets a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
      * </pre>
      */
-    public void getServiceAccountKey(
+    default void getServiceAccountKey(
         com.google.iam.admin.v1.GetServiceAccountKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.admin.v1.ServiceAccountKey> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1673,7 +1673,7 @@ public final class IAMGrpc {
      * Creates a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
      * </pre>
      */
-    public void createServiceAccountKey(
+    default void createServiceAccountKey(
         com.google.iam.admin.v1.CreateServiceAccountKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.admin.v1.ServiceAccountKey> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1690,7 +1690,7 @@ public final class IAMGrpc {
      * pair as a service account key.
      * </pre>
      */
-    public void uploadServiceAccountKey(
+    default void uploadServiceAccountKey(
         com.google.iam.admin.v1.UploadServiceAccountKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.admin.v1.ServiceAccountKey> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1706,7 +1706,7 @@ public final class IAMGrpc {
      * account key.
      * </pre>
      */
-    public void deleteServiceAccountKey(
+    default void deleteServiceAccountKey(
         com.google.iam.admin.v1.DeleteServiceAccountKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1721,7 +1721,7 @@ public final class IAMGrpc {
      * re-enabled with [EnableServiceAccountKey][google.iam.admin.v1.IAM.EnableServiceAccountKey].
      * </pre>
      */
-    public void disableServiceAccountKey(
+    default void disableServiceAccountKey(
         com.google.iam.admin.v1.DisableServiceAccountKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1735,7 +1735,7 @@ public final class IAMGrpc {
      * Enable a [ServiceAccountKey][google.iam.admin.v1.ServiceAccountKey].
      * </pre>
      */
-    public void enableServiceAccountKey(
+    default void enableServiceAccountKey(
         com.google.iam.admin.v1.EnableServiceAccountKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1756,7 +1756,7 @@ public final class IAMGrpc {
      * </pre>
      */
     @java.lang.Deprecated
-    public void signBlob(
+    default void signBlob(
         com.google.iam.admin.v1.SignBlobRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.admin.v1.SignBlobResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSignBlobMethod(), responseObserver);
@@ -1777,7 +1777,7 @@ public final class IAMGrpc {
      * </pre>
      */
     @java.lang.Deprecated
-    public void signJwt(
+    default void signJwt(
         com.google.iam.admin.v1.SignJwtRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.admin.v1.SignJwtResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSignJwtMethod(), responseObserver);
@@ -1798,7 +1798,7 @@ public final class IAMGrpc {
      * method.
      * </pre>
      */
-    public void getIamPolicy(
+    default void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1826,7 +1826,7 @@ public final class IAMGrpc {
      * resources](https://cloud.google.com/iam/help/access/manage-other-resources).
      * </pre>
      */
-    public void setIamPolicy(
+    default void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1841,7 +1841,7 @@ public final class IAMGrpc {
      * [ServiceAccount][google.iam.admin.v1.ServiceAccount].
      * </pre>
      */
-    public void testIamPermissions(
+    default void testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
@@ -1858,7 +1858,7 @@ public final class IAMGrpc {
      * role.
      * </pre>
      */
-    public void queryGrantableRoles(
+    default void queryGrantableRoles(
         com.google.iam.admin.v1.QueryGrantableRolesRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.admin.v1.QueryGrantableRolesResponse>
             responseObserver) {
@@ -1874,7 +1874,7 @@ public final class IAMGrpc {
      * that is defined for an organization or project.
      * </pre>
      */
-    public void listRoles(
+    default void listRoles(
         com.google.iam.admin.v1.ListRolesRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.admin.v1.ListRolesResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListRolesMethod(), responseObserver);
@@ -1887,7 +1887,7 @@ public final class IAMGrpc {
      * Gets the definition of a [Role][google.iam.admin.v1.Role].
      * </pre>
      */
-    public void getRole(
+    default void getRole(
         com.google.iam.admin.v1.GetRoleRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.admin.v1.Role> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetRoleMethod(), responseObserver);
@@ -1900,7 +1900,7 @@ public final class IAMGrpc {
      * Creates a new custom [Role][google.iam.admin.v1.Role].
      * </pre>
      */
-    public void createRole(
+    default void createRole(
         com.google.iam.admin.v1.CreateRoleRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.admin.v1.Role> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateRoleMethod(), responseObserver);
@@ -1913,7 +1913,7 @@ public final class IAMGrpc {
      * Updates the definition of a custom [Role][google.iam.admin.v1.Role].
      * </pre>
      */
-    public void updateRole(
+    default void updateRole(
         com.google.iam.admin.v1.UpdateRoleRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.admin.v1.Role> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateRoleMethod(), responseObserver);
@@ -1938,7 +1938,7 @@ public final class IAMGrpc {
      * permanently removed.
      * </pre>
      */
-    public void deleteRole(
+    default void deleteRole(
         com.google.iam.admin.v1.DeleteRoleRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.admin.v1.Role> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteRoleMethod(), responseObserver);
@@ -1951,7 +1951,7 @@ public final class IAMGrpc {
      * Undeletes a custom [Role][google.iam.admin.v1.Role].
      * </pre>
      */
-    public void undeleteRole(
+    default void undeleteRole(
         com.google.iam.admin.v1.UndeleteRoleRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.admin.v1.Role> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1967,7 +1967,7 @@ public final class IAMGrpc {
      * resource.
      * </pre>
      */
-    public void queryTestablePermissions(
+    default void queryTestablePermissions(
         com.google.iam.admin.v1.QueryTestablePermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.admin.v1.QueryTestablePermissionsResponse>
             responseObserver) {
@@ -1985,7 +1985,7 @@ public final class IAMGrpc {
      * documentation](https://cloud.google.com/logging/docs/audit).
      * </pre>
      */
-    public void queryAuditableServices(
+    default void queryAuditableServices(
         com.google.iam.admin.v1.QueryAuditableServicesRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.admin.v1.QueryAuditableServicesResponse>
             responseObserver) {
@@ -2004,220 +2004,52 @@ public final class IAMGrpc {
      * even if the linter detects an issue in the IAM policy.
      * </pre>
      */
-    public void lintPolicy(
+    default void lintPolicy(
         com.google.iam.admin.v1.LintPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.admin.v1.LintPolicyResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLintPolicyMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service IAM.
+   *
+   * <pre>
+   * Creates and manages Identity and Access Management (IAM) resources.
+   * You can use this service to work with all of the following resources:
+   * * **Service accounts**, which identify an application or a virtual machine
+   *   (VM) instance rather than a person
+   * * **Service account keys**, which service accounts use to authenticate with
+   *   Google APIs
+   * * **IAM policies for service accounts**, which specify the roles that a
+   *   principal has for the service account
+   * * **IAM custom roles**, which help you limit the number of permissions that
+   *   you grant to principals
+   * In addition, you can use this service to complete the following tasks, among
+   * others:
+   * * Test whether a service account can use specific permissions
+   * * Check which roles you can grant for a specific resource
+   * * Lint, or validate, condition expressions in an IAM policy
+   * When you read data from the IAM API, each read is eventually consistent. In
+   * other words, if you write data with the IAM API, then immediately read that
+   * data, the read operation might return an older version of the data. To deal
+   * with this behavior, your application can retry the request with truncated
+   * exponential backoff.
+   * In contrast, writing data to the IAM API is sequentially consistent. In other
+   * words, write operations are always processed in the order in which they were
+   * received.
+   * </pre>
+   */
+  public abstract static class IAMImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListServiceAccountsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.admin.v1.ListServiceAccountsRequest,
-                      com.google.iam.admin.v1.ListServiceAccountsResponse>(
-                      this, METHODID_LIST_SERVICE_ACCOUNTS)))
-          .addMethod(
-              getGetServiceAccountMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.admin.v1.GetServiceAccountRequest,
-                      com.google.iam.admin.v1.ServiceAccount>(this, METHODID_GET_SERVICE_ACCOUNT)))
-          .addMethod(
-              getCreateServiceAccountMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.admin.v1.CreateServiceAccountRequest,
-                      com.google.iam.admin.v1.ServiceAccount>(
-                      this, METHODID_CREATE_SERVICE_ACCOUNT)))
-          .addMethod(
-              getUpdateServiceAccountMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.admin.v1.ServiceAccount,
-                      com.google.iam.admin.v1.ServiceAccount>(
-                      this, METHODID_UPDATE_SERVICE_ACCOUNT)))
-          .addMethod(
-              getPatchServiceAccountMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.admin.v1.PatchServiceAccountRequest,
-                      com.google.iam.admin.v1.ServiceAccount>(
-                      this, METHODID_PATCH_SERVICE_ACCOUNT)))
-          .addMethod(
-              getDeleteServiceAccountMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.admin.v1.DeleteServiceAccountRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_SERVICE_ACCOUNT)))
-          .addMethod(
-              getUndeleteServiceAccountMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.admin.v1.UndeleteServiceAccountRequest,
-                      com.google.iam.admin.v1.UndeleteServiceAccountResponse>(
-                      this, METHODID_UNDELETE_SERVICE_ACCOUNT)))
-          .addMethod(
-              getEnableServiceAccountMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.admin.v1.EnableServiceAccountRequest,
-                      com.google.protobuf.Empty>(this, METHODID_ENABLE_SERVICE_ACCOUNT)))
-          .addMethod(
-              getDisableServiceAccountMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.admin.v1.DisableServiceAccountRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DISABLE_SERVICE_ACCOUNT)))
-          .addMethod(
-              getListServiceAccountKeysMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.admin.v1.ListServiceAccountKeysRequest,
-                      com.google.iam.admin.v1.ListServiceAccountKeysResponse>(
-                      this, METHODID_LIST_SERVICE_ACCOUNT_KEYS)))
-          .addMethod(
-              getGetServiceAccountKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.admin.v1.GetServiceAccountKeyRequest,
-                      com.google.iam.admin.v1.ServiceAccountKey>(
-                      this, METHODID_GET_SERVICE_ACCOUNT_KEY)))
-          .addMethod(
-              getCreateServiceAccountKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.admin.v1.CreateServiceAccountKeyRequest,
-                      com.google.iam.admin.v1.ServiceAccountKey>(
-                      this, METHODID_CREATE_SERVICE_ACCOUNT_KEY)))
-          .addMethod(
-              getUploadServiceAccountKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.admin.v1.UploadServiceAccountKeyRequest,
-                      com.google.iam.admin.v1.ServiceAccountKey>(
-                      this, METHODID_UPLOAD_SERVICE_ACCOUNT_KEY)))
-          .addMethod(
-              getDeleteServiceAccountKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.admin.v1.DeleteServiceAccountKeyRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_SERVICE_ACCOUNT_KEY)))
-          .addMethod(
-              getDisableServiceAccountKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.admin.v1.DisableServiceAccountKeyRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DISABLE_SERVICE_ACCOUNT_KEY)))
-          .addMethod(
-              getEnableServiceAccountKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.admin.v1.EnableServiceAccountKeyRequest,
-                      com.google.protobuf.Empty>(this, METHODID_ENABLE_SERVICE_ACCOUNT_KEY)))
-          .addMethod(
-              getSignBlobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.admin.v1.SignBlobRequest,
-                      com.google.iam.admin.v1.SignBlobResponse>(this, METHODID_SIGN_BLOB)))
-          .addMethod(
-              getSignJwtMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.admin.v1.SignJwtRequest,
-                      com.google.iam.admin.v1.SignJwtResponse>(this, METHODID_SIGN_JWT)))
-          .addMethod(
-              getGetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_GET_IAM_POLICY)))
-          .addMethod(
-              getSetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_SET_IAM_POLICY)))
-          .addMethod(
-              getTestIamPermissionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.TestIamPermissionsRequest,
-                      com.google.iam.v1.TestIamPermissionsResponse>(
-                      this, METHODID_TEST_IAM_PERMISSIONS)))
-          .addMethod(
-              getQueryGrantableRolesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.admin.v1.QueryGrantableRolesRequest,
-                      com.google.iam.admin.v1.QueryGrantableRolesResponse>(
-                      this, METHODID_QUERY_GRANTABLE_ROLES)))
-          .addMethod(
-              getListRolesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.admin.v1.ListRolesRequest,
-                      com.google.iam.admin.v1.ListRolesResponse>(this, METHODID_LIST_ROLES)))
-          .addMethod(
-              getGetRoleMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.admin.v1.GetRoleRequest, com.google.iam.admin.v1.Role>(
-                      this, METHODID_GET_ROLE)))
-          .addMethod(
-              getCreateRoleMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.admin.v1.CreateRoleRequest, com.google.iam.admin.v1.Role>(
-                      this, METHODID_CREATE_ROLE)))
-          .addMethod(
-              getUpdateRoleMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.admin.v1.UpdateRoleRequest, com.google.iam.admin.v1.Role>(
-                      this, METHODID_UPDATE_ROLE)))
-          .addMethod(
-              getDeleteRoleMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.admin.v1.DeleteRoleRequest, com.google.iam.admin.v1.Role>(
-                      this, METHODID_DELETE_ROLE)))
-          .addMethod(
-              getUndeleteRoleMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.admin.v1.UndeleteRoleRequest, com.google.iam.admin.v1.Role>(
-                      this, METHODID_UNDELETE_ROLE)))
-          .addMethod(
-              getQueryTestablePermissionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.admin.v1.QueryTestablePermissionsRequest,
-                      com.google.iam.admin.v1.QueryTestablePermissionsResponse>(
-                      this, METHODID_QUERY_TESTABLE_PERMISSIONS)))
-          .addMethod(
-              getQueryAuditableServicesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.admin.v1.QueryAuditableServicesRequest,
-                      com.google.iam.admin.v1.QueryAuditableServicesResponse>(
-                      this, METHODID_QUERY_AUDITABLE_SERVICES)))
-          .addMethod(
-              getLintPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.admin.v1.LintPolicyRequest,
-                      com.google.iam.admin.v1.LintPolicyResponse>(this, METHODID_LINT_POLICY)))
-          .build();
+      return IAMGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service IAM.
    *
    * <pre>
    * Creates and manages Identity and Access Management (IAM) resources.
@@ -2848,7 +2680,7 @@ public final class IAMGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service IAM.
    *
    * <pre>
    * Creates and manages Identity and Access Management (IAM) resources.
@@ -3393,7 +3225,7 @@ public final class IAMGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service IAM.
    *
    * <pre>
    * Creates and manages Identity and Access Management (IAM) resources.
@@ -3994,10 +3826,10 @@ public final class IAMGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final IAMImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(IAMImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -4194,6 +4026,207 @@ public final class IAMGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListServiceAccountsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.admin.v1.ListServiceAccountsRequest,
+                    com.google.iam.admin.v1.ListServiceAccountsResponse>(
+                    service, METHODID_LIST_SERVICE_ACCOUNTS)))
+        .addMethod(
+            getGetServiceAccountMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.admin.v1.GetServiceAccountRequest,
+                    com.google.iam.admin.v1.ServiceAccount>(service, METHODID_GET_SERVICE_ACCOUNT)))
+        .addMethod(
+            getCreateServiceAccountMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.admin.v1.CreateServiceAccountRequest,
+                    com.google.iam.admin.v1.ServiceAccount>(
+                    service, METHODID_CREATE_SERVICE_ACCOUNT)))
+        .addMethod(
+            getUpdateServiceAccountMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.admin.v1.ServiceAccount, com.google.iam.admin.v1.ServiceAccount>(
+                    service, METHODID_UPDATE_SERVICE_ACCOUNT)))
+        .addMethod(
+            getPatchServiceAccountMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.admin.v1.PatchServiceAccountRequest,
+                    com.google.iam.admin.v1.ServiceAccount>(
+                    service, METHODID_PATCH_SERVICE_ACCOUNT)))
+        .addMethod(
+            getDeleteServiceAccountMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.admin.v1.DeleteServiceAccountRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_SERVICE_ACCOUNT)))
+        .addMethod(
+            getUndeleteServiceAccountMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.admin.v1.UndeleteServiceAccountRequest,
+                    com.google.iam.admin.v1.UndeleteServiceAccountResponse>(
+                    service, METHODID_UNDELETE_SERVICE_ACCOUNT)))
+        .addMethod(
+            getEnableServiceAccountMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.admin.v1.EnableServiceAccountRequest, com.google.protobuf.Empty>(
+                    service, METHODID_ENABLE_SERVICE_ACCOUNT)))
+        .addMethod(
+            getDisableServiceAccountMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.admin.v1.DisableServiceAccountRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DISABLE_SERVICE_ACCOUNT)))
+        .addMethod(
+            getListServiceAccountKeysMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.admin.v1.ListServiceAccountKeysRequest,
+                    com.google.iam.admin.v1.ListServiceAccountKeysResponse>(
+                    service, METHODID_LIST_SERVICE_ACCOUNT_KEYS)))
+        .addMethod(
+            getGetServiceAccountKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.admin.v1.GetServiceAccountKeyRequest,
+                    com.google.iam.admin.v1.ServiceAccountKey>(
+                    service, METHODID_GET_SERVICE_ACCOUNT_KEY)))
+        .addMethod(
+            getCreateServiceAccountKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.admin.v1.CreateServiceAccountKeyRequest,
+                    com.google.iam.admin.v1.ServiceAccountKey>(
+                    service, METHODID_CREATE_SERVICE_ACCOUNT_KEY)))
+        .addMethod(
+            getUploadServiceAccountKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.admin.v1.UploadServiceAccountKeyRequest,
+                    com.google.iam.admin.v1.ServiceAccountKey>(
+                    service, METHODID_UPLOAD_SERVICE_ACCOUNT_KEY)))
+        .addMethod(
+            getDeleteServiceAccountKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.admin.v1.DeleteServiceAccountKeyRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_SERVICE_ACCOUNT_KEY)))
+        .addMethod(
+            getDisableServiceAccountKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.admin.v1.DisableServiceAccountKeyRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DISABLE_SERVICE_ACCOUNT_KEY)))
+        .addMethod(
+            getEnableServiceAccountKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.admin.v1.EnableServiceAccountKeyRequest,
+                    com.google.protobuf.Empty>(service, METHODID_ENABLE_SERVICE_ACCOUNT_KEY)))
+        .addMethod(
+            getSignBlobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.admin.v1.SignBlobRequest,
+                    com.google.iam.admin.v1.SignBlobResponse>(service, METHODID_SIGN_BLOB)))
+        .addMethod(
+            getSignJwtMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.admin.v1.SignJwtRequest,
+                    com.google.iam.admin.v1.SignJwtResponse>(service, METHODID_SIGN_JWT)))
+        .addMethod(
+            getGetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_GET_IAM_POLICY)))
+        .addMethod(
+            getSetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_SET_IAM_POLICY)))
+        .addMethod(
+            getTestIamPermissionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.v1.TestIamPermissionsRequest,
+                    com.google.iam.v1.TestIamPermissionsResponse>(
+                    service, METHODID_TEST_IAM_PERMISSIONS)))
+        .addMethod(
+            getQueryGrantableRolesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.admin.v1.QueryGrantableRolesRequest,
+                    com.google.iam.admin.v1.QueryGrantableRolesResponse>(
+                    service, METHODID_QUERY_GRANTABLE_ROLES)))
+        .addMethod(
+            getListRolesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.admin.v1.ListRolesRequest,
+                    com.google.iam.admin.v1.ListRolesResponse>(service, METHODID_LIST_ROLES)))
+        .addMethod(
+            getGetRoleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.admin.v1.GetRoleRequest, com.google.iam.admin.v1.Role>(
+                    service, METHODID_GET_ROLE)))
+        .addMethod(
+            getCreateRoleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.admin.v1.CreateRoleRequest, com.google.iam.admin.v1.Role>(
+                    service, METHODID_CREATE_ROLE)))
+        .addMethod(
+            getUpdateRoleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.admin.v1.UpdateRoleRequest, com.google.iam.admin.v1.Role>(
+                    service, METHODID_UPDATE_ROLE)))
+        .addMethod(
+            getDeleteRoleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.admin.v1.DeleteRoleRequest, com.google.iam.admin.v1.Role>(
+                    service, METHODID_DELETE_ROLE)))
+        .addMethod(
+            getUndeleteRoleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.admin.v1.UndeleteRoleRequest, com.google.iam.admin.v1.Role>(
+                    service, METHODID_UNDELETE_ROLE)))
+        .addMethod(
+            getQueryTestablePermissionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.admin.v1.QueryTestablePermissionsRequest,
+                    com.google.iam.admin.v1.QueryTestablePermissionsResponse>(
+                    service, METHODID_QUERY_TESTABLE_PERMISSIONS)))
+        .addMethod(
+            getQueryAuditableServicesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.admin.v1.QueryAuditableServicesRequest,
+                    com.google.iam.admin.v1.QueryAuditableServicesResponse>(
+                    service, METHODID_QUERY_AUDITABLE_SERVICES)))
+        .addMethod(
+            getLintPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.admin.v1.LintPolicyRequest,
+                    com.google.iam.admin.v1.LintPolicyResponse>(service, METHODID_LINT_POLICY)))
+        .build();
   }
 
   private abstract static class IAMBaseDescriptorSupplier

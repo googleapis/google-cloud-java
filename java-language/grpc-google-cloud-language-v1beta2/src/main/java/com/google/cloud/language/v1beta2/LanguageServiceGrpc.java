@@ -370,7 +370,7 @@ public final class LanguageServiceGrpc {
    * recognition.
    * </pre>
    */
-  public abstract static class LanguageServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -379,7 +379,7 @@ public final class LanguageServiceGrpc {
      * Analyzes the sentiment of the provided text.
      * </pre>
      */
-    public void analyzeSentiment(
+    default void analyzeSentiment(
         com.google.cloud.language.v1beta2.AnalyzeSentimentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.language.v1beta2.AnalyzeSentimentResponse>
             responseObserver) {
@@ -396,7 +396,7 @@ public final class LanguageServiceGrpc {
      * other properties.
      * </pre>
      */
-    public void analyzeEntities(
+    default void analyzeEntities(
         com.google.cloud.language.v1beta2.AnalyzeEntitiesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.language.v1beta2.AnalyzeEntitiesResponse>
             responseObserver) {
@@ -412,7 +412,7 @@ public final class LanguageServiceGrpc {
      * sentiment associated with each entity and its mentions.
      * </pre>
      */
-    public void analyzeEntitySentiment(
+    default void analyzeEntitySentiment(
         com.google.cloud.language.v1beta2.AnalyzeEntitySentimentRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.language.v1beta2.AnalyzeEntitySentimentResponse>
@@ -430,7 +430,7 @@ public final class LanguageServiceGrpc {
      * properties.
      * </pre>
      */
-    public void analyzeSyntax(
+    default void analyzeSyntax(
         com.google.cloud.language.v1beta2.AnalyzeSyntaxRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse>
             responseObserver) {
@@ -445,7 +445,7 @@ public final class LanguageServiceGrpc {
      * Classifies a document into categories.
      * </pre>
      */
-    public void classifyText(
+    default void classifyText(
         com.google.cloud.language.v1beta2.ClassifyTextRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.language.v1beta2.ClassifyTextResponse>
             responseObserver) {
@@ -461,65 +461,34 @@ public final class LanguageServiceGrpc {
      * classification features in one call.
      * </pre>
      */
-    public void annotateText(
+    default void annotateText(
         com.google.cloud.language.v1beta2.AnnotateTextRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.language.v1beta2.AnnotateTextResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getAnnotateTextMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service LanguageService.
+   *
+   * <pre>
+   * Provides text analysis operations such as sentiment analysis and entity
+   * recognition.
+   * </pre>
+   */
+  public abstract static class LanguageServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getAnalyzeSentimentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.language.v1beta2.AnalyzeSentimentRequest,
-                      com.google.cloud.language.v1beta2.AnalyzeSentimentResponse>(
-                      this, METHODID_ANALYZE_SENTIMENT)))
-          .addMethod(
-              getAnalyzeEntitiesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.language.v1beta2.AnalyzeEntitiesRequest,
-                      com.google.cloud.language.v1beta2.AnalyzeEntitiesResponse>(
-                      this, METHODID_ANALYZE_ENTITIES)))
-          .addMethod(
-              getAnalyzeEntitySentimentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.language.v1beta2.AnalyzeEntitySentimentRequest,
-                      com.google.cloud.language.v1beta2.AnalyzeEntitySentimentResponse>(
-                      this, METHODID_ANALYZE_ENTITY_SENTIMENT)))
-          .addMethod(
-              getAnalyzeSyntaxMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.language.v1beta2.AnalyzeSyntaxRequest,
-                      com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse>(
-                      this, METHODID_ANALYZE_SYNTAX)))
-          .addMethod(
-              getClassifyTextMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.language.v1beta2.ClassifyTextRequest,
-                      com.google.cloud.language.v1beta2.ClassifyTextResponse>(
-                      this, METHODID_CLASSIFY_TEXT)))
-          .addMethod(
-              getAnnotateTextMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.language.v1beta2.AnnotateTextRequest,
-                      com.google.cloud.language.v1beta2.AnnotateTextResponse>(
-                      this, METHODID_ANNOTATE_TEXT)))
-          .build();
+      return LanguageServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service LanguageService.
    *
    * <pre>
    * Provides text analysis operations such as sentiment analysis and entity
@@ -648,7 +617,7 @@ public final class LanguageServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service LanguageService.
    *
    * <pre>
    * Provides text analysis operations such as sentiment analysis and entity
@@ -753,7 +722,7 @@ public final class LanguageServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service LanguageService.
    *
    * <pre>
    * Provides text analysis operations such as sentiment analysis and entity
@@ -876,10 +845,10 @@ public final class LanguageServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final LanguageServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(LanguageServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -941,6 +910,53 @@ public final class LanguageServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getAnalyzeSentimentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.language.v1beta2.AnalyzeSentimentRequest,
+                    com.google.cloud.language.v1beta2.AnalyzeSentimentResponse>(
+                    service, METHODID_ANALYZE_SENTIMENT)))
+        .addMethod(
+            getAnalyzeEntitiesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.language.v1beta2.AnalyzeEntitiesRequest,
+                    com.google.cloud.language.v1beta2.AnalyzeEntitiesResponse>(
+                    service, METHODID_ANALYZE_ENTITIES)))
+        .addMethod(
+            getAnalyzeEntitySentimentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.language.v1beta2.AnalyzeEntitySentimentRequest,
+                    com.google.cloud.language.v1beta2.AnalyzeEntitySentimentResponse>(
+                    service, METHODID_ANALYZE_ENTITY_SENTIMENT)))
+        .addMethod(
+            getAnalyzeSyntaxMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.language.v1beta2.AnalyzeSyntaxRequest,
+                    com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse>(
+                    service, METHODID_ANALYZE_SYNTAX)))
+        .addMethod(
+            getClassifyTextMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.language.v1beta2.ClassifyTextRequest,
+                    com.google.cloud.language.v1beta2.ClassifyTextResponse>(
+                    service, METHODID_CLASSIFY_TEXT)))
+        .addMethod(
+            getAnnotateTextMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.language.v1beta2.AnnotateTextRequest,
+                    com.google.cloud.language.v1beta2.AnnotateTextResponse>(
+                    service, METHODID_ANNOTATE_TEXT)))
+        .build();
   }
 
   private abstract static class LanguageServiceBaseDescriptorSupplier

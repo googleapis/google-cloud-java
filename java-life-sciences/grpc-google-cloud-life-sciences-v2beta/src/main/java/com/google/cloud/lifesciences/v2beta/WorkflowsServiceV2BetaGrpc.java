@@ -130,7 +130,7 @@ public final class WorkflowsServiceV2BetaGrpc {
    * containers.
    * </pre>
    */
-  public abstract static class WorkflowsServiceV2BetaImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -153,28 +153,33 @@ public final class WorkflowsServiceV2BetaGrpc {
      * * `lifesciences.workflows.run`
      * </pre>
      */
-    public void runPipeline(
+    default void runPipeline(
         com.google.cloud.lifesciences.v2beta.RunPipelineRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getRunPipelineMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service WorkflowsServiceV2Beta.
+   *
+   * <pre>
+   * A service for running workflows, such as pipelines consisting of Docker
+   * containers.
+   * </pre>
+   */
+  public abstract static class WorkflowsServiceV2BetaImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getRunPipelineMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.lifesciences.v2beta.RunPipelineRequest,
-                      com.google.longrunning.Operation>(this, METHODID_RUN_PIPELINE)))
-          .build();
+      return WorkflowsServiceV2BetaGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service WorkflowsServiceV2Beta.
    *
    * <pre>
    * A service for running workflows, such as pipelines consisting of Docker
@@ -225,7 +230,7 @@ public final class WorkflowsServiceV2BetaGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service WorkflowsServiceV2Beta.
    *
    * <pre>
    * A service for running workflows, such as pipelines consisting of Docker
@@ -274,7 +279,8 @@ public final class WorkflowsServiceV2BetaGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * WorkflowsServiceV2Beta.
    *
    * <pre>
    * A service for running workflows, such as pipelines consisting of Docker
@@ -329,10 +335,10 @@ public final class WorkflowsServiceV2BetaGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final WorkflowsServiceV2BetaImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(WorkflowsServiceV2BetaImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -360,6 +366,17 @@ public final class WorkflowsServiceV2BetaGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getRunPipelineMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.lifesciences.v2beta.RunPipelineRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RUN_PIPELINE)))
+        .build();
   }
 
   private abstract static class WorkflowsServiceV2BetaBaseDescriptorSupplier

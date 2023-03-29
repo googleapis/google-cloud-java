@@ -570,7 +570,7 @@ public final class GkeHubGrpc {
    * with Membership resources.
    * </pre>
    */
-  public abstract static class GkeHubImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -579,7 +579,7 @@ public final class GkeHubGrpc {
      * Lists Memberships in a given project and location.
      * </pre>
      */
-    public void listMemberships(
+    default void listMemberships(
         com.google.cloud.gkehub.v1.ListMembershipsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.ListMembershipsResponse>
             responseObserver) {
@@ -594,7 +594,7 @@ public final class GkeHubGrpc {
      * Lists Features in a given project and location.
      * </pre>
      */
-    public void listFeatures(
+    default void listFeatures(
         com.google.cloud.gkehub.v1.ListFeaturesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.ListFeaturesResponse>
             responseObserver) {
@@ -609,7 +609,7 @@ public final class GkeHubGrpc {
      * Gets the details of a Membership.
      * </pre>
      */
-    public void getMembership(
+    default void getMembership(
         com.google.cloud.gkehub.v1.GetMembershipRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.Membership> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -623,7 +623,7 @@ public final class GkeHubGrpc {
      * Gets details of a single Feature.
      * </pre>
      */
-    public void getFeature(
+    default void getFeature(
         com.google.cloud.gkehub.v1.GetFeatureRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.Feature> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetFeatureMethod(), responseObserver);
@@ -639,7 +639,7 @@ public final class GkeHubGrpc {
      * https://cloud.google.com/anthos/multicluster-management/connect/registering-a-cluster.
      * </pre>
      */
-    public void createMembership(
+    default void createMembership(
         com.google.cloud.gkehub.v1.CreateMembershipRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -653,7 +653,7 @@ public final class GkeHubGrpc {
      * Adds a new Feature.
      * </pre>
      */
-    public void createFeature(
+    default void createFeature(
         com.google.cloud.gkehub.v1.CreateFeatureRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -670,7 +670,7 @@ public final class GkeHubGrpc {
      * https://cloud.google.com/anthos/multicluster-management/connect/unregistering-a-cluster.
      * </pre>
      */
-    public void deleteMembership(
+    default void deleteMembership(
         com.google.cloud.gkehub.v1.DeleteMembershipRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -684,7 +684,7 @@ public final class GkeHubGrpc {
      * Removes a Feature.
      * </pre>
      */
-    public void deleteFeature(
+    default void deleteFeature(
         com.google.cloud.gkehub.v1.DeleteFeatureRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -698,7 +698,7 @@ public final class GkeHubGrpc {
      * Updates an existing Membership.
      * </pre>
      */
-    public void updateMembership(
+    default void updateMembership(
         com.google.cloud.gkehub.v1.UpdateMembershipRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -712,7 +712,7 @@ public final class GkeHubGrpc {
      * Updates an existing Feature.
      * </pre>
      */
-    public void updateFeature(
+    default void updateFeature(
         com.google.cloud.gkehub.v1.UpdateFeatureRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -728,92 +728,41 @@ public final class GkeHubGrpc {
      * Most clients should not need to call this method directly.
      * </pre>
      */
-    public void generateConnectManifest(
+    default void generateConnectManifest(
         com.google.cloud.gkehub.v1.GenerateConnectManifestRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1.GenerateConnectManifestResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGenerateConnectManifestMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service GkeHub.
+   *
+   * <pre>
+   * The GKE Hub service handles the registration of many Kubernetes clusters to
+   * Google Cloud, and the management of multi-cluster features over those
+   * clusters.
+   * The GKE Hub service operates on the following resources:
+   * * [Membership][google.cloud.gkehub.v1.Membership]
+   * * [Feature][google.cloud.gkehub.v1.Feature]
+   * GKE Hub is currently only available in the global region.
+   * **Membership management may be non-trivial:** it is recommended to use one
+   * of the Google-provided client libraries or tools where possible when working
+   * with Membership resources.
+   * </pre>
+   */
+  public abstract static class GkeHubImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListMembershipsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkehub.v1.ListMembershipsRequest,
-                      com.google.cloud.gkehub.v1.ListMembershipsResponse>(
-                      this, METHODID_LIST_MEMBERSHIPS)))
-          .addMethod(
-              getListFeaturesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkehub.v1.ListFeaturesRequest,
-                      com.google.cloud.gkehub.v1.ListFeaturesResponse>(
-                      this, METHODID_LIST_FEATURES)))
-          .addMethod(
-              getGetMembershipMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkehub.v1.GetMembershipRequest,
-                      com.google.cloud.gkehub.v1.Membership>(this, METHODID_GET_MEMBERSHIP)))
-          .addMethod(
-              getGetFeatureMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkehub.v1.GetFeatureRequest,
-                      com.google.cloud.gkehub.v1.Feature>(this, METHODID_GET_FEATURE)))
-          .addMethod(
-              getCreateMembershipMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkehub.v1.CreateMembershipRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_MEMBERSHIP)))
-          .addMethod(
-              getCreateFeatureMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkehub.v1.CreateFeatureRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_FEATURE)))
-          .addMethod(
-              getDeleteMembershipMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkehub.v1.DeleteMembershipRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_MEMBERSHIP)))
-          .addMethod(
-              getDeleteFeatureMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkehub.v1.DeleteFeatureRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_FEATURE)))
-          .addMethod(
-              getUpdateMembershipMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkehub.v1.UpdateMembershipRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_MEMBERSHIP)))
-          .addMethod(
-              getUpdateFeatureMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkehub.v1.UpdateFeatureRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_FEATURE)))
-          .addMethod(
-              getGenerateConnectManifestMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkehub.v1.GenerateConnectManifestRequest,
-                      com.google.cloud.gkehub.v1.GenerateConnectManifestResponse>(
-                      this, METHODID_GENERATE_CONNECT_MANIFEST)))
-          .build();
+      return GkeHubGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service GkeHub.
    *
    * <pre>
    * The GKE Hub service handles the registration of many Kubernetes clusters to
@@ -1025,7 +974,7 @@ public final class GkeHubGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service GkeHub.
    *
    * <pre>
    * The GKE Hub service handles the registration of many Kubernetes clusters to
@@ -1204,7 +1153,7 @@ public final class GkeHubGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service GkeHub.
    *
    * <pre>
    * The GKE Hub service handles the registration of many Kubernetes clusters to
@@ -1402,10 +1351,10 @@ public final class GkeHubGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final GkeHubImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(GkeHubImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1488,6 +1437,80 @@ public final class GkeHubGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListMembershipsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.ListMembershipsRequest,
+                    com.google.cloud.gkehub.v1.ListMembershipsResponse>(
+                    service, METHODID_LIST_MEMBERSHIPS)))
+        .addMethod(
+            getListFeaturesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.ListFeaturesRequest,
+                    com.google.cloud.gkehub.v1.ListFeaturesResponse>(
+                    service, METHODID_LIST_FEATURES)))
+        .addMethod(
+            getGetMembershipMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.GetMembershipRequest,
+                    com.google.cloud.gkehub.v1.Membership>(service, METHODID_GET_MEMBERSHIP)))
+        .addMethod(
+            getGetFeatureMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.GetFeatureRequest,
+                    com.google.cloud.gkehub.v1.Feature>(service, METHODID_GET_FEATURE)))
+        .addMethod(
+            getCreateMembershipMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.CreateMembershipRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_MEMBERSHIP)))
+        .addMethod(
+            getCreateFeatureMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.CreateFeatureRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_FEATURE)))
+        .addMethod(
+            getDeleteMembershipMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.DeleteMembershipRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_MEMBERSHIP)))
+        .addMethod(
+            getDeleteFeatureMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.DeleteFeatureRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_FEATURE)))
+        .addMethod(
+            getUpdateMembershipMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.UpdateMembershipRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_MEMBERSHIP)))
+        .addMethod(
+            getUpdateFeatureMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.UpdateFeatureRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_FEATURE)))
+        .addMethod(
+            getGenerateConnectManifestMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1.GenerateConnectManifestRequest,
+                    com.google.cloud.gkehub.v1.GenerateConnectManifestResponse>(
+                    service, METHODID_GENERATE_CONNECT_MANIFEST)))
+        .build();
   }
 
   private abstract static class GkeHubBaseDescriptorSupplier

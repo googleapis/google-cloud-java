@@ -253,7 +253,7 @@ public final class SnoozeServiceGrpc {
    * or more alert policies should not fire alerts for the specified duration.
    * </pre>
    */
-  public abstract static class SnoozeServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -264,7 +264,7 @@ public final class SnoozeServiceGrpc {
      * interval.
      * </pre>
      */
-    public void createSnooze(
+    default void createSnooze(
         com.google.monitoring.v3.CreateSnoozeRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.Snooze> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -279,7 +279,7 @@ public final class SnoozeServiceGrpc {
      * `filter`, which specifies predicates to match `Snooze`s.
      * </pre>
      */
-    public void listSnoozes(
+    default void listSnoozes(
         com.google.monitoring.v3.ListSnoozesRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.ListSnoozesResponse>
             responseObserver) {
@@ -294,7 +294,7 @@ public final class SnoozeServiceGrpc {
      * Retrieves a `Snooze` by `name`.
      * </pre>
      */
-    public void getSnooze(
+    default void getSnooze(
         com.google.monitoring.v3.GetSnoozeRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.Snooze> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetSnoozeMethod(), responseObserver);
@@ -308,46 +308,34 @@ public final class SnoozeServiceGrpc {
      * given `Snooze` object.
      * </pre>
      */
-    public void updateSnooze(
+    default void updateSnooze(
         com.google.monitoring.v3.UpdateSnoozeRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.Snooze> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateSnoozeMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service SnoozeService.
+   *
+   * <pre>
+   * The SnoozeService API is used to temporarily prevent an alert policy from
+   * generating alerts. A Snooze is a description of the criteria under which one
+   * or more alert policies should not fire alerts for the specified duration.
+   * </pre>
+   */
+  public abstract static class SnoozeServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateSnoozeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.CreateSnoozeRequest,
-                      com.google.monitoring.v3.Snooze>(this, METHODID_CREATE_SNOOZE)))
-          .addMethod(
-              getListSnoozesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.ListSnoozesRequest,
-                      com.google.monitoring.v3.ListSnoozesResponse>(this, METHODID_LIST_SNOOZES)))
-          .addMethod(
-              getGetSnoozeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.GetSnoozeRequest, com.google.monitoring.v3.Snooze>(
-                      this, METHODID_GET_SNOOZE)))
-          .addMethod(
-              getUpdateSnoozeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.UpdateSnoozeRequest,
-                      com.google.monitoring.v3.Snooze>(this, METHODID_UPDATE_SNOOZE)))
-          .build();
+      return SnoozeServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service SnoozeService.
    *
    * <pre>
    * The SnoozeService API is used to temporarily prevent an alert policy from
@@ -435,7 +423,7 @@ public final class SnoozeServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service SnoozeService.
    *
    * <pre>
    * The SnoozeService API is used to temporarily prevent an alert policy from
@@ -513,7 +501,7 @@ public final class SnoozeServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service SnoozeService.
    *
    * <pre>
    * The SnoozeService API is used to temporarily prevent an alert policy from
@@ -601,10 +589,10 @@ public final class SnoozeServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final SnoozeServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(SnoozeServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -648,6 +636,35 @@ public final class SnoozeServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateSnoozeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.CreateSnoozeRequest, com.google.monitoring.v3.Snooze>(
+                    service, METHODID_CREATE_SNOOZE)))
+        .addMethod(
+            getListSnoozesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.ListSnoozesRequest,
+                    com.google.monitoring.v3.ListSnoozesResponse>(service, METHODID_LIST_SNOOZES)))
+        .addMethod(
+            getGetSnoozeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.GetSnoozeRequest, com.google.monitoring.v3.Snooze>(
+                    service, METHODID_GET_SNOOZE)))
+        .addMethod(
+            getUpdateSnoozeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.UpdateSnoozeRequest, com.google.monitoring.v3.Snooze>(
+                    service, METHODID_UPDATE_SNOOZE)))
+        .build();
   }
 
   private abstract static class SnoozeServiceBaseDescriptorSupplier

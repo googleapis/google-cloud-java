@@ -604,7 +604,7 @@ public final class ManagedIdentitiesServiceGrpc {
    *  * Must be unique within the customer project.
    * </pre>
    */
-  public abstract static class ManagedIdentitiesServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -613,7 +613,7 @@ public final class ManagedIdentitiesServiceGrpc {
      * Creates a Microsoft AD domain.
      * </pre>
      */
-    public void createMicrosoftAdDomain(
+    default void createMicrosoftAdDomain(
         com.google.cloud.managedidentities.v1.CreateMicrosoftAdDomainRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -627,7 +627,7 @@ public final class ManagedIdentitiesServiceGrpc {
      * Resets a domain's administrator password.
      * </pre>
      */
-    public void resetAdminPassword(
+    default void resetAdminPassword(
         com.google.cloud.managedidentities.v1.ResetAdminPasswordRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.managedidentities.v1.ResetAdminPasswordResponse>
@@ -643,7 +643,7 @@ public final class ManagedIdentitiesServiceGrpc {
      * Lists domains in a project.
      * </pre>
      */
-    public void listDomains(
+    default void listDomains(
         com.google.cloud.managedidentities.v1.ListDomainsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.managedidentities.v1.ListDomainsResponse>
             responseObserver) {
@@ -658,7 +658,7 @@ public final class ManagedIdentitiesServiceGrpc {
      * Gets information about a domain.
      * </pre>
      */
-    public void getDomain(
+    default void getDomain(
         com.google.cloud.managedidentities.v1.GetDomainRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.managedidentities.v1.Domain>
             responseObserver) {
@@ -672,7 +672,7 @@ public final class ManagedIdentitiesServiceGrpc {
      * Updates the metadata and configuration of a domain.
      * </pre>
      */
-    public void updateDomain(
+    default void updateDomain(
         com.google.cloud.managedidentities.v1.UpdateDomainRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -686,7 +686,7 @@ public final class ManagedIdentitiesServiceGrpc {
      * Deletes a domain.
      * </pre>
      */
-    public void deleteDomain(
+    default void deleteDomain(
         com.google.cloud.managedidentities.v1.DeleteDomainRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -700,7 +700,7 @@ public final class ManagedIdentitiesServiceGrpc {
      * Adds an AD trust to a domain.
      * </pre>
      */
-    public void attachTrust(
+    default void attachTrust(
         com.google.cloud.managedidentities.v1.AttachTrustRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -714,7 +714,7 @@ public final class ManagedIdentitiesServiceGrpc {
      * Updates the DNS conditional forwarder.
      * </pre>
      */
-    public void reconfigureTrust(
+    default void reconfigureTrust(
         com.google.cloud.managedidentities.v1.ReconfigureTrustRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -728,7 +728,7 @@ public final class ManagedIdentitiesServiceGrpc {
      * Removes an AD trust.
      * </pre>
      */
-    public void detachTrust(
+    default void detachTrust(
         com.google.cloud.managedidentities.v1.DetachTrustRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -743,84 +743,55 @@ public final class ManagedIdentitiesServiceGrpc {
      * target domain is able to accept incoming trust requests.
      * </pre>
      */
-    public void validateTrust(
+    default void validateTrust(
         com.google.cloud.managedidentities.v1.ValidateTrustRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getValidateTrustMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ManagedIdentitiesService.
+   *
+   * <pre>
+   * API Overview
+   * The `managedidentites.googleapis.com` service implements the Google Cloud
+   * Managed Identites API for identity services
+   * (e.g. Microsoft Active Directory).
+   * The Managed Identities service provides methods to manage
+   * (create/read/update/delete) domains, reset managed identities admin password,
+   * add/remove domain controllers in GCP regions and add/remove VPC peering.
+   * Data Model
+   * The Managed Identities service exposes the following resources:
+   * * Locations as global, named as follows:
+   *   `projects/{project_id}/locations/global`.
+   * * Domains, named as follows:
+   *   `/projects/{project_id}/locations/global/domain/{domain_name}`.
+   * The `{domain_name}` refers to fully qualified domain name in the customer
+   * project e.g. mydomain.myorganization.com, with the following restrictions:
+   *  * Must contain only lowercase letters, numbers, periods and hyphens.
+   *  * Must start with a letter.
+   *  * Must contain between 2-64 characters.
+   *  * Must end with a number or a letter.
+   *  * Must not start with period.
+   *  * First segement length (mydomain form example above) shouldn't exceed
+   *    15 chars.
+   *  * The last segment cannot be fully numeric.
+   *  * Must be unique within the customer project.
+   * </pre>
+   */
+  public abstract static class ManagedIdentitiesServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateMicrosoftAdDomainMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.managedidentities.v1.CreateMicrosoftAdDomainRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_MICROSOFT_AD_DOMAIN)))
-          .addMethod(
-              getResetAdminPasswordMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.managedidentities.v1.ResetAdminPasswordRequest,
-                      com.google.cloud.managedidentities.v1.ResetAdminPasswordResponse>(
-                      this, METHODID_RESET_ADMIN_PASSWORD)))
-          .addMethod(
-              getListDomainsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.managedidentities.v1.ListDomainsRequest,
-                      com.google.cloud.managedidentities.v1.ListDomainsResponse>(
-                      this, METHODID_LIST_DOMAINS)))
-          .addMethod(
-              getGetDomainMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.managedidentities.v1.GetDomainRequest,
-                      com.google.cloud.managedidentities.v1.Domain>(this, METHODID_GET_DOMAIN)))
-          .addMethod(
-              getUpdateDomainMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.managedidentities.v1.UpdateDomainRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_DOMAIN)))
-          .addMethod(
-              getDeleteDomainMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.managedidentities.v1.DeleteDomainRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_DOMAIN)))
-          .addMethod(
-              getAttachTrustMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.managedidentities.v1.AttachTrustRequest,
-                      com.google.longrunning.Operation>(this, METHODID_ATTACH_TRUST)))
-          .addMethod(
-              getReconfigureTrustMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.managedidentities.v1.ReconfigureTrustRequest,
-                      com.google.longrunning.Operation>(this, METHODID_RECONFIGURE_TRUST)))
-          .addMethod(
-              getDetachTrustMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.managedidentities.v1.DetachTrustRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DETACH_TRUST)))
-          .addMethod(
-              getValidateTrustMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.managedidentities.v1.ValidateTrustRequest,
-                      com.google.longrunning.Operation>(this, METHODID_VALIDATE_TRUST)))
-          .build();
+      return ManagedIdentitiesServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ManagedIdentitiesService.
    *
    * <pre>
    * API Overview
@@ -1026,7 +997,7 @@ public final class ManagedIdentitiesServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ManagedIdentitiesService.
    *
    * <pre>
    * API Overview
@@ -1201,7 +1172,8 @@ public final class ManagedIdentitiesServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * ManagedIdentitiesService.
    *
    * <pre>
    * API Overview
@@ -1396,10 +1368,10 @@ public final class ManagedIdentitiesServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ManagedIdentitiesServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ManagedIdentitiesServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1477,6 +1449,74 @@ public final class ManagedIdentitiesServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateMicrosoftAdDomainMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.managedidentities.v1.CreateMicrosoftAdDomainRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_MICROSOFT_AD_DOMAIN)))
+        .addMethod(
+            getResetAdminPasswordMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.managedidentities.v1.ResetAdminPasswordRequest,
+                    com.google.cloud.managedidentities.v1.ResetAdminPasswordResponse>(
+                    service, METHODID_RESET_ADMIN_PASSWORD)))
+        .addMethod(
+            getListDomainsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.managedidentities.v1.ListDomainsRequest,
+                    com.google.cloud.managedidentities.v1.ListDomainsResponse>(
+                    service, METHODID_LIST_DOMAINS)))
+        .addMethod(
+            getGetDomainMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.managedidentities.v1.GetDomainRequest,
+                    com.google.cloud.managedidentities.v1.Domain>(service, METHODID_GET_DOMAIN)))
+        .addMethod(
+            getUpdateDomainMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.managedidentities.v1.UpdateDomainRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_DOMAIN)))
+        .addMethod(
+            getDeleteDomainMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.managedidentities.v1.DeleteDomainRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_DOMAIN)))
+        .addMethod(
+            getAttachTrustMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.managedidentities.v1.AttachTrustRequest,
+                    com.google.longrunning.Operation>(service, METHODID_ATTACH_TRUST)))
+        .addMethod(
+            getReconfigureTrustMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.managedidentities.v1.ReconfigureTrustRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RECONFIGURE_TRUST)))
+        .addMethod(
+            getDetachTrustMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.managedidentities.v1.DetachTrustRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DETACH_TRUST)))
+        .addMethod(
+            getValidateTrustMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.managedidentities.v1.ValidateTrustRequest,
+                    com.google.longrunning.Operation>(service, METHODID_VALIDATE_TRUST)))
+        .build();
   }
 
   private abstract static class ManagedIdentitiesServiceBaseDescriptorSupplier

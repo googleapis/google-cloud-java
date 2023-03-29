@@ -139,7 +139,7 @@ public final class SpeechTranslationServiceGrpc {
    * Provides translation from/to media types.
    * </pre>
    */
-  public abstract static class SpeechTranslationServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -149,7 +149,7 @@ public final class SpeechTranslationServiceGrpc {
      * sending audio. This method is only available via the gRPC API (not REST).
      * </pre>
      */
-    public io.grpc.stub.StreamObserver<
+    default io.grpc.stub.StreamObserver<
             com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechRequest>
         streamingTranslateSpeech(
             io.grpc.stub.StreamObserver<
@@ -158,23 +158,26 @@ public final class SpeechTranslationServiceGrpc {
       return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(
           getStreamingTranslateSpeechMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service SpeechTranslationService.
+   *
+   * <pre>
+   * Provides translation from/to media types.
+   * </pre>
+   */
+  public abstract static class SpeechTranslationServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getStreamingTranslateSpeechMethod(),
-              io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
-                  new MethodHandlers<
-                      com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechRequest,
-                      com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResponse>(
-                      this, METHODID_STREAMING_TRANSLATE_SPEECH)))
-          .build();
+      return SpeechTranslationServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service SpeechTranslationService.
    *
    * <pre>
    * Provides translation from/to media types.
@@ -213,7 +216,7 @@ public final class SpeechTranslationServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service SpeechTranslationService.
    *
    * <pre>
    * Provides translation from/to media types.
@@ -234,7 +237,8 @@ public final class SpeechTranslationServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * SpeechTranslationService.
    *
    * <pre>
    * Provides translation from/to media types.
@@ -261,10 +265,10 @@ public final class SpeechTranslationServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final SpeechTranslationServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(SpeechTranslationServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -294,6 +298,18 @@ public final class SpeechTranslationServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getStreamingTranslateSpeechMethod(),
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechRequest,
+                    com.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResponse>(
+                    service, METHODID_STREAMING_TRANSLATE_SPEECH)))
+        .build();
   }
 
   private abstract static class SpeechTranslationServiceBaseDescriptorSupplier

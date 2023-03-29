@@ -191,7 +191,7 @@ public final class KeyTrackingServiceGrpc {
    * given Cloud KMS key via CMEK.
    * </pre>
    */
-  public abstract static class KeyTrackingServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -204,7 +204,7 @@ public final class KeyTrackingServiceGrpc {
      * succeed.
      * </pre>
      */
-    public void getProtectedResourcesSummary(
+    default void getProtectedResourcesSummary(
         com.google.cloud.kms.inventory.v1.GetProtectedResourcesSummaryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.inventory.v1.ProtectedResourcesSummary>
             responseObserver) {
@@ -220,7 +220,7 @@ public final class KeyTrackingServiceGrpc {
      * [CryptoKey][google.cloud.kms.v1.CryptoKey] in the given Cloud organization.
      * </pre>
      */
-    public void searchProtectedResources(
+    default void searchProtectedResources(
         com.google.cloud.kms.inventory.v1.SearchProtectedResourcesRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.kms.inventory.v1.SearchProtectedResourcesResponse>
@@ -228,30 +228,27 @@ public final class KeyTrackingServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSearchProtectedResourcesMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service KeyTrackingService.
+   *
+   * <pre>
+   * Returns information about the resources in an org that are protected by a
+   * given Cloud KMS key via CMEK.
+   * </pre>
+   */
+  public abstract static class KeyTrackingServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getGetProtectedResourcesSummaryMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.inventory.v1.GetProtectedResourcesSummaryRequest,
-                      com.google.cloud.kms.inventory.v1.ProtectedResourcesSummary>(
-                      this, METHODID_GET_PROTECTED_RESOURCES_SUMMARY)))
-          .addMethod(
-              getSearchProtectedResourcesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.inventory.v1.SearchProtectedResourcesRequest,
-                      com.google.cloud.kms.inventory.v1.SearchProtectedResourcesResponse>(
-                      this, METHODID_SEARCH_PROTECTED_RESOURCES)))
-          .build();
+      return KeyTrackingServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service KeyTrackingService.
    *
    * <pre>
    * Returns information about the resources in an org that are protected by a
@@ -312,7 +309,7 @@ public final class KeyTrackingServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service KeyTrackingService.
    *
    * <pre>
    * Returns information about the resources in an org that are protected by a
@@ -366,7 +363,7 @@ public final class KeyTrackingServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service KeyTrackingService.
    *
    * <pre>
    * Returns information about the resources in an org that are protected by a
@@ -429,10 +426,10 @@ public final class KeyTrackingServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final KeyTrackingServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(KeyTrackingServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -469,6 +466,25 @@ public final class KeyTrackingServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getGetProtectedResourcesSummaryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.inventory.v1.GetProtectedResourcesSummaryRequest,
+                    com.google.cloud.kms.inventory.v1.ProtectedResourcesSummary>(
+                    service, METHODID_GET_PROTECTED_RESOURCES_SUMMARY)))
+        .addMethod(
+            getSearchProtectedResourcesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.inventory.v1.SearchProtectedResourcesRequest,
+                    com.google.cloud.kms.inventory.v1.SearchProtectedResourcesResponse>(
+                    service, METHODID_SEARCH_PROTECTED_RESOURCES)))
+        .build();
   }
 
   private abstract static class KeyTrackingServiceBaseDescriptorSupplier

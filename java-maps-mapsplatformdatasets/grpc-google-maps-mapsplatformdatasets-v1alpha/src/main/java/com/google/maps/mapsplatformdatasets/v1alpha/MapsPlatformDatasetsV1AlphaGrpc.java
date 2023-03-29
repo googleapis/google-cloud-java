@@ -433,8 +433,7 @@ public final class MapsPlatformDatasetsV1AlphaGrpc {
    * Service definition for the Maps Platform Datasets API.
    * </pre>
    */
-  public abstract static class MapsPlatformDatasetsV1AlphaImplBase
-      implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -443,7 +442,7 @@ public final class MapsPlatformDatasetsV1AlphaGrpc {
      * Create a new dataset for the specified project.
      * </pre>
      */
-    public void createDataset(
+    default void createDataset(
         com.google.maps.mapsplatformdatasets.v1alpha.CreateDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.maps.mapsplatformdatasets.v1alpha.Dataset>
             responseObserver) {
@@ -458,7 +457,7 @@ public final class MapsPlatformDatasetsV1AlphaGrpc {
      * Update the metadata for the dataset. To update the data use: UploadDataset.
      * </pre>
      */
-    public void updateDatasetMetadata(
+    default void updateDatasetMetadata(
         com.google.maps.mapsplatformdatasets.v1alpha.UpdateDatasetMetadataRequest request,
         io.grpc.stub.StreamObserver<com.google.maps.mapsplatformdatasets.v1alpha.Dataset>
             responseObserver) {
@@ -473,7 +472,7 @@ public final class MapsPlatformDatasetsV1AlphaGrpc {
      * Get the published or latest version of the dataset.
      * </pre>
      */
-    public void getDataset(
+    default void getDataset(
         com.google.maps.mapsplatformdatasets.v1alpha.GetDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.maps.mapsplatformdatasets.v1alpha.Dataset>
             responseObserver) {
@@ -487,7 +486,7 @@ public final class MapsPlatformDatasetsV1AlphaGrpc {
      * List all the versions of a dataset.
      * </pre>
      */
-    public void listDatasetVersions(
+    default void listDatasetVersions(
         com.google.maps.mapsplatformdatasets.v1alpha.ListDatasetVersionsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.maps.mapsplatformdatasets.v1alpha.ListDatasetVersionsResponse>
@@ -503,7 +502,7 @@ public final class MapsPlatformDatasetsV1AlphaGrpc {
      * List all the datasets for the specified project.
      * </pre>
      */
-    public void listDatasets(
+    default void listDatasets(
         com.google.maps.mapsplatformdatasets.v1alpha.ListDatasetsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.maps.mapsplatformdatasets.v1alpha.ListDatasetsResponse>
@@ -520,7 +519,7 @@ public final class MapsPlatformDatasetsV1AlphaGrpc {
      * versions.
      * </pre>
      */
-    public void deleteDataset(
+    default void deleteDataset(
         com.google.maps.mapsplatformdatasets.v1alpha.DeleteDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -534,69 +533,32 @@ public final class MapsPlatformDatasetsV1AlphaGrpc {
      * Delete a specific version of the dataset.
      * </pre>
      */
-    public void deleteDatasetVersion(
+    default void deleteDatasetVersion(
         com.google.maps.mapsplatformdatasets.v1alpha.DeleteDatasetVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteDatasetVersionMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service MapsPlatformDatasetsV1Alpha.
+   *
+   * <pre>
+   * Service definition for the Maps Platform Datasets API.
+   * </pre>
+   */
+  public abstract static class MapsPlatformDatasetsV1AlphaImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateDatasetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.maps.mapsplatformdatasets.v1alpha.CreateDatasetRequest,
-                      com.google.maps.mapsplatformdatasets.v1alpha.Dataset>(
-                      this, METHODID_CREATE_DATASET)))
-          .addMethod(
-              getUpdateDatasetMetadataMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.maps.mapsplatformdatasets.v1alpha.UpdateDatasetMetadataRequest,
-                      com.google.maps.mapsplatformdatasets.v1alpha.Dataset>(
-                      this, METHODID_UPDATE_DATASET_METADATA)))
-          .addMethod(
-              getGetDatasetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.maps.mapsplatformdatasets.v1alpha.GetDatasetRequest,
-                      com.google.maps.mapsplatformdatasets.v1alpha.Dataset>(
-                      this, METHODID_GET_DATASET)))
-          .addMethod(
-              getListDatasetVersionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.maps.mapsplatformdatasets.v1alpha.ListDatasetVersionsRequest,
-                      com.google.maps.mapsplatformdatasets.v1alpha.ListDatasetVersionsResponse>(
-                      this, METHODID_LIST_DATASET_VERSIONS)))
-          .addMethod(
-              getListDatasetsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.maps.mapsplatformdatasets.v1alpha.ListDatasetsRequest,
-                      com.google.maps.mapsplatformdatasets.v1alpha.ListDatasetsResponse>(
-                      this, METHODID_LIST_DATASETS)))
-          .addMethod(
-              getDeleteDatasetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.maps.mapsplatformdatasets.v1alpha.DeleteDatasetRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_DATASET)))
-          .addMethod(
-              getDeleteDatasetVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.maps.mapsplatformdatasets.v1alpha.DeleteDatasetVersionRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_DATASET_VERSION)))
-          .build();
+      return MapsPlatformDatasetsV1AlphaGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service MapsPlatformDatasetsV1Alpha.
    *
    * <pre>
    * Service definition for the Maps Platform Datasets API.
@@ -735,7 +697,7 @@ public final class MapsPlatformDatasetsV1AlphaGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service MapsPlatformDatasetsV1Alpha.
    *
    * <pre>
    * Service definition for the Maps Platform Datasets API.
@@ -849,7 +811,8 @@ public final class MapsPlatformDatasetsV1AlphaGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * MapsPlatformDatasetsV1Alpha.
    *
    * <pre>
    * Service definition for the Maps Platform Datasets API.
@@ -982,10 +945,10 @@ public final class MapsPlatformDatasetsV1AlphaGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final MapsPlatformDatasetsV1AlphaImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(MapsPlatformDatasetsV1AlphaImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1050,6 +1013,58 @@ public final class MapsPlatformDatasetsV1AlphaGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateDatasetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.maps.mapsplatformdatasets.v1alpha.CreateDatasetRequest,
+                    com.google.maps.mapsplatformdatasets.v1alpha.Dataset>(
+                    service, METHODID_CREATE_DATASET)))
+        .addMethod(
+            getUpdateDatasetMetadataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.maps.mapsplatformdatasets.v1alpha.UpdateDatasetMetadataRequest,
+                    com.google.maps.mapsplatformdatasets.v1alpha.Dataset>(
+                    service, METHODID_UPDATE_DATASET_METADATA)))
+        .addMethod(
+            getGetDatasetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.maps.mapsplatformdatasets.v1alpha.GetDatasetRequest,
+                    com.google.maps.mapsplatformdatasets.v1alpha.Dataset>(
+                    service, METHODID_GET_DATASET)))
+        .addMethod(
+            getListDatasetVersionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.maps.mapsplatformdatasets.v1alpha.ListDatasetVersionsRequest,
+                    com.google.maps.mapsplatformdatasets.v1alpha.ListDatasetVersionsResponse>(
+                    service, METHODID_LIST_DATASET_VERSIONS)))
+        .addMethod(
+            getListDatasetsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.maps.mapsplatformdatasets.v1alpha.ListDatasetsRequest,
+                    com.google.maps.mapsplatformdatasets.v1alpha.ListDatasetsResponse>(
+                    service, METHODID_LIST_DATASETS)))
+        .addMethod(
+            getDeleteDatasetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.maps.mapsplatformdatasets.v1alpha.DeleteDatasetRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_DATASET)))
+        .addMethod(
+            getDeleteDatasetVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.maps.mapsplatformdatasets.v1alpha.DeleteDatasetVersionRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_DATASET_VERSION)))
+        .build();
   }
 
   private abstract static class MapsPlatformDatasetsV1AlphaBaseDescriptorSupplier

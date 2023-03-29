@@ -350,7 +350,7 @@ public final class GroupServiceGrpc {
    * from the infrastructure.
    * </pre>
    */
-  public abstract static class GroupServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -359,7 +359,7 @@ public final class GroupServiceGrpc {
      * Lists the existing groups.
      * </pre>
      */
-    public void listGroups(
+    default void listGroups(
         com.google.monitoring.v3.ListGroupsRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.ListGroupsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListGroupsMethod(), responseObserver);
@@ -372,7 +372,7 @@ public final class GroupServiceGrpc {
      * Gets a single group.
      * </pre>
      */
-    public void getGroup(
+    default void getGroup(
         com.google.monitoring.v3.GetGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.Group> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetGroupMethod(), responseObserver);
@@ -385,7 +385,7 @@ public final class GroupServiceGrpc {
      * Creates a new group.
      * </pre>
      */
-    public void createGroup(
+    default void createGroup(
         com.google.monitoring.v3.CreateGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.Group> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -400,7 +400,7 @@ public final class GroupServiceGrpc {
      * You can change any group attributes except `name`.
      * </pre>
      */
-    public void updateGroup(
+    default void updateGroup(
         com.google.monitoring.v3.UpdateGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.Group> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -414,7 +414,7 @@ public final class GroupServiceGrpc {
      * Deletes an existing group.
      * </pre>
      */
-    public void deleteGroup(
+    default void deleteGroup(
         com.google.monitoring.v3.DeleteGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -428,60 +428,43 @@ public final class GroupServiceGrpc {
      * Lists the monitored resources that are members of a group.
      * </pre>
      */
-    public void listGroupMembers(
+    default void listGroupMembers(
         com.google.monitoring.v3.ListGroupMembersRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.ListGroupMembersResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListGroupMembersMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service GroupService.
+   *
+   * <pre>
+   * The Group API lets you inspect and manage your
+   * [groups](#google.monitoring.v3.Group).
+   * A group is a named filter that is used to identify
+   * a collection of monitored resources. Groups are typically used to
+   * mirror the physical and/or logical topology of the environment.
+   * Because group membership is computed dynamically, monitored
+   * resources that are started in the future are automatically placed
+   * in matching groups. By using a group to name monitored resources in,
+   * for example, an alert policy, the target of that alert policy is
+   * updated automatically as monitored resources are added and removed
+   * from the infrastructure.
+   * </pre>
+   */
+  public abstract static class GroupServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListGroupsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.ListGroupsRequest,
-                      com.google.monitoring.v3.ListGroupsResponse>(this, METHODID_LIST_GROUPS)))
-          .addMethod(
-              getGetGroupMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.GetGroupRequest, com.google.monitoring.v3.Group>(
-                      this, METHODID_GET_GROUP)))
-          .addMethod(
-              getCreateGroupMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.CreateGroupRequest, com.google.monitoring.v3.Group>(
-                      this, METHODID_CREATE_GROUP)))
-          .addMethod(
-              getUpdateGroupMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.UpdateGroupRequest, com.google.monitoring.v3.Group>(
-                      this, METHODID_UPDATE_GROUP)))
-          .addMethod(
-              getDeleteGroupMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.DeleteGroupRequest, com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_GROUP)))
-          .addMethod(
-              getListGroupMembersMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.ListGroupMembersRequest,
-                      com.google.monitoring.v3.ListGroupMembersResponse>(
-                      this, METHODID_LIST_GROUP_MEMBERS)))
-          .build();
+      return GroupServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service GroupService.
    *
    * <pre>
    * The Group API lets you inspect and manage your
@@ -604,7 +587,7 @@ public final class GroupServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service GroupService.
    *
    * <pre>
    * The Group API lets you inspect and manage your
@@ -713,7 +696,7 @@ public final class GroupServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service GroupService.
    *
    * <pre>
    * The Group API lets you inspect and manage your
@@ -835,10 +818,10 @@ public final class GroupServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final GroupServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(GroupServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -893,6 +876,48 @@ public final class GroupServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListGroupsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.ListGroupsRequest,
+                    com.google.monitoring.v3.ListGroupsResponse>(service, METHODID_LIST_GROUPS)))
+        .addMethod(
+            getGetGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.GetGroupRequest, com.google.monitoring.v3.Group>(
+                    service, METHODID_GET_GROUP)))
+        .addMethod(
+            getCreateGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.CreateGroupRequest, com.google.monitoring.v3.Group>(
+                    service, METHODID_CREATE_GROUP)))
+        .addMethod(
+            getUpdateGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.UpdateGroupRequest, com.google.monitoring.v3.Group>(
+                    service, METHODID_UPDATE_GROUP)))
+        .addMethod(
+            getDeleteGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.DeleteGroupRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_GROUP)))
+        .addMethod(
+            getListGroupMembersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.ListGroupMembersRequest,
+                    com.google.monitoring.v3.ListGroupMembersResponse>(
+                    service, METHODID_LIST_GROUP_MEMBERS)))
+        .build();
   }
 
   private abstract static class GroupServiceBaseDescriptorSupplier

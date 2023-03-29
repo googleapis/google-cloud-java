@@ -183,7 +183,7 @@ public final class AddressValidationGrpc {
    * The service for validating addresses.
    * </pre>
    */
-  public abstract static class AddressValidationImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -192,7 +192,7 @@ public final class AddressValidationGrpc {
      * Validates an address.
      * </pre>
      */
-    public void validateAddress(
+    default void validateAddress(
         com.google.maps.addressvalidation.v1.ValidateAddressRequest request,
         io.grpc.stub.StreamObserver<com.google.maps.addressvalidation.v1.ValidateAddressResponse>
             responseObserver) {
@@ -211,7 +211,7 @@ public final class AddressValidationGrpc {
      * needed to validate an address fully.
      * </pre>
      */
-    public void provideValidationFeedback(
+    default void provideValidationFeedback(
         com.google.maps.addressvalidation.v1.ProvideValidationFeedbackRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.maps.addressvalidation.v1.ProvideValidationFeedbackResponse>
@@ -219,30 +219,26 @@ public final class AddressValidationGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getProvideValidationFeedbackMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service AddressValidation.
+   *
+   * <pre>
+   * The service for validating addresses.
+   * </pre>
+   */
+  public abstract static class AddressValidationImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getValidateAddressMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.maps.addressvalidation.v1.ValidateAddressRequest,
-                      com.google.maps.addressvalidation.v1.ValidateAddressResponse>(
-                      this, METHODID_VALIDATE_ADDRESS)))
-          .addMethod(
-              getProvideValidationFeedbackMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.maps.addressvalidation.v1.ProvideValidationFeedbackRequest,
-                      com.google.maps.addressvalidation.v1.ProvideValidationFeedbackResponse>(
-                      this, METHODID_PROVIDE_VALIDATION_FEEDBACK)))
-          .build();
+      return AddressValidationGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service AddressValidation.
    *
    * <pre>
    * The service for validating addresses.
@@ -301,7 +297,7 @@ public final class AddressValidationGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service AddressValidation.
    *
    * <pre>
    * The service for validating addresses.
@@ -353,7 +349,7 @@ public final class AddressValidationGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service AddressValidation.
    *
    * <pre>
    * The service for validating addresses.
@@ -413,10 +409,10 @@ public final class AddressValidationGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final AddressValidationImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(AddressValidationImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -453,6 +449,25 @@ public final class AddressValidationGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getValidateAddressMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.maps.addressvalidation.v1.ValidateAddressRequest,
+                    com.google.maps.addressvalidation.v1.ValidateAddressResponse>(
+                    service, METHODID_VALIDATE_ADDRESS)))
+        .addMethod(
+            getProvideValidationFeedbackMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.maps.addressvalidation.v1.ProvideValidationFeedbackRequest,
+                    com.google.maps.addressvalidation.v1.ProvideValidationFeedbackResponse>(
+                    service, METHODID_PROVIDE_VALIDATION_FEEDBACK)))
+        .build();
   }
 
   private abstract static class AddressValidationBaseDescriptorSupplier

@@ -646,7 +646,7 @@ public final class GrafeasGrpc {
    * image with the vulnerability referring to that note.
    * </pre>
    */
-  public abstract static class GrafeasImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -655,7 +655,7 @@ public final class GrafeasGrpc {
      * Gets the specified occurrence.
      * </pre>
      */
-    public void getOccurrence(
+    default void getOccurrence(
         io.grafeas.v1.GetOccurrenceRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1.Occurrence> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -669,7 +669,7 @@ public final class GrafeasGrpc {
      * Lists occurrences for the specified project.
      * </pre>
      */
-    public void listOccurrences(
+    default void listOccurrences(
         io.grafeas.v1.ListOccurrencesRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1.ListOccurrencesResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -685,7 +685,7 @@ public final class GrafeasGrpc {
      * resource.
      * </pre>
      */
-    public void deleteOccurrence(
+    default void deleteOccurrence(
         io.grafeas.v1.DeleteOccurrenceRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -699,7 +699,7 @@ public final class GrafeasGrpc {
      * Creates a new occurrence.
      * </pre>
      */
-    public void createOccurrence(
+    default void createOccurrence(
         io.grafeas.v1.CreateOccurrenceRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1.Occurrence> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -713,7 +713,7 @@ public final class GrafeasGrpc {
      * Creates new occurrences in batch.
      * </pre>
      */
-    public void batchCreateOccurrences(
+    default void batchCreateOccurrences(
         io.grafeas.v1.BatchCreateOccurrencesRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1.BatchCreateOccurrencesResponse>
             responseObserver) {
@@ -728,7 +728,7 @@ public final class GrafeasGrpc {
      * Updates the specified occurrence.
      * </pre>
      */
-    public void updateOccurrence(
+    default void updateOccurrence(
         io.grafeas.v1.UpdateOccurrenceRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1.Occurrence> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -743,7 +743,7 @@ public final class GrafeasGrpc {
      * use this method to get a note that belongs to a provider project.
      * </pre>
      */
-    public void getOccurrenceNote(
+    default void getOccurrenceNote(
         io.grafeas.v1.GetOccurrenceNoteRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1.Note> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -757,7 +757,7 @@ public final class GrafeasGrpc {
      * Gets the specified note.
      * </pre>
      */
-    public void getNote(
+    default void getNote(
         io.grafeas.v1.GetNoteRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1.Note> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetNoteMethod(), responseObserver);
@@ -770,7 +770,7 @@ public final class GrafeasGrpc {
      * Lists notes for the specified project.
      * </pre>
      */
-    public void listNotes(
+    default void listNotes(
         io.grafeas.v1.ListNotesRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1.ListNotesResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListNotesMethod(), responseObserver);
@@ -783,7 +783,7 @@ public final class GrafeasGrpc {
      * Deletes the specified note.
      * </pre>
      */
-    public void deleteNote(
+    default void deleteNote(
         io.grafeas.v1.DeleteNoteRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteNoteMethod(), responseObserver);
@@ -796,7 +796,7 @@ public final class GrafeasGrpc {
      * Creates a new note.
      * </pre>
      */
-    public void createNote(
+    default void createNote(
         io.grafeas.v1.CreateNoteRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1.Note> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateNoteMethod(), responseObserver);
@@ -809,7 +809,7 @@ public final class GrafeasGrpc {
      * Creates new notes in batch.
      * </pre>
      */
-    public void batchCreateNotes(
+    default void batchCreateNotes(
         io.grafeas.v1.BatchCreateNotesRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1.BatchCreateNotesResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -823,7 +823,7 @@ public final class GrafeasGrpc {
      * Updates the specified note.
      * </pre>
      */
-    public void updateNote(
+    default void updateNote(
         io.grafeas.v1.UpdateNoteRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1.Note> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateNoteMethod(), responseObserver);
@@ -838,102 +838,41 @@ public final class GrafeasGrpc {
      * specified note.
      * </pre>
      */
-    public void listNoteOccurrences(
+    default void listNoteOccurrences(
         io.grafeas.v1.ListNoteOccurrencesRequest request,
         io.grpc.stub.StreamObserver<io.grafeas.v1.ListNoteOccurrencesResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListNoteOccurrencesMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Grafeas.
+   *
+   * <pre>
+   * [Grafeas](https://grafeas.io) API.
+   * Retrieves analysis results of Cloud components such as Docker container
+   * images.
+   * Analysis results are stored as a series of occurrences. An `Occurrence`
+   * contains information about a specific analysis instance on a resource. An
+   * occurrence refers to a `Note`. A note contains details describing the
+   * analysis and is generally stored in a separate project, called a `Provider`.
+   * Multiple occurrences can refer to the same note.
+   * For example, an SSL vulnerability could affect multiple images. In this case,
+   * there would be one note for the vulnerability and an occurrence for each
+   * image with the vulnerability referring to that note.
+   * </pre>
+   */
+  public abstract static class GrafeasImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getGetOccurrenceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<io.grafeas.v1.GetOccurrenceRequest, io.grafeas.v1.Occurrence>(
-                      this, METHODID_GET_OCCURRENCE)))
-          .addMethod(
-              getListOccurrencesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      io.grafeas.v1.ListOccurrencesRequest, io.grafeas.v1.ListOccurrencesResponse>(
-                      this, METHODID_LIST_OCCURRENCES)))
-          .addMethod(
-              getDeleteOccurrenceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      io.grafeas.v1.DeleteOccurrenceRequest, com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_OCCURRENCE)))
-          .addMethod(
-              getCreateOccurrenceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      io.grafeas.v1.CreateOccurrenceRequest, io.grafeas.v1.Occurrence>(
-                      this, METHODID_CREATE_OCCURRENCE)))
-          .addMethod(
-              getBatchCreateOccurrencesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      io.grafeas.v1.BatchCreateOccurrencesRequest,
-                      io.grafeas.v1.BatchCreateOccurrencesResponse>(
-                      this, METHODID_BATCH_CREATE_OCCURRENCES)))
-          .addMethod(
-              getUpdateOccurrenceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      io.grafeas.v1.UpdateOccurrenceRequest, io.grafeas.v1.Occurrence>(
-                      this, METHODID_UPDATE_OCCURRENCE)))
-          .addMethod(
-              getGetOccurrenceNoteMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<io.grafeas.v1.GetOccurrenceNoteRequest, io.grafeas.v1.Note>(
-                      this, METHODID_GET_OCCURRENCE_NOTE)))
-          .addMethod(
-              getGetNoteMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<io.grafeas.v1.GetNoteRequest, io.grafeas.v1.Note>(
-                      this, METHODID_GET_NOTE)))
-          .addMethod(
-              getListNotesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      io.grafeas.v1.ListNotesRequest, io.grafeas.v1.ListNotesResponse>(
-                      this, METHODID_LIST_NOTES)))
-          .addMethod(
-              getDeleteNoteMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<io.grafeas.v1.DeleteNoteRequest, com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_NOTE)))
-          .addMethod(
-              getCreateNoteMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<io.grafeas.v1.CreateNoteRequest, io.grafeas.v1.Note>(
-                      this, METHODID_CREATE_NOTE)))
-          .addMethod(
-              getBatchCreateNotesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      io.grafeas.v1.BatchCreateNotesRequest,
-                      io.grafeas.v1.BatchCreateNotesResponse>(this, METHODID_BATCH_CREATE_NOTES)))
-          .addMethod(
-              getUpdateNoteMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<io.grafeas.v1.UpdateNoteRequest, io.grafeas.v1.Note>(
-                      this, METHODID_UPDATE_NOTE)))
-          .addMethod(
-              getListNoteOccurrencesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      io.grafeas.v1.ListNoteOccurrencesRequest,
-                      io.grafeas.v1.ListNoteOccurrencesResponse>(
-                      this, METHODID_LIST_NOTE_OCCURRENCES)))
-          .build();
+      return GrafeasGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Grafeas.
    *
    * <pre>
    * [Grafeas](https://grafeas.io) API.
@@ -1181,7 +1120,7 @@ public final class GrafeasGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Grafeas.
    *
    * <pre>
    * [Grafeas](https://grafeas.io) API.
@@ -1390,7 +1329,7 @@ public final class GrafeasGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Grafeas.
    *
    * <pre>
    * [Grafeas](https://grafeas.io) API.
@@ -1628,10 +1567,10 @@ public final class GrafeasGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final GrafeasImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(GrafeasImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1728,6 +1667,88 @@ public final class GrafeasGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getGetOccurrenceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<io.grafeas.v1.GetOccurrenceRequest, io.grafeas.v1.Occurrence>(
+                    service, METHODID_GET_OCCURRENCE)))
+        .addMethod(
+            getListOccurrencesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    io.grafeas.v1.ListOccurrencesRequest, io.grafeas.v1.ListOccurrencesResponse>(
+                    service, METHODID_LIST_OCCURRENCES)))
+        .addMethod(
+            getDeleteOccurrenceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    io.grafeas.v1.DeleteOccurrenceRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_OCCURRENCE)))
+        .addMethod(
+            getCreateOccurrenceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<io.grafeas.v1.CreateOccurrenceRequest, io.grafeas.v1.Occurrence>(
+                    service, METHODID_CREATE_OCCURRENCE)))
+        .addMethod(
+            getBatchCreateOccurrencesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    io.grafeas.v1.BatchCreateOccurrencesRequest,
+                    io.grafeas.v1.BatchCreateOccurrencesResponse>(
+                    service, METHODID_BATCH_CREATE_OCCURRENCES)))
+        .addMethod(
+            getUpdateOccurrenceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<io.grafeas.v1.UpdateOccurrenceRequest, io.grafeas.v1.Occurrence>(
+                    service, METHODID_UPDATE_OCCURRENCE)))
+        .addMethod(
+            getGetOccurrenceNoteMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<io.grafeas.v1.GetOccurrenceNoteRequest, io.grafeas.v1.Note>(
+                    service, METHODID_GET_OCCURRENCE_NOTE)))
+        .addMethod(
+            getGetNoteMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<io.grafeas.v1.GetNoteRequest, io.grafeas.v1.Note>(
+                    service, METHODID_GET_NOTE)))
+        .addMethod(
+            getListNotesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<io.grafeas.v1.ListNotesRequest, io.grafeas.v1.ListNotesResponse>(
+                    service, METHODID_LIST_NOTES)))
+        .addMethod(
+            getDeleteNoteMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<io.grafeas.v1.DeleteNoteRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_NOTE)))
+        .addMethod(
+            getCreateNoteMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<io.grafeas.v1.CreateNoteRequest, io.grafeas.v1.Note>(
+                    service, METHODID_CREATE_NOTE)))
+        .addMethod(
+            getBatchCreateNotesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    io.grafeas.v1.BatchCreateNotesRequest, io.grafeas.v1.BatchCreateNotesResponse>(
+                    service, METHODID_BATCH_CREATE_NOTES)))
+        .addMethod(
+            getUpdateNoteMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<io.grafeas.v1.UpdateNoteRequest, io.grafeas.v1.Note>(
+                    service, METHODID_UPDATE_NOTE)))
+        .addMethod(
+            getListNoteOccurrencesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    io.grafeas.v1.ListNoteOccurrencesRequest,
+                    io.grafeas.v1.ListNoteOccurrencesResponse>(
+                    service, METHODID_LIST_NOTE_OCCURRENCES)))
+        .build();
   }
 
   private abstract static class GrafeasBaseDescriptorSupplier

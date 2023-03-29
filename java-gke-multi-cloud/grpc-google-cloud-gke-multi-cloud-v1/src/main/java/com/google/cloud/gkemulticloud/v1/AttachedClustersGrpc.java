@@ -492,7 +492,7 @@ public final class AttachedClustersGrpc {
    * infrastructure.
    * </pre>
    */
-  public abstract static class AttachedClustersImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -506,7 +506,7 @@ public final class AttachedClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
-    public void createAttachedCluster(
+    default void createAttachedCluster(
         com.google.cloud.gkemulticloud.v1.CreateAttachedClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -521,7 +521,7 @@ public final class AttachedClustersGrpc {
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster].
      * </pre>
      */
-    public void updateAttachedCluster(
+    default void updateAttachedCluster(
         com.google.cloud.gkemulticloud.v1.UpdateAttachedClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -542,7 +542,7 @@ public final class AttachedClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
-    public void importAttachedCluster(
+    default void importAttachedCluster(
         com.google.cloud.gkemulticloud.v1.ImportAttachedClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -557,7 +557,7 @@ public final class AttachedClustersGrpc {
      * [AttachedCluster][google.cloud.gkemulticloud.v1.AttachedCluster] resource.
      * </pre>
      */
-    public void getAttachedCluster(
+    default void getAttachedCluster(
         com.google.cloud.gkemulticloud.v1.GetAttachedClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AttachedCluster>
             responseObserver) {
@@ -573,7 +573,7 @@ public final class AttachedClustersGrpc {
      * resources on a given Google Cloud project and region.
      * </pre>
      */
-    public void listAttachedClusters(
+    default void listAttachedClusters(
         com.google.cloud.gkemulticloud.v1.ListAttachedClustersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.ListAttachedClustersResponse>
             responseObserver) {
@@ -592,7 +592,7 @@ public final class AttachedClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
-    public void deleteAttachedCluster(
+    default void deleteAttachedCluster(
         com.google.cloud.gkemulticloud.v1.DeleteAttachedClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -607,7 +607,7 @@ public final class AttachedClustersGrpc {
      * Google Cloud location.
      * </pre>
      */
-    public void getAttachedServerConfig(
+    default void getAttachedServerConfig(
         com.google.cloud.gkemulticloud.v1.GetAttachedServerConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AttachedServerConfig>
             responseObserver) {
@@ -622,7 +622,7 @@ public final class AttachedClustersGrpc {
      * Generates the install manifest to be installed on the target cluster.
      * </pre>
      */
-    public void generateAttachedClusterInstallManifest(
+    default void generateAttachedClusterInstallManifest(
         com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterInstallManifestRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterInstallManifestResponse>
@@ -630,70 +630,28 @@ public final class AttachedClustersGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGenerateAttachedClusterInstallManifestMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service AttachedClusters.
+   *
+   * <pre>
+   * The AttachedClusters API provides a single centrally managed service
+   * to register and manage Anthos attached clusters that run on customer's owned
+   * infrastructure.
+   * </pre>
+   */
+  public abstract static class AttachedClustersImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateAttachedClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.CreateAttachedClusterRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_ATTACHED_CLUSTER)))
-          .addMethod(
-              getUpdateAttachedClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.UpdateAttachedClusterRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_ATTACHED_CLUSTER)))
-          .addMethod(
-              getImportAttachedClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.ImportAttachedClusterRequest,
-                      com.google.longrunning.Operation>(this, METHODID_IMPORT_ATTACHED_CLUSTER)))
-          .addMethod(
-              getGetAttachedClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.GetAttachedClusterRequest,
-                      com.google.cloud.gkemulticloud.v1.AttachedCluster>(
-                      this, METHODID_GET_ATTACHED_CLUSTER)))
-          .addMethod(
-              getListAttachedClustersMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.ListAttachedClustersRequest,
-                      com.google.cloud.gkemulticloud.v1.ListAttachedClustersResponse>(
-                      this, METHODID_LIST_ATTACHED_CLUSTERS)))
-          .addMethod(
-              getDeleteAttachedClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.DeleteAttachedClusterRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_ATTACHED_CLUSTER)))
-          .addMethod(
-              getGetAttachedServerConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.GetAttachedServerConfigRequest,
-                      com.google.cloud.gkemulticloud.v1.AttachedServerConfig>(
-                      this, METHODID_GET_ATTACHED_SERVER_CONFIG)))
-          .addMethod(
-              getGenerateAttachedClusterInstallManifestMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1
-                          .GenerateAttachedClusterInstallManifestRequest,
-                      com.google.cloud.gkemulticloud.v1
-                          .GenerateAttachedClusterInstallManifestResponse>(
-                      this, METHODID_GENERATE_ATTACHED_CLUSTER_INSTALL_MANIFEST)))
-          .build();
+      return AttachedClustersGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service AttachedClusters.
    *
    * <pre>
    * The AttachedClusters API provides a single centrally managed service
@@ -867,7 +825,7 @@ public final class AttachedClustersGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service AttachedClusters.
    *
    * <pre>
    * The AttachedClusters API provides a single centrally managed service
@@ -1018,7 +976,7 @@ public final class AttachedClustersGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service AttachedClusters.
    *
    * <pre>
    * The AttachedClusters API provides a single centrally managed service
@@ -1190,10 +1148,10 @@ public final class AttachedClustersGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final AttachedClustersImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(AttachedClustersImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1264,6 +1222,64 @@ public final class AttachedClustersGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateAttachedClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.CreateAttachedClusterRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_ATTACHED_CLUSTER)))
+        .addMethod(
+            getUpdateAttachedClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.UpdateAttachedClusterRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_ATTACHED_CLUSTER)))
+        .addMethod(
+            getImportAttachedClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.ImportAttachedClusterRequest,
+                    com.google.longrunning.Operation>(service, METHODID_IMPORT_ATTACHED_CLUSTER)))
+        .addMethod(
+            getGetAttachedClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.GetAttachedClusterRequest,
+                    com.google.cloud.gkemulticloud.v1.AttachedCluster>(
+                    service, METHODID_GET_ATTACHED_CLUSTER)))
+        .addMethod(
+            getListAttachedClustersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.ListAttachedClustersRequest,
+                    com.google.cloud.gkemulticloud.v1.ListAttachedClustersResponse>(
+                    service, METHODID_LIST_ATTACHED_CLUSTERS)))
+        .addMethod(
+            getDeleteAttachedClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.DeleteAttachedClusterRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_ATTACHED_CLUSTER)))
+        .addMethod(
+            getGetAttachedServerConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.GetAttachedServerConfigRequest,
+                    com.google.cloud.gkemulticloud.v1.AttachedServerConfig>(
+                    service, METHODID_GET_ATTACHED_SERVER_CONFIG)))
+        .addMethod(
+            getGenerateAttachedClusterInstallManifestMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.GenerateAttachedClusterInstallManifestRequest,
+                    com.google.cloud.gkemulticloud.v1
+                        .GenerateAttachedClusterInstallManifestResponse>(
+                    service, METHODID_GENERATE_ATTACHED_CLUSTER_INSTALL_MANIFEST)))
+        .build();
   }
 
   private abstract static class AttachedClustersBaseDescriptorSupplier
