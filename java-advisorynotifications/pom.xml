@@ -50,4 +50,5 @@
     <module>proto-google-cloud-advisorynotifications-v1</module>
     <module>google-cloud-advisorynotifications-bom</module>
   </modules>
-</project>
+
+  </project>
