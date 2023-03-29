@@ -21,20 +21,20 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Configures and manages Cloud Filestore resources.
- * Cloud Filestore Manager v1.
- * The `file.googleapis.com` service implements the Cloud Filestore API and
+ * Configures and manages Filestore resources.
+ * Filestore Manager v1.
+ * The `file.googleapis.com` service implements the Filestore API and
  * defines the following resource model for managing instances:
  * * The service works with a collection of cloud projects, named: `/projects/&#42;`
  * * Each project has a collection of available locations, named: `/locations/&#42;`
  * * Each location has a collection of instances and backups, named:
  * `/instances/&#42;` and `/backups/&#42;` respectively.
- * * As such, Cloud Filestore instances are resources of the form:
+ * * As such, Filestore instances are resources of the form:
  *   `/projects/{project_number}/locations/{location_id}/instances/{instance_id}`
  *   and backups are resources of the form:
  *   `/projects/{project_number}/locations/{location_id}/backup/{backup_id}`
- * Note that location_id must be a GCP `zone` for instances and but to a GCP
- * `region` for backups; for example:
+ * Note that location_id must be a Google Cloud `zone` for instances, but
+ * a Google Cloud `region` for backups; for example:
  * * `projects/12345/locations/us-central1-c/instances/my-filestore`
  * * `projects/12345/locations/us-central1/backups/my-backup`
  * </pre>
@@ -315,6 +315,226 @@ public final class CloudFilestoreManagerGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.filestore.v1.ListSnapshotsRequest,
+          com.google.cloud.filestore.v1.ListSnapshotsResponse>
+      getListSnapshotsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSnapshots",
+      requestType = com.google.cloud.filestore.v1.ListSnapshotsRequest.class,
+      responseType = com.google.cloud.filestore.v1.ListSnapshotsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.filestore.v1.ListSnapshotsRequest,
+          com.google.cloud.filestore.v1.ListSnapshotsResponse>
+      getListSnapshotsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.filestore.v1.ListSnapshotsRequest,
+            com.google.cloud.filestore.v1.ListSnapshotsResponse>
+        getListSnapshotsMethod;
+    if ((getListSnapshotsMethod = CloudFilestoreManagerGrpc.getListSnapshotsMethod) == null) {
+      synchronized (CloudFilestoreManagerGrpc.class) {
+        if ((getListSnapshotsMethod = CloudFilestoreManagerGrpc.getListSnapshotsMethod) == null) {
+          CloudFilestoreManagerGrpc.getListSnapshotsMethod =
+              getListSnapshotsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.filestore.v1.ListSnapshotsRequest,
+                          com.google.cloud.filestore.v1.ListSnapshotsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListSnapshots"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.filestore.v1.ListSnapshotsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.filestore.v1.ListSnapshotsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudFilestoreManagerMethodDescriptorSupplier("ListSnapshots"))
+                      .build();
+        }
+      }
+    }
+    return getListSnapshotsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.filestore.v1.GetSnapshotRequest, com.google.cloud.filestore.v1.Snapshot>
+      getGetSnapshotMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSnapshot",
+      requestType = com.google.cloud.filestore.v1.GetSnapshotRequest.class,
+      responseType = com.google.cloud.filestore.v1.Snapshot.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.filestore.v1.GetSnapshotRequest, com.google.cloud.filestore.v1.Snapshot>
+      getGetSnapshotMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.filestore.v1.GetSnapshotRequest,
+            com.google.cloud.filestore.v1.Snapshot>
+        getGetSnapshotMethod;
+    if ((getGetSnapshotMethod = CloudFilestoreManagerGrpc.getGetSnapshotMethod) == null) {
+      synchronized (CloudFilestoreManagerGrpc.class) {
+        if ((getGetSnapshotMethod = CloudFilestoreManagerGrpc.getGetSnapshotMethod) == null) {
+          CloudFilestoreManagerGrpc.getGetSnapshotMethod =
+              getGetSnapshotMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.filestore.v1.GetSnapshotRequest,
+                          com.google.cloud.filestore.v1.Snapshot>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetSnapshot"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.filestore.v1.GetSnapshotRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.filestore.v1.Snapshot.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudFilestoreManagerMethodDescriptorSupplier("GetSnapshot"))
+                      .build();
+        }
+      }
+    }
+    return getGetSnapshotMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.filestore.v1.CreateSnapshotRequest, com.google.longrunning.Operation>
+      getCreateSnapshotMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateSnapshot",
+      requestType = com.google.cloud.filestore.v1.CreateSnapshotRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.filestore.v1.CreateSnapshotRequest, com.google.longrunning.Operation>
+      getCreateSnapshotMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.filestore.v1.CreateSnapshotRequest, com.google.longrunning.Operation>
+        getCreateSnapshotMethod;
+    if ((getCreateSnapshotMethod = CloudFilestoreManagerGrpc.getCreateSnapshotMethod) == null) {
+      synchronized (CloudFilestoreManagerGrpc.class) {
+        if ((getCreateSnapshotMethod = CloudFilestoreManagerGrpc.getCreateSnapshotMethod) == null) {
+          CloudFilestoreManagerGrpc.getCreateSnapshotMethod =
+              getCreateSnapshotMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.filestore.v1.CreateSnapshotRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateSnapshot"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.filestore.v1.CreateSnapshotRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudFilestoreManagerMethodDescriptorSupplier("CreateSnapshot"))
+                      .build();
+        }
+      }
+    }
+    return getCreateSnapshotMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.filestore.v1.DeleteSnapshotRequest, com.google.longrunning.Operation>
+      getDeleteSnapshotMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteSnapshot",
+      requestType = com.google.cloud.filestore.v1.DeleteSnapshotRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.filestore.v1.DeleteSnapshotRequest, com.google.longrunning.Operation>
+      getDeleteSnapshotMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.filestore.v1.DeleteSnapshotRequest, com.google.longrunning.Operation>
+        getDeleteSnapshotMethod;
+    if ((getDeleteSnapshotMethod = CloudFilestoreManagerGrpc.getDeleteSnapshotMethod) == null) {
+      synchronized (CloudFilestoreManagerGrpc.class) {
+        if ((getDeleteSnapshotMethod = CloudFilestoreManagerGrpc.getDeleteSnapshotMethod) == null) {
+          CloudFilestoreManagerGrpc.getDeleteSnapshotMethod =
+              getDeleteSnapshotMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.filestore.v1.DeleteSnapshotRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteSnapshot"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.filestore.v1.DeleteSnapshotRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudFilestoreManagerMethodDescriptorSupplier("DeleteSnapshot"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteSnapshotMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.filestore.v1.UpdateSnapshotRequest, com.google.longrunning.Operation>
+      getUpdateSnapshotMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSnapshot",
+      requestType = com.google.cloud.filestore.v1.UpdateSnapshotRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.filestore.v1.UpdateSnapshotRequest, com.google.longrunning.Operation>
+      getUpdateSnapshotMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.filestore.v1.UpdateSnapshotRequest, com.google.longrunning.Operation>
+        getUpdateSnapshotMethod;
+    if ((getUpdateSnapshotMethod = CloudFilestoreManagerGrpc.getUpdateSnapshotMethod) == null) {
+      synchronized (CloudFilestoreManagerGrpc.class) {
+        if ((getUpdateSnapshotMethod = CloudFilestoreManagerGrpc.getUpdateSnapshotMethod) == null) {
+          CloudFilestoreManagerGrpc.getUpdateSnapshotMethod =
+              getUpdateSnapshotMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.filestore.v1.UpdateSnapshotRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateSnapshot"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.filestore.v1.UpdateSnapshotRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudFilestoreManagerMethodDescriptorSupplier("UpdateSnapshot"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateSnapshotMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.filestore.v1.ListBackupsRequest,
           com.google.cloud.filestore.v1.ListBackupsResponse>
       getListBackupsMethod;
@@ -577,25 +797,25 @@ public final class CloudFilestoreManagerGrpc {
    *
    *
    * <pre>
-   * Configures and manages Cloud Filestore resources.
-   * Cloud Filestore Manager v1.
-   * The `file.googleapis.com` service implements the Cloud Filestore API and
+   * Configures and manages Filestore resources.
+   * Filestore Manager v1.
+   * The `file.googleapis.com` service implements the Filestore API and
    * defines the following resource model for managing instances:
    * * The service works with a collection of cloud projects, named: `/projects/&#42;`
    * * Each project has a collection of available locations, named: `/locations/&#42;`
    * * Each location has a collection of instances and backups, named:
    * `/instances/&#42;` and `/backups/&#42;` respectively.
-   * * As such, Cloud Filestore instances are resources of the form:
+   * * As such, Filestore instances are resources of the form:
    *   `/projects/{project_number}/locations/{location_id}/instances/{instance_id}`
    *   and backups are resources of the form:
    *   `/projects/{project_number}/locations/{location_id}/backup/{backup_id}`
-   * Note that location_id must be a GCP `zone` for instances and but to a GCP
-   * `region` for backups; for example:
+   * Note that location_id must be a Google Cloud `zone` for instances, but
+   * a Google Cloud `region` for backups; for example:
    * * `projects/12345/locations/us-central1-c/instances/my-filestore`
    * * `projects/12345/locations/us-central1/backups/my-backup`
    * </pre>
    */
-  public abstract static class CloudFilestoreManagerImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -605,7 +825,7 @@ public final class CloudFilestoreManagerGrpc {
      * or for all locations.
      * </pre>
      */
-    public void listInstances(
+    default void listInstances(
         com.google.cloud.filestore.v1.ListInstancesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.filestore.v1.ListInstancesResponse>
             responseObserver) {
@@ -620,7 +840,7 @@ public final class CloudFilestoreManagerGrpc {
      * Gets the details of a specific instance.
      * </pre>
      */
-    public void getInstance(
+    default void getInstance(
         com.google.cloud.filestore.v1.GetInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.filestore.v1.Instance> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -637,7 +857,7 @@ public final class CloudFilestoreManagerGrpc {
      * larger than the minimum capacity of the tier).
      * </pre>
      */
-    public void createInstance(
+    default void createInstance(
         com.google.cloud.filestore.v1.CreateInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -651,7 +871,7 @@ public final class CloudFilestoreManagerGrpc {
      * Updates the settings of a specific instance.
      * </pre>
      */
-    public void updateInstance(
+    default void updateInstance(
         com.google.cloud.filestore.v1.UpdateInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -668,7 +888,7 @@ public final class CloudFilestoreManagerGrpc {
      * capacity of the tier).
      * </pre>
      */
-    public void restoreInstance(
+    default void restoreInstance(
         com.google.cloud.filestore.v1.RestoreInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -682,7 +902,7 @@ public final class CloudFilestoreManagerGrpc {
      * Deletes an instance.
      * </pre>
      */
-    public void deleteInstance(
+    default void deleteInstance(
         com.google.cloud.filestore.v1.DeleteInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -693,11 +913,83 @@ public final class CloudFilestoreManagerGrpc {
      *
      *
      * <pre>
+     * Lists all snapshots in a project for either a specified location
+     * or for all locations.
+     * </pre>
+     */
+    default void listSnapshots(
+        com.google.cloud.filestore.v1.ListSnapshotsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.filestore.v1.ListSnapshotsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListSnapshotsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a specific snapshot.
+     * </pre>
+     */
+    default void getSnapshot(
+        com.google.cloud.filestore.v1.GetSnapshotRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.filestore.v1.Snapshot> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetSnapshotMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a snapshot.
+     * </pre>
+     */
+    default void createSnapshot(
+        com.google.cloud.filestore.v1.CreateSnapshotRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateSnapshotMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a snapshot.
+     * </pre>
+     */
+    default void deleteSnapshot(
+        com.google.cloud.filestore.v1.DeleteSnapshotRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteSnapshotMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the settings of a specific snapshot.
+     * </pre>
+     */
+    default void updateSnapshot(
+        com.google.cloud.filestore.v1.UpdateSnapshotRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateSnapshotMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists all backups in a project for either a specified location or for all
      * locations.
      * </pre>
      */
-    public void listBackups(
+    default void listBackups(
         com.google.cloud.filestore.v1.ListBackupsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.filestore.v1.ListBackupsResponse>
             responseObserver) {
@@ -712,7 +1004,7 @@ public final class CloudFilestoreManagerGrpc {
      * Gets the details of a specific backup.
      * </pre>
      */
-    public void getBackup(
+    default void getBackup(
         com.google.cloud.filestore.v1.GetBackupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.filestore.v1.Backup> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBackupMethod(), responseObserver);
@@ -725,7 +1017,7 @@ public final class CloudFilestoreManagerGrpc {
      * Creates a backup.
      * </pre>
      */
-    public void createBackup(
+    default void createBackup(
         com.google.cloud.filestore.v1.CreateBackupRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -739,7 +1031,7 @@ public final class CloudFilestoreManagerGrpc {
      * Deletes a backup.
      * </pre>
      */
-    public void deleteBackup(
+    default void deleteBackup(
         com.google.cloud.filestore.v1.DeleteBackupRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -753,106 +1045,63 @@ public final class CloudFilestoreManagerGrpc {
      * Updates the settings of a specific backup.
      * </pre>
      */
-    public void updateBackup(
+    default void updateBackup(
         com.google.cloud.filestore.v1.UpdateBackupRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateBackupMethod(), responseObserver);
     }
-
-    @java.lang.Override
-    public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListInstancesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.filestore.v1.ListInstancesRequest,
-                      com.google.cloud.filestore.v1.ListInstancesResponse>(
-                      this, METHODID_LIST_INSTANCES)))
-          .addMethod(
-              getGetInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.filestore.v1.GetInstanceRequest,
-                      com.google.cloud.filestore.v1.Instance>(this, METHODID_GET_INSTANCE)))
-          .addMethod(
-              getCreateInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.filestore.v1.CreateInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_INSTANCE)))
-          .addMethod(
-              getUpdateInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.filestore.v1.UpdateInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_INSTANCE)))
-          .addMethod(
-              getRestoreInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.filestore.v1.RestoreInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_RESTORE_INSTANCE)))
-          .addMethod(
-              getDeleteInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.filestore.v1.DeleteInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_INSTANCE)))
-          .addMethod(
-              getListBackupsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.filestore.v1.ListBackupsRequest,
-                      com.google.cloud.filestore.v1.ListBackupsResponse>(
-                      this, METHODID_LIST_BACKUPS)))
-          .addMethod(
-              getGetBackupMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.filestore.v1.GetBackupRequest,
-                      com.google.cloud.filestore.v1.Backup>(this, METHODID_GET_BACKUP)))
-          .addMethod(
-              getCreateBackupMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.filestore.v1.CreateBackupRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_BACKUP)))
-          .addMethod(
-              getDeleteBackupMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.filestore.v1.DeleteBackupRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_BACKUP)))
-          .addMethod(
-              getUpdateBackupMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.filestore.v1.UpdateBackupRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_BACKUP)))
-          .build();
-    }
   }
 
   /**
-   *
+   * Base class for the server implementation of the service CloudFilestoreManager.
    *
    * <pre>
-   * Configures and manages Cloud Filestore resources.
-   * Cloud Filestore Manager v1.
-   * The `file.googleapis.com` service implements the Cloud Filestore API and
+   * Configures and manages Filestore resources.
+   * Filestore Manager v1.
+   * The `file.googleapis.com` service implements the Filestore API and
    * defines the following resource model for managing instances:
    * * The service works with a collection of cloud projects, named: `/projects/&#42;`
    * * Each project has a collection of available locations, named: `/locations/&#42;`
    * * Each location has a collection of instances and backups, named:
    * `/instances/&#42;` and `/backups/&#42;` respectively.
-   * * As such, Cloud Filestore instances are resources of the form:
+   * * As such, Filestore instances are resources of the form:
    *   `/projects/{project_number}/locations/{location_id}/instances/{instance_id}`
    *   and backups are resources of the form:
    *   `/projects/{project_number}/locations/{location_id}/backup/{backup_id}`
-   * Note that location_id must be a GCP `zone` for instances and but to a GCP
-   * `region` for backups; for example:
+   * Note that location_id must be a Google Cloud `zone` for instances, but
+   * a Google Cloud `region` for backups; for example:
+   * * `projects/12345/locations/us-central1-c/instances/my-filestore`
+   * * `projects/12345/locations/us-central1/backups/my-backup`
+   * </pre>
+   */
+  public abstract static class CloudFilestoreManagerImplBase
+      implements io.grpc.BindableService, AsyncService {
+
+    @java.lang.Override
+    public final io.grpc.ServerServiceDefinition bindService() {
+      return CloudFilestoreManagerGrpc.bindService(this);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do asynchronous rpc calls to service CloudFilestoreManager.
+   *
+   * <pre>
+   * Configures and manages Filestore resources.
+   * Filestore Manager v1.
+   * The `file.googleapis.com` service implements the Filestore API and
+   * defines the following resource model for managing instances:
+   * * The service works with a collection of cloud projects, named: `/projects/&#42;`
+   * * Each project has a collection of available locations, named: `/locations/&#42;`
+   * * Each location has a collection of instances and backups, named:
+   * `/instances/&#42;` and `/backups/&#42;` respectively.
+   * * As such, Filestore instances are resources of the form:
+   *   `/projects/{project_number}/locations/{location_id}/instances/{instance_id}`
+   *   and backups are resources of the form:
+   *   `/projects/{project_number}/locations/{location_id}/backup/{backup_id}`
+   * Note that location_id must be a Google Cloud `zone` for instances, but
+   * a Google Cloud `region` for backups; for example:
    * * `projects/12345/locations/us-central1-c/instances/my-filestore`
    * * `projects/12345/locations/us-central1/backups/my-backup`
    * </pre>
@@ -977,6 +1226,88 @@ public final class CloudFilestoreManagerGrpc {
      *
      *
      * <pre>
+     * Lists all snapshots in a project for either a specified location
+     * or for all locations.
+     * </pre>
+     */
+    public void listSnapshots(
+        com.google.cloud.filestore.v1.ListSnapshotsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.filestore.v1.ListSnapshotsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListSnapshotsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a specific snapshot.
+     * </pre>
+     */
+    public void getSnapshot(
+        com.google.cloud.filestore.v1.GetSnapshotRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.filestore.v1.Snapshot> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetSnapshotMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a snapshot.
+     * </pre>
+     */
+    public void createSnapshot(
+        com.google.cloud.filestore.v1.CreateSnapshotRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateSnapshotMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a snapshot.
+     * </pre>
+     */
+    public void deleteSnapshot(
+        com.google.cloud.filestore.v1.DeleteSnapshotRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteSnapshotMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the settings of a specific snapshot.
+     * </pre>
+     */
+    public void updateSnapshot(
+        com.google.cloud.filestore.v1.UpdateSnapshotRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateSnapshotMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists all backups in a project for either a specified location or for all
      * locations.
      * </pre>
@@ -1055,23 +1386,23 @@ public final class CloudFilestoreManagerGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service CloudFilestoreManager.
    *
    * <pre>
-   * Configures and manages Cloud Filestore resources.
-   * Cloud Filestore Manager v1.
-   * The `file.googleapis.com` service implements the Cloud Filestore API and
+   * Configures and manages Filestore resources.
+   * Filestore Manager v1.
+   * The `file.googleapis.com` service implements the Filestore API and
    * defines the following resource model for managing instances:
    * * The service works with a collection of cloud projects, named: `/projects/&#42;`
    * * Each project has a collection of available locations, named: `/locations/&#42;`
    * * Each location has a collection of instances and backups, named:
    * `/instances/&#42;` and `/backups/&#42;` respectively.
-   * * As such, Cloud Filestore instances are resources of the form:
+   * * As such, Filestore instances are resources of the form:
    *   `/projects/{project_number}/locations/{location_id}/instances/{instance_id}`
    *   and backups are resources of the form:
    *   `/projects/{project_number}/locations/{location_id}/backup/{backup_id}`
-   * Note that location_id must be a GCP `zone` for instances and but to a GCP
-   * `region` for backups; for example:
+   * Note that location_id must be a Google Cloud `zone` for instances, but
+   * a Google Cloud `region` for backups; for example:
    * * `projects/12345/locations/us-central1-c/instances/my-filestore`
    * * `projects/12345/locations/us-central1/backups/my-backup`
    * </pre>
@@ -1178,6 +1509,72 @@ public final class CloudFilestoreManagerGrpc {
      *
      *
      * <pre>
+     * Lists all snapshots in a project for either a specified location
+     * or for all locations.
+     * </pre>
+     */
+    public com.google.cloud.filestore.v1.ListSnapshotsResponse listSnapshots(
+        com.google.cloud.filestore.v1.ListSnapshotsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSnapshotsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a specific snapshot.
+     * </pre>
+     */
+    public com.google.cloud.filestore.v1.Snapshot getSnapshot(
+        com.google.cloud.filestore.v1.GetSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a snapshot.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createSnapshot(
+        com.google.cloud.filestore.v1.CreateSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a snapshot.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteSnapshot(
+        com.google.cloud.filestore.v1.DeleteSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the settings of a specific snapshot.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateSnapshot(
+        com.google.cloud.filestore.v1.UpdateSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists all backups in a project for either a specified location or for all
      * locations.
      * </pre>
@@ -1242,23 +1639,24 @@ public final class CloudFilestoreManagerGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * CloudFilestoreManager.
    *
    * <pre>
-   * Configures and manages Cloud Filestore resources.
-   * Cloud Filestore Manager v1.
-   * The `file.googleapis.com` service implements the Cloud Filestore API and
+   * Configures and manages Filestore resources.
+   * Filestore Manager v1.
+   * The `file.googleapis.com` service implements the Filestore API and
    * defines the following resource model for managing instances:
    * * The service works with a collection of cloud projects, named: `/projects/&#42;`
    * * Each project has a collection of available locations, named: `/locations/&#42;`
    * * Each location has a collection of instances and backups, named:
    * `/instances/&#42;` and `/backups/&#42;` respectively.
-   * * As such, Cloud Filestore instances are resources of the form:
+   * * As such, Filestore instances are resources of the form:
    *   `/projects/{project_number}/locations/{location_id}/instances/{instance_id}`
    *   and backups are resources of the form:
    *   `/projects/{project_number}/locations/{location_id}/backup/{backup_id}`
-   * Note that location_id must be a GCP `zone` for instances and but to a GCP
-   * `region` for backups; for example:
+   * Note that location_id must be a Google Cloud `zone` for instances, but
+   * a Google Cloud `region` for backups; for example:
    * * `projects/12345/locations/us-central1-c/instances/my-filestore`
    * * `projects/12345/locations/us-central1/backups/my-backup`
    * </pre>
@@ -1367,6 +1765,74 @@ public final class CloudFilestoreManagerGrpc {
      *
      *
      * <pre>
+     * Lists all snapshots in a project for either a specified location
+     * or for all locations.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.filestore.v1.ListSnapshotsResponse>
+        listSnapshots(com.google.cloud.filestore.v1.ListSnapshotsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListSnapshotsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a specific snapshot.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.filestore.v1.Snapshot>
+        getSnapshot(com.google.cloud.filestore.v1.GetSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSnapshotMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a snapshot.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createSnapshot(com.google.cloud.filestore.v1.CreateSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateSnapshotMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a snapshot.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteSnapshot(com.google.cloud.filestore.v1.DeleteSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteSnapshotMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the settings of a specific snapshot.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateSnapshot(com.google.cloud.filestore.v1.UpdateSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateSnapshotMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists all backups in a project for either a specified location or for all
      * locations.
      * </pre>
@@ -1437,21 +1903,26 @@ public final class CloudFilestoreManagerGrpc {
   private static final int METHODID_UPDATE_INSTANCE = 3;
   private static final int METHODID_RESTORE_INSTANCE = 4;
   private static final int METHODID_DELETE_INSTANCE = 5;
-  private static final int METHODID_LIST_BACKUPS = 6;
-  private static final int METHODID_GET_BACKUP = 7;
-  private static final int METHODID_CREATE_BACKUP = 8;
-  private static final int METHODID_DELETE_BACKUP = 9;
-  private static final int METHODID_UPDATE_BACKUP = 10;
+  private static final int METHODID_LIST_SNAPSHOTS = 6;
+  private static final int METHODID_GET_SNAPSHOT = 7;
+  private static final int METHODID_CREATE_SNAPSHOT = 8;
+  private static final int METHODID_DELETE_SNAPSHOT = 9;
+  private static final int METHODID_UPDATE_SNAPSHOT = 10;
+  private static final int METHODID_LIST_BACKUPS = 11;
+  private static final int METHODID_GET_BACKUP = 12;
+  private static final int METHODID_CREATE_BACKUP = 13;
+  private static final int METHODID_DELETE_BACKUP = 14;
+  private static final int METHODID_UPDATE_BACKUP = 15;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final CloudFilestoreManagerImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(CloudFilestoreManagerImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1490,6 +1961,33 @@ public final class CloudFilestoreManagerGrpc {
         case METHODID_DELETE_INSTANCE:
           serviceImpl.deleteInstance(
               (com.google.cloud.filestore.v1.DeleteInstanceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_SNAPSHOTS:
+          serviceImpl.listSnapshots(
+              (com.google.cloud.filestore.v1.ListSnapshotsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.filestore.v1.ListSnapshotsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_SNAPSHOT:
+          serviceImpl.getSnapshot(
+              (com.google.cloud.filestore.v1.GetSnapshotRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.filestore.v1.Snapshot>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_SNAPSHOT:
+          serviceImpl.createSnapshot(
+              (com.google.cloud.filestore.v1.CreateSnapshotRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_SNAPSHOT:
+          serviceImpl.deleteSnapshot(
+              (com.google.cloud.filestore.v1.DeleteSnapshotRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_SNAPSHOT:
+          serviceImpl.updateSnapshot(
+              (com.google.cloud.filestore.v1.UpdateSnapshotRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_LIST_BACKUPS:
@@ -1532,6 +2030,110 @@ public final class CloudFilestoreManagerGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListInstancesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.filestore.v1.ListInstancesRequest,
+                    com.google.cloud.filestore.v1.ListInstancesResponse>(
+                    service, METHODID_LIST_INSTANCES)))
+        .addMethod(
+            getGetInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.filestore.v1.GetInstanceRequest,
+                    com.google.cloud.filestore.v1.Instance>(service, METHODID_GET_INSTANCE)))
+        .addMethod(
+            getCreateInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.filestore.v1.CreateInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_INSTANCE)))
+        .addMethod(
+            getUpdateInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.filestore.v1.UpdateInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_INSTANCE)))
+        .addMethod(
+            getRestoreInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.filestore.v1.RestoreInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RESTORE_INSTANCE)))
+        .addMethod(
+            getDeleteInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.filestore.v1.DeleteInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_INSTANCE)))
+        .addMethod(
+            getListSnapshotsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.filestore.v1.ListSnapshotsRequest,
+                    com.google.cloud.filestore.v1.ListSnapshotsResponse>(
+                    service, METHODID_LIST_SNAPSHOTS)))
+        .addMethod(
+            getGetSnapshotMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.filestore.v1.GetSnapshotRequest,
+                    com.google.cloud.filestore.v1.Snapshot>(service, METHODID_GET_SNAPSHOT)))
+        .addMethod(
+            getCreateSnapshotMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.filestore.v1.CreateSnapshotRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_SNAPSHOT)))
+        .addMethod(
+            getDeleteSnapshotMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.filestore.v1.DeleteSnapshotRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_SNAPSHOT)))
+        .addMethod(
+            getUpdateSnapshotMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.filestore.v1.UpdateSnapshotRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_SNAPSHOT)))
+        .addMethod(
+            getListBackupsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.filestore.v1.ListBackupsRequest,
+                    com.google.cloud.filestore.v1.ListBackupsResponse>(
+                    service, METHODID_LIST_BACKUPS)))
+        .addMethod(
+            getGetBackupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.filestore.v1.GetBackupRequest,
+                    com.google.cloud.filestore.v1.Backup>(service, METHODID_GET_BACKUP)))
+        .addMethod(
+            getCreateBackupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.filestore.v1.CreateBackupRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_BACKUP)))
+        .addMethod(
+            getDeleteBackupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.filestore.v1.DeleteBackupRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_BACKUP)))
+        .addMethod(
+            getUpdateBackupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.filestore.v1.UpdateBackupRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_BACKUP)))
+        .build();
   }
 
   private abstract static class CloudFilestoreManagerBaseDescriptorSupplier
@@ -1588,6 +2190,11 @@ public final class CloudFilestoreManagerGrpc {
                       .addMethod(getUpdateInstanceMethod())
                       .addMethod(getRestoreInstanceMethod())
                       .addMethod(getDeleteInstanceMethod())
+                      .addMethod(getListSnapshotsMethod())
+                      .addMethod(getGetSnapshotMethod())
+                      .addMethod(getCreateSnapshotMethod())
+                      .addMethod(getDeleteSnapshotMethod())
+                      .addMethod(getUpdateSnapshotMethod())
                       .addMethod(getListBackupsMethod())
                       .addMethod(getGetBackupMethod())
                       .addMethod(getCreateBackupMethod())

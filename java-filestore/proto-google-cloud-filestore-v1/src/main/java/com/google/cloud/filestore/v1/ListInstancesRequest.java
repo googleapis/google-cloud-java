@@ -80,8 +80,9 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The project and location for which to retrieve instance
    * information, in the format `projects/{project_id}/locations/{location}`. In
-   * Cloud Filestore, locations map to GCP zones, for example **us-west1-b**. To
-   * retrieve instance information for all locations, use "-" for the
+   * Cloud Filestore, locations map to Google Cloud zones, for example
+   * **us-west1-b**. To retrieve instance information for all locations, use "-"
+   * for the
    * `{location}` value.
    * </pre>
    *
@@ -109,8 +110,9 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
    * <pre>
    * Required. The project and location for which to retrieve instance
    * information, in the format `projects/{project_id}/locations/{location}`. In
-   * Cloud Filestore, locations map to GCP zones, for example **us-west1-b**. To
-   * retrieve instance information for all locations, use "-" for the
+   * Cloud Filestore, locations map to Google Cloud zones, for example
+   * **us-west1-b**. To retrieve instance information for all locations, use "-"
+   * for the
    * `{location}` value.
    * </pre>
    *
@@ -749,8 +751,9 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The project and location for which to retrieve instance
      * information, in the format `projects/{project_id}/locations/{location}`. In
-     * Cloud Filestore, locations map to GCP zones, for example **us-west1-b**. To
-     * retrieve instance information for all locations, use "-" for the
+     * Cloud Filestore, locations map to Google Cloud zones, for example
+     * **us-west1-b**. To retrieve instance information for all locations, use "-"
+     * for the
      * `{location}` value.
      * </pre>
      *
@@ -777,8 +780,9 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The project and location for which to retrieve instance
      * information, in the format `projects/{project_id}/locations/{location}`. In
-     * Cloud Filestore, locations map to GCP zones, for example **us-west1-b**. To
-     * retrieve instance information for all locations, use "-" for the
+     * Cloud Filestore, locations map to Google Cloud zones, for example
+     * **us-west1-b**. To retrieve instance information for all locations, use "-"
+     * for the
      * `{location}` value.
      * </pre>
      *
@@ -805,8 +809,9 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The project and location for which to retrieve instance
      * information, in the format `projects/{project_id}/locations/{location}`. In
-     * Cloud Filestore, locations map to GCP zones, for example **us-west1-b**. To
-     * retrieve instance information for all locations, use "-" for the
+     * Cloud Filestore, locations map to Google Cloud zones, for example
+     * **us-west1-b**. To retrieve instance information for all locations, use "-"
+     * for the
      * `{location}` value.
      * </pre>
      *
@@ -832,8 +837,9 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The project and location for which to retrieve instance
      * information, in the format `projects/{project_id}/locations/{location}`. In
-     * Cloud Filestore, locations map to GCP zones, for example **us-west1-b**. To
-     * retrieve instance information for all locations, use "-" for the
+     * Cloud Filestore, locations map to Google Cloud zones, for example
+     * **us-west1-b**. To retrieve instance information for all locations, use "-"
+     * for the
      * `{location}` value.
      * </pre>
      *
@@ -855,8 +861,9 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Required. The project and location for which to retrieve instance
      * information, in the format `projects/{project_id}/locations/{location}`. In
-     * Cloud Filestore, locations map to GCP zones, for example **us-west1-b**. To
-     * retrieve instance information for all locations, use "-" for the
+     * Cloud Filestore, locations map to Google Cloud zones, for example
+     * **us-west1-b**. To retrieve instance information for all locations, use "-"
+     * for the
      * `{location}` value.
      * </pre>
      *

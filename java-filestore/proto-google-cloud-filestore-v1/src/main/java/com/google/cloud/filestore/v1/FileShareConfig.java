@@ -170,7 +170,7 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * File share capacity in gigabytes (GB).
-   * Cloud Filestore defines 1 GB as 1024^3 bytes.
+   * Filestore defines 1 GB as 1024^3 bytes.
    * </pre>
    *
    * <code>int64 capacity_gb = 2;</code>
@@ -945,7 +945,7 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * File share capacity in gigabytes (GB).
-     * Cloud Filestore defines 1 GB as 1024^3 bytes.
+     * Filestore defines 1 GB as 1024^3 bytes.
      * </pre>
      *
      * <code>int64 capacity_gb = 2;</code>
@@ -961,7 +961,7 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * File share capacity in gigabytes (GB).
-     * Cloud Filestore defines 1 GB as 1024^3 bytes.
+     * Filestore defines 1 GB as 1024^3 bytes.
      * </pre>
      *
      * <code>int64 capacity_gb = 2;</code>
@@ -981,7 +981,7 @@ public final class FileShareConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * File share capacity in gigabytes (GB).
-     * Cloud Filestore defines 1 GB as 1024^3 bytes.
+     * Filestore defines 1 GB as 1024^3 bytes.
      * </pre>
      *
      * <code>int64 capacity_gb = 2;</code>

@@ -22,7 +22,7 @@ package com.google.cloud.filestore.v1;
  *
  *
  * <pre>
- * A Cloud Filestore instance.
+ * A Filestore instance.
  * </pre>
  *
  * Protobuf type {@code google.cloud.filestore.v1.Instance}
@@ -46,6 +46,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     fileShares_ = java.util.Collections.emptyList();
     networks_ = java.util.Collections.emptyList();
     etag_ = "";
+    kmsKeyName_ = "";
+    suspensionReasons_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -169,6 +171,37 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>RESTORING = 7;</code>
      */
     RESTORING(7),
+    /**
+     *
+     *
+     * <pre>
+     * The instance is suspended. You can get further details from
+     * the `suspension_reasons` field of the `Instance` resource.
+     * </pre>
+     *
+     * <code>SUSPENDED = 8;</code>
+     */
+    SUSPENDED(8),
+    /**
+     *
+     *
+     * <pre>
+     * The instance is in the process of becoming suspended.
+     * </pre>
+     *
+     * <code>SUSPENDING = 9;</code>
+     */
+    SUSPENDING(9),
+    /**
+     *
+     *
+     * <pre>
+     * The instance is in the process of becoming active.
+     * </pre>
+     *
+     * <code>RESUMING = 10;</code>
+     */
+    RESUMING(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -246,6 +279,37 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>RESTORING = 7;</code>
      */
     public static final int RESTORING_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * The instance is suspended. You can get further details from
+     * the `suspension_reasons` field of the `Instance` resource.
+     * </pre>
+     *
+     * <code>SUSPENDED = 8;</code>
+     */
+    public static final int SUSPENDED_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
+     * The instance is in the process of becoming suspended.
+     * </pre>
+     *
+     * <code>SUSPENDING = 9;</code>
+     */
+    public static final int SUSPENDING_VALUE = 9;
+    /**
+     *
+     *
+     * <pre>
+     * The instance is in the process of becoming active.
+     * </pre>
+     *
+     * <code>RESUMING = 10;</code>
+     */
+    public static final int RESUMING_VALUE = 10;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -285,6 +349,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return ERROR;
         case 7:
           return RESTORING;
+        case 8:
+          return SUSPENDED;
+        case 9:
+          return SUSPENDING;
+        case 10:
+          return RESUMING;
         default:
           return null;
       }
@@ -362,7 +432,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * STANDARD tier.
+     * STANDARD tier. BASIC_HDD is the preferred term for this tier.
      * </pre>
      *
      * <code>STANDARD = 1;</code>
@@ -372,7 +442,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * PREMIUM tier.
+     * PREMIUM tier. BASIC_SSD is the preferred term for this tier.
      * </pre>
      *
      * <code>PREMIUM = 2;</code>
@@ -413,6 +483,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>HIGH_SCALE_SSD = 5;</code>
      */
     HIGH_SCALE_SSD(5),
+    /**
+     *
+     *
+     * <pre>
+     * ENTERPRISE instances offer the features and availability needed for
+     * mission-critical workloads.
+     * </pre>
+     *
+     * <code>ENTERPRISE = 6;</code>
+     */
+    ENTERPRISE(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -430,7 +511,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * STANDARD tier.
+     * STANDARD tier. BASIC_HDD is the preferred term for this tier.
      * </pre>
      *
      * <code>STANDARD = 1;</code>
@@ -440,7 +521,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * PREMIUM tier.
+     * PREMIUM tier. BASIC_SSD is the preferred term for this tier.
      * </pre>
      *
      * <code>PREMIUM = 2;</code>
@@ -481,6 +562,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>HIGH_SCALE_SSD = 5;</code>
      */
     public static final int HIGH_SCALE_SSD_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * ENTERPRISE instances offer the features and availability needed for
+     * mission-critical workloads.
+     * </pre>
+     *
+     * <code>ENTERPRISE = 6;</code>
+     */
+    public static final int ENTERPRISE_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -518,6 +610,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return BASIC_SSD;
         case 5:
           return HIGH_SCALE_SSD;
+        case 6:
+          return ENTERPRISE;
         default:
           return null;
       }
@@ -569,6 +663,143 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.filestore.v1.Instance.Tier)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * SuspensionReason contains the possible reasons for a suspension.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.filestore.v1.Instance.SuspensionReason}
+   */
+  public enum SuspensionReason implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Not set.
+     * </pre>
+     *
+     * <code>SUSPENSION_REASON_UNSPECIFIED = 0;</code>
+     */
+    SUSPENSION_REASON_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The KMS key used by the instance is either revoked or denied access to.
+     * </pre>
+     *
+     * <code>KMS_KEY_ISSUE = 1;</code>
+     */
+    KMS_KEY_ISSUE(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Not set.
+     * </pre>
+     *
+     * <code>SUSPENSION_REASON_UNSPECIFIED = 0;</code>
+     */
+    public static final int SUSPENSION_REASON_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The KMS key used by the instance is either revoked or denied access to.
+     * </pre>
+     *
+     * <code>KMS_KEY_ISSUE = 1;</code>
+     */
+    public static final int KMS_KEY_ISSUE_VALUE = 1;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SuspensionReason valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static SuspensionReason forNumber(int value) {
+      switch (value) {
+        case 0:
+          return SUSPENSION_REASON_UNSPECIFIED;
+        case 1:
+          return KMS_KEY_ISSUE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<SuspensionReason> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<SuspensionReason>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<SuspensionReason>() {
+              public SuspensionReason findValueByNumber(int number) {
+                return SuspensionReason.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.filestore.v1.Instance.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final SuspensionReason[] VALUES = values();
+
+    public static SuspensionReason valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private SuspensionReason(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.filestore.v1.Instance.SuspensionReason)
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -1212,6 +1443,174 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         : satisfiesPzs_;
   }
 
+  public static final int KMS_KEY_NAME_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKeyName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * KMS key name used for data encryption.
+   * </pre>
+   *
+   * <code>string kms_key_name = 14;</code>
+   *
+   * @return The kmsKeyName.
+   */
+  @java.lang.Override
+  public java.lang.String getKmsKeyName() {
+    java.lang.Object ref = kmsKeyName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      kmsKeyName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * KMS key name used for data encryption.
+   * </pre>
+   *
+   * <code>string kms_key_name = 14;</code>
+   *
+   * @return The bytes for kmsKeyName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getKmsKeyNameBytes() {
+    java.lang.Object ref = kmsKeyName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      kmsKeyName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SUSPENSION_REASONS_FIELD_NUMBER = 15;
+
+  @SuppressWarnings("serial")
+  private java.util.List<java.lang.Integer> suspensionReasons_;
+
+  private static final com.google.protobuf.Internal.ListAdapter.Converter<
+          java.lang.Integer, com.google.cloud.filestore.v1.Instance.SuspensionReason>
+      suspensionReasons_converter_ =
+          new com.google.protobuf.Internal.ListAdapter.Converter<
+              java.lang.Integer, com.google.cloud.filestore.v1.Instance.SuspensionReason>() {
+            public com.google.cloud.filestore.v1.Instance.SuspensionReason convert(
+                java.lang.Integer from) {
+              com.google.cloud.filestore.v1.Instance.SuspensionReason result =
+                  com.google.cloud.filestore.v1.Instance.SuspensionReason.forNumber(from);
+              return result == null
+                  ? com.google.cloud.filestore.v1.Instance.SuspensionReason.UNRECOGNIZED
+                  : result;
+            }
+          };
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+   * state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.filestore.v1.Instance.SuspensionReason suspension_reasons = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the suspensionReasons.
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.filestore.v1.Instance.SuspensionReason>
+      getSuspensionReasonsList() {
+    return new com.google.protobuf.Internal.ListAdapter<
+        java.lang.Integer, com.google.cloud.filestore.v1.Instance.SuspensionReason>(
+        suspensionReasons_, suspensionReasons_converter_);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+   * state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.filestore.v1.Instance.SuspensionReason suspension_reasons = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of suspensionReasons.
+   */
+  @java.lang.Override
+  public int getSuspensionReasonsCount() {
+    return suspensionReasons_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+   * state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.filestore.v1.Instance.SuspensionReason suspension_reasons = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The suspensionReasons at the given index.
+   */
+  @java.lang.Override
+  public com.google.cloud.filestore.v1.Instance.SuspensionReason getSuspensionReasons(int index) {
+    return suspensionReasons_converter_.convert(suspensionReasons_.get(index));
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+   * state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.filestore.v1.Instance.SuspensionReason suspension_reasons = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for suspensionReasons.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getSuspensionReasonsValueList() {
+    return suspensionReasons_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+   * state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.filestore.v1.Instance.SuspensionReason suspension_reasons = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of suspensionReasons at the given index.
+   */
+  @java.lang.Override
+  public int getSuspensionReasonsValue(int index) {
+    return suspensionReasons_.get(index);
+  }
+
+  private int suspensionReasonsMemoizedSerializedSize;
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1226,6 +1625,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    getSerializedSize();
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -1257,6 +1657,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     if (satisfiesPzs_ != null) {
       output.writeMessage(13, getSatisfiesPzs());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, kmsKeyName_);
+    }
+    if (getSuspensionReasonsList().size() > 0) {
+      output.writeUInt32NoTag(122);
+      output.writeUInt32NoTag(suspensionReasonsMemoizedSerializedSize);
+    }
+    for (int i = 0; i < suspensionReasons_.size(); i++) {
+      output.writeEnumNoTag(suspensionReasons_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -1307,6 +1717,22 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (satisfiesPzs_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getSatisfiesPzs());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, kmsKeyName_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < suspensionReasons_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(suspensionReasons_.get(i));
+      }
+      size += dataSize;
+      if (!getSuspensionReasonsList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      suspensionReasonsMemoizedSerializedSize = dataSize;
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1339,6 +1765,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (hasSatisfiesPzs()) {
       if (!getSatisfiesPzs().equals(other.getSatisfiesPzs())) return false;
     }
+    if (!getKmsKeyName().equals(other.getKmsKeyName())) return false;
+    if (!suspensionReasons_.equals(other.suspensionReasons_)) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1381,6 +1809,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (hasSatisfiesPzs()) {
       hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
       hash = (53 * hash) + getSatisfiesPzs().hashCode();
+    }
+    hash = (37 * hash) + KMS_KEY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getKmsKeyName().hashCode();
+    if (getSuspensionReasonsCount() > 0) {
+      hash = (37 * hash) + SUSPENSION_REASONS_FIELD_NUMBER;
+      hash = (53 * hash) + suspensionReasons_.hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1486,7 +1920,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A Cloud Filestore instance.
+   * A Filestore instance.
    * </pre>
    *
    * Protobuf type {@code google.cloud.filestore.v1.Instance}
@@ -1572,6 +2006,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         satisfiesPzsBuilder_.dispose();
         satisfiesPzsBuilder_ = null;
       }
+      kmsKeyName_ = "";
+      suspensionReasons_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00001000);
       return this;
     }
 
@@ -1626,6 +2063,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.networks_ = networksBuilder_.build();
       }
+      if (((bitField0_ & 0x00001000) != 0)) {
+        suspensionReasons_ = java.util.Collections.unmodifiableList(suspensionReasons_);
+        bitField0_ = (bitField0_ & ~0x00001000);
+      }
+      result.suspensionReasons_ = suspensionReasons_;
     }
 
     private void buildPartial0(com.google.cloud.filestore.v1.Instance result) {
@@ -1658,6 +2100,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.satisfiesPzs_ =
             satisfiesPzsBuilder_ == null ? satisfiesPzs_ : satisfiesPzsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.kmsKeyName_ = kmsKeyName_;
       }
     }
 
@@ -1794,6 +2239,21 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       if (other.hasSatisfiesPzs()) {
         mergeSatisfiesPzs(other.getSatisfiesPzs());
       }
+      if (!other.getKmsKeyName().isEmpty()) {
+        kmsKeyName_ = other.kmsKeyName_;
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      if (!other.suspensionReasons_.isEmpty()) {
+        if (suspensionReasons_.isEmpty()) {
+          suspensionReasons_ = other.suspensionReasons_;
+          bitField0_ = (bitField0_ & ~0x00001000);
+        } else {
+          ensureSuspensionReasonsIsMutable();
+          suspensionReasons_.addAll(other.suspensionReasons_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1906,6 +2366,31 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000400;
                 break;
               } // case 106
+            case 114:
+              {
+                kmsKeyName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 114
+            case 120:
+              {
+                int tmpRaw = input.readEnum();
+                ensureSuspensionReasonsIsMutable();
+                suspensionReasons_.add(tmpRaw);
+                break;
+              } // case 120
+            case 122:
+              {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while (input.getBytesUntilLimit() > 0) {
+                  int tmpRaw = input.readEnum();
+                  ensureSuspensionReasonsIsMutable();
+                  suspensionReasons_.add(tmpRaw);
+                }
+                input.popLimit(oldLimit);
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3850,6 +4335,374 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         satisfiesPzs_ = null;
       }
       return satisfiesPzsBuilder_;
+    }
+
+    private java.lang.Object kmsKeyName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * KMS key name used for data encryption.
+     * </pre>
+     *
+     * <code>string kms_key_name = 14;</code>
+     *
+     * @return The kmsKeyName.
+     */
+    public java.lang.String getKmsKeyName() {
+      java.lang.Object ref = kmsKeyName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kmsKeyName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * KMS key name used for data encryption.
+     * </pre>
+     *
+     * <code>string kms_key_name = 14;</code>
+     *
+     * @return The bytes for kmsKeyName.
+     */
+    public com.google.protobuf.ByteString getKmsKeyNameBytes() {
+      java.lang.Object ref = kmsKeyName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kmsKeyName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * KMS key name used for data encryption.
+     * </pre>
+     *
+     * <code>string kms_key_name = 14;</code>
+     *
+     * @param value The kmsKeyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      kmsKeyName_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * KMS key name used for data encryption.
+     * </pre>
+     *
+     * <code>string kms_key_name = 14;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKmsKeyName() {
+      kmsKeyName_ = getDefaultInstance().getKmsKeyName();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * KMS key name used for data encryption.
+     * </pre>
+     *
+     * <code>string kms_key_name = 14;</code>
+     *
+     * @param value The bytes for kmsKeyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      kmsKeyName_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<java.lang.Integer> suspensionReasons_ =
+        java.util.Collections.emptyList();
+
+    private void ensureSuspensionReasonsIsMutable() {
+      if (!((bitField0_ & 0x00001000) != 0)) {
+        suspensionReasons_ = new java.util.ArrayList<java.lang.Integer>(suspensionReasons_);
+        bitField0_ |= 0x00001000;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+     * state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.filestore.v1.Instance.SuspensionReason suspension_reasons = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the suspensionReasons.
+     */
+    public java.util.List<com.google.cloud.filestore.v1.Instance.SuspensionReason>
+        getSuspensionReasonsList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, com.google.cloud.filestore.v1.Instance.SuspensionReason>(
+          suspensionReasons_, suspensionReasons_converter_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+     * state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.filestore.v1.Instance.SuspensionReason suspension_reasons = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of suspensionReasons.
+     */
+    public int getSuspensionReasonsCount() {
+      return suspensionReasons_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+     * state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.filestore.v1.Instance.SuspensionReason suspension_reasons = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The suspensionReasons at the given index.
+     */
+    public com.google.cloud.filestore.v1.Instance.SuspensionReason getSuspensionReasons(int index) {
+      return suspensionReasons_converter_.convert(suspensionReasons_.get(index));
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+     * state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.filestore.v1.Instance.SuspensionReason suspension_reasons = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The suspensionReasons to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSuspensionReasons(
+        int index, com.google.cloud.filestore.v1.Instance.SuspensionReason value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSuspensionReasonsIsMutable();
+      suspensionReasons_.set(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+     * state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.filestore.v1.Instance.SuspensionReason suspension_reasons = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The suspensionReasons to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSuspensionReasons(
+        com.google.cloud.filestore.v1.Instance.SuspensionReason value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSuspensionReasonsIsMutable();
+      suspensionReasons_.add(value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+     * state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.filestore.v1.Instance.SuspensionReason suspension_reasons = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The suspensionReasons to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSuspensionReasons(
+        java.lang.Iterable<? extends com.google.cloud.filestore.v1.Instance.SuspensionReason>
+            values) {
+      ensureSuspensionReasonsIsMutable();
+      for (com.google.cloud.filestore.v1.Instance.SuspensionReason value : values) {
+        suspensionReasons_.add(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+     * state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.filestore.v1.Instance.SuspensionReason suspension_reasons = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSuspensionReasons() {
+      suspensionReasons_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+     * state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.filestore.v1.Instance.SuspensionReason suspension_reasons = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for suspensionReasons.
+     */
+    public java.util.List<java.lang.Integer> getSuspensionReasonsValueList() {
+      return java.util.Collections.unmodifiableList(suspensionReasons_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+     * state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.filestore.v1.Instance.SuspensionReason suspension_reasons = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of suspensionReasons at the given index.
+     */
+    public int getSuspensionReasonsValue(int index) {
+      return suspensionReasons_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+     * state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.filestore.v1.Instance.SuspensionReason suspension_reasons = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for suspensionReasons to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSuspensionReasonsValue(int index, int value) {
+      ensureSuspensionReasonsIsMutable();
+      suspensionReasons_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+     * state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.filestore.v1.Instance.SuspensionReason suspension_reasons = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for suspensionReasons to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSuspensionReasonsValue(int value) {
+      ensureSuspensionReasonsIsMutable();
+      suspensionReasons_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+     * state.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.filestore.v1.Instance.SuspensionReason suspension_reasons = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for suspensionReasons to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSuspensionReasonsValue(java.lang.Iterable<java.lang.Integer> values) {
+      ensureSuspensionReasonsIsMutable();
+      for (int value : values) {
+        suspensionReasons_.add(value);
+      }
+      onChanged();
+      return this;
     }
 
     @java.lang.Override
