@@ -52,35 +52,39 @@ final class BigtableCreateTimeSeriesExporter extends MetricExporter {
         continue;
       }
 
-      try {
-        projectToTimeSeries =
-            metric.getTimeSeriesList().stream()
-                .collect(
-                    Collectors.groupingBy(
-                        timeSeries ->
-                            BigtableStackdriverExportUtils.getProjectId(
-                                metric.getMetricDescriptor(), timeSeries),
-                        Collectors.mapping(
-                            timeSeries ->
-                                BigtableStackdriverExportUtils.convertTimeSeries(
-                                    metric.getMetricDescriptor(),
-                                    timeSeries,
-                                    clientId,
-                                    monitoredResource),
-                            Collectors.toList())));
+      projectToTimeSeries =
+          metric.getTimeSeriesList().stream()
+              .collect(
+                  Collectors.groupingBy(
+                      timeSeries ->
+                          BigtableStackdriverExportUtils.getProjectId(
+                              metric.getMetricDescriptor(), timeSeries),
+                      Collectors.mapping(
+                          timeSeries ->
+                              BigtableStackdriverExportUtils.convertTimeSeries(
+                                  metric.getMetricDescriptor(),
+                                  timeSeries,
+                                  clientId,
+                                  monitoredResource),
+                          Collectors.toList())));
 
-        for (Map.Entry<String, List<com.google.monitoring.v3.TimeSeries>> entry :
-            projectToTimeSeries.entrySet()) {
-          ProjectName projectName = ProjectName.of(entry.getKey());
-          CreateTimeSeriesRequest request =
-              CreateTimeSeriesRequest.newBuilder()
-                  .setName(projectName.toString())
-                  .addAllTimeSeries(entry.getValue())
-                  .build();
+      for (Map.Entry<String, List<com.google.monitoring.v3.TimeSeries>> entry :
+          projectToTimeSeries.entrySet()) {
+        ProjectName projectName = ProjectName.of(entry.getKey());
+        CreateTimeSeriesRequest request =
+            CreateTimeSeriesRequest.newBuilder()
+                .setName(projectName.toString())
+                .addAllTimeSeries(entry.getValue())
+                .build();
+        try {
           this.metricServiceClient.createServiceTimeSeries(request);
+        } catch (Throwable e) {
+          logger.log(
+              Level.WARNING,
+              "Exception thrown when exporting TimeSeries for projectName="
+                  + projectName.getProject(),
+              e);
         }
-      } catch (Throwable e) {
-        logger.log(Level.WARNING, "Exception thrown when exporting TimeSeries.", e);
       }
     }
   }

@@ -746,8 +746,12 @@
           <skip>true</skip>
 
           <!-- Enable concurrent test execution by default -->
-          <parallel>classes</parallel>
-          <threadCount>10</threadCount>
+          <!-- Using processes instead of threads because BuiltinMetricsIT updates a global variable when
+           enabling metrics collection. It only works with cloud environment and will fail with permission
+           denied when running against emulators. Running in different processes make sure the state is
+           only set on the process for BuiltinMetricsIT test. -->
+          <forkCount>4</forkCount>
+          <reuseForks>false</reuseForks>
 
           <!-- print full stacktraces by default -->
           <trimStackTrace>false</trimStackTrace>
