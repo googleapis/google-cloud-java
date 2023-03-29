@@ -3786,6 +3786,52 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int FLEET_FIELD_NUMBER = 140;
+  private com.google.container.v1.Fleet fleet_;
+  /**
+   *
+   *
+   * <pre>
+   * Fleet information for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.Fleet fleet = 140;</code>
+   *
+   * @return Whether the fleet field is set.
+   */
+  @java.lang.Override
+  public boolean hasFleet() {
+    return fleet_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Fleet information for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.Fleet fleet = 140;</code>
+   *
+   * @return The fleet.
+   */
+  @java.lang.Override
+  public com.google.container.v1.Fleet getFleet() {
+    return fleet_ == null ? com.google.container.v1.Fleet.getDefaultInstance() : fleet_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Fleet information for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.Fleet fleet = 140;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.FleetOrBuilder getFleetOrBuilder() {
+    return fleet_ == null ? com.google.container.v1.Fleet.getDefaultInstance() : fleet_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3987,6 +4033,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 139, etag_);
+    }
+    if (fleet_ != null) {
+      output.writeMessage(140, getFleet());
     }
     getUnknownFields().writeTo(output);
   }
@@ -4218,6 +4267,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(139, etag_);
     }
+    if (fleet_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(140, getFleet());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4390,6 +4442,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       if (!getNodePoolAutoConfig().equals(other.getNodePoolAutoConfig())) return false;
     }
     if (!getEtag().equals(other.getEtag())) return false;
+    if (hasFleet() != other.hasFleet()) return false;
+    if (hasFleet()) {
+      if (!getFleet().equals(other.getFleet())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4597,6 +4653,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
+    if (hasFleet()) {
+      hash = (37 * hash) + FLEET_FIELD_NUMBER;
+      hash = (53 * hash) + getFleet().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -4787,6 +4847,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         getLoggingConfigFieldBuilder();
         getMonitoringConfigFieldBuilder();
         getNodePoolAutoConfigFieldBuilder();
+        getFleetFieldBuilder();
       }
     }
 
@@ -4992,6 +5053,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         nodePoolAutoConfigBuilder_ = null;
       }
       etag_ = "";
+      fleet_ = null;
+      if (fleetBuilder_ != null) {
+        fleetBuilder_.dispose();
+        fleetBuilder_ = null;
+      }
       return this;
     }
 
@@ -5303,6 +5369,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField1_ & 0x40000000) != 0)) {
         result.etag_ = etag_;
+      }
+      if (((from_bitField1_ & 0x80000000) != 0)) {
+        result.fleet_ = fleetBuilder_ == null ? fleet_ : fleetBuilder_.build();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -5645,6 +5714,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         etag_ = other.etag_;
         bitField1_ |= 0x40000000;
         onChanged();
+      }
+      if (other.hasFleet()) {
+        mergeFleet(other.getFleet());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -6091,6 +6163,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x40000000;
                 break;
               } // case 1114
+            case 1122:
+              {
+                input.readMessage(getFleetFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x80000000;
+                break;
+              } // case 1122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -16354,6 +16432,185 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       bitField1_ |= 0x40000000;
       onChanged();
       return this;
+    }
+
+    private com.google.container.v1.Fleet fleet_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.Fleet,
+            com.google.container.v1.Fleet.Builder,
+            com.google.container.v1.FleetOrBuilder>
+        fleetBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Fleet information for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.Fleet fleet = 140;</code>
+     *
+     * @return Whether the fleet field is set.
+     */
+    public boolean hasFleet() {
+      return ((bitField1_ & 0x80000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fleet information for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.Fleet fleet = 140;</code>
+     *
+     * @return The fleet.
+     */
+    public com.google.container.v1.Fleet getFleet() {
+      if (fleetBuilder_ == null) {
+        return fleet_ == null ? com.google.container.v1.Fleet.getDefaultInstance() : fleet_;
+      } else {
+        return fleetBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fleet information for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.Fleet fleet = 140;</code>
+     */
+    public Builder setFleet(com.google.container.v1.Fleet value) {
+      if (fleetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        fleet_ = value;
+      } else {
+        fleetBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fleet information for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.Fleet fleet = 140;</code>
+     */
+    public Builder setFleet(com.google.container.v1.Fleet.Builder builderForValue) {
+      if (fleetBuilder_ == null) {
+        fleet_ = builderForValue.build();
+      } else {
+        fleetBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fleet information for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.Fleet fleet = 140;</code>
+     */
+    public Builder mergeFleet(com.google.container.v1.Fleet value) {
+      if (fleetBuilder_ == null) {
+        if (((bitField1_ & 0x80000000) != 0)
+            && fleet_ != null
+            && fleet_ != com.google.container.v1.Fleet.getDefaultInstance()) {
+          getFleetBuilder().mergeFrom(value);
+        } else {
+          fleet_ = value;
+        }
+      } else {
+        fleetBuilder_.mergeFrom(value);
+      }
+      bitField1_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fleet information for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.Fleet fleet = 140;</code>
+     */
+    public Builder clearFleet() {
+      bitField1_ = (bitField1_ & ~0x80000000);
+      fleet_ = null;
+      if (fleetBuilder_ != null) {
+        fleetBuilder_.dispose();
+        fleetBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fleet information for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.Fleet fleet = 140;</code>
+     */
+    public com.google.container.v1.Fleet.Builder getFleetBuilder() {
+      bitField1_ |= 0x80000000;
+      onChanged();
+      return getFleetFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fleet information for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.Fleet fleet = 140;</code>
+     */
+    public com.google.container.v1.FleetOrBuilder getFleetOrBuilder() {
+      if (fleetBuilder_ != null) {
+        return fleetBuilder_.getMessageOrBuilder();
+      } else {
+        return fleet_ == null ? com.google.container.v1.Fleet.getDefaultInstance() : fleet_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Fleet information for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.Fleet fleet = 140;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.Fleet,
+            com.google.container.v1.Fleet.Builder,
+            com.google.container.v1.FleetOrBuilder>
+        getFleetFieldBuilder() {
+      if (fleetBuilder_ == null) {
+        fleetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.Fleet,
+                com.google.container.v1.Fleet.Builder,
+                com.google.container.v1.FleetOrBuilder>(
+                getFleet(), getParentForChildren(), isClean());
+        fleet_ = null;
+      }
+      return fleetBuilder_;
     }
 
     @java.lang.Override

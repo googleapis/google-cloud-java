@@ -2284,4 +2284,39 @@ public interface ClusterOrBuilder
    * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Fleet information for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.Fleet fleet = 140;</code>
+   *
+   * @return Whether the fleet field is set.
+   */
+  boolean hasFleet();
+  /**
+   *
+   *
+   * <pre>
+   * Fleet information for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.Fleet fleet = 140;</code>
+   *
+   * @return The fleet.
+   */
+  com.google.container.v1.Fleet getFleet();
+  /**
+   *
+   *
+   * <pre>
+   * Fleet information for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.Fleet fleet = 140;</code>
+   */
+  com.google.container.v1.FleetOrBuilder getFleetOrBuilder();
 }

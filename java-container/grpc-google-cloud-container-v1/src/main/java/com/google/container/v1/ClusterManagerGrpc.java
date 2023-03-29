@@ -1511,7 +1511,7 @@ public final class ClusterManagerGrpc {
    * Google Kubernetes Engine Cluster Manager v1
    * </pre>
    */
-  public abstract static class ClusterManagerImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -1521,7 +1521,7 @@ public final class ClusterManagerGrpc {
      * zones.
      * </pre>
      */
-    public void listClusters(
+    default void listClusters(
         com.google.container.v1.ListClustersRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.ListClustersResponse>
             responseObserver) {
@@ -1536,7 +1536,7 @@ public final class ClusterManagerGrpc {
      * Gets the details of a specific cluster.
      * </pre>
      */
-    public void getCluster(
+    default void getCluster(
         com.google.container.v1.GetClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Cluster> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetClusterMethod(), responseObserver);
@@ -1559,7 +1559,7 @@ public final class ClusterManagerGrpc {
      * which CIDR range the cluster is using.
      * </pre>
      */
-    public void createCluster(
+    default void createCluster(
         com.google.container.v1.CreateClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1573,7 +1573,7 @@ public final class ClusterManagerGrpc {
      * Updates the settings of a specific cluster.
      * </pre>
      */
-    public void updateCluster(
+    default void updateCluster(
         com.google.container.v1.UpdateClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1587,7 +1587,7 @@ public final class ClusterManagerGrpc {
      * Updates the version and/or image type for the specified node pool.
      * </pre>
      */
-    public void updateNodePool(
+    default void updateNodePool(
         com.google.container.v1.UpdateNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1601,7 +1601,7 @@ public final class ClusterManagerGrpc {
      * Sets the autoscaling settings for the specified node pool.
      * </pre>
      */
-    public void setNodePoolAutoscaling(
+    default void setNodePoolAutoscaling(
         com.google.container.v1.SetNodePoolAutoscalingRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1615,7 +1615,7 @@ public final class ClusterManagerGrpc {
      * Sets the logging service for a specific cluster.
      * </pre>
      */
-    public void setLoggingService(
+    default void setLoggingService(
         com.google.container.v1.SetLoggingServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1629,7 +1629,7 @@ public final class ClusterManagerGrpc {
      * Sets the monitoring service for a specific cluster.
      * </pre>
      */
-    public void setMonitoringService(
+    default void setMonitoringService(
         com.google.container.v1.SetMonitoringServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1643,7 +1643,7 @@ public final class ClusterManagerGrpc {
      * Sets the addons for a specific cluster.
      * </pre>
      */
-    public void setAddonsConfig(
+    default void setAddonsConfig(
         com.google.container.v1.SetAddonsConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1661,7 +1661,7 @@ public final class ClusterManagerGrpc {
      * </pre>
      */
     @java.lang.Deprecated
-    public void setLocations(
+    default void setLocations(
         com.google.container.v1.SetLocationsRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1675,7 +1675,7 @@ public final class ClusterManagerGrpc {
      * Updates the master for a specific cluster.
      * </pre>
      */
-    public void updateMaster(
+    default void updateMaster(
         com.google.container.v1.UpdateMasterRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1691,7 +1691,7 @@ public final class ClusterManagerGrpc {
      * the password.
      * </pre>
      */
-    public void setMasterAuth(
+    default void setMasterAuth(
         com.google.container.v1.SetMasterAuthRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1711,7 +1711,7 @@ public final class ClusterManagerGrpc {
      * when the cluster was initially created.
      * </pre>
      */
-    public void deleteCluster(
+    default void deleteCluster(
         com.google.container.v1.DeleteClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1725,7 +1725,7 @@ public final class ClusterManagerGrpc {
      * Lists all operations in a project in a specific zone or all zones.
      * </pre>
      */
-    public void listOperations(
+    default void listOperations(
         com.google.container.v1.ListOperationsRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.ListOperationsResponse>
             responseObserver) {
@@ -1740,7 +1740,7 @@ public final class ClusterManagerGrpc {
      * Gets the specified operation.
      * </pre>
      */
-    public void getOperation(
+    default void getOperation(
         com.google.container.v1.GetOperationRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1754,7 +1754,7 @@ public final class ClusterManagerGrpc {
      * Cancels the specified operation.
      * </pre>
      */
-    public void cancelOperation(
+    default void cancelOperation(
         com.google.container.v1.CancelOperationRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1768,7 +1768,7 @@ public final class ClusterManagerGrpc {
      * Returns configuration info about the Google Kubernetes Engine service.
      * </pre>
      */
-    public void getServerConfig(
+    default void getServerConfig(
         com.google.container.v1.GetServerConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.ServerConfig> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1785,7 +1785,7 @@ public final class ClusterManagerGrpc {
      * clusters.
      * </pre>
      */
-    public void getJSONWebKeys(
+    default void getJSONWebKeys(
         com.google.container.v1.GetJSONWebKeysRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.GetJSONWebKeysResponse>
             responseObserver) {
@@ -1800,7 +1800,7 @@ public final class ClusterManagerGrpc {
      * Lists the node pools for a cluster.
      * </pre>
      */
-    public void listNodePools(
+    default void listNodePools(
         com.google.container.v1.ListNodePoolsRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.ListNodePoolsResponse>
             responseObserver) {
@@ -1815,7 +1815,7 @@ public final class ClusterManagerGrpc {
      * Retrieves the requested node pool.
      * </pre>
      */
-    public void getNodePool(
+    default void getNodePool(
         com.google.container.v1.GetNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.NodePool> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1829,7 +1829,7 @@ public final class ClusterManagerGrpc {
      * Creates a node pool for a cluster.
      * </pre>
      */
-    public void createNodePool(
+    default void createNodePool(
         com.google.container.v1.CreateNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1843,7 +1843,7 @@ public final class ClusterManagerGrpc {
      * Deletes a node pool from a cluster.
      * </pre>
      */
-    public void deleteNodePool(
+    default void deleteNodePool(
         com.google.container.v1.DeleteNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1858,7 +1858,7 @@ public final class ClusterManagerGrpc {
      * complete.
      * </pre>
      */
-    public void completeNodePoolUpgrade(
+    default void completeNodePoolUpgrade(
         com.google.container.v1.CompleteNodePoolUpgradeRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1873,7 +1873,7 @@ public final class ClusterManagerGrpc {
      * This makes no changes if the last upgrade successfully completed.
      * </pre>
      */
-    public void rollbackNodePoolUpgrade(
+    default void rollbackNodePoolUpgrade(
         com.google.container.v1.RollbackNodePoolUpgradeRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1887,7 +1887,7 @@ public final class ClusterManagerGrpc {
      * Sets the NodeManagement options for a node pool.
      * </pre>
      */
-    public void setNodePoolManagement(
+    default void setNodePoolManagement(
         com.google.container.v1.SetNodePoolManagementRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1901,7 +1901,7 @@ public final class ClusterManagerGrpc {
      * Sets labels on a cluster.
      * </pre>
      */
-    public void setLabels(
+    default void setLabels(
         com.google.container.v1.SetLabelsRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSetLabelsMethod(), responseObserver);
@@ -1914,7 +1914,7 @@ public final class ClusterManagerGrpc {
      * Enables or disables the ABAC authorization mechanism on a cluster.
      * </pre>
      */
-    public void setLegacyAbac(
+    default void setLegacyAbac(
         com.google.container.v1.SetLegacyAbacRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1928,7 +1928,7 @@ public final class ClusterManagerGrpc {
      * Starts master IP rotation.
      * </pre>
      */
-    public void startIPRotation(
+    default void startIPRotation(
         com.google.container.v1.StartIPRotationRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1942,7 +1942,7 @@ public final class ClusterManagerGrpc {
      * Completes master IP rotation.
      * </pre>
      */
-    public void completeIPRotation(
+    default void completeIPRotation(
         com.google.container.v1.CompleteIPRotationRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1958,7 +1958,7 @@ public final class ClusterManagerGrpc {
      * [NodePool.locations][google.container.v1.NodePool.locations].
      * </pre>
      */
-    public void setNodePoolSize(
+    default void setNodePoolSize(
         com.google.container.v1.SetNodePoolSizeRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1972,7 +1972,7 @@ public final class ClusterManagerGrpc {
      * Enables or disables Network Policy for a cluster.
      * </pre>
      */
-    public void setNetworkPolicy(
+    default void setNetworkPolicy(
         com.google.container.v1.SetNetworkPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1986,7 +1986,7 @@ public final class ClusterManagerGrpc {
      * Sets the maintenance policy for a cluster.
      * </pre>
      */
-    public void setMaintenancePolicy(
+    default void setMaintenancePolicy(
         com.google.container.v1.SetMaintenancePolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2000,226 +2000,33 @@ public final class ClusterManagerGrpc {
      * Lists subnetworks that are usable for creating clusters in a project.
      * </pre>
      */
-    public void listUsableSubnetworks(
+    default void listUsableSubnetworks(
         com.google.container.v1.ListUsableSubnetworksRequest request,
         io.grpc.stub.StreamObserver<com.google.container.v1.ListUsableSubnetworksResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListUsableSubnetworksMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ClusterManager.
+   *
+   * <pre>
+   * Google Kubernetes Engine Cluster Manager v1
+   * </pre>
+   */
+  public abstract static class ClusterManagerImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListClustersMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.ListClustersRequest,
-                      com.google.container.v1.ListClustersResponse>(this, METHODID_LIST_CLUSTERS)))
-          .addMethod(
-              getGetClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.GetClusterRequest, com.google.container.v1.Cluster>(
-                      this, METHODID_GET_CLUSTER)))
-          .addMethod(
-              getCreateClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.CreateClusterRequest,
-                      com.google.container.v1.Operation>(this, METHODID_CREATE_CLUSTER)))
-          .addMethod(
-              getUpdateClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.UpdateClusterRequest,
-                      com.google.container.v1.Operation>(this, METHODID_UPDATE_CLUSTER)))
-          .addMethod(
-              getUpdateNodePoolMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.UpdateNodePoolRequest,
-                      com.google.container.v1.Operation>(this, METHODID_UPDATE_NODE_POOL)))
-          .addMethod(
-              getSetNodePoolAutoscalingMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.SetNodePoolAutoscalingRequest,
-                      com.google.container.v1.Operation>(this, METHODID_SET_NODE_POOL_AUTOSCALING)))
-          .addMethod(
-              getSetLoggingServiceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.SetLoggingServiceRequest,
-                      com.google.container.v1.Operation>(this, METHODID_SET_LOGGING_SERVICE)))
-          .addMethod(
-              getSetMonitoringServiceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.SetMonitoringServiceRequest,
-                      com.google.container.v1.Operation>(this, METHODID_SET_MONITORING_SERVICE)))
-          .addMethod(
-              getSetAddonsConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.SetAddonsConfigRequest,
-                      com.google.container.v1.Operation>(this, METHODID_SET_ADDONS_CONFIG)))
-          .addMethod(
-              getSetLocationsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.SetLocationsRequest,
-                      com.google.container.v1.Operation>(this, METHODID_SET_LOCATIONS)))
-          .addMethod(
-              getUpdateMasterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.UpdateMasterRequest,
-                      com.google.container.v1.Operation>(this, METHODID_UPDATE_MASTER)))
-          .addMethod(
-              getSetMasterAuthMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.SetMasterAuthRequest,
-                      com.google.container.v1.Operation>(this, METHODID_SET_MASTER_AUTH)))
-          .addMethod(
-              getDeleteClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.DeleteClusterRequest,
-                      com.google.container.v1.Operation>(this, METHODID_DELETE_CLUSTER)))
-          .addMethod(
-              getListOperationsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.ListOperationsRequest,
-                      com.google.container.v1.ListOperationsResponse>(
-                      this, METHODID_LIST_OPERATIONS)))
-          .addMethod(
-              getGetOperationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.GetOperationRequest,
-                      com.google.container.v1.Operation>(this, METHODID_GET_OPERATION)))
-          .addMethod(
-              getCancelOperationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.CancelOperationRequest, com.google.protobuf.Empty>(
-                      this, METHODID_CANCEL_OPERATION)))
-          .addMethod(
-              getGetServerConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.GetServerConfigRequest,
-                      com.google.container.v1.ServerConfig>(this, METHODID_GET_SERVER_CONFIG)))
-          .addMethod(
-              getGetJSONWebKeysMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.GetJSONWebKeysRequest,
-                      com.google.container.v1.GetJSONWebKeysResponse>(
-                      this, METHODID_GET_JSONWEB_KEYS)))
-          .addMethod(
-              getListNodePoolsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.ListNodePoolsRequest,
-                      com.google.container.v1.ListNodePoolsResponse>(
-                      this, METHODID_LIST_NODE_POOLS)))
-          .addMethod(
-              getGetNodePoolMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.GetNodePoolRequest, com.google.container.v1.NodePool>(
-                      this, METHODID_GET_NODE_POOL)))
-          .addMethod(
-              getCreateNodePoolMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.CreateNodePoolRequest,
-                      com.google.container.v1.Operation>(this, METHODID_CREATE_NODE_POOL)))
-          .addMethod(
-              getDeleteNodePoolMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.DeleteNodePoolRequest,
-                      com.google.container.v1.Operation>(this, METHODID_DELETE_NODE_POOL)))
-          .addMethod(
-              getCompleteNodePoolUpgradeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.CompleteNodePoolUpgradeRequest,
-                      com.google.protobuf.Empty>(this, METHODID_COMPLETE_NODE_POOL_UPGRADE)))
-          .addMethod(
-              getRollbackNodePoolUpgradeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.RollbackNodePoolUpgradeRequest,
-                      com.google.container.v1.Operation>(
-                      this, METHODID_ROLLBACK_NODE_POOL_UPGRADE)))
-          .addMethod(
-              getSetNodePoolManagementMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.SetNodePoolManagementRequest,
-                      com.google.container.v1.Operation>(this, METHODID_SET_NODE_POOL_MANAGEMENT)))
-          .addMethod(
-              getSetLabelsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.SetLabelsRequest, com.google.container.v1.Operation>(
-                      this, METHODID_SET_LABELS)))
-          .addMethod(
-              getSetLegacyAbacMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.SetLegacyAbacRequest,
-                      com.google.container.v1.Operation>(this, METHODID_SET_LEGACY_ABAC)))
-          .addMethod(
-              getStartIPRotationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.StartIPRotationRequest,
-                      com.google.container.v1.Operation>(this, METHODID_START_IPROTATION)))
-          .addMethod(
-              getCompleteIPRotationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.CompleteIPRotationRequest,
-                      com.google.container.v1.Operation>(this, METHODID_COMPLETE_IPROTATION)))
-          .addMethod(
-              getSetNodePoolSizeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.SetNodePoolSizeRequest,
-                      com.google.container.v1.Operation>(this, METHODID_SET_NODE_POOL_SIZE)))
-          .addMethod(
-              getSetNetworkPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.SetNetworkPolicyRequest,
-                      com.google.container.v1.Operation>(this, METHODID_SET_NETWORK_POLICY)))
-          .addMethod(
-              getSetMaintenancePolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.SetMaintenancePolicyRequest,
-                      com.google.container.v1.Operation>(this, METHODID_SET_MAINTENANCE_POLICY)))
-          .addMethod(
-              getListUsableSubnetworksMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.container.v1.ListUsableSubnetworksRequest,
-                      com.google.container.v1.ListUsableSubnetworksResponse>(
-                      this, METHODID_LIST_USABLE_SUBNETWORKS)))
-          .build();
+      return ClusterManagerGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ClusterManager.
    *
    * <pre>
    * Google Kubernetes Engine Cluster Manager v1
@@ -2797,7 +2604,7 @@ public final class ClusterManagerGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ClusterManager.
    *
    * <pre>
    * Google Kubernetes Engine Cluster Manager v1
@@ -3276,7 +3083,7 @@ public final class ClusterManagerGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service ClusterManager.
    *
    * <pre>
    * Google Kubernetes Engine Cluster Manager v1
@@ -3798,10 +3605,10 @@ public final class ClusterManagerGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ClusterManagerImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ClusterManagerImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -3994,6 +3801,215 @@ public final class ClusterManagerGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListClustersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.ListClustersRequest,
+                    com.google.container.v1.ListClustersResponse>(service, METHODID_LIST_CLUSTERS)))
+        .addMethod(
+            getGetClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.GetClusterRequest, com.google.container.v1.Cluster>(
+                    service, METHODID_GET_CLUSTER)))
+        .addMethod(
+            getCreateClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.CreateClusterRequest,
+                    com.google.container.v1.Operation>(service, METHODID_CREATE_CLUSTER)))
+        .addMethod(
+            getUpdateClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.UpdateClusterRequest,
+                    com.google.container.v1.Operation>(service, METHODID_UPDATE_CLUSTER)))
+        .addMethod(
+            getUpdateNodePoolMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.UpdateNodePoolRequest,
+                    com.google.container.v1.Operation>(service, METHODID_UPDATE_NODE_POOL)))
+        .addMethod(
+            getSetNodePoolAutoscalingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.SetNodePoolAutoscalingRequest,
+                    com.google.container.v1.Operation>(
+                    service, METHODID_SET_NODE_POOL_AUTOSCALING)))
+        .addMethod(
+            getSetLoggingServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.SetLoggingServiceRequest,
+                    com.google.container.v1.Operation>(service, METHODID_SET_LOGGING_SERVICE)))
+        .addMethod(
+            getSetMonitoringServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.SetMonitoringServiceRequest,
+                    com.google.container.v1.Operation>(service, METHODID_SET_MONITORING_SERVICE)))
+        .addMethod(
+            getSetAddonsConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.SetAddonsConfigRequest,
+                    com.google.container.v1.Operation>(service, METHODID_SET_ADDONS_CONFIG)))
+        .addMethod(
+            getSetLocationsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.SetLocationsRequest, com.google.container.v1.Operation>(
+                    service, METHODID_SET_LOCATIONS)))
+        .addMethod(
+            getUpdateMasterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.UpdateMasterRequest, com.google.container.v1.Operation>(
+                    service, METHODID_UPDATE_MASTER)))
+        .addMethod(
+            getSetMasterAuthMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.SetMasterAuthRequest,
+                    com.google.container.v1.Operation>(service, METHODID_SET_MASTER_AUTH)))
+        .addMethod(
+            getDeleteClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.DeleteClusterRequest,
+                    com.google.container.v1.Operation>(service, METHODID_DELETE_CLUSTER)))
+        .addMethod(
+            getListOperationsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.ListOperationsRequest,
+                    com.google.container.v1.ListOperationsResponse>(
+                    service, METHODID_LIST_OPERATIONS)))
+        .addMethod(
+            getGetOperationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.GetOperationRequest, com.google.container.v1.Operation>(
+                    service, METHODID_GET_OPERATION)))
+        .addMethod(
+            getCancelOperationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.CancelOperationRequest, com.google.protobuf.Empty>(
+                    service, METHODID_CANCEL_OPERATION)))
+        .addMethod(
+            getGetServerConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.GetServerConfigRequest,
+                    com.google.container.v1.ServerConfig>(service, METHODID_GET_SERVER_CONFIG)))
+        .addMethod(
+            getGetJSONWebKeysMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.GetJSONWebKeysRequest,
+                    com.google.container.v1.GetJSONWebKeysResponse>(
+                    service, METHODID_GET_JSONWEB_KEYS)))
+        .addMethod(
+            getListNodePoolsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.ListNodePoolsRequest,
+                    com.google.container.v1.ListNodePoolsResponse>(
+                    service, METHODID_LIST_NODE_POOLS)))
+        .addMethod(
+            getGetNodePoolMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.GetNodePoolRequest, com.google.container.v1.NodePool>(
+                    service, METHODID_GET_NODE_POOL)))
+        .addMethod(
+            getCreateNodePoolMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.CreateNodePoolRequest,
+                    com.google.container.v1.Operation>(service, METHODID_CREATE_NODE_POOL)))
+        .addMethod(
+            getDeleteNodePoolMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.DeleteNodePoolRequest,
+                    com.google.container.v1.Operation>(service, METHODID_DELETE_NODE_POOL)))
+        .addMethod(
+            getCompleteNodePoolUpgradeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.CompleteNodePoolUpgradeRequest,
+                    com.google.protobuf.Empty>(service, METHODID_COMPLETE_NODE_POOL_UPGRADE)))
+        .addMethod(
+            getRollbackNodePoolUpgradeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.RollbackNodePoolUpgradeRequest,
+                    com.google.container.v1.Operation>(
+                    service, METHODID_ROLLBACK_NODE_POOL_UPGRADE)))
+        .addMethod(
+            getSetNodePoolManagementMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.SetNodePoolManagementRequest,
+                    com.google.container.v1.Operation>(service, METHODID_SET_NODE_POOL_MANAGEMENT)))
+        .addMethod(
+            getSetLabelsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.SetLabelsRequest, com.google.container.v1.Operation>(
+                    service, METHODID_SET_LABELS)))
+        .addMethod(
+            getSetLegacyAbacMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.SetLegacyAbacRequest,
+                    com.google.container.v1.Operation>(service, METHODID_SET_LEGACY_ABAC)))
+        .addMethod(
+            getStartIPRotationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.StartIPRotationRequest,
+                    com.google.container.v1.Operation>(service, METHODID_START_IPROTATION)))
+        .addMethod(
+            getCompleteIPRotationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.CompleteIPRotationRequest,
+                    com.google.container.v1.Operation>(service, METHODID_COMPLETE_IPROTATION)))
+        .addMethod(
+            getSetNodePoolSizeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.SetNodePoolSizeRequest,
+                    com.google.container.v1.Operation>(service, METHODID_SET_NODE_POOL_SIZE)))
+        .addMethod(
+            getSetNetworkPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.SetNetworkPolicyRequest,
+                    com.google.container.v1.Operation>(service, METHODID_SET_NETWORK_POLICY)))
+        .addMethod(
+            getSetMaintenancePolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.SetMaintenancePolicyRequest,
+                    com.google.container.v1.Operation>(service, METHODID_SET_MAINTENANCE_POLICY)))
+        .addMethod(
+            getListUsableSubnetworksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.container.v1.ListUsableSubnetworksRequest,
+                    com.google.container.v1.ListUsableSubnetworksResponse>(
+                    service, METHODID_LIST_USABLE_SUBNETWORKS)))
+        .build();
   }
 
   private abstract static class ClusterManagerBaseDescriptorSupplier

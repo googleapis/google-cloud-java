@@ -44,6 +44,7 @@ import com.google.container.v1.DatabaseEncryption;
 import com.google.container.v1.DeleteClusterRequest;
 import com.google.container.v1.DeleteNodePoolRequest;
 import com.google.container.v1.FastSocket;
+import com.google.container.v1.Fleet;
 import com.google.container.v1.GcfsConfig;
 import com.google.container.v1.GetClusterRequest;
 import com.google.container.v1.GetJSONWebKeysRequest;
@@ -321,6 +322,7 @@ public class ClusterManagerClientTest {
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .setNodePoolAutoConfig(NodePoolAutoConfig.newBuilder().build())
             .setEtag("etag3123477")
+            .setFleet(Fleet.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -420,6 +422,7 @@ public class ClusterManagerClientTest {
             .setMonitoringConfig(MonitoringConfig.newBuilder().build())
             .setNodePoolAutoConfig(NodePoolAutoConfig.newBuilder().build())
             .setEtag("etag3123477")
+            .setFleet(Fleet.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
