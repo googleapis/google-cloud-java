@@ -65,6 +65,606 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
             com.google.cloud.video.livestream.v1.PreprocessingConfig.Builder.class);
   }
 
+  public interface AudioOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.video.livestream.v1.PreprocessingConfig.Audio)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Specify audio loudness normalization in loudness units relative to full
+     * scale (LUFS). Enter a value between -24 and 0 according to the following:
+     * - -24 is the Advanced Television Systems Committee (ATSC A/85)
+     * - -23 is the EU R128 broadcast standard
+     * - -19 is the prior standard for online mono audio
+     * - -18 is the ReplayGain standard
+     * - -16 is the prior standard for stereo audio
+     * - -14 is the new online audio standard recommended by Spotify, as well as
+     * Amazon Echo
+     * - 0 disables normalization. The default is 0.
+     * </pre>
+     *
+     * <code>double lufs = 1;</code>
+     *
+     * @return The lufs.
+     */
+    double getLufs();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Audio preprocessing configuration.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.video.livestream.v1.PreprocessingConfig.Audio}
+   */
+  public static final class Audio extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.PreprocessingConfig.Audio)
+      AudioOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use Audio.newBuilder() to construct.
+    private Audio(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Audio() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Audio();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.video.livestream.v1.OutputsProto
+          .internal_static_google_cloud_video_livestream_v1_PreprocessingConfig_Audio_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.video.livestream.v1.OutputsProto
+          .internal_static_google_cloud_video_livestream_v1_PreprocessingConfig_Audio_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio.class,
+              com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio.Builder.class);
+    }
+
+    public static final int LUFS_FIELD_NUMBER = 1;
+    private double lufs_ = 0D;
+    /**
+     *
+     *
+     * <pre>
+     * Specify audio loudness normalization in loudness units relative to full
+     * scale (LUFS). Enter a value between -24 and 0 according to the following:
+     * - -24 is the Advanced Television Systems Committee (ATSC A/85)
+     * - -23 is the EU R128 broadcast standard
+     * - -19 is the prior standard for online mono audio
+     * - -18 is the ReplayGain standard
+     * - -16 is the prior standard for stereo audio
+     * - -14 is the new online audio standard recommended by Spotify, as well as
+     * Amazon Echo
+     * - 0 disables normalization. The default is 0.
+     * </pre>
+     *
+     * <code>double lufs = 1;</code>
+     *
+     * @return The lufs.
+     */
+    @java.lang.Override
+    public double getLufs() {
+      return lufs_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (java.lang.Double.doubleToRawLongBits(lufs_) != 0) {
+        output.writeDouble(1, lufs_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (java.lang.Double.doubleToRawLongBits(lufs_) != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, lufs_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio other =
+          (com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio) obj;
+
+      if (java.lang.Double.doubleToLongBits(getLufs())
+          != java.lang.Double.doubleToLongBits(other.getLufs())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + LUFS_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(java.lang.Double.doubleToLongBits(getLufs()));
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Audio preprocessing configuration.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.video.livestream.v1.PreprocessingConfig.Audio}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.video.livestream.v1.PreprocessingConfig.Audio)
+        com.google.cloud.video.livestream.v1.PreprocessingConfig.AudioOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.video.livestream.v1.OutputsProto
+            .internal_static_google_cloud_video_livestream_v1_PreprocessingConfig_Audio_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.video.livestream.v1.OutputsProto
+            .internal_static_google_cloud_video_livestream_v1_PreprocessingConfig_Audio_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio.class,
+                com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio.Builder.class);
+      }
+
+      // Construct using com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        lufs_ = 0D;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.video.livestream.v1.OutputsProto
+            .internal_static_google_cloud_video_livestream_v1_PreprocessingConfig_Audio_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio
+          getDefaultInstanceForType() {
+        return com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio build() {
+        com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio buildPartial() {
+        com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio result =
+            new com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.lufs_ = lufs_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio) {
+          return mergeFrom((com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio other) {
+        if (other
+            == com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio.getDefaultInstance())
+          return this;
+        if (other.getLufs() != 0D) {
+          setLufs(other.getLufs());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 9:
+                {
+                  lufs_ = input.readDouble();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 9
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private double lufs_;
+      /**
+       *
+       *
+       * <pre>
+       * Specify audio loudness normalization in loudness units relative to full
+       * scale (LUFS). Enter a value between -24 and 0 according to the following:
+       * - -24 is the Advanced Television Systems Committee (ATSC A/85)
+       * - -23 is the EU R128 broadcast standard
+       * - -19 is the prior standard for online mono audio
+       * - -18 is the ReplayGain standard
+       * - -16 is the prior standard for stereo audio
+       * - -14 is the new online audio standard recommended by Spotify, as well as
+       * Amazon Echo
+       * - 0 disables normalization. The default is 0.
+       * </pre>
+       *
+       * <code>double lufs = 1;</code>
+       *
+       * @return The lufs.
+       */
+      @java.lang.Override
+      public double getLufs() {
+        return lufs_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specify audio loudness normalization in loudness units relative to full
+       * scale (LUFS). Enter a value between -24 and 0 according to the following:
+       * - -24 is the Advanced Television Systems Committee (ATSC A/85)
+       * - -23 is the EU R128 broadcast standard
+       * - -19 is the prior standard for online mono audio
+       * - -18 is the ReplayGain standard
+       * - -16 is the prior standard for stereo audio
+       * - -14 is the new online audio standard recommended by Spotify, as well as
+       * Amazon Echo
+       * - 0 disables normalization. The default is 0.
+       * </pre>
+       *
+       * <code>double lufs = 1;</code>
+       *
+       * @param value The lufs to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLufs(double value) {
+
+        lufs_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Specify audio loudness normalization in loudness units relative to full
+       * scale (LUFS). Enter a value between -24 and 0 according to the following:
+       * - -24 is the Advanced Television Systems Committee (ATSC A/85)
+       * - -23 is the EU R128 broadcast standard
+       * - -19 is the prior standard for online mono audio
+       * - -18 is the ReplayGain standard
+       * - -16 is the prior standard for stereo audio
+       * - -14 is the new online audio standard recommended by Spotify, as well as
+       * Amazon Echo
+       * - 0 disables normalization. The default is 0.
+       * </pre>
+       *
+       * <code>double lufs = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearLufs() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        lufs_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.video.livestream.v1.PreprocessingConfig.Audio)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.video.livestream.v1.PreprocessingConfig.Audio)
+    private static final com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio();
+    }
+
+    public static com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Audio> PARSER =
+        new com.google.protobuf.AbstractParser<Audio>() {
+          @java.lang.Override
+          public Audio parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Audio> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Audio> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface CropOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.video.livestream.v1.PreprocessingConfig.Crop)
@@ -1808,6 +2408,57 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int AUDIO_FIELD_NUMBER = 1;
+  private com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio audio_;
+  /**
+   *
+   *
+   * <pre>
+   * Audio preprocessing configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.PreprocessingConfig.Audio audio = 1;</code>
+   *
+   * @return Whether the audio field is set.
+   */
+  @java.lang.Override
+  public boolean hasAudio() {
+    return audio_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Audio preprocessing configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.PreprocessingConfig.Audio audio = 1;</code>
+   *
+   * @return The audio.
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio getAudio() {
+    return audio_ == null
+        ? com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio.getDefaultInstance()
+        : audio_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Audio preprocessing configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.PreprocessingConfig.Audio audio = 1;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.PreprocessingConfig.AudioOrBuilder
+      getAudioOrBuilder() {
+    return audio_ == null
+        ? com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio.getDefaultInstance()
+        : audio_;
+  }
+
   public static final int CROP_FIELD_NUMBER = 2;
   private com.google.cloud.video.livestream.v1.PreprocessingConfig.Crop crop_;
   /**
@@ -1922,6 +2573,9 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (audio_ != null) {
+      output.writeMessage(1, getAudio());
+    }
     if (crop_ != null) {
       output.writeMessage(2, getCrop());
     }
@@ -1937,6 +2591,9 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
+    if (audio_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getAudio());
+    }
     if (crop_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getCrop());
     }
@@ -1959,6 +2616,10 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     com.google.cloud.video.livestream.v1.PreprocessingConfig other =
         (com.google.cloud.video.livestream.v1.PreprocessingConfig) obj;
 
+    if (hasAudio() != other.hasAudio()) return false;
+    if (hasAudio()) {
+      if (!getAudio().equals(other.getAudio())) return false;
+    }
     if (hasCrop() != other.hasCrop()) return false;
     if (hasCrop()) {
       if (!getCrop().equals(other.getCrop())) return false;
@@ -1978,6 +2639,10 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasAudio()) {
+      hash = (37 * hash) + AUDIO_FIELD_NUMBER;
+      hash = (53 * hash) + getAudio().hashCode();
+    }
     if (hasCrop()) {
       hash = (37 * hash) + CROP_FIELD_NUMBER;
       hash = (53 * hash) + getCrop().hashCode();
@@ -2126,6 +2791,11 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      audio_ = null;
+      if (audioBuilder_ != null) {
+        audioBuilder_.dispose();
+        audioBuilder_ = null;
+      }
       crop_ = null;
       if (cropBuilder_ != null) {
         cropBuilder_.dispose();
@@ -2173,9 +2843,12 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     private void buildPartial0(com.google.cloud.video.livestream.v1.PreprocessingConfig result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.crop_ = cropBuilder_ == null ? crop_ : cropBuilder_.build();
+        result.audio_ = audioBuilder_ == null ? audio_ : audioBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.crop_ = cropBuilder_ == null ? crop_ : cropBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.pad_ = padBuilder_ == null ? pad_ : padBuilder_.build();
       }
     }
@@ -2226,6 +2899,9 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
     public Builder mergeFrom(com.google.cloud.video.livestream.v1.PreprocessingConfig other) {
       if (other == com.google.cloud.video.livestream.v1.PreprocessingConfig.getDefaultInstance())
         return this;
+      if (other.hasAudio()) {
+        mergeAudio(other.getAudio());
+      }
       if (other.hasCrop()) {
         mergeCrop(other.getCrop());
       }
@@ -2258,16 +2934,22 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
             case 0:
               done = true;
               break;
+            case 10:
+              {
+                input.readMessage(getAudioFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
             case 18:
               {
                 input.readMessage(getCropFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getPadFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             default:
@@ -2289,6 +2971,195 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
 
     private int bitField0_;
 
+    private com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio audio_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio,
+            com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio.Builder,
+            com.google.cloud.video.livestream.v1.PreprocessingConfig.AudioOrBuilder>
+        audioBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Audio preprocessing configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.PreprocessingConfig.Audio audio = 1;</code>
+     *
+     * @return Whether the audio field is set.
+     */
+    public boolean hasAudio() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Audio preprocessing configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.PreprocessingConfig.Audio audio = 1;</code>
+     *
+     * @return The audio.
+     */
+    public com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio getAudio() {
+      if (audioBuilder_ == null) {
+        return audio_ == null
+            ? com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio.getDefaultInstance()
+            : audio_;
+      } else {
+        return audioBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Audio preprocessing configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.PreprocessingConfig.Audio audio = 1;</code>
+     */
+    public Builder setAudio(com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio value) {
+      if (audioBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        audio_ = value;
+      } else {
+        audioBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Audio preprocessing configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.PreprocessingConfig.Audio audio = 1;</code>
+     */
+    public Builder setAudio(
+        com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio.Builder builderForValue) {
+      if (audioBuilder_ == null) {
+        audio_ = builderForValue.build();
+      } else {
+        audioBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Audio preprocessing configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.PreprocessingConfig.Audio audio = 1;</code>
+     */
+    public Builder mergeAudio(
+        com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio value) {
+      if (audioBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && audio_ != null
+            && audio_
+                != com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio
+                    .getDefaultInstance()) {
+          getAudioBuilder().mergeFrom(value);
+        } else {
+          audio_ = value;
+        }
+      } else {
+        audioBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Audio preprocessing configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.PreprocessingConfig.Audio audio = 1;</code>
+     */
+    public Builder clearAudio() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      audio_ = null;
+      if (audioBuilder_ != null) {
+        audioBuilder_.dispose();
+        audioBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Audio preprocessing configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.PreprocessingConfig.Audio audio = 1;</code>
+     */
+    public com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio.Builder
+        getAudioBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return getAudioFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Audio preprocessing configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.PreprocessingConfig.Audio audio = 1;</code>
+     */
+    public com.google.cloud.video.livestream.v1.PreprocessingConfig.AudioOrBuilder
+        getAudioOrBuilder() {
+      if (audioBuilder_ != null) {
+        return audioBuilder_.getMessageOrBuilder();
+      } else {
+        return audio_ == null
+            ? com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio.getDefaultInstance()
+            : audio_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Audio preprocessing configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.PreprocessingConfig.Audio audio = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio,
+            com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio.Builder,
+            com.google.cloud.video.livestream.v1.PreprocessingConfig.AudioOrBuilder>
+        getAudioFieldBuilder() {
+      if (audioBuilder_ == null) {
+        audioBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio,
+                com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio.Builder,
+                com.google.cloud.video.livestream.v1.PreprocessingConfig.AudioOrBuilder>(
+                getAudio(), getParentForChildren(), isClean());
+        audio_ = null;
+      }
+      return audioBuilder_;
+    }
+
     private com.google.cloud.video.livestream.v1.PreprocessingConfig.Crop crop_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.video.livestream.v1.PreprocessingConfig.Crop,
@@ -2307,7 +3178,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      * @return Whether the crop field is set.
      */
     public boolean hasCrop() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      *
@@ -2347,7 +3218,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       } else {
         cropBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2367,7 +3238,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       } else {
         cropBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2382,7 +3253,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeCrop(com.google.cloud.video.livestream.v1.PreprocessingConfig.Crop value) {
       if (cropBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)
+        if (((bitField0_ & 0x00000002) != 0)
             && crop_ != null
             && crop_
                 != com.google.cloud.video.livestream.v1.PreprocessingConfig.Crop
@@ -2394,7 +3265,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       } else {
         cropBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2408,7 +3279,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.video.livestream.v1.PreprocessingConfig.Crop crop = 2;</code>
      */
     public Builder clearCrop() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       crop_ = null;
       if (cropBuilder_ != null) {
         cropBuilder_.dispose();
@@ -2427,7 +3298,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.video.livestream.v1.PreprocessingConfig.Crop crop = 2;</code>
      */
     public com.google.cloud.video.livestream.v1.PreprocessingConfig.Crop.Builder getCropBuilder() {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return getCropFieldBuilder().getBuilder();
     }
@@ -2494,7 +3365,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      * @return Whether the pad field is set.
      */
     public boolean hasPad() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -2534,7 +3405,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       } else {
         padBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2554,7 +3425,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       } else {
         padBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2569,7 +3440,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      */
     public Builder mergePad(com.google.cloud.video.livestream.v1.PreprocessingConfig.Pad value) {
       if (padBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && pad_ != null
             && pad_
                 != com.google.cloud.video.livestream.v1.PreprocessingConfig.Pad
@@ -2581,7 +3452,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
       } else {
         padBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2595,7 +3466,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.video.livestream.v1.PreprocessingConfig.Pad pad = 3;</code>
      */
     public Builder clearPad() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       pad_ = null;
       if (padBuilder_ != null) {
         padBuilder_.dispose();
@@ -2614,7 +3485,7 @@ public final class PreprocessingConfig extends com.google.protobuf.GeneratedMess
      * <code>.google.cloud.video.livestream.v1.PreprocessingConfig.Pad pad = 3;</code>
      */
     public com.google.cloud.video.livestream.v1.PreprocessingConfig.Pad.Builder getPadBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getPadFieldBuilder().getBuilder();
     }

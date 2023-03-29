@@ -188,6 +188,47 @@ public interface EventOrBuilder
    *
    *
    * <pre>
+   * Required. Switches to another input stream.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the inputSwitch field is set.
+   */
+  boolean hasInputSwitch();
+  /**
+   *
+   *
+   * <pre>
+   * Required. Switches to another input stream.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The inputSwitch.
+   */
+  com.google.cloud.video.livestream.v1.Event.InputSwitchTask getInputSwitch();
+  /**
+   *
+   *
+   * <pre>
+   * Required. Switches to another input stream.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  com.google.cloud.video.livestream.v1.Event.InputSwitchTaskOrBuilder getInputSwitchOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. Inserts a new ad opportunity.
    * </pre>
    *
@@ -229,9 +270,135 @@ public interface EventOrBuilder
    *
    *
    * <pre>
+   * Required. Stops any running ad break.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the returnToProgram field is set.
+   */
+  boolean hasReturnToProgram();
+  /**
+   *
+   *
+   * <pre>
+   * Required. Stops any running ad break.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The returnToProgram.
+   */
+  com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask getReturnToProgram();
+  /**
+   *
+   *
+   * <pre>
+   * Required. Stops any running ad break.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  com.google.cloud.video.livestream.v1.Event.ReturnToProgramTaskOrBuilder
+      getReturnToProgramOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Mutes the stream.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.Event.MuteTask mute = 15 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the mute field is set.
+   */
+  boolean hasMute();
+  /**
+   *
+   *
+   * <pre>
+   * Required. Mutes the stream.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.Event.MuteTask mute = 15 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The mute.
+   */
+  com.google.cloud.video.livestream.v1.Event.MuteTask getMute();
+  /**
+   *
+   *
+   * <pre>
+   * Required. Mutes the stream.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.Event.MuteTask mute = 15 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  com.google.cloud.video.livestream.v1.Event.MuteTaskOrBuilder getMuteOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Unmutes the stream.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the unmute field is set.
+   */
+  boolean hasUnmute();
+  /**
+   *
+   *
+   * <pre>
+   * Required. Unmutes the stream.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The unmute.
+   */
+  com.google.cloud.video.livestream.v1.Event.UnmuteTask getUnmute();
+  /**
+   *
+   *
+   * <pre>
+   * Required. Unmutes the stream.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  com.google.cloud.video.livestream.v1.Event.UnmuteTaskOrBuilder getUnmuteOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * When this field is set to true, the event will be executed at the earliest
-   * time that the server can schedule the event and [execution_time][google.cloud.video.livestream.v1.Event.execution_time] will be
-   * populated with the time that the server actually schedules the event.
+   * time that the server can schedule the event and
+   * [execution_time][google.cloud.video.livestream.v1.Event.execution_time]
+   * will be populated with the time that the server actually schedules the
+   * event.
    * </pre>
    *
    * <code>bool execute_now = 9;</code>
@@ -244,9 +411,13 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * The time when the event should be executed. When [execute_now][google.cloud.video.livestream.v1.Event.execute_now] is set to
-   * `true`, this field should not be set in `CreateEvent` request and will be
-   * populated with the time that the server schedules the event.
+   * The time to execute the event. If you set
+   * [execute_now][google.cloud.video.livestream.v1.Event.execute_now] to
+   * `true`, then do not set this field in the `CreateEvent` request. In
+   * this case, the server schedules the event and populates this field. If you
+   * set [execute_now][google.cloud.video.livestream.v1.Event.execute_now] to
+   * `false`, then you must set this field to at least 10 seconds in the future
+   * or else the event can't be created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp execution_time = 10;</code>
@@ -258,9 +429,13 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * The time when the event should be executed. When [execute_now][google.cloud.video.livestream.v1.Event.execute_now] is set to
-   * `true`, this field should not be set in `CreateEvent` request and will be
-   * populated with the time that the server schedules the event.
+   * The time to execute the event. If you set
+   * [execute_now][google.cloud.video.livestream.v1.Event.execute_now] to
+   * `true`, then do not set this field in the `CreateEvent` request. In
+   * this case, the server schedules the event and populates this field. If you
+   * set [execute_now][google.cloud.video.livestream.v1.Event.execute_now] to
+   * `false`, then you must set this field to at least 10 seconds in the future
+   * or else the event can't be created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp execution_time = 10;</code>
@@ -272,9 +447,13 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * The time when the event should be executed. When [execute_now][google.cloud.video.livestream.v1.Event.execute_now] is set to
-   * `true`, this field should not be set in `CreateEvent` request and will be
-   * populated with the time that the server schedules the event.
+   * The time to execute the event. If you set
+   * [execute_now][google.cloud.video.livestream.v1.Event.execute_now] to
+   * `true`, then do not set this field in the `CreateEvent` request. In
+   * this case, the server schedules the event and populates this field. If you
+   * set [execute_now][google.cloud.video.livestream.v1.Event.execute_now] to
+   * `false`, then you must set this field to at least 10 seconds in the future
+   * or else the event can't be created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp execution_time = 10;</code>

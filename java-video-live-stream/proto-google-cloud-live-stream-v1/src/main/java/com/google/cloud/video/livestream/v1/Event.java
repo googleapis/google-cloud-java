@@ -325,6 +325,675 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.video.livestream.v1.Event.State)
   }
 
+  public interface InputSwitchTaskOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.video.livestream.v1.Event.InputSwitchTask)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The
+     * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+     * of the input to switch to.
+     * </pre>
+     *
+     * <code>string input_key = 1;</code>
+     *
+     * @return The inputKey.
+     */
+    java.lang.String getInputKey();
+    /**
+     *
+     *
+     * <pre>
+     * The
+     * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+     * of the input to switch to.
+     * </pre>
+     *
+     * <code>string input_key = 1;</code>
+     *
+     * @return The bytes for inputKey.
+     */
+    com.google.protobuf.ByteString getInputKeyBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Switches to another input stream. Automatic failover is then disabled.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.video.livestream.v1.Event.InputSwitchTask}
+   */
+  public static final class InputSwitchTask extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.Event.InputSwitchTask)
+      InputSwitchTaskOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use InputSwitchTask.newBuilder() to construct.
+    private InputSwitchTask(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private InputSwitchTask() {
+      inputKey_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new InputSwitchTask();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.video.livestream.v1.ResourcesProto
+          .internal_static_google_cloud_video_livestream_v1_Event_InputSwitchTask_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.video.livestream.v1.ResourcesProto
+          .internal_static_google_cloud_video_livestream_v1_Event_InputSwitchTask_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.video.livestream.v1.Event.InputSwitchTask.class,
+              com.google.cloud.video.livestream.v1.Event.InputSwitchTask.Builder.class);
+    }
+
+    public static final int INPUT_KEY_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object inputKey_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The
+     * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+     * of the input to switch to.
+     * </pre>
+     *
+     * <code>string input_key = 1;</code>
+     *
+     * @return The inputKey.
+     */
+    @java.lang.Override
+    public java.lang.String getInputKey() {
+      java.lang.Object ref = inputKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        inputKey_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The
+     * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+     * of the input to switch to.
+     * </pre>
+     *
+     * <code>string input_key = 1;</code>
+     *
+     * @return The bytes for inputKey.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getInputKeyBytes() {
+      java.lang.Object ref = inputKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        inputKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputKey_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, inputKey_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputKey_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, inputKey_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.video.livestream.v1.Event.InputSwitchTask)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.video.livestream.v1.Event.InputSwitchTask other =
+          (com.google.cloud.video.livestream.v1.Event.InputSwitchTask) obj;
+
+      if (!getInputKey().equals(other.getInputKey())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + INPUT_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getInputKey().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.InputSwitchTask parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.InputSwitchTask parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.InputSwitchTask parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.InputSwitchTask parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.InputSwitchTask parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.InputSwitchTask parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.InputSwitchTask parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.InputSwitchTask parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.InputSwitchTask parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.InputSwitchTask parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.InputSwitchTask parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.InputSwitchTask parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.video.livestream.v1.Event.InputSwitchTask prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Switches to another input stream. Automatic failover is then disabled.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.video.livestream.v1.Event.InputSwitchTask}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.video.livestream.v1.Event.InputSwitchTask)
+        com.google.cloud.video.livestream.v1.Event.InputSwitchTaskOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.video.livestream.v1.ResourcesProto
+            .internal_static_google_cloud_video_livestream_v1_Event_InputSwitchTask_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.video.livestream.v1.ResourcesProto
+            .internal_static_google_cloud_video_livestream_v1_Event_InputSwitchTask_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.video.livestream.v1.Event.InputSwitchTask.class,
+                com.google.cloud.video.livestream.v1.Event.InputSwitchTask.Builder.class);
+      }
+
+      // Construct using com.google.cloud.video.livestream.v1.Event.InputSwitchTask.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        inputKey_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.video.livestream.v1.ResourcesProto
+            .internal_static_google_cloud_video_livestream_v1_Event_InputSwitchTask_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.livestream.v1.Event.InputSwitchTask
+          getDefaultInstanceForType() {
+        return com.google.cloud.video.livestream.v1.Event.InputSwitchTask.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.livestream.v1.Event.InputSwitchTask build() {
+        com.google.cloud.video.livestream.v1.Event.InputSwitchTask result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.livestream.v1.Event.InputSwitchTask buildPartial() {
+        com.google.cloud.video.livestream.v1.Event.InputSwitchTask result =
+            new com.google.cloud.video.livestream.v1.Event.InputSwitchTask(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.video.livestream.v1.Event.InputSwitchTask result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.inputKey_ = inputKey_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.video.livestream.v1.Event.InputSwitchTask) {
+          return mergeFrom((com.google.cloud.video.livestream.v1.Event.InputSwitchTask) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.video.livestream.v1.Event.InputSwitchTask other) {
+        if (other
+            == com.google.cloud.video.livestream.v1.Event.InputSwitchTask.getDefaultInstance())
+          return this;
+        if (!other.getInputKey().isEmpty()) {
+          inputKey_ = other.inputKey_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  inputKey_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object inputKey_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The
+       * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+       * of the input to switch to.
+       * </pre>
+       *
+       * <code>string input_key = 1;</code>
+       *
+       * @return The inputKey.
+       */
+      public java.lang.String getInputKey() {
+        java.lang.Object ref = inputKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          inputKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The
+       * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+       * of the input to switch to.
+       * </pre>
+       *
+       * <code>string input_key = 1;</code>
+       *
+       * @return The bytes for inputKey.
+       */
+      public com.google.protobuf.ByteString getInputKeyBytes() {
+        java.lang.Object ref = inputKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          inputKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The
+       * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+       * of the input to switch to.
+       * </pre>
+       *
+       * <code>string input_key = 1;</code>
+       *
+       * @param value The inputKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInputKey(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        inputKey_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The
+       * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+       * of the input to switch to.
+       * </pre>
+       *
+       * <code>string input_key = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearInputKey() {
+        inputKey_ = getDefaultInstance().getInputKey();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The
+       * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+       * of the input to switch to.
+       * </pre>
+       *
+       * <code>string input_key = 1;</code>
+       *
+       * @param value The bytes for inputKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInputKeyBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        inputKey_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.video.livestream.v1.Event.InputSwitchTask)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.video.livestream.v1.Event.InputSwitchTask)
+    private static final com.google.cloud.video.livestream.v1.Event.InputSwitchTask
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.video.livestream.v1.Event.InputSwitchTask();
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.InputSwitchTask getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<InputSwitchTask> PARSER =
+        new com.google.protobuf.AbstractParser<InputSwitchTask>() {
+          @java.lang.Override
+          public InputSwitchTask parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<InputSwitchTask> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<InputSwitchTask> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.video.livestream.v1.Event.InputSwitchTask getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface AdBreakTaskOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.video.livestream.v1.Event.AdBreakTask)
@@ -1055,6 +1724,1617 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface ReturnToProgramTaskOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.video.livestream.v1.Event.ReturnToProgramTask)
+      com.google.protobuf.MessageOrBuilder {}
+  /**
+   *
+   *
+   * <pre>
+   * Stops any events which are currently running. This only applies to events
+   * with a duration.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.video.livestream.v1.Event.ReturnToProgramTask}
+   */
+  public static final class ReturnToProgramTask extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.Event.ReturnToProgramTask)
+      ReturnToProgramTaskOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ReturnToProgramTask.newBuilder() to construct.
+    private ReturnToProgramTask(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ReturnToProgramTask() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ReturnToProgramTask();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.video.livestream.v1.ResourcesProto
+          .internal_static_google_cloud_video_livestream_v1_Event_ReturnToProgramTask_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.video.livestream.v1.ResourcesProto
+          .internal_static_google_cloud_video_livestream_v1_Event_ReturnToProgramTask_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask.class,
+              com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask other =
+          (com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Stops any events which are currently running. This only applies to events
+     * with a duration.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.video.livestream.v1.Event.ReturnToProgramTask}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.video.livestream.v1.Event.ReturnToProgramTask)
+        com.google.cloud.video.livestream.v1.Event.ReturnToProgramTaskOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.video.livestream.v1.ResourcesProto
+            .internal_static_google_cloud_video_livestream_v1_Event_ReturnToProgramTask_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.video.livestream.v1.ResourcesProto
+            .internal_static_google_cloud_video_livestream_v1_Event_ReturnToProgramTask_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask.class,
+                com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask.Builder.class);
+      }
+
+      // Construct using com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.video.livestream.v1.ResourcesProto
+            .internal_static_google_cloud_video_livestream_v1_Event_ReturnToProgramTask_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask
+          getDefaultInstanceForType() {
+        return com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask build() {
+        com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask buildPartial() {
+        com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask result =
+            new com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask) {
+          return mergeFrom((com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask other) {
+        if (other
+            == com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask.getDefaultInstance())
+          return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.video.livestream.v1.Event.ReturnToProgramTask)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.video.livestream.v1.Event.ReturnToProgramTask)
+    private static final com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask();
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ReturnToProgramTask> PARSER =
+        new com.google.protobuf.AbstractParser<ReturnToProgramTask>() {
+          @java.lang.Override
+          public ReturnToProgramTask parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ReturnToProgramTask> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ReturnToProgramTask> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface MuteTaskOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.video.livestream.v1.Event.MuteTask)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Duration for which the stream should be muted. If omitted, the stream
+     * will be muted until an UnmuteTask event is sent.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration duration = 1;</code>
+     *
+     * @return Whether the duration field is set.
+     */
+    boolean hasDuration();
+    /**
+     *
+     *
+     * <pre>
+     * Duration for which the stream should be muted. If omitted, the stream
+     * will be muted until an UnmuteTask event is sent.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration duration = 1;</code>
+     *
+     * @return The duration.
+     */
+    com.google.protobuf.Duration getDuration();
+    /**
+     *
+     *
+     * <pre>
+     * Duration for which the stream should be muted. If omitted, the stream
+     * will be muted until an UnmuteTask event is sent.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration duration = 1;</code>
+     */
+    com.google.protobuf.DurationOrBuilder getDurationOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Mutes the stream.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.video.livestream.v1.Event.MuteTask}
+   */
+  public static final class MuteTask extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.Event.MuteTask)
+      MuteTaskOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use MuteTask.newBuilder() to construct.
+    private MuteTask(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private MuteTask() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new MuteTask();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.video.livestream.v1.ResourcesProto
+          .internal_static_google_cloud_video_livestream_v1_Event_MuteTask_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.video.livestream.v1.ResourcesProto
+          .internal_static_google_cloud_video_livestream_v1_Event_MuteTask_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.video.livestream.v1.Event.MuteTask.class,
+              com.google.cloud.video.livestream.v1.Event.MuteTask.Builder.class);
+    }
+
+    public static final int DURATION_FIELD_NUMBER = 1;
+    private com.google.protobuf.Duration duration_;
+    /**
+     *
+     *
+     * <pre>
+     * Duration for which the stream should be muted. If omitted, the stream
+     * will be muted until an UnmuteTask event is sent.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration duration = 1;</code>
+     *
+     * @return Whether the duration field is set.
+     */
+    @java.lang.Override
+    public boolean hasDuration() {
+      return duration_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Duration for which the stream should be muted. If omitted, the stream
+     * will be muted until an UnmuteTask event is sent.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration duration = 1;</code>
+     *
+     * @return The duration.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getDuration() {
+      return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Duration for which the stream should be muted. If omitted, the stream
+     * will be muted until an UnmuteTask event is sent.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration duration = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
+      return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (duration_ != null) {
+        output.writeMessage(1, getDuration());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (duration_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDuration());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.video.livestream.v1.Event.MuteTask)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.video.livestream.v1.Event.MuteTask other =
+          (com.google.cloud.video.livestream.v1.Event.MuteTask) obj;
+
+      if (hasDuration() != other.hasDuration()) return false;
+      if (hasDuration()) {
+        if (!getDuration().equals(other.getDuration())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasDuration()) {
+        hash = (37 * hash) + DURATION_FIELD_NUMBER;
+        hash = (53 * hash) + getDuration().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.MuteTask parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.MuteTask parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.MuteTask parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.MuteTask parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.MuteTask parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.MuteTask parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.MuteTask parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.MuteTask parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.MuteTask parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.MuteTask parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.MuteTask parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.MuteTask parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.video.livestream.v1.Event.MuteTask prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Mutes the stream.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.video.livestream.v1.Event.MuteTask}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.video.livestream.v1.Event.MuteTask)
+        com.google.cloud.video.livestream.v1.Event.MuteTaskOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.video.livestream.v1.ResourcesProto
+            .internal_static_google_cloud_video_livestream_v1_Event_MuteTask_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.video.livestream.v1.ResourcesProto
+            .internal_static_google_cloud_video_livestream_v1_Event_MuteTask_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.video.livestream.v1.Event.MuteTask.class,
+                com.google.cloud.video.livestream.v1.Event.MuteTask.Builder.class);
+      }
+
+      // Construct using com.google.cloud.video.livestream.v1.Event.MuteTask.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        duration_ = null;
+        if (durationBuilder_ != null) {
+          durationBuilder_.dispose();
+          durationBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.video.livestream.v1.ResourcesProto
+            .internal_static_google_cloud_video_livestream_v1_Event_MuteTask_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.livestream.v1.Event.MuteTask getDefaultInstanceForType() {
+        return com.google.cloud.video.livestream.v1.Event.MuteTask.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.livestream.v1.Event.MuteTask build() {
+        com.google.cloud.video.livestream.v1.Event.MuteTask result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.livestream.v1.Event.MuteTask buildPartial() {
+        com.google.cloud.video.livestream.v1.Event.MuteTask result =
+            new com.google.cloud.video.livestream.v1.Event.MuteTask(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.video.livestream.v1.Event.MuteTask result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.duration_ = durationBuilder_ == null ? duration_ : durationBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.video.livestream.v1.Event.MuteTask) {
+          return mergeFrom((com.google.cloud.video.livestream.v1.Event.MuteTask) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.video.livestream.v1.Event.MuteTask other) {
+        if (other == com.google.cloud.video.livestream.v1.Event.MuteTask.getDefaultInstance())
+          return this;
+        if (other.hasDuration()) {
+          mergeDuration(other.getDuration());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getDurationFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.Duration duration_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          durationBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Duration for which the stream should be muted. If omitted, the stream
+       * will be muted until an UnmuteTask event is sent.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 1;</code>
+       *
+       * @return Whether the duration field is set.
+       */
+      public boolean hasDuration() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration for which the stream should be muted. If omitted, the stream
+       * will be muted until an UnmuteTask event is sent.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 1;</code>
+       *
+       * @return The duration.
+       */
+      public com.google.protobuf.Duration getDuration() {
+        if (durationBuilder_ == null) {
+          return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
+        } else {
+          return durationBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration for which the stream should be muted. If omitted, the stream
+       * will be muted until an UnmuteTask event is sent.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 1;</code>
+       */
+      public Builder setDuration(com.google.protobuf.Duration value) {
+        if (durationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          duration_ = value;
+        } else {
+          durationBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration for which the stream should be muted. If omitted, the stream
+       * will be muted until an UnmuteTask event is sent.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 1;</code>
+       */
+      public Builder setDuration(com.google.protobuf.Duration.Builder builderForValue) {
+        if (durationBuilder_ == null) {
+          duration_ = builderForValue.build();
+        } else {
+          durationBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration for which the stream should be muted. If omitted, the stream
+       * will be muted until an UnmuteTask event is sent.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 1;</code>
+       */
+      public Builder mergeDuration(com.google.protobuf.Duration value) {
+        if (durationBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && duration_ != null
+              && duration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getDurationBuilder().mergeFrom(value);
+          } else {
+            duration_ = value;
+          }
+        } else {
+          durationBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration for which the stream should be muted. If omitted, the stream
+       * will be muted until an UnmuteTask event is sent.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 1;</code>
+       */
+      public Builder clearDuration() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        duration_ = null;
+        if (durationBuilder_ != null) {
+          durationBuilder_.dispose();
+          durationBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration for which the stream should be muted. If omitted, the stream
+       * will be muted until an UnmuteTask event is sent.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 1;</code>
+       */
+      public com.google.protobuf.Duration.Builder getDurationBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getDurationFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration for which the stream should be muted. If omitted, the stream
+       * will be muted until an UnmuteTask event is sent.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 1;</code>
+       */
+      public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
+        if (durationBuilder_ != null) {
+          return durationBuilder_.getMessageOrBuilder();
+        } else {
+          return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Duration for which the stream should be muted. If omitted, the stream
+       * will be muted until an UnmuteTask event is sent.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          getDurationFieldBuilder() {
+        if (durationBuilder_ == null) {
+          durationBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>(
+                  getDuration(), getParentForChildren(), isClean());
+          duration_ = null;
+        }
+        return durationBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.video.livestream.v1.Event.MuteTask)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.video.livestream.v1.Event.MuteTask)
+    private static final com.google.cloud.video.livestream.v1.Event.MuteTask DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.video.livestream.v1.Event.MuteTask();
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.MuteTask getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MuteTask> PARSER =
+        new com.google.protobuf.AbstractParser<MuteTask>() {
+          @java.lang.Override
+          public MuteTask parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<MuteTask> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MuteTask> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.video.livestream.v1.Event.MuteTask getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface UnmuteTaskOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.video.livestream.v1.Event.UnmuteTask)
+      com.google.protobuf.MessageOrBuilder {}
+  /**
+   *
+   *
+   * <pre>
+   * Unmutes the stream. The task will fail if the stream is not
+   * currently muted.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.video.livestream.v1.Event.UnmuteTask}
+   */
+  public static final class UnmuteTask extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.Event.UnmuteTask)
+      UnmuteTaskOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use UnmuteTask.newBuilder() to construct.
+    private UnmuteTask(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private UnmuteTask() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new UnmuteTask();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.video.livestream.v1.ResourcesProto
+          .internal_static_google_cloud_video_livestream_v1_Event_UnmuteTask_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.video.livestream.v1.ResourcesProto
+          .internal_static_google_cloud_video_livestream_v1_Event_UnmuteTask_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.video.livestream.v1.Event.UnmuteTask.class,
+              com.google.cloud.video.livestream.v1.Event.UnmuteTask.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.video.livestream.v1.Event.UnmuteTask)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.video.livestream.v1.Event.UnmuteTask other =
+          (com.google.cloud.video.livestream.v1.Event.UnmuteTask) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.UnmuteTask parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.UnmuteTask parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.UnmuteTask parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.UnmuteTask parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.UnmuteTask parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.UnmuteTask parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.UnmuteTask parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.UnmuteTask parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.UnmuteTask parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.UnmuteTask parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.UnmuteTask parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.UnmuteTask parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.video.livestream.v1.Event.UnmuteTask prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unmutes the stream. The task will fail if the stream is not
+     * currently muted.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.video.livestream.v1.Event.UnmuteTask}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.video.livestream.v1.Event.UnmuteTask)
+        com.google.cloud.video.livestream.v1.Event.UnmuteTaskOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.video.livestream.v1.ResourcesProto
+            .internal_static_google_cloud_video_livestream_v1_Event_UnmuteTask_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.video.livestream.v1.ResourcesProto
+            .internal_static_google_cloud_video_livestream_v1_Event_UnmuteTask_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.video.livestream.v1.Event.UnmuteTask.class,
+                com.google.cloud.video.livestream.v1.Event.UnmuteTask.Builder.class);
+      }
+
+      // Construct using com.google.cloud.video.livestream.v1.Event.UnmuteTask.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.video.livestream.v1.ResourcesProto
+            .internal_static_google_cloud_video_livestream_v1_Event_UnmuteTask_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.livestream.v1.Event.UnmuteTask getDefaultInstanceForType() {
+        return com.google.cloud.video.livestream.v1.Event.UnmuteTask.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.livestream.v1.Event.UnmuteTask build() {
+        com.google.cloud.video.livestream.v1.Event.UnmuteTask result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.livestream.v1.Event.UnmuteTask buildPartial() {
+        com.google.cloud.video.livestream.v1.Event.UnmuteTask result =
+            new com.google.cloud.video.livestream.v1.Event.UnmuteTask(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.video.livestream.v1.Event.UnmuteTask) {
+          return mergeFrom((com.google.cloud.video.livestream.v1.Event.UnmuteTask) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.video.livestream.v1.Event.UnmuteTask other) {
+        if (other == com.google.cloud.video.livestream.v1.Event.UnmuteTask.getDefaultInstance())
+          return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.video.livestream.v1.Event.UnmuteTask)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.video.livestream.v1.Event.UnmuteTask)
+    private static final com.google.cloud.video.livestream.v1.Event.UnmuteTask DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.video.livestream.v1.Event.UnmuteTask();
+    }
+
+    public static com.google.cloud.video.livestream.v1.Event.UnmuteTask getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UnmuteTask> PARSER =
+        new com.google.protobuf.AbstractParser<UnmuteTask>() {
+          @java.lang.Override
+          public UnmuteTask parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<UnmuteTask> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UnmuteTask> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.video.livestream.v1.Event.UnmuteTask getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int taskCase_ = 0;
   private java.lang.Object task_;
 
@@ -1062,7 +3342,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       implements
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    INPUT_SWITCH(5),
     AD_BREAK(6),
+    RETURN_TO_PROGRAM(13),
+    MUTE(15),
+    UNMUTE(16),
     TASK_NOT_SET(0);
     private final int value;
 
@@ -1081,8 +3365,16 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
 
     public static TaskCase forNumber(int value) {
       switch (value) {
+        case 5:
+          return INPUT_SWITCH;
         case 6:
           return AD_BREAK;
+        case 13:
+          return RETURN_TO_PROGRAM;
+        case 15:
+          return MUTE;
+        case 16:
+          return UNMUTE;
         case 0:
           return TASK_NOT_SET;
         default:
@@ -1352,6 +3644,64 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int INPUT_SWITCH_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * Required. Switches to another input stream.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the inputSwitch field is set.
+   */
+  @java.lang.Override
+  public boolean hasInputSwitch() {
+    return taskCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required. Switches to another input stream.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The inputSwitch.
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.Event.InputSwitchTask getInputSwitch() {
+    if (taskCase_ == 5) {
+      return (com.google.cloud.video.livestream.v1.Event.InputSwitchTask) task_;
+    }
+    return com.google.cloud.video.livestream.v1.Event.InputSwitchTask.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required. Switches to another input stream.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.Event.InputSwitchTaskOrBuilder
+      getInputSwitchOrBuilder() {
+    if (taskCase_ == 5) {
+      return (com.google.cloud.video.livestream.v1.Event.InputSwitchTask) task_;
+    }
+    return com.google.cloud.video.livestream.v1.Event.InputSwitchTask.getDefaultInstance();
+  }
+
   public static final int AD_BREAK_FIELD_NUMBER = 6;
   /**
    *
@@ -1409,6 +3759,178 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.video.livestream.v1.Event.AdBreakTask.getDefaultInstance();
   }
 
+  public static final int RETURN_TO_PROGRAM_FIELD_NUMBER = 13;
+  /**
+   *
+   *
+   * <pre>
+   * Required. Stops any running ad break.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the returnToProgram field is set.
+   */
+  @java.lang.Override
+  public boolean hasReturnToProgram() {
+    return taskCase_ == 13;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required. Stops any running ad break.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The returnToProgram.
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask getReturnToProgram() {
+    if (taskCase_ == 13) {
+      return (com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask) task_;
+    }
+    return com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required. Stops any running ad break.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.Event.ReturnToProgramTaskOrBuilder
+      getReturnToProgramOrBuilder() {
+    if (taskCase_ == 13) {
+      return (com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask) task_;
+    }
+    return com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask.getDefaultInstance();
+  }
+
+  public static final int MUTE_FIELD_NUMBER = 15;
+  /**
+   *
+   *
+   * <pre>
+   * Required. Mutes the stream.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.Event.MuteTask mute = 15 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the mute field is set.
+   */
+  @java.lang.Override
+  public boolean hasMute() {
+    return taskCase_ == 15;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required. Mutes the stream.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.Event.MuteTask mute = 15 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The mute.
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.Event.MuteTask getMute() {
+    if (taskCase_ == 15) {
+      return (com.google.cloud.video.livestream.v1.Event.MuteTask) task_;
+    }
+    return com.google.cloud.video.livestream.v1.Event.MuteTask.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required. Mutes the stream.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.Event.MuteTask mute = 15 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.Event.MuteTaskOrBuilder getMuteOrBuilder() {
+    if (taskCase_ == 15) {
+      return (com.google.cloud.video.livestream.v1.Event.MuteTask) task_;
+    }
+    return com.google.cloud.video.livestream.v1.Event.MuteTask.getDefaultInstance();
+  }
+
+  public static final int UNMUTE_FIELD_NUMBER = 16;
+  /**
+   *
+   *
+   * <pre>
+   * Required. Unmutes the stream.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the unmute field is set.
+   */
+  @java.lang.Override
+  public boolean hasUnmute() {
+    return taskCase_ == 16;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required. Unmutes the stream.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The unmute.
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.Event.UnmuteTask getUnmute() {
+    if (taskCase_ == 16) {
+      return (com.google.cloud.video.livestream.v1.Event.UnmuteTask) task_;
+    }
+    return com.google.cloud.video.livestream.v1.Event.UnmuteTask.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required. Unmutes the stream.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.Event.UnmuteTaskOrBuilder getUnmuteOrBuilder() {
+    if (taskCase_ == 16) {
+      return (com.google.cloud.video.livestream.v1.Event.UnmuteTask) task_;
+    }
+    return com.google.cloud.video.livestream.v1.Event.UnmuteTask.getDefaultInstance();
+  }
+
   public static final int EXECUTE_NOW_FIELD_NUMBER = 9;
   private boolean executeNow_ = false;
   /**
@@ -1416,8 +3938,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * When this field is set to true, the event will be executed at the earliest
-   * time that the server can schedule the event and [execution_time][google.cloud.video.livestream.v1.Event.execution_time] will be
-   * populated with the time that the server actually schedules the event.
+   * time that the server can schedule the event and
+   * [execution_time][google.cloud.video.livestream.v1.Event.execution_time]
+   * will be populated with the time that the server actually schedules the
+   * event.
    * </pre>
    *
    * <code>bool execute_now = 9;</code>
@@ -1435,9 +3959,13 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time when the event should be executed. When [execute_now][google.cloud.video.livestream.v1.Event.execute_now] is set to
-   * `true`, this field should not be set in `CreateEvent` request and will be
-   * populated with the time that the server schedules the event.
+   * The time to execute the event. If you set
+   * [execute_now][google.cloud.video.livestream.v1.Event.execute_now] to
+   * `true`, then do not set this field in the `CreateEvent` request. In
+   * this case, the server schedules the event and populates this field. If you
+   * set [execute_now][google.cloud.video.livestream.v1.Event.execute_now] to
+   * `false`, then you must set this field to at least 10 seconds in the future
+   * or else the event can't be created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp execution_time = 10;</code>
@@ -1452,9 +3980,13 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time when the event should be executed. When [execute_now][google.cloud.video.livestream.v1.Event.execute_now] is set to
-   * `true`, this field should not be set in `CreateEvent` request and will be
-   * populated with the time that the server schedules the event.
+   * The time to execute the event. If you set
+   * [execute_now][google.cloud.video.livestream.v1.Event.execute_now] to
+   * `true`, then do not set this field in the `CreateEvent` request. In
+   * this case, the server schedules the event and populates this field. If you
+   * set [execute_now][google.cloud.video.livestream.v1.Event.execute_now] to
+   * `false`, then you must set this field to at least 10 seconds in the future
+   * or else the event can't be created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp execution_time = 10;</code>
@@ -1471,9 +4003,13 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The time when the event should be executed. When [execute_now][google.cloud.video.livestream.v1.Event.execute_now] is set to
-   * `true`, this field should not be set in `CreateEvent` request and will be
-   * populated with the time that the server schedules the event.
+   * The time to execute the event. If you set
+   * [execute_now][google.cloud.video.livestream.v1.Event.execute_now] to
+   * `true`, then do not set this field in the `CreateEvent` request. In
+   * this case, the server schedules the event and populates this field. If you
+   * set [execute_now][google.cloud.video.livestream.v1.Event.execute_now] to
+   * `false`, then you must set this field to at least 10 seconds in the future
+   * or else the event can't be created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp execution_time = 10;</code>
@@ -1598,6 +4134,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 4);
+    if (taskCase_ == 5) {
+      output.writeMessage(5, (com.google.cloud.video.livestream.v1.Event.InputSwitchTask) task_);
+    }
     if (taskCase_ == 6) {
       output.writeMessage(6, (com.google.cloud.video.livestream.v1.Event.AdBreakTask) task_);
     }
@@ -1612,6 +4151,16 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     }
     if (error_ != null) {
       output.writeMessage(12, getError());
+    }
+    if (taskCase_ == 13) {
+      output.writeMessage(
+          13, (com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask) task_);
+    }
+    if (taskCase_ == 15) {
+      output.writeMessage(15, (com.google.cloud.video.livestream.v1.Event.MuteTask) task_);
+    }
+    if (taskCase_ == 16) {
+      output.writeMessage(16, (com.google.cloud.video.livestream.v1.Event.UnmuteTask) task_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1641,6 +4190,11 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, labels__);
     }
+    if (taskCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.cloud.video.livestream.v1.Event.InputSwitchTask) task_);
+    }
     if (taskCase_ == 6) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -1657,6 +4211,21 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     }
     if (error_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getError());
+    }
+    if (taskCase_ == 13) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13, (com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask) task_);
+    }
+    if (taskCase_ == 15) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              15, (com.google.cloud.video.livestream.v1.Event.MuteTask) task_);
+    }
+    if (taskCase_ == 16) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              16, (com.google.cloud.video.livestream.v1.Event.UnmuteTask) task_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1696,8 +4265,20 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getTaskCase().equals(other.getTaskCase())) return false;
     switch (taskCase_) {
+      case 5:
+        if (!getInputSwitch().equals(other.getInputSwitch())) return false;
+        break;
       case 6:
         if (!getAdBreak().equals(other.getAdBreak())) return false;
+        break;
+      case 13:
+        if (!getReturnToProgram().equals(other.getReturnToProgram())) return false;
+        break;
+      case 15:
+        if (!getMute().equals(other.getMute())) return false;
+        break;
+      case 16:
+        if (!getUnmute().equals(other.getUnmute())) return false;
         break;
       case 0:
       default:
@@ -1740,9 +4321,25 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getError().hashCode();
     }
     switch (taskCase_) {
+      case 5:
+        hash = (37 * hash) + INPUT_SWITCH_FIELD_NUMBER;
+        hash = (53 * hash) + getInputSwitch().hashCode();
+        break;
       case 6:
         hash = (37 * hash) + AD_BREAK_FIELD_NUMBER;
         hash = (53 * hash) + getAdBreak().hashCode();
+        break;
+      case 13:
+        hash = (37 * hash) + RETURN_TO_PROGRAM_FIELD_NUMBER;
+        hash = (53 * hash) + getReturnToProgram().hashCode();
+        break;
+      case 15:
+        hash = (37 * hash) + MUTE_FIELD_NUMBER;
+        hash = (53 * hash) + getMute().hashCode();
+        break;
+      case 16:
+        hash = (37 * hash) + UNMUTE_FIELD_NUMBER;
+        hash = (53 * hash) + getUnmute().hashCode();
         break;
       case 0:
       default:
@@ -1919,8 +4516,20 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
+      if (inputSwitchBuilder_ != null) {
+        inputSwitchBuilder_.clear();
+      }
       if (adBreakBuilder_ != null) {
         adBreakBuilder_.clear();
+      }
+      if (returnToProgramBuilder_ != null) {
+        returnToProgramBuilder_.clear();
+      }
+      if (muteBuilder_ != null) {
+        muteBuilder_.clear();
+      }
+      if (unmuteBuilder_ != null) {
+        unmuteBuilder_.clear();
       }
       executeNow_ = false;
       executionTime_ = null;
@@ -1986,17 +4595,17 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.executeNow_ = executeNow_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.executionTime_ =
             executionTimeBuilder_ == null ? executionTime_ : executionTimeBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.state_ = state_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
       }
     }
@@ -2004,8 +4613,20 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     private void buildPartialOneofs(com.google.cloud.video.livestream.v1.Event result) {
       result.taskCase_ = taskCase_;
       result.task_ = this.task_;
+      if (taskCase_ == 5 && inputSwitchBuilder_ != null) {
+        result.task_ = inputSwitchBuilder_.build();
+      }
       if (taskCase_ == 6 && adBreakBuilder_ != null) {
         result.task_ = adBreakBuilder_.build();
+      }
+      if (taskCase_ == 13 && returnToProgramBuilder_ != null) {
+        result.task_ = returnToProgramBuilder_.build();
+      }
+      if (taskCase_ == 15 && muteBuilder_ != null) {
+        result.task_ = muteBuilder_.build();
+      }
+      if (taskCase_ == 16 && unmuteBuilder_ != null) {
+        result.task_ = unmuteBuilder_.build();
       }
     }
 
@@ -2080,9 +4701,29 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         mergeError(other.getError());
       }
       switch (other.getTaskCase()) {
+        case INPUT_SWITCH:
+          {
+            mergeInputSwitch(other.getInputSwitch());
+            break;
+          }
         case AD_BREAK:
           {
             mergeAdBreak(other.getAdBreak());
+            break;
+          }
+        case RETURN_TO_PROGRAM:
+          {
+            mergeReturnToProgram(other.getReturnToProgram());
+            break;
+          }
+        case MUTE:
+          {
+            mergeMute(other.getMute());
+            break;
+          }
+        case UNMUTE:
+          {
+            mergeUnmute(other.getUnmute());
             break;
           }
         case TASK_NOT_SET:
@@ -2146,6 +4787,12 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(getInputSwitchFieldBuilder().getBuilder(), extensionRegistry);
+                taskCase_ = 5;
+                break;
+              } // case 42
             case 50:
               {
                 input.readMessage(getAdBreakFieldBuilder().getBuilder(), extensionRegistry);
@@ -2155,27 +4802,45 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
             case 72:
               {
                 executeNow_ = input.readBool();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 72
             case 82:
               {
                 input.readMessage(getExecutionTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 82
             case 88:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 88
             case 98:
               {
                 input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 98
+            case 106:
+              {
+                input.readMessage(getReturnToProgramFieldBuilder().getBuilder(), extensionRegistry);
+                taskCase_ = 13;
+                break;
+              } // case 106
+            case 122:
+              {
+                input.readMessage(getMuteFieldBuilder().getBuilder(), extensionRegistry);
+                taskCase_ = 15;
+                break;
+              } // case 122
+            case 130:
+              {
+                input.readMessage(getUnmuteFieldBuilder().getBuilder(), extensionRegistry);
+                taskCase_ = 16;
+                break;
+              } // case 130
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2886,6 +5551,239 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.Event.InputSwitchTask,
+            com.google.cloud.video.livestream.v1.Event.InputSwitchTask.Builder,
+            com.google.cloud.video.livestream.v1.Event.InputSwitchTaskOrBuilder>
+        inputSwitchBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. Switches to another input stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the inputSwitch field is set.
+     */
+    @java.lang.Override
+    public boolean hasInputSwitch() {
+      return taskCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Switches to another input stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The inputSwitch.
+     */
+    @java.lang.Override
+    public com.google.cloud.video.livestream.v1.Event.InputSwitchTask getInputSwitch() {
+      if (inputSwitchBuilder_ == null) {
+        if (taskCase_ == 5) {
+          return (com.google.cloud.video.livestream.v1.Event.InputSwitchTask) task_;
+        }
+        return com.google.cloud.video.livestream.v1.Event.InputSwitchTask.getDefaultInstance();
+      } else {
+        if (taskCase_ == 5) {
+          return inputSwitchBuilder_.getMessage();
+        }
+        return com.google.cloud.video.livestream.v1.Event.InputSwitchTask.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Switches to another input stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder setInputSwitch(
+        com.google.cloud.video.livestream.v1.Event.InputSwitchTask value) {
+      if (inputSwitchBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        task_ = value;
+        onChanged();
+      } else {
+        inputSwitchBuilder_.setMessage(value);
+      }
+      taskCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Switches to another input stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder setInputSwitch(
+        com.google.cloud.video.livestream.v1.Event.InputSwitchTask.Builder builderForValue) {
+      if (inputSwitchBuilder_ == null) {
+        task_ = builderForValue.build();
+        onChanged();
+      } else {
+        inputSwitchBuilder_.setMessage(builderForValue.build());
+      }
+      taskCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Switches to another input stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder mergeInputSwitch(
+        com.google.cloud.video.livestream.v1.Event.InputSwitchTask value) {
+      if (inputSwitchBuilder_ == null) {
+        if (taskCase_ == 5
+            && task_
+                != com.google.cloud.video.livestream.v1.Event.InputSwitchTask
+                    .getDefaultInstance()) {
+          task_ =
+              com.google.cloud.video.livestream.v1.Event.InputSwitchTask.newBuilder(
+                      (com.google.cloud.video.livestream.v1.Event.InputSwitchTask) task_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          task_ = value;
+        }
+        onChanged();
+      } else {
+        if (taskCase_ == 5) {
+          inputSwitchBuilder_.mergeFrom(value);
+        } else {
+          inputSwitchBuilder_.setMessage(value);
+        }
+      }
+      taskCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Switches to another input stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder clearInputSwitch() {
+      if (inputSwitchBuilder_ == null) {
+        if (taskCase_ == 5) {
+          taskCase_ = 0;
+          task_ = null;
+          onChanged();
+        }
+      } else {
+        if (taskCase_ == 5) {
+          taskCase_ = 0;
+          task_ = null;
+        }
+        inputSwitchBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Switches to another input stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public com.google.cloud.video.livestream.v1.Event.InputSwitchTask.Builder
+        getInputSwitchBuilder() {
+      return getInputSwitchFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Switches to another input stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.video.livestream.v1.Event.InputSwitchTaskOrBuilder
+        getInputSwitchOrBuilder() {
+      if ((taskCase_ == 5) && (inputSwitchBuilder_ != null)) {
+        return inputSwitchBuilder_.getMessageOrBuilder();
+      } else {
+        if (taskCase_ == 5) {
+          return (com.google.cloud.video.livestream.v1.Event.InputSwitchTask) task_;
+        }
+        return com.google.cloud.video.livestream.v1.Event.InputSwitchTask.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Switches to another input stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.InputSwitchTask input_switch = 5 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.Event.InputSwitchTask,
+            com.google.cloud.video.livestream.v1.Event.InputSwitchTask.Builder,
+            com.google.cloud.video.livestream.v1.Event.InputSwitchTaskOrBuilder>
+        getInputSwitchFieldBuilder() {
+      if (inputSwitchBuilder_ == null) {
+        if (!(taskCase_ == 5)) {
+          task_ = com.google.cloud.video.livestream.v1.Event.InputSwitchTask.getDefaultInstance();
+        }
+        inputSwitchBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.video.livestream.v1.Event.InputSwitchTask,
+                com.google.cloud.video.livestream.v1.Event.InputSwitchTask.Builder,
+                com.google.cloud.video.livestream.v1.Event.InputSwitchTaskOrBuilder>(
+                (com.google.cloud.video.livestream.v1.Event.InputSwitchTask) task_,
+                getParentForChildren(),
+                isClean());
+        task_ = null;
+      }
+      taskCase_ = 5;
+      onChanged();
+      return inputSwitchBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.video.livestream.v1.Event.AdBreakTask,
             com.google.cloud.video.livestream.v1.Event.AdBreakTask.Builder,
             com.google.cloud.video.livestream.v1.Event.AdBreakTaskOrBuilder>
@@ -3113,14 +6011,705 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       return adBreakBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask,
+            com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask.Builder,
+            com.google.cloud.video.livestream.v1.Event.ReturnToProgramTaskOrBuilder>
+        returnToProgramBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. Stops any running ad break.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the returnToProgram field is set.
+     */
+    @java.lang.Override
+    public boolean hasReturnToProgram() {
+      return taskCase_ == 13;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Stops any running ad break.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The returnToProgram.
+     */
+    @java.lang.Override
+    public com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask getReturnToProgram() {
+      if (returnToProgramBuilder_ == null) {
+        if (taskCase_ == 13) {
+          return (com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask) task_;
+        }
+        return com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask.getDefaultInstance();
+      } else {
+        if (taskCase_ == 13) {
+          return returnToProgramBuilder_.getMessage();
+        }
+        return com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Stops any running ad break.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder setReturnToProgram(
+        com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask value) {
+      if (returnToProgramBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        task_ = value;
+        onChanged();
+      } else {
+        returnToProgramBuilder_.setMessage(value);
+      }
+      taskCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Stops any running ad break.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder setReturnToProgram(
+        com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask.Builder builderForValue) {
+      if (returnToProgramBuilder_ == null) {
+        task_ = builderForValue.build();
+        onChanged();
+      } else {
+        returnToProgramBuilder_.setMessage(builderForValue.build());
+      }
+      taskCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Stops any running ad break.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder mergeReturnToProgram(
+        com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask value) {
+      if (returnToProgramBuilder_ == null) {
+        if (taskCase_ == 13
+            && task_
+                != com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask
+                    .getDefaultInstance()) {
+          task_ =
+              com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask.newBuilder(
+                      (com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask) task_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          task_ = value;
+        }
+        onChanged();
+      } else {
+        if (taskCase_ == 13) {
+          returnToProgramBuilder_.mergeFrom(value);
+        } else {
+          returnToProgramBuilder_.setMessage(value);
+        }
+      }
+      taskCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Stops any running ad break.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder clearReturnToProgram() {
+      if (returnToProgramBuilder_ == null) {
+        if (taskCase_ == 13) {
+          taskCase_ = 0;
+          task_ = null;
+          onChanged();
+        }
+      } else {
+        if (taskCase_ == 13) {
+          taskCase_ = 0;
+          task_ = null;
+        }
+        returnToProgramBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Stops any running ad break.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask.Builder
+        getReturnToProgramBuilder() {
+      return getReturnToProgramFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Stops any running ad break.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.video.livestream.v1.Event.ReturnToProgramTaskOrBuilder
+        getReturnToProgramOrBuilder() {
+      if ((taskCase_ == 13) && (returnToProgramBuilder_ != null)) {
+        return returnToProgramBuilder_.getMessageOrBuilder();
+      } else {
+        if (taskCase_ == 13) {
+          return (com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask) task_;
+        }
+        return com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Stops any running ad break.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.ReturnToProgramTask return_to_program = 13 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask,
+            com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask.Builder,
+            com.google.cloud.video.livestream.v1.Event.ReturnToProgramTaskOrBuilder>
+        getReturnToProgramFieldBuilder() {
+      if (returnToProgramBuilder_ == null) {
+        if (!(taskCase_ == 13)) {
+          task_ =
+              com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask.getDefaultInstance();
+        }
+        returnToProgramBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask,
+                com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask.Builder,
+                com.google.cloud.video.livestream.v1.Event.ReturnToProgramTaskOrBuilder>(
+                (com.google.cloud.video.livestream.v1.Event.ReturnToProgramTask) task_,
+                getParentForChildren(),
+                isClean());
+        task_ = null;
+      }
+      taskCase_ = 13;
+      onChanged();
+      return returnToProgramBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.Event.MuteTask,
+            com.google.cloud.video.livestream.v1.Event.MuteTask.Builder,
+            com.google.cloud.video.livestream.v1.Event.MuteTaskOrBuilder>
+        muteBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. Mutes the stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.MuteTask mute = 15 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the mute field is set.
+     */
+    @java.lang.Override
+    public boolean hasMute() {
+      return taskCase_ == 15;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Mutes the stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.MuteTask mute = 15 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The mute.
+     */
+    @java.lang.Override
+    public com.google.cloud.video.livestream.v1.Event.MuteTask getMute() {
+      if (muteBuilder_ == null) {
+        if (taskCase_ == 15) {
+          return (com.google.cloud.video.livestream.v1.Event.MuteTask) task_;
+        }
+        return com.google.cloud.video.livestream.v1.Event.MuteTask.getDefaultInstance();
+      } else {
+        if (taskCase_ == 15) {
+          return muteBuilder_.getMessage();
+        }
+        return com.google.cloud.video.livestream.v1.Event.MuteTask.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Mutes the stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.MuteTask mute = 15 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder setMute(com.google.cloud.video.livestream.v1.Event.MuteTask value) {
+      if (muteBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        task_ = value;
+        onChanged();
+      } else {
+        muteBuilder_.setMessage(value);
+      }
+      taskCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Mutes the stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.MuteTask mute = 15 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder setMute(
+        com.google.cloud.video.livestream.v1.Event.MuteTask.Builder builderForValue) {
+      if (muteBuilder_ == null) {
+        task_ = builderForValue.build();
+        onChanged();
+      } else {
+        muteBuilder_.setMessage(builderForValue.build());
+      }
+      taskCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Mutes the stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.MuteTask mute = 15 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder mergeMute(com.google.cloud.video.livestream.v1.Event.MuteTask value) {
+      if (muteBuilder_ == null) {
+        if (taskCase_ == 15
+            && task_ != com.google.cloud.video.livestream.v1.Event.MuteTask.getDefaultInstance()) {
+          task_ =
+              com.google.cloud.video.livestream.v1.Event.MuteTask.newBuilder(
+                      (com.google.cloud.video.livestream.v1.Event.MuteTask) task_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          task_ = value;
+        }
+        onChanged();
+      } else {
+        if (taskCase_ == 15) {
+          muteBuilder_.mergeFrom(value);
+        } else {
+          muteBuilder_.setMessage(value);
+        }
+      }
+      taskCase_ = 15;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Mutes the stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.MuteTask mute = 15 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder clearMute() {
+      if (muteBuilder_ == null) {
+        if (taskCase_ == 15) {
+          taskCase_ = 0;
+          task_ = null;
+          onChanged();
+        }
+      } else {
+        if (taskCase_ == 15) {
+          taskCase_ = 0;
+          task_ = null;
+        }
+        muteBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Mutes the stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.MuteTask mute = 15 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public com.google.cloud.video.livestream.v1.Event.MuteTask.Builder getMuteBuilder() {
+      return getMuteFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Mutes the stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.MuteTask mute = 15 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.video.livestream.v1.Event.MuteTaskOrBuilder getMuteOrBuilder() {
+      if ((taskCase_ == 15) && (muteBuilder_ != null)) {
+        return muteBuilder_.getMessageOrBuilder();
+      } else {
+        if (taskCase_ == 15) {
+          return (com.google.cloud.video.livestream.v1.Event.MuteTask) task_;
+        }
+        return com.google.cloud.video.livestream.v1.Event.MuteTask.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Mutes the stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.MuteTask mute = 15 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.Event.MuteTask,
+            com.google.cloud.video.livestream.v1.Event.MuteTask.Builder,
+            com.google.cloud.video.livestream.v1.Event.MuteTaskOrBuilder>
+        getMuteFieldBuilder() {
+      if (muteBuilder_ == null) {
+        if (!(taskCase_ == 15)) {
+          task_ = com.google.cloud.video.livestream.v1.Event.MuteTask.getDefaultInstance();
+        }
+        muteBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.video.livestream.v1.Event.MuteTask,
+                com.google.cloud.video.livestream.v1.Event.MuteTask.Builder,
+                com.google.cloud.video.livestream.v1.Event.MuteTaskOrBuilder>(
+                (com.google.cloud.video.livestream.v1.Event.MuteTask) task_,
+                getParentForChildren(),
+                isClean());
+        task_ = null;
+      }
+      taskCase_ = 15;
+      onChanged();
+      return muteBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.Event.UnmuteTask,
+            com.google.cloud.video.livestream.v1.Event.UnmuteTask.Builder,
+            com.google.cloud.video.livestream.v1.Event.UnmuteTaskOrBuilder>
+        unmuteBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Required. Unmutes the stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the unmute field is set.
+     */
+    @java.lang.Override
+    public boolean hasUnmute() {
+      return taskCase_ == 16;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Unmutes the stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The unmute.
+     */
+    @java.lang.Override
+    public com.google.cloud.video.livestream.v1.Event.UnmuteTask getUnmute() {
+      if (unmuteBuilder_ == null) {
+        if (taskCase_ == 16) {
+          return (com.google.cloud.video.livestream.v1.Event.UnmuteTask) task_;
+        }
+        return com.google.cloud.video.livestream.v1.Event.UnmuteTask.getDefaultInstance();
+      } else {
+        if (taskCase_ == 16) {
+          return unmuteBuilder_.getMessage();
+        }
+        return com.google.cloud.video.livestream.v1.Event.UnmuteTask.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Unmutes the stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder setUnmute(com.google.cloud.video.livestream.v1.Event.UnmuteTask value) {
+      if (unmuteBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        task_ = value;
+        onChanged();
+      } else {
+        unmuteBuilder_.setMessage(value);
+      }
+      taskCase_ = 16;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Unmutes the stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder setUnmute(
+        com.google.cloud.video.livestream.v1.Event.UnmuteTask.Builder builderForValue) {
+      if (unmuteBuilder_ == null) {
+        task_ = builderForValue.build();
+        onChanged();
+      } else {
+        unmuteBuilder_.setMessage(builderForValue.build());
+      }
+      taskCase_ = 16;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Unmutes the stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder mergeUnmute(com.google.cloud.video.livestream.v1.Event.UnmuteTask value) {
+      if (unmuteBuilder_ == null) {
+        if (taskCase_ == 16
+            && task_
+                != com.google.cloud.video.livestream.v1.Event.UnmuteTask.getDefaultInstance()) {
+          task_ =
+              com.google.cloud.video.livestream.v1.Event.UnmuteTask.newBuilder(
+                      (com.google.cloud.video.livestream.v1.Event.UnmuteTask) task_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          task_ = value;
+        }
+        onChanged();
+      } else {
+        if (taskCase_ == 16) {
+          unmuteBuilder_.mergeFrom(value);
+        } else {
+          unmuteBuilder_.setMessage(value);
+        }
+      }
+      taskCase_ = 16;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Unmutes the stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder clearUnmute() {
+      if (unmuteBuilder_ == null) {
+        if (taskCase_ == 16) {
+          taskCase_ = 0;
+          task_ = null;
+          onChanged();
+        }
+      } else {
+        if (taskCase_ == 16) {
+          taskCase_ = 0;
+          task_ = null;
+        }
+        unmuteBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Unmutes the stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public com.google.cloud.video.livestream.v1.Event.UnmuteTask.Builder getUnmuteBuilder() {
+      return getUnmuteFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Unmutes the stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.video.livestream.v1.Event.UnmuteTaskOrBuilder getUnmuteOrBuilder() {
+      if ((taskCase_ == 16) && (unmuteBuilder_ != null)) {
+        return unmuteBuilder_.getMessageOrBuilder();
+      } else {
+        if (taskCase_ == 16) {
+          return (com.google.cloud.video.livestream.v1.Event.UnmuteTask) task_;
+        }
+        return com.google.cloud.video.livestream.v1.Event.UnmuteTask.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Unmutes the stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.Event.UnmuteTask unmute = 16 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.Event.UnmuteTask,
+            com.google.cloud.video.livestream.v1.Event.UnmuteTask.Builder,
+            com.google.cloud.video.livestream.v1.Event.UnmuteTaskOrBuilder>
+        getUnmuteFieldBuilder() {
+      if (unmuteBuilder_ == null) {
+        if (!(taskCase_ == 16)) {
+          task_ = com.google.cloud.video.livestream.v1.Event.UnmuteTask.getDefaultInstance();
+        }
+        unmuteBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.video.livestream.v1.Event.UnmuteTask,
+                com.google.cloud.video.livestream.v1.Event.UnmuteTask.Builder,
+                com.google.cloud.video.livestream.v1.Event.UnmuteTaskOrBuilder>(
+                (com.google.cloud.video.livestream.v1.Event.UnmuteTask) task_,
+                getParentForChildren(),
+                isClean());
+        task_ = null;
+      }
+      taskCase_ = 16;
+      onChanged();
+      return unmuteBuilder_;
+    }
+
     private boolean executeNow_;
     /**
      *
      *
      * <pre>
      * When this field is set to true, the event will be executed at the earliest
-     * time that the server can schedule the event and [execution_time][google.cloud.video.livestream.v1.Event.execution_time] will be
-     * populated with the time that the server actually schedules the event.
+     * time that the server can schedule the event and
+     * [execution_time][google.cloud.video.livestream.v1.Event.execution_time]
+     * will be populated with the time that the server actually schedules the
+     * event.
      * </pre>
      *
      * <code>bool execute_now = 9;</code>
@@ -3136,8 +6725,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * When this field is set to true, the event will be executed at the earliest
-     * time that the server can schedule the event and [execution_time][google.cloud.video.livestream.v1.Event.execution_time] will be
-     * populated with the time that the server actually schedules the event.
+     * time that the server can schedule the event and
+     * [execution_time][google.cloud.video.livestream.v1.Event.execution_time]
+     * will be populated with the time that the server actually schedules the
+     * event.
      * </pre>
      *
      * <code>bool execute_now = 9;</code>
@@ -3148,7 +6739,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     public Builder setExecuteNow(boolean value) {
 
       executeNow_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3157,8 +6748,10 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * When this field is set to true, the event will be executed at the earliest
-     * time that the server can schedule the event and [execution_time][google.cloud.video.livestream.v1.Event.execution_time] will be
-     * populated with the time that the server actually schedules the event.
+     * time that the server can schedule the event and
+     * [execution_time][google.cloud.video.livestream.v1.Event.execution_time]
+     * will be populated with the time that the server actually schedules the
+     * event.
      * </pre>
      *
      * <code>bool execute_now = 9;</code>
@@ -3166,7 +6759,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearExecuteNow() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000200);
       executeNow_ = false;
       onChanged();
       return this;
@@ -3182,9 +6775,13 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the event should be executed. When [execute_now][google.cloud.video.livestream.v1.Event.execute_now] is set to
-     * `true`, this field should not be set in `CreateEvent` request and will be
-     * populated with the time that the server schedules the event.
+     * The time to execute the event. If you set
+     * [execute_now][google.cloud.video.livestream.v1.Event.execute_now] to
+     * `true`, then do not set this field in the `CreateEvent` request. In
+     * this case, the server schedules the event and populates this field. If you
+     * set [execute_now][google.cloud.video.livestream.v1.Event.execute_now] to
+     * `false`, then you must set this field to at least 10 seconds in the future
+     * or else the event can't be created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp execution_time = 10;</code>
@@ -3192,15 +6789,19 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the executionTime field is set.
      */
     public boolean hasExecutionTime() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
      *
      * <pre>
-     * The time when the event should be executed. When [execute_now][google.cloud.video.livestream.v1.Event.execute_now] is set to
-     * `true`, this field should not be set in `CreateEvent` request and will be
-     * populated with the time that the server schedules the event.
+     * The time to execute the event. If you set
+     * [execute_now][google.cloud.video.livestream.v1.Event.execute_now] to
+     * `true`, then do not set this field in the `CreateEvent` request. In
+     * this case, the server schedules the event and populates this field. If you
+     * set [execute_now][google.cloud.video.livestream.v1.Event.execute_now] to
+     * `false`, then you must set this field to at least 10 seconds in the future
+     * or else the event can't be created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp execution_time = 10;</code>
@@ -3220,9 +6821,13 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the event should be executed. When [execute_now][google.cloud.video.livestream.v1.Event.execute_now] is set to
-     * `true`, this field should not be set in `CreateEvent` request and will be
-     * populated with the time that the server schedules the event.
+     * The time to execute the event. If you set
+     * [execute_now][google.cloud.video.livestream.v1.Event.execute_now] to
+     * `true`, then do not set this field in the `CreateEvent` request. In
+     * this case, the server schedules the event and populates this field. If you
+     * set [execute_now][google.cloud.video.livestream.v1.Event.execute_now] to
+     * `false`, then you must set this field to at least 10 seconds in the future
+     * or else the event can't be created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp execution_time = 10;</code>
@@ -3236,7 +6841,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         executionTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3244,9 +6849,13 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the event should be executed. When [execute_now][google.cloud.video.livestream.v1.Event.execute_now] is set to
-     * `true`, this field should not be set in `CreateEvent` request and will be
-     * populated with the time that the server schedules the event.
+     * The time to execute the event. If you set
+     * [execute_now][google.cloud.video.livestream.v1.Event.execute_now] to
+     * `true`, then do not set this field in the `CreateEvent` request. In
+     * this case, the server schedules the event and populates this field. If you
+     * set [execute_now][google.cloud.video.livestream.v1.Event.execute_now] to
+     * `false`, then you must set this field to at least 10 seconds in the future
+     * or else the event can't be created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp execution_time = 10;</code>
@@ -3257,7 +6866,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         executionTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3265,16 +6874,20 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the event should be executed. When [execute_now][google.cloud.video.livestream.v1.Event.execute_now] is set to
-     * `true`, this field should not be set in `CreateEvent` request and will be
-     * populated with the time that the server schedules the event.
+     * The time to execute the event. If you set
+     * [execute_now][google.cloud.video.livestream.v1.Event.execute_now] to
+     * `true`, then do not set this field in the `CreateEvent` request. In
+     * this case, the server schedules the event and populates this field. If you
+     * set [execute_now][google.cloud.video.livestream.v1.Event.execute_now] to
+     * `false`, then you must set this field to at least 10 seconds in the future
+     * or else the event can't be created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp execution_time = 10;</code>
      */
     public Builder mergeExecutionTime(com.google.protobuf.Timestamp value) {
       if (executionTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && executionTime_ != null
             && executionTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getExecutionTimeBuilder().mergeFrom(value);
@@ -3284,7 +6897,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         executionTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3292,15 +6905,19 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the event should be executed. When [execute_now][google.cloud.video.livestream.v1.Event.execute_now] is set to
-     * `true`, this field should not be set in `CreateEvent` request and will be
-     * populated with the time that the server schedules the event.
+     * The time to execute the event. If you set
+     * [execute_now][google.cloud.video.livestream.v1.Event.execute_now] to
+     * `true`, then do not set this field in the `CreateEvent` request. In
+     * this case, the server schedules the event and populates this field. If you
+     * set [execute_now][google.cloud.video.livestream.v1.Event.execute_now] to
+     * `false`, then you must set this field to at least 10 seconds in the future
+     * or else the event can't be created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp execution_time = 10;</code>
      */
     public Builder clearExecutionTime() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000400);
       executionTime_ = null;
       if (executionTimeBuilder_ != null) {
         executionTimeBuilder_.dispose();
@@ -3313,15 +6930,19 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the event should be executed. When [execute_now][google.cloud.video.livestream.v1.Event.execute_now] is set to
-     * `true`, this field should not be set in `CreateEvent` request and will be
-     * populated with the time that the server schedules the event.
+     * The time to execute the event. If you set
+     * [execute_now][google.cloud.video.livestream.v1.Event.execute_now] to
+     * `true`, then do not set this field in the `CreateEvent` request. In
+     * this case, the server schedules the event and populates this field. If you
+     * set [execute_now][google.cloud.video.livestream.v1.Event.execute_now] to
+     * `false`, then you must set this field to at least 10 seconds in the future
+     * or else the event can't be created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp execution_time = 10;</code>
      */
     public com.google.protobuf.Timestamp.Builder getExecutionTimeBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getExecutionTimeFieldBuilder().getBuilder();
     }
@@ -3329,9 +6950,13 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the event should be executed. When [execute_now][google.cloud.video.livestream.v1.Event.execute_now] is set to
-     * `true`, this field should not be set in `CreateEvent` request and will be
-     * populated with the time that the server schedules the event.
+     * The time to execute the event. If you set
+     * [execute_now][google.cloud.video.livestream.v1.Event.execute_now] to
+     * `true`, then do not set this field in the `CreateEvent` request. In
+     * this case, the server schedules the event and populates this field. If you
+     * set [execute_now][google.cloud.video.livestream.v1.Event.execute_now] to
+     * `false`, then you must set this field to at least 10 seconds in the future
+     * or else the event can't be created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp execution_time = 10;</code>
@@ -3349,9 +6974,13 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The time when the event should be executed. When [execute_now][google.cloud.video.livestream.v1.Event.execute_now] is set to
-     * `true`, this field should not be set in `CreateEvent` request and will be
-     * populated with the time that the server schedules the event.
+     * The time to execute the event. If you set
+     * [execute_now][google.cloud.video.livestream.v1.Event.execute_now] to
+     * `true`, then do not set this field in the `CreateEvent` request. In
+     * this case, the server schedules the event and populates this field. If you
+     * set [execute_now][google.cloud.video.livestream.v1.Event.execute_now] to
+     * `false`, then you must set this field to at least 10 seconds in the future
+     * or else the event can't be created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp execution_time = 10;</code>
@@ -3407,7 +7036,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3450,7 +7079,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000800;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -3469,7 +7098,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000800);
       state_ = 0;
       onChanged();
       return this;
@@ -3492,7 +7121,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the error field is set.
      */
     public boolean hasError() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -3532,7 +7161,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         errorBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3552,7 +7181,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3568,7 +7197,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && error_ != null
             && error_ != com.google.rpc.Status.getDefaultInstance()) {
           getErrorBuilder().mergeFrom(value);
@@ -3578,7 +7207,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         errorBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3593,7 +7222,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearError() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00001000);
       error_ = null;
       if (errorBuilder_ != null) {
         errorBuilder_.dispose();
@@ -3613,7 +7242,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00001000;
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }

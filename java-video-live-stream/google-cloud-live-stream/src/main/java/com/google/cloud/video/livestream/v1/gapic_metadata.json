@@ -37,6 +37,9 @@
             "GetInput": {
               "methods": ["getInput", "getInput", "getInput", "getInputCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "ListChannels": {
               "methods": ["listChannels", "listChannels", "listChannels", "listChannelsPagedCallable", "listChannelsCallable"]
             },
@@ -45,6 +48,9 @@
             },
             "ListInputs": {
               "methods": ["listInputs", "listInputs", "listInputs", "listInputsPagedCallable", "listInputsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "StartChannel": {
               "methods": ["startChannelAsync", "startChannelAsync", "startChannelAsync", "startChannelOperationCallable", "startChannelCallable"]

@@ -71,7 +71,8 @@ public interface AudioStreamOrBuilder
    *
    *
    * <pre>
-   * Required. Audio bitrate in bits per second. Must be between 1 and 10,000,000.
+   * Required. Audio bitrate in bits per second. Must be between 1 and
+   * 10,000,000.
    * </pre>
    *
    * <code>int32 bitrate_bps = 2 [(.google.api.field_behavior) = REQUIRED];</code>

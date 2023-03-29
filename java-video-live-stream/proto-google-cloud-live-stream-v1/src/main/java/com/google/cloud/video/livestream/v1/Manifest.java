@@ -235,7 +235,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the generated file. The default is `manifest` with the
-   * extension suffix corresponding to the `Manifest` [type][google.cloud.video.livestream.v1.Manifest.type]. If multiple
+   * extension suffix corresponding to the `Manifest`
+   * [type][google.cloud.video.livestream.v1.Manifest.type]. If multiple
    * manifests are added to the channel, each must have a unique file name.
    * </pre>
    *
@@ -260,7 +261,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the generated file. The default is `manifest` with the
-   * extension suffix corresponding to the `Manifest` [type][google.cloud.video.livestream.v1.Manifest.type]. If multiple
+   * extension suffix corresponding to the `Manifest`
+   * [type][google.cloud.video.livestream.v1.Manifest.type]. If multiple
    * manifests are added to the channel, each must have a unique file name.
    * </pre>
    *
@@ -330,8 +332,9 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. List of `MuxStream` [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear in this
-   * manifest.
+   * Required. List of `MuxStream`
+   * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
+   * in this manifest.
    * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
    * mixed.
    * - For DASH, only `fmp4` mux streams can be specified.
@@ -348,8 +351,9 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. List of `MuxStream` [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear in this
-   * manifest.
+   * Required. List of `MuxStream`
+   * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
+   * in this manifest.
    * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
    * mixed.
    * - For DASH, only `fmp4` mux streams can be specified.
@@ -366,8 +370,9 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. List of `MuxStream` [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear in this
-   * manifest.
+   * Required. List of `MuxStream`
+   * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
+   * in this manifest.
    * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
    * mixed.
    * - For DASH, only `fmp4` mux streams can be specified.
@@ -385,8 +390,9 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. List of `MuxStream` [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear in this
-   * manifest.
+   * Required. List of `MuxStream`
+   * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
+   * in this manifest.
    * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
    * mixed.
    * - For DASH, only `fmp4` mux streams can be specified.
@@ -487,6 +493,28 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
         : segmentKeepDuration_;
   }
 
+  public static final int USE_TIMECODE_AS_TIMELINE_FIELD_NUMBER = 6;
+  private boolean useTimecodeAsTimeline_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Whether to use the timecode, as specified in timecode config, when setting:
+   * - `availabilityStartTime` attribute in DASH manifests.
+   * - `#EXT-X-PROGRAM-DATE-TIME` tag in HLS manifests.
+   * If false, ignore the input timecode and use the time from system clock
+   * when the manifest is first generated. This is the default behavior.
+   * </pre>
+   *
+   * <code>bool use_timecode_as_timeline = 6;</code>
+   *
+   * @return The useTimecodeAsTimeline.
+   */
+  @java.lang.Override
+  public boolean getUseTimecodeAsTimeline() {
+    return useTimecodeAsTimeline_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -517,6 +545,9 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     }
     if (segmentKeepDuration_ != null) {
       output.writeMessage(5, getSegmentKeepDuration());
+    }
+    if (useTimecodeAsTimeline_ != false) {
+      output.writeBool(6, useTimecodeAsTimeline_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -549,6 +580,9 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     if (segmentKeepDuration_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getSegmentKeepDuration());
     }
+    if (useTimecodeAsTimeline_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, useTimecodeAsTimeline_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -573,6 +607,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
     if (hasSegmentKeepDuration()) {
       if (!getSegmentKeepDuration().equals(other.getSegmentKeepDuration())) return false;
     }
+    if (getUseTimecodeAsTimeline() != other.getUseTimecodeAsTimeline()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -598,6 +633,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SEGMENT_KEEP_DURATION_FIELD_NUMBER;
       hash = (53 * hash) + getSegmentKeepDuration().hashCode();
     }
+    hash = (37 * hash) + USE_TIMECODE_AS_TIMELINE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseTimecodeAsTimeline());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -747,6 +784,7 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
         segmentKeepDurationBuilder_.dispose();
         segmentKeepDurationBuilder_ = null;
       }
+      useTimecodeAsTimeline_ = false;
       return this;
     }
 
@@ -806,6 +844,9 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
             segmentKeepDurationBuilder_ == null
                 ? segmentKeepDuration_
                 : segmentKeepDurationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.useTimecodeAsTimeline_ = useTimecodeAsTimeline_;
       }
     }
 
@@ -878,6 +919,9 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
       if (other.hasSegmentKeepDuration()) {
         mergeSegmentKeepDuration(other.getSegmentKeepDuration());
       }
+      if (other.getUseTimecodeAsTimeline() != false) {
+        setUseTimecodeAsTimeline(other.getUseTimecodeAsTimeline());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -936,6 +980,12 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 48:
+              {
+                useTimecodeAsTimeline_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -961,7 +1011,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the generated file. The default is `manifest` with the
-     * extension suffix corresponding to the `Manifest` [type][google.cloud.video.livestream.v1.Manifest.type]. If multiple
+     * extension suffix corresponding to the `Manifest`
+     * [type][google.cloud.video.livestream.v1.Manifest.type]. If multiple
      * manifests are added to the channel, each must have a unique file name.
      * </pre>
      *
@@ -985,7 +1036,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the generated file. The default is `manifest` with the
-     * extension suffix corresponding to the `Manifest` [type][google.cloud.video.livestream.v1.Manifest.type]. If multiple
+     * extension suffix corresponding to the `Manifest`
+     * [type][google.cloud.video.livestream.v1.Manifest.type]. If multiple
      * manifests are added to the channel, each must have a unique file name.
      * </pre>
      *
@@ -1009,7 +1061,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the generated file. The default is `manifest` with the
-     * extension suffix corresponding to the `Manifest` [type][google.cloud.video.livestream.v1.Manifest.type]. If multiple
+     * extension suffix corresponding to the `Manifest`
+     * [type][google.cloud.video.livestream.v1.Manifest.type]. If multiple
      * manifests are added to the channel, each must have a unique file name.
      * </pre>
      *
@@ -1032,7 +1085,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the generated file. The default is `manifest` with the
-     * extension suffix corresponding to the `Manifest` [type][google.cloud.video.livestream.v1.Manifest.type]. If multiple
+     * extension suffix corresponding to the `Manifest`
+     * [type][google.cloud.video.livestream.v1.Manifest.type]. If multiple
      * manifests are added to the channel, each must have a unique file name.
      * </pre>
      *
@@ -1051,7 +1105,8 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the generated file. The default is `manifest` with the
-     * extension suffix corresponding to the `Manifest` [type][google.cloud.video.livestream.v1.Manifest.type]. If multiple
+     * extension suffix corresponding to the `Manifest`
+     * [type][google.cloud.video.livestream.v1.Manifest.type]. If multiple
      * manifests are added to the channel, each must have a unique file name.
      * </pre>
      *
@@ -1186,8 +1241,9 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of `MuxStream` [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear in this
-     * manifest.
+     * Required. List of `MuxStream`
+     * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
+     * in this manifest.
      * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
      * mixed.
      * - For DASH, only `fmp4` mux streams can be specified.
@@ -1204,8 +1260,9 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of `MuxStream` [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear in this
-     * manifest.
+     * Required. List of `MuxStream`
+     * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
+     * in this manifest.
      * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
      * mixed.
      * - For DASH, only `fmp4` mux streams can be specified.
@@ -1222,8 +1279,9 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of `MuxStream` [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear in this
-     * manifest.
+     * Required. List of `MuxStream`
+     * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
+     * in this manifest.
      * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
      * mixed.
      * - For DASH, only `fmp4` mux streams can be specified.
@@ -1241,8 +1299,9 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of `MuxStream` [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear in this
-     * manifest.
+     * Required. List of `MuxStream`
+     * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
+     * in this manifest.
      * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
      * mixed.
      * - For DASH, only `fmp4` mux streams can be specified.
@@ -1260,8 +1319,9 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of `MuxStream` [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear in this
-     * manifest.
+     * Required. List of `MuxStream`
+     * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
+     * in this manifest.
      * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
      * mixed.
      * - For DASH, only `fmp4` mux streams can be specified.
@@ -1286,8 +1346,9 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of `MuxStream` [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear in this
-     * manifest.
+     * Required. List of `MuxStream`
+     * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
+     * in this manifest.
      * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
      * mixed.
      * - For DASH, only `fmp4` mux streams can be specified.
@@ -1311,8 +1372,9 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of `MuxStream` [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear in this
-     * manifest.
+     * Required. List of `MuxStream`
+     * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
+     * in this manifest.
      * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
      * mixed.
      * - For DASH, only `fmp4` mux streams can be specified.
@@ -1333,8 +1395,9 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of `MuxStream` [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear in this
-     * manifest.
+     * Required. List of `MuxStream`
+     * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
+     * in this manifest.
      * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
      * mixed.
      * - For DASH, only `fmp4` mux streams can be specified.
@@ -1354,8 +1417,9 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. List of `MuxStream` [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear in this
-     * manifest.
+     * Required. List of `MuxStream`
+     * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
+     * in this manifest.
      * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
      * mixed.
      * - For DASH, only `fmp4` mux streams can be specified.
@@ -1665,6 +1729,71 @@ public final class Manifest extends com.google.protobuf.GeneratedMessageV3
         segmentKeepDuration_ = null;
       }
       return segmentKeepDurationBuilder_;
+    }
+
+    private boolean useTimecodeAsTimeline_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether to use the timecode, as specified in timecode config, when setting:
+     * - `availabilityStartTime` attribute in DASH manifests.
+     * - `#EXT-X-PROGRAM-DATE-TIME` tag in HLS manifests.
+     * If false, ignore the input timecode and use the time from system clock
+     * when the manifest is first generated. This is the default behavior.
+     * </pre>
+     *
+     * <code>bool use_timecode_as_timeline = 6;</code>
+     *
+     * @return The useTimecodeAsTimeline.
+     */
+    @java.lang.Override
+    public boolean getUseTimecodeAsTimeline() {
+      return useTimecodeAsTimeline_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether to use the timecode, as specified in timecode config, when setting:
+     * - `availabilityStartTime` attribute in DASH manifests.
+     * - `#EXT-X-PROGRAM-DATE-TIME` tag in HLS manifests.
+     * If false, ignore the input timecode and use the time from system clock
+     * when the manifest is first generated. This is the default behavior.
+     * </pre>
+     *
+     * <code>bool use_timecode_as_timeline = 6;</code>
+     *
+     * @param value The useTimecodeAsTimeline to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUseTimecodeAsTimeline(boolean value) {
+
+      useTimecodeAsTimeline_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether to use the timecode, as specified in timecode config, when setting:
+     * - `availabilityStartTime` attribute in DASH manifests.
+     * - `#EXT-X-PROGRAM-DATE-TIME` tag in HLS manifests.
+     * If false, ignore the input timecode and use the time from system clock
+     * when the manifest is first generated. This is the default behavior.
+     * </pre>
+     *
+     * <code>bool use_timecode_as_timeline = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUseTimecodeAsTimeline() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      useTimecodeAsTimeline_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

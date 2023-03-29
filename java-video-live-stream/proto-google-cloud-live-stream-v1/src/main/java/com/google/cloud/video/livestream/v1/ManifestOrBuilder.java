@@ -28,7 +28,8 @@ public interface ManifestOrBuilder
    *
    * <pre>
    * The name of the generated file. The default is `manifest` with the
-   * extension suffix corresponding to the `Manifest` [type][google.cloud.video.livestream.v1.Manifest.type]. If multiple
+   * extension suffix corresponding to the `Manifest`
+   * [type][google.cloud.video.livestream.v1.Manifest.type]. If multiple
    * manifests are added to the channel, each must have a unique file name.
    * </pre>
    *
@@ -42,7 +43,8 @@ public interface ManifestOrBuilder
    *
    * <pre>
    * The name of the generated file. The default is `manifest` with the
-   * extension suffix corresponding to the `Manifest` [type][google.cloud.video.livestream.v1.Manifest.type]. If multiple
+   * extension suffix corresponding to the `Manifest`
+   * [type][google.cloud.video.livestream.v1.Manifest.type]. If multiple
    * manifests are added to the channel, each must have a unique file name.
    * </pre>
    *
@@ -85,8 +87,9 @@ public interface ManifestOrBuilder
    *
    *
    * <pre>
-   * Required. List of `MuxStream` [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear in this
-   * manifest.
+   * Required. List of `MuxStream`
+   * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
+   * in this manifest.
    * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
    * mixed.
    * - For DASH, only `fmp4` mux streams can be specified.
@@ -101,8 +104,9 @@ public interface ManifestOrBuilder
    *
    *
    * <pre>
-   * Required. List of `MuxStream` [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear in this
-   * manifest.
+   * Required. List of `MuxStream`
+   * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
+   * in this manifest.
    * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
    * mixed.
    * - For DASH, only `fmp4` mux streams can be specified.
@@ -117,8 +121,9 @@ public interface ManifestOrBuilder
    *
    *
    * <pre>
-   * Required. List of `MuxStream` [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear in this
-   * manifest.
+   * Required. List of `MuxStream`
+   * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
+   * in this manifest.
    * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
    * mixed.
    * - For DASH, only `fmp4` mux streams can be specified.
@@ -134,8 +139,9 @@ public interface ManifestOrBuilder
    *
    *
    * <pre>
-   * Required. List of `MuxStream` [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear in this
-   * manifest.
+   * Required. List of `MuxStream`
+   * [key][google.cloud.video.livestream.v1.MuxStream.key]s that should appear
+   * in this manifest.
    * - For HLS, either `fmp4` or `ts` mux streams can be specified but not
    * mixed.
    * - For DASH, only `fmp4` mux streams can be specified.
@@ -213,4 +219,21 @@ public interface ManifestOrBuilder
    * <code>.google.protobuf.Duration segment_keep_duration = 5;</code>
    */
   com.google.protobuf.DurationOrBuilder getSegmentKeepDurationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether to use the timecode, as specified in timecode config, when setting:
+   * - `availabilityStartTime` attribute in DASH manifests.
+   * - `#EXT-X-PROGRAM-DATE-TIME` tag in HLS manifests.
+   * If false, ignore the input timecode and use the time from system clock
+   * when the manifest is first generated. This is the default behavior.
+   * </pre>
+   *
+   * <code>bool use_timecode_as_timeline = 6;</code>
+   *
+   * @return The useTimecodeAsTimeline.
+   */
+  boolean getUseTimecodeAsTimeline();
 }

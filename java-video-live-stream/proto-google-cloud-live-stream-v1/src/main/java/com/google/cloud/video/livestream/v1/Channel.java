@@ -50,6 +50,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     manifests_ = java.util.Collections.emptyList();
     spriteSheets_ = java.util.Collections.emptyList();
     streamingState_ = 0;
+    encryptions_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -1357,8 +1358,11 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key] that serves as the current input source. The
-   * first input in the [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments] is the initial input source.
+   * Output only. The
+   * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+   * that serves as the current input source. The first input in the
+   * [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments]
+   * is the initial input source.
    * </pre>
    *
    * <code>string active_input = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1381,8 +1385,11 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key] that serves as the current input source. The
-   * first input in the [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments] is the initial input source.
+   * Output only. The
+   * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+   * that serves as the current input source. The first input in the
+   * [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments]
+   * is the initial input source.
    * </pre>
    *
    * <code>string active_input = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1408,8 +1415,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Information about the output (that is, the Cloud Storage bucket to store
-   * the generated live stream).
+   * Required. Information about the output (that is, the Cloud Storage bucket
+   * to store the generated live stream).
    * </pre>
    *
    * <code>
@@ -1426,8 +1433,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Information about the output (that is, the Cloud Storage bucket to store
-   * the generated live stream).
+   * Required. Information about the output (that is, the Cloud Storage bucket
+   * to store the generated live stream).
    * </pre>
    *
    * <code>
@@ -1446,8 +1453,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Information about the output (that is, the Cloud Storage bucket to store
-   * the generated live stream).
+   * Required. Information about the output (that is, the Cloud Storage bucket
+   * to store the generated live stream).
    * </pre>
    *
    * <code>
@@ -1800,8 +1807,10 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A description of the reason for the streaming error. This property is
-   * always present when [streaming_state][google.cloud.video.livestream.v1.Channel.streaming_state] is
+   * Output only. A description of the reason for the streaming error. This
+   * property is always present when
+   * [streaming_state][google.cloud.video.livestream.v1.Channel.streaming_state]
+   * is
    * [STREAMING_ERROR][google.cloud.video.livestream.v1.Channel.StreamingState.STREAMING_ERROR].
    * </pre>
    *
@@ -1818,8 +1827,10 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A description of the reason for the streaming error. This property is
-   * always present when [streaming_state][google.cloud.video.livestream.v1.Channel.streaming_state] is
+   * Output only. A description of the reason for the streaming error. This
+   * property is always present when
+   * [streaming_state][google.cloud.video.livestream.v1.Channel.streaming_state]
+   * is
    * [STREAMING_ERROR][google.cloud.video.livestream.v1.Channel.StreamingState.STREAMING_ERROR].
    * </pre>
    *
@@ -1836,8 +1847,10 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A description of the reason for the streaming error. This property is
-   * always present when [streaming_state][google.cloud.video.livestream.v1.Channel.streaming_state] is
+   * Output only. A description of the reason for the streaming error. This
+   * property is always present when
+   * [streaming_state][google.cloud.video.livestream.v1.Channel.streaming_state]
+   * is
    * [STREAMING_ERROR][google.cloud.video.livestream.v1.Channel.StreamingState.STREAMING_ERROR].
    * </pre>
    *
@@ -1899,6 +1912,191 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         : logConfig_;
   }
 
+  public static final int TIMECODE_CONFIG_FIELD_NUMBER = 21;
+  private com.google.cloud.video.livestream.v1.TimecodeConfig timecodeConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of timecode for this channel.
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.TimecodeConfig timecode_config = 21;</code>
+   *
+   * @return Whether the timecodeConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasTimecodeConfig() {
+    return timecodeConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of timecode for this channel.
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.TimecodeConfig timecode_config = 21;</code>
+   *
+   * @return The timecodeConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.TimecodeConfig getTimecodeConfig() {
+    return timecodeConfig_ == null
+        ? com.google.cloud.video.livestream.v1.TimecodeConfig.getDefaultInstance()
+        : timecodeConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of timecode for this channel.
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.TimecodeConfig timecode_config = 21;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.TimecodeConfigOrBuilder getTimecodeConfigOrBuilder() {
+    return timecodeConfig_ == null
+        ? com.google.cloud.video.livestream.v1.TimecodeConfig.getDefaultInstance()
+        : timecodeConfig_;
+  }
+
+  public static final int ENCRYPTIONS_FIELD_NUMBER = 24;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.video.livestream.v1.Encryption> encryptions_;
+  /**
+   *
+   *
+   * <pre>
+   * Encryption configurations for this channel. Each configuration has an ID
+   * which is referred to by each MuxStream to indicate which configuration is
+   * used for that output.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.video.livestream.v1.Encryption> getEncryptionsList() {
+    return encryptions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Encryption configurations for this channel. Each configuration has an ID
+   * which is referred to by each MuxStream to indicate which configuration is
+   * used for that output.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.video.livestream.v1.EncryptionOrBuilder>
+      getEncryptionsOrBuilderList() {
+    return encryptions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Encryption configurations for this channel. Each configuration has an ID
+   * which is referred to by each MuxStream to indicate which configuration is
+   * used for that output.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+   */
+  @java.lang.Override
+  public int getEncryptionsCount() {
+    return encryptions_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Encryption configurations for this channel. Each configuration has an ID
+   * which is referred to by each MuxStream to indicate which configuration is
+   * used for that output.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.Encryption getEncryptions(int index) {
+    return encryptions_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Encryption configurations for this channel. Each configuration has an ID
+   * which is referred to by each MuxStream to indicate which configuration is
+   * used for that output.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.EncryptionOrBuilder getEncryptionsOrBuilder(
+      int index) {
+    return encryptions_.get(index);
+  }
+
+  public static final int INPUT_CONFIG_FIELD_NUMBER = 25;
+  private com.google.cloud.video.livestream.v1.InputConfig inputConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for input sources defined in
+   * [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments].
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.InputConfig input_config = 25;</code>
+   *
+   * @return Whether the inputConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasInputConfig() {
+    return inputConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for input sources defined in
+   * [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments].
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.InputConfig input_config = 25;</code>
+   *
+   * @return The inputConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.InputConfig getInputConfig() {
+    return inputConfig_ == null
+        ? com.google.cloud.video.livestream.v1.InputConfig.getDefaultInstance()
+        : inputConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for input sources defined in
+   * [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments].
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.InputConfig input_config = 25;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.InputConfigOrBuilder getInputConfigOrBuilder() {
+    return inputConfig_ == null
+        ? com.google.cloud.video.livestream.v1.InputConfig.getDefaultInstance()
+        : inputConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1955,6 +2153,15 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     }
     if (logConfig_ != null) {
       output.writeMessage(19, getLogConfig());
+    }
+    if (timecodeConfig_ != null) {
+      output.writeMessage(21, getTimecodeConfig());
+    }
+    for (int i = 0; i < encryptions_.size(); i++) {
+      output.writeMessage(24, encryptions_.get(i));
+    }
+    if (inputConfig_ != null) {
+      output.writeMessage(25, getInputConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2018,6 +2225,15 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     if (logConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getLogConfig());
     }
+    if (timecodeConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getTimecodeConfig());
+    }
+    for (int i = 0; i < encryptions_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, encryptions_.get(i));
+    }
+    if (inputConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, getInputConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2062,6 +2278,15 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     if (hasLogConfig() != other.hasLogConfig()) return false;
     if (hasLogConfig()) {
       if (!getLogConfig().equals(other.getLogConfig())) return false;
+    }
+    if (hasTimecodeConfig() != other.hasTimecodeConfig()) return false;
+    if (hasTimecodeConfig()) {
+      if (!getTimecodeConfig().equals(other.getTimecodeConfig())) return false;
+    }
+    if (!getEncryptionsList().equals(other.getEncryptionsList())) return false;
+    if (hasInputConfig() != other.hasInputConfig()) return false;
+    if (hasInputConfig()) {
+      if (!getInputConfig().equals(other.getInputConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -2123,6 +2348,18 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     if (hasLogConfig()) {
       hash = (37 * hash) + LOG_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getLogConfig().hashCode();
+    }
+    if (hasTimecodeConfig()) {
+      hash = (37 * hash) + TIMECODE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getTimecodeConfig().hashCode();
+    }
+    if (getEncryptionsCount() > 0) {
+      hash = (37 * hash) + ENCRYPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionsList().hashCode();
+    }
+    if (hasInputConfig()) {
+      hash = (37 * hash) + INPUT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getInputConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2351,6 +2588,23 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         logConfigBuilder_.dispose();
         logConfigBuilder_ = null;
       }
+      timecodeConfig_ = null;
+      if (timecodeConfigBuilder_ != null) {
+        timecodeConfigBuilder_.dispose();
+        timecodeConfigBuilder_ = null;
+      }
+      if (encryptionsBuilder_ == null) {
+        encryptions_ = java.util.Collections.emptyList();
+      } else {
+        encryptions_ = null;
+        encryptionsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00008000);
+      inputConfig_ = null;
+      if (inputConfigBuilder_ != null) {
+        inputConfigBuilder_.dispose();
+        inputConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -2432,6 +2686,15 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.spriteSheets_ = spriteSheetsBuilder_.build();
       }
+      if (encryptionsBuilder_ == null) {
+        if (((bitField0_ & 0x00008000) != 0)) {
+          encryptions_ = java.util.Collections.unmodifiableList(encryptions_);
+          bitField0_ = (bitField0_ & ~0x00008000);
+        }
+        result.encryptions_ = encryptions_;
+      } else {
+        result.encryptions_ = encryptionsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.video.livestream.v1.Channel result) {
@@ -2464,6 +2727,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
         result.logConfig_ = logConfigBuilder_ == null ? logConfig_ : logConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.timecodeConfig_ =
+            timecodeConfigBuilder_ == null ? timecodeConfig_ : timecodeConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.inputConfig_ =
+            inputConfigBuilder_ == null ? inputConfig_ : inputConfigBuilder_.build();
       }
     }
 
@@ -2677,6 +2948,39 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       if (other.hasLogConfig()) {
         mergeLogConfig(other.getLogConfig());
       }
+      if (other.hasTimecodeConfig()) {
+        mergeTimecodeConfig(other.getTimecodeConfig());
+      }
+      if (encryptionsBuilder_ == null) {
+        if (!other.encryptions_.isEmpty()) {
+          if (encryptions_.isEmpty()) {
+            encryptions_ = other.encryptions_;
+            bitField0_ = (bitField0_ & ~0x00008000);
+          } else {
+            ensureEncryptionsIsMutable();
+            encryptions_.addAll(other.encryptions_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.encryptions_.isEmpty()) {
+          if (encryptionsBuilder_.isEmpty()) {
+            encryptionsBuilder_.dispose();
+            encryptionsBuilder_ = null;
+            encryptions_ = other.encryptions_;
+            bitField0_ = (bitField0_ & ~0x00008000);
+            encryptionsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getEncryptionsFieldBuilder()
+                    : null;
+          } else {
+            encryptionsBuilder_.addAllMessages(other.encryptions_);
+          }
+        }
+      }
+      if (other.hasInputConfig()) {
+        mergeInputConfig(other.getInputConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2831,6 +3135,32 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00002000;
                 break;
               } // case 154
+            case 170:
+              {
+                input.readMessage(getTimecodeConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 170
+            case 194:
+              {
+                com.google.cloud.video.livestream.v1.Encryption m =
+                    input.readMessage(
+                        com.google.cloud.video.livestream.v1.Encryption.parser(),
+                        extensionRegistry);
+                if (encryptionsBuilder_ == null) {
+                  ensureEncryptionsIsMutable();
+                  encryptions_.add(m);
+                } else {
+                  encryptionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 194
+            case 202:
+              {
+                input.readMessage(getInputConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 202
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3948,8 +4278,11 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key] that serves as the current input source. The
-     * first input in the [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments] is the initial input source.
+     * Output only. The
+     * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+     * that serves as the current input source. The first input in the
+     * [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments]
+     * is the initial input source.
      * </pre>
      *
      * <code>string active_input = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3971,8 +4304,11 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key] that serves as the current input source. The
-     * first input in the [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments] is the initial input source.
+     * Output only. The
+     * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+     * that serves as the current input source. The first input in the
+     * [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments]
+     * is the initial input source.
      * </pre>
      *
      * <code>string active_input = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3994,8 +4330,11 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key] that serves as the current input source. The
-     * first input in the [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments] is the initial input source.
+     * Output only. The
+     * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+     * that serves as the current input source. The first input in the
+     * [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments]
+     * is the initial input source.
      * </pre>
      *
      * <code>string active_input = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4016,8 +4355,11 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key] that serves as the current input source. The
-     * first input in the [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments] is the initial input source.
+     * Output only. The
+     * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+     * that serves as the current input source. The first input in the
+     * [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments]
+     * is the initial input source.
      * </pre>
      *
      * <code>string active_input = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4034,8 +4376,11 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key] that serves as the current input source. The
-     * first input in the [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments] is the initial input source.
+     * Output only. The
+     * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+     * that serves as the current input source. The first input in the
+     * [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments]
+     * is the initial input source.
      * </pre>
      *
      * <code>string active_input = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4064,8 +4409,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Information about the output (that is, the Cloud Storage bucket to store
-     * the generated live stream).
+     * Required. Information about the output (that is, the Cloud Storage bucket
+     * to store the generated live stream).
      * </pre>
      *
      * <code>
@@ -4081,8 +4426,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Information about the output (that is, the Cloud Storage bucket to store
-     * the generated live stream).
+     * Required. Information about the output (that is, the Cloud Storage bucket
+     * to store the generated live stream).
      * </pre>
      *
      * <code>
@@ -4104,8 +4449,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Information about the output (that is, the Cloud Storage bucket to store
-     * the generated live stream).
+     * Required. Information about the output (that is, the Cloud Storage bucket
+     * to store the generated live stream).
      * </pre>
      *
      * <code>
@@ -4129,8 +4474,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Information about the output (that is, the Cloud Storage bucket to store
-     * the generated live stream).
+     * Required. Information about the output (that is, the Cloud Storage bucket
+     * to store the generated live stream).
      * </pre>
      *
      * <code>
@@ -4152,8 +4497,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Information about the output (that is, the Cloud Storage bucket to store
-     * the generated live stream).
+     * Required. Information about the output (that is, the Cloud Storage bucket
+     * to store the generated live stream).
      * </pre>
      *
      * <code>
@@ -4181,8 +4526,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Information about the output (that is, the Cloud Storage bucket to store
-     * the generated live stream).
+     * Required. Information about the output (that is, the Cloud Storage bucket
+     * to store the generated live stream).
      * </pre>
      *
      * <code>
@@ -4203,8 +4548,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Information about the output (that is, the Cloud Storage bucket to store
-     * the generated live stream).
+     * Required. Information about the output (that is, the Cloud Storage bucket
+     * to store the generated live stream).
      * </pre>
      *
      * <code>
@@ -4220,8 +4565,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Information about the output (that is, the Cloud Storage bucket to store
-     * the generated live stream).
+     * Required. Information about the output (that is, the Cloud Storage bucket
+     * to store the generated live stream).
      * </pre>
      *
      * <code>
@@ -4241,8 +4586,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Information about the output (that is, the Cloud Storage bucket to store
-     * the generated live stream).
+     * Required. Information about the output (that is, the Cloud Storage bucket
+     * to store the generated live stream).
      * </pre>
      *
      * <code>
@@ -5820,8 +6165,10 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A description of the reason for the streaming error. This property is
-     * always present when [streaming_state][google.cloud.video.livestream.v1.Channel.streaming_state] is
+     * Output only. A description of the reason for the streaming error. This
+     * property is always present when
+     * [streaming_state][google.cloud.video.livestream.v1.Channel.streaming_state]
+     * is
      * [STREAMING_ERROR][google.cloud.video.livestream.v1.Channel.StreamingState.STREAMING_ERROR].
      * </pre>
      *
@@ -5837,8 +6184,10 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A description of the reason for the streaming error. This property is
-     * always present when [streaming_state][google.cloud.video.livestream.v1.Channel.streaming_state] is
+     * Output only. A description of the reason for the streaming error. This
+     * property is always present when
+     * [streaming_state][google.cloud.video.livestream.v1.Channel.streaming_state]
+     * is
      * [STREAMING_ERROR][google.cloud.video.livestream.v1.Channel.StreamingState.STREAMING_ERROR].
      * </pre>
      *
@@ -5860,8 +6209,10 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A description of the reason for the streaming error. This property is
-     * always present when [streaming_state][google.cloud.video.livestream.v1.Channel.streaming_state] is
+     * Output only. A description of the reason for the streaming error. This
+     * property is always present when
+     * [streaming_state][google.cloud.video.livestream.v1.Channel.streaming_state]
+     * is
      * [STREAMING_ERROR][google.cloud.video.livestream.v1.Channel.StreamingState.STREAMING_ERROR].
      * </pre>
      *
@@ -5885,8 +6236,10 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A description of the reason for the streaming error. This property is
-     * always present when [streaming_state][google.cloud.video.livestream.v1.Channel.streaming_state] is
+     * Output only. A description of the reason for the streaming error. This
+     * property is always present when
+     * [streaming_state][google.cloud.video.livestream.v1.Channel.streaming_state]
+     * is
      * [STREAMING_ERROR][google.cloud.video.livestream.v1.Channel.StreamingState.STREAMING_ERROR].
      * </pre>
      *
@@ -5907,8 +6260,10 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A description of the reason for the streaming error. This property is
-     * always present when [streaming_state][google.cloud.video.livestream.v1.Channel.streaming_state] is
+     * Output only. A description of the reason for the streaming error. This
+     * property is always present when
+     * [streaming_state][google.cloud.video.livestream.v1.Channel.streaming_state]
+     * is
      * [STREAMING_ERROR][google.cloud.video.livestream.v1.Channel.StreamingState.STREAMING_ERROR].
      * </pre>
      *
@@ -5935,8 +6290,10 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A description of the reason for the streaming error. This property is
-     * always present when [streaming_state][google.cloud.video.livestream.v1.Channel.streaming_state] is
+     * Output only. A description of the reason for the streaming error. This
+     * property is always present when
+     * [streaming_state][google.cloud.video.livestream.v1.Channel.streaming_state]
+     * is
      * [STREAMING_ERROR][google.cloud.video.livestream.v1.Channel.StreamingState.STREAMING_ERROR].
      * </pre>
      *
@@ -5957,8 +6314,10 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A description of the reason for the streaming error. This property is
-     * always present when [streaming_state][google.cloud.video.livestream.v1.Channel.streaming_state] is
+     * Output only. A description of the reason for the streaming error. This
+     * property is always present when
+     * [streaming_state][google.cloud.video.livestream.v1.Channel.streaming_state]
+     * is
      * [STREAMING_ERROR][google.cloud.video.livestream.v1.Channel.StreamingState.STREAMING_ERROR].
      * </pre>
      *
@@ -5974,8 +6333,10 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A description of the reason for the streaming error. This property is
-     * always present when [streaming_state][google.cloud.video.livestream.v1.Channel.streaming_state] is
+     * Output only. A description of the reason for the streaming error. This
+     * property is always present when
+     * [streaming_state][google.cloud.video.livestream.v1.Channel.streaming_state]
+     * is
      * [STREAMING_ERROR][google.cloud.video.livestream.v1.Channel.StreamingState.STREAMING_ERROR].
      * </pre>
      *
@@ -5995,8 +6356,10 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A description of the reason for the streaming error. This property is
-     * always present when [streaming_state][google.cloud.video.livestream.v1.Channel.streaming_state] is
+     * Output only. A description of the reason for the streaming error. This
+     * property is always present when
+     * [streaming_state][google.cloud.video.livestream.v1.Channel.streaming_state]
+     * is
      * [STREAMING_ERROR][google.cloud.video.livestream.v1.Channel.StreamingState.STREAMING_ERROR].
      * </pre>
      *
@@ -6200,6 +6563,778 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         logConfig_ = null;
       }
       return logConfigBuilder_;
+    }
+
+    private com.google.cloud.video.livestream.v1.TimecodeConfig timecodeConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.TimecodeConfig,
+            com.google.cloud.video.livestream.v1.TimecodeConfig.Builder,
+            com.google.cloud.video.livestream.v1.TimecodeConfigOrBuilder>
+        timecodeConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of timecode for this channel.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.TimecodeConfig timecode_config = 21;</code>
+     *
+     * @return Whether the timecodeConfig field is set.
+     */
+    public boolean hasTimecodeConfig() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of timecode for this channel.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.TimecodeConfig timecode_config = 21;</code>
+     *
+     * @return The timecodeConfig.
+     */
+    public com.google.cloud.video.livestream.v1.TimecodeConfig getTimecodeConfig() {
+      if (timecodeConfigBuilder_ == null) {
+        return timecodeConfig_ == null
+            ? com.google.cloud.video.livestream.v1.TimecodeConfig.getDefaultInstance()
+            : timecodeConfig_;
+      } else {
+        return timecodeConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of timecode for this channel.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.TimecodeConfig timecode_config = 21;</code>
+     */
+    public Builder setTimecodeConfig(com.google.cloud.video.livestream.v1.TimecodeConfig value) {
+      if (timecodeConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        timecodeConfig_ = value;
+      } else {
+        timecodeConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of timecode for this channel.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.TimecodeConfig timecode_config = 21;</code>
+     */
+    public Builder setTimecodeConfig(
+        com.google.cloud.video.livestream.v1.TimecodeConfig.Builder builderForValue) {
+      if (timecodeConfigBuilder_ == null) {
+        timecodeConfig_ = builderForValue.build();
+      } else {
+        timecodeConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of timecode for this channel.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.TimecodeConfig timecode_config = 21;</code>
+     */
+    public Builder mergeTimecodeConfig(com.google.cloud.video.livestream.v1.TimecodeConfig value) {
+      if (timecodeConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)
+            && timecodeConfig_ != null
+            && timecodeConfig_
+                != com.google.cloud.video.livestream.v1.TimecodeConfig.getDefaultInstance()) {
+          getTimecodeConfigBuilder().mergeFrom(value);
+        } else {
+          timecodeConfig_ = value;
+        }
+      } else {
+        timecodeConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of timecode for this channel.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.TimecodeConfig timecode_config = 21;</code>
+     */
+    public Builder clearTimecodeConfig() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      timecodeConfig_ = null;
+      if (timecodeConfigBuilder_ != null) {
+        timecodeConfigBuilder_.dispose();
+        timecodeConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of timecode for this channel.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.TimecodeConfig timecode_config = 21;</code>
+     */
+    public com.google.cloud.video.livestream.v1.TimecodeConfig.Builder getTimecodeConfigBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return getTimecodeConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of timecode for this channel.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.TimecodeConfig timecode_config = 21;</code>
+     */
+    public com.google.cloud.video.livestream.v1.TimecodeConfigOrBuilder
+        getTimecodeConfigOrBuilder() {
+      if (timecodeConfigBuilder_ != null) {
+        return timecodeConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return timecodeConfig_ == null
+            ? com.google.cloud.video.livestream.v1.TimecodeConfig.getDefaultInstance()
+            : timecodeConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of timecode for this channel.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.TimecodeConfig timecode_config = 21;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.TimecodeConfig,
+            com.google.cloud.video.livestream.v1.TimecodeConfig.Builder,
+            com.google.cloud.video.livestream.v1.TimecodeConfigOrBuilder>
+        getTimecodeConfigFieldBuilder() {
+      if (timecodeConfigBuilder_ == null) {
+        timecodeConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.video.livestream.v1.TimecodeConfig,
+                com.google.cloud.video.livestream.v1.TimecodeConfig.Builder,
+                com.google.cloud.video.livestream.v1.TimecodeConfigOrBuilder>(
+                getTimecodeConfig(), getParentForChildren(), isClean());
+        timecodeConfig_ = null;
+      }
+      return timecodeConfigBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.video.livestream.v1.Encryption> encryptions_ =
+        java.util.Collections.emptyList();
+
+    private void ensureEncryptionsIsMutable() {
+      if (!((bitField0_ & 0x00008000) != 0)) {
+        encryptions_ =
+            new java.util.ArrayList<com.google.cloud.video.livestream.v1.Encryption>(encryptions_);
+        bitField0_ |= 0x00008000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.Encryption,
+            com.google.cloud.video.livestream.v1.Encryption.Builder,
+            com.google.cloud.video.livestream.v1.EncryptionOrBuilder>
+        encryptionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Encryption configurations for this channel. Each configuration has an ID
+     * which is referred to by each MuxStream to indicate which configuration is
+     * used for that output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     */
+    public java.util.List<com.google.cloud.video.livestream.v1.Encryption> getEncryptionsList() {
+      if (encryptionsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(encryptions_);
+      } else {
+        return encryptionsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Encryption configurations for this channel. Each configuration has an ID
+     * which is referred to by each MuxStream to indicate which configuration is
+     * used for that output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     */
+    public int getEncryptionsCount() {
+      if (encryptionsBuilder_ == null) {
+        return encryptions_.size();
+      } else {
+        return encryptionsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Encryption configurations for this channel. Each configuration has an ID
+     * which is referred to by each MuxStream to indicate which configuration is
+     * used for that output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     */
+    public com.google.cloud.video.livestream.v1.Encryption getEncryptions(int index) {
+      if (encryptionsBuilder_ == null) {
+        return encryptions_.get(index);
+      } else {
+        return encryptionsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Encryption configurations for this channel. Each configuration has an ID
+     * which is referred to by each MuxStream to indicate which configuration is
+     * used for that output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     */
+    public Builder setEncryptions(
+        int index, com.google.cloud.video.livestream.v1.Encryption value) {
+      if (encryptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEncryptionsIsMutable();
+        encryptions_.set(index, value);
+        onChanged();
+      } else {
+        encryptionsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Encryption configurations for this channel. Each configuration has an ID
+     * which is referred to by each MuxStream to indicate which configuration is
+     * used for that output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     */
+    public Builder setEncryptions(
+        int index, com.google.cloud.video.livestream.v1.Encryption.Builder builderForValue) {
+      if (encryptionsBuilder_ == null) {
+        ensureEncryptionsIsMutable();
+        encryptions_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        encryptionsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Encryption configurations for this channel. Each configuration has an ID
+     * which is referred to by each MuxStream to indicate which configuration is
+     * used for that output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     */
+    public Builder addEncryptions(com.google.cloud.video.livestream.v1.Encryption value) {
+      if (encryptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEncryptionsIsMutable();
+        encryptions_.add(value);
+        onChanged();
+      } else {
+        encryptionsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Encryption configurations for this channel. Each configuration has an ID
+     * which is referred to by each MuxStream to indicate which configuration is
+     * used for that output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     */
+    public Builder addEncryptions(
+        int index, com.google.cloud.video.livestream.v1.Encryption value) {
+      if (encryptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEncryptionsIsMutable();
+        encryptions_.add(index, value);
+        onChanged();
+      } else {
+        encryptionsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Encryption configurations for this channel. Each configuration has an ID
+     * which is referred to by each MuxStream to indicate which configuration is
+     * used for that output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     */
+    public Builder addEncryptions(
+        com.google.cloud.video.livestream.v1.Encryption.Builder builderForValue) {
+      if (encryptionsBuilder_ == null) {
+        ensureEncryptionsIsMutable();
+        encryptions_.add(builderForValue.build());
+        onChanged();
+      } else {
+        encryptionsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Encryption configurations for this channel. Each configuration has an ID
+     * which is referred to by each MuxStream to indicate which configuration is
+     * used for that output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     */
+    public Builder addEncryptions(
+        int index, com.google.cloud.video.livestream.v1.Encryption.Builder builderForValue) {
+      if (encryptionsBuilder_ == null) {
+        ensureEncryptionsIsMutable();
+        encryptions_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        encryptionsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Encryption configurations for this channel. Each configuration has an ID
+     * which is referred to by each MuxStream to indicate which configuration is
+     * used for that output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     */
+    public Builder addAllEncryptions(
+        java.lang.Iterable<? extends com.google.cloud.video.livestream.v1.Encryption> values) {
+      if (encryptionsBuilder_ == null) {
+        ensureEncryptionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, encryptions_);
+        onChanged();
+      } else {
+        encryptionsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Encryption configurations for this channel. Each configuration has an ID
+     * which is referred to by each MuxStream to indicate which configuration is
+     * used for that output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     */
+    public Builder clearEncryptions() {
+      if (encryptionsBuilder_ == null) {
+        encryptions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00008000);
+        onChanged();
+      } else {
+        encryptionsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Encryption configurations for this channel. Each configuration has an ID
+     * which is referred to by each MuxStream to indicate which configuration is
+     * used for that output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     */
+    public Builder removeEncryptions(int index) {
+      if (encryptionsBuilder_ == null) {
+        ensureEncryptionsIsMutable();
+        encryptions_.remove(index);
+        onChanged();
+      } else {
+        encryptionsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Encryption configurations for this channel. Each configuration has an ID
+     * which is referred to by each MuxStream to indicate which configuration is
+     * used for that output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     */
+    public com.google.cloud.video.livestream.v1.Encryption.Builder getEncryptionsBuilder(
+        int index) {
+      return getEncryptionsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Encryption configurations for this channel. Each configuration has an ID
+     * which is referred to by each MuxStream to indicate which configuration is
+     * used for that output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     */
+    public com.google.cloud.video.livestream.v1.EncryptionOrBuilder getEncryptionsOrBuilder(
+        int index) {
+      if (encryptionsBuilder_ == null) {
+        return encryptions_.get(index);
+      } else {
+        return encryptionsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Encryption configurations for this channel. Each configuration has an ID
+     * which is referred to by each MuxStream to indicate which configuration is
+     * used for that output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     */
+    public java.util.List<? extends com.google.cloud.video.livestream.v1.EncryptionOrBuilder>
+        getEncryptionsOrBuilderList() {
+      if (encryptionsBuilder_ != null) {
+        return encryptionsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(encryptions_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Encryption configurations for this channel. Each configuration has an ID
+     * which is referred to by each MuxStream to indicate which configuration is
+     * used for that output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     */
+    public com.google.cloud.video.livestream.v1.Encryption.Builder addEncryptionsBuilder() {
+      return getEncryptionsFieldBuilder()
+          .addBuilder(com.google.cloud.video.livestream.v1.Encryption.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Encryption configurations for this channel. Each configuration has an ID
+     * which is referred to by each MuxStream to indicate which configuration is
+     * used for that output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     */
+    public com.google.cloud.video.livestream.v1.Encryption.Builder addEncryptionsBuilder(
+        int index) {
+      return getEncryptionsFieldBuilder()
+          .addBuilder(index, com.google.cloud.video.livestream.v1.Encryption.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Encryption configurations for this channel. Each configuration has an ID
+     * which is referred to by each MuxStream to indicate which configuration is
+     * used for that output.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     */
+    public java.util.List<com.google.cloud.video.livestream.v1.Encryption.Builder>
+        getEncryptionsBuilderList() {
+      return getEncryptionsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.Encryption,
+            com.google.cloud.video.livestream.v1.Encryption.Builder,
+            com.google.cloud.video.livestream.v1.EncryptionOrBuilder>
+        getEncryptionsFieldBuilder() {
+      if (encryptionsBuilder_ == null) {
+        encryptionsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.video.livestream.v1.Encryption,
+                com.google.cloud.video.livestream.v1.Encryption.Builder,
+                com.google.cloud.video.livestream.v1.EncryptionOrBuilder>(
+                encryptions_, ((bitField0_ & 0x00008000) != 0), getParentForChildren(), isClean());
+        encryptions_ = null;
+      }
+      return encryptionsBuilder_;
+    }
+
+    private com.google.cloud.video.livestream.v1.InputConfig inputConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.InputConfig,
+            com.google.cloud.video.livestream.v1.InputConfig.Builder,
+            com.google.cloud.video.livestream.v1.InputConfigOrBuilder>
+        inputConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for input sources defined in
+     * [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments].
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.InputConfig input_config = 25;</code>
+     *
+     * @return Whether the inputConfig field is set.
+     */
+    public boolean hasInputConfig() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for input sources defined in
+     * [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments].
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.InputConfig input_config = 25;</code>
+     *
+     * @return The inputConfig.
+     */
+    public com.google.cloud.video.livestream.v1.InputConfig getInputConfig() {
+      if (inputConfigBuilder_ == null) {
+        return inputConfig_ == null
+            ? com.google.cloud.video.livestream.v1.InputConfig.getDefaultInstance()
+            : inputConfig_;
+      } else {
+        return inputConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for input sources defined in
+     * [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments].
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.InputConfig input_config = 25;</code>
+     */
+    public Builder setInputConfig(com.google.cloud.video.livestream.v1.InputConfig value) {
+      if (inputConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        inputConfig_ = value;
+      } else {
+        inputConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for input sources defined in
+     * [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments].
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.InputConfig input_config = 25;</code>
+     */
+    public Builder setInputConfig(
+        com.google.cloud.video.livestream.v1.InputConfig.Builder builderForValue) {
+      if (inputConfigBuilder_ == null) {
+        inputConfig_ = builderForValue.build();
+      } else {
+        inputConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for input sources defined in
+     * [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments].
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.InputConfig input_config = 25;</code>
+     */
+    public Builder mergeInputConfig(com.google.cloud.video.livestream.v1.InputConfig value) {
+      if (inputConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0)
+            && inputConfig_ != null
+            && inputConfig_
+                != com.google.cloud.video.livestream.v1.InputConfig.getDefaultInstance()) {
+          getInputConfigBuilder().mergeFrom(value);
+        } else {
+          inputConfig_ = value;
+        }
+      } else {
+        inputConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for input sources defined in
+     * [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments].
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.InputConfig input_config = 25;</code>
+     */
+    public Builder clearInputConfig() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      inputConfig_ = null;
+      if (inputConfigBuilder_ != null) {
+        inputConfigBuilder_.dispose();
+        inputConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for input sources defined in
+     * [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments].
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.InputConfig input_config = 25;</code>
+     */
+    public com.google.cloud.video.livestream.v1.InputConfig.Builder getInputConfigBuilder() {
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return getInputConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for input sources defined in
+     * [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments].
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.InputConfig input_config = 25;</code>
+     */
+    public com.google.cloud.video.livestream.v1.InputConfigOrBuilder getInputConfigOrBuilder() {
+      if (inputConfigBuilder_ != null) {
+        return inputConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return inputConfig_ == null
+            ? com.google.cloud.video.livestream.v1.InputConfig.getDefaultInstance()
+            : inputConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for input sources defined in
+     * [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments].
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.InputConfig input_config = 25;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.InputConfig,
+            com.google.cloud.video.livestream.v1.InputConfig.Builder,
+            com.google.cloud.video.livestream.v1.InputConfigOrBuilder>
+        getInputConfigFieldBuilder() {
+      if (inputConfigBuilder_ == null) {
+        inputConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.video.livestream.v1.InputConfig,
+                com.google.cloud.video.livestream.v1.InputConfig.Builder,
+                com.google.cloud.video.livestream.v1.InputConfigOrBuilder>(
+                getInputConfig(), getParentForChildren(), isClean());
+        inputConfig_ = null;
+      }
+      return inputConfigBuilder_;
     }
 
     @java.lang.Override

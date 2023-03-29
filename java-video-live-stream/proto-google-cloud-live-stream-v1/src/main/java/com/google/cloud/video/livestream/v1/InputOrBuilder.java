@@ -245,7 +245,8 @@ public interface InputOrBuilder
    *
    * <pre>
    * Output only. URI to push the input stream to.
-   * Its format depends on the input [type][google.cloud.video.livestream.v1.Input.type], for example:
+   * Its format depends on the input
+   * [type][google.cloud.video.livestream.v1.Input.type], for example:
    * *  `RTMP_PUSH`: `rtmp://1.2.3.4/live/{STREAM-ID}`
    * *  `SRT_PUSH`: `srt://1.2.3.4:4201?streamid={STREAM-ID}`
    * </pre>
@@ -260,7 +261,8 @@ public interface InputOrBuilder
    *
    * <pre>
    * Output only. URI to push the input stream to.
-   * Its format depends on the input [type][google.cloud.video.livestream.v1.Input.type], for example:
+   * Its format depends on the input
+   * [type][google.cloud.video.livestream.v1.Input.type], for example:
    * *  `RTMP_PUSH`: `rtmp://1.2.3.4/live/{STREAM-ID}`
    * *  `SRT_PUSH`: `srt://1.2.3.4:4201?streamid={STREAM-ID}`
    * </pre>
@@ -346,8 +348,8 @@ public interface InputOrBuilder
    *
    *
    * <pre>
-   * Output only. The information for the input stream. This field will be present only when
-   * this input receives the input stream.
+   * Output only. The information for the input stream. This field will be
+   * present only when this input receives the input stream.
    * </pre>
    *
    * <code>
@@ -361,8 +363,8 @@ public interface InputOrBuilder
    *
    *
    * <pre>
-   * Output only. The information for the input stream. This field will be present only when
-   * this input receives the input stream.
+   * Output only. The information for the input stream. This field will be
+   * present only when this input receives the input stream.
    * </pre>
    *
    * <code>
@@ -376,8 +378,8 @@ public interface InputOrBuilder
    *
    *
    * <pre>
-   * Output only. The information for the input stream. This field will be present only when
-   * this input receives the input stream.
+   * Output only. The information for the input stream. This field will be
+   * present only when this input receives the input stream.
    * </pre>
    *
    * <code>
