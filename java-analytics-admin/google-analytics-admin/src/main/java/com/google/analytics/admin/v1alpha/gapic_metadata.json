@@ -61,6 +61,9 @@
             "CreateAudience": {
               "methods": ["createAudience", "createAudience", "createAudience", "createAudienceCallable"]
             },
+            "CreateConnectedSiteTag": {
+              "methods": ["createConnectedSiteTag", "createConnectedSiteTagCallable"]
+            },
             "CreateConversionEvent": {
               "methods": ["createConversionEvent", "createConversionEvent", "createConversionEvent", "createConversionEventCallable"]
             },
@@ -105,6 +108,9 @@
             },
             "DeleteAccount": {
               "methods": ["deleteAccount", "deleteAccount", "deleteAccount", "deleteAccountCallable"]
+            },
+            "DeleteConnectedSiteTag": {
+              "methods": ["deleteConnectedSiteTag", "deleteConnectedSiteTagCallable"]
             },
             "DeleteConversionEvent": {
               "methods": ["deleteConversionEvent", "deleteConversionEvent", "deleteConversionEvent", "deleteConversionEventCallable"]
@@ -181,6 +187,9 @@
             "GetDisplayVideo360AdvertiserLinkProposal": {
               "methods": ["getDisplayVideo360AdvertiserLinkProposal", "getDisplayVideo360AdvertiserLinkProposal", "getDisplayVideo360AdvertiserLinkProposal", "getDisplayVideo360AdvertiserLinkProposalCallable"]
             },
+            "GetEnhancedMeasurementSettings": {
+              "methods": ["getEnhancedMeasurementSettings", "getEnhancedMeasurementSettings", "getEnhancedMeasurementSettings", "getEnhancedMeasurementSettingsCallable"]
+            },
             "GetExpandedDataSet": {
               "methods": ["getExpandedDataSet", "getExpandedDataSet", "getExpandedDataSet", "getExpandedDataSetCallable"]
             },
@@ -216,6 +225,9 @@
             },
             "ListBigQueryLinks": {
               "methods": ["listBigQueryLinks", "listBigQueryLinks", "listBigQueryLinks", "listBigQueryLinksPagedCallable", "listBigQueryLinksCallable"]
+            },
+            "ListConnectedSiteTags": {
+              "methods": ["listConnectedSiteTags", "listConnectedSiteTagsCallable"]
             },
             "ListConversionEvents": {
               "methods": ["listConversionEvents", "listConversionEvents", "listConversionEvents", "listConversionEventsPagedCallable", "listConversionEventsCallable"]
@@ -294,6 +306,9 @@
             },
             "UpdateDisplayVideo360AdvertiserLink": {
               "methods": ["updateDisplayVideo360AdvertiserLink", "updateDisplayVideo360AdvertiserLink", "updateDisplayVideo360AdvertiserLinkCallable"]
+            },
+            "UpdateEnhancedMeasurementSettings": {
+              "methods": ["updateEnhancedMeasurementSettings", "updateEnhancedMeasurementSettings", "updateEnhancedMeasurementSettingsCallable"]
             },
             "UpdateExpandedDataSet": {
               "methods": ["updateExpandedDataSet", "updateExpandedDataSet", "updateExpandedDataSetCallable"]

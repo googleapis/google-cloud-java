@@ -7491,6 +7491,7 @@ public class AnalyticsAdminServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDailyExportEnabled(true)
             .setStreamingExportEnabled(true)
+            .setIntradayExportEnabled(true)
             .setIncludeAdvertisingId(true)
             .addAllExportStreams(new ArrayList<String>())
             .addAllExcludedEvents(new ArrayList<String>())
@@ -7536,6 +7537,7 @@ public class AnalyticsAdminServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDailyExportEnabled(true)
             .setStreamingExportEnabled(true)
+            .setIntradayExportEnabled(true)
             .setIncludeAdvertisingId(true)
             .addAllExportStreams(new ArrayList<String>())
             .addAllExcludedEvents(new ArrayList<String>())
@@ -7654,6 +7656,293 @@ public class AnalyticsAdminServiceClientTest {
     try {
       String parent = "parent-995424086";
       client.listBigQueryLinks(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEnhancedMeasurementSettingsTest() throws Exception {
+    EnhancedMeasurementSettings expectedResponse =
+        EnhancedMeasurementSettings.newBuilder()
+            .setName(EnhancedMeasurementSettingsName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+            .setStreamEnabled(true)
+            .setScrollsEnabled(true)
+            .setOutboundClicksEnabled(true)
+            .setSiteSearchEnabled(true)
+            .setVideoEngagementEnabled(true)
+            .setFileDownloadsEnabled(true)
+            .setPageChangesEnabled(true)
+            .setFormInteractionsEnabled(true)
+            .setSearchQueryParameter("searchQueryParameter-2012788855")
+            .setUriQueryParameter("uriQueryParameter1580843085")
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    EnhancedMeasurementSettingsName name =
+        EnhancedMeasurementSettingsName.of("[PROPERTY]", "[DATA_STREAM]");
+
+    EnhancedMeasurementSettings actualResponse = client.getEnhancedMeasurementSettings(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetEnhancedMeasurementSettingsRequest actualRequest =
+        ((GetEnhancedMeasurementSettingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getEnhancedMeasurementSettingsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      EnhancedMeasurementSettingsName name =
+          EnhancedMeasurementSettingsName.of("[PROPERTY]", "[DATA_STREAM]");
+      client.getEnhancedMeasurementSettings(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEnhancedMeasurementSettingsTest2() throws Exception {
+    EnhancedMeasurementSettings expectedResponse =
+        EnhancedMeasurementSettings.newBuilder()
+            .setName(EnhancedMeasurementSettingsName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+            .setStreamEnabled(true)
+            .setScrollsEnabled(true)
+            .setOutboundClicksEnabled(true)
+            .setSiteSearchEnabled(true)
+            .setVideoEngagementEnabled(true)
+            .setFileDownloadsEnabled(true)
+            .setPageChangesEnabled(true)
+            .setFormInteractionsEnabled(true)
+            .setSearchQueryParameter("searchQueryParameter-2012788855")
+            .setUriQueryParameter("uriQueryParameter1580843085")
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    EnhancedMeasurementSettings actualResponse = client.getEnhancedMeasurementSettings(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetEnhancedMeasurementSettingsRequest actualRequest =
+        ((GetEnhancedMeasurementSettingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getEnhancedMeasurementSettingsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getEnhancedMeasurementSettings(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateEnhancedMeasurementSettingsTest() throws Exception {
+    EnhancedMeasurementSettings expectedResponse =
+        EnhancedMeasurementSettings.newBuilder()
+            .setName(EnhancedMeasurementSettingsName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+            .setStreamEnabled(true)
+            .setScrollsEnabled(true)
+            .setOutboundClicksEnabled(true)
+            .setSiteSearchEnabled(true)
+            .setVideoEngagementEnabled(true)
+            .setFileDownloadsEnabled(true)
+            .setPageChangesEnabled(true)
+            .setFormInteractionsEnabled(true)
+            .setSearchQueryParameter("searchQueryParameter-2012788855")
+            .setUriQueryParameter("uriQueryParameter1580843085")
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    EnhancedMeasurementSettings enhancedMeasurementSettings =
+        EnhancedMeasurementSettings.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    EnhancedMeasurementSettings actualResponse =
+        client.updateEnhancedMeasurementSettings(enhancedMeasurementSettings, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateEnhancedMeasurementSettingsRequest actualRequest =
+        ((UpdateEnhancedMeasurementSettingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(
+        enhancedMeasurementSettings, actualRequest.getEnhancedMeasurementSettings());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateEnhancedMeasurementSettingsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      EnhancedMeasurementSettings enhancedMeasurementSettings =
+          EnhancedMeasurementSettings.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateEnhancedMeasurementSettings(enhancedMeasurementSettings, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createConnectedSiteTagTest() throws Exception {
+    CreateConnectedSiteTagResponse expectedResponse =
+        CreateConnectedSiteTagResponse.newBuilder().build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    CreateConnectedSiteTagRequest request =
+        CreateConnectedSiteTagRequest.newBuilder()
+            .setProperty("property-993141291")
+            .setConnectedSiteTag(ConnectedSiteTag.newBuilder().build())
+            .build();
+
+    CreateConnectedSiteTagResponse actualResponse = client.createConnectedSiteTag(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateConnectedSiteTagRequest actualRequest =
+        ((CreateConnectedSiteTagRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getProperty(), actualRequest.getProperty());
+    Assert.assertEquals(request.getConnectedSiteTag(), actualRequest.getConnectedSiteTag());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createConnectedSiteTagExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      CreateConnectedSiteTagRequest request =
+          CreateConnectedSiteTagRequest.newBuilder()
+              .setProperty("property-993141291")
+              .setConnectedSiteTag(ConnectedSiteTag.newBuilder().build())
+              .build();
+      client.createConnectedSiteTag(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteConnectedSiteTagTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    DeleteConnectedSiteTagRequest request =
+        DeleteConnectedSiteTagRequest.newBuilder()
+            .setProperty("property-993141291")
+            .setTagId("tagId110119509")
+            .build();
+
+    client.deleteConnectedSiteTag(request);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteConnectedSiteTagRequest actualRequest =
+        ((DeleteConnectedSiteTagRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getProperty(), actualRequest.getProperty());
+    Assert.assertEquals(request.getTagId(), actualRequest.getTagId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteConnectedSiteTagExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      DeleteConnectedSiteTagRequest request =
+          DeleteConnectedSiteTagRequest.newBuilder()
+              .setProperty("property-993141291")
+              .setTagId("tagId110119509")
+              .build();
+      client.deleteConnectedSiteTag(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listConnectedSiteTagsTest() throws Exception {
+    ListConnectedSiteTagsResponse expectedResponse =
+        ListConnectedSiteTagsResponse.newBuilder()
+            .addAllConnectedSiteTags(new ArrayList<ConnectedSiteTag>())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    ListConnectedSiteTagsRequest request =
+        ListConnectedSiteTagsRequest.newBuilder().setProperty("property-993141291").build();
+
+    ListConnectedSiteTagsResponse actualResponse = client.listConnectedSiteTags(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListConnectedSiteTagsRequest actualRequest =
+        ((ListConnectedSiteTagsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getProperty(), actualRequest.getProperty());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listConnectedSiteTagsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      ListConnectedSiteTagsRequest request =
+          ListConnectedSiteTagsRequest.newBuilder().setProperty("property-993141291").build();
+      client.listConnectedSiteTags(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

@@ -27,7 +27,8 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The account resource for which to return change history resources.
+   * Required. The account resource for which to return change history
+   * resources.
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The account resource for which to return change history resources.
+   * Required. The account resource for which to return change history
+   * resources.
    * </pre>
    *
    * <code>
@@ -87,8 +89,8 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If set, only return changes if they are for a resource that matches at
-   * least one of these types.
+   * Optional. If set, only return changes if they are for a resource that
+   * matches at least one of these types.
    * </pre>
    *
    * <code>
@@ -102,8 +104,8 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If set, only return changes if they are for a resource that matches at
-   * least one of these types.
+   * Optional. If set, only return changes if they are for a resource that
+   * matches at least one of these types.
    * </pre>
    *
    * <code>
@@ -117,8 +119,8 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If set, only return changes if they are for a resource that matches at
-   * least one of these types.
+   * Optional. If set, only return changes if they are for a resource that
+   * matches at least one of these types.
    * </pre>
    *
    * <code>
@@ -133,8 +135,8 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If set, only return changes if they are for a resource that matches at
-   * least one of these types.
+   * Optional. If set, only return changes if they are for a resource that
+   * matches at least one of these types.
    * </pre>
    *
    * <code>
@@ -148,8 +150,8 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If set, only return changes if they are for a resource that matches at
-   * least one of these types.
+   * Optional. If set, only return changes if they are for a resource that
+   * matches at least one of these types.
    * </pre>
    *
    * <code>
@@ -165,8 +167,8 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If set, only return changes that match one or more of these types of
-   * actions.
+   * Optional. If set, only return changes that match one or more of these types
+   * of actions.
    * </pre>
    *
    * <code>
@@ -180,8 +182,8 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If set, only return changes that match one or more of these types of
-   * actions.
+   * Optional. If set, only return changes that match one or more of these types
+   * of actions.
    * </pre>
    *
    * <code>
@@ -195,8 +197,8 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If set, only return changes that match one or more of these types of
-   * actions.
+   * Optional. If set, only return changes that match one or more of these types
+   * of actions.
    * </pre>
    *
    * <code>
@@ -211,8 +213,8 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If set, only return changes that match one or more of these types of
-   * actions.
+   * Optional. If set, only return changes that match one or more of these types
+   * of actions.
    * </pre>
    *
    * <code>
@@ -226,8 +228,8 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If set, only return changes that match one or more of these types of
-   * actions.
+   * Optional. If set, only return changes that match one or more of these types
+   * of actions.
    * </pre>
    *
    * <code>
@@ -243,7 +245,8 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If set, only return changes if they are made by a user in this list.
+   * Optional. If set, only return changes if they are made by a user in this
+   * list.
    * </pre>
    *
    * <code>repeated string actor_email = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -255,7 +258,8 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If set, only return changes if they are made by a user in this list.
+   * Optional. If set, only return changes if they are made by a user in this
+   * list.
    * </pre>
    *
    * <code>repeated string actor_email = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -267,7 +271,8 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If set, only return changes if they are made by a user in this list.
+   * Optional. If set, only return changes if they are made by a user in this
+   * list.
    * </pre>
    *
    * <code>repeated string actor_email = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -280,7 +285,8 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If set, only return changes if they are made by a user in this list.
+   * Optional. If set, only return changes if they are made by a user in this
+   * list.
    * </pre>
    *
    * <code>repeated string actor_email = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -392,10 +398,11 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A page token, received from a previous `SearchChangeHistoryEvents` call.
-   * Provide this to retrieve the subsequent page. When paginating, all other
-   * parameters provided to `SearchChangeHistoryEvents` must match the call that
-   * provided the page token.
+   * Optional. A page token, received from a previous
+   * `SearchChangeHistoryEvents` call. Provide this to retrieve the subsequent
+   * page. When paginating, all other parameters provided to
+   * `SearchChangeHistoryEvents` must match the call that provided the page
+   * token.
    * </pre>
    *
    * <code>string page_token = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -407,10 +414,11 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A page token, received from a previous `SearchChangeHistoryEvents` call.
-   * Provide this to retrieve the subsequent page. When paginating, all other
-   * parameters provided to `SearchChangeHistoryEvents` must match the call that
-   * provided the page token.
+   * Optional. A page token, received from a previous
+   * `SearchChangeHistoryEvents` call. Provide this to retrieve the subsequent
+   * page. When paginating, all other parameters provided to
+   * `SearchChangeHistoryEvents` must match the call that provided the page
+   * token.
    * </pre>
    *
    * <code>string page_token = 9 [(.google.api.field_behavior) = OPTIONAL];</code>

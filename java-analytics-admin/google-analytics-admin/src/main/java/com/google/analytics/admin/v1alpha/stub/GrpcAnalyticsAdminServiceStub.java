@@ -69,6 +69,8 @@ import com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkPro
 import com.google.analytics.admin.v1alpha.ConversionEvent;
 import com.google.analytics.admin.v1alpha.CreateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.CreateAudienceRequest;
+import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest;
+import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse;
 import com.google.analytics.admin.v1alpha.CreateConversionEventRequest;
 import com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.CreateCustomMetricRequest;
@@ -89,6 +91,7 @@ import com.google.analytics.admin.v1alpha.DataSharingSettings;
 import com.google.analytics.admin.v1alpha.DataStream;
 import com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
+import com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest;
 import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
 import com.google.analytics.admin.v1alpha.DeleteDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest;
@@ -102,6 +105,7 @@ import com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal;
+import com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings;
 import com.google.analytics.admin.v1alpha.ExpandedDataSet;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse;
@@ -119,6 +123,7 @@ import com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetDataStreamRequest;
 import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest;
+import com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
 import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
@@ -139,6 +144,8 @@ import com.google.analytics.admin.v1alpha.ListAudiencesRequest;
 import com.google.analytics.admin.v1alpha.ListAudiencesResponse;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse;
+import com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest;
+import com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse;
 import com.google.analytics.admin.v1alpha.ListConversionEventsRequest;
 import com.google.analytics.admin.v1alpha.ListConversionEventsResponse;
 import com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest;
@@ -185,6 +192,7 @@ import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest;
+import com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
@@ -1458,6 +1466,72 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(ListBigQueryLinksResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
+      getEnhancedMeasurementSettingsMethodDescriptor =
+          MethodDescriptor
+              .<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetEnhancedMeasurementSettings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetEnhancedMeasurementSettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(EnhancedMeasurementSettings.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
+      updateEnhancedMeasurementSettingsMethodDescriptor =
+          MethodDescriptor
+              .<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateEnhancedMeasurementSettings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      UpdateEnhancedMeasurementSettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(EnhancedMeasurementSettings.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          CreateConnectedSiteTagRequest, CreateConnectedSiteTagResponse>
+      createConnectedSiteTagMethodDescriptor =
+          MethodDescriptor
+              .<CreateConnectedSiteTagRequest, CreateConnectedSiteTagResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateConnectedSiteTag")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateConnectedSiteTagRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(CreateConnectedSiteTagResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteConnectedSiteTagRequest, Empty>
+      deleteConnectedSiteTagMethodDescriptor =
+          MethodDescriptor.<DeleteConnectedSiteTagRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteConnectedSiteTag")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteConnectedSiteTagRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
+      listConnectedSiteTagsMethodDescriptor =
+          MethodDescriptor.<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListConnectedSiteTags")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListConnectedSiteTagsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListConnectedSiteTagsResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<GetAccountRequest, Account> getAccountCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsResponse> listAccountsCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsPagedResponse>
@@ -1683,6 +1757,15 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
       listBigQueryLinksCallable;
   private final UnaryCallable<ListBigQueryLinksRequest, ListBigQueryLinksPagedResponse>
       listBigQueryLinksPagedCallable;
+  private final UnaryCallable<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
+      getEnhancedMeasurementSettingsCallable;
+  private final UnaryCallable<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
+      updateEnhancedMeasurementSettingsCallable;
+  private final UnaryCallable<CreateConnectedSiteTagRequest, CreateConnectedSiteTagResponse>
+      createConnectedSiteTagCallable;
+  private final UnaryCallable<DeleteConnectedSiteTagRequest, Empty> deleteConnectedSiteTagCallable;
+  private final UnaryCallable<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
+      listConnectedSiteTagsCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -2847,6 +2930,48 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
+        getEnhancedMeasurementSettingsTransportSettings =
+            GrpcCallSettings
+                .<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>newBuilder()
+                .setMethodDescriptor(getEnhancedMeasurementSettingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
+        updateEnhancedMeasurementSettingsTransportSettings =
+            GrpcCallSettings
+                .<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>newBuilder()
+                .setMethodDescriptor(updateEnhancedMeasurementSettingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "enhanced_measurement_settings.name",
+                          String.valueOf(request.getEnhancedMeasurementSettings().getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateConnectedSiteTagRequest, CreateConnectedSiteTagResponse>
+        createConnectedSiteTagTransportSettings =
+            GrpcCallSettings
+                .<CreateConnectedSiteTagRequest, CreateConnectedSiteTagResponse>newBuilder()
+                .setMethodDescriptor(createConnectedSiteTagMethodDescriptor)
+                .build();
+    GrpcCallSettings<DeleteConnectedSiteTagRequest, Empty> deleteConnectedSiteTagTransportSettings =
+        GrpcCallSettings.<DeleteConnectedSiteTagRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteConnectedSiteTagMethodDescriptor)
+            .build();
+    GrpcCallSettings<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
+        listConnectedSiteTagsTransportSettings =
+            GrpcCallSettings
+                .<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>newBuilder()
+                .setMethodDescriptor(listConnectedSiteTagsMethodDescriptor)
+                .build();
 
     this.getAccountCallable =
         callableFactory.createUnaryCallable(
@@ -3385,6 +3510,31 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
         callableFactory.createPagedCallable(
             listBigQueryLinksTransportSettings,
             settings.listBigQueryLinksSettings(),
+            clientContext);
+    this.getEnhancedMeasurementSettingsCallable =
+        callableFactory.createUnaryCallable(
+            getEnhancedMeasurementSettingsTransportSettings,
+            settings.getEnhancedMeasurementSettingsSettings(),
+            clientContext);
+    this.updateEnhancedMeasurementSettingsCallable =
+        callableFactory.createUnaryCallable(
+            updateEnhancedMeasurementSettingsTransportSettings,
+            settings.updateEnhancedMeasurementSettingsSettings(),
+            clientContext);
+    this.createConnectedSiteTagCallable =
+        callableFactory.createUnaryCallable(
+            createConnectedSiteTagTransportSettings,
+            settings.createConnectedSiteTagSettings(),
+            clientContext);
+    this.deleteConnectedSiteTagCallable =
+        callableFactory.createUnaryCallable(
+            deleteConnectedSiteTagTransportSettings,
+            settings.deleteConnectedSiteTagSettings(),
+            clientContext);
+    this.listConnectedSiteTagsCallable =
+        callableFactory.createUnaryCallable(
+            listConnectedSiteTagsTransportSettings,
+            settings.listConnectedSiteTagsSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -4090,6 +4240,35 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   public UnaryCallable<ListBigQueryLinksRequest, ListBigQueryLinksPagedResponse>
       listBigQueryLinksPagedCallable() {
     return listBigQueryLinksPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
+      getEnhancedMeasurementSettingsCallable() {
+    return getEnhancedMeasurementSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
+      updateEnhancedMeasurementSettingsCallable() {
+    return updateEnhancedMeasurementSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateConnectedSiteTagRequest, CreateConnectedSiteTagResponse>
+      createConnectedSiteTagCallable() {
+    return createConnectedSiteTagCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteConnectedSiteTagRequest, Empty> deleteConnectedSiteTagCallable() {
+    return deleteConnectedSiteTagCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
+      listConnectedSiteTagsCallable() {
+    return listConnectedSiteTagsCallable;
   }
 
   @Override

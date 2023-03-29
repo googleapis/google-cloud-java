@@ -131,8 +131,8 @@ public final class CreateConversionEventRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The resource name of the parent property where this conversion event will
-   * be created. Format: properties/123
+   * Required. The resource name of the parent property where this conversion
+   * event will be created. Format: properties/123
    * </pre>
    *
    * <code>
@@ -157,8 +157,8 @@ public final class CreateConversionEventRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The resource name of the parent property where this conversion event will
-   * be created. Format: properties/123
+   * Required. The resource name of the parent property where this conversion
+   * event will be created. Format: properties/123
    * </pre>
    *
    * <code>
@@ -767,8 +767,8 @@ public final class CreateConversionEventRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The resource name of the parent property where this conversion event will
-     * be created. Format: properties/123
+     * Required. The resource name of the parent property where this conversion
+     * event will be created. Format: properties/123
      * </pre>
      *
      * <code>
@@ -792,8 +792,8 @@ public final class CreateConversionEventRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The resource name of the parent property where this conversion event will
-     * be created. Format: properties/123
+     * Required. The resource name of the parent property where this conversion
+     * event will be created. Format: properties/123
      * </pre>
      *
      * <code>
@@ -817,8 +817,8 @@ public final class CreateConversionEventRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The resource name of the parent property where this conversion event will
-     * be created. Format: properties/123
+     * Required. The resource name of the parent property where this conversion
+     * event will be created. Format: properties/123
      * </pre>
      *
      * <code>
@@ -841,8 +841,8 @@ public final class CreateConversionEventRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The resource name of the parent property where this conversion event will
-     * be created. Format: properties/123
+     * Required. The resource name of the parent property where this conversion
+     * event will be created. Format: properties/123
      * </pre>
      *
      * <code>
@@ -861,8 +861,8 @@ public final class CreateConversionEventRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The resource name of the parent property where this conversion event will
-     * be created. Format: properties/123
+     * Required. The resource name of the parent property where this conversion
+     * event will be created. Format: properties/123
      * </pre>
      *
      * <code>

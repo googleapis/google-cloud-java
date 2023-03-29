@@ -124,6 +124,9 @@
             "ProvisionAccountTicket": {
               "methods": ["provisionAccountTicket", "provisionAccountTicketCallable"]
             },
+            "RunAccessReport": {
+              "methods": ["runAccessReport", "runAccessReportCallable"]
+            },
             "SearchChangeHistoryEvents": {
               "methods": ["searchChangeHistoryEvents", "searchChangeHistoryEventsPagedCallable", "searchChangeHistoryEventsCallable"]
             },

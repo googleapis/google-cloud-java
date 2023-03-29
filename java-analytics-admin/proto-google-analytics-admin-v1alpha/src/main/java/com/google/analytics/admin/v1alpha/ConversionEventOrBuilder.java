@@ -119,7 +119,7 @@ public interface ConversionEventOrBuilder
    *
    *
    * <pre>
-   * Output only. If set, this event can currently be deleted via
+   * Output only. If set, this event can currently be deleted with
    * DeleteConversionEvent.
    * </pre>
    *

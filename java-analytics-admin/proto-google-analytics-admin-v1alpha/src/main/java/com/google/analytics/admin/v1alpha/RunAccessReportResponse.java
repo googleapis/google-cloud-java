@@ -342,7 +342,8 @@ public final class RunAccessReportResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The quota state for this Analytics property including this request.
+   * The quota state for this Analytics property including this request. This
+   * field doesn't work with account-level requests.
    * </pre>
    *
    * <code>.google.analytics.admin.v1alpha.AccessQuota quota = 5;</code>
@@ -357,7 +358,8 @@ public final class RunAccessReportResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The quota state for this Analytics property including this request.
+   * The quota state for this Analytics property including this request. This
+   * field doesn't work with account-level requests.
    * </pre>
    *
    * <code>.google.analytics.admin.v1alpha.AccessQuota quota = 5;</code>
@@ -374,7 +376,8 @@ public final class RunAccessReportResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The quota state for this Analytics property including this request.
+   * The quota state for this Analytics property including this request. This
+   * field doesn't work with account-level requests.
    * </pre>
    *
    * <code>.google.analytics.admin.v1alpha.AccessQuota quota = 5;</code>
@@ -2218,7 +2221,8 @@ public final class RunAccessReportResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The quota state for this Analytics property including this request.
+     * The quota state for this Analytics property including this request. This
+     * field doesn't work with account-level requests.
      * </pre>
      *
      * <code>.google.analytics.admin.v1alpha.AccessQuota quota = 5;</code>
@@ -2232,7 +2236,8 @@ public final class RunAccessReportResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The quota state for this Analytics property including this request.
+     * The quota state for this Analytics property including this request. This
+     * field doesn't work with account-level requests.
      * </pre>
      *
      * <code>.google.analytics.admin.v1alpha.AccessQuota quota = 5;</code>
@@ -2252,7 +2257,8 @@ public final class RunAccessReportResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The quota state for this Analytics property including this request.
+     * The quota state for this Analytics property including this request. This
+     * field doesn't work with account-level requests.
      * </pre>
      *
      * <code>.google.analytics.admin.v1alpha.AccessQuota quota = 5;</code>
@@ -2274,7 +2280,8 @@ public final class RunAccessReportResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The quota state for this Analytics property including this request.
+     * The quota state for this Analytics property including this request. This
+     * field doesn't work with account-level requests.
      * </pre>
      *
      * <code>.google.analytics.admin.v1alpha.AccessQuota quota = 5;</code>
@@ -2294,7 +2301,8 @@ public final class RunAccessReportResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The quota state for this Analytics property including this request.
+     * The quota state for this Analytics property including this request. This
+     * field doesn't work with account-level requests.
      * </pre>
      *
      * <code>.google.analytics.admin.v1alpha.AccessQuota quota = 5;</code>
@@ -2319,7 +2327,8 @@ public final class RunAccessReportResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The quota state for this Analytics property including this request.
+     * The quota state for this Analytics property including this request. This
+     * field doesn't work with account-level requests.
      * </pre>
      *
      * <code>.google.analytics.admin.v1alpha.AccessQuota quota = 5;</code>
@@ -2338,7 +2347,8 @@ public final class RunAccessReportResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The quota state for this Analytics property including this request.
+     * The quota state for this Analytics property including this request. This
+     * field doesn't work with account-level requests.
      * </pre>
      *
      * <code>.google.analytics.admin.v1alpha.AccessQuota quota = 5;</code>
@@ -2352,7 +2362,8 @@ public final class RunAccessReportResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The quota state for this Analytics property including this request.
+     * The quota state for this Analytics property including this request. This
+     * field doesn't work with account-level requests.
      * </pre>
      *
      * <code>.google.analytics.admin.v1alpha.AccessQuota quota = 5;</code>
@@ -2370,7 +2381,8 @@ public final class RunAccessReportResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The quota state for this Analytics property including this request.
+     * The quota state for this Analytics property including this request. This
+     * field doesn't work with account-level requests.
      * </pre>
      *
      * <code>.google.analytics.admin.v1alpha.AccessQuota quota = 5;</code>

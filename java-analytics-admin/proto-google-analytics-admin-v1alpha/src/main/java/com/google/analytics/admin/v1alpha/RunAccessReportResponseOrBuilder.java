@@ -230,7 +230,8 @@ public interface RunAccessReportResponseOrBuilder
    *
    *
    * <pre>
-   * The quota state for this Analytics property including this request.
+   * The quota state for this Analytics property including this request. This
+   * field doesn't work with account-level requests.
    * </pre>
    *
    * <code>.google.analytics.admin.v1alpha.AccessQuota quota = 5;</code>
@@ -242,7 +243,8 @@ public interface RunAccessReportResponseOrBuilder
    *
    *
    * <pre>
-   * The quota state for this Analytics property including this request.
+   * The quota state for this Analytics property including this request. This
+   * field doesn't work with account-level requests.
    * </pre>
    *
    * <code>.google.analytics.admin.v1alpha.AccessQuota quota = 5;</code>
@@ -254,7 +256,8 @@ public interface RunAccessReportResponseOrBuilder
    *
    *
    * <pre>
-   * The quota state for this Analytics property including this request.
+   * The quota state for this Analytics property including this request. This
+   * field doesn't work with account-level requests.
    * </pre>
    *
    * <code>.google.analytics.admin.v1alpha.AccessQuota quota = 5;</code>
