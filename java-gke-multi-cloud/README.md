@@ -16,27 +16,29 @@ Java idiomatic client for [Anthos Multicloud][product-docs].
 
 
 If you are using Maven, add this to your pom.xml file:
+<!-- {x-version-update-start:google-cloud-gke-multi-cloud:released} -->
 
 
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-gke-multi-cloud</artifactId>
-  <version>0.11.0</version>
+  <version>0.12.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-gke-multi-cloud:0.11.0'
+implementation 'com.google.cloud:google-cloud-gke-multi-cloud:0.12.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-gke-multi-cloud" % "0.11.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-gke-multi-cloud" % "0.12.0"
 ```
+<!-- {x-version-update-end} -->
 
 ## Authentication
 
@@ -177,7 +179,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.html
 [stability-image]: https://img.shields.io/badge/stability-preview-yellow
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-gke-multi-cloud.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-gke-multi-cloud/0.11.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-gke-multi-cloud/0.12.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles
