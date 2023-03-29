@@ -1063,7 +1063,7 @@ public final class SpeechGrpc {
    * Enables speech transcription and resource management.
    * </pre>
    */
-  public abstract static class SpeechImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -1072,7 +1072,7 @@ public final class SpeechGrpc {
      * Creates a [Recognizer][google.cloud.speech.v2.Recognizer].
      * </pre>
      */
-    public void createRecognizer(
+    default void createRecognizer(
         com.google.cloud.speech.v2.CreateRecognizerRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1086,7 +1086,7 @@ public final class SpeechGrpc {
      * Lists Recognizers.
      * </pre>
      */
-    public void listRecognizers(
+    default void listRecognizers(
         com.google.cloud.speech.v2.ListRecognizersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.speech.v2.ListRecognizersResponse>
             responseObserver) {
@@ -1100,11 +1100,11 @@ public final class SpeechGrpc {
      * <pre>
      * Returns the requested
      * [Recognizer][google.cloud.speech.v2.Recognizer]. Fails with
-     * [NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested recognizer doesn't
+     * [NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested Recognizer doesn't
      * exist.
      * </pre>
      */
-    public void getRecognizer(
+    default void getRecognizer(
         com.google.cloud.speech.v2.GetRecognizerRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.speech.v2.Recognizer> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1118,7 +1118,7 @@ public final class SpeechGrpc {
      * Updates the [Recognizer][google.cloud.speech.v2.Recognizer].
      * </pre>
      */
-    public void updateRecognizer(
+    default void updateRecognizer(
         com.google.cloud.speech.v2.UpdateRecognizerRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1132,7 +1132,7 @@ public final class SpeechGrpc {
      * Deletes the [Recognizer][google.cloud.speech.v2.Recognizer].
      * </pre>
      */
-    public void deleteRecognizer(
+    default void deleteRecognizer(
         com.google.cloud.speech.v2.DeleteRecognizerRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1146,7 +1146,7 @@ public final class SpeechGrpc {
      * Undeletes the [Recognizer][google.cloud.speech.v2.Recognizer].
      * </pre>
      */
-    public void undeleteRecognizer(
+    default void undeleteRecognizer(
         com.google.cloud.speech.v2.UndeleteRecognizerRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1161,7 +1161,7 @@ public final class SpeechGrpc {
      * has been sent and processed.
      * </pre>
      */
-    public void recognize(
+    default void recognize(
         com.google.cloud.speech.v2.RecognizeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.speech.v2.RecognizeResponse>
             responseObserver) {
@@ -1176,7 +1176,7 @@ public final class SpeechGrpc {
      * sending audio. This method is only available via the gRPC API (not REST).
      * </pre>
      */
-    public io.grpc.stub.StreamObserver<com.google.cloud.speech.v2.StreamingRecognizeRequest>
+    default io.grpc.stub.StreamObserver<com.google.cloud.speech.v2.StreamingRecognizeRequest>
         streamingRecognize(
             io.grpc.stub.StreamObserver<com.google.cloud.speech.v2.StreamingRecognizeResponse>
                 responseObserver) {
@@ -1193,7 +1193,7 @@ public final class SpeechGrpc {
      * when the transcriptions are finished.
      * </pre>
      */
-    public void batchRecognize(
+    default void batchRecognize(
         com.google.cloud.speech.v2.BatchRecognizeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1207,7 +1207,7 @@ public final class SpeechGrpc {
      * Returns the requested [Config][google.cloud.speech.v2.Config].
      * </pre>
      */
-    public void getConfig(
+    default void getConfig(
         com.google.cloud.speech.v2.GetConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.speech.v2.Config> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetConfigMethod(), responseObserver);
@@ -1220,7 +1220,7 @@ public final class SpeechGrpc {
      * Updates the [Config][google.cloud.speech.v2.Config].
      * </pre>
      */
-    public void updateConfig(
+    default void updateConfig(
         com.google.cloud.speech.v2.UpdateConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.speech.v2.Config> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1234,7 +1234,7 @@ public final class SpeechGrpc {
      * Creates a [CustomClass][google.cloud.speech.v2.CustomClass].
      * </pre>
      */
-    public void createCustomClass(
+    default void createCustomClass(
         com.google.cloud.speech.v2.CreateCustomClassRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1248,7 +1248,7 @@ public final class SpeechGrpc {
      * Lists CustomClasses.
      * </pre>
      */
-    public void listCustomClasses(
+    default void listCustomClasses(
         com.google.cloud.speech.v2.ListCustomClassesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.speech.v2.ListCustomClassesResponse>
             responseObserver) {
@@ -1264,7 +1264,7 @@ public final class SpeechGrpc {
      * [CustomClass][google.cloud.speech.v2.CustomClass].
      * </pre>
      */
-    public void getCustomClass(
+    default void getCustomClass(
         com.google.cloud.speech.v2.GetCustomClassRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.speech.v2.CustomClass> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1278,7 +1278,7 @@ public final class SpeechGrpc {
      * Updates the [CustomClass][google.cloud.speech.v2.CustomClass].
      * </pre>
      */
-    public void updateCustomClass(
+    default void updateCustomClass(
         com.google.cloud.speech.v2.UpdateCustomClassRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1292,7 +1292,7 @@ public final class SpeechGrpc {
      * Deletes the [CustomClass][google.cloud.speech.v2.CustomClass].
      * </pre>
      */
-    public void deleteCustomClass(
+    default void deleteCustomClass(
         com.google.cloud.speech.v2.DeleteCustomClassRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1306,7 +1306,7 @@ public final class SpeechGrpc {
      * Undeletes the [CustomClass][google.cloud.speech.v2.CustomClass].
      * </pre>
      */
-    public void undeleteCustomClass(
+    default void undeleteCustomClass(
         com.google.cloud.speech.v2.UndeleteCustomClassRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1320,7 +1320,7 @@ public final class SpeechGrpc {
      * Creates a [PhraseSet][google.cloud.speech.v2.PhraseSet].
      * </pre>
      */
-    public void createPhraseSet(
+    default void createPhraseSet(
         com.google.cloud.speech.v2.CreatePhraseSetRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1334,7 +1334,7 @@ public final class SpeechGrpc {
      * Lists PhraseSets.
      * </pre>
      */
-    public void listPhraseSets(
+    default void listPhraseSets(
         com.google.cloud.speech.v2.ListPhraseSetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.speech.v2.ListPhraseSetsResponse>
             responseObserver) {
@@ -1350,7 +1350,7 @@ public final class SpeechGrpc {
      * [PhraseSet][google.cloud.speech.v2.PhraseSet].
      * </pre>
      */
-    public void getPhraseSet(
+    default void getPhraseSet(
         com.google.cloud.speech.v2.GetPhraseSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.speech.v2.PhraseSet> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1364,7 +1364,7 @@ public final class SpeechGrpc {
      * Updates the [PhraseSet][google.cloud.speech.v2.PhraseSet].
      * </pre>
      */
-    public void updatePhraseSet(
+    default void updatePhraseSet(
         com.google.cloud.speech.v2.UpdatePhraseSetRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1378,7 +1378,7 @@ public final class SpeechGrpc {
      * Deletes the [PhraseSet][google.cloud.speech.v2.PhraseSet].
      * </pre>
      */
-    public void deletePhraseSet(
+    default void deletePhraseSet(
         com.google.cloud.speech.v2.DeletePhraseSetRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1392,164 +1392,31 @@ public final class SpeechGrpc {
      * Undeletes the [PhraseSet][google.cloud.speech.v2.PhraseSet].
      * </pre>
      */
-    public void undeletePhraseSet(
+    default void undeletePhraseSet(
         com.google.cloud.speech.v2.UndeletePhraseSetRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUndeletePhraseSetMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Speech.
+   *
+   * <pre>
+   * Enables speech transcription and resource management.
+   * </pre>
+   */
+  public abstract static class SpeechImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateRecognizerMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.speech.v2.CreateRecognizerRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_RECOGNIZER)))
-          .addMethod(
-              getListRecognizersMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.speech.v2.ListRecognizersRequest,
-                      com.google.cloud.speech.v2.ListRecognizersResponse>(
-                      this, METHODID_LIST_RECOGNIZERS)))
-          .addMethod(
-              getGetRecognizerMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.speech.v2.GetRecognizerRequest,
-                      com.google.cloud.speech.v2.Recognizer>(this, METHODID_GET_RECOGNIZER)))
-          .addMethod(
-              getUpdateRecognizerMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.speech.v2.UpdateRecognizerRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_RECOGNIZER)))
-          .addMethod(
-              getDeleteRecognizerMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.speech.v2.DeleteRecognizerRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_RECOGNIZER)))
-          .addMethod(
-              getUndeleteRecognizerMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.speech.v2.UndeleteRecognizerRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UNDELETE_RECOGNIZER)))
-          .addMethod(
-              getRecognizeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.speech.v2.RecognizeRequest,
-                      com.google.cloud.speech.v2.RecognizeResponse>(this, METHODID_RECOGNIZE)))
-          .addMethod(
-              getStreamingRecognizeMethod(),
-              io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
-                  new MethodHandlers<
-                      com.google.cloud.speech.v2.StreamingRecognizeRequest,
-                      com.google.cloud.speech.v2.StreamingRecognizeResponse>(
-                      this, METHODID_STREAMING_RECOGNIZE)))
-          .addMethod(
-              getBatchRecognizeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.speech.v2.BatchRecognizeRequest,
-                      com.google.longrunning.Operation>(this, METHODID_BATCH_RECOGNIZE)))
-          .addMethod(
-              getGetConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.speech.v2.GetConfigRequest,
-                      com.google.cloud.speech.v2.Config>(this, METHODID_GET_CONFIG)))
-          .addMethod(
-              getUpdateConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.speech.v2.UpdateConfigRequest,
-                      com.google.cloud.speech.v2.Config>(this, METHODID_UPDATE_CONFIG)))
-          .addMethod(
-              getCreateCustomClassMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.speech.v2.CreateCustomClassRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_CUSTOM_CLASS)))
-          .addMethod(
-              getListCustomClassesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.speech.v2.ListCustomClassesRequest,
-                      com.google.cloud.speech.v2.ListCustomClassesResponse>(
-                      this, METHODID_LIST_CUSTOM_CLASSES)))
-          .addMethod(
-              getGetCustomClassMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.speech.v2.GetCustomClassRequest,
-                      com.google.cloud.speech.v2.CustomClass>(this, METHODID_GET_CUSTOM_CLASS)))
-          .addMethod(
-              getUpdateCustomClassMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.speech.v2.UpdateCustomClassRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_CUSTOM_CLASS)))
-          .addMethod(
-              getDeleteCustomClassMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.speech.v2.DeleteCustomClassRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_CUSTOM_CLASS)))
-          .addMethod(
-              getUndeleteCustomClassMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.speech.v2.UndeleteCustomClassRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UNDELETE_CUSTOM_CLASS)))
-          .addMethod(
-              getCreatePhraseSetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.speech.v2.CreatePhraseSetRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_PHRASE_SET)))
-          .addMethod(
-              getListPhraseSetsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.speech.v2.ListPhraseSetsRequest,
-                      com.google.cloud.speech.v2.ListPhraseSetsResponse>(
-                      this, METHODID_LIST_PHRASE_SETS)))
-          .addMethod(
-              getGetPhraseSetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.speech.v2.GetPhraseSetRequest,
-                      com.google.cloud.speech.v2.PhraseSet>(this, METHODID_GET_PHRASE_SET)))
-          .addMethod(
-              getUpdatePhraseSetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.speech.v2.UpdatePhraseSetRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_PHRASE_SET)))
-          .addMethod(
-              getDeletePhraseSetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.speech.v2.DeletePhraseSetRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_PHRASE_SET)))
-          .addMethod(
-              getUndeletePhraseSetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.speech.v2.UndeletePhraseSetRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UNDELETE_PHRASE_SET)))
-          .build();
+      return SpeechGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Speech.
    *
    * <pre>
    * Enables speech transcription and resource management.
@@ -1604,7 +1471,7 @@ public final class SpeechGrpc {
      * <pre>
      * Returns the requested
      * [Recognizer][google.cloud.speech.v2.Recognizer]. Fails with
-     * [NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested recognizer doesn't
+     * [NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested Recognizer doesn't
      * exist.
      * </pre>
      */
@@ -1943,7 +1810,7 @@ public final class SpeechGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Speech.
    *
    * <pre>
    * Enables speech transcription and resource management.
@@ -1992,7 +1859,7 @@ public final class SpeechGrpc {
      * <pre>
      * Returns the requested
      * [Recognizer][google.cloud.speech.v2.Recognizer]. Fails with
-     * [NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested recognizer doesn't
+     * [NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested Recognizer doesn't
      * exist.
      * </pre>
      */
@@ -2256,7 +2123,7 @@ public final class SpeechGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Speech.
    *
    * <pre>
    * Enables speech transcription and resource management.
@@ -2306,7 +2173,7 @@ public final class SpeechGrpc {
      * <pre>
      * Returns the requested
      * [Recognizer][google.cloud.speech.v2.Recognizer]. Fails with
-     * [NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested recognizer doesn't
+     * [NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested Recognizer doesn't
      * exist.
      * </pre>
      */
@@ -2602,10 +2469,10 @@ public final class SpeechGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final SpeechImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(SpeechImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -2750,6 +2617,153 @@ public final class SpeechGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateRecognizerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.speech.v2.CreateRecognizerRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_RECOGNIZER)))
+        .addMethod(
+            getListRecognizersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.speech.v2.ListRecognizersRequest,
+                    com.google.cloud.speech.v2.ListRecognizersResponse>(
+                    service, METHODID_LIST_RECOGNIZERS)))
+        .addMethod(
+            getGetRecognizerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.speech.v2.GetRecognizerRequest,
+                    com.google.cloud.speech.v2.Recognizer>(service, METHODID_GET_RECOGNIZER)))
+        .addMethod(
+            getUpdateRecognizerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.speech.v2.UpdateRecognizerRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_RECOGNIZER)))
+        .addMethod(
+            getDeleteRecognizerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.speech.v2.DeleteRecognizerRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_RECOGNIZER)))
+        .addMethod(
+            getUndeleteRecognizerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.speech.v2.UndeleteRecognizerRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UNDELETE_RECOGNIZER)))
+        .addMethod(
+            getRecognizeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.speech.v2.RecognizeRequest,
+                    com.google.cloud.speech.v2.RecognizeResponse>(service, METHODID_RECOGNIZE)))
+        .addMethod(
+            getStreamingRecognizeMethod(),
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.speech.v2.StreamingRecognizeRequest,
+                    com.google.cloud.speech.v2.StreamingRecognizeResponse>(
+                    service, METHODID_STREAMING_RECOGNIZE)))
+        .addMethod(
+            getBatchRecognizeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.speech.v2.BatchRecognizeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_BATCH_RECOGNIZE)))
+        .addMethod(
+            getGetConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.speech.v2.GetConfigRequest, com.google.cloud.speech.v2.Config>(
+                    service, METHODID_GET_CONFIG)))
+        .addMethod(
+            getUpdateConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.speech.v2.UpdateConfigRequest,
+                    com.google.cloud.speech.v2.Config>(service, METHODID_UPDATE_CONFIG)))
+        .addMethod(
+            getCreateCustomClassMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.speech.v2.CreateCustomClassRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_CUSTOM_CLASS)))
+        .addMethod(
+            getListCustomClassesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.speech.v2.ListCustomClassesRequest,
+                    com.google.cloud.speech.v2.ListCustomClassesResponse>(
+                    service, METHODID_LIST_CUSTOM_CLASSES)))
+        .addMethod(
+            getGetCustomClassMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.speech.v2.GetCustomClassRequest,
+                    com.google.cloud.speech.v2.CustomClass>(service, METHODID_GET_CUSTOM_CLASS)))
+        .addMethod(
+            getUpdateCustomClassMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.speech.v2.UpdateCustomClassRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_CUSTOM_CLASS)))
+        .addMethod(
+            getDeleteCustomClassMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.speech.v2.DeleteCustomClassRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_CUSTOM_CLASS)))
+        .addMethod(
+            getUndeleteCustomClassMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.speech.v2.UndeleteCustomClassRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UNDELETE_CUSTOM_CLASS)))
+        .addMethod(
+            getCreatePhraseSetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.speech.v2.CreatePhraseSetRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_PHRASE_SET)))
+        .addMethod(
+            getListPhraseSetsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.speech.v2.ListPhraseSetsRequest,
+                    com.google.cloud.speech.v2.ListPhraseSetsResponse>(
+                    service, METHODID_LIST_PHRASE_SETS)))
+        .addMethod(
+            getGetPhraseSetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.speech.v2.GetPhraseSetRequest,
+                    com.google.cloud.speech.v2.PhraseSet>(service, METHODID_GET_PHRASE_SET)))
+        .addMethod(
+            getUpdatePhraseSetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.speech.v2.UpdatePhraseSetRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_PHRASE_SET)))
+        .addMethod(
+            getDeletePhraseSetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.speech.v2.DeletePhraseSetRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_PHRASE_SET)))
+        .addMethod(
+            getUndeletePhraseSetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.speech.v2.UndeletePhraseSetRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UNDELETE_PHRASE_SET)))
+        .build();
   }
 
   private abstract static class SpeechBaseDescriptorSupplier

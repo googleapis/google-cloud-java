@@ -221,7 +221,7 @@ public final class SpeechGrpc {
    * Service that implements Google Cloud Speech API.
    * </pre>
    */
-  public abstract static class SpeechImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -231,7 +231,7 @@ public final class SpeechGrpc {
      * has been sent and processed.
      * </pre>
      */
-    public void recognize(
+    default void recognize(
         com.google.cloud.speech.v1p1beta1.RecognizeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.speech.v1p1beta1.RecognizeResponse>
             responseObserver) {
@@ -250,7 +250,7 @@ public final class SpeechGrpc {
      * [how-to](https://cloud.google.com/speech-to-text/docs/async-recognize).
      * </pre>
      */
-    public void longRunningRecognize(
+    default void longRunningRecognize(
         com.google.cloud.speech.v1p1beta1.LongRunningRecognizeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -265,7 +265,7 @@ public final class SpeechGrpc {
      * sending audio. This method is only available via the gRPC API (not REST).
      * </pre>
      */
-    public io.grpc.stub.StreamObserver<com.google.cloud.speech.v1p1beta1.StreamingRecognizeRequest>
+    default io.grpc.stub.StreamObserver<com.google.cloud.speech.v1p1beta1.StreamingRecognizeRequest>
         streamingRecognize(
             io.grpc.stub.StreamObserver<
                     com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse>
@@ -273,36 +273,25 @@ public final class SpeechGrpc {
       return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(
           getStreamingRecognizeMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Speech.
+   *
+   * <pre>
+   * Service that implements Google Cloud Speech API.
+   * </pre>
+   */
+  public abstract static class SpeechImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getRecognizeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.speech.v1p1beta1.RecognizeRequest,
-                      com.google.cloud.speech.v1p1beta1.RecognizeResponse>(
-                      this, METHODID_RECOGNIZE)))
-          .addMethod(
-              getLongRunningRecognizeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.speech.v1p1beta1.LongRunningRecognizeRequest,
-                      com.google.longrunning.Operation>(this, METHODID_LONG_RUNNING_RECOGNIZE)))
-          .addMethod(
-              getStreamingRecognizeMethod(),
-              io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
-                  new MethodHandlers<
-                      com.google.cloud.speech.v1p1beta1.StreamingRecognizeRequest,
-                      com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse>(
-                      this, METHODID_STREAMING_RECOGNIZE)))
-          .build();
+      return SpeechGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Speech.
    *
    * <pre>
    * Service that implements Google Cloud Speech API.
@@ -374,7 +363,7 @@ public final class SpeechGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Speech.
    *
    * <pre>
    * Service that implements Google Cloud Speech API.
@@ -425,7 +414,7 @@ public final class SpeechGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Speech.
    *
    * <pre>
    * Service that implements Google Cloud Speech API.
@@ -486,10 +475,10 @@ public final class SpeechGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final SpeechImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(SpeechImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -529,6 +518,31 @@ public final class SpeechGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getRecognizeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.speech.v1p1beta1.RecognizeRequest,
+                    com.google.cloud.speech.v1p1beta1.RecognizeResponse>(
+                    service, METHODID_RECOGNIZE)))
+        .addMethod(
+            getLongRunningRecognizeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.speech.v1p1beta1.LongRunningRecognizeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_LONG_RUNNING_RECOGNIZE)))
+        .addMethod(
+            getStreamingRecognizeMethod(),
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.speech.v1p1beta1.StreamingRecognizeRequest,
+                    com.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse>(
+                    service, METHODID_STREAMING_RECOGNIZE)))
+        .build();
   }
 
   private abstract static class SpeechBaseDescriptorSupplier

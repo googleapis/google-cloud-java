@@ -17,6 +17,7 @@
 package com.google.cloud.speech.v2;
 
 import static com.google.cloud.speech.v2.SpeechClient.ListCustomClassesPagedResponse;
+import static com.google.cloud.speech.v2.SpeechClient.ListLocationsPagedResponse;
 import static com.google.cloud.speech.v2.SpeechClient.ListPhraseSetsPagedResponse;
 import static com.google.cloud.speech.v2.SpeechClient.ListRecognizersPagedResponse;
 
@@ -34,6 +35,10 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.speech.v2.stub.SpeechStubSettings;
 import com.google.longrunning.Operation;
 import java.io.IOException;
@@ -277,6 +282,17 @@ public class SpeechSettings extends ClientSettings<SpeechSettings> {
   public OperationCallSettings<UndeletePhraseSetRequest, PhraseSet, OperationMetadata>
       undeletePhraseSetOperationSettings() {
     return ((SpeechStubSettings) getStubSettings()).undeletePhraseSetOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((SpeechStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((SpeechStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final SpeechSettings create(SpeechStubSettings stub) throws IOException {
@@ -601,6 +617,18 @@ public class SpeechSettings extends ClientSettings<SpeechSettings> {
     public OperationCallSettings.Builder<UndeletePhraseSetRequest, PhraseSet, OperationMetadata>
         undeletePhraseSetOperationSettings() {
       return getStubSettingsBuilder().undeletePhraseSetOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

@@ -679,10 +679,15 @@ public interface OperationMetadataOrBuilder
    * The UpdateConfigRequest that spawned the Operation.
    * </pre>
    *
-   * <code>.google.cloud.speech.v2.UpdateConfigRequest update_config_request = 21;</code>
+   * <code>
+   * .google.cloud.speech.v2.UpdateConfigRequest update_config_request = 21 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.speech.v2.OperationMetadata.update_config_request is deprecated. See
+   *     google/cloud/speech/v2/cloud_speech.proto;l=419
    * @return Whether the updateConfigRequest field is set.
    */
+  @java.lang.Deprecated
   boolean hasUpdateConfigRequest();
   /**
    *
@@ -691,10 +696,15 @@ public interface OperationMetadataOrBuilder
    * The UpdateConfigRequest that spawned the Operation.
    * </pre>
    *
-   * <code>.google.cloud.speech.v2.UpdateConfigRequest update_config_request = 21;</code>
+   * <code>
+   * .google.cloud.speech.v2.UpdateConfigRequest update_config_request = 21 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.speech.v2.OperationMetadata.update_config_request is deprecated. See
+   *     google/cloud/speech/v2/cloud_speech.proto;l=419
    * @return The updateConfigRequest.
    */
+  @java.lang.Deprecated
   com.google.cloud.speech.v2.UpdateConfigRequest getUpdateConfigRequest();
   /**
    *
@@ -703,8 +713,11 @@ public interface OperationMetadataOrBuilder
    * The UpdateConfigRequest that spawned the Operation.
    * </pre>
    *
-   * <code>.google.cloud.speech.v2.UpdateConfigRequest update_config_request = 21;</code>
+   * <code>
+   * .google.cloud.speech.v2.UpdateConfigRequest update_config_request = 21 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.speech.v2.UpdateConfigRequestOrBuilder getUpdateConfigRequestOrBuilder();
 
   /**

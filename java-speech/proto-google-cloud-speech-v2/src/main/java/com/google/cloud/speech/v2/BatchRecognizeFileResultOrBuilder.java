@@ -27,7 +27,7 @@ public interface BatchRecognizeFileResultOrBuilder
    *
    *
    * <pre>
-   * The GCS URI to which recognition results were written.
+   * The Cloud Storage URI to which recognition results were written.
    * </pre>
    *
    * <code>string uri = 1;</code>
@@ -39,7 +39,7 @@ public interface BatchRecognizeFileResultOrBuilder
    *
    *
    * <pre>
-   * The GCS URI to which recognition results were written.
+   * The Cloud Storage URI to which recognition results were written.
    * </pre>
    *
    * <code>string uri = 1;</code>
@@ -82,4 +82,63 @@ public interface BatchRecognizeFileResultOrBuilder
    * <code>.google.rpc.Status error = 2;</code>
    */
   com.google.rpc.StatusOrBuilder getErrorOrBuilder();
+
+  /**
+   * <code>.google.cloud.speech.v2.RecognitionResponseMetadata metadata = 3;</code>
+   *
+   * @return Whether the metadata field is set.
+   */
+  boolean hasMetadata();
+  /**
+   * <code>.google.cloud.speech.v2.RecognitionResponseMetadata metadata = 3;</code>
+   *
+   * @return The metadata.
+   */
+  com.google.cloud.speech.v2.RecognitionResponseMetadata getMetadata();
+  /** <code>.google.cloud.speech.v2.RecognitionResponseMetadata metadata = 3;</code> */
+  com.google.cloud.speech.v2.RecognitionResponseMetadataOrBuilder getMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The transcript for the audio file. This is populated only when
+   * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
+   * the
+   * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4;</code>
+   *
+   * @return Whether the transcript field is set.
+   */
+  boolean hasTranscript();
+  /**
+   *
+   *
+   * <pre>
+   * The transcript for the audio file. This is populated only when
+   * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
+   * the
+   * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4;</code>
+   *
+   * @return The transcript.
+   */
+  com.google.cloud.speech.v2.BatchRecognizeResults getTranscript();
+  /**
+   *
+   *
+   * <pre>
+   * The transcript for the audio file. This is populated only when
+   * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
+   * the
+   * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4;</code>
+   */
+  com.google.cloud.speech.v2.BatchRecognizeResultsOrBuilder getTranscriptOrBuilder();
 }

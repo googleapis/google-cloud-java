@@ -17,6 +17,7 @@
 package com.google.cloud.speech.v2.stub;
 
 import static com.google.cloud.speech.v2.SpeechClient.ListCustomClassesPagedResponse;
+import static com.google.cloud.speech.v2.SpeechClient.ListLocationsPagedResponse;
 import static com.google.cloud.speech.v2.SpeechClient.ListPhraseSetsPagedResponse;
 import static com.google.cloud.speech.v2.SpeechClient.ListRecognizersPagedResponse;
 
@@ -24,6 +25,10 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.speech.v2.BatchRecognizeRequest;
 import com.google.cloud.speech.v2.BatchRecognizeResponse;
 import com.google.cloud.speech.v2.Config;
@@ -257,6 +262,19 @@ public abstract class SpeechStub implements BackgroundResource {
 
   public UnaryCallable<UndeletePhraseSetRequest, Operation> undeletePhraseSetCallable() {
     throw new UnsupportedOperationException("Not implemented: undeletePhraseSetCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   @Override

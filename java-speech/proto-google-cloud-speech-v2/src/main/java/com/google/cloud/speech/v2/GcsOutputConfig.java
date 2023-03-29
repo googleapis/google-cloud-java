@@ -22,27 +22,29 @@ package com.google.cloud.speech.v2;
  *
  *
  * <pre>
- * Configuration to enable speaker diarization.
+ * Output configurations for Cloud Storage.
  * </pre>
  *
- * Protobuf type {@code google.cloud.speech.v2.SpeakerDiarizationConfig}
+ * Protobuf type {@code google.cloud.speech.v2.GcsOutputConfig}
  */
-public final class SpeakerDiarizationConfig extends com.google.protobuf.GeneratedMessageV3
+public final class GcsOutputConfig extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.SpeakerDiarizationConfig)
-    SpeakerDiarizationConfigOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.GcsOutputConfig)
+    GcsOutputConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use SpeakerDiarizationConfig.newBuilder() to construct.
-  private SpeakerDiarizationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use GcsOutputConfig.newBuilder() to construct.
+  private GcsOutputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private SpeakerDiarizationConfig() {}
+  private GcsOutputConfig() {
+    uri_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new SpeakerDiarizationConfig();
+    return new GcsOutputConfig();
   }
 
   @java.lang.Override
@@ -52,60 +54,70 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v2.CloudSpeechProto
-        .internal_static_google_cloud_speech_v2_SpeakerDiarizationConfig_descriptor;
+        .internal_static_google_cloud_speech_v2_GcsOutputConfig_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.speech.v2.CloudSpeechProto
-        .internal_static_google_cloud_speech_v2_SpeakerDiarizationConfig_fieldAccessorTable
+        .internal_static_google_cloud_speech_v2_GcsOutputConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.speech.v2.SpeakerDiarizationConfig.class,
-            com.google.cloud.speech.v2.SpeakerDiarizationConfig.Builder.class);
+            com.google.cloud.speech.v2.GcsOutputConfig.class,
+            com.google.cloud.speech.v2.GcsOutputConfig.Builder.class);
   }
 
-  public static final int MIN_SPEAKER_COUNT_FIELD_NUMBER = 2;
-  private int minSpeakerCount_ = 0;
+  public static final int URI_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uri_ = "";
   /**
    *
    *
    * <pre>
-   * Required. Minimum number of speakers in the conversation. This range gives
-   * you more flexibility by allowing the system to automatically determine the
-   * correct number of speakers.
-   * To fix the number of speakers detected in the audio, set
-   * `min_speaker_count` = `max_speaker_count`.
+   * The Cloud Storage URI prefix with which recognition results will be
+   * written.
    * </pre>
    *
-   * <code>int32 min_speaker_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string uri = 1;</code>
    *
-   * @return The minSpeakerCount.
+   * @return The uri.
    */
   @java.lang.Override
-  public int getMinSpeakerCount() {
-    return minSpeakerCount_;
+  public java.lang.String getUri() {
+    java.lang.Object ref = uri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      uri_ = s;
+      return s;
+    }
   }
-
-  public static final int MAX_SPEAKER_COUNT_FIELD_NUMBER = 3;
-  private int maxSpeakerCount_ = 0;
   /**
    *
    *
    * <pre>
-   * Required. Maximum number of speakers in the conversation. Valid values are:
-   * 1-6. Must be &gt;= `min_speaker_count`. This range gives you more flexibility
-   * by allowing the system to automatically determine the correct number of
-   * speakers.
+   * The Cloud Storage URI prefix with which recognition results will be
+   * written.
    * </pre>
    *
-   * <code>int32 max_speaker_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string uri = 1;</code>
    *
-   * @return The maxSpeakerCount.
+   * @return The bytes for uri.
    */
   @java.lang.Override
-  public int getMaxSpeakerCount() {
-    return maxSpeakerCount_;
+  public com.google.protobuf.ByteString getUriBytes() {
+    java.lang.Object ref = uri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      uri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -122,11 +134,8 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (minSpeakerCount_ != 0) {
-      output.writeInt32(2, minSpeakerCount_);
-    }
-    if (maxSpeakerCount_ != 0) {
-      output.writeInt32(3, maxSpeakerCount_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uri_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -137,11 +146,8 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     if (size != -1) return size;
 
     size = 0;
-    if (minSpeakerCount_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, minSpeakerCount_);
-    }
-    if (maxSpeakerCount_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, maxSpeakerCount_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uri_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -153,14 +159,13 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.speech.v2.SpeakerDiarizationConfig)) {
+    if (!(obj instanceof com.google.cloud.speech.v2.GcsOutputConfig)) {
       return super.equals(obj);
     }
-    com.google.cloud.speech.v2.SpeakerDiarizationConfig other =
-        (com.google.cloud.speech.v2.SpeakerDiarizationConfig) obj;
+    com.google.cloud.speech.v2.GcsOutputConfig other =
+        (com.google.cloud.speech.v2.GcsOutputConfig) obj;
 
-    if (getMinSpeakerCount() != other.getMinSpeakerCount()) return false;
-    if (getMaxSpeakerCount() != other.getMaxSpeakerCount()) return false;
+    if (!getUri().equals(other.getUri())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -172,80 +177,78 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + MIN_SPEAKER_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + getMinSpeakerCount();
-    hash = (37 * hash) + MAX_SPEAKER_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + getMaxSpeakerCount();
+    hash = (37 * hash) + URI_FIELD_NUMBER;
+    hash = (53 * hash) + getUri().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.speech.v2.SpeakerDiarizationConfig parseFrom(
-      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.speech.v2.GcsOutputConfig parseFrom(java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.speech.v2.SpeakerDiarizationConfig parseFrom(
+  public static com.google.cloud.speech.v2.GcsOutputConfig parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.speech.v2.SpeakerDiarizationConfig parseFrom(
+  public static com.google.cloud.speech.v2.GcsOutputConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.speech.v2.SpeakerDiarizationConfig parseFrom(
+  public static com.google.cloud.speech.v2.GcsOutputConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.speech.v2.SpeakerDiarizationConfig parseFrom(byte[] data)
+  public static com.google.cloud.speech.v2.GcsOutputConfig parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.speech.v2.SpeakerDiarizationConfig parseFrom(
+  public static com.google.cloud.speech.v2.GcsOutputConfig parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.speech.v2.SpeakerDiarizationConfig parseFrom(
-      java.io.InputStream input) throws java.io.IOException {
+  public static com.google.cloud.speech.v2.GcsOutputConfig parseFrom(java.io.InputStream input)
+      throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.speech.v2.SpeakerDiarizationConfig parseFrom(
+  public static com.google.cloud.speech.v2.GcsOutputConfig parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.speech.v2.SpeakerDiarizationConfig parseDelimitedFrom(
+  public static com.google.cloud.speech.v2.GcsOutputConfig parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.speech.v2.SpeakerDiarizationConfig parseDelimitedFrom(
+  public static com.google.cloud.speech.v2.GcsOutputConfig parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.speech.v2.SpeakerDiarizationConfig parseFrom(
+  public static com.google.cloud.speech.v2.GcsOutputConfig parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.speech.v2.SpeakerDiarizationConfig parseFrom(
+  public static com.google.cloud.speech.v2.GcsOutputConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -262,7 +265,7 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.cloud.speech.v2.SpeakerDiarizationConfig prototype) {
+  public static Builder newBuilder(com.google.cloud.speech.v2.GcsOutputConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -280,31 +283,31 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Configuration to enable speaker diarization.
+   * Output configurations for Cloud Storage.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.speech.v2.SpeakerDiarizationConfig}
+   * Protobuf type {@code google.cloud.speech.v2.GcsOutputConfig}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.speech.v2.SpeakerDiarizationConfig)
-      com.google.cloud.speech.v2.SpeakerDiarizationConfigOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.speech.v2.GcsOutputConfig)
+      com.google.cloud.speech.v2.GcsOutputConfigOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.speech.v2.CloudSpeechProto
-          .internal_static_google_cloud_speech_v2_SpeakerDiarizationConfig_descriptor;
+          .internal_static_google_cloud_speech_v2_GcsOutputConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.speech.v2.CloudSpeechProto
-          .internal_static_google_cloud_speech_v2_SpeakerDiarizationConfig_fieldAccessorTable
+          .internal_static_google_cloud_speech_v2_GcsOutputConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.speech.v2.SpeakerDiarizationConfig.class,
-              com.google.cloud.speech.v2.SpeakerDiarizationConfig.Builder.class);
+              com.google.cloud.speech.v2.GcsOutputConfig.class,
+              com.google.cloud.speech.v2.GcsOutputConfig.Builder.class);
     }
 
-    // Construct using com.google.cloud.speech.v2.SpeakerDiarizationConfig.newBuilder()
+    // Construct using com.google.cloud.speech.v2.GcsOutputConfig.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -315,25 +318,24 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      minSpeakerCount_ = 0;
-      maxSpeakerCount_ = 0;
+      uri_ = "";
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.speech.v2.CloudSpeechProto
-          .internal_static_google_cloud_speech_v2_SpeakerDiarizationConfig_descriptor;
+          .internal_static_google_cloud_speech_v2_GcsOutputConfig_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.speech.v2.SpeakerDiarizationConfig getDefaultInstanceForType() {
-      return com.google.cloud.speech.v2.SpeakerDiarizationConfig.getDefaultInstance();
+    public com.google.cloud.speech.v2.GcsOutputConfig getDefaultInstanceForType() {
+      return com.google.cloud.speech.v2.GcsOutputConfig.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.speech.v2.SpeakerDiarizationConfig build() {
-      com.google.cloud.speech.v2.SpeakerDiarizationConfig result = buildPartial();
+    public com.google.cloud.speech.v2.GcsOutputConfig build() {
+      com.google.cloud.speech.v2.GcsOutputConfig result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -341,9 +343,9 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
     }
 
     @java.lang.Override
-    public com.google.cloud.speech.v2.SpeakerDiarizationConfig buildPartial() {
-      com.google.cloud.speech.v2.SpeakerDiarizationConfig result =
-          new com.google.cloud.speech.v2.SpeakerDiarizationConfig(this);
+    public com.google.cloud.speech.v2.GcsOutputConfig buildPartial() {
+      com.google.cloud.speech.v2.GcsOutputConfig result =
+          new com.google.cloud.speech.v2.GcsOutputConfig(this);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -351,13 +353,10 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
       return result;
     }
 
-    private void buildPartial0(com.google.cloud.speech.v2.SpeakerDiarizationConfig result) {
+    private void buildPartial0(com.google.cloud.speech.v2.GcsOutputConfig result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.minSpeakerCount_ = minSpeakerCount_;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.maxSpeakerCount_ = maxSpeakerCount_;
+        result.uri_ = uri_;
       }
     }
 
@@ -396,22 +395,20 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.speech.v2.SpeakerDiarizationConfig) {
-        return mergeFrom((com.google.cloud.speech.v2.SpeakerDiarizationConfig) other);
+      if (other instanceof com.google.cloud.speech.v2.GcsOutputConfig) {
+        return mergeFrom((com.google.cloud.speech.v2.GcsOutputConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.speech.v2.SpeakerDiarizationConfig other) {
-      if (other == com.google.cloud.speech.v2.SpeakerDiarizationConfig.getDefaultInstance())
-        return this;
-      if (other.getMinSpeakerCount() != 0) {
-        setMinSpeakerCount(other.getMinSpeakerCount());
-      }
-      if (other.getMaxSpeakerCount() != 0) {
-        setMaxSpeakerCount(other.getMaxSpeakerCount());
+    public Builder mergeFrom(com.google.cloud.speech.v2.GcsOutputConfig other) {
+      if (other == com.google.cloud.speech.v2.GcsOutputConfig.getDefaultInstance()) return this;
+      if (!other.getUri().isEmpty()) {
+        uri_ = other.uri_;
+        bitField0_ |= 0x00000001;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -439,18 +436,12 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
             case 0:
               done = true;
               break;
-            case 16:
+            case 10:
               {
-                minSpeakerCount_ = input.readInt32();
+                uri_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000001;
                 break;
-              } // case 16
-            case 24:
-              {
-                maxSpeakerCount_ = input.readInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 24
+              } // case 10
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -470,45 +461,71 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
 
     private int bitField0_;
 
-    private int minSpeakerCount_;
+    private java.lang.Object uri_ = "";
     /**
      *
      *
      * <pre>
-     * Required. Minimum number of speakers in the conversation. This range gives
-     * you more flexibility by allowing the system to automatically determine the
-     * correct number of speakers.
-     * To fix the number of speakers detected in the audio, set
-     * `min_speaker_count` = `max_speaker_count`.
+     * The Cloud Storage URI prefix with which recognition results will be
+     * written.
      * </pre>
      *
-     * <code>int32 min_speaker_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string uri = 1;</code>
      *
-     * @return The minSpeakerCount.
+     * @return The uri.
      */
-    @java.lang.Override
-    public int getMinSpeakerCount() {
-      return minSpeakerCount_;
+    public java.lang.String getUri() {
+      java.lang.Object ref = uri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      *
      *
      * <pre>
-     * Required. Minimum number of speakers in the conversation. This range gives
-     * you more flexibility by allowing the system to automatically determine the
-     * correct number of speakers.
-     * To fix the number of speakers detected in the audio, set
-     * `min_speaker_count` = `max_speaker_count`.
+     * The Cloud Storage URI prefix with which recognition results will be
+     * written.
      * </pre>
      *
-     * <code>int32 min_speaker_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string uri = 1;</code>
      *
-     * @param value The minSpeakerCount to set.
+     * @return The bytes for uri.
+     */
+    public com.google.protobuf.ByteString getUriBytes() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        uri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage URI prefix with which recognition results will be
+     * written.
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     *
+     * @param value The uri to set.
      * @return This builder for chaining.
      */
-    public Builder setMinSpeakerCount(int value) {
-
-      minSpeakerCount_ = value;
+    public Builder setUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      uri_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
@@ -517,62 +534,17 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Minimum number of speakers in the conversation. This range gives
-     * you more flexibility by allowing the system to automatically determine the
-     * correct number of speakers.
-     * To fix the number of speakers detected in the audio, set
-     * `min_speaker_count` = `max_speaker_count`.
+     * The Cloud Storage URI prefix with which recognition results will be
+     * written.
      * </pre>
      *
-     * <code>int32 min_speaker_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string uri = 1;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearMinSpeakerCount() {
+    public Builder clearUri() {
+      uri_ = getDefaultInstance().getUri();
       bitField0_ = (bitField0_ & ~0x00000001);
-      minSpeakerCount_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private int maxSpeakerCount_;
-    /**
-     *
-     *
-     * <pre>
-     * Required. Maximum number of speakers in the conversation. Valid values are:
-     * 1-6. Must be &gt;= `min_speaker_count`. This range gives you more flexibility
-     * by allowing the system to automatically determine the correct number of
-     * speakers.
-     * </pre>
-     *
-     * <code>int32 max_speaker_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @return The maxSpeakerCount.
-     */
-    @java.lang.Override
-    public int getMaxSpeakerCount() {
-      return maxSpeakerCount_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. Maximum number of speakers in the conversation. Valid values are:
-     * 1-6. Must be &gt;= `min_speaker_count`. This range gives you more flexibility
-     * by allowing the system to automatically determine the correct number of
-     * speakers.
-     * </pre>
-     *
-     * <code>int32 max_speaker_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
-     *
-     * @param value The maxSpeakerCount to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMaxSpeakerCount(int value) {
-
-      maxSpeakerCount_ = value;
-      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -580,19 +552,22 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. Maximum number of speakers in the conversation. Valid values are:
-     * 1-6. Must be &gt;= `min_speaker_count`. This range gives you more flexibility
-     * by allowing the system to automatically determine the correct number of
-     * speakers.
+     * The Cloud Storage URI prefix with which recognition results will be
+     * written.
      * </pre>
      *
-     * <code>int32 max_speaker_count = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string uri = 1;</code>
      *
+     * @param value The bytes for uri to set.
      * @return This builder for chaining.
      */
-    public Builder clearMaxSpeakerCount() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      maxSpeakerCount_ = 0;
+    public Builder setUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      uri_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -608,24 +583,24 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.speech.v2.SpeakerDiarizationConfig)
+    // @@protoc_insertion_point(builder_scope:google.cloud.speech.v2.GcsOutputConfig)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.speech.v2.SpeakerDiarizationConfig)
-  private static final com.google.cloud.speech.v2.SpeakerDiarizationConfig DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.speech.v2.GcsOutputConfig)
+  private static final com.google.cloud.speech.v2.GcsOutputConfig DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.speech.v2.SpeakerDiarizationConfig();
+    DEFAULT_INSTANCE = new com.google.cloud.speech.v2.GcsOutputConfig();
   }
 
-  public static com.google.cloud.speech.v2.SpeakerDiarizationConfig getDefaultInstance() {
+  public static com.google.cloud.speech.v2.GcsOutputConfig getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SpeakerDiarizationConfig> PARSER =
-      new com.google.protobuf.AbstractParser<SpeakerDiarizationConfig>() {
+  private static final com.google.protobuf.Parser<GcsOutputConfig> PARSER =
+      new com.google.protobuf.AbstractParser<GcsOutputConfig>() {
         @java.lang.Override
-        public SpeakerDiarizationConfig parsePartialFrom(
+        public GcsOutputConfig parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -644,17 +619,17 @@ public final class SpeakerDiarizationConfig extends com.google.protobuf.Generate
         }
       };
 
-  public static com.google.protobuf.Parser<SpeakerDiarizationConfig> parser() {
+  public static com.google.protobuf.Parser<GcsOutputConfig> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<SpeakerDiarizationConfig> getParserForType() {
+  public com.google.protobuf.Parser<GcsOutputConfig> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.speech.v2.SpeakerDiarizationConfig getDefaultInstanceForType() {
+  public com.google.cloud.speech.v2.GcsOutputConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

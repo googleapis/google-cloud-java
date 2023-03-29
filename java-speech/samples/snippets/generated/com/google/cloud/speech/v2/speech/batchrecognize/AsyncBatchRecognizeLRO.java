@@ -23,6 +23,7 @@ import com.google.cloud.speech.v2.BatchRecognizeRequest;
 import com.google.cloud.speech.v2.BatchRecognizeResponse;
 import com.google.cloud.speech.v2.OperationMetadata;
 import com.google.cloud.speech.v2.RecognitionConfig;
+import com.google.cloud.speech.v2.RecognitionOutputConfig;
 import com.google.cloud.speech.v2.RecognizerName;
 import com.google.cloud.speech.v2.SpeechClient;
 import com.google.protobuf.FieldMask;
@@ -48,6 +49,7 @@ public class AsyncBatchRecognizeLRO {
               .setConfig(RecognitionConfig.newBuilder().build())
               .setConfigMask(FieldMask.newBuilder().build())
               .addAllFiles(new ArrayList<BatchRecognizeFileMetadata>())
+              .setRecognitionOutputConfig(RecognitionOutputConfig.newBuilder().build())
               .build();
       OperationFuture<BatchRecognizeResponse, OperationMetadata> future =
           speechClient.batchRecognizeOperationCallable().futureCall(request);

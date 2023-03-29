@@ -81,4 +81,39 @@ public interface BatchRecognizeResponseOrBuilder
    * <code>map&lt;string, .google.cloud.speech.v2.BatchRecognizeFileResult&gt; results = 1;</code>
    */
   com.google.cloud.speech.v2.BatchRecognizeFileResult getResultsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * When available, billed audio seconds for the corresponding request.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration total_billed_duration = 2;</code>
+   *
+   * @return Whether the totalBilledDuration field is set.
+   */
+  boolean hasTotalBilledDuration();
+  /**
+   *
+   *
+   * <pre>
+   * When available, billed audio seconds for the corresponding request.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration total_billed_duration = 2;</code>
+   *
+   * @return The totalBilledDuration.
+   */
+  com.google.protobuf.Duration getTotalBilledDuration();
+  /**
+   *
+   *
+   * <pre>
+   * When available, billed audio seconds for the corresponding request.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration total_billed_duration = 2;</code>
+   */
+  com.google.protobuf.DurationOrBuilder getTotalBilledDurationOrBuilder();
 }

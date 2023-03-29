@@ -16,44 +16,38 @@
 
 package com.google.cloud.speech.v2.samples;
 
-// [START speech_v2_generated_Speech_BatchRecognize_async]
+// [START speech_v2_generated_Speech_ListLocations_async]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.speech.v2.BatchRecognizeFileMetadata;
-import com.google.cloud.speech.v2.BatchRecognizeRequest;
-import com.google.cloud.speech.v2.RecognitionConfig;
-import com.google.cloud.speech.v2.RecognitionOutputConfig;
-import com.google.cloud.speech.v2.RecognizerName;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.Location;
 import com.google.cloud.speech.v2.SpeechClient;
-import com.google.longrunning.Operation;
-import com.google.protobuf.FieldMask;
-import java.util.ArrayList;
 
-public class AsyncBatchRecognize {
+public class AsyncListLocations {
 
   public static void main(String[] args) throws Exception {
-    asyncBatchRecognize();
+    asyncListLocations();
   }
 
-  public static void asyncBatchRecognize() throws Exception {
+  public static void asyncListLocations() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (SpeechClient speechClient = SpeechClient.create()) {
-      BatchRecognizeRequest request =
-          BatchRecognizeRequest.newBuilder()
-              .setRecognizer(
-                  RecognizerName.of("[PROJECT]", "[LOCATION]", "[RECOGNIZER]").toString())
-              .setConfig(RecognitionConfig.newBuilder().build())
-              .setConfigMask(FieldMask.newBuilder().build())
-              .addAllFiles(new ArrayList<BatchRecognizeFileMetadata>())
-              .setRecognitionOutputConfig(RecognitionOutputConfig.newBuilder().build())
+      ListLocationsRequest request =
+          ListLocationsRequest.newBuilder()
+              .setName("name3373707")
+              .setFilter("filter-1274492040")
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
               .build();
-      ApiFuture<Operation> future = speechClient.batchRecognizeCallable().futureCall(request);
+      ApiFuture<Location> future = speechClient.listLocationsPagedCallable().futureCall(request);
       // Do something.
-      Operation response = future.get();
+      for (Location element : future.get().iterateAll()) {
+        // doThingsWith(element);
+      }
     }
   }
 }
-// [END speech_v2_generated_Speech_BatchRecognize_async]
+// [END speech_v2_generated_Speech_ListLocations_async]

@@ -37,6 +37,9 @@
             "GetCustomClass": {
               "methods": ["getCustomClass", "getCustomClass", "getCustomClass", "getCustomClassCallable"]
             },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "GetPhraseSet": {
               "methods": ["getPhraseSet", "getPhraseSet", "getPhraseSet", "getPhraseSetCallable"]
             },
@@ -45,6 +48,9 @@
             },
             "ListCustomClasses": {
               "methods": ["listCustomClasses", "listCustomClasses", "listCustomClasses", "listCustomClassesPagedCallable", "listCustomClassesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "ListPhraseSets": {
               "methods": ["listPhraseSets", "listPhraseSets", "listPhraseSets", "listPhraseSetsPagedCallable", "listPhraseSetsCallable"]

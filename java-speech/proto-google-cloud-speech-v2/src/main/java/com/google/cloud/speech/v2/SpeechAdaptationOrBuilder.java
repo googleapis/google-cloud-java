@@ -27,7 +27,7 @@ public interface SpeechAdaptationOrBuilder
    *
    *
    * <pre>
-   * A list of inline or referenced phrase sets.
+   * A list of inline or referenced PhraseSets.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet phrase_sets = 1;
@@ -39,7 +39,7 @@ public interface SpeechAdaptationOrBuilder
    *
    *
    * <pre>
-   * A list of inline or referenced phrase sets.
+   * A list of inline or referenced PhraseSets.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet phrase_sets = 1;
@@ -50,7 +50,7 @@ public interface SpeechAdaptationOrBuilder
    *
    *
    * <pre>
-   * A list of inline or referenced phrase sets.
+   * A list of inline or referenced PhraseSets.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet phrase_sets = 1;
@@ -61,7 +61,7 @@ public interface SpeechAdaptationOrBuilder
    *
    *
    * <pre>
-   * A list of inline or referenced phrase sets.
+   * A list of inline or referenced PhraseSets.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet phrase_sets = 1;
@@ -73,7 +73,7 @@ public interface SpeechAdaptationOrBuilder
    *
    *
    * <pre>
-   * A list of inline or referenced phrase sets.
+   * A list of inline or referenced PhraseSets.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet phrase_sets = 1;
@@ -86,8 +86,8 @@ public interface SpeechAdaptationOrBuilder
    *
    *
    * <pre>
-   * A list of inline custom classes. Existing custom class resources can be
-   * referenced directly in a phrase set.
+   * A list of inline CustomClasses. Existing CustomClass resources can be
+   * referenced directly in a PhraseSet.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>
@@ -97,8 +97,8 @@ public interface SpeechAdaptationOrBuilder
    *
    *
    * <pre>
-   * A list of inline custom classes. Existing custom class resources can be
-   * referenced directly in a phrase set.
+   * A list of inline CustomClasses. Existing CustomClass resources can be
+   * referenced directly in a PhraseSet.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>
@@ -108,8 +108,8 @@ public interface SpeechAdaptationOrBuilder
    *
    *
    * <pre>
-   * A list of inline custom classes. Existing custom class resources can be
-   * referenced directly in a phrase set.
+   * A list of inline CustomClasses. Existing CustomClass resources can be
+   * referenced directly in a PhraseSet.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>
@@ -119,8 +119,8 @@ public interface SpeechAdaptationOrBuilder
    *
    *
    * <pre>
-   * A list of inline custom classes. Existing custom class resources can be
-   * referenced directly in a phrase set.
+   * A list of inline CustomClasses. Existing CustomClass resources can be
+   * referenced directly in a PhraseSet.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>
@@ -131,8 +131,8 @@ public interface SpeechAdaptationOrBuilder
    *
    *
    * <pre>
-   * A list of inline custom classes. Existing custom class resources can be
-   * referenced directly in a phrase set.
+   * A list of inline CustomClasses. Existing CustomClass resources can be
+   * referenced directly in a PhraseSet.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>

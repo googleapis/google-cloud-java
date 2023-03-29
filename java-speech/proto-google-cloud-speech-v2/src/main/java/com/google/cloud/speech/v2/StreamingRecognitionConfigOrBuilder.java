@@ -90,9 +90,9 @@ public interface StreamingRecognitionConfigOrBuilder
    * of the recognizer during this recognition request. If no mask is provided,
    * all non-default valued fields in
    * [config][google.cloud.speech.v2.StreamingRecognitionConfig.config] override
-   * the values in the recognizer for this recognition request. If a mask is
+   * the values in the Recognizer for this recognition request. If a mask is
    * provided, only the fields listed in the mask override the config in the
-   * recognizer for this recognition request. If a wildcard (`*`) is provided,
+   * Recognizer for this recognition request. If a wildcard (`*`) is provided,
    * [config][google.cloud.speech.v2.StreamingRecognitionConfig.config]
    * completely overrides and replaces the config in the recognizer for this
    * recognition request.
@@ -114,9 +114,9 @@ public interface StreamingRecognitionConfigOrBuilder
    * of the recognizer during this recognition request. If no mask is provided,
    * all non-default valued fields in
    * [config][google.cloud.speech.v2.StreamingRecognitionConfig.config] override
-   * the values in the recognizer for this recognition request. If a mask is
+   * the values in the Recognizer for this recognition request. If a mask is
    * provided, only the fields listed in the mask override the config in the
-   * recognizer for this recognition request. If a wildcard (`*`) is provided,
+   * Recognizer for this recognition request. If a wildcard (`*`) is provided,
    * [config][google.cloud.speech.v2.StreamingRecognitionConfig.config]
    * completely overrides and replaces the config in the recognizer for this
    * recognition request.
@@ -138,9 +138,9 @@ public interface StreamingRecognitionConfigOrBuilder
    * of the recognizer during this recognition request. If no mask is provided,
    * all non-default valued fields in
    * [config][google.cloud.speech.v2.StreamingRecognitionConfig.config] override
-   * the values in the recognizer for this recognition request. If a mask is
+   * the values in the Recognizer for this recognition request. If a mask is
    * provided, only the fields listed in the mask override the config in the
-   * recognizer for this recognition request. If a wildcard (`*`) is provided,
+   * Recognizer for this recognition request. If a wildcard (`*`) is provided,
    * [config][google.cloud.speech.v2.StreamingRecognitionConfig.config]
    * completely overrides and replaces the config in the recognizer for this
    * recognition request.

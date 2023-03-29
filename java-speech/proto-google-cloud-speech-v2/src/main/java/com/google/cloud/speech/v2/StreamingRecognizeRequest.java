@@ -255,6 +255,7 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Inline audio bytes to be Recognized.
+   * Maximum size for this field is 15 KB per request.
    * </pre>
    *
    * <code>bytes audio = 5;</code>
@@ -270,6 +271,7 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Inline audio bytes to be Recognized.
+   * Maximum size for this field is 15 KB per request.
    * </pre>
    *
    * <code>bytes audio = 5;</code>
@@ -1109,6 +1111,7 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Inline audio bytes to be Recognized.
+     * Maximum size for this field is 15 KB per request.
      * </pre>
      *
      * <code>bytes audio = 5;</code>
@@ -1123,6 +1126,7 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Inline audio bytes to be Recognized.
+     * Maximum size for this field is 15 KB per request.
      * </pre>
      *
      * <code>bytes audio = 5;</code>
@@ -1140,6 +1144,7 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Inline audio bytes to be Recognized.
+     * Maximum size for this field is 15 KB per request.
      * </pre>
      *
      * <code>bytes audio = 5;</code>
@@ -1161,6 +1166,7 @@ public final class StreamingRecognizeRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Inline audio bytes to be Recognized.
+     * Maximum size for this field is 15 KB per request.
      * </pre>
      *
      * <code>bytes audio = 5;</code>
