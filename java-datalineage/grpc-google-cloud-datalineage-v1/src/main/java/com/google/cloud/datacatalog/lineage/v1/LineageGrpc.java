@@ -821,7 +821,7 @@ public final class LineageGrpc {
    * example, when table data is based on data from multiple tables.
    * </pre>
    */
-  public abstract static class LineageImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -830,7 +830,7 @@ public final class LineageGrpc {
      * Creates a new process.
      * </pre>
      */
-    public void createProcess(
+    default void createProcess(
         com.google.cloud.datacatalog.lineage.v1.CreateProcessRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.lineage.v1.Process>
             responseObserver) {
@@ -845,7 +845,7 @@ public final class LineageGrpc {
      * Updates a process.
      * </pre>
      */
-    public void updateProcess(
+    default void updateProcess(
         com.google.cloud.datacatalog.lineage.v1.UpdateProcessRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.lineage.v1.Process>
             responseObserver) {
@@ -860,7 +860,7 @@ public final class LineageGrpc {
      * Gets the details of the specified process.
      * </pre>
      */
-    public void getProcess(
+    default void getProcess(
         com.google.cloud.datacatalog.lineage.v1.GetProcessRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.lineage.v1.Process>
             responseObserver) {
@@ -875,7 +875,7 @@ public final class LineageGrpc {
      * by insertion time.
      * </pre>
      */
-    public void listProcesses(
+    default void listProcesses(
         com.google.cloud.datacatalog.lineage.v1.ListProcessesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.lineage.v1.ListProcessesResponse>
             responseObserver) {
@@ -890,7 +890,7 @@ public final class LineageGrpc {
      * Deletes the process with the specified name.
      * </pre>
      */
-    public void deleteProcess(
+    default void deleteProcess(
         com.google.cloud.datacatalog.lineage.v1.DeleteProcessRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -904,7 +904,7 @@ public final class LineageGrpc {
      * Creates a new run.
      * </pre>
      */
-    public void createRun(
+    default void createRun(
         com.google.cloud.datacatalog.lineage.v1.CreateRunRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.lineage.v1.Run> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateRunMethod(), responseObserver);
@@ -917,7 +917,7 @@ public final class LineageGrpc {
      * Updates a run.
      * </pre>
      */
-    public void updateRun(
+    default void updateRun(
         com.google.cloud.datacatalog.lineage.v1.UpdateRunRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.lineage.v1.Run> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateRunMethod(), responseObserver);
@@ -930,7 +930,7 @@ public final class LineageGrpc {
      * Gets the details of the specified run.
      * </pre>
      */
-    public void getRun(
+    default void getRun(
         com.google.cloud.datacatalog.lineage.v1.GetRunRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.lineage.v1.Run> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetRunMethod(), responseObserver);
@@ -944,7 +944,7 @@ public final class LineageGrpc {
      * `start_time`.
      * </pre>
      */
-    public void listRuns(
+    default void listRuns(
         com.google.cloud.datacatalog.lineage.v1.ListRunsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.lineage.v1.ListRunsResponse>
             responseObserver) {
@@ -958,7 +958,7 @@ public final class LineageGrpc {
      * Deletes the run with the specified name.
      * </pre>
      */
-    public void deleteRun(
+    default void deleteRun(
         com.google.cloud.datacatalog.lineage.v1.DeleteRunRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteRunMethod(), responseObserver);
@@ -971,7 +971,7 @@ public final class LineageGrpc {
      * Creates a new lineage event.
      * </pre>
      */
-    public void createLineageEvent(
+    default void createLineageEvent(
         com.google.cloud.datacatalog.lineage.v1.CreateLineageEventRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.lineage.v1.LineageEvent>
             responseObserver) {
@@ -986,7 +986,7 @@ public final class LineageGrpc {
      * Gets details of a specified lineage event.
      * </pre>
      */
-    public void getLineageEvent(
+    default void getLineageEvent(
         com.google.cloud.datacatalog.lineage.v1.GetLineageEventRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.lineage.v1.LineageEvent>
             responseObserver) {
@@ -1002,7 +1002,7 @@ public final class LineageGrpc {
      * not defined.
      * </pre>
      */
-    public void listLineageEvents(
+    default void listLineageEvents(
         com.google.cloud.datacatalog.lineage.v1.ListLineageEventsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.datacatalog.lineage.v1.ListLineageEventsResponse>
@@ -1018,7 +1018,7 @@ public final class LineageGrpc {
      * Deletes the lineage event with the specified name.
      * </pre>
      */
-    public void deleteLineageEvent(
+    default void deleteLineageEvent(
         com.google.cloud.datacatalog.lineage.v1.DeleteLineageEventRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1039,7 +1039,7 @@ public final class LineageGrpc {
      * is used for Billing and Quota.
      * </pre>
      */
-    public void searchLinks(
+    default void searchLinks(
         com.google.cloud.datacatalog.lineage.v1.SearchLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.lineage.v1.SearchLinksResponse>
             responseObserver) {
@@ -1065,7 +1065,7 @@ public final class LineageGrpc {
      * URL is used for Billing and Quota.
      * </pre>
      */
-    public void batchSearchLinkProcesses(
+    default void batchSearchLinkProcesses(
         com.google.cloud.datacatalog.lineage.v1.BatchSearchLinkProcessesRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.datacatalog.lineage.v1.BatchSearchLinkProcessesResponse>
@@ -1073,121 +1073,28 @@ public final class LineageGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getBatchSearchLinkProcessesMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Lineage.
+   *
+   * <pre>
+   * Lineage is used to track data flows between assets over time. You can
+   * create [LineageEvents][google.cloud.datacatalog.lineage.v1.LineageEvent]
+   * to record lineage between multiple sources and a single target, for
+   * example, when table data is based on data from multiple tables.
+   * </pre>
+   */
+  public abstract static class LineageImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateProcessMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datacatalog.lineage.v1.CreateProcessRequest,
-                      com.google.cloud.datacatalog.lineage.v1.Process>(
-                      this, METHODID_CREATE_PROCESS)))
-          .addMethod(
-              getUpdateProcessMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datacatalog.lineage.v1.UpdateProcessRequest,
-                      com.google.cloud.datacatalog.lineage.v1.Process>(
-                      this, METHODID_UPDATE_PROCESS)))
-          .addMethod(
-              getGetProcessMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datacatalog.lineage.v1.GetProcessRequest,
-                      com.google.cloud.datacatalog.lineage.v1.Process>(this, METHODID_GET_PROCESS)))
-          .addMethod(
-              getListProcessesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datacatalog.lineage.v1.ListProcessesRequest,
-                      com.google.cloud.datacatalog.lineage.v1.ListProcessesResponse>(
-                      this, METHODID_LIST_PROCESSES)))
-          .addMethod(
-              getDeleteProcessMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datacatalog.lineage.v1.DeleteProcessRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_PROCESS)))
-          .addMethod(
-              getCreateRunMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datacatalog.lineage.v1.CreateRunRequest,
-                      com.google.cloud.datacatalog.lineage.v1.Run>(this, METHODID_CREATE_RUN)))
-          .addMethod(
-              getUpdateRunMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datacatalog.lineage.v1.UpdateRunRequest,
-                      com.google.cloud.datacatalog.lineage.v1.Run>(this, METHODID_UPDATE_RUN)))
-          .addMethod(
-              getGetRunMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datacatalog.lineage.v1.GetRunRequest,
-                      com.google.cloud.datacatalog.lineage.v1.Run>(this, METHODID_GET_RUN)))
-          .addMethod(
-              getListRunsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datacatalog.lineage.v1.ListRunsRequest,
-                      com.google.cloud.datacatalog.lineage.v1.ListRunsResponse>(
-                      this, METHODID_LIST_RUNS)))
-          .addMethod(
-              getDeleteRunMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datacatalog.lineage.v1.DeleteRunRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_RUN)))
-          .addMethod(
-              getCreateLineageEventMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datacatalog.lineage.v1.CreateLineageEventRequest,
-                      com.google.cloud.datacatalog.lineage.v1.LineageEvent>(
-                      this, METHODID_CREATE_LINEAGE_EVENT)))
-          .addMethod(
-              getGetLineageEventMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datacatalog.lineage.v1.GetLineageEventRequest,
-                      com.google.cloud.datacatalog.lineage.v1.LineageEvent>(
-                      this, METHODID_GET_LINEAGE_EVENT)))
-          .addMethod(
-              getListLineageEventsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datacatalog.lineage.v1.ListLineageEventsRequest,
-                      com.google.cloud.datacatalog.lineage.v1.ListLineageEventsResponse>(
-                      this, METHODID_LIST_LINEAGE_EVENTS)))
-          .addMethod(
-              getDeleteLineageEventMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datacatalog.lineage.v1.DeleteLineageEventRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_LINEAGE_EVENT)))
-          .addMethod(
-              getSearchLinksMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datacatalog.lineage.v1.SearchLinksRequest,
-                      com.google.cloud.datacatalog.lineage.v1.SearchLinksResponse>(
-                      this, METHODID_SEARCH_LINKS)))
-          .addMethod(
-              getBatchSearchLinkProcessesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datacatalog.lineage.v1.BatchSearchLinkProcessesRequest,
-                      com.google.cloud.datacatalog.lineage.v1.BatchSearchLinkProcessesResponse>(
-                      this, METHODID_BATCH_SEARCH_LINK_PROCESSES)))
-          .build();
+      return LineageGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Lineage.
    *
    * <pre>
    * Lineage is used to track data flows between assets over time. You can
@@ -1485,7 +1392,7 @@ public final class LineageGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Lineage.
    *
    * <pre>
    * Lineage is used to track data flows between assets over time. You can
@@ -1737,7 +1644,7 @@ public final class LineageGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Lineage.
    *
    * <pre>
    * Lineage is used to track data flows between assets over time. You can
@@ -2026,10 +1933,10 @@ public final class LineageGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final LineageImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(LineageImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -2150,6 +2057,117 @@ public final class LineageGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateProcessMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.lineage.v1.CreateProcessRequest,
+                    com.google.cloud.datacatalog.lineage.v1.Process>(
+                    service, METHODID_CREATE_PROCESS)))
+        .addMethod(
+            getUpdateProcessMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.lineage.v1.UpdateProcessRequest,
+                    com.google.cloud.datacatalog.lineage.v1.Process>(
+                    service, METHODID_UPDATE_PROCESS)))
+        .addMethod(
+            getGetProcessMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.lineage.v1.GetProcessRequest,
+                    com.google.cloud.datacatalog.lineage.v1.Process>(
+                    service, METHODID_GET_PROCESS)))
+        .addMethod(
+            getListProcessesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.lineage.v1.ListProcessesRequest,
+                    com.google.cloud.datacatalog.lineage.v1.ListProcessesResponse>(
+                    service, METHODID_LIST_PROCESSES)))
+        .addMethod(
+            getDeleteProcessMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.lineage.v1.DeleteProcessRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_PROCESS)))
+        .addMethod(
+            getCreateRunMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.lineage.v1.CreateRunRequest,
+                    com.google.cloud.datacatalog.lineage.v1.Run>(service, METHODID_CREATE_RUN)))
+        .addMethod(
+            getUpdateRunMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.lineage.v1.UpdateRunRequest,
+                    com.google.cloud.datacatalog.lineage.v1.Run>(service, METHODID_UPDATE_RUN)))
+        .addMethod(
+            getGetRunMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.lineage.v1.GetRunRequest,
+                    com.google.cloud.datacatalog.lineage.v1.Run>(service, METHODID_GET_RUN)))
+        .addMethod(
+            getListRunsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.lineage.v1.ListRunsRequest,
+                    com.google.cloud.datacatalog.lineage.v1.ListRunsResponse>(
+                    service, METHODID_LIST_RUNS)))
+        .addMethod(
+            getDeleteRunMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.lineage.v1.DeleteRunRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_RUN)))
+        .addMethod(
+            getCreateLineageEventMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.lineage.v1.CreateLineageEventRequest,
+                    com.google.cloud.datacatalog.lineage.v1.LineageEvent>(
+                    service, METHODID_CREATE_LINEAGE_EVENT)))
+        .addMethod(
+            getGetLineageEventMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.lineage.v1.GetLineageEventRequest,
+                    com.google.cloud.datacatalog.lineage.v1.LineageEvent>(
+                    service, METHODID_GET_LINEAGE_EVENT)))
+        .addMethod(
+            getListLineageEventsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.lineage.v1.ListLineageEventsRequest,
+                    com.google.cloud.datacatalog.lineage.v1.ListLineageEventsResponse>(
+                    service, METHODID_LIST_LINEAGE_EVENTS)))
+        .addMethod(
+            getDeleteLineageEventMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.lineage.v1.DeleteLineageEventRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_LINEAGE_EVENT)))
+        .addMethod(
+            getSearchLinksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.lineage.v1.SearchLinksRequest,
+                    com.google.cloud.datacatalog.lineage.v1.SearchLinksResponse>(
+                    service, METHODID_SEARCH_LINKS)))
+        .addMethod(
+            getBatchSearchLinkProcessesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.lineage.v1.BatchSearchLinkProcessesRequest,
+                    com.google.cloud.datacatalog.lineage.v1.BatchSearchLinkProcessesResponse>(
+                    service, METHODID_BATCH_SEARCH_LINK_PROCESSES)))
+        .build();
   }
 
   private abstract static class LineageBaseDescriptorSupplier

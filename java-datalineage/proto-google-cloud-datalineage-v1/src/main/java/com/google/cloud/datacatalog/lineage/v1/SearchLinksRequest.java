@@ -124,7 +124,7 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The project and location you want search in.
+   * Required. The project and location you want search in the format `projects/&#42;&#47;locations/&#42;`
    * </pre>
    *
    * <code>
@@ -149,7 +149,7 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The project and location you want search in.
+   * Required. The project and location you want search in the format `projects/&#42;&#47;locations/&#42;`
    * </pre>
    *
    * <code>
@@ -868,7 +868,7 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The project and location you want search in.
+     * Required. The project and location you want search in the format `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -892,7 +892,7 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The project and location you want search in.
+     * Required. The project and location you want search in the format `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -916,7 +916,7 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The project and location you want search in.
+     * Required. The project and location you want search in the format `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -939,7 +939,7 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The project and location you want search in.
+     * Required. The project and location you want search in the format `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -958,7 +958,7 @@ public final class SearchLinksRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The project and location you want search in.
+     * Required. The project and location you want search in the format `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>

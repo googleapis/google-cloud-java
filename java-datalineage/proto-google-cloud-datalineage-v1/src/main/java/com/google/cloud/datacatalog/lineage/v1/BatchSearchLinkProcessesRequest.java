@@ -79,7 +79,7 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. The project and location where you want to search.
+   * Required. The project and location you want search in the format `projects/&#42;&#47;locations/&#42;`
    * </pre>
    *
    * <code>
@@ -104,7 +104,7 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. The project and location where you want to search.
+   * Required. The project and location you want search in the format `projects/&#42;&#47;locations/&#42;`
    * </pre>
    *
    * <code>
@@ -734,7 +734,7 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The project and location where you want to search.
+     * Required. The project and location you want search in the format `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -758,7 +758,7 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The project and location where you want to search.
+     * Required. The project and location you want search in the format `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -782,7 +782,7 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The project and location where you want to search.
+     * Required. The project and location you want search in the format `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -805,7 +805,7 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The project and location where you want to search.
+     * Required. The project and location you want search in the format `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -824,7 +824,7 @@ public final class BatchSearchLinkProcessesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The project and location where you want to search.
+     * Required. The project and location you want search in the format `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
