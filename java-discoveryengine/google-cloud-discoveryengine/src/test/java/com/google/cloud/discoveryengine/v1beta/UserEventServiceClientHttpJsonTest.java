@@ -107,7 +107,10 @@ public class UserEventServiceClientHttpJsonTest {
 
     WriteUserEventRequest request =
         WriteUserEventRequest.newBuilder()
-            .setParent(DataStoreName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]").toString())
+            .setParent(
+                DataStoreName.ofProjectLocationDataStoreName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                    .toString())
             .setUserEvent(UserEvent.newBuilder().build())
             .build();
 
@@ -139,7 +142,10 @@ public class UserEventServiceClientHttpJsonTest {
     try {
       WriteUserEventRequest request =
           WriteUserEventRequest.newBuilder()
-              .setParent(DataStoreName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]").toString())
+              .setParent(
+                  DataStoreName.ofProjectLocationDataStoreName(
+                          "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                      .toString())
               .setUserEvent(UserEvent.newBuilder().build())
               .build();
       client.writeUserEvent(request);
@@ -161,7 +167,10 @@ public class UserEventServiceClientHttpJsonTest {
 
     CollectUserEventRequest request =
         CollectUserEventRequest.newBuilder()
-            .setParent(DataStoreName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]").toString())
+            .setParent(
+                DataStoreName.ofProjectLocationDataStoreName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                    .toString())
             .setUserEvent("userEvent315571599")
             .setUri("uri116076")
             .setEts(100772)
@@ -195,7 +204,10 @@ public class UserEventServiceClientHttpJsonTest {
     try {
       CollectUserEventRequest request =
           CollectUserEventRequest.newBuilder()
-              .setParent(DataStoreName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]").toString())
+              .setParent(
+                  DataStoreName.ofProjectLocationDataStoreName(
+                          "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                      .toString())
               .setUserEvent("userEvent315571599")
               .setUri("uri116076")
               .setEts(100772)
@@ -226,7 +238,10 @@ public class UserEventServiceClientHttpJsonTest {
 
     ImportUserEventsRequest request =
         ImportUserEventsRequest.newBuilder()
-            .setParent(DataStoreName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]").toString())
+            .setParent(
+                DataStoreName.ofProjectLocationDataStoreName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                    .toString())
             .setErrorConfig(ImportErrorConfig.newBuilder().build())
             .build();
 
@@ -258,7 +273,10 @@ public class UserEventServiceClientHttpJsonTest {
     try {
       ImportUserEventsRequest request =
           ImportUserEventsRequest.newBuilder()
-              .setParent(DataStoreName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]").toString())
+              .setParent(
+                  DataStoreName.ofProjectLocationDataStoreName(
+                          "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                      .toString())
               .setErrorConfig(ImportErrorConfig.newBuilder().build())
               .build();
       client.importUserEventsAsync(request).get();

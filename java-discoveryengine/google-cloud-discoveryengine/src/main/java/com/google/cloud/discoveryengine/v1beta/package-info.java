@@ -34,7 +34,8 @@
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
  *   DocumentName name =
- *       DocumentName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
+ *       DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+ *           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
  *   Document response = documentServiceClient.getDocument(name);
  * }
  * }</pre>
@@ -56,7 +57,7 @@
  *   RecommendRequest request =
  *       RecommendRequest.newBuilder()
  *           .setServingConfig(
- *               ServingConfigName.of(
+ *               ServingConfigName.ofProjectLocationDataStoreServingConfigName(
  *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]")
  *                   .toString())
  *           .setUserEvent(UserEvent.newBuilder().build())
@@ -86,7 +87,10 @@
  * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
  *   WriteUserEventRequest request =
  *       WriteUserEventRequest.newBuilder()
- *           .setParent(DataStoreName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]").toString())
+ *           .setParent(
+ *               DataStoreName.ofProjectLocationDataStoreName(
+ *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+ *                   .toString())
  *           .setUserEvent(UserEvent.newBuilder().build())
  *           .build();
  *   UserEvent response = userEventServiceClient.writeUserEvent(request);

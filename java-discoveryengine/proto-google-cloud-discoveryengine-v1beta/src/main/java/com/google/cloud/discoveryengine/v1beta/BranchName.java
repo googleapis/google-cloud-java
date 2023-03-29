@@ -16,7 +16,9 @@
 
 package com.google.cloud.discoveryengine.v1beta;
 
+import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -32,11 +34,17 @@ public class BranchName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_DATA_STORE_BRANCH =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}");
+  private static final PathTemplate PROJECT_LOCATION_COLLECTION_DATA_STORE_BRANCH =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}");
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
   private final String project;
   private final String location;
   private final String dataStore;
   private final String branch;
+  private final String collection;
 
   @Deprecated
   protected BranchName() {
@@ -44,6 +52,7 @@ public class BranchName implements ResourceName {
     location = null;
     dataStore = null;
     branch = null;
+    collection = null;
   }
 
   private BranchName(Builder builder) {
@@ -51,6 +60,17 @@ public class BranchName implements ResourceName {
     location = Preconditions.checkNotNull(builder.getLocation());
     dataStore = Preconditions.checkNotNull(builder.getDataStore());
     branch = Preconditions.checkNotNull(builder.getBranch());
+    collection = null;
+    pathTemplate = PROJECT_LOCATION_DATA_STORE_BRANCH;
+  }
+
+  private BranchName(ProjectLocationCollectionDataStoreBranchBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    collection = Preconditions.checkNotNull(builder.getCollection());
+    dataStore = Preconditions.checkNotNull(builder.getDataStore());
+    branch = Preconditions.checkNotNull(builder.getBranch());
+    pathTemplate = PROJECT_LOCATION_COLLECTION_DATA_STORE_BRANCH;
   }
 
   public String getProject() {
@@ -69,8 +89,23 @@ public class BranchName implements ResourceName {
     return branch;
   }
 
+  public String getCollection() {
+    return collection;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static Builder newProjectLocationDataStoreBranchBuilder() {
+    return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static ProjectLocationCollectionDataStoreBranchBuilder
+      newProjectLocationCollectionDataStoreBranchBuilder() {
+    return new ProjectLocationCollectionDataStoreBranchBuilder();
   }
 
   public Builder toBuilder() {
@@ -86,6 +121,29 @@ public class BranchName implements ResourceName {
         .build();
   }
 
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static BranchName ofProjectLocationDataStoreBranchName(
+      String project, String location, String dataStore, String branch) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setDataStore(dataStore)
+        .setBranch(branch)
+        .build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static BranchName ofProjectLocationCollectionDataStoreBranchName(
+      String project, String location, String collection, String dataStore, String branch) {
+    return newProjectLocationCollectionDataStoreBranchBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setCollection(collection)
+        .setDataStore(dataStore)
+        .setBranch(branch)
+        .build();
+  }
+
   public static String format(String project, String location, String dataStore, String branch) {
     return newBuilder()
         .setProject(project)
@@ -96,18 +154,53 @@ public class BranchName implements ResourceName {
         .toString();
   }
 
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectLocationDataStoreBranchName(
+      String project, String location, String dataStore, String branch) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setDataStore(dataStore)
+        .setBranch(branch)
+        .build()
+        .toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectLocationCollectionDataStoreBranchName(
+      String project, String location, String collection, String dataStore, String branch) {
+    return newProjectLocationCollectionDataStoreBranchBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setCollection(collection)
+        .setDataStore(dataStore)
+        .setBranch(branch)
+        .build()
+        .toString();
+  }
+
   public static BranchName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        PROJECT_LOCATION_DATA_STORE_BRANCH.validatedMatch(
-            formattedString, "BranchName.parse: formattedString not in valid format");
-    return of(
-        matchMap.get("project"),
-        matchMap.get("location"),
-        matchMap.get("data_store"),
-        matchMap.get("branch"));
+    if (PROJECT_LOCATION_DATA_STORE_BRANCH.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_DATA_STORE_BRANCH.match(formattedString);
+      return ofProjectLocationDataStoreBranchName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("data_store"),
+          matchMap.get("branch"));
+    } else if (PROJECT_LOCATION_COLLECTION_DATA_STORE_BRANCH.matches(formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_LOCATION_COLLECTION_DATA_STORE_BRANCH.match(formattedString);
+      return ofProjectLocationCollectionDataStoreBranchName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("collection"),
+          matchMap.get("data_store"),
+          matchMap.get("branch"));
+    }
+    throw new ValidationException("BranchName.parse: formattedString not in valid format");
   }
 
   public static List<BranchName> parseList(List<String> formattedStrings) {
@@ -131,7 +224,8 @@ public class BranchName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_LOCATION_DATA_STORE_BRANCH.matches(formattedString);
+    return PROJECT_LOCATION_DATA_STORE_BRANCH.matches(formattedString)
+        || PROJECT_LOCATION_COLLECTION_DATA_STORE_BRANCH.matches(formattedString);
   }
 
   @Override
@@ -152,6 +246,9 @@ public class BranchName implements ResourceName {
           if (branch != null) {
             fieldMapBuilder.put("branch", branch);
           }
+          if (collection != null) {
+            fieldMapBuilder.put("collection", collection);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -165,8 +262,7 @@ public class BranchName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_LOCATION_DATA_STORE_BRANCH.instantiate(
-        "project", project, "location", location, "data_store", dataStore, "branch", branch);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override
@@ -179,7 +275,8 @@ public class BranchName implements ResourceName {
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)
           && Objects.equals(this.dataStore, that.dataStore)
-          && Objects.equals(this.branch, that.branch);
+          && Objects.equals(this.branch, that.branch)
+          && Objects.equals(this.collection, that.collection);
     }
     return false;
   }
@@ -188,6 +285,8 @@ public class BranchName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
     h ^= Objects.hashCode(project);
     h *= 1000003;
     h ^= Objects.hashCode(location);
@@ -195,6 +294,8 @@ public class BranchName implements ResourceName {
     h ^= Objects.hashCode(dataStore);
     h *= 1000003;
     h ^= Objects.hashCode(branch);
+    h *= 1000003;
+    h ^= Objects.hashCode(collection);
     return h;
   }
 
@@ -246,10 +347,77 @@ public class BranchName implements ResourceName {
     }
 
     private Builder(BranchName branchName) {
+      Preconditions.checkArgument(
+          Objects.equals(branchName.pathTemplate, PROJECT_LOCATION_DATA_STORE_BRANCH),
+          "toBuilder is only supported when BranchName has the pattern of projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}");
       this.project = branchName.project;
       this.location = branchName.location;
       this.dataStore = branchName.dataStore;
       this.branch = branchName.branch;
+    }
+
+    public BranchName build() {
+      return new BranchName(this);
+    }
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}.
+   */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class ProjectLocationCollectionDataStoreBranchBuilder {
+    private String project;
+    private String location;
+    private String collection;
+    private String dataStore;
+    private String branch;
+
+    protected ProjectLocationCollectionDataStoreBranchBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getCollection() {
+      return collection;
+    }
+
+    public String getDataStore() {
+      return dataStore;
+    }
+
+    public String getBranch() {
+      return branch;
+    }
+
+    public ProjectLocationCollectionDataStoreBranchBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationCollectionDataStoreBranchBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public ProjectLocationCollectionDataStoreBranchBuilder setCollection(String collection) {
+      this.collection = collection;
+      return this;
+    }
+
+    public ProjectLocationCollectionDataStoreBranchBuilder setDataStore(String dataStore) {
+      this.dataStore = dataStore;
+      return this;
+    }
+
+    public ProjectLocationCollectionDataStoreBranchBuilder setBranch(String branch) {
+      this.branch = branch;
+      return this;
     }
 
     public BranchName build() {

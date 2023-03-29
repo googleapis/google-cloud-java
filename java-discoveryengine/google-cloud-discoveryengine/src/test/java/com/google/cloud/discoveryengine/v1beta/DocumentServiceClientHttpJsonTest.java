@@ -86,7 +86,8 @@ public class DocumentServiceClientHttpJsonTest {
     Document expectedResponse =
         Document.newBuilder()
             .setName(
-                DocumentName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
+                DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
                     .toString())
             .setId("id3355")
             .setSchemaId("schemaId-697673060")
@@ -95,7 +96,8 @@ public class DocumentServiceClientHttpJsonTest {
     mockService.addResponse(expectedResponse);
 
     DocumentName name =
-        DocumentName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
+        DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+            "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
 
     Document actualResponse = client.getDocument(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -124,7 +126,8 @@ public class DocumentServiceClientHttpJsonTest {
 
     try {
       DocumentName name =
-          DocumentName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
+          DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+              "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
       client.getDocument(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -137,7 +140,8 @@ public class DocumentServiceClientHttpJsonTest {
     Document expectedResponse =
         Document.newBuilder()
             .setName(
-                DocumentName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
+                DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
                     .toString())
             .setId("id3355")
             .setSchemaId("schemaId-697673060")
@@ -193,7 +197,9 @@ public class DocumentServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    BranchName parent = BranchName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]");
+    BranchName parent =
+        BranchName.ofProjectLocationDataStoreBranchName(
+            "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]");
 
     ListDocumentsPagedResponse pagedListResponse = client.listDocuments(parent);
 
@@ -225,7 +231,9 @@ public class DocumentServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      BranchName parent = BranchName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]");
+      BranchName parent =
+          BranchName.ofProjectLocationDataStoreBranchName(
+              "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]");
       client.listDocuments(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -290,7 +298,8 @@ public class DocumentServiceClientHttpJsonTest {
     Document expectedResponse =
         Document.newBuilder()
             .setName(
-                DocumentName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
+                DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
                     .toString())
             .setId("id3355")
             .setSchemaId("schemaId-697673060")
@@ -298,7 +307,9 @@ public class DocumentServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    BranchName parent = BranchName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]");
+    BranchName parent =
+        BranchName.ofProjectLocationDataStoreBranchName(
+            "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]");
     Document document = Document.newBuilder().build();
     String documentId = "documentId-814940266";
 
@@ -328,7 +339,9 @@ public class DocumentServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      BranchName parent = BranchName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]");
+      BranchName parent =
+          BranchName.ofProjectLocationDataStoreBranchName(
+              "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]");
       Document document = Document.newBuilder().build();
       String documentId = "documentId-814940266";
       client.createDocument(parent, document, documentId);
@@ -343,7 +356,8 @@ public class DocumentServiceClientHttpJsonTest {
     Document expectedResponse =
         Document.newBuilder()
             .setName(
-                DocumentName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
+                DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
                     .toString())
             .setId("id3355")
             .setSchemaId("schemaId-697673060")
@@ -398,7 +412,8 @@ public class DocumentServiceClientHttpJsonTest {
     Document expectedResponse =
         Document.newBuilder()
             .setName(
-                DocumentName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
+                DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
                     .toString())
             .setId("id3355")
             .setSchemaId("schemaId-697673060")
@@ -411,7 +426,7 @@ public class DocumentServiceClientHttpJsonTest {
             .setDocument(
                 Document.newBuilder()
                     .setName(
-                        DocumentName.of(
+                        DocumentName.ofProjectLocationDataStoreBranchDocumentName(
                                 "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
                             .toString())
                     .setId("id3355")
@@ -452,7 +467,7 @@ public class DocumentServiceClientHttpJsonTest {
               .setDocument(
                   Document.newBuilder()
                       .setName(
-                          DocumentName.of(
+                          DocumentName.ofProjectLocationDataStoreBranchDocumentName(
                                   "[PROJECT]",
                                   "[LOCATION]",
                                   "[DATA_STORE]",
@@ -478,7 +493,8 @@ public class DocumentServiceClientHttpJsonTest {
     mockService.addResponse(expectedResponse);
 
     DocumentName name =
-        DocumentName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
+        DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+            "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
 
     client.deleteDocument(name);
 
@@ -506,7 +522,8 @@ public class DocumentServiceClientHttpJsonTest {
 
     try {
       DocumentName name =
-          DocumentName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
+          DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+              "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
       client.deleteDocument(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -574,7 +591,9 @@ public class DocumentServiceClientHttpJsonTest {
     ImportDocumentsRequest request =
         ImportDocumentsRequest.newBuilder()
             .setParent(
-                BranchName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]").toString())
+                BranchName.ofProjectLocationDataStoreBranchName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+                    .toString())
             .setErrorConfig(ImportErrorConfig.newBuilder().build())
             .build();
 
@@ -607,7 +626,9 @@ public class DocumentServiceClientHttpJsonTest {
       ImportDocumentsRequest request =
           ImportDocumentsRequest.newBuilder()
               .setParent(
-                  BranchName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]").toString())
+                  BranchName.ofProjectLocationDataStoreBranchName(
+                          "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+                      .toString())
               .setErrorConfig(ImportErrorConfig.newBuilder().build())
               .build();
       client.importDocumentsAsync(request).get();

@@ -255,7 +255,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Immutable. The full resource name of the document.
    * Format:
-   * `projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}/documents/{document_id}`.
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document_id}`.
    * This field must be a UTF-8 encoded string with a length limit of 1024
    * characters.
    * </pre>
@@ -282,7 +282,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Immutable. The full resource name of the document.
    * Format:
-   * `projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}/documents/{document_id}`.
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document_id}`.
    * This field must be a UTF-8 encoded string with a length limit of 1024
    * characters.
    * </pre>
@@ -367,10 +367,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The identifier of the schema located in the same data store.
+   * The identifier of the schema located in the same data store.
    * </pre>
    *
-   * <code>string schema_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string schema_id = 3;</code>
    *
    * @return The schemaId.
    */
@@ -390,10 +390,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The identifier of the schema located in the same data store.
+   * The identifier of the schema located in the same data store.
    * </pre>
    *
-   * <code>string schema_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string schema_id = 3;</code>
    *
    * @return The bytes for schemaId.
    */
@@ -1338,7 +1338,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Immutable. The full resource name of the document.
      * Format:
-     * `projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}/documents/{document_id}`.
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document_id}`.
      * This field must be a UTF-8 encoded string with a length limit of 1024
      * characters.
      * </pre>
@@ -1364,7 +1364,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Immutable. The full resource name of the document.
      * Format:
-     * `projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}/documents/{document_id}`.
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document_id}`.
      * This field must be a UTF-8 encoded string with a length limit of 1024
      * characters.
      * </pre>
@@ -1390,7 +1390,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Immutable. The full resource name of the document.
      * Format:
-     * `projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}/documents/{document_id}`.
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document_id}`.
      * This field must be a UTF-8 encoded string with a length limit of 1024
      * characters.
      * </pre>
@@ -1415,7 +1415,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Immutable. The full resource name of the document.
      * Format:
-     * `projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}/documents/{document_id}`.
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document_id}`.
      * This field must be a UTF-8 encoded string with a length limit of 1024
      * characters.
      * </pre>
@@ -1436,7 +1436,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Immutable. The full resource name of the document.
      * Format:
-     * `projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}/documents/{document_id}`.
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document_id}`.
      * This field must be a UTF-8 encoded string with a length limit of 1024
      * characters.
      * </pre>
@@ -1578,10 +1578,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The identifier of the schema located in the same data store.
+     * The identifier of the schema located in the same data store.
      * </pre>
      *
-     * <code>string schema_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string schema_id = 3;</code>
      *
      * @return The schemaId.
      */
@@ -1600,10 +1600,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The identifier of the schema located in the same data store.
+     * The identifier of the schema located in the same data store.
      * </pre>
      *
-     * <code>string schema_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string schema_id = 3;</code>
      *
      * @return The bytes for schemaId.
      */
@@ -1622,10 +1622,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The identifier of the schema located in the same data store.
+     * The identifier of the schema located in the same data store.
      * </pre>
      *
-     * <code>string schema_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string schema_id = 3;</code>
      *
      * @param value The schemaId to set.
      * @return This builder for chaining.
@@ -1643,10 +1643,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The identifier of the schema located in the same data store.
+     * The identifier of the schema located in the same data store.
      * </pre>
      *
-     * <code>string schema_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string schema_id = 3;</code>
      *
      * @return This builder for chaining.
      */
@@ -1660,10 +1660,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The identifier of the schema located in the same data store.
+     * The identifier of the schema located in the same data store.
      * </pre>
      *
-     * <code>string schema_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string schema_id = 3;</code>
      *
      * @param value The bytes for schemaId to set.
      * @return This builder for chaining.

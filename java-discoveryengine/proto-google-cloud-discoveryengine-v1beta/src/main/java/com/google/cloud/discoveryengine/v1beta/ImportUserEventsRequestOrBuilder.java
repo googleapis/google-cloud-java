@@ -69,7 +69,7 @@ public interface ImportUserEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Google Cloud Storage location for the input content.
+   * Required. Cloud Storage location for the input content.
    * </pre>
    *
    * <code>
@@ -83,7 +83,7 @@ public interface ImportUserEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Google Cloud Storage location for the input content.
+   * Required. Cloud Storage location for the input content.
    * </pre>
    *
    * <code>
@@ -97,7 +97,7 @@ public interface ImportUserEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Google Cloud Storage location for the input content.
+   * Required. Cloud Storage location for the input content.
    * </pre>
    *
    * <code>
@@ -152,7 +152,7 @@ public interface ImportUserEventsRequestOrBuilder
    *
    * <pre>
    * Required. Parent DataStore resource name, of the form
-   * `projects/{project}/locations/{location}/dataStores/{data_store}`
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
    * </pre>
    *
    * <code>
@@ -167,7 +167,7 @@ public interface ImportUserEventsRequestOrBuilder
    *
    * <pre>
    * Required. Parent DataStore resource name, of the form
-   * `projects/{project}/locations/{location}/dataStores/{data_store}`
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
    * </pre>
    *
    * <code>

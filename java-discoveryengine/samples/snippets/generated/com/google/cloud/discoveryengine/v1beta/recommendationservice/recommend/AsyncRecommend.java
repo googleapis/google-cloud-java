@@ -43,7 +43,7 @@ public class AsyncRecommend {
       RecommendRequest request =
           RecommendRequest.newBuilder()
               .setServingConfig(
-                  ServingConfigName.of(
+                  ServingConfigName.ofProjectLocationDataStoreServingConfigName(
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]")
                       .toString())
               .setUserEvent(UserEvent.newBuilder().build())

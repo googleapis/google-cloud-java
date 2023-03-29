@@ -1262,7 +1262,7 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. Google Cloud Storage location for the input content.
+   * Required. Cloud Storage location for the input content.
    * </pre>
    *
    * <code>
@@ -1279,7 +1279,7 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. Google Cloud Storage location for the input content.
+   * Required. Cloud Storage location for the input content.
    * </pre>
    *
    * <code>
@@ -1299,7 +1299,7 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. Google Cloud Storage location for the input content.
+   * Required. Cloud Storage location for the input content.
    * </pre>
    *
    * <code>
@@ -1381,7 +1381,7 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. Parent DataStore resource name, of the form
-   * `projects/{project}/locations/{location}/dataStores/{data_store}`
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
    * </pre>
    *
    * <code>
@@ -1407,7 +1407,7 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. Parent DataStore resource name, of the form
-   * `projects/{project}/locations/{location}/dataStores/{data_store}`
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
    * </pre>
    *
    * <code>
@@ -2256,7 +2256,7 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Google Cloud Storage location for the input content.
+     * Required. Cloud Storage location for the input content.
      * </pre>
      *
      * <code>
@@ -2273,7 +2273,7 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Google Cloud Storage location for the input content.
+     * Required. Cloud Storage location for the input content.
      * </pre>
      *
      * <code>
@@ -2300,7 +2300,7 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Google Cloud Storage location for the input content.
+     * Required. Cloud Storage location for the input content.
      * </pre>
      *
      * <code>
@@ -2324,7 +2324,7 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Google Cloud Storage location for the input content.
+     * Required. Cloud Storage location for the input content.
      * </pre>
      *
      * <code>
@@ -2346,7 +2346,7 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Google Cloud Storage location for the input content.
+     * Required. Cloud Storage location for the input content.
      * </pre>
      *
      * <code>
@@ -2380,7 +2380,7 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Google Cloud Storage location for the input content.
+     * Required. Cloud Storage location for the input content.
      * </pre>
      *
      * <code>
@@ -2407,7 +2407,7 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Google Cloud Storage location for the input content.
+     * Required. Cloud Storage location for the input content.
      * </pre>
      *
      * <code>
@@ -2421,7 +2421,7 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Google Cloud Storage location for the input content.
+     * Required. Cloud Storage location for the input content.
      * </pre>
      *
      * <code>
@@ -2443,7 +2443,7 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Google Cloud Storage location for the input content.
+     * Required. Cloud Storage location for the input content.
      * </pre>
      *
      * <code>
@@ -2711,7 +2711,7 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Parent DataStore resource name, of the form
-     * `projects/{project}/locations/{location}/dataStores/{data_store}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
      * </pre>
      *
      * <code>
@@ -2736,7 +2736,7 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Parent DataStore resource name, of the form
-     * `projects/{project}/locations/{location}/dataStores/{data_store}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
      * </pre>
      *
      * <code>
@@ -2761,7 +2761,7 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Parent DataStore resource name, of the form
-     * `projects/{project}/locations/{location}/dataStores/{data_store}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
      * </pre>
      *
      * <code>
@@ -2785,7 +2785,7 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Parent DataStore resource name, of the form
-     * `projects/{project}/locations/{location}/dataStores/{data_store}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
      * </pre>
      *
      * <code>
@@ -2805,7 +2805,7 @@ public final class ImportUserEventsRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. Parent DataStore resource name, of the form
-     * `projects/{project}/locations/{location}/dataStores/{data_store}`
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`
      * </pre>
      *
      * <code>

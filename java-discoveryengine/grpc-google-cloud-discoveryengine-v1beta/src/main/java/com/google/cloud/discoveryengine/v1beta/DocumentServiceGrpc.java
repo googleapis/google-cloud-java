@@ -365,7 +365,7 @@ public final class DocumentServiceGrpc {
    * customer's website.
    * </pre>
    */
-  public abstract static class DocumentServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -374,7 +374,7 @@ public final class DocumentServiceGrpc {
      * Gets a [Document][google.cloud.discoveryengine.v1beta.Document].
      * </pre>
      */
-    public void getDocument(
+    default void getDocument(
         com.google.cloud.discoveryengine.v1beta.GetDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.Document>
             responseObserver) {
@@ -389,7 +389,7 @@ public final class DocumentServiceGrpc {
      * Gets a list of [Document][google.cloud.discoveryengine.v1beta.Document]s.
      * </pre>
      */
-    public void listDocuments(
+    default void listDocuments(
         com.google.cloud.discoveryengine.v1beta.ListDocumentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.ListDocumentsResponse>
             responseObserver) {
@@ -404,7 +404,7 @@ public final class DocumentServiceGrpc {
      * Creates a [Document][google.cloud.discoveryengine.v1beta.Document].
      * </pre>
      */
-    public void createDocument(
+    default void createDocument(
         com.google.cloud.discoveryengine.v1beta.CreateDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.Document>
             responseObserver) {
@@ -419,7 +419,7 @@ public final class DocumentServiceGrpc {
      * Updates a [Document][google.cloud.discoveryengine.v1beta.Document].
      * </pre>
      */
-    public void updateDocument(
+    default void updateDocument(
         com.google.cloud.discoveryengine.v1beta.UpdateDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1beta.Document>
             responseObserver) {
@@ -434,7 +434,7 @@ public final class DocumentServiceGrpc {
      * Deletes a [Document][google.cloud.discoveryengine.v1beta.Document].
      * </pre>
      */
-    public void deleteDocument(
+    default void deleteDocument(
         com.google.cloud.discoveryengine.v1beta.DeleteDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -453,62 +453,34 @@ public final class DocumentServiceGrpc {
      * successfully updated.
      * </pre>
      */
-    public void importDocuments(
+    default void importDocuments(
         com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getImportDocumentsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service DocumentService.
+   *
+   * <pre>
+   * Service for ingesting
+   * [Document][google.cloud.discoveryengine.v1beta.Document] information of the
+   * customer's website.
+   * </pre>
+   */
+  public abstract static class DocumentServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getGetDocumentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.discoveryengine.v1beta.GetDocumentRequest,
-                      com.google.cloud.discoveryengine.v1beta.Document>(
-                      this, METHODID_GET_DOCUMENT)))
-          .addMethod(
-              getListDocumentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.discoveryengine.v1beta.ListDocumentsRequest,
-                      com.google.cloud.discoveryengine.v1beta.ListDocumentsResponse>(
-                      this, METHODID_LIST_DOCUMENTS)))
-          .addMethod(
-              getCreateDocumentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.discoveryengine.v1beta.CreateDocumentRequest,
-                      com.google.cloud.discoveryengine.v1beta.Document>(
-                      this, METHODID_CREATE_DOCUMENT)))
-          .addMethod(
-              getUpdateDocumentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.discoveryengine.v1beta.UpdateDocumentRequest,
-                      com.google.cloud.discoveryengine.v1beta.Document>(
-                      this, METHODID_UPDATE_DOCUMENT)))
-          .addMethod(
-              getDeleteDocumentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.discoveryengine.v1beta.DeleteDocumentRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_DOCUMENT)))
-          .addMethod(
-              getImportDocumentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_IMPORT_DOCUMENTS)))
-          .build();
+      return DocumentServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service DocumentService.
    *
    * <pre>
    * Service for ingesting
@@ -634,7 +606,7 @@ public final class DocumentServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service DocumentService.
    *
    * <pre>
    * Service for ingesting
@@ -739,7 +711,7 @@ public final class DocumentServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service DocumentService.
    *
    * <pre>
    * Service for ingesting
@@ -859,10 +831,10 @@ public final class DocumentServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final DocumentServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(DocumentServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -920,6 +892,51 @@ public final class DocumentServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getGetDocumentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1beta.GetDocumentRequest,
+                    com.google.cloud.discoveryengine.v1beta.Document>(
+                    service, METHODID_GET_DOCUMENT)))
+        .addMethod(
+            getListDocumentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1beta.ListDocumentsRequest,
+                    com.google.cloud.discoveryengine.v1beta.ListDocumentsResponse>(
+                    service, METHODID_LIST_DOCUMENTS)))
+        .addMethod(
+            getCreateDocumentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1beta.CreateDocumentRequest,
+                    com.google.cloud.discoveryengine.v1beta.Document>(
+                    service, METHODID_CREATE_DOCUMENT)))
+        .addMethod(
+            getUpdateDocumentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1beta.UpdateDocumentRequest,
+                    com.google.cloud.discoveryengine.v1beta.Document>(
+                    service, METHODID_UPDATE_DOCUMENT)))
+        .addMethod(
+            getDeleteDocumentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1beta.DeleteDocumentRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_DOCUMENT)))
+        .addMethod(
+            getImportDocumentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_IMPORT_DOCUMENTS)))
+        .build();
   }
 
   private abstract static class DocumentServiceBaseDescriptorSupplier

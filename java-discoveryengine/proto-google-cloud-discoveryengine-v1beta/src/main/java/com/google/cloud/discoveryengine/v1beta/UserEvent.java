@@ -22,8 +22,8 @@ package com.google.cloud.discoveryengine.v1beta;
  *
  *
  * <pre>
- * UserEvent captures all metadata information DiscoveryEngine API needs to know
- * about how end users interact with customers' website.
+ * UserEvent captures all metadata information Discovery Engine API needs to
+ * know about how end users interact with customers' website.
  * </pre>
  *
  * Protobuf type {@code google.cloud.discoveryengine.v1beta.UserEvent}
@@ -375,7 +375,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * A unique identifier for tracking a visitor session with a length limit of
    * 128 bytes. A session is an aggregation of an end user behavior in a time
    * span.
-   * A general guideline to populate the sesion_id:
+   * A general guideline to populate the session_id:
    * 1. If user has no activity for 30 min, a new session_id should be assigned.
    * 2. The session_id should be unique across users, suggest use uuid or add
    * [UserEvent.user_pseudo_id][google.cloud.discoveryengine.v1beta.UserEvent.user_pseudo_id]
@@ -405,7 +405,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * A unique identifier for tracking a visitor session with a length limit of
    * 128 bytes. A session is an aggregation of an end user behavior in a time
    * span.
-   * A general guideline to populate the sesion_id:
+   * A general guideline to populate the session_id:
    * 1. If user has no activity for 30 min, a new session_id should be assigned.
    * 2. The session_id should be unique across users, suggest use uuid or add
    * [UserEvent.user_pseudo_id][google.cloud.discoveryengine.v1beta.UserEvent.user_pseudo_id]
@@ -1169,7 +1169,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * If you provide custom attributes for ingested user events, also include
    * them in the user events that you associate with prediction requests. Custom
    * attribute formatting must be consistent between imported events and events
-   * provided with prediction requests. This lets the DiscoveryEngine API use
+   * provided with prediction requests. This lets the Discovery Engine API use
    * those custom attributes when training models and serving predictions, which
    * helps improve recommendation quality.
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
@@ -1213,7 +1213,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * If you provide custom attributes for ingested user events, also include
    * them in the user events that you associate with prediction requests. Custom
    * attribute formatting must be consistent between imported events and events
-   * provided with prediction requests. This lets the DiscoveryEngine API use
+   * provided with prediction requests. This lets the Discovery Engine API use
    * those custom attributes when training models and serving predictions, which
    * helps improve recommendation quality.
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
@@ -1248,7 +1248,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * If you provide custom attributes for ingested user events, also include
    * them in the user events that you associate with prediction requests. Custom
    * attribute formatting must be consistent between imported events and events
-   * provided with prediction requests. This lets the DiscoveryEngine API use
+   * provided with prediction requests. This lets the Discovery Engine API use
    * those custom attributes when training models and serving predictions, which
    * helps improve recommendation quality.
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
@@ -1291,7 +1291,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * If you provide custom attributes for ingested user events, also include
    * them in the user events that you associate with prediction requests. Custom
    * attribute formatting must be consistent between imported events and events
-   * provided with prediction requests. This lets the DiscoveryEngine API use
+   * provided with prediction requests. This lets the Discovery Engine API use
    * those custom attributes when training models and serving predictions, which
    * helps improve recommendation quality.
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
@@ -1758,8 +1758,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * UserEvent captures all metadata information DiscoveryEngine API needs to know
-   * about how end users interact with customers' website.
+   * UserEvent captures all metadata information Discovery Engine API needs to
+   * know about how end users interact with customers' website.
    * </pre>
    *
    * Protobuf type {@code google.cloud.discoveryengine.v1beta.UserEvent}
@@ -3098,7 +3098,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * A unique identifier for tracking a visitor session with a length limit of
      * 128 bytes. A session is an aggregation of an end user behavior in a time
      * span.
-     * A general guideline to populate the sesion_id:
+     * A general guideline to populate the session_id:
      * 1. If user has no activity for 30 min, a new session_id should be assigned.
      * 2. The session_id should be unique across users, suggest use uuid or add
      * [UserEvent.user_pseudo_id][google.cloud.discoveryengine.v1beta.UserEvent.user_pseudo_id]
@@ -3127,7 +3127,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * A unique identifier for tracking a visitor session with a length limit of
      * 128 bytes. A session is an aggregation of an end user behavior in a time
      * span.
-     * A general guideline to populate the sesion_id:
+     * A general guideline to populate the session_id:
      * 1. If user has no activity for 30 min, a new session_id should be assigned.
      * 2. The session_id should be unique across users, suggest use uuid or add
      * [UserEvent.user_pseudo_id][google.cloud.discoveryengine.v1beta.UserEvent.user_pseudo_id]
@@ -3156,7 +3156,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * A unique identifier for tracking a visitor session with a length limit of
      * 128 bytes. A session is an aggregation of an end user behavior in a time
      * span.
-     * A general guideline to populate the sesion_id:
+     * A general guideline to populate the session_id:
      * 1. If user has no activity for 30 min, a new session_id should be assigned.
      * 2. The session_id should be unique across users, suggest use uuid or add
      * [UserEvent.user_pseudo_id][google.cloud.discoveryengine.v1beta.UserEvent.user_pseudo_id]
@@ -3184,7 +3184,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * A unique identifier for tracking a visitor session with a length limit of
      * 128 bytes. A session is an aggregation of an end user behavior in a time
      * span.
-     * A general guideline to populate the sesion_id:
+     * A general guideline to populate the session_id:
      * 1. If user has no activity for 30 min, a new session_id should be assigned.
      * 2. The session_id should be unique across users, suggest use uuid or add
      * [UserEvent.user_pseudo_id][google.cloud.discoveryengine.v1beta.UserEvent.user_pseudo_id]
@@ -3208,7 +3208,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * A unique identifier for tracking a visitor session with a length limit of
      * 128 bytes. A session is an aggregation of an end user behavior in a time
      * span.
-     * A general guideline to populate the sesion_id:
+     * A general guideline to populate the session_id:
      * 1. If user has no activity for 30 min, a new session_id should be assigned.
      * 2. The session_id should be unique across users, suggest use uuid or add
      * [UserEvent.user_pseudo_id][google.cloud.discoveryengine.v1beta.UserEvent.user_pseudo_id]
@@ -5541,7 +5541,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * If you provide custom attributes for ingested user events, also include
      * them in the user events that you associate with prediction requests. Custom
      * attribute formatting must be consistent between imported events and events
-     * provided with prediction requests. This lets the DiscoveryEngine API use
+     * provided with prediction requests. This lets the Discovery Engine API use
      * those custom attributes when training models and serving predictions, which
      * helps improve recommendation quality.
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
@@ -5586,7 +5586,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * If you provide custom attributes for ingested user events, also include
      * them in the user events that you associate with prediction requests. Custom
      * attribute formatting must be consistent between imported events and events
-     * provided with prediction requests. This lets the DiscoveryEngine API use
+     * provided with prediction requests. This lets the Discovery Engine API use
      * those custom attributes when training models and serving predictions, which
      * helps improve recommendation quality.
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
@@ -5622,7 +5622,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * If you provide custom attributes for ingested user events, also include
      * them in the user events that you associate with prediction requests. Custom
      * attribute formatting must be consistent between imported events and events
-     * provided with prediction requests. This lets the DiscoveryEngine API use
+     * provided with prediction requests. This lets the Discovery Engine API use
      * those custom attributes when training models and serving predictions, which
      * helps improve recommendation quality.
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
@@ -5666,7 +5666,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * If you provide custom attributes for ingested user events, also include
      * them in the user events that you associate with prediction requests. Custom
      * attribute formatting must be consistent between imported events and events
-     * provided with prediction requests. This lets the DiscoveryEngine API use
+     * provided with prediction requests. This lets the Discovery Engine API use
      * those custom attributes when training models and serving predictions, which
      * helps improve recommendation quality.
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
@@ -5716,7 +5716,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * If you provide custom attributes for ingested user events, also include
      * them in the user events that you associate with prediction requests. Custom
      * attribute formatting must be consistent between imported events and events
-     * provided with prediction requests. This lets the DiscoveryEngine API use
+     * provided with prediction requests. This lets the Discovery Engine API use
      * those custom attributes when training models and serving predictions, which
      * helps improve recommendation quality.
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
@@ -5761,7 +5761,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * If you provide custom attributes for ingested user events, also include
      * them in the user events that you associate with prediction requests. Custom
      * attribute formatting must be consistent between imported events and events
-     * provided with prediction requests. This lets the DiscoveryEngine API use
+     * provided with prediction requests. This lets the Discovery Engine API use
      * those custom attributes when training models and serving predictions, which
      * helps improve recommendation quality.
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
@@ -5804,7 +5804,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * If you provide custom attributes for ingested user events, also include
      * them in the user events that you associate with prediction requests. Custom
      * attribute formatting must be consistent between imported events and events
-     * provided with prediction requests. This lets the DiscoveryEngine API use
+     * provided with prediction requests. This lets the Discovery Engine API use
      * those custom attributes when training models and serving predictions, which
      * helps improve recommendation quality.
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT

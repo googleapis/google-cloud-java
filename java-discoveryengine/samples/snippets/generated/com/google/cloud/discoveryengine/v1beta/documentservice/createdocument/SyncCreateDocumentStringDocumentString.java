@@ -35,7 +35,9 @@ public class SyncCreateDocumentStringDocumentString {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
       String parent =
-          BranchName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]").toString();
+          BranchName.ofProjectLocationDataStoreBranchName(
+                  "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+              .toString();
       Document document = Document.newBuilder().build();
       String documentId = "documentId-814940266";
       Document response = documentServiceClient.createDocument(parent, document, documentId);

@@ -107,7 +107,7 @@ public interface DocumentOrBuilder
    * <pre>
    * Immutable. The full resource name of the document.
    * Format:
-   * `projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}/documents/{document_id}`.
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document_id}`.
    * This field must be a UTF-8 encoded string with a length limit of 1024
    * characters.
    * </pre>
@@ -123,7 +123,7 @@ public interface DocumentOrBuilder
    * <pre>
    * Immutable. The full resource name of the document.
    * Format:
-   * `projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}/documents/{document_id}`.
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document_id}`.
    * This field must be a UTF-8 encoded string with a length limit of 1024
    * characters.
    * </pre>
@@ -167,10 +167,10 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Required. The identifier of the schema located in the same data store.
+   * The identifier of the schema located in the same data store.
    * </pre>
    *
-   * <code>string schema_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string schema_id = 3;</code>
    *
    * @return The schemaId.
    */
@@ -179,10 +179,10 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Required. The identifier of the schema located in the same data store.
+   * The identifier of the schema located in the same data store.
    * </pre>
    *
-   * <code>string schema_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string schema_id = 3;</code>
    *
    * @return The bytes for schemaId.
    */

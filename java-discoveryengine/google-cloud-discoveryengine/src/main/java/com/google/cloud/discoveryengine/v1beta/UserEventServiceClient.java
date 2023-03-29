@@ -46,7 +46,10 @@ import javax.annotation.Generated;
  * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
  *   WriteUserEventRequest request =
  *       WriteUserEventRequest.newBuilder()
- *           .setParent(DataStoreName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]").toString())
+ *           .setParent(
+ *               DataStoreName.ofProjectLocationDataStoreName(
+ *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+ *                   .toString())
  *           .setUserEvent(UserEvent.newBuilder().build())
  *           .build();
  *   UserEvent response = userEventServiceClient.writeUserEvent(request);
@@ -218,7 +221,10 @@ public class UserEventServiceClient implements BackgroundResource {
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   WriteUserEventRequest request =
    *       WriteUserEventRequest.newBuilder()
-   *           .setParent(DataStoreName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]").toString())
+   *           .setParent(
+   *               DataStoreName.ofProjectLocationDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *                   .toString())
    *           .setUserEvent(UserEvent.newBuilder().build())
    *           .build();
    *   UserEvent response = userEventServiceClient.writeUserEvent(request);
@@ -247,7 +253,10 @@ public class UserEventServiceClient implements BackgroundResource {
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   WriteUserEventRequest request =
    *       WriteUserEventRequest.newBuilder()
-   *           .setParent(DataStoreName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]").toString())
+   *           .setParent(
+   *               DataStoreName.ofProjectLocationDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *                   .toString())
    *           .setUserEvent(UserEvent.newBuilder().build())
    *           .build();
    *   ApiFuture<UserEvent> future =
@@ -280,7 +289,10 @@ public class UserEventServiceClient implements BackgroundResource {
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   CollectUserEventRequest request =
    *       CollectUserEventRequest.newBuilder()
-   *           .setParent(DataStoreName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]").toString())
+   *           .setParent(
+   *               DataStoreName.ofProjectLocationDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *                   .toString())
    *           .setUserEvent("userEvent315571599")
    *           .setUri("uri116076")
    *           .setEts(100772)
@@ -315,7 +327,10 @@ public class UserEventServiceClient implements BackgroundResource {
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   CollectUserEventRequest request =
    *       CollectUserEventRequest.newBuilder()
-   *           .setParent(DataStoreName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]").toString())
+   *           .setParent(
+   *               DataStoreName.ofProjectLocationDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *                   .toString())
    *           .setUserEvent("userEvent315571599")
    *           .setUri("uri116076")
    *           .setEts(100772)
@@ -350,7 +365,10 @@ public class UserEventServiceClient implements BackgroundResource {
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   ImportUserEventsRequest request =
    *       ImportUserEventsRequest.newBuilder()
-   *           .setParent(DataStoreName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]").toString())
+   *           .setParent(
+   *               DataStoreName.ofProjectLocationDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *                   .toString())
    *           .setErrorConfig(ImportErrorConfig.newBuilder().build())
    *           .build();
    *   ImportUserEventsResponse response =
@@ -385,7 +403,10 @@ public class UserEventServiceClient implements BackgroundResource {
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   ImportUserEventsRequest request =
    *       ImportUserEventsRequest.newBuilder()
-   *           .setParent(DataStoreName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]").toString())
+   *           .setParent(
+   *               DataStoreName.ofProjectLocationDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *                   .toString())
    *           .setErrorConfig(ImportErrorConfig.newBuilder().build())
    *           .build();
    *   OperationFuture<ImportUserEventsResponse, ImportUserEventsMetadata> future =
@@ -420,7 +441,10 @@ public class UserEventServiceClient implements BackgroundResource {
    * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
    *   ImportUserEventsRequest request =
    *       ImportUserEventsRequest.newBuilder()
-   *           .setParent(DataStoreName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]").toString())
+   *           .setParent(
+   *               DataStoreName.ofProjectLocationDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *                   .toString())
    *           .setErrorConfig(ImportErrorConfig.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =

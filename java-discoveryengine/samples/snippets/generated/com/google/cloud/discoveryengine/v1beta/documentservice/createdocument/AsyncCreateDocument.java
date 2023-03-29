@@ -39,7 +39,9 @@ public class AsyncCreateDocument {
       CreateDocumentRequest request =
           CreateDocumentRequest.newBuilder()
               .setParent(
-                  BranchName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]").toString())
+                  BranchName.ofProjectLocationDataStoreBranchName(
+                          "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+                      .toString())
               .setDocument(Document.newBuilder().build())
               .setDocumentId("documentId-814940266")
               .build();

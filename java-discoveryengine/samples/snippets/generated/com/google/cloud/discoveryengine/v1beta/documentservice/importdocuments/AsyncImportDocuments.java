@@ -40,7 +40,9 @@ public class AsyncImportDocuments {
       ImportDocumentsRequest request =
           ImportDocumentsRequest.newBuilder()
               .setParent(
-                  BranchName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]").toString())
+                  BranchName.ofProjectLocationDataStoreBranchName(
+                          "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+                      .toString())
               .setErrorConfig(ImportErrorConfig.newBuilder().build())
               .build();
       ApiFuture<Operation> future =

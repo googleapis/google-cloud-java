@@ -77,7 +77,7 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The parent DataStore resource name, such as
-   * `projects/{project}/locations/{location}/dataStores/{data_store}`.
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`.
    * </pre>
    *
    * <code>
@@ -103,7 +103,7 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The parent DataStore resource name, such as
-   * `projects/{project}/locations/{location}/dataStores/{data_store}`.
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`.
    * </pre>
    *
    * <code>
@@ -576,7 +576,7 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The parent DataStore resource name, such as
-     * `projects/{project}/locations/{location}/dataStores/{data_store}`.
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`.
      * </pre>
      *
      * <code>
@@ -601,7 +601,7 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The parent DataStore resource name, such as
-     * `projects/{project}/locations/{location}/dataStores/{data_store}`.
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`.
      * </pre>
      *
      * <code>
@@ -626,7 +626,7 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The parent DataStore resource name, such as
-     * `projects/{project}/locations/{location}/dataStores/{data_store}`.
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`.
      * </pre>
      *
      * <code>
@@ -650,7 +650,7 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The parent DataStore resource name, such as
-     * `projects/{project}/locations/{location}/dataStores/{data_store}`.
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`.
      * </pre>
      *
      * <code>
@@ -670,7 +670,7 @@ public final class WriteUserEventRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The parent DataStore resource name, such as
-     * `projects/{project}/locations/{location}/dataStores/{data_store}`.
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}`.
      * </pre>
      *
      * <code>

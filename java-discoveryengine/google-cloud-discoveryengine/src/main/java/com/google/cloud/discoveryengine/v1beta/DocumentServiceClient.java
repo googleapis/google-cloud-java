@@ -54,7 +54,8 @@ import javax.annotation.Generated;
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
  *   DocumentName name =
- *       DocumentName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
+ *       DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+ *           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
  *   Document response = documentServiceClient.getDocument(name);
  * }
  * }</pre>
@@ -223,14 +224,15 @@ public class DocumentServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
    *   DocumentName name =
-   *       DocumentName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
+   *       DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+   *           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
    *   Document response = documentServiceClient.getDocument(name);
    * }
    * }</pre>
    *
    * @param name Required. Full resource name of
    *     [Document][google.cloud.discoveryengine.v1beta.Document], such as
-   *     `projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}/documents/{document}`.
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document}`.
    *     <p>If the caller does not have permission to access the
    *     [Document][google.cloud.discoveryengine.v1beta.Document], regardless of whether or not it
    *     exists, a PERMISSION_DENIED error is returned.
@@ -258,7 +260,8 @@ public class DocumentServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
    *   String name =
-   *       DocumentName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
+   *       DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+   *               "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
    *           .toString();
    *   Document response = documentServiceClient.getDocument(name);
    * }
@@ -266,7 +269,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *
    * @param name Required. Full resource name of
    *     [Document][google.cloud.discoveryengine.v1beta.Document], such as
-   *     `projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}/documents/{document}`.
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document}`.
    *     <p>If the caller does not have permission to access the
    *     [Document][google.cloud.discoveryengine.v1beta.Document], regardless of whether or not it
    *     exists, a PERMISSION_DENIED error is returned.
@@ -295,7 +298,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *   GetDocumentRequest request =
    *       GetDocumentRequest.newBuilder()
    *           .setName(
-   *               DocumentName.of(
+   *               DocumentName.ofProjectLocationDataStoreBranchDocumentName(
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
    *                   .toString())
    *           .build();
@@ -326,7 +329,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *   GetDocumentRequest request =
    *       GetDocumentRequest.newBuilder()
    *           .setName(
-   *               DocumentName.of(
+   *               DocumentName.ofProjectLocationDataStoreBranchDocumentName(
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
    *                   .toString())
    *           .build();
@@ -353,7 +356,9 @@ public class DocumentServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
-   *   BranchName parent = BranchName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]");
+   *   BranchName parent =
+   *       BranchName.ofProjectLocationDataStoreBranchName(
+   *           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]");
    *   for (Document element : documentServiceClient.listDocuments(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -361,8 +366,8 @@ public class DocumentServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent branch resource name, such as
-   *     `projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}`. Use
-   *     `default_branch` as the branch ID, to list documents under the default branch.
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
+   *     Use `default_branch` as the branch ID, to list documents under the default branch.
    *     <p>If the caller does not have permission to list [Documents][]s under this branch,
    *     regardless of whether or not this branch exists, a PERMISSION_DENIED error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -389,7 +394,9 @@ public class DocumentServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
    *   String parent =
-   *       BranchName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]").toString();
+   *       BranchName.ofProjectLocationDataStoreBranchName(
+   *               "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+   *           .toString();
    *   for (Document element : documentServiceClient.listDocuments(parent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -397,8 +404,8 @@ public class DocumentServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent branch resource name, such as
-   *     `projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}`. Use
-   *     `default_branch` as the branch ID, to list documents under the default branch.
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
+   *     Use `default_branch` as the branch ID, to list documents under the default branch.
    *     <p>If the caller does not have permission to list [Documents][]s under this branch,
    *     regardless of whether or not this branch exists, a PERMISSION_DENIED error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -424,7 +431,9 @@ public class DocumentServiceClient implements BackgroundResource {
    *   ListDocumentsRequest request =
    *       ListDocumentsRequest.newBuilder()
    *           .setParent(
-   *               BranchName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]").toString())
+   *               BranchName.ofProjectLocationDataStoreBranchName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+   *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -457,7 +466,9 @@ public class DocumentServiceClient implements BackgroundResource {
    *   ListDocumentsRequest request =
    *       ListDocumentsRequest.newBuilder()
    *           .setParent(
-   *               BranchName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]").toString())
+   *               BranchName.ofProjectLocationDataStoreBranchName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+   *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -491,7 +502,9 @@ public class DocumentServiceClient implements BackgroundResource {
    *   ListDocumentsRequest request =
    *       ListDocumentsRequest.newBuilder()
    *           .setParent(
-   *               BranchName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]").toString())
+   *               BranchName.ofProjectLocationDataStoreBranchName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+   *                   .toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -528,7 +541,9 @@ public class DocumentServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
-   *   BranchName parent = BranchName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]");
+   *   BranchName parent =
+   *       BranchName.ofProjectLocationDataStoreBranchName(
+   *           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]");
    *   Document document = Document.newBuilder().build();
    *   String documentId = "documentId-814940266";
    *   Document response = documentServiceClient.createDocument(parent, document, documentId);
@@ -536,7 +551,7 @@ public class DocumentServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource name, such as
-   *     `projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}`.
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
    * @param document Required. The [Document][google.cloud.discoveryengine.v1beta.Document] to
    *     create.
    * @param documentId Required. The ID to use for the
@@ -577,7 +592,9 @@ public class DocumentServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
    *   String parent =
-   *       BranchName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]").toString();
+   *       BranchName.ofProjectLocationDataStoreBranchName(
+   *               "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+   *           .toString();
    *   Document document = Document.newBuilder().build();
    *   String documentId = "documentId-814940266";
    *   Document response = documentServiceClient.createDocument(parent, document, documentId);
@@ -585,7 +602,7 @@ public class DocumentServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource name, such as
-   *     `projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}`.
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
    * @param document Required. The [Document][google.cloud.discoveryengine.v1beta.Document] to
    *     create.
    * @param documentId Required. The ID to use for the
@@ -628,7 +645,9 @@ public class DocumentServiceClient implements BackgroundResource {
    *   CreateDocumentRequest request =
    *       CreateDocumentRequest.newBuilder()
    *           .setParent(
-   *               BranchName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]").toString())
+   *               BranchName.ofProjectLocationDataStoreBranchName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+   *                   .toString())
    *           .setDocument(Document.newBuilder().build())
    *           .setDocumentId("documentId-814940266")
    *           .build();
@@ -659,7 +678,9 @@ public class DocumentServiceClient implements BackgroundResource {
    *   CreateDocumentRequest request =
    *       CreateDocumentRequest.newBuilder()
    *           .setParent(
-   *               BranchName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]").toString())
+   *               BranchName.ofProjectLocationDataStoreBranchName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+   *                   .toString())
    *           .setDocument(Document.newBuilder().build())
    *           .setDocumentId("documentId-814940266")
    *           .build();
@@ -746,14 +767,15 @@ public class DocumentServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
    *   DocumentName name =
-   *       DocumentName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
+   *       DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+   *           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
    *   documentServiceClient.deleteDocument(name);
    * }
    * }</pre>
    *
    * @param name Required. Full resource name of
    *     [Document][google.cloud.discoveryengine.v1beta.Document], such as
-   *     `projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}/documents/{document}`.
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document}`.
    *     <p>If the caller does not have permission to delete the
    *     [Document][google.cloud.discoveryengine.v1beta.Document], regardless of whether or not it
    *     exists, a PERMISSION_DENIED error is returned.
@@ -781,7 +803,8 @@ public class DocumentServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
    *   String name =
-   *       DocumentName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
+   *       DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+   *               "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
    *           .toString();
    *   documentServiceClient.deleteDocument(name);
    * }
@@ -789,7 +812,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *
    * @param name Required. Full resource name of
    *     [Document][google.cloud.discoveryengine.v1beta.Document], such as
-   *     `projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}/documents/{document}`.
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document}`.
    *     <p>If the caller does not have permission to delete the
    *     [Document][google.cloud.discoveryengine.v1beta.Document], regardless of whether or not it
    *     exists, a PERMISSION_DENIED error is returned.
@@ -818,7 +841,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *   DeleteDocumentRequest request =
    *       DeleteDocumentRequest.newBuilder()
    *           .setName(
-   *               DocumentName.of(
+   *               DocumentName.ofProjectLocationDataStoreBranchDocumentName(
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
    *                   .toString())
    *           .build();
@@ -849,7 +872,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *   DeleteDocumentRequest request =
    *       DeleteDocumentRequest.newBuilder()
    *           .setName(
-   *               DocumentName.of(
+   *               DocumentName.ofProjectLocationDataStoreBranchDocumentName(
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
    *                   .toString())
    *           .build();
@@ -883,7 +906,9 @@ public class DocumentServiceClient implements BackgroundResource {
    *   ImportDocumentsRequest request =
    *       ImportDocumentsRequest.newBuilder()
    *           .setParent(
-   *               BranchName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]").toString())
+   *               BranchName.ofProjectLocationDataStoreBranchName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+   *                   .toString())
    *           .setErrorConfig(ImportErrorConfig.newBuilder().build())
    *           .build();
    *   ImportDocumentsResponse response = documentServiceClient.importDocumentsAsync(request).get();
@@ -918,7 +943,9 @@ public class DocumentServiceClient implements BackgroundResource {
    *   ImportDocumentsRequest request =
    *       ImportDocumentsRequest.newBuilder()
    *           .setParent(
-   *               BranchName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]").toString())
+   *               BranchName.ofProjectLocationDataStoreBranchName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+   *                   .toString())
    *           .setErrorConfig(ImportErrorConfig.newBuilder().build())
    *           .build();
    *   OperationFuture<ImportDocumentsResponse, ImportDocumentsMetadata> future =
@@ -954,7 +981,9 @@ public class DocumentServiceClient implements BackgroundResource {
    *   ImportDocumentsRequest request =
    *       ImportDocumentsRequest.newBuilder()
    *           .setParent(
-   *               BranchName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]").toString())
+   *               BranchName.ofProjectLocationDataStoreBranchName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+   *                   .toString())
    *           .setErrorConfig(ImportErrorConfig.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
