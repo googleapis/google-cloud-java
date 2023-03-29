@@ -101,6 +101,42 @@ public interface TranslationConfigDetailsOrBuilder
    *
    *
    * <pre>
+   * The mapping of objects to their desired output names in list form.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.ObjectNameMappingList name_mapping_list = 5;</code>
+   *
+   * @return Whether the nameMappingList field is set.
+   */
+  boolean hasNameMappingList();
+  /**
+   *
+   *
+   * <pre>
+   * The mapping of objects to their desired output names in list form.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.ObjectNameMappingList name_mapping_list = 5;</code>
+   *
+   * @return The nameMappingList.
+   */
+  com.google.cloud.bigquery.migration.v2.ObjectNameMappingList getNameMappingList();
+  /**
+   *
+   *
+   * <pre>
+   * The mapping of objects to their desired output names in list form.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.ObjectNameMappingList name_mapping_list = 5;</code>
+   */
+  com.google.cloud.bigquery.migration.v2.ObjectNameMappingListOrBuilder
+      getNameMappingListOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The dialect of the input files.
    * </pre>
    *
@@ -171,42 +207,6 @@ public interface TranslationConfigDetailsOrBuilder
    *
    *
    * <pre>
-   * The mapping of objects to their desired output names in list form.
-   * </pre>
-   *
-   * <code>.google.cloud.bigquery.migration.v2.ObjectNameMappingList name_mapping_list = 5;</code>
-   *
-   * @return Whether the nameMappingList field is set.
-   */
-  boolean hasNameMappingList();
-  /**
-   *
-   *
-   * <pre>
-   * The mapping of objects to their desired output names in list form.
-   * </pre>
-   *
-   * <code>.google.cloud.bigquery.migration.v2.ObjectNameMappingList name_mapping_list = 5;</code>
-   *
-   * @return The nameMappingList.
-   */
-  com.google.cloud.bigquery.migration.v2.ObjectNameMappingList getNameMappingList();
-  /**
-   *
-   *
-   * <pre>
-   * The mapping of objects to their desired output names in list form.
-   * </pre>
-   *
-   * <code>.google.cloud.bigquery.migration.v2.ObjectNameMappingList name_mapping_list = 5;</code>
-   */
-  com.google.cloud.bigquery.migration.v2.ObjectNameMappingListOrBuilder
-      getNameMappingListOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
    * The default source environment values for the translation.
    * </pre>
    *
@@ -237,6 +237,31 @@ public interface TranslationConfigDetailsOrBuilder
    * <code>.google.cloud.bigquery.migration.v2.SourceEnv source_env = 6;</code>
    */
   com.google.cloud.bigquery.migration.v2.SourceEnvOrBuilder getSourceEnvOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The indicator to show translation request initiator.
+   * </pre>
+   *
+   * <code>string request_source = 8;</code>
+   *
+   * @return The requestSource.
+   */
+  java.lang.String getRequestSource();
+  /**
+   *
+   *
+   * <pre>
+   * The indicator to show translation request initiator.
+   * </pre>
+   *
+   * <code>string request_source = 8;</code>
+   *
+   * @return The bytes for requestSource.
+   */
+  com.google.protobuf.ByteString getRequestSourceBytes();
 
   public com.google.cloud.bigquery.migration.v2.TranslationConfigDetails.SourceLocationCase
       getSourceLocationCase();

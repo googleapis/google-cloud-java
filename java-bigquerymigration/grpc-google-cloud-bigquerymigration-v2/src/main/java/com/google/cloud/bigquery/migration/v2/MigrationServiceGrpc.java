@@ -433,7 +433,7 @@ public final class MigrationServiceGrpc {
    * Service to handle EDW migrations.
    * </pre>
    */
-  public abstract static class MigrationServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -442,7 +442,7 @@ public final class MigrationServiceGrpc {
      * Creates a migration workflow.
      * </pre>
      */
-    public void createMigrationWorkflow(
+    default void createMigrationWorkflow(
         com.google.cloud.bigquery.migration.v2.CreateMigrationWorkflowRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.migration.v2.MigrationWorkflow>
             responseObserver) {
@@ -457,7 +457,7 @@ public final class MigrationServiceGrpc {
      * Gets a previously created migration workflow.
      * </pre>
      */
-    public void getMigrationWorkflow(
+    default void getMigrationWorkflow(
         com.google.cloud.bigquery.migration.v2.GetMigrationWorkflowRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.migration.v2.MigrationWorkflow>
             responseObserver) {
@@ -472,7 +472,7 @@ public final class MigrationServiceGrpc {
      * Lists previously created migration workflow.
      * </pre>
      */
-    public void listMigrationWorkflows(
+    default void listMigrationWorkflows(
         com.google.cloud.bigquery.migration.v2.ListMigrationWorkflowsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.migration.v2.ListMigrationWorkflowsResponse>
@@ -488,7 +488,7 @@ public final class MigrationServiceGrpc {
      * Deletes a migration workflow by name.
      * </pre>
      */
-    public void deleteMigrationWorkflow(
+    default void deleteMigrationWorkflow(
         com.google.cloud.bigquery.migration.v2.DeleteMigrationWorkflowRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -505,7 +505,7 @@ public final class MigrationServiceGrpc {
      * RUNNING.
      * </pre>
      */
-    public void startMigrationWorkflow(
+    default void startMigrationWorkflow(
         com.google.cloud.bigquery.migration.v2.StartMigrationWorkflowRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -519,7 +519,7 @@ public final class MigrationServiceGrpc {
      * Gets a previously created migration subtask.
      * </pre>
      */
-    public void getMigrationSubtask(
+    default void getMigrationSubtask(
         com.google.cloud.bigquery.migration.v2.GetMigrationSubtaskRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.migration.v2.MigrationSubtask>
             responseObserver) {
@@ -534,7 +534,7 @@ public final class MigrationServiceGrpc {
      * Lists previously created migration subtasks.
      * </pre>
      */
-    public void listMigrationSubtasks(
+    default void listMigrationSubtasks(
         com.google.cloud.bigquery.migration.v2.ListMigrationSubtasksRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.migration.v2.ListMigrationSubtasksResponse>
@@ -542,63 +542,26 @@ public final class MigrationServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListMigrationSubtasksMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service MigrationService.
+   *
+   * <pre>
+   * Service to handle EDW migrations.
+   * </pre>
+   */
+  public abstract static class MigrationServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateMigrationWorkflowMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.migration.v2.CreateMigrationWorkflowRequest,
-                      com.google.cloud.bigquery.migration.v2.MigrationWorkflow>(
-                      this, METHODID_CREATE_MIGRATION_WORKFLOW)))
-          .addMethod(
-              getGetMigrationWorkflowMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.migration.v2.GetMigrationWorkflowRequest,
-                      com.google.cloud.bigquery.migration.v2.MigrationWorkflow>(
-                      this, METHODID_GET_MIGRATION_WORKFLOW)))
-          .addMethod(
-              getListMigrationWorkflowsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.migration.v2.ListMigrationWorkflowsRequest,
-                      com.google.cloud.bigquery.migration.v2.ListMigrationWorkflowsResponse>(
-                      this, METHODID_LIST_MIGRATION_WORKFLOWS)))
-          .addMethod(
-              getDeleteMigrationWorkflowMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.migration.v2.DeleteMigrationWorkflowRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_MIGRATION_WORKFLOW)))
-          .addMethod(
-              getStartMigrationWorkflowMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.migration.v2.StartMigrationWorkflowRequest,
-                      com.google.protobuf.Empty>(this, METHODID_START_MIGRATION_WORKFLOW)))
-          .addMethod(
-              getGetMigrationSubtaskMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.migration.v2.GetMigrationSubtaskRequest,
-                      com.google.cloud.bigquery.migration.v2.MigrationSubtask>(
-                      this, METHODID_GET_MIGRATION_SUBTASK)))
-          .addMethod(
-              getListMigrationSubtasksMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.migration.v2.ListMigrationSubtasksRequest,
-                      com.google.cloud.bigquery.migration.v2.ListMigrationSubtasksResponse>(
-                      this, METHODID_LIST_MIGRATION_SUBTASKS)))
-          .build();
+      return MigrationServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service MigrationService.
    *
    * <pre>
    * Service to handle EDW migrations.
@@ -739,7 +702,7 @@ public final class MigrationServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service MigrationService.
    *
    * <pre>
    * Service to handle EDW migrations.
@@ -855,7 +818,7 @@ public final class MigrationServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service MigrationService.
    *
    * <pre>
    * Service to handle EDW migrations.
@@ -993,10 +956,10 @@ public final class MigrationServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final MigrationServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(MigrationServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1063,6 +1026,58 @@ public final class MigrationServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateMigrationWorkflowMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.migration.v2.CreateMigrationWorkflowRequest,
+                    com.google.cloud.bigquery.migration.v2.MigrationWorkflow>(
+                    service, METHODID_CREATE_MIGRATION_WORKFLOW)))
+        .addMethod(
+            getGetMigrationWorkflowMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.migration.v2.GetMigrationWorkflowRequest,
+                    com.google.cloud.bigquery.migration.v2.MigrationWorkflow>(
+                    service, METHODID_GET_MIGRATION_WORKFLOW)))
+        .addMethod(
+            getListMigrationWorkflowsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.migration.v2.ListMigrationWorkflowsRequest,
+                    com.google.cloud.bigquery.migration.v2.ListMigrationWorkflowsResponse>(
+                    service, METHODID_LIST_MIGRATION_WORKFLOWS)))
+        .addMethod(
+            getDeleteMigrationWorkflowMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.migration.v2.DeleteMigrationWorkflowRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_MIGRATION_WORKFLOW)))
+        .addMethod(
+            getStartMigrationWorkflowMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.migration.v2.StartMigrationWorkflowRequest,
+                    com.google.protobuf.Empty>(service, METHODID_START_MIGRATION_WORKFLOW)))
+        .addMethod(
+            getGetMigrationSubtaskMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.migration.v2.GetMigrationSubtaskRequest,
+                    com.google.cloud.bigquery.migration.v2.MigrationSubtask>(
+                    service, METHODID_GET_MIGRATION_SUBTASK)))
+        .addMethod(
+            getListMigrationSubtasksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.migration.v2.ListMigrationSubtasksRequest,
+                    com.google.cloud.bigquery.migration.v2.ListMigrationSubtasksResponse>(
+                    service, METHODID_LIST_MIGRATION_SUBTASKS)))
+        .build();
   }
 
   private abstract static class MigrationServiceBaseDescriptorSupplier

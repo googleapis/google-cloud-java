@@ -217,8 +217,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The data points of this time series. When listing time series, points are
-   * returned in reverse time order.
+   * Required. The data points of this time series. When listing time series,
+   * points are returned in reverse time order.
    * When creating a time series, this field must contain exactly one point and
    * the point's type must be the same as the value type of the associated
    * metric. If the associated metric's descriptor must be auto-created, then
@@ -238,8 +238,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The data points of this time series. When listing time series, points are
-   * returned in reverse time order.
+   * Required. The data points of this time series. When listing time series,
+   * points are returned in reverse time order.
    * When creating a time series, this field must contain exactly one point and
    * the point's type must be the same as the value type of the associated
    * metric. If the associated metric's descriptor must be auto-created, then
@@ -260,8 +260,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The data points of this time series. When listing time series, points are
-   * returned in reverse time order.
+   * Required. The data points of this time series. When listing time series,
+   * points are returned in reverse time order.
    * When creating a time series, this field must contain exactly one point and
    * the point's type must be the same as the value type of the associated
    * metric. If the associated metric's descriptor must be auto-created, then
@@ -281,8 +281,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The data points of this time series. When listing time series, points are
-   * returned in reverse time order.
+   * Required. The data points of this time series. When listing time series,
+   * points are returned in reverse time order.
    * When creating a time series, this field must contain exactly one point and
    * the point's type must be the same as the value type of the associated
    * metric. If the associated metric's descriptor must be auto-created, then
@@ -302,8 +302,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The data points of this time series. When listing time series, points are
-   * returned in reverse time order.
+   * Required. The data points of this time series. When listing time series,
+   * points are returned in reverse time order.
    * When creating a time series, this field must contain exactly one point and
    * the point's type must be the same as the value type of the associated
    * metric. If the associated metric's descriptor must be auto-created, then
@@ -1133,8 +1133,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The data points of this time series. When listing time series, points are
-     * returned in reverse time order.
+     * Required. The data points of this time series. When listing time series,
+     * points are returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1157,8 +1157,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The data points of this time series. When listing time series, points are
-     * returned in reverse time order.
+     * Required. The data points of this time series. When listing time series,
+     * points are returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1181,8 +1181,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The data points of this time series. When listing time series, points are
-     * returned in reverse time order.
+     * Required. The data points of this time series. When listing time series,
+     * points are returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1205,8 +1205,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The data points of this time series. When listing time series, points are
-     * returned in reverse time order.
+     * Required. The data points of this time series. When listing time series,
+     * points are returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1235,8 +1235,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The data points of this time series. When listing time series, points are
-     * returned in reverse time order.
+     * Required. The data points of this time series. When listing time series,
+     * points are returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1263,8 +1263,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The data points of this time series. When listing time series, points are
-     * returned in reverse time order.
+     * Required. The data points of this time series. When listing time series,
+     * points are returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1293,8 +1293,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The data points of this time series. When listing time series, points are
-     * returned in reverse time order.
+     * Required. The data points of this time series. When listing time series,
+     * points are returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1323,8 +1323,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The data points of this time series. When listing time series, points are
-     * returned in reverse time order.
+     * Required. The data points of this time series. When listing time series,
+     * points are returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1350,8 +1350,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The data points of this time series. When listing time series, points are
-     * returned in reverse time order.
+     * Required. The data points of this time series. When listing time series,
+     * points are returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1378,8 +1378,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The data points of this time series. When listing time series, points are
-     * returned in reverse time order.
+     * Required. The data points of this time series. When listing time series,
+     * points are returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1406,8 +1406,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The data points of this time series. When listing time series, points are
-     * returned in reverse time order.
+     * Required. The data points of this time series. When listing time series,
+     * points are returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1433,8 +1433,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The data points of this time series. When listing time series, points are
-     * returned in reverse time order.
+     * Required. The data points of this time series. When listing time series,
+     * points are returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1460,8 +1460,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The data points of this time series. When listing time series, points are
-     * returned in reverse time order.
+     * Required. The data points of this time series. When listing time series,
+     * points are returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1480,8 +1480,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The data points of this time series. When listing time series, points are
-     * returned in reverse time order.
+     * Required. The data points of this time series. When listing time series,
+     * points are returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1504,8 +1504,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The data points of this time series. When listing time series, points are
-     * returned in reverse time order.
+     * Required. The data points of this time series. When listing time series,
+     * points are returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1529,8 +1529,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The data points of this time series. When listing time series, points are
-     * returned in reverse time order.
+     * Required. The data points of this time series. When listing time series,
+     * points are returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1550,8 +1550,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The data points of this time series. When listing time series, points are
-     * returned in reverse time order.
+     * Required. The data points of this time series. When listing time series,
+     * points are returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then
@@ -1571,8 +1571,8 @@ public final class TimeSeries extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The data points of this time series. When listing time series, points are
-     * returned in reverse time order.
+     * Required. The data points of this time series. When listing time series,
+     * points are returned in reverse time order.
      * When creating a time series, this field must contain exactly one point and
      * the point's type must be the same as the value type of the associated
      * metric. If the associated metric's descriptor must be auto-created, then

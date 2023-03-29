@@ -145,6 +145,17 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      * <code>PAUSED = 5;</code>
      */
     PAUSED(5),
+    /**
+     *
+     *
+     * <pre>
+     * The subtask is pending a dependency. It will be scheduled once its
+     * dependencies are done.
+     * </pre>
+     *
+     * <code>PENDING_DEPENDENCY = 6;</code>
+     */
+    PENDING_DEPENDENCY(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -209,6 +220,17 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
      * <code>PAUSED = 5;</code>
      */
     public static final int PAUSED_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * The subtask is pending a dependency. It will be scheduled once its
+     * dependencies are done.
+     * </pre>
+     *
+     * <code>PENDING_DEPENDENCY = 6;</code>
+     */
+    public static final int PENDING_DEPENDENCY_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -246,6 +268,8 @@ public final class MigrationSubtask extends com.google.protobuf.GeneratedMessage
           return FAILED;
         case 5:
           return PAUSED;
+        case 6:
+          return PENDING_DEPENDENCY;
         default:
           return null;
       }

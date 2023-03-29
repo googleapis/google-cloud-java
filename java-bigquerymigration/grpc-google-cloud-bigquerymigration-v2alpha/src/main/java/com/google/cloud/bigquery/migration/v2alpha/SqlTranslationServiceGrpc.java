@@ -131,7 +131,7 @@ public final class SqlTranslationServiceGrpc {
    * Provides other SQL dialects to GoogleSQL translation operations.
    * </pre>
    */
-  public abstract static class SqlTranslationServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -140,7 +140,7 @@ public final class SqlTranslationServiceGrpc {
      * Translates input queries from source dialects to GoogleSQL.
      * </pre>
      */
-    public void translateQuery(
+    default void translateQuery(
         com.google.cloud.bigquery.migration.v2alpha.TranslateQueryRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.migration.v2alpha.TranslateQueryResponse>
@@ -148,23 +148,26 @@ public final class SqlTranslationServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getTranslateQueryMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service SqlTranslationService.
+   *
+   * <pre>
+   * Provides other SQL dialects to GoogleSQL translation operations.
+   * </pre>
+   */
+  public abstract static class SqlTranslationServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getTranslateQueryMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.migration.v2alpha.TranslateQueryRequest,
-                      com.google.cloud.bigquery.migration.v2alpha.TranslateQueryResponse>(
-                      this, METHODID_TRANSLATE_QUERY)))
-          .build();
+      return SqlTranslationServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service SqlTranslationService.
    *
    * <pre>
    * Provides other SQL dialects to GoogleSQL translation operations.
@@ -202,7 +205,7 @@ public final class SqlTranslationServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service SqlTranslationService.
    *
    * <pre>
    * Provides other SQL dialects to GoogleSQL translation operations.
@@ -236,7 +239,8 @@ public final class SqlTranslationServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * SqlTranslationService.
    *
    * <pre>
    * Provides other SQL dialects to GoogleSQL translation operations.
@@ -277,10 +281,10 @@ public final class SqlTranslationServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final SqlTranslationServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(SqlTranslationServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -310,6 +314,18 @@ public final class SqlTranslationServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getTranslateQueryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.migration.v2alpha.TranslateQueryRequest,
+                    com.google.cloud.bigquery.migration.v2alpha.TranslateQueryResponse>(
+                    service, METHODID_TRANSLATE_QUERY)))
+        .build();
   }
 
   private abstract static class SqlTranslationServiceBaseDescriptorSupplier
