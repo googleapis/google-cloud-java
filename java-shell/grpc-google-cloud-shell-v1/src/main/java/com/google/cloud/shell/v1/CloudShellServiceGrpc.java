@@ -311,7 +311,7 @@ public final class CloudShellServiceGrpc {
    * client.
    * </pre>
    */
-  public abstract static class CloudShellServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -320,7 +320,7 @@ public final class CloudShellServiceGrpc {
      * Gets an environment. Returns NOT_FOUND if the environment does not exist.
      * </pre>
      */
-    public void getEnvironment(
+    default void getEnvironment(
         com.google.cloud.shell.v1.GetEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.shell.v1.Environment> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -339,7 +339,7 @@ public final class CloudShellServiceGrpc {
      * StartEnvironmentResponse in its response field.
      * </pre>
      */
-    public void startEnvironment(
+    default void startEnvironment(
         com.google.cloud.shell.v1.StartEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -356,7 +356,7 @@ public final class CloudShellServiceGrpc {
      * authenticate.
      * </pre>
      */
-    public void authorizeEnvironment(
+    default void authorizeEnvironment(
         com.google.cloud.shell.v1.AuthorizeEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -372,7 +372,7 @@ public final class CloudShellServiceGrpc {
      * with the same content already exists, this will error with ALREADY_EXISTS.
      * </pre>
      */
-    public void addPublicKey(
+    default void addPublicKey(
         com.google.cloud.shell.v1.AddPublicKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -389,52 +389,38 @@ public final class CloudShellServiceGrpc {
      * NOT_FOUND.
      * </pre>
      */
-    public void removePublicKey(
+    default void removePublicKey(
         com.google.cloud.shell.v1.RemovePublicKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getRemovePublicKeyMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service CloudShellService.
+   *
+   * <pre>
+   * API for interacting with Google Cloud Shell. Each user of Cloud Shell has at
+   * least one environment, which has the ID "default". Environment consists of a
+   * Docker image defining what is installed on the environment and a home
+   * directory containing the user's data that will remain across sessions.
+   * Clients use this API to start and fetch information about their environment,
+   * which can then be used to connect to that environment via a separate SSH
+   * client.
+   * </pre>
+   */
+  public abstract static class CloudShellServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getGetEnvironmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.shell.v1.GetEnvironmentRequest,
-                      com.google.cloud.shell.v1.Environment>(this, METHODID_GET_ENVIRONMENT)))
-          .addMethod(
-              getStartEnvironmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.shell.v1.StartEnvironmentRequest,
-                      com.google.longrunning.Operation>(this, METHODID_START_ENVIRONMENT)))
-          .addMethod(
-              getAuthorizeEnvironmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.shell.v1.AuthorizeEnvironmentRequest,
-                      com.google.longrunning.Operation>(this, METHODID_AUTHORIZE_ENVIRONMENT)))
-          .addMethod(
-              getAddPublicKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.shell.v1.AddPublicKeyRequest,
-                      com.google.longrunning.Operation>(this, METHODID_ADD_PUBLIC_KEY)))
-          .addMethod(
-              getRemovePublicKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.shell.v1.RemovePublicKeyRequest,
-                      com.google.longrunning.Operation>(this, METHODID_REMOVE_PUBLIC_KEY)))
-          .build();
+      return CloudShellServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service CloudShellService.
    *
    * <pre>
    * API for interacting with Google Cloud Shell. Each user of Cloud Shell has at
@@ -553,7 +539,7 @@ public final class CloudShellServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service CloudShellService.
    *
    * <pre>
    * API for interacting with Google Cloud Shell. Each user of Cloud Shell has at
@@ -658,7 +644,7 @@ public final class CloudShellServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service CloudShellService.
    *
    * <pre>
    * API for interacting with Google Cloud Shell. Each user of Cloud Shell has at
@@ -772,10 +758,10 @@ public final class CloudShellServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final CloudShellServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(CloudShellServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -824,6 +810,41 @@ public final class CloudShellServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getGetEnvironmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.shell.v1.GetEnvironmentRequest,
+                    com.google.cloud.shell.v1.Environment>(service, METHODID_GET_ENVIRONMENT)))
+        .addMethod(
+            getStartEnvironmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.shell.v1.StartEnvironmentRequest,
+                    com.google.longrunning.Operation>(service, METHODID_START_ENVIRONMENT)))
+        .addMethod(
+            getAuthorizeEnvironmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.shell.v1.AuthorizeEnvironmentRequest,
+                    com.google.longrunning.Operation>(service, METHODID_AUTHORIZE_ENVIRONMENT)))
+        .addMethod(
+            getAddPublicKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.shell.v1.AddPublicKeyRequest,
+                    com.google.longrunning.Operation>(service, METHODID_ADD_PUBLIC_KEY)))
+        .addMethod(
+            getRemovePublicKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.shell.v1.RemovePublicKeyRequest,
+                    com.google.longrunning.Operation>(service, METHODID_REMOVE_PUBLIC_KEY)))
+        .build();
   }
 
   private abstract static class CloudShellServiceBaseDescriptorSupplier

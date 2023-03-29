@@ -137,8 +137,7 @@ public final class TextToSpeechLongAudioSynthesizeGrpc {
    * Service that implements Google Cloud Text-to-Speech API.
    * </pre>
    */
-  public abstract static class TextToSpeechLongAudioSynthesizeImplBase
-      implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -147,28 +146,33 @@ public final class TextToSpeechLongAudioSynthesizeGrpc {
      * Synthesizes long form text asynchronously.
      * </pre>
      */
-    public void synthesizeLongAudio(
+    default void synthesizeLongAudio(
         com.google.cloud.texttospeech.v1beta1.SynthesizeLongAudioRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSynthesizeLongAudioMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service TextToSpeechLongAudioSynthesize.
+   *
+   * <pre>
+   * Service that implements Google Cloud Text-to-Speech API.
+   * </pre>
+   */
+  public abstract static class TextToSpeechLongAudioSynthesizeImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getSynthesizeLongAudioMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.texttospeech.v1beta1.SynthesizeLongAudioRequest,
-                      com.google.longrunning.Operation>(this, METHODID_SYNTHESIZE_LONG_AUDIO)))
-          .build();
+      return TextToSpeechLongAudioSynthesizeGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service
+   * TextToSpeechLongAudioSynthesize.
    *
    * <pre>
    * Service that implements Google Cloud Text-to-Speech API.
@@ -205,7 +209,7 @@ public final class TextToSpeechLongAudioSynthesizeGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service TextToSpeechLongAudioSynthesize.
    *
    * <pre>
    * Service that implements Google Cloud Text-to-Speech API.
@@ -239,7 +243,8 @@ public final class TextToSpeechLongAudioSynthesizeGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * TextToSpeechLongAudioSynthesize.
    *
    * <pre>
    * Service that implements Google Cloud Text-to-Speech API.
@@ -280,10 +285,10 @@ public final class TextToSpeechLongAudioSynthesizeGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final TextToSpeechLongAudioSynthesizeImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(TextToSpeechLongAudioSynthesizeImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -311,6 +316,17 @@ public final class TextToSpeechLongAudioSynthesizeGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getSynthesizeLongAudioMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.texttospeech.v1beta1.SynthesizeLongAudioRequest,
+                    com.google.longrunning.Operation>(service, METHODID_SYNTHESIZE_LONG_AUDIO)))
+        .build();
   }
 
   private abstract static class TextToSpeechLongAudioSynthesizeBaseDescriptorSupplier

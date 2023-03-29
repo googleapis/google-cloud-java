@@ -925,7 +925,7 @@ public final class CloudTasksGrpc {
    * work in their applications.
    * </pre>
    */
-  public abstract static class CloudTasksImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -935,7 +935,7 @@ public final class CloudTasksGrpc {
      * Queues are returned in lexicographical order.
      * </pre>
      */
-    public void listQueues(
+    default void listQueues(
         com.google.cloud.tasks.v2beta2.ListQueuesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.ListQueuesResponse>
             responseObserver) {
@@ -949,7 +949,7 @@ public final class CloudTasksGrpc {
      * Gets a queue.
      * </pre>
      */
-    public void getQueue(
+    default void getQueue(
         com.google.cloud.tasks.v2beta2.GetQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Queue> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetQueueMethod(), responseObserver);
@@ -971,7 +971,7 @@ public final class CloudTasksGrpc {
      * this method.
      * </pre>
      */
-    public void createQueue(
+    default void createQueue(
         com.google.cloud.tasks.v2beta2.CreateQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Queue> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -996,7 +996,7 @@ public final class CloudTasksGrpc {
      * this method.
      * </pre>
      */
-    public void updateQueue(
+    default void updateQueue(
         com.google.cloud.tasks.v2beta2.UpdateQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Queue> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1019,7 +1019,7 @@ public final class CloudTasksGrpc {
      * this method.
      * </pre>
      */
-    public void deleteQueue(
+    default void deleteQueue(
         com.google.cloud.tasks.v2beta2.DeleteQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1036,7 +1036,7 @@ public final class CloudTasksGrpc {
      * might be dispatched before the purge takes effect. A purge is irreversible.
      * </pre>
      */
-    public void purgeQueue(
+    default void purgeQueue(
         com.google.cloud.tasks.v2beta2.PurgeQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Queue> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPurgeQueueMethod(), responseObserver);
@@ -1054,7 +1054,7 @@ public final class CloudTasksGrpc {
      * [state][google.cloud.tasks.v2beta2.Queue.state] is [PAUSED][google.cloud.tasks.v2beta2.Queue.State.PAUSED].
      * </pre>
      */
-    public void pauseQueue(
+    default void pauseQueue(
         com.google.cloud.tasks.v2beta2.PauseQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Queue> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPauseQueueMethod(), responseObserver);
@@ -1077,7 +1077,7 @@ public final class CloudTasksGrpc {
      * Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).
      * </pre>
      */
-    public void resumeQueue(
+    default void resumeQueue(
         com.google.cloud.tasks.v2beta2.ResumeQueueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Queue> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1097,7 +1097,7 @@ public final class CloudTasksGrpc {
      * * `cloudtasks.queues.getIamPolicy`
      * </pre>
      */
-    public void getIamPolicy(
+    default void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1118,7 +1118,7 @@ public final class CloudTasksGrpc {
      * * `cloudtasks.queues.setIamPolicy`
      * </pre>
      */
-    public void setIamPolicy(
+    default void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1137,7 +1137,7 @@ public final class CloudTasksGrpc {
      * may "fail open" without warning.
      * </pre>
      */
-    public void testIamPermissions(
+    default void testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
@@ -1158,7 +1158,7 @@ public final class CloudTasksGrpc {
      * time.
      * </pre>
      */
-    public void listTasks(
+    default void listTasks(
         com.google.cloud.tasks.v2beta2.ListTasksRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.ListTasksResponse>
             responseObserver) {
@@ -1172,7 +1172,7 @@ public final class CloudTasksGrpc {
      * Gets a task.
      * </pre>
      */
-    public void getTask(
+    default void getTask(
         com.google.cloud.tasks.v2beta2.GetTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Task> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetTaskMethod(), responseObserver);
@@ -1189,7 +1189,7 @@ public final class CloudTasksGrpc {
      * * For [pull queues][google.cloud.tasks.v2beta2.PullTarget], the maximum task size is 1MB.
      * </pre>
      */
-    public void createTask(
+    default void createTask(
         com.google.cloud.tasks.v2beta2.CreateTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Task> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateTaskMethod(), responseObserver);
@@ -1205,7 +1205,7 @@ public final class CloudTasksGrpc {
      * failed.
      * </pre>
      */
-    public void deleteTask(
+    default void deleteTask(
         com.google.cloud.tasks.v2beta2.DeleteTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteTaskMethod(), responseObserver);
@@ -1236,7 +1236,7 @@ public final class CloudTasksGrpc {
      * is exceeded.
      * </pre>
      */
-    public void leaseTasks(
+    default void leaseTasks(
         com.google.cloud.tasks.v2beta2.LeaseTasksRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.LeaseTasksResponse>
             responseObserver) {
@@ -1260,7 +1260,7 @@ public final class CloudTasksGrpc {
      * [ListTasks][google.cloud.tasks.v2beta2.CloudTasks.ListTasks].
      * </pre>
      */
-    public void acknowledgeTask(
+    default void acknowledgeTask(
         com.google.cloud.tasks.v2beta2.AcknowledgeTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1277,7 +1277,7 @@ public final class CloudTasksGrpc {
      * returned in the task's [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time].
      * </pre>
      */
-    public void renewLease(
+    default void renewLease(
         com.google.cloud.tasks.v2beta2.RenewLeaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Task> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRenewLeaseMethod(), responseObserver);
@@ -1294,7 +1294,7 @@ public final class CloudTasksGrpc {
      * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks].
      * </pre>
      */
-    public void cancelLease(
+    default void cancelLease(
         com.google.cloud.tasks.v2beta2.CancelLeaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Task> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1328,144 +1328,31 @@ public final class CloudTasksGrpc {
      * [pull task][google.cloud.tasks.v2beta2.PullMessage].
      * </pre>
      */
-    public void runTask(
+    default void runTask(
         com.google.cloud.tasks.v2beta2.RunTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Task> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRunTaskMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service CloudTasks.
+   *
+   * <pre>
+   * Cloud Tasks allows developers to manage the execution of background
+   * work in their applications.
+   * </pre>
+   */
+  public abstract static class CloudTasksImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListQueuesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.tasks.v2beta2.ListQueuesRequest,
-                      com.google.cloud.tasks.v2beta2.ListQueuesResponse>(
-                      this, METHODID_LIST_QUEUES)))
-          .addMethod(
-              getGetQueueMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.tasks.v2beta2.GetQueueRequest,
-                      com.google.cloud.tasks.v2beta2.Queue>(this, METHODID_GET_QUEUE)))
-          .addMethod(
-              getCreateQueueMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.tasks.v2beta2.CreateQueueRequest,
-                      com.google.cloud.tasks.v2beta2.Queue>(this, METHODID_CREATE_QUEUE)))
-          .addMethod(
-              getUpdateQueueMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.tasks.v2beta2.UpdateQueueRequest,
-                      com.google.cloud.tasks.v2beta2.Queue>(this, METHODID_UPDATE_QUEUE)))
-          .addMethod(
-              getDeleteQueueMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.tasks.v2beta2.DeleteQueueRequest, com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_QUEUE)))
-          .addMethod(
-              getPurgeQueueMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.tasks.v2beta2.PurgeQueueRequest,
-                      com.google.cloud.tasks.v2beta2.Queue>(this, METHODID_PURGE_QUEUE)))
-          .addMethod(
-              getPauseQueueMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.tasks.v2beta2.PauseQueueRequest,
-                      com.google.cloud.tasks.v2beta2.Queue>(this, METHODID_PAUSE_QUEUE)))
-          .addMethod(
-              getResumeQueueMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.tasks.v2beta2.ResumeQueueRequest,
-                      com.google.cloud.tasks.v2beta2.Queue>(this, METHODID_RESUME_QUEUE)))
-          .addMethod(
-              getGetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_GET_IAM_POLICY)))
-          .addMethod(
-              getSetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_SET_IAM_POLICY)))
-          .addMethod(
-              getTestIamPermissionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.TestIamPermissionsRequest,
-                      com.google.iam.v1.TestIamPermissionsResponse>(
-                      this, METHODID_TEST_IAM_PERMISSIONS)))
-          .addMethod(
-              getListTasksMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.tasks.v2beta2.ListTasksRequest,
-                      com.google.cloud.tasks.v2beta2.ListTasksResponse>(this, METHODID_LIST_TASKS)))
-          .addMethod(
-              getGetTaskMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.tasks.v2beta2.GetTaskRequest,
-                      com.google.cloud.tasks.v2beta2.Task>(this, METHODID_GET_TASK)))
-          .addMethod(
-              getCreateTaskMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.tasks.v2beta2.CreateTaskRequest,
-                      com.google.cloud.tasks.v2beta2.Task>(this, METHODID_CREATE_TASK)))
-          .addMethod(
-              getDeleteTaskMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.tasks.v2beta2.DeleteTaskRequest, com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_TASK)))
-          .addMethod(
-              getLeaseTasksMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.tasks.v2beta2.LeaseTasksRequest,
-                      com.google.cloud.tasks.v2beta2.LeaseTasksResponse>(
-                      this, METHODID_LEASE_TASKS)))
-          .addMethod(
-              getAcknowledgeTaskMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.tasks.v2beta2.AcknowledgeTaskRequest,
-                      com.google.protobuf.Empty>(this, METHODID_ACKNOWLEDGE_TASK)))
-          .addMethod(
-              getRenewLeaseMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.tasks.v2beta2.RenewLeaseRequest,
-                      com.google.cloud.tasks.v2beta2.Task>(this, METHODID_RENEW_LEASE)))
-          .addMethod(
-              getCancelLeaseMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.tasks.v2beta2.CancelLeaseRequest,
-                      com.google.cloud.tasks.v2beta2.Task>(this, METHODID_CANCEL_LEASE)))
-          .addMethod(
-              getRunTaskMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.tasks.v2beta2.RunTaskRequest,
-                      com.google.cloud.tasks.v2beta2.Task>(this, METHODID_RUN_TASK)))
-          .build();
+      return CloudTasksGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service CloudTasks.
    *
    * <pre>
    * Cloud Tasks allows developers to manage the execution of background
@@ -1920,7 +1807,7 @@ public final class CloudTasksGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service CloudTasks.
    *
    * <pre>
    * Cloud Tasks allows developers to manage the execution of background
@@ -2333,7 +2220,7 @@ public final class CloudTasksGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service CloudTasks.
    *
    * <pre>
    * Cloud Tasks allows developers to manage the execution of background
@@ -2776,10 +2663,10 @@ public final class CloudTasksGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final CloudTasksImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(CloudTasksImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -2906,6 +2793,133 @@ public final class CloudTasksGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListQueuesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tasks.v2beta2.ListQueuesRequest,
+                    com.google.cloud.tasks.v2beta2.ListQueuesResponse>(
+                    service, METHODID_LIST_QUEUES)))
+        .addMethod(
+            getGetQueueMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tasks.v2beta2.GetQueueRequest,
+                    com.google.cloud.tasks.v2beta2.Queue>(service, METHODID_GET_QUEUE)))
+        .addMethod(
+            getCreateQueueMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tasks.v2beta2.CreateQueueRequest,
+                    com.google.cloud.tasks.v2beta2.Queue>(service, METHODID_CREATE_QUEUE)))
+        .addMethod(
+            getUpdateQueueMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tasks.v2beta2.UpdateQueueRequest,
+                    com.google.cloud.tasks.v2beta2.Queue>(service, METHODID_UPDATE_QUEUE)))
+        .addMethod(
+            getDeleteQueueMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tasks.v2beta2.DeleteQueueRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_QUEUE)))
+        .addMethod(
+            getPurgeQueueMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tasks.v2beta2.PurgeQueueRequest,
+                    com.google.cloud.tasks.v2beta2.Queue>(service, METHODID_PURGE_QUEUE)))
+        .addMethod(
+            getPauseQueueMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tasks.v2beta2.PauseQueueRequest,
+                    com.google.cloud.tasks.v2beta2.Queue>(service, METHODID_PAUSE_QUEUE)))
+        .addMethod(
+            getResumeQueueMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tasks.v2beta2.ResumeQueueRequest,
+                    com.google.cloud.tasks.v2beta2.Queue>(service, METHODID_RESUME_QUEUE)))
+        .addMethod(
+            getGetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_GET_IAM_POLICY)))
+        .addMethod(
+            getSetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_SET_IAM_POLICY)))
+        .addMethod(
+            getTestIamPermissionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.v1.TestIamPermissionsRequest,
+                    com.google.iam.v1.TestIamPermissionsResponse>(
+                    service, METHODID_TEST_IAM_PERMISSIONS)))
+        .addMethod(
+            getListTasksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tasks.v2beta2.ListTasksRequest,
+                    com.google.cloud.tasks.v2beta2.ListTasksResponse>(
+                    service, METHODID_LIST_TASKS)))
+        .addMethod(
+            getGetTaskMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tasks.v2beta2.GetTaskRequest,
+                    com.google.cloud.tasks.v2beta2.Task>(service, METHODID_GET_TASK)))
+        .addMethod(
+            getCreateTaskMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tasks.v2beta2.CreateTaskRequest,
+                    com.google.cloud.tasks.v2beta2.Task>(service, METHODID_CREATE_TASK)))
+        .addMethod(
+            getDeleteTaskMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tasks.v2beta2.DeleteTaskRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_TASK)))
+        .addMethod(
+            getLeaseTasksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tasks.v2beta2.LeaseTasksRequest,
+                    com.google.cloud.tasks.v2beta2.LeaseTasksResponse>(
+                    service, METHODID_LEASE_TASKS)))
+        .addMethod(
+            getAcknowledgeTaskMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tasks.v2beta2.AcknowledgeTaskRequest,
+                    com.google.protobuf.Empty>(service, METHODID_ACKNOWLEDGE_TASK)))
+        .addMethod(
+            getRenewLeaseMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tasks.v2beta2.RenewLeaseRequest,
+                    com.google.cloud.tasks.v2beta2.Task>(service, METHODID_RENEW_LEASE)))
+        .addMethod(
+            getCancelLeaseMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tasks.v2beta2.CancelLeaseRequest,
+                    com.google.cloud.tasks.v2beta2.Task>(service, METHODID_CANCEL_LEASE)))
+        .addMethod(
+            getRunTaskMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tasks.v2beta2.RunTaskRequest,
+                    com.google.cloud.tasks.v2beta2.Task>(service, METHODID_RUN_TASK)))
+        .build();
   }
 
   private abstract static class CloudTasksBaseDescriptorSupplier

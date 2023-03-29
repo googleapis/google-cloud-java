@@ -129,7 +129,7 @@ public final class EventServiceGrpc {
    * A service handles client event report.
    * </pre>
    */
-  public abstract static class EventServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -144,28 +144,32 @@ public final class EventServiceGrpc {
      * about self service tools.
      * </pre>
      */
-    public void createClientEvent(
+    default void createClientEvent(
         com.google.cloud.talent.v4.CreateClientEventRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4.ClientEvent> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCreateClientEventMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service EventService.
+   *
+   * <pre>
+   * A service handles client event report.
+   * </pre>
+   */
+  public abstract static class EventServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateClientEventMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.talent.v4.CreateClientEventRequest,
-                      com.google.cloud.talent.v4.ClientEvent>(this, METHODID_CREATE_CLIENT_EVENT)))
-          .build();
+      return EventServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service EventService.
    *
    * <pre>
    * A service handles client event report.
@@ -206,7 +210,7 @@ public final class EventServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service EventService.
    *
    * <pre>
    * A service handles client event report.
@@ -245,7 +249,7 @@ public final class EventServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service EventService.
    *
    * <pre>
    * A service handles client event report.
@@ -291,10 +295,10 @@ public final class EventServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final EventServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(EventServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -323,6 +327,17 @@ public final class EventServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateClientEventMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.talent.v4.CreateClientEventRequest,
+                    com.google.cloud.talent.v4.ClientEvent>(service, METHODID_CREATE_CLIENT_EVENT)))
+        .build();
   }
 
   private abstract static class EventServiceBaseDescriptorSupplier

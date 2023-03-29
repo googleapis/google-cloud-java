@@ -293,7 +293,7 @@ public final class TenantServiceGrpc {
    * A service that handles tenant management, including CRUD and enumeration.
    * </pre>
    */
-  public abstract static class TenantServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -302,7 +302,7 @@ public final class TenantServiceGrpc {
      * Creates a new tenant entity.
      * </pre>
      */
-    public void createTenant(
+    default void createTenant(
         com.google.cloud.talent.v4.CreateTenantRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4.Tenant> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -316,7 +316,7 @@ public final class TenantServiceGrpc {
      * Retrieves specified tenant.
      * </pre>
      */
-    public void getTenant(
+    default void getTenant(
         com.google.cloud.talent.v4.GetTenantRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4.Tenant> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetTenantMethod(), responseObserver);
@@ -329,7 +329,7 @@ public final class TenantServiceGrpc {
      * Updates specified tenant.
      * </pre>
      */
-    public void updateTenant(
+    default void updateTenant(
         com.google.cloud.talent.v4.UpdateTenantRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4.Tenant> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -343,7 +343,7 @@ public final class TenantServiceGrpc {
      * Deletes specified tenant.
      * </pre>
      */
-    public void deleteTenant(
+    default void deleteTenant(
         com.google.cloud.talent.v4.DeleteTenantRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -357,53 +357,33 @@ public final class TenantServiceGrpc {
      * Lists all tenants associated with the project.
      * </pre>
      */
-    public void listTenants(
+    default void listTenants(
         com.google.cloud.talent.v4.ListTenantsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4.ListTenantsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListTenantsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service TenantService.
+   *
+   * <pre>
+   * A service that handles tenant management, including CRUD and enumeration.
+   * </pre>
+   */
+  public abstract static class TenantServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateTenantMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.talent.v4.CreateTenantRequest,
-                      com.google.cloud.talent.v4.Tenant>(this, METHODID_CREATE_TENANT)))
-          .addMethod(
-              getGetTenantMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.talent.v4.GetTenantRequest,
-                      com.google.cloud.talent.v4.Tenant>(this, METHODID_GET_TENANT)))
-          .addMethod(
-              getUpdateTenantMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.talent.v4.UpdateTenantRequest,
-                      com.google.cloud.talent.v4.Tenant>(this, METHODID_UPDATE_TENANT)))
-          .addMethod(
-              getDeleteTenantMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.talent.v4.DeleteTenantRequest, com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_TENANT)))
-          .addMethod(
-              getListTenantsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.talent.v4.ListTenantsRequest,
-                      com.google.cloud.talent.v4.ListTenantsResponse>(this, METHODID_LIST_TENANTS)))
-          .build();
+      return TenantServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service TenantService.
    *
    * <pre>
    * A service that handles tenant management, including CRUD and enumeration.
@@ -501,7 +481,7 @@ public final class TenantServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service TenantService.
    *
    * <pre>
    * A service that handles tenant management, including CRUD and enumeration.
@@ -586,7 +566,7 @@ public final class TenantServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service TenantService.
    *
    * <pre>
    * A service that handles tenant management, including CRUD and enumeration.
@@ -682,10 +662,10 @@ public final class TenantServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final TenantServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(TenantServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -734,6 +714,42 @@ public final class TenantServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateTenantMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.talent.v4.CreateTenantRequest,
+                    com.google.cloud.talent.v4.Tenant>(service, METHODID_CREATE_TENANT)))
+        .addMethod(
+            getGetTenantMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.talent.v4.GetTenantRequest, com.google.cloud.talent.v4.Tenant>(
+                    service, METHODID_GET_TENANT)))
+        .addMethod(
+            getUpdateTenantMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.talent.v4.UpdateTenantRequest,
+                    com.google.cloud.talent.v4.Tenant>(service, METHODID_UPDATE_TENANT)))
+        .addMethod(
+            getDeleteTenantMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.talent.v4.DeleteTenantRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_TENANT)))
+        .addMethod(
+            getListTenantsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.talent.v4.ListTenantsRequest,
+                    com.google.cloud.talent.v4.ListTenantsResponse>(
+                    service, METHODID_LIST_TENANTS)))
+        .build();
   }
 
   private abstract static class TenantServiceBaseDescriptorSupplier

@@ -141,8 +141,7 @@ public final class StreamingVideoIntelligenceServiceGrpc {
    * Service that implements streaming Video Intelligence API.
    * </pre>
    */
-  public abstract static class StreamingVideoIntelligenceServiceImplBase
-      implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -153,7 +152,7 @@ public final class StreamingVideoIntelligenceServiceGrpc {
      * This method is only available via the gRPC API (not REST).
      * </pre>
      */
-    public io.grpc.stub.StreamObserver<
+    default io.grpc.stub.StreamObserver<
             com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest>
         streamingAnnotateVideo(
             io.grpc.stub.StreamObserver<
@@ -162,23 +161,27 @@ public final class StreamingVideoIntelligenceServiceGrpc {
       return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(
           getStreamingAnnotateVideoMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service StreamingVideoIntelligenceService.
+   *
+   * <pre>
+   * Service that implements streaming Video Intelligence API.
+   * </pre>
+   */
+  public abstract static class StreamingVideoIntelligenceServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getStreamingAnnotateVideoMethod(),
-              io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
-                  new MethodHandlers<
-                      com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest,
-                      com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoResponse>(
-                      this, METHODID_STREAMING_ANNOTATE_VIDEO)))
-          .build();
+      return StreamingVideoIntelligenceServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service
+   * StreamingVideoIntelligenceService.
    *
    * <pre>
    * Service that implements streaming Video Intelligence API.
@@ -219,7 +222,8 @@ public final class StreamingVideoIntelligenceServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service
+   * StreamingVideoIntelligenceService.
    *
    * <pre>
    * Service that implements streaming Video Intelligence API.
@@ -240,7 +244,8 @@ public final class StreamingVideoIntelligenceServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * StreamingVideoIntelligenceService.
    *
    * <pre>
    * Service that implements streaming Video Intelligence API.
@@ -267,10 +272,10 @@ public final class StreamingVideoIntelligenceServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final StreamingVideoIntelligenceServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(StreamingVideoIntelligenceServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -300,6 +305,18 @@ public final class StreamingVideoIntelligenceServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getStreamingAnnotateVideoMethod(),
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest,
+                    com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoResponse>(
+                    service, METHODID_STREAMING_ANNOTATE_VIDEO)))
+        .build();
   }
 
   private abstract static class StreamingVideoIntelligenceServiceBaseDescriptorSupplier

@@ -128,7 +128,7 @@ public final class CompletionGrpc {
    * A service handles auto completion.
    * </pre>
    */
-  public abstract static class CompletionImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -138,30 +138,32 @@ public final class CompletionGrpc {
      * Intended for use by a job search auto-complete search box.
      * </pre>
      */
-    public void completeQuery(
+    default void completeQuery(
         com.google.cloud.talent.v4beta1.CompleteQueryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4beta1.CompleteQueryResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCompleteQueryMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Completion.
+   *
+   * <pre>
+   * A service handles auto completion.
+   * </pre>
+   */
+  public abstract static class CompletionImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCompleteQueryMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.talent.v4beta1.CompleteQueryRequest,
-                      com.google.cloud.talent.v4beta1.CompleteQueryResponse>(
-                      this, METHODID_COMPLETE_QUERY)))
-          .build();
+      return CompletionGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Completion.
    *
    * <pre>
    * A service handles auto completion.
@@ -197,7 +199,7 @@ public final class CompletionGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Completion.
    *
    * <pre>
    * A service handles auto completion.
@@ -231,7 +233,7 @@ public final class CompletionGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Completion.
    *
    * <pre>
    * A service handles auto completion.
@@ -271,10 +273,10 @@ public final class CompletionGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final CompletionImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(CompletionImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -303,6 +305,18 @@ public final class CompletionGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCompleteQueryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.talent.v4beta1.CompleteQueryRequest,
+                    com.google.cloud.talent.v4beta1.CompleteQueryResponse>(
+                    service, METHODID_COMPLETE_QUERY)))
+        .build();
   }
 
   private abstract static class CompletionBaseDescriptorSupplier

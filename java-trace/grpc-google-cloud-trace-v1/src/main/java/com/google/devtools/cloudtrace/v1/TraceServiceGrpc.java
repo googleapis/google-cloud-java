@@ -224,7 +224,7 @@ public final class TraceServiceGrpc {
    * may span multiple services.
    * </pre>
    */
-  public abstract static class TraceServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -233,7 +233,7 @@ public final class TraceServiceGrpc {
      * Returns of a list of traces that match the specified filter conditions.
      * </pre>
      */
-    public void listTraces(
+    default void listTraces(
         com.google.devtools.cloudtrace.v1.ListTracesRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.cloudtrace.v1.ListTracesResponse>
             responseObserver) {
@@ -247,7 +247,7 @@ public final class TraceServiceGrpc {
      * Gets a single trace by its ID.
      * </pre>
      */
-    public void getTrace(
+    default void getTrace(
         com.google.devtools.cloudtrace.v1.GetTraceRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.cloudtrace.v1.Trace> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetTraceMethod(), responseObserver);
@@ -264,41 +264,36 @@ public final class TraceServiceGrpc {
      * ID does not match, a new trace is created.
      * </pre>
      */
-    public void patchTraces(
+    default void patchTraces(
         com.google.devtools.cloudtrace.v1.PatchTracesRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getPatchTracesMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service TraceService.
+   *
+   * <pre>
+   * This file describes an API for collecting and viewing traces and spans
+   * within a trace.  A Trace is a collection of spans corresponding to a single
+   * operation or set of operations for an application. A span is an individual
+   * timed event which forms a node of the trace tree. Spans for a single trace
+   * may span multiple services.
+   * </pre>
+   */
+  public abstract static class TraceServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListTracesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.devtools.cloudtrace.v1.ListTracesRequest,
-                      com.google.devtools.cloudtrace.v1.ListTracesResponse>(
-                      this, METHODID_LIST_TRACES)))
-          .addMethod(
-              getGetTraceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.devtools.cloudtrace.v1.GetTraceRequest,
-                      com.google.devtools.cloudtrace.v1.Trace>(this, METHODID_GET_TRACE)))
-          .addMethod(
-              getPatchTracesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.devtools.cloudtrace.v1.PatchTracesRequest,
-                      com.google.protobuf.Empty>(this, METHODID_PATCH_TRACES)))
-          .build();
+      return TraceServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service TraceService.
    *
    * <pre>
    * This file describes an API for collecting and viewing traces and spans
@@ -370,7 +365,7 @@ public final class TraceServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service TraceService.
    *
    * <pre>
    * This file describes an API for collecting and viewing traces and spans
@@ -437,7 +432,7 @@ public final class TraceServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service TraceService.
    *
    * <pre>
    * This file describes an API for collecting and viewing traces and spans
@@ -514,10 +509,10 @@ public final class TraceServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final TraceServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(TraceServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -557,6 +552,30 @@ public final class TraceServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListTracesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.cloudtrace.v1.ListTracesRequest,
+                    com.google.devtools.cloudtrace.v1.ListTracesResponse>(
+                    service, METHODID_LIST_TRACES)))
+        .addMethod(
+            getGetTraceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.cloudtrace.v1.GetTraceRequest,
+                    com.google.devtools.cloudtrace.v1.Trace>(service, METHODID_GET_TRACE)))
+        .addMethod(
+            getPatchTracesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.cloudtrace.v1.PatchTracesRequest,
+                    com.google.protobuf.Empty>(service, METHODID_PATCH_TRACES)))
+        .build();
   }
 
   private abstract static class TraceServiceBaseDescriptorSupplier

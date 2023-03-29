@@ -208,7 +208,7 @@ public final class RevisionsGrpc {
    * Cloud Run Revision Control Plane API.
    * </pre>
    */
-  public abstract static class RevisionsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -217,7 +217,7 @@ public final class RevisionsGrpc {
      * Gets information about a Revision.
      * </pre>
      */
-    public void getRevision(
+    default void getRevision(
         com.google.cloud.run.v2.GetRevisionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.run.v2.Revision> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -231,7 +231,7 @@ public final class RevisionsGrpc {
      * Lists Revisions from a given Service, or from a given location.
      * </pre>
      */
-    public void listRevisions(
+    default void listRevisions(
         com.google.cloud.run.v2.ListRevisionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.run.v2.ListRevisionsResponse>
             responseObserver) {
@@ -246,41 +246,31 @@ public final class RevisionsGrpc {
      * Deletes a Revision.
      * </pre>
      */
-    public void deleteRevision(
+    default void deleteRevision(
         com.google.cloud.run.v2.DeleteRevisionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteRevisionMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Revisions.
+   *
+   * <pre>
+   * Cloud Run Revision Control Plane API.
+   * </pre>
+   */
+  public abstract static class RevisionsImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getGetRevisionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.run.v2.GetRevisionRequest, com.google.cloud.run.v2.Revision>(
-                      this, METHODID_GET_REVISION)))
-          .addMethod(
-              getListRevisionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.run.v2.ListRevisionsRequest,
-                      com.google.cloud.run.v2.ListRevisionsResponse>(
-                      this, METHODID_LIST_REVISIONS)))
-          .addMethod(
-              getDeleteRevisionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.run.v2.DeleteRevisionRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_REVISION)))
-          .build();
+      return RevisionsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Revisions.
    *
    * <pre>
    * Cloud Run Revision Control Plane API.
@@ -347,7 +337,7 @@ public final class RevisionsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Revisions.
    *
    * <pre>
    * Cloud Run Revision Control Plane API.
@@ -406,7 +396,7 @@ public final class RevisionsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Revisions.
    *
    * <pre>
    * Cloud Run Revision Control Plane API.
@@ -473,10 +463,10 @@ public final class RevisionsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final RevisionsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(RevisionsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -515,6 +505,30 @@ public final class RevisionsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getGetRevisionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.run.v2.GetRevisionRequest, com.google.cloud.run.v2.Revision>(
+                    service, METHODID_GET_REVISION)))
+        .addMethod(
+            getListRevisionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.run.v2.ListRevisionsRequest,
+                    com.google.cloud.run.v2.ListRevisionsResponse>(
+                    service, METHODID_LIST_REVISIONS)))
+        .addMethod(
+            getDeleteRevisionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.run.v2.DeleteRevisionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_REVISION)))
+        .build();
   }
 
   private abstract static class RevisionsBaseDescriptorSupplier

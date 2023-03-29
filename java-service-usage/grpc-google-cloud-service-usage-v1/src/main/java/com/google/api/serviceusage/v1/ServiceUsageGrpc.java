@@ -359,7 +359,7 @@ public final class ServiceUsageGrpc {
    * See [Service Usage API](https://cloud.google.com/service-usage/docs/overview)
    * </pre>
    */
-  public abstract static class ServiceUsageImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -368,7 +368,7 @@ public final class ServiceUsageGrpc {
      * Enable a service so that it can be used with a project.
      * </pre>
      */
-    public void enableService(
+    default void enableService(
         com.google.api.serviceusage.v1.EnableServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -387,7 +387,7 @@ public final class ServiceUsageGrpc {
      * the target service is not currently enabled.
      * </pre>
      */
-    public void disableService(
+    default void disableService(
         com.google.api.serviceusage.v1.DisableServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -401,7 +401,7 @@ public final class ServiceUsageGrpc {
      * Returns the service configuration and enabled state for a given service.
      * </pre>
      */
-    public void getService(
+    default void getService(
         com.google.api.serviceusage.v1.GetServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.api.serviceusage.v1.Service> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetServiceMethod(), responseObserver);
@@ -425,7 +425,7 @@ public final class ServiceUsageGrpc {
      * higher throughput and richer filtering capability.
      * </pre>
      */
-    public void listServices(
+    default void listServices(
         com.google.api.serviceusage.v1.ListServicesRequest request,
         io.grpc.stub.StreamObserver<com.google.api.serviceusage.v1.ListServicesResponse>
             responseObserver) {
@@ -442,7 +442,7 @@ public final class ServiceUsageGrpc {
      * To enable a single service, use the `EnableService` method instead.
      * </pre>
      */
-    public void batchEnableServices(
+    default void batchEnableServices(
         com.google.api.serviceusage.v1.BatchEnableServicesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -457,61 +457,36 @@ public final class ServiceUsageGrpc {
      * services.
      * </pre>
      */
-    public void batchGetServices(
+    default void batchGetServices(
         com.google.api.serviceusage.v1.BatchGetServicesRequest request,
         io.grpc.stub.StreamObserver<com.google.api.serviceusage.v1.BatchGetServicesResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getBatchGetServicesMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ServiceUsage.
+   *
+   * <pre>
+   * Enables services that service consumers want to use on Google Cloud Platform,
+   * lists the available or enabled services, or disables services that service
+   * consumers no longer use.
+   * See [Service Usage API](https://cloud.google.com/service-usage/docs/overview)
+   * </pre>
+   */
+  public abstract static class ServiceUsageImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getEnableServiceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.serviceusage.v1.EnableServiceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_ENABLE_SERVICE)))
-          .addMethod(
-              getDisableServiceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.serviceusage.v1.DisableServiceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DISABLE_SERVICE)))
-          .addMethod(
-              getGetServiceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.serviceusage.v1.GetServiceRequest,
-                      com.google.api.serviceusage.v1.Service>(this, METHODID_GET_SERVICE)))
-          .addMethod(
-              getListServicesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.serviceusage.v1.ListServicesRequest,
-                      com.google.api.serviceusage.v1.ListServicesResponse>(
-                      this, METHODID_LIST_SERVICES)))
-          .addMethod(
-              getBatchEnableServicesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.serviceusage.v1.BatchEnableServicesRequest,
-                      com.google.longrunning.Operation>(this, METHODID_BATCH_ENABLE_SERVICES)))
-          .addMethod(
-              getBatchGetServicesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.serviceusage.v1.BatchGetServicesRequest,
-                      com.google.api.serviceusage.v1.BatchGetServicesResponse>(
-                      this, METHODID_BATCH_GET_SERVICES)))
-          .build();
+      return ServiceUsageGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ServiceUsage.
    *
    * <pre>
    * Enables services that service consumers want to use on Google Cloud Platform,
@@ -648,7 +623,7 @@ public final class ServiceUsageGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ServiceUsage.
    *
    * <pre>
    * Enables services that service consumers want to use on Google Cloud Platform,
@@ -768,7 +743,7 @@ public final class ServiceUsageGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service ServiceUsage.
    *
    * <pre>
    * Enables services that service consumers want to use on Google Cloud Platform,
@@ -902,10 +877,10 @@ public final class ServiceUsageGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ServiceUsageImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ServiceUsageImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -961,6 +936,49 @@ public final class ServiceUsageGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getEnableServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.serviceusage.v1.EnableServiceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_ENABLE_SERVICE)))
+        .addMethod(
+            getDisableServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.serviceusage.v1.DisableServiceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DISABLE_SERVICE)))
+        .addMethod(
+            getGetServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.serviceusage.v1.GetServiceRequest,
+                    com.google.api.serviceusage.v1.Service>(service, METHODID_GET_SERVICE)))
+        .addMethod(
+            getListServicesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.serviceusage.v1.ListServicesRequest,
+                    com.google.api.serviceusage.v1.ListServicesResponse>(
+                    service, METHODID_LIST_SERVICES)))
+        .addMethod(
+            getBatchEnableServicesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.serviceusage.v1.BatchEnableServicesRequest,
+                    com.google.longrunning.Operation>(service, METHODID_BATCH_ENABLE_SERVICES)))
+        .addMethod(
+            getBatchGetServicesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.serviceusage.v1.BatchGetServicesRequest,
+                    com.google.api.serviceusage.v1.BatchGetServicesResponse>(
+                    service, METHODID_BATCH_GET_SERVICES)))
+        .build();
   }
 
   private abstract static class ServiceUsageBaseDescriptorSupplier

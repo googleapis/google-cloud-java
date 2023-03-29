@@ -134,7 +134,7 @@ public final class QuotaControllerGrpc {
    * service](https://cloud.google.com/service-management/reference/rpc/google.api/servicemanagement.v1#google.api.servicemanagement.v1.ManagedService).
    * </pre>
    */
-  public abstract static class QuotaControllerImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -151,30 +151,35 @@ public final class QuotaControllerGrpc {
      * dependency on the quota functionality.
      * </pre>
      */
-    public void allocateQuota(
+    default void allocateQuota(
         com.google.api.servicecontrol.v1.AllocateQuotaRequest request,
         io.grpc.stub.StreamObserver<com.google.api.servicecontrol.v1.AllocateQuotaResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getAllocateQuotaMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service QuotaController.
+   *
+   * <pre>
+   * [Google Quota Control API](/service-control/overview)
+   * Allows clients to allocate and release quota against a [managed
+   * service](https://cloud.google.com/service-management/reference/rpc/google.api/servicemanagement.v1#google.api.servicemanagement.v1.ManagedService).
+   * </pre>
+   */
+  public abstract static class QuotaControllerImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getAllocateQuotaMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.servicecontrol.v1.AllocateQuotaRequest,
-                      com.google.api.servicecontrol.v1.AllocateQuotaResponse>(
-                      this, METHODID_ALLOCATE_QUOTA)))
-          .build();
+      return QuotaControllerGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service QuotaController.
    *
    * <pre>
    * [Google Quota Control API](/service-control/overview)
@@ -220,7 +225,7 @@ public final class QuotaControllerGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service QuotaController.
    *
    * <pre>
    * [Google Quota Control API](/service-control/overview)
@@ -263,7 +268,7 @@ public final class QuotaControllerGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service QuotaController.
    *
    * <pre>
    * [Google Quota Control API](/service-control/overview)
@@ -313,10 +318,10 @@ public final class QuotaControllerGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final QuotaControllerImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(QuotaControllerImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -345,6 +350,18 @@ public final class QuotaControllerGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getAllocateQuotaMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.servicecontrol.v1.AllocateQuotaRequest,
+                    com.google.api.servicecontrol.v1.AllocateQuotaResponse>(
+                    service, METHODID_ALLOCATE_QUOTA)))
+        .build();
   }
 
   private abstract static class QuotaControllerBaseDescriptorSupplier

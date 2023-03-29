@@ -209,7 +209,7 @@ public final class ExecutionsGrpc {
    * Cloud Run Execution Control Plane API.
    * </pre>
    */
-  public abstract static class ExecutionsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -218,7 +218,7 @@ public final class ExecutionsGrpc {
      * Gets information about an Execution.
      * </pre>
      */
-    public void getExecution(
+    default void getExecution(
         com.google.cloud.run.v2.GetExecutionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.run.v2.Execution> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -232,7 +232,7 @@ public final class ExecutionsGrpc {
      * Lists Executions from a Job.
      * </pre>
      */
-    public void listExecutions(
+    default void listExecutions(
         com.google.cloud.run.v2.ListExecutionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.run.v2.ListExecutionsResponse>
             responseObserver) {
@@ -247,41 +247,31 @@ public final class ExecutionsGrpc {
      * Deletes an Execution.
      * </pre>
      */
-    public void deleteExecution(
+    default void deleteExecution(
         com.google.cloud.run.v2.DeleteExecutionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteExecutionMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Executions.
+   *
+   * <pre>
+   * Cloud Run Execution Control Plane API.
+   * </pre>
+   */
+  public abstract static class ExecutionsImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getGetExecutionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.run.v2.GetExecutionRequest,
-                      com.google.cloud.run.v2.Execution>(this, METHODID_GET_EXECUTION)))
-          .addMethod(
-              getListExecutionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.run.v2.ListExecutionsRequest,
-                      com.google.cloud.run.v2.ListExecutionsResponse>(
-                      this, METHODID_LIST_EXECUTIONS)))
-          .addMethod(
-              getDeleteExecutionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.run.v2.DeleteExecutionRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_EXECUTION)))
-          .build();
+      return ExecutionsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Executions.
    *
    * <pre>
    * Cloud Run Execution Control Plane API.
@@ -348,7 +338,7 @@ public final class ExecutionsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Executions.
    *
    * <pre>
    * Cloud Run Execution Control Plane API.
@@ -407,7 +397,7 @@ public final class ExecutionsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Executions.
    *
    * <pre>
    * Cloud Run Execution Control Plane API.
@@ -474,10 +464,10 @@ public final class ExecutionsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ExecutionsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ExecutionsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -516,6 +506,30 @@ public final class ExecutionsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getGetExecutionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.run.v2.GetExecutionRequest, com.google.cloud.run.v2.Execution>(
+                    service, METHODID_GET_EXECUTION)))
+        .addMethod(
+            getListExecutionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.run.v2.ListExecutionsRequest,
+                    com.google.cloud.run.v2.ListExecutionsResponse>(
+                    service, METHODID_LIST_EXECUTIONS)))
+        .addMethod(
+            getDeleteExecutionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.run.v2.DeleteExecutionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_EXECUTION)))
+        .build();
   }
 
   private abstract static class ExecutionsBaseDescriptorSupplier

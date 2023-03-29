@@ -782,8 +782,7 @@ public final class SecurityCenterSettingsServiceGrpc {
    * folders, projects, and clusters.
    * </pre>
    */
-  public abstract static class SecurityCenterSettingsServiceImplBase
-      implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -801,7 +800,7 @@ public final class SecurityCenterSettingsServiceGrpc {
      * onboarding workflow.
      * </pre>
      */
-    public void getServiceAccount(
+    default void getServiceAccount(
         com.google.cloud.securitycenter.settings.v1beta1.GetServiceAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.settings.v1beta1.ServiceAccount>
             responseObserver) {
@@ -816,7 +815,7 @@ public final class SecurityCenterSettingsServiceGrpc {
      * Gets the Settings.
      * </pre>
      */
-    public void getSettings(
+    default void getSettings(
         com.google.cloud.securitycenter.settings.v1beta1.GetSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.settings.v1beta1.Settings>
             responseObserver) {
@@ -831,7 +830,7 @@ public final class SecurityCenterSettingsServiceGrpc {
      * Updates the Settings.
      * </pre>
      */
-    public void updateSettings(
+    default void updateSettings(
         com.google.cloud.securitycenter.settings.v1beta1.UpdateSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.settings.v1beta1.Settings>
             responseObserver) {
@@ -853,7 +852,7 @@ public final class SecurityCenterSettingsServiceGrpc {
      * result in default settings being used.
      * </pre>
      */
-    public void resetSettings(
+    default void resetSettings(
         com.google.cloud.securitycenter.settings.v1beta1.ResetSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -867,7 +866,7 @@ public final class SecurityCenterSettingsServiceGrpc {
      * Gets a list of settings.
      * </pre>
      */
-    public void batchGetSettings(
+    default void batchGetSettings(
         com.google.cloud.securitycenter.settings.v1beta1.BatchGetSettingsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.securitycenter.settings.v1beta1.BatchGetSettingsResponse>
@@ -893,7 +892,7 @@ public final class SecurityCenterSettingsServiceGrpc {
      *    has not configured.
      * </pre>
      */
-    public void calculateEffectiveSettings(
+    default void calculateEffectiveSettings(
         com.google.cloud.securitycenter.settings.v1beta1.CalculateEffectiveSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.settings.v1beta1.Settings>
             responseObserver) {
@@ -908,7 +907,7 @@ public final class SecurityCenterSettingsServiceGrpc {
      * Gets a list of effective settings.
      * </pre>
      */
-    public void batchCalculateEffectiveSettings(
+    default void batchCalculateEffectiveSettings(
         com.google.cloud.securitycenter.settings.v1beta1.BatchCalculateEffectiveSettingsRequest
             request,
         io.grpc.stub.StreamObserver<
@@ -926,7 +925,7 @@ public final class SecurityCenterSettingsServiceGrpc {
      * Gets the Component Settings.
      * </pre>
      */
-    public void getComponentSettings(
+    default void getComponentSettings(
         com.google.cloud.securitycenter.settings.v1beta1.GetComponentSettingsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings>
@@ -942,7 +941,7 @@ public final class SecurityCenterSettingsServiceGrpc {
      * Updates the Component Settings.
      * </pre>
      */
-    public void updateComponentSettings(
+    default void updateComponentSettings(
         com.google.cloud.securitycenter.settings.v1beta1.UpdateComponentSettingsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings>
@@ -962,7 +961,7 @@ public final class SecurityCenterSettingsServiceGrpc {
      * organization-level settings being used.
      * </pre>
      */
-    public void resetComponentSettings(
+    default void resetComponentSettings(
         com.google.cloud.securitycenter.settings.v1beta1.ResetComponentSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -976,7 +975,7 @@ public final class SecurityCenterSettingsServiceGrpc {
      * Gets the Effective Component Settings.
      * </pre>
      */
-    public void calculateEffectiveComponentSettings(
+    default void calculateEffectiveComponentSettings(
         com.google.cloud.securitycenter.settings.v1beta1.CalculateEffectiveComponentSettingsRequest
             request,
         io.grpc.stub.StreamObserver<
@@ -993,7 +992,7 @@ public final class SecurityCenterSettingsServiceGrpc {
      * Retrieves an unordered list of available detectors.
      * </pre>
      */
-    public void listDetectors(
+    default void listDetectors(
         com.google.cloud.securitycenter.settings.v1beta1.ListDetectorsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.securitycenter.settings.v1beta1.ListDetectorsResponse>
@@ -1009,7 +1008,7 @@ public final class SecurityCenterSettingsServiceGrpc {
      * Retrieves an unordered list of available SCC components.
      * </pre>
      */
-    public void listComponents(
+    default void listComponents(
         com.google.cloud.securitycenter.settings.v1beta1.ListComponentsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.securitycenter.settings.v1beta1.ListComponentsResponse>
@@ -1017,111 +1016,30 @@ public final class SecurityCenterSettingsServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListComponentsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service SecurityCenterSettingsService.
+   *
+   * <pre>
+   * ## API Overview
+   * The SecurityCenterSettingsService is a sub-api of
+   * `securitycenter.googleapis.com`. The service provides methods to manage
+   * Security Center Settings, and Component Settings for GCP organizations,
+   * folders, projects, and clusters.
+   * </pre>
+   */
+  public abstract static class SecurityCenterSettingsServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getGetServiceAccountMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.settings.v1beta1.GetServiceAccountRequest,
-                      com.google.cloud.securitycenter.settings.v1beta1.ServiceAccount>(
-                      this, METHODID_GET_SERVICE_ACCOUNT)))
-          .addMethod(
-              getGetSettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.settings.v1beta1.GetSettingsRequest,
-                      com.google.cloud.securitycenter.settings.v1beta1.Settings>(
-                      this, METHODID_GET_SETTINGS)))
-          .addMethod(
-              getUpdateSettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.settings.v1beta1.UpdateSettingsRequest,
-                      com.google.cloud.securitycenter.settings.v1beta1.Settings>(
-                      this, METHODID_UPDATE_SETTINGS)))
-          .addMethod(
-              getResetSettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.settings.v1beta1.ResetSettingsRequest,
-                      com.google.protobuf.Empty>(this, METHODID_RESET_SETTINGS)))
-          .addMethod(
-              getBatchGetSettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.settings.v1beta1.BatchGetSettingsRequest,
-                      com.google.cloud.securitycenter.settings.v1beta1.BatchGetSettingsResponse>(
-                      this, METHODID_BATCH_GET_SETTINGS)))
-          .addMethod(
-              getCalculateEffectiveSettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.settings.v1beta1
-                          .CalculateEffectiveSettingsRequest,
-                      com.google.cloud.securitycenter.settings.v1beta1.Settings>(
-                      this, METHODID_CALCULATE_EFFECTIVE_SETTINGS)))
-          .addMethod(
-              getBatchCalculateEffectiveSettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.settings.v1beta1
-                          .BatchCalculateEffectiveSettingsRequest,
-                      com.google.cloud.securitycenter.settings.v1beta1
-                          .BatchCalculateEffectiveSettingsResponse>(
-                      this, METHODID_BATCH_CALCULATE_EFFECTIVE_SETTINGS)))
-          .addMethod(
-              getGetComponentSettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.settings.v1beta1.GetComponentSettingsRequest,
-                      com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings>(
-                      this, METHODID_GET_COMPONENT_SETTINGS)))
-          .addMethod(
-              getUpdateComponentSettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.settings.v1beta1
-                          .UpdateComponentSettingsRequest,
-                      com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings>(
-                      this, METHODID_UPDATE_COMPONENT_SETTINGS)))
-          .addMethod(
-              getResetComponentSettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.settings.v1beta1
-                          .ResetComponentSettingsRequest,
-                      com.google.protobuf.Empty>(this, METHODID_RESET_COMPONENT_SETTINGS)))
-          .addMethod(
-              getCalculateEffectiveComponentSettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.settings.v1beta1
-                          .CalculateEffectiveComponentSettingsRequest,
-                      com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings>(
-                      this, METHODID_CALCULATE_EFFECTIVE_COMPONENT_SETTINGS)))
-          .addMethod(
-              getListDetectorsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.settings.v1beta1.ListDetectorsRequest,
-                      com.google.cloud.securitycenter.settings.v1beta1.ListDetectorsResponse>(
-                      this, METHODID_LIST_DETECTORS)))
-          .addMethod(
-              getListComponentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.settings.v1beta1.ListComponentsRequest,
-                      com.google.cloud.securitycenter.settings.v1beta1.ListComponentsResponse>(
-                      this, METHODID_LIST_COMPONENTS)))
-          .build();
+      return SecurityCenterSettingsServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service SecurityCenterSettingsService.
    *
    * <pre>
    * ## API Overview
@@ -1405,7 +1323,7 @@ public final class SecurityCenterSettingsServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service SecurityCenterSettingsService.
    *
    * <pre>
    * ## API Overview
@@ -1638,7 +1556,8 @@ public final class SecurityCenterSettingsServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * SecurityCenterSettingsService.
    *
    * <pre>
    * ## API Overview
@@ -1912,10 +1831,10 @@ public final class SecurityCenterSettingsServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final SecurityCenterSettingsServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(SecurityCenterSettingsServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -2034,6 +1953,104 @@ public final class SecurityCenterSettingsServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getGetServiceAccountMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.settings.v1beta1.GetServiceAccountRequest,
+                    com.google.cloud.securitycenter.settings.v1beta1.ServiceAccount>(
+                    service, METHODID_GET_SERVICE_ACCOUNT)))
+        .addMethod(
+            getGetSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.settings.v1beta1.GetSettingsRequest,
+                    com.google.cloud.securitycenter.settings.v1beta1.Settings>(
+                    service, METHODID_GET_SETTINGS)))
+        .addMethod(
+            getUpdateSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.settings.v1beta1.UpdateSettingsRequest,
+                    com.google.cloud.securitycenter.settings.v1beta1.Settings>(
+                    service, METHODID_UPDATE_SETTINGS)))
+        .addMethod(
+            getResetSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.settings.v1beta1.ResetSettingsRequest,
+                    com.google.protobuf.Empty>(service, METHODID_RESET_SETTINGS)))
+        .addMethod(
+            getBatchGetSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.settings.v1beta1.BatchGetSettingsRequest,
+                    com.google.cloud.securitycenter.settings.v1beta1.BatchGetSettingsResponse>(
+                    service, METHODID_BATCH_GET_SETTINGS)))
+        .addMethod(
+            getCalculateEffectiveSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.settings.v1beta1
+                        .CalculateEffectiveSettingsRequest,
+                    com.google.cloud.securitycenter.settings.v1beta1.Settings>(
+                    service, METHODID_CALCULATE_EFFECTIVE_SETTINGS)))
+        .addMethod(
+            getBatchCalculateEffectiveSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.settings.v1beta1
+                        .BatchCalculateEffectiveSettingsRequest,
+                    com.google.cloud.securitycenter.settings.v1beta1
+                        .BatchCalculateEffectiveSettingsResponse>(
+                    service, METHODID_BATCH_CALCULATE_EFFECTIVE_SETTINGS)))
+        .addMethod(
+            getGetComponentSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.settings.v1beta1.GetComponentSettingsRequest,
+                    com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings>(
+                    service, METHODID_GET_COMPONENT_SETTINGS)))
+        .addMethod(
+            getUpdateComponentSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.settings.v1beta1.UpdateComponentSettingsRequest,
+                    com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings>(
+                    service, METHODID_UPDATE_COMPONENT_SETTINGS)))
+        .addMethod(
+            getResetComponentSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.settings.v1beta1.ResetComponentSettingsRequest,
+                    com.google.protobuf.Empty>(service, METHODID_RESET_COMPONENT_SETTINGS)))
+        .addMethod(
+            getCalculateEffectiveComponentSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.settings.v1beta1
+                        .CalculateEffectiveComponentSettingsRequest,
+                    com.google.cloud.securitycenter.settings.v1beta1.ComponentSettings>(
+                    service, METHODID_CALCULATE_EFFECTIVE_COMPONENT_SETTINGS)))
+        .addMethod(
+            getListDetectorsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.settings.v1beta1.ListDetectorsRequest,
+                    com.google.cloud.securitycenter.settings.v1beta1.ListDetectorsResponse>(
+                    service, METHODID_LIST_DETECTORS)))
+        .addMethod(
+            getListComponentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.settings.v1beta1.ListComponentsRequest,
+                    com.google.cloud.securitycenter.settings.v1beta1.ListComponentsResponse>(
+                    service, METHODID_LIST_COMPONENTS)))
+        .build();
   }
 
   private abstract static class SecurityCenterSettingsServiceBaseDescriptorSupplier

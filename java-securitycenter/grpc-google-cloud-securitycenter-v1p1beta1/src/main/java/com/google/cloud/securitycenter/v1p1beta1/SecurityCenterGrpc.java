@@ -1171,7 +1171,7 @@ public final class SecurityCenterGrpc {
    * V1p1Beta1 APIs for Security Center service.
    * </pre>
    */
-  public abstract static class SecurityCenterImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -1180,7 +1180,7 @@ public final class SecurityCenterGrpc {
      * Creates a source.
      * </pre>
      */
-    public void createSource(
+    default void createSource(
         com.google.cloud.securitycenter.v1p1beta1.CreateSourceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.Source>
             responseObserver) {
@@ -1196,7 +1196,7 @@ public final class SecurityCenterGrpc {
      * creation to succeed.
      * </pre>
      */
-    public void createFinding(
+    default void createFinding(
         com.google.cloud.securitycenter.v1p1beta1.CreateFindingRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.Finding>
             responseObserver) {
@@ -1211,7 +1211,7 @@ public final class SecurityCenterGrpc {
      * Creates a notification config.
      * </pre>
      */
-    public void createNotificationConfig(
+    default void createNotificationConfig(
         com.google.cloud.securitycenter.v1p1beta1.CreateNotificationConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.NotificationConfig>
             responseObserver) {
@@ -1226,7 +1226,7 @@ public final class SecurityCenterGrpc {
      * Deletes a notification config.
      * </pre>
      */
-    public void deleteNotificationConfig(
+    default void deleteNotificationConfig(
         com.google.cloud.securitycenter.v1p1beta1.DeleteNotificationConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1240,7 +1240,7 @@ public final class SecurityCenterGrpc {
      * Gets the access control policy on the specified Source.
      * </pre>
      */
-    public void getIamPolicy(
+    default void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1254,7 +1254,7 @@ public final class SecurityCenterGrpc {
      * Gets a notification config.
      * </pre>
      */
-    public void getNotificationConfig(
+    default void getNotificationConfig(
         com.google.cloud.securitycenter.v1p1beta1.GetNotificationConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.NotificationConfig>
             responseObserver) {
@@ -1269,7 +1269,7 @@ public final class SecurityCenterGrpc {
      * Gets the settings for an organization.
      * </pre>
      */
-    public void getOrganizationSettings(
+    default void getOrganizationSettings(
         com.google.cloud.securitycenter.v1p1beta1.GetOrganizationSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.OrganizationSettings>
             responseObserver) {
@@ -1284,7 +1284,7 @@ public final class SecurityCenterGrpc {
      * Gets a source.
      * </pre>
      */
-    public void getSource(
+    default void getSource(
         com.google.cloud.securitycenter.v1p1beta1.GetSourceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.Source>
             responseObserver) {
@@ -1299,7 +1299,7 @@ public final class SecurityCenterGrpc {
      * properties.
      * </pre>
      */
-    public void groupAssets(
+    default void groupAssets(
         com.google.cloud.securitycenter.v1p1beta1.GroupAssetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.GroupAssetsResponse>
             responseObserver) {
@@ -1319,7 +1319,7 @@ public final class SecurityCenterGrpc {
      * /v1/projects/{project_id}/sources/-/findings
      * </pre>
      */
-    public void groupFindings(
+    default void groupFindings(
         com.google.cloud.securitycenter.v1p1beta1.GroupFindingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.GroupFindingsResponse>
             responseObserver) {
@@ -1334,7 +1334,7 @@ public final class SecurityCenterGrpc {
      * Lists an organization's assets.
      * </pre>
      */
-    public void listAssets(
+    default void listAssets(
         com.google.cloud.securitycenter.v1p1beta1.ListAssetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.ListAssetsResponse>
             responseObserver) {
@@ -1350,7 +1350,7 @@ public final class SecurityCenterGrpc {
      * Example: /v1p1beta1/organizations/{organization_id}/sources/-/findings
      * </pre>
      */
-    public void listFindings(
+    default void listFindings(
         com.google.cloud.securitycenter.v1p1beta1.ListFindingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse>
             responseObserver) {
@@ -1365,7 +1365,7 @@ public final class SecurityCenterGrpc {
      * Lists notification configs.
      * </pre>
      */
-    public void listNotificationConfigs(
+    default void listNotificationConfigs(
         com.google.cloud.securitycenter.v1p1beta1.ListNotificationConfigsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.securitycenter.v1p1beta1.ListNotificationConfigsResponse>
@@ -1381,7 +1381,7 @@ public final class SecurityCenterGrpc {
      * Lists all sources belonging to an organization.
      * </pre>
      */
-    public void listSources(
+    default void listSources(
         com.google.cloud.securitycenter.v1p1beta1.ListSourcesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.ListSourcesResponse>
             responseObserver) {
@@ -1400,7 +1400,7 @@ public final class SecurityCenterGrpc {
      * error.
      * </pre>
      */
-    public void runAssetDiscovery(
+    default void runAssetDiscovery(
         com.google.cloud.securitycenter.v1p1beta1.RunAssetDiscoveryRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1414,7 +1414,7 @@ public final class SecurityCenterGrpc {
      * Updates the state of a finding.
      * </pre>
      */
-    public void setFindingState(
+    default void setFindingState(
         com.google.cloud.securitycenter.v1p1beta1.SetFindingStateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.Finding>
             responseObserver) {
@@ -1429,7 +1429,7 @@ public final class SecurityCenterGrpc {
      * Sets the access control policy on the specified Source.
      * </pre>
      */
-    public void setIamPolicy(
+    default void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1443,7 +1443,7 @@ public final class SecurityCenterGrpc {
      * Returns the permissions that a caller has on the specified source.
      * </pre>
      */
-    public void testIamPermissions(
+    default void testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
@@ -1459,7 +1459,7 @@ public final class SecurityCenterGrpc {
      * finding creation to succeed.
      * </pre>
      */
-    public void updateFinding(
+    default void updateFinding(
         com.google.cloud.securitycenter.v1p1beta1.UpdateFindingRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.Finding>
             responseObserver) {
@@ -1475,7 +1475,7 @@ public final class SecurityCenterGrpc {
      * fields are allowed: description, pubsub_topic, streaming_config.filter
      * </pre>
      */
-    public void updateNotificationConfig(
+    default void updateNotificationConfig(
         com.google.cloud.securitycenter.v1p1beta1.UpdateNotificationConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.NotificationConfig>
             responseObserver) {
@@ -1490,7 +1490,7 @@ public final class SecurityCenterGrpc {
      * Updates an organization's settings.
      * </pre>
      */
-    public void updateOrganizationSettings(
+    default void updateOrganizationSettings(
         com.google.cloud.securitycenter.v1p1beta1.UpdateOrganizationSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.OrganizationSettings>
             responseObserver) {
@@ -1505,7 +1505,7 @@ public final class SecurityCenterGrpc {
      * Updates a source.
      * </pre>
      */
-    public void updateSource(
+    default void updateSource(
         com.google.cloud.securitycenter.v1p1beta1.UpdateSourceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.Source>
             responseObserver) {
@@ -1520,179 +1520,33 @@ public final class SecurityCenterGrpc {
      * Updates security marks.
      * </pre>
      */
-    public void updateSecurityMarks(
+    default void updateSecurityMarks(
         com.google.cloud.securitycenter.v1p1beta1.UpdateSecurityMarksRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.securitycenter.v1p1beta1.SecurityMarks>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateSecurityMarksMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service SecurityCenter.
+   *
+   * <pre>
+   * V1p1Beta1 APIs for Security Center service.
+   * </pre>
+   */
+  public abstract static class SecurityCenterImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateSourceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.v1p1beta1.CreateSourceRequest,
-                      com.google.cloud.securitycenter.v1p1beta1.Source>(
-                      this, METHODID_CREATE_SOURCE)))
-          .addMethod(
-              getCreateFindingMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.v1p1beta1.CreateFindingRequest,
-                      com.google.cloud.securitycenter.v1p1beta1.Finding>(
-                      this, METHODID_CREATE_FINDING)))
-          .addMethod(
-              getCreateNotificationConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.v1p1beta1.CreateNotificationConfigRequest,
-                      com.google.cloud.securitycenter.v1p1beta1.NotificationConfig>(
-                      this, METHODID_CREATE_NOTIFICATION_CONFIG)))
-          .addMethod(
-              getDeleteNotificationConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.v1p1beta1.DeleteNotificationConfigRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_NOTIFICATION_CONFIG)))
-          .addMethod(
-              getGetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_GET_IAM_POLICY)))
-          .addMethod(
-              getGetNotificationConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.v1p1beta1.GetNotificationConfigRequest,
-                      com.google.cloud.securitycenter.v1p1beta1.NotificationConfig>(
-                      this, METHODID_GET_NOTIFICATION_CONFIG)))
-          .addMethod(
-              getGetOrganizationSettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.v1p1beta1.GetOrganizationSettingsRequest,
-                      com.google.cloud.securitycenter.v1p1beta1.OrganizationSettings>(
-                      this, METHODID_GET_ORGANIZATION_SETTINGS)))
-          .addMethod(
-              getGetSourceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.v1p1beta1.GetSourceRequest,
-                      com.google.cloud.securitycenter.v1p1beta1.Source>(this, METHODID_GET_SOURCE)))
-          .addMethod(
-              getGroupAssetsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.v1p1beta1.GroupAssetsRequest,
-                      com.google.cloud.securitycenter.v1p1beta1.GroupAssetsResponse>(
-                      this, METHODID_GROUP_ASSETS)))
-          .addMethod(
-              getGroupFindingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.v1p1beta1.GroupFindingsRequest,
-                      com.google.cloud.securitycenter.v1p1beta1.GroupFindingsResponse>(
-                      this, METHODID_GROUP_FINDINGS)))
-          .addMethod(
-              getListAssetsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.v1p1beta1.ListAssetsRequest,
-                      com.google.cloud.securitycenter.v1p1beta1.ListAssetsResponse>(
-                      this, METHODID_LIST_ASSETS)))
-          .addMethod(
-              getListFindingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.v1p1beta1.ListFindingsRequest,
-                      com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse>(
-                      this, METHODID_LIST_FINDINGS)))
-          .addMethod(
-              getListNotificationConfigsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.v1p1beta1.ListNotificationConfigsRequest,
-                      com.google.cloud.securitycenter.v1p1beta1.ListNotificationConfigsResponse>(
-                      this, METHODID_LIST_NOTIFICATION_CONFIGS)))
-          .addMethod(
-              getListSourcesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.v1p1beta1.ListSourcesRequest,
-                      com.google.cloud.securitycenter.v1p1beta1.ListSourcesResponse>(
-                      this, METHODID_LIST_SOURCES)))
-          .addMethod(
-              getRunAssetDiscoveryMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.v1p1beta1.RunAssetDiscoveryRequest,
-                      com.google.longrunning.Operation>(this, METHODID_RUN_ASSET_DISCOVERY)))
-          .addMethod(
-              getSetFindingStateMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.v1p1beta1.SetFindingStateRequest,
-                      com.google.cloud.securitycenter.v1p1beta1.Finding>(
-                      this, METHODID_SET_FINDING_STATE)))
-          .addMethod(
-              getSetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_SET_IAM_POLICY)))
-          .addMethod(
-              getTestIamPermissionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.TestIamPermissionsRequest,
-                      com.google.iam.v1.TestIamPermissionsResponse>(
-                      this, METHODID_TEST_IAM_PERMISSIONS)))
-          .addMethod(
-              getUpdateFindingMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.v1p1beta1.UpdateFindingRequest,
-                      com.google.cloud.securitycenter.v1p1beta1.Finding>(
-                      this, METHODID_UPDATE_FINDING)))
-          .addMethod(
-              getUpdateNotificationConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.v1p1beta1.UpdateNotificationConfigRequest,
-                      com.google.cloud.securitycenter.v1p1beta1.NotificationConfig>(
-                      this, METHODID_UPDATE_NOTIFICATION_CONFIG)))
-          .addMethod(
-              getUpdateOrganizationSettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.v1p1beta1.UpdateOrganizationSettingsRequest,
-                      com.google.cloud.securitycenter.v1p1beta1.OrganizationSettings>(
-                      this, METHODID_UPDATE_ORGANIZATION_SETTINGS)))
-          .addMethod(
-              getUpdateSourceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.v1p1beta1.UpdateSourceRequest,
-                      com.google.cloud.securitycenter.v1p1beta1.Source>(
-                      this, METHODID_UPDATE_SOURCE)))
-          .addMethod(
-              getUpdateSecurityMarksMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.securitycenter.v1p1beta1.UpdateSecurityMarksRequest,
-                      com.google.cloud.securitycenter.v1p1beta1.SecurityMarks>(
-                      this, METHODID_UPDATE_SECURITY_MARKS)))
-          .build();
+      return SecurityCenterGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service SecurityCenter.
    *
    * <pre>
    * V1p1Beta1 APIs for Security Center service.
@@ -2110,7 +1964,7 @@ public final class SecurityCenterGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service SecurityCenter.
    *
    * <pre>
    * V1p1Beta1 APIs for Security Center service.
@@ -2444,7 +2298,7 @@ public final class SecurityCenterGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service SecurityCenter.
    *
    * <pre>
    * V1p1Beta1 APIs for Security Center service.
@@ -2834,10 +2688,10 @@ public final class SecurityCenterGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final SecurityCenterImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(SecurityCenterImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -3005,6 +2859,166 @@ public final class SecurityCenterGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateSourceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.v1p1beta1.CreateSourceRequest,
+                    com.google.cloud.securitycenter.v1p1beta1.Source>(
+                    service, METHODID_CREATE_SOURCE)))
+        .addMethod(
+            getCreateFindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.v1p1beta1.CreateFindingRequest,
+                    com.google.cloud.securitycenter.v1p1beta1.Finding>(
+                    service, METHODID_CREATE_FINDING)))
+        .addMethod(
+            getCreateNotificationConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.v1p1beta1.CreateNotificationConfigRequest,
+                    com.google.cloud.securitycenter.v1p1beta1.NotificationConfig>(
+                    service, METHODID_CREATE_NOTIFICATION_CONFIG)))
+        .addMethod(
+            getDeleteNotificationConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.v1p1beta1.DeleteNotificationConfigRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_NOTIFICATION_CONFIG)))
+        .addMethod(
+            getGetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_GET_IAM_POLICY)))
+        .addMethod(
+            getGetNotificationConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.v1p1beta1.GetNotificationConfigRequest,
+                    com.google.cloud.securitycenter.v1p1beta1.NotificationConfig>(
+                    service, METHODID_GET_NOTIFICATION_CONFIG)))
+        .addMethod(
+            getGetOrganizationSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.v1p1beta1.GetOrganizationSettingsRequest,
+                    com.google.cloud.securitycenter.v1p1beta1.OrganizationSettings>(
+                    service, METHODID_GET_ORGANIZATION_SETTINGS)))
+        .addMethod(
+            getGetSourceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.v1p1beta1.GetSourceRequest,
+                    com.google.cloud.securitycenter.v1p1beta1.Source>(
+                    service, METHODID_GET_SOURCE)))
+        .addMethod(
+            getGroupAssetsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.v1p1beta1.GroupAssetsRequest,
+                    com.google.cloud.securitycenter.v1p1beta1.GroupAssetsResponse>(
+                    service, METHODID_GROUP_ASSETS)))
+        .addMethod(
+            getGroupFindingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.v1p1beta1.GroupFindingsRequest,
+                    com.google.cloud.securitycenter.v1p1beta1.GroupFindingsResponse>(
+                    service, METHODID_GROUP_FINDINGS)))
+        .addMethod(
+            getListAssetsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.v1p1beta1.ListAssetsRequest,
+                    com.google.cloud.securitycenter.v1p1beta1.ListAssetsResponse>(
+                    service, METHODID_LIST_ASSETS)))
+        .addMethod(
+            getListFindingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.v1p1beta1.ListFindingsRequest,
+                    com.google.cloud.securitycenter.v1p1beta1.ListFindingsResponse>(
+                    service, METHODID_LIST_FINDINGS)))
+        .addMethod(
+            getListNotificationConfigsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.v1p1beta1.ListNotificationConfigsRequest,
+                    com.google.cloud.securitycenter.v1p1beta1.ListNotificationConfigsResponse>(
+                    service, METHODID_LIST_NOTIFICATION_CONFIGS)))
+        .addMethod(
+            getListSourcesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.v1p1beta1.ListSourcesRequest,
+                    com.google.cloud.securitycenter.v1p1beta1.ListSourcesResponse>(
+                    service, METHODID_LIST_SOURCES)))
+        .addMethod(
+            getRunAssetDiscoveryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.v1p1beta1.RunAssetDiscoveryRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RUN_ASSET_DISCOVERY)))
+        .addMethod(
+            getSetFindingStateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.v1p1beta1.SetFindingStateRequest,
+                    com.google.cloud.securitycenter.v1p1beta1.Finding>(
+                    service, METHODID_SET_FINDING_STATE)))
+        .addMethod(
+            getSetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_SET_IAM_POLICY)))
+        .addMethod(
+            getTestIamPermissionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.v1.TestIamPermissionsRequest,
+                    com.google.iam.v1.TestIamPermissionsResponse>(
+                    service, METHODID_TEST_IAM_PERMISSIONS)))
+        .addMethod(
+            getUpdateFindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.v1p1beta1.UpdateFindingRequest,
+                    com.google.cloud.securitycenter.v1p1beta1.Finding>(
+                    service, METHODID_UPDATE_FINDING)))
+        .addMethod(
+            getUpdateNotificationConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.v1p1beta1.UpdateNotificationConfigRequest,
+                    com.google.cloud.securitycenter.v1p1beta1.NotificationConfig>(
+                    service, METHODID_UPDATE_NOTIFICATION_CONFIG)))
+        .addMethod(
+            getUpdateOrganizationSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.v1p1beta1.UpdateOrganizationSettingsRequest,
+                    com.google.cloud.securitycenter.v1p1beta1.OrganizationSettings>(
+                    service, METHODID_UPDATE_ORGANIZATION_SETTINGS)))
+        .addMethod(
+            getUpdateSourceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.v1p1beta1.UpdateSourceRequest,
+                    com.google.cloud.securitycenter.v1p1beta1.Source>(
+                    service, METHODID_UPDATE_SOURCE)))
+        .addMethod(
+            getUpdateSecurityMarksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securitycenter.v1p1beta1.UpdateSecurityMarksRequest,
+                    com.google.cloud.securitycenter.v1p1beta1.SecurityMarks>(
+                    service, METHODID_UPDATE_SECURITY_MARKS)))
+        .build();
   }
 
   private abstract static class SecurityCenterBaseDescriptorSupplier
