@@ -306,7 +306,7 @@ public final class WorkflowsGrpc {
    * networking interruptions.
    * </pre>
    */
-  public abstract static class WorkflowsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -316,7 +316,7 @@ public final class WorkflowsGrpc {
      * The default order is not specified.
      * </pre>
      */
-    public void listWorkflows(
+    default void listWorkflows(
         com.google.cloud.workflows.v1beta.ListWorkflowsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.workflows.v1beta.ListWorkflowsResponse>
             responseObserver) {
@@ -331,7 +331,7 @@ public final class WorkflowsGrpc {
      * Gets details of a single Workflow.
      * </pre>
      */
-    public void getWorkflow(
+    default void getWorkflow(
         com.google.cloud.workflows.v1beta.GetWorkflowRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.workflows.v1beta.Workflow> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -347,7 +347,7 @@ public final class WorkflowsGrpc {
      * will return [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS] error.
      * </pre>
      */
-    public void createWorkflow(
+    default void createWorkflow(
         com.google.cloud.workflows.v1beta.CreateWorkflowRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -363,7 +363,7 @@ public final class WorkflowsGrpc {
      * workflow.
      * </pre>
      */
-    public void deleteWorkflow(
+    default void deleteWorkflow(
         com.google.cloud.workflows.v1beta.DeleteWorkflowRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -381,53 +381,33 @@ public final class WorkflowsGrpc {
      * in new workflow executions.
      * </pre>
      */
-    public void updateWorkflow(
+    default void updateWorkflow(
         com.google.cloud.workflows.v1beta.UpdateWorkflowRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateWorkflowMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Workflows.
+   *
+   * <pre>
+   * Workflows is used to deploy and execute workflow programs.
+   * Workflows makes sure the program executes reliably, despite hardware and
+   * networking interruptions.
+   * </pre>
+   */
+  public abstract static class WorkflowsImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListWorkflowsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.workflows.v1beta.ListWorkflowsRequest,
-                      com.google.cloud.workflows.v1beta.ListWorkflowsResponse>(
-                      this, METHODID_LIST_WORKFLOWS)))
-          .addMethod(
-              getGetWorkflowMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.workflows.v1beta.GetWorkflowRequest,
-                      com.google.cloud.workflows.v1beta.Workflow>(this, METHODID_GET_WORKFLOW)))
-          .addMethod(
-              getCreateWorkflowMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.workflows.v1beta.CreateWorkflowRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_WORKFLOW)))
-          .addMethod(
-              getDeleteWorkflowMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.workflows.v1beta.DeleteWorkflowRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_WORKFLOW)))
-          .addMethod(
-              getUpdateWorkflowMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.workflows.v1beta.UpdateWorkflowRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_WORKFLOW)))
-          .build();
+      return WorkflowsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Workflows.
    *
    * <pre>
    * Workflows is used to deploy and execute workflow programs.
@@ -537,7 +517,7 @@ public final class WorkflowsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Workflows.
    *
    * <pre>
    * Workflows is used to deploy and execute workflow programs.
@@ -633,7 +613,7 @@ public final class WorkflowsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Workflows.
    *
    * <pre>
    * Workflows is used to deploy and execute workflow programs.
@@ -740,10 +720,10 @@ public final class WorkflowsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final WorkflowsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(WorkflowsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -793,6 +773,42 @@ public final class WorkflowsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListWorkflowsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workflows.v1beta.ListWorkflowsRequest,
+                    com.google.cloud.workflows.v1beta.ListWorkflowsResponse>(
+                    service, METHODID_LIST_WORKFLOWS)))
+        .addMethod(
+            getGetWorkflowMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workflows.v1beta.GetWorkflowRequest,
+                    com.google.cloud.workflows.v1beta.Workflow>(service, METHODID_GET_WORKFLOW)))
+        .addMethod(
+            getCreateWorkflowMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workflows.v1beta.CreateWorkflowRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_WORKFLOW)))
+        .addMethod(
+            getDeleteWorkflowMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workflows.v1beta.DeleteWorkflowRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_WORKFLOW)))
+        .addMethod(
+            getUpdateWorkflowMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workflows.v1beta.UpdateWorkflowRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_WORKFLOW)))
+        .build();
   }
 
   private abstract static class WorkflowsBaseDescriptorSupplier

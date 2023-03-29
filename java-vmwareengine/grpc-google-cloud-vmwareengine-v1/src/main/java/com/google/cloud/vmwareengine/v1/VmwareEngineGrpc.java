@@ -1549,7 +1549,7 @@ public final class VmwareEngineGrpc {
    * VMwareEngine manages VMware's private clusters in the Cloud.
    * </pre>
    */
-  public abstract static class VmwareEngineImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -1558,7 +1558,7 @@ public final class VmwareEngineGrpc {
      * Lists `PrivateCloud` resources in a given project and location.
      * </pre>
      */
-    public void listPrivateClouds(
+    default void listPrivateClouds(
         com.google.cloud.vmwareengine.v1.ListPrivateCloudsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.ListPrivateCloudsResponse>
             responseObserver) {
@@ -1573,7 +1573,7 @@ public final class VmwareEngineGrpc {
      * Retrieves a `PrivateCloud` resource by its resource name.
      * </pre>
      */
-    public void getPrivateCloud(
+    default void getPrivateCloud(
         com.google.cloud.vmwareengine.v1.GetPrivateCloudRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.PrivateCloud>
             responseObserver) {
@@ -1593,7 +1593,7 @@ public final class VmwareEngineGrpc {
      * for that private cloud.
      * </pre>
      */
-    public void createPrivateCloud(
+    default void createPrivateCloud(
         com.google.cloud.vmwareengine.v1.CreatePrivateCloudRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1613,7 +1613,7 @@ public final class VmwareEngineGrpc {
      * processing fully completes.
      * </pre>
      */
-    public void updatePrivateCloud(
+    default void updatePrivateCloud(
         com.google.cloud.vmwareengine.v1.UpdatePrivateCloudRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1640,7 +1640,7 @@ public final class VmwareEngineGrpc {
      * when it is completely purged.
      * </pre>
      */
-    public void deletePrivateCloud(
+    default void deletePrivateCloud(
         com.google.cloud.vmwareengine.v1.DeletePrivateCloudRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1657,7 +1657,7 @@ public final class VmwareEngineGrpc {
      * the time when deletion can no longer be reversed.
      * </pre>
      */
-    public void undeletePrivateCloud(
+    default void undeletePrivateCloud(
         com.google.cloud.vmwareengine.v1.UndeletePrivateCloudRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1671,7 +1671,7 @@ public final class VmwareEngineGrpc {
      * Lists `Cluster` resources in a given private cloud.
      * </pre>
      */
-    public void listClusters(
+    default void listClusters(
         com.google.cloud.vmwareengine.v1.ListClustersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.ListClustersResponse>
             responseObserver) {
@@ -1686,7 +1686,7 @@ public final class VmwareEngineGrpc {
      * Retrieves a `Cluster` resource by its resource name.
      * </pre>
      */
-    public void getCluster(
+    default void getCluster(
         com.google.cloud.vmwareengine.v1.GetClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.Cluster> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetClusterMethod(), responseObserver);
@@ -1702,7 +1702,7 @@ public final class VmwareEngineGrpc {
      * quota](https://cloud.google.com/vmware-engine/quotas).
      * </pre>
      */
-    public void createCluster(
+    default void createCluster(
         com.google.cloud.vmwareengine.v1.CreateClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1722,7 +1722,7 @@ public final class VmwareEngineGrpc {
      * processing fully completes.
      * </pre>
      */
-    public void updateCluster(
+    default void updateCluster(
         com.google.cloud.vmwareengine.v1.UpdateClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1739,7 +1739,7 @@ public final class VmwareEngineGrpc {
      * method.
      * </pre>
      */
-    public void deleteCluster(
+    default void deleteCluster(
         com.google.cloud.vmwareengine.v1.DeleteClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1753,7 +1753,7 @@ public final class VmwareEngineGrpc {
      * Lists subnets in a given private cloud.
      * </pre>
      */
-    public void listSubnets(
+    default void listSubnets(
         com.google.cloud.vmwareengine.v1.ListSubnetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.ListSubnetsResponse>
             responseObserver) {
@@ -1768,7 +1768,7 @@ public final class VmwareEngineGrpc {
      * Lists node types
      * </pre>
      */
-    public void listNodeTypes(
+    default void listNodeTypes(
         com.google.cloud.vmwareengine.v1.ListNodeTypesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.ListNodeTypesResponse>
             responseObserver) {
@@ -1783,7 +1783,7 @@ public final class VmwareEngineGrpc {
      * Gets details of a single `NodeType`.
      * </pre>
      */
-    public void getNodeType(
+    default void getNodeType(
         com.google.cloud.vmwareengine.v1.GetNodeTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.NodeType> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1797,7 +1797,7 @@ public final class VmwareEngineGrpc {
      * Gets details of credentials for NSX appliance.
      * </pre>
      */
-    public void showNsxCredentials(
+    default void showNsxCredentials(
         com.google.cloud.vmwareengine.v1.ShowNsxCredentialsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.Credentials>
             responseObserver) {
@@ -1812,7 +1812,7 @@ public final class VmwareEngineGrpc {
      * Gets details of credentials for Vcenter appliance.
      * </pre>
      */
-    public void showVcenterCredentials(
+    default void showVcenterCredentials(
         com.google.cloud.vmwareengine.v1.ShowVcenterCredentialsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.Credentials>
             responseObserver) {
@@ -1827,7 +1827,7 @@ public final class VmwareEngineGrpc {
      * Resets credentials of the NSX appliance.
      * </pre>
      */
-    public void resetNsxCredentials(
+    default void resetNsxCredentials(
         com.google.cloud.vmwareengine.v1.ResetNsxCredentialsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1841,7 +1841,7 @@ public final class VmwareEngineGrpc {
      * Resets credentials of the Vcenter appliance.
      * </pre>
      */
-    public void resetVcenterCredentials(
+    default void resetVcenterCredentials(
         com.google.cloud.vmwareengine.v1.ResetVcenterCredentialsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1855,7 +1855,7 @@ public final class VmwareEngineGrpc {
      * Creates a new HCX activation key in a given private cloud.
      * </pre>
      */
-    public void createHcxActivationKey(
+    default void createHcxActivationKey(
         com.google.cloud.vmwareengine.v1.CreateHcxActivationKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1869,7 +1869,7 @@ public final class VmwareEngineGrpc {
      * Lists `HcxActivationKey` resources in a given private cloud.
      * </pre>
      */
-    public void listHcxActivationKeys(
+    default void listHcxActivationKeys(
         com.google.cloud.vmwareengine.v1.ListHcxActivationKeysRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.ListHcxActivationKeysResponse>
             responseObserver) {
@@ -1884,7 +1884,7 @@ public final class VmwareEngineGrpc {
      * Retrieves a `HcxActivationKey` resource by its resource name.
      * </pre>
      */
-    public void getHcxActivationKey(
+    default void getHcxActivationKey(
         com.google.cloud.vmwareengine.v1.GetHcxActivationKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.HcxActivationKey>
             responseObserver) {
@@ -1899,7 +1899,7 @@ public final class VmwareEngineGrpc {
      * Retrieves a `NetworkPolicy` resource by its resource name.
      * </pre>
      */
-    public void getNetworkPolicy(
+    default void getNetworkPolicy(
         com.google.cloud.vmwareengine.v1.GetNetworkPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.NetworkPolicy>
             responseObserver) {
@@ -1914,7 +1914,7 @@ public final class VmwareEngineGrpc {
      * Lists `NetworkPolicy` resources in a specified project and location.
      * </pre>
      */
-    public void listNetworkPolicies(
+    default void listNetworkPolicies(
         com.google.cloud.vmwareengine.v1.ListNetworkPoliciesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.ListNetworkPoliciesResponse>
             responseObserver) {
@@ -1931,7 +1931,7 @@ public final class VmwareEngineGrpc {
      * another network policy already exists in the same scope.
      * </pre>
      */
-    public void createNetworkPolicy(
+    default void createNetworkPolicy(
         com.google.cloud.vmwareengine.v1.CreateNetworkPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1955,7 +1955,7 @@ public final class VmwareEngineGrpc {
      * processing fully completes.
      * </pre>
      */
-    public void updateNetworkPolicy(
+    default void updateNetworkPolicy(
         com.google.cloud.vmwareengine.v1.UpdateNetworkPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1971,7 +1971,7 @@ public final class VmwareEngineGrpc {
      * IP or internet access service.
      * </pre>
      */
-    public void deleteNetworkPolicy(
+    default void deleteNetworkPolicy(
         com.google.cloud.vmwareengine.v1.DeleteNetworkPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1985,7 +1985,7 @@ public final class VmwareEngineGrpc {
      * Creates a new VMware Engine network that can be used by a private cloud.
      * </pre>
      */
-    public void createVmwareEngineNetwork(
+    default void createVmwareEngineNetwork(
         com.google.cloud.vmwareengine.v1.CreateVmwareEngineNetworkRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2001,7 +2001,7 @@ public final class VmwareEngineGrpc {
      * applied.
      * </pre>
      */
-    public void updateVmwareEngineNetwork(
+    default void updateVmwareEngineNetwork(
         com.google.cloud.vmwareengine.v1.UpdateVmwareEngineNetworkRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2018,7 +2018,7 @@ public final class VmwareEngineGrpc {
      * refer to the same VMware Engine network.
      * </pre>
      */
-    public void deleteVmwareEngineNetwork(
+    default void deleteVmwareEngineNetwork(
         com.google.cloud.vmwareengine.v1.DeleteVmwareEngineNetworkRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2035,7 +2035,7 @@ public final class VmwareEngineGrpc {
      * (for example, `CREATING`, `ACTIVE`, `DELETING`).
      * </pre>
      */
-    public void getVmwareEngineNetwork(
+    default void getVmwareEngineNetwork(
         com.google.cloud.vmwareengine.v1.GetVmwareEngineNetworkRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmwareengine.v1.VmwareEngineNetwork>
             responseObserver) {
@@ -2050,7 +2050,7 @@ public final class VmwareEngineGrpc {
      * Lists `VmwareEngineNetwork` resources in a given project and location.
      * </pre>
      */
-    public void listVmwareEngineNetworks(
+    default void listVmwareEngineNetworks(
         com.google.cloud.vmwareengine.v1.ListVmwareEngineNetworksRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.vmwareengine.v1.ListVmwareEngineNetworksResponse>
@@ -2058,218 +2058,26 @@ public final class VmwareEngineGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListVmwareEngineNetworksMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service VmwareEngine.
+   *
+   * <pre>
+   * VMwareEngine manages VMware's private clusters in the Cloud.
+   * </pre>
+   */
+  public abstract static class VmwareEngineImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListPrivateCloudsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.ListPrivateCloudsRequest,
-                      com.google.cloud.vmwareengine.v1.ListPrivateCloudsResponse>(
-                      this, METHODID_LIST_PRIVATE_CLOUDS)))
-          .addMethod(
-              getGetPrivateCloudMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.GetPrivateCloudRequest,
-                      com.google.cloud.vmwareengine.v1.PrivateCloud>(
-                      this, METHODID_GET_PRIVATE_CLOUD)))
-          .addMethod(
-              getCreatePrivateCloudMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.CreatePrivateCloudRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_PRIVATE_CLOUD)))
-          .addMethod(
-              getUpdatePrivateCloudMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.UpdatePrivateCloudRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_PRIVATE_CLOUD)))
-          .addMethod(
-              getDeletePrivateCloudMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.DeletePrivateCloudRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_PRIVATE_CLOUD)))
-          .addMethod(
-              getUndeletePrivateCloudMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.UndeletePrivateCloudRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UNDELETE_PRIVATE_CLOUD)))
-          .addMethod(
-              getListClustersMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.ListClustersRequest,
-                      com.google.cloud.vmwareengine.v1.ListClustersResponse>(
-                      this, METHODID_LIST_CLUSTERS)))
-          .addMethod(
-              getGetClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.GetClusterRequest,
-                      com.google.cloud.vmwareengine.v1.Cluster>(this, METHODID_GET_CLUSTER)))
-          .addMethod(
-              getCreateClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.CreateClusterRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_CLUSTER)))
-          .addMethod(
-              getUpdateClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.UpdateClusterRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_CLUSTER)))
-          .addMethod(
-              getDeleteClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.DeleteClusterRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_CLUSTER)))
-          .addMethod(
-              getListSubnetsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.ListSubnetsRequest,
-                      com.google.cloud.vmwareengine.v1.ListSubnetsResponse>(
-                      this, METHODID_LIST_SUBNETS)))
-          .addMethod(
-              getListNodeTypesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.ListNodeTypesRequest,
-                      com.google.cloud.vmwareengine.v1.ListNodeTypesResponse>(
-                      this, METHODID_LIST_NODE_TYPES)))
-          .addMethod(
-              getGetNodeTypeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.GetNodeTypeRequest,
-                      com.google.cloud.vmwareengine.v1.NodeType>(this, METHODID_GET_NODE_TYPE)))
-          .addMethod(
-              getShowNsxCredentialsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.ShowNsxCredentialsRequest,
-                      com.google.cloud.vmwareengine.v1.Credentials>(
-                      this, METHODID_SHOW_NSX_CREDENTIALS)))
-          .addMethod(
-              getShowVcenterCredentialsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.ShowVcenterCredentialsRequest,
-                      com.google.cloud.vmwareengine.v1.Credentials>(
-                      this, METHODID_SHOW_VCENTER_CREDENTIALS)))
-          .addMethod(
-              getResetNsxCredentialsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.ResetNsxCredentialsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_RESET_NSX_CREDENTIALS)))
-          .addMethod(
-              getResetVcenterCredentialsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.ResetVcenterCredentialsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_RESET_VCENTER_CREDENTIALS)))
-          .addMethod(
-              getCreateHcxActivationKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.CreateHcxActivationKeyRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_HCX_ACTIVATION_KEY)))
-          .addMethod(
-              getListHcxActivationKeysMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.ListHcxActivationKeysRequest,
-                      com.google.cloud.vmwareengine.v1.ListHcxActivationKeysResponse>(
-                      this, METHODID_LIST_HCX_ACTIVATION_KEYS)))
-          .addMethod(
-              getGetHcxActivationKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.GetHcxActivationKeyRequest,
-                      com.google.cloud.vmwareengine.v1.HcxActivationKey>(
-                      this, METHODID_GET_HCX_ACTIVATION_KEY)))
-          .addMethod(
-              getGetNetworkPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.GetNetworkPolicyRequest,
-                      com.google.cloud.vmwareengine.v1.NetworkPolicy>(
-                      this, METHODID_GET_NETWORK_POLICY)))
-          .addMethod(
-              getListNetworkPoliciesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.ListNetworkPoliciesRequest,
-                      com.google.cloud.vmwareengine.v1.ListNetworkPoliciesResponse>(
-                      this, METHODID_LIST_NETWORK_POLICIES)))
-          .addMethod(
-              getCreateNetworkPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.CreateNetworkPolicyRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_NETWORK_POLICY)))
-          .addMethod(
-              getUpdateNetworkPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.UpdateNetworkPolicyRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_NETWORK_POLICY)))
-          .addMethod(
-              getDeleteNetworkPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.DeleteNetworkPolicyRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_NETWORK_POLICY)))
-          .addMethod(
-              getCreateVmwareEngineNetworkMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.CreateVmwareEngineNetworkRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_CREATE_VMWARE_ENGINE_NETWORK)))
-          .addMethod(
-              getUpdateVmwareEngineNetworkMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.UpdateVmwareEngineNetworkRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_UPDATE_VMWARE_ENGINE_NETWORK)))
-          .addMethod(
-              getDeleteVmwareEngineNetworkMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.DeleteVmwareEngineNetworkRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_DELETE_VMWARE_ENGINE_NETWORK)))
-          .addMethod(
-              getGetVmwareEngineNetworkMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.GetVmwareEngineNetworkRequest,
-                      com.google.cloud.vmwareengine.v1.VmwareEngineNetwork>(
-                      this, METHODID_GET_VMWARE_ENGINE_NETWORK)))
-          .addMethod(
-              getListVmwareEngineNetworksMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmwareengine.v1.ListVmwareEngineNetworksRequest,
-                      com.google.cloud.vmwareengine.v1.ListVmwareEngineNetworksResponse>(
-                      this, METHODID_LIST_VMWARE_ENGINE_NETWORKS)))
-          .build();
+      return VmwareEngineGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service VmwareEngine.
    *
    * <pre>
    * VMwareEngine manages VMware's private clusters in the Cloud.
@@ -2857,7 +2665,7 @@ public final class VmwareEngineGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service VmwareEngine.
    *
    * <pre>
    * VMwareEngine manages VMware's private clusters in the Cloud.
@@ -3342,7 +3150,7 @@ public final class VmwareEngineGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service VmwareEngine.
    *
    * <pre>
    * VMwareEngine manages VMware's private clusters in the Cloud.
@@ -3886,10 +3694,10 @@ public final class VmwareEngineGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final VmwareEngineImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(VmwareEngineImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -4086,6 +3894,213 @@ public final class VmwareEngineGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListPrivateCloudsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.ListPrivateCloudsRequest,
+                    com.google.cloud.vmwareengine.v1.ListPrivateCloudsResponse>(
+                    service, METHODID_LIST_PRIVATE_CLOUDS)))
+        .addMethod(
+            getGetPrivateCloudMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.GetPrivateCloudRequest,
+                    com.google.cloud.vmwareengine.v1.PrivateCloud>(
+                    service, METHODID_GET_PRIVATE_CLOUD)))
+        .addMethod(
+            getCreatePrivateCloudMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.CreatePrivateCloudRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_PRIVATE_CLOUD)))
+        .addMethod(
+            getUpdatePrivateCloudMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.UpdatePrivateCloudRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_PRIVATE_CLOUD)))
+        .addMethod(
+            getDeletePrivateCloudMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.DeletePrivateCloudRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_PRIVATE_CLOUD)))
+        .addMethod(
+            getUndeletePrivateCloudMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.UndeletePrivateCloudRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UNDELETE_PRIVATE_CLOUD)))
+        .addMethod(
+            getListClustersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.ListClustersRequest,
+                    com.google.cloud.vmwareengine.v1.ListClustersResponse>(
+                    service, METHODID_LIST_CLUSTERS)))
+        .addMethod(
+            getGetClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.GetClusterRequest,
+                    com.google.cloud.vmwareengine.v1.Cluster>(service, METHODID_GET_CLUSTER)))
+        .addMethod(
+            getCreateClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.CreateClusterRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_CLUSTER)))
+        .addMethod(
+            getUpdateClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.UpdateClusterRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_CLUSTER)))
+        .addMethod(
+            getDeleteClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.DeleteClusterRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_CLUSTER)))
+        .addMethod(
+            getListSubnetsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.ListSubnetsRequest,
+                    com.google.cloud.vmwareengine.v1.ListSubnetsResponse>(
+                    service, METHODID_LIST_SUBNETS)))
+        .addMethod(
+            getListNodeTypesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.ListNodeTypesRequest,
+                    com.google.cloud.vmwareengine.v1.ListNodeTypesResponse>(
+                    service, METHODID_LIST_NODE_TYPES)))
+        .addMethod(
+            getGetNodeTypeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.GetNodeTypeRequest,
+                    com.google.cloud.vmwareengine.v1.NodeType>(service, METHODID_GET_NODE_TYPE)))
+        .addMethod(
+            getShowNsxCredentialsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.ShowNsxCredentialsRequest,
+                    com.google.cloud.vmwareengine.v1.Credentials>(
+                    service, METHODID_SHOW_NSX_CREDENTIALS)))
+        .addMethod(
+            getShowVcenterCredentialsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.ShowVcenterCredentialsRequest,
+                    com.google.cloud.vmwareengine.v1.Credentials>(
+                    service, METHODID_SHOW_VCENTER_CREDENTIALS)))
+        .addMethod(
+            getResetNsxCredentialsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.ResetNsxCredentialsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RESET_NSX_CREDENTIALS)))
+        .addMethod(
+            getResetVcenterCredentialsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.ResetVcenterCredentialsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RESET_VCENTER_CREDENTIALS)))
+        .addMethod(
+            getCreateHcxActivationKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.CreateHcxActivationKeyRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_HCX_ACTIVATION_KEY)))
+        .addMethod(
+            getListHcxActivationKeysMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.ListHcxActivationKeysRequest,
+                    com.google.cloud.vmwareengine.v1.ListHcxActivationKeysResponse>(
+                    service, METHODID_LIST_HCX_ACTIVATION_KEYS)))
+        .addMethod(
+            getGetHcxActivationKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.GetHcxActivationKeyRequest,
+                    com.google.cloud.vmwareengine.v1.HcxActivationKey>(
+                    service, METHODID_GET_HCX_ACTIVATION_KEY)))
+        .addMethod(
+            getGetNetworkPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.GetNetworkPolicyRequest,
+                    com.google.cloud.vmwareengine.v1.NetworkPolicy>(
+                    service, METHODID_GET_NETWORK_POLICY)))
+        .addMethod(
+            getListNetworkPoliciesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.ListNetworkPoliciesRequest,
+                    com.google.cloud.vmwareengine.v1.ListNetworkPoliciesResponse>(
+                    service, METHODID_LIST_NETWORK_POLICIES)))
+        .addMethod(
+            getCreateNetworkPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.CreateNetworkPolicyRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_NETWORK_POLICY)))
+        .addMethod(
+            getUpdateNetworkPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.UpdateNetworkPolicyRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_NETWORK_POLICY)))
+        .addMethod(
+            getDeleteNetworkPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.DeleteNetworkPolicyRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_NETWORK_POLICY)))
+        .addMethod(
+            getCreateVmwareEngineNetworkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.CreateVmwareEngineNetworkRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_VMWARE_ENGINE_NETWORK)))
+        .addMethod(
+            getUpdateVmwareEngineNetworkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.UpdateVmwareEngineNetworkRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_VMWARE_ENGINE_NETWORK)))
+        .addMethod(
+            getDeleteVmwareEngineNetworkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.DeleteVmwareEngineNetworkRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_VMWARE_ENGINE_NETWORK)))
+        .addMethod(
+            getGetVmwareEngineNetworkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.GetVmwareEngineNetworkRequest,
+                    com.google.cloud.vmwareengine.v1.VmwareEngineNetwork>(
+                    service, METHODID_GET_VMWARE_ENGINE_NETWORK)))
+        .addMethod(
+            getListVmwareEngineNetworksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmwareengine.v1.ListVmwareEngineNetworksRequest,
+                    com.google.cloud.vmwareengine.v1.ListVmwareEngineNetworksResponse>(
+                    service, METHODID_LIST_VMWARE_ENGINE_NETWORKS)))
+        .build();
   }
 
   private abstract static class VmwareEngineBaseDescriptorSupplier
