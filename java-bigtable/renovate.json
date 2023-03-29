@@ -68,6 +68,28 @@
         "^com.fasterxml.jackson.core"
       ],
       "groupName": "jackson dependencies"
+    },
+    {
+      "packagePatterns": [
+        "^com.google.cloud:google-cloud-shared-dependencies",
+        "^com.google.protobuf:protoc",
+        "^io.grpc:protoc-gen-grpc-java"
+      ],
+      "groupName": "shared dependencies"
+    }
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["^pom\\.xml$"],
+      "matchStrings": ["\\<grpc\\.version>(?<currentValue>.*?)\\<\\/grpc\\.version\\>"],
+      "depNameTemplate": "io.grpc:protoc-gen-grpc-java",
+      "datasourceTemplate": "maven"
+    },
+    {
+      "fileMatch": ["^pom\\.xml$"],
+      "matchStrings": ["\\<protobuf\\.version>(?<currentValue>.*?)\\<\\/protobuf\\.version\\>"],
+      "depNameTemplate": "com.google.protobuf:protoc",
+      "datasourceTemplate": "maven"
     }
   ],
   "semanticCommits": true,

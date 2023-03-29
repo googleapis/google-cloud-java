@@ -109,4 +109,5 @@ java.common_templates(excludes=[
     'codecov.yaml'
     # needed for extraFiles
     '.github/release-please.yml',
+    'renovate.json',
 ])
