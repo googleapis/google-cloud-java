@@ -66,6 +66,7 @@ import com.google.cloud.compute.v1.PatchNodeGroupRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetIamPolicyNodeGroupRequest;
 import com.google.cloud.compute.v1.SetNodeTemplateNodeGroupRequest;
+import com.google.cloud.compute.v1.SimulateMaintenanceEventNodeGroupRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsNodeGroupRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.common.collect.ImmutableList;
@@ -154,6 +155,11 @@ public class NodeGroupsStubSettings extends StubSettings<NodeGroupsStubSettings>
       setNodeTemplateSettings;
   private final OperationCallSettings<SetNodeTemplateNodeGroupRequest, Operation, Operation>
       setNodeTemplateOperationSettings;
+  private final UnaryCallSettings<SimulateMaintenanceEventNodeGroupRequest, Operation>
+      simulateMaintenanceEventSettings;
+  private final OperationCallSettings<
+          SimulateMaintenanceEventNodeGroupRequest, Operation, Operation>
+      simulateMaintenanceEventOperationSettings;
   private final UnaryCallSettings<TestIamPermissionsNodeGroupRequest, TestPermissionsResponse>
       testIamPermissionsSettings;
 
@@ -439,6 +445,18 @@ public class NodeGroupsStubSettings extends StubSettings<NodeGroupsStubSettings>
     return setNodeTemplateOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to simulateMaintenanceEvent. */
+  public UnaryCallSettings<SimulateMaintenanceEventNodeGroupRequest, Operation>
+      simulateMaintenanceEventSettings() {
+    return simulateMaintenanceEventSettings;
+  }
+
+  /** Returns the object with the settings used for calls to simulateMaintenanceEvent. */
+  public OperationCallSettings<SimulateMaintenanceEventNodeGroupRequest, Operation, Operation>
+      simulateMaintenanceEventOperationSettings() {
+    return simulateMaintenanceEventOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to testIamPermissions. */
   public UnaryCallSettings<TestIamPermissionsNodeGroupRequest, TestPermissionsResponse>
       testIamPermissionsSettings() {
@@ -539,6 +557,9 @@ public class NodeGroupsStubSettings extends StubSettings<NodeGroupsStubSettings>
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     setNodeTemplateSettings = settingsBuilder.setNodeTemplateSettings().build();
     setNodeTemplateOperationSettings = settingsBuilder.setNodeTemplateOperationSettings().build();
+    simulateMaintenanceEventSettings = settingsBuilder.simulateMaintenanceEventSettings().build();
+    simulateMaintenanceEventOperationSettings =
+        settingsBuilder.simulateMaintenanceEventOperationSettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
@@ -579,6 +600,11 @@ public class NodeGroupsStubSettings extends StubSettings<NodeGroupsStubSettings>
     private final OperationCallSettings.Builder<
             SetNodeTemplateNodeGroupRequest, Operation, Operation>
         setNodeTemplateOperationSettings;
+    private final UnaryCallSettings.Builder<SimulateMaintenanceEventNodeGroupRequest, Operation>
+        simulateMaintenanceEventSettings;
+    private final OperationCallSettings.Builder<
+            SimulateMaintenanceEventNodeGroupRequest, Operation, Operation>
+        simulateMaintenanceEventOperationSettings;
     private final UnaryCallSettings.Builder<
             TestIamPermissionsNodeGroupRequest, TestPermissionsResponse>
         testIamPermissionsSettings;
@@ -650,6 +676,8 @@ public class NodeGroupsStubSettings extends StubSettings<NodeGroupsStubSettings>
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setNodeTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setNodeTemplateOperationSettings = OperationCallSettings.newBuilder();
+      simulateMaintenanceEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      simulateMaintenanceEventOperationSettings = OperationCallSettings.newBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -666,6 +694,7 @@ public class NodeGroupsStubSettings extends StubSettings<NodeGroupsStubSettings>
               patchSettings,
               setIamPolicySettings,
               setNodeTemplateSettings,
+              simulateMaintenanceEventSettings,
               testIamPermissionsSettings);
       initDefaults(this);
     }
@@ -691,6 +720,9 @@ public class NodeGroupsStubSettings extends StubSettings<NodeGroupsStubSettings>
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       setNodeTemplateSettings = settings.setNodeTemplateSettings.toBuilder();
       setNodeTemplateOperationSettings = settings.setNodeTemplateOperationSettings.toBuilder();
+      simulateMaintenanceEventSettings = settings.simulateMaintenanceEventSettings.toBuilder();
+      simulateMaintenanceEventOperationSettings =
+          settings.simulateMaintenanceEventOperationSettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
@@ -707,6 +739,7 @@ public class NodeGroupsStubSettings extends StubSettings<NodeGroupsStubSettings>
               patchSettings,
               setIamPolicySettings,
               setNodeTemplateSettings,
+              simulateMaintenanceEventSettings,
               testIamPermissionsSettings);
     }
 
@@ -781,6 +814,11 @@ public class NodeGroupsStubSettings extends StubSettings<NodeGroupsStubSettings>
 
       builder
           .setNodeTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .simulateMaintenanceEventSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -933,6 +971,31 @@ public class NodeGroupsStubSettings extends StubSettings<NodeGroupsStubSettings>
                       .setTotalTimeout(Duration.ofMillis(600000L))
                       .build()));
 
+      builder
+          .simulateMaintenanceEventOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SimulateMaintenanceEventNodeGroupRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(600000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1063,6 +1126,21 @@ public class NodeGroupsStubSettings extends StubSettings<NodeGroupsStubSettings>
     public OperationCallSettings.Builder<SetNodeTemplateNodeGroupRequest, Operation, Operation>
         setNodeTemplateOperationSettings() {
       return setNodeTemplateOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to simulateMaintenanceEvent. */
+    public UnaryCallSettings.Builder<SimulateMaintenanceEventNodeGroupRequest, Operation>
+        simulateMaintenanceEventSettings() {
+      return simulateMaintenanceEventSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to simulateMaintenanceEvent. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            SimulateMaintenanceEventNodeGroupRequest, Operation, Operation>
+        simulateMaintenanceEventOperationSettings() {
+      return simulateMaintenanceEventOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to testIamPermissions. */

@@ -41,6 +41,7 @@ import com.google.cloud.compute.v1.PatchNodeGroupRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetIamPolicyNodeGroupRequest;
 import com.google.cloud.compute.v1.SetNodeTemplateNodeGroupRequest;
+import com.google.cloud.compute.v1.SimulateMaintenanceEventNodeGroupRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsNodeGroupRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import javax.annotation.Generated;
@@ -142,6 +143,17 @@ public abstract class NodeGroupsStub implements BackgroundResource {
 
   public UnaryCallable<SetNodeTemplateNodeGroupRequest, Operation> setNodeTemplateCallable() {
     throw new UnsupportedOperationException("Not implemented: setNodeTemplateCallable()");
+  }
+
+  public OperationCallable<SimulateMaintenanceEventNodeGroupRequest, Operation, Operation>
+      simulateMaintenanceEventOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: simulateMaintenanceEventOperationCallable()");
+  }
+
+  public UnaryCallable<SimulateMaintenanceEventNodeGroupRequest, Operation>
+      simulateMaintenanceEventCallable() {
+    throw new UnsupportedOperationException("Not implemented: simulateMaintenanceEventCallable()");
   }
 
   public UnaryCallable<TestIamPermissionsNodeGroupRequest, TestPermissionsResponse>
