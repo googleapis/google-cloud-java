@@ -249,7 +249,7 @@ public final class InstancesGrpc {
    * Manages instances of a version.
    * </pre>
    */
-  public abstract static class InstancesImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -260,7 +260,7 @@ public final class InstancesGrpc {
      * [Stackdriver Monitoring API](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
      * </pre>
      */
-    public void listInstances(
+    default void listInstances(
         com.google.appengine.v1.ListInstancesRequest request,
         io.grpc.stub.StreamObserver<com.google.appengine.v1.ListInstancesResponse>
             responseObserver) {
@@ -275,7 +275,7 @@ public final class InstancesGrpc {
      * Gets instance information.
      * </pre>
      */
-    public void getInstance(
+    default void getInstance(
         com.google.appengine.v1.GetInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.appengine.v1.Instance> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -298,7 +298,7 @@ public final class InstancesGrpc {
      * method.
      * </pre>
      */
-    public void deleteInstance(
+    default void deleteInstance(
         com.google.appengine.v1.DeleteInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -318,47 +318,31 @@ public final class InstancesGrpc {
      * Only applicable for instances in App Engine flexible environment.
      * </pre>
      */
-    public void debugInstance(
+    default void debugInstance(
         com.google.appengine.v1.DebugInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDebugInstanceMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Instances.
+   *
+   * <pre>
+   * Manages instances of a version.
+   * </pre>
+   */
+  public abstract static class InstancesImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListInstancesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.ListInstancesRequest,
-                      com.google.appengine.v1.ListInstancesResponse>(
-                      this, METHODID_LIST_INSTANCES)))
-          .addMethod(
-              getGetInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.GetInstanceRequest, com.google.appengine.v1.Instance>(
-                      this, METHODID_GET_INSTANCE)))
-          .addMethod(
-              getDeleteInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.DeleteInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_INSTANCE)))
-          .addMethod(
-              getDebugInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.DebugInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DEBUG_INSTANCE)))
-          .build();
+      return InstancesGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Instances.
    *
    * <pre>
    * Manages instances of a version.
@@ -458,7 +442,7 @@ public final class InstancesGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Instances.
    *
    * <pre>
    * Manages instances of a version.
@@ -547,7 +531,7 @@ public final class InstancesGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Instances.
    *
    * <pre>
    * Manages instances of a version.
@@ -645,10 +629,10 @@ public final class InstancesGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final InstancesImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(InstancesImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -692,6 +676,36 @@ public final class InstancesGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListInstancesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.ListInstancesRequest,
+                    com.google.appengine.v1.ListInstancesResponse>(
+                    service, METHODID_LIST_INSTANCES)))
+        .addMethod(
+            getGetInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.GetInstanceRequest, com.google.appengine.v1.Instance>(
+                    service, METHODID_GET_INSTANCE)))
+        .addMethod(
+            getDeleteInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.DeleteInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_INSTANCE)))
+        .addMethod(
+            getDebugInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.DebugInstanceRequest, com.google.longrunning.Operation>(
+                    service, METHODID_DEBUG_INSTANCE)))
+        .build();
   }
 
   private abstract static class InstancesBaseDescriptorSupplier

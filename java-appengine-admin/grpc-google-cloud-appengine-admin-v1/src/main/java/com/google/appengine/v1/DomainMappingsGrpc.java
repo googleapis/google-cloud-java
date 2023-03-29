@@ -308,7 +308,7 @@ public final class DomainMappingsGrpc {
    * Manages domains serving an application.
    * </pre>
    */
-  public abstract static class DomainMappingsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -317,7 +317,7 @@ public final class DomainMappingsGrpc {
      * Lists the domain mappings on an application.
      * </pre>
      */
-    public void listDomainMappings(
+    default void listDomainMappings(
         com.google.appengine.v1.ListDomainMappingsRequest request,
         io.grpc.stub.StreamObserver<com.google.appengine.v1.ListDomainMappingsResponse>
             responseObserver) {
@@ -332,7 +332,7 @@ public final class DomainMappingsGrpc {
      * Gets the specified domain mapping.
      * </pre>
      */
-    public void getDomainMapping(
+    default void getDomainMapping(
         com.google.appengine.v1.GetDomainMappingRequest request,
         io.grpc.stub.StreamObserver<com.google.appengine.v1.DomainMapping> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -348,7 +348,7 @@ public final class DomainMappingsGrpc {
      * authorized domains, see [`AuthorizedDomains.ListAuthorizedDomains`]().
      * </pre>
      */
-    public void createDomainMapping(
+    default void createDomainMapping(
         com.google.appengine.v1.CreateDomainMappingRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -365,7 +365,7 @@ public final class DomainMappingsGrpc {
      * in order to update a `DomainMapping` resource.
      * </pre>
      */
-    public void updateDomainMapping(
+    default void updateDomainMapping(
         com.google.appengine.v1.UpdateDomainMappingRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -381,53 +381,32 @@ public final class DomainMappingsGrpc {
      * resource.
      * </pre>
      */
-    public void deleteDomainMapping(
+    default void deleteDomainMapping(
         com.google.appengine.v1.DeleteDomainMappingRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteDomainMappingMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service DomainMappings.
+   *
+   * <pre>
+   * Manages domains serving an application.
+   * </pre>
+   */
+  public abstract static class DomainMappingsImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListDomainMappingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.ListDomainMappingsRequest,
-                      com.google.appengine.v1.ListDomainMappingsResponse>(
-                      this, METHODID_LIST_DOMAIN_MAPPINGS)))
-          .addMethod(
-              getGetDomainMappingMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.GetDomainMappingRequest,
-                      com.google.appengine.v1.DomainMapping>(this, METHODID_GET_DOMAIN_MAPPING)))
-          .addMethod(
-              getCreateDomainMappingMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.CreateDomainMappingRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_DOMAIN_MAPPING)))
-          .addMethod(
-              getUpdateDomainMappingMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.UpdateDomainMappingRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_DOMAIN_MAPPING)))
-          .addMethod(
-              getDeleteDomainMappingMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.DeleteDomainMappingRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_DOMAIN_MAPPING)))
-          .build();
+      return DomainMappingsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service DomainMappings.
    *
    * <pre>
    * Manages domains serving an application.
@@ -534,7 +513,7 @@ public final class DomainMappingsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service DomainMappings.
    *
    * <pre>
    * Manages domains serving an application.
@@ -626,7 +605,7 @@ public final class DomainMappingsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service DomainMappings.
    *
    * <pre>
    * Manages domains serving an application.
@@ -729,10 +708,10 @@ public final class DomainMappingsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final DomainMappingsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(DomainMappingsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -782,6 +761,42 @@ public final class DomainMappingsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListDomainMappingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.ListDomainMappingsRequest,
+                    com.google.appengine.v1.ListDomainMappingsResponse>(
+                    service, METHODID_LIST_DOMAIN_MAPPINGS)))
+        .addMethod(
+            getGetDomainMappingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.GetDomainMappingRequest,
+                    com.google.appengine.v1.DomainMapping>(service, METHODID_GET_DOMAIN_MAPPING)))
+        .addMethod(
+            getCreateDomainMappingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.CreateDomainMappingRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_DOMAIN_MAPPING)))
+        .addMethod(
+            getUpdateDomainMappingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.UpdateDomainMappingRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_DOMAIN_MAPPING)))
+        .addMethod(
+            getDeleteDomainMappingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.DeleteDomainMappingRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_DOMAIN_MAPPING)))
+        .build();
   }
 
   private abstract static class DomainMappingsBaseDescriptorSupplier

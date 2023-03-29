@@ -641,7 +641,7 @@ public final class TablesServiceGrpc {
    *   resources, named `workspaces/&#42;`.
    * </pre>
    */
-  public abstract static class TablesServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -650,7 +650,7 @@ public final class TablesServiceGrpc {
      * Gets a table. Returns NOT_FOUND if the table does not exist.
      * </pre>
      */
-    public void getTable(
+    default void getTable(
         com.google.area120.tables.v1alpha1.GetTableRequest request,
         io.grpc.stub.StreamObserver<com.google.area120.tables.v1alpha1.Table> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetTableMethod(), responseObserver);
@@ -663,7 +663,7 @@ public final class TablesServiceGrpc {
      * Lists tables for the user.
      * </pre>
      */
-    public void listTables(
+    default void listTables(
         com.google.area120.tables.v1alpha1.ListTablesRequest request,
         io.grpc.stub.StreamObserver<com.google.area120.tables.v1alpha1.ListTablesResponse>
             responseObserver) {
@@ -677,7 +677,7 @@ public final class TablesServiceGrpc {
      * Gets a workspace. Returns NOT_FOUND if the workspace does not exist.
      * </pre>
      */
-    public void getWorkspace(
+    default void getWorkspace(
         com.google.area120.tables.v1alpha1.GetWorkspaceRequest request,
         io.grpc.stub.StreamObserver<com.google.area120.tables.v1alpha1.Workspace>
             responseObserver) {
@@ -692,7 +692,7 @@ public final class TablesServiceGrpc {
      * Lists workspaces for the user.
      * </pre>
      */
-    public void listWorkspaces(
+    default void listWorkspaces(
         com.google.area120.tables.v1alpha1.ListWorkspacesRequest request,
         io.grpc.stub.StreamObserver<com.google.area120.tables.v1alpha1.ListWorkspacesResponse>
             responseObserver) {
@@ -707,7 +707,7 @@ public final class TablesServiceGrpc {
      * Gets a row. Returns NOT_FOUND if the row does not exist in the table.
      * </pre>
      */
-    public void getRow(
+    default void getRow(
         com.google.area120.tables.v1alpha1.GetRowRequest request,
         io.grpc.stub.StreamObserver<com.google.area120.tables.v1alpha1.Row> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetRowMethod(), responseObserver);
@@ -720,7 +720,7 @@ public final class TablesServiceGrpc {
      * Lists rows in a table. Returns NOT_FOUND if the table does not exist.
      * </pre>
      */
-    public void listRows(
+    default void listRows(
         com.google.area120.tables.v1alpha1.ListRowsRequest request,
         io.grpc.stub.StreamObserver<com.google.area120.tables.v1alpha1.ListRowsResponse>
             responseObserver) {
@@ -734,7 +734,7 @@ public final class TablesServiceGrpc {
      * Creates a row.
      * </pre>
      */
-    public void createRow(
+    default void createRow(
         com.google.area120.tables.v1alpha1.CreateRowRequest request,
         io.grpc.stub.StreamObserver<com.google.area120.tables.v1alpha1.Row> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateRowMethod(), responseObserver);
@@ -747,7 +747,7 @@ public final class TablesServiceGrpc {
      * Creates multiple rows.
      * </pre>
      */
-    public void batchCreateRows(
+    default void batchCreateRows(
         com.google.area120.tables.v1alpha1.BatchCreateRowsRequest request,
         io.grpc.stub.StreamObserver<com.google.area120.tables.v1alpha1.BatchCreateRowsResponse>
             responseObserver) {
@@ -762,7 +762,7 @@ public final class TablesServiceGrpc {
      * Updates a row.
      * </pre>
      */
-    public void updateRow(
+    default void updateRow(
         com.google.area120.tables.v1alpha1.UpdateRowRequest request,
         io.grpc.stub.StreamObserver<com.google.area120.tables.v1alpha1.Row> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateRowMethod(), responseObserver);
@@ -775,7 +775,7 @@ public final class TablesServiceGrpc {
      * Updates multiple rows.
      * </pre>
      */
-    public void batchUpdateRows(
+    default void batchUpdateRows(
         com.google.area120.tables.v1alpha1.BatchUpdateRowsRequest request,
         io.grpc.stub.StreamObserver<com.google.area120.tables.v1alpha1.BatchUpdateRowsResponse>
             responseObserver) {
@@ -790,7 +790,7 @@ public final class TablesServiceGrpc {
      * Deletes a row.
      * </pre>
      */
-    public void deleteRow(
+    default void deleteRow(
         com.google.area120.tables.v1alpha1.DeleteRowRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteRowMethod(), responseObserver);
@@ -803,99 +803,40 @@ public final class TablesServiceGrpc {
      * Deletes multiple rows.
      * </pre>
      */
-    public void batchDeleteRows(
+    default void batchDeleteRows(
         com.google.area120.tables.v1alpha1.BatchDeleteRowsRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getBatchDeleteRowsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service TablesService.
+   *
+   * <pre>
+   * The Tables Service provides an API for reading and updating tables.
+   * It defines the following resource model:
+   * - The API has a collection of [Table][google.area120.tables.v1alpha1.Table]
+   *   resources, named `tables/&#42;`
+   * - Each Table has a collection of [Row][google.area120.tables.v1alpha1.Row]
+   *   resources, named `tables/&#42;&#47;rows/&#42;`
+   * - The API has a collection of
+   *   [Workspace][google.area120.tables.v1alpha1.Workspace]
+   *   resources, named `workspaces/&#42;`.
+   * </pre>
+   */
+  public abstract static class TablesServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getGetTableMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.area120.tables.v1alpha1.GetTableRequest,
-                      com.google.area120.tables.v1alpha1.Table>(this, METHODID_GET_TABLE)))
-          .addMethod(
-              getListTablesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.area120.tables.v1alpha1.ListTablesRequest,
-                      com.google.area120.tables.v1alpha1.ListTablesResponse>(
-                      this, METHODID_LIST_TABLES)))
-          .addMethod(
-              getGetWorkspaceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.area120.tables.v1alpha1.GetWorkspaceRequest,
-                      com.google.area120.tables.v1alpha1.Workspace>(this, METHODID_GET_WORKSPACE)))
-          .addMethod(
-              getListWorkspacesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.area120.tables.v1alpha1.ListWorkspacesRequest,
-                      com.google.area120.tables.v1alpha1.ListWorkspacesResponse>(
-                      this, METHODID_LIST_WORKSPACES)))
-          .addMethod(
-              getGetRowMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.area120.tables.v1alpha1.GetRowRequest,
-                      com.google.area120.tables.v1alpha1.Row>(this, METHODID_GET_ROW)))
-          .addMethod(
-              getListRowsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.area120.tables.v1alpha1.ListRowsRequest,
-                      com.google.area120.tables.v1alpha1.ListRowsResponse>(
-                      this, METHODID_LIST_ROWS)))
-          .addMethod(
-              getCreateRowMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.area120.tables.v1alpha1.CreateRowRequest,
-                      com.google.area120.tables.v1alpha1.Row>(this, METHODID_CREATE_ROW)))
-          .addMethod(
-              getBatchCreateRowsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.area120.tables.v1alpha1.BatchCreateRowsRequest,
-                      com.google.area120.tables.v1alpha1.BatchCreateRowsResponse>(
-                      this, METHODID_BATCH_CREATE_ROWS)))
-          .addMethod(
-              getUpdateRowMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.area120.tables.v1alpha1.UpdateRowRequest,
-                      com.google.area120.tables.v1alpha1.Row>(this, METHODID_UPDATE_ROW)))
-          .addMethod(
-              getBatchUpdateRowsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.area120.tables.v1alpha1.BatchUpdateRowsRequest,
-                      com.google.area120.tables.v1alpha1.BatchUpdateRowsResponse>(
-                      this, METHODID_BATCH_UPDATE_ROWS)))
-          .addMethod(
-              getDeleteRowMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.area120.tables.v1alpha1.DeleteRowRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_ROW)))
-          .addMethod(
-              getBatchDeleteRowsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.area120.tables.v1alpha1.BatchDeleteRowsRequest,
-                      com.google.protobuf.Empty>(this, METHODID_BATCH_DELETE_ROWS)))
-          .build();
+      return TablesServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service TablesService.
    *
    * <pre>
    * The Tables Service provides an API for reading and updating tables.
@@ -1106,7 +1047,7 @@ public final class TablesServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service TablesService.
    *
    * <pre>
    * The Tables Service provides an API for reading and updating tables.
@@ -1290,7 +1231,7 @@ public final class TablesServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service TablesService.
    *
    * <pre>
    * The Tables Service provides an API for reading and updating tables.
@@ -1501,10 +1442,10 @@ public final class TablesServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final TablesServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(TablesServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1600,6 +1541,88 @@ public final class TablesServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getGetTableMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.area120.tables.v1alpha1.GetTableRequest,
+                    com.google.area120.tables.v1alpha1.Table>(service, METHODID_GET_TABLE)))
+        .addMethod(
+            getListTablesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.area120.tables.v1alpha1.ListTablesRequest,
+                    com.google.area120.tables.v1alpha1.ListTablesResponse>(
+                    service, METHODID_LIST_TABLES)))
+        .addMethod(
+            getGetWorkspaceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.area120.tables.v1alpha1.GetWorkspaceRequest,
+                    com.google.area120.tables.v1alpha1.Workspace>(service, METHODID_GET_WORKSPACE)))
+        .addMethod(
+            getListWorkspacesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.area120.tables.v1alpha1.ListWorkspacesRequest,
+                    com.google.area120.tables.v1alpha1.ListWorkspacesResponse>(
+                    service, METHODID_LIST_WORKSPACES)))
+        .addMethod(
+            getGetRowMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.area120.tables.v1alpha1.GetRowRequest,
+                    com.google.area120.tables.v1alpha1.Row>(service, METHODID_GET_ROW)))
+        .addMethod(
+            getListRowsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.area120.tables.v1alpha1.ListRowsRequest,
+                    com.google.area120.tables.v1alpha1.ListRowsResponse>(
+                    service, METHODID_LIST_ROWS)))
+        .addMethod(
+            getCreateRowMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.area120.tables.v1alpha1.CreateRowRequest,
+                    com.google.area120.tables.v1alpha1.Row>(service, METHODID_CREATE_ROW)))
+        .addMethod(
+            getBatchCreateRowsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.area120.tables.v1alpha1.BatchCreateRowsRequest,
+                    com.google.area120.tables.v1alpha1.BatchCreateRowsResponse>(
+                    service, METHODID_BATCH_CREATE_ROWS)))
+        .addMethod(
+            getUpdateRowMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.area120.tables.v1alpha1.UpdateRowRequest,
+                    com.google.area120.tables.v1alpha1.Row>(service, METHODID_UPDATE_ROW)))
+        .addMethod(
+            getBatchUpdateRowsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.area120.tables.v1alpha1.BatchUpdateRowsRequest,
+                    com.google.area120.tables.v1alpha1.BatchUpdateRowsResponse>(
+                    service, METHODID_BATCH_UPDATE_ROWS)))
+        .addMethod(
+            getDeleteRowMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.area120.tables.v1alpha1.DeleteRowRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_ROW)))
+        .addMethod(
+            getBatchDeleteRowsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.area120.tables.v1alpha1.BatchDeleteRowsRequest,
+                    com.google.protobuf.Empty>(service, METHODID_BATCH_DELETE_ROWS)))
+        .build();
   }
 
   private abstract static class TablesServiceBaseDescriptorSupplier

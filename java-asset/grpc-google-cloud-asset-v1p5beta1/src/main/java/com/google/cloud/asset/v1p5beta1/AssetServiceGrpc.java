@@ -129,7 +129,7 @@ public final class AssetServiceGrpc {
    * Asset service definition.
    * </pre>
    */
-  public abstract static class AssetServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -139,29 +139,32 @@ public final class AssetServiceGrpc {
      * response.
      * </pre>
      */
-    public void listAssets(
+    default void listAssets(
         com.google.cloud.asset.v1p5beta1.ListAssetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.asset.v1p5beta1.ListAssetsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListAssetsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service AssetService.
+   *
+   * <pre>
+   * Asset service definition.
+   * </pre>
+   */
+  public abstract static class AssetServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListAssetsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.asset.v1p5beta1.ListAssetsRequest,
-                      com.google.cloud.asset.v1p5beta1.ListAssetsResponse>(
-                      this, METHODID_LIST_ASSETS)))
-          .build();
+      return AssetServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service AssetService.
    *
    * <pre>
    * Asset service definition.
@@ -196,7 +199,7 @@ public final class AssetServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service AssetService.
    *
    * <pre>
    * Asset service definition.
@@ -230,7 +233,7 @@ public final class AssetServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service AssetService.
    *
    * <pre>
    * Asset service definition.
@@ -271,10 +274,10 @@ public final class AssetServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final AssetServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(AssetServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -303,6 +306,18 @@ public final class AssetServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListAssetsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.asset.v1p5beta1.ListAssetsRequest,
+                    com.google.cloud.asset.v1p5beta1.ListAssetsResponse>(
+                    service, METHODID_LIST_ASSETS)))
+        .build();
   }
 
   private abstract static class AssetServiceBaseDescriptorSupplier

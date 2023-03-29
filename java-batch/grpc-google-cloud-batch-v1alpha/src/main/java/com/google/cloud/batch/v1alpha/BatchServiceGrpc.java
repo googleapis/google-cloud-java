@@ -340,7 +340,7 @@ public final class BatchServiceGrpc {
    * Engine VM instances to run the jobs.
    * </pre>
    */
-  public abstract static class BatchServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -349,7 +349,7 @@ public final class BatchServiceGrpc {
      * Create a Job.
      * </pre>
      */
-    public void createJob(
+    default void createJob(
         com.google.cloud.batch.v1alpha.CreateJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.batch.v1alpha.Job> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateJobMethod(), responseObserver);
@@ -362,7 +362,7 @@ public final class BatchServiceGrpc {
      * Get a Job specified by its resource name.
      * </pre>
      */
-    public void getJob(
+    default void getJob(
         com.google.cloud.batch.v1alpha.GetJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.batch.v1alpha.Job> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetJobMethod(), responseObserver);
@@ -375,7 +375,7 @@ public final class BatchServiceGrpc {
      * Delete a Job.
      * </pre>
      */
-    public void deleteJob(
+    default void deleteJob(
         com.google.cloud.batch.v1alpha.DeleteJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteJobMethod(), responseObserver);
@@ -388,7 +388,7 @@ public final class BatchServiceGrpc {
      * List all Jobs for a project within a region.
      * </pre>
      */
-    public void listJobs(
+    default void listJobs(
         com.google.cloud.batch.v1alpha.ListJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.batch.v1alpha.ListJobsResponse>
             responseObserver) {
@@ -402,7 +402,7 @@ public final class BatchServiceGrpc {
      * Return a single Task.
      * </pre>
      */
-    public void getTask(
+    default void getTask(
         com.google.cloud.batch.v1alpha.GetTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.batch.v1alpha.Task> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetTaskMethod(), responseObserver);
@@ -415,58 +415,34 @@ public final class BatchServiceGrpc {
      * List Tasks associated with a job.
      * </pre>
      */
-    public void listTasks(
+    default void listTasks(
         com.google.cloud.batch.v1alpha.ListTasksRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.batch.v1alpha.ListTasksResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListTasksMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service BatchService.
+   *
+   * <pre>
+   * Google Batch Service.
+   * The service manages user submitted batch jobs and allocates Google Compute
+   * Engine VM instances to run the jobs.
+   * </pre>
+   */
+  public abstract static class BatchServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.batch.v1alpha.CreateJobRequest,
-                      com.google.cloud.batch.v1alpha.Job>(this, METHODID_CREATE_JOB)))
-          .addMethod(
-              getGetJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.batch.v1alpha.GetJobRequest,
-                      com.google.cloud.batch.v1alpha.Job>(this, METHODID_GET_JOB)))
-          .addMethod(
-              getDeleteJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.batch.v1alpha.DeleteJobRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_JOB)))
-          .addMethod(
-              getListJobsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.batch.v1alpha.ListJobsRequest,
-                      com.google.cloud.batch.v1alpha.ListJobsResponse>(this, METHODID_LIST_JOBS)))
-          .addMethod(
-              getGetTaskMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.batch.v1alpha.GetTaskRequest,
-                      com.google.cloud.batch.v1alpha.Task>(this, METHODID_GET_TASK)))
-          .addMethod(
-              getListTasksMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.batch.v1alpha.ListTasksRequest,
-                      com.google.cloud.batch.v1alpha.ListTasksResponse>(this, METHODID_LIST_TASKS)))
-          .build();
+      return BatchServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service BatchService.
    *
    * <pre>
    * Google Batch Service.
@@ -573,7 +549,7 @@ public final class BatchServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service BatchService.
    *
    * <pre>
    * Google Batch Service.
@@ -673,7 +649,7 @@ public final class BatchServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service BatchService.
    *
    * <pre>
    * Google Batch Service.
@@ -786,10 +762,10 @@ public final class BatchServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final BatchServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(BatchServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -844,6 +820,48 @@ public final class BatchServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.batch.v1alpha.CreateJobRequest,
+                    com.google.cloud.batch.v1alpha.Job>(service, METHODID_CREATE_JOB)))
+        .addMethod(
+            getGetJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.batch.v1alpha.GetJobRequest,
+                    com.google.cloud.batch.v1alpha.Job>(service, METHODID_GET_JOB)))
+        .addMethod(
+            getDeleteJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.batch.v1alpha.DeleteJobRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_JOB)))
+        .addMethod(
+            getListJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.batch.v1alpha.ListJobsRequest,
+                    com.google.cloud.batch.v1alpha.ListJobsResponse>(service, METHODID_LIST_JOBS)))
+        .addMethod(
+            getGetTaskMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.batch.v1alpha.GetTaskRequest,
+                    com.google.cloud.batch.v1alpha.Task>(service, METHODID_GET_TASK)))
+        .addMethod(
+            getListTasksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.batch.v1alpha.ListTasksRequest,
+                    com.google.cloud.batch.v1alpha.ListTasksResponse>(
+                    service, METHODID_LIST_TASKS)))
+        .build();
   }
 
   private abstract static class BatchServiceBaseDescriptorSupplier

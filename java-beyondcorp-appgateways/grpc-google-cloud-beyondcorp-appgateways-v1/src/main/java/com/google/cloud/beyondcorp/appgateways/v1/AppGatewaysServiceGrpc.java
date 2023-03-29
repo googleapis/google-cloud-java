@@ -288,7 +288,7 @@ public final class AppGatewaysServiceGrpc {
    * (create/read/update/delete) BeyondCorp AppGateways.
    * </pre>
    */
-  public abstract static class AppGatewaysServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -297,7 +297,7 @@ public final class AppGatewaysServiceGrpc {
      * Lists AppGateways in a given project and location.
      * </pre>
      */
-    public void listAppGateways(
+    default void listAppGateways(
         com.google.cloud.beyondcorp.appgateways.v1.ListAppGatewaysRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.beyondcorp.appgateways.v1.ListAppGatewaysResponse>
@@ -313,7 +313,7 @@ public final class AppGatewaysServiceGrpc {
      * Gets details of a single AppGateway.
      * </pre>
      */
-    public void getAppGateway(
+    default void getAppGateway(
         com.google.cloud.beyondcorp.appgateways.v1.GetAppGatewayRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.beyondcorp.appgateways.v1.AppGateway>
             responseObserver) {
@@ -328,7 +328,7 @@ public final class AppGatewaysServiceGrpc {
      * Creates a new AppGateway in a given project and location.
      * </pre>
      */
-    public void createAppGateway(
+    default void createAppGateway(
         com.google.cloud.beyondcorp.appgateways.v1.CreateAppGatewayRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -342,48 +342,40 @@ public final class AppGatewaysServiceGrpc {
      * Deletes a single AppGateway.
      * </pre>
      */
-    public void deleteAppGateway(
+    default void deleteAppGateway(
         com.google.cloud.beyondcorp.appgateways.v1.DeleteAppGatewayRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteAppGatewayMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service AppGatewaysService.
+   *
+   * <pre>
+   * API Overview:
+   * The `beyondcorp.googleapis.com` service implements the Google Cloud
+   * BeyondCorp API.
+   * Data Model:
+   * The AppGatewaysService exposes the following resources:
+   * * AppGateways, named as follows:
+   *   `projects/{project_id}/locations/{location_id}/appGateways/{app_gateway_id}`.
+   * The AppGatewaysService service provides methods to manage
+   * (create/read/update/delete) BeyondCorp AppGateways.
+   * </pre>
+   */
+  public abstract static class AppGatewaysServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListAppGatewaysMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.beyondcorp.appgateways.v1.ListAppGatewaysRequest,
-                      com.google.cloud.beyondcorp.appgateways.v1.ListAppGatewaysResponse>(
-                      this, METHODID_LIST_APP_GATEWAYS)))
-          .addMethod(
-              getGetAppGatewayMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.beyondcorp.appgateways.v1.GetAppGatewayRequest,
-                      com.google.cloud.beyondcorp.appgateways.v1.AppGateway>(
-                      this, METHODID_GET_APP_GATEWAY)))
-          .addMethod(
-              getCreateAppGatewayMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.beyondcorp.appgateways.v1.CreateAppGatewayRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_APP_GATEWAY)))
-          .addMethod(
-              getDeleteAppGatewayMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.beyondcorp.appgateways.v1.DeleteAppGatewayRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_APP_GATEWAY)))
-          .build();
+      return AppGatewaysServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service AppGatewaysService.
    *
    * <pre>
    * API Overview:
@@ -478,7 +470,7 @@ public final class AppGatewaysServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service AppGatewaysService.
    *
    * <pre>
    * API Overview:
@@ -559,7 +551,7 @@ public final class AppGatewaysServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service AppGatewaysService.
    *
    * <pre>
    * API Overview:
@@ -652,10 +644,10 @@ public final class AppGatewaysServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final AppGatewaysServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(AppGatewaysServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -701,6 +693,37 @@ public final class AppGatewaysServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListAppGatewaysMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.beyondcorp.appgateways.v1.ListAppGatewaysRequest,
+                    com.google.cloud.beyondcorp.appgateways.v1.ListAppGatewaysResponse>(
+                    service, METHODID_LIST_APP_GATEWAYS)))
+        .addMethod(
+            getGetAppGatewayMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.beyondcorp.appgateways.v1.GetAppGatewayRequest,
+                    com.google.cloud.beyondcorp.appgateways.v1.AppGateway>(
+                    service, METHODID_GET_APP_GATEWAY)))
+        .addMethod(
+            getCreateAppGatewayMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.beyondcorp.appgateways.v1.CreateAppGatewayRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_APP_GATEWAY)))
+        .addMethod(
+            getDeleteAppGatewayMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.beyondcorp.appgateways.v1.DeleteAppGatewayRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_APP_GATEWAY)))
+        .build();
   }
 
   private abstract static class AppGatewaysServiceBaseDescriptorSupplier

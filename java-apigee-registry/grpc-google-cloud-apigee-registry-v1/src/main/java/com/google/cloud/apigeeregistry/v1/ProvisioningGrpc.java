@@ -222,7 +222,7 @@ public final class ProvisioningGrpc {
    * Registry.
    * </pre>
    */
-  public abstract static class ProvisioningImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -231,7 +231,7 @@ public final class ProvisioningGrpc {
      * Provisions instance resources for the Registry.
      * </pre>
      */
-    public void createInstance(
+    default void createInstance(
         com.google.cloud.apigeeregistry.v1.CreateInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -245,7 +245,7 @@ public final class ProvisioningGrpc {
      * Deletes the Registry instance.
      * </pre>
      */
-    public void deleteInstance(
+    default void deleteInstance(
         com.google.cloud.apigeeregistry.v1.DeleteInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -259,40 +259,33 @@ public final class ProvisioningGrpc {
      * Gets details of a single Instance.
      * </pre>
      */
-    public void getInstance(
+    default void getInstance(
         com.google.cloud.apigeeregistry.v1.GetInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigeeregistry.v1.Instance> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetInstanceMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Provisioning.
+   *
+   * <pre>
+   * The service that is used for managing the data plane provisioning of the
+   * Registry.
+   * </pre>
+   */
+  public abstract static class ProvisioningImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.CreateInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_INSTANCE)))
-          .addMethod(
-              getDeleteInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.DeleteInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_INSTANCE)))
-          .addMethod(
-              getGetInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.GetInstanceRequest,
-                      com.google.cloud.apigeeregistry.v1.Instance>(this, METHODID_GET_INSTANCE)))
-          .build();
+      return ProvisioningGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Provisioning.
    *
    * <pre>
    * The service that is used for managing the data plane provisioning of the
@@ -360,7 +353,7 @@ public final class ProvisioningGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Provisioning.
    *
    * <pre>
    * The service that is used for managing the data plane provisioning of the
@@ -420,7 +413,7 @@ public final class ProvisioningGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Provisioning.
    *
    * <pre>
    * The service that is used for managing the data plane provisioning of the
@@ -489,10 +482,10 @@ public final class ProvisioningGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ProvisioningImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ProvisioningImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -531,6 +524,29 @@ public final class ProvisioningGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.CreateInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_INSTANCE)))
+        .addMethod(
+            getDeleteInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.DeleteInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_INSTANCE)))
+        .addMethod(
+            getGetInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.GetInstanceRequest,
+                    com.google.cloud.apigeeregistry.v1.Instance>(service, METHODID_GET_INSTANCE)))
+        .build();
   }
 
   private abstract static class ProvisioningBaseDescriptorSupplier

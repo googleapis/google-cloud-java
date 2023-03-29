@@ -185,8 +185,7 @@ public final class AdvisoryNotificationsServiceGrpc {
    * Service to manage Security and Privacy Notifications.
    * </pre>
    */
-  public abstract static class AdvisoryNotificationsServiceImplBase
-      implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -195,7 +194,7 @@ public final class AdvisoryNotificationsServiceGrpc {
      * Lists notifications under a given parent.
      * </pre>
      */
-    public void listNotifications(
+    default void listNotifications(
         com.google.cloud.advisorynotifications.v1.ListNotificationsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.advisorynotifications.v1.ListNotificationsResponse>
@@ -211,37 +210,33 @@ public final class AdvisoryNotificationsServiceGrpc {
      * Gets a notification.
      * </pre>
      */
-    public void getNotification(
+    default void getNotification(
         com.google.cloud.advisorynotifications.v1.GetNotificationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.advisorynotifications.v1.Notification>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetNotificationMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service AdvisoryNotificationsService.
+   *
+   * <pre>
+   * Service to manage Security and Privacy Notifications.
+   * </pre>
+   */
+  public abstract static class AdvisoryNotificationsServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListNotificationsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.advisorynotifications.v1.ListNotificationsRequest,
-                      com.google.cloud.advisorynotifications.v1.ListNotificationsResponse>(
-                      this, METHODID_LIST_NOTIFICATIONS)))
-          .addMethod(
-              getGetNotificationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.advisorynotifications.v1.GetNotificationRequest,
-                      com.google.cloud.advisorynotifications.v1.Notification>(
-                      this, METHODID_GET_NOTIFICATION)))
-          .build();
+      return AdvisoryNotificationsServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service AdvisoryNotificationsService.
    *
    * <pre>
    * Service to manage Security and Privacy Notifications.
@@ -297,7 +292,7 @@ public final class AdvisoryNotificationsServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service AdvisoryNotificationsService.
    *
    * <pre>
    * Service to manage Security and Privacy Notifications.
@@ -344,7 +339,8 @@ public final class AdvisoryNotificationsServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * AdvisoryNotificationsService.
    *
    * <pre>
    * Service to manage Security and Privacy Notifications.
@@ -401,10 +397,10 @@ public final class AdvisoryNotificationsServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final AdvisoryNotificationsServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(AdvisoryNotificationsServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -440,6 +436,25 @@ public final class AdvisoryNotificationsServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListNotificationsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.advisorynotifications.v1.ListNotificationsRequest,
+                    com.google.cloud.advisorynotifications.v1.ListNotificationsResponse>(
+                    service, METHODID_LIST_NOTIFICATIONS)))
+        .addMethod(
+            getGetNotificationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.advisorynotifications.v1.GetNotificationRequest,
+                    com.google.cloud.advisorynotifications.v1.Notification>(
+                    service, METHODID_GET_NOTIFICATION)))
+        .build();
   }
 
   private abstract static class AdvisoryNotificationsServiceBaseDescriptorSupplier

@@ -137,7 +137,7 @@ public final class AuthorizedDomainsGrpc {
    * [Webmaster Central](https://www.google.com/webmasters/verification/home).
    * </pre>
    */
-  public abstract static class AuthorizedDomainsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -146,30 +146,35 @@ public final class AuthorizedDomainsGrpc {
      * Lists all domains the user is authorized to administer.
      * </pre>
      */
-    public void listAuthorizedDomains(
+    default void listAuthorizedDomains(
         com.google.appengine.v1.ListAuthorizedDomainsRequest request,
         io.grpc.stub.StreamObserver<com.google.appengine.v1.ListAuthorizedDomainsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListAuthorizedDomainsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service AuthorizedDomains.
+   *
+   * <pre>
+   * Manages domains a user is authorized to administer. To authorize use of a
+   * domain, verify ownership via
+   * [Webmaster Central](https://www.google.com/webmasters/verification/home).
+   * </pre>
+   */
+  public abstract static class AuthorizedDomainsImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListAuthorizedDomainsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.ListAuthorizedDomainsRequest,
-                      com.google.appengine.v1.ListAuthorizedDomainsResponse>(
-                      this, METHODID_LIST_AUTHORIZED_DOMAINS)))
-          .build();
+      return AuthorizedDomainsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service AuthorizedDomains.
    *
    * <pre>
    * Manages domains a user is authorized to administer. To authorize use of a
@@ -208,7 +213,7 @@ public final class AuthorizedDomainsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service AuthorizedDomains.
    *
    * <pre>
    * Manages domains a user is authorized to administer. To authorize use of a
@@ -244,7 +249,7 @@ public final class AuthorizedDomainsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service AuthorizedDomains.
    *
    * <pre>
    * Manages domains a user is authorized to administer. To authorize use of a
@@ -286,10 +291,10 @@ public final class AuthorizedDomainsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final AuthorizedDomainsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(AuthorizedDomainsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -318,6 +323,18 @@ public final class AuthorizedDomainsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListAuthorizedDomainsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.ListAuthorizedDomainsRequest,
+                    com.google.appengine.v1.ListAuthorizedDomainsResponse>(
+                    service, METHODID_LIST_AUTHORIZED_DOMAINS)))
+        .build();
   }
 
   private abstract static class AuthorizedDomainsBaseDescriptorSupplier

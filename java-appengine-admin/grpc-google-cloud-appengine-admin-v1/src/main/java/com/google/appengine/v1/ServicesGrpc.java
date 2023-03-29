@@ -246,7 +246,7 @@ public final class ServicesGrpc {
    * Manages services of an application.
    * </pre>
    */
-  public abstract static class ServicesImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -255,7 +255,7 @@ public final class ServicesGrpc {
      * Lists all the services in the application.
      * </pre>
      */
-    public void listServices(
+    default void listServices(
         com.google.appengine.v1.ListServicesRequest request,
         io.grpc.stub.StreamObserver<com.google.appengine.v1.ListServicesResponse>
             responseObserver) {
@@ -270,7 +270,7 @@ public final class ServicesGrpc {
      * Gets the current configuration of the specified service.
      * </pre>
      */
-    public void getService(
+    default void getService(
         com.google.appengine.v1.GetServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.appengine.v1.Service> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetServiceMethod(), responseObserver);
@@ -283,7 +283,7 @@ public final class ServicesGrpc {
      * Updates the configuration of the specified service.
      * </pre>
      */
-    public void updateService(
+    default void updateService(
         com.google.appengine.v1.UpdateServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -297,46 +297,31 @@ public final class ServicesGrpc {
      * Deletes the specified service and all enclosed versions.
      * </pre>
      */
-    public void deleteService(
+    default void deleteService(
         com.google.appengine.v1.DeleteServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteServiceMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Services.
+   *
+   * <pre>
+   * Manages services of an application.
+   * </pre>
+   */
+  public abstract static class ServicesImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListServicesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.ListServicesRequest,
-                      com.google.appengine.v1.ListServicesResponse>(this, METHODID_LIST_SERVICES)))
-          .addMethod(
-              getGetServiceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.GetServiceRequest, com.google.appengine.v1.Service>(
-                      this, METHODID_GET_SERVICE)))
-          .addMethod(
-              getUpdateServiceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.UpdateServiceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_SERVICE)))
-          .addMethod(
-              getDeleteServiceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.DeleteServiceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_SERVICE)))
-          .build();
+      return ServicesGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Services.
    *
    * <pre>
    * Manages services of an application.
@@ -417,7 +402,7 @@ public final class ServicesGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Services.
    *
    * <pre>
    * Manages services of an application.
@@ -488,7 +473,7 @@ public final class ServicesGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Services.
    *
    * <pre>
    * Manages services of an application.
@@ -569,10 +554,10 @@ public final class ServicesGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ServicesImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ServicesImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -616,6 +601,35 @@ public final class ServicesGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListServicesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.ListServicesRequest,
+                    com.google.appengine.v1.ListServicesResponse>(service, METHODID_LIST_SERVICES)))
+        .addMethod(
+            getGetServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.GetServiceRequest, com.google.appengine.v1.Service>(
+                    service, METHODID_GET_SERVICE)))
+        .addMethod(
+            getUpdateServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.UpdateServiceRequest, com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_SERVICE)))
+        .addMethod(
+            getDeleteServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.DeleteServiceRequest, com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_SERVICE)))
+        .build();
   }
 
   private abstract static class ServicesBaseDescriptorSupplier

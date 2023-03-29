@@ -859,7 +859,7 @@ public final class AutoMlGrpc {
    * snake_case or dash-case, either of those cases is accepted.
    * </pre>
    */
-  public abstract static class AutoMlImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -868,7 +868,7 @@ public final class AutoMlGrpc {
      * Creates a dataset.
      * </pre>
      */
-    public void createDataset(
+    default void createDataset(
         com.google.cloud.automl.v1.CreateDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -882,7 +882,7 @@ public final class AutoMlGrpc {
      * Gets a dataset.
      * </pre>
      */
-    public void getDataset(
+    default void getDataset(
         com.google.cloud.automl.v1.GetDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.Dataset> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetDatasetMethod(), responseObserver);
@@ -895,7 +895,7 @@ public final class AutoMlGrpc {
      * Lists datasets in a project.
      * </pre>
      */
-    public void listDatasets(
+    default void listDatasets(
         com.google.cloud.automl.v1.ListDatasetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.ListDatasetsResponse>
             responseObserver) {
@@ -910,7 +910,7 @@ public final class AutoMlGrpc {
      * Updates a dataset.
      * </pre>
      */
-    public void updateDataset(
+    default void updateDataset(
         com.google.cloud.automl.v1.UpdateDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.Dataset> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -928,7 +928,7 @@ public final class AutoMlGrpc {
      * [metadata][google.longrunning.Operation.metadata] field.
      * </pre>
      */
-    public void deleteDataset(
+    default void deleteDataset(
         com.google.cloud.automl.v1.DeleteDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -949,7 +949,7 @@ public final class AutoMlGrpc {
      * [response][google.longrunning.Operation.response] field when it completes.
      * </pre>
      */
-    public void importData(
+    default void importData(
         com.google.cloud.automl.v1.ImportDataRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getImportDataMethod(), responseObserver);
@@ -964,7 +964,7 @@ public final class AutoMlGrpc {
      * [response][google.longrunning.Operation.response] field when it completes.
      * </pre>
      */
-    public void exportData(
+    default void exportData(
         com.google.cloud.automl.v1.ExportDataRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getExportDataMethod(), responseObserver);
@@ -977,7 +977,7 @@ public final class AutoMlGrpc {
      * Gets an annotation spec.
      * </pre>
      */
-    public void getAnnotationSpec(
+    default void getAnnotationSpec(
         com.google.cloud.automl.v1.GetAnnotationSpecRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.AnnotationSpec> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -995,7 +995,7 @@ public final class AutoMlGrpc {
      * a global evaluation, and one evaluation for each annotation spec.
      * </pre>
      */
-    public void createModel(
+    default void createModel(
         com.google.cloud.automl.v1.CreateModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1009,7 +1009,7 @@ public final class AutoMlGrpc {
      * Gets a model.
      * </pre>
      */
-    public void getModel(
+    default void getModel(
         com.google.cloud.automl.v1.GetModelRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.Model> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetModelMethod(), responseObserver);
@@ -1022,7 +1022,7 @@ public final class AutoMlGrpc {
      * Lists models.
      * </pre>
      */
-    public void listModels(
+    default void listModels(
         com.google.cloud.automl.v1.ListModelsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.ListModelsResponse>
             responseObserver) {
@@ -1040,7 +1040,7 @@ public final class AutoMlGrpc {
      * [metadata][google.longrunning.Operation.metadata] field.
      * </pre>
      */
-    public void deleteModel(
+    default void deleteModel(
         com.google.cloud.automl.v1.DeleteModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1054,7 +1054,7 @@ public final class AutoMlGrpc {
      * Updates a model.
      * </pre>
      */
-    public void updateModel(
+    default void updateModel(
         com.google.cloud.automl.v1.UpdateModelRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.Model> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1076,7 +1076,7 @@ public final class AutoMlGrpc {
      * [response][google.longrunning.Operation.response] field when it completes.
      * </pre>
      */
-    public void deployModel(
+    default void deployModel(
         com.google.cloud.automl.v1.DeployModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1094,7 +1094,7 @@ public final class AutoMlGrpc {
      * [response][google.longrunning.Operation.response] field when it completes.
      * </pre>
      */
-    public void undeployModel(
+    default void undeployModel(
         com.google.cloud.automl.v1.UndeployModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1113,7 +1113,7 @@ public final class AutoMlGrpc {
      * [response][google.longrunning.Operation.response] field when it completes.
      * </pre>
      */
-    public void exportModel(
+    default void exportModel(
         com.google.cloud.automl.v1.ExportModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1127,7 +1127,7 @@ public final class AutoMlGrpc {
      * Gets a model evaluation.
      * </pre>
      */
-    public void getModelEvaluation(
+    default void getModelEvaluation(
         com.google.cloud.automl.v1.GetModelEvaluationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.ModelEvaluation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1141,135 +1141,41 @@ public final class AutoMlGrpc {
      * Lists model evaluations.
      * </pre>
      */
-    public void listModelEvaluations(
+    default void listModelEvaluations(
         com.google.cloud.automl.v1.ListModelEvaluationsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1.ListModelEvaluationsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListModelEvaluationsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service AutoMl.
+   *
+   * <pre>
+   * AutoML Server API.
+   * The resource names are assigned by the server.
+   * The server never reuses names that it has created after the resources with
+   * those names are deleted.
+   * An ID of a resource is the last element of the item's resource name. For
+   * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`, then
+   * the id for the item is `{dataset_id}`.
+   * Currently the only supported `location_id` is "us-central1".
+   * On any input that is documented to expect a string parameter in
+   * snake_case or dash-case, either of those cases is accepted.
+   * </pre>
+   */
+  public abstract static class AutoMlImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateDatasetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.automl.v1.CreateDatasetRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_DATASET)))
-          .addMethod(
-              getGetDatasetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.automl.v1.GetDatasetRequest,
-                      com.google.cloud.automl.v1.Dataset>(this, METHODID_GET_DATASET)))
-          .addMethod(
-              getListDatasetsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.automl.v1.ListDatasetsRequest,
-                      com.google.cloud.automl.v1.ListDatasetsResponse>(
-                      this, METHODID_LIST_DATASETS)))
-          .addMethod(
-              getUpdateDatasetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.automl.v1.UpdateDatasetRequest,
-                      com.google.cloud.automl.v1.Dataset>(this, METHODID_UPDATE_DATASET)))
-          .addMethod(
-              getDeleteDatasetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.automl.v1.DeleteDatasetRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_DATASET)))
-          .addMethod(
-              getImportDataMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.automl.v1.ImportDataRequest,
-                      com.google.longrunning.Operation>(this, METHODID_IMPORT_DATA)))
-          .addMethod(
-              getExportDataMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.automl.v1.ExportDataRequest,
-                      com.google.longrunning.Operation>(this, METHODID_EXPORT_DATA)))
-          .addMethod(
-              getGetAnnotationSpecMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.automl.v1.GetAnnotationSpecRequest,
-                      com.google.cloud.automl.v1.AnnotationSpec>(
-                      this, METHODID_GET_ANNOTATION_SPEC)))
-          .addMethod(
-              getCreateModelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.automl.v1.CreateModelRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_MODEL)))
-          .addMethod(
-              getGetModelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.automl.v1.GetModelRequest, com.google.cloud.automl.v1.Model>(
-                      this, METHODID_GET_MODEL)))
-          .addMethod(
-              getListModelsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.automl.v1.ListModelsRequest,
-                      com.google.cloud.automl.v1.ListModelsResponse>(this, METHODID_LIST_MODELS)))
-          .addMethod(
-              getDeleteModelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.automl.v1.DeleteModelRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_MODEL)))
-          .addMethod(
-              getUpdateModelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.automl.v1.UpdateModelRequest,
-                      com.google.cloud.automl.v1.Model>(this, METHODID_UPDATE_MODEL)))
-          .addMethod(
-              getDeployModelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.automl.v1.DeployModelRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DEPLOY_MODEL)))
-          .addMethod(
-              getUndeployModelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.automl.v1.UndeployModelRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UNDEPLOY_MODEL)))
-          .addMethod(
-              getExportModelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.automl.v1.ExportModelRequest,
-                      com.google.longrunning.Operation>(this, METHODID_EXPORT_MODEL)))
-          .addMethod(
-              getGetModelEvaluationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.automl.v1.GetModelEvaluationRequest,
-                      com.google.cloud.automl.v1.ModelEvaluation>(
-                      this, METHODID_GET_MODEL_EVALUATION)))
-          .addMethod(
-              getListModelEvaluationsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.automl.v1.ListModelEvaluationsRequest,
-                      com.google.cloud.automl.v1.ListModelEvaluationsResponse>(
-                      this, METHODID_LIST_MODEL_EVALUATIONS)))
-          .build();
+      return AutoMlGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service AutoMl.
    *
    * <pre>
    * AutoML Server API.
@@ -1615,7 +1521,7 @@ public final class AutoMlGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service AutoMl.
    *
    * <pre>
    * AutoML Server API.
@@ -1915,7 +1821,7 @@ public final class AutoMlGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service AutoMl.
    *
    * <pre>
    * AutoML Server API.
@@ -2243,10 +2149,10 @@ public final class AutoMlGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final AutoMlImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(AutoMlImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -2364,6 +2270,123 @@ public final class AutoMlGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateDatasetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.automl.v1.CreateDatasetRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_DATASET)))
+        .addMethod(
+            getGetDatasetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.automl.v1.GetDatasetRequest,
+                    com.google.cloud.automl.v1.Dataset>(service, METHODID_GET_DATASET)))
+        .addMethod(
+            getListDatasetsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.automl.v1.ListDatasetsRequest,
+                    com.google.cloud.automl.v1.ListDatasetsResponse>(
+                    service, METHODID_LIST_DATASETS)))
+        .addMethod(
+            getUpdateDatasetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.automl.v1.UpdateDatasetRequest,
+                    com.google.cloud.automl.v1.Dataset>(service, METHODID_UPDATE_DATASET)))
+        .addMethod(
+            getDeleteDatasetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.automl.v1.DeleteDatasetRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_DATASET)))
+        .addMethod(
+            getImportDataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.automl.v1.ImportDataRequest, com.google.longrunning.Operation>(
+                    service, METHODID_IMPORT_DATA)))
+        .addMethod(
+            getExportDataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.automl.v1.ExportDataRequest, com.google.longrunning.Operation>(
+                    service, METHODID_EXPORT_DATA)))
+        .addMethod(
+            getGetAnnotationSpecMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.automl.v1.GetAnnotationSpecRequest,
+                    com.google.cloud.automl.v1.AnnotationSpec>(
+                    service, METHODID_GET_ANNOTATION_SPEC)))
+        .addMethod(
+            getCreateModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.automl.v1.CreateModelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_MODEL)))
+        .addMethod(
+            getGetModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.automl.v1.GetModelRequest, com.google.cloud.automl.v1.Model>(
+                    service, METHODID_GET_MODEL)))
+        .addMethod(
+            getListModelsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.automl.v1.ListModelsRequest,
+                    com.google.cloud.automl.v1.ListModelsResponse>(service, METHODID_LIST_MODELS)))
+        .addMethod(
+            getDeleteModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.automl.v1.DeleteModelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_MODEL)))
+        .addMethod(
+            getUpdateModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.automl.v1.UpdateModelRequest,
+                    com.google.cloud.automl.v1.Model>(service, METHODID_UPDATE_MODEL)))
+        .addMethod(
+            getDeployModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.automl.v1.DeployModelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DEPLOY_MODEL)))
+        .addMethod(
+            getUndeployModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.automl.v1.UndeployModelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UNDEPLOY_MODEL)))
+        .addMethod(
+            getExportModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.automl.v1.ExportModelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EXPORT_MODEL)))
+        .addMethod(
+            getGetModelEvaluationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.automl.v1.GetModelEvaluationRequest,
+                    com.google.cloud.automl.v1.ModelEvaluation>(
+                    service, METHODID_GET_MODEL_EVALUATION)))
+        .addMethod(
+            getListModelEvaluationsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.automl.v1.ListModelEvaluationsRequest,
+                    com.google.cloud.automl.v1.ListModelEvaluationsResponse>(
+                    service, METHODID_LIST_MODEL_EVALUATIONS)))
+        .build();
   }
 
   private abstract static class AutoMlBaseDescriptorSupplier

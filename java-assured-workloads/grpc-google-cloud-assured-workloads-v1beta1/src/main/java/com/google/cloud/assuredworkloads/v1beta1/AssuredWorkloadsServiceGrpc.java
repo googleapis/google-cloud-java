@@ -427,7 +427,7 @@ public final class AssuredWorkloadsServiceGrpc {
    * Service to manage AssuredWorkloads.
    * </pre>
    */
-  public abstract static class AssuredWorkloadsServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -436,7 +436,7 @@ public final class AssuredWorkloadsServiceGrpc {
      * Creates Assured Workload.
      * </pre>
      */
-    public void createWorkload(
+    default void createWorkload(
         com.google.cloud.assuredworkloads.v1beta1.CreateWorkloadRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -453,7 +453,7 @@ public final class AssuredWorkloadsServiceGrpc {
      * Only one update operation per workload can be in progress.
      * </pre>
      */
-    public void updateWorkload(
+    default void updateWorkload(
         com.google.cloud.assuredworkloads.v1beta1.UpdateWorkloadRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.assuredworkloads.v1beta1.Workload>
             responseObserver) {
@@ -473,7 +473,7 @@ public final class AssuredWorkloadsServiceGrpc {
      * to use this functionality.
      * </pre>
      */
-    public void restrictAllowedResources(
+    default void restrictAllowedResources(
         com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesResponse>
@@ -494,7 +494,7 @@ public final class AssuredWorkloadsServiceGrpc {
      * Assured Workloads OrgPolicies.
      * </pre>
      */
-    public void deleteWorkload(
+    default void deleteWorkload(
         com.google.cloud.assuredworkloads.v1beta1.DeleteWorkloadRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -508,7 +508,7 @@ public final class AssuredWorkloadsServiceGrpc {
      * Gets Assured Workload associated with a CRM Node
      * </pre>
      */
-    public void getWorkload(
+    default void getWorkload(
         com.google.cloud.assuredworkloads.v1beta1.GetWorkloadRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.assuredworkloads.v1beta1.Workload>
             responseObserver) {
@@ -524,7 +524,7 @@ public final class AssuredWorkloadsServiceGrpc {
      * Workload
      * </pre>
      */
-    public void analyzeWorkloadMove(
+    default void analyzeWorkloadMove(
         com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse>
@@ -540,70 +540,33 @@ public final class AssuredWorkloadsServiceGrpc {
      * Lists Assured Workloads under a CRM Node.
      * </pre>
      */
-    public void listWorkloads(
+    default void listWorkloads(
         com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListWorkloadsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service AssuredWorkloadsService.
+   *
+   * <pre>
+   * Service to manage AssuredWorkloads.
+   * </pre>
+   */
+  public abstract static class AssuredWorkloadsServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateWorkloadMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.assuredworkloads.v1beta1.CreateWorkloadRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_WORKLOAD)))
-          .addMethod(
-              getUpdateWorkloadMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.assuredworkloads.v1beta1.UpdateWorkloadRequest,
-                      com.google.cloud.assuredworkloads.v1beta1.Workload>(
-                      this, METHODID_UPDATE_WORKLOAD)))
-          .addMethod(
-              getRestrictAllowedResourcesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesRequest,
-                      com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesResponse>(
-                      this, METHODID_RESTRICT_ALLOWED_RESOURCES)))
-          .addMethod(
-              getDeleteWorkloadMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.assuredworkloads.v1beta1.DeleteWorkloadRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_WORKLOAD)))
-          .addMethod(
-              getGetWorkloadMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.assuredworkloads.v1beta1.GetWorkloadRequest,
-                      com.google.cloud.assuredworkloads.v1beta1.Workload>(
-                      this, METHODID_GET_WORKLOAD)))
-          .addMethod(
-              getAnalyzeWorkloadMoveMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest,
-                      com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse>(
-                      this, METHODID_ANALYZE_WORKLOAD_MOVE)))
-          .addMethod(
-              getListWorkloadsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsRequest,
-                      com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsResponse>(
-                      this, METHODID_LIST_WORKLOADS)))
-          .build();
+      return AssuredWorkloadsServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service AssuredWorkloadsService.
    *
    * <pre>
    * Service to manage AssuredWorkloads.
@@ -756,7 +719,7 @@ public final class AssuredWorkloadsServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service AssuredWorkloadsService.
    *
    * <pre>
    * Service to manage AssuredWorkloads.
@@ -884,7 +847,8 @@ public final class AssuredWorkloadsServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * AssuredWorkloadsService.
    *
    * <pre>
    * Service to manage AssuredWorkloads.
@@ -1029,10 +993,10 @@ public final class AssuredWorkloadsServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final AssuredWorkloadsServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(AssuredWorkloadsServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1098,6 +1062,58 @@ public final class AssuredWorkloadsServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateWorkloadMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.assuredworkloads.v1beta1.CreateWorkloadRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_WORKLOAD)))
+        .addMethod(
+            getUpdateWorkloadMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.assuredworkloads.v1beta1.UpdateWorkloadRequest,
+                    com.google.cloud.assuredworkloads.v1beta1.Workload>(
+                    service, METHODID_UPDATE_WORKLOAD)))
+        .addMethod(
+            getRestrictAllowedResourcesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesRequest,
+                    com.google.cloud.assuredworkloads.v1beta1.RestrictAllowedResourcesResponse>(
+                    service, METHODID_RESTRICT_ALLOWED_RESOURCES)))
+        .addMethod(
+            getDeleteWorkloadMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.assuredworkloads.v1beta1.DeleteWorkloadRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_WORKLOAD)))
+        .addMethod(
+            getGetWorkloadMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.assuredworkloads.v1beta1.GetWorkloadRequest,
+                    com.google.cloud.assuredworkloads.v1beta1.Workload>(
+                    service, METHODID_GET_WORKLOAD)))
+        .addMethod(
+            getAnalyzeWorkloadMoveMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveRequest,
+                    com.google.cloud.assuredworkloads.v1beta1.AnalyzeWorkloadMoveResponse>(
+                    service, METHODID_ANALYZE_WORKLOAD_MOVE)))
+        .addMethod(
+            getListWorkloadsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsRequest,
+                    com.google.cloud.assuredworkloads.v1beta1.ListWorkloadsResponse>(
+                    service, METHODID_LIST_WORKLOADS)))
+        .build();
   }
 
   private abstract static class AssuredWorkloadsServiceBaseDescriptorSupplier

@@ -387,7 +387,7 @@ public final class AppConnectorsServiceGrpc {
    * (create/read/update/delete) BeyondCorp AppConnectors.
    * </pre>
    */
-  public abstract static class AppConnectorsServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -396,7 +396,7 @@ public final class AppConnectorsServiceGrpc {
      * Lists AppConnectors in a given project and location.
      * </pre>
      */
-    public void listAppConnectors(
+    default void listAppConnectors(
         com.google.cloud.beyondcorp.appconnectors.v1.ListAppConnectorsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.beyondcorp.appconnectors.v1.ListAppConnectorsResponse>
@@ -412,7 +412,7 @@ public final class AppConnectorsServiceGrpc {
      * Gets details of a single AppConnector.
      * </pre>
      */
-    public void getAppConnector(
+    default void getAppConnector(
         com.google.cloud.beyondcorp.appconnectors.v1.GetAppConnectorRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.beyondcorp.appconnectors.v1.AppConnector>
             responseObserver) {
@@ -427,7 +427,7 @@ public final class AppConnectorsServiceGrpc {
      * Creates a new AppConnector in a given project and location.
      * </pre>
      */
-    public void createAppConnector(
+    default void createAppConnector(
         com.google.cloud.beyondcorp.appconnectors.v1.CreateAppConnectorRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -441,7 +441,7 @@ public final class AppConnectorsServiceGrpc {
      * Updates the parameters of a single AppConnector.
      * </pre>
      */
-    public void updateAppConnector(
+    default void updateAppConnector(
         com.google.cloud.beyondcorp.appconnectors.v1.UpdateAppConnectorRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -455,7 +455,7 @@ public final class AppConnectorsServiceGrpc {
      * Deletes a single AppConnector.
      * </pre>
      */
-    public void deleteAppConnector(
+    default void deleteAppConnector(
         com.google.cloud.beyondcorp.appconnectors.v1.DeleteAppConnectorRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -469,60 +469,40 @@ public final class AppConnectorsServiceGrpc {
      * Report status for a given connector.
      * </pre>
      */
-    public void reportStatus(
+    default void reportStatus(
         com.google.cloud.beyondcorp.appconnectors.v1.ReportStatusRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getReportStatusMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service AppConnectorsService.
+   *
+   * <pre>
+   * API Overview:
+   * The `beyondcorp.googleapis.com` service implements the Google Cloud
+   * BeyondCorp API.
+   * Data Model:
+   * The AppConnectorsService exposes the following resource:
+   * * AppConnectors, named as follows:
+   *   `projects/{project_id}/locations/{location_id}/appConnectors/{app_connector_id}`.
+   * The AppConnectorsService provides methods to manage
+   * (create/read/update/delete) BeyondCorp AppConnectors.
+   * </pre>
+   */
+  public abstract static class AppConnectorsServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListAppConnectorsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.beyondcorp.appconnectors.v1.ListAppConnectorsRequest,
-                      com.google.cloud.beyondcorp.appconnectors.v1.ListAppConnectorsResponse>(
-                      this, METHODID_LIST_APP_CONNECTORS)))
-          .addMethod(
-              getGetAppConnectorMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.beyondcorp.appconnectors.v1.GetAppConnectorRequest,
-                      com.google.cloud.beyondcorp.appconnectors.v1.AppConnector>(
-                      this, METHODID_GET_APP_CONNECTOR)))
-          .addMethod(
-              getCreateAppConnectorMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.beyondcorp.appconnectors.v1.CreateAppConnectorRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_APP_CONNECTOR)))
-          .addMethod(
-              getUpdateAppConnectorMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.beyondcorp.appconnectors.v1.UpdateAppConnectorRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_APP_CONNECTOR)))
-          .addMethod(
-              getDeleteAppConnectorMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.beyondcorp.appconnectors.v1.DeleteAppConnectorRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_APP_CONNECTOR)))
-          .addMethod(
-              getReportStatusMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.beyondcorp.appconnectors.v1.ReportStatusRequest,
-                      com.google.longrunning.Operation>(this, METHODID_REPORT_STATUS)))
-          .build();
+      return AppConnectorsServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service AppConnectorsService.
    *
    * <pre>
    * API Overview:
@@ -649,7 +629,7 @@ public final class AppConnectorsServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service AppConnectorsService.
    *
    * <pre>
    * API Overview:
@@ -756,7 +736,7 @@ public final class AppConnectorsServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service AppConnectorsService.
    *
    * <pre>
    * API Overview:
@@ -881,10 +861,10 @@ public final class AppConnectorsServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final AppConnectorsServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(AppConnectorsServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -941,6 +921,49 @@ public final class AppConnectorsServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListAppConnectorsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.beyondcorp.appconnectors.v1.ListAppConnectorsRequest,
+                    com.google.cloud.beyondcorp.appconnectors.v1.ListAppConnectorsResponse>(
+                    service, METHODID_LIST_APP_CONNECTORS)))
+        .addMethod(
+            getGetAppConnectorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.beyondcorp.appconnectors.v1.GetAppConnectorRequest,
+                    com.google.cloud.beyondcorp.appconnectors.v1.AppConnector>(
+                    service, METHODID_GET_APP_CONNECTOR)))
+        .addMethod(
+            getCreateAppConnectorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.beyondcorp.appconnectors.v1.CreateAppConnectorRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_APP_CONNECTOR)))
+        .addMethod(
+            getUpdateAppConnectorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.beyondcorp.appconnectors.v1.UpdateAppConnectorRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_APP_CONNECTOR)))
+        .addMethod(
+            getDeleteAppConnectorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.beyondcorp.appconnectors.v1.DeleteAppConnectorRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_APP_CONNECTOR)))
+        .addMethod(
+            getReportStatusMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.beyondcorp.appconnectors.v1.ReportStatusRequest,
+                    com.google.longrunning.Operation>(service, METHODID_REPORT_STATUS)))
+        .build();
   }
 
   private abstract static class AppConnectorsServiceBaseDescriptorSupplier

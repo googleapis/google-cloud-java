@@ -411,7 +411,7 @@ public final class ApiKeysGrpc {
    * Manages the API keys associated with projects.
    * </pre>
    */
-  public abstract static class ApiKeysImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -422,7 +422,7 @@ public final class ApiKeysGrpc {
      * location is `global`.
      * </pre>
      */
-    public void createKey(
+    default void createKey(
         com.google.api.apikeys.v2.CreateKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateKeyMethod(), responseObserver);
@@ -438,7 +438,7 @@ public final class ApiKeysGrpc {
      * location is `global`.
      * </pre>
      */
-    public void listKeys(
+    default void listKeys(
         com.google.api.apikeys.v2.ListKeysRequest request,
         io.grpc.stub.StreamObserver<com.google.api.apikeys.v2.ListKeysResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListKeysMethod(), responseObserver);
@@ -454,7 +454,7 @@ public final class ApiKeysGrpc {
      * location is `global`.
      * </pre>
      */
-    public void getKey(
+    default void getKey(
         com.google.api.apikeys.v2.GetKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.api.apikeys.v2.Key> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetKeyMethod(), responseObserver);
@@ -469,7 +469,7 @@ public final class ApiKeysGrpc {
      * location is `global`.
      * </pre>
      */
-    public void getKeyString(
+    default void getKeyString(
         com.google.api.apikeys.v2.GetKeyStringRequest request,
         io.grpc.stub.StreamObserver<com.google.api.apikeys.v2.GetKeyStringResponse>
             responseObserver) {
@@ -487,7 +487,7 @@ public final class ApiKeysGrpc {
      * location is `global`.
      * </pre>
      */
-    public void updateKey(
+    default void updateKey(
         com.google.api.apikeys.v2.UpdateKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateKeyMethod(), responseObserver);
@@ -503,7 +503,7 @@ public final class ApiKeysGrpc {
      * location is `global`.
      * </pre>
      */
-    public void deleteKey(
+    default void deleteKey(
         com.google.api.apikeys.v2.DeleteKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteKeyMethod(), responseObserver);
@@ -518,7 +518,7 @@ public final class ApiKeysGrpc {
      * location is `global`.
      * </pre>
      */
-    public void undeleteKey(
+    default void undeleteKey(
         com.google.api.apikeys.v2.UndeleteKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -536,70 +536,30 @@ public final class ApiKeysGrpc {
      * on the parent project.
      * </pre>
      */
-    public void lookupKey(
+    default void lookupKey(
         com.google.api.apikeys.v2.LookupKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.api.apikeys.v2.LookupKeyResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLookupKeyMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ApiKeys.
+   *
+   * <pre>
+   * Manages the API keys associated with projects.
+   * </pre>
+   */
+  public abstract static class ApiKeysImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.apikeys.v2.CreateKeyRequest, com.google.longrunning.Operation>(
-                      this, METHODID_CREATE_KEY)))
-          .addMethod(
-              getListKeysMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.apikeys.v2.ListKeysRequest,
-                      com.google.api.apikeys.v2.ListKeysResponse>(this, METHODID_LIST_KEYS)))
-          .addMethod(
-              getGetKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.apikeys.v2.GetKeyRequest, com.google.api.apikeys.v2.Key>(
-                      this, METHODID_GET_KEY)))
-          .addMethod(
-              getGetKeyStringMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.apikeys.v2.GetKeyStringRequest,
-                      com.google.api.apikeys.v2.GetKeyStringResponse>(
-                      this, METHODID_GET_KEY_STRING)))
-          .addMethod(
-              getUpdateKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.apikeys.v2.UpdateKeyRequest, com.google.longrunning.Operation>(
-                      this, METHODID_UPDATE_KEY)))
-          .addMethod(
-              getDeleteKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.apikeys.v2.DeleteKeyRequest, com.google.longrunning.Operation>(
-                      this, METHODID_DELETE_KEY)))
-          .addMethod(
-              getUndeleteKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.apikeys.v2.UndeleteKeyRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UNDELETE_KEY)))
-          .addMethod(
-              getLookupKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.apikeys.v2.LookupKeyRequest,
-                      com.google.api.apikeys.v2.LookupKeyResponse>(this, METHODID_LOOKUP_KEY)))
-          .build();
+      return ApiKeysGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ApiKeys.
    *
    * <pre>
    * Manages the API keys associated with projects.
@@ -756,7 +716,7 @@ public final class ApiKeysGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ApiKeys.
    *
    * <pre>
    * Manages the API keys associated with projects.
@@ -900,7 +860,7 @@ public final class ApiKeysGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service ApiKeys.
    *
    * <pre>
    * Manages the API keys associated with projects.
@@ -1061,10 +1021,10 @@ public final class ApiKeysGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ApiKeysImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ApiKeysImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1130,6 +1090,60 @@ public final class ApiKeysGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.apikeys.v2.CreateKeyRequest, com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_KEY)))
+        .addMethod(
+            getListKeysMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.apikeys.v2.ListKeysRequest,
+                    com.google.api.apikeys.v2.ListKeysResponse>(service, METHODID_LIST_KEYS)))
+        .addMethod(
+            getGetKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.apikeys.v2.GetKeyRequest, com.google.api.apikeys.v2.Key>(
+                    service, METHODID_GET_KEY)))
+        .addMethod(
+            getGetKeyStringMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.apikeys.v2.GetKeyStringRequest,
+                    com.google.api.apikeys.v2.GetKeyStringResponse>(
+                    service, METHODID_GET_KEY_STRING)))
+        .addMethod(
+            getUpdateKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.apikeys.v2.UpdateKeyRequest, com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_KEY)))
+        .addMethod(
+            getDeleteKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.apikeys.v2.DeleteKeyRequest, com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_KEY)))
+        .addMethod(
+            getUndeleteKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.apikeys.v2.UndeleteKeyRequest, com.google.longrunning.Operation>(
+                    service, METHODID_UNDELETE_KEY)))
+        .addMethod(
+            getLookupKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.apikeys.v2.LookupKeyRequest,
+                    com.google.api.apikeys.v2.LookupKeyResponse>(service, METHODID_LOOKUP_KEY)))
+        .build();
   }
 
   private abstract static class ApiKeysBaseDescriptorSupplier
