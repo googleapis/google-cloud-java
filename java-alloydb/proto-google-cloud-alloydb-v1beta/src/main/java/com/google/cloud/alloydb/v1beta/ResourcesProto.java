@@ -413,7 +413,7 @@ public final class ResourcesProto {
           + "m/go/alloydb/apiv1beta/alloydbpb;alloydb"
           + "pb\252\002\033Google.Cloud.AlloyDb.V1Beta\312\002\033Googl"
           + "e\\Cloud\\AlloyDb\\V1beta\352\002\036Google::Cloud::"
-          + "AlloyDb::V1beta\352A\246\001\n(cloudkms.googleapis"
+          + "AlloyDB::V1beta\352A\246\001\n(cloudkms.googleapis"
           + ".com/CryptoKeyVersion\022zprojects/{project"
           + "}/locations/{location}/keyRings/{key_rin"
           + "g}/cryptoKeys/{crypto_key}/cryptoKeyVers"
