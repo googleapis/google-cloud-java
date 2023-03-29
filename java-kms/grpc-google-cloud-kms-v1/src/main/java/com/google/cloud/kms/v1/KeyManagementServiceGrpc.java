@@ -1291,7 +1291,7 @@ public final class KeyManagementServiceGrpc {
    * [Using gRPC with Cloud KMS](https://cloud.google.com/kms/docs/grpc).
    * </pre>
    */
-  public abstract static class KeyManagementServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -1300,7 +1300,7 @@ public final class KeyManagementServiceGrpc {
      * Lists [KeyRings][google.cloud.kms.v1.KeyRing].
      * </pre>
      */
-    public void listKeyRings(
+    default void listKeyRings(
         com.google.cloud.kms.v1.ListKeyRingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.ListKeyRingsResponse>
             responseObserver) {
@@ -1315,7 +1315,7 @@ public final class KeyManagementServiceGrpc {
      * Lists [CryptoKeys][google.cloud.kms.v1.CryptoKey].
      * </pre>
      */
-    public void listCryptoKeys(
+    default void listCryptoKeys(
         com.google.cloud.kms.v1.ListCryptoKeysRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.ListCryptoKeysResponse>
             responseObserver) {
@@ -1330,7 +1330,7 @@ public final class KeyManagementServiceGrpc {
      * Lists [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
      * </pre>
      */
-    public void listCryptoKeyVersions(
+    default void listCryptoKeyVersions(
         com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse>
             responseObserver) {
@@ -1345,7 +1345,7 @@ public final class KeyManagementServiceGrpc {
      * Lists [ImportJobs][google.cloud.kms.v1.ImportJob].
      * </pre>
      */
-    public void listImportJobs(
+    default void listImportJobs(
         com.google.cloud.kms.v1.ListImportJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.ListImportJobsResponse>
             responseObserver) {
@@ -1360,7 +1360,7 @@ public final class KeyManagementServiceGrpc {
      * Returns metadata for a given [KeyRing][google.cloud.kms.v1.KeyRing].
      * </pre>
      */
-    public void getKeyRing(
+    default void getKeyRing(
         com.google.cloud.kms.v1.GetKeyRingRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.KeyRing> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetKeyRingMethod(), responseObserver);
@@ -1375,7 +1375,7 @@ public final class KeyManagementServiceGrpc {
      * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
      * </pre>
      */
-    public void getCryptoKey(
+    default void getCryptoKey(
         com.google.cloud.kms.v1.GetCryptoKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKey> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1390,7 +1390,7 @@ public final class KeyManagementServiceGrpc {
      * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
      * </pre>
      */
-    public void getCryptoKeyVersion(
+    default void getCryptoKeyVersion(
         com.google.cloud.kms.v1.GetCryptoKeyVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1409,7 +1409,7 @@ public final class KeyManagementServiceGrpc {
      * [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
      * </pre>
      */
-    public void getPublicKey(
+    default void getPublicKey(
         com.google.cloud.kms.v1.GetPublicKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.PublicKey> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1423,7 +1423,7 @@ public final class KeyManagementServiceGrpc {
      * Returns metadata for a given [ImportJob][google.cloud.kms.v1.ImportJob].
      * </pre>
      */
-    public void getImportJob(
+    default void getImportJob(
         com.google.cloud.kms.v1.GetImportJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.ImportJob> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1438,7 +1438,7 @@ public final class KeyManagementServiceGrpc {
      * Location.
      * </pre>
      */
-    public void createKeyRing(
+    default void createKeyRing(
         com.google.cloud.kms.v1.CreateKeyRingRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.KeyRing> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1456,7 +1456,7 @@ public final class KeyManagementServiceGrpc {
      * are required.
      * </pre>
      */
-    public void createCryptoKey(
+    default void createCryptoKey(
         com.google.cloud.kms.v1.CreateCryptoKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKey> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1474,7 +1474,7 @@ public final class KeyManagementServiceGrpc {
      * [ENABLED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.ENABLED].
      * </pre>
      */
-    public void createCryptoKeyVersion(
+    default void createCryptoKeyVersion(
         com.google.cloud.kms.v1.CreateCryptoKeyVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1494,7 +1494,7 @@ public final class KeyManagementServiceGrpc {
      * next sequential id within the [CryptoKey][google.cloud.kms.v1.CryptoKey].
      * </pre>
      */
-    public void importCryptoKeyVersion(
+    default void importCryptoKeyVersion(
         com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1511,7 +1511,7 @@ public final class KeyManagementServiceGrpc {
      * required.
      * </pre>
      */
-    public void createImportJob(
+    default void createImportJob(
         com.google.cloud.kms.v1.CreateImportJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.ImportJob> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1525,7 +1525,7 @@ public final class KeyManagementServiceGrpc {
      * Update a [CryptoKey][google.cloud.kms.v1.CryptoKey].
      * </pre>
      */
-    public void updateCryptoKey(
+    default void updateCryptoKey(
         com.google.cloud.kms.v1.UpdateCryptoKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKey> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1549,7 +1549,7 @@ public final class KeyManagementServiceGrpc {
      * to move between other states.
      * </pre>
      */
-    public void updateCryptoKeyVersion(
+    default void updateCryptoKeyVersion(
         com.google.cloud.kms.v1.UpdateCryptoKeyVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1567,7 +1567,7 @@ public final class KeyManagementServiceGrpc {
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      */
-    public void updateCryptoKeyPrimaryVersion(
+    default void updateCryptoKeyPrimaryVersion(
         com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKey> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1599,7 +1599,7 @@ public final class KeyManagementServiceGrpc {
      * may be called to reverse the process.
      * </pre>
      */
-    public void destroyCryptoKeyVersion(
+    default void destroyCryptoKeyVersion(
         com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1620,7 +1620,7 @@ public final class KeyManagementServiceGrpc {
      * be cleared.
      * </pre>
      */
-    public void restoreCryptoKeyVersion(
+    default void restoreCryptoKeyVersion(
         com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1637,7 +1637,7 @@ public final class KeyManagementServiceGrpc {
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      */
-    public void encrypt(
+    default void encrypt(
         com.google.cloud.kms.v1.EncryptRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.EncryptResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getEncryptMethod(), responseObserver);
@@ -1653,7 +1653,7 @@ public final class KeyManagementServiceGrpc {
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      */
-    public void decrypt(
+    default void decrypt(
         com.google.cloud.kms.v1.DecryptRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.DecryptResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDecryptMethod(), responseObserver);
@@ -1670,7 +1670,7 @@ public final class KeyManagementServiceGrpc {
      * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
      * </pre>
      */
-    public void asymmetricSign(
+    default void asymmetricSign(
         com.google.cloud.kms.v1.AsymmetricSignRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.AsymmetricSignResponse>
             responseObserver) {
@@ -1689,7 +1689,7 @@ public final class KeyManagementServiceGrpc {
      * ASYMMETRIC_DECRYPT.
      * </pre>
      */
-    public void asymmetricDecrypt(
+    default void asymmetricDecrypt(
         com.google.cloud.kms.v1.AsymmetricDecryptRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.AsymmetricDecryptResponse>
             responseObserver) {
@@ -1706,7 +1706,7 @@ public final class KeyManagementServiceGrpc {
      * producing a tag that can be verified by another source with the same key.
      * </pre>
      */
-    public void macSign(
+    default void macSign(
         com.google.cloud.kms.v1.MacSignRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.MacSignResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMacSignMethod(), responseObserver);
@@ -1722,7 +1722,7 @@ public final class KeyManagementServiceGrpc {
      * a response that indicates whether or not the verification was successful.
      * </pre>
      */
-    public void macVerify(
+    default void macVerify(
         com.google.cloud.kms.v1.MacVerifyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.MacVerifyResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMacVerifyMethod(), responseObserver);
@@ -1736,192 +1736,41 @@ public final class KeyManagementServiceGrpc {
      * location.
      * </pre>
      */
-    public void generateRandomBytes(
+    default void generateRandomBytes(
         com.google.cloud.kms.v1.GenerateRandomBytesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.GenerateRandomBytesResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGenerateRandomBytesMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service KeyManagementService.
+   *
+   * <pre>
+   * Google Cloud Key Management Service
+   * Manages cryptographic keys and operations using those keys. Implements a REST
+   * model with the following objects:
+   * * [KeyRing][google.cloud.kms.v1.KeyRing]
+   * * [CryptoKey][google.cloud.kms.v1.CryptoKey]
+   * * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+   * * [ImportJob][google.cloud.kms.v1.ImportJob]
+   * If you are using manual gRPC libraries, see
+   * [Using gRPC with Cloud KMS](https://cloud.google.com/kms/docs/grpc).
+   * </pre>
+   */
+  public abstract static class KeyManagementServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListKeyRingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.ListKeyRingsRequest,
-                      com.google.cloud.kms.v1.ListKeyRingsResponse>(this, METHODID_LIST_KEY_RINGS)))
-          .addMethod(
-              getListCryptoKeysMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.ListCryptoKeysRequest,
-                      com.google.cloud.kms.v1.ListCryptoKeysResponse>(
-                      this, METHODID_LIST_CRYPTO_KEYS)))
-          .addMethod(
-              getListCryptoKeyVersionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest,
-                      com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse>(
-                      this, METHODID_LIST_CRYPTO_KEY_VERSIONS)))
-          .addMethod(
-              getListImportJobsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.ListImportJobsRequest,
-                      com.google.cloud.kms.v1.ListImportJobsResponse>(
-                      this, METHODID_LIST_IMPORT_JOBS)))
-          .addMethod(
-              getGetKeyRingMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.GetKeyRingRequest, com.google.cloud.kms.v1.KeyRing>(
-                      this, METHODID_GET_KEY_RING)))
-          .addMethod(
-              getGetCryptoKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.GetCryptoKeyRequest,
-                      com.google.cloud.kms.v1.CryptoKey>(this, METHODID_GET_CRYPTO_KEY)))
-          .addMethod(
-              getGetCryptoKeyVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.GetCryptoKeyVersionRequest,
-                      com.google.cloud.kms.v1.CryptoKeyVersion>(
-                      this, METHODID_GET_CRYPTO_KEY_VERSION)))
-          .addMethod(
-              getGetPublicKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.GetPublicKeyRequest,
-                      com.google.cloud.kms.v1.PublicKey>(this, METHODID_GET_PUBLIC_KEY)))
-          .addMethod(
-              getGetImportJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.GetImportJobRequest,
-                      com.google.cloud.kms.v1.ImportJob>(this, METHODID_GET_IMPORT_JOB)))
-          .addMethod(
-              getCreateKeyRingMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.CreateKeyRingRequest,
-                      com.google.cloud.kms.v1.KeyRing>(this, METHODID_CREATE_KEY_RING)))
-          .addMethod(
-              getCreateCryptoKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.CreateCryptoKeyRequest,
-                      com.google.cloud.kms.v1.CryptoKey>(this, METHODID_CREATE_CRYPTO_KEY)))
-          .addMethod(
-              getCreateCryptoKeyVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.CreateCryptoKeyVersionRequest,
-                      com.google.cloud.kms.v1.CryptoKeyVersion>(
-                      this, METHODID_CREATE_CRYPTO_KEY_VERSION)))
-          .addMethod(
-              getImportCryptoKeyVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest,
-                      com.google.cloud.kms.v1.CryptoKeyVersion>(
-                      this, METHODID_IMPORT_CRYPTO_KEY_VERSION)))
-          .addMethod(
-              getCreateImportJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.CreateImportJobRequest,
-                      com.google.cloud.kms.v1.ImportJob>(this, METHODID_CREATE_IMPORT_JOB)))
-          .addMethod(
-              getUpdateCryptoKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.UpdateCryptoKeyRequest,
-                      com.google.cloud.kms.v1.CryptoKey>(this, METHODID_UPDATE_CRYPTO_KEY)))
-          .addMethod(
-              getUpdateCryptoKeyVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.UpdateCryptoKeyVersionRequest,
-                      com.google.cloud.kms.v1.CryptoKeyVersion>(
-                      this, METHODID_UPDATE_CRYPTO_KEY_VERSION)))
-          .addMethod(
-              getUpdateCryptoKeyPrimaryVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest,
-                      com.google.cloud.kms.v1.CryptoKey>(
-                      this, METHODID_UPDATE_CRYPTO_KEY_PRIMARY_VERSION)))
-          .addMethod(
-              getDestroyCryptoKeyVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest,
-                      com.google.cloud.kms.v1.CryptoKeyVersion>(
-                      this, METHODID_DESTROY_CRYPTO_KEY_VERSION)))
-          .addMethod(
-              getRestoreCryptoKeyVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest,
-                      com.google.cloud.kms.v1.CryptoKeyVersion>(
-                      this, METHODID_RESTORE_CRYPTO_KEY_VERSION)))
-          .addMethod(
-              getEncryptMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.EncryptRequest,
-                      com.google.cloud.kms.v1.EncryptResponse>(this, METHODID_ENCRYPT)))
-          .addMethod(
-              getDecryptMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.DecryptRequest,
-                      com.google.cloud.kms.v1.DecryptResponse>(this, METHODID_DECRYPT)))
-          .addMethod(
-              getAsymmetricSignMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.AsymmetricSignRequest,
-                      com.google.cloud.kms.v1.AsymmetricSignResponse>(
-                      this, METHODID_ASYMMETRIC_SIGN)))
-          .addMethod(
-              getAsymmetricDecryptMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.AsymmetricDecryptRequest,
-                      com.google.cloud.kms.v1.AsymmetricDecryptResponse>(
-                      this, METHODID_ASYMMETRIC_DECRYPT)))
-          .addMethod(
-              getMacSignMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.MacSignRequest,
-                      com.google.cloud.kms.v1.MacSignResponse>(this, METHODID_MAC_SIGN)))
-          .addMethod(
-              getMacVerifyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.MacVerifyRequest,
-                      com.google.cloud.kms.v1.MacVerifyResponse>(this, METHODID_MAC_VERIFY)))
-          .addMethod(
-              getGenerateRandomBytesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.GenerateRandomBytesRequest,
-                      com.google.cloud.kms.v1.GenerateRandomBytesResponse>(
-                      this, METHODID_GENERATE_RANDOM_BYTES)))
-          .build();
+      return KeyManagementServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service KeyManagementService.
    *
    * <pre>
    * Google Cloud Key Management Service
@@ -2447,7 +2296,7 @@ public final class KeyManagementServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service KeyManagementService.
    *
    * <pre>
    * Google Cloud Key Management Service
@@ -2899,7 +2748,7 @@ public final class KeyManagementServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service KeyManagementService.
    *
    * <pre>
    * Google Cloud Key Management Service
@@ -3401,10 +3250,10 @@ public final class KeyManagementServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final KeyManagementServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(KeyManagementServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -3574,6 +3423,181 @@ public final class KeyManagementServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListKeyRingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.ListKeyRingsRequest,
+                    com.google.cloud.kms.v1.ListKeyRingsResponse>(
+                    service, METHODID_LIST_KEY_RINGS)))
+        .addMethod(
+            getListCryptoKeysMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.ListCryptoKeysRequest,
+                    com.google.cloud.kms.v1.ListCryptoKeysResponse>(
+                    service, METHODID_LIST_CRYPTO_KEYS)))
+        .addMethod(
+            getListCryptoKeyVersionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest,
+                    com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse>(
+                    service, METHODID_LIST_CRYPTO_KEY_VERSIONS)))
+        .addMethod(
+            getListImportJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.ListImportJobsRequest,
+                    com.google.cloud.kms.v1.ListImportJobsResponse>(
+                    service, METHODID_LIST_IMPORT_JOBS)))
+        .addMethod(
+            getGetKeyRingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.GetKeyRingRequest, com.google.cloud.kms.v1.KeyRing>(
+                    service, METHODID_GET_KEY_RING)))
+        .addMethod(
+            getGetCryptoKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.GetCryptoKeyRequest, com.google.cloud.kms.v1.CryptoKey>(
+                    service, METHODID_GET_CRYPTO_KEY)))
+        .addMethod(
+            getGetCryptoKeyVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.GetCryptoKeyVersionRequest,
+                    com.google.cloud.kms.v1.CryptoKeyVersion>(
+                    service, METHODID_GET_CRYPTO_KEY_VERSION)))
+        .addMethod(
+            getGetPublicKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.GetPublicKeyRequest, com.google.cloud.kms.v1.PublicKey>(
+                    service, METHODID_GET_PUBLIC_KEY)))
+        .addMethod(
+            getGetImportJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.GetImportJobRequest, com.google.cloud.kms.v1.ImportJob>(
+                    service, METHODID_GET_IMPORT_JOB)))
+        .addMethod(
+            getCreateKeyRingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.CreateKeyRingRequest, com.google.cloud.kms.v1.KeyRing>(
+                    service, METHODID_CREATE_KEY_RING)))
+        .addMethod(
+            getCreateCryptoKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.CreateCryptoKeyRequest,
+                    com.google.cloud.kms.v1.CryptoKey>(service, METHODID_CREATE_CRYPTO_KEY)))
+        .addMethod(
+            getCreateCryptoKeyVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.CreateCryptoKeyVersionRequest,
+                    com.google.cloud.kms.v1.CryptoKeyVersion>(
+                    service, METHODID_CREATE_CRYPTO_KEY_VERSION)))
+        .addMethod(
+            getImportCryptoKeyVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest,
+                    com.google.cloud.kms.v1.CryptoKeyVersion>(
+                    service, METHODID_IMPORT_CRYPTO_KEY_VERSION)))
+        .addMethod(
+            getCreateImportJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.CreateImportJobRequest,
+                    com.google.cloud.kms.v1.ImportJob>(service, METHODID_CREATE_IMPORT_JOB)))
+        .addMethod(
+            getUpdateCryptoKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.UpdateCryptoKeyRequest,
+                    com.google.cloud.kms.v1.CryptoKey>(service, METHODID_UPDATE_CRYPTO_KEY)))
+        .addMethod(
+            getUpdateCryptoKeyVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.UpdateCryptoKeyVersionRequest,
+                    com.google.cloud.kms.v1.CryptoKeyVersion>(
+                    service, METHODID_UPDATE_CRYPTO_KEY_VERSION)))
+        .addMethod(
+            getUpdateCryptoKeyPrimaryVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest,
+                    com.google.cloud.kms.v1.CryptoKey>(
+                    service, METHODID_UPDATE_CRYPTO_KEY_PRIMARY_VERSION)))
+        .addMethod(
+            getDestroyCryptoKeyVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest,
+                    com.google.cloud.kms.v1.CryptoKeyVersion>(
+                    service, METHODID_DESTROY_CRYPTO_KEY_VERSION)))
+        .addMethod(
+            getRestoreCryptoKeyVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest,
+                    com.google.cloud.kms.v1.CryptoKeyVersion>(
+                    service, METHODID_RESTORE_CRYPTO_KEY_VERSION)))
+        .addMethod(
+            getEncryptMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.EncryptRequest,
+                    com.google.cloud.kms.v1.EncryptResponse>(service, METHODID_ENCRYPT)))
+        .addMethod(
+            getDecryptMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.DecryptRequest,
+                    com.google.cloud.kms.v1.DecryptResponse>(service, METHODID_DECRYPT)))
+        .addMethod(
+            getAsymmetricSignMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.AsymmetricSignRequest,
+                    com.google.cloud.kms.v1.AsymmetricSignResponse>(
+                    service, METHODID_ASYMMETRIC_SIGN)))
+        .addMethod(
+            getAsymmetricDecryptMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.AsymmetricDecryptRequest,
+                    com.google.cloud.kms.v1.AsymmetricDecryptResponse>(
+                    service, METHODID_ASYMMETRIC_DECRYPT)))
+        .addMethod(
+            getMacSignMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.MacSignRequest,
+                    com.google.cloud.kms.v1.MacSignResponse>(service, METHODID_MAC_SIGN)))
+        .addMethod(
+            getMacVerifyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.MacVerifyRequest,
+                    com.google.cloud.kms.v1.MacVerifyResponse>(service, METHODID_MAC_VERIFY)))
+        .addMethod(
+            getGenerateRandomBytesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.GenerateRandomBytesRequest,
+                    com.google.cloud.kms.v1.GenerateRandomBytesResponse>(
+                    service, METHODID_GENERATE_RANDOM_BYTES)))
+        .build();
   }
 
   private abstract static class KeyManagementServiceBaseDescriptorSupplier
