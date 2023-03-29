@@ -421,7 +421,7 @@ public final class DatastoreAdminGrpc {
    * but are accessed via service google.longrunning.Operations.
    * </pre>
    */
-  public abstract static class DatastoreAdminImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -437,7 +437,7 @@ public final class DatastoreAdminGrpc {
      * Cloud Storage.
      * </pre>
      */
-    public void exportEntities(
+    default void exportEntities(
         com.google.datastore.admin.v1.ExportEntitiesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -455,7 +455,7 @@ public final class DatastoreAdminGrpc {
      * that a subset of the data has already been imported to Cloud Datastore.
      * </pre>
      */
-    public void importEntities(
+    default void importEntities(
         com.google.datastore.admin.v1.ImportEntitiesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -480,7 +480,7 @@ public final class DatastoreAdminGrpc {
      * Indexes with a single property cannot be created.
      * </pre>
      */
-    public void createIndex(
+    default void createIndex(
         com.google.datastore.admin.v1.CreateIndexRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -502,7 +502,7 @@ public final class DatastoreAdminGrpc {
      * [delete][google.datastore.admin.v1.DatastoreAdmin.DeleteIndex] again.
      * </pre>
      */
-    public void deleteIndex(
+    default void deleteIndex(
         com.google.datastore.admin.v1.DeleteIndexRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -516,7 +516,7 @@ public final class DatastoreAdminGrpc {
      * Gets an index.
      * </pre>
      */
-    public void getIndex(
+    default void getIndex(
         com.google.datastore.admin.v1.GetIndexRequest request,
         io.grpc.stub.StreamObserver<com.google.datastore.admin.v1.Index> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetIndexMethod(), responseObserver);
@@ -531,60 +531,72 @@ public final class DatastoreAdminGrpc {
      * occasionally return stale results.
      * </pre>
      */
-    public void listIndexes(
+    default void listIndexes(
         com.google.datastore.admin.v1.ListIndexesRequest request,
         io.grpc.stub.StreamObserver<com.google.datastore.admin.v1.ListIndexesResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListIndexesMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service DatastoreAdmin.
+   *
+   * <pre>
+   * Google Cloud Datastore Admin API
+   * The Datastore Admin API provides several admin services for Cloud Datastore.
+   * -----------------------------------------------------------------------------
+   * ## Concepts
+   * Project, namespace, kind, and entity as defined in the Google Cloud Datastore
+   * API.
+   * Operation: An Operation represents work being performed in the background.
+   * EntityFilter: Allows specifying a subset of entities in a project. This is
+   * specified as a combination of kinds and namespaces (either or both of which
+   * may be all).
+   * -----------------------------------------------------------------------------
+   * ## Services
+   * # Export/Import
+   * The Export/Import service provides the ability to copy all or a subset of
+   * entities to/from Google Cloud Storage.
+   * Exported data may be imported into Cloud Datastore for any Google Cloud
+   * Platform project. It is not restricted to the export source project. It is
+   * possible to export from one project and then import into another.
+   * Exported data can also be loaded into Google BigQuery for analysis.
+   * Exports and imports are performed asynchronously. An Operation resource is
+   * created for each export/import. The state (including any errors encountered)
+   * of the export/import may be queried via the Operation resource.
+   * # Index
+   * The index service manages Cloud Datastore composite indexes.
+   * Index creation and deletion are performed asynchronously.
+   * An Operation resource is created for each such asynchronous operation.
+   * The state of the operation (including any errors encountered)
+   * may be queried via the Operation resource.
+   * # Operation
+   * The Operations collection provides a record of actions performed for the
+   * specified project (including any operations in progress). Operations are not
+   * created directly but through calls on other collections or resources.
+   * An operation that is not yet done may be cancelled. The request to cancel is
+   * asynchronous and the operation may continue to run for some time after the
+   * request to cancel is made.
+   * An operation that is done may be deleted so that it is no longer listed as
+   * part of the Operation collection.
+   * ListOperations returns all pending operations, but not completed operations.
+   * Operations are created by service DatastoreAdmin,
+   * but are accessed via service google.longrunning.Operations.
+   * </pre>
+   */
+  public abstract static class DatastoreAdminImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getExportEntitiesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.datastore.admin.v1.ExportEntitiesRequest,
-                      com.google.longrunning.Operation>(this, METHODID_EXPORT_ENTITIES)))
-          .addMethod(
-              getImportEntitiesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.datastore.admin.v1.ImportEntitiesRequest,
-                      com.google.longrunning.Operation>(this, METHODID_IMPORT_ENTITIES)))
-          .addMethod(
-              getCreateIndexMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.datastore.admin.v1.CreateIndexRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_INDEX)))
-          .addMethod(
-              getDeleteIndexMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.datastore.admin.v1.DeleteIndexRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_INDEX)))
-          .addMethod(
-              getGetIndexMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.datastore.admin.v1.GetIndexRequest,
-                      com.google.datastore.admin.v1.Index>(this, METHODID_GET_INDEX)))
-          .addMethod(
-              getListIndexesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.datastore.admin.v1.ListIndexesRequest,
-                      com.google.datastore.admin.v1.ListIndexesResponse>(
-                      this, METHODID_LIST_INDEXES)))
-          .build();
+      return DatastoreAdminGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service DatastoreAdmin.
    *
    * <pre>
    * Google Cloud Datastore Admin API
@@ -769,7 +781,7 @@ public final class DatastoreAdminGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service DatastoreAdmin.
    *
    * <pre>
    * Google Cloud Datastore Admin API
@@ -938,7 +950,7 @@ public final class DatastoreAdminGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service DatastoreAdmin.
    *
    * <pre>
    * Google Cloud Datastore Admin API
@@ -1119,10 +1131,10 @@ public final class DatastoreAdminGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final DatastoreAdminImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(DatastoreAdminImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1176,6 +1188,48 @@ public final class DatastoreAdminGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getExportEntitiesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.datastore.admin.v1.ExportEntitiesRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EXPORT_ENTITIES)))
+        .addMethod(
+            getImportEntitiesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.datastore.admin.v1.ImportEntitiesRequest,
+                    com.google.longrunning.Operation>(service, METHODID_IMPORT_ENTITIES)))
+        .addMethod(
+            getCreateIndexMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.datastore.admin.v1.CreateIndexRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_INDEX)))
+        .addMethod(
+            getDeleteIndexMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.datastore.admin.v1.DeleteIndexRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_INDEX)))
+        .addMethod(
+            getGetIndexMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.datastore.admin.v1.GetIndexRequest,
+                    com.google.datastore.admin.v1.Index>(service, METHODID_GET_INDEX)))
+        .addMethod(
+            getListIndexesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.datastore.admin.v1.ListIndexesRequest,
+                    com.google.datastore.admin.v1.ListIndexesResponse>(
+                    service, METHODID_LIST_INDEXES)))
+        .build();
   }
 
   private abstract static class DatastoreAdminBaseDescriptorSupplier
