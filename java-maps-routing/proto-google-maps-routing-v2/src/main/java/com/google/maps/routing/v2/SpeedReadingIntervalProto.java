@@ -41,20 +41,21 @@ public final class SpeedReadingIntervalProto {
   static {
     java.lang.String[] descriptorData = {
       "\n3google/maps/routing/v2/speed_reading_i"
-          + "nterval.proto\022\026google.maps.routing.v2\"\254\002"
+          + "nterval.proto\022\026google.maps.routing.v2\"\274\002"
           + "\n\024SpeedReadingInterval\022\'\n\032start_polyline"
-          + "_point_index\030\001 \001(\005H\000\210\001\001\022%\n\030end_polyline_"
-          + "point_index\030\002 \001(\005H\001\210\001\001\022A\n\005speed\030\003 \001(\01622."
+          + "_point_index\030\001 \001(\005H\001\210\001\001\022%\n\030end_polyline_"
+          + "point_index\030\002 \001(\005H\002\210\001\001\022C\n\005speed\030\003 \001(\01622."
           + "google.maps.routing.v2.SpeedReadingInter"
-          + "val.Speed\"E\n\005Speed\022\025\n\021SPEED_UNSPECIFIED\020"
-          + "\000\022\n\n\006NORMAL\020\001\022\010\n\004SLOW\020\002\022\017\n\013TRAFFIC_JAM\020\003"
-          + "B\035\n\033_start_polyline_point_indexB\033\n\031_end_"
-          + "polyline_point_indexB\321\001\n\032com.google.maps"
-          + ".routing.v2B\031SpeedReadingIntervalProtoP\001"
-          + "Z=google.golang.org/genproto/googleapis/"
-          + "maps/routing/v2;routing\370\001\001\242\002\005GMRV2\252\002\026Goo"
-          + "gle.Maps.Routing.V2\312\002\026Google\\Maps\\Routin"
-          + "g\\V2\352\002\031Google::Maps::Routing::V2b\006proto3"
+          + "val.SpeedH\000\"E\n\005Speed\022\025\n\021SPEED_UNSPECIFIE"
+          + "D\020\000\022\n\n\006NORMAL\020\001\022\010\n\004SLOW\020\002\022\017\n\013TRAFFIC_JAM"
+          + "\020\003B\014\n\nspeed_typeB\035\n\033_start_polyline_poin"
+          + "t_indexB\033\n\031_end_polyline_point_indexB\321\001\n"
+          + "\032com.google.maps.routing.v2B\031SpeedReadin"
+          + "gIntervalProtoP\001Z=google.golang.org/genp"
+          + "roto/googleapis/maps/routing/v2;routing\370"
+          + "\001\001\242\002\005GMRV2\252\002\026Google.Maps.Routing.V2\312\002\026Go"
+          + "ogle\\Maps\\Routing\\V2\352\002\031Google::Maps::Rou"
+          + "ting::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -68,6 +69,7 @@ public final class SpeedReadingIntervalProto {
               "StartPolylinePointIndex",
               "EndPolylinePointIndex",
               "Speed",
+              "SpeedType",
               "StartPolylinePointIndex",
               "EndPolylinePointIndex",
             });

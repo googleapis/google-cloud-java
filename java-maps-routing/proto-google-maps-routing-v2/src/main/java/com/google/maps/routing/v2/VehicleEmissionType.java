@@ -23,7 +23,8 @@ package com.google.maps.routing.v2;
  *
  * <pre>
  * A set of values describing the vehicle's emission type.
- * Applies only to the DRIVE travel mode.
+ * Applies only to the `DRIVE`
+ * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
  * </pre>
  *
  * Protobuf enum {@code google.maps.routing.v2.VehicleEmissionType}
@@ -33,7 +34,7 @@ public enum VehicleEmissionType implements com.google.protobuf.ProtocolMessageEn
    *
    *
    * <pre>
-   * No emission type specified. Default to GASOLINE.
+   * No emission type specified. Default to `GASOLINE`.
    * </pre>
    *
    * <code>VEHICLE_EMISSION_TYPE_UNSPECIFIED = 0;</code>
@@ -86,7 +87,7 @@ public enum VehicleEmissionType implements com.google.protobuf.ProtocolMessageEn
    *
    *
    * <pre>
-   * No emission type specified. Default to GASOLINE.
+   * No emission type specified. Default to `GASOLINE`.
    * </pre>
    *
    * <code>VEHICLE_EMISSION_TYPE_UNSPECIFIED = 0;</code>

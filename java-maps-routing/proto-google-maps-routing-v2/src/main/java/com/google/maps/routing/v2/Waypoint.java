@@ -321,15 +321,15 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Marks this waypoint as a milestone rather a stopping point. For
    * each non-via waypoint in the request, the response appends an entry to the
-   * `legs` array to provide the details for stopovers on that leg of the
-   * trip. Set this value to true when you want the route to pass through this
-   * waypoint without stopping over. Via waypoints don't cause an entry to be
-   * added to the `legs` array, but they do route the journey through the
-   * waypoint. You can only set this value on waypoints that are intermediates.
-   * The request fails if you set this field on terminal waypoints.
-   * If `ComputeRoutesRequest.optimize_waypoint_order`
-   * is set to true then this field cannot be set to
-   * true; otherwise, the request fails.
+   * [legs][google.maps.routing.v2.Route.legs]
+   * array to provide the details for stopovers on that leg of the trip. Set
+   * this value to true when you want the route to pass through this waypoint
+   * without stopping over. Via waypoints don't cause an entry to be added to
+   * the `legs` array, but they do route the journey through the waypoint. You
+   * can only set this value on waypoints that are intermediates. The request
+   * fails if you set this field on terminal waypoints. If
+   * `ComputeRoutesRequest.optimize_waypoint_order` is set to true then this
+   * field cannot be set to true; otherwise, the request fails.
    * </pre>
    *
    * <code>bool via = 3;</code>
@@ -351,7 +351,8 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
    * intention is to either pickup or drop-off. When you set this value, the
    * calculated route won't include non-`via` waypoints on roads that are
    * unsuitable for pickup and drop-off. This option works only for `DRIVE` and
-   * `TWO_WHEELER` travel modes, and when the `location_type` is `location`.
+   * `TWO_WHEELER` travel modes, and when the `location_type` is
+   * [Location][google.maps.routing.v2.Location].
    * </pre>
    *
    * <code>bool vehicle_stopover = 4;</code>
@@ -374,7 +375,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
    * value, the route will pass through the location so that the vehicle can
    * stop at the side of road that the location is biased towards from the
    * center of the road. This option works only for 'DRIVE' and 'TWO_WHEELER'
-   * travel modes.
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
    * </pre>
    *
    * <code>bool side_of_road = 5;</code>
@@ -1388,15 +1389,15 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Marks this waypoint as a milestone rather a stopping point. For
      * each non-via waypoint in the request, the response appends an entry to the
-     * `legs` array to provide the details for stopovers on that leg of the
-     * trip. Set this value to true when you want the route to pass through this
-     * waypoint without stopping over. Via waypoints don't cause an entry to be
-     * added to the `legs` array, but they do route the journey through the
-     * waypoint. You can only set this value on waypoints that are intermediates.
-     * The request fails if you set this field on terminal waypoints.
-     * If `ComputeRoutesRequest.optimize_waypoint_order`
-     * is set to true then this field cannot be set to
-     * true; otherwise, the request fails.
+     * [legs][google.maps.routing.v2.Route.legs]
+     * array to provide the details for stopovers on that leg of the trip. Set
+     * this value to true when you want the route to pass through this waypoint
+     * without stopping over. Via waypoints don't cause an entry to be added to
+     * the `legs` array, but they do route the journey through the waypoint. You
+     * can only set this value on waypoints that are intermediates. The request
+     * fails if you set this field on terminal waypoints. If
+     * `ComputeRoutesRequest.optimize_waypoint_order` is set to true then this
+     * field cannot be set to true; otherwise, the request fails.
      * </pre>
      *
      * <code>bool via = 3;</code>
@@ -1413,15 +1414,15 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Marks this waypoint as a milestone rather a stopping point. For
      * each non-via waypoint in the request, the response appends an entry to the
-     * `legs` array to provide the details for stopovers on that leg of the
-     * trip. Set this value to true when you want the route to pass through this
-     * waypoint without stopping over. Via waypoints don't cause an entry to be
-     * added to the `legs` array, but they do route the journey through the
-     * waypoint. You can only set this value on waypoints that are intermediates.
-     * The request fails if you set this field on terminal waypoints.
-     * If `ComputeRoutesRequest.optimize_waypoint_order`
-     * is set to true then this field cannot be set to
-     * true; otherwise, the request fails.
+     * [legs][google.maps.routing.v2.Route.legs]
+     * array to provide the details for stopovers on that leg of the trip. Set
+     * this value to true when you want the route to pass through this waypoint
+     * without stopping over. Via waypoints don't cause an entry to be added to
+     * the `legs` array, but they do route the journey through the waypoint. You
+     * can only set this value on waypoints that are intermediates. The request
+     * fails if you set this field on terminal waypoints. If
+     * `ComputeRoutesRequest.optimize_waypoint_order` is set to true then this
+     * field cannot be set to true; otherwise, the request fails.
      * </pre>
      *
      * <code>bool via = 3;</code>
@@ -1442,15 +1443,15 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Marks this waypoint as a milestone rather a stopping point. For
      * each non-via waypoint in the request, the response appends an entry to the
-     * `legs` array to provide the details for stopovers on that leg of the
-     * trip. Set this value to true when you want the route to pass through this
-     * waypoint without stopping over. Via waypoints don't cause an entry to be
-     * added to the `legs` array, but they do route the journey through the
-     * waypoint. You can only set this value on waypoints that are intermediates.
-     * The request fails if you set this field on terminal waypoints.
-     * If `ComputeRoutesRequest.optimize_waypoint_order`
-     * is set to true then this field cannot be set to
-     * true; otherwise, the request fails.
+     * [legs][google.maps.routing.v2.Route.legs]
+     * array to provide the details for stopovers on that leg of the trip. Set
+     * this value to true when you want the route to pass through this waypoint
+     * without stopping over. Via waypoints don't cause an entry to be added to
+     * the `legs` array, but they do route the journey through the waypoint. You
+     * can only set this value on waypoints that are intermediates. The request
+     * fails if you set this field on terminal waypoints. If
+     * `ComputeRoutesRequest.optimize_waypoint_order` is set to true then this
+     * field cannot be set to true; otherwise, the request fails.
      * </pre>
      *
      * <code>bool via = 3;</code>
@@ -1473,7 +1474,8 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
      * intention is to either pickup or drop-off. When you set this value, the
      * calculated route won't include non-`via` waypoints on roads that are
      * unsuitable for pickup and drop-off. This option works only for `DRIVE` and
-     * `TWO_WHEELER` travel modes, and when the `location_type` is `location`.
+     * `TWO_WHEELER` travel modes, and when the `location_type` is
+     * [Location][google.maps.routing.v2.Location].
      * </pre>
      *
      * <code>bool vehicle_stopover = 4;</code>
@@ -1492,7 +1494,8 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
      * intention is to either pickup or drop-off. When you set this value, the
      * calculated route won't include non-`via` waypoints on roads that are
      * unsuitable for pickup and drop-off. This option works only for `DRIVE` and
-     * `TWO_WHEELER` travel modes, and when the `location_type` is `location`.
+     * `TWO_WHEELER` travel modes, and when the `location_type` is
+     * [Location][google.maps.routing.v2.Location].
      * </pre>
      *
      * <code>bool vehicle_stopover = 4;</code>
@@ -1515,7 +1518,8 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
      * intention is to either pickup or drop-off. When you set this value, the
      * calculated route won't include non-`via` waypoints on roads that are
      * unsuitable for pickup and drop-off. This option works only for `DRIVE` and
-     * `TWO_WHEELER` travel modes, and when the `location_type` is `location`.
+     * `TWO_WHEELER` travel modes, and when the `location_type` is
+     * [Location][google.maps.routing.v2.Location].
      * </pre>
      *
      * <code>bool vehicle_stopover = 4;</code>
@@ -1539,7 +1543,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
      * value, the route will pass through the location so that the vehicle can
      * stop at the side of road that the location is biased towards from the
      * center of the road. This option works only for 'DRIVE' and 'TWO_WHEELER'
-     * travel modes.
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
      * </pre>
      *
      * <code>bool side_of_road = 5;</code>
@@ -1559,7 +1563,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
      * value, the route will pass through the location so that the vehicle can
      * stop at the side of road that the location is biased towards from the
      * center of the road. This option works only for 'DRIVE' and 'TWO_WHEELER'
-     * travel modes.
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
      * </pre>
      *
      * <code>bool side_of_road = 5;</code>
@@ -1583,7 +1587,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessageV3
      * value, the route will pass through the location so that the vehicle can
      * stop at the side of road that the location is biased towards from the
      * center of the road. This option works only for 'DRIVE' and 'TWO_WHEELER'
-     * travel modes.
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
      * </pre>
      *
      * <code>bool side_of_road = 5;</code>

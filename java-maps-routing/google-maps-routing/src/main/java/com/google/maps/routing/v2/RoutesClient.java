@@ -52,6 +52,7 @@ import javax.annotation.Generated;
  *           .setComputeAlternativeRoutes(true)
  *           .setRouteModifiers(RouteModifiers.newBuilder().build())
  *           .setLanguageCode("languageCode-2092349083")
+ *           .setRegionCode("regionCode-1991004415")
  *           .setUnits(Units.forNumber(0))
  *           .addAllRequestedReferenceRoutes(new ArrayList<ComputeRoutesRequest.ReferenceRoute>())
  *           .addAllExtraComputations(new ArrayList<ComputeRoutesRequest.ExtraComputation>())
@@ -233,6 +234,7 @@ public class RoutesClient implements BackgroundResource {
    *           .setComputeAlternativeRoutes(true)
    *           .setRouteModifiers(RouteModifiers.newBuilder().build())
    *           .setLanguageCode("languageCode-2092349083")
+   *           .setRegionCode("regionCode-1991004415")
    *           .setUnits(Units.forNumber(0))
    *           .addAllRequestedReferenceRoutes(new ArrayList<ComputeRoutesRequest.ReferenceRoute>())
    *           .addAllExtraComputations(new ArrayList<ComputeRoutesRequest.ExtraComputation>())
@@ -305,6 +307,7 @@ public class RoutesClient implements BackgroundResource {
    *           .setComputeAlternativeRoutes(true)
    *           .setRouteModifiers(RouteModifiers.newBuilder().build())
    *           .setLanguageCode("languageCode-2092349083")
+   *           .setRegionCode("regionCode-1991004415")
    *           .setUnits(Units.forNumber(0))
    *           .addAllRequestedReferenceRoutes(new ArrayList<ComputeRoutesRequest.ReferenceRoute>())
    *           .addAllExtraComputations(new ArrayList<ComputeRoutesRequest.ExtraComputation>())
@@ -374,6 +377,8 @@ public class RoutesClient implements BackgroundResource {
    *           .setTravelMode(RouteTravelMode.forNumber(0))
    *           .setRoutingPreference(RoutingPreference.forNumber(0))
    *           .setDepartureTime(Timestamp.newBuilder().build())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setRegionCode("regionCode-1991004415")
    *           .addAllExtraComputations(new ArrayList<ComputeRouteMatrixRequest.ExtraComputation>())
    *           .build();
    *   ServerStream<RouteMatrixElement> stream =

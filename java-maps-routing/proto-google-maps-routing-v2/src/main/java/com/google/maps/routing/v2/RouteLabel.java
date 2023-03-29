@@ -22,8 +22,8 @@ package com.google.maps.routing.v2;
  *
  *
  * <pre>
- * Labels for the `Route` that are useful to identify specific properties
- * of the route to compare against others.
+ * Labels for the [Route][google.maps.routing.v2.Route] that are useful to
+ * identify specific properties of the route to compare against others.
  * </pre>
  *
  * Protobuf enum {@code google.maps.routing.v2.RouteLabel}
@@ -54,8 +54,9 @@ public enum RouteLabel implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * An alternative to the default "best" route. Routes like this will be
-   * returned when `ComputeRoutesRequest.compute_alternative_routes` is
-   * specified.
+   * returned when
+   * [compute_alternative_routes][google.maps.routing.v2.ComputeRoutesRequest.compute_alternative_routes]
+   * is specified.
    * </pre>
    *
    * <code>DEFAULT_ROUTE_ALTERNATE = 2;</code>
@@ -100,8 +101,9 @@ public enum RouteLabel implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * An alternative to the default "best" route. Routes like this will be
-   * returned when `ComputeRoutesRequest.compute_alternative_routes` is
-   * specified.
+   * returned when
+   * [compute_alternative_routes][google.maps.routing.v2.ComputeRoutesRequest.compute_alternative_routes]
+   * is specified.
    * </pre>
    *
    * <code>DEFAULT_ROUTE_ALTERNATE = 2;</code>

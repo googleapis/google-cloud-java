@@ -183,12 +183,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A collection of legs (path segments between waypoints) that make-up the
-   * route. Each leg corresponds to the trip between two non-`via` Waypoints.
-   * For example, a route with no intermediate waypoints has only one leg. A
-   * route that includes one non-`via` intermediate waypoint has two legs. A
-   * route that includes one `via` intermediate waypoint has one leg. The order
-   * of the legs matches the order of Waypoints from `origin` to `intermediates`
-   * to `destination`.
+   * route. Each leg corresponds to the trip between two non-`via`
+   * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
+   * intermediate waypoints has only one leg. A route that includes one
+   * non-`via` intermediate waypoint has two legs. A route that includes one
+   * `via` intermediate waypoint has one leg. The order of the legs matches the
+   * order of Waypoints from `origin` to `intermediates` to `destination`.
    * </pre>
    *
    * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -202,12 +202,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A collection of legs (path segments between waypoints) that make-up the
-   * route. Each leg corresponds to the trip between two non-`via` Waypoints.
-   * For example, a route with no intermediate waypoints has only one leg. A
-   * route that includes one non-`via` intermediate waypoint has two legs. A
-   * route that includes one `via` intermediate waypoint has one leg. The order
-   * of the legs matches the order of Waypoints from `origin` to `intermediates`
-   * to `destination`.
+   * route. Each leg corresponds to the trip between two non-`via`
+   * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
+   * intermediate waypoints has only one leg. A route that includes one
+   * non-`via` intermediate waypoint has two legs. A route that includes one
+   * `via` intermediate waypoint has one leg. The order of the legs matches the
+   * order of Waypoints from `origin` to `intermediates` to `destination`.
    * </pre>
    *
    * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -222,12 +222,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A collection of legs (path segments between waypoints) that make-up the
-   * route. Each leg corresponds to the trip between two non-`via` Waypoints.
-   * For example, a route with no intermediate waypoints has only one leg. A
-   * route that includes one non-`via` intermediate waypoint has two legs. A
-   * route that includes one `via` intermediate waypoint has one leg. The order
-   * of the legs matches the order of Waypoints from `origin` to `intermediates`
-   * to `destination`.
+   * route. Each leg corresponds to the trip between two non-`via`
+   * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
+   * intermediate waypoints has only one leg. A route that includes one
+   * non-`via` intermediate waypoint has two legs. A route that includes one
+   * `via` intermediate waypoint has one leg. The order of the legs matches the
+   * order of Waypoints from `origin` to `intermediates` to `destination`.
    * </pre>
    *
    * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -241,12 +241,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A collection of legs (path segments between waypoints) that make-up the
-   * route. Each leg corresponds to the trip between two non-`via` Waypoints.
-   * For example, a route with no intermediate waypoints has only one leg. A
-   * route that includes one non-`via` intermediate waypoint has two legs. A
-   * route that includes one `via` intermediate waypoint has one leg. The order
-   * of the legs matches the order of Waypoints from `origin` to `intermediates`
-   * to `destination`.
+   * route. Each leg corresponds to the trip between two non-`via`
+   * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
+   * intermediate waypoints has only one leg. A route that includes one
+   * non-`via` intermediate waypoint has two legs. A route that includes one
+   * `via` intermediate waypoint has one leg. The order of the legs matches the
+   * order of Waypoints from `origin` to `intermediates` to `destination`.
    * </pre>
    *
    * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -260,12 +260,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A collection of legs (path segments between waypoints) that make-up the
-   * route. Each leg corresponds to the trip between two non-`via` Waypoints.
-   * For example, a route with no intermediate waypoints has only one leg. A
-   * route that includes one non-`via` intermediate waypoint has two legs. A
-   * route that includes one `via` intermediate waypoint has one leg. The order
-   * of the legs matches the order of Waypoints from `origin` to `intermediates`
-   * to `destination`.
+   * route. Each leg corresponds to the trip between two non-`via`
+   * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
+   * intermediate waypoints has only one leg. A route that includes one
+   * non-`via` intermediate waypoint has two legs. A route that includes one
+   * `via` intermediate waypoint has one leg. The order of the legs matches the
+   * order of Waypoints from `origin` to `intermediates` to `destination`.
    * </pre>
    *
    * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -1698,12 +1698,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A collection of legs (path segments between waypoints) that make-up the
-     * route. Each leg corresponds to the trip between two non-`via` Waypoints.
-     * For example, a route with no intermediate waypoints has only one leg. A
-     * route that includes one non-`via` intermediate waypoint has two legs. A
-     * route that includes one `via` intermediate waypoint has one leg. The order
-     * of the legs matches the order of Waypoints from `origin` to `intermediates`
-     * to `destination`.
+     * route. Each leg corresponds to the trip between two non-`via`
+     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
+     * intermediate waypoints has only one leg. A route that includes one
+     * non-`via` intermediate waypoint has two legs. A route that includes one
+     * `via` intermediate waypoint has one leg. The order of the legs matches the
+     * order of Waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -1720,12 +1720,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A collection of legs (path segments between waypoints) that make-up the
-     * route. Each leg corresponds to the trip between two non-`via` Waypoints.
-     * For example, a route with no intermediate waypoints has only one leg. A
-     * route that includes one non-`via` intermediate waypoint has two legs. A
-     * route that includes one `via` intermediate waypoint has one leg. The order
-     * of the legs matches the order of Waypoints from `origin` to `intermediates`
-     * to `destination`.
+     * route. Each leg corresponds to the trip between two non-`via`
+     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
+     * intermediate waypoints has only one leg. A route that includes one
+     * non-`via` intermediate waypoint has two legs. A route that includes one
+     * `via` intermediate waypoint has one leg. The order of the legs matches the
+     * order of Waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -1742,12 +1742,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A collection of legs (path segments between waypoints) that make-up the
-     * route. Each leg corresponds to the trip between two non-`via` Waypoints.
-     * For example, a route with no intermediate waypoints has only one leg. A
-     * route that includes one non-`via` intermediate waypoint has two legs. A
-     * route that includes one `via` intermediate waypoint has one leg. The order
-     * of the legs matches the order of Waypoints from `origin` to `intermediates`
-     * to `destination`.
+     * route. Each leg corresponds to the trip between two non-`via`
+     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
+     * intermediate waypoints has only one leg. A route that includes one
+     * non-`via` intermediate waypoint has two legs. A route that includes one
+     * `via` intermediate waypoint has one leg. The order of the legs matches the
+     * order of Waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -1764,12 +1764,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A collection of legs (path segments between waypoints) that make-up the
-     * route. Each leg corresponds to the trip between two non-`via` Waypoints.
-     * For example, a route with no intermediate waypoints has only one leg. A
-     * route that includes one non-`via` intermediate waypoint has two legs. A
-     * route that includes one `via` intermediate waypoint has one leg. The order
-     * of the legs matches the order of Waypoints from `origin` to `intermediates`
-     * to `destination`.
+     * route. Each leg corresponds to the trip between two non-`via`
+     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
+     * intermediate waypoints has only one leg. A route that includes one
+     * non-`via` intermediate waypoint has two legs. A route that includes one
+     * `via` intermediate waypoint has one leg. The order of the legs matches the
+     * order of Waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -1792,12 +1792,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A collection of legs (path segments between waypoints) that make-up the
-     * route. Each leg corresponds to the trip between two non-`via` Waypoints.
-     * For example, a route with no intermediate waypoints has only one leg. A
-     * route that includes one non-`via` intermediate waypoint has two legs. A
-     * route that includes one `via` intermediate waypoint has one leg. The order
-     * of the legs matches the order of Waypoints from `origin` to `intermediates`
-     * to `destination`.
+     * route. Each leg corresponds to the trip between two non-`via`
+     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
+     * intermediate waypoints has only one leg. A route that includes one
+     * non-`via` intermediate waypoint has two legs. A route that includes one
+     * `via` intermediate waypoint has one leg. The order of the legs matches the
+     * order of Waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -1817,12 +1817,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A collection of legs (path segments between waypoints) that make-up the
-     * route. Each leg corresponds to the trip between two non-`via` Waypoints.
-     * For example, a route with no intermediate waypoints has only one leg. A
-     * route that includes one non-`via` intermediate waypoint has two legs. A
-     * route that includes one `via` intermediate waypoint has one leg. The order
-     * of the legs matches the order of Waypoints from `origin` to `intermediates`
-     * to `destination`.
+     * route. Each leg corresponds to the trip between two non-`via`
+     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
+     * intermediate waypoints has only one leg. A route that includes one
+     * non-`via` intermediate waypoint has two legs. A route that includes one
+     * `via` intermediate waypoint has one leg. The order of the legs matches the
+     * order of Waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -1845,12 +1845,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A collection of legs (path segments between waypoints) that make-up the
-     * route. Each leg corresponds to the trip between two non-`via` Waypoints.
-     * For example, a route with no intermediate waypoints has only one leg. A
-     * route that includes one non-`via` intermediate waypoint has two legs. A
-     * route that includes one `via` intermediate waypoint has one leg. The order
-     * of the legs matches the order of Waypoints from `origin` to `intermediates`
-     * to `destination`.
+     * route. Each leg corresponds to the trip between two non-`via`
+     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
+     * intermediate waypoints has only one leg. A route that includes one
+     * non-`via` intermediate waypoint has two legs. A route that includes one
+     * `via` intermediate waypoint has one leg. The order of the legs matches the
+     * order of Waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -1873,12 +1873,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A collection of legs (path segments between waypoints) that make-up the
-     * route. Each leg corresponds to the trip between two non-`via` Waypoints.
-     * For example, a route with no intermediate waypoints has only one leg. A
-     * route that includes one non-`via` intermediate waypoint has two legs. A
-     * route that includes one `via` intermediate waypoint has one leg. The order
-     * of the legs matches the order of Waypoints from `origin` to `intermediates`
-     * to `destination`.
+     * route. Each leg corresponds to the trip between two non-`via`
+     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
+     * intermediate waypoints has only one leg. A route that includes one
+     * non-`via` intermediate waypoint has two legs. A route that includes one
+     * `via` intermediate waypoint has one leg. The order of the legs matches the
+     * order of Waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -1898,12 +1898,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A collection of legs (path segments between waypoints) that make-up the
-     * route. Each leg corresponds to the trip between two non-`via` Waypoints.
-     * For example, a route with no intermediate waypoints has only one leg. A
-     * route that includes one non-`via` intermediate waypoint has two legs. A
-     * route that includes one `via` intermediate waypoint has one leg. The order
-     * of the legs matches the order of Waypoints from `origin` to `intermediates`
-     * to `destination`.
+     * route. Each leg corresponds to the trip between two non-`via`
+     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
+     * intermediate waypoints has only one leg. A route that includes one
+     * non-`via` intermediate waypoint has two legs. A route that includes one
+     * `via` intermediate waypoint has one leg. The order of the legs matches the
+     * order of Waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -1923,12 +1923,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A collection of legs (path segments between waypoints) that make-up the
-     * route. Each leg corresponds to the trip between two non-`via` Waypoints.
-     * For example, a route with no intermediate waypoints has only one leg. A
-     * route that includes one non-`via` intermediate waypoint has two legs. A
-     * route that includes one `via` intermediate waypoint has one leg. The order
-     * of the legs matches the order of Waypoints from `origin` to `intermediates`
-     * to `destination`.
+     * route. Each leg corresponds to the trip between two non-`via`
+     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
+     * intermediate waypoints has only one leg. A route that includes one
+     * non-`via` intermediate waypoint has two legs. A route that includes one
+     * `via` intermediate waypoint has one leg. The order of the legs matches the
+     * order of Waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -1949,12 +1949,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A collection of legs (path segments between waypoints) that make-up the
-     * route. Each leg corresponds to the trip between two non-`via` Waypoints.
-     * For example, a route with no intermediate waypoints has only one leg. A
-     * route that includes one non-`via` intermediate waypoint has two legs. A
-     * route that includes one `via` intermediate waypoint has one leg. The order
-     * of the legs matches the order of Waypoints from `origin` to `intermediates`
-     * to `destination`.
+     * route. Each leg corresponds to the trip between two non-`via`
+     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
+     * intermediate waypoints has only one leg. A route that includes one
+     * non-`via` intermediate waypoint has two legs. A route that includes one
+     * `via` intermediate waypoint has one leg. The order of the legs matches the
+     * order of Waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -1974,12 +1974,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A collection of legs (path segments between waypoints) that make-up the
-     * route. Each leg corresponds to the trip between two non-`via` Waypoints.
-     * For example, a route with no intermediate waypoints has only one leg. A
-     * route that includes one non-`via` intermediate waypoint has two legs. A
-     * route that includes one `via` intermediate waypoint has one leg. The order
-     * of the legs matches the order of Waypoints from `origin` to `intermediates`
-     * to `destination`.
+     * route. Each leg corresponds to the trip between two non-`via`
+     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
+     * intermediate waypoints has only one leg. A route that includes one
+     * non-`via` intermediate waypoint has two legs. A route that includes one
+     * `via` intermediate waypoint has one leg. The order of the legs matches the
+     * order of Waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -1999,12 +1999,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A collection of legs (path segments between waypoints) that make-up the
-     * route. Each leg corresponds to the trip between two non-`via` Waypoints.
-     * For example, a route with no intermediate waypoints has only one leg. A
-     * route that includes one non-`via` intermediate waypoint has two legs. A
-     * route that includes one `via` intermediate waypoint has one leg. The order
-     * of the legs matches the order of Waypoints from `origin` to `intermediates`
-     * to `destination`.
+     * route. Each leg corresponds to the trip between two non-`via`
+     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
+     * intermediate waypoints has only one leg. A route that includes one
+     * non-`via` intermediate waypoint has two legs. A route that includes one
+     * `via` intermediate waypoint has one leg. The order of the legs matches the
+     * order of Waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -2017,12 +2017,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A collection of legs (path segments between waypoints) that make-up the
-     * route. Each leg corresponds to the trip between two non-`via` Waypoints.
-     * For example, a route with no intermediate waypoints has only one leg. A
-     * route that includes one non-`via` intermediate waypoint has two legs. A
-     * route that includes one `via` intermediate waypoint has one leg. The order
-     * of the legs matches the order of Waypoints from `origin` to `intermediates`
-     * to `destination`.
+     * route. Each leg corresponds to the trip between two non-`via`
+     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
+     * intermediate waypoints has only one leg. A route that includes one
+     * non-`via` intermediate waypoint has two legs. A route that includes one
+     * `via` intermediate waypoint has one leg. The order of the legs matches the
+     * order of Waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -2039,12 +2039,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A collection of legs (path segments between waypoints) that make-up the
-     * route. Each leg corresponds to the trip between two non-`via` Waypoints.
-     * For example, a route with no intermediate waypoints has only one leg. A
-     * route that includes one non-`via` intermediate waypoint has two legs. A
-     * route that includes one `via` intermediate waypoint has one leg. The order
-     * of the legs matches the order of Waypoints from `origin` to `intermediates`
-     * to `destination`.
+     * route. Each leg corresponds to the trip between two non-`via`
+     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
+     * intermediate waypoints has only one leg. A route that includes one
+     * non-`via` intermediate waypoint has two legs. A route that includes one
+     * `via` intermediate waypoint has one leg. The order of the legs matches the
+     * order of Waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -2062,12 +2062,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A collection of legs (path segments between waypoints) that make-up the
-     * route. Each leg corresponds to the trip between two non-`via` Waypoints.
-     * For example, a route with no intermediate waypoints has only one leg. A
-     * route that includes one non-`via` intermediate waypoint has two legs. A
-     * route that includes one `via` intermediate waypoint has one leg. The order
-     * of the legs matches the order of Waypoints from `origin` to `intermediates`
-     * to `destination`.
+     * route. Each leg corresponds to the trip between two non-`via`
+     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
+     * intermediate waypoints has only one leg. A route that includes one
+     * non-`via` intermediate waypoint has two legs. A route that includes one
+     * `via` intermediate waypoint has one leg. The order of the legs matches the
+     * order of Waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -2081,12 +2081,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A collection of legs (path segments between waypoints) that make-up the
-     * route. Each leg corresponds to the trip between two non-`via` Waypoints.
-     * For example, a route with no intermediate waypoints has only one leg. A
-     * route that includes one non-`via` intermediate waypoint has two legs. A
-     * route that includes one `via` intermediate waypoint has one leg. The order
-     * of the legs matches the order of Waypoints from `origin` to `intermediates`
-     * to `destination`.
+     * route. Each leg corresponds to the trip between two non-`via`
+     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
+     * intermediate waypoints has only one leg. A route that includes one
+     * non-`via` intermediate waypoint has two legs. A route that includes one
+     * `via` intermediate waypoint has one leg. The order of the legs matches the
+     * order of Waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>
@@ -2100,12 +2100,12 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * A collection of legs (path segments between waypoints) that make-up the
-     * route. Each leg corresponds to the trip between two non-`via` Waypoints.
-     * For example, a route with no intermediate waypoints has only one leg. A
-     * route that includes one non-`via` intermediate waypoint has two legs. A
-     * route that includes one `via` intermediate waypoint has one leg. The order
-     * of the legs matches the order of Waypoints from `origin` to `intermediates`
-     * to `destination`.
+     * route. Each leg corresponds to the trip between two non-`via`
+     * [Waypoints][google.maps.routing.v2.Waypoint]. For example, a route with no
+     * intermediate waypoints has only one leg. A route that includes one
+     * non-`via` intermediate waypoint has two legs. A route that includes one
+     * `via` intermediate waypoint has one leg. The order of the legs matches the
+     * order of Waypoints from `origin` to `intermediates` to `destination`.
      * </pre>
      *
      * <code>repeated .google.maps.routing.v2.RouteLeg legs = 1;</code>

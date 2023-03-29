@@ -306,6 +306,70 @@ public interface ComputeRouteMatrixRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+   * information, see
+   * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. See
+   * [Language Support](https://developers.google.com/maps/faq#languagesupport)
+   * for the list of supported languages. When you don't provide this value, the
+   * display language is inferred from the location of the first origin.
+   * </pre>
+   *
+   * <code>string language_code = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The languageCode.
+   */
+  java.lang.String getLanguageCode();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+   * information, see
+   * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. See
+   * [Language Support](https://developers.google.com/maps/faq#languagesupport)
+   * for the list of supported languages. When you don't provide this value, the
+   * display language is inferred from the location of the first origin.
+   * </pre>
+   *
+   * <code>string language_code = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for languageCode.
+   */
+  com.google.protobuf.ByteString getLanguageCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The region code, specified as a ccTLD ("top-level domain")
+   * two-character value. For more information see
+   * https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains
+   * </pre>
+   *
+   * <code>string region_code = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The regionCode.
+   */
+  java.lang.String getRegionCode();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The region code, specified as a ccTLD ("top-level domain")
+   * two-character value. For more information see
+   * https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains
+   * </pre>
+   *
+   * <code>string region_code = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for regionCode.
+   */
+  com.google.protobuf.ByteString getRegionCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. A list of extra computations which may be used to complete the
    * request. Note: These extra computations may return extra fields on the
    * response. These extra fields must also be specified in the field mask to be

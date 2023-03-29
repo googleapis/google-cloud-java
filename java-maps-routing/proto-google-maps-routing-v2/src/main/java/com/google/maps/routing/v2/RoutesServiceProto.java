@@ -75,7 +75,7 @@ public final class RoutesServiceProto {
           + "/routing/v2/units.proto\032%google/maps/rou"
           + "ting/v2/waypoint.proto\032\036google/protobuf/"
           + "duration.proto\032\037google/protobuf/timestam"
-          + "p.proto\032\027google/rpc/status.proto\"\335\010\n\024Com"
+          + "p.proto\032\027google/rpc/status.proto\"\367\010\n\024Com"
           + "puteRoutesRequest\0225\n\006origin\030\001 \001(\0132 .goog"
           + "le.maps.routing.v2.WaypointB\003\340A\002\022:\n\013dest"
           + "ination\030\002 \001(\0132 .google.maps.routing.v2.W"
@@ -93,31 +93,33 @@ public final class RoutesServiceProto {
           + "ive_routes\030\010 \001(\010B\003\340A\001\022D\n\017route_modifiers"
           + "\030\t \001(\0132&.google.maps.routing.v2.RouteMod"
           + "ifiersB\003\340A\001\022\032\n\rlanguage_code\030\n \001(\tB\003\340A\001\022"
-          + "1\n\005units\030\013 \001(\0162\035.google.maps.routing.v2."
-          + "UnitsB\003\340A\001\022d\n\032requested_reference_routes"
-          + "\030\016 \003(\0162;.google.maps.routing.v2.ComputeR"
-          + "outesRequest.ReferenceRouteB\003\340A\001\022^\n\022extr"
-          + "a_computations\030\017 \003(\0162=.google.maps.routi"
-          + "ng.v2.ComputeRoutesRequest.ExtraComputat"
-          + "ionB\003\340A\001\"E\n\016ReferenceRoute\022\037\n\033REFERENCE_"
-          + "ROUTE_UNSPECIFIED\020\000\022\022\n\016FUEL_EFFICIENT\020\001\""
-          + "o\n\020ExtraComputation\022!\n\035EXTRA_COMPUTATION"
-          + "_UNSPECIFIED\020\000\022\t\n\005TOLLS\020\001\022\024\n\020FUEL_CONSUM"
-          + "PTION\020\002\022\027\n\023TRAFFIC_ON_POLYLINE\020\003\"\310\001\n\025Com"
-          + "puteRoutesResponse\022-\n\006routes\030\001 \003(\0132\035.goo"
-          + "gle.maps.routing.v2.Route\022;\n\rfallback_in"
-          + "fo\030\002 \001(\0132$.google.maps.routing.v2.Fallba"
-          + "ckInfo\022C\n\021geocoding_results\030\003 \001(\0132(.goog"
-          + "le.maps.routing.v2.GeocodingResults\"\226\004\n\031"
-          + "ComputeRouteMatrixRequest\022?\n\007origins\030\001 \003"
-          + "(\0132).google.maps.routing.v2.RouteMatrixO"
-          + "riginB\003\340A\002\022I\n\014destinations\030\002 \003(\0132..googl"
-          + "e.maps.routing.v2.RouteMatrixDestination"
-          + "B\003\340A\002\022A\n\013travel_mode\030\003 \001(\0162\'.google.maps"
-          + ".routing.v2.RouteTravelModeB\003\340A\001\022J\n\022rout"
-          + "ing_preference\030\004 \001(\0162).google.maps.routi"
-          + "ng.v2.RoutingPreferenceB\003\340A\001\0227\n\016departur"
-          + "e_time\030\005 \001(\0132\032.google.protobuf.Timestamp"
+          + "\030\n\013region_code\030\020 \001(\tB\003\340A\001\0221\n\005units\030\013 \001(\016"
+          + "2\035.google.maps.routing.v2.UnitsB\003\340A\001\022d\n\032"
+          + "requested_reference_routes\030\016 \003(\0162;.googl"
+          + "e.maps.routing.v2.ComputeRoutesRequest.R"
+          + "eferenceRouteB\003\340A\001\022^\n\022extra_computations"
+          + "\030\017 \003(\0162=.google.maps.routing.v2.ComputeR"
+          + "outesRequest.ExtraComputationB\003\340A\001\"E\n\016Re"
+          + "ferenceRoute\022\037\n\033REFERENCE_ROUTE_UNSPECIF"
+          + "IED\020\000\022\022\n\016FUEL_EFFICIENT\020\001\"o\n\020ExtraComput"
+          + "ation\022!\n\035EXTRA_COMPUTATION_UNSPECIFIED\020\000"
+          + "\022\t\n\005TOLLS\020\001\022\024\n\020FUEL_CONSUMPTION\020\002\022\027\n\023TRA"
+          + "FFIC_ON_POLYLINE\020\003\"\310\001\n\025ComputeRoutesResp"
+          + "onse\022-\n\006routes\030\001 \003(\0132\035.google.maps.routi"
+          + "ng.v2.Route\022;\n\rfallback_info\030\002 \001(\0132$.goo"
+          + "gle.maps.routing.v2.FallbackInfo\022C\n\021geoc"
+          + "oding_results\030\003 \001(\0132(.google.maps.routin"
+          + "g.v2.GeocodingResults\"\314\004\n\031ComputeRouteMa"
+          + "trixRequest\022?\n\007origins\030\001 \003(\0132).google.ma"
+          + "ps.routing.v2.RouteMatrixOriginB\003\340A\002\022I\n\014"
+          + "destinations\030\002 \003(\0132..google.maps.routing"
+          + ".v2.RouteMatrixDestinationB\003\340A\002\022A\n\013trave"
+          + "l_mode\030\003 \001(\0162\'.google.maps.routing.v2.Ro"
+          + "uteTravelModeB\003\340A\001\022J\n\022routing_preference"
+          + "\030\004 \001(\0162).google.maps.routing.v2.RoutingP"
+          + "referenceB\003\340A\001\0227\n\016departure_time\030\005 \001(\0132\032"
+          + ".google.protobuf.TimestampB\003\340A\001\022\032\n\rlangu"
+          + "age_code\030\006 \001(\tB\003\340A\001\022\030\n\013region_code\030\t \001(\t"
           + "B\003\340A\001\022c\n\022extra_computations\030\010 \003(\0162B.goog"
           + "le.maps.routing.v2.ComputeRouteMatrixReq"
           + "uest.ExtraComputationB\003\340A\001\"@\n\020ExtraCompu"
@@ -196,6 +198,7 @@ public final class RoutesServiceProto {
               "ComputeAlternativeRoutes",
               "RouteModifiers",
               "LanguageCode",
+              "RegionCode",
               "Units",
               "RequestedReferenceRoutes",
               "ExtraComputations",
@@ -219,6 +222,8 @@ public final class RoutesServiceProto {
               "TravelMode",
               "RoutingPreference",
               "DepartureTime",
+              "LanguageCode",
+              "RegionCode",
               "ExtraComputations",
             });
     internal_static_google_maps_routing_v2_RouteMatrixOrigin_descriptor =
