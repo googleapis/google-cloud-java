@@ -1818,7 +1818,7 @@ public final class JobServiceGrpc {
    * A service for creating and managing Vertex AI's jobs.
    * </pre>
    */
-  public abstract static class JobServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -1828,7 +1828,7 @@ public final class JobServiceGrpc {
      * will be attempted to be run.
      * </pre>
      */
-    public void createCustomJob(
+    default void createCustomJob(
         com.google.cloud.aiplatform.v1beta1.CreateCustomJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.CustomJob>
             responseObserver) {
@@ -1843,7 +1843,7 @@ public final class JobServiceGrpc {
      * Gets a CustomJob.
      * </pre>
      */
-    public void getCustomJob(
+    default void getCustomJob(
         com.google.cloud.aiplatform.v1beta1.GetCustomJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.CustomJob>
             responseObserver) {
@@ -1858,7 +1858,7 @@ public final class JobServiceGrpc {
      * Lists CustomJobs in a Location.
      * </pre>
      */
-    public void listCustomJobs(
+    default void listCustomJobs(
         com.google.cloud.aiplatform.v1beta1.ListCustomJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListCustomJobsResponse>
             responseObserver) {
@@ -1873,7 +1873,7 @@ public final class JobServiceGrpc {
      * Deletes a CustomJob.
      * </pre>
      */
-    public void deleteCustomJob(
+    default void deleteCustomJob(
         com.google.cloud.aiplatform.v1beta1.DeleteCustomJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1899,7 +1899,7 @@ public final class JobServiceGrpc {
      * to `CANCELLED`.
      * </pre>
      */
-    public void cancelCustomJob(
+    default void cancelCustomJob(
         com.google.cloud.aiplatform.v1beta1.CancelCustomJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1913,7 +1913,7 @@ public final class JobServiceGrpc {
      * Creates a DataLabelingJob.
      * </pre>
      */
-    public void createDataLabelingJob(
+    default void createDataLabelingJob(
         com.google.cloud.aiplatform.v1beta1.CreateDataLabelingJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.DataLabelingJob>
             responseObserver) {
@@ -1928,7 +1928,7 @@ public final class JobServiceGrpc {
      * Gets a DataLabelingJob.
      * </pre>
      */
-    public void getDataLabelingJob(
+    default void getDataLabelingJob(
         com.google.cloud.aiplatform.v1beta1.GetDataLabelingJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.DataLabelingJob>
             responseObserver) {
@@ -1943,7 +1943,7 @@ public final class JobServiceGrpc {
      * Lists DataLabelingJobs in a Location.
      * </pre>
      */
-    public void listDataLabelingJobs(
+    default void listDataLabelingJobs(
         com.google.cloud.aiplatform.v1beta1.ListDataLabelingJobsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.aiplatform.v1beta1.ListDataLabelingJobsResponse>
@@ -1959,7 +1959,7 @@ public final class JobServiceGrpc {
      * Deletes a DataLabelingJob.
      * </pre>
      */
-    public void deleteDataLabelingJob(
+    default void deleteDataLabelingJob(
         com.google.cloud.aiplatform.v1beta1.DeleteDataLabelingJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1973,7 +1973,7 @@ public final class JobServiceGrpc {
      * Cancels a DataLabelingJob. Success of cancellation is not guaranteed.
      * </pre>
      */
-    public void cancelDataLabelingJob(
+    default void cancelDataLabelingJob(
         com.google.cloud.aiplatform.v1beta1.CancelDataLabelingJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1987,7 +1987,7 @@ public final class JobServiceGrpc {
      * Creates a HyperparameterTuningJob
      * </pre>
      */
-    public void createHyperparameterTuningJob(
+    default void createHyperparameterTuningJob(
         com.google.cloud.aiplatform.v1beta1.CreateHyperparameterTuningJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJob>
             responseObserver) {
@@ -2002,7 +2002,7 @@ public final class JobServiceGrpc {
      * Gets a HyperparameterTuningJob
      * </pre>
      */
-    public void getHyperparameterTuningJob(
+    default void getHyperparameterTuningJob(
         com.google.cloud.aiplatform.v1beta1.GetHyperparameterTuningJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJob>
             responseObserver) {
@@ -2017,7 +2017,7 @@ public final class JobServiceGrpc {
      * Lists HyperparameterTuningJobs in a Location.
      * </pre>
      */
-    public void listHyperparameterTuningJobs(
+    default void listHyperparameterTuningJobs(
         com.google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsResponse>
@@ -2033,7 +2033,7 @@ public final class JobServiceGrpc {
      * Deletes a HyperparameterTuningJob.
      * </pre>
      */
-    public void deleteHyperparameterTuningJob(
+    default void deleteHyperparameterTuningJob(
         com.google.cloud.aiplatform.v1beta1.DeleteHyperparameterTuningJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2060,7 +2060,7 @@ public final class JobServiceGrpc {
      * is set to `CANCELLED`.
      * </pre>
      */
-    public void cancelHyperparameterTuningJob(
+    default void cancelHyperparameterTuningJob(
         com.google.cloud.aiplatform.v1beta1.CancelHyperparameterTuningJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2074,7 +2074,7 @@ public final class JobServiceGrpc {
      * Creates a NasJob
      * </pre>
      */
-    public void createNasJob(
+    default void createNasJob(
         com.google.cloud.aiplatform.v1beta1.CreateNasJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.NasJob> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2088,7 +2088,7 @@ public final class JobServiceGrpc {
      * Gets a NasJob
      * </pre>
      */
-    public void getNasJob(
+    default void getNasJob(
         com.google.cloud.aiplatform.v1beta1.GetNasJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.NasJob> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetNasJobMethod(), responseObserver);
@@ -2101,7 +2101,7 @@ public final class JobServiceGrpc {
      * Lists NasJobs in a Location.
      * </pre>
      */
-    public void listNasJobs(
+    default void listNasJobs(
         com.google.cloud.aiplatform.v1beta1.ListNasJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListNasJobsResponse>
             responseObserver) {
@@ -2116,7 +2116,7 @@ public final class JobServiceGrpc {
      * Deletes a NasJob.
      * </pre>
      */
-    public void deleteNasJob(
+    default void deleteNasJob(
         com.google.cloud.aiplatform.v1beta1.DeleteNasJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2142,7 +2142,7 @@ public final class JobServiceGrpc {
      * `CANCELLED`.
      * </pre>
      */
-    public void cancelNasJob(
+    default void cancelNasJob(
         com.google.cloud.aiplatform.v1beta1.CancelNasJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2156,7 +2156,7 @@ public final class JobServiceGrpc {
      * Gets a NasTrialDetail.
      * </pre>
      */
-    public void getNasTrialDetail(
+    default void getNasTrialDetail(
         com.google.cloud.aiplatform.v1beta1.GetNasTrialDetailRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.NasTrialDetail>
             responseObserver) {
@@ -2171,7 +2171,7 @@ public final class JobServiceGrpc {
      * List top NasTrialDetails of a NasJob.
      * </pre>
      */
-    public void listNasTrialDetails(
+    default void listNasTrialDetails(
         com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsResponse>
             responseObserver) {
@@ -2187,7 +2187,7 @@ public final class JobServiceGrpc {
      * right away be attempted to start.
      * </pre>
      */
-    public void createBatchPredictionJob(
+    default void createBatchPredictionJob(
         com.google.cloud.aiplatform.v1beta1.CreateBatchPredictionJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.BatchPredictionJob>
             responseObserver) {
@@ -2202,7 +2202,7 @@ public final class JobServiceGrpc {
      * Gets a BatchPredictionJob
      * </pre>
      */
-    public void getBatchPredictionJob(
+    default void getBatchPredictionJob(
         com.google.cloud.aiplatform.v1beta1.GetBatchPredictionJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.BatchPredictionJob>
             responseObserver) {
@@ -2217,7 +2217,7 @@ public final class JobServiceGrpc {
      * Lists BatchPredictionJobs in a Location.
      * </pre>
      */
-    public void listBatchPredictionJobs(
+    default void listBatchPredictionJobs(
         com.google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsResponse>
@@ -2234,7 +2234,7 @@ public final class JobServiceGrpc {
      * finished.
      * </pre>
      */
-    public void deleteBatchPredictionJob(
+    default void deleteBatchPredictionJob(
         com.google.cloud.aiplatform.v1beta1.DeleteBatchPredictionJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2258,7 +2258,7 @@ public final class JobServiceGrpc {
      * deleted.
      * </pre>
      */
-    public void cancelBatchPredictionJob(
+    default void cancelBatchPredictionJob(
         com.google.cloud.aiplatform.v1beta1.CancelBatchPredictionJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2273,7 +2273,7 @@ public final class JobServiceGrpc {
      * configured interval.
      * </pre>
      */
-    public void createModelDeploymentMonitoringJob(
+    default void createModelDeploymentMonitoringJob(
         com.google.cloud.aiplatform.v1beta1.CreateModelDeploymentMonitoringJobRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob>
@@ -2289,7 +2289,7 @@ public final class JobServiceGrpc {
      * Searches Model Monitoring Statistics generated within a given time window.
      * </pre>
      */
-    public void searchModelDeploymentMonitoringStatsAnomalies(
+    default void searchModelDeploymentMonitoringStatsAnomalies(
         com.google.cloud.aiplatform.v1beta1.SearchModelDeploymentMonitoringStatsAnomaliesRequest
             request,
         io.grpc.stub.StreamObserver<
@@ -2307,7 +2307,7 @@ public final class JobServiceGrpc {
      * Gets a ModelDeploymentMonitoringJob.
      * </pre>
      */
-    public void getModelDeploymentMonitoringJob(
+    default void getModelDeploymentMonitoringJob(
         com.google.cloud.aiplatform.v1beta1.GetModelDeploymentMonitoringJobRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob>
@@ -2323,7 +2323,7 @@ public final class JobServiceGrpc {
      * Lists ModelDeploymentMonitoringJobs in a Location.
      * </pre>
      */
-    public void listModelDeploymentMonitoringJobs(
+    default void listModelDeploymentMonitoringJobs(
         com.google.cloud.aiplatform.v1beta1.ListModelDeploymentMonitoringJobsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.aiplatform.v1beta1.ListModelDeploymentMonitoringJobsResponse>
@@ -2339,7 +2339,7 @@ public final class JobServiceGrpc {
      * Updates a ModelDeploymentMonitoringJob.
      * </pre>
      */
-    public void updateModelDeploymentMonitoringJob(
+    default void updateModelDeploymentMonitoringJob(
         com.google.cloud.aiplatform.v1beta1.UpdateModelDeploymentMonitoringJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2353,7 +2353,7 @@ public final class JobServiceGrpc {
      * Deletes a ModelDeploymentMonitoringJob.
      * </pre>
      */
-    public void deleteModelDeploymentMonitoringJob(
+    default void deleteModelDeploymentMonitoringJob(
         com.google.cloud.aiplatform.v1beta1.DeleteModelDeploymentMonitoringJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2370,7 +2370,7 @@ public final class JobServiceGrpc {
      * to 'PAUSED'.
      * </pre>
      */
-    public void pauseModelDeploymentMonitoringJob(
+    default void pauseModelDeploymentMonitoringJob(
         com.google.cloud.aiplatform.v1beta1.PauseModelDeploymentMonitoringJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2386,260 +2386,31 @@ public final class JobServiceGrpc {
      * resumed.
      * </pre>
      */
-    public void resumeModelDeploymentMonitoringJob(
+    default void resumeModelDeploymentMonitoringJob(
         com.google.cloud.aiplatform.v1beta1.ResumeModelDeploymentMonitoringJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getResumeModelDeploymentMonitoringJobMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service JobService.
+   *
+   * <pre>
+   * A service for creating and managing Vertex AI's jobs.
+   * </pre>
+   */
+  public abstract static class JobServiceImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateCustomJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.CreateCustomJobRequest,
-                      com.google.cloud.aiplatform.v1beta1.CustomJob>(
-                      this, METHODID_CREATE_CUSTOM_JOB)))
-          .addMethod(
-              getGetCustomJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.GetCustomJobRequest,
-                      com.google.cloud.aiplatform.v1beta1.CustomJob>(
-                      this, METHODID_GET_CUSTOM_JOB)))
-          .addMethod(
-              getListCustomJobsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.ListCustomJobsRequest,
-                      com.google.cloud.aiplatform.v1beta1.ListCustomJobsResponse>(
-                      this, METHODID_LIST_CUSTOM_JOBS)))
-          .addMethod(
-              getDeleteCustomJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.DeleteCustomJobRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_CUSTOM_JOB)))
-          .addMethod(
-              getCancelCustomJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.CancelCustomJobRequest,
-                      com.google.protobuf.Empty>(this, METHODID_CANCEL_CUSTOM_JOB)))
-          .addMethod(
-              getCreateDataLabelingJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.CreateDataLabelingJobRequest,
-                      com.google.cloud.aiplatform.v1beta1.DataLabelingJob>(
-                      this, METHODID_CREATE_DATA_LABELING_JOB)))
-          .addMethod(
-              getGetDataLabelingJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.GetDataLabelingJobRequest,
-                      com.google.cloud.aiplatform.v1beta1.DataLabelingJob>(
-                      this, METHODID_GET_DATA_LABELING_JOB)))
-          .addMethod(
-              getListDataLabelingJobsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.ListDataLabelingJobsRequest,
-                      com.google.cloud.aiplatform.v1beta1.ListDataLabelingJobsResponse>(
-                      this, METHODID_LIST_DATA_LABELING_JOBS)))
-          .addMethod(
-              getDeleteDataLabelingJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.DeleteDataLabelingJobRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_DATA_LABELING_JOB)))
-          .addMethod(
-              getCancelDataLabelingJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.CancelDataLabelingJobRequest,
-                      com.google.protobuf.Empty>(this, METHODID_CANCEL_DATA_LABELING_JOB)))
-          .addMethod(
-              getCreateHyperparameterTuningJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.CreateHyperparameterTuningJobRequest,
-                      com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJob>(
-                      this, METHODID_CREATE_HYPERPARAMETER_TUNING_JOB)))
-          .addMethod(
-              getGetHyperparameterTuningJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.GetHyperparameterTuningJobRequest,
-                      com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJob>(
-                      this, METHODID_GET_HYPERPARAMETER_TUNING_JOB)))
-          .addMethod(
-              getListHyperparameterTuningJobsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsRequest,
-                      com.google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsResponse>(
-                      this, METHODID_LIST_HYPERPARAMETER_TUNING_JOBS)))
-          .addMethod(
-              getDeleteHyperparameterTuningJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.DeleteHyperparameterTuningJobRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_DELETE_HYPERPARAMETER_TUNING_JOB)))
-          .addMethod(
-              getCancelHyperparameterTuningJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.CancelHyperparameterTuningJobRequest,
-                      com.google.protobuf.Empty>(this, METHODID_CANCEL_HYPERPARAMETER_TUNING_JOB)))
-          .addMethod(
-              getCreateNasJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.CreateNasJobRequest,
-                      com.google.cloud.aiplatform.v1beta1.NasJob>(this, METHODID_CREATE_NAS_JOB)))
-          .addMethod(
-              getGetNasJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.GetNasJobRequest,
-                      com.google.cloud.aiplatform.v1beta1.NasJob>(this, METHODID_GET_NAS_JOB)))
-          .addMethod(
-              getListNasJobsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.ListNasJobsRequest,
-                      com.google.cloud.aiplatform.v1beta1.ListNasJobsResponse>(
-                      this, METHODID_LIST_NAS_JOBS)))
-          .addMethod(
-              getDeleteNasJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.DeleteNasJobRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_NAS_JOB)))
-          .addMethod(
-              getCancelNasJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.CancelNasJobRequest,
-                      com.google.protobuf.Empty>(this, METHODID_CANCEL_NAS_JOB)))
-          .addMethod(
-              getGetNasTrialDetailMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.GetNasTrialDetailRequest,
-                      com.google.cloud.aiplatform.v1beta1.NasTrialDetail>(
-                      this, METHODID_GET_NAS_TRIAL_DETAIL)))
-          .addMethod(
-              getListNasTrialDetailsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsRequest,
-                      com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsResponse>(
-                      this, METHODID_LIST_NAS_TRIAL_DETAILS)))
-          .addMethod(
-              getCreateBatchPredictionJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.CreateBatchPredictionJobRequest,
-                      com.google.cloud.aiplatform.v1beta1.BatchPredictionJob>(
-                      this, METHODID_CREATE_BATCH_PREDICTION_JOB)))
-          .addMethod(
-              getGetBatchPredictionJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.GetBatchPredictionJobRequest,
-                      com.google.cloud.aiplatform.v1beta1.BatchPredictionJob>(
-                      this, METHODID_GET_BATCH_PREDICTION_JOB)))
-          .addMethod(
-              getListBatchPredictionJobsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsRequest,
-                      com.google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsResponse>(
-                      this, METHODID_LIST_BATCH_PREDICTION_JOBS)))
-          .addMethod(
-              getDeleteBatchPredictionJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.DeleteBatchPredictionJobRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_DELETE_BATCH_PREDICTION_JOB)))
-          .addMethod(
-              getCancelBatchPredictionJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.CancelBatchPredictionJobRequest,
-                      com.google.protobuf.Empty>(this, METHODID_CANCEL_BATCH_PREDICTION_JOB)))
-          .addMethod(
-              getCreateModelDeploymentMonitoringJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.CreateModelDeploymentMonitoringJobRequest,
-                      com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob>(
-                      this, METHODID_CREATE_MODEL_DEPLOYMENT_MONITORING_JOB)))
-          .addMethod(
-              getSearchModelDeploymentMonitoringStatsAnomaliesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1
-                          .SearchModelDeploymentMonitoringStatsAnomaliesRequest,
-                      com.google.cloud.aiplatform.v1beta1
-                          .SearchModelDeploymentMonitoringStatsAnomaliesResponse>(
-                      this, METHODID_SEARCH_MODEL_DEPLOYMENT_MONITORING_STATS_ANOMALIES)))
-          .addMethod(
-              getGetModelDeploymentMonitoringJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.GetModelDeploymentMonitoringJobRequest,
-                      com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob>(
-                      this, METHODID_GET_MODEL_DEPLOYMENT_MONITORING_JOB)))
-          .addMethod(
-              getListModelDeploymentMonitoringJobsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.ListModelDeploymentMonitoringJobsRequest,
-                      com.google.cloud.aiplatform.v1beta1
-                          .ListModelDeploymentMonitoringJobsResponse>(
-                      this, METHODID_LIST_MODEL_DEPLOYMENT_MONITORING_JOBS)))
-          .addMethod(
-              getUpdateModelDeploymentMonitoringJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.UpdateModelDeploymentMonitoringJobRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_UPDATE_MODEL_DEPLOYMENT_MONITORING_JOB)))
-          .addMethod(
-              getDeleteModelDeploymentMonitoringJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.DeleteModelDeploymentMonitoringJobRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_DELETE_MODEL_DEPLOYMENT_MONITORING_JOB)))
-          .addMethod(
-              getPauseModelDeploymentMonitoringJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.PauseModelDeploymentMonitoringJobRequest,
-                      com.google.protobuf.Empty>(
-                      this, METHODID_PAUSE_MODEL_DEPLOYMENT_MONITORING_JOB)))
-          .addMethod(
-              getResumeModelDeploymentMonitoringJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.ResumeModelDeploymentMonitoringJobRequest,
-                      com.google.protobuf.Empty>(
-                      this, METHODID_RESUME_MODEL_DEPLOYMENT_MONITORING_JOB)))
-          .build();
+      return JobServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service JobService.
    *
    * <pre>
    * A service for creating and managing Vertex AI's jobs.
@@ -3300,7 +3071,7 @@ public final class JobServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service JobService.
    *
    * <pre>
    * A service for creating and managing Vertex AI's jobs.
@@ -3842,7 +3613,7 @@ public final class JobServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service JobService.
    *
    * <pre>
    * A service for creating and managing Vertex AI's jobs.
@@ -4470,10 +4241,10 @@ public final class JobServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final JobServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(JobServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -4713,6 +4484,248 @@ public final class JobServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateCustomJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.CreateCustomJobRequest,
+                    com.google.cloud.aiplatform.v1beta1.CustomJob>(
+                    service, METHODID_CREATE_CUSTOM_JOB)))
+        .addMethod(
+            getGetCustomJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.GetCustomJobRequest,
+                    com.google.cloud.aiplatform.v1beta1.CustomJob>(
+                    service, METHODID_GET_CUSTOM_JOB)))
+        .addMethod(
+            getListCustomJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.ListCustomJobsRequest,
+                    com.google.cloud.aiplatform.v1beta1.ListCustomJobsResponse>(
+                    service, METHODID_LIST_CUSTOM_JOBS)))
+        .addMethod(
+            getDeleteCustomJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.DeleteCustomJobRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_CUSTOM_JOB)))
+        .addMethod(
+            getCancelCustomJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.CancelCustomJobRequest,
+                    com.google.protobuf.Empty>(service, METHODID_CANCEL_CUSTOM_JOB)))
+        .addMethod(
+            getCreateDataLabelingJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.CreateDataLabelingJobRequest,
+                    com.google.cloud.aiplatform.v1beta1.DataLabelingJob>(
+                    service, METHODID_CREATE_DATA_LABELING_JOB)))
+        .addMethod(
+            getGetDataLabelingJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.GetDataLabelingJobRequest,
+                    com.google.cloud.aiplatform.v1beta1.DataLabelingJob>(
+                    service, METHODID_GET_DATA_LABELING_JOB)))
+        .addMethod(
+            getListDataLabelingJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.ListDataLabelingJobsRequest,
+                    com.google.cloud.aiplatform.v1beta1.ListDataLabelingJobsResponse>(
+                    service, METHODID_LIST_DATA_LABELING_JOBS)))
+        .addMethod(
+            getDeleteDataLabelingJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.DeleteDataLabelingJobRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_DATA_LABELING_JOB)))
+        .addMethod(
+            getCancelDataLabelingJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.CancelDataLabelingJobRequest,
+                    com.google.protobuf.Empty>(service, METHODID_CANCEL_DATA_LABELING_JOB)))
+        .addMethod(
+            getCreateHyperparameterTuningJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.CreateHyperparameterTuningJobRequest,
+                    com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJob>(
+                    service, METHODID_CREATE_HYPERPARAMETER_TUNING_JOB)))
+        .addMethod(
+            getGetHyperparameterTuningJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.GetHyperparameterTuningJobRequest,
+                    com.google.cloud.aiplatform.v1beta1.HyperparameterTuningJob>(
+                    service, METHODID_GET_HYPERPARAMETER_TUNING_JOB)))
+        .addMethod(
+            getListHyperparameterTuningJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsRequest,
+                    com.google.cloud.aiplatform.v1beta1.ListHyperparameterTuningJobsResponse>(
+                    service, METHODID_LIST_HYPERPARAMETER_TUNING_JOBS)))
+        .addMethod(
+            getDeleteHyperparameterTuningJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.DeleteHyperparameterTuningJobRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_HYPERPARAMETER_TUNING_JOB)))
+        .addMethod(
+            getCancelHyperparameterTuningJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.CancelHyperparameterTuningJobRequest,
+                    com.google.protobuf.Empty>(service, METHODID_CANCEL_HYPERPARAMETER_TUNING_JOB)))
+        .addMethod(
+            getCreateNasJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.CreateNasJobRequest,
+                    com.google.cloud.aiplatform.v1beta1.NasJob>(service, METHODID_CREATE_NAS_JOB)))
+        .addMethod(
+            getGetNasJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.GetNasJobRequest,
+                    com.google.cloud.aiplatform.v1beta1.NasJob>(service, METHODID_GET_NAS_JOB)))
+        .addMethod(
+            getListNasJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.ListNasJobsRequest,
+                    com.google.cloud.aiplatform.v1beta1.ListNasJobsResponse>(
+                    service, METHODID_LIST_NAS_JOBS)))
+        .addMethod(
+            getDeleteNasJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.DeleteNasJobRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_NAS_JOB)))
+        .addMethod(
+            getCancelNasJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.CancelNasJobRequest,
+                    com.google.protobuf.Empty>(service, METHODID_CANCEL_NAS_JOB)))
+        .addMethod(
+            getGetNasTrialDetailMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.GetNasTrialDetailRequest,
+                    com.google.cloud.aiplatform.v1beta1.NasTrialDetail>(
+                    service, METHODID_GET_NAS_TRIAL_DETAIL)))
+        .addMethod(
+            getListNasTrialDetailsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsRequest,
+                    com.google.cloud.aiplatform.v1beta1.ListNasTrialDetailsResponse>(
+                    service, METHODID_LIST_NAS_TRIAL_DETAILS)))
+        .addMethod(
+            getCreateBatchPredictionJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.CreateBatchPredictionJobRequest,
+                    com.google.cloud.aiplatform.v1beta1.BatchPredictionJob>(
+                    service, METHODID_CREATE_BATCH_PREDICTION_JOB)))
+        .addMethod(
+            getGetBatchPredictionJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.GetBatchPredictionJobRequest,
+                    com.google.cloud.aiplatform.v1beta1.BatchPredictionJob>(
+                    service, METHODID_GET_BATCH_PREDICTION_JOB)))
+        .addMethod(
+            getListBatchPredictionJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsRequest,
+                    com.google.cloud.aiplatform.v1beta1.ListBatchPredictionJobsResponse>(
+                    service, METHODID_LIST_BATCH_PREDICTION_JOBS)))
+        .addMethod(
+            getDeleteBatchPredictionJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.DeleteBatchPredictionJobRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_BATCH_PREDICTION_JOB)))
+        .addMethod(
+            getCancelBatchPredictionJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.CancelBatchPredictionJobRequest,
+                    com.google.protobuf.Empty>(service, METHODID_CANCEL_BATCH_PREDICTION_JOB)))
+        .addMethod(
+            getCreateModelDeploymentMonitoringJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.CreateModelDeploymentMonitoringJobRequest,
+                    com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob>(
+                    service, METHODID_CREATE_MODEL_DEPLOYMENT_MONITORING_JOB)))
+        .addMethod(
+            getSearchModelDeploymentMonitoringStatsAnomaliesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1
+                        .SearchModelDeploymentMonitoringStatsAnomaliesRequest,
+                    com.google.cloud.aiplatform.v1beta1
+                        .SearchModelDeploymentMonitoringStatsAnomaliesResponse>(
+                    service, METHODID_SEARCH_MODEL_DEPLOYMENT_MONITORING_STATS_ANOMALIES)))
+        .addMethod(
+            getGetModelDeploymentMonitoringJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.GetModelDeploymentMonitoringJobRequest,
+                    com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob>(
+                    service, METHODID_GET_MODEL_DEPLOYMENT_MONITORING_JOB)))
+        .addMethod(
+            getListModelDeploymentMonitoringJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.ListModelDeploymentMonitoringJobsRequest,
+                    com.google.cloud.aiplatform.v1beta1.ListModelDeploymentMonitoringJobsResponse>(
+                    service, METHODID_LIST_MODEL_DEPLOYMENT_MONITORING_JOBS)))
+        .addMethod(
+            getUpdateModelDeploymentMonitoringJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.UpdateModelDeploymentMonitoringJobRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_MODEL_DEPLOYMENT_MONITORING_JOB)))
+        .addMethod(
+            getDeleteModelDeploymentMonitoringJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.DeleteModelDeploymentMonitoringJobRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_MODEL_DEPLOYMENT_MONITORING_JOB)))
+        .addMethod(
+            getPauseModelDeploymentMonitoringJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.PauseModelDeploymentMonitoringJobRequest,
+                    com.google.protobuf.Empty>(
+                    service, METHODID_PAUSE_MODEL_DEPLOYMENT_MONITORING_JOB)))
+        .addMethod(
+            getResumeModelDeploymentMonitoringJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.ResumeModelDeploymentMonitoringJobRequest,
+                    com.google.protobuf.Empty>(
+                    service, METHODID_RESUME_MODEL_DEPLOYMENT_MONITORING_JOB)))
+        .build();
   }
 
   private abstract static class JobServiceBaseDescriptorSupplier

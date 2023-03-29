@@ -461,7 +461,7 @@ public final class IndexEndpointServiceGrpc {
    * A service for managing Vertex AI's IndexEndpoints.
    * </pre>
    */
-  public abstract static class IndexEndpointServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -470,7 +470,7 @@ public final class IndexEndpointServiceGrpc {
      * Creates an IndexEndpoint.
      * </pre>
      */
-    public void createIndexEndpoint(
+    default void createIndexEndpoint(
         com.google.cloud.aiplatform.v1.CreateIndexEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -484,7 +484,7 @@ public final class IndexEndpointServiceGrpc {
      * Gets an IndexEndpoint.
      * </pre>
      */
-    public void getIndexEndpoint(
+    default void getIndexEndpoint(
         com.google.cloud.aiplatform.v1.GetIndexEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.IndexEndpoint>
             responseObserver) {
@@ -499,7 +499,7 @@ public final class IndexEndpointServiceGrpc {
      * Lists IndexEndpoints in a Location.
      * </pre>
      */
-    public void listIndexEndpoints(
+    default void listIndexEndpoints(
         com.google.cloud.aiplatform.v1.ListIndexEndpointsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListIndexEndpointsResponse>
             responseObserver) {
@@ -514,7 +514,7 @@ public final class IndexEndpointServiceGrpc {
      * Updates an IndexEndpoint.
      * </pre>
      */
-    public void updateIndexEndpoint(
+    default void updateIndexEndpoint(
         com.google.cloud.aiplatform.v1.UpdateIndexEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.IndexEndpoint>
             responseObserver) {
@@ -529,7 +529,7 @@ public final class IndexEndpointServiceGrpc {
      * Deletes an IndexEndpoint.
      * </pre>
      */
-    public void deleteIndexEndpoint(
+    default void deleteIndexEndpoint(
         com.google.cloud.aiplatform.v1.DeleteIndexEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -545,7 +545,7 @@ public final class IndexEndpointServiceGrpc {
      * Only non-empty Indexes can be deployed.
      * </pre>
      */
-    public void deployIndex(
+    default void deployIndex(
         com.google.cloud.aiplatform.v1.DeployIndexRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -560,7 +560,7 @@ public final class IndexEndpointServiceGrpc {
      * and freeing all resources it's using.
      * </pre>
      */
-    public void undeployIndex(
+    default void undeployIndex(
         com.google.cloud.aiplatform.v1.UndeployIndexRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -574,73 +574,32 @@ public final class IndexEndpointServiceGrpc {
      * Update an existing DeployedIndex under an IndexEndpoint.
      * </pre>
      */
-    public void mutateDeployedIndex(
+    default void mutateDeployedIndex(
         com.google.cloud.aiplatform.v1.MutateDeployedIndexRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getMutateDeployedIndexMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service IndexEndpointService.
+   *
+   * <pre>
+   * A service for managing Vertex AI's IndexEndpoints.
+   * </pre>
+   */
+  public abstract static class IndexEndpointServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateIndexEndpointMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.CreateIndexEndpointRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_INDEX_ENDPOINT)))
-          .addMethod(
-              getGetIndexEndpointMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.GetIndexEndpointRequest,
-                      com.google.cloud.aiplatform.v1.IndexEndpoint>(
-                      this, METHODID_GET_INDEX_ENDPOINT)))
-          .addMethod(
-              getListIndexEndpointsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.ListIndexEndpointsRequest,
-                      com.google.cloud.aiplatform.v1.ListIndexEndpointsResponse>(
-                      this, METHODID_LIST_INDEX_ENDPOINTS)))
-          .addMethod(
-              getUpdateIndexEndpointMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.UpdateIndexEndpointRequest,
-                      com.google.cloud.aiplatform.v1.IndexEndpoint>(
-                      this, METHODID_UPDATE_INDEX_ENDPOINT)))
-          .addMethod(
-              getDeleteIndexEndpointMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.DeleteIndexEndpointRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_INDEX_ENDPOINT)))
-          .addMethod(
-              getDeployIndexMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.DeployIndexRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DEPLOY_INDEX)))
-          .addMethod(
-              getUndeployIndexMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.UndeployIndexRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UNDEPLOY_INDEX)))
-          .addMethod(
-              getMutateDeployedIndexMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.MutateDeployedIndexRequest,
-                      com.google.longrunning.Operation>(this, METHODID_MUTATE_DEPLOYED_INDEX)))
-          .build();
+      return IndexEndpointServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service IndexEndpointService.
    *
    * <pre>
    * A service for managing Vertex AI's IndexEndpoints.
@@ -794,7 +753,7 @@ public final class IndexEndpointServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service IndexEndpointService.
    *
    * <pre>
    * A service for managing Vertex AI's IndexEndpoints.
@@ -922,7 +881,7 @@ public final class IndexEndpointServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service IndexEndpointService.
    *
    * <pre>
    * A service for managing Vertex AI's IndexEndpoints.
@@ -1066,10 +1025,10 @@ public final class IndexEndpointServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final IndexEndpointServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(IndexEndpointServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1136,6 +1095,62 @@ public final class IndexEndpointServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateIndexEndpointMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.CreateIndexEndpointRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_INDEX_ENDPOINT)))
+        .addMethod(
+            getGetIndexEndpointMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.GetIndexEndpointRequest,
+                    com.google.cloud.aiplatform.v1.IndexEndpoint>(
+                    service, METHODID_GET_INDEX_ENDPOINT)))
+        .addMethod(
+            getListIndexEndpointsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.ListIndexEndpointsRequest,
+                    com.google.cloud.aiplatform.v1.ListIndexEndpointsResponse>(
+                    service, METHODID_LIST_INDEX_ENDPOINTS)))
+        .addMethod(
+            getUpdateIndexEndpointMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.UpdateIndexEndpointRequest,
+                    com.google.cloud.aiplatform.v1.IndexEndpoint>(
+                    service, METHODID_UPDATE_INDEX_ENDPOINT)))
+        .addMethod(
+            getDeleteIndexEndpointMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.DeleteIndexEndpointRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_INDEX_ENDPOINT)))
+        .addMethod(
+            getDeployIndexMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.DeployIndexRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DEPLOY_INDEX)))
+        .addMethod(
+            getUndeployIndexMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.UndeployIndexRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UNDEPLOY_INDEX)))
+        .addMethod(
+            getMutateDeployedIndexMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.MutateDeployedIndexRequest,
+                    com.google.longrunning.Operation>(service, METHODID_MUTATE_DEPLOYED_INDEX)))
+        .build();
   }
 
   private abstract static class IndexEndpointServiceBaseDescriptorSupplier

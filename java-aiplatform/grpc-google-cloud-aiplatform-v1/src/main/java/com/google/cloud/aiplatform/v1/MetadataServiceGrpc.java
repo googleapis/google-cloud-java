@@ -1583,7 +1583,7 @@ public final class MetadataServiceGrpc {
    * Service for reading and writing metadata entries.
    * </pre>
    */
-  public abstract static class MetadataServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -1592,7 +1592,7 @@ public final class MetadataServiceGrpc {
      * Initializes a MetadataStore, including allocation of resources.
      * </pre>
      */
-    public void createMetadataStore(
+    default void createMetadataStore(
         com.google.cloud.aiplatform.v1.CreateMetadataStoreRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1606,7 +1606,7 @@ public final class MetadataServiceGrpc {
      * Retrieves a specific MetadataStore.
      * </pre>
      */
-    public void getMetadataStore(
+    default void getMetadataStore(
         com.google.cloud.aiplatform.v1.GetMetadataStoreRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.MetadataStore>
             responseObserver) {
@@ -1621,7 +1621,7 @@ public final class MetadataServiceGrpc {
      * Lists MetadataStores for a Location.
      * </pre>
      */
-    public void listMetadataStores(
+    default void listMetadataStores(
         com.google.cloud.aiplatform.v1.ListMetadataStoresRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListMetadataStoresResponse>
             responseObserver) {
@@ -1637,7 +1637,7 @@ public final class MetadataServiceGrpc {
      * Executions, and Contexts).
      * </pre>
      */
-    public void deleteMetadataStore(
+    default void deleteMetadataStore(
         com.google.cloud.aiplatform.v1.DeleteMetadataStoreRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1651,7 +1651,7 @@ public final class MetadataServiceGrpc {
      * Creates an Artifact associated with a MetadataStore.
      * </pre>
      */
-    public void createArtifact(
+    default void createArtifact(
         com.google.cloud.aiplatform.v1.CreateArtifactRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Artifact> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1665,7 +1665,7 @@ public final class MetadataServiceGrpc {
      * Retrieves a specific Artifact.
      * </pre>
      */
-    public void getArtifact(
+    default void getArtifact(
         com.google.cloud.aiplatform.v1.GetArtifactRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Artifact> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1679,7 +1679,7 @@ public final class MetadataServiceGrpc {
      * Lists Artifacts in the MetadataStore.
      * </pre>
      */
-    public void listArtifacts(
+    default void listArtifacts(
         com.google.cloud.aiplatform.v1.ListArtifactsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListArtifactsResponse>
             responseObserver) {
@@ -1694,7 +1694,7 @@ public final class MetadataServiceGrpc {
      * Updates a stored Artifact.
      * </pre>
      */
-    public void updateArtifact(
+    default void updateArtifact(
         com.google.cloud.aiplatform.v1.UpdateArtifactRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Artifact> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1708,7 +1708,7 @@ public final class MetadataServiceGrpc {
      * Deletes an Artifact.
      * </pre>
      */
-    public void deleteArtifact(
+    default void deleteArtifact(
         com.google.cloud.aiplatform.v1.DeleteArtifactRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1722,7 +1722,7 @@ public final class MetadataServiceGrpc {
      * Purges Artifacts.
      * </pre>
      */
-    public void purgeArtifacts(
+    default void purgeArtifacts(
         com.google.cloud.aiplatform.v1.PurgeArtifactsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1736,7 +1736,7 @@ public final class MetadataServiceGrpc {
      * Creates a Context associated with a MetadataStore.
      * </pre>
      */
-    public void createContext(
+    default void createContext(
         com.google.cloud.aiplatform.v1.CreateContextRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Context> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1750,7 +1750,7 @@ public final class MetadataServiceGrpc {
      * Retrieves a specific Context.
      * </pre>
      */
-    public void getContext(
+    default void getContext(
         com.google.cloud.aiplatform.v1.GetContextRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Context> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetContextMethod(), responseObserver);
@@ -1763,7 +1763,7 @@ public final class MetadataServiceGrpc {
      * Lists Contexts on the MetadataStore.
      * </pre>
      */
-    public void listContexts(
+    default void listContexts(
         com.google.cloud.aiplatform.v1.ListContextsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListContextsResponse>
             responseObserver) {
@@ -1778,7 +1778,7 @@ public final class MetadataServiceGrpc {
      * Updates a stored Context.
      * </pre>
      */
-    public void updateContext(
+    default void updateContext(
         com.google.cloud.aiplatform.v1.UpdateContextRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Context> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1792,7 +1792,7 @@ public final class MetadataServiceGrpc {
      * Deletes a stored Context.
      * </pre>
      */
-    public void deleteContext(
+    default void deleteContext(
         com.google.cloud.aiplatform.v1.DeleteContextRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1806,7 +1806,7 @@ public final class MetadataServiceGrpc {
      * Purges Contexts.
      * </pre>
      */
-    public void purgeContexts(
+    default void purgeContexts(
         com.google.cloud.aiplatform.v1.PurgeContextsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1822,7 +1822,7 @@ public final class MetadataServiceGrpc {
      * simply skipped.
      * </pre>
      */
-    public void addContextArtifactsAndExecutions(
+    default void addContextArtifactsAndExecutions(
         com.google.cloud.aiplatform.v1.AddContextArtifactsAndExecutionsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.aiplatform.v1.AddContextArtifactsAndExecutionsResponse>
@@ -1842,7 +1842,7 @@ public final class MetadataServiceGrpc {
      * error.
      * </pre>
      */
-    public void addContextChildren(
+    default void addContextChildren(
         com.google.cloud.aiplatform.v1.AddContextChildrenRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.AddContextChildrenResponse>
             responseObserver) {
@@ -1859,7 +1859,7 @@ public final class MetadataServiceGrpc {
      * simply skipped.
      * </pre>
      */
-    public void removeContextChildren(
+    default void removeContextChildren(
         com.google.cloud.aiplatform.v1.RemoveContextChildrenRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.RemoveContextChildrenResponse>
             responseObserver) {
@@ -1875,7 +1875,7 @@ public final class MetadataServiceGrpc {
      * by Event edges and returned as a LineageSubgraph.
      * </pre>
      */
-    public void queryContextLineageSubgraph(
+    default void queryContextLineageSubgraph(
         com.google.cloud.aiplatform.v1.QueryContextLineageSubgraphRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.LineageSubgraph>
             responseObserver) {
@@ -1890,7 +1890,7 @@ public final class MetadataServiceGrpc {
      * Creates an Execution associated with a MetadataStore.
      * </pre>
      */
-    public void createExecution(
+    default void createExecution(
         com.google.cloud.aiplatform.v1.CreateExecutionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Execution> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1904,7 +1904,7 @@ public final class MetadataServiceGrpc {
      * Retrieves a specific Execution.
      * </pre>
      */
-    public void getExecution(
+    default void getExecution(
         com.google.cloud.aiplatform.v1.GetExecutionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Execution> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1918,7 +1918,7 @@ public final class MetadataServiceGrpc {
      * Lists Executions in the MetadataStore.
      * </pre>
      */
-    public void listExecutions(
+    default void listExecutions(
         com.google.cloud.aiplatform.v1.ListExecutionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListExecutionsResponse>
             responseObserver) {
@@ -1933,7 +1933,7 @@ public final class MetadataServiceGrpc {
      * Updates a stored Execution.
      * </pre>
      */
-    public void updateExecution(
+    default void updateExecution(
         com.google.cloud.aiplatform.v1.UpdateExecutionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Execution> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1947,7 +1947,7 @@ public final class MetadataServiceGrpc {
      * Deletes an Execution.
      * </pre>
      */
-    public void deleteExecution(
+    default void deleteExecution(
         com.google.cloud.aiplatform.v1.DeleteExecutionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1961,7 +1961,7 @@ public final class MetadataServiceGrpc {
      * Purges Executions.
      * </pre>
      */
-    public void purgeExecutions(
+    default void purgeExecutions(
         com.google.cloud.aiplatform.v1.PurgeExecutionsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1978,7 +1978,7 @@ public final class MetadataServiceGrpc {
      * skipped.
      * </pre>
      */
-    public void addExecutionEvents(
+    default void addExecutionEvents(
         com.google.cloud.aiplatform.v1.AddExecutionEventsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.AddExecutionEventsResponse>
             responseObserver) {
@@ -1995,7 +1995,7 @@ public final class MetadataServiceGrpc {
      * Events.
      * </pre>
      */
-    public void queryExecutionInputsAndOutputs(
+    default void queryExecutionInputsAndOutputs(
         com.google.cloud.aiplatform.v1.QueryExecutionInputsAndOutputsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.LineageSubgraph>
             responseObserver) {
@@ -2010,7 +2010,7 @@ public final class MetadataServiceGrpc {
      * Creates a MetadataSchema.
      * </pre>
      */
-    public void createMetadataSchema(
+    default void createMetadataSchema(
         com.google.cloud.aiplatform.v1.CreateMetadataSchemaRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.MetadataSchema>
             responseObserver) {
@@ -2025,7 +2025,7 @@ public final class MetadataServiceGrpc {
      * Retrieves a specific MetadataSchema.
      * </pre>
      */
-    public void getMetadataSchema(
+    default void getMetadataSchema(
         com.google.cloud.aiplatform.v1.GetMetadataSchemaRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.MetadataSchema>
             responseObserver) {
@@ -2040,7 +2040,7 @@ public final class MetadataServiceGrpc {
      * Lists MetadataSchemas.
      * </pre>
      */
-    public void listMetadataSchemas(
+    default void listMetadataSchemas(
         com.google.cloud.aiplatform.v1.ListMetadataSchemasRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListMetadataSchemasResponse>
             responseObserver) {
@@ -2056,230 +2056,33 @@ public final class MetadataServiceGrpc {
      * Executions connected by Event edges and returned as a LineageSubgraph.
      * </pre>
      */
-    public void queryArtifactLineageSubgraph(
+    default void queryArtifactLineageSubgraph(
         com.google.cloud.aiplatform.v1.QueryArtifactLineageSubgraphRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.LineageSubgraph>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getQueryArtifactLineageSubgraphMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service MetadataService.
+   *
+   * <pre>
+   * Service for reading and writing metadata entries.
+   * </pre>
+   */
+  public abstract static class MetadataServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateMetadataStoreMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.CreateMetadataStoreRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_METADATA_STORE)))
-          .addMethod(
-              getGetMetadataStoreMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.GetMetadataStoreRequest,
-                      com.google.cloud.aiplatform.v1.MetadataStore>(
-                      this, METHODID_GET_METADATA_STORE)))
-          .addMethod(
-              getListMetadataStoresMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.ListMetadataStoresRequest,
-                      com.google.cloud.aiplatform.v1.ListMetadataStoresResponse>(
-                      this, METHODID_LIST_METADATA_STORES)))
-          .addMethod(
-              getDeleteMetadataStoreMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.DeleteMetadataStoreRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_METADATA_STORE)))
-          .addMethod(
-              getCreateArtifactMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.CreateArtifactRequest,
-                      com.google.cloud.aiplatform.v1.Artifact>(this, METHODID_CREATE_ARTIFACT)))
-          .addMethod(
-              getGetArtifactMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.GetArtifactRequest,
-                      com.google.cloud.aiplatform.v1.Artifact>(this, METHODID_GET_ARTIFACT)))
-          .addMethod(
-              getListArtifactsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.ListArtifactsRequest,
-                      com.google.cloud.aiplatform.v1.ListArtifactsResponse>(
-                      this, METHODID_LIST_ARTIFACTS)))
-          .addMethod(
-              getUpdateArtifactMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.UpdateArtifactRequest,
-                      com.google.cloud.aiplatform.v1.Artifact>(this, METHODID_UPDATE_ARTIFACT)))
-          .addMethod(
-              getDeleteArtifactMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.DeleteArtifactRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_ARTIFACT)))
-          .addMethod(
-              getPurgeArtifactsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.PurgeArtifactsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_PURGE_ARTIFACTS)))
-          .addMethod(
-              getCreateContextMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.CreateContextRequest,
-                      com.google.cloud.aiplatform.v1.Context>(this, METHODID_CREATE_CONTEXT)))
-          .addMethod(
-              getGetContextMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.GetContextRequest,
-                      com.google.cloud.aiplatform.v1.Context>(this, METHODID_GET_CONTEXT)))
-          .addMethod(
-              getListContextsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.ListContextsRequest,
-                      com.google.cloud.aiplatform.v1.ListContextsResponse>(
-                      this, METHODID_LIST_CONTEXTS)))
-          .addMethod(
-              getUpdateContextMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.UpdateContextRequest,
-                      com.google.cloud.aiplatform.v1.Context>(this, METHODID_UPDATE_CONTEXT)))
-          .addMethod(
-              getDeleteContextMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.DeleteContextRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_CONTEXT)))
-          .addMethod(
-              getPurgeContextsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.PurgeContextsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_PURGE_CONTEXTS)))
-          .addMethod(
-              getAddContextArtifactsAndExecutionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.AddContextArtifactsAndExecutionsRequest,
-                      com.google.cloud.aiplatform.v1.AddContextArtifactsAndExecutionsResponse>(
-                      this, METHODID_ADD_CONTEXT_ARTIFACTS_AND_EXECUTIONS)))
-          .addMethod(
-              getAddContextChildrenMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.AddContextChildrenRequest,
-                      com.google.cloud.aiplatform.v1.AddContextChildrenResponse>(
-                      this, METHODID_ADD_CONTEXT_CHILDREN)))
-          .addMethod(
-              getRemoveContextChildrenMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.RemoveContextChildrenRequest,
-                      com.google.cloud.aiplatform.v1.RemoveContextChildrenResponse>(
-                      this, METHODID_REMOVE_CONTEXT_CHILDREN)))
-          .addMethod(
-              getQueryContextLineageSubgraphMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.QueryContextLineageSubgraphRequest,
-                      com.google.cloud.aiplatform.v1.LineageSubgraph>(
-                      this, METHODID_QUERY_CONTEXT_LINEAGE_SUBGRAPH)))
-          .addMethod(
-              getCreateExecutionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.CreateExecutionRequest,
-                      com.google.cloud.aiplatform.v1.Execution>(this, METHODID_CREATE_EXECUTION)))
-          .addMethod(
-              getGetExecutionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.GetExecutionRequest,
-                      com.google.cloud.aiplatform.v1.Execution>(this, METHODID_GET_EXECUTION)))
-          .addMethod(
-              getListExecutionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.ListExecutionsRequest,
-                      com.google.cloud.aiplatform.v1.ListExecutionsResponse>(
-                      this, METHODID_LIST_EXECUTIONS)))
-          .addMethod(
-              getUpdateExecutionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.UpdateExecutionRequest,
-                      com.google.cloud.aiplatform.v1.Execution>(this, METHODID_UPDATE_EXECUTION)))
-          .addMethod(
-              getDeleteExecutionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.DeleteExecutionRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_EXECUTION)))
-          .addMethod(
-              getPurgeExecutionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.PurgeExecutionsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_PURGE_EXECUTIONS)))
-          .addMethod(
-              getAddExecutionEventsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.AddExecutionEventsRequest,
-                      com.google.cloud.aiplatform.v1.AddExecutionEventsResponse>(
-                      this, METHODID_ADD_EXECUTION_EVENTS)))
-          .addMethod(
-              getQueryExecutionInputsAndOutputsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.QueryExecutionInputsAndOutputsRequest,
-                      com.google.cloud.aiplatform.v1.LineageSubgraph>(
-                      this, METHODID_QUERY_EXECUTION_INPUTS_AND_OUTPUTS)))
-          .addMethod(
-              getCreateMetadataSchemaMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.CreateMetadataSchemaRequest,
-                      com.google.cloud.aiplatform.v1.MetadataSchema>(
-                      this, METHODID_CREATE_METADATA_SCHEMA)))
-          .addMethod(
-              getGetMetadataSchemaMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.GetMetadataSchemaRequest,
-                      com.google.cloud.aiplatform.v1.MetadataSchema>(
-                      this, METHODID_GET_METADATA_SCHEMA)))
-          .addMethod(
-              getListMetadataSchemasMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.ListMetadataSchemasRequest,
-                      com.google.cloud.aiplatform.v1.ListMetadataSchemasResponse>(
-                      this, METHODID_LIST_METADATA_SCHEMAS)))
-          .addMethod(
-              getQueryArtifactLineageSubgraphMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.QueryArtifactLineageSubgraphRequest,
-                      com.google.cloud.aiplatform.v1.LineageSubgraph>(
-                      this, METHODID_QUERY_ARTIFACT_LINEAGE_SUBGRAPH)))
-          .build();
+      return MetadataServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service MetadataService.
    *
    * <pre>
    * Service for reading and writing metadata entries.
@@ -2840,7 +2643,7 @@ public final class MetadataServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service MetadataService.
    *
    * <pre>
    * Service for reading and writing metadata entries.
@@ -3293,7 +3096,7 @@ public final class MetadataServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service MetadataService.
    *
    * <pre>
    * Service for reading and writing metadata entries.
@@ -3812,10 +3615,10 @@ public final class MetadataServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final MetadataServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(MetadataServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -4028,6 +3831,218 @@ public final class MetadataServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateMetadataStoreMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.CreateMetadataStoreRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_METADATA_STORE)))
+        .addMethod(
+            getGetMetadataStoreMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.GetMetadataStoreRequest,
+                    com.google.cloud.aiplatform.v1.MetadataStore>(
+                    service, METHODID_GET_METADATA_STORE)))
+        .addMethod(
+            getListMetadataStoresMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.ListMetadataStoresRequest,
+                    com.google.cloud.aiplatform.v1.ListMetadataStoresResponse>(
+                    service, METHODID_LIST_METADATA_STORES)))
+        .addMethod(
+            getDeleteMetadataStoreMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.DeleteMetadataStoreRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_METADATA_STORE)))
+        .addMethod(
+            getCreateArtifactMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.CreateArtifactRequest,
+                    com.google.cloud.aiplatform.v1.Artifact>(service, METHODID_CREATE_ARTIFACT)))
+        .addMethod(
+            getGetArtifactMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.GetArtifactRequest,
+                    com.google.cloud.aiplatform.v1.Artifact>(service, METHODID_GET_ARTIFACT)))
+        .addMethod(
+            getListArtifactsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.ListArtifactsRequest,
+                    com.google.cloud.aiplatform.v1.ListArtifactsResponse>(
+                    service, METHODID_LIST_ARTIFACTS)))
+        .addMethod(
+            getUpdateArtifactMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.UpdateArtifactRequest,
+                    com.google.cloud.aiplatform.v1.Artifact>(service, METHODID_UPDATE_ARTIFACT)))
+        .addMethod(
+            getDeleteArtifactMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.DeleteArtifactRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_ARTIFACT)))
+        .addMethod(
+            getPurgeArtifactsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.PurgeArtifactsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_PURGE_ARTIFACTS)))
+        .addMethod(
+            getCreateContextMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.CreateContextRequest,
+                    com.google.cloud.aiplatform.v1.Context>(service, METHODID_CREATE_CONTEXT)))
+        .addMethod(
+            getGetContextMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.GetContextRequest,
+                    com.google.cloud.aiplatform.v1.Context>(service, METHODID_GET_CONTEXT)))
+        .addMethod(
+            getListContextsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.ListContextsRequest,
+                    com.google.cloud.aiplatform.v1.ListContextsResponse>(
+                    service, METHODID_LIST_CONTEXTS)))
+        .addMethod(
+            getUpdateContextMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.UpdateContextRequest,
+                    com.google.cloud.aiplatform.v1.Context>(service, METHODID_UPDATE_CONTEXT)))
+        .addMethod(
+            getDeleteContextMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.DeleteContextRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_CONTEXT)))
+        .addMethod(
+            getPurgeContextsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.PurgeContextsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_PURGE_CONTEXTS)))
+        .addMethod(
+            getAddContextArtifactsAndExecutionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.AddContextArtifactsAndExecutionsRequest,
+                    com.google.cloud.aiplatform.v1.AddContextArtifactsAndExecutionsResponse>(
+                    service, METHODID_ADD_CONTEXT_ARTIFACTS_AND_EXECUTIONS)))
+        .addMethod(
+            getAddContextChildrenMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.AddContextChildrenRequest,
+                    com.google.cloud.aiplatform.v1.AddContextChildrenResponse>(
+                    service, METHODID_ADD_CONTEXT_CHILDREN)))
+        .addMethod(
+            getRemoveContextChildrenMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.RemoveContextChildrenRequest,
+                    com.google.cloud.aiplatform.v1.RemoveContextChildrenResponse>(
+                    service, METHODID_REMOVE_CONTEXT_CHILDREN)))
+        .addMethod(
+            getQueryContextLineageSubgraphMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.QueryContextLineageSubgraphRequest,
+                    com.google.cloud.aiplatform.v1.LineageSubgraph>(
+                    service, METHODID_QUERY_CONTEXT_LINEAGE_SUBGRAPH)))
+        .addMethod(
+            getCreateExecutionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.CreateExecutionRequest,
+                    com.google.cloud.aiplatform.v1.Execution>(service, METHODID_CREATE_EXECUTION)))
+        .addMethod(
+            getGetExecutionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.GetExecutionRequest,
+                    com.google.cloud.aiplatform.v1.Execution>(service, METHODID_GET_EXECUTION)))
+        .addMethod(
+            getListExecutionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.ListExecutionsRequest,
+                    com.google.cloud.aiplatform.v1.ListExecutionsResponse>(
+                    service, METHODID_LIST_EXECUTIONS)))
+        .addMethod(
+            getUpdateExecutionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.UpdateExecutionRequest,
+                    com.google.cloud.aiplatform.v1.Execution>(service, METHODID_UPDATE_EXECUTION)))
+        .addMethod(
+            getDeleteExecutionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.DeleteExecutionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_EXECUTION)))
+        .addMethod(
+            getPurgeExecutionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.PurgeExecutionsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_PURGE_EXECUTIONS)))
+        .addMethod(
+            getAddExecutionEventsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.AddExecutionEventsRequest,
+                    com.google.cloud.aiplatform.v1.AddExecutionEventsResponse>(
+                    service, METHODID_ADD_EXECUTION_EVENTS)))
+        .addMethod(
+            getQueryExecutionInputsAndOutputsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.QueryExecutionInputsAndOutputsRequest,
+                    com.google.cloud.aiplatform.v1.LineageSubgraph>(
+                    service, METHODID_QUERY_EXECUTION_INPUTS_AND_OUTPUTS)))
+        .addMethod(
+            getCreateMetadataSchemaMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.CreateMetadataSchemaRequest,
+                    com.google.cloud.aiplatform.v1.MetadataSchema>(
+                    service, METHODID_CREATE_METADATA_SCHEMA)))
+        .addMethod(
+            getGetMetadataSchemaMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.GetMetadataSchemaRequest,
+                    com.google.cloud.aiplatform.v1.MetadataSchema>(
+                    service, METHODID_GET_METADATA_SCHEMA)))
+        .addMethod(
+            getListMetadataSchemasMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.ListMetadataSchemasRequest,
+                    com.google.cloud.aiplatform.v1.ListMetadataSchemasResponse>(
+                    service, METHODID_LIST_METADATA_SCHEMAS)))
+        .addMethod(
+            getQueryArtifactLineageSubgraphMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.QueryArtifactLineageSubgraphRequest,
+                    com.google.cloud.aiplatform.v1.LineageSubgraph>(
+                    service, METHODID_QUERY_ARTIFACT_LINEAGE_SUBGRAPH)))
+        .build();
   }
 
   private abstract static class MetadataServiceBaseDescriptorSupplier

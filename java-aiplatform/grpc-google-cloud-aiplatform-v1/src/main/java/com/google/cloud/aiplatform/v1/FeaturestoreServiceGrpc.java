@@ -1067,7 +1067,7 @@ public final class FeaturestoreServiceGrpc {
    * The service that handles CRUD and List for resources for Featurestore.
    * </pre>
    */
-  public abstract static class FeaturestoreServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -1076,7 +1076,7 @@ public final class FeaturestoreServiceGrpc {
      * Creates a new Featurestore in a given project and location.
      * </pre>
      */
-    public void createFeaturestore(
+    default void createFeaturestore(
         com.google.cloud.aiplatform.v1.CreateFeaturestoreRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1090,7 +1090,7 @@ public final class FeaturestoreServiceGrpc {
      * Gets details of a single Featurestore.
      * </pre>
      */
-    public void getFeaturestore(
+    default void getFeaturestore(
         com.google.cloud.aiplatform.v1.GetFeaturestoreRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Featurestore> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1104,7 +1104,7 @@ public final class FeaturestoreServiceGrpc {
      * Lists Featurestores in a given project and location.
      * </pre>
      */
-    public void listFeaturestores(
+    default void listFeaturestores(
         com.google.cloud.aiplatform.v1.ListFeaturestoresRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListFeaturestoresResponse>
             responseObserver) {
@@ -1119,7 +1119,7 @@ public final class FeaturestoreServiceGrpc {
      * Updates the parameters of a single Featurestore.
      * </pre>
      */
-    public void updateFeaturestore(
+    default void updateFeaturestore(
         com.google.cloud.aiplatform.v1.UpdateFeaturestoreRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1134,7 +1134,7 @@ public final class FeaturestoreServiceGrpc {
      * EntityTypes or `force` must be set to true for the request to succeed.
      * </pre>
      */
-    public void deleteFeaturestore(
+    default void deleteFeaturestore(
         com.google.cloud.aiplatform.v1.DeleteFeaturestoreRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1148,7 +1148,7 @@ public final class FeaturestoreServiceGrpc {
      * Creates a new EntityType in a given Featurestore.
      * </pre>
      */
-    public void createEntityType(
+    default void createEntityType(
         com.google.cloud.aiplatform.v1.CreateEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1162,7 +1162,7 @@ public final class FeaturestoreServiceGrpc {
      * Gets details of a single EntityType.
      * </pre>
      */
-    public void getEntityType(
+    default void getEntityType(
         com.google.cloud.aiplatform.v1.GetEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.EntityType> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1176,7 +1176,7 @@ public final class FeaturestoreServiceGrpc {
      * Lists EntityTypes in a given Featurestore.
      * </pre>
      */
-    public void listEntityTypes(
+    default void listEntityTypes(
         com.google.cloud.aiplatform.v1.ListEntityTypesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListEntityTypesResponse>
             responseObserver) {
@@ -1191,7 +1191,7 @@ public final class FeaturestoreServiceGrpc {
      * Updates the parameters of a single EntityType.
      * </pre>
      */
-    public void updateEntityType(
+    default void updateEntityType(
         com.google.cloud.aiplatform.v1.UpdateEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.EntityType> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1206,7 +1206,7 @@ public final class FeaturestoreServiceGrpc {
      * or `force` must be set to true for the request to succeed.
      * </pre>
      */
-    public void deleteEntityType(
+    default void deleteEntityType(
         com.google.cloud.aiplatform.v1.DeleteEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1220,7 +1220,7 @@ public final class FeaturestoreServiceGrpc {
      * Creates a new Feature in a given EntityType.
      * </pre>
      */
-    public void createFeature(
+    default void createFeature(
         com.google.cloud.aiplatform.v1.CreateFeatureRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1234,7 +1234,7 @@ public final class FeaturestoreServiceGrpc {
      * Creates a batch of Features in a given EntityType.
      * </pre>
      */
-    public void batchCreateFeatures(
+    default void batchCreateFeatures(
         com.google.cloud.aiplatform.v1.BatchCreateFeaturesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1248,7 +1248,7 @@ public final class FeaturestoreServiceGrpc {
      * Gets details of a single Feature.
      * </pre>
      */
-    public void getFeature(
+    default void getFeature(
         com.google.cloud.aiplatform.v1.GetFeatureRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Feature> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetFeatureMethod(), responseObserver);
@@ -1261,7 +1261,7 @@ public final class FeaturestoreServiceGrpc {
      * Lists Features in a given EntityType.
      * </pre>
      */
-    public void listFeatures(
+    default void listFeatures(
         com.google.cloud.aiplatform.v1.ListFeaturesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListFeaturesResponse>
             responseObserver) {
@@ -1276,7 +1276,7 @@ public final class FeaturestoreServiceGrpc {
      * Updates the parameters of a single Feature.
      * </pre>
      */
-    public void updateFeature(
+    default void updateFeature(
         com.google.cloud.aiplatform.v1.UpdateFeatureRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Feature> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1290,7 +1290,7 @@ public final class FeaturestoreServiceGrpc {
      * Deletes a single Feature.
      * </pre>
      */
-    public void deleteFeature(
+    default void deleteFeature(
         com.google.cloud.aiplatform.v1.DeleteFeatureRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1319,7 +1319,7 @@ public final class FeaturestoreServiceGrpc {
      *  - Online serving cluster is under-provisioned.
      * </pre>
      */
-    public void importFeatureValues(
+    default void importFeatureValues(
         com.google.cloud.aiplatform.v1.ImportFeatureValuesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1337,7 +1337,7 @@ public final class FeaturestoreServiceGrpc {
      * values of each read instance as of each instance's read timestamp.
      * </pre>
      */
-    public void batchReadFeatureValues(
+    default void batchReadFeatureValues(
         com.google.cloud.aiplatform.v1.BatchReadFeatureValuesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1351,7 +1351,7 @@ public final class FeaturestoreServiceGrpc {
      * Exports Feature values from all the entities of a target EntityType.
      * </pre>
      */
-    public void exportFeatureValues(
+    default void exportFeatureValues(
         com.google.cloud.aiplatform.v1.ExportFeatureValuesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1372,7 +1372,7 @@ public final class FeaturestoreServiceGrpc {
      * the new operation returned is marked as successfully done.
      * </pre>
      */
-    public void deleteFeatureValues(
+    default void deleteFeatureValues(
         com.google.cloud.aiplatform.v1.DeleteFeatureValuesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1386,155 +1386,33 @@ public final class FeaturestoreServiceGrpc {
      * Searches Features matching a query in a given project.
      * </pre>
      */
-    public void searchFeatures(
+    default void searchFeatures(
         com.google.cloud.aiplatform.v1.SearchFeaturesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.SearchFeaturesResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSearchFeaturesMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service FeaturestoreService.
+   *
+   * <pre>
+   * The service that handles CRUD and List for resources for Featurestore.
+   * </pre>
+   */
+  public abstract static class FeaturestoreServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateFeaturestoreMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.CreateFeaturestoreRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_FEATURESTORE)))
-          .addMethod(
-              getGetFeaturestoreMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.GetFeaturestoreRequest,
-                      com.google.cloud.aiplatform.v1.Featurestore>(
-                      this, METHODID_GET_FEATURESTORE)))
-          .addMethod(
-              getListFeaturestoresMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.ListFeaturestoresRequest,
-                      com.google.cloud.aiplatform.v1.ListFeaturestoresResponse>(
-                      this, METHODID_LIST_FEATURESTORES)))
-          .addMethod(
-              getUpdateFeaturestoreMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.UpdateFeaturestoreRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_FEATURESTORE)))
-          .addMethod(
-              getDeleteFeaturestoreMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.DeleteFeaturestoreRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_FEATURESTORE)))
-          .addMethod(
-              getCreateEntityTypeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.CreateEntityTypeRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_ENTITY_TYPE)))
-          .addMethod(
-              getGetEntityTypeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.GetEntityTypeRequest,
-                      com.google.cloud.aiplatform.v1.EntityType>(this, METHODID_GET_ENTITY_TYPE)))
-          .addMethod(
-              getListEntityTypesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.ListEntityTypesRequest,
-                      com.google.cloud.aiplatform.v1.ListEntityTypesResponse>(
-                      this, METHODID_LIST_ENTITY_TYPES)))
-          .addMethod(
-              getUpdateEntityTypeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.UpdateEntityTypeRequest,
-                      com.google.cloud.aiplatform.v1.EntityType>(
-                      this, METHODID_UPDATE_ENTITY_TYPE)))
-          .addMethod(
-              getDeleteEntityTypeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.DeleteEntityTypeRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_ENTITY_TYPE)))
-          .addMethod(
-              getCreateFeatureMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.CreateFeatureRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_FEATURE)))
-          .addMethod(
-              getBatchCreateFeaturesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.BatchCreateFeaturesRequest,
-                      com.google.longrunning.Operation>(this, METHODID_BATCH_CREATE_FEATURES)))
-          .addMethod(
-              getGetFeatureMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.GetFeatureRequest,
-                      com.google.cloud.aiplatform.v1.Feature>(this, METHODID_GET_FEATURE)))
-          .addMethod(
-              getListFeaturesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.ListFeaturesRequest,
-                      com.google.cloud.aiplatform.v1.ListFeaturesResponse>(
-                      this, METHODID_LIST_FEATURES)))
-          .addMethod(
-              getUpdateFeatureMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.UpdateFeatureRequest,
-                      com.google.cloud.aiplatform.v1.Feature>(this, METHODID_UPDATE_FEATURE)))
-          .addMethod(
-              getDeleteFeatureMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.DeleteFeatureRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_FEATURE)))
-          .addMethod(
-              getImportFeatureValuesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.ImportFeatureValuesRequest,
-                      com.google.longrunning.Operation>(this, METHODID_IMPORT_FEATURE_VALUES)))
-          .addMethod(
-              getBatchReadFeatureValuesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.BatchReadFeatureValuesRequest,
-                      com.google.longrunning.Operation>(this, METHODID_BATCH_READ_FEATURE_VALUES)))
-          .addMethod(
-              getExportFeatureValuesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.ExportFeatureValuesRequest,
-                      com.google.longrunning.Operation>(this, METHODID_EXPORT_FEATURE_VALUES)))
-          .addMethod(
-              getDeleteFeatureValuesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.DeleteFeatureValuesRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_FEATURE_VALUES)))
-          .addMethod(
-              getSearchFeaturesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.SearchFeaturesRequest,
-                      com.google.cloud.aiplatform.v1.SearchFeaturesResponse>(
-                      this, METHODID_SEARCH_FEATURES)))
-          .build();
+      return FeaturestoreServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service FeaturestoreService.
    *
    * <pre>
    * The service that handles CRUD and List for resources for Featurestore.
@@ -1920,7 +1798,7 @@ public final class FeaturestoreServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service FeaturestoreService.
    *
    * <pre>
    * The service that handles CRUD and List for resources for Featurestore.
@@ -2242,7 +2120,7 @@ public final class FeaturestoreServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service FeaturestoreService.
    *
    * <pre>
    * The service that handles CRUD and List for resources for Featurestore.
@@ -2600,10 +2478,10 @@ public final class FeaturestoreServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final FeaturestoreServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(FeaturestoreServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -2741,6 +2619,143 @@ public final class FeaturestoreServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateFeaturestoreMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.CreateFeaturestoreRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_FEATURESTORE)))
+        .addMethod(
+            getGetFeaturestoreMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.GetFeaturestoreRequest,
+                    com.google.cloud.aiplatform.v1.Featurestore>(
+                    service, METHODID_GET_FEATURESTORE)))
+        .addMethod(
+            getListFeaturestoresMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.ListFeaturestoresRequest,
+                    com.google.cloud.aiplatform.v1.ListFeaturestoresResponse>(
+                    service, METHODID_LIST_FEATURESTORES)))
+        .addMethod(
+            getUpdateFeaturestoreMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.UpdateFeaturestoreRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_FEATURESTORE)))
+        .addMethod(
+            getDeleteFeaturestoreMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.DeleteFeaturestoreRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_FEATURESTORE)))
+        .addMethod(
+            getCreateEntityTypeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.CreateEntityTypeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_ENTITY_TYPE)))
+        .addMethod(
+            getGetEntityTypeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.GetEntityTypeRequest,
+                    com.google.cloud.aiplatform.v1.EntityType>(service, METHODID_GET_ENTITY_TYPE)))
+        .addMethod(
+            getListEntityTypesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.ListEntityTypesRequest,
+                    com.google.cloud.aiplatform.v1.ListEntityTypesResponse>(
+                    service, METHODID_LIST_ENTITY_TYPES)))
+        .addMethod(
+            getUpdateEntityTypeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.UpdateEntityTypeRequest,
+                    com.google.cloud.aiplatform.v1.EntityType>(
+                    service, METHODID_UPDATE_ENTITY_TYPE)))
+        .addMethod(
+            getDeleteEntityTypeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.DeleteEntityTypeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_ENTITY_TYPE)))
+        .addMethod(
+            getCreateFeatureMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.CreateFeatureRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_FEATURE)))
+        .addMethod(
+            getBatchCreateFeaturesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.BatchCreateFeaturesRequest,
+                    com.google.longrunning.Operation>(service, METHODID_BATCH_CREATE_FEATURES)))
+        .addMethod(
+            getGetFeatureMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.GetFeatureRequest,
+                    com.google.cloud.aiplatform.v1.Feature>(service, METHODID_GET_FEATURE)))
+        .addMethod(
+            getListFeaturesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.ListFeaturesRequest,
+                    com.google.cloud.aiplatform.v1.ListFeaturesResponse>(
+                    service, METHODID_LIST_FEATURES)))
+        .addMethod(
+            getUpdateFeatureMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.UpdateFeatureRequest,
+                    com.google.cloud.aiplatform.v1.Feature>(service, METHODID_UPDATE_FEATURE)))
+        .addMethod(
+            getDeleteFeatureMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.DeleteFeatureRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_FEATURE)))
+        .addMethod(
+            getImportFeatureValuesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.ImportFeatureValuesRequest,
+                    com.google.longrunning.Operation>(service, METHODID_IMPORT_FEATURE_VALUES)))
+        .addMethod(
+            getBatchReadFeatureValuesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.BatchReadFeatureValuesRequest,
+                    com.google.longrunning.Operation>(service, METHODID_BATCH_READ_FEATURE_VALUES)))
+        .addMethod(
+            getExportFeatureValuesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.ExportFeatureValuesRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EXPORT_FEATURE_VALUES)))
+        .addMethod(
+            getDeleteFeatureValuesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.DeleteFeatureValuesRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_FEATURE_VALUES)))
+        .addMethod(
+            getSearchFeaturesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.SearchFeaturesRequest,
+                    com.google.cloud.aiplatform.v1.SearchFeaturesResponse>(
+                    service, METHODID_SEARCH_FEATURES)))
+        .build();
   }
 
   private abstract static class FeaturestoreServiceBaseDescriptorSupplier

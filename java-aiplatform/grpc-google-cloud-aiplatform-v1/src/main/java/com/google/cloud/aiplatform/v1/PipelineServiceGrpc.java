@@ -555,7 +555,7 @@ public final class PipelineServiceGrpc {
    * `PipelineJob` resources (used for Vertex AI Pipelines).
    * </pre>
    */
-  public abstract static class PipelineServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -565,7 +565,7 @@ public final class PipelineServiceGrpc {
      * attempted to be run.
      * </pre>
      */
-    public void createTrainingPipeline(
+    default void createTrainingPipeline(
         com.google.cloud.aiplatform.v1.CreateTrainingPipelineRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.TrainingPipeline>
             responseObserver) {
@@ -580,7 +580,7 @@ public final class PipelineServiceGrpc {
      * Gets a TrainingPipeline.
      * </pre>
      */
-    public void getTrainingPipeline(
+    default void getTrainingPipeline(
         com.google.cloud.aiplatform.v1.GetTrainingPipelineRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.TrainingPipeline>
             responseObserver) {
@@ -595,7 +595,7 @@ public final class PipelineServiceGrpc {
      * Lists TrainingPipelines in a Location.
      * </pre>
      */
-    public void listTrainingPipelines(
+    default void listTrainingPipelines(
         com.google.cloud.aiplatform.v1.ListTrainingPipelinesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListTrainingPipelinesResponse>
             responseObserver) {
@@ -610,7 +610,7 @@ public final class PipelineServiceGrpc {
      * Deletes a TrainingPipeline.
      * </pre>
      */
-    public void deleteTrainingPipeline(
+    default void deleteTrainingPipeline(
         com.google.cloud.aiplatform.v1.DeleteTrainingPipelineRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -637,7 +637,7 @@ public final class PipelineServiceGrpc {
      * is set to `CANCELLED`.
      * </pre>
      */
-    public void cancelTrainingPipeline(
+    default void cancelTrainingPipeline(
         com.google.cloud.aiplatform.v1.CancelTrainingPipelineRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -651,7 +651,7 @@ public final class PipelineServiceGrpc {
      * Creates a PipelineJob. A PipelineJob will run immediately when created.
      * </pre>
      */
-    public void createPipelineJob(
+    default void createPipelineJob(
         com.google.cloud.aiplatform.v1.CreatePipelineJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.PipelineJob> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -665,7 +665,7 @@ public final class PipelineServiceGrpc {
      * Gets a PipelineJob.
      * </pre>
      */
-    public void getPipelineJob(
+    default void getPipelineJob(
         com.google.cloud.aiplatform.v1.GetPipelineJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.PipelineJob> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -679,7 +679,7 @@ public final class PipelineServiceGrpc {
      * Lists PipelineJobs in a Location.
      * </pre>
      */
-    public void listPipelineJobs(
+    default void listPipelineJobs(
         com.google.cloud.aiplatform.v1.ListPipelineJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListPipelineJobsResponse>
             responseObserver) {
@@ -694,7 +694,7 @@ public final class PipelineServiceGrpc {
      * Deletes a PipelineJob.
      * </pre>
      */
-    public void deletePipelineJob(
+    default void deletePipelineJob(
         com.google.cloud.aiplatform.v1.DeletePipelineJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -720,87 +720,34 @@ public final class PipelineServiceGrpc {
      * `CANCELLED`.
      * </pre>
      */
-    public void cancelPipelineJob(
+    default void cancelPipelineJob(
         com.google.cloud.aiplatform.v1.CancelPipelineJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCancelPipelineJobMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service PipelineService.
+   *
+   * <pre>
+   * A service for creating and managing Vertex AI's pipelines. This includes both
+   * `TrainingPipeline` resources (used for AutoML and custom training) and
+   * `PipelineJob` resources (used for Vertex AI Pipelines).
+   * </pre>
+   */
+  public abstract static class PipelineServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateTrainingPipelineMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.CreateTrainingPipelineRequest,
-                      com.google.cloud.aiplatform.v1.TrainingPipeline>(
-                      this, METHODID_CREATE_TRAINING_PIPELINE)))
-          .addMethod(
-              getGetTrainingPipelineMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.GetTrainingPipelineRequest,
-                      com.google.cloud.aiplatform.v1.TrainingPipeline>(
-                      this, METHODID_GET_TRAINING_PIPELINE)))
-          .addMethod(
-              getListTrainingPipelinesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.ListTrainingPipelinesRequest,
-                      com.google.cloud.aiplatform.v1.ListTrainingPipelinesResponse>(
-                      this, METHODID_LIST_TRAINING_PIPELINES)))
-          .addMethod(
-              getDeleteTrainingPipelineMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.DeleteTrainingPipelineRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_TRAINING_PIPELINE)))
-          .addMethod(
-              getCancelTrainingPipelineMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.CancelTrainingPipelineRequest,
-                      com.google.protobuf.Empty>(this, METHODID_CANCEL_TRAINING_PIPELINE)))
-          .addMethod(
-              getCreatePipelineJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.CreatePipelineJobRequest,
-                      com.google.cloud.aiplatform.v1.PipelineJob>(
-                      this, METHODID_CREATE_PIPELINE_JOB)))
-          .addMethod(
-              getGetPipelineJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.GetPipelineJobRequest,
-                      com.google.cloud.aiplatform.v1.PipelineJob>(this, METHODID_GET_PIPELINE_JOB)))
-          .addMethod(
-              getListPipelineJobsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.ListPipelineJobsRequest,
-                      com.google.cloud.aiplatform.v1.ListPipelineJobsResponse>(
-                      this, METHODID_LIST_PIPELINE_JOBS)))
-          .addMethod(
-              getDeletePipelineJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.DeletePipelineJobRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_PIPELINE_JOB)))
-          .addMethod(
-              getCancelPipelineJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.CancelPipelineJobRequest,
-                      com.google.protobuf.Empty>(this, METHODID_CANCEL_PIPELINE_JOB)))
-          .build();
+      return PipelineServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service PipelineService.
    *
    * <pre>
    * A service for creating and managing Vertex AI's pipelines. This includes both
@@ -1011,7 +958,7 @@ public final class PipelineServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service PipelineService.
    *
    * <pre>
    * A service for creating and managing Vertex AI's pipelines. This includes both
@@ -1189,7 +1136,7 @@ public final class PipelineServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service PipelineService.
    *
    * <pre>
    * A service for creating and managing Vertex AI's pipelines. This includes both
@@ -1391,10 +1338,10 @@ public final class PipelineServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final PipelineServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(PipelineServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1474,6 +1421,77 @@ public final class PipelineServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateTrainingPipelineMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.CreateTrainingPipelineRequest,
+                    com.google.cloud.aiplatform.v1.TrainingPipeline>(
+                    service, METHODID_CREATE_TRAINING_PIPELINE)))
+        .addMethod(
+            getGetTrainingPipelineMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.GetTrainingPipelineRequest,
+                    com.google.cloud.aiplatform.v1.TrainingPipeline>(
+                    service, METHODID_GET_TRAINING_PIPELINE)))
+        .addMethod(
+            getListTrainingPipelinesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.ListTrainingPipelinesRequest,
+                    com.google.cloud.aiplatform.v1.ListTrainingPipelinesResponse>(
+                    service, METHODID_LIST_TRAINING_PIPELINES)))
+        .addMethod(
+            getDeleteTrainingPipelineMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.DeleteTrainingPipelineRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_TRAINING_PIPELINE)))
+        .addMethod(
+            getCancelTrainingPipelineMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.CancelTrainingPipelineRequest,
+                    com.google.protobuf.Empty>(service, METHODID_CANCEL_TRAINING_PIPELINE)))
+        .addMethod(
+            getCreatePipelineJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.CreatePipelineJobRequest,
+                    com.google.cloud.aiplatform.v1.PipelineJob>(
+                    service, METHODID_CREATE_PIPELINE_JOB)))
+        .addMethod(
+            getGetPipelineJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.GetPipelineJobRequest,
+                    com.google.cloud.aiplatform.v1.PipelineJob>(
+                    service, METHODID_GET_PIPELINE_JOB)))
+        .addMethod(
+            getListPipelineJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.ListPipelineJobsRequest,
+                    com.google.cloud.aiplatform.v1.ListPipelineJobsResponse>(
+                    service, METHODID_LIST_PIPELINE_JOBS)))
+        .addMethod(
+            getDeletePipelineJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.DeletePipelineJobRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_PIPELINE_JOB)))
+        .addMethod(
+            getCancelPipelineJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.CancelPipelineJobRequest,
+                    com.google.protobuf.Empty>(service, METHODID_CANCEL_PIPELINE_JOB)))
+        .build();
   }
 
   private abstract static class PipelineServiceBaseDescriptorSupplier

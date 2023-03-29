@@ -939,7 +939,7 @@ public final class ModelServiceGrpc {
    * A service for managing Vertex AI's machine learning Models.
    * </pre>
    */
-  public abstract static class ModelServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -948,7 +948,7 @@ public final class ModelServiceGrpc {
      * Uploads a Model artifact into Vertex AI.
      * </pre>
      */
-    public void uploadModel(
+    default void uploadModel(
         com.google.cloud.aiplatform.v1beta1.UploadModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -962,7 +962,7 @@ public final class ModelServiceGrpc {
      * Gets a Model.
      * </pre>
      */
-    public void getModel(
+    default void getModel(
         com.google.cloud.aiplatform.v1beta1.GetModelRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.Model> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetModelMethod(), responseObserver);
@@ -975,7 +975,7 @@ public final class ModelServiceGrpc {
      * Lists Models in a Location.
      * </pre>
      */
-    public void listModels(
+    default void listModels(
         com.google.cloud.aiplatform.v1beta1.ListModelsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListModelsResponse>
             responseObserver) {
@@ -989,7 +989,7 @@ public final class ModelServiceGrpc {
      * Lists versions of the specified model.
      * </pre>
      */
-    public void listModelVersions(
+    default void listModelVersions(
         com.google.cloud.aiplatform.v1beta1.ListModelVersionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListModelVersionsResponse>
             responseObserver) {
@@ -1004,7 +1004,7 @@ public final class ModelServiceGrpc {
      * Updates a Model.
      * </pre>
      */
-    public void updateModel(
+    default void updateModel(
         com.google.cloud.aiplatform.v1beta1.UpdateModelRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.Model> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1018,7 +1018,7 @@ public final class ModelServiceGrpc {
      * Incrementally update the dataset used for an examples model.
      * </pre>
      */
-    public void updateExplanationDataset(
+    default void updateExplanationDataset(
         com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1038,7 +1038,7 @@ public final class ModelServiceGrpc {
      * field.
      * </pre>
      */
-    public void deleteModel(
+    default void deleteModel(
         com.google.cloud.aiplatform.v1beta1.DeleteModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1057,7 +1057,7 @@ public final class ModelServiceGrpc {
      * deleting the Model instead.
      * </pre>
      */
-    public void deleteModelVersion(
+    default void deleteModelVersion(
         com.google.cloud.aiplatform.v1beta1.DeleteModelVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1071,7 +1071,7 @@ public final class ModelServiceGrpc {
      * Merges a set of aliases for a Model version.
      * </pre>
      */
-    public void mergeVersionAliases(
+    default void mergeVersionAliases(
         com.google.cloud.aiplatform.v1beta1.MergeVersionAliasesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.Model> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1088,7 +1088,7 @@ public final class ModelServiceGrpc {
      * format][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
      * </pre>
      */
-    public void exportModel(
+    default void exportModel(
         com.google.cloud.aiplatform.v1beta1.ExportModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1107,7 +1107,7 @@ public final class ModelServiceGrpc {
      * it depends on remain accessible.
      * </pre>
      */
-    public void copyModel(
+    default void copyModel(
         com.google.cloud.aiplatform.v1beta1.CopyModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCopyModelMethod(), responseObserver);
@@ -1120,7 +1120,7 @@ public final class ModelServiceGrpc {
      * Imports an externally generated ModelEvaluation.
      * </pre>
      */
-    public void importModelEvaluation(
+    default void importModelEvaluation(
         com.google.cloud.aiplatform.v1beta1.ImportModelEvaluationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ModelEvaluation>
             responseObserver) {
@@ -1135,7 +1135,7 @@ public final class ModelServiceGrpc {
      * Imports a list of externally generated ModelEvaluationSlice.
      * </pre>
      */
-    public void batchImportModelEvaluationSlices(
+    default void batchImportModelEvaluationSlices(
         com.google.cloud.aiplatform.v1beta1.BatchImportModelEvaluationSlicesRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.aiplatform.v1beta1.BatchImportModelEvaluationSlicesResponse>
@@ -1151,7 +1151,7 @@ public final class ModelServiceGrpc {
      * Imports a list of externally generated EvaluatedAnnotations.
      * </pre>
      */
-    public void batchImportEvaluatedAnnotations(
+    default void batchImportEvaluatedAnnotations(
         com.google.cloud.aiplatform.v1beta1.BatchImportEvaluatedAnnotationsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.aiplatform.v1beta1.BatchImportEvaluatedAnnotationsResponse>
@@ -1167,7 +1167,7 @@ public final class ModelServiceGrpc {
      * Gets a ModelEvaluation.
      * </pre>
      */
-    public void getModelEvaluation(
+    default void getModelEvaluation(
         com.google.cloud.aiplatform.v1beta1.GetModelEvaluationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ModelEvaluation>
             responseObserver) {
@@ -1182,7 +1182,7 @@ public final class ModelServiceGrpc {
      * Lists ModelEvaluations in a Model.
      * </pre>
      */
-    public void listModelEvaluations(
+    default void listModelEvaluations(
         com.google.cloud.aiplatform.v1beta1.ListModelEvaluationsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.aiplatform.v1beta1.ListModelEvaluationsResponse>
@@ -1198,7 +1198,7 @@ public final class ModelServiceGrpc {
      * Gets a ModelEvaluationSlice.
      * </pre>
      */
-    public void getModelEvaluationSlice(
+    default void getModelEvaluationSlice(
         com.google.cloud.aiplatform.v1beta1.GetModelEvaluationSliceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice>
             responseObserver) {
@@ -1213,7 +1213,7 @@ public final class ModelServiceGrpc {
      * Lists ModelEvaluationSlices in a ModelEvaluation.
      * </pre>
      */
-    public void listModelEvaluationSlices(
+    default void listModelEvaluationSlices(
         com.google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesResponse>
@@ -1221,134 +1221,26 @@ public final class ModelServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListModelEvaluationSlicesMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ModelService.
+   *
+   * <pre>
+   * A service for managing Vertex AI's machine learning Models.
+   * </pre>
+   */
+  public abstract static class ModelServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getUploadModelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.UploadModelRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPLOAD_MODEL)))
-          .addMethod(
-              getGetModelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.GetModelRequest,
-                      com.google.cloud.aiplatform.v1beta1.Model>(this, METHODID_GET_MODEL)))
-          .addMethod(
-              getListModelsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.ListModelsRequest,
-                      com.google.cloud.aiplatform.v1beta1.ListModelsResponse>(
-                      this, METHODID_LIST_MODELS)))
-          .addMethod(
-              getListModelVersionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.ListModelVersionsRequest,
-                      com.google.cloud.aiplatform.v1beta1.ListModelVersionsResponse>(
-                      this, METHODID_LIST_MODEL_VERSIONS)))
-          .addMethod(
-              getUpdateModelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.UpdateModelRequest,
-                      com.google.cloud.aiplatform.v1beta1.Model>(this, METHODID_UPDATE_MODEL)))
-          .addMethod(
-              getUpdateExplanationDatasetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_EXPLANATION_DATASET)))
-          .addMethod(
-              getDeleteModelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.DeleteModelRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_MODEL)))
-          .addMethod(
-              getDeleteModelVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.DeleteModelVersionRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_MODEL_VERSION)))
-          .addMethod(
-              getMergeVersionAliasesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.MergeVersionAliasesRequest,
-                      com.google.cloud.aiplatform.v1beta1.Model>(
-                      this, METHODID_MERGE_VERSION_ALIASES)))
-          .addMethod(
-              getExportModelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.ExportModelRequest,
-                      com.google.longrunning.Operation>(this, METHODID_EXPORT_MODEL)))
-          .addMethod(
-              getCopyModelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.CopyModelRequest,
-                      com.google.longrunning.Operation>(this, METHODID_COPY_MODEL)))
-          .addMethod(
-              getImportModelEvaluationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.ImportModelEvaluationRequest,
-                      com.google.cloud.aiplatform.v1beta1.ModelEvaluation>(
-                      this, METHODID_IMPORT_MODEL_EVALUATION)))
-          .addMethod(
-              getBatchImportModelEvaluationSlicesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.BatchImportModelEvaluationSlicesRequest,
-                      com.google.cloud.aiplatform.v1beta1.BatchImportModelEvaluationSlicesResponse>(
-                      this, METHODID_BATCH_IMPORT_MODEL_EVALUATION_SLICES)))
-          .addMethod(
-              getBatchImportEvaluatedAnnotationsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.BatchImportEvaluatedAnnotationsRequest,
-                      com.google.cloud.aiplatform.v1beta1.BatchImportEvaluatedAnnotationsResponse>(
-                      this, METHODID_BATCH_IMPORT_EVALUATED_ANNOTATIONS)))
-          .addMethod(
-              getGetModelEvaluationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.GetModelEvaluationRequest,
-                      com.google.cloud.aiplatform.v1beta1.ModelEvaluation>(
-                      this, METHODID_GET_MODEL_EVALUATION)))
-          .addMethod(
-              getListModelEvaluationsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.ListModelEvaluationsRequest,
-                      com.google.cloud.aiplatform.v1beta1.ListModelEvaluationsResponse>(
-                      this, METHODID_LIST_MODEL_EVALUATIONS)))
-          .addMethod(
-              getGetModelEvaluationSliceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.GetModelEvaluationSliceRequest,
-                      com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice>(
-                      this, METHODID_GET_MODEL_EVALUATION_SLICE)))
-          .addMethod(
-              getListModelEvaluationSlicesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesRequest,
-                      com.google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesResponse>(
-                      this, METHODID_LIST_MODEL_EVALUATION_SLICES)))
-          .build();
+      return ModelServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ModelService.
    *
    * <pre>
    * A service for managing Vertex AI's machine learning Models.
@@ -1681,7 +1573,7 @@ public final class ModelServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ModelService.
    *
    * <pre>
    * A service for managing Vertex AI's machine learning Models.
@@ -1957,7 +1849,7 @@ public final class ModelServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service ModelService.
    *
    * <pre>
    * A service for managing Vertex AI's machine learning Models.
@@ -2275,10 +2167,10 @@ public final class ModelServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ModelServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ModelServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -2409,6 +2301,130 @@ public final class ModelServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getUploadModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.UploadModelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPLOAD_MODEL)))
+        .addMethod(
+            getGetModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.GetModelRequest,
+                    com.google.cloud.aiplatform.v1beta1.Model>(service, METHODID_GET_MODEL)))
+        .addMethod(
+            getListModelsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.ListModelsRequest,
+                    com.google.cloud.aiplatform.v1beta1.ListModelsResponse>(
+                    service, METHODID_LIST_MODELS)))
+        .addMethod(
+            getListModelVersionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.ListModelVersionsRequest,
+                    com.google.cloud.aiplatform.v1beta1.ListModelVersionsResponse>(
+                    service, METHODID_LIST_MODEL_VERSIONS)))
+        .addMethod(
+            getUpdateModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.UpdateModelRequest,
+                    com.google.cloud.aiplatform.v1beta1.Model>(service, METHODID_UPDATE_MODEL)))
+        .addMethod(
+            getUpdateExplanationDatasetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.UpdateExplanationDatasetRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_EXPLANATION_DATASET)))
+        .addMethod(
+            getDeleteModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.DeleteModelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_MODEL)))
+        .addMethod(
+            getDeleteModelVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.DeleteModelVersionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_MODEL_VERSION)))
+        .addMethod(
+            getMergeVersionAliasesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.MergeVersionAliasesRequest,
+                    com.google.cloud.aiplatform.v1beta1.Model>(
+                    service, METHODID_MERGE_VERSION_ALIASES)))
+        .addMethod(
+            getExportModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.ExportModelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EXPORT_MODEL)))
+        .addMethod(
+            getCopyModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.CopyModelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_COPY_MODEL)))
+        .addMethod(
+            getImportModelEvaluationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.ImportModelEvaluationRequest,
+                    com.google.cloud.aiplatform.v1beta1.ModelEvaluation>(
+                    service, METHODID_IMPORT_MODEL_EVALUATION)))
+        .addMethod(
+            getBatchImportModelEvaluationSlicesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.BatchImportModelEvaluationSlicesRequest,
+                    com.google.cloud.aiplatform.v1beta1.BatchImportModelEvaluationSlicesResponse>(
+                    service, METHODID_BATCH_IMPORT_MODEL_EVALUATION_SLICES)))
+        .addMethod(
+            getBatchImportEvaluatedAnnotationsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.BatchImportEvaluatedAnnotationsRequest,
+                    com.google.cloud.aiplatform.v1beta1.BatchImportEvaluatedAnnotationsResponse>(
+                    service, METHODID_BATCH_IMPORT_EVALUATED_ANNOTATIONS)))
+        .addMethod(
+            getGetModelEvaluationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.GetModelEvaluationRequest,
+                    com.google.cloud.aiplatform.v1beta1.ModelEvaluation>(
+                    service, METHODID_GET_MODEL_EVALUATION)))
+        .addMethod(
+            getListModelEvaluationsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.ListModelEvaluationsRequest,
+                    com.google.cloud.aiplatform.v1beta1.ListModelEvaluationsResponse>(
+                    service, METHODID_LIST_MODEL_EVALUATIONS)))
+        .addMethod(
+            getGetModelEvaluationSliceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.GetModelEvaluationSliceRequest,
+                    com.google.cloud.aiplatform.v1beta1.ModelEvaluationSlice>(
+                    service, METHODID_GET_MODEL_EVALUATION_SLICE)))
+        .addMethod(
+            getListModelEvaluationSlicesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesRequest,
+                    com.google.cloud.aiplatform.v1beta1.ListModelEvaluationSlicesResponse>(
+                    service, METHODID_LIST_MODEL_EVALUATION_SLICES)))
+        .build();
   }
 
   private abstract static class ModelServiceBaseDescriptorSupplier

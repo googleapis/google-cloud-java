@@ -747,7 +747,7 @@ public final class VizierServiceGrpc {
    * learning architectures.
    * </pre>
    */
-  public abstract static class VizierServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -757,7 +757,7 @@ public final class VizierServiceGrpc {
      * Study.
      * </pre>
      */
-    public void createStudy(
+    default void createStudy(
         com.google.cloud.aiplatform.v1.CreateStudyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Study> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -771,7 +771,7 @@ public final class VizierServiceGrpc {
      * Gets a Study by name.
      * </pre>
      */
-    public void getStudy(
+    default void getStudy(
         com.google.cloud.aiplatform.v1.GetStudyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Study> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetStudyMethod(), responseObserver);
@@ -784,7 +784,7 @@ public final class VizierServiceGrpc {
      * Lists all the studies in a region for an associated project.
      * </pre>
      */
-    public void listStudies(
+    default void listStudies(
         com.google.cloud.aiplatform.v1.ListStudiesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListStudiesResponse>
             responseObserver) {
@@ -799,7 +799,7 @@ public final class VizierServiceGrpc {
      * Deletes a Study.
      * </pre>
      */
-    public void deleteStudy(
+    default void deleteStudy(
         com.google.cloud.aiplatform.v1.DeleteStudyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -814,7 +814,7 @@ public final class VizierServiceGrpc {
      * fully qualified resource name.
      * </pre>
      */
-    public void lookupStudy(
+    default void lookupStudy(
         com.google.cloud.aiplatform.v1.LookupStudyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Study> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -832,7 +832,7 @@ public final class VizierServiceGrpc {
      * a [SuggestTrialsResponse][google.cloud.ml.v1.SuggestTrialsResponse].
      * </pre>
      */
-    public void suggestTrials(
+    default void suggestTrials(
         com.google.cloud.aiplatform.v1.SuggestTrialsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -846,7 +846,7 @@ public final class VizierServiceGrpc {
      * Adds a user provided Trial to a Study.
      * </pre>
      */
-    public void createTrial(
+    default void createTrial(
         com.google.cloud.aiplatform.v1.CreateTrialRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Trial> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -860,7 +860,7 @@ public final class VizierServiceGrpc {
      * Gets a Trial.
      * </pre>
      */
-    public void getTrial(
+    default void getTrial(
         com.google.cloud.aiplatform.v1.GetTrialRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Trial> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetTrialMethod(), responseObserver);
@@ -873,7 +873,7 @@ public final class VizierServiceGrpc {
      * Lists the Trials associated with a Study.
      * </pre>
      */
-    public void listTrials(
+    default void listTrials(
         com.google.cloud.aiplatform.v1.ListTrialsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListTrialsResponse>
             responseObserver) {
@@ -888,7 +888,7 @@ public final class VizierServiceGrpc {
      * is assumed to have been taken before the Trial is complete.
      * </pre>
      */
-    public void addTrialMeasurement(
+    default void addTrialMeasurement(
         com.google.cloud.aiplatform.v1.AddTrialMeasurementRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Trial> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -902,7 +902,7 @@ public final class VizierServiceGrpc {
      * Marks a Trial as complete.
      * </pre>
      */
-    public void completeTrial(
+    default void completeTrial(
         com.google.cloud.aiplatform.v1.CompleteTrialRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Trial> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -916,7 +916,7 @@ public final class VizierServiceGrpc {
      * Deletes a Trial.
      * </pre>
      */
-    public void deleteTrial(
+    default void deleteTrial(
         com.google.cloud.aiplatform.v1.DeleteTrialRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -933,7 +933,7 @@ public final class VizierServiceGrpc {
      * [CheckTrialEarlyStoppingStateResponse][google.cloud.aiplatform.v1.CheckTrialEarlyStoppingStateResponse].
      * </pre>
      */
-    public void checkTrialEarlyStoppingState(
+    default void checkTrialEarlyStoppingState(
         com.google.cloud.aiplatform.v1.CheckTrialEarlyStoppingStateRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -947,7 +947,7 @@ public final class VizierServiceGrpc {
      * Stops a Trial.
      * </pre>
      */
-    public void stopTrial(
+    default void stopTrial(
         com.google.cloud.aiplatform.v1.StopTrialRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Trial> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStopTrialMethod(), responseObserver);
@@ -963,117 +963,36 @@ public final class VizierServiceGrpc {
      * https://en.wikipedia.org/wiki/Pareto_efficiency
      * </pre>
      */
-    public void listOptimalTrials(
+    default void listOptimalTrials(
         com.google.cloud.aiplatform.v1.ListOptimalTrialsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListOptimalTrialsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListOptimalTrialsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service VizierService.
+   *
+   * <pre>
+   * Vertex AI Vizier API.
+   * Vertex AI Vizier is a service to solve blackbox optimization problems,
+   * such as tuning machine learning hyperparameters and searching over deep
+   * learning architectures.
+   * </pre>
+   */
+  public abstract static class VizierServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateStudyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.CreateStudyRequest,
-                      com.google.cloud.aiplatform.v1.Study>(this, METHODID_CREATE_STUDY)))
-          .addMethod(
-              getGetStudyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.GetStudyRequest,
-                      com.google.cloud.aiplatform.v1.Study>(this, METHODID_GET_STUDY)))
-          .addMethod(
-              getListStudiesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.ListStudiesRequest,
-                      com.google.cloud.aiplatform.v1.ListStudiesResponse>(
-                      this, METHODID_LIST_STUDIES)))
-          .addMethod(
-              getDeleteStudyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.DeleteStudyRequest, com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_STUDY)))
-          .addMethod(
-              getLookupStudyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.LookupStudyRequest,
-                      com.google.cloud.aiplatform.v1.Study>(this, METHODID_LOOKUP_STUDY)))
-          .addMethod(
-              getSuggestTrialsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.SuggestTrialsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_SUGGEST_TRIALS)))
-          .addMethod(
-              getCreateTrialMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.CreateTrialRequest,
-                      com.google.cloud.aiplatform.v1.Trial>(this, METHODID_CREATE_TRIAL)))
-          .addMethod(
-              getGetTrialMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.GetTrialRequest,
-                      com.google.cloud.aiplatform.v1.Trial>(this, METHODID_GET_TRIAL)))
-          .addMethod(
-              getListTrialsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.ListTrialsRequest,
-                      com.google.cloud.aiplatform.v1.ListTrialsResponse>(
-                      this, METHODID_LIST_TRIALS)))
-          .addMethod(
-              getAddTrialMeasurementMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.AddTrialMeasurementRequest,
-                      com.google.cloud.aiplatform.v1.Trial>(this, METHODID_ADD_TRIAL_MEASUREMENT)))
-          .addMethod(
-              getCompleteTrialMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.CompleteTrialRequest,
-                      com.google.cloud.aiplatform.v1.Trial>(this, METHODID_COMPLETE_TRIAL)))
-          .addMethod(
-              getDeleteTrialMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.DeleteTrialRequest, com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_TRIAL)))
-          .addMethod(
-              getCheckTrialEarlyStoppingStateMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.CheckTrialEarlyStoppingStateRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_CHECK_TRIAL_EARLY_STOPPING_STATE)))
-          .addMethod(
-              getStopTrialMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.StopTrialRequest,
-                      com.google.cloud.aiplatform.v1.Trial>(this, METHODID_STOP_TRIAL)))
-          .addMethod(
-              getListOptimalTrialsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.ListOptimalTrialsRequest,
-                      com.google.cloud.aiplatform.v1.ListOptimalTrialsResponse>(
-                      this, METHODID_LIST_OPTIMAL_TRIALS)))
-          .build();
+      return VizierServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service VizierService.
    *
    * <pre>
    * Vertex AI Vizier API.
@@ -1343,7 +1262,7 @@ public final class VizierServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service VizierService.
    *
    * <pre>
    * Vertex AI Vizier API.
@@ -1574,7 +1493,7 @@ public final class VizierServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service VizierService.
    *
    * <pre>
    * Vertex AI Vizier API.
@@ -1829,10 +1748,10 @@ public final class VizierServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final VizierServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(VizierServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1934,6 +1853,105 @@ public final class VizierServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateStudyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.CreateStudyRequest,
+                    com.google.cloud.aiplatform.v1.Study>(service, METHODID_CREATE_STUDY)))
+        .addMethod(
+            getGetStudyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.GetStudyRequest,
+                    com.google.cloud.aiplatform.v1.Study>(service, METHODID_GET_STUDY)))
+        .addMethod(
+            getListStudiesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.ListStudiesRequest,
+                    com.google.cloud.aiplatform.v1.ListStudiesResponse>(
+                    service, METHODID_LIST_STUDIES)))
+        .addMethod(
+            getDeleteStudyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.DeleteStudyRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_STUDY)))
+        .addMethod(
+            getLookupStudyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.LookupStudyRequest,
+                    com.google.cloud.aiplatform.v1.Study>(service, METHODID_LOOKUP_STUDY)))
+        .addMethod(
+            getSuggestTrialsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.SuggestTrialsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_SUGGEST_TRIALS)))
+        .addMethod(
+            getCreateTrialMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.CreateTrialRequest,
+                    com.google.cloud.aiplatform.v1.Trial>(service, METHODID_CREATE_TRIAL)))
+        .addMethod(
+            getGetTrialMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.GetTrialRequest,
+                    com.google.cloud.aiplatform.v1.Trial>(service, METHODID_GET_TRIAL)))
+        .addMethod(
+            getListTrialsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.ListTrialsRequest,
+                    com.google.cloud.aiplatform.v1.ListTrialsResponse>(
+                    service, METHODID_LIST_TRIALS)))
+        .addMethod(
+            getAddTrialMeasurementMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.AddTrialMeasurementRequest,
+                    com.google.cloud.aiplatform.v1.Trial>(service, METHODID_ADD_TRIAL_MEASUREMENT)))
+        .addMethod(
+            getCompleteTrialMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.CompleteTrialRequest,
+                    com.google.cloud.aiplatform.v1.Trial>(service, METHODID_COMPLETE_TRIAL)))
+        .addMethod(
+            getDeleteTrialMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.DeleteTrialRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_TRIAL)))
+        .addMethod(
+            getCheckTrialEarlyStoppingStateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.CheckTrialEarlyStoppingStateRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CHECK_TRIAL_EARLY_STOPPING_STATE)))
+        .addMethod(
+            getStopTrialMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.StopTrialRequest,
+                    com.google.cloud.aiplatform.v1.Trial>(service, METHODID_STOP_TRIAL)))
+        .addMethod(
+            getListOptimalTrialsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.ListOptimalTrialsRequest,
+                    com.google.cloud.aiplatform.v1.ListOptimalTrialsResponse>(
+                    service, METHODID_LIST_OPTIMAL_TRIALS)))
+        .build();
   }
 
   private abstract static class VizierServiceBaseDescriptorSupplier

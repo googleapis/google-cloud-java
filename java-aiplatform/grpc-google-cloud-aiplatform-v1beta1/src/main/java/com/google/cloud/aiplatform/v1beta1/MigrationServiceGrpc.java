@@ -186,7 +186,7 @@ public final class MigrationServiceGrpc {
    * datalabeling.googleapis.com and ml.googleapis.com to Vertex AI.
    * </pre>
    */
-  public abstract static class MigrationServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -197,7 +197,7 @@ public final class MigrationServiceGrpc {
      * Vertex AI's given location.
      * </pre>
      */
-    public void searchMigratableResources(
+    default void searchMigratableResources(
         com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse>
@@ -214,35 +214,33 @@ public final class MigrationServiceGrpc {
      * and datalabeling.googleapis.com to Vertex AI.
      * </pre>
      */
-    public void batchMigrateResources(
+    default void batchMigrateResources(
         com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getBatchMigrateResourcesMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service MigrationService.
+   *
+   * <pre>
+   * A service that migrates resources from automl.googleapis.com,
+   * datalabeling.googleapis.com and ml.googleapis.com to Vertex AI.
+   * </pre>
+   */
+  public abstract static class MigrationServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getSearchMigratableResourcesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest,
-                      com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse>(
-                      this, METHODID_SEARCH_MIGRATABLE_RESOURCES)))
-          .addMethod(
-              getBatchMigrateResourcesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest,
-                      com.google.longrunning.Operation>(this, METHODID_BATCH_MIGRATE_RESOURCES)))
-          .build();
+      return MigrationServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service MigrationService.
    *
    * <pre>
    * A service that migrates resources from automl.googleapis.com,
@@ -299,7 +297,7 @@ public final class MigrationServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service MigrationService.
    *
    * <pre>
    * A service that migrates resources from automl.googleapis.com,
@@ -350,7 +348,7 @@ public final class MigrationServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service MigrationService.
    *
    * <pre>
    * A service that migrates resources from automl.googleapis.com,
@@ -410,10 +408,10 @@ public final class MigrationServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final MigrationServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(MigrationServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -448,6 +446,24 @@ public final class MigrationServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getSearchMigratableResourcesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesRequest,
+                    com.google.cloud.aiplatform.v1beta1.SearchMigratableResourcesResponse>(
+                    service, METHODID_SEARCH_MIGRATABLE_RESOURCES)))
+        .addMethod(
+            getBatchMigrateResourcesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.BatchMigrateResourcesRequest,
+                    com.google.longrunning.Operation>(service, METHODID_BATCH_MIGRATE_RESOURCES)))
+        .build();
   }
 
   private abstract static class MigrationServiceBaseDescriptorSupplier

@@ -1556,7 +1556,7 @@ public final class TensorboardServiceGrpc {
    * TensorboardService
    * </pre>
    */
-  public abstract static class TensorboardServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -1565,7 +1565,7 @@ public final class TensorboardServiceGrpc {
      * Creates a Tensorboard.
      * </pre>
      */
-    public void createTensorboard(
+    default void createTensorboard(
         com.google.cloud.aiplatform.v1.CreateTensorboardRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1579,7 +1579,7 @@ public final class TensorboardServiceGrpc {
      * Gets a Tensorboard.
      * </pre>
      */
-    public void getTensorboard(
+    default void getTensorboard(
         com.google.cloud.aiplatform.v1.GetTensorboardRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.Tensorboard> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1593,7 +1593,7 @@ public final class TensorboardServiceGrpc {
      * Returns a list of monthly active users for a given TensorBoard instance.
      * </pre>
      */
-    public void readTensorboardUsage(
+    default void readTensorboardUsage(
         com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse>
             responseObserver) {
@@ -1608,7 +1608,7 @@ public final class TensorboardServiceGrpc {
      * Updates a Tensorboard.
      * </pre>
      */
-    public void updateTensorboard(
+    default void updateTensorboard(
         com.google.cloud.aiplatform.v1.UpdateTensorboardRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1622,7 +1622,7 @@ public final class TensorboardServiceGrpc {
      * Lists Tensorboards in a Location.
      * </pre>
      */
-    public void listTensorboards(
+    default void listTensorboards(
         com.google.cloud.aiplatform.v1.ListTensorboardsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListTensorboardsResponse>
             responseObserver) {
@@ -1637,7 +1637,7 @@ public final class TensorboardServiceGrpc {
      * Deletes a Tensorboard.
      * </pre>
      */
-    public void deleteTensorboard(
+    default void deleteTensorboard(
         com.google.cloud.aiplatform.v1.DeleteTensorboardRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1651,7 +1651,7 @@ public final class TensorboardServiceGrpc {
      * Creates a TensorboardExperiment.
      * </pre>
      */
-    public void createTensorboardExperiment(
+    default void createTensorboardExperiment(
         com.google.cloud.aiplatform.v1.CreateTensorboardExperimentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.TensorboardExperiment>
             responseObserver) {
@@ -1666,7 +1666,7 @@ public final class TensorboardServiceGrpc {
      * Gets a TensorboardExperiment.
      * </pre>
      */
-    public void getTensorboardExperiment(
+    default void getTensorboardExperiment(
         com.google.cloud.aiplatform.v1.GetTensorboardExperimentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.TensorboardExperiment>
             responseObserver) {
@@ -1681,7 +1681,7 @@ public final class TensorboardServiceGrpc {
      * Updates a TensorboardExperiment.
      * </pre>
      */
-    public void updateTensorboardExperiment(
+    default void updateTensorboardExperiment(
         com.google.cloud.aiplatform.v1.UpdateTensorboardExperimentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.TensorboardExperiment>
             responseObserver) {
@@ -1696,7 +1696,7 @@ public final class TensorboardServiceGrpc {
      * Lists TensorboardExperiments in a Location.
      * </pre>
      */
-    public void listTensorboardExperiments(
+    default void listTensorboardExperiments(
         com.google.cloud.aiplatform.v1.ListTensorboardExperimentsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.aiplatform.v1.ListTensorboardExperimentsResponse>
@@ -1712,7 +1712,7 @@ public final class TensorboardServiceGrpc {
      * Deletes a TensorboardExperiment.
      * </pre>
      */
-    public void deleteTensorboardExperiment(
+    default void deleteTensorboardExperiment(
         com.google.cloud.aiplatform.v1.DeleteTensorboardExperimentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1726,7 +1726,7 @@ public final class TensorboardServiceGrpc {
      * Creates a TensorboardRun.
      * </pre>
      */
-    public void createTensorboardRun(
+    default void createTensorboardRun(
         com.google.cloud.aiplatform.v1.CreateTensorboardRunRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.TensorboardRun>
             responseObserver) {
@@ -1741,7 +1741,7 @@ public final class TensorboardServiceGrpc {
      * Batch create TensorboardRuns.
      * </pre>
      */
-    public void batchCreateTensorboardRuns(
+    default void batchCreateTensorboardRuns(
         com.google.cloud.aiplatform.v1.BatchCreateTensorboardRunsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.aiplatform.v1.BatchCreateTensorboardRunsResponse>
@@ -1757,7 +1757,7 @@ public final class TensorboardServiceGrpc {
      * Gets a TensorboardRun.
      * </pre>
      */
-    public void getTensorboardRun(
+    default void getTensorboardRun(
         com.google.cloud.aiplatform.v1.GetTensorboardRunRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.TensorboardRun>
             responseObserver) {
@@ -1772,7 +1772,7 @@ public final class TensorboardServiceGrpc {
      * Updates a TensorboardRun.
      * </pre>
      */
-    public void updateTensorboardRun(
+    default void updateTensorboardRun(
         com.google.cloud.aiplatform.v1.UpdateTensorboardRunRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.TensorboardRun>
             responseObserver) {
@@ -1787,7 +1787,7 @@ public final class TensorboardServiceGrpc {
      * Lists TensorboardRuns in a Location.
      * </pre>
      */
-    public void listTensorboardRuns(
+    default void listTensorboardRuns(
         com.google.cloud.aiplatform.v1.ListTensorboardRunsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListTensorboardRunsResponse>
             responseObserver) {
@@ -1802,7 +1802,7 @@ public final class TensorboardServiceGrpc {
      * Deletes a TensorboardRun.
      * </pre>
      */
-    public void deleteTensorboardRun(
+    default void deleteTensorboardRun(
         com.google.cloud.aiplatform.v1.DeleteTensorboardRunRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1816,7 +1816,7 @@ public final class TensorboardServiceGrpc {
      * Batch create TensorboardTimeSeries that belong to a TensorboardExperiment.
      * </pre>
      */
-    public void batchCreateTensorboardTimeSeries(
+    default void batchCreateTensorboardTimeSeries(
         com.google.cloud.aiplatform.v1.BatchCreateTensorboardTimeSeriesRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.aiplatform.v1.BatchCreateTensorboardTimeSeriesResponse>
@@ -1832,7 +1832,7 @@ public final class TensorboardServiceGrpc {
      * Creates a TensorboardTimeSeries.
      * </pre>
      */
-    public void createTensorboardTimeSeries(
+    default void createTensorboardTimeSeries(
         com.google.cloud.aiplatform.v1.CreateTensorboardTimeSeriesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.TensorboardTimeSeries>
             responseObserver) {
@@ -1847,7 +1847,7 @@ public final class TensorboardServiceGrpc {
      * Gets a TensorboardTimeSeries.
      * </pre>
      */
-    public void getTensorboardTimeSeries(
+    default void getTensorboardTimeSeries(
         com.google.cloud.aiplatform.v1.GetTensorboardTimeSeriesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.TensorboardTimeSeries>
             responseObserver) {
@@ -1862,7 +1862,7 @@ public final class TensorboardServiceGrpc {
      * Updates a TensorboardTimeSeries.
      * </pre>
      */
-    public void updateTensorboardTimeSeries(
+    default void updateTensorboardTimeSeries(
         com.google.cloud.aiplatform.v1.UpdateTensorboardTimeSeriesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.TensorboardTimeSeries>
             responseObserver) {
@@ -1877,7 +1877,7 @@ public final class TensorboardServiceGrpc {
      * Lists TensorboardTimeSeries in a Location.
      * </pre>
      */
-    public void listTensorboardTimeSeries(
+    default void listTensorboardTimeSeries(
         com.google.cloud.aiplatform.v1.ListTensorboardTimeSeriesRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.aiplatform.v1.ListTensorboardTimeSeriesResponse>
@@ -1893,7 +1893,7 @@ public final class TensorboardServiceGrpc {
      * Deletes a TensorboardTimeSeries.
      * </pre>
      */
-    public void deleteTensorboardTimeSeries(
+    default void deleteTensorboardTimeSeries(
         com.google.cloud.aiplatform.v1.DeleteTensorboardTimeSeriesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1911,7 +1911,7 @@ public final class TensorboardServiceGrpc {
      * this time series and returned.
      * </pre>
      */
-    public void batchReadTensorboardTimeSeriesData(
+    default void batchReadTensorboardTimeSeriesData(
         com.google.cloud.aiplatform.v1.BatchReadTensorboardTimeSeriesDataRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.aiplatform.v1.BatchReadTensorboardTimeSeriesDataResponse>
@@ -1931,7 +1931,7 @@ public final class TensorboardServiceGrpc {
      * greater than 10k.
      * </pre>
      */
-    public void readTensorboardTimeSeriesData(
+    default void readTensorboardTimeSeriesData(
         com.google.cloud.aiplatform.v1.ReadTensorboardTimeSeriesDataRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.aiplatform.v1.ReadTensorboardTimeSeriesDataResponse>
@@ -1950,7 +1950,7 @@ public final class TensorboardServiceGrpc {
      * permission.
      * </pre>
      */
-    public void readTensorboardBlobData(
+    default void readTensorboardBlobData(
         com.google.cloud.aiplatform.v1.ReadTensorboardBlobDataRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ReadTensorboardBlobDataResponse>
             responseObserver) {
@@ -1966,7 +1966,7 @@ public final class TensorboardServiceGrpc {
      * TensorboardRun's. If any data fail to be ingested, an error is returned.
      * </pre>
      */
-    public void writeTensorboardExperimentData(
+    default void writeTensorboardExperimentData(
         com.google.cloud.aiplatform.v1.WriteTensorboardExperimentDataRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.aiplatform.v1.WriteTensorboardExperimentDataResponse>
@@ -1983,7 +1983,7 @@ public final class TensorboardServiceGrpc {
      * a TensorboardRun. If any data fail to be ingested, an error is returned.
      * </pre>
      */
-    public void writeTensorboardRunData(
+    default void writeTensorboardRunData(
         com.google.cloud.aiplatform.v1.WriteTensorboardRunDataRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.WriteTensorboardRunDataResponse>
             responseObserver) {
@@ -1999,7 +1999,7 @@ public final class TensorboardServiceGrpc {
      * responses.
      * </pre>
      */
-    public void exportTensorboardTimeSeriesData(
+    default void exportTensorboardTimeSeriesData(
         com.google.cloud.aiplatform.v1.ExportTensorboardTimeSeriesDataRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.aiplatform.v1.ExportTensorboardTimeSeriesDataResponse>
@@ -2007,214 +2007,26 @@ public final class TensorboardServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getExportTensorboardTimeSeriesDataMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service TensorboardService.
+   *
+   * <pre>
+   * TensorboardService
+   * </pre>
+   */
+  public abstract static class TensorboardServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateTensorboardMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.CreateTensorboardRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_TENSORBOARD)))
-          .addMethod(
-              getGetTensorboardMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.GetTensorboardRequest,
-                      com.google.cloud.aiplatform.v1.Tensorboard>(this, METHODID_GET_TENSORBOARD)))
-          .addMethod(
-              getReadTensorboardUsageMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest,
-                      com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse>(
-                      this, METHODID_READ_TENSORBOARD_USAGE)))
-          .addMethod(
-              getUpdateTensorboardMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.UpdateTensorboardRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_TENSORBOARD)))
-          .addMethod(
-              getListTensorboardsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.ListTensorboardsRequest,
-                      com.google.cloud.aiplatform.v1.ListTensorboardsResponse>(
-                      this, METHODID_LIST_TENSORBOARDS)))
-          .addMethod(
-              getDeleteTensorboardMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.DeleteTensorboardRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_TENSORBOARD)))
-          .addMethod(
-              getCreateTensorboardExperimentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.CreateTensorboardExperimentRequest,
-                      com.google.cloud.aiplatform.v1.TensorboardExperiment>(
-                      this, METHODID_CREATE_TENSORBOARD_EXPERIMENT)))
-          .addMethod(
-              getGetTensorboardExperimentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.GetTensorboardExperimentRequest,
-                      com.google.cloud.aiplatform.v1.TensorboardExperiment>(
-                      this, METHODID_GET_TENSORBOARD_EXPERIMENT)))
-          .addMethod(
-              getUpdateTensorboardExperimentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.UpdateTensorboardExperimentRequest,
-                      com.google.cloud.aiplatform.v1.TensorboardExperiment>(
-                      this, METHODID_UPDATE_TENSORBOARD_EXPERIMENT)))
-          .addMethod(
-              getListTensorboardExperimentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.ListTensorboardExperimentsRequest,
-                      com.google.cloud.aiplatform.v1.ListTensorboardExperimentsResponse>(
-                      this, METHODID_LIST_TENSORBOARD_EXPERIMENTS)))
-          .addMethod(
-              getDeleteTensorboardExperimentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.DeleteTensorboardExperimentRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_DELETE_TENSORBOARD_EXPERIMENT)))
-          .addMethod(
-              getCreateTensorboardRunMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.CreateTensorboardRunRequest,
-                      com.google.cloud.aiplatform.v1.TensorboardRun>(
-                      this, METHODID_CREATE_TENSORBOARD_RUN)))
-          .addMethod(
-              getBatchCreateTensorboardRunsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.BatchCreateTensorboardRunsRequest,
-                      com.google.cloud.aiplatform.v1.BatchCreateTensorboardRunsResponse>(
-                      this, METHODID_BATCH_CREATE_TENSORBOARD_RUNS)))
-          .addMethod(
-              getGetTensorboardRunMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.GetTensorboardRunRequest,
-                      com.google.cloud.aiplatform.v1.TensorboardRun>(
-                      this, METHODID_GET_TENSORBOARD_RUN)))
-          .addMethod(
-              getUpdateTensorboardRunMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.UpdateTensorboardRunRequest,
-                      com.google.cloud.aiplatform.v1.TensorboardRun>(
-                      this, METHODID_UPDATE_TENSORBOARD_RUN)))
-          .addMethod(
-              getListTensorboardRunsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.ListTensorboardRunsRequest,
-                      com.google.cloud.aiplatform.v1.ListTensorboardRunsResponse>(
-                      this, METHODID_LIST_TENSORBOARD_RUNS)))
-          .addMethod(
-              getDeleteTensorboardRunMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.DeleteTensorboardRunRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_TENSORBOARD_RUN)))
-          .addMethod(
-              getBatchCreateTensorboardTimeSeriesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.BatchCreateTensorboardTimeSeriesRequest,
-                      com.google.cloud.aiplatform.v1.BatchCreateTensorboardTimeSeriesResponse>(
-                      this, METHODID_BATCH_CREATE_TENSORBOARD_TIME_SERIES)))
-          .addMethod(
-              getCreateTensorboardTimeSeriesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.CreateTensorboardTimeSeriesRequest,
-                      com.google.cloud.aiplatform.v1.TensorboardTimeSeries>(
-                      this, METHODID_CREATE_TENSORBOARD_TIME_SERIES)))
-          .addMethod(
-              getGetTensorboardTimeSeriesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.GetTensorboardTimeSeriesRequest,
-                      com.google.cloud.aiplatform.v1.TensorboardTimeSeries>(
-                      this, METHODID_GET_TENSORBOARD_TIME_SERIES)))
-          .addMethod(
-              getUpdateTensorboardTimeSeriesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.UpdateTensorboardTimeSeriesRequest,
-                      com.google.cloud.aiplatform.v1.TensorboardTimeSeries>(
-                      this, METHODID_UPDATE_TENSORBOARD_TIME_SERIES)))
-          .addMethod(
-              getListTensorboardTimeSeriesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.ListTensorboardTimeSeriesRequest,
-                      com.google.cloud.aiplatform.v1.ListTensorboardTimeSeriesResponse>(
-                      this, METHODID_LIST_TENSORBOARD_TIME_SERIES)))
-          .addMethod(
-              getDeleteTensorboardTimeSeriesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.DeleteTensorboardTimeSeriesRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_DELETE_TENSORBOARD_TIME_SERIES)))
-          .addMethod(
-              getBatchReadTensorboardTimeSeriesDataMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.BatchReadTensorboardTimeSeriesDataRequest,
-                      com.google.cloud.aiplatform.v1.BatchReadTensorboardTimeSeriesDataResponse>(
-                      this, METHODID_BATCH_READ_TENSORBOARD_TIME_SERIES_DATA)))
-          .addMethod(
-              getReadTensorboardTimeSeriesDataMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.ReadTensorboardTimeSeriesDataRequest,
-                      com.google.cloud.aiplatform.v1.ReadTensorboardTimeSeriesDataResponse>(
-                      this, METHODID_READ_TENSORBOARD_TIME_SERIES_DATA)))
-          .addMethod(
-              getReadTensorboardBlobDataMethod(),
-              io.grpc.stub.ServerCalls.asyncServerStreamingCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.ReadTensorboardBlobDataRequest,
-                      com.google.cloud.aiplatform.v1.ReadTensorboardBlobDataResponse>(
-                      this, METHODID_READ_TENSORBOARD_BLOB_DATA)))
-          .addMethod(
-              getWriteTensorboardExperimentDataMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.WriteTensorboardExperimentDataRequest,
-                      com.google.cloud.aiplatform.v1.WriteTensorboardExperimentDataResponse>(
-                      this, METHODID_WRITE_TENSORBOARD_EXPERIMENT_DATA)))
-          .addMethod(
-              getWriteTensorboardRunDataMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.WriteTensorboardRunDataRequest,
-                      com.google.cloud.aiplatform.v1.WriteTensorboardRunDataResponse>(
-                      this, METHODID_WRITE_TENSORBOARD_RUN_DATA)))
-          .addMethod(
-              getExportTensorboardTimeSeriesDataMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1.ExportTensorboardTimeSeriesDataRequest,
-                      com.google.cloud.aiplatform.v1.ExportTensorboardTimeSeriesDataResponse>(
-                      this, METHODID_EXPORT_TENSORBOARD_TIME_SERIES_DATA)))
-          .build();
+      return TensorboardServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service TensorboardService.
    *
    * <pre>
    * TensorboardService
@@ -2742,7 +2554,7 @@ public final class TensorboardServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service TensorboardService.
    *
    * <pre>
    * TensorboardService
@@ -3163,7 +2975,7 @@ public final class TensorboardServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service TensorboardService.
    *
    * <pre>
    * TensorboardService
@@ -3636,10 +3448,10 @@ public final class TensorboardServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final TensorboardServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(TensorboardServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -3842,6 +3654,209 @@ public final class TensorboardServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateTensorboardMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.CreateTensorboardRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_TENSORBOARD)))
+        .addMethod(
+            getGetTensorboardMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.GetTensorboardRequest,
+                    com.google.cloud.aiplatform.v1.Tensorboard>(service, METHODID_GET_TENSORBOARD)))
+        .addMethod(
+            getReadTensorboardUsageMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest,
+                    com.google.cloud.aiplatform.v1.ReadTensorboardUsageResponse>(
+                    service, METHODID_READ_TENSORBOARD_USAGE)))
+        .addMethod(
+            getUpdateTensorboardMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.UpdateTensorboardRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_TENSORBOARD)))
+        .addMethod(
+            getListTensorboardsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.ListTensorboardsRequest,
+                    com.google.cloud.aiplatform.v1.ListTensorboardsResponse>(
+                    service, METHODID_LIST_TENSORBOARDS)))
+        .addMethod(
+            getDeleteTensorboardMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.DeleteTensorboardRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_TENSORBOARD)))
+        .addMethod(
+            getCreateTensorboardExperimentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.CreateTensorboardExperimentRequest,
+                    com.google.cloud.aiplatform.v1.TensorboardExperiment>(
+                    service, METHODID_CREATE_TENSORBOARD_EXPERIMENT)))
+        .addMethod(
+            getGetTensorboardExperimentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.GetTensorboardExperimentRequest,
+                    com.google.cloud.aiplatform.v1.TensorboardExperiment>(
+                    service, METHODID_GET_TENSORBOARD_EXPERIMENT)))
+        .addMethod(
+            getUpdateTensorboardExperimentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.UpdateTensorboardExperimentRequest,
+                    com.google.cloud.aiplatform.v1.TensorboardExperiment>(
+                    service, METHODID_UPDATE_TENSORBOARD_EXPERIMENT)))
+        .addMethod(
+            getListTensorboardExperimentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.ListTensorboardExperimentsRequest,
+                    com.google.cloud.aiplatform.v1.ListTensorboardExperimentsResponse>(
+                    service, METHODID_LIST_TENSORBOARD_EXPERIMENTS)))
+        .addMethod(
+            getDeleteTensorboardExperimentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.DeleteTensorboardExperimentRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_TENSORBOARD_EXPERIMENT)))
+        .addMethod(
+            getCreateTensorboardRunMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.CreateTensorboardRunRequest,
+                    com.google.cloud.aiplatform.v1.TensorboardRun>(
+                    service, METHODID_CREATE_TENSORBOARD_RUN)))
+        .addMethod(
+            getBatchCreateTensorboardRunsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.BatchCreateTensorboardRunsRequest,
+                    com.google.cloud.aiplatform.v1.BatchCreateTensorboardRunsResponse>(
+                    service, METHODID_BATCH_CREATE_TENSORBOARD_RUNS)))
+        .addMethod(
+            getGetTensorboardRunMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.GetTensorboardRunRequest,
+                    com.google.cloud.aiplatform.v1.TensorboardRun>(
+                    service, METHODID_GET_TENSORBOARD_RUN)))
+        .addMethod(
+            getUpdateTensorboardRunMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.UpdateTensorboardRunRequest,
+                    com.google.cloud.aiplatform.v1.TensorboardRun>(
+                    service, METHODID_UPDATE_TENSORBOARD_RUN)))
+        .addMethod(
+            getListTensorboardRunsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.ListTensorboardRunsRequest,
+                    com.google.cloud.aiplatform.v1.ListTensorboardRunsResponse>(
+                    service, METHODID_LIST_TENSORBOARD_RUNS)))
+        .addMethod(
+            getDeleteTensorboardRunMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.DeleteTensorboardRunRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_TENSORBOARD_RUN)))
+        .addMethod(
+            getBatchCreateTensorboardTimeSeriesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.BatchCreateTensorboardTimeSeriesRequest,
+                    com.google.cloud.aiplatform.v1.BatchCreateTensorboardTimeSeriesResponse>(
+                    service, METHODID_BATCH_CREATE_TENSORBOARD_TIME_SERIES)))
+        .addMethod(
+            getCreateTensorboardTimeSeriesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.CreateTensorboardTimeSeriesRequest,
+                    com.google.cloud.aiplatform.v1.TensorboardTimeSeries>(
+                    service, METHODID_CREATE_TENSORBOARD_TIME_SERIES)))
+        .addMethod(
+            getGetTensorboardTimeSeriesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.GetTensorboardTimeSeriesRequest,
+                    com.google.cloud.aiplatform.v1.TensorboardTimeSeries>(
+                    service, METHODID_GET_TENSORBOARD_TIME_SERIES)))
+        .addMethod(
+            getUpdateTensorboardTimeSeriesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.UpdateTensorboardTimeSeriesRequest,
+                    com.google.cloud.aiplatform.v1.TensorboardTimeSeries>(
+                    service, METHODID_UPDATE_TENSORBOARD_TIME_SERIES)))
+        .addMethod(
+            getListTensorboardTimeSeriesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.ListTensorboardTimeSeriesRequest,
+                    com.google.cloud.aiplatform.v1.ListTensorboardTimeSeriesResponse>(
+                    service, METHODID_LIST_TENSORBOARD_TIME_SERIES)))
+        .addMethod(
+            getDeleteTensorboardTimeSeriesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.DeleteTensorboardTimeSeriesRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_TENSORBOARD_TIME_SERIES)))
+        .addMethod(
+            getBatchReadTensorboardTimeSeriesDataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.BatchReadTensorboardTimeSeriesDataRequest,
+                    com.google.cloud.aiplatform.v1.BatchReadTensorboardTimeSeriesDataResponse>(
+                    service, METHODID_BATCH_READ_TENSORBOARD_TIME_SERIES_DATA)))
+        .addMethod(
+            getReadTensorboardTimeSeriesDataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.ReadTensorboardTimeSeriesDataRequest,
+                    com.google.cloud.aiplatform.v1.ReadTensorboardTimeSeriesDataResponse>(
+                    service, METHODID_READ_TENSORBOARD_TIME_SERIES_DATA)))
+        .addMethod(
+            getReadTensorboardBlobDataMethod(),
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.ReadTensorboardBlobDataRequest,
+                    com.google.cloud.aiplatform.v1.ReadTensorboardBlobDataResponse>(
+                    service, METHODID_READ_TENSORBOARD_BLOB_DATA)))
+        .addMethod(
+            getWriteTensorboardExperimentDataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.WriteTensorboardExperimentDataRequest,
+                    com.google.cloud.aiplatform.v1.WriteTensorboardExperimentDataResponse>(
+                    service, METHODID_WRITE_TENSORBOARD_EXPERIMENT_DATA)))
+        .addMethod(
+            getWriteTensorboardRunDataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.WriteTensorboardRunDataRequest,
+                    com.google.cloud.aiplatform.v1.WriteTensorboardRunDataResponse>(
+                    service, METHODID_WRITE_TENSORBOARD_RUN_DATA)))
+        .addMethod(
+            getExportTensorboardTimeSeriesDataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.ExportTensorboardTimeSeriesDataRequest,
+                    com.google.cloud.aiplatform.v1.ExportTensorboardTimeSeriesDataResponse>(
+                    service, METHODID_EXPORT_TENSORBOARD_TIME_SERIES_DATA)))
+        .build();
   }
 
   private abstract static class TensorboardServiceBaseDescriptorSupplier

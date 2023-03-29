@@ -404,7 +404,7 @@ public final class EndpointServiceGrpc {
    * A service for managing Vertex AI's Endpoints.
    * </pre>
    */
-  public abstract static class EndpointServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -413,7 +413,7 @@ public final class EndpointServiceGrpc {
      * Creates an Endpoint.
      * </pre>
      */
-    public void createEndpoint(
+    default void createEndpoint(
         com.google.cloud.aiplatform.v1beta1.CreateEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -427,7 +427,7 @@ public final class EndpointServiceGrpc {
      * Gets an Endpoint.
      * </pre>
      */
-    public void getEndpoint(
+    default void getEndpoint(
         com.google.cloud.aiplatform.v1beta1.GetEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.Endpoint>
             responseObserver) {
@@ -442,7 +442,7 @@ public final class EndpointServiceGrpc {
      * Lists Endpoints in a Location.
      * </pre>
      */
-    public void listEndpoints(
+    default void listEndpoints(
         com.google.cloud.aiplatform.v1beta1.ListEndpointsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListEndpointsResponse>
             responseObserver) {
@@ -457,7 +457,7 @@ public final class EndpointServiceGrpc {
      * Updates an Endpoint.
      * </pre>
      */
-    public void updateEndpoint(
+    default void updateEndpoint(
         com.google.cloud.aiplatform.v1beta1.UpdateEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.Endpoint>
             responseObserver) {
@@ -472,7 +472,7 @@ public final class EndpointServiceGrpc {
      * Deletes an Endpoint.
      * </pre>
      */
-    public void deleteEndpoint(
+    default void deleteEndpoint(
         com.google.cloud.aiplatform.v1beta1.DeleteEndpointRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -486,7 +486,7 @@ public final class EndpointServiceGrpc {
      * Deploys a Model into this Endpoint, creating a DeployedModel within it.
      * </pre>
      */
-    public void deployModel(
+    default void deployModel(
         com.google.cloud.aiplatform.v1beta1.DeployModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -501,66 +501,32 @@ public final class EndpointServiceGrpc {
      * freeing all resources it's using.
      * </pre>
      */
-    public void undeployModel(
+    default void undeployModel(
         com.google.cloud.aiplatform.v1beta1.UndeployModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUndeployModelMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service EndpointService.
+   *
+   * <pre>
+   * A service for managing Vertex AI's Endpoints.
+   * </pre>
+   */
+  public abstract static class EndpointServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateEndpointMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.CreateEndpointRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_ENDPOINT)))
-          .addMethod(
-              getGetEndpointMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.GetEndpointRequest,
-                      com.google.cloud.aiplatform.v1beta1.Endpoint>(this, METHODID_GET_ENDPOINT)))
-          .addMethod(
-              getListEndpointsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.ListEndpointsRequest,
-                      com.google.cloud.aiplatform.v1beta1.ListEndpointsResponse>(
-                      this, METHODID_LIST_ENDPOINTS)))
-          .addMethod(
-              getUpdateEndpointMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.UpdateEndpointRequest,
-                      com.google.cloud.aiplatform.v1beta1.Endpoint>(
-                      this, METHODID_UPDATE_ENDPOINT)))
-          .addMethod(
-              getDeleteEndpointMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.DeleteEndpointRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_ENDPOINT)))
-          .addMethod(
-              getDeployModelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.DeployModelRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DEPLOY_MODEL)))
-          .addMethod(
-              getUndeployModelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.UndeployModelRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UNDEPLOY_MODEL)))
-          .build();
+      return EndpointServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service EndpointService.
    *
    * <pre>
    * A service for managing Vertex AI's Endpoints.
@@ -695,7 +661,7 @@ public final class EndpointServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service EndpointService.
    *
    * <pre>
    * A service for managing Vertex AI's Endpoints.
@@ -807,7 +773,7 @@ public final class EndpointServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service EndpointService.
    *
    * <pre>
    * A service for managing Vertex AI's Endpoints.
@@ -934,10 +900,10 @@ public final class EndpointServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final EndpointServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(EndpointServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -999,6 +965,55 @@ public final class EndpointServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateEndpointMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.CreateEndpointRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_ENDPOINT)))
+        .addMethod(
+            getGetEndpointMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.GetEndpointRequest,
+                    com.google.cloud.aiplatform.v1beta1.Endpoint>(service, METHODID_GET_ENDPOINT)))
+        .addMethod(
+            getListEndpointsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.ListEndpointsRequest,
+                    com.google.cloud.aiplatform.v1beta1.ListEndpointsResponse>(
+                    service, METHODID_LIST_ENDPOINTS)))
+        .addMethod(
+            getUpdateEndpointMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.UpdateEndpointRequest,
+                    com.google.cloud.aiplatform.v1beta1.Endpoint>(
+                    service, METHODID_UPDATE_ENDPOINT)))
+        .addMethod(
+            getDeleteEndpointMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.DeleteEndpointRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_ENDPOINT)))
+        .addMethod(
+            getDeployModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.DeployModelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DEPLOY_MODEL)))
+        .addMethod(
+            getUndeployModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.UndeployModelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UNDEPLOY_MODEL)))
+        .build();
   }
 
   private abstract static class EndpointServiceBaseDescriptorSupplier
