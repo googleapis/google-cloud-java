@@ -405,7 +405,7 @@ public final class DocumentServiceGrpc {
    * This service lets you manage document.
    * </pre>
    */
-  public abstract static class DocumentServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -414,7 +414,7 @@ public final class DocumentServiceGrpc {
      * Creates a document.
      * </pre>
      */
-    public void createDocument(
+    default void createDocument(
         com.google.cloud.contentwarehouse.v1.CreateDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.contentwarehouse.v1.CreateDocumentResponse>
             responseObserver) {
@@ -429,7 +429,7 @@ public final class DocumentServiceGrpc {
      * Gets a document. Returns NOT_FOUND if the document does not exist.
      * </pre>
      */
-    public void getDocument(
+    default void getDocument(
         com.google.cloud.contentwarehouse.v1.GetDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.contentwarehouse.v1.Document>
             responseObserver) {
@@ -445,7 +445,7 @@ public final class DocumentServiceGrpc {
      * is non-empty and does not equal the existing name.
      * </pre>
      */
-    public void updateDocument(
+    default void updateDocument(
         com.google.cloud.contentwarehouse.v1.UpdateDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.contentwarehouse.v1.UpdateDocumentResponse>
             responseObserver) {
@@ -460,7 +460,7 @@ public final class DocumentServiceGrpc {
      * Deletes a document. Returns NOT_FOUND if the document does not exist.
      * </pre>
      */
-    public void deleteDocument(
+    default void deleteDocument(
         com.google.cloud.contentwarehouse.v1.DeleteDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -476,7 +476,7 @@ public final class DocumentServiceGrpc {
      * against.
      * </pre>
      */
-    public void searchDocuments(
+    default void searchDocuments(
         com.google.cloud.contentwarehouse.v1.SearchDocumentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.contentwarehouse.v1.SearchDocumentsResponse>
             responseObserver) {
@@ -493,7 +493,7 @@ public final class DocumentServiceGrpc {
      * but does not have a policy set.
      * </pre>
      */
-    public void fetchAcl(
+    default void fetchAcl(
         com.google.cloud.contentwarehouse.v1.FetchAclRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.contentwarehouse.v1.FetchAclResponse>
             responseObserver) {
@@ -508,68 +508,32 @@ public final class DocumentServiceGrpc {
      * policy.
      * </pre>
      */
-    public void setAcl(
+    default void setAcl(
         com.google.cloud.contentwarehouse.v1.SetAclRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.contentwarehouse.v1.SetAclResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSetAclMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service DocumentService.
+   *
+   * <pre>
+   * This service lets you manage document.
+   * </pre>
+   */
+  public abstract static class DocumentServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateDocumentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.contentwarehouse.v1.CreateDocumentRequest,
-                      com.google.cloud.contentwarehouse.v1.CreateDocumentResponse>(
-                      this, METHODID_CREATE_DOCUMENT)))
-          .addMethod(
-              getGetDocumentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.contentwarehouse.v1.GetDocumentRequest,
-                      com.google.cloud.contentwarehouse.v1.Document>(this, METHODID_GET_DOCUMENT)))
-          .addMethod(
-              getUpdateDocumentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.contentwarehouse.v1.UpdateDocumentRequest,
-                      com.google.cloud.contentwarehouse.v1.UpdateDocumentResponse>(
-                      this, METHODID_UPDATE_DOCUMENT)))
-          .addMethod(
-              getDeleteDocumentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.contentwarehouse.v1.DeleteDocumentRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_DOCUMENT)))
-          .addMethod(
-              getSearchDocumentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.contentwarehouse.v1.SearchDocumentsRequest,
-                      com.google.cloud.contentwarehouse.v1.SearchDocumentsResponse>(
-                      this, METHODID_SEARCH_DOCUMENTS)))
-          .addMethod(
-              getFetchAclMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.contentwarehouse.v1.FetchAclRequest,
-                      com.google.cloud.contentwarehouse.v1.FetchAclResponse>(
-                      this, METHODID_FETCH_ACL)))
-          .addMethod(
-              getSetAclMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.contentwarehouse.v1.SetAclRequest,
-                      com.google.cloud.contentwarehouse.v1.SetAclResponse>(this, METHODID_SET_ACL)))
-          .build();
+      return DocumentServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service DocumentService.
    *
    * <pre>
    * This service lets you manage document.
@@ -708,7 +672,7 @@ public final class DocumentServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service DocumentService.
    *
    * <pre>
    * This service lets you manage document.
@@ -825,7 +789,7 @@ public final class DocumentServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service DocumentService.
    *
    * <pre>
    * This service lets you manage document.
@@ -960,10 +924,10 @@ public final class DocumentServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final DocumentServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(DocumentServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1030,6 +994,58 @@ public final class DocumentServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateDocumentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contentwarehouse.v1.CreateDocumentRequest,
+                    com.google.cloud.contentwarehouse.v1.CreateDocumentResponse>(
+                    service, METHODID_CREATE_DOCUMENT)))
+        .addMethod(
+            getGetDocumentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contentwarehouse.v1.GetDocumentRequest,
+                    com.google.cloud.contentwarehouse.v1.Document>(service, METHODID_GET_DOCUMENT)))
+        .addMethod(
+            getUpdateDocumentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contentwarehouse.v1.UpdateDocumentRequest,
+                    com.google.cloud.contentwarehouse.v1.UpdateDocumentResponse>(
+                    service, METHODID_UPDATE_DOCUMENT)))
+        .addMethod(
+            getDeleteDocumentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contentwarehouse.v1.DeleteDocumentRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_DOCUMENT)))
+        .addMethod(
+            getSearchDocumentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contentwarehouse.v1.SearchDocumentsRequest,
+                    com.google.cloud.contentwarehouse.v1.SearchDocumentsResponse>(
+                    service, METHODID_SEARCH_DOCUMENTS)))
+        .addMethod(
+            getFetchAclMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contentwarehouse.v1.FetchAclRequest,
+                    com.google.cloud.contentwarehouse.v1.FetchAclResponse>(
+                    service, METHODID_FETCH_ACL)))
+        .addMethod(
+            getSetAclMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contentwarehouse.v1.SetAclRequest,
+                    com.google.cloud.contentwarehouse.v1.SetAclResponse>(
+                    service, METHODID_SET_ACL)))
+        .build();
   }
 
   private abstract static class DocumentServiceBaseDescriptorSupplier

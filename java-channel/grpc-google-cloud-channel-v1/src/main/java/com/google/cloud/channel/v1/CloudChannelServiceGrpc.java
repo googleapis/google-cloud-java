@@ -2344,7 +2344,7 @@ public final class CloudChannelServiceGrpc {
    * resellers in a channel.
    * </pre>
    */
-  public abstract static class CloudChannelServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -2360,7 +2360,7 @@ public final class CloudChannelServiceGrpc {
      * there are no customers.
      * </pre>
      */
-    public void listCustomers(
+    default void listCustomers(
         com.google.cloud.channel.v1.ListCustomersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListCustomersResponse>
             responseObserver) {
@@ -2384,7 +2384,7 @@ public final class CloudChannelServiceGrpc {
      * The [Customer][google.cloud.channel.v1.Customer] resource.
      * </pre>
      */
-    public void getCustomer(
+    default void getCustomer(
         com.google.cloud.channel.v1.GetCustomerRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.Customer> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2412,7 +2412,7 @@ public final class CloudChannelServiceGrpc {
      * resources match the domain.
      * </pre>
      */
-    public void checkCloudIdentityAccountsExist(
+    default void checkCloudIdentityAccountsExist(
         com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistResponse>
@@ -2437,7 +2437,7 @@ public final class CloudChannelServiceGrpc {
      * The newly created [Customer][google.cloud.channel.v1.Customer] resource.
      * </pre>
      */
-    public void createCustomer(
+    default void createCustomer(
         com.google.cloud.channel.v1.CreateCustomerRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.Customer> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2460,7 +2460,7 @@ public final class CloudChannelServiceGrpc {
      * The updated [Customer][google.cloud.channel.v1.Customer] resource.
      * </pre>
      */
-    public void updateCustomer(
+    default void updateCustomer(
         com.google.cloud.channel.v1.UpdateCustomerRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.Customer> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2481,7 +2481,7 @@ public final class CloudChannelServiceGrpc {
      * for the name in the request.
      * </pre>
      */
-    public void deleteCustomer(
+    default void deleteCustomer(
         com.google.cloud.channel.v1.DeleteCustomerRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2508,7 +2508,7 @@ public final class CloudChannelServiceGrpc {
      * The [Customer][google.cloud.channel.v1.Customer].
      * </pre>
      */
-    public void importCustomer(
+    default void importCustomer(
         com.google.cloud.channel.v1.ImportCustomerRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.Customer> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2538,7 +2538,7 @@ public final class CloudChannelServiceGrpc {
      * instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
      * </pre>
      */
-    public void provisionCloudIdentity(
+    default void provisionCloudIdentity(
         com.google.cloud.channel.v1.ProvisionCloudIdentityRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2559,7 +2559,7 @@ public final class CloudChannelServiceGrpc {
      * [Entitlement][google.cloud.channel.v1.Entitlement]s.
      * </pre>
      */
-    public void listEntitlements(
+    default void listEntitlements(
         com.google.cloud.channel.v1.ListEntitlementsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListEntitlementsResponse>
             responseObserver) {
@@ -2588,7 +2588,7 @@ public final class CloudChannelServiceGrpc {
      * [TransferableSku][google.cloud.channel.v1.TransferableSku].
      * </pre>
      */
-    public void listTransferableSkus(
+    default void listTransferableSkus(
         com.google.cloud.channel.v1.ListTransferableSkusRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListTransferableSkusResponse>
             responseObserver) {
@@ -2618,7 +2618,7 @@ public final class CloudChannelServiceGrpc {
      * the given customer and SKU.
      * </pre>
      */
-    public void listTransferableOffers(
+    default void listTransferableOffers(
         com.google.cloud.channel.v1.ListTransferableOffersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListTransferableOffersResponse>
             responseObserver) {
@@ -2640,7 +2640,7 @@ public final class CloudChannelServiceGrpc {
      * The requested [Entitlement][google.cloud.channel.v1.Entitlement] resource.
      * </pre>
      */
-    public void getEntitlement(
+    default void getEntitlement(
         com.google.cloud.channel.v1.GetEntitlementRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.Entitlement> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2685,7 +2685,7 @@ public final class CloudChannelServiceGrpc {
      * instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
      * </pre>
      */
-    public void createEntitlement(
+    default void createEntitlement(
         com.google.cloud.channel.v1.CreateEntitlementRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2716,7 +2716,7 @@ public final class CloudChannelServiceGrpc {
      * instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
      * </pre>
      */
-    public void changeParameters(
+    default void changeParameters(
         com.google.cloud.channel.v1.ChangeParametersRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2747,7 +2747,7 @@ public final class CloudChannelServiceGrpc {
      * instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
      * </pre>
      */
-    public void changeRenewalSettings(
+    default void changeRenewalSettings(
         com.google.cloud.channel.v1.ChangeRenewalSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2776,7 +2776,7 @@ public final class CloudChannelServiceGrpc {
      * instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
      * </pre>
      */
-    public void changeOffer(
+    default void changeOffer(
         com.google.cloud.channel.v1.ChangeOfferRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2808,7 +2808,7 @@ public final class CloudChannelServiceGrpc {
      * instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
      * </pre>
      */
-    public void startPaidService(
+    default void startPaidService(
         com.google.cloud.channel.v1.StartPaidServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2837,7 +2837,7 @@ public final class CloudChannelServiceGrpc {
      * instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
      * </pre>
      */
-    public void suspendEntitlement(
+    default void suspendEntitlement(
         com.google.cloud.channel.v1.SuspendEntitlementRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2871,7 +2871,7 @@ public final class CloudChannelServiceGrpc {
      * instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
      * </pre>
      */
-    public void cancelEntitlement(
+    default void cancelEntitlement(
         com.google.cloud.channel.v1.CancelEntitlementRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2906,7 +2906,7 @@ public final class CloudChannelServiceGrpc {
      * instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
      * </pre>
      */
-    public void activateEntitlement(
+    default void activateEntitlement(
         com.google.cloud.channel.v1.ActivateEntitlementRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2944,7 +2944,7 @@ public final class CloudChannelServiceGrpc {
      * instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
      * </pre>
      */
-    public void transferEntitlements(
+    default void transferEntitlements(
         com.google.cloud.channel.v1.TransferEntitlementsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2982,7 +2982,7 @@ public final class CloudChannelServiceGrpc {
      * instance of [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
      * </pre>
      */
-    public void transferEntitlementsToGoogle(
+    default void transferEntitlementsToGoogle(
         com.google.cloud.channel.v1.TransferEntitlementsToGoogleRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -3004,7 +3004,7 @@ public final class CloudChannelServiceGrpc {
      * [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink] resources.
      * </pre>
      */
-    public void listChannelPartnerLinks(
+    default void listChannelPartnerLinks(
         com.google.cloud.channel.v1.ListChannelPartnerLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListChannelPartnerLinksResponse>
             responseObserver) {
@@ -3030,7 +3030,7 @@ public final class CloudChannelServiceGrpc {
      * resource.
      * </pre>
      */
-    public void getChannelPartnerLink(
+    default void getChannelPartnerLink(
         com.google.cloud.channel.v1.GetChannelPartnerLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ChannelPartnerLink>
             responseObserver) {
@@ -3064,7 +3064,7 @@ public final class CloudChannelServiceGrpc {
      * resource.
      * </pre>
      */
-    public void createChannelPartnerLink(
+    default void createChannelPartnerLink(
         com.google.cloud.channel.v1.CreateChannelPartnerLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ChannelPartnerLink>
             responseObserver) {
@@ -3097,7 +3097,7 @@ public final class CloudChannelServiceGrpc {
      * [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink] resource.
      * </pre>
      */
-    public void updateChannelPartnerLink(
+    default void updateChannelPartnerLink(
         com.google.cloud.channel.v1.UpdateChannelPartnerLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ChannelPartnerLink>
             responseObserver) {
@@ -3125,7 +3125,7 @@ public final class CloudChannelServiceGrpc {
      * resource, otherwise returns an error.
      * </pre>
      */
-    public void getCustomerRepricingConfig(
+    default void getCustomerRepricingConfig(
         com.google.cloud.channel.v1.GetCustomerRepricingConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.CustomerRepricingConfig>
             responseObserver) {
@@ -3159,7 +3159,7 @@ public final class CloudChannelServiceGrpc {
      * If unsuccessful, returns an error.
      * </pre>
      */
-    public void listCustomerRepricingConfigs(
+    default void listCustomerRepricingConfigs(
         com.google.cloud.channel.v1.ListCustomerRepricingConfigsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.channel.v1.ListCustomerRepricingConfigsResponse>
@@ -3210,7 +3210,7 @@ public final class CloudChannelServiceGrpc {
      * resource, otherwise returns an error.
      * </pre>
      */
-    public void createCustomerRepricingConfig(
+    default void createCustomerRepricingConfig(
         com.google.cloud.channel.v1.CreateCustomerRepricingConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.CustomerRepricingConfig>
             responseObserver) {
@@ -3250,7 +3250,7 @@ public final class CloudChannelServiceGrpc {
      * resource, otherwise returns an error.
      * </pre>
      */
-    public void updateCustomerRepricingConfig(
+    default void updateCustomerRepricingConfig(
         com.google.cloud.channel.v1.UpdateCustomerRepricingConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.CustomerRepricingConfig>
             responseObserver) {
@@ -3279,7 +3279,7 @@ public final class CloudChannelServiceGrpc {
      * found for the name in the request.
      * </pre>
      */
-    public void deleteCustomerRepricingConfig(
+    default void deleteCustomerRepricingConfig(
         com.google.cloud.channel.v1.DeleteCustomerRepricingConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -3306,7 +3306,7 @@ public final class CloudChannelServiceGrpc {
      * resource, otherwise returns an error.
      * </pre>
      */
-    public void getChannelPartnerRepricingConfig(
+    default void getChannelPartnerRepricingConfig(
         com.google.cloud.channel.v1.GetChannelPartnerRepricingConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>
             responseObserver) {
@@ -3339,7 +3339,7 @@ public final class CloudChannelServiceGrpc {
      * If unsuccessful, returns an error.
      * </pre>
      */
-    public void listChannelPartnerRepricingConfigs(
+    default void listChannelPartnerRepricingConfigs(
         com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse>
@@ -3389,7 +3389,7 @@ public final class CloudChannelServiceGrpc {
      * resource, otherwise returns an error.
      * </pre>
      */
-    public void createChannelPartnerRepricingConfig(
+    default void createChannelPartnerRepricingConfig(
         com.google.cloud.channel.v1.CreateChannelPartnerRepricingConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>
             responseObserver) {
@@ -3429,7 +3429,7 @@ public final class CloudChannelServiceGrpc {
      * resource, otherwise returns an error.
      * </pre>
      */
-    public void updateChannelPartnerRepricingConfig(
+    default void updateChannelPartnerRepricingConfig(
         com.google.cloud.channel.v1.UpdateChannelPartnerRepricingConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>
             responseObserver) {
@@ -3458,7 +3458,7 @@ public final class CloudChannelServiceGrpc {
      * found for the name in the request.
      * </pre>
      */
-    public void deleteChannelPartnerRepricingConfig(
+    default void deleteChannelPartnerRepricingConfig(
         com.google.cloud.channel.v1.DeleteChannelPartnerRepricingConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -3478,7 +3478,7 @@ public final class CloudChannelServiceGrpc {
      * The [Offer][google.cloud.channel.v1.Offer] resource.
      * </pre>
      */
-    public void lookupOffer(
+    default void lookupOffer(
         com.google.cloud.channel.v1.LookupOfferRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.Offer> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -3494,7 +3494,7 @@ public final class CloudChannelServiceGrpc {
      * * INVALID_ARGUMENT: Required request parameters are missing or invalid.
      * </pre>
      */
-    public void listProducts(
+    default void listProducts(
         com.google.cloud.channel.v1.ListProductsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListProductsResponse>
             responseObserver) {
@@ -3511,7 +3511,7 @@ public final class CloudChannelServiceGrpc {
      * * INVALID_ARGUMENT: Required request parameters are missing or invalid.
      * </pre>
      */
-    public void listSkus(
+    default void listSkus(
         com.google.cloud.channel.v1.ListSkusRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListSkusResponse>
             responseObserver) {
@@ -3527,7 +3527,7 @@ public final class CloudChannelServiceGrpc {
      * * INVALID_ARGUMENT: Required request parameters are missing or invalid.
      * </pre>
      */
-    public void listOffers(
+    default void listOffers(
         com.google.cloud.channel.v1.ListOffersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListOffersResponse>
             responseObserver) {
@@ -3546,7 +3546,7 @@ public final class CloudChannelServiceGrpc {
      * * INVALID_ARGUMENT: Required request parameters are missing or invalid.
      * </pre>
      */
-    public void listPurchasableSkus(
+    default void listPurchasableSkus(
         com.google.cloud.channel.v1.ListPurchasableSkusRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListPurchasableSkusResponse>
             responseObserver) {
@@ -3566,7 +3566,7 @@ public final class CloudChannelServiceGrpc {
      * * INVALID_ARGUMENT: Required request parameters are missing or invalid.
      * </pre>
      */
-    public void listPurchasableOffers(
+    default void listPurchasableOffers(
         com.google.cloud.channel.v1.ListPurchasableOffersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListPurchasableOffersResponse>
             responseObserver) {
@@ -3595,7 +3595,7 @@ public final class CloudChannelServiceGrpc {
      * The topic name with the registered service email address.
      * </pre>
      */
-    public void registerSubscriber(
+    default void registerSubscriber(
         com.google.cloud.channel.v1.RegisterSubscriberRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.RegisterSubscriberResponse>
             responseObserver) {
@@ -3627,7 +3627,7 @@ public final class CloudChannelServiceGrpc {
      * with the topic.
      * </pre>
      */
-    public void unregisterSubscriber(
+    default void unregisterSubscriber(
         com.google.cloud.channel.v1.UnregisterSubscriberRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.UnregisterSubscriberResponse>
             responseObserver) {
@@ -3655,7 +3655,7 @@ public final class CloudChannelServiceGrpc {
      * A list of service email addresses.
      * </pre>
      */
-    public void listSubscribers(
+    default void listSubscribers(
         com.google.cloud.channel.v1.ListSubscribersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListSubscribersResponse>
             responseObserver) {
@@ -3682,325 +3682,48 @@ public final class CloudChannelServiceGrpc {
      * List of [EntitlementChange][google.cloud.channel.v1.EntitlementChange]s.
      * </pre>
      */
-    public void listEntitlementChanges(
+    default void listEntitlementChanges(
         com.google.cloud.channel.v1.ListEntitlementChangesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListEntitlementChangesResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListEntitlementChangesMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service CloudChannelService.
+   *
+   * <pre>
+   * CloudChannelService lets Google cloud resellers and distributors manage
+   * their customers, channel partners, entitlements, and reports.
+   * Using this service:
+   * 1. Resellers and distributors can manage a customer entity.
+   * 2. Distributors can register an authorized reseller in their channel and
+   *    provide them with delegated admin access.
+   * 3. Resellers and distributors can manage customer entitlements.
+   * CloudChannelService exposes the following resources:
+   * - [Customer][google.cloud.channel.v1.Customer]s: An entity-usually an
+   * enterprise-managed by a reseller or distributor.
+   * - [Entitlement][google.cloud.channel.v1.Entitlement]s: An entity that
+   * provides a customer with the means to use a service. Entitlements are created
+   * or updated as a result of a successful fulfillment.
+   * - [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink]s: An
+   * entity that identifies links between distributors and their indirect
+   * resellers in a channel.
+   * </pre>
+   */
+  public abstract static class CloudChannelServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListCustomersMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.ListCustomersRequest,
-                      com.google.cloud.channel.v1.ListCustomersResponse>(
-                      this, METHODID_LIST_CUSTOMERS)))
-          .addMethod(
-              getGetCustomerMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.GetCustomerRequest,
-                      com.google.cloud.channel.v1.Customer>(this, METHODID_GET_CUSTOMER)))
-          .addMethod(
-              getCheckCloudIdentityAccountsExistMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistRequest,
-                      com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistResponse>(
-                      this, METHODID_CHECK_CLOUD_IDENTITY_ACCOUNTS_EXIST)))
-          .addMethod(
-              getCreateCustomerMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.CreateCustomerRequest,
-                      com.google.cloud.channel.v1.Customer>(this, METHODID_CREATE_CUSTOMER)))
-          .addMethod(
-              getUpdateCustomerMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.UpdateCustomerRequest,
-                      com.google.cloud.channel.v1.Customer>(this, METHODID_UPDATE_CUSTOMER)))
-          .addMethod(
-              getDeleteCustomerMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.DeleteCustomerRequest, com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_CUSTOMER)))
-          .addMethod(
-              getImportCustomerMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.ImportCustomerRequest,
-                      com.google.cloud.channel.v1.Customer>(this, METHODID_IMPORT_CUSTOMER)))
-          .addMethod(
-              getProvisionCloudIdentityMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.ProvisionCloudIdentityRequest,
-                      com.google.longrunning.Operation>(this, METHODID_PROVISION_CLOUD_IDENTITY)))
-          .addMethod(
-              getListEntitlementsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.ListEntitlementsRequest,
-                      com.google.cloud.channel.v1.ListEntitlementsResponse>(
-                      this, METHODID_LIST_ENTITLEMENTS)))
-          .addMethod(
-              getListTransferableSkusMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.ListTransferableSkusRequest,
-                      com.google.cloud.channel.v1.ListTransferableSkusResponse>(
-                      this, METHODID_LIST_TRANSFERABLE_SKUS)))
-          .addMethod(
-              getListTransferableOffersMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.ListTransferableOffersRequest,
-                      com.google.cloud.channel.v1.ListTransferableOffersResponse>(
-                      this, METHODID_LIST_TRANSFERABLE_OFFERS)))
-          .addMethod(
-              getGetEntitlementMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.GetEntitlementRequest,
-                      com.google.cloud.channel.v1.Entitlement>(this, METHODID_GET_ENTITLEMENT)))
-          .addMethod(
-              getCreateEntitlementMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.CreateEntitlementRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_ENTITLEMENT)))
-          .addMethod(
-              getChangeParametersMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.ChangeParametersRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CHANGE_PARAMETERS)))
-          .addMethod(
-              getChangeRenewalSettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.ChangeRenewalSettingsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CHANGE_RENEWAL_SETTINGS)))
-          .addMethod(
-              getChangeOfferMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.ChangeOfferRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CHANGE_OFFER)))
-          .addMethod(
-              getStartPaidServiceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.StartPaidServiceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_START_PAID_SERVICE)))
-          .addMethod(
-              getSuspendEntitlementMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.SuspendEntitlementRequest,
-                      com.google.longrunning.Operation>(this, METHODID_SUSPEND_ENTITLEMENT)))
-          .addMethod(
-              getCancelEntitlementMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.CancelEntitlementRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CANCEL_ENTITLEMENT)))
-          .addMethod(
-              getActivateEntitlementMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.ActivateEntitlementRequest,
-                      com.google.longrunning.Operation>(this, METHODID_ACTIVATE_ENTITLEMENT)))
-          .addMethod(
-              getTransferEntitlementsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.TransferEntitlementsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_TRANSFER_ENTITLEMENTS)))
-          .addMethod(
-              getTransferEntitlementsToGoogleMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.TransferEntitlementsToGoogleRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_TRANSFER_ENTITLEMENTS_TO_GOOGLE)))
-          .addMethod(
-              getListChannelPartnerLinksMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.ListChannelPartnerLinksRequest,
-                      com.google.cloud.channel.v1.ListChannelPartnerLinksResponse>(
-                      this, METHODID_LIST_CHANNEL_PARTNER_LINKS)))
-          .addMethod(
-              getGetChannelPartnerLinkMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.GetChannelPartnerLinkRequest,
-                      com.google.cloud.channel.v1.ChannelPartnerLink>(
-                      this, METHODID_GET_CHANNEL_PARTNER_LINK)))
-          .addMethod(
-              getCreateChannelPartnerLinkMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.CreateChannelPartnerLinkRequest,
-                      com.google.cloud.channel.v1.ChannelPartnerLink>(
-                      this, METHODID_CREATE_CHANNEL_PARTNER_LINK)))
-          .addMethod(
-              getUpdateChannelPartnerLinkMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.UpdateChannelPartnerLinkRequest,
-                      com.google.cloud.channel.v1.ChannelPartnerLink>(
-                      this, METHODID_UPDATE_CHANNEL_PARTNER_LINK)))
-          .addMethod(
-              getGetCustomerRepricingConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.GetCustomerRepricingConfigRequest,
-                      com.google.cloud.channel.v1.CustomerRepricingConfig>(
-                      this, METHODID_GET_CUSTOMER_REPRICING_CONFIG)))
-          .addMethod(
-              getListCustomerRepricingConfigsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.ListCustomerRepricingConfigsRequest,
-                      com.google.cloud.channel.v1.ListCustomerRepricingConfigsResponse>(
-                      this, METHODID_LIST_CUSTOMER_REPRICING_CONFIGS)))
-          .addMethod(
-              getCreateCustomerRepricingConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.CreateCustomerRepricingConfigRequest,
-                      com.google.cloud.channel.v1.CustomerRepricingConfig>(
-                      this, METHODID_CREATE_CUSTOMER_REPRICING_CONFIG)))
-          .addMethod(
-              getUpdateCustomerRepricingConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.UpdateCustomerRepricingConfigRequest,
-                      com.google.cloud.channel.v1.CustomerRepricingConfig>(
-                      this, METHODID_UPDATE_CUSTOMER_REPRICING_CONFIG)))
-          .addMethod(
-              getDeleteCustomerRepricingConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.DeleteCustomerRepricingConfigRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_CUSTOMER_REPRICING_CONFIG)))
-          .addMethod(
-              getGetChannelPartnerRepricingConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.GetChannelPartnerRepricingConfigRequest,
-                      com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>(
-                      this, METHODID_GET_CHANNEL_PARTNER_REPRICING_CONFIG)))
-          .addMethod(
-              getListChannelPartnerRepricingConfigsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsRequest,
-                      com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse>(
-                      this, METHODID_LIST_CHANNEL_PARTNER_REPRICING_CONFIGS)))
-          .addMethod(
-              getCreateChannelPartnerRepricingConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.CreateChannelPartnerRepricingConfigRequest,
-                      com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>(
-                      this, METHODID_CREATE_CHANNEL_PARTNER_REPRICING_CONFIG)))
-          .addMethod(
-              getUpdateChannelPartnerRepricingConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.UpdateChannelPartnerRepricingConfigRequest,
-                      com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>(
-                      this, METHODID_UPDATE_CHANNEL_PARTNER_REPRICING_CONFIG)))
-          .addMethod(
-              getDeleteChannelPartnerRepricingConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.DeleteChannelPartnerRepricingConfigRequest,
-                      com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_CHANNEL_PARTNER_REPRICING_CONFIG)))
-          .addMethod(
-              getLookupOfferMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.LookupOfferRequest,
-                      com.google.cloud.channel.v1.Offer>(this, METHODID_LOOKUP_OFFER)))
-          .addMethod(
-              getListProductsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.ListProductsRequest,
-                      com.google.cloud.channel.v1.ListProductsResponse>(
-                      this, METHODID_LIST_PRODUCTS)))
-          .addMethod(
-              getListSkusMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.ListSkusRequest,
-                      com.google.cloud.channel.v1.ListSkusResponse>(this, METHODID_LIST_SKUS)))
-          .addMethod(
-              getListOffersMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.ListOffersRequest,
-                      com.google.cloud.channel.v1.ListOffersResponse>(this, METHODID_LIST_OFFERS)))
-          .addMethod(
-              getListPurchasableSkusMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.ListPurchasableSkusRequest,
-                      com.google.cloud.channel.v1.ListPurchasableSkusResponse>(
-                      this, METHODID_LIST_PURCHASABLE_SKUS)))
-          .addMethod(
-              getListPurchasableOffersMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.ListPurchasableOffersRequest,
-                      com.google.cloud.channel.v1.ListPurchasableOffersResponse>(
-                      this, METHODID_LIST_PURCHASABLE_OFFERS)))
-          .addMethod(
-              getRegisterSubscriberMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.RegisterSubscriberRequest,
-                      com.google.cloud.channel.v1.RegisterSubscriberResponse>(
-                      this, METHODID_REGISTER_SUBSCRIBER)))
-          .addMethod(
-              getUnregisterSubscriberMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.UnregisterSubscriberRequest,
-                      com.google.cloud.channel.v1.UnregisterSubscriberResponse>(
-                      this, METHODID_UNREGISTER_SUBSCRIBER)))
-          .addMethod(
-              getListSubscribersMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.ListSubscribersRequest,
-                      com.google.cloud.channel.v1.ListSubscribersResponse>(
-                      this, METHODID_LIST_SUBSCRIBERS)))
-          .addMethod(
-              getListEntitlementChangesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.ListEntitlementChangesRequest,
-                      com.google.cloud.channel.v1.ListEntitlementChangesResponse>(
-                      this, METHODID_LIST_ENTITLEMENT_CHANGES)))
-          .build();
+      return CloudChannelServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service CloudChannelService.
    *
    * <pre>
    * CloudChannelService lets Google cloud resellers and distributors manage
@@ -5469,7 +5192,7 @@ public final class CloudChannelServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service CloudChannelService.
    *
    * <pre>
    * CloudChannelService lets Google cloud resellers and distributors manage
@@ -6782,7 +6505,7 @@ public final class CloudChannelServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service CloudChannelService.
    *
    * <pre>
    * CloudChannelService lets Google cloud resellers and distributors manage
@@ -8191,10 +7914,10 @@ public final class CloudChannelServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final CloudChannelServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(CloudChannelServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -8486,6 +8209,313 @@ public final class CloudChannelServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListCustomersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.ListCustomersRequest,
+                    com.google.cloud.channel.v1.ListCustomersResponse>(
+                    service, METHODID_LIST_CUSTOMERS)))
+        .addMethod(
+            getGetCustomerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.GetCustomerRequest,
+                    com.google.cloud.channel.v1.Customer>(service, METHODID_GET_CUSTOMER)))
+        .addMethod(
+            getCheckCloudIdentityAccountsExistMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistRequest,
+                    com.google.cloud.channel.v1.CheckCloudIdentityAccountsExistResponse>(
+                    service, METHODID_CHECK_CLOUD_IDENTITY_ACCOUNTS_EXIST)))
+        .addMethod(
+            getCreateCustomerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.CreateCustomerRequest,
+                    com.google.cloud.channel.v1.Customer>(service, METHODID_CREATE_CUSTOMER)))
+        .addMethod(
+            getUpdateCustomerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.UpdateCustomerRequest,
+                    com.google.cloud.channel.v1.Customer>(service, METHODID_UPDATE_CUSTOMER)))
+        .addMethod(
+            getDeleteCustomerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.DeleteCustomerRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_CUSTOMER)))
+        .addMethod(
+            getImportCustomerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.ImportCustomerRequest,
+                    com.google.cloud.channel.v1.Customer>(service, METHODID_IMPORT_CUSTOMER)))
+        .addMethod(
+            getProvisionCloudIdentityMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.ProvisionCloudIdentityRequest,
+                    com.google.longrunning.Operation>(service, METHODID_PROVISION_CLOUD_IDENTITY)))
+        .addMethod(
+            getListEntitlementsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.ListEntitlementsRequest,
+                    com.google.cloud.channel.v1.ListEntitlementsResponse>(
+                    service, METHODID_LIST_ENTITLEMENTS)))
+        .addMethod(
+            getListTransferableSkusMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.ListTransferableSkusRequest,
+                    com.google.cloud.channel.v1.ListTransferableSkusResponse>(
+                    service, METHODID_LIST_TRANSFERABLE_SKUS)))
+        .addMethod(
+            getListTransferableOffersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.ListTransferableOffersRequest,
+                    com.google.cloud.channel.v1.ListTransferableOffersResponse>(
+                    service, METHODID_LIST_TRANSFERABLE_OFFERS)))
+        .addMethod(
+            getGetEntitlementMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.GetEntitlementRequest,
+                    com.google.cloud.channel.v1.Entitlement>(service, METHODID_GET_ENTITLEMENT)))
+        .addMethod(
+            getCreateEntitlementMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.CreateEntitlementRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_ENTITLEMENT)))
+        .addMethod(
+            getChangeParametersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.ChangeParametersRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CHANGE_PARAMETERS)))
+        .addMethod(
+            getChangeRenewalSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.ChangeRenewalSettingsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CHANGE_RENEWAL_SETTINGS)))
+        .addMethod(
+            getChangeOfferMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.ChangeOfferRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CHANGE_OFFER)))
+        .addMethod(
+            getStartPaidServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.StartPaidServiceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_START_PAID_SERVICE)))
+        .addMethod(
+            getSuspendEntitlementMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.SuspendEntitlementRequest,
+                    com.google.longrunning.Operation>(service, METHODID_SUSPEND_ENTITLEMENT)))
+        .addMethod(
+            getCancelEntitlementMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.CancelEntitlementRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CANCEL_ENTITLEMENT)))
+        .addMethod(
+            getActivateEntitlementMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.ActivateEntitlementRequest,
+                    com.google.longrunning.Operation>(service, METHODID_ACTIVATE_ENTITLEMENT)))
+        .addMethod(
+            getTransferEntitlementsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.TransferEntitlementsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_TRANSFER_ENTITLEMENTS)))
+        .addMethod(
+            getTransferEntitlementsToGoogleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.TransferEntitlementsToGoogleRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_TRANSFER_ENTITLEMENTS_TO_GOOGLE)))
+        .addMethod(
+            getListChannelPartnerLinksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.ListChannelPartnerLinksRequest,
+                    com.google.cloud.channel.v1.ListChannelPartnerLinksResponse>(
+                    service, METHODID_LIST_CHANNEL_PARTNER_LINKS)))
+        .addMethod(
+            getGetChannelPartnerLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.GetChannelPartnerLinkRequest,
+                    com.google.cloud.channel.v1.ChannelPartnerLink>(
+                    service, METHODID_GET_CHANNEL_PARTNER_LINK)))
+        .addMethod(
+            getCreateChannelPartnerLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.CreateChannelPartnerLinkRequest,
+                    com.google.cloud.channel.v1.ChannelPartnerLink>(
+                    service, METHODID_CREATE_CHANNEL_PARTNER_LINK)))
+        .addMethod(
+            getUpdateChannelPartnerLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.UpdateChannelPartnerLinkRequest,
+                    com.google.cloud.channel.v1.ChannelPartnerLink>(
+                    service, METHODID_UPDATE_CHANNEL_PARTNER_LINK)))
+        .addMethod(
+            getGetCustomerRepricingConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.GetCustomerRepricingConfigRequest,
+                    com.google.cloud.channel.v1.CustomerRepricingConfig>(
+                    service, METHODID_GET_CUSTOMER_REPRICING_CONFIG)))
+        .addMethod(
+            getListCustomerRepricingConfigsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.ListCustomerRepricingConfigsRequest,
+                    com.google.cloud.channel.v1.ListCustomerRepricingConfigsResponse>(
+                    service, METHODID_LIST_CUSTOMER_REPRICING_CONFIGS)))
+        .addMethod(
+            getCreateCustomerRepricingConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.CreateCustomerRepricingConfigRequest,
+                    com.google.cloud.channel.v1.CustomerRepricingConfig>(
+                    service, METHODID_CREATE_CUSTOMER_REPRICING_CONFIG)))
+        .addMethod(
+            getUpdateCustomerRepricingConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.UpdateCustomerRepricingConfigRequest,
+                    com.google.cloud.channel.v1.CustomerRepricingConfig>(
+                    service, METHODID_UPDATE_CUSTOMER_REPRICING_CONFIG)))
+        .addMethod(
+            getDeleteCustomerRepricingConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.DeleteCustomerRepricingConfigRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_CUSTOMER_REPRICING_CONFIG)))
+        .addMethod(
+            getGetChannelPartnerRepricingConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.GetChannelPartnerRepricingConfigRequest,
+                    com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>(
+                    service, METHODID_GET_CHANNEL_PARTNER_REPRICING_CONFIG)))
+        .addMethod(
+            getListChannelPartnerRepricingConfigsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsRequest,
+                    com.google.cloud.channel.v1.ListChannelPartnerRepricingConfigsResponse>(
+                    service, METHODID_LIST_CHANNEL_PARTNER_REPRICING_CONFIGS)))
+        .addMethod(
+            getCreateChannelPartnerRepricingConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.CreateChannelPartnerRepricingConfigRequest,
+                    com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>(
+                    service, METHODID_CREATE_CHANNEL_PARTNER_REPRICING_CONFIG)))
+        .addMethod(
+            getUpdateChannelPartnerRepricingConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.UpdateChannelPartnerRepricingConfigRequest,
+                    com.google.cloud.channel.v1.ChannelPartnerRepricingConfig>(
+                    service, METHODID_UPDATE_CHANNEL_PARTNER_REPRICING_CONFIG)))
+        .addMethod(
+            getDeleteChannelPartnerRepricingConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.DeleteChannelPartnerRepricingConfigRequest,
+                    com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_CHANNEL_PARTNER_REPRICING_CONFIG)))
+        .addMethod(
+            getLookupOfferMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.LookupOfferRequest,
+                    com.google.cloud.channel.v1.Offer>(service, METHODID_LOOKUP_OFFER)))
+        .addMethod(
+            getListProductsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.ListProductsRequest,
+                    com.google.cloud.channel.v1.ListProductsResponse>(
+                    service, METHODID_LIST_PRODUCTS)))
+        .addMethod(
+            getListSkusMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.ListSkusRequest,
+                    com.google.cloud.channel.v1.ListSkusResponse>(service, METHODID_LIST_SKUS)))
+        .addMethod(
+            getListOffersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.ListOffersRequest,
+                    com.google.cloud.channel.v1.ListOffersResponse>(service, METHODID_LIST_OFFERS)))
+        .addMethod(
+            getListPurchasableSkusMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.ListPurchasableSkusRequest,
+                    com.google.cloud.channel.v1.ListPurchasableSkusResponse>(
+                    service, METHODID_LIST_PURCHASABLE_SKUS)))
+        .addMethod(
+            getListPurchasableOffersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.ListPurchasableOffersRequest,
+                    com.google.cloud.channel.v1.ListPurchasableOffersResponse>(
+                    service, METHODID_LIST_PURCHASABLE_OFFERS)))
+        .addMethod(
+            getRegisterSubscriberMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.RegisterSubscriberRequest,
+                    com.google.cloud.channel.v1.RegisterSubscriberResponse>(
+                    service, METHODID_REGISTER_SUBSCRIBER)))
+        .addMethod(
+            getUnregisterSubscriberMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.UnregisterSubscriberRequest,
+                    com.google.cloud.channel.v1.UnregisterSubscriberResponse>(
+                    service, METHODID_UNREGISTER_SUBSCRIBER)))
+        .addMethod(
+            getListSubscribersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.ListSubscribersRequest,
+                    com.google.cloud.channel.v1.ListSubscribersResponse>(
+                    service, METHODID_LIST_SUBSCRIBERS)))
+        .addMethod(
+            getListEntitlementChangesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.ListEntitlementChangesRequest,
+                    com.google.cloud.channel.v1.ListEntitlementChangesResponse>(
+                    service, METHODID_LIST_ENTITLEMENT_CHANGES)))
+        .build();
   }
 
   private abstract static class CloudChannelServiceBaseDescriptorSupplier

@@ -239,8 +239,7 @@ public final class PolicyTagManagerSerializationGrpc {
    * Taxonomy is a hierarchical group of policy tags.
    * </pre>
    */
-  public abstract static class PolicyTagManagerSerializationImplBase
-      implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -258,7 +257,7 @@ public final class PolicyTagManagerSerializationGrpc {
      * - Updates policy tags with valid resources names accordingly.
      * </pre>
      */
-    public void replaceTaxonomy(
+    default void replaceTaxonomy(
         com.google.cloud.datacatalog.v1.ReplaceTaxonomyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.Taxonomy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -277,7 +276,7 @@ public final class PolicyTagManagerSerializationGrpc {
      * nested protocol buffer structures.
      * </pre>
      */
-    public void importTaxonomies(
+    default void importTaxonomies(
         com.google.cloud.datacatalog.v1.ImportTaxonomiesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.ImportTaxonomiesResponse>
             responseObserver) {
@@ -296,43 +295,35 @@ public final class PolicyTagManagerSerializationGrpc {
      * policy tags that can be used as input for `ImportTaxonomies` calls.
      * </pre>
      */
-    public void exportTaxonomies(
+    default void exportTaxonomies(
         com.google.cloud.datacatalog.v1.ExportTaxonomiesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.ExportTaxonomiesResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getExportTaxonomiesMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service PolicyTagManagerSerialization.
+   *
+   * <pre>
+   * Policy Tag Manager Serialization API service allows you to manipulate
+   * your policy tags and taxonomies in a serialized format.
+   * Taxonomy is a hierarchical group of policy tags.
+   * </pre>
+   */
+  public abstract static class PolicyTagManagerSerializationImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getReplaceTaxonomyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datacatalog.v1.ReplaceTaxonomyRequest,
-                      com.google.cloud.datacatalog.v1.Taxonomy>(this, METHODID_REPLACE_TAXONOMY)))
-          .addMethod(
-              getImportTaxonomiesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datacatalog.v1.ImportTaxonomiesRequest,
-                      com.google.cloud.datacatalog.v1.ImportTaxonomiesResponse>(
-                      this, METHODID_IMPORT_TAXONOMIES)))
-          .addMethod(
-              getExportTaxonomiesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datacatalog.v1.ExportTaxonomiesRequest,
-                      com.google.cloud.datacatalog.v1.ExportTaxonomiesResponse>(
-                      this, METHODID_EXPORT_TAXONOMIES)))
-          .build();
+      return PolicyTagManagerSerializationGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service PolicyTagManagerSerialization.
    *
    * <pre>
    * Policy Tag Manager Serialization API service allows you to manipulate
@@ -423,7 +414,7 @@ public final class PolicyTagManagerSerializationGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service PolicyTagManagerSerialization.
    *
    * <pre>
    * Policy Tag Manager Serialization API service allows you to manipulate
@@ -503,7 +494,8 @@ public final class PolicyTagManagerSerializationGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * PolicyTagManagerSerialization.
    *
    * <pre>
    * Policy Tag Manager Serialization API service allows you to manipulate
@@ -594,10 +586,10 @@ public final class PolicyTagManagerSerializationGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final PolicyTagManagerSerializationImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(PolicyTagManagerSerializationImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -640,6 +632,31 @@ public final class PolicyTagManagerSerializationGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getReplaceTaxonomyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.v1.ReplaceTaxonomyRequest,
+                    com.google.cloud.datacatalog.v1.Taxonomy>(service, METHODID_REPLACE_TAXONOMY)))
+        .addMethod(
+            getImportTaxonomiesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.v1.ImportTaxonomiesRequest,
+                    com.google.cloud.datacatalog.v1.ImportTaxonomiesResponse>(
+                    service, METHODID_IMPORT_TAXONOMIES)))
+        .addMethod(
+            getExportTaxonomiesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.v1.ExportTaxonomiesRequest,
+                    com.google.cloud.datacatalog.v1.ExportTaxonomiesResponse>(
+                    service, METHODID_EXPORT_TAXONOMIES)))
+        .build();
   }
 
   private abstract static class PolicyTagManagerSerializationBaseDescriptorSupplier

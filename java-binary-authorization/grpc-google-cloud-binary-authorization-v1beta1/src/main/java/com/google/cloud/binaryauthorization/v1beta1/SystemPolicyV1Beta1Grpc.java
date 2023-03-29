@@ -131,7 +131,7 @@ public final class SystemPolicyV1Beta1Grpc {
    * API for working with the system policy.
    * </pre>
    */
-  public abstract static class SystemPolicyV1Beta1ImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -140,30 +140,33 @@ public final class SystemPolicyV1Beta1Grpc {
      * Gets the current system policy in the specified location.
      * </pre>
      */
-    public void getSystemPolicy(
+    default void getSystemPolicy(
         com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.binaryauthorization.v1beta1.Policy>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetSystemPolicyMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service SystemPolicyV1Beta1.
+   *
+   * <pre>
+   * API for working with the system policy.
+   * </pre>
+   */
+  public abstract static class SystemPolicyV1Beta1ImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getGetSystemPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest,
-                      com.google.cloud.binaryauthorization.v1beta1.Policy>(
-                      this, METHODID_GET_SYSTEM_POLICY)))
-          .build();
+      return SystemPolicyV1Beta1Grpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service SystemPolicyV1Beta1.
    *
    * <pre>
    * API for working with the system policy.
@@ -200,7 +203,7 @@ public final class SystemPolicyV1Beta1Grpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service SystemPolicyV1Beta1.
    *
    * <pre>
    * API for working with the system policy.
@@ -234,7 +237,7 @@ public final class SystemPolicyV1Beta1Grpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service SystemPolicyV1Beta1.
    *
    * <pre>
    * API for working with the system policy.
@@ -276,10 +279,10 @@ public final class SystemPolicyV1Beta1Grpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final SystemPolicyV1Beta1ImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(SystemPolicyV1Beta1ImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -308,6 +311,18 @@ public final class SystemPolicyV1Beta1Grpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getGetSystemPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.binaryauthorization.v1beta1.GetSystemPolicyRequest,
+                    com.google.cloud.binaryauthorization.v1beta1.Policy>(
+                    service, METHODID_GET_SYSTEM_POLICY)))
+        .build();
   }
 
   private abstract static class SystemPolicyV1Beta1BaseDescriptorSupplier

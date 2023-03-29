@@ -229,7 +229,7 @@ public final class MetricsV1Beta3Grpc {
    * jobs.
    * </pre>
    */
-  public abstract static class MetricsV1Beta3ImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -243,7 +243,7 @@ public final class MetricsV1Beta3Grpc {
      * status of jobs that are running in `us-central1`.
      * </pre>
      */
-    public void getJobMetrics(
+    default void getJobMetrics(
         com.google.dataflow.v1beta3.GetJobMetricsRequest request,
         io.grpc.stub.StreamObserver<com.google.dataflow.v1beta3.JobMetrics> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -258,7 +258,7 @@ public final class MetricsV1Beta3Grpc {
      * EXPERIMENTAL.  This API is subject to change or removal without notice.
      * </pre>
      */
-    public void getJobExecutionDetails(
+    default void getJobExecutionDetails(
         com.google.dataflow.v1beta3.GetJobExecutionDetailsRequest request,
         io.grpc.stub.StreamObserver<com.google.dataflow.v1beta3.JobExecutionDetails>
             responseObserver) {
@@ -275,43 +275,34 @@ public final class MetricsV1Beta3Grpc {
      * EXPERIMENTAL.  This API is subject to change or removal without notice.
      * </pre>
      */
-    public void getStageExecutionDetails(
+    default void getStageExecutionDetails(
         com.google.dataflow.v1beta3.GetStageExecutionDetailsRequest request,
         io.grpc.stub.StreamObserver<com.google.dataflow.v1beta3.StageExecutionDetails>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetStageExecutionDetailsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service MetricsV1Beta3.
+   *
+   * <pre>
+   * The Dataflow Metrics API lets you monitor the progress of Dataflow
+   * jobs.
+   * </pre>
+   */
+  public abstract static class MetricsV1Beta3ImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getGetJobMetricsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.dataflow.v1beta3.GetJobMetricsRequest,
-                      com.google.dataflow.v1beta3.JobMetrics>(this, METHODID_GET_JOB_METRICS)))
-          .addMethod(
-              getGetJobExecutionDetailsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.dataflow.v1beta3.GetJobExecutionDetailsRequest,
-                      com.google.dataflow.v1beta3.JobExecutionDetails>(
-                      this, METHODID_GET_JOB_EXECUTION_DETAILS)))
-          .addMethod(
-              getGetStageExecutionDetailsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.dataflow.v1beta3.GetStageExecutionDetailsRequest,
-                      com.google.dataflow.v1beta3.StageExecutionDetails>(
-                      this, METHODID_GET_STAGE_EXECUTION_DETAILS)))
-          .build();
+      return MetricsV1Beta3Grpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service MetricsV1Beta3.
    *
    * <pre>
    * The Dataflow Metrics API lets you monitor the progress of Dataflow
@@ -389,7 +380,7 @@ public final class MetricsV1Beta3Grpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service MetricsV1Beta3.
    *
    * <pre>
    * The Dataflow Metrics API lets you monitor the progress of Dataflow
@@ -457,7 +448,7 @@ public final class MetricsV1Beta3Grpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service MetricsV1Beta3.
    *
    * <pre>
    * The Dataflow Metrics API lets you monitor the progress of Dataflow
@@ -537,10 +528,10 @@ public final class MetricsV1Beta3Grpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final MetricsV1Beta3ImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(MetricsV1Beta3ImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -581,6 +572,31 @@ public final class MetricsV1Beta3Grpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getGetJobMetricsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.dataflow.v1beta3.GetJobMetricsRequest,
+                    com.google.dataflow.v1beta3.JobMetrics>(service, METHODID_GET_JOB_METRICS)))
+        .addMethod(
+            getGetJobExecutionDetailsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.dataflow.v1beta3.GetJobExecutionDetailsRequest,
+                    com.google.dataflow.v1beta3.JobExecutionDetails>(
+                    service, METHODID_GET_JOB_EXECUTION_DETAILS)))
+        .addMethod(
+            getGetStageExecutionDetailsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.dataflow.v1beta3.GetStageExecutionDetailsRequest,
+                    com.google.dataflow.v1beta3.StageExecutionDetails>(
+                    service, METHODID_GET_STAGE_EXECUTION_DETAILS)))
+        .build();
   }
 
   private abstract static class MetricsV1Beta3BaseDescriptorSupplier

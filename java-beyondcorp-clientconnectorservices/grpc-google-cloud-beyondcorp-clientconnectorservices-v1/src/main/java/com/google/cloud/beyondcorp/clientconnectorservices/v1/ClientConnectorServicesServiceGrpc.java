@@ -393,8 +393,7 @@ public final class ClientConnectorServicesServiceGrpc {
    *   `projects/{project_id}/locations/{location_id}/client_connector_services/{client_connector_service_id}`.
    * </pre>
    */
-  public abstract static class ClientConnectorServicesServiceImplBase
-      implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -403,7 +402,7 @@ public final class ClientConnectorServicesServiceGrpc {
      * Lists ClientConnectorServices in a given project and location.
      * </pre>
      */
-    public void listClientConnectorServices(
+    default void listClientConnectorServices(
         com.google.cloud.beyondcorp.clientconnectorservices.v1.ListClientConnectorServicesRequest
             request,
         io.grpc.stub.StreamObserver<
@@ -421,7 +420,7 @@ public final class ClientConnectorServicesServiceGrpc {
      * Gets details of a single ClientConnectorService.
      * </pre>
      */
-    public void getClientConnectorService(
+    default void getClientConnectorService(
         com.google.cloud.beyondcorp.clientconnectorservices.v1.GetClientConnectorServiceRequest
             request,
         io.grpc.stub.StreamObserver<
@@ -438,7 +437,7 @@ public final class ClientConnectorServicesServiceGrpc {
      * Creates a new ClientConnectorService in a given project and location.
      * </pre>
      */
-    public void createClientConnectorService(
+    default void createClientConnectorService(
         com.google.cloud.beyondcorp.clientconnectorservices.v1.CreateClientConnectorServiceRequest
             request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -453,7 +452,7 @@ public final class ClientConnectorServicesServiceGrpc {
      * Updates the parameters of a single ClientConnectorService.
      * </pre>
      */
-    public void updateClientConnectorService(
+    default void updateClientConnectorService(
         com.google.cloud.beyondcorp.clientconnectorservices.v1.UpdateClientConnectorServiceRequest
             request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -468,64 +467,39 @@ public final class ClientConnectorServicesServiceGrpc {
      * Deletes a single ClientConnectorService.
      * </pre>
      */
-    public void deleteClientConnectorService(
+    default void deleteClientConnectorService(
         com.google.cloud.beyondcorp.clientconnectorservices.v1.DeleteClientConnectorServiceRequest
             request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteClientConnectorServiceMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ClientConnectorServicesService.
+   *
+   * <pre>
+   * API Overview:
+   * The `beyondcorp.googleapis.com` service implements the Google Cloud
+   * BeyondCorp API.
+   * Data Model:
+   * The ClientConnectorServicesService exposes the following resources:
+   * * Client Connector Services, named as follows:
+   *   `projects/{project_id}/locations/{location_id}/client_connector_services/{client_connector_service_id}`.
+   * </pre>
+   */
+  public abstract static class ClientConnectorServicesServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListClientConnectorServicesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.beyondcorp.clientconnectorservices.v1
-                          .ListClientConnectorServicesRequest,
-                      com.google.cloud.beyondcorp.clientconnectorservices.v1
-                          .ListClientConnectorServicesResponse>(
-                      this, METHODID_LIST_CLIENT_CONNECTOR_SERVICES)))
-          .addMethod(
-              getGetClientConnectorServiceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.beyondcorp.clientconnectorservices.v1
-                          .GetClientConnectorServiceRequest,
-                      com.google.cloud.beyondcorp.clientconnectorservices.v1
-                          .ClientConnectorService>(this, METHODID_GET_CLIENT_CONNECTOR_SERVICE)))
-          .addMethod(
-              getCreateClientConnectorServiceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.beyondcorp.clientconnectorservices.v1
-                          .CreateClientConnectorServiceRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_CREATE_CLIENT_CONNECTOR_SERVICE)))
-          .addMethod(
-              getUpdateClientConnectorServiceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.beyondcorp.clientconnectorservices.v1
-                          .UpdateClientConnectorServiceRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_UPDATE_CLIENT_CONNECTOR_SERVICE)))
-          .addMethod(
-              getDeleteClientConnectorServiceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.beyondcorp.clientconnectorservices.v1
-                          .DeleteClientConnectorServiceRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_DELETE_CLIENT_CONNECTOR_SERVICE)))
-          .build();
+      return ClientConnectorServicesServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ClientConnectorServicesService.
    *
    * <pre>
    * API Overview:
@@ -642,7 +616,7 @@ public final class ClientConnectorServicesServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ClientConnectorServicesService.
    *
    * <pre>
    * API Overview:
@@ -743,7 +717,8 @@ public final class ClientConnectorServicesServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * ClientConnectorServicesService.
    *
    * <pre>
    * API Overview:
@@ -862,10 +837,10 @@ public final class ClientConnectorServicesServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ClientConnectorServicesServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ClientConnectorServicesServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -929,6 +904,52 @@ public final class ClientConnectorServicesServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListClientConnectorServicesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.beyondcorp.clientconnectorservices.v1
+                        .ListClientConnectorServicesRequest,
+                    com.google.cloud.beyondcorp.clientconnectorservices.v1
+                        .ListClientConnectorServicesResponse>(
+                    service, METHODID_LIST_CLIENT_CONNECTOR_SERVICES)))
+        .addMethod(
+            getGetClientConnectorServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.beyondcorp.clientconnectorservices.v1
+                        .GetClientConnectorServiceRequest,
+                    com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService>(
+                    service, METHODID_GET_CLIENT_CONNECTOR_SERVICE)))
+        .addMethod(
+            getCreateClientConnectorServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.beyondcorp.clientconnectorservices.v1
+                        .CreateClientConnectorServiceRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_CLIENT_CONNECTOR_SERVICE)))
+        .addMethod(
+            getUpdateClientConnectorServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.beyondcorp.clientconnectorservices.v1
+                        .UpdateClientConnectorServiceRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_CLIENT_CONNECTOR_SERVICE)))
+        .addMethod(
+            getDeleteClientConnectorServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.beyondcorp.clientconnectorservices.v1
+                        .DeleteClientConnectorServiceRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_CLIENT_CONNECTOR_SERVICE)))
+        .build();
   }
 
   private abstract static class ClientConnectorServicesServiceBaseDescriptorSupplier

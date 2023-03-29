@@ -440,8 +440,7 @@ public final class BinauthzManagementServiceV1Beta1Grpc {
    * * [Attestor][google.cloud.binaryauthorization.v1beta1.Attestor]
    * </pre>
    */
-  public abstract static class BinauthzManagementServiceV1Beta1ImplBase
-      implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -455,7 +454,7 @@ public final class BinauthzManagementServiceV1Beta1Grpc {
      * [policy][google.cloud.binaryauthorization.v1beta1.Policy] if the project does not have one.
      * </pre>
      */
-    public void getPolicy(
+    default void getPolicy(
         com.google.cloud.binaryauthorization.v1beta1.GetPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.binaryauthorization.v1beta1.Policy>
             responseObserver) {
@@ -473,7 +472,7 @@ public final class BinauthzManagementServiceV1Beta1Grpc {
      * if the request is malformed.
      * </pre>
      */
-    public void updatePolicy(
+    default void updatePolicy(
         com.google.cloud.binaryauthorization.v1beta1.UpdatePolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.binaryauthorization.v1beta1.Policy>
             responseObserver) {
@@ -491,7 +490,7 @@ public final class BinauthzManagementServiceV1Beta1Grpc {
      * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] already exists.
      * </pre>
      */
-    public void createAttestor(
+    default void createAttestor(
         com.google.cloud.binaryauthorization.v1beta1.CreateAttestorRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.binaryauthorization.v1beta1.Attestor>
             responseObserver) {
@@ -507,7 +506,7 @@ public final class BinauthzManagementServiceV1Beta1Grpc {
      * Returns NOT_FOUND if the [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] does not exist.
      * </pre>
      */
-    public void getAttestor(
+    default void getAttestor(
         com.google.cloud.binaryauthorization.v1beta1.GetAttestorRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.binaryauthorization.v1beta1.Attestor>
             responseObserver) {
@@ -523,7 +522,7 @@ public final class BinauthzManagementServiceV1Beta1Grpc {
      * Returns NOT_FOUND if the [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] does not exist.
      * </pre>
      */
-    public void updateAttestor(
+    default void updateAttestor(
         com.google.cloud.binaryauthorization.v1beta1.UpdateAttestorRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.binaryauthorization.v1beta1.Attestor>
             responseObserver) {
@@ -539,7 +538,7 @@ public final class BinauthzManagementServiceV1Beta1Grpc {
      * Returns INVALID_ARGUMENT if the project does not exist.
      * </pre>
      */
-    public void listAttestors(
+    default void listAttestors(
         com.google.cloud.binaryauthorization.v1beta1.ListAttestorsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.binaryauthorization.v1beta1.ListAttestorsResponse>
@@ -556,70 +555,37 @@ public final class BinauthzManagementServiceV1Beta1Grpc {
      * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] does not exist.
      * </pre>
      */
-    public void deleteAttestor(
+    default void deleteAttestor(
         com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteAttestorMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service BinauthzManagementServiceV1Beta1.
+   *
+   * <pre>
+   * Google Cloud Management Service for Binary Authorization admission policies
+   * and attestation authorities.
+   * This API implements a REST model with the following objects:
+   * * [Policy][google.cloud.binaryauthorization.v1beta1.Policy]
+   * * [Attestor][google.cloud.binaryauthorization.v1beta1.Attestor]
+   * </pre>
+   */
+  public abstract static class BinauthzManagementServiceV1Beta1ImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getGetPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.binaryauthorization.v1beta1.GetPolicyRequest,
-                      com.google.cloud.binaryauthorization.v1beta1.Policy>(
-                      this, METHODID_GET_POLICY)))
-          .addMethod(
-              getUpdatePolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.binaryauthorization.v1beta1.UpdatePolicyRequest,
-                      com.google.cloud.binaryauthorization.v1beta1.Policy>(
-                      this, METHODID_UPDATE_POLICY)))
-          .addMethod(
-              getCreateAttestorMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.binaryauthorization.v1beta1.CreateAttestorRequest,
-                      com.google.cloud.binaryauthorization.v1beta1.Attestor>(
-                      this, METHODID_CREATE_ATTESTOR)))
-          .addMethod(
-              getGetAttestorMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.binaryauthorization.v1beta1.GetAttestorRequest,
-                      com.google.cloud.binaryauthorization.v1beta1.Attestor>(
-                      this, METHODID_GET_ATTESTOR)))
-          .addMethod(
-              getUpdateAttestorMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.binaryauthorization.v1beta1.UpdateAttestorRequest,
-                      com.google.cloud.binaryauthorization.v1beta1.Attestor>(
-                      this, METHODID_UPDATE_ATTESTOR)))
-          .addMethod(
-              getListAttestorsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.binaryauthorization.v1beta1.ListAttestorsRequest,
-                      com.google.cloud.binaryauthorization.v1beta1.ListAttestorsResponse>(
-                      this, METHODID_LIST_ATTESTORS)))
-          .addMethod(
-              getDeleteAttestorMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_ATTESTOR)))
-          .build();
+      return BinauthzManagementServiceV1Beta1Grpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service
+   * BinauthzManagementServiceV1Beta1.
    *
    * <pre>
    * Google Cloud Management Service for Binary Authorization admission policies
@@ -777,7 +743,8 @@ public final class BinauthzManagementServiceV1Beta1Grpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service
+   * BinauthzManagementServiceV1Beta1.
    *
    * <pre>
    * Google Cloud Management Service for Binary Authorization admission policies
@@ -909,7 +876,8 @@ public final class BinauthzManagementServiceV1Beta1Grpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * BinauthzManagementServiceV1Beta1.
    *
    * <pre>
    * Google Cloud Management Service for Binary Authorization admission policies
@@ -1059,10 +1027,10 @@ public final class BinauthzManagementServiceV1Beta1Grpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final BinauthzManagementServiceV1Beta1ImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(BinauthzManagementServiceV1Beta1ImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1127,6 +1095,59 @@ public final class BinauthzManagementServiceV1Beta1Grpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getGetPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.binaryauthorization.v1beta1.GetPolicyRequest,
+                    com.google.cloud.binaryauthorization.v1beta1.Policy>(
+                    service, METHODID_GET_POLICY)))
+        .addMethod(
+            getUpdatePolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.binaryauthorization.v1beta1.UpdatePolicyRequest,
+                    com.google.cloud.binaryauthorization.v1beta1.Policy>(
+                    service, METHODID_UPDATE_POLICY)))
+        .addMethod(
+            getCreateAttestorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.binaryauthorization.v1beta1.CreateAttestorRequest,
+                    com.google.cloud.binaryauthorization.v1beta1.Attestor>(
+                    service, METHODID_CREATE_ATTESTOR)))
+        .addMethod(
+            getGetAttestorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.binaryauthorization.v1beta1.GetAttestorRequest,
+                    com.google.cloud.binaryauthorization.v1beta1.Attestor>(
+                    service, METHODID_GET_ATTESTOR)))
+        .addMethod(
+            getUpdateAttestorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.binaryauthorization.v1beta1.UpdateAttestorRequest,
+                    com.google.cloud.binaryauthorization.v1beta1.Attestor>(
+                    service, METHODID_UPDATE_ATTESTOR)))
+        .addMethod(
+            getListAttestorsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.binaryauthorization.v1beta1.ListAttestorsRequest,
+                    com.google.cloud.binaryauthorization.v1beta1.ListAttestorsResponse>(
+                    service, METHODID_LIST_ATTESTORS)))
+        .addMethod(
+            getDeleteAttestorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.binaryauthorization.v1beta1.DeleteAttestorRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_ATTESTOR)))
+        .build();
   }
 
   private abstract static class BinauthzManagementServiceV1Beta1BaseDescriptorSupplier

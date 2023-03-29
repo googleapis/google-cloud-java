@@ -149,7 +149,7 @@ public final class ValidationHelperV1Grpc {
    * BinAuthz Attestor verification
    * </pre>
    */
-  public abstract static class ValidationHelperV1ImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -159,7 +159,7 @@ public final class ValidationHelperV1Grpc {
      * was signed by the given Attestor
      * </pre>
      */
-    public void validateAttestationOccurrence(
+    default void validateAttestationOccurrence(
         com.google.protos.google.cloud.binaryauthorization.v1.Service
                 .ValidateAttestationOccurrenceRequest
             request,
@@ -170,25 +170,26 @@ public final class ValidationHelperV1Grpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getValidateAttestationOccurrenceMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ValidationHelperV1.
+   *
+   * <pre>
+   * BinAuthz Attestor verification
+   * </pre>
+   */
+  public abstract static class ValidationHelperV1ImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getValidateAttestationOccurrenceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.protos.google.cloud.binaryauthorization.v1.Service
-                          .ValidateAttestationOccurrenceRequest,
-                      com.google.protos.google.cloud.binaryauthorization.v1.Service
-                          .ValidateAttestationOccurrenceResponse>(
-                      this, METHODID_VALIDATE_ATTESTATION_OCCURRENCE)))
-          .build();
+      return ValidationHelperV1Grpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ValidationHelperV1.
    *
    * <pre>
    * BinAuthz Attestor verification
@@ -230,7 +231,7 @@ public final class ValidationHelperV1Grpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ValidationHelperV1.
    *
    * <pre>
    * BinAuthz Attestor verification
@@ -269,7 +270,7 @@ public final class ValidationHelperV1Grpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service ValidationHelperV1.
    *
    * <pre>
    * BinAuthz Attestor verification
@@ -315,10 +316,10 @@ public final class ValidationHelperV1Grpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ValidationHelperV1ImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ValidationHelperV1ImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -351,6 +352,20 @@ public final class ValidationHelperV1Grpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getValidateAttestationOccurrenceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.protos.google.cloud.binaryauthorization.v1.Service
+                        .ValidateAttestationOccurrenceRequest,
+                    com.google.protos.google.cloud.binaryauthorization.v1.Service
+                        .ValidateAttestationOccurrenceResponse>(
+                    service, METHODID_VALIDATE_ATTESTATION_OCCURRENCE)))
+        .build();
   }
 
   private abstract static class ValidationHelperV1BaseDescriptorSupplier

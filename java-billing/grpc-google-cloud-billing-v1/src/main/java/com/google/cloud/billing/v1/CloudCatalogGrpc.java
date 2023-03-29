@@ -174,7 +174,7 @@ public final class CloudCatalogGrpc {
    * and SKUs.
    * </pre>
    */
-  public abstract static class CloudCatalogImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -183,7 +183,7 @@ public final class CloudCatalogGrpc {
      * Lists all public cloud services.
      * </pre>
      */
-    public void listServices(
+    default void listServices(
         com.google.cloud.billing.v1.ListServicesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.billing.v1.ListServicesResponse>
             responseObserver) {
@@ -198,35 +198,34 @@ public final class CloudCatalogGrpc {
      * Lists all publicly available SKUs for a given cloud service.
      * </pre>
      */
-    public void listSkus(
+    default void listSkus(
         com.google.cloud.billing.v1.ListSkusRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.billing.v1.ListSkusResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListSkusMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service CloudCatalog.
+   *
+   * <pre>
+   * A catalog of Google Cloud Platform services and SKUs.
+   * Provides pricing information and metadata on Google Cloud Platform services
+   * and SKUs.
+   * </pre>
+   */
+  public abstract static class CloudCatalogImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListServicesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.billing.v1.ListServicesRequest,
-                      com.google.cloud.billing.v1.ListServicesResponse>(
-                      this, METHODID_LIST_SERVICES)))
-          .addMethod(
-              getListSkusMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.billing.v1.ListSkusRequest,
-                      com.google.cloud.billing.v1.ListSkusResponse>(this, METHODID_LIST_SKUS)))
-          .build();
+      return CloudCatalogGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service CloudCatalog.
    *
    * <pre>
    * A catalog of Google Cloud Platform services and SKUs.
@@ -279,7 +278,7 @@ public final class CloudCatalogGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service CloudCatalog.
    *
    * <pre>
    * A catalog of Google Cloud Platform services and SKUs.
@@ -327,7 +326,7 @@ public final class CloudCatalogGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service CloudCatalog.
    *
    * <pre>
    * A catalog of Google Cloud Platform services and SKUs.
@@ -384,10 +383,10 @@ public final class CloudCatalogGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final CloudCatalogImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(CloudCatalogImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -422,6 +421,24 @@ public final class CloudCatalogGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListServicesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.billing.v1.ListServicesRequest,
+                    com.google.cloud.billing.v1.ListServicesResponse>(
+                    service, METHODID_LIST_SERVICES)))
+        .addMethod(
+            getListSkusMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.billing.v1.ListSkusRequest,
+                    com.google.cloud.billing.v1.ListSkusResponse>(service, METHODID_LIST_SKUS)))
+        .build();
   }
 
   private abstract static class CloudCatalogBaseDescriptorSupplier

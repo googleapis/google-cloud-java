@@ -237,8 +237,7 @@ public final class ConsumerProcurementServiceGrpc {
    * enable billing setup for charging for the procured item.
    * </pre>
    */
-  public abstract static class ConsumerProcurementServiceImplBase
-      implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -251,7 +250,7 @@ public final class ConsumerProcurementServiceGrpc {
      * order resource will be removed.
      * </pre>
      */
-    public void placeOrder(
+    default void placeOrder(
         com.google.cloud.commerce.consumer.procurement.v1alpha1.PlaceOrderRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPlaceOrderMethod(), responseObserver);
@@ -264,7 +263,7 @@ public final class ConsumerProcurementServiceGrpc {
      * Returns the requested [Order][google.cloud.commerce.consumer.procurement.v1alpha1.Order] resource.
      * </pre>
      */
-    public void getOrder(
+    default void getOrder(
         com.google.cloud.commerce.consumer.procurement.v1alpha1.GetOrderRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.commerce.consumer.procurement.v1alpha1.Order>
             responseObserver) {
@@ -279,43 +278,38 @@ public final class ConsumerProcurementServiceGrpc {
      * scope of the parent resource.
      * </pre>
      */
-    public void listOrders(
+    default void listOrders(
         com.google.cloud.commerce.consumer.procurement.v1alpha1.ListOrdersRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.commerce.consumer.procurement.v1alpha1.ListOrdersResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListOrdersMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ConsumerProcurementService.
+   *
+   * <pre>
+   * ConsumerProcurementService allows customers to make purchases of products
+   * served by the Cloud Commerce platform.
+   * When purchases are made, the
+   * [ConsumerProcurementService][google.cloud.commerce.consumer.procurement.v1alpha1.ConsumerProcurementService] programs the appropriate backends, including
+   * both Google's own infrastructure, as well as third-party systems, and to
+   * enable billing setup for charging for the procured item.
+   * </pre>
+   */
+  public abstract static class ConsumerProcurementServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getPlaceOrderMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.commerce.consumer.procurement.v1alpha1.PlaceOrderRequest,
-                      com.google.longrunning.Operation>(this, METHODID_PLACE_ORDER)))
-          .addMethod(
-              getGetOrderMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.commerce.consumer.procurement.v1alpha1.GetOrderRequest,
-                      com.google.cloud.commerce.consumer.procurement.v1alpha1.Order>(
-                      this, METHODID_GET_ORDER)))
-          .addMethod(
-              getListOrdersMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.commerce.consumer.procurement.v1alpha1.ListOrdersRequest,
-                      com.google.cloud.commerce.consumer.procurement.v1alpha1.ListOrdersResponse>(
-                      this, METHODID_LIST_ORDERS)))
-          .build();
+      return ConsumerProcurementServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ConsumerProcurementService.
    *
    * <pre>
    * ConsumerProcurementService allows customers to make purchases of products
@@ -391,7 +385,7 @@ public final class ConsumerProcurementServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ConsumerProcurementService.
    *
    * <pre>
    * ConsumerProcurementService allows customers to make purchases of products
@@ -461,7 +455,8 @@ public final class ConsumerProcurementServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * ConsumerProcurementService.
    *
    * <pre>
    * ConsumerProcurementService allows customers to make purchases of products
@@ -543,10 +538,10 @@ public final class ConsumerProcurementServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ConsumerProcurementServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ConsumerProcurementServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -588,6 +583,31 @@ public final class ConsumerProcurementServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getPlaceOrderMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.commerce.consumer.procurement.v1alpha1.PlaceOrderRequest,
+                    com.google.longrunning.Operation>(service, METHODID_PLACE_ORDER)))
+        .addMethod(
+            getGetOrderMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.commerce.consumer.procurement.v1alpha1.GetOrderRequest,
+                    com.google.cloud.commerce.consumer.procurement.v1alpha1.Order>(
+                    service, METHODID_GET_ORDER)))
+        .addMethod(
+            getListOrdersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.commerce.consumer.procurement.v1alpha1.ListOrdersRequest,
+                    com.google.cloud.commerce.consumer.procurement.v1alpha1.ListOrdersResponse>(
+                    service, METHODID_LIST_ORDERS)))
+        .build();
   }
 
   private abstract static class ConsumerProcurementServiceBaseDescriptorSupplier

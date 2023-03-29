@@ -228,8 +228,7 @@ public final class CloudChannelReportsServiceGrpc {
    * Google Workspace.)
    * </pre>
    */
-  public abstract static class CloudChannelReportsServiceImplBase
-      implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -257,7 +256,7 @@ public final class CloudChannelReportsServiceGrpc {
      * [RunReportJobResponse.report_job][google.cloud.channel.v1.RunReportJobResponse.report_job].
      * </pre>
      */
-    public void runReportJob(
+    default void runReportJob(
         com.google.cloud.channel.v1.RunReportJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -272,7 +271,7 @@ public final class CloudChannelReportsServiceGrpc {
      * [CloudChannelReportsService.RunReportJob][google.cloud.channel.v1.CloudChannelReportsService.RunReportJob].
      * </pre>
      */
-    public void fetchReportResults(
+    default void fetchReportResults(
         com.google.cloud.channel.v1.FetchReportResultsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.FetchReportResultsResponse>
             responseObserver) {
@@ -288,43 +287,36 @@ public final class CloudChannelReportsServiceGrpc {
      * a description, and the list of columns that will be in the result.
      * </pre>
      */
-    public void listReports(
+    default void listReports(
         com.google.cloud.channel.v1.ListReportsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListReportsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListReportsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service CloudChannelReportsService.
+   *
+   * <pre>
+   * CloudChannelReportsService lets Google Cloud resellers and
+   * distributors retrieve and combine a variety of data in Cloud Channel for
+   * multiple products (Google Cloud Platform (GCP), Google Voice, and
+   * Google Workspace.)
+   * </pre>
+   */
+  public abstract static class CloudChannelReportsServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getRunReportJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.RunReportJobRequest,
-                      com.google.longrunning.Operation>(this, METHODID_RUN_REPORT_JOB)))
-          .addMethod(
-              getFetchReportResultsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.FetchReportResultsRequest,
-                      com.google.cloud.channel.v1.FetchReportResultsResponse>(
-                      this, METHODID_FETCH_REPORT_RESULTS)))
-          .addMethod(
-              getListReportsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.channel.v1.ListReportsRequest,
-                      com.google.cloud.channel.v1.ListReportsResponse>(
-                      this, METHODID_LIST_REPORTS)))
-          .build();
+      return CloudChannelReportsServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service CloudChannelReportsService.
    *
    * <pre>
    * CloudChannelReportsService lets Google Cloud resellers and
@@ -419,7 +411,7 @@ public final class CloudChannelReportsServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service CloudChannelReportsService.
    *
    * <pre>
    * CloudChannelReportsService lets Google Cloud resellers and
@@ -503,7 +495,8 @@ public final class CloudChannelReportsServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * CloudChannelReportsService.
    *
    * <pre>
    * CloudChannelReportsService lets Google Cloud resellers and
@@ -597,10 +590,10 @@ public final class CloudChannelReportsServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final CloudChannelReportsServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(CloudChannelReportsServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -640,6 +633,31 @@ public final class CloudChannelReportsServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getRunReportJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.RunReportJobRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RUN_REPORT_JOB)))
+        .addMethod(
+            getFetchReportResultsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.FetchReportResultsRequest,
+                    com.google.cloud.channel.v1.FetchReportResultsResponse>(
+                    service, METHODID_FETCH_REPORT_RESULTS)))
+        .addMethod(
+            getListReportsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.channel.v1.ListReportsRequest,
+                    com.google.cloud.channel.v1.ListReportsResponse>(
+                    service, METHODID_LIST_REPORTS)))
+        .build();
   }
 
   private abstract static class CloudChannelReportsServiceBaseDescriptorSupplier

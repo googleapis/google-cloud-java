@@ -813,7 +813,7 @@ public final class DataTransferServiceGrpc {
    * This API allows users to manage their data transfers into BigQuery.
    * </pre>
    */
-  public abstract static class DataTransferServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -822,7 +822,7 @@ public final class DataTransferServiceGrpc {
      * Retrieves a supported data source and returns its settings.
      * </pre>
      */
-    public void getDataSource(
+    default void getDataSource(
         com.google.cloud.bigquery.datatransfer.v1.GetDataSourceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.datatransfer.v1.DataSource>
             responseObserver) {
@@ -837,7 +837,7 @@ public final class DataTransferServiceGrpc {
      * Lists supported data sources and returns their settings.
      * </pre>
      */
-    public void listDataSources(
+    default void listDataSources(
         com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse>
@@ -853,7 +853,7 @@ public final class DataTransferServiceGrpc {
      * Creates a new data transfer configuration.
      * </pre>
      */
-    public void createTransferConfig(
+    default void createTransferConfig(
         com.google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.datatransfer.v1.TransferConfig>
             responseObserver) {
@@ -869,7 +869,7 @@ public final class DataTransferServiceGrpc {
      * All fields must be set, even if they are not updated.
      * </pre>
      */
-    public void updateTransferConfig(
+    default void updateTransferConfig(
         com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.datatransfer.v1.TransferConfig>
             responseObserver) {
@@ -885,7 +885,7 @@ public final class DataTransferServiceGrpc {
      * runs and logs.
      * </pre>
      */
-    public void deleteTransferConfig(
+    default void deleteTransferConfig(
         com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -899,7 +899,7 @@ public final class DataTransferServiceGrpc {
      * Returns information about a data transfer config.
      * </pre>
      */
-    public void getTransferConfig(
+    default void getTransferConfig(
         com.google.cloud.bigquery.datatransfer.v1.GetTransferConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.datatransfer.v1.TransferConfig>
             responseObserver) {
@@ -915,7 +915,7 @@ public final class DataTransferServiceGrpc {
      * specified location.
      * </pre>
      */
-    public void listTransferConfigs(
+    default void listTransferConfigs(
         com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsResponse>
@@ -936,7 +936,7 @@ public final class DataTransferServiceGrpc {
      * </pre>
      */
     @java.lang.Deprecated
-    public void scheduleTransferRuns(
+    default void scheduleTransferRuns(
         com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsResponse>
@@ -955,7 +955,7 @@ public final class DataTransferServiceGrpc {
      * a specific run_time.
      * </pre>
      */
-    public void startManualTransferRuns(
+    default void startManualTransferRuns(
         com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse>
@@ -971,7 +971,7 @@ public final class DataTransferServiceGrpc {
      * Returns information about the particular transfer run.
      * </pre>
      */
-    public void getTransferRun(
+    default void getTransferRun(
         com.google.cloud.bigquery.datatransfer.v1.GetTransferRunRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.datatransfer.v1.TransferRun>
             responseObserver) {
@@ -986,7 +986,7 @@ public final class DataTransferServiceGrpc {
      * Deletes the specified transfer run.
      * </pre>
      */
-    public void deleteTransferRun(
+    default void deleteTransferRun(
         com.google.cloud.bigquery.datatransfer.v1.DeleteTransferRunRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1000,7 +1000,7 @@ public final class DataTransferServiceGrpc {
      * Returns information about running and completed transfer runs.
      * </pre>
      */
-    public void listTransferRuns(
+    default void listTransferRuns(
         com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsResponse>
@@ -1016,7 +1016,7 @@ public final class DataTransferServiceGrpc {
      * Returns log messages for the transfer run.
      * </pre>
      */
-    public void listTransferLogs(
+    default void listTransferLogs(
         com.google.cloud.bigquery.datatransfer.v1.ListTransferLogsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.datatransfer.v1.ListTransferLogsResponse>
@@ -1033,7 +1033,7 @@ public final class DataTransferServiceGrpc {
      * requesting user.
      * </pre>
      */
-    public void checkValidCreds(
+    default void checkValidCreds(
         com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsResponse>
@@ -1056,124 +1056,32 @@ public final class DataTransferServiceGrpc {
      * Service](https://cloud.google.com/bigquery/docs/working-with-transfers).
      * </pre>
      */
-    public void enrollDataSources(
+    default void enrollDataSources(
         com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getEnrollDataSourcesMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service DataTransferService.
+   *
+   * <pre>
+   * This API allows users to manage their data transfers into BigQuery.
+   * </pre>
+   */
+  public abstract static class DataTransferServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getGetDataSourceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.datatransfer.v1.GetDataSourceRequest,
-                      com.google.cloud.bigquery.datatransfer.v1.DataSource>(
-                      this, METHODID_GET_DATA_SOURCE)))
-          .addMethod(
-              getListDataSourcesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesRequest,
-                      com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse>(
-                      this, METHODID_LIST_DATA_SOURCES)))
-          .addMethod(
-              getCreateTransferConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest,
-                      com.google.cloud.bigquery.datatransfer.v1.TransferConfig>(
-                      this, METHODID_CREATE_TRANSFER_CONFIG)))
-          .addMethod(
-              getUpdateTransferConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest,
-                      com.google.cloud.bigquery.datatransfer.v1.TransferConfig>(
-                      this, METHODID_UPDATE_TRANSFER_CONFIG)))
-          .addMethod(
-              getDeleteTransferConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_TRANSFER_CONFIG)))
-          .addMethod(
-              getGetTransferConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.datatransfer.v1.GetTransferConfigRequest,
-                      com.google.cloud.bigquery.datatransfer.v1.TransferConfig>(
-                      this, METHODID_GET_TRANSFER_CONFIG)))
-          .addMethod(
-              getListTransferConfigsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest,
-                      com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsResponse>(
-                      this, METHODID_LIST_TRANSFER_CONFIGS)))
-          .addMethod(
-              getScheduleTransferRunsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsRequest,
-                      com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsResponse>(
-                      this, METHODID_SCHEDULE_TRANSFER_RUNS)))
-          .addMethod(
-              getStartManualTransferRunsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest,
-                      com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse>(
-                      this, METHODID_START_MANUAL_TRANSFER_RUNS)))
-          .addMethod(
-              getGetTransferRunMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.datatransfer.v1.GetTransferRunRequest,
-                      com.google.cloud.bigquery.datatransfer.v1.TransferRun>(
-                      this, METHODID_GET_TRANSFER_RUN)))
-          .addMethod(
-              getDeleteTransferRunMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.datatransfer.v1.DeleteTransferRunRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_TRANSFER_RUN)))
-          .addMethod(
-              getListTransferRunsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest,
-                      com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsResponse>(
-                      this, METHODID_LIST_TRANSFER_RUNS)))
-          .addMethod(
-              getListTransferLogsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.datatransfer.v1.ListTransferLogsRequest,
-                      com.google.cloud.bigquery.datatransfer.v1.ListTransferLogsResponse>(
-                      this, METHODID_LIST_TRANSFER_LOGS)))
-          .addMethod(
-              getCheckValidCredsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsRequest,
-                      com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsResponse>(
-                      this, METHODID_CHECK_VALID_CREDS)))
-          .addMethod(
-              getEnrollDataSourcesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest,
-                      com.google.protobuf.Empty>(this, METHODID_ENROLL_DATA_SOURCES)))
-          .build();
+      return DataTransferServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service DataTransferService.
    *
    * <pre>
    * This API allows users to manage their data transfers into BigQuery.
@@ -1471,7 +1379,7 @@ public final class DataTransferServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service DataTransferService.
    *
    * <pre>
    * This API allows users to manage their data transfers into BigQuery.
@@ -1709,7 +1617,7 @@ public final class DataTransferServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service DataTransferService.
    *
    * <pre>
    * This API allows users to manage their data transfers into BigQuery.
@@ -1987,10 +1895,10 @@ public final class DataTransferServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final DataTransferServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(DataTransferServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -2110,6 +2018,113 @@ public final class DataTransferServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getGetDataSourceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.datatransfer.v1.GetDataSourceRequest,
+                    com.google.cloud.bigquery.datatransfer.v1.DataSource>(
+                    service, METHODID_GET_DATA_SOURCE)))
+        .addMethod(
+            getListDataSourcesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesRequest,
+                    com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse>(
+                    service, METHODID_LIST_DATA_SOURCES)))
+        .addMethod(
+            getCreateTransferConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest,
+                    com.google.cloud.bigquery.datatransfer.v1.TransferConfig>(
+                    service, METHODID_CREATE_TRANSFER_CONFIG)))
+        .addMethod(
+            getUpdateTransferConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest,
+                    com.google.cloud.bigquery.datatransfer.v1.TransferConfig>(
+                    service, METHODID_UPDATE_TRANSFER_CONFIG)))
+        .addMethod(
+            getDeleteTransferConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_TRANSFER_CONFIG)))
+        .addMethod(
+            getGetTransferConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.datatransfer.v1.GetTransferConfigRequest,
+                    com.google.cloud.bigquery.datatransfer.v1.TransferConfig>(
+                    service, METHODID_GET_TRANSFER_CONFIG)))
+        .addMethod(
+            getListTransferConfigsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest,
+                    com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsResponse>(
+                    service, METHODID_LIST_TRANSFER_CONFIGS)))
+        .addMethod(
+            getScheduleTransferRunsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsRequest,
+                    com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsResponse>(
+                    service, METHODID_SCHEDULE_TRANSFER_RUNS)))
+        .addMethod(
+            getStartManualTransferRunsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest,
+                    com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse>(
+                    service, METHODID_START_MANUAL_TRANSFER_RUNS)))
+        .addMethod(
+            getGetTransferRunMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.datatransfer.v1.GetTransferRunRequest,
+                    com.google.cloud.bigquery.datatransfer.v1.TransferRun>(
+                    service, METHODID_GET_TRANSFER_RUN)))
+        .addMethod(
+            getDeleteTransferRunMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.datatransfer.v1.DeleteTransferRunRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_TRANSFER_RUN)))
+        .addMethod(
+            getListTransferRunsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest,
+                    com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsResponse>(
+                    service, METHODID_LIST_TRANSFER_RUNS)))
+        .addMethod(
+            getListTransferLogsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.datatransfer.v1.ListTransferLogsRequest,
+                    com.google.cloud.bigquery.datatransfer.v1.ListTransferLogsResponse>(
+                    service, METHODID_LIST_TRANSFER_LOGS)))
+        .addMethod(
+            getCheckValidCredsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsRequest,
+                    com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsResponse>(
+                    service, METHODID_CHECK_VALID_CREDS)))
+        .addMethod(
+            getEnrollDataSourcesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest,
+                    com.google.protobuf.Empty>(service, METHODID_ENROLL_DATA_SOURCES)))
+        .build();
   }
 
   private abstract static class DataTransferServiceBaseDescriptorSupplier

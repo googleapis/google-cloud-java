@@ -686,7 +686,7 @@ public final class DataFusionGrpc {
    * pipelines via a point-and-click UI.
    * </pre>
    */
-  public abstract static class DataFusionImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -696,7 +696,7 @@ public final class DataFusionGrpc {
      * and location.
      * </pre>
      */
-    public void listAvailableVersions(
+    default void listAvailableVersions(
         com.google.cloud.datafusion.v1beta1.ListAvailableVersionsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.datafusion.v1beta1.ListAvailableVersionsResponse>
@@ -712,7 +712,7 @@ public final class DataFusionGrpc {
      * Lists Data Fusion instances in the specified project and location.
      * </pre>
      */
-    public void listInstances(
+    default void listInstances(
         com.google.cloud.datafusion.v1beta1.ListInstancesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datafusion.v1beta1.ListInstancesResponse>
             responseObserver) {
@@ -727,7 +727,7 @@ public final class DataFusionGrpc {
      * Gets details of a single Data Fusion instance.
      * </pre>
      */
-    public void getInstance(
+    default void getInstance(
         com.google.cloud.datafusion.v1beta1.GetInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datafusion.v1beta1.Instance>
             responseObserver) {
@@ -742,7 +742,7 @@ public final class DataFusionGrpc {
      * Creates a new Data Fusion instance in the specified project and location.
      * </pre>
      */
-    public void createInstance(
+    default void createInstance(
         com.google.cloud.datafusion.v1beta1.CreateInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -756,7 +756,7 @@ public final class DataFusionGrpc {
      * Deletes a single Data Fusion instance.
      * </pre>
      */
-    public void deleteInstance(
+    default void deleteInstance(
         com.google.cloud.datafusion.v1beta1.DeleteInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -770,7 +770,7 @@ public final class DataFusionGrpc {
      * Updates a single Data Fusion instance.
      * </pre>
      */
-    public void updateInstance(
+    default void updateInstance(
         com.google.cloud.datafusion.v1beta1.UpdateInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -785,7 +785,7 @@ public final class DataFusionGrpc {
      * At the end of an operation instance is fully restarted.
      * </pre>
      */
-    public void restartInstance(
+    default void restartInstance(
         com.google.cloud.datafusion.v1beta1.RestartInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -800,7 +800,7 @@ public final class DataFusionGrpc {
      * At the end of an operation instance is fully upgraded.
      * </pre>
      */
-    public void upgradeInstance(
+    default void upgradeInstance(
         com.google.cloud.datafusion.v1beta1.UpgradeInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -814,7 +814,7 @@ public final class DataFusionGrpc {
      * Remove IAM policy that is currently set on the given resource.
      * </pre>
      */
-    public void removeIamPolicy(
+    default void removeIamPolicy(
         com.google.cloud.datafusion.v1beta1.RemoveIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datafusion.v1beta1.RemoveIamPolicyResponse>
             responseObserver) {
@@ -829,7 +829,7 @@ public final class DataFusionGrpc {
      * List namespaces in a given instance
      * </pre>
      */
-    public void listNamespaces(
+    default void listNamespaces(
         com.google.cloud.datafusion.v1beta1.ListNamespacesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datafusion.v1beta1.ListNamespacesResponse>
             responseObserver) {
@@ -844,7 +844,7 @@ public final class DataFusionGrpc {
      * Add DNS peering on the given resource.
      * </pre>
      */
-    public void addDnsPeering(
+    default void addDnsPeering(
         com.google.cloud.datafusion.v1beta1.AddDnsPeeringRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datafusion.v1beta1.AddDnsPeeringResponse>
             responseObserver) {
@@ -859,7 +859,7 @@ public final class DataFusionGrpc {
      * Remove DNS peering on the given resource.
      * </pre>
      */
-    public void removeDnsPeering(
+    default void removeDnsPeering(
         com.google.cloud.datafusion.v1beta1.RemoveDnsPeeringRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datafusion.v1beta1.RemoveDnsPeeringResponse>
             responseObserver) {
@@ -874,108 +874,34 @@ public final class DataFusionGrpc {
      * List DNS peering for a given resource.
      * </pre>
      */
-    public void listDnsPeerings(
+    default void listDnsPeerings(
         com.google.cloud.datafusion.v1beta1.ListDnsPeeringsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datafusion.v1beta1.ListDnsPeeringsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListDnsPeeringsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service DataFusion.
+   *
+   * <pre>
+   * Service for creating and managing Data Fusion instances.
+   * Data Fusion enables ETL developers to build code-free, data integration
+   * pipelines via a point-and-click UI.
+   * </pre>
+   */
+  public abstract static class DataFusionImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListAvailableVersionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datafusion.v1beta1.ListAvailableVersionsRequest,
-                      com.google.cloud.datafusion.v1beta1.ListAvailableVersionsResponse>(
-                      this, METHODID_LIST_AVAILABLE_VERSIONS)))
-          .addMethod(
-              getListInstancesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datafusion.v1beta1.ListInstancesRequest,
-                      com.google.cloud.datafusion.v1beta1.ListInstancesResponse>(
-                      this, METHODID_LIST_INSTANCES)))
-          .addMethod(
-              getGetInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datafusion.v1beta1.GetInstanceRequest,
-                      com.google.cloud.datafusion.v1beta1.Instance>(this, METHODID_GET_INSTANCE)))
-          .addMethod(
-              getCreateInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datafusion.v1beta1.CreateInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_INSTANCE)))
-          .addMethod(
-              getDeleteInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datafusion.v1beta1.DeleteInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_INSTANCE)))
-          .addMethod(
-              getUpdateInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datafusion.v1beta1.UpdateInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_INSTANCE)))
-          .addMethod(
-              getRestartInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datafusion.v1beta1.RestartInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_RESTART_INSTANCE)))
-          .addMethod(
-              getUpgradeInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datafusion.v1beta1.UpgradeInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPGRADE_INSTANCE)))
-          .addMethod(
-              getRemoveIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datafusion.v1beta1.RemoveIamPolicyRequest,
-                      com.google.cloud.datafusion.v1beta1.RemoveIamPolicyResponse>(
-                      this, METHODID_REMOVE_IAM_POLICY)))
-          .addMethod(
-              getListNamespacesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datafusion.v1beta1.ListNamespacesRequest,
-                      com.google.cloud.datafusion.v1beta1.ListNamespacesResponse>(
-                      this, METHODID_LIST_NAMESPACES)))
-          .addMethod(
-              getAddDnsPeeringMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datafusion.v1beta1.AddDnsPeeringRequest,
-                      com.google.cloud.datafusion.v1beta1.AddDnsPeeringResponse>(
-                      this, METHODID_ADD_DNS_PEERING)))
-          .addMethod(
-              getRemoveDnsPeeringMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datafusion.v1beta1.RemoveDnsPeeringRequest,
-                      com.google.cloud.datafusion.v1beta1.RemoveDnsPeeringResponse>(
-                      this, METHODID_REMOVE_DNS_PEERING)))
-          .addMethod(
-              getListDnsPeeringsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datafusion.v1beta1.ListDnsPeeringsRequest,
-                      com.google.cloud.datafusion.v1beta1.ListDnsPeeringsResponse>(
-                      this, METHODID_LIST_DNS_PEERINGS)))
-          .build();
+      return DataFusionGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service DataFusion.
    *
    * <pre>
    * Service for creating and managing Data Fusion instances.
@@ -1215,7 +1141,7 @@ public final class DataFusionGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service DataFusion.
    *
    * <pre>
    * Service for creating and managing Data Fusion instances.
@@ -1409,7 +1335,7 @@ public final class DataFusionGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service DataFusion.
    *
    * <pre>
    * Service for creating and managing Data Fusion instances.
@@ -1629,10 +1555,10 @@ public final class DataFusionGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final DataFusionImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(DataFusionImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1735,6 +1661,96 @@ public final class DataFusionGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListAvailableVersionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datafusion.v1beta1.ListAvailableVersionsRequest,
+                    com.google.cloud.datafusion.v1beta1.ListAvailableVersionsResponse>(
+                    service, METHODID_LIST_AVAILABLE_VERSIONS)))
+        .addMethod(
+            getListInstancesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datafusion.v1beta1.ListInstancesRequest,
+                    com.google.cloud.datafusion.v1beta1.ListInstancesResponse>(
+                    service, METHODID_LIST_INSTANCES)))
+        .addMethod(
+            getGetInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datafusion.v1beta1.GetInstanceRequest,
+                    com.google.cloud.datafusion.v1beta1.Instance>(service, METHODID_GET_INSTANCE)))
+        .addMethod(
+            getCreateInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datafusion.v1beta1.CreateInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_INSTANCE)))
+        .addMethod(
+            getDeleteInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datafusion.v1beta1.DeleteInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_INSTANCE)))
+        .addMethod(
+            getUpdateInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datafusion.v1beta1.UpdateInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_INSTANCE)))
+        .addMethod(
+            getRestartInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datafusion.v1beta1.RestartInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RESTART_INSTANCE)))
+        .addMethod(
+            getUpgradeInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datafusion.v1beta1.UpgradeInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPGRADE_INSTANCE)))
+        .addMethod(
+            getRemoveIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datafusion.v1beta1.RemoveIamPolicyRequest,
+                    com.google.cloud.datafusion.v1beta1.RemoveIamPolicyResponse>(
+                    service, METHODID_REMOVE_IAM_POLICY)))
+        .addMethod(
+            getListNamespacesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datafusion.v1beta1.ListNamespacesRequest,
+                    com.google.cloud.datafusion.v1beta1.ListNamespacesResponse>(
+                    service, METHODID_LIST_NAMESPACES)))
+        .addMethod(
+            getAddDnsPeeringMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datafusion.v1beta1.AddDnsPeeringRequest,
+                    com.google.cloud.datafusion.v1beta1.AddDnsPeeringResponse>(
+                    service, METHODID_ADD_DNS_PEERING)))
+        .addMethod(
+            getRemoveDnsPeeringMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datafusion.v1beta1.RemoveDnsPeeringRequest,
+                    com.google.cloud.datafusion.v1beta1.RemoveDnsPeeringResponse>(
+                    service, METHODID_REMOVE_DNS_PEERING)))
+        .addMethod(
+            getListDnsPeeringsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datafusion.v1beta1.ListDnsPeeringsRequest,
+                    com.google.cloud.datafusion.v1beta1.ListDnsPeeringsResponse>(
+                    service, METHODID_LIST_DNS_PEERINGS)))
+        .build();
   }
 
   private abstract static class DataFusionBaseDescriptorSupplier

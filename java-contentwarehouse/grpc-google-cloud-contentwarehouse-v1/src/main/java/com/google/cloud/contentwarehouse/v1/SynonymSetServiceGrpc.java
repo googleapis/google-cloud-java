@@ -311,7 +311,7 @@ public final class SynonymSetServiceGrpc {
    * A Service that manage/custom customer specified SynonymSets.
    * </pre>
    */
-  public abstract static class SynonymSetServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -322,7 +322,7 @@ public final class SynonymSetServiceGrpc {
      * for the context.
      * </pre>
      */
-    public void createSynonymSet(
+    default void createSynonymSet(
         com.google.cloud.contentwarehouse.v1.CreateSynonymSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.contentwarehouse.v1.SynonymSet>
             responseObserver) {
@@ -339,7 +339,7 @@ public final class SynonymSetServiceGrpc {
      * does not exist
      * </pre>
      */
-    public void getSynonymSet(
+    default void getSynonymSet(
         com.google.cloud.contentwarehouse.v1.GetSynonymSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.contentwarehouse.v1.SynonymSet>
             responseObserver) {
@@ -356,7 +356,7 @@ public final class SynonymSetServiceGrpc {
      * Throws a NOT_FOUND exception if the SynonymSet is not found.
      * </pre>
      */
-    public void updateSynonymSet(
+    default void updateSynonymSet(
         com.google.cloud.contentwarehouse.v1.UpdateSynonymSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.contentwarehouse.v1.SynonymSet>
             responseObserver) {
@@ -372,7 +372,7 @@ public final class SynonymSetServiceGrpc {
      * Throws a NOT_FOUND exception if the SynonymSet is not found.
      * </pre>
      */
-    public void deleteSynonymSet(
+    default void deleteSynonymSet(
         com.google.cloud.contentwarehouse.v1.DeleteSynonymSetRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -386,57 +386,33 @@ public final class SynonymSetServiceGrpc {
      * Returns all SynonymSets (for all contexts) for the specified location.
      * </pre>
      */
-    public void listSynonymSets(
+    default void listSynonymSets(
         com.google.cloud.contentwarehouse.v1.ListSynonymSetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.contentwarehouse.v1.ListSynonymSetsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListSynonymSetsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service SynonymSetService.
+   *
+   * <pre>
+   * A Service that manage/custom customer specified SynonymSets.
+   * </pre>
+   */
+  public abstract static class SynonymSetServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateSynonymSetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.contentwarehouse.v1.CreateSynonymSetRequest,
-                      com.google.cloud.contentwarehouse.v1.SynonymSet>(
-                      this, METHODID_CREATE_SYNONYM_SET)))
-          .addMethod(
-              getGetSynonymSetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.contentwarehouse.v1.GetSynonymSetRequest,
-                      com.google.cloud.contentwarehouse.v1.SynonymSet>(
-                      this, METHODID_GET_SYNONYM_SET)))
-          .addMethod(
-              getUpdateSynonymSetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.contentwarehouse.v1.UpdateSynonymSetRequest,
-                      com.google.cloud.contentwarehouse.v1.SynonymSet>(
-                      this, METHODID_UPDATE_SYNONYM_SET)))
-          .addMethod(
-              getDeleteSynonymSetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.contentwarehouse.v1.DeleteSynonymSetRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_SYNONYM_SET)))
-          .addMethod(
-              getListSynonymSetsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.contentwarehouse.v1.ListSynonymSetsRequest,
-                      com.google.cloud.contentwarehouse.v1.ListSynonymSetsResponse>(
-                      this, METHODID_LIST_SYNONYM_SETS)))
-          .build();
+      return SynonymSetServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service SynonymSetService.
    *
    * <pre>
    * A Service that manage/custom customer specified SynonymSets.
@@ -547,7 +523,7 @@ public final class SynonymSetServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service SynonymSetService.
    *
    * <pre>
    * A Service that manage/custom customer specified SynonymSets.
@@ -640,7 +616,7 @@ public final class SynonymSetServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service SynonymSetService.
    *
    * <pre>
    * A Service that manage/custom customer specified SynonymSets.
@@ -746,10 +722,10 @@ public final class SynonymSetServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final SynonymSetServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(SynonymSetServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -802,6 +778,45 @@ public final class SynonymSetServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateSynonymSetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contentwarehouse.v1.CreateSynonymSetRequest,
+                    com.google.cloud.contentwarehouse.v1.SynonymSet>(
+                    service, METHODID_CREATE_SYNONYM_SET)))
+        .addMethod(
+            getGetSynonymSetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contentwarehouse.v1.GetSynonymSetRequest,
+                    com.google.cloud.contentwarehouse.v1.SynonymSet>(
+                    service, METHODID_GET_SYNONYM_SET)))
+        .addMethod(
+            getUpdateSynonymSetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contentwarehouse.v1.UpdateSynonymSetRequest,
+                    com.google.cloud.contentwarehouse.v1.SynonymSet>(
+                    service, METHODID_UPDATE_SYNONYM_SET)))
+        .addMethod(
+            getDeleteSynonymSetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contentwarehouse.v1.DeleteSynonymSetRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_SYNONYM_SET)))
+        .addMethod(
+            getListSynonymSetsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contentwarehouse.v1.ListSynonymSetsRequest,
+                    com.google.cloud.contentwarehouse.v1.ListSynonymSetsResponse>(
+                    service, METHODID_LIST_SYNONYM_SETS)))
+        .build();
   }
 
   private abstract static class SynonymSetServiceBaseDescriptorSupplier
