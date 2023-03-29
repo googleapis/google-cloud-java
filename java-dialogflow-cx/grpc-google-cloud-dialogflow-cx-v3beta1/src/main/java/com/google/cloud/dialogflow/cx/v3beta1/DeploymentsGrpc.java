@@ -177,7 +177,7 @@ public final class DeploymentsGrpc {
    * [Deployments][google.cloud.dialogflow.cx.v3beta1.Deployment].
    * </pre>
    */
-  public abstract static class DeploymentsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -187,7 +187,7 @@ public final class DeploymentsGrpc {
      * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * </pre>
      */
-    public void listDeployments(
+    default void listDeployments(
         com.google.cloud.dialogflow.cx.v3beta1.ListDeploymentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.ListDeploymentsResponse>
             responseObserver) {
@@ -203,37 +203,34 @@ public final class DeploymentsGrpc {
      * [Deployment][google.cloud.dialogflow.cx.v3beta1.Deployment].
      * </pre>
      */
-    public void getDeployment(
+    default void getDeployment(
         com.google.cloud.dialogflow.cx.v3beta1.GetDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.Deployment>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetDeploymentMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Deployments.
+   *
+   * <pre>
+   * Service for managing
+   * [Deployments][google.cloud.dialogflow.cx.v3beta1.Deployment].
+   * </pre>
+   */
+  public abstract static class DeploymentsImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListDeploymentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3beta1.ListDeploymentsRequest,
-                      com.google.cloud.dialogflow.cx.v3beta1.ListDeploymentsResponse>(
-                      this, METHODID_LIST_DEPLOYMENTS)))
-          .addMethod(
-              getGetDeploymentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3beta1.GetDeploymentRequest,
-                      com.google.cloud.dialogflow.cx.v3beta1.Deployment>(
-                      this, METHODID_GET_DEPLOYMENT)))
-          .build();
+      return DeploymentsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Deployments.
    *
    * <pre>
    * Service for managing
@@ -289,7 +286,7 @@ public final class DeploymentsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Deployments.
    *
    * <pre>
    * Service for managing
@@ -338,7 +335,7 @@ public final class DeploymentsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Deployments.
    *
    * <pre>
    * Service for managing
@@ -396,10 +393,10 @@ public final class DeploymentsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final DeploymentsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(DeploymentsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -435,6 +432,25 @@ public final class DeploymentsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListDeploymentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.ListDeploymentsRequest,
+                    com.google.cloud.dialogflow.cx.v3beta1.ListDeploymentsResponse>(
+                    service, METHODID_LIST_DEPLOYMENTS)))
+        .addMethod(
+            getGetDeploymentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.GetDeploymentRequest,
+                    com.google.cloud.dialogflow.cx.v3beta1.Deployment>(
+                    service, METHODID_GET_DEPLOYMENT)))
+        .build();
   }
 
   private abstract static class DeploymentsBaseDescriptorSupplier

@@ -1638,7 +1638,7 @@ public final class DlpServiceGrpc {
    * https://cloud.google.com/dlp/docs/.
    * </pre>
    */
-  public abstract static class DlpServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -1653,7 +1653,7 @@ public final class DlpServiceGrpc {
      * and https://cloud.google.com/dlp/docs/inspecting-text,
      * </pre>
      */
-    public void inspectContent(
+    default void inspectContent(
         com.google.privacy.dlp.v2.InspectContentRequest request,
         io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.InspectContentResponse>
             responseObserver) {
@@ -1674,7 +1674,7 @@ public final class DlpServiceGrpc {
      * be all types, but may change over time as detectors are updated.
      * </pre>
      */
-    public void redactImage(
+    default void redactImage(
         com.google.privacy.dlp.v2.RedactImageRequest request,
         io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.RedactImageResponse>
             responseObserver) {
@@ -1695,7 +1695,7 @@ public final class DlpServiceGrpc {
      * be all types, but may change over time as detectors are updated.
      * </pre>
      */
-    public void deidentifyContent(
+    default void deidentifyContent(
         com.google.privacy.dlp.v2.DeidentifyContentRequest request,
         io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.DeidentifyContentResponse>
             responseObserver) {
@@ -1713,7 +1713,7 @@ public final class DlpServiceGrpc {
      * to learn more.
      * </pre>
      */
-    public void reidentifyContent(
+    default void reidentifyContent(
         com.google.privacy.dlp.v2.ReidentifyContentRequest request,
         io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.ReidentifyContentResponse>
             responseObserver) {
@@ -1730,7 +1730,7 @@ public final class DlpServiceGrpc {
      * learn more.
      * </pre>
      */
-    public void listInfoTypes(
+    default void listInfoTypes(
         com.google.privacy.dlp.v2.ListInfoTypesRequest request,
         io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.ListInfoTypesResponse>
             responseObserver) {
@@ -1747,7 +1747,7 @@ public final class DlpServiceGrpc {
      * See https://cloud.google.com/dlp/docs/creating-templates to learn more.
      * </pre>
      */
-    public void createInspectTemplate(
+    default void createInspectTemplate(
         com.google.privacy.dlp.v2.CreateInspectTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.InspectTemplate> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1762,7 +1762,7 @@ public final class DlpServiceGrpc {
      * See https://cloud.google.com/dlp/docs/creating-templates to learn more.
      * </pre>
      */
-    public void updateInspectTemplate(
+    default void updateInspectTemplate(
         com.google.privacy.dlp.v2.UpdateInspectTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.InspectTemplate> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1777,7 +1777,7 @@ public final class DlpServiceGrpc {
      * See https://cloud.google.com/dlp/docs/creating-templates to learn more.
      * </pre>
      */
-    public void getInspectTemplate(
+    default void getInspectTemplate(
         com.google.privacy.dlp.v2.GetInspectTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.InspectTemplate> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1792,7 +1792,7 @@ public final class DlpServiceGrpc {
      * See https://cloud.google.com/dlp/docs/creating-templates to learn more.
      * </pre>
      */
-    public void listInspectTemplates(
+    default void listInspectTemplates(
         com.google.privacy.dlp.v2.ListInspectTemplatesRequest request,
         io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.ListInspectTemplatesResponse>
             responseObserver) {
@@ -1808,7 +1808,7 @@ public final class DlpServiceGrpc {
      * See https://cloud.google.com/dlp/docs/creating-templates to learn more.
      * </pre>
      */
-    public void deleteInspectTemplate(
+    default void deleteInspectTemplate(
         com.google.privacy.dlp.v2.DeleteInspectTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1825,7 +1825,7 @@ public final class DlpServiceGrpc {
      * more.
      * </pre>
      */
-    public void createDeidentifyTemplate(
+    default void createDeidentifyTemplate(
         com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.DeidentifyTemplate>
             responseObserver) {
@@ -1842,7 +1842,7 @@ public final class DlpServiceGrpc {
      * more.
      * </pre>
      */
-    public void updateDeidentifyTemplate(
+    default void updateDeidentifyTemplate(
         com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.DeidentifyTemplate>
             responseObserver) {
@@ -1859,7 +1859,7 @@ public final class DlpServiceGrpc {
      * more.
      * </pre>
      */
-    public void getDeidentifyTemplate(
+    default void getDeidentifyTemplate(
         com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.DeidentifyTemplate>
             responseObserver) {
@@ -1876,7 +1876,7 @@ public final class DlpServiceGrpc {
      * more.
      * </pre>
      */
-    public void listDeidentifyTemplates(
+    default void listDeidentifyTemplates(
         com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest request,
         io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse>
             responseObserver) {
@@ -1893,7 +1893,7 @@ public final class DlpServiceGrpc {
      * more.
      * </pre>
      */
-    public void deleteDeidentifyTemplate(
+    default void deleteDeidentifyTemplate(
         com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1909,7 +1909,7 @@ public final class DlpServiceGrpc {
      * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
      * </pre>
      */
-    public void createJobTrigger(
+    default void createJobTrigger(
         com.google.privacy.dlp.v2.CreateJobTriggerRequest request,
         io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.JobTrigger> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1924,7 +1924,7 @@ public final class DlpServiceGrpc {
      * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
      * </pre>
      */
-    public void updateJobTrigger(
+    default void updateJobTrigger(
         com.google.privacy.dlp.v2.UpdateJobTriggerRequest request,
         io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.JobTrigger> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1940,7 +1940,7 @@ public final class DlpServiceGrpc {
      * jobs within the trigger.
      * </pre>
      */
-    public void hybridInspectJobTrigger(
+    default void hybridInspectJobTrigger(
         com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest request,
         io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.HybridInspectResponse>
             responseObserver) {
@@ -1956,7 +1956,7 @@ public final class DlpServiceGrpc {
      * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
      * </pre>
      */
-    public void getJobTrigger(
+    default void getJobTrigger(
         com.google.privacy.dlp.v2.GetJobTriggerRequest request,
         io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.JobTrigger> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1971,7 +1971,7 @@ public final class DlpServiceGrpc {
      * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
      * </pre>
      */
-    public void listJobTriggers(
+    default void listJobTriggers(
         com.google.privacy.dlp.v2.ListJobTriggersRequest request,
         io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.ListJobTriggersResponse>
             responseObserver) {
@@ -1987,7 +1987,7 @@ public final class DlpServiceGrpc {
      * See https://cloud.google.com/dlp/docs/creating-job-triggers to learn more.
      * </pre>
      */
-    public void deleteJobTrigger(
+    default void deleteJobTrigger(
         com.google.privacy.dlp.v2.DeleteJobTriggerRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2002,7 +2002,7 @@ public final class DlpServiceGrpc {
      * instead of waiting on the trigger event to occur.
      * </pre>
      */
-    public void activateJobTrigger(
+    default void activateJobTrigger(
         com.google.privacy.dlp.v2.ActivateJobTriggerRequest request,
         io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.DlpJob> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2021,7 +2021,7 @@ public final class DlpServiceGrpc {
      * be all types, but may change over time as detectors are updated.
      * </pre>
      */
-    public void createDlpJob(
+    default void createDlpJob(
         com.google.privacy.dlp.v2.CreateDlpJobRequest request,
         io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.DlpJob> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2037,7 +2037,7 @@ public final class DlpServiceGrpc {
      * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
      * </pre>
      */
-    public void listDlpJobs(
+    default void listDlpJobs(
         com.google.privacy.dlp.v2.ListDlpJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.ListDlpJobsResponse>
             responseObserver) {
@@ -2054,7 +2054,7 @@ public final class DlpServiceGrpc {
      * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
      * </pre>
      */
-    public void getDlpJob(
+    default void getDlpJob(
         com.google.privacy.dlp.v2.GetDlpJobRequest request,
         io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.DlpJob> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetDlpJobMethod(), responseObserver);
@@ -2071,7 +2071,7 @@ public final class DlpServiceGrpc {
      * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
      * </pre>
      */
-    public void deleteDlpJob(
+    default void deleteDlpJob(
         com.google.privacy.dlp.v2.DeleteDlpJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2089,7 +2089,7 @@ public final class DlpServiceGrpc {
      * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
      * </pre>
      */
-    public void cancelDlpJob(
+    default void cancelDlpJob(
         com.google.privacy.dlp.v2.CancelDlpJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2105,7 +2105,7 @@ public final class DlpServiceGrpc {
      * learn more.
      * </pre>
      */
-    public void createStoredInfoType(
+    default void createStoredInfoType(
         com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.StoredInfoType> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2122,7 +2122,7 @@ public final class DlpServiceGrpc {
      * learn more.
      * </pre>
      */
-    public void updateStoredInfoType(
+    default void updateStoredInfoType(
         com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.StoredInfoType> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2138,7 +2138,7 @@ public final class DlpServiceGrpc {
      * learn more.
      * </pre>
      */
-    public void getStoredInfoType(
+    default void getStoredInfoType(
         com.google.privacy.dlp.v2.GetStoredInfoTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.StoredInfoType> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2154,7 +2154,7 @@ public final class DlpServiceGrpc {
      * learn more.
      * </pre>
      */
-    public void listStoredInfoTypes(
+    default void listStoredInfoTypes(
         com.google.privacy.dlp.v2.ListStoredInfoTypesRequest request,
         io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.ListStoredInfoTypesResponse>
             responseObserver) {
@@ -2171,7 +2171,7 @@ public final class DlpServiceGrpc {
      * learn more.
      * </pre>
      */
-    public void deleteStoredInfoType(
+    default void deleteStoredInfoType(
         com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2187,7 +2187,7 @@ public final class DlpServiceGrpc {
      * asynchronously.
      * </pre>
      */
-    public void hybridInspectDlpJob(
+    default void hybridInspectDlpJob(
         com.google.privacy.dlp.v2.HybridInspectDlpJobRequest request,
         io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.HybridInspectResponse>
             responseObserver) {
@@ -2203,245 +2203,38 @@ public final class DlpServiceGrpc {
      * of any enabled actions that have not yet run.
      * </pre>
      */
-    public void finishDlpJob(
+    default void finishDlpJob(
         com.google.privacy.dlp.v2.FinishDlpJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getFinishDlpJobMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service DlpService.
+   *
+   * <pre>
+   * The Cloud Data Loss Prevention (DLP) API is a service that allows clients
+   * to detect the presence of Personally Identifiable Information (PII) and other
+   * privacy-sensitive data in user-supplied, unstructured data streams, like text
+   * blocks or images.
+   * The service also includes methods for sensitive data redaction and
+   * scheduling of data scans on Google Cloud Platform based data sets.
+   * To learn more about concepts and find how-to guides see
+   * https://cloud.google.com/dlp/docs/.
+   * </pre>
+   */
+  public abstract static class DlpServiceImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getInspectContentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.InspectContentRequest,
-                      com.google.privacy.dlp.v2.InspectContentResponse>(
-                      this, METHODID_INSPECT_CONTENT)))
-          .addMethod(
-              getRedactImageMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.RedactImageRequest,
-                      com.google.privacy.dlp.v2.RedactImageResponse>(this, METHODID_REDACT_IMAGE)))
-          .addMethod(
-              getDeidentifyContentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.DeidentifyContentRequest,
-                      com.google.privacy.dlp.v2.DeidentifyContentResponse>(
-                      this, METHODID_DEIDENTIFY_CONTENT)))
-          .addMethod(
-              getReidentifyContentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.ReidentifyContentRequest,
-                      com.google.privacy.dlp.v2.ReidentifyContentResponse>(
-                      this, METHODID_REIDENTIFY_CONTENT)))
-          .addMethod(
-              getListInfoTypesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.ListInfoTypesRequest,
-                      com.google.privacy.dlp.v2.ListInfoTypesResponse>(
-                      this, METHODID_LIST_INFO_TYPES)))
-          .addMethod(
-              getCreateInspectTemplateMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.CreateInspectTemplateRequest,
-                      com.google.privacy.dlp.v2.InspectTemplate>(
-                      this, METHODID_CREATE_INSPECT_TEMPLATE)))
-          .addMethod(
-              getUpdateInspectTemplateMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.UpdateInspectTemplateRequest,
-                      com.google.privacy.dlp.v2.InspectTemplate>(
-                      this, METHODID_UPDATE_INSPECT_TEMPLATE)))
-          .addMethod(
-              getGetInspectTemplateMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.GetInspectTemplateRequest,
-                      com.google.privacy.dlp.v2.InspectTemplate>(
-                      this, METHODID_GET_INSPECT_TEMPLATE)))
-          .addMethod(
-              getListInspectTemplatesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.ListInspectTemplatesRequest,
-                      com.google.privacy.dlp.v2.ListInspectTemplatesResponse>(
-                      this, METHODID_LIST_INSPECT_TEMPLATES)))
-          .addMethod(
-              getDeleteInspectTemplateMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.DeleteInspectTemplateRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_INSPECT_TEMPLATE)))
-          .addMethod(
-              getCreateDeidentifyTemplateMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest,
-                      com.google.privacy.dlp.v2.DeidentifyTemplate>(
-                      this, METHODID_CREATE_DEIDENTIFY_TEMPLATE)))
-          .addMethod(
-              getUpdateDeidentifyTemplateMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest,
-                      com.google.privacy.dlp.v2.DeidentifyTemplate>(
-                      this, METHODID_UPDATE_DEIDENTIFY_TEMPLATE)))
-          .addMethod(
-              getGetDeidentifyTemplateMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest,
-                      com.google.privacy.dlp.v2.DeidentifyTemplate>(
-                      this, METHODID_GET_DEIDENTIFY_TEMPLATE)))
-          .addMethod(
-              getListDeidentifyTemplatesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest,
-                      com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse>(
-                      this, METHODID_LIST_DEIDENTIFY_TEMPLATES)))
-          .addMethod(
-              getDeleteDeidentifyTemplateMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_DEIDENTIFY_TEMPLATE)))
-          .addMethod(
-              getCreateJobTriggerMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.CreateJobTriggerRequest,
-                      com.google.privacy.dlp.v2.JobTrigger>(this, METHODID_CREATE_JOB_TRIGGER)))
-          .addMethod(
-              getUpdateJobTriggerMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.UpdateJobTriggerRequest,
-                      com.google.privacy.dlp.v2.JobTrigger>(this, METHODID_UPDATE_JOB_TRIGGER)))
-          .addMethod(
-              getHybridInspectJobTriggerMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest,
-                      com.google.privacy.dlp.v2.HybridInspectResponse>(
-                      this, METHODID_HYBRID_INSPECT_JOB_TRIGGER)))
-          .addMethod(
-              getGetJobTriggerMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.GetJobTriggerRequest,
-                      com.google.privacy.dlp.v2.JobTrigger>(this, METHODID_GET_JOB_TRIGGER)))
-          .addMethod(
-              getListJobTriggersMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.ListJobTriggersRequest,
-                      com.google.privacy.dlp.v2.ListJobTriggersResponse>(
-                      this, METHODID_LIST_JOB_TRIGGERS)))
-          .addMethod(
-              getDeleteJobTriggerMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.DeleteJobTriggerRequest, com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_JOB_TRIGGER)))
-          .addMethod(
-              getActivateJobTriggerMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.ActivateJobTriggerRequest,
-                      com.google.privacy.dlp.v2.DlpJob>(this, METHODID_ACTIVATE_JOB_TRIGGER)))
-          .addMethod(
-              getCreateDlpJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.CreateDlpJobRequest,
-                      com.google.privacy.dlp.v2.DlpJob>(this, METHODID_CREATE_DLP_JOB)))
-          .addMethod(
-              getListDlpJobsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.ListDlpJobsRequest,
-                      com.google.privacy.dlp.v2.ListDlpJobsResponse>(this, METHODID_LIST_DLP_JOBS)))
-          .addMethod(
-              getGetDlpJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.GetDlpJobRequest, com.google.privacy.dlp.v2.DlpJob>(
-                      this, METHODID_GET_DLP_JOB)))
-          .addMethod(
-              getDeleteDlpJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.DeleteDlpJobRequest, com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_DLP_JOB)))
-          .addMethod(
-              getCancelDlpJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.CancelDlpJobRequest, com.google.protobuf.Empty>(
-                      this, METHODID_CANCEL_DLP_JOB)))
-          .addMethod(
-              getCreateStoredInfoTypeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest,
-                      com.google.privacy.dlp.v2.StoredInfoType>(
-                      this, METHODID_CREATE_STORED_INFO_TYPE)))
-          .addMethod(
-              getUpdateStoredInfoTypeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest,
-                      com.google.privacy.dlp.v2.StoredInfoType>(
-                      this, METHODID_UPDATE_STORED_INFO_TYPE)))
-          .addMethod(
-              getGetStoredInfoTypeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.GetStoredInfoTypeRequest,
-                      com.google.privacy.dlp.v2.StoredInfoType>(
-                      this, METHODID_GET_STORED_INFO_TYPE)))
-          .addMethod(
-              getListStoredInfoTypesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.ListStoredInfoTypesRequest,
-                      com.google.privacy.dlp.v2.ListStoredInfoTypesResponse>(
-                      this, METHODID_LIST_STORED_INFO_TYPES)))
-          .addMethod(
-              getDeleteStoredInfoTypeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_STORED_INFO_TYPE)))
-          .addMethod(
-              getHybridInspectDlpJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.HybridInspectDlpJobRequest,
-                      com.google.privacy.dlp.v2.HybridInspectResponse>(
-                      this, METHODID_HYBRID_INSPECT_DLP_JOB)))
-          .addMethod(
-              getFinishDlpJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.privacy.dlp.v2.FinishDlpJobRequest, com.google.protobuf.Empty>(
-                      this, METHODID_FINISH_DLP_JOB)))
-          .build();
+      return DlpServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service DlpService.
    *
    * <pre>
    * The Cloud Data Loss Prevention (DLP) API is a service that allows clients
@@ -3103,7 +2896,7 @@ public final class DlpServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service DlpService.
    *
    * <pre>
    * The Cloud Data Loss Prevention (DLP) API is a service that allows clients
@@ -3652,7 +3445,7 @@ public final class DlpServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service DlpService.
    *
    * <pre>
    * The Cloud Data Loss Prevention (DLP) API is a service that allows clients
@@ -4263,10 +4056,10 @@ public final class DlpServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final DlpServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(DlpServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -4481,6 +4274,235 @@ public final class DlpServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getInspectContentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.InspectContentRequest,
+                    com.google.privacy.dlp.v2.InspectContentResponse>(
+                    service, METHODID_INSPECT_CONTENT)))
+        .addMethod(
+            getRedactImageMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.RedactImageRequest,
+                    com.google.privacy.dlp.v2.RedactImageResponse>(service, METHODID_REDACT_IMAGE)))
+        .addMethod(
+            getDeidentifyContentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.DeidentifyContentRequest,
+                    com.google.privacy.dlp.v2.DeidentifyContentResponse>(
+                    service, METHODID_DEIDENTIFY_CONTENT)))
+        .addMethod(
+            getReidentifyContentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.ReidentifyContentRequest,
+                    com.google.privacy.dlp.v2.ReidentifyContentResponse>(
+                    service, METHODID_REIDENTIFY_CONTENT)))
+        .addMethod(
+            getListInfoTypesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.ListInfoTypesRequest,
+                    com.google.privacy.dlp.v2.ListInfoTypesResponse>(
+                    service, METHODID_LIST_INFO_TYPES)))
+        .addMethod(
+            getCreateInspectTemplateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.CreateInspectTemplateRequest,
+                    com.google.privacy.dlp.v2.InspectTemplate>(
+                    service, METHODID_CREATE_INSPECT_TEMPLATE)))
+        .addMethod(
+            getUpdateInspectTemplateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.UpdateInspectTemplateRequest,
+                    com.google.privacy.dlp.v2.InspectTemplate>(
+                    service, METHODID_UPDATE_INSPECT_TEMPLATE)))
+        .addMethod(
+            getGetInspectTemplateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.GetInspectTemplateRequest,
+                    com.google.privacy.dlp.v2.InspectTemplate>(
+                    service, METHODID_GET_INSPECT_TEMPLATE)))
+        .addMethod(
+            getListInspectTemplatesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.ListInspectTemplatesRequest,
+                    com.google.privacy.dlp.v2.ListInspectTemplatesResponse>(
+                    service, METHODID_LIST_INSPECT_TEMPLATES)))
+        .addMethod(
+            getDeleteInspectTemplateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.DeleteInspectTemplateRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_INSPECT_TEMPLATE)))
+        .addMethod(
+            getCreateDeidentifyTemplateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest,
+                    com.google.privacy.dlp.v2.DeidentifyTemplate>(
+                    service, METHODID_CREATE_DEIDENTIFY_TEMPLATE)))
+        .addMethod(
+            getUpdateDeidentifyTemplateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest,
+                    com.google.privacy.dlp.v2.DeidentifyTemplate>(
+                    service, METHODID_UPDATE_DEIDENTIFY_TEMPLATE)))
+        .addMethod(
+            getGetDeidentifyTemplateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest,
+                    com.google.privacy.dlp.v2.DeidentifyTemplate>(
+                    service, METHODID_GET_DEIDENTIFY_TEMPLATE)))
+        .addMethod(
+            getListDeidentifyTemplatesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest,
+                    com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse>(
+                    service, METHODID_LIST_DEIDENTIFY_TEMPLATES)))
+        .addMethod(
+            getDeleteDeidentifyTemplateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_DEIDENTIFY_TEMPLATE)))
+        .addMethod(
+            getCreateJobTriggerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.CreateJobTriggerRequest,
+                    com.google.privacy.dlp.v2.JobTrigger>(service, METHODID_CREATE_JOB_TRIGGER)))
+        .addMethod(
+            getUpdateJobTriggerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.UpdateJobTriggerRequest,
+                    com.google.privacy.dlp.v2.JobTrigger>(service, METHODID_UPDATE_JOB_TRIGGER)))
+        .addMethod(
+            getHybridInspectJobTriggerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest,
+                    com.google.privacy.dlp.v2.HybridInspectResponse>(
+                    service, METHODID_HYBRID_INSPECT_JOB_TRIGGER)))
+        .addMethod(
+            getGetJobTriggerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.GetJobTriggerRequest,
+                    com.google.privacy.dlp.v2.JobTrigger>(service, METHODID_GET_JOB_TRIGGER)))
+        .addMethod(
+            getListJobTriggersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.ListJobTriggersRequest,
+                    com.google.privacy.dlp.v2.ListJobTriggersResponse>(
+                    service, METHODID_LIST_JOB_TRIGGERS)))
+        .addMethod(
+            getDeleteJobTriggerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.DeleteJobTriggerRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_JOB_TRIGGER)))
+        .addMethod(
+            getActivateJobTriggerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.ActivateJobTriggerRequest,
+                    com.google.privacy.dlp.v2.DlpJob>(service, METHODID_ACTIVATE_JOB_TRIGGER)))
+        .addMethod(
+            getCreateDlpJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.CreateDlpJobRequest,
+                    com.google.privacy.dlp.v2.DlpJob>(service, METHODID_CREATE_DLP_JOB)))
+        .addMethod(
+            getListDlpJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.ListDlpJobsRequest,
+                    com.google.privacy.dlp.v2.ListDlpJobsResponse>(
+                    service, METHODID_LIST_DLP_JOBS)))
+        .addMethod(
+            getGetDlpJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.GetDlpJobRequest, com.google.privacy.dlp.v2.DlpJob>(
+                    service, METHODID_GET_DLP_JOB)))
+        .addMethod(
+            getDeleteDlpJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.DeleteDlpJobRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_DLP_JOB)))
+        .addMethod(
+            getCancelDlpJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.CancelDlpJobRequest, com.google.protobuf.Empty>(
+                    service, METHODID_CANCEL_DLP_JOB)))
+        .addMethod(
+            getCreateStoredInfoTypeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest,
+                    com.google.privacy.dlp.v2.StoredInfoType>(
+                    service, METHODID_CREATE_STORED_INFO_TYPE)))
+        .addMethod(
+            getUpdateStoredInfoTypeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest,
+                    com.google.privacy.dlp.v2.StoredInfoType>(
+                    service, METHODID_UPDATE_STORED_INFO_TYPE)))
+        .addMethod(
+            getGetStoredInfoTypeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.GetStoredInfoTypeRequest,
+                    com.google.privacy.dlp.v2.StoredInfoType>(
+                    service, METHODID_GET_STORED_INFO_TYPE)))
+        .addMethod(
+            getListStoredInfoTypesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.ListStoredInfoTypesRequest,
+                    com.google.privacy.dlp.v2.ListStoredInfoTypesResponse>(
+                    service, METHODID_LIST_STORED_INFO_TYPES)))
+        .addMethod(
+            getDeleteStoredInfoTypeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_STORED_INFO_TYPE)))
+        .addMethod(
+            getHybridInspectDlpJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.HybridInspectDlpJobRequest,
+                    com.google.privacy.dlp.v2.HybridInspectResponse>(
+                    service, METHODID_HYBRID_INSPECT_DLP_JOB)))
+        .addMethod(
+            getFinishDlpJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.privacy.dlp.v2.FinishDlpJobRequest, com.google.protobuf.Empty>(
+                    service, METHODID_FINISH_DLP_JOB)))
+        .build();
   }
 
   private abstract static class DlpServiceBaseDescriptorSupplier

@@ -260,7 +260,7 @@ public final class Controller2Grpc {
    * service.
    * </pre>
    */
-  public abstract static class Controller2ImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -276,7 +276,7 @@ public final class Controller2Grpc {
      * `debuggee_id` value changing upon re-registration.
      * </pre>
      */
-    public void registerDebuggee(
+    default void registerDebuggee(
         com.google.devtools.clouddebugger.v2.RegisterDebuggeeRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.clouddebugger.v2.RegisterDebuggeeResponse>
             responseObserver) {
@@ -301,7 +301,7 @@ public final class Controller2Grpc {
      * setting those breakpoints again.
      * </pre>
      */
-    public void listActiveBreakpoints(
+    default void listActiveBreakpoints(
         com.google.devtools.clouddebugger.v2.ListActiveBreakpointsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.devtools.clouddebugger.v2.ListActiveBreakpointsResponse>
@@ -323,7 +323,7 @@ public final class Controller2Grpc {
      * or snapping the location to the correct line of code.
      * </pre>
      */
-    public void updateActiveBreakpoint(
+    default void updateActiveBreakpoint(
         com.google.devtools.clouddebugger.v2.UpdateActiveBreakpointRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.devtools.clouddebugger.v2.UpdateActiveBreakpointResponse>
@@ -331,37 +331,42 @@ public final class Controller2Grpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateActiveBreakpointMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Controller2.
+   *
+   * <pre>
+   * The Controller service provides the API for orchestrating a collection of
+   * debugger agents to perform debugging tasks. These agents are each attached
+   * to a process of an application which may include one or more replicas.
+   * The debugger agents register with the Controller to identify the application
+   * being debugged, the Debuggee. All agents that register with the same data,
+   * represent the same Debuggee, and are assigned the same `debuggee_id`.
+   * The debugger agents call the Controller to retrieve  the list of active
+   * Breakpoints. Agents with the same `debuggee_id` get the same breakpoints
+   * list. An agent that can fulfill the breakpoint request updates the
+   * Controller with the breakpoint result. The controller selects the first
+   * result received and discards the rest of the results.
+   * Agents that poll again for active breakpoints will no longer have
+   * the completed breakpoint in the list and should remove that breakpoint from
+   * their attached process.
+   * The Controller service does not provide a way to retrieve the results of
+   * a completed breakpoint. This functionality is available using the Debugger
+   * service.
+   * </pre>
+   */
+  public abstract static class Controller2ImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getRegisterDebuggeeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.devtools.clouddebugger.v2.RegisterDebuggeeRequest,
-                      com.google.devtools.clouddebugger.v2.RegisterDebuggeeResponse>(
-                      this, METHODID_REGISTER_DEBUGGEE)))
-          .addMethod(
-              getListActiveBreakpointsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.devtools.clouddebugger.v2.ListActiveBreakpointsRequest,
-                      com.google.devtools.clouddebugger.v2.ListActiveBreakpointsResponse>(
-                      this, METHODID_LIST_ACTIVE_BREAKPOINTS)))
-          .addMethod(
-              getUpdateActiveBreakpointMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.devtools.clouddebugger.v2.UpdateActiveBreakpointRequest,
-                      com.google.devtools.clouddebugger.v2.UpdateActiveBreakpointResponse>(
-                      this, METHODID_UPDATE_ACTIVE_BREAKPOINT)))
-          .build();
+      return Controller2Grpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Controller2.
    *
    * <pre>
    * The Controller service provides the API for orchestrating a collection of
@@ -472,7 +477,7 @@ public final class Controller2Grpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Controller2.
    *
    * <pre>
    * The Controller service provides the API for orchestrating a collection of
@@ -571,7 +576,7 @@ public final class Controller2Grpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Controller2.
    *
    * <pre>
    * The Controller service provides the API for orchestrating a collection of
@@ -682,10 +687,10 @@ public final class Controller2Grpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final Controller2ImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(Controller2ImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -729,6 +734,32 @@ public final class Controller2Grpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getRegisterDebuggeeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.clouddebugger.v2.RegisterDebuggeeRequest,
+                    com.google.devtools.clouddebugger.v2.RegisterDebuggeeResponse>(
+                    service, METHODID_REGISTER_DEBUGGEE)))
+        .addMethod(
+            getListActiveBreakpointsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.clouddebugger.v2.ListActiveBreakpointsRequest,
+                    com.google.devtools.clouddebugger.v2.ListActiveBreakpointsResponse>(
+                    service, METHODID_LIST_ACTIVE_BREAKPOINTS)))
+        .addMethod(
+            getUpdateActiveBreakpointMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.clouddebugger.v2.UpdateActiveBreakpointRequest,
+                    com.google.devtools.clouddebugger.v2.UpdateActiveBreakpointResponse>(
+                    service, METHODID_UPDATE_ACTIVE_BREAKPOINT)))
+        .build();
   }
 
   private abstract static class Controller2BaseDescriptorSupplier

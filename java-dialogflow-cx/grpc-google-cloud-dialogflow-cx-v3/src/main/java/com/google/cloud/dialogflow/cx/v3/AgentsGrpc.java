@@ -485,7 +485,7 @@ public final class AgentsGrpc {
    * Service for managing [Agents][google.cloud.dialogflow.cx.v3.Agent].
    * </pre>
    */
-  public abstract static class AgentsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -494,7 +494,7 @@ public final class AgentsGrpc {
      * Returns the list of all agents in the specified location.
      * </pre>
      */
-    public void listAgents(
+    default void listAgents(
         com.google.cloud.dialogflow.cx.v3.ListAgentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListAgentsResponse>
             responseObserver) {
@@ -508,7 +508,7 @@ public final class AgentsGrpc {
      * Retrieves the specified agent.
      * </pre>
      */
-    public void getAgent(
+    default void getAgent(
         com.google.cloud.dialogflow.cx.v3.GetAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Agent> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAgentMethod(), responseObserver);
@@ -524,7 +524,7 @@ public final class AgentsGrpc {
      * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
-    public void createAgent(
+    default void createAgent(
         com.google.cloud.dialogflow.cx.v3.CreateAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Agent> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -541,7 +541,7 @@ public final class AgentsGrpc {
      * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
-    public void updateAgent(
+    default void updateAgent(
         com.google.cloud.dialogflow.cx.v3.UpdateAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Agent> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -555,7 +555,7 @@ public final class AgentsGrpc {
      * Deletes the specified agent.
      * </pre>
      */
-    public void deleteAgent(
+    default void deleteAgent(
         com.google.cloud.dialogflow.cx.v3.DeleteAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -576,7 +576,7 @@ public final class AgentsGrpc {
      * [ExportAgentResponse][google.cloud.dialogflow.cx.v3.ExportAgentResponse]
      * </pre>
      */
-    public void exportAgent(
+    default void exportAgent(
         com.google.cloud.dialogflow.cx.v3.ExportAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -602,7 +602,7 @@ public final class AgentsGrpc {
      * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
-    public void restoreAgent(
+    default void restoreAgent(
         com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -618,7 +618,7 @@ public final class AgentsGrpc {
      * training is completed to get the complete validation results.
      * </pre>
      */
-    public void validateAgent(
+    default void validateAgent(
         com.google.cloud.dialogflow.cx.v3.ValidateAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.AgentValidationResult>
             responseObserver) {
@@ -634,80 +634,32 @@ public final class AgentsGrpc {
      * when ValidateAgent is called.
      * </pre>
      */
-    public void getAgentValidationResult(
+    default void getAgentValidationResult(
         com.google.cloud.dialogflow.cx.v3.GetAgentValidationResultRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.AgentValidationResult>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetAgentValidationResultMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Agents.
+   *
+   * <pre>
+   * Service for managing [Agents][google.cloud.dialogflow.cx.v3.Agent].
+   * </pre>
+   */
+  public abstract static class AgentsImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListAgentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.ListAgentsRequest,
-                      com.google.cloud.dialogflow.cx.v3.ListAgentsResponse>(
-                      this, METHODID_LIST_AGENTS)))
-          .addMethod(
-              getGetAgentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.GetAgentRequest,
-                      com.google.cloud.dialogflow.cx.v3.Agent>(this, METHODID_GET_AGENT)))
-          .addMethod(
-              getCreateAgentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.CreateAgentRequest,
-                      com.google.cloud.dialogflow.cx.v3.Agent>(this, METHODID_CREATE_AGENT)))
-          .addMethod(
-              getUpdateAgentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.UpdateAgentRequest,
-                      com.google.cloud.dialogflow.cx.v3.Agent>(this, METHODID_UPDATE_AGENT)))
-          .addMethod(
-              getDeleteAgentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.DeleteAgentRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_AGENT)))
-          .addMethod(
-              getExportAgentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.ExportAgentRequest,
-                      com.google.longrunning.Operation>(this, METHODID_EXPORT_AGENT)))
-          .addMethod(
-              getRestoreAgentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest,
-                      com.google.longrunning.Operation>(this, METHODID_RESTORE_AGENT)))
-          .addMethod(
-              getValidateAgentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.ValidateAgentRequest,
-                      com.google.cloud.dialogflow.cx.v3.AgentValidationResult>(
-                      this, METHODID_VALIDATE_AGENT)))
-          .addMethod(
-              getGetAgentValidationResultMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.GetAgentValidationResultRequest,
-                      com.google.cloud.dialogflow.cx.v3.AgentValidationResult>(
-                      this, METHODID_GET_AGENT_VALIDATION_RESULT)))
-          .build();
+      return AgentsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Agents.
    *
    * <pre>
    * Service for managing [Agents][google.cloud.dialogflow.cx.v3.Agent].
@@ -896,7 +848,7 @@ public final class AgentsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Agents.
    *
    * <pre>
    * Service for managing [Agents][google.cloud.dialogflow.cx.v3.Agent].
@@ -1060,7 +1012,7 @@ public final class AgentsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Agents.
    *
    * <pre>
    * Service for managing [Agents][google.cloud.dialogflow.cx.v3.Agent].
@@ -1245,10 +1197,10 @@ public final class AgentsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final AgentsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(AgentsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1322,6 +1274,68 @@ public final class AgentsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListAgentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.ListAgentsRequest,
+                    com.google.cloud.dialogflow.cx.v3.ListAgentsResponse>(
+                    service, METHODID_LIST_AGENTS)))
+        .addMethod(
+            getGetAgentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.GetAgentRequest,
+                    com.google.cloud.dialogflow.cx.v3.Agent>(service, METHODID_GET_AGENT)))
+        .addMethod(
+            getCreateAgentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.CreateAgentRequest,
+                    com.google.cloud.dialogflow.cx.v3.Agent>(service, METHODID_CREATE_AGENT)))
+        .addMethod(
+            getUpdateAgentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.UpdateAgentRequest,
+                    com.google.cloud.dialogflow.cx.v3.Agent>(service, METHODID_UPDATE_AGENT)))
+        .addMethod(
+            getDeleteAgentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.DeleteAgentRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_AGENT)))
+        .addMethod(
+            getExportAgentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.ExportAgentRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EXPORT_AGENT)))
+        .addMethod(
+            getRestoreAgentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RESTORE_AGENT)))
+        .addMethod(
+            getValidateAgentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.ValidateAgentRequest,
+                    com.google.cloud.dialogflow.cx.v3.AgentValidationResult>(
+                    service, METHODID_VALIDATE_AGENT)))
+        .addMethod(
+            getGetAgentValidationResultMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.GetAgentValidationResultRequest,
+                    com.google.cloud.dialogflow.cx.v3.AgentValidationResult>(
+                    service, METHODID_GET_AGENT_VALIDATION_RESULT)))
+        .build();
   }
 
   private abstract static class AgentsBaseDescriptorSupplier

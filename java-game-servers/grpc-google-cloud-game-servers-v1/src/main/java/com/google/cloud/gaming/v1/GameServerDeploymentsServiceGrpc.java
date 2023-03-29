@@ -558,8 +558,7 @@ public final class GameServerDeploymentsServiceGrpc {
    * fleets.
    * </pre>
    */
-  public abstract static class GameServerDeploymentsServiceImplBase
-      implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -568,7 +567,7 @@ public final class GameServerDeploymentsServiceGrpc {
      * Lists game server deployments in a given project and location.
      * </pre>
      */
-    public void listGameServerDeployments(
+    default void listGameServerDeployments(
         com.google.cloud.gaming.v1.ListGameServerDeploymentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.ListGameServerDeploymentsResponse>
             responseObserver) {
@@ -583,7 +582,7 @@ public final class GameServerDeploymentsServiceGrpc {
      * Gets details of a single game server deployment.
      * </pre>
      */
-    public void getGameServerDeployment(
+    default void getGameServerDeployment(
         com.google.cloud.gaming.v1.GetGameServerDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.GameServerDeployment>
             responseObserver) {
@@ -598,7 +597,7 @@ public final class GameServerDeploymentsServiceGrpc {
      * Creates a new game server deployment in a given project and location.
      * </pre>
      */
-    public void createGameServerDeployment(
+    default void createGameServerDeployment(
         com.google.cloud.gaming.v1.CreateGameServerDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -612,7 +611,7 @@ public final class GameServerDeploymentsServiceGrpc {
      * Deletes a single game server deployment.
      * </pre>
      */
-    public void deleteGameServerDeployment(
+    default void deleteGameServerDeployment(
         com.google.cloud.gaming.v1.DeleteGameServerDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -626,7 +625,7 @@ public final class GameServerDeploymentsServiceGrpc {
      * Patches a game server deployment.
      * </pre>
      */
-    public void updateGameServerDeployment(
+    default void updateGameServerDeployment(
         com.google.cloud.gaming.v1.UpdateGameServerDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -640,7 +639,7 @@ public final class GameServerDeploymentsServiceGrpc {
      * Gets details a single game server deployment rollout.
      * </pre>
      */
-    public void getGameServerDeploymentRollout(
+    default void getGameServerDeploymentRollout(
         com.google.cloud.gaming.v1.GetGameServerDeploymentRolloutRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.GameServerDeploymentRollout>
             responseObserver) {
@@ -660,7 +659,7 @@ public final class GameServerDeploymentsServiceGrpc {
      * field, that will also not result in an error.
      * </pre>
      */
-    public void updateGameServerDeploymentRollout(
+    default void updateGameServerDeploymentRollout(
         com.google.cloud.gaming.v1.UpdateGameServerDeploymentRolloutRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -675,7 +674,7 @@ public final class GameServerDeploymentsServiceGrpc {
      * rollout resource.
      * </pre>
      */
-    public void previewGameServerDeploymentRollout(
+    default void previewGameServerDeploymentRollout(
         com.google.cloud.gaming.v1.PreviewGameServerDeploymentRolloutRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.gaming.v1.PreviewGameServerDeploymentRolloutResponse>
@@ -693,86 +692,34 @@ public final class GameServerDeploymentsServiceGrpc {
      * including fleets running an older version of the game server deployment.
      * </pre>
      */
-    public void fetchDeploymentState(
+    default void fetchDeploymentState(
         com.google.cloud.gaming.v1.FetchDeploymentStateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.FetchDeploymentStateResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getFetchDeploymentStateMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service GameServerDeploymentsService.
+   *
+   * <pre>
+   * The game server deployment is used to control the deployment of Agones
+   * fleets.
+   * </pre>
+   */
+  public abstract static class GameServerDeploymentsServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListGameServerDeploymentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gaming.v1.ListGameServerDeploymentsRequest,
-                      com.google.cloud.gaming.v1.ListGameServerDeploymentsResponse>(
-                      this, METHODID_LIST_GAME_SERVER_DEPLOYMENTS)))
-          .addMethod(
-              getGetGameServerDeploymentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gaming.v1.GetGameServerDeploymentRequest,
-                      com.google.cloud.gaming.v1.GameServerDeployment>(
-                      this, METHODID_GET_GAME_SERVER_DEPLOYMENT)))
-          .addMethod(
-              getCreateGameServerDeploymentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gaming.v1.CreateGameServerDeploymentRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_CREATE_GAME_SERVER_DEPLOYMENT)))
-          .addMethod(
-              getDeleteGameServerDeploymentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gaming.v1.DeleteGameServerDeploymentRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_DELETE_GAME_SERVER_DEPLOYMENT)))
-          .addMethod(
-              getUpdateGameServerDeploymentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gaming.v1.UpdateGameServerDeploymentRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_UPDATE_GAME_SERVER_DEPLOYMENT)))
-          .addMethod(
-              getGetGameServerDeploymentRolloutMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gaming.v1.GetGameServerDeploymentRolloutRequest,
-                      com.google.cloud.gaming.v1.GameServerDeploymentRollout>(
-                      this, METHODID_GET_GAME_SERVER_DEPLOYMENT_ROLLOUT)))
-          .addMethod(
-              getUpdateGameServerDeploymentRolloutMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gaming.v1.UpdateGameServerDeploymentRolloutRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_UPDATE_GAME_SERVER_DEPLOYMENT_ROLLOUT)))
-          .addMethod(
-              getPreviewGameServerDeploymentRolloutMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gaming.v1.PreviewGameServerDeploymentRolloutRequest,
-                      com.google.cloud.gaming.v1.PreviewGameServerDeploymentRolloutResponse>(
-                      this, METHODID_PREVIEW_GAME_SERVER_DEPLOYMENT_ROLLOUT)))
-          .addMethod(
-              getFetchDeploymentStateMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gaming.v1.FetchDeploymentStateRequest,
-                      com.google.cloud.gaming.v1.FetchDeploymentStateResponse>(
-                      this, METHODID_FETCH_DEPLOYMENT_STATE)))
-          .build();
+      return GameServerDeploymentsServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service GameServerDeploymentsService.
    *
    * <pre>
    * The game server deployment is used to control the deployment of Agones
@@ -952,7 +899,7 @@ public final class GameServerDeploymentsServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service GameServerDeploymentsService.
    *
    * <pre>
    * The game server deployment is used to control the deployment of Agones
@@ -1100,7 +1047,8 @@ public final class GameServerDeploymentsServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * GameServerDeploymentsService.
    *
    * <pre>
    * The game server deployment is used to control the deployment of Agones
@@ -1276,10 +1224,10 @@ public final class GameServerDeploymentsServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final GameServerDeploymentsServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(GameServerDeploymentsServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1354,6 +1302,74 @@ public final class GameServerDeploymentsServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListGameServerDeploymentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gaming.v1.ListGameServerDeploymentsRequest,
+                    com.google.cloud.gaming.v1.ListGameServerDeploymentsResponse>(
+                    service, METHODID_LIST_GAME_SERVER_DEPLOYMENTS)))
+        .addMethod(
+            getGetGameServerDeploymentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gaming.v1.GetGameServerDeploymentRequest,
+                    com.google.cloud.gaming.v1.GameServerDeployment>(
+                    service, METHODID_GET_GAME_SERVER_DEPLOYMENT)))
+        .addMethod(
+            getCreateGameServerDeploymentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gaming.v1.CreateGameServerDeploymentRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_GAME_SERVER_DEPLOYMENT)))
+        .addMethod(
+            getDeleteGameServerDeploymentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gaming.v1.DeleteGameServerDeploymentRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_GAME_SERVER_DEPLOYMENT)))
+        .addMethod(
+            getUpdateGameServerDeploymentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gaming.v1.UpdateGameServerDeploymentRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_GAME_SERVER_DEPLOYMENT)))
+        .addMethod(
+            getGetGameServerDeploymentRolloutMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gaming.v1.GetGameServerDeploymentRolloutRequest,
+                    com.google.cloud.gaming.v1.GameServerDeploymentRollout>(
+                    service, METHODID_GET_GAME_SERVER_DEPLOYMENT_ROLLOUT)))
+        .addMethod(
+            getUpdateGameServerDeploymentRolloutMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gaming.v1.UpdateGameServerDeploymentRolloutRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_GAME_SERVER_DEPLOYMENT_ROLLOUT)))
+        .addMethod(
+            getPreviewGameServerDeploymentRolloutMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gaming.v1.PreviewGameServerDeploymentRolloutRequest,
+                    com.google.cloud.gaming.v1.PreviewGameServerDeploymentRolloutResponse>(
+                    service, METHODID_PREVIEW_GAME_SERVER_DEPLOYMENT_ROLLOUT)))
+        .addMethod(
+            getFetchDeploymentStateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gaming.v1.FetchDeploymentStateRequest,
+                    com.google.cloud.gaming.v1.FetchDeploymentStateResponse>(
+                    service, METHODID_FETCH_DEPLOYMENT_STATE)))
+        .build();
   }
 
   private abstract static class GameServerDeploymentsServiceBaseDescriptorSupplier

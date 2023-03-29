@@ -444,7 +444,7 @@ public final class DataScanServiceGrpc {
    * Data Profile, Data Quality) for the data source.
    * </pre>
    */
-  public abstract static class DataScanServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -453,7 +453,7 @@ public final class DataScanServiceGrpc {
      * Creates a DataScan resource.
      * </pre>
      */
-    public void createDataScan(
+    default void createDataScan(
         com.google.cloud.dataplex.v1.CreateDataScanRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -467,7 +467,7 @@ public final class DataScanServiceGrpc {
      * Updates a DataScan resource.
      * </pre>
      */
-    public void updateDataScan(
+    default void updateDataScan(
         com.google.cloud.dataplex.v1.UpdateDataScanRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -481,7 +481,7 @@ public final class DataScanServiceGrpc {
      * Deletes a DataScan resource.
      * </pre>
      */
-    public void deleteDataScan(
+    default void deleteDataScan(
         com.google.cloud.dataplex.v1.DeleteDataScanRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -495,7 +495,7 @@ public final class DataScanServiceGrpc {
      * Gets a DataScan resource.
      * </pre>
      */
-    public void getDataScan(
+    default void getDataScan(
         com.google.cloud.dataplex.v1.GetDataScanRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.DataScan> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -509,7 +509,7 @@ public final class DataScanServiceGrpc {
      * Lists DataScans.
      * </pre>
      */
-    public void listDataScans(
+    default void listDataScans(
         com.google.cloud.dataplex.v1.ListDataScansRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListDataScansResponse>
             responseObserver) {
@@ -524,7 +524,7 @@ public final class DataScanServiceGrpc {
      * Runs an on-demand execution of a DataScan
      * </pre>
      */
-    public void runDataScan(
+    default void runDataScan(
         com.google.cloud.dataplex.v1.RunDataScanRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.RunDataScanResponse>
             responseObserver) {
@@ -539,7 +539,7 @@ public final class DataScanServiceGrpc {
      * Gets a DataScanJob resource.
      * </pre>
      */
-    public void getDataScanJob(
+    default void getDataScanJob(
         com.google.cloud.dataplex.v1.GetDataScanJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.DataScanJob> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -553,74 +553,35 @@ public final class DataScanServiceGrpc {
      * Lists DataScanJobs under the given DataScan.
      * </pre>
      */
-    public void listDataScanJobs(
+    default void listDataScanJobs(
         com.google.cloud.dataplex.v1.ListDataScanJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListDataScanJobsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListDataScanJobsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service DataScanService.
+   *
+   * <pre>
+   * DataScanService manages DataScan resources which can be configured to run
+   * various types of data scanning workload and generate enriched metadata (e.g.
+   * Data Profile, Data Quality) for the data source.
+   * </pre>
+   */
+  public abstract static class DataScanServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateDataScanMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.CreateDataScanRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_DATA_SCAN)))
-          .addMethod(
-              getUpdateDataScanMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.UpdateDataScanRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_DATA_SCAN)))
-          .addMethod(
-              getDeleteDataScanMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.DeleteDataScanRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_DATA_SCAN)))
-          .addMethod(
-              getGetDataScanMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.GetDataScanRequest,
-                      com.google.cloud.dataplex.v1.DataScan>(this, METHODID_GET_DATA_SCAN)))
-          .addMethod(
-              getListDataScansMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.ListDataScansRequest,
-                      com.google.cloud.dataplex.v1.ListDataScansResponse>(
-                      this, METHODID_LIST_DATA_SCANS)))
-          .addMethod(
-              getRunDataScanMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.RunDataScanRequest,
-                      com.google.cloud.dataplex.v1.RunDataScanResponse>(
-                      this, METHODID_RUN_DATA_SCAN)))
-          .addMethod(
-              getGetDataScanJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.GetDataScanJobRequest,
-                      com.google.cloud.dataplex.v1.DataScanJob>(this, METHODID_GET_DATA_SCAN_JOB)))
-          .addMethod(
-              getListDataScanJobsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.ListDataScanJobsRequest,
-                      com.google.cloud.dataplex.v1.ListDataScanJobsResponse>(
-                      this, METHODID_LIST_DATA_SCAN_JOBS)))
-          .build();
+      return DataScanServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service DataScanService.
    *
    * <pre>
    * DataScanService manages DataScan resources which can be configured to run
@@ -772,7 +733,7 @@ public final class DataScanServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service DataScanService.
    *
    * <pre>
    * DataScanService manages DataScan resources which can be configured to run
@@ -898,7 +859,7 @@ public final class DataScanServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service DataScanService.
    *
    * <pre>
    * DataScanService manages DataScan resources which can be configured to run
@@ -1041,10 +1002,10 @@ public final class DataScanServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final DataScanServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(DataScanServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1112,6 +1073,62 @@ public final class DataScanServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateDataScanMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.CreateDataScanRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_DATA_SCAN)))
+        .addMethod(
+            getUpdateDataScanMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.UpdateDataScanRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_DATA_SCAN)))
+        .addMethod(
+            getDeleteDataScanMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.DeleteDataScanRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_DATA_SCAN)))
+        .addMethod(
+            getGetDataScanMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.GetDataScanRequest,
+                    com.google.cloud.dataplex.v1.DataScan>(service, METHODID_GET_DATA_SCAN)))
+        .addMethod(
+            getListDataScansMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.ListDataScansRequest,
+                    com.google.cloud.dataplex.v1.ListDataScansResponse>(
+                    service, METHODID_LIST_DATA_SCANS)))
+        .addMethod(
+            getRunDataScanMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.RunDataScanRequest,
+                    com.google.cloud.dataplex.v1.RunDataScanResponse>(
+                    service, METHODID_RUN_DATA_SCAN)))
+        .addMethod(
+            getGetDataScanJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.GetDataScanJobRequest,
+                    com.google.cloud.dataplex.v1.DataScanJob>(service, METHODID_GET_DATA_SCAN_JOB)))
+        .addMethod(
+            getListDataScanJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.ListDataScanJobsRequest,
+                    com.google.cloud.dataplex.v1.ListDataScanJobsResponse>(
+                    service, METHODID_LIST_DATA_SCAN_JOBS)))
+        .build();
   }
 
   private abstract static class DataScanServiceBaseDescriptorSupplier

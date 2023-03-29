@@ -304,7 +304,7 @@ public final class PagesGrpc {
    * Service for managing [Pages][google.cloud.dialogflow.cx.v3beta1.Page].
    * </pre>
    */
-  public abstract static class PagesImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -313,7 +313,7 @@ public final class PagesGrpc {
      * Returns the list of all pages in the specified flow.
      * </pre>
      */
-    public void listPages(
+    default void listPages(
         com.google.cloud.dialogflow.cx.v3beta1.ListPagesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.ListPagesResponse>
             responseObserver) {
@@ -327,7 +327,7 @@ public final class PagesGrpc {
      * Retrieves the specified page.
      * </pre>
      */
-    public void getPage(
+    default void getPage(
         com.google.cloud.dialogflow.cx.v3beta1.GetPageRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.Page> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPageMethod(), responseObserver);
@@ -340,7 +340,7 @@ public final class PagesGrpc {
      * Creates a page in the specified flow.
      * </pre>
      */
-    public void createPage(
+    default void createPage(
         com.google.cloud.dialogflow.cx.v3beta1.CreatePageRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.Page> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreatePageMethod(), responseObserver);
@@ -353,7 +353,7 @@ public final class PagesGrpc {
      * Updates the specified page.
      * </pre>
      */
-    public void updatePage(
+    default void updatePage(
         com.google.cloud.dialogflow.cx.v3beta1.UpdatePageRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.Page> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdatePageMethod(), responseObserver);
@@ -366,52 +366,30 @@ public final class PagesGrpc {
      * Deletes the specified page.
      * </pre>
      */
-    public void deletePage(
+    default void deletePage(
         com.google.cloud.dialogflow.cx.v3beta1.DeletePageRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeletePageMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Pages.
+   *
+   * <pre>
+   * Service for managing [Pages][google.cloud.dialogflow.cx.v3beta1.Page].
+   * </pre>
+   */
+  public abstract static class PagesImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListPagesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3beta1.ListPagesRequest,
-                      com.google.cloud.dialogflow.cx.v3beta1.ListPagesResponse>(
-                      this, METHODID_LIST_PAGES)))
-          .addMethod(
-              getGetPageMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3beta1.GetPageRequest,
-                      com.google.cloud.dialogflow.cx.v3beta1.Page>(this, METHODID_GET_PAGE)))
-          .addMethod(
-              getCreatePageMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3beta1.CreatePageRequest,
-                      com.google.cloud.dialogflow.cx.v3beta1.Page>(this, METHODID_CREATE_PAGE)))
-          .addMethod(
-              getUpdatePageMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3beta1.UpdatePageRequest,
-                      com.google.cloud.dialogflow.cx.v3beta1.Page>(this, METHODID_UPDATE_PAGE)))
-          .addMethod(
-              getDeletePageMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3beta1.DeletePageRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_PAGE)))
-          .build();
+      return PagesGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Pages.
    *
    * <pre>
    * Service for managing [Pages][google.cloud.dialogflow.cx.v3beta1.Page].
@@ -500,7 +478,7 @@ public final class PagesGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Pages.
    *
    * <pre>
    * Service for managing [Pages][google.cloud.dialogflow.cx.v3beta1.Page].
@@ -584,7 +562,7 @@ public final class PagesGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Pages.
    *
    * <pre>
    * Service for managing [Pages][google.cloud.dialogflow.cx.v3beta1.Page].
@@ -682,10 +660,10 @@ public final class PagesGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final PagesImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(PagesImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -738,6 +716,42 @@ public final class PagesGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListPagesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.ListPagesRequest,
+                    com.google.cloud.dialogflow.cx.v3beta1.ListPagesResponse>(
+                    service, METHODID_LIST_PAGES)))
+        .addMethod(
+            getGetPageMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.GetPageRequest,
+                    com.google.cloud.dialogflow.cx.v3beta1.Page>(service, METHODID_GET_PAGE)))
+        .addMethod(
+            getCreatePageMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.CreatePageRequest,
+                    com.google.cloud.dialogflow.cx.v3beta1.Page>(service, METHODID_CREATE_PAGE)))
+        .addMethod(
+            getUpdatePageMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.UpdatePageRequest,
+                    com.google.cloud.dialogflow.cx.v3beta1.Page>(service, METHODID_UPDATE_PAGE)))
+        .addMethod(
+            getDeletePageMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.DeletePageRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_PAGE)))
+        .build();
   }
 
   private abstract static class PagesBaseDescriptorSupplier

@@ -409,7 +409,7 @@ public final class EssentialContactsServiceGrpc {
    * Manages contacts for important Google Cloud notifications.
    * </pre>
    */
-  public abstract static class EssentialContactsServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -418,7 +418,7 @@ public final class EssentialContactsServiceGrpc {
      * Adds a new contact for a resource.
      * </pre>
      */
-    public void createContact(
+    default void createContact(
         com.google.cloud.essentialcontacts.v1.CreateContactRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.essentialcontacts.v1.Contact>
             responseObserver) {
@@ -434,7 +434,7 @@ public final class EssentialContactsServiceGrpc {
      * Note: A contact's email address cannot be changed.
      * </pre>
      */
-    public void updateContact(
+    default void updateContact(
         com.google.cloud.essentialcontacts.v1.UpdateContactRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.essentialcontacts.v1.Contact>
             responseObserver) {
@@ -449,7 +449,7 @@ public final class EssentialContactsServiceGrpc {
      * Lists the contacts that have been set on a resource.
      * </pre>
      */
-    public void listContacts(
+    default void listContacts(
         com.google.cloud.essentialcontacts.v1.ListContactsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.essentialcontacts.v1.ListContactsResponse>
             responseObserver) {
@@ -464,7 +464,7 @@ public final class EssentialContactsServiceGrpc {
      * Gets a single contact.
      * </pre>
      */
-    public void getContact(
+    default void getContact(
         com.google.cloud.essentialcontacts.v1.GetContactRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.essentialcontacts.v1.Contact>
             responseObserver) {
@@ -478,7 +478,7 @@ public final class EssentialContactsServiceGrpc {
      * Deletes a contact.
      * </pre>
      */
-    public void deleteContact(
+    default void deleteContact(
         com.google.cloud.essentialcontacts.v1.DeleteContactRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -494,7 +494,7 @@ public final class EssentialContactsServiceGrpc {
      * any parent resources.
      * </pre>
      */
-    public void computeContacts(
+    default void computeContacts(
         com.google.cloud.essentialcontacts.v1.ComputeContactsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.essentialcontacts.v1.ComputeContactsResponse>
             responseObserver) {
@@ -510,68 +510,32 @@ public final class EssentialContactsServiceGrpc {
      * has been configured correctly.
      * </pre>
      */
-    public void sendTestMessage(
+    default void sendTestMessage(
         com.google.cloud.essentialcontacts.v1.SendTestMessageRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSendTestMessageMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service EssentialContactsService.
+   *
+   * <pre>
+   * Manages contacts for important Google Cloud notifications.
+   * </pre>
+   */
+  public abstract static class EssentialContactsServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateContactMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.essentialcontacts.v1.CreateContactRequest,
-                      com.google.cloud.essentialcontacts.v1.Contact>(
-                      this, METHODID_CREATE_CONTACT)))
-          .addMethod(
-              getUpdateContactMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.essentialcontacts.v1.UpdateContactRequest,
-                      com.google.cloud.essentialcontacts.v1.Contact>(
-                      this, METHODID_UPDATE_CONTACT)))
-          .addMethod(
-              getListContactsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.essentialcontacts.v1.ListContactsRequest,
-                      com.google.cloud.essentialcontacts.v1.ListContactsResponse>(
-                      this, METHODID_LIST_CONTACTS)))
-          .addMethod(
-              getGetContactMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.essentialcontacts.v1.GetContactRequest,
-                      com.google.cloud.essentialcontacts.v1.Contact>(this, METHODID_GET_CONTACT)))
-          .addMethod(
-              getDeleteContactMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.essentialcontacts.v1.DeleteContactRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_CONTACT)))
-          .addMethod(
-              getComputeContactsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.essentialcontacts.v1.ComputeContactsRequest,
-                      com.google.cloud.essentialcontacts.v1.ComputeContactsResponse>(
-                      this, METHODID_COMPUTE_CONTACTS)))
-          .addMethod(
-              getSendTestMessageMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.essentialcontacts.v1.SendTestMessageRequest,
-                      com.google.protobuf.Empty>(this, METHODID_SEND_TEST_MESSAGE)))
-          .build();
+      return EssentialContactsServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service EssentialContactsService.
    *
    * <pre>
    * Manages contacts for important Google Cloud notifications.
@@ -710,7 +674,7 @@ public final class EssentialContactsServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service EssentialContactsService.
    *
    * <pre>
    * Manages contacts for important Google Cloud notifications.
@@ -826,7 +790,8 @@ public final class EssentialContactsServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * EssentialContactsService.
    *
    * <pre>
    * Manages contacts for important Google Cloud notifications.
@@ -959,10 +924,10 @@ public final class EssentialContactsServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final EssentialContactsServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(EssentialContactsServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1027,6 +992,57 @@ public final class EssentialContactsServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateContactMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.essentialcontacts.v1.CreateContactRequest,
+                    com.google.cloud.essentialcontacts.v1.Contact>(
+                    service, METHODID_CREATE_CONTACT)))
+        .addMethod(
+            getUpdateContactMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.essentialcontacts.v1.UpdateContactRequest,
+                    com.google.cloud.essentialcontacts.v1.Contact>(
+                    service, METHODID_UPDATE_CONTACT)))
+        .addMethod(
+            getListContactsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.essentialcontacts.v1.ListContactsRequest,
+                    com.google.cloud.essentialcontacts.v1.ListContactsResponse>(
+                    service, METHODID_LIST_CONTACTS)))
+        .addMethod(
+            getGetContactMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.essentialcontacts.v1.GetContactRequest,
+                    com.google.cloud.essentialcontacts.v1.Contact>(service, METHODID_GET_CONTACT)))
+        .addMethod(
+            getDeleteContactMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.essentialcontacts.v1.DeleteContactRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_CONTACT)))
+        .addMethod(
+            getComputeContactsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.essentialcontacts.v1.ComputeContactsRequest,
+                    com.google.cloud.essentialcontacts.v1.ComputeContactsResponse>(
+                    service, METHODID_COMPUTE_CONTACTS)))
+        .addMethod(
+            getSendTestMessageMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.essentialcontacts.v1.SendTestMessageRequest,
+                    com.google.protobuf.Empty>(service, METHODID_SEND_TEST_MESSAGE)))
+        .build();
   }
 
   private abstract static class EssentialContactsServiceBaseDescriptorSupplier

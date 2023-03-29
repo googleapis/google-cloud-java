@@ -544,7 +544,7 @@ public final class ConversationModelsGrpc {
    * Manages a collection of models for human agent assistant.
    * </pre>
    */
-  public abstract static class ConversationModelsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -560,7 +560,7 @@ public final class ConversationModelsGrpc {
      * [ConversationModel][google.cloud.dialogflow.v2.ConversationModel]
      * </pre>
      */
-    public void createConversationModel(
+    default void createConversationModel(
         com.google.cloud.dialogflow.v2.CreateConversationModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -574,7 +574,7 @@ public final class ConversationModelsGrpc {
      * Gets conversation model.
      * </pre>
      */
-    public void getConversationModel(
+    default void getConversationModel(
         com.google.cloud.dialogflow.v2.GetConversationModelRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.ConversationModel>
             responseObserver) {
@@ -589,7 +589,7 @@ public final class ConversationModelsGrpc {
      * Lists conversation models.
      * </pre>
      */
-    public void listConversationModels(
+    default void listConversationModels(
         com.google.cloud.dialogflow.v2.ListConversationModelsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.ListConversationModelsResponse>
             responseObserver) {
@@ -611,7 +611,7 @@ public final class ConversationModelsGrpc {
      *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
      * </pre>
      */
-    public void deleteConversationModel(
+    default void deleteConversationModel(
         com.google.cloud.dialogflow.v2.DeleteConversationModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -635,7 +635,7 @@ public final class ConversationModelsGrpc {
      *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
      * </pre>
      */
-    public void deployConversationModel(
+    default void deployConversationModel(
         com.google.cloud.dialogflow.v2.DeployConversationModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -659,7 +659,7 @@ public final class ConversationModelsGrpc {
      *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
      * </pre>
      */
-    public void undeployConversationModel(
+    default void undeployConversationModel(
         com.google.cloud.dialogflow.v2.UndeployConversationModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -673,7 +673,7 @@ public final class ConversationModelsGrpc {
      * Gets an evaluation of conversation model.
      * </pre>
      */
-    public void getConversationModelEvaluation(
+    default void getConversationModelEvaluation(
         com.google.cloud.dialogflow.v2.GetConversationModelEvaluationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.ConversationModelEvaluation>
             responseObserver) {
@@ -688,7 +688,7 @@ public final class ConversationModelsGrpc {
      * Lists evaluations of a conversation model.
      * </pre>
      */
-    public void listConversationModelEvaluations(
+    default void listConversationModelEvaluations(
         com.google.cloud.dialogflow.v2.ListConversationModelEvaluationsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.dialogflow.v2.ListConversationModelEvaluationsResponse>
@@ -704,82 +704,32 @@ public final class ConversationModelsGrpc {
      * Creates evaluation of a conversation model.
      * </pre>
      */
-    public void createConversationModelEvaluation(
+    default void createConversationModelEvaluation(
         com.google.cloud.dialogflow.v2.CreateConversationModelEvaluationRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCreateConversationModelEvaluationMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ConversationModels.
+   *
+   * <pre>
+   * Manages a collection of models for human agent assistant.
+   * </pre>
+   */
+  public abstract static class ConversationModelsImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateConversationModelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.CreateConversationModelRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_CONVERSATION_MODEL)))
-          .addMethod(
-              getGetConversationModelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.GetConversationModelRequest,
-                      com.google.cloud.dialogflow.v2.ConversationModel>(
-                      this, METHODID_GET_CONVERSATION_MODEL)))
-          .addMethod(
-              getListConversationModelsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.ListConversationModelsRequest,
-                      com.google.cloud.dialogflow.v2.ListConversationModelsResponse>(
-                      this, METHODID_LIST_CONVERSATION_MODELS)))
-          .addMethod(
-              getDeleteConversationModelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.DeleteConversationModelRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_CONVERSATION_MODEL)))
-          .addMethod(
-              getDeployConversationModelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.DeployConversationModelRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DEPLOY_CONVERSATION_MODEL)))
-          .addMethod(
-              getUndeployConversationModelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.UndeployConversationModelRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_UNDEPLOY_CONVERSATION_MODEL)))
-          .addMethod(
-              getGetConversationModelEvaluationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.GetConversationModelEvaluationRequest,
-                      com.google.cloud.dialogflow.v2.ConversationModelEvaluation>(
-                      this, METHODID_GET_CONVERSATION_MODEL_EVALUATION)))
-          .addMethod(
-              getListConversationModelEvaluationsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.ListConversationModelEvaluationsRequest,
-                      com.google.cloud.dialogflow.v2.ListConversationModelEvaluationsResponse>(
-                      this, METHODID_LIST_CONVERSATION_MODEL_EVALUATIONS)))
-          .addMethod(
-              getCreateConversationModelEvaluationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.CreateConversationModelEvaluationRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_CREATE_CONVERSATION_MODEL_EVALUATION)))
-          .build();
+      return ConversationModelsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ConversationModels.
    *
    * <pre>
    * Manages a collection of models for human agent assistant.
@@ -982,7 +932,7 @@ public final class ConversationModelsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ConversationModels.
    *
    * <pre>
    * Manages a collection of models for human agent assistant.
@@ -1156,7 +1106,7 @@ public final class ConversationModelsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service ConversationModels.
    *
    * <pre>
    * Manages a collection of models for human agent assistant.
@@ -1356,10 +1306,10 @@ public final class ConversationModelsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ConversationModelsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ConversationModelsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1434,6 +1384,71 @@ public final class ConversationModelsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateConversationModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.CreateConversationModelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_CONVERSATION_MODEL)))
+        .addMethod(
+            getGetConversationModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.GetConversationModelRequest,
+                    com.google.cloud.dialogflow.v2.ConversationModel>(
+                    service, METHODID_GET_CONVERSATION_MODEL)))
+        .addMethod(
+            getListConversationModelsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.ListConversationModelsRequest,
+                    com.google.cloud.dialogflow.v2.ListConversationModelsResponse>(
+                    service, METHODID_LIST_CONVERSATION_MODELS)))
+        .addMethod(
+            getDeleteConversationModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.DeleteConversationModelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_CONVERSATION_MODEL)))
+        .addMethod(
+            getDeployConversationModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.DeployConversationModelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DEPLOY_CONVERSATION_MODEL)))
+        .addMethod(
+            getUndeployConversationModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.UndeployConversationModelRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UNDEPLOY_CONVERSATION_MODEL)))
+        .addMethod(
+            getGetConversationModelEvaluationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.GetConversationModelEvaluationRequest,
+                    com.google.cloud.dialogflow.v2.ConversationModelEvaluation>(
+                    service, METHODID_GET_CONVERSATION_MODEL_EVALUATION)))
+        .addMethod(
+            getListConversationModelEvaluationsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.ListConversationModelEvaluationsRequest,
+                    com.google.cloud.dialogflow.v2.ListConversationModelEvaluationsResponse>(
+                    service, METHODID_LIST_CONVERSATION_MODEL_EVALUATIONS)))
+        .addMethod(
+            getCreateConversationModelEvaluationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.CreateConversationModelEvaluationRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_CONVERSATION_MODEL_EVALUATION)))
+        .build();
   }
 
   private abstract static class ConversationModelsBaseDescriptorSupplier

@@ -465,7 +465,7 @@ public final class FunctionServiceGrpc {
    * executed and how it is triggered.
    * </pre>
    */
-  public abstract static class FunctionServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -474,7 +474,7 @@ public final class FunctionServiceGrpc {
      * Returns a function with the given name from the requested project.
      * </pre>
      */
-    public void getFunction(
+    default void getFunction(
         com.google.cloud.functions.v2alpha.GetFunctionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.functions.v2alpha.Function> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -488,7 +488,7 @@ public final class FunctionServiceGrpc {
      * Returns a list of functions that belong to the requested project.
      * </pre>
      */
-    public void listFunctions(
+    default void listFunctions(
         com.google.cloud.functions.v2alpha.ListFunctionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.functions.v2alpha.ListFunctionsResponse>
             responseObserver) {
@@ -505,7 +505,7 @@ public final class FunctionServiceGrpc {
      * `ALREADY_EXISTS` error.
      * </pre>
      */
-    public void createFunction(
+    default void createFunction(
         com.google.cloud.functions.v2alpha.CreateFunctionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -519,7 +519,7 @@ public final class FunctionServiceGrpc {
      * Updates existing function.
      * </pre>
      */
-    public void updateFunction(
+    default void updateFunction(
         com.google.cloud.functions.v2alpha.UpdateFunctionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -535,7 +535,7 @@ public final class FunctionServiceGrpc {
      * remove this function.
      * </pre>
      */
-    public void deleteFunction(
+    default void deleteFunction(
         com.google.cloud.functions.v2alpha.DeleteFunctionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -565,7 +565,7 @@ public final class FunctionServiceGrpc {
      * * `Authorization: Bearer YOUR_TOKEN`
      * </pre>
      */
-    public void generateUploadUrl(
+    default void generateUploadUrl(
         com.google.cloud.functions.v2alpha.GenerateUploadUrlRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.functions.v2alpha.GenerateUploadUrlResponse>
             responseObserver) {
@@ -584,7 +584,7 @@ public final class FunctionServiceGrpc {
      * https://cloud.google.com/storage/docs/access-control/signed-urls
      * </pre>
      */
-    public void generateDownloadUrl(
+    default void generateDownloadUrl(
         com.google.cloud.functions.v2alpha.GenerateDownloadUrlRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.functions.v2alpha.GenerateDownloadUrlResponse>
             responseObserver) {
@@ -599,75 +599,37 @@ public final class FunctionServiceGrpc {
      * Returns a list of runtimes that are supported for the requested project.
      * </pre>
      */
-    public void listRuntimes(
+    default void listRuntimes(
         com.google.cloud.functions.v2alpha.ListRuntimesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.functions.v2alpha.ListRuntimesResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListRuntimesMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service FunctionService.
+   *
+   * <pre>
+   * Google Cloud Functions is used to deploy functions that are executed by
+   * Google in response to various events. Data connected with that event is
+   * passed to a function as the input data.
+   * A **function** is a resource which describes a function that should be
+   * executed and how it is triggered.
+   * </pre>
+   */
+  public abstract static class FunctionServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getGetFunctionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.functions.v2alpha.GetFunctionRequest,
-                      com.google.cloud.functions.v2alpha.Function>(this, METHODID_GET_FUNCTION)))
-          .addMethod(
-              getListFunctionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.functions.v2alpha.ListFunctionsRequest,
-                      com.google.cloud.functions.v2alpha.ListFunctionsResponse>(
-                      this, METHODID_LIST_FUNCTIONS)))
-          .addMethod(
-              getCreateFunctionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.functions.v2alpha.CreateFunctionRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_FUNCTION)))
-          .addMethod(
-              getUpdateFunctionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.functions.v2alpha.UpdateFunctionRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_FUNCTION)))
-          .addMethod(
-              getDeleteFunctionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.functions.v2alpha.DeleteFunctionRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_FUNCTION)))
-          .addMethod(
-              getGenerateUploadUrlMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.functions.v2alpha.GenerateUploadUrlRequest,
-                      com.google.cloud.functions.v2alpha.GenerateUploadUrlResponse>(
-                      this, METHODID_GENERATE_UPLOAD_URL)))
-          .addMethod(
-              getGenerateDownloadUrlMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.functions.v2alpha.GenerateDownloadUrlRequest,
-                      com.google.cloud.functions.v2alpha.GenerateDownloadUrlResponse>(
-                      this, METHODID_GENERATE_DOWNLOAD_URL)))
-          .addMethod(
-              getListRuntimesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.functions.v2alpha.ListRuntimesRequest,
-                      com.google.cloud.functions.v2alpha.ListRuntimesResponse>(
-                      this, METHODID_LIST_RUNTIMES)))
-          .build();
+      return FunctionServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service FunctionService.
    *
    * <pre>
    * Google Cloud Functions is used to deploy functions that are executed by
@@ -846,7 +808,7 @@ public final class FunctionServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service FunctionService.
    *
    * <pre>
    * Google Cloud Functions is used to deploy functions that are executed by
@@ -998,7 +960,7 @@ public final class FunctionServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service FunctionService.
    *
    * <pre>
    * Google Cloud Functions is used to deploy functions that are executed by
@@ -1168,10 +1130,10 @@ public final class FunctionServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final FunctionServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(FunctionServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1242,6 +1204,63 @@ public final class FunctionServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getGetFunctionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.functions.v2alpha.GetFunctionRequest,
+                    com.google.cloud.functions.v2alpha.Function>(service, METHODID_GET_FUNCTION)))
+        .addMethod(
+            getListFunctionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.functions.v2alpha.ListFunctionsRequest,
+                    com.google.cloud.functions.v2alpha.ListFunctionsResponse>(
+                    service, METHODID_LIST_FUNCTIONS)))
+        .addMethod(
+            getCreateFunctionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.functions.v2alpha.CreateFunctionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_FUNCTION)))
+        .addMethod(
+            getUpdateFunctionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.functions.v2alpha.UpdateFunctionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_FUNCTION)))
+        .addMethod(
+            getDeleteFunctionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.functions.v2alpha.DeleteFunctionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_FUNCTION)))
+        .addMethod(
+            getGenerateUploadUrlMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.functions.v2alpha.GenerateUploadUrlRequest,
+                    com.google.cloud.functions.v2alpha.GenerateUploadUrlResponse>(
+                    service, METHODID_GENERATE_UPLOAD_URL)))
+        .addMethod(
+            getGenerateDownloadUrlMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.functions.v2alpha.GenerateDownloadUrlRequest,
+                    com.google.cloud.functions.v2alpha.GenerateDownloadUrlResponse>(
+                    service, METHODID_GENERATE_DOWNLOAD_URL)))
+        .addMethod(
+            getListRuntimesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.functions.v2alpha.ListRuntimesRequest,
+                    com.google.cloud.functions.v2alpha.ListRuntimesResponse>(
+                    service, METHODID_LIST_RUNTIMES)))
+        .build();
   }
 
   private abstract static class FunctionServiceBaseDescriptorSupplier

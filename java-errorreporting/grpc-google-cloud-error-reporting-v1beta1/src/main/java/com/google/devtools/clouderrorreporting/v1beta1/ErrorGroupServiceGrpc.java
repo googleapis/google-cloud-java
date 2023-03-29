@@ -178,7 +178,7 @@ public final class ErrorGroupServiceGrpc {
    * Service for retrieving and updating individual error groups.
    * </pre>
    */
-  public abstract static class ErrorGroupServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -187,7 +187,7 @@ public final class ErrorGroupServiceGrpc {
      * Get the specified group.
      * </pre>
      */
-    public void getGroup(
+    default void getGroup(
         com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup>
             responseObserver) {
@@ -202,37 +202,33 @@ public final class ErrorGroupServiceGrpc {
      * Fails if the group does not exist.
      * </pre>
      */
-    public void updateGroup(
+    default void updateGroup(
         com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateGroupMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ErrorGroupService.
+   *
+   * <pre>
+   * Service for retrieving and updating individual error groups.
+   * </pre>
+   */
+  public abstract static class ErrorGroupServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getGetGroupMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest,
-                      com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup>(
-                      this, METHODID_GET_GROUP)))
-          .addMethod(
-              getUpdateGroupMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest,
-                      com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup>(
-                      this, METHODID_UPDATE_GROUP)))
-          .build();
+      return ErrorGroupServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ErrorGroupService.
    *
    * <pre>
    * Service for retrieving and updating individual error groups.
@@ -285,7 +281,7 @@ public final class ErrorGroupServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ErrorGroupService.
    *
    * <pre>
    * Service for retrieving and updating individual error groups.
@@ -333,7 +329,7 @@ public final class ErrorGroupServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service ErrorGroupService.
    *
    * <pre>
    * Service for retrieving and updating individual error groups.
@@ -389,10 +385,10 @@ public final class ErrorGroupServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ErrorGroupServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ErrorGroupServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -429,6 +425,25 @@ public final class ErrorGroupServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getGetGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest,
+                    com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup>(
+                    service, METHODID_GET_GROUP)))
+        .addMethod(
+            getUpdateGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest,
+                    com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup>(
+                    service, METHODID_UPDATE_GROUP)))
+        .build();
   }
 
   private abstract static class ErrorGroupServiceBaseDescriptorSupplier

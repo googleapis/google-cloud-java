@@ -509,7 +509,7 @@ public final class EnvironmentsGrpc {
    * [Environments][google.cloud.dialogflow.cx.v3beta1.Environment].
    * </pre>
    */
-  public abstract static class EnvironmentsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -519,7 +519,7 @@ public final class EnvironmentsGrpc {
      * [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
      * </pre>
      */
-    public void listEnvironments(
+    default void listEnvironments(
         com.google.cloud.dialogflow.cx.v3beta1.ListEnvironmentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.ListEnvironmentsResponse>
             responseObserver) {
@@ -535,7 +535,7 @@ public final class EnvironmentsGrpc {
      * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * </pre>
      */
-    public void getEnvironment(
+    default void getEnvironment(
         com.google.cloud.dialogflow.cx.v3beta1.GetEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.Environment>
             responseObserver) {
@@ -557,7 +557,7 @@ public final class EnvironmentsGrpc {
      * - `response`: [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
      * </pre>
      */
-    public void createEnvironment(
+    default void createEnvironment(
         com.google.cloud.dialogflow.cx.v3beta1.CreateEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -578,7 +578,7 @@ public final class EnvironmentsGrpc {
      * - `response`: [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
      * </pre>
      */
-    public void updateEnvironment(
+    default void updateEnvironment(
         com.google.cloud.dialogflow.cx.v3beta1.UpdateEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -593,7 +593,7 @@ public final class EnvironmentsGrpc {
      * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * </pre>
      */
-    public void deleteEnvironment(
+    default void deleteEnvironment(
         com.google.cloud.dialogflow.cx.v3beta1.DeleteEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -608,7 +608,7 @@ public final class EnvironmentsGrpc {
      * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * </pre>
      */
-    public void lookupEnvironmentHistory(
+    default void lookupEnvironmentHistory(
         com.google.cloud.dialogflow.cx.v3beta1.LookupEnvironmentHistoryRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.dialogflow.cx.v3beta1.LookupEnvironmentHistoryResponse>
@@ -632,7 +632,7 @@ public final class EnvironmentsGrpc {
      * [RunContinuousTestResponse][google.cloud.dialogflow.cx.v3beta1.RunContinuousTestResponse]
      * </pre>
      */
-    public void runContinuousTest(
+    default void runContinuousTest(
         com.google.cloud.dialogflow.cx.v3beta1.RunContinuousTestRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -646,7 +646,7 @@ public final class EnvironmentsGrpc {
      * Fetches a list of continuous test results for a given environment.
      * </pre>
      */
-    public void listContinuousTestResults(
+    default void listContinuousTestResults(
         com.google.cloud.dialogflow.cx.v3beta1.ListContinuousTestResultsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.dialogflow.cx.v3beta1.ListContinuousTestResultsResponse>
@@ -670,79 +670,32 @@ public final class EnvironmentsGrpc {
      * [DeployFlowResponse][google.cloud.dialogflow.cx.v3beta1.DeployFlowResponse]
      * </pre>
      */
-    public void deployFlow(
+    default void deployFlow(
         com.google.cloud.dialogflow.cx.v3beta1.DeployFlowRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeployFlowMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Environments.
+   *
+   * <pre>
+   * Service for managing
+   * [Environments][google.cloud.dialogflow.cx.v3beta1.Environment].
+   * </pre>
+   */
+  public abstract static class EnvironmentsImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListEnvironmentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3beta1.ListEnvironmentsRequest,
-                      com.google.cloud.dialogflow.cx.v3beta1.ListEnvironmentsResponse>(
-                      this, METHODID_LIST_ENVIRONMENTS)))
-          .addMethod(
-              getGetEnvironmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3beta1.GetEnvironmentRequest,
-                      com.google.cloud.dialogflow.cx.v3beta1.Environment>(
-                      this, METHODID_GET_ENVIRONMENT)))
-          .addMethod(
-              getCreateEnvironmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3beta1.CreateEnvironmentRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_ENVIRONMENT)))
-          .addMethod(
-              getUpdateEnvironmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3beta1.UpdateEnvironmentRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_ENVIRONMENT)))
-          .addMethod(
-              getDeleteEnvironmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3beta1.DeleteEnvironmentRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_ENVIRONMENT)))
-          .addMethod(
-              getLookupEnvironmentHistoryMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3beta1.LookupEnvironmentHistoryRequest,
-                      com.google.cloud.dialogflow.cx.v3beta1.LookupEnvironmentHistoryResponse>(
-                      this, METHODID_LOOKUP_ENVIRONMENT_HISTORY)))
-          .addMethod(
-              getRunContinuousTestMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3beta1.RunContinuousTestRequest,
-                      com.google.longrunning.Operation>(this, METHODID_RUN_CONTINUOUS_TEST)))
-          .addMethod(
-              getListContinuousTestResultsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3beta1.ListContinuousTestResultsRequest,
-                      com.google.cloud.dialogflow.cx.v3beta1.ListContinuousTestResultsResponse>(
-                      this, METHODID_LIST_CONTINUOUS_TEST_RESULTS)))
-          .addMethod(
-              getDeployFlowMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3beta1.DeployFlowRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DEPLOY_FLOW)))
-          .build();
+      return EnvironmentsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Environments.
    *
    * <pre>
    * Service for managing
@@ -944,7 +897,7 @@ public final class EnvironmentsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Environments.
    *
    * <pre>
    * Service for managing
@@ -1118,7 +1071,7 @@ public final class EnvironmentsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Environments.
    *
    * <pre>
    * Service for managing
@@ -1310,10 +1263,10 @@ public final class EnvironmentsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final EnvironmentsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(EnvironmentsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1388,6 +1341,69 @@ public final class EnvironmentsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListEnvironmentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.ListEnvironmentsRequest,
+                    com.google.cloud.dialogflow.cx.v3beta1.ListEnvironmentsResponse>(
+                    service, METHODID_LIST_ENVIRONMENTS)))
+        .addMethod(
+            getGetEnvironmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.GetEnvironmentRequest,
+                    com.google.cloud.dialogflow.cx.v3beta1.Environment>(
+                    service, METHODID_GET_ENVIRONMENT)))
+        .addMethod(
+            getCreateEnvironmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.CreateEnvironmentRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_ENVIRONMENT)))
+        .addMethod(
+            getUpdateEnvironmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.UpdateEnvironmentRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_ENVIRONMENT)))
+        .addMethod(
+            getDeleteEnvironmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.DeleteEnvironmentRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_ENVIRONMENT)))
+        .addMethod(
+            getLookupEnvironmentHistoryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.LookupEnvironmentHistoryRequest,
+                    com.google.cloud.dialogflow.cx.v3beta1.LookupEnvironmentHistoryResponse>(
+                    service, METHODID_LOOKUP_ENVIRONMENT_HISTORY)))
+        .addMethod(
+            getRunContinuousTestMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.RunContinuousTestRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RUN_CONTINUOUS_TEST)))
+        .addMethod(
+            getListContinuousTestResultsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.ListContinuousTestResultsRequest,
+                    com.google.cloud.dialogflow.cx.v3beta1.ListContinuousTestResultsResponse>(
+                    service, METHODID_LIST_CONTINUOUS_TEST_RESULTS)))
+        .addMethod(
+            getDeployFlowMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.DeployFlowRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DEPLOY_FLOW)))
+        .build();
   }
 
   private abstract static class EnvironmentsBaseDescriptorSupplier

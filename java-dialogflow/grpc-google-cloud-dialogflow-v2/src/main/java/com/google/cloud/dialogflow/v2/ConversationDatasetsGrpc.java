@@ -347,7 +347,7 @@ public final class ConversationDatasetsGrpc {
    * customizable metadata that can be used for model training.
    * </pre>
    */
-  public abstract static class ConversationDatasetsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -363,7 +363,7 @@ public final class ConversationDatasetsGrpc {
      * [ConversationDataset][google.cloud.dialogflow.v2.ConversationDataset]
      * </pre>
      */
-    public void createConversationDataset(
+    default void createConversationDataset(
         com.google.cloud.dialogflow.v2.CreateConversationDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -377,7 +377,7 @@ public final class ConversationDatasetsGrpc {
      * Retrieves the specified conversation dataset.
      * </pre>
      */
-    public void getConversationDataset(
+    default void getConversationDataset(
         com.google.cloud.dialogflow.v2.GetConversationDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.ConversationDataset>
             responseObserver) {
@@ -393,7 +393,7 @@ public final class ConversationDatasetsGrpc {
      * project and location.
      * </pre>
      */
-    public void listConversationDatasets(
+    default void listConversationDatasets(
         com.google.cloud.dialogflow.v2.ListConversationDatasetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.ListConversationDatasetsResponse>
             responseObserver) {
@@ -415,7 +415,7 @@ public final class ConversationDatasetsGrpc {
      *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
      * </pre>
      */
-    public void deleteConversationDataset(
+    default void deleteConversationDataset(
         com.google.cloud.dialogflow.v2.DeleteConversationDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -438,56 +438,34 @@ public final class ConversationDatasetsGrpc {
      * [ImportConversationDataOperationResponse][google.cloud.dialogflow.v2.ImportConversationDataOperationResponse]
      * </pre>
      */
-    public void importConversationData(
+    default void importConversationData(
         com.google.cloud.dialogflow.v2.ImportConversationDataRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getImportConversationDataMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ConversationDatasets.
+   *
+   * <pre>
+   * Conversation datasets.
+   * Conversation datasets contain raw conversation files and their
+   * customizable metadata that can be used for model training.
+   * </pre>
+   */
+  public abstract static class ConversationDatasetsImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateConversationDatasetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.CreateConversationDatasetRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_CREATE_CONVERSATION_DATASET)))
-          .addMethod(
-              getGetConversationDatasetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.GetConversationDatasetRequest,
-                      com.google.cloud.dialogflow.v2.ConversationDataset>(
-                      this, METHODID_GET_CONVERSATION_DATASET)))
-          .addMethod(
-              getListConversationDatasetsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.ListConversationDatasetsRequest,
-                      com.google.cloud.dialogflow.v2.ListConversationDatasetsResponse>(
-                      this, METHODID_LIST_CONVERSATION_DATASETS)))
-          .addMethod(
-              getDeleteConversationDatasetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.DeleteConversationDatasetRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_DELETE_CONVERSATION_DATASET)))
-          .addMethod(
-              getImportConversationDataMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.ImportConversationDataRequest,
-                      com.google.longrunning.Operation>(this, METHODID_IMPORT_CONVERSATION_DATA)))
-          .build();
+      return ConversationDatasetsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ConversationDatasets.
    *
    * <pre>
    * Conversation datasets.
@@ -615,7 +593,7 @@ public final class ConversationDatasetsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ConversationDatasets.
    *
    * <pre>
    * Conversation datasets.
@@ -727,7 +705,7 @@ public final class ConversationDatasetsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service ConversationDatasets.
    *
    * <pre>
    * Conversation datasets.
@@ -856,10 +834,10 @@ public final class ConversationDatasetsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ConversationDatasetsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ConversationDatasetsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -910,6 +888,45 @@ public final class ConversationDatasetsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateConversationDatasetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.CreateConversationDatasetRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_CONVERSATION_DATASET)))
+        .addMethod(
+            getGetConversationDatasetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.GetConversationDatasetRequest,
+                    com.google.cloud.dialogflow.v2.ConversationDataset>(
+                    service, METHODID_GET_CONVERSATION_DATASET)))
+        .addMethod(
+            getListConversationDatasetsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.ListConversationDatasetsRequest,
+                    com.google.cloud.dialogflow.v2.ListConversationDatasetsResponse>(
+                    service, METHODID_LIST_CONVERSATION_DATASETS)))
+        .addMethod(
+            getDeleteConversationDatasetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.DeleteConversationDatasetRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_CONVERSATION_DATASET)))
+        .addMethod(
+            getImportConversationDataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.ImportConversationDataRequest,
+                    com.google.longrunning.Operation>(service, METHODID_IMPORT_CONVERSATION_DATA)))
+        .build();
   }
 
   private abstract static class ConversationDatasetsBaseDescriptorSupplier

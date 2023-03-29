@@ -305,7 +305,7 @@ public final class WebhooksGrpc {
    * Service for managing [Webhooks][google.cloud.dialogflow.cx.v3.Webhook].
    * </pre>
    */
-  public abstract static class WebhooksImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -314,7 +314,7 @@ public final class WebhooksGrpc {
      * Returns the list of all webhooks in the specified agent.
      * </pre>
      */
-    public void listWebhooks(
+    default void listWebhooks(
         com.google.cloud.dialogflow.cx.v3.ListWebhooksRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListWebhooksResponse>
             responseObserver) {
@@ -329,7 +329,7 @@ public final class WebhooksGrpc {
      * Retrieves the specified webhook.
      * </pre>
      */
-    public void getWebhook(
+    default void getWebhook(
         com.google.cloud.dialogflow.cx.v3.GetWebhookRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Webhook> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetWebhookMethod(), responseObserver);
@@ -342,7 +342,7 @@ public final class WebhooksGrpc {
      * Creates a webhook in the specified agent.
      * </pre>
      */
-    public void createWebhook(
+    default void createWebhook(
         com.google.cloud.dialogflow.cx.v3.CreateWebhookRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Webhook> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -356,7 +356,7 @@ public final class WebhooksGrpc {
      * Updates the specified webhook.
      * </pre>
      */
-    public void updateWebhook(
+    default void updateWebhook(
         com.google.cloud.dialogflow.cx.v3.UpdateWebhookRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Webhook> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -370,53 +370,31 @@ public final class WebhooksGrpc {
      * Deletes the specified webhook.
      * </pre>
      */
-    public void deleteWebhook(
+    default void deleteWebhook(
         com.google.cloud.dialogflow.cx.v3.DeleteWebhookRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteWebhookMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Webhooks.
+   *
+   * <pre>
+   * Service for managing [Webhooks][google.cloud.dialogflow.cx.v3.Webhook].
+   * </pre>
+   */
+  public abstract static class WebhooksImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListWebhooksMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.ListWebhooksRequest,
-                      com.google.cloud.dialogflow.cx.v3.ListWebhooksResponse>(
-                      this, METHODID_LIST_WEBHOOKS)))
-          .addMethod(
-              getGetWebhookMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.GetWebhookRequest,
-                      com.google.cloud.dialogflow.cx.v3.Webhook>(this, METHODID_GET_WEBHOOK)))
-          .addMethod(
-              getCreateWebhookMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.CreateWebhookRequest,
-                      com.google.cloud.dialogflow.cx.v3.Webhook>(this, METHODID_CREATE_WEBHOOK)))
-          .addMethod(
-              getUpdateWebhookMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.UpdateWebhookRequest,
-                      com.google.cloud.dialogflow.cx.v3.Webhook>(this, METHODID_UPDATE_WEBHOOK)))
-          .addMethod(
-              getDeleteWebhookMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.DeleteWebhookRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_WEBHOOK)))
-          .build();
+      return WebhooksGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Webhooks.
    *
    * <pre>
    * Service for managing [Webhooks][google.cloud.dialogflow.cx.v3.Webhook].
@@ -513,7 +491,7 @@ public final class WebhooksGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Webhooks.
    *
    * <pre>
    * Service for managing [Webhooks][google.cloud.dialogflow.cx.v3.Webhook].
@@ -597,7 +575,7 @@ public final class WebhooksGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Webhooks.
    *
    * <pre>
    * Service for managing [Webhooks][google.cloud.dialogflow.cx.v3.Webhook].
@@ -695,10 +673,10 @@ public final class WebhooksGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final WebhooksImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(WebhooksImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -750,6 +728,42 @@ public final class WebhooksGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListWebhooksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.ListWebhooksRequest,
+                    com.google.cloud.dialogflow.cx.v3.ListWebhooksResponse>(
+                    service, METHODID_LIST_WEBHOOKS)))
+        .addMethod(
+            getGetWebhookMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.GetWebhookRequest,
+                    com.google.cloud.dialogflow.cx.v3.Webhook>(service, METHODID_GET_WEBHOOK)))
+        .addMethod(
+            getCreateWebhookMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.CreateWebhookRequest,
+                    com.google.cloud.dialogflow.cx.v3.Webhook>(service, METHODID_CREATE_WEBHOOK)))
+        .addMethod(
+            getUpdateWebhookMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.UpdateWebhookRequest,
+                    com.google.cloud.dialogflow.cx.v3.Webhook>(service, METHODID_UPDATE_WEBHOOK)))
+        .addMethod(
+            getDeleteWebhookMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.DeleteWebhookRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_WEBHOOK)))
+        .build();
   }
 
   private abstract static class WebhooksBaseDescriptorSupplier

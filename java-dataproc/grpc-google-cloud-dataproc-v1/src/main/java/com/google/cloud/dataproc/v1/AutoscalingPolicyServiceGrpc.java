@@ -342,7 +342,7 @@ public final class AutoscalingPolicyServiceGrpc {
    * Dataproc API.
    * </pre>
    */
-  public abstract static class AutoscalingPolicyServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -351,7 +351,7 @@ public final class AutoscalingPolicyServiceGrpc {
      * Creates new autoscaling policy.
      * </pre>
      */
-    public void createAutoscalingPolicy(
+    default void createAutoscalingPolicy(
         com.google.cloud.dataproc.v1.CreateAutoscalingPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1.AutoscalingPolicy>
             responseObserver) {
@@ -368,7 +368,7 @@ public final class AutoscalingPolicyServiceGrpc {
      * replacements.
      * </pre>
      */
-    public void updateAutoscalingPolicy(
+    default void updateAutoscalingPolicy(
         com.google.cloud.dataproc.v1.UpdateAutoscalingPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1.AutoscalingPolicy>
             responseObserver) {
@@ -383,7 +383,7 @@ public final class AutoscalingPolicyServiceGrpc {
      * Retrieves autoscaling policy.
      * </pre>
      */
-    public void getAutoscalingPolicy(
+    default void getAutoscalingPolicy(
         com.google.cloud.dataproc.v1.GetAutoscalingPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1.AutoscalingPolicy>
             responseObserver) {
@@ -398,7 +398,7 @@ public final class AutoscalingPolicyServiceGrpc {
      * Lists autoscaling policies in the project.
      * </pre>
      */
-    public void listAutoscalingPolicies(
+    default void listAutoscalingPolicies(
         com.google.cloud.dataproc.v1.ListAutoscalingPoliciesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1.ListAutoscalingPoliciesResponse>
             responseObserver) {
@@ -414,56 +414,33 @@ public final class AutoscalingPolicyServiceGrpc {
      * policy that is in use by one or more clusters.
      * </pre>
      */
-    public void deleteAutoscalingPolicy(
+    default void deleteAutoscalingPolicy(
         com.google.cloud.dataproc.v1.DeleteAutoscalingPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteAutoscalingPolicyMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service AutoscalingPolicyService.
+   *
+   * <pre>
+   * The API interface for managing autoscaling policies in the
+   * Dataproc API.
+   * </pre>
+   */
+  public abstract static class AutoscalingPolicyServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateAutoscalingPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataproc.v1.CreateAutoscalingPolicyRequest,
-                      com.google.cloud.dataproc.v1.AutoscalingPolicy>(
-                      this, METHODID_CREATE_AUTOSCALING_POLICY)))
-          .addMethod(
-              getUpdateAutoscalingPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataproc.v1.UpdateAutoscalingPolicyRequest,
-                      com.google.cloud.dataproc.v1.AutoscalingPolicy>(
-                      this, METHODID_UPDATE_AUTOSCALING_POLICY)))
-          .addMethod(
-              getGetAutoscalingPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataproc.v1.GetAutoscalingPolicyRequest,
-                      com.google.cloud.dataproc.v1.AutoscalingPolicy>(
-                      this, METHODID_GET_AUTOSCALING_POLICY)))
-          .addMethod(
-              getListAutoscalingPoliciesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataproc.v1.ListAutoscalingPoliciesRequest,
-                      com.google.cloud.dataproc.v1.ListAutoscalingPoliciesResponse>(
-                      this, METHODID_LIST_AUTOSCALING_POLICIES)))
-          .addMethod(
-              getDeleteAutoscalingPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataproc.v1.DeleteAutoscalingPolicyRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_AUTOSCALING_POLICY)))
-          .build();
+      return AutoscalingPolicyServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service AutoscalingPolicyService.
    *
    * <pre>
    * The API interface for managing autoscaling policies in the
@@ -571,7 +548,7 @@ public final class AutoscalingPolicyServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service AutoscalingPolicyService.
    *
    * <pre>
    * The API interface for managing autoscaling policies in the
@@ -661,7 +638,8 @@ public final class AutoscalingPolicyServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * AutoscalingPolicyService.
    *
    * <pre>
    * The API interface for managing autoscaling policies in the
@@ -769,10 +747,10 @@ public final class AutoscalingPolicyServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final AutoscalingPolicyServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(AutoscalingPolicyServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -825,6 +803,45 @@ public final class AutoscalingPolicyServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateAutoscalingPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataproc.v1.CreateAutoscalingPolicyRequest,
+                    com.google.cloud.dataproc.v1.AutoscalingPolicy>(
+                    service, METHODID_CREATE_AUTOSCALING_POLICY)))
+        .addMethod(
+            getUpdateAutoscalingPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataproc.v1.UpdateAutoscalingPolicyRequest,
+                    com.google.cloud.dataproc.v1.AutoscalingPolicy>(
+                    service, METHODID_UPDATE_AUTOSCALING_POLICY)))
+        .addMethod(
+            getGetAutoscalingPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataproc.v1.GetAutoscalingPolicyRequest,
+                    com.google.cloud.dataproc.v1.AutoscalingPolicy>(
+                    service, METHODID_GET_AUTOSCALING_POLICY)))
+        .addMethod(
+            getListAutoscalingPoliciesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataproc.v1.ListAutoscalingPoliciesRequest,
+                    com.google.cloud.dataproc.v1.ListAutoscalingPoliciesResponse>(
+                    service, METHODID_LIST_AUTOSCALING_POLICIES)))
+        .addMethod(
+            getDeleteAutoscalingPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataproc.v1.DeleteAutoscalingPolicyRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_AUTOSCALING_POLICY)))
+        .build();
   }
 
   private abstract static class AutoscalingPolicyServiceBaseDescriptorSupplier

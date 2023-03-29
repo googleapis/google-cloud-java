@@ -1067,7 +1067,7 @@ public final class DatastreamGrpc {
    * Datastream service
    * </pre>
    */
-  public abstract static class DatastreamImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -1077,7 +1077,7 @@ public final class DatastreamGrpc {
      * location.
      * </pre>
      */
-    public void listConnectionProfiles(
+    default void listConnectionProfiles(
         com.google.cloud.datastream.v1alpha1.ListConnectionProfilesRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.datastream.v1alpha1.ListConnectionProfilesResponse>
@@ -1093,7 +1093,7 @@ public final class DatastreamGrpc {
      * Use this method to get details about a connection profile.
      * </pre>
      */
-    public void getConnectionProfile(
+    default void getConnectionProfile(
         com.google.cloud.datastream.v1alpha1.GetConnectionProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datastream.v1alpha1.ConnectionProfile>
             responseObserver) {
@@ -1108,7 +1108,7 @@ public final class DatastreamGrpc {
      * Use this method to create a connection profile in a project and location.
      * </pre>
      */
-    public void createConnectionProfile(
+    default void createConnectionProfile(
         com.google.cloud.datastream.v1alpha1.CreateConnectionProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1122,7 +1122,7 @@ public final class DatastreamGrpc {
      * Use this method to update the parameters of a connection profile.
      * </pre>
      */
-    public void updateConnectionProfile(
+    default void updateConnectionProfile(
         com.google.cloud.datastream.v1alpha1.UpdateConnectionProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1136,7 +1136,7 @@ public final class DatastreamGrpc {
      * Use this method to delete a connection profile..
      * </pre>
      */
-    public void deleteConnectionProfile(
+    default void deleteConnectionProfile(
         com.google.cloud.datastream.v1alpha1.DeleteConnectionProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1153,7 +1153,7 @@ public final class DatastreamGrpc {
      * parent data object that's optionally supplied in the request.
      * </pre>
      */
-    public void discoverConnectionProfile(
+    default void discoverConnectionProfile(
         com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileResponse>
@@ -1169,7 +1169,7 @@ public final class DatastreamGrpc {
      * Use this method to list streams in a project and location.
      * </pre>
      */
-    public void listStreams(
+    default void listStreams(
         com.google.cloud.datastream.v1alpha1.ListStreamsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datastream.v1alpha1.ListStreamsResponse>
             responseObserver) {
@@ -1184,7 +1184,7 @@ public final class DatastreamGrpc {
      * Use this method to get details about a stream.
      * </pre>
      */
-    public void getStream(
+    default void getStream(
         com.google.cloud.datastream.v1alpha1.GetStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datastream.v1alpha1.Stream> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetStreamMethod(), responseObserver);
@@ -1197,7 +1197,7 @@ public final class DatastreamGrpc {
      * Use this method to create a stream.
      * </pre>
      */
-    public void createStream(
+    default void createStream(
         com.google.cloud.datastream.v1alpha1.CreateStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1211,7 +1211,7 @@ public final class DatastreamGrpc {
      * Use this method to update the configuration of a stream.
      * </pre>
      */
-    public void updateStream(
+    default void updateStream(
         com.google.cloud.datastream.v1alpha1.UpdateStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1225,7 +1225,7 @@ public final class DatastreamGrpc {
      * Use this method to delete a stream.
      * </pre>
      */
-    public void deleteStream(
+    default void deleteStream(
         com.google.cloud.datastream.v1alpha1.DeleteStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1239,7 +1239,7 @@ public final class DatastreamGrpc {
      * Use this method to fetch any errors associated with a stream.
      * </pre>
      */
-    public void fetchErrors(
+    default void fetchErrors(
         com.google.cloud.datastream.v1alpha1.FetchErrorsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1255,7 +1255,7 @@ public final class DatastreamGrpc {
      * a parent data object that's optionally supplied in the request.
      * </pre>
      */
-    public void fetchStaticIps(
+    default void fetchStaticIps(
         com.google.cloud.datastream.v1alpha1.FetchStaticIpsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datastream.v1alpha1.FetchStaticIpsResponse>
             responseObserver) {
@@ -1270,7 +1270,7 @@ public final class DatastreamGrpc {
      * Use this method to create a private connectivity configuration.
      * </pre>
      */
-    public void createPrivateConnection(
+    default void createPrivateConnection(
         com.google.cloud.datastream.v1alpha1.CreatePrivateConnectionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1284,7 +1284,7 @@ public final class DatastreamGrpc {
      * Use this method to get details about a private connectivity configuration.
      * </pre>
      */
-    public void getPrivateConnection(
+    default void getPrivateConnection(
         com.google.cloud.datastream.v1alpha1.GetPrivateConnectionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datastream.v1alpha1.PrivateConnection>
             responseObserver) {
@@ -1300,7 +1300,7 @@ public final class DatastreamGrpc {
      * and location.
      * </pre>
      */
-    public void listPrivateConnections(
+    default void listPrivateConnections(
         com.google.cloud.datastream.v1alpha1.ListPrivateConnectionsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.datastream.v1alpha1.ListPrivateConnectionsResponse>
@@ -1316,7 +1316,7 @@ public final class DatastreamGrpc {
      * Use this method to delete a private connectivity configuration.
      * </pre>
      */
-    public void deletePrivateConnection(
+    default void deletePrivateConnection(
         com.google.cloud.datastream.v1alpha1.DeletePrivateConnectionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1331,7 +1331,7 @@ public final class DatastreamGrpc {
      * and location.
      * </pre>
      */
-    public void createRoute(
+    default void createRoute(
         com.google.cloud.datastream.v1alpha1.CreateRouteRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1345,7 +1345,7 @@ public final class DatastreamGrpc {
      * Use this method to get details about a route.
      * </pre>
      */
-    public void getRoute(
+    default void getRoute(
         com.google.cloud.datastream.v1alpha1.GetRouteRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datastream.v1alpha1.Route> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetRouteMethod(), responseObserver);
@@ -1359,7 +1359,7 @@ public final class DatastreamGrpc {
      * project and location.
      * </pre>
      */
-    public void listRoutes(
+    default void listRoutes(
         com.google.cloud.datastream.v1alpha1.ListRoutesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datastream.v1alpha1.ListRoutesResponse>
             responseObserver) {
@@ -1373,156 +1373,31 @@ public final class DatastreamGrpc {
      * Use this method to delete a route.
      * </pre>
      */
-    public void deleteRoute(
+    default void deleteRoute(
         com.google.cloud.datastream.v1alpha1.DeleteRouteRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteRouteMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Datastream.
+   *
+   * <pre>
+   * Datastream service
+   * </pre>
+   */
+  public abstract static class DatastreamImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListConnectionProfilesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datastream.v1alpha1.ListConnectionProfilesRequest,
-                      com.google.cloud.datastream.v1alpha1.ListConnectionProfilesResponse>(
-                      this, METHODID_LIST_CONNECTION_PROFILES)))
-          .addMethod(
-              getGetConnectionProfileMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datastream.v1alpha1.GetConnectionProfileRequest,
-                      com.google.cloud.datastream.v1alpha1.ConnectionProfile>(
-                      this, METHODID_GET_CONNECTION_PROFILE)))
-          .addMethod(
-              getCreateConnectionProfileMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datastream.v1alpha1.CreateConnectionProfileRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_CONNECTION_PROFILE)))
-          .addMethod(
-              getUpdateConnectionProfileMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datastream.v1alpha1.UpdateConnectionProfileRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_CONNECTION_PROFILE)))
-          .addMethod(
-              getDeleteConnectionProfileMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datastream.v1alpha1.DeleteConnectionProfileRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_CONNECTION_PROFILE)))
-          .addMethod(
-              getDiscoverConnectionProfileMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileRequest,
-                      com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileResponse>(
-                      this, METHODID_DISCOVER_CONNECTION_PROFILE)))
-          .addMethod(
-              getListStreamsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datastream.v1alpha1.ListStreamsRequest,
-                      com.google.cloud.datastream.v1alpha1.ListStreamsResponse>(
-                      this, METHODID_LIST_STREAMS)))
-          .addMethod(
-              getGetStreamMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datastream.v1alpha1.GetStreamRequest,
-                      com.google.cloud.datastream.v1alpha1.Stream>(this, METHODID_GET_STREAM)))
-          .addMethod(
-              getCreateStreamMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datastream.v1alpha1.CreateStreamRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_STREAM)))
-          .addMethod(
-              getUpdateStreamMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datastream.v1alpha1.UpdateStreamRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_STREAM)))
-          .addMethod(
-              getDeleteStreamMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datastream.v1alpha1.DeleteStreamRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_STREAM)))
-          .addMethod(
-              getFetchErrorsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datastream.v1alpha1.FetchErrorsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_FETCH_ERRORS)))
-          .addMethod(
-              getFetchStaticIpsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datastream.v1alpha1.FetchStaticIpsRequest,
-                      com.google.cloud.datastream.v1alpha1.FetchStaticIpsResponse>(
-                      this, METHODID_FETCH_STATIC_IPS)))
-          .addMethod(
-              getCreatePrivateConnectionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datastream.v1alpha1.CreatePrivateConnectionRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_PRIVATE_CONNECTION)))
-          .addMethod(
-              getGetPrivateConnectionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datastream.v1alpha1.GetPrivateConnectionRequest,
-                      com.google.cloud.datastream.v1alpha1.PrivateConnection>(
-                      this, METHODID_GET_PRIVATE_CONNECTION)))
-          .addMethod(
-              getListPrivateConnectionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datastream.v1alpha1.ListPrivateConnectionsRequest,
-                      com.google.cloud.datastream.v1alpha1.ListPrivateConnectionsResponse>(
-                      this, METHODID_LIST_PRIVATE_CONNECTIONS)))
-          .addMethod(
-              getDeletePrivateConnectionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datastream.v1alpha1.DeletePrivateConnectionRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_PRIVATE_CONNECTION)))
-          .addMethod(
-              getCreateRouteMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datastream.v1alpha1.CreateRouteRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_ROUTE)))
-          .addMethod(
-              getGetRouteMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datastream.v1alpha1.GetRouteRequest,
-                      com.google.cloud.datastream.v1alpha1.Route>(this, METHODID_GET_ROUTE)))
-          .addMethod(
-              getListRoutesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datastream.v1alpha1.ListRoutesRequest,
-                      com.google.cloud.datastream.v1alpha1.ListRoutesResponse>(
-                      this, METHODID_LIST_ROUTES)))
-          .addMethod(
-              getDeleteRouteMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datastream.v1alpha1.DeleteRouteRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_ROUTE)))
-          .build();
+      return DatastreamGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Datastream.
    *
    * <pre>
    * Datastream service
@@ -1890,7 +1765,7 @@ public final class DatastreamGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Datastream.
    *
    * <pre>
    * Datastream service
@@ -2195,7 +2070,7 @@ public final class DatastreamGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Datastream.
    *
    * <pre>
    * Datastream service
@@ -2542,10 +2417,10 @@ public final class DatastreamGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final DatastreamImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(DatastreamImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -2688,6 +2563,145 @@ public final class DatastreamGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListConnectionProfilesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datastream.v1alpha1.ListConnectionProfilesRequest,
+                    com.google.cloud.datastream.v1alpha1.ListConnectionProfilesResponse>(
+                    service, METHODID_LIST_CONNECTION_PROFILES)))
+        .addMethod(
+            getGetConnectionProfileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datastream.v1alpha1.GetConnectionProfileRequest,
+                    com.google.cloud.datastream.v1alpha1.ConnectionProfile>(
+                    service, METHODID_GET_CONNECTION_PROFILE)))
+        .addMethod(
+            getCreateConnectionProfileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datastream.v1alpha1.CreateConnectionProfileRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_CONNECTION_PROFILE)))
+        .addMethod(
+            getUpdateConnectionProfileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datastream.v1alpha1.UpdateConnectionProfileRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_CONNECTION_PROFILE)))
+        .addMethod(
+            getDeleteConnectionProfileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datastream.v1alpha1.DeleteConnectionProfileRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_CONNECTION_PROFILE)))
+        .addMethod(
+            getDiscoverConnectionProfileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileRequest,
+                    com.google.cloud.datastream.v1alpha1.DiscoverConnectionProfileResponse>(
+                    service, METHODID_DISCOVER_CONNECTION_PROFILE)))
+        .addMethod(
+            getListStreamsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datastream.v1alpha1.ListStreamsRequest,
+                    com.google.cloud.datastream.v1alpha1.ListStreamsResponse>(
+                    service, METHODID_LIST_STREAMS)))
+        .addMethod(
+            getGetStreamMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datastream.v1alpha1.GetStreamRequest,
+                    com.google.cloud.datastream.v1alpha1.Stream>(service, METHODID_GET_STREAM)))
+        .addMethod(
+            getCreateStreamMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datastream.v1alpha1.CreateStreamRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_STREAM)))
+        .addMethod(
+            getUpdateStreamMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datastream.v1alpha1.UpdateStreamRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_STREAM)))
+        .addMethod(
+            getDeleteStreamMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datastream.v1alpha1.DeleteStreamRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_STREAM)))
+        .addMethod(
+            getFetchErrorsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datastream.v1alpha1.FetchErrorsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_FETCH_ERRORS)))
+        .addMethod(
+            getFetchStaticIpsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datastream.v1alpha1.FetchStaticIpsRequest,
+                    com.google.cloud.datastream.v1alpha1.FetchStaticIpsResponse>(
+                    service, METHODID_FETCH_STATIC_IPS)))
+        .addMethod(
+            getCreatePrivateConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datastream.v1alpha1.CreatePrivateConnectionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_PRIVATE_CONNECTION)))
+        .addMethod(
+            getGetPrivateConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datastream.v1alpha1.GetPrivateConnectionRequest,
+                    com.google.cloud.datastream.v1alpha1.PrivateConnection>(
+                    service, METHODID_GET_PRIVATE_CONNECTION)))
+        .addMethod(
+            getListPrivateConnectionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datastream.v1alpha1.ListPrivateConnectionsRequest,
+                    com.google.cloud.datastream.v1alpha1.ListPrivateConnectionsResponse>(
+                    service, METHODID_LIST_PRIVATE_CONNECTIONS)))
+        .addMethod(
+            getDeletePrivateConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datastream.v1alpha1.DeletePrivateConnectionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_PRIVATE_CONNECTION)))
+        .addMethod(
+            getCreateRouteMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datastream.v1alpha1.CreateRouteRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_ROUTE)))
+        .addMethod(
+            getGetRouteMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datastream.v1alpha1.GetRouteRequest,
+                    com.google.cloud.datastream.v1alpha1.Route>(service, METHODID_GET_ROUTE)))
+        .addMethod(
+            getListRoutesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datastream.v1alpha1.ListRoutesRequest,
+                    com.google.cloud.datastream.v1alpha1.ListRoutesResponse>(
+                    service, METHODID_LIST_ROUTES)))
+        .addMethod(
+            getDeleteRouteMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datastream.v1alpha1.DeleteRouteRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_ROUTE)))
+        .build();
   }
 
   private abstract static class DatastreamBaseDescriptorSupplier

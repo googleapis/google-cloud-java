@@ -1706,7 +1706,7 @@ public final class DataLabelingServiceGrpc {
    * Service for the AI Platform Data Labeling API.
    * </pre>
    */
-  public abstract static class DataLabelingServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -1715,7 +1715,7 @@ public final class DataLabelingServiceGrpc {
      * Creates dataset. If success return a Dataset resource.
      * </pre>
      */
-    public void createDataset(
+    default void createDataset(
         com.google.cloud.datalabeling.v1beta1.CreateDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datalabeling.v1beta1.Dataset>
             responseObserver) {
@@ -1730,7 +1730,7 @@ public final class DataLabelingServiceGrpc {
      * Gets dataset by resource name.
      * </pre>
      */
-    public void getDataset(
+    default void getDataset(
         com.google.cloud.datalabeling.v1beta1.GetDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datalabeling.v1beta1.Dataset>
             responseObserver) {
@@ -1744,7 +1744,7 @@ public final class DataLabelingServiceGrpc {
      * Lists datasets under a project. Pagination is supported.
      * </pre>
      */
-    public void listDatasets(
+    default void listDatasets(
         com.google.cloud.datalabeling.v1beta1.ListDatasetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datalabeling.v1beta1.ListDatasetsResponse>
             responseObserver) {
@@ -1759,7 +1759,7 @@ public final class DataLabelingServiceGrpc {
      * Deletes a dataset by resource name.
      * </pre>
      */
-    public void deleteDataset(
+    default void deleteDataset(
         com.google.cloud.datalabeling.v1beta1.DeleteDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1777,7 +1777,7 @@ public final class DataLabelingServiceGrpc {
      * importing is still ongoing. Vice versa.
      * </pre>
      */
-    public void importData(
+    default void importData(
         com.google.cloud.datalabeling.v1beta1.ImportDataRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getImportDataMethod(), responseObserver);
@@ -1790,7 +1790,7 @@ public final class DataLabelingServiceGrpc {
      * Exports data and annotations from dataset.
      * </pre>
      */
-    public void exportData(
+    default void exportData(
         com.google.cloud.datalabeling.v1beta1.ExportDataRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getExportDataMethod(), responseObserver);
@@ -1804,7 +1804,7 @@ public final class DataLabelingServiceGrpc {
      * called after data are imported into dataset.
      * </pre>
      */
-    public void getDataItem(
+    default void getDataItem(
         com.google.cloud.datalabeling.v1beta1.GetDataItemRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datalabeling.v1beta1.DataItem>
             responseObserver) {
@@ -1820,7 +1820,7 @@ public final class DataLabelingServiceGrpc {
      * are imported into dataset. Pagination is supported.
      * </pre>
      */
-    public void listDataItems(
+    default void listDataItems(
         com.google.cloud.datalabeling.v1beta1.ListDataItemsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datalabeling.v1beta1.ListDataItemsResponse>
             responseObserver) {
@@ -1835,7 +1835,7 @@ public final class DataLabelingServiceGrpc {
      * Gets an annotated dataset by resource name.
      * </pre>
      */
-    public void getAnnotatedDataset(
+    default void getAnnotatedDataset(
         com.google.cloud.datalabeling.v1beta1.GetAnnotatedDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datalabeling.v1beta1.AnnotatedDataset>
             responseObserver) {
@@ -1850,7 +1850,7 @@ public final class DataLabelingServiceGrpc {
      * Lists annotated datasets for a dataset. Pagination is supported.
      * </pre>
      */
-    public void listAnnotatedDatasets(
+    default void listAnnotatedDatasets(
         com.google.cloud.datalabeling.v1beta1.ListAnnotatedDatasetsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.datalabeling.v1beta1.ListAnnotatedDatasetsResponse>
@@ -1866,7 +1866,7 @@ public final class DataLabelingServiceGrpc {
      * Deletes an annotated dataset by resource name.
      * </pre>
      */
-    public void deleteAnnotatedDataset(
+    default void deleteAnnotatedDataset(
         com.google.cloud.datalabeling.v1beta1.DeleteAnnotatedDatasetRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1881,7 +1881,7 @@ public final class DataLabelingServiceGrpc {
      * configured by feature in the request.
      * </pre>
      */
-    public void labelImage(
+    default void labelImage(
         com.google.cloud.datalabeling.v1beta1.LabelImageRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLabelImageMethod(), responseObserver);
@@ -1895,7 +1895,7 @@ public final class DataLabelingServiceGrpc {
      * configured by feature in the request.
      * </pre>
      */
-    public void labelVideo(
+    default void labelVideo(
         com.google.cloud.datalabeling.v1beta1.LabelVideoRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLabelVideoMethod(), responseObserver);
@@ -1909,7 +1909,7 @@ public final class DataLabelingServiceGrpc {
      * configured by feature in the request.
      * </pre>
      */
-    public void labelText(
+    default void labelText(
         com.google.cloud.datalabeling.v1beta1.LabelTextRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLabelTextMethod(), responseObserver);
@@ -1922,7 +1922,7 @@ public final class DataLabelingServiceGrpc {
      * Gets an example by resource name, including both data and annotation.
      * </pre>
      */
-    public void getExample(
+    default void getExample(
         com.google.cloud.datalabeling.v1beta1.GetExampleRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datalabeling.v1beta1.Example>
             responseObserver) {
@@ -1936,7 +1936,7 @@ public final class DataLabelingServiceGrpc {
      * Lists examples in an annotated dataset. Pagination is supported.
      * </pre>
      */
-    public void listExamples(
+    default void listExamples(
         com.google.cloud.datalabeling.v1beta1.ListExamplesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datalabeling.v1beta1.ListExamplesResponse>
             responseObserver) {
@@ -1951,7 +1951,7 @@ public final class DataLabelingServiceGrpc {
      * Creates an annotation spec set by providing a set of labels.
      * </pre>
      */
-    public void createAnnotationSpecSet(
+    default void createAnnotationSpecSet(
         com.google.cloud.datalabeling.v1beta1.CreateAnnotationSpecSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet>
             responseObserver) {
@@ -1966,7 +1966,7 @@ public final class DataLabelingServiceGrpc {
      * Gets an annotation spec set by resource name.
      * </pre>
      */
-    public void getAnnotationSpecSet(
+    default void getAnnotationSpecSet(
         com.google.cloud.datalabeling.v1beta1.GetAnnotationSpecSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet>
             responseObserver) {
@@ -1981,7 +1981,7 @@ public final class DataLabelingServiceGrpc {
      * Lists annotation spec sets for a project. Pagination is supported.
      * </pre>
      */
-    public void listAnnotationSpecSets(
+    default void listAnnotationSpecSets(
         com.google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsResponse>
@@ -1997,7 +1997,7 @@ public final class DataLabelingServiceGrpc {
      * Deletes an annotation spec set by resource name.
      * </pre>
      */
-    public void deleteAnnotationSpecSet(
+    default void deleteAnnotationSpecSet(
         com.google.cloud.datalabeling.v1beta1.DeleteAnnotationSpecSetRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2011,7 +2011,7 @@ public final class DataLabelingServiceGrpc {
      * Creates an instruction for how data should be labeled.
      * </pre>
      */
-    public void createInstruction(
+    default void createInstruction(
         com.google.cloud.datalabeling.v1beta1.CreateInstructionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2025,7 +2025,7 @@ public final class DataLabelingServiceGrpc {
      * Gets an instruction by resource name.
      * </pre>
      */
-    public void getInstruction(
+    default void getInstruction(
         com.google.cloud.datalabeling.v1beta1.GetInstructionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datalabeling.v1beta1.Instruction>
             responseObserver) {
@@ -2040,7 +2040,7 @@ public final class DataLabelingServiceGrpc {
      * Lists instructions for a project. Pagination is supported.
      * </pre>
      */
-    public void listInstructions(
+    default void listInstructions(
         com.google.cloud.datalabeling.v1beta1.ListInstructionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datalabeling.v1beta1.ListInstructionsResponse>
             responseObserver) {
@@ -2055,7 +2055,7 @@ public final class DataLabelingServiceGrpc {
      * Deletes an instruction object by resource name.
      * </pre>
      */
-    public void deleteInstruction(
+    default void deleteInstruction(
         com.google.cloud.datalabeling.v1beta1.DeleteInstructionRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2070,7 +2070,7 @@ public final class DataLabelingServiceGrpc {
      * [projects.evaluations.search][google.cloud.datalabeling.v1beta1.DataLabelingService.SearchEvaluations]).
      * </pre>
      */
-    public void getEvaluation(
+    default void getEvaluation(
         com.google.cloud.datalabeling.v1beta1.GetEvaluationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datalabeling.v1beta1.Evaluation>
             responseObserver) {
@@ -2085,7 +2085,7 @@ public final class DataLabelingServiceGrpc {
      * Searches [evaluations][google.cloud.datalabeling.v1beta1.Evaluation] within a project.
      * </pre>
      */
-    public void searchEvaluations(
+    default void searchEvaluations(
         com.google.cloud.datalabeling.v1beta1.SearchEvaluationsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datalabeling.v1beta1.SearchEvaluationsResponse>
             responseObserver) {
@@ -2102,7 +2102,7 @@ public final class DataLabelingServiceGrpc {
      * a single input. Search by providing an evaluation ID.
      * </pre>
      */
-    public void searchExampleComparisons(
+    default void searchExampleComparisons(
         com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse>
@@ -2118,7 +2118,7 @@ public final class DataLabelingServiceGrpc {
      * Creates an evaluation job.
      * </pre>
      */
-    public void createEvaluationJob(
+    default void createEvaluationJob(
         com.google.cloud.datalabeling.v1beta1.CreateEvaluationJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datalabeling.v1beta1.EvaluationJob>
             responseObserver) {
@@ -2137,7 +2137,7 @@ public final class DataLabelingServiceGrpc {
      * delete the job and create a new one.
      * </pre>
      */
-    public void updateEvaluationJob(
+    default void updateEvaluationJob(
         com.google.cloud.datalabeling.v1beta1.UpdateEvaluationJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datalabeling.v1beta1.EvaluationJob>
             responseObserver) {
@@ -2152,7 +2152,7 @@ public final class DataLabelingServiceGrpc {
      * Gets an evaluation job by resource name.
      * </pre>
      */
-    public void getEvaluationJob(
+    default void getEvaluationJob(
         com.google.cloud.datalabeling.v1beta1.GetEvaluationJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datalabeling.v1beta1.EvaluationJob>
             responseObserver) {
@@ -2168,7 +2168,7 @@ public final class DataLabelingServiceGrpc {
      * `PAUSED` state is a no-op.
      * </pre>
      */
-    public void pauseEvaluationJob(
+    default void pauseEvaluationJob(
         com.google.cloud.datalabeling.v1beta1.PauseEvaluationJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2183,7 +2183,7 @@ public final class DataLabelingServiceGrpc {
      * Resuming a running or scheduled evaluation job is a no-op.
      * </pre>
      */
-    public void resumeEvaluationJob(
+    default void resumeEvaluationJob(
         com.google.cloud.datalabeling.v1beta1.ResumeEvaluationJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2197,7 +2197,7 @@ public final class DataLabelingServiceGrpc {
      * Stops and deletes an evaluation job.
      * </pre>
      */
-    public void deleteEvaluationJob(
+    default void deleteEvaluationJob(
         com.google.cloud.datalabeling.v1beta1.DeleteEvaluationJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2212,7 +2212,7 @@ public final class DataLabelingServiceGrpc {
      * Pagination is supported.
      * </pre>
      */
-    public void listEvaluationJobs(
+    default void listEvaluationJobs(
         com.google.cloud.datalabeling.v1beta1.ListEvaluationJobsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.datalabeling.v1beta1.ListEvaluationJobsResponse>
@@ -2220,239 +2220,26 @@ public final class DataLabelingServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListEvaluationJobsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service DataLabelingService.
+   *
+   * <pre>
+   * Service for the AI Platform Data Labeling API.
+   * </pre>
+   */
+  public abstract static class DataLabelingServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateDatasetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.CreateDatasetRequest,
-                      com.google.cloud.datalabeling.v1beta1.Dataset>(
-                      this, METHODID_CREATE_DATASET)))
-          .addMethod(
-              getGetDatasetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.GetDatasetRequest,
-                      com.google.cloud.datalabeling.v1beta1.Dataset>(this, METHODID_GET_DATASET)))
-          .addMethod(
-              getListDatasetsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.ListDatasetsRequest,
-                      com.google.cloud.datalabeling.v1beta1.ListDatasetsResponse>(
-                      this, METHODID_LIST_DATASETS)))
-          .addMethod(
-              getDeleteDatasetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.DeleteDatasetRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_DATASET)))
-          .addMethod(
-              getImportDataMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.ImportDataRequest,
-                      com.google.longrunning.Operation>(this, METHODID_IMPORT_DATA)))
-          .addMethod(
-              getExportDataMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.ExportDataRequest,
-                      com.google.longrunning.Operation>(this, METHODID_EXPORT_DATA)))
-          .addMethod(
-              getGetDataItemMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.GetDataItemRequest,
-                      com.google.cloud.datalabeling.v1beta1.DataItem>(
-                      this, METHODID_GET_DATA_ITEM)))
-          .addMethod(
-              getListDataItemsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.ListDataItemsRequest,
-                      com.google.cloud.datalabeling.v1beta1.ListDataItemsResponse>(
-                      this, METHODID_LIST_DATA_ITEMS)))
-          .addMethod(
-              getGetAnnotatedDatasetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.GetAnnotatedDatasetRequest,
-                      com.google.cloud.datalabeling.v1beta1.AnnotatedDataset>(
-                      this, METHODID_GET_ANNOTATED_DATASET)))
-          .addMethod(
-              getListAnnotatedDatasetsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.ListAnnotatedDatasetsRequest,
-                      com.google.cloud.datalabeling.v1beta1.ListAnnotatedDatasetsResponse>(
-                      this, METHODID_LIST_ANNOTATED_DATASETS)))
-          .addMethod(
-              getDeleteAnnotatedDatasetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.DeleteAnnotatedDatasetRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_ANNOTATED_DATASET)))
-          .addMethod(
-              getLabelImageMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.LabelImageRequest,
-                      com.google.longrunning.Operation>(this, METHODID_LABEL_IMAGE)))
-          .addMethod(
-              getLabelVideoMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.LabelVideoRequest,
-                      com.google.longrunning.Operation>(this, METHODID_LABEL_VIDEO)))
-          .addMethod(
-              getLabelTextMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.LabelTextRequest,
-                      com.google.longrunning.Operation>(this, METHODID_LABEL_TEXT)))
-          .addMethod(
-              getGetExampleMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.GetExampleRequest,
-                      com.google.cloud.datalabeling.v1beta1.Example>(this, METHODID_GET_EXAMPLE)))
-          .addMethod(
-              getListExamplesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.ListExamplesRequest,
-                      com.google.cloud.datalabeling.v1beta1.ListExamplesResponse>(
-                      this, METHODID_LIST_EXAMPLES)))
-          .addMethod(
-              getCreateAnnotationSpecSetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.CreateAnnotationSpecSetRequest,
-                      com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet>(
-                      this, METHODID_CREATE_ANNOTATION_SPEC_SET)))
-          .addMethod(
-              getGetAnnotationSpecSetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.GetAnnotationSpecSetRequest,
-                      com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet>(
-                      this, METHODID_GET_ANNOTATION_SPEC_SET)))
-          .addMethod(
-              getListAnnotationSpecSetsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsRequest,
-                      com.google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsResponse>(
-                      this, METHODID_LIST_ANNOTATION_SPEC_SETS)))
-          .addMethod(
-              getDeleteAnnotationSpecSetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.DeleteAnnotationSpecSetRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_ANNOTATION_SPEC_SET)))
-          .addMethod(
-              getCreateInstructionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.CreateInstructionRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_INSTRUCTION)))
-          .addMethod(
-              getGetInstructionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.GetInstructionRequest,
-                      com.google.cloud.datalabeling.v1beta1.Instruction>(
-                      this, METHODID_GET_INSTRUCTION)))
-          .addMethod(
-              getListInstructionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.ListInstructionsRequest,
-                      com.google.cloud.datalabeling.v1beta1.ListInstructionsResponse>(
-                      this, METHODID_LIST_INSTRUCTIONS)))
-          .addMethod(
-              getDeleteInstructionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.DeleteInstructionRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_INSTRUCTION)))
-          .addMethod(
-              getGetEvaluationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.GetEvaluationRequest,
-                      com.google.cloud.datalabeling.v1beta1.Evaluation>(
-                      this, METHODID_GET_EVALUATION)))
-          .addMethod(
-              getSearchEvaluationsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.SearchEvaluationsRequest,
-                      com.google.cloud.datalabeling.v1beta1.SearchEvaluationsResponse>(
-                      this, METHODID_SEARCH_EVALUATIONS)))
-          .addMethod(
-              getSearchExampleComparisonsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsRequest,
-                      com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse>(
-                      this, METHODID_SEARCH_EXAMPLE_COMPARISONS)))
-          .addMethod(
-              getCreateEvaluationJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.CreateEvaluationJobRequest,
-                      com.google.cloud.datalabeling.v1beta1.EvaluationJob>(
-                      this, METHODID_CREATE_EVALUATION_JOB)))
-          .addMethod(
-              getUpdateEvaluationJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.UpdateEvaluationJobRequest,
-                      com.google.cloud.datalabeling.v1beta1.EvaluationJob>(
-                      this, METHODID_UPDATE_EVALUATION_JOB)))
-          .addMethod(
-              getGetEvaluationJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.GetEvaluationJobRequest,
-                      com.google.cloud.datalabeling.v1beta1.EvaluationJob>(
-                      this, METHODID_GET_EVALUATION_JOB)))
-          .addMethod(
-              getPauseEvaluationJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.PauseEvaluationJobRequest,
-                      com.google.protobuf.Empty>(this, METHODID_PAUSE_EVALUATION_JOB)))
-          .addMethod(
-              getResumeEvaluationJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.ResumeEvaluationJobRequest,
-                      com.google.protobuf.Empty>(this, METHODID_RESUME_EVALUATION_JOB)))
-          .addMethod(
-              getDeleteEvaluationJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.DeleteEvaluationJobRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_EVALUATION_JOB)))
-          .addMethod(
-              getListEvaluationJobsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datalabeling.v1beta1.ListEvaluationJobsRequest,
-                      com.google.cloud.datalabeling.v1beta1.ListEvaluationJobsResponse>(
-                      this, METHODID_LIST_EVALUATION_JOBS)))
-          .build();
+      return DataLabelingServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service DataLabelingService.
    *
    * <pre>
    * Service for the AI Platform Data Labeling API.
@@ -3046,7 +2833,7 @@ public final class DataLabelingServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service DataLabelingService.
    *
    * <pre>
    * Service for the AI Platform Data Labeling API.
@@ -3531,7 +3318,7 @@ public final class DataLabelingServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service DataLabelingService.
    *
    * <pre>
    * Service for the AI Platform Data Labeling API.
@@ -4087,10 +3874,10 @@ public final class DataLabelingServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final DataLabelingServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(DataLabelingServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -4313,6 +4100,234 @@ public final class DataLabelingServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateDatasetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.CreateDatasetRequest,
+                    com.google.cloud.datalabeling.v1beta1.Dataset>(
+                    service, METHODID_CREATE_DATASET)))
+        .addMethod(
+            getGetDatasetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.GetDatasetRequest,
+                    com.google.cloud.datalabeling.v1beta1.Dataset>(service, METHODID_GET_DATASET)))
+        .addMethod(
+            getListDatasetsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.ListDatasetsRequest,
+                    com.google.cloud.datalabeling.v1beta1.ListDatasetsResponse>(
+                    service, METHODID_LIST_DATASETS)))
+        .addMethod(
+            getDeleteDatasetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.DeleteDatasetRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_DATASET)))
+        .addMethod(
+            getImportDataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.ImportDataRequest,
+                    com.google.longrunning.Operation>(service, METHODID_IMPORT_DATA)))
+        .addMethod(
+            getExportDataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.ExportDataRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EXPORT_DATA)))
+        .addMethod(
+            getGetDataItemMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.GetDataItemRequest,
+                    com.google.cloud.datalabeling.v1beta1.DataItem>(
+                    service, METHODID_GET_DATA_ITEM)))
+        .addMethod(
+            getListDataItemsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.ListDataItemsRequest,
+                    com.google.cloud.datalabeling.v1beta1.ListDataItemsResponse>(
+                    service, METHODID_LIST_DATA_ITEMS)))
+        .addMethod(
+            getGetAnnotatedDatasetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.GetAnnotatedDatasetRequest,
+                    com.google.cloud.datalabeling.v1beta1.AnnotatedDataset>(
+                    service, METHODID_GET_ANNOTATED_DATASET)))
+        .addMethod(
+            getListAnnotatedDatasetsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.ListAnnotatedDatasetsRequest,
+                    com.google.cloud.datalabeling.v1beta1.ListAnnotatedDatasetsResponse>(
+                    service, METHODID_LIST_ANNOTATED_DATASETS)))
+        .addMethod(
+            getDeleteAnnotatedDatasetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.DeleteAnnotatedDatasetRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_ANNOTATED_DATASET)))
+        .addMethod(
+            getLabelImageMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.LabelImageRequest,
+                    com.google.longrunning.Operation>(service, METHODID_LABEL_IMAGE)))
+        .addMethod(
+            getLabelVideoMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.LabelVideoRequest,
+                    com.google.longrunning.Operation>(service, METHODID_LABEL_VIDEO)))
+        .addMethod(
+            getLabelTextMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.LabelTextRequest,
+                    com.google.longrunning.Operation>(service, METHODID_LABEL_TEXT)))
+        .addMethod(
+            getGetExampleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.GetExampleRequest,
+                    com.google.cloud.datalabeling.v1beta1.Example>(service, METHODID_GET_EXAMPLE)))
+        .addMethod(
+            getListExamplesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.ListExamplesRequest,
+                    com.google.cloud.datalabeling.v1beta1.ListExamplesResponse>(
+                    service, METHODID_LIST_EXAMPLES)))
+        .addMethod(
+            getCreateAnnotationSpecSetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.CreateAnnotationSpecSetRequest,
+                    com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet>(
+                    service, METHODID_CREATE_ANNOTATION_SPEC_SET)))
+        .addMethod(
+            getGetAnnotationSpecSetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.GetAnnotationSpecSetRequest,
+                    com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet>(
+                    service, METHODID_GET_ANNOTATION_SPEC_SET)))
+        .addMethod(
+            getListAnnotationSpecSetsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsRequest,
+                    com.google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsResponse>(
+                    service, METHODID_LIST_ANNOTATION_SPEC_SETS)))
+        .addMethod(
+            getDeleteAnnotationSpecSetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.DeleteAnnotationSpecSetRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_ANNOTATION_SPEC_SET)))
+        .addMethod(
+            getCreateInstructionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.CreateInstructionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_INSTRUCTION)))
+        .addMethod(
+            getGetInstructionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.GetInstructionRequest,
+                    com.google.cloud.datalabeling.v1beta1.Instruction>(
+                    service, METHODID_GET_INSTRUCTION)))
+        .addMethod(
+            getListInstructionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.ListInstructionsRequest,
+                    com.google.cloud.datalabeling.v1beta1.ListInstructionsResponse>(
+                    service, METHODID_LIST_INSTRUCTIONS)))
+        .addMethod(
+            getDeleteInstructionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.DeleteInstructionRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_INSTRUCTION)))
+        .addMethod(
+            getGetEvaluationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.GetEvaluationRequest,
+                    com.google.cloud.datalabeling.v1beta1.Evaluation>(
+                    service, METHODID_GET_EVALUATION)))
+        .addMethod(
+            getSearchEvaluationsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.SearchEvaluationsRequest,
+                    com.google.cloud.datalabeling.v1beta1.SearchEvaluationsResponse>(
+                    service, METHODID_SEARCH_EVALUATIONS)))
+        .addMethod(
+            getSearchExampleComparisonsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsRequest,
+                    com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse>(
+                    service, METHODID_SEARCH_EXAMPLE_COMPARISONS)))
+        .addMethod(
+            getCreateEvaluationJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.CreateEvaluationJobRequest,
+                    com.google.cloud.datalabeling.v1beta1.EvaluationJob>(
+                    service, METHODID_CREATE_EVALUATION_JOB)))
+        .addMethod(
+            getUpdateEvaluationJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.UpdateEvaluationJobRequest,
+                    com.google.cloud.datalabeling.v1beta1.EvaluationJob>(
+                    service, METHODID_UPDATE_EVALUATION_JOB)))
+        .addMethod(
+            getGetEvaluationJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.GetEvaluationJobRequest,
+                    com.google.cloud.datalabeling.v1beta1.EvaluationJob>(
+                    service, METHODID_GET_EVALUATION_JOB)))
+        .addMethod(
+            getPauseEvaluationJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.PauseEvaluationJobRequest,
+                    com.google.protobuf.Empty>(service, METHODID_PAUSE_EVALUATION_JOB)))
+        .addMethod(
+            getResumeEvaluationJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.ResumeEvaluationJobRequest,
+                    com.google.protobuf.Empty>(service, METHODID_RESUME_EVALUATION_JOB)))
+        .addMethod(
+            getDeleteEvaluationJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.DeleteEvaluationJobRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_EVALUATION_JOB)))
+        .addMethod(
+            getListEvaluationJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datalabeling.v1beta1.ListEvaluationJobsRequest,
+                    com.google.cloud.datalabeling.v1beta1.ListEvaluationJobsResponse>(
+                    service, METHODID_LIST_EVALUATION_JOBS)))
+        .build();
   }
 
   private abstract static class DataLabelingServiceBaseDescriptorSupplier

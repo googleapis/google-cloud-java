@@ -505,8 +505,7 @@ public final class GameServerClustersServiceGrpc {
    * used to manage fleets within clusters.
    * </pre>
    */
-  public abstract static class GameServerClustersServiceImplBase
-      implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -515,7 +514,7 @@ public final class GameServerClustersServiceGrpc {
      * Lists game server clusters in a given project and location.
      * </pre>
      */
-    public void listGameServerClusters(
+    default void listGameServerClusters(
         com.google.cloud.gaming.v1.ListGameServerClustersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.ListGameServerClustersResponse>
             responseObserver) {
@@ -530,7 +529,7 @@ public final class GameServerClustersServiceGrpc {
      * Gets details of a single game server cluster.
      * </pre>
      */
-    public void getGameServerCluster(
+    default void getGameServerCluster(
         com.google.cloud.gaming.v1.GetGameServerClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1.GameServerCluster>
             responseObserver) {
@@ -545,7 +544,7 @@ public final class GameServerClustersServiceGrpc {
      * Creates a new game server cluster in a given project and location.
      * </pre>
      */
-    public void createGameServerCluster(
+    default void createGameServerCluster(
         com.google.cloud.gaming.v1.CreateGameServerClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -560,7 +559,7 @@ public final class GameServerClustersServiceGrpc {
      * location.
      * </pre>
      */
-    public void previewCreateGameServerCluster(
+    default void previewCreateGameServerCluster(
         com.google.cloud.gaming.v1.PreviewCreateGameServerClusterRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.gaming.v1.PreviewCreateGameServerClusterResponse>
@@ -576,7 +575,7 @@ public final class GameServerClustersServiceGrpc {
      * Deletes a single game server cluster.
      * </pre>
      */
-    public void deleteGameServerCluster(
+    default void deleteGameServerCluster(
         com.google.cloud.gaming.v1.DeleteGameServerClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -590,7 +589,7 @@ public final class GameServerClustersServiceGrpc {
      * Previews deletion of a single game server cluster.
      * </pre>
      */
-    public void previewDeleteGameServerCluster(
+    default void previewDeleteGameServerCluster(
         com.google.cloud.gaming.v1.PreviewDeleteGameServerClusterRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.gaming.v1.PreviewDeleteGameServerClusterResponse>
@@ -606,7 +605,7 @@ public final class GameServerClustersServiceGrpc {
      * Patches a single game server cluster.
      * </pre>
      */
-    public void updateGameServerCluster(
+    default void updateGameServerCluster(
         com.google.cloud.gaming.v1.UpdateGameServerClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -620,7 +619,7 @@ public final class GameServerClustersServiceGrpc {
      * Previews updating a GameServerCluster.
      * </pre>
      */
-    public void previewUpdateGameServerCluster(
+    default void previewUpdateGameServerCluster(
         com.google.cloud.gaming.v1.PreviewUpdateGameServerClusterRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.gaming.v1.PreviewUpdateGameServerClusterResponse>
@@ -628,69 +627,27 @@ public final class GameServerClustersServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getPreviewUpdateGameServerClusterMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service GameServerClustersService.
+   *
+   * <pre>
+   * The game server cluster maps to Kubernetes clusters running Agones and is
+   * used to manage fleets within clusters.
+   * </pre>
+   */
+  public abstract static class GameServerClustersServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListGameServerClustersMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gaming.v1.ListGameServerClustersRequest,
-                      com.google.cloud.gaming.v1.ListGameServerClustersResponse>(
-                      this, METHODID_LIST_GAME_SERVER_CLUSTERS)))
-          .addMethod(
-              getGetGameServerClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gaming.v1.GetGameServerClusterRequest,
-                      com.google.cloud.gaming.v1.GameServerCluster>(
-                      this, METHODID_GET_GAME_SERVER_CLUSTER)))
-          .addMethod(
-              getCreateGameServerClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gaming.v1.CreateGameServerClusterRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_GAME_SERVER_CLUSTER)))
-          .addMethod(
-              getPreviewCreateGameServerClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gaming.v1.PreviewCreateGameServerClusterRequest,
-                      com.google.cloud.gaming.v1.PreviewCreateGameServerClusterResponse>(
-                      this, METHODID_PREVIEW_CREATE_GAME_SERVER_CLUSTER)))
-          .addMethod(
-              getDeleteGameServerClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gaming.v1.DeleteGameServerClusterRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_GAME_SERVER_CLUSTER)))
-          .addMethod(
-              getPreviewDeleteGameServerClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gaming.v1.PreviewDeleteGameServerClusterRequest,
-                      com.google.cloud.gaming.v1.PreviewDeleteGameServerClusterResponse>(
-                      this, METHODID_PREVIEW_DELETE_GAME_SERVER_CLUSTER)))
-          .addMethod(
-              getUpdateGameServerClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gaming.v1.UpdateGameServerClusterRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_GAME_SERVER_CLUSTER)))
-          .addMethod(
-              getPreviewUpdateGameServerClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gaming.v1.PreviewUpdateGameServerClusterRequest,
-                      com.google.cloud.gaming.v1.PreviewUpdateGameServerClusterResponse>(
-                      this, METHODID_PREVIEW_UPDATE_GAME_SERVER_CLUSTER)))
-          .build();
+      return GameServerClustersServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service GameServerClustersService.
    *
    * <pre>
    * The game server cluster maps to Kubernetes clusters running Agones and is
@@ -849,7 +806,7 @@ public final class GameServerClustersServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service GameServerClustersService.
    *
    * <pre>
    * The game server cluster maps to Kubernetes clusters running Agones and is
@@ -979,7 +936,8 @@ public final class GameServerClustersServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * GameServerClustersService.
    *
    * <pre>
    * The game server cluster maps to Kubernetes clusters running Agones and is
@@ -1130,10 +1088,10 @@ public final class GameServerClustersServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final GameServerClustersServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(GameServerClustersServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1205,6 +1163,67 @@ public final class GameServerClustersServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListGameServerClustersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gaming.v1.ListGameServerClustersRequest,
+                    com.google.cloud.gaming.v1.ListGameServerClustersResponse>(
+                    service, METHODID_LIST_GAME_SERVER_CLUSTERS)))
+        .addMethod(
+            getGetGameServerClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gaming.v1.GetGameServerClusterRequest,
+                    com.google.cloud.gaming.v1.GameServerCluster>(
+                    service, METHODID_GET_GAME_SERVER_CLUSTER)))
+        .addMethod(
+            getCreateGameServerClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gaming.v1.CreateGameServerClusterRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_GAME_SERVER_CLUSTER)))
+        .addMethod(
+            getPreviewCreateGameServerClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gaming.v1.PreviewCreateGameServerClusterRequest,
+                    com.google.cloud.gaming.v1.PreviewCreateGameServerClusterResponse>(
+                    service, METHODID_PREVIEW_CREATE_GAME_SERVER_CLUSTER)))
+        .addMethod(
+            getDeleteGameServerClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gaming.v1.DeleteGameServerClusterRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_GAME_SERVER_CLUSTER)))
+        .addMethod(
+            getPreviewDeleteGameServerClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gaming.v1.PreviewDeleteGameServerClusterRequest,
+                    com.google.cloud.gaming.v1.PreviewDeleteGameServerClusterResponse>(
+                    service, METHODID_PREVIEW_DELETE_GAME_SERVER_CLUSTER)))
+        .addMethod(
+            getUpdateGameServerClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gaming.v1.UpdateGameServerClusterRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_GAME_SERVER_CLUSTER)))
+        .addMethod(
+            getPreviewUpdateGameServerClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gaming.v1.PreviewUpdateGameServerClusterRequest,
+                    com.google.cloud.gaming.v1.PreviewUpdateGameServerClusterResponse>(
+                    service, METHODID_PREVIEW_UPDATE_GAME_SERVER_CLUSTER)))
+        .build();
   }
 
   private abstract static class GameServerClustersServiceBaseDescriptorSupplier

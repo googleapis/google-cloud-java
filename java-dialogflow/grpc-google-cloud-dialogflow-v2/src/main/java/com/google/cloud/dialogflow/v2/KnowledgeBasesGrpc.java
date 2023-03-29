@@ -320,7 +320,7 @@ public final class KnowledgeBasesGrpc {
    * [KnowledgeBases][google.cloud.dialogflow.v2.KnowledgeBase].
    * </pre>
    */
-  public abstract static class KnowledgeBasesImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -329,7 +329,7 @@ public final class KnowledgeBasesGrpc {
      * Returns the list of all knowledge bases of the specified agent.
      * </pre>
      */
-    public void listKnowledgeBases(
+    default void listKnowledgeBases(
         com.google.cloud.dialogflow.v2.ListKnowledgeBasesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.ListKnowledgeBasesResponse>
             responseObserver) {
@@ -344,7 +344,7 @@ public final class KnowledgeBasesGrpc {
      * Retrieves the specified knowledge base.
      * </pre>
      */
-    public void getKnowledgeBase(
+    default void getKnowledgeBase(
         com.google.cloud.dialogflow.v2.GetKnowledgeBaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.KnowledgeBase>
             responseObserver) {
@@ -359,7 +359,7 @@ public final class KnowledgeBasesGrpc {
      * Creates a knowledge base.
      * </pre>
      */
-    public void createKnowledgeBase(
+    default void createKnowledgeBase(
         com.google.cloud.dialogflow.v2.CreateKnowledgeBaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.KnowledgeBase>
             responseObserver) {
@@ -374,7 +374,7 @@ public final class KnowledgeBasesGrpc {
      * Deletes the specified knowledge base.
      * </pre>
      */
-    public void deleteKnowledgeBase(
+    default void deleteKnowledgeBase(
         com.google.cloud.dialogflow.v2.DeleteKnowledgeBaseRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -388,57 +388,34 @@ public final class KnowledgeBasesGrpc {
      * Updates the specified knowledge base.
      * </pre>
      */
-    public void updateKnowledgeBase(
+    default void updateKnowledgeBase(
         com.google.cloud.dialogflow.v2.UpdateKnowledgeBaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.KnowledgeBase>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateKnowledgeBaseMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service KnowledgeBases.
+   *
+   * <pre>
+   * Service for managing
+   * [KnowledgeBases][google.cloud.dialogflow.v2.KnowledgeBase].
+   * </pre>
+   */
+  public abstract static class KnowledgeBasesImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListKnowledgeBasesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.ListKnowledgeBasesRequest,
-                      com.google.cloud.dialogflow.v2.ListKnowledgeBasesResponse>(
-                      this, METHODID_LIST_KNOWLEDGE_BASES)))
-          .addMethod(
-              getGetKnowledgeBaseMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.GetKnowledgeBaseRequest,
-                      com.google.cloud.dialogflow.v2.KnowledgeBase>(
-                      this, METHODID_GET_KNOWLEDGE_BASE)))
-          .addMethod(
-              getCreateKnowledgeBaseMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.CreateKnowledgeBaseRequest,
-                      com.google.cloud.dialogflow.v2.KnowledgeBase>(
-                      this, METHODID_CREATE_KNOWLEDGE_BASE)))
-          .addMethod(
-              getDeleteKnowledgeBaseMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.DeleteKnowledgeBaseRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_KNOWLEDGE_BASE)))
-          .addMethod(
-              getUpdateKnowledgeBaseMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.UpdateKnowledgeBaseRequest,
-                      com.google.cloud.dialogflow.v2.KnowledgeBase>(
-                      this, METHODID_UPDATE_KNOWLEDGE_BASE)))
-          .build();
+      return KnowledgeBasesGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service KnowledgeBases.
    *
    * <pre>
    * Service for managing
@@ -542,7 +519,7 @@ public final class KnowledgeBasesGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service KnowledgeBases.
    *
    * <pre>
    * Service for managing
@@ -628,7 +605,7 @@ public final class KnowledgeBasesGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service KnowledgeBases.
    *
    * <pre>
    * Service for managing
@@ -728,10 +705,10 @@ public final class KnowledgeBasesGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final KnowledgeBasesImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(KnowledgeBasesImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -784,6 +761,45 @@ public final class KnowledgeBasesGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListKnowledgeBasesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.ListKnowledgeBasesRequest,
+                    com.google.cloud.dialogflow.v2.ListKnowledgeBasesResponse>(
+                    service, METHODID_LIST_KNOWLEDGE_BASES)))
+        .addMethod(
+            getGetKnowledgeBaseMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.GetKnowledgeBaseRequest,
+                    com.google.cloud.dialogflow.v2.KnowledgeBase>(
+                    service, METHODID_GET_KNOWLEDGE_BASE)))
+        .addMethod(
+            getCreateKnowledgeBaseMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.CreateKnowledgeBaseRequest,
+                    com.google.cloud.dialogflow.v2.KnowledgeBase>(
+                    service, METHODID_CREATE_KNOWLEDGE_BASE)))
+        .addMethod(
+            getDeleteKnowledgeBaseMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.DeleteKnowledgeBaseRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_KNOWLEDGE_BASE)))
+        .addMethod(
+            getUpdateKnowledgeBaseMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.UpdateKnowledgeBaseRequest,
+                    com.google.cloud.dialogflow.v2.KnowledgeBase>(
+                    service, METHODID_UPDATE_KNOWLEDGE_BASE)))
+        .build();
   }
 
   private abstract static class KnowledgeBasesBaseDescriptorSupplier

@@ -554,8 +554,7 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
    * APIs for enterprise knowledge graph product.
    * </pre>
    */
-  public abstract static class EnterpriseKnowledgeGraphServiceImplBase
-      implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -565,7 +564,7 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
      * will right away be attempted to start.
      * </pre>
      */
-    public void createEntityReconciliationJob(
+    default void createEntityReconciliationJob(
         com.google.cloud.enterpriseknowledgegraph.v1.CreateEntityReconciliationJobRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob>
@@ -581,7 +580,7 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
      * Gets a EntityReconciliationJob.
      * </pre>
      */
-    public void getEntityReconciliationJob(
+    default void getEntityReconciliationJob(
         com.google.cloud.enterpriseknowledgegraph.v1.GetEntityReconciliationJobRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob>
@@ -597,7 +596,7 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
      * Lists Entity Reconciliation Jobs.
      * </pre>
      */
-    public void listEntityReconciliationJobs(
+    default void listEntityReconciliationJobs(
         com.google.cloud.enterpriseknowledgegraph.v1.ListEntityReconciliationJobsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.enterpriseknowledgegraph.v1.ListEntityReconciliationJobsResponse>
@@ -614,7 +613,7 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
      * guaranteed.
      * </pre>
      */
-    public void cancelEntityReconciliationJob(
+    default void cancelEntityReconciliationJob(
         com.google.cloud.enterpriseknowledgegraph.v1.CancelEntityReconciliationJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -630,7 +629,7 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
      * CANCELLED.
      * </pre>
      */
-    public void deleteEntityReconciliationJob(
+    default void deleteEntityReconciliationJob(
         com.google.cloud.enterpriseknowledgegraph.v1.DeleteEntityReconciliationJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -644,7 +643,7 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
      * Finds the Cloud KG entities with CKG ID(s).
      * </pre>
      */
-    public void lookup(
+    default void lookup(
         com.google.cloud.enterpriseknowledgegraph.v1.LookupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.enterpriseknowledgegraph.v1.LookupResponse>
             responseObserver) {
@@ -658,7 +657,7 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
      * Searches the Cloud KG entities with entity name.
      * </pre>
      */
-    public void search(
+    default void search(
         com.google.cloud.enterpriseknowledgegraph.v1.SearchRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.enterpriseknowledgegraph.v1.SearchResponse>
             responseObserver) {
@@ -672,7 +671,7 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
      * Finds the public KG entities with public KG ID(s).
      * </pre>
      */
-    public void lookupPublicKg(
+    default void lookupPublicKg(
         com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgResponse>
@@ -688,7 +687,7 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
      * Searches the public KG entities with entity name.
      * </pre>
      */
-    public void searchPublicKg(
+    default void searchPublicKg(
         com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgResponse>
@@ -696,83 +695,27 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSearchPublicKgMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service EnterpriseKnowledgeGraphService.
+   *
+   * <pre>
+   * APIs for enterprise knowledge graph product.
+   * </pre>
+   */
+  public abstract static class EnterpriseKnowledgeGraphServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateEntityReconciliationJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.enterpriseknowledgegraph.v1
-                          .CreateEntityReconciliationJobRequest,
-                      com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob>(
-                      this, METHODID_CREATE_ENTITY_RECONCILIATION_JOB)))
-          .addMethod(
-              getGetEntityReconciliationJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.enterpriseknowledgegraph.v1
-                          .GetEntityReconciliationJobRequest,
-                      com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob>(
-                      this, METHODID_GET_ENTITY_RECONCILIATION_JOB)))
-          .addMethod(
-              getListEntityReconciliationJobsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.enterpriseknowledgegraph.v1
-                          .ListEntityReconciliationJobsRequest,
-                      com.google.cloud.enterpriseknowledgegraph.v1
-                          .ListEntityReconciliationJobsResponse>(
-                      this, METHODID_LIST_ENTITY_RECONCILIATION_JOBS)))
-          .addMethod(
-              getCancelEntityReconciliationJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.enterpriseknowledgegraph.v1
-                          .CancelEntityReconciliationJobRequest,
-                      com.google.protobuf.Empty>(this, METHODID_CANCEL_ENTITY_RECONCILIATION_JOB)))
-          .addMethod(
-              getDeleteEntityReconciliationJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.enterpriseknowledgegraph.v1
-                          .DeleteEntityReconciliationJobRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_ENTITY_RECONCILIATION_JOB)))
-          .addMethod(
-              getLookupMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.enterpriseknowledgegraph.v1.LookupRequest,
-                      com.google.cloud.enterpriseknowledgegraph.v1.LookupResponse>(
-                      this, METHODID_LOOKUP)))
-          .addMethod(
-              getSearchMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.enterpriseknowledgegraph.v1.SearchRequest,
-                      com.google.cloud.enterpriseknowledgegraph.v1.SearchResponse>(
-                      this, METHODID_SEARCH)))
-          .addMethod(
-              getLookupPublicKgMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgRequest,
-                      com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgResponse>(
-                      this, METHODID_LOOKUP_PUBLIC_KG)))
-          .addMethod(
-              getSearchPublicKgMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgRequest,
-                      com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgResponse>(
-                      this, METHODID_SEARCH_PUBLIC_KG)))
-          .build();
+      return EnterpriseKnowledgeGraphServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service
+   * EnterpriseKnowledgeGraphService.
    *
    * <pre>
    * APIs for enterprise knowledge graph product.
@@ -949,7 +892,7 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service EnterpriseKnowledgeGraphService.
    *
    * <pre>
    * APIs for enterprise knowledge graph product.
@@ -1097,7 +1040,8 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * EnterpriseKnowledgeGraphService.
    *
    * <pre>
    * APIs for enterprise knowledge graph product.
@@ -1273,10 +1217,10 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final EnterpriseKnowledgeGraphServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(EnterpriseKnowledgeGraphServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1364,6 +1308,77 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateEntityReconciliationJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.enterpriseknowledgegraph.v1
+                        .CreateEntityReconciliationJobRequest,
+                    com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob>(
+                    service, METHODID_CREATE_ENTITY_RECONCILIATION_JOB)))
+        .addMethod(
+            getGetEntityReconciliationJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.enterpriseknowledgegraph.v1.GetEntityReconciliationJobRequest,
+                    com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob>(
+                    service, METHODID_GET_ENTITY_RECONCILIATION_JOB)))
+        .addMethod(
+            getListEntityReconciliationJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.enterpriseknowledgegraph.v1
+                        .ListEntityReconciliationJobsRequest,
+                    com.google.cloud.enterpriseknowledgegraph.v1
+                        .ListEntityReconciliationJobsResponse>(
+                    service, METHODID_LIST_ENTITY_RECONCILIATION_JOBS)))
+        .addMethod(
+            getCancelEntityReconciliationJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.enterpriseknowledgegraph.v1
+                        .CancelEntityReconciliationJobRequest,
+                    com.google.protobuf.Empty>(service, METHODID_CANCEL_ENTITY_RECONCILIATION_JOB)))
+        .addMethod(
+            getDeleteEntityReconciliationJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.enterpriseknowledgegraph.v1
+                        .DeleteEntityReconciliationJobRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_ENTITY_RECONCILIATION_JOB)))
+        .addMethod(
+            getLookupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.enterpriseknowledgegraph.v1.LookupRequest,
+                    com.google.cloud.enterpriseknowledgegraph.v1.LookupResponse>(
+                    service, METHODID_LOOKUP)))
+        .addMethod(
+            getSearchMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.enterpriseknowledgegraph.v1.SearchRequest,
+                    com.google.cloud.enterpriseknowledgegraph.v1.SearchResponse>(
+                    service, METHODID_SEARCH)))
+        .addMethod(
+            getLookupPublicKgMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgRequest,
+                    com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgResponse>(
+                    service, METHODID_LOOKUP_PUBLIC_KG)))
+        .addMethod(
+            getSearchPublicKgMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgRequest,
+                    com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgResponse>(
+                    service, METHODID_SEARCH_PUBLIC_KG)))
+        .build();
   }
 
   private abstract static class EnterpriseKnowledgeGraphServiceBaseDescriptorSupplier

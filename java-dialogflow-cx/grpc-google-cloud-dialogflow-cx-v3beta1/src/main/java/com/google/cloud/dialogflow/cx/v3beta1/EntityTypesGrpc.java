@@ -315,7 +315,7 @@ public final class EntityTypesGrpc {
    * [EntityTypes][google.cloud.dialogflow.cx.v3beta1.EntityType].
    * </pre>
    */
-  public abstract static class EntityTypesImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -324,7 +324,7 @@ public final class EntityTypesGrpc {
      * Returns the list of all entity types in the specified agent.
      * </pre>
      */
-    public void listEntityTypes(
+    default void listEntityTypes(
         com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse>
             responseObserver) {
@@ -339,7 +339,7 @@ public final class EntityTypesGrpc {
      * Retrieves the specified entity type.
      * </pre>
      */
-    public void getEntityType(
+    default void getEntityType(
         com.google.cloud.dialogflow.cx.v3beta1.GetEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.EntityType>
             responseObserver) {
@@ -354,7 +354,7 @@ public final class EntityTypesGrpc {
      * Creates an entity type in the specified agent.
      * </pre>
      */
-    public void createEntityType(
+    default void createEntityType(
         com.google.cloud.dialogflow.cx.v3beta1.CreateEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.EntityType>
             responseObserver) {
@@ -372,7 +372,7 @@ public final class EntityTypesGrpc {
      * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
-    public void updateEntityType(
+    default void updateEntityType(
         com.google.cloud.dialogflow.cx.v3beta1.UpdateEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.EntityType>
             responseObserver) {
@@ -390,56 +390,33 @@ public final class EntityTypesGrpc {
      * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
-    public void deleteEntityType(
+    default void deleteEntityType(
         com.google.cloud.dialogflow.cx.v3beta1.DeleteEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteEntityTypeMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service EntityTypes.
+   *
+   * <pre>
+   * Service for managing
+   * [EntityTypes][google.cloud.dialogflow.cx.v3beta1.EntityType].
+   * </pre>
+   */
+  public abstract static class EntityTypesImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListEntityTypesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest,
-                      com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse>(
-                      this, METHODID_LIST_ENTITY_TYPES)))
-          .addMethod(
-              getGetEntityTypeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3beta1.GetEntityTypeRequest,
-                      com.google.cloud.dialogflow.cx.v3beta1.EntityType>(
-                      this, METHODID_GET_ENTITY_TYPE)))
-          .addMethod(
-              getCreateEntityTypeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3beta1.CreateEntityTypeRequest,
-                      com.google.cloud.dialogflow.cx.v3beta1.EntityType>(
-                      this, METHODID_CREATE_ENTITY_TYPE)))
-          .addMethod(
-              getUpdateEntityTypeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3beta1.UpdateEntityTypeRequest,
-                      com.google.cloud.dialogflow.cx.v3beta1.EntityType>(
-                      this, METHODID_UPDATE_ENTITY_TYPE)))
-          .addMethod(
-              getDeleteEntityTypeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3beta1.DeleteEntityTypeRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_ENTITY_TYPE)))
-          .build();
+      return EntityTypesGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service EntityTypes.
    *
    * <pre>
    * Service for managing
@@ -549,7 +526,7 @@ public final class EntityTypesGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service EntityTypes.
    *
    * <pre>
    * Service for managing
@@ -641,7 +618,7 @@ public final class EntityTypesGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service EntityTypes.
    *
    * <pre>
    * Service for managing
@@ -747,10 +724,10 @@ public final class EntityTypesGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final EntityTypesImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(EntityTypesImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -803,6 +780,45 @@ public final class EntityTypesGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListEntityTypesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesRequest,
+                    com.google.cloud.dialogflow.cx.v3beta1.ListEntityTypesResponse>(
+                    service, METHODID_LIST_ENTITY_TYPES)))
+        .addMethod(
+            getGetEntityTypeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.GetEntityTypeRequest,
+                    com.google.cloud.dialogflow.cx.v3beta1.EntityType>(
+                    service, METHODID_GET_ENTITY_TYPE)))
+        .addMethod(
+            getCreateEntityTypeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.CreateEntityTypeRequest,
+                    com.google.cloud.dialogflow.cx.v3beta1.EntityType>(
+                    service, METHODID_CREATE_ENTITY_TYPE)))
+        .addMethod(
+            getUpdateEntityTypeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.UpdateEntityTypeRequest,
+                    com.google.cloud.dialogflow.cx.v3beta1.EntityType>(
+                    service, METHODID_UPDATE_ENTITY_TYPE)))
+        .addMethod(
+            getDeleteEntityTypeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.DeleteEntityTypeRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_ENTITY_TYPE)))
+        .build();
   }
 
   private abstract static class EntityTypesBaseDescriptorSupplier

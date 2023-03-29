@@ -773,7 +773,7 @@ public final class DomainsGrpc {
    * The Cloud Domains API enables management and configuration of domain names.
    * </pre>
    */
-  public abstract static class DomainsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -785,7 +785,7 @@ public final class DomainsGrpc {
      * availability.
      * </pre>
      */
-    public void searchDomains(
+    default void searchDomains(
         com.google.cloud.domains.v1.SearchDomainsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.domains.v1.SearchDomainsResponse>
             responseObserver) {
@@ -801,7 +801,7 @@ public final class DomainsGrpc {
      * up-to-date availability. Use the returned values to call `RegisterDomain`.
      * </pre>
      */
-    public void retrieveRegisterParameters(
+    default void retrieveRegisterParameters(
         com.google.cloud.domains.v1.RetrieveRegisterParametersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.domains.v1.RetrieveRegisterParametersResponse>
             responseObserver) {
@@ -826,7 +826,7 @@ public final class DomainsGrpc {
      * resource and retry registration.
      * </pre>
      */
-    public void registerDomain(
+    default void registerDomain(
         com.google.cloud.domains.v1.RegisterDomainRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -843,7 +843,7 @@ public final class DomainsGrpc {
      * Use the returned values to call `TransferDomain`.
      * </pre>
      */
-    public void retrieveTransferParameters(
+    default void retrieveTransferParameters(
         com.google.cloud.domains.v1.RetrieveTransferParametersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.domains.v1.RetrieveTransferParametersResponse>
             responseObserver) {
@@ -874,7 +874,7 @@ public final class DomainsGrpc {
      * the resource and retry the transfer.
      * </pre>
      */
-    public void transferDomain(
+    default void transferDomain(
         com.google.cloud.domains.v1.TransferDomainRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -888,7 +888,7 @@ public final class DomainsGrpc {
      * Lists the `Registration` resources in a project.
      * </pre>
      */
-    public void listRegistrations(
+    default void listRegistrations(
         com.google.cloud.domains.v1.ListRegistrationsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.domains.v1.ListRegistrationsResponse>
             responseObserver) {
@@ -903,7 +903,7 @@ public final class DomainsGrpc {
      * Gets the details of a `Registration` resource.
      * </pre>
      */
-    public void getRegistration(
+    default void getRegistration(
         com.google.cloud.domains.v1.GetRegistrationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.domains.v1.Registration> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -921,7 +921,7 @@ public final class DomainsGrpc {
      * * To update contact information, see `ConfigureContactSettings`
      * </pre>
      */
-    public void updateRegistration(
+    default void updateRegistration(
         com.google.cloud.domains.v1.UpdateRegistrationRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -935,7 +935,7 @@ public final class DomainsGrpc {
      * Updates a `Registration`'s management settings.
      * </pre>
      */
-    public void configureManagementSettings(
+    default void configureManagementSettings(
         com.google.cloud.domains.v1.ConfigureManagementSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -949,7 +949,7 @@ public final class DomainsGrpc {
      * Updates a `Registration`'s DNS settings.
      * </pre>
      */
-    public void configureDnsSettings(
+    default void configureDnsSettings(
         com.google.cloud.domains.v1.ConfigureDnsSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -964,7 +964,7 @@ public final class DomainsGrpc {
      * confirmation by the domain's registrant contact .
      * </pre>
      */
-    public void configureContactSettings(
+    default void configureContactSettings(
         com.google.cloud.domains.v1.ConfigureContactSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -985,7 +985,7 @@ public final class DomainsGrpc {
      * Domains.
      * </pre>
      */
-    public void exportRegistration(
+    default void exportRegistration(
         com.google.cloud.domains.v1.ExportRegistrationRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1013,7 +1013,7 @@ public final class DomainsGrpc {
      * Google Domains.
      * </pre>
      */
-    public void deleteRegistration(
+    default void deleteRegistration(
         com.google.cloud.domains.v1.DeleteRegistrationRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1030,7 +1030,7 @@ public final class DomainsGrpc {
      * domain registration.
      * </pre>
      */
-    public void retrieveAuthorizationCode(
+    default void retrieveAuthorizationCode(
         com.google.cloud.domains.v1.RetrieveAuthorizationCodeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.domains.v1.AuthorizationCode>
             responseObserver) {
@@ -1047,120 +1047,32 @@ public final class DomainsGrpc {
      * domain registration.
      * </pre>
      */
-    public void resetAuthorizationCode(
+    default void resetAuthorizationCode(
         com.google.cloud.domains.v1.ResetAuthorizationCodeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.domains.v1.AuthorizationCode>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getResetAuthorizationCodeMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Domains.
+   *
+   * <pre>
+   * The Cloud Domains API enables management and configuration of domain names.
+   * </pre>
+   */
+  public abstract static class DomainsImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getSearchDomainsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.domains.v1.SearchDomainsRequest,
-                      com.google.cloud.domains.v1.SearchDomainsResponse>(
-                      this, METHODID_SEARCH_DOMAINS)))
-          .addMethod(
-              getRetrieveRegisterParametersMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.domains.v1.RetrieveRegisterParametersRequest,
-                      com.google.cloud.domains.v1.RetrieveRegisterParametersResponse>(
-                      this, METHODID_RETRIEVE_REGISTER_PARAMETERS)))
-          .addMethod(
-              getRegisterDomainMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.domains.v1.RegisterDomainRequest,
-                      com.google.longrunning.Operation>(this, METHODID_REGISTER_DOMAIN)))
-          .addMethod(
-              getRetrieveTransferParametersMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.domains.v1.RetrieveTransferParametersRequest,
-                      com.google.cloud.domains.v1.RetrieveTransferParametersResponse>(
-                      this, METHODID_RETRIEVE_TRANSFER_PARAMETERS)))
-          .addMethod(
-              getTransferDomainMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.domains.v1.TransferDomainRequest,
-                      com.google.longrunning.Operation>(this, METHODID_TRANSFER_DOMAIN)))
-          .addMethod(
-              getListRegistrationsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.domains.v1.ListRegistrationsRequest,
-                      com.google.cloud.domains.v1.ListRegistrationsResponse>(
-                      this, METHODID_LIST_REGISTRATIONS)))
-          .addMethod(
-              getGetRegistrationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.domains.v1.GetRegistrationRequest,
-                      com.google.cloud.domains.v1.Registration>(this, METHODID_GET_REGISTRATION)))
-          .addMethod(
-              getUpdateRegistrationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.domains.v1.UpdateRegistrationRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_REGISTRATION)))
-          .addMethod(
-              getConfigureManagementSettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.domains.v1.ConfigureManagementSettingsRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_CONFIGURE_MANAGEMENT_SETTINGS)))
-          .addMethod(
-              getConfigureDnsSettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.domains.v1.ConfigureDnsSettingsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CONFIGURE_DNS_SETTINGS)))
-          .addMethod(
-              getConfigureContactSettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.domains.v1.ConfigureContactSettingsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CONFIGURE_CONTACT_SETTINGS)))
-          .addMethod(
-              getExportRegistrationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.domains.v1.ExportRegistrationRequest,
-                      com.google.longrunning.Operation>(this, METHODID_EXPORT_REGISTRATION)))
-          .addMethod(
-              getDeleteRegistrationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.domains.v1.DeleteRegistrationRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_REGISTRATION)))
-          .addMethod(
-              getRetrieveAuthorizationCodeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.domains.v1.RetrieveAuthorizationCodeRequest,
-                      com.google.cloud.domains.v1.AuthorizationCode>(
-                      this, METHODID_RETRIEVE_AUTHORIZATION_CODE)))
-          .addMethod(
-              getResetAuthorizationCodeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.domains.v1.ResetAuthorizationCodeRequest,
-                      com.google.cloud.domains.v1.AuthorizationCode>(
-                      this, METHODID_RESET_AUTHORIZATION_CODE)))
-          .build();
+      return DomainsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Domains.
    *
    * <pre>
    * The Cloud Domains API enables management and configuration of domain names.
@@ -1488,7 +1400,7 @@ public final class DomainsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Domains.
    *
    * <pre>
    * The Cloud Domains API enables management and configuration of domain names.
@@ -1768,7 +1680,7 @@ public final class DomainsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Domains.
    *
    * <pre>
    * The Cloud Domains API enables management and configuration of domain names.
@@ -2078,10 +1990,10 @@ public final class DomainsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final DomainsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(DomainsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -2188,6 +2100,109 @@ public final class DomainsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getSearchDomainsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.domains.v1.SearchDomainsRequest,
+                    com.google.cloud.domains.v1.SearchDomainsResponse>(
+                    service, METHODID_SEARCH_DOMAINS)))
+        .addMethod(
+            getRetrieveRegisterParametersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.domains.v1.RetrieveRegisterParametersRequest,
+                    com.google.cloud.domains.v1.RetrieveRegisterParametersResponse>(
+                    service, METHODID_RETRIEVE_REGISTER_PARAMETERS)))
+        .addMethod(
+            getRegisterDomainMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.domains.v1.RegisterDomainRequest,
+                    com.google.longrunning.Operation>(service, METHODID_REGISTER_DOMAIN)))
+        .addMethod(
+            getRetrieveTransferParametersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.domains.v1.RetrieveTransferParametersRequest,
+                    com.google.cloud.domains.v1.RetrieveTransferParametersResponse>(
+                    service, METHODID_RETRIEVE_TRANSFER_PARAMETERS)))
+        .addMethod(
+            getTransferDomainMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.domains.v1.TransferDomainRequest,
+                    com.google.longrunning.Operation>(service, METHODID_TRANSFER_DOMAIN)))
+        .addMethod(
+            getListRegistrationsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.domains.v1.ListRegistrationsRequest,
+                    com.google.cloud.domains.v1.ListRegistrationsResponse>(
+                    service, METHODID_LIST_REGISTRATIONS)))
+        .addMethod(
+            getGetRegistrationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.domains.v1.GetRegistrationRequest,
+                    com.google.cloud.domains.v1.Registration>(service, METHODID_GET_REGISTRATION)))
+        .addMethod(
+            getUpdateRegistrationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.domains.v1.UpdateRegistrationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_REGISTRATION)))
+        .addMethod(
+            getConfigureManagementSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.domains.v1.ConfigureManagementSettingsRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CONFIGURE_MANAGEMENT_SETTINGS)))
+        .addMethod(
+            getConfigureDnsSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.domains.v1.ConfigureDnsSettingsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CONFIGURE_DNS_SETTINGS)))
+        .addMethod(
+            getConfigureContactSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.domains.v1.ConfigureContactSettingsRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CONFIGURE_CONTACT_SETTINGS)))
+        .addMethod(
+            getExportRegistrationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.domains.v1.ExportRegistrationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EXPORT_REGISTRATION)))
+        .addMethod(
+            getDeleteRegistrationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.domains.v1.DeleteRegistrationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_REGISTRATION)))
+        .addMethod(
+            getRetrieveAuthorizationCodeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.domains.v1.RetrieveAuthorizationCodeRequest,
+                    com.google.cloud.domains.v1.AuthorizationCode>(
+                    service, METHODID_RETRIEVE_AUTHORIZATION_CODE)))
+        .addMethod(
+            getResetAuthorizationCodeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.domains.v1.ResetAuthorizationCodeRequest,
+                    com.google.cloud.domains.v1.AuthorizationCode>(
+                    service, METHODID_RESET_AUTHORIZATION_CODE)))
+        .build();
   }
 
   private abstract static class DomainsBaseDescriptorSupplier

@@ -574,7 +574,7 @@ public final class CloudFunctionsServiceGrpc {
    * A service that application uses to manipulate triggers and functions.
    * </pre>
    */
-  public abstract static class CloudFunctionsServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -583,7 +583,7 @@ public final class CloudFunctionsServiceGrpc {
      * Returns a list of functions that belong to the requested project.
      * </pre>
      */
-    public void listFunctions(
+    default void listFunctions(
         com.google.cloud.functions.v1.ListFunctionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.functions.v1.ListFunctionsResponse>
             responseObserver) {
@@ -598,7 +598,7 @@ public final class CloudFunctionsServiceGrpc {
      * Returns a function with the given name from the requested project.
      * </pre>
      */
-    public void getFunction(
+    default void getFunction(
         com.google.cloud.functions.v1.GetFunctionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.functions.v1.CloudFunction> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -614,7 +614,7 @@ public final class CloudFunctionsServiceGrpc {
      * `ALREADY_EXISTS` error.
      * </pre>
      */
-    public void createFunction(
+    default void createFunction(
         com.google.cloud.functions.v1.CreateFunctionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -628,7 +628,7 @@ public final class CloudFunctionsServiceGrpc {
      * Updates existing function.
      * </pre>
      */
-    public void updateFunction(
+    default void updateFunction(
         com.google.cloud.functions.v1.UpdateFunctionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -644,7 +644,7 @@ public final class CloudFunctionsServiceGrpc {
      * remove this function.
      * </pre>
      */
-    public void deleteFunction(
+    default void deleteFunction(
         com.google.cloud.functions.v1.DeleteFunctionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -661,7 +661,7 @@ public final class CloudFunctionsServiceGrpc {
      * [Rate Limits](https://cloud.google.com/functions/quotas#rate_limits).
      * </pre>
      */
-    public void callFunction(
+    default void callFunction(
         com.google.cloud.functions.v1.CallFunctionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.functions.v1.CallFunctionResponse>
             responseObserver) {
@@ -694,7 +694,7 @@ public final class CloudFunctionsServiceGrpc {
      * * `Authorization: Bearer YOUR_TOKEN`
      * </pre>
      */
-    public void generateUploadUrl(
+    default void generateUploadUrl(
         com.google.cloud.functions.v1.GenerateUploadUrlRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.functions.v1.GenerateUploadUrlResponse>
             responseObserver) {
@@ -713,7 +713,7 @@ public final class CloudFunctionsServiceGrpc {
      * https://cloud.google.com/storage/docs/access-control/signed-urls
      * </pre>
      */
-    public void generateDownloadUrl(
+    default void generateDownloadUrl(
         com.google.cloud.functions.v1.GenerateDownloadUrlRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.functions.v1.GenerateDownloadUrlResponse>
             responseObserver) {
@@ -729,7 +729,7 @@ public final class CloudFunctionsServiceGrpc {
      * Replaces any existing policy.
      * </pre>
      */
-    public void setIamPolicy(
+    default void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -745,7 +745,7 @@ public final class CloudFunctionsServiceGrpc {
      * set.
      * </pre>
      */
-    public void getIamPolicy(
+    default void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -762,94 +762,33 @@ public final class CloudFunctionsServiceGrpc {
      * permissions, not a NOT_FOUND error.
      * </pre>
      */
-    public void testIamPermissions(
+    default void testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getTestIamPermissionsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service CloudFunctionsService.
+   *
+   * <pre>
+   * A service that application uses to manipulate triggers and functions.
+   * </pre>
+   */
+  public abstract static class CloudFunctionsServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListFunctionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.functions.v1.ListFunctionsRequest,
-                      com.google.cloud.functions.v1.ListFunctionsResponse>(
-                      this, METHODID_LIST_FUNCTIONS)))
-          .addMethod(
-              getGetFunctionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.functions.v1.GetFunctionRequest,
-                      com.google.cloud.functions.v1.CloudFunction>(this, METHODID_GET_FUNCTION)))
-          .addMethod(
-              getCreateFunctionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.functions.v1.CreateFunctionRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_FUNCTION)))
-          .addMethod(
-              getUpdateFunctionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.functions.v1.UpdateFunctionRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_FUNCTION)))
-          .addMethod(
-              getDeleteFunctionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.functions.v1.DeleteFunctionRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_FUNCTION)))
-          .addMethod(
-              getCallFunctionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.functions.v1.CallFunctionRequest,
-                      com.google.cloud.functions.v1.CallFunctionResponse>(
-                      this, METHODID_CALL_FUNCTION)))
-          .addMethod(
-              getGenerateUploadUrlMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.functions.v1.GenerateUploadUrlRequest,
-                      com.google.cloud.functions.v1.GenerateUploadUrlResponse>(
-                      this, METHODID_GENERATE_UPLOAD_URL)))
-          .addMethod(
-              getGenerateDownloadUrlMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.functions.v1.GenerateDownloadUrlRequest,
-                      com.google.cloud.functions.v1.GenerateDownloadUrlResponse>(
-                      this, METHODID_GENERATE_DOWNLOAD_URL)))
-          .addMethod(
-              getSetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_SET_IAM_POLICY)))
-          .addMethod(
-              getGetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_GET_IAM_POLICY)))
-          .addMethod(
-              getTestIamPermissionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.TestIamPermissionsRequest,
-                      com.google.iam.v1.TestIamPermissionsResponse>(
-                      this, METHODID_TEST_IAM_PERMISSIONS)))
-          .build();
+      return CloudFunctionsServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service CloudFunctionsService.
    *
    * <pre>
    * A service that application uses to manipulate triggers and functions.
@@ -1085,7 +1024,7 @@ public final class CloudFunctionsServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service CloudFunctionsService.
    *
    * <pre>
    * A service that application uses to manipulate triggers and functions.
@@ -1282,7 +1221,8 @@ public final class CloudFunctionsServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * CloudFunctionsService.
    *
    * <pre>
    * A service that application uses to manipulate triggers and functions.
@@ -1503,10 +1443,10 @@ public final class CloudFunctionsServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final CloudFunctionsServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(CloudFunctionsServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1591,6 +1531,80 @@ public final class CloudFunctionsServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListFunctionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.functions.v1.ListFunctionsRequest,
+                    com.google.cloud.functions.v1.ListFunctionsResponse>(
+                    service, METHODID_LIST_FUNCTIONS)))
+        .addMethod(
+            getGetFunctionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.functions.v1.GetFunctionRequest,
+                    com.google.cloud.functions.v1.CloudFunction>(service, METHODID_GET_FUNCTION)))
+        .addMethod(
+            getCreateFunctionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.functions.v1.CreateFunctionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_FUNCTION)))
+        .addMethod(
+            getUpdateFunctionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.functions.v1.UpdateFunctionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_FUNCTION)))
+        .addMethod(
+            getDeleteFunctionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.functions.v1.DeleteFunctionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_FUNCTION)))
+        .addMethod(
+            getCallFunctionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.functions.v1.CallFunctionRequest,
+                    com.google.cloud.functions.v1.CallFunctionResponse>(
+                    service, METHODID_CALL_FUNCTION)))
+        .addMethod(
+            getGenerateUploadUrlMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.functions.v1.GenerateUploadUrlRequest,
+                    com.google.cloud.functions.v1.GenerateUploadUrlResponse>(
+                    service, METHODID_GENERATE_UPLOAD_URL)))
+        .addMethod(
+            getGenerateDownloadUrlMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.functions.v1.GenerateDownloadUrlRequest,
+                    com.google.cloud.functions.v1.GenerateDownloadUrlResponse>(
+                    service, METHODID_GENERATE_DOWNLOAD_URL)))
+        .addMethod(
+            getSetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_SET_IAM_POLICY)))
+        .addMethod(
+            getGetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_GET_IAM_POLICY)))
+        .addMethod(
+            getTestIamPermissionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.v1.TestIamPermissionsRequest,
+                    com.google.iam.v1.TestIamPermissionsResponse>(
+                    service, METHODID_TEST_IAM_PERMISSIONS)))
+        .build();
   }
 
   private abstract static class CloudFunctionsServiceBaseDescriptorSupplier

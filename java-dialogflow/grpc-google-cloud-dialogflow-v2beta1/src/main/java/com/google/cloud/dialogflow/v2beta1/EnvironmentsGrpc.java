@@ -363,7 +363,7 @@ public final class EnvironmentsGrpc {
    * [Environments][google.cloud.dialogflow.v2beta1.Environment].
    * </pre>
    */
-  public abstract static class EnvironmentsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -372,7 +372,7 @@ public final class EnvironmentsGrpc {
      * Returns the list of all non-draft environments of the specified agent.
      * </pre>
      */
-    public void listEnvironments(
+    default void listEnvironments(
         com.google.cloud.dialogflow.v2beta1.ListEnvironmentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListEnvironmentsResponse>
             responseObserver) {
@@ -387,7 +387,7 @@ public final class EnvironmentsGrpc {
      * Retrieves the specified agent environment.
      * </pre>
      */
-    public void getEnvironment(
+    default void getEnvironment(
         com.google.cloud.dialogflow.v2beta1.GetEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Environment>
             responseObserver) {
@@ -402,7 +402,7 @@ public final class EnvironmentsGrpc {
      * Creates an agent environment.
      * </pre>
      */
-    public void createEnvironment(
+    default void createEnvironment(
         com.google.cloud.dialogflow.v2beta1.CreateEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Environment>
             responseObserver) {
@@ -427,7 +427,7 @@ public final class EnvironmentsGrpc {
      * before calling this function.
      * </pre>
      */
-    public void updateEnvironment(
+    default void updateEnvironment(
         com.google.cloud.dialogflow.v2beta1.UpdateEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Environment>
             responseObserver) {
@@ -442,7 +442,7 @@ public final class EnvironmentsGrpc {
      * Deletes the specified agent environment.
      * </pre>
      */
-    public void deleteEnvironment(
+    default void deleteEnvironment(
         com.google.cloud.dialogflow.v2beta1.DeleteEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -456,64 +456,34 @@ public final class EnvironmentsGrpc {
      * Gets the history of the specified environment.
      * </pre>
      */
-    public void getEnvironmentHistory(
+    default void getEnvironmentHistory(
         com.google.cloud.dialogflow.v2beta1.GetEnvironmentHistoryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.EnvironmentHistory>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetEnvironmentHistoryMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Environments.
+   *
+   * <pre>
+   * Service for managing
+   * [Environments][google.cloud.dialogflow.v2beta1.Environment].
+   * </pre>
+   */
+  public abstract static class EnvironmentsImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListEnvironmentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.ListEnvironmentsRequest,
-                      com.google.cloud.dialogflow.v2beta1.ListEnvironmentsResponse>(
-                      this, METHODID_LIST_ENVIRONMENTS)))
-          .addMethod(
-              getGetEnvironmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.GetEnvironmentRequest,
-                      com.google.cloud.dialogflow.v2beta1.Environment>(
-                      this, METHODID_GET_ENVIRONMENT)))
-          .addMethod(
-              getCreateEnvironmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.CreateEnvironmentRequest,
-                      com.google.cloud.dialogflow.v2beta1.Environment>(
-                      this, METHODID_CREATE_ENVIRONMENT)))
-          .addMethod(
-              getUpdateEnvironmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.UpdateEnvironmentRequest,
-                      com.google.cloud.dialogflow.v2beta1.Environment>(
-                      this, METHODID_UPDATE_ENVIRONMENT)))
-          .addMethod(
-              getDeleteEnvironmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.DeleteEnvironmentRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_ENVIRONMENT)))
-          .addMethod(
-              getGetEnvironmentHistoryMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.GetEnvironmentHistoryRequest,
-                      com.google.cloud.dialogflow.v2beta1.EnvironmentHistory>(
-                      this, METHODID_GET_ENVIRONMENT_HISTORY)))
-          .build();
+      return EnvironmentsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Environments.
    *
    * <pre>
    * Service for managing
@@ -644,7 +614,7 @@ public final class EnvironmentsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Environments.
    *
    * <pre>
    * Service for managing
@@ -753,7 +723,7 @@ public final class EnvironmentsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Environments.
    *
    * <pre>
    * Service for managing
@@ -879,10 +849,10 @@ public final class EnvironmentsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final EnvironmentsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(EnvironmentsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -941,6 +911,52 @@ public final class EnvironmentsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListEnvironmentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.ListEnvironmentsRequest,
+                    com.google.cloud.dialogflow.v2beta1.ListEnvironmentsResponse>(
+                    service, METHODID_LIST_ENVIRONMENTS)))
+        .addMethod(
+            getGetEnvironmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.GetEnvironmentRequest,
+                    com.google.cloud.dialogflow.v2beta1.Environment>(
+                    service, METHODID_GET_ENVIRONMENT)))
+        .addMethod(
+            getCreateEnvironmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.CreateEnvironmentRequest,
+                    com.google.cloud.dialogflow.v2beta1.Environment>(
+                    service, METHODID_CREATE_ENVIRONMENT)))
+        .addMethod(
+            getUpdateEnvironmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.UpdateEnvironmentRequest,
+                    com.google.cloud.dialogflow.v2beta1.Environment>(
+                    service, METHODID_UPDATE_ENVIRONMENT)))
+        .addMethod(
+            getDeleteEnvironmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.DeleteEnvironmentRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_ENVIRONMENT)))
+        .addMethod(
+            getGetEnvironmentHistoryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.GetEnvironmentHistoryRequest,
+                    com.google.cloud.dialogflow.v2beta1.EnvironmentHistory>(
+                    service, METHODID_GET_ENVIRONMENT_HISTORY)))
+        .build();
   }
 
   private abstract static class EnvironmentsBaseDescriptorSupplier

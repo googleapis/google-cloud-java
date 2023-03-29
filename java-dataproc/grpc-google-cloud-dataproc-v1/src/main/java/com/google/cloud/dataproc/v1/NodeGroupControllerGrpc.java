@@ -215,7 +215,7 @@ public final class NodeGroupControllerGrpc {
    * of Compute Engine managed instances.
    * </pre>
    */
-  public abstract static class NodeGroupControllerImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -226,7 +226,7 @@ public final class NodeGroupControllerGrpc {
      * [NodeGroupOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#nodegroupoperationmetadata).
      * </pre>
      */
-    public void createNodeGroup(
+    default void createNodeGroup(
         com.google.cloud.dataproc.v1.CreateNodeGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -242,7 +242,7 @@ public final class NodeGroupControllerGrpc {
      * [NodeGroupOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#nodegroupoperationmetadata).
      * </pre>
      */
-    public void resizeNodeGroup(
+    default void resizeNodeGroup(
         com.google.cloud.dataproc.v1.ResizeNodeGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -257,40 +257,33 @@ public final class NodeGroupControllerGrpc {
      * cluster.
      * </pre>
      */
-    public void getNodeGroup(
+    default void getNodeGroup(
         com.google.cloud.dataproc.v1.GetNodeGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1.NodeGroup> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetNodeGroupMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service NodeGroupController.
+   *
+   * <pre>
+   * The `NodeGroupControllerService` provides methods to manage node groups
+   * of Compute Engine managed instances.
+   * </pre>
+   */
+  public abstract static class NodeGroupControllerImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateNodeGroupMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataproc.v1.CreateNodeGroupRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_NODE_GROUP)))
-          .addMethod(
-              getResizeNodeGroupMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataproc.v1.ResizeNodeGroupRequest,
-                      com.google.longrunning.Operation>(this, METHODID_RESIZE_NODE_GROUP)))
-          .addMethod(
-              getGetNodeGroupMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataproc.v1.GetNodeGroupRequest,
-                      com.google.cloud.dataproc.v1.NodeGroup>(this, METHODID_GET_NODE_GROUP)))
-          .build();
+      return NodeGroupControllerGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service NodeGroupController.
    *
    * <pre>
    * The `NodeGroupControllerService` provides methods to manage node groups
@@ -364,7 +357,7 @@ public final class NodeGroupControllerGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service NodeGroupController.
    *
    * <pre>
    * The `NodeGroupControllerService` provides methods to manage node groups
@@ -430,7 +423,7 @@ public final class NodeGroupControllerGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service NodeGroupController.
    *
    * <pre>
    * The `NodeGroupControllerService` provides methods to manage node groups
@@ -505,10 +498,10 @@ public final class NodeGroupControllerGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final NodeGroupControllerImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(NodeGroupControllerImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -547,6 +540,29 @@ public final class NodeGroupControllerGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateNodeGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataproc.v1.CreateNodeGroupRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_NODE_GROUP)))
+        .addMethod(
+            getResizeNodeGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataproc.v1.ResizeNodeGroupRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RESIZE_NODE_GROUP)))
+        .addMethod(
+            getGetNodeGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataproc.v1.GetNodeGroupRequest,
+                    com.google.cloud.dataproc.v1.NodeGroup>(service, METHODID_GET_NODE_GROUP)))
+        .build();
   }
 
   private abstract static class NodeGroupControllerBaseDescriptorSupplier
