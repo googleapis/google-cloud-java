@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.24.4](https://github.com/googleapis/java-bigquery/compare/v2.24.3...v2.24.4) (2023-03-30)
+
+
+### Bug Fixes
+
+* QueryWithStructsParameters sample mismatch ([#2610](https://github.com/googleapis/java-bigquery/issues/2610)) ([71f9f55](https://github.com/googleapis/java-bigquery/commit/71f9f55225eac6d7d4a3d5f0960b28bf8769d03d))
+
+
+### Dependencies
+
+* Update dependency com.google.apis:google-api-services-bigquery to v2-rev20230318-2.0.0 ([#2607](https://github.com/googleapis/java-bigquery/issues/2607)) ([a328eb2](https://github.com/googleapis/java-bigquery/commit/a328eb285b6007e0e01b059a03e71a2b5a6e7399))
+* Update dependency com.google.cloud:google-cloud-bigquerystorage-bom to v2.34.2 ([#2619](https://github.com/googleapis/java-bigquery/issues/2619)) ([e4aa0fe](https://github.com/googleapis/java-bigquery/commit/e4aa0fef53f9eebbe09d878318521df5d070fd70))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.6.0 ([#2612](https://github.com/googleapis/java-bigquery/issues/2612)) ([eac97ac](https://github.com/googleapis/java-bigquery/commit/eac97ac03007b52e6c242f427ac21e491bfefb13))
+* Update github/codeql-action action to v2.2.9 ([#2608](https://github.com/googleapis/java-bigquery/issues/2608)) ([24aac14](https://github.com/googleapis/java-bigquery/commit/24aac1489dd99ebd0133e80a21dd7309f2c17494))
+
 ## [2.24.3](https://github.com/googleapis/java-bigquery/compare/v2.24.2...v2.24.3) (2023-03-24)
 
 
