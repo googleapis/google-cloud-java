@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.20.2](https://github.com/googleapis/java-bigtable/compare/v2.20.1...v2.20.2) (2023-03-29)
+
+
+### Bug Fixes
+
+* Higher application blocking latency precision ([#1676](https://github.com/googleapis/java-bigtable/issues/1676)) ([45ce93b](https://github.com/googleapis/java-bigtable/commit/45ce93bb52112391b9c3a90f10f51279839bea1b))
+* Make ChangeStreamRecord interface serializable ([#1685](https://github.com/googleapis/java-bigtable/issues/1685)) ([b97badb](https://github.com/googleapis/java-bigtable/commit/b97badbaa30588c578bfacc8183e77baaa656bd9))
+* Mark readRow requests as unary operations ([#1679](https://github.com/googleapis/java-bigtable/issues/1679)) ([f88bb67](https://github.com/googleapis/java-bigtable/commit/f88bb67a7a63450b8cd29f01660cf677ddfe436c))
+
 ## [2.20.1](https://github.com/googleapis/java-bigtable/compare/v2.20.0...v2.20.1) (2023-03-21)
 
 
