@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.8.0](https://github.com/googleapis/google-cloud-java/compare/v1.7.0...v1.8.0) (2023-03-30)
+
+
+### Features
+
+* [advisorynotifications] updating Cloud Client Libraries with new field NotificationType for advisorynotifications.googleapis.com ([#9290](https://github.com/googleapis/google-cloud-java/issues/9290)) ([3c73dee](https://github.com/googleapis/google-cloud-java/commit/3c73dee1834ae21fc6dc1b6d4638ba6c0b7d4715))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.123.7 ([#9269](https://github.com/googleapis/google-cloud-java/issues/9269)) ([e018539](https://github.com/googleapis/google-cloud-java/commit/e018539a8d403033ddaf697838c952a22e2b5f44))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.6.0 ([#9282](https://github.com/googleapis/google-cloud-java/issues/9282)) ([f8a662a](https://github.com/googleapis/google-cloud-java/commit/f8a662ab38ec2c20c190cf0fabad3c7bdf4c76f9))
+* **deps:** update dependency com.google.cloud:google-cloud-storage to v2.20.2 ([#9274](https://github.com/googleapis/google-cloud-java/issues/9274)) ([82b3cae](https://github.com/googleapis/google-cloud-java/commit/82b3cae8d98084327e46cf2f0673ad90fb0f4bad))
+
 ## [1.7.0](https://github.com/googleapis/google-cloud-java/compare/v1.6.0...v1.7.0) (2023-03-16)
 
 
