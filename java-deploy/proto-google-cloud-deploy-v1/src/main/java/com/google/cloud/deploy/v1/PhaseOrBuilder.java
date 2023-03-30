@@ -81,6 +81,33 @@ public interface PhaseOrBuilder
    *
    *
    * <pre>
+   * Output only. Additional information on why the Phase was skipped, if
+   * available.
+   * </pre>
+   *
+   * <code>string skip_message = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The skipMessage.
+   */
+  java.lang.String getSkipMessage();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional information on why the Phase was skipped, if
+   * available.
+   * </pre>
+   *
+   * <code>string skip_message = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for skipMessage.
+   */
+  com.google.protobuf.ByteString getSkipMessageBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Deployment job composition.
    * </pre>
    *
@@ -117,6 +144,47 @@ public interface PhaseOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.DeploymentJobsOrBuilder getDeploymentJobsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. ChildRollout job composition.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.ChildRolloutJobs child_rollout_jobs = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the childRolloutJobs field is set.
+   */
+  boolean hasChildRolloutJobs();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. ChildRollout job composition.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.ChildRolloutJobs child_rollout_jobs = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The childRolloutJobs.
+   */
+  com.google.cloud.deploy.v1.ChildRolloutJobs getChildRolloutJobs();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. ChildRollout job composition.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.ChildRolloutJobs child_rollout_jobs = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.ChildRolloutJobsOrBuilder getChildRolloutJobsOrBuilder();
 
   public com.google.cloud.deploy.v1.Phase.JobsCase getJobsCase();
 }

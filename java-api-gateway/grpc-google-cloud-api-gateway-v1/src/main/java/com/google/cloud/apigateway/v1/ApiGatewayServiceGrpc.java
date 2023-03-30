@@ -737,7 +737,7 @@ public final class ApiGatewayServiceGrpc {
    * The API Gateway Service is the interface for managing API Gateways.
    * </pre>
    */
-  public abstract static class ApiGatewayServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -746,7 +746,7 @@ public final class ApiGatewayServiceGrpc {
      * Lists Gateways in a given project and location.
      * </pre>
      */
-    public void listGateways(
+    default void listGateways(
         com.google.cloud.apigateway.v1.ListGatewaysRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigateway.v1.ListGatewaysResponse>
             responseObserver) {
@@ -761,7 +761,7 @@ public final class ApiGatewayServiceGrpc {
      * Gets details of a single Gateway.
      * </pre>
      */
-    public void getGateway(
+    default void getGateway(
         com.google.cloud.apigateway.v1.GetGatewayRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigateway.v1.Gateway> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetGatewayMethod(), responseObserver);
@@ -774,7 +774,7 @@ public final class ApiGatewayServiceGrpc {
      * Creates a new Gateway in a given project and location.
      * </pre>
      */
-    public void createGateway(
+    default void createGateway(
         com.google.cloud.apigateway.v1.CreateGatewayRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -788,7 +788,7 @@ public final class ApiGatewayServiceGrpc {
      * Updates the parameters of a single Gateway.
      * </pre>
      */
-    public void updateGateway(
+    default void updateGateway(
         com.google.cloud.apigateway.v1.UpdateGatewayRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -802,7 +802,7 @@ public final class ApiGatewayServiceGrpc {
      * Deletes a single Gateway.
      * </pre>
      */
-    public void deleteGateway(
+    default void deleteGateway(
         com.google.cloud.apigateway.v1.DeleteGatewayRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -816,7 +816,7 @@ public final class ApiGatewayServiceGrpc {
      * Lists Apis in a given project and location.
      * </pre>
      */
-    public void listApis(
+    default void listApis(
         com.google.cloud.apigateway.v1.ListApisRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigateway.v1.ListApisResponse>
             responseObserver) {
@@ -830,7 +830,7 @@ public final class ApiGatewayServiceGrpc {
      * Gets details of a single Api.
      * </pre>
      */
-    public void getApi(
+    default void getApi(
         com.google.cloud.apigateway.v1.GetApiRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigateway.v1.Api> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetApiMethod(), responseObserver);
@@ -843,7 +843,7 @@ public final class ApiGatewayServiceGrpc {
      * Creates a new Api in a given project and location.
      * </pre>
      */
-    public void createApi(
+    default void createApi(
         com.google.cloud.apigateway.v1.CreateApiRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateApiMethod(), responseObserver);
@@ -856,7 +856,7 @@ public final class ApiGatewayServiceGrpc {
      * Updates the parameters of a single Api.
      * </pre>
      */
-    public void updateApi(
+    default void updateApi(
         com.google.cloud.apigateway.v1.UpdateApiRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateApiMethod(), responseObserver);
@@ -869,7 +869,7 @@ public final class ApiGatewayServiceGrpc {
      * Deletes a single Api.
      * </pre>
      */
-    public void deleteApi(
+    default void deleteApi(
         com.google.cloud.apigateway.v1.DeleteApiRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteApiMethod(), responseObserver);
@@ -882,7 +882,7 @@ public final class ApiGatewayServiceGrpc {
      * Lists ApiConfigs in a given project and location.
      * </pre>
      */
-    public void listApiConfigs(
+    default void listApiConfigs(
         com.google.cloud.apigateway.v1.ListApiConfigsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigateway.v1.ListApiConfigsResponse>
             responseObserver) {
@@ -897,7 +897,7 @@ public final class ApiGatewayServiceGrpc {
      * Gets details of a single ApiConfig.
      * </pre>
      */
-    public void getApiConfig(
+    default void getApiConfig(
         com.google.cloud.apigateway.v1.GetApiConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigateway.v1.ApiConfig> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -911,7 +911,7 @@ public final class ApiGatewayServiceGrpc {
      * Creates a new ApiConfig in a given project and location.
      * </pre>
      */
-    public void createApiConfig(
+    default void createApiConfig(
         com.google.cloud.apigateway.v1.CreateApiConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -925,7 +925,7 @@ public final class ApiGatewayServiceGrpc {
      * Updates the parameters of a single ApiConfig.
      * </pre>
      */
-    public void updateApiConfig(
+    default void updateApiConfig(
         com.google.cloud.apigateway.v1.UpdateApiConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -939,114 +939,32 @@ public final class ApiGatewayServiceGrpc {
      * Deletes a single ApiConfig.
      * </pre>
      */
-    public void deleteApiConfig(
+    default void deleteApiConfig(
         com.google.cloud.apigateway.v1.DeleteApiConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteApiConfigMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ApiGatewayService.
+   *
+   * <pre>
+   * The API Gateway Service is the interface for managing API Gateways.
+   * </pre>
+   */
+  public abstract static class ApiGatewayServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListGatewaysMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigateway.v1.ListGatewaysRequest,
-                      com.google.cloud.apigateway.v1.ListGatewaysResponse>(
-                      this, METHODID_LIST_GATEWAYS)))
-          .addMethod(
-              getGetGatewayMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigateway.v1.GetGatewayRequest,
-                      com.google.cloud.apigateway.v1.Gateway>(this, METHODID_GET_GATEWAY)))
-          .addMethod(
-              getCreateGatewayMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigateway.v1.CreateGatewayRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_GATEWAY)))
-          .addMethod(
-              getUpdateGatewayMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigateway.v1.UpdateGatewayRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_GATEWAY)))
-          .addMethod(
-              getDeleteGatewayMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigateway.v1.DeleteGatewayRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_GATEWAY)))
-          .addMethod(
-              getListApisMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigateway.v1.ListApisRequest,
-                      com.google.cloud.apigateway.v1.ListApisResponse>(this, METHODID_LIST_APIS)))
-          .addMethod(
-              getGetApiMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigateway.v1.GetApiRequest,
-                      com.google.cloud.apigateway.v1.Api>(this, METHODID_GET_API)))
-          .addMethod(
-              getCreateApiMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigateway.v1.CreateApiRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_API)))
-          .addMethod(
-              getUpdateApiMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigateway.v1.UpdateApiRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_API)))
-          .addMethod(
-              getDeleteApiMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigateway.v1.DeleteApiRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_API)))
-          .addMethod(
-              getListApiConfigsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigateway.v1.ListApiConfigsRequest,
-                      com.google.cloud.apigateway.v1.ListApiConfigsResponse>(
-                      this, METHODID_LIST_API_CONFIGS)))
-          .addMethod(
-              getGetApiConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigateway.v1.GetApiConfigRequest,
-                      com.google.cloud.apigateway.v1.ApiConfig>(this, METHODID_GET_API_CONFIG)))
-          .addMethod(
-              getCreateApiConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigateway.v1.CreateApiConfigRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_API_CONFIG)))
-          .addMethod(
-              getUpdateApiConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigateway.v1.UpdateApiConfigRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_API_CONFIG)))
-          .addMethod(
-              getDeleteApiConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigateway.v1.DeleteApiConfigRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_API_CONFIG)))
-          .build();
+      return ApiGatewayServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ApiGatewayService.
    *
    * <pre>
    * The API Gateway Service is the interface for managing API Gateways.
@@ -1297,7 +1215,7 @@ public final class ApiGatewayServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ApiGatewayService.
    *
    * <pre>
    * The API Gateway Service is the interface for managing API Gateways.
@@ -1513,7 +1431,7 @@ public final class ApiGatewayServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service ApiGatewayService.
    *
    * <pre>
    * The API Gateway Service is the interface for managing API Gateways.
@@ -1753,10 +1671,10 @@ public final class ApiGatewayServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ApiGatewayServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ApiGatewayServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1859,6 +1777,103 @@ public final class ApiGatewayServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListGatewaysMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigateway.v1.ListGatewaysRequest,
+                    com.google.cloud.apigateway.v1.ListGatewaysResponse>(
+                    service, METHODID_LIST_GATEWAYS)))
+        .addMethod(
+            getGetGatewayMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigateway.v1.GetGatewayRequest,
+                    com.google.cloud.apigateway.v1.Gateway>(service, METHODID_GET_GATEWAY)))
+        .addMethod(
+            getCreateGatewayMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigateway.v1.CreateGatewayRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_GATEWAY)))
+        .addMethod(
+            getUpdateGatewayMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigateway.v1.UpdateGatewayRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_GATEWAY)))
+        .addMethod(
+            getDeleteGatewayMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigateway.v1.DeleteGatewayRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_GATEWAY)))
+        .addMethod(
+            getListApisMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigateway.v1.ListApisRequest,
+                    com.google.cloud.apigateway.v1.ListApisResponse>(service, METHODID_LIST_APIS)))
+        .addMethod(
+            getGetApiMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigateway.v1.GetApiRequest,
+                    com.google.cloud.apigateway.v1.Api>(service, METHODID_GET_API)))
+        .addMethod(
+            getCreateApiMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigateway.v1.CreateApiRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_API)))
+        .addMethod(
+            getUpdateApiMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigateway.v1.UpdateApiRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_API)))
+        .addMethod(
+            getDeleteApiMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigateway.v1.DeleteApiRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_API)))
+        .addMethod(
+            getListApiConfigsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigateway.v1.ListApiConfigsRequest,
+                    com.google.cloud.apigateway.v1.ListApiConfigsResponse>(
+                    service, METHODID_LIST_API_CONFIGS)))
+        .addMethod(
+            getGetApiConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigateway.v1.GetApiConfigRequest,
+                    com.google.cloud.apigateway.v1.ApiConfig>(service, METHODID_GET_API_CONFIG)))
+        .addMethod(
+            getCreateApiConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigateway.v1.CreateApiConfigRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_API_CONFIG)))
+        .addMethod(
+            getUpdateApiConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigateway.v1.UpdateApiConfigRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_API_CONFIG)))
+        .addMethod(
+            getDeleteApiConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigateway.v1.DeleteApiConfigRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_API_CONFIG)))
+        .build();
   }
 
   private abstract static class ApiGatewayServiceBaseDescriptorSupplier

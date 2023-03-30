@@ -63,7 +63,7 @@ public interface ProvisionAccountTicketRequestOrBuilder
    *
    * <pre>
    * Redirect URI where the user will be sent after accepting Terms of Service.
-   * Must be configured in Developers Console as a Redirect URI.
+   * Must be configured in Cloud Console as a Redirect URI.
    * </pre>
    *
    * <code>string redirect_uri = 2;</code>
@@ -76,7 +76,7 @@ public interface ProvisionAccountTicketRequestOrBuilder
    *
    * <pre>
    * Redirect URI where the user will be sent after accepting Terms of Service.
-   * Must be configured in Developers Console as a Redirect URI.
+   * Must be configured in Cloud Console as a Redirect URI.
    * </pre>
    *
    * <code>string redirect_uri = 2;</code>

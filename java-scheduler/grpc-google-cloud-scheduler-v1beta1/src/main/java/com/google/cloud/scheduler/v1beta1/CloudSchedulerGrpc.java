@@ -439,7 +439,7 @@ public final class CloudSchedulerGrpc {
    * schedule asynchronous jobs.
    * </pre>
    */
-  public abstract static class CloudSchedulerImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -448,7 +448,7 @@ public final class CloudSchedulerGrpc {
      * Lists jobs.
      * </pre>
      */
-    public void listJobs(
+    default void listJobs(
         com.google.cloud.scheduler.v1beta1.ListJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.ListJobsResponse>
             responseObserver) {
@@ -462,7 +462,7 @@ public final class CloudSchedulerGrpc {
      * Gets a job.
      * </pre>
      */
-    public void getJob(
+    default void getJob(
         com.google.cloud.scheduler.v1beta1.GetJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.Job> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetJobMethod(), responseObserver);
@@ -475,7 +475,7 @@ public final class CloudSchedulerGrpc {
      * Creates a job.
      * </pre>
      */
-    public void createJob(
+    default void createJob(
         com.google.cloud.scheduler.v1beta1.CreateJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.Job> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateJobMethod(), responseObserver);
@@ -495,7 +495,7 @@ public final class CloudSchedulerGrpc {
      * UpdateJob request until a successful response is received.
      * </pre>
      */
-    public void updateJob(
+    default void updateJob(
         com.google.cloud.scheduler.v1beta1.UpdateJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.Job> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateJobMethod(), responseObserver);
@@ -508,7 +508,7 @@ public final class CloudSchedulerGrpc {
      * Deletes a job.
      * </pre>
      */
-    public void deleteJob(
+    default void deleteJob(
         com.google.cloud.scheduler.v1beta1.DeleteJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteJobMethod(), responseObserver);
@@ -530,7 +530,7 @@ public final class CloudSchedulerGrpc {
      * paused.
      * </pre>
      */
-    public void pauseJob(
+    default void pauseJob(
         com.google.cloud.scheduler.v1beta1.PauseJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.Job> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPauseJobMethod(), responseObserver);
@@ -552,7 +552,7 @@ public final class CloudSchedulerGrpc {
      * resumed.
      * </pre>
      */
-    public void resumeJob(
+    default void resumeJob(
         com.google.cloud.scheduler.v1beta1.ResumeJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.Job> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getResumeJobMethod(), responseObserver);
@@ -567,70 +567,32 @@ public final class CloudSchedulerGrpc {
      * if the job is already running.
      * </pre>
      */
-    public void runJob(
+    default void runJob(
         com.google.cloud.scheduler.v1beta1.RunJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.scheduler.v1beta1.Job> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRunJobMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service CloudScheduler.
+   *
+   * <pre>
+   * The Cloud Scheduler API allows external entities to reliably
+   * schedule asynchronous jobs.
+   * </pre>
+   */
+  public abstract static class CloudSchedulerImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListJobsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.scheduler.v1beta1.ListJobsRequest,
-                      com.google.cloud.scheduler.v1beta1.ListJobsResponse>(
-                      this, METHODID_LIST_JOBS)))
-          .addMethod(
-              getGetJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.scheduler.v1beta1.GetJobRequest,
-                      com.google.cloud.scheduler.v1beta1.Job>(this, METHODID_GET_JOB)))
-          .addMethod(
-              getCreateJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.scheduler.v1beta1.CreateJobRequest,
-                      com.google.cloud.scheduler.v1beta1.Job>(this, METHODID_CREATE_JOB)))
-          .addMethod(
-              getUpdateJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.scheduler.v1beta1.UpdateJobRequest,
-                      com.google.cloud.scheduler.v1beta1.Job>(this, METHODID_UPDATE_JOB)))
-          .addMethod(
-              getDeleteJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.scheduler.v1beta1.DeleteJobRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_JOB)))
-          .addMethod(
-              getPauseJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.scheduler.v1beta1.PauseJobRequest,
-                      com.google.cloud.scheduler.v1beta1.Job>(this, METHODID_PAUSE_JOB)))
-          .addMethod(
-              getResumeJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.scheduler.v1beta1.ResumeJobRequest,
-                      com.google.cloud.scheduler.v1beta1.Job>(this, METHODID_RESUME_JOB)))
-          .addMethod(
-              getRunJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.scheduler.v1beta1.RunJobRequest,
-                      com.google.cloud.scheduler.v1beta1.Job>(this, METHODID_RUN_JOB)))
-          .build();
+      return CloudSchedulerGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service CloudScheduler.
    *
    * <pre>
    * The Cloud Scheduler API allows external entities to reliably
@@ -790,7 +752,7 @@ public final class CloudSchedulerGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service CloudScheduler.
    *
    * <pre>
    * The Cloud Scheduler API allows external entities to reliably
@@ -942,7 +904,7 @@ public final class CloudSchedulerGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service CloudScheduler.
    *
    * <pre>
    * The Cloud Scheduler API allows external entities to reliably
@@ -1114,10 +1076,10 @@ public final class CloudSchedulerGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final CloudSchedulerImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(CloudSchedulerImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1187,6 +1149,60 @@ public final class CloudSchedulerGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.scheduler.v1beta1.ListJobsRequest,
+                    com.google.cloud.scheduler.v1beta1.ListJobsResponse>(
+                    service, METHODID_LIST_JOBS)))
+        .addMethod(
+            getGetJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.scheduler.v1beta1.GetJobRequest,
+                    com.google.cloud.scheduler.v1beta1.Job>(service, METHODID_GET_JOB)))
+        .addMethod(
+            getCreateJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.scheduler.v1beta1.CreateJobRequest,
+                    com.google.cloud.scheduler.v1beta1.Job>(service, METHODID_CREATE_JOB)))
+        .addMethod(
+            getUpdateJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.scheduler.v1beta1.UpdateJobRequest,
+                    com.google.cloud.scheduler.v1beta1.Job>(service, METHODID_UPDATE_JOB)))
+        .addMethod(
+            getDeleteJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.scheduler.v1beta1.DeleteJobRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_JOB)))
+        .addMethod(
+            getPauseJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.scheduler.v1beta1.PauseJobRequest,
+                    com.google.cloud.scheduler.v1beta1.Job>(service, METHODID_PAUSE_JOB)))
+        .addMethod(
+            getResumeJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.scheduler.v1beta1.ResumeJobRequest,
+                    com.google.cloud.scheduler.v1beta1.Job>(service, METHODID_RESUME_JOB)))
+        .addMethod(
+            getRunJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.scheduler.v1beta1.RunJobRequest,
+                    com.google.cloud.scheduler.v1beta1.Job>(service, METHODID_RUN_JOB)))
+        .build();
   }
 
   private abstract static class CloudSchedulerBaseDescriptorSupplier

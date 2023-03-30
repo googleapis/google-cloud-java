@@ -95,8 +95,8 @@ public interface CustomDimensionOrBuilder
    *
    *
    * <pre>
-   * Required. Display name for this custom dimension as shown in the Analytics UI.
-   * Max length of 82 characters, alphanumeric plus space and underscore
+   * Required. Display name for this custom dimension as shown in the Analytics
+   * UI. Max length of 82 characters, alphanumeric plus space and underscore
    * starting with a letter. Legacy system-generated display names may contain
    * square brackets, but updates to this field will never permit square
    * brackets.
@@ -111,8 +111,8 @@ public interface CustomDimensionOrBuilder
    *
    *
    * <pre>
-   * Required. Display name for this custom dimension as shown in the Analytics UI.
-   * Max length of 82 characters, alphanumeric plus space and underscore
+   * Required. Display name for this custom dimension as shown in the Analytics
+   * UI. Max length of 82 characters, alphanumeric plus space and underscore
    * starting with a letter. Legacy system-generated display names may contain
    * square brackets, but updates to this field will never permit square
    * brackets.
@@ -128,7 +128,8 @@ public interface CustomDimensionOrBuilder
    *
    *
    * <pre>
-   * Optional. Description for this custom dimension. Max length of 150 characters.
+   * Optional. Description for this custom dimension. Max length of 150
+   * characters.
    * </pre>
    *
    * <code>string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -140,7 +141,8 @@ public interface CustomDimensionOrBuilder
    *
    *
    * <pre>
-   * Optional. Description for this custom dimension. Max length of 150 characters.
+   * Optional. Description for this custom dimension. Max length of 150
+   * characters.
    * </pre>
    *
    * <code>string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -182,8 +184,8 @@ public interface CustomDimensionOrBuilder
    *
    *
    * <pre>
-   * Optional. If set to true, sets this dimension as NPA and excludes it from ads
-   * personalization.
+   * Optional. If set to true, sets this dimension as NPA and excludes it from
+   * ads personalization.
    * This is currently only supported by user-scoped custom dimensions.
    * </pre>
    *

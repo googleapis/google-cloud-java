@@ -42,8 +42,8 @@ public enum FallbackRoutingMode implements com.google.protobuf.ProtocolMessageEn
    *
    *
    * <pre>
-   * Indicates the "TRAFFIC_UNAWARE" routing mode was used to compute the
-   * response.
+   * Indicates the `TRAFFIC_UNAWARE` [google.maps.routing.v2.RoutingPreference]
+   * was used to compute the response.
    * </pre>
    *
    * <code>FALLBACK_TRAFFIC_UNAWARE = 1;</code>
@@ -53,8 +53,9 @@ public enum FallbackRoutingMode implements com.google.protobuf.ProtocolMessageEn
    *
    *
    * <pre>
-   * Indicates the "TRAFFIC_AWARE" routing mode was used to compute the
-   * response.
+   * Indicates the `TRAFFIC_AWARE`
+   * [RoutingPreference][google.maps.routing.v2.RoutingPreference] was used to
+   * compute the response.
    * </pre>
    *
    * <code>FALLBACK_TRAFFIC_AWARE = 2;</code>
@@ -77,8 +78,8 @@ public enum FallbackRoutingMode implements com.google.protobuf.ProtocolMessageEn
    *
    *
    * <pre>
-   * Indicates the "TRAFFIC_UNAWARE" routing mode was used to compute the
-   * response.
+   * Indicates the `TRAFFIC_UNAWARE` [google.maps.routing.v2.RoutingPreference]
+   * was used to compute the response.
    * </pre>
    *
    * <code>FALLBACK_TRAFFIC_UNAWARE = 1;</code>
@@ -88,8 +89,9 @@ public enum FallbackRoutingMode implements com.google.protobuf.ProtocolMessageEn
    *
    *
    * <pre>
-   * Indicates the "TRAFFIC_AWARE" routing mode was used to compute the
-   * response.
+   * Indicates the `TRAFFIC_AWARE`
+   * [RoutingPreference][google.maps.routing.v2.RoutingPreference] was used to
+   * compute the response.
    * </pre>
    *
    * <code>FALLBACK_TRAFFIC_AWARE = 2;</code>

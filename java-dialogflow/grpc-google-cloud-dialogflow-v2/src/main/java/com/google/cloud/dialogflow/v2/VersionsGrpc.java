@@ -303,7 +303,7 @@ public final class VersionsGrpc {
    * Service for managing [Versions][google.cloud.dialogflow.v2.Version].
    * </pre>
    */
-  public abstract static class VersionsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -312,7 +312,7 @@ public final class VersionsGrpc {
      * Returns the list of all versions of the specified agent.
      * </pre>
      */
-    public void listVersions(
+    default void listVersions(
         com.google.cloud.dialogflow.v2.ListVersionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.ListVersionsResponse>
             responseObserver) {
@@ -327,7 +327,7 @@ public final class VersionsGrpc {
      * Retrieves the specified agent version.
      * </pre>
      */
-    public void getVersion(
+    default void getVersion(
         com.google.cloud.dialogflow.v2.GetVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Version> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetVersionMethod(), responseObserver);
@@ -341,7 +341,7 @@ public final class VersionsGrpc {
      * The new version points to the agent instance in the "default" environment.
      * </pre>
      */
-    public void createVersion(
+    default void createVersion(
         com.google.cloud.dialogflow.v2.CreateVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Version> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -358,7 +358,7 @@ public final class VersionsGrpc {
      * properties of the version resource.
      * </pre>
      */
-    public void updateVersion(
+    default void updateVersion(
         com.google.cloud.dialogflow.v2.UpdateVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Version> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -372,53 +372,31 @@ public final class VersionsGrpc {
      * Delete the specified agent version.
      * </pre>
      */
-    public void deleteVersion(
+    default void deleteVersion(
         com.google.cloud.dialogflow.v2.DeleteVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteVersionMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Versions.
+   *
+   * <pre>
+   * Service for managing [Versions][google.cloud.dialogflow.v2.Version].
+   * </pre>
+   */
+  public abstract static class VersionsImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListVersionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.ListVersionsRequest,
-                      com.google.cloud.dialogflow.v2.ListVersionsResponse>(
-                      this, METHODID_LIST_VERSIONS)))
-          .addMethod(
-              getGetVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.GetVersionRequest,
-                      com.google.cloud.dialogflow.v2.Version>(this, METHODID_GET_VERSION)))
-          .addMethod(
-              getCreateVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.CreateVersionRequest,
-                      com.google.cloud.dialogflow.v2.Version>(this, METHODID_CREATE_VERSION)))
-          .addMethod(
-              getUpdateVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.UpdateVersionRequest,
-                      com.google.cloud.dialogflow.v2.Version>(this, METHODID_UPDATE_VERSION)))
-          .addMethod(
-              getDeleteVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.DeleteVersionRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_VERSION)))
-          .build();
+      return VersionsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Versions.
    *
    * <pre>
    * Service for managing [Versions][google.cloud.dialogflow.v2.Version].
@@ -519,7 +497,7 @@ public final class VersionsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Versions.
    *
    * <pre>
    * Service for managing [Versions][google.cloud.dialogflow.v2.Version].
@@ -607,7 +585,7 @@ public final class VersionsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Versions.
    *
    * <pre>
    * Service for managing [Versions][google.cloud.dialogflow.v2.Version].
@@ -709,10 +687,10 @@ public final class VersionsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final VersionsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(VersionsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -764,6 +742,42 @@ public final class VersionsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListVersionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.ListVersionsRequest,
+                    com.google.cloud.dialogflow.v2.ListVersionsResponse>(
+                    service, METHODID_LIST_VERSIONS)))
+        .addMethod(
+            getGetVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.GetVersionRequest,
+                    com.google.cloud.dialogflow.v2.Version>(service, METHODID_GET_VERSION)))
+        .addMethod(
+            getCreateVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.CreateVersionRequest,
+                    com.google.cloud.dialogflow.v2.Version>(service, METHODID_CREATE_VERSION)))
+        .addMethod(
+            getUpdateVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.UpdateVersionRequest,
+                    com.google.cloud.dialogflow.v2.Version>(service, METHODID_UPDATE_VERSION)))
+        .addMethod(
+            getDeleteVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.DeleteVersionRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_VERSION)))
+        .build();
   }
 
   private abstract static class VersionsBaseDescriptorSupplier

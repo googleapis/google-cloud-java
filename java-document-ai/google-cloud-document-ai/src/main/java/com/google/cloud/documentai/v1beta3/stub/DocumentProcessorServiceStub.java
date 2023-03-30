@@ -53,6 +53,9 @@ import com.google.cloud.documentai.v1beta3.GetEvaluationRequest;
 import com.google.cloud.documentai.v1beta3.GetProcessorRequest;
 import com.google.cloud.documentai.v1beta3.GetProcessorTypeRequest;
 import com.google.cloud.documentai.v1beta3.GetProcessorVersionRequest;
+import com.google.cloud.documentai.v1beta3.ImportProcessorVersionMetadata;
+import com.google.cloud.documentai.v1beta3.ImportProcessorVersionRequest;
+import com.google.cloud.documentai.v1beta3.ImportProcessorVersionResponse;
 import com.google.cloud.documentai.v1beta3.ListEvaluationsRequest;
 import com.google.cloud.documentai.v1beta3.ListEvaluationsResponse;
 import com.google.cloud.documentai.v1beta3.ListProcessorTypesRequest;
@@ -298,6 +301,19 @@ public abstract class DocumentProcessorServiceStub implements BackgroundResource
 
   public UnaryCallable<ListEvaluationsRequest, ListEvaluationsResponse> listEvaluationsCallable() {
     throw new UnsupportedOperationException("Not implemented: listEvaluationsCallable()");
+  }
+
+  public OperationCallable<
+          ImportProcessorVersionRequest,
+          ImportProcessorVersionResponse,
+          ImportProcessorVersionMetadata>
+      importProcessorVersionOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: importProcessorVersionOperationCallable()");
+  }
+
+  public UnaryCallable<ImportProcessorVersionRequest, Operation> importProcessorVersionCallable() {
+    throw new UnsupportedOperationException("Not implemented: importProcessorVersionCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

@@ -22,8 +22,9 @@ package com.google.maps.routing.v2;
  *
  *
  * <pre>
- * Contains GeocodedWaypoints for origin, destination and intermediate
- * waypoints. Only populated for address waypoints.
+ * Contains [GeocodedWaypoints][google.maps.routing.v2.GeocodedWaypoint] for
+ * origin, destination and intermediate waypoints. Only populated for address
+ * waypoints.
  * </pre>
  *
  * Protobuf type {@code google.maps.routing.v2.GeocodingResults}
@@ -442,8 +443,9 @@ public final class GeocodingResults extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Contains GeocodedWaypoints for origin, destination and intermediate
-   * waypoints. Only populated for address waypoints.
+   * Contains [GeocodedWaypoints][google.maps.routing.v2.GeocodedWaypoint] for
+   * origin, destination and intermediate waypoints. Only populated for address
+   * waypoints.
    * </pre>
    *
    * Protobuf type {@code google.maps.routing.v2.GeocodingResults}

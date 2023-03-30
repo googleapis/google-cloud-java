@@ -133,7 +133,7 @@ public final class IamCheckerGrpc {
    * This service helps you troubleshoot access issues for Google Cloud resources.
    * </pre>
    */
-  public abstract static class IamCheckerImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -143,7 +143,7 @@ public final class IamCheckerGrpc {
      * and explains why the member does or does not have that permission.
      * </pre>
      */
-    public void troubleshootIamPolicy(
+    default void troubleshootIamPolicy(
         com.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyResponse>
@@ -151,23 +151,26 @@ public final class IamCheckerGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getTroubleshootIamPolicyMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service IamChecker.
+   *
+   * <pre>
+   * IAM Policy Troubleshooter service.
+   * This service helps you troubleshoot access issues for Google Cloud resources.
+   * </pre>
+   */
+  public abstract static class IamCheckerImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getTroubleshootIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyRequest,
-                      com.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyResponse>(
-                      this, METHODID_TROUBLESHOOT_IAM_POLICY)))
-          .build();
+      return IamCheckerGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service IamChecker.
    *
    * <pre>
    * IAM Policy Troubleshooter service.
@@ -205,7 +208,7 @@ public final class IamCheckerGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service IamChecker.
    *
    * <pre>
    * IAM Policy Troubleshooter service.
@@ -241,7 +244,7 @@ public final class IamCheckerGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service IamChecker.
    *
    * <pre>
    * IAM Policy Troubleshooter service.
@@ -283,10 +286,10 @@ public final class IamCheckerGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final IamCheckerImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(IamCheckerImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -316,6 +319,18 @@ public final class IamCheckerGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getTroubleshootIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyRequest,
+                    com.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyResponse>(
+                    service, METHODID_TROUBLESHOOT_IAM_POLICY)))
+        .build();
   }
 
   private abstract static class IamCheckerBaseDescriptorSupplier

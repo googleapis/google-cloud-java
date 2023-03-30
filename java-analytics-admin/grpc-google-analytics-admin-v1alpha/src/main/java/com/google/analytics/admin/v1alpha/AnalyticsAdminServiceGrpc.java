@@ -5178,6 +5178,270 @@ public final class AnalyticsAdminServiceGrpc {
     return getListBigQueryLinksMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest,
+          com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
+      getGetEnhancedMeasurementSettingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetEnhancedMeasurementSettings",
+      requestType = com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest,
+          com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
+      getGetEnhancedMeasurementSettingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest,
+            com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
+        getGetEnhancedMeasurementSettingsMethod;
+    if ((getGetEnhancedMeasurementSettingsMethod =
+            AnalyticsAdminServiceGrpc.getGetEnhancedMeasurementSettingsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetEnhancedMeasurementSettingsMethod =
+                AnalyticsAdminServiceGrpc.getGetEnhancedMeasurementSettingsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getGetEnhancedMeasurementSettingsMethod =
+              getGetEnhancedMeasurementSettingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest,
+                          com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetEnhancedMeasurementSettings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .GetEnhancedMeasurementSettingsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "GetEnhancedMeasurementSettings"))
+                      .build();
+        }
+      }
+    }
+    return getGetEnhancedMeasurementSettingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest,
+          com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
+      getUpdateEnhancedMeasurementSettingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateEnhancedMeasurementSettings",
+      requestType =
+          com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest,
+          com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
+      getUpdateEnhancedMeasurementSettingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest,
+            com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
+        getUpdateEnhancedMeasurementSettingsMethod;
+    if ((getUpdateEnhancedMeasurementSettingsMethod =
+            AnalyticsAdminServiceGrpc.getUpdateEnhancedMeasurementSettingsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateEnhancedMeasurementSettingsMethod =
+                AnalyticsAdminServiceGrpc.getUpdateEnhancedMeasurementSettingsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getUpdateEnhancedMeasurementSettingsMethod =
+              getUpdateEnhancedMeasurementSettingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest,
+                          com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateEnhancedMeasurementSettings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .UpdateEnhancedMeasurementSettingsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "UpdateEnhancedMeasurementSettings"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateEnhancedMeasurementSettingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest,
+          com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse>
+      getCreateConnectedSiteTagMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateConnectedSiteTag",
+      requestType = com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest,
+          com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse>
+      getCreateConnectedSiteTagMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest,
+            com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse>
+        getCreateConnectedSiteTagMethod;
+    if ((getCreateConnectedSiteTagMethod =
+            AnalyticsAdminServiceGrpc.getCreateConnectedSiteTagMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getCreateConnectedSiteTagMethod =
+                AnalyticsAdminServiceGrpc.getCreateConnectedSiteTagMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getCreateConnectedSiteTagMethod =
+              getCreateConnectedSiteTagMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest,
+                          com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateConnectedSiteTag"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "CreateConnectedSiteTag"))
+                      .build();
+        }
+      }
+    }
+    return getCreateConnectedSiteTagMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest,
+          com.google.protobuf.Empty>
+      getDeleteConnectedSiteTagMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteConnectedSiteTag",
+      requestType = com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest,
+          com.google.protobuf.Empty>
+      getDeleteConnectedSiteTagMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest,
+            com.google.protobuf.Empty>
+        getDeleteConnectedSiteTagMethod;
+    if ((getDeleteConnectedSiteTagMethod =
+            AnalyticsAdminServiceGrpc.getDeleteConnectedSiteTagMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getDeleteConnectedSiteTagMethod =
+                AnalyticsAdminServiceGrpc.getDeleteConnectedSiteTagMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getDeleteConnectedSiteTagMethod =
+              getDeleteConnectedSiteTagMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteConnectedSiteTag"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "DeleteConnectedSiteTag"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteConnectedSiteTagMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest,
+          com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse>
+      getListConnectedSiteTagsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListConnectedSiteTags",
+      requestType = com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest,
+          com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse>
+      getListConnectedSiteTagsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest,
+            com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse>
+        getListConnectedSiteTagsMethod;
+    if ((getListConnectedSiteTagsMethod = AnalyticsAdminServiceGrpc.getListConnectedSiteTagsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getListConnectedSiteTagsMethod =
+                AnalyticsAdminServiceGrpc.getListConnectedSiteTagsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getListConnectedSiteTagsMethod =
+              getListConnectedSiteTagsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest,
+                          com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListConnectedSiteTags"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "ListConnectedSiteTags"))
+                      .build();
+        }
+      }
+    }
+    return getListConnectedSiteTagsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AnalyticsAdminServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AnalyticsAdminServiceStub> factory =
@@ -5226,7 +5490,7 @@ public final class AnalyticsAdminServiceGrpc {
    * Service Interface for the Analytics Admin API (GA4).
    * </pre>
    */
-  public abstract static class AnalyticsAdminServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -5235,7 +5499,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Lookup for a single Account.
      * </pre>
      */
-    public void getAccount(
+    default void getAccount(
         com.google.analytics.admin.v1alpha.GetAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Account> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAccountMethod(), responseObserver);
@@ -5251,7 +5515,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Returns an empty list if no relevant accounts are found.
      * </pre>
      */
-    public void listAccounts(
+    default void listAccounts(
         com.google.analytics.admin.v1alpha.ListAccountsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListAccountsResponse>
             responseObserver) {
@@ -5273,7 +5537,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Returns an error if the target is not found.
      * </pre>
      */
-    public void deleteAccount(
+    default void deleteAccount(
         com.google.analytics.admin.v1alpha.DeleteAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -5287,7 +5551,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Updates an account.
      * </pre>
      */
-    public void updateAccount(
+    default void updateAccount(
         com.google.analytics.admin.v1alpha.UpdateAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Account> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -5301,7 +5565,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Requests a ticket for creating an account.
      * </pre>
      */
-    public void provisionAccountTicket(
+    default void provisionAccountTicket(
         com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse>
@@ -5317,7 +5581,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Returns summaries of all accounts accessible by the caller.
      * </pre>
      */
-    public void listAccountSummaries(
+    default void listAccountSummaries(
         com.google.analytics.admin.v1alpha.ListAccountSummariesRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListAccountSummariesResponse>
             responseObserver) {
@@ -5332,7 +5596,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Lookup for a single "GA4" Property.
      * </pre>
      */
-    public void getProperty(
+    default void getProperty(
         com.google.analytics.admin.v1alpha.GetPropertyRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Property> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -5350,7 +5614,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Returns an empty list if no relevant properties are found.
      * </pre>
      */
-    public void listProperties(
+    default void listProperties(
         com.google.analytics.admin.v1alpha.ListPropertiesRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListPropertiesResponse>
             responseObserver) {
@@ -5365,7 +5629,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Creates an "GA4" property with the specified location and attributes.
      * </pre>
      */
-    public void createProperty(
+    default void createProperty(
         com.google.analytics.admin.v1alpha.CreatePropertyRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Property> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -5386,7 +5650,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Returns an error if the target is not found, or is not a GA4 Property.
      * </pre>
      */
-    public void deleteProperty(
+    default void deleteProperty(
         com.google.analytics.admin.v1alpha.DeletePropertyRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Property> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -5400,7 +5664,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Updates a property.
      * </pre>
      */
-    public void updateProperty(
+    default void updateProperty(
         com.google.analytics.admin.v1alpha.UpdatePropertyRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Property> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -5414,7 +5678,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Gets information about a user's link to an account or property.
      * </pre>
      */
-    public void getUserLink(
+    default void getUserLink(
         com.google.analytics.admin.v1alpha.GetUserLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.UserLink> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -5428,7 +5692,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Gets information about multiple users' links to an account or property.
      * </pre>
      */
-    public void batchGetUserLinks(
+    default void batchGetUserLinks(
         com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse>
             responseObserver) {
@@ -5443,7 +5707,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Lists all user links on an account or property.
      * </pre>
      */
-    public void listUserLinks(
+    default void listUserLinks(
         com.google.analytics.admin.v1alpha.ListUserLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListUserLinksResponse>
             responseObserver) {
@@ -5465,7 +5729,7 @@ public final class AnalyticsAdminServiceGrpc {
      * UIs.
      * </pre>
      */
-    public void auditUserLinks(
+    default void auditUserLinks(
         com.google.analytics.admin.v1alpha.AuditUserLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AuditUserLinksResponse>
             responseObserver) {
@@ -5483,7 +5747,7 @@ public final class AnalyticsAdminServiceGrpc {
      * with the permissions specified in the new UserLink.
      * </pre>
      */
-    public void createUserLink(
+    default void createUserLink(
         com.google.analytics.admin.v1alpha.CreateUserLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.UserLink> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -5499,7 +5763,7 @@ public final class AnalyticsAdminServiceGrpc {
      * the UserLinks will be created.
      * </pre>
      */
-    public void batchCreateUserLinks(
+    default void batchCreateUserLinks(
         com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse>
             responseObserver) {
@@ -5514,7 +5778,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Updates a user link on an account or property.
      * </pre>
      */
-    public void updateUserLink(
+    default void updateUserLink(
         com.google.analytics.admin.v1alpha.UpdateUserLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.UserLink> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -5528,7 +5792,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Updates information about multiple users' links to an account or property.
      * </pre>
      */
-    public void batchUpdateUserLinks(
+    default void batchUpdateUserLinks(
         com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse>
             responseObserver) {
@@ -5543,7 +5807,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Deletes a user link on an account or property.
      * </pre>
      */
-    public void deleteUserLink(
+    default void deleteUserLink(
         com.google.analytics.admin.v1alpha.DeleteUserLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -5557,7 +5821,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Deletes information about multiple users' links to an account or property.
      * </pre>
      */
-    public void batchDeleteUserLinks(
+    default void batchDeleteUserLinks(
         com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -5572,7 +5836,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Properties can have at most one FirebaseLink.
      * </pre>
      */
-    public void createFirebaseLink(
+    default void createFirebaseLink(
         com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.FirebaseLink>
             responseObserver) {
@@ -5587,7 +5851,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Deletes a FirebaseLink on a property
      * </pre>
      */
-    public void deleteFirebaseLink(
+    default void deleteFirebaseLink(
         com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -5602,7 +5866,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Properties can have at most one FirebaseLink.
      * </pre>
      */
-    public void listFirebaseLinks(
+    default void listFirebaseLinks(
         com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse>
             responseObserver) {
@@ -5618,7 +5882,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Site Tags are immutable singletons.
      * </pre>
      */
-    public void getGlobalSiteTag(
+    default void getGlobalSiteTag(
         com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.GlobalSiteTag>
             responseObserver) {
@@ -5633,7 +5897,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Creates a GoogleAdsLink.
      * </pre>
      */
-    public void createGoogleAdsLink(
+    default void createGoogleAdsLink(
         com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.GoogleAdsLink>
             responseObserver) {
@@ -5648,7 +5912,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Updates a GoogleAdsLink on a property
      * </pre>
      */
-    public void updateGoogleAdsLink(
+    default void updateGoogleAdsLink(
         com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.GoogleAdsLink>
             responseObserver) {
@@ -5663,7 +5927,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Deletes a GoogleAdsLink on a property
      * </pre>
      */
-    public void deleteGoogleAdsLink(
+    default void deleteGoogleAdsLink(
         com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -5677,7 +5941,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Lists GoogleAdsLinks on a property.
      * </pre>
      */
-    public void listGoogleAdsLinks(
+    default void listGoogleAdsLinks(
         com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListGoogleAdsLinksResponse>
             responseObserver) {
@@ -5693,7 +5957,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Data sharing settings are singletons.
      * </pre>
      */
-    public void getDataSharingSettings(
+    default void getDataSharingSettings(
         com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.DataSharingSettings>
             responseObserver) {
@@ -5708,7 +5972,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Lookup for a single "GA4" MeasurementProtocolSecret.
      * </pre>
      */
-    public void getMeasurementProtocolSecret(
+    default void getMeasurementProtocolSecret(
         com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>
             responseObserver) {
@@ -5724,7 +5988,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Property.
      * </pre>
      */
-    public void listMeasurementProtocolSecrets(
+    default void listMeasurementProtocolSecrets(
         com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse>
@@ -5740,7 +6004,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Creates a measurement protocol secret.
      * </pre>
      */
-    public void createMeasurementProtocolSecret(
+    default void createMeasurementProtocolSecret(
         com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>
             responseObserver) {
@@ -5755,7 +6019,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Deletes target MeasurementProtocolSecret.
      * </pre>
      */
-    public void deleteMeasurementProtocolSecret(
+    default void deleteMeasurementProtocolSecret(
         com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -5769,7 +6033,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Updates a measurement protocol secret.
      * </pre>
      */
-    public void updateMeasurementProtocolSecret(
+    default void updateMeasurementProtocolSecret(
         com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>
             responseObserver) {
@@ -5787,7 +6051,7 @@ public final class AnalyticsAdminServiceGrpc {
      * created.
      * </pre>
      */
-    public void acknowledgeUserDataCollection(
+    default void acknowledgeUserDataCollection(
         com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse>
@@ -5804,7 +6068,7 @@ public final class AnalyticsAdminServiceGrpc {
      * specified set of filters.
      * </pre>
      */
-    public void searchChangeHistoryEvents(
+    default void searchChangeHistoryEvents(
         com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse>
@@ -5820,7 +6084,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Lookup for Google Signals settings for a property.
      * </pre>
      */
-    public void getGoogleSignalsSettings(
+    default void getGoogleSignalsSettings(
         com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.GoogleSignalsSettings>
             responseObserver) {
@@ -5835,7 +6099,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Updates Google Signals settings for a property.
      * </pre>
      */
-    public void updateGoogleSignalsSettings(
+    default void updateGoogleSignalsSettings(
         com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.GoogleSignalsSettings>
             responseObserver) {
@@ -5850,7 +6114,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Creates a conversion event with the specified attributes.
      * </pre>
      */
-    public void createConversionEvent(
+    default void createConversionEvent(
         com.google.analytics.admin.v1alpha.CreateConversionEventRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ConversionEvent>
             responseObserver) {
@@ -5865,7 +6129,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Retrieve a single conversion event.
      * </pre>
      */
-    public void getConversionEvent(
+    default void getConversionEvent(
         com.google.analytics.admin.v1alpha.GetConversionEventRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ConversionEvent>
             responseObserver) {
@@ -5880,7 +6144,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Deletes a conversion event in a property.
      * </pre>
      */
-    public void deleteConversionEvent(
+    default void deleteConversionEvent(
         com.google.analytics.admin.v1alpha.DeleteConversionEventRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -5895,7 +6159,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Returns an empty list if no conversion events are found.
      * </pre>
      */
-    public void listConversionEvents(
+    default void listConversionEvents(
         com.google.analytics.admin.v1alpha.ListConversionEventsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListConversionEventsResponse>
             responseObserver) {
@@ -5910,7 +6174,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Look up a single DisplayVideo360AdvertiserLink
      * </pre>
      */
-    public void getDisplayVideo360AdvertiserLink(
+    default void getDisplayVideo360AdvertiserLink(
         com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>
@@ -5926,7 +6190,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Lists all DisplayVideo360AdvertiserLinks on a property.
      * </pre>
      */
-    public void listDisplayVideo360AdvertiserLinks(
+    default void listDisplayVideo360AdvertiserLinks(
         com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksResponse>
@@ -5946,7 +6210,7 @@ public final class AnalyticsAdminServiceGrpc {
      * instead seek to create a DisplayVideo360LinkProposal.
      * </pre>
      */
-    public void createDisplayVideo360AdvertiserLink(
+    default void createDisplayVideo360AdvertiserLink(
         com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>
@@ -5962,7 +6226,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Deletes a DisplayVideo360AdvertiserLink on a property.
      * </pre>
      */
-    public void deleteDisplayVideo360AdvertiserLink(
+    default void deleteDisplayVideo360AdvertiserLink(
         com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -5976,7 +6240,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Updates a DisplayVideo360AdvertiserLink on a property.
      * </pre>
      */
-    public void updateDisplayVideo360AdvertiserLink(
+    default void updateDisplayVideo360AdvertiserLink(
         com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>
@@ -5992,7 +6256,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Lookup for a single DisplayVideo360AdvertiserLinkProposal.
      * </pre>
      */
-    public void getDisplayVideo360AdvertiserLinkProposal(
+    default void getDisplayVideo360AdvertiserLinkProposal(
         com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkProposalRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>
@@ -6008,7 +6272,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Lists DisplayVideo360AdvertiserLinkProposals on a property.
      * </pre>
      */
-    public void listDisplayVideo360AdvertiserLinkProposals(
+    default void listDisplayVideo360AdvertiserLinkProposals(
         com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsRequest
             request,
         io.grpc.stub.StreamObserver<
@@ -6026,7 +6290,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Creates a DisplayVideo360AdvertiserLinkProposal.
      * </pre>
      */
-    public void createDisplayVideo360AdvertiserLinkProposal(
+    default void createDisplayVideo360AdvertiserLinkProposal(
         com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkProposalRequest
             request,
         io.grpc.stub.StreamObserver<
@@ -6044,7 +6308,7 @@ public final class AnalyticsAdminServiceGrpc {
      * This can only be used on cancelled proposals.
      * </pre>
      */
-    public void deleteDisplayVideo360AdvertiserLinkProposal(
+    default void deleteDisplayVideo360AdvertiserLinkProposal(
         com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest
             request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -6061,7 +6325,7 @@ public final class AnalyticsAdminServiceGrpc {
      * DisplayVideo360AdvertiserLink will be created.
      * </pre>
      */
-    public void approveDisplayVideo360AdvertiserLinkProposal(
+    default void approveDisplayVideo360AdvertiserLinkProposal(
         com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalRequest
             request,
         io.grpc.stub.StreamObserver<
@@ -6083,7 +6347,7 @@ public final class AnalyticsAdminServiceGrpc {
      * After being cancelled, a proposal will eventually be deleted automatically.
      * </pre>
      */
-    public void cancelDisplayVideo360AdvertiserLinkProposal(
+    default void cancelDisplayVideo360AdvertiserLinkProposal(
         com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest
             request,
         io.grpc.stub.StreamObserver<
@@ -6100,7 +6364,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Creates a CustomDimension.
      * </pre>
      */
-    public void createCustomDimension(
+    default void createCustomDimension(
         com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CustomDimension>
             responseObserver) {
@@ -6115,7 +6379,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Updates a CustomDimension on a property.
      * </pre>
      */
-    public void updateCustomDimension(
+    default void updateCustomDimension(
         com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CustomDimension>
             responseObserver) {
@@ -6130,7 +6394,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Lists CustomDimensions on a property.
      * </pre>
      */
-    public void listCustomDimensions(
+    default void listCustomDimensions(
         com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListCustomDimensionsResponse>
             responseObserver) {
@@ -6145,7 +6409,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Archives a CustomDimension on a property.
      * </pre>
      */
-    public void archiveCustomDimension(
+    default void archiveCustomDimension(
         com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -6159,7 +6423,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Lookup for a single CustomDimension.
      * </pre>
      */
-    public void getCustomDimension(
+    default void getCustomDimension(
         com.google.analytics.admin.v1alpha.GetCustomDimensionRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CustomDimension>
             responseObserver) {
@@ -6174,7 +6438,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Creates a CustomMetric.
      * </pre>
      */
-    public void createCustomMetric(
+    default void createCustomMetric(
         com.google.analytics.admin.v1alpha.CreateCustomMetricRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CustomMetric>
             responseObserver) {
@@ -6189,7 +6453,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Updates a CustomMetric on a property.
      * </pre>
      */
-    public void updateCustomMetric(
+    default void updateCustomMetric(
         com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CustomMetric>
             responseObserver) {
@@ -6204,7 +6468,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Lists CustomMetrics on a property.
      * </pre>
      */
-    public void listCustomMetrics(
+    default void listCustomMetrics(
         com.google.analytics.admin.v1alpha.ListCustomMetricsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListCustomMetricsResponse>
             responseObserver) {
@@ -6219,7 +6483,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Archives a CustomMetric on a property.
      * </pre>
      */
-    public void archiveCustomMetric(
+    default void archiveCustomMetric(
         com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -6233,7 +6497,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Lookup for a single CustomMetric.
      * </pre>
      */
-    public void getCustomMetric(
+    default void getCustomMetric(
         com.google.analytics.admin.v1alpha.GetCustomMetricRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.CustomMetric>
             responseObserver) {
@@ -6248,7 +6512,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Returns the singleton data retention settings for this property.
      * </pre>
      */
-    public void getDataRetentionSettings(
+    default void getDataRetentionSettings(
         com.google.analytics.admin.v1alpha.GetDataRetentionSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.DataRetentionSettings>
             responseObserver) {
@@ -6263,7 +6527,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Updates the singleton data retention settings for this property.
      * </pre>
      */
-    public void updateDataRetentionSettings(
+    default void updateDataRetentionSettings(
         com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.DataRetentionSettings>
             responseObserver) {
@@ -6278,7 +6542,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Creates a DataStream.
      * </pre>
      */
-    public void createDataStream(
+    default void createDataStream(
         com.google.analytics.admin.v1alpha.CreateDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.DataStream>
             responseObserver) {
@@ -6293,7 +6557,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Deletes a DataStream on a property.
      * </pre>
      */
-    public void deleteDataStream(
+    default void deleteDataStream(
         com.google.analytics.admin.v1alpha.DeleteDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -6307,7 +6571,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Updates a DataStream on a property.
      * </pre>
      */
-    public void updateDataStream(
+    default void updateDataStream(
         com.google.analytics.admin.v1alpha.UpdateDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.DataStream>
             responseObserver) {
@@ -6322,7 +6586,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Lists DataStreams on a property.
      * </pre>
      */
-    public void listDataStreams(
+    default void listDataStreams(
         com.google.analytics.admin.v1alpha.ListDataStreamsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListDataStreamsResponse>
             responseObserver) {
@@ -6337,7 +6601,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Lookup for a single DataStream.
      * </pre>
      */
-    public void getDataStream(
+    default void getDataStream(
         com.google.analytics.admin.v1alpha.GetDataStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.DataStream>
             responseObserver) {
@@ -6354,7 +6618,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Default audiences will not show filter definitions.
      * </pre>
      */
-    public void getAudience(
+    default void getAudience(
         com.google.analytics.admin.v1alpha.GetAudienceRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Audience> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -6370,7 +6634,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Default audiences will not show filter definitions.
      * </pre>
      */
-    public void listAudiences(
+    default void listAudiences(
         com.google.analytics.admin.v1alpha.ListAudiencesRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListAudiencesResponse>
             responseObserver) {
@@ -6385,7 +6649,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Creates an Audience.
      * </pre>
      */
-    public void createAudience(
+    default void createAudience(
         com.google.analytics.admin.v1alpha.CreateAudienceRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Audience> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -6399,7 +6663,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Updates an Audience on a property.
      * </pre>
      */
-    public void updateAudience(
+    default void updateAudience(
         com.google.analytics.admin.v1alpha.UpdateAudienceRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.Audience> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -6413,7 +6677,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Archives an Audience on a property.
      * </pre>
      */
-    public void archiveAudience(
+    default void archiveAudience(
         com.google.analytics.admin.v1alpha.ArchiveAudienceRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -6427,7 +6691,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Look up a single SearchAds360Link
      * </pre>
      */
-    public void getSearchAds360Link(
+    default void getSearchAds360Link(
         com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SearchAds360Link>
             responseObserver) {
@@ -6442,7 +6706,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Lists all SearchAds360Links on a property.
      * </pre>
      */
-    public void listSearchAds360Links(
+    default void listSearchAds360Links(
         com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse>
@@ -6458,7 +6722,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Creates a SearchAds360Link.
      * </pre>
      */
-    public void createSearchAds360Link(
+    default void createSearchAds360Link(
         com.google.analytics.admin.v1alpha.CreateSearchAds360LinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SearchAds360Link>
             responseObserver) {
@@ -6473,7 +6737,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Deletes a SearchAds360Link on a property.
      * </pre>
      */
-    public void deleteSearchAds360Link(
+    default void deleteSearchAds360Link(
         com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -6487,7 +6751,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Updates a SearchAds360Link on a property.
      * </pre>
      */
-    public void updateSearchAds360Link(
+    default void updateSearchAds360Link(
         com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SearchAds360Link>
             responseObserver) {
@@ -6502,7 +6766,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Lookup for a AttributionSettings singleton.
      * </pre>
      */
-    public void getAttributionSettings(
+    default void getAttributionSettings(
         com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AttributionSettings>
             responseObserver) {
@@ -6517,7 +6781,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Updates attribution settings on a property.
      * </pre>
      */
-    public void updateAttributionSettings(
+    default void updateAttributionSettings(
         com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AttributionSettings>
             responseObserver) {
@@ -6542,7 +6806,7 @@ public final class AnalyticsAdminServiceGrpc {
      * [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).
      * </pre>
      */
-    public void runAccessReport(
+    default void runAccessReport(
         com.google.analytics.admin.v1alpha.RunAccessReportRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.RunAccessReportResponse>
             responseObserver) {
@@ -6557,7 +6821,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Creates an access binding on an account or property.
      * </pre>
      */
-    public void createAccessBinding(
+    default void createAccessBinding(
         com.google.analytics.admin.v1alpha.CreateAccessBindingRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AccessBinding>
             responseObserver) {
@@ -6572,7 +6836,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Gets information about an access binding.
      * </pre>
      */
-    public void getAccessBinding(
+    default void getAccessBinding(
         com.google.analytics.admin.v1alpha.GetAccessBindingRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AccessBinding>
             responseObserver) {
@@ -6587,7 +6851,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Updates an access binding on an account or property.
      * </pre>
      */
-    public void updateAccessBinding(
+    default void updateAccessBinding(
         com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.AccessBinding>
             responseObserver) {
@@ -6602,7 +6866,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Deletes an access binding on an account or property.
      * </pre>
      */
-    public void deleteAccessBinding(
+    default void deleteAccessBinding(
         com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -6616,7 +6880,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Lists all access bindings on an account or property.
      * </pre>
      */
-    public void listAccessBindings(
+    default void listAccessBindings(
         com.google.analytics.admin.v1alpha.ListAccessBindingsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListAccessBindingsResponse>
             responseObserver) {
@@ -6634,7 +6898,7 @@ public final class AnalyticsAdminServiceGrpc {
      * of the AccessBindings will be created.
      * </pre>
      */
-    public void batchCreateAccessBindings(
+    default void batchCreateAccessBindings(
         com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsResponse>
@@ -6650,7 +6914,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Gets information about multiple access bindings to an account or property.
      * </pre>
      */
-    public void batchGetAccessBindings(
+    default void batchGetAccessBindings(
         com.google.analytics.admin.v1alpha.BatchGetAccessBindingsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.analytics.admin.v1alpha.BatchGetAccessBindingsResponse>
@@ -6667,7 +6931,7 @@ public final class AnalyticsAdminServiceGrpc {
      * property.
      * </pre>
      */
-    public void batchUpdateAccessBindings(
+    default void batchUpdateAccessBindings(
         com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsResponse>
@@ -6683,7 +6947,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Deletes information about multiple users' links to an account or property.
      * </pre>
      */
-    public void batchDeleteAccessBindings(
+    default void batchDeleteAccessBindings(
         com.google.analytics.admin.v1alpha.BatchDeleteAccessBindingsRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -6697,7 +6961,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Lookup for a single ExpandedDataSet.
      * </pre>
      */
-    public void getExpandedDataSet(
+    default void getExpandedDataSet(
         com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ExpandedDataSet>
             responseObserver) {
@@ -6712,7 +6976,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Lists ExpandedDataSets on a property.
      * </pre>
      */
-    public void listExpandedDataSets(
+    default void listExpandedDataSets(
         com.google.analytics.admin.v1alpha.ListExpandedDataSetsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListExpandedDataSetsResponse>
             responseObserver) {
@@ -6727,7 +6991,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Creates a ExpandedDataSet.
      * </pre>
      */
-    public void createExpandedDataSet(
+    default void createExpandedDataSet(
         com.google.analytics.admin.v1alpha.CreateExpandedDataSetRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ExpandedDataSet>
             responseObserver) {
@@ -6742,7 +7006,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Updates a ExpandedDataSet on a property.
      * </pre>
      */
-    public void updateExpandedDataSet(
+    default void updateExpandedDataSet(
         com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ExpandedDataSet>
             responseObserver) {
@@ -6757,7 +7021,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Deletes a ExpandedDataSet on a property.
      * </pre>
      */
-    public void deleteExpandedDataSet(
+    default void deleteExpandedDataSet(
         com.google.analytics.admin.v1alpha.DeleteExpandedDataSetRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -6773,7 +7037,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Note: this has no effect on GA4 property.
      * </pre>
      */
-    public void setAutomatedGa4ConfigurationOptOut(
+    default void setAutomatedGa4ConfigurationOptOut(
         com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse>
@@ -6791,7 +7055,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Note: this has no effect on GA4 property.
      * </pre>
      */
-    public void fetchAutomatedGa4ConfigurationOptOut(
+    default void fetchAutomatedGa4ConfigurationOptOut(
         com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse>
@@ -6807,7 +7071,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Lookup for a single BigQuery Link.
      * </pre>
      */
-    public void getBigQueryLink(
+    default void getBigQueryLink(
         com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.BigQueryLink>
             responseObserver) {
@@ -6822,7 +7086,7 @@ public final class AnalyticsAdminServiceGrpc {
      * Lists BigQuery Links on a property.
      * </pre>
      */
-    public void listBigQueryLinks(
+    default void listBigQueryLinks(
         com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse>
             responseObserver) {
@@ -6830,717 +7094,110 @@ public final class AnalyticsAdminServiceGrpc {
           getListBigQueryLinksMethod(), responseObserver);
     }
 
-    @java.lang.Override
-    public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getGetAccountMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.GetAccountRequest,
-                      com.google.analytics.admin.v1alpha.Account>(this, METHODID_GET_ACCOUNT)))
-          .addMethod(
-              getListAccountsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.ListAccountsRequest,
-                      com.google.analytics.admin.v1alpha.ListAccountsResponse>(
-                      this, METHODID_LIST_ACCOUNTS)))
-          .addMethod(
-              getDeleteAccountMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.DeleteAccountRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_ACCOUNT)))
-          .addMethod(
-              getUpdateAccountMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.UpdateAccountRequest,
-                      com.google.analytics.admin.v1alpha.Account>(this, METHODID_UPDATE_ACCOUNT)))
-          .addMethod(
-              getProvisionAccountTicketMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest,
-                      com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse>(
-                      this, METHODID_PROVISION_ACCOUNT_TICKET)))
-          .addMethod(
-              getListAccountSummariesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.ListAccountSummariesRequest,
-                      com.google.analytics.admin.v1alpha.ListAccountSummariesResponse>(
-                      this, METHODID_LIST_ACCOUNT_SUMMARIES)))
-          .addMethod(
-              getGetPropertyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.GetPropertyRequest,
-                      com.google.analytics.admin.v1alpha.Property>(this, METHODID_GET_PROPERTY)))
-          .addMethod(
-              getListPropertiesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.ListPropertiesRequest,
-                      com.google.analytics.admin.v1alpha.ListPropertiesResponse>(
-                      this, METHODID_LIST_PROPERTIES)))
-          .addMethod(
-              getCreatePropertyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.CreatePropertyRequest,
-                      com.google.analytics.admin.v1alpha.Property>(this, METHODID_CREATE_PROPERTY)))
-          .addMethod(
-              getDeletePropertyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.DeletePropertyRequest,
-                      com.google.analytics.admin.v1alpha.Property>(this, METHODID_DELETE_PROPERTY)))
-          .addMethod(
-              getUpdatePropertyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.UpdatePropertyRequest,
-                      com.google.analytics.admin.v1alpha.Property>(this, METHODID_UPDATE_PROPERTY)))
-          .addMethod(
-              getGetUserLinkMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.GetUserLinkRequest,
-                      com.google.analytics.admin.v1alpha.UserLink>(this, METHODID_GET_USER_LINK)))
-          .addMethod(
-              getBatchGetUserLinksMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest,
-                      com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse>(
-                      this, METHODID_BATCH_GET_USER_LINKS)))
-          .addMethod(
-              getListUserLinksMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.ListUserLinksRequest,
-                      com.google.analytics.admin.v1alpha.ListUserLinksResponse>(
-                      this, METHODID_LIST_USER_LINKS)))
-          .addMethod(
-              getAuditUserLinksMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.AuditUserLinksRequest,
-                      com.google.analytics.admin.v1alpha.AuditUserLinksResponse>(
-                      this, METHODID_AUDIT_USER_LINKS)))
-          .addMethod(
-              getCreateUserLinkMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.CreateUserLinkRequest,
-                      com.google.analytics.admin.v1alpha.UserLink>(
-                      this, METHODID_CREATE_USER_LINK)))
-          .addMethod(
-              getBatchCreateUserLinksMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest,
-                      com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse>(
-                      this, METHODID_BATCH_CREATE_USER_LINKS)))
-          .addMethod(
-              getUpdateUserLinkMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.UpdateUserLinkRequest,
-                      com.google.analytics.admin.v1alpha.UserLink>(
-                      this, METHODID_UPDATE_USER_LINK)))
-          .addMethod(
-              getBatchUpdateUserLinksMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest,
-                      com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse>(
-                      this, METHODID_BATCH_UPDATE_USER_LINKS)))
-          .addMethod(
-              getDeleteUserLinkMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.DeleteUserLinkRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_USER_LINK)))
-          .addMethod(
-              getBatchDeleteUserLinksMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest,
-                      com.google.protobuf.Empty>(this, METHODID_BATCH_DELETE_USER_LINKS)))
-          .addMethod(
-              getCreateFirebaseLinkMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest,
-                      com.google.analytics.admin.v1alpha.FirebaseLink>(
-                      this, METHODID_CREATE_FIREBASE_LINK)))
-          .addMethod(
-              getDeleteFirebaseLinkMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_FIREBASE_LINK)))
-          .addMethod(
-              getListFirebaseLinksMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest,
-                      com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse>(
-                      this, METHODID_LIST_FIREBASE_LINKS)))
-          .addMethod(
-              getGetGlobalSiteTagMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest,
-                      com.google.analytics.admin.v1alpha.GlobalSiteTag>(
-                      this, METHODID_GET_GLOBAL_SITE_TAG)))
-          .addMethod(
-              getCreateGoogleAdsLinkMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest,
-                      com.google.analytics.admin.v1alpha.GoogleAdsLink>(
-                      this, METHODID_CREATE_GOOGLE_ADS_LINK)))
-          .addMethod(
-              getUpdateGoogleAdsLinkMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest,
-                      com.google.analytics.admin.v1alpha.GoogleAdsLink>(
-                      this, METHODID_UPDATE_GOOGLE_ADS_LINK)))
-          .addMethod(
-              getDeleteGoogleAdsLinkMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_GOOGLE_ADS_LINK)))
-          .addMethod(
-              getListGoogleAdsLinksMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest,
-                      com.google.analytics.admin.v1alpha.ListGoogleAdsLinksResponse>(
-                      this, METHODID_LIST_GOOGLE_ADS_LINKS)))
-          .addMethod(
-              getGetDataSharingSettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest,
-                      com.google.analytics.admin.v1alpha.DataSharingSettings>(
-                      this, METHODID_GET_DATA_SHARING_SETTINGS)))
-          .addMethod(
-              getGetMeasurementProtocolSecretMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest,
-                      com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>(
-                      this, METHODID_GET_MEASUREMENT_PROTOCOL_SECRET)))
-          .addMethod(
-              getListMeasurementProtocolSecretsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest,
-                      com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse>(
-                      this, METHODID_LIST_MEASUREMENT_PROTOCOL_SECRETS)))
-          .addMethod(
-              getCreateMeasurementProtocolSecretMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest,
-                      com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>(
-                      this, METHODID_CREATE_MEASUREMENT_PROTOCOL_SECRET)))
-          .addMethod(
-              getDeleteMeasurementProtocolSecretMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest,
-                      com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_MEASUREMENT_PROTOCOL_SECRET)))
-          .addMethod(
-              getUpdateMeasurementProtocolSecretMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest,
-                      com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>(
-                      this, METHODID_UPDATE_MEASUREMENT_PROTOCOL_SECRET)))
-          .addMethod(
-              getAcknowledgeUserDataCollectionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest,
-                      com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse>(
-                      this, METHODID_ACKNOWLEDGE_USER_DATA_COLLECTION)))
-          .addMethod(
-              getSearchChangeHistoryEventsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest,
-                      com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse>(
-                      this, METHODID_SEARCH_CHANGE_HISTORY_EVENTS)))
-          .addMethod(
-              getGetGoogleSignalsSettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest,
-                      com.google.analytics.admin.v1alpha.GoogleSignalsSettings>(
-                      this, METHODID_GET_GOOGLE_SIGNALS_SETTINGS)))
-          .addMethod(
-              getUpdateGoogleSignalsSettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest,
-                      com.google.analytics.admin.v1alpha.GoogleSignalsSettings>(
-                      this, METHODID_UPDATE_GOOGLE_SIGNALS_SETTINGS)))
-          .addMethod(
-              getCreateConversionEventMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.CreateConversionEventRequest,
-                      com.google.analytics.admin.v1alpha.ConversionEvent>(
-                      this, METHODID_CREATE_CONVERSION_EVENT)))
-          .addMethod(
-              getGetConversionEventMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.GetConversionEventRequest,
-                      com.google.analytics.admin.v1alpha.ConversionEvent>(
-                      this, METHODID_GET_CONVERSION_EVENT)))
-          .addMethod(
-              getDeleteConversionEventMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.DeleteConversionEventRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_CONVERSION_EVENT)))
-          .addMethod(
-              getListConversionEventsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.ListConversionEventsRequest,
-                      com.google.analytics.admin.v1alpha.ListConversionEventsResponse>(
-                      this, METHODID_LIST_CONVERSION_EVENTS)))
-          .addMethod(
-              getGetDisplayVideo360AdvertiserLinkMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest,
-                      com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>(
-                      this, METHODID_GET_DISPLAY_VIDEO360ADVERTISER_LINK)))
-          .addMethod(
-              getListDisplayVideo360AdvertiserLinksMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequest,
-                      com.google.analytics.admin.v1alpha
-                          .ListDisplayVideo360AdvertiserLinksResponse>(
-                      this, METHODID_LIST_DISPLAY_VIDEO360ADVERTISER_LINKS)))
-          .addMethod(
-              getCreateDisplayVideo360AdvertiserLinkMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest,
-                      com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>(
-                      this, METHODID_CREATE_DISPLAY_VIDEO360ADVERTISER_LINK)))
-          .addMethod(
-              getDeleteDisplayVideo360AdvertiserLinkMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest,
-                      com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_DISPLAY_VIDEO360ADVERTISER_LINK)))
-          .addMethod(
-              getUpdateDisplayVideo360AdvertiserLinkMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest,
-                      com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>(
-                      this, METHODID_UPDATE_DISPLAY_VIDEO360ADVERTISER_LINK)))
-          .addMethod(
-              getGetDisplayVideo360AdvertiserLinkProposalMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha
-                          .GetDisplayVideo360AdvertiserLinkProposalRequest,
-                      com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>(
-                      this, METHODID_GET_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL)))
-          .addMethod(
-              getListDisplayVideo360AdvertiserLinkProposalsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha
-                          .ListDisplayVideo360AdvertiserLinkProposalsRequest,
-                      com.google.analytics.admin.v1alpha
-                          .ListDisplayVideo360AdvertiserLinkProposalsResponse>(
-                      this, METHODID_LIST_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSALS)))
-          .addMethod(
-              getCreateDisplayVideo360AdvertiserLinkProposalMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha
-                          .CreateDisplayVideo360AdvertiserLinkProposalRequest,
-                      com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>(
-                      this, METHODID_CREATE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL)))
-          .addMethod(
-              getDeleteDisplayVideo360AdvertiserLinkProposalMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha
-                          .DeleteDisplayVideo360AdvertiserLinkProposalRequest,
-                      com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL)))
-          .addMethod(
-              getApproveDisplayVideo360AdvertiserLinkProposalMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha
-                          .ApproveDisplayVideo360AdvertiserLinkProposalRequest,
-                      com.google.analytics.admin.v1alpha
-                          .ApproveDisplayVideo360AdvertiserLinkProposalResponse>(
-                      this, METHODID_APPROVE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL)))
-          .addMethod(
-              getCancelDisplayVideo360AdvertiserLinkProposalMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha
-                          .CancelDisplayVideo360AdvertiserLinkProposalRequest,
-                      com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>(
-                      this, METHODID_CANCEL_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL)))
-          .addMethod(
-              getCreateCustomDimensionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest,
-                      com.google.analytics.admin.v1alpha.CustomDimension>(
-                      this, METHODID_CREATE_CUSTOM_DIMENSION)))
-          .addMethod(
-              getUpdateCustomDimensionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest,
-                      com.google.analytics.admin.v1alpha.CustomDimension>(
-                      this, METHODID_UPDATE_CUSTOM_DIMENSION)))
-          .addMethod(
-              getListCustomDimensionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest,
-                      com.google.analytics.admin.v1alpha.ListCustomDimensionsResponse>(
-                      this, METHODID_LIST_CUSTOM_DIMENSIONS)))
-          .addMethod(
-              getArchiveCustomDimensionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest,
-                      com.google.protobuf.Empty>(this, METHODID_ARCHIVE_CUSTOM_DIMENSION)))
-          .addMethod(
-              getGetCustomDimensionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.GetCustomDimensionRequest,
-                      com.google.analytics.admin.v1alpha.CustomDimension>(
-                      this, METHODID_GET_CUSTOM_DIMENSION)))
-          .addMethod(
-              getCreateCustomMetricMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.CreateCustomMetricRequest,
-                      com.google.analytics.admin.v1alpha.CustomMetric>(
-                      this, METHODID_CREATE_CUSTOM_METRIC)))
-          .addMethod(
-              getUpdateCustomMetricMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest,
-                      com.google.analytics.admin.v1alpha.CustomMetric>(
-                      this, METHODID_UPDATE_CUSTOM_METRIC)))
-          .addMethod(
-              getListCustomMetricsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.ListCustomMetricsRequest,
-                      com.google.analytics.admin.v1alpha.ListCustomMetricsResponse>(
-                      this, METHODID_LIST_CUSTOM_METRICS)))
-          .addMethod(
-              getArchiveCustomMetricMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest,
-                      com.google.protobuf.Empty>(this, METHODID_ARCHIVE_CUSTOM_METRIC)))
-          .addMethod(
-              getGetCustomMetricMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.GetCustomMetricRequest,
-                      com.google.analytics.admin.v1alpha.CustomMetric>(
-                      this, METHODID_GET_CUSTOM_METRIC)))
-          .addMethod(
-              getGetDataRetentionSettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.GetDataRetentionSettingsRequest,
-                      com.google.analytics.admin.v1alpha.DataRetentionSettings>(
-                      this, METHODID_GET_DATA_RETENTION_SETTINGS)))
-          .addMethod(
-              getUpdateDataRetentionSettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest,
-                      com.google.analytics.admin.v1alpha.DataRetentionSettings>(
-                      this, METHODID_UPDATE_DATA_RETENTION_SETTINGS)))
-          .addMethod(
-              getCreateDataStreamMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.CreateDataStreamRequest,
-                      com.google.analytics.admin.v1alpha.DataStream>(
-                      this, METHODID_CREATE_DATA_STREAM)))
-          .addMethod(
-              getDeleteDataStreamMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.DeleteDataStreamRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_DATA_STREAM)))
-          .addMethod(
-              getUpdateDataStreamMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.UpdateDataStreamRequest,
-                      com.google.analytics.admin.v1alpha.DataStream>(
-                      this, METHODID_UPDATE_DATA_STREAM)))
-          .addMethod(
-              getListDataStreamsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.ListDataStreamsRequest,
-                      com.google.analytics.admin.v1alpha.ListDataStreamsResponse>(
-                      this, METHODID_LIST_DATA_STREAMS)))
-          .addMethod(
-              getGetDataStreamMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.GetDataStreamRequest,
-                      com.google.analytics.admin.v1alpha.DataStream>(
-                      this, METHODID_GET_DATA_STREAM)))
-          .addMethod(
-              getGetAudienceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.GetAudienceRequest,
-                      com.google.analytics.admin.v1alpha.Audience>(this, METHODID_GET_AUDIENCE)))
-          .addMethod(
-              getListAudiencesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.ListAudiencesRequest,
-                      com.google.analytics.admin.v1alpha.ListAudiencesResponse>(
-                      this, METHODID_LIST_AUDIENCES)))
-          .addMethod(
-              getCreateAudienceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.CreateAudienceRequest,
-                      com.google.analytics.admin.v1alpha.Audience>(this, METHODID_CREATE_AUDIENCE)))
-          .addMethod(
-              getUpdateAudienceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.UpdateAudienceRequest,
-                      com.google.analytics.admin.v1alpha.Audience>(this, METHODID_UPDATE_AUDIENCE)))
-          .addMethod(
-              getArchiveAudienceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.ArchiveAudienceRequest,
-                      com.google.protobuf.Empty>(this, METHODID_ARCHIVE_AUDIENCE)))
-          .addMethod(
-              getGetSearchAds360LinkMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest,
-                      com.google.analytics.admin.v1alpha.SearchAds360Link>(
-                      this, METHODID_GET_SEARCH_ADS360LINK)))
-          .addMethod(
-              getListSearchAds360LinksMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest,
-                      com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse>(
-                      this, METHODID_LIST_SEARCH_ADS360LINKS)))
-          .addMethod(
-              getCreateSearchAds360LinkMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.CreateSearchAds360LinkRequest,
-                      com.google.analytics.admin.v1alpha.SearchAds360Link>(
-                      this, METHODID_CREATE_SEARCH_ADS360LINK)))
-          .addMethod(
-              getDeleteSearchAds360LinkMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_SEARCH_ADS360LINK)))
-          .addMethod(
-              getUpdateSearchAds360LinkMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest,
-                      com.google.analytics.admin.v1alpha.SearchAds360Link>(
-                      this, METHODID_UPDATE_SEARCH_ADS360LINK)))
-          .addMethod(
-              getGetAttributionSettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest,
-                      com.google.analytics.admin.v1alpha.AttributionSettings>(
-                      this, METHODID_GET_ATTRIBUTION_SETTINGS)))
-          .addMethod(
-              getUpdateAttributionSettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest,
-                      com.google.analytics.admin.v1alpha.AttributionSettings>(
-                      this, METHODID_UPDATE_ATTRIBUTION_SETTINGS)))
-          .addMethod(
-              getRunAccessReportMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.RunAccessReportRequest,
-                      com.google.analytics.admin.v1alpha.RunAccessReportResponse>(
-                      this, METHODID_RUN_ACCESS_REPORT)))
-          .addMethod(
-              getCreateAccessBindingMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.CreateAccessBindingRequest,
-                      com.google.analytics.admin.v1alpha.AccessBinding>(
-                      this, METHODID_CREATE_ACCESS_BINDING)))
-          .addMethod(
-              getGetAccessBindingMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.GetAccessBindingRequest,
-                      com.google.analytics.admin.v1alpha.AccessBinding>(
-                      this, METHODID_GET_ACCESS_BINDING)))
-          .addMethod(
-              getUpdateAccessBindingMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest,
-                      com.google.analytics.admin.v1alpha.AccessBinding>(
-                      this, METHODID_UPDATE_ACCESS_BINDING)))
-          .addMethod(
-              getDeleteAccessBindingMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_ACCESS_BINDING)))
-          .addMethod(
-              getListAccessBindingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.ListAccessBindingsRequest,
-                      com.google.analytics.admin.v1alpha.ListAccessBindingsResponse>(
-                      this, METHODID_LIST_ACCESS_BINDINGS)))
-          .addMethod(
-              getBatchCreateAccessBindingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsRequest,
-                      com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsResponse>(
-                      this, METHODID_BATCH_CREATE_ACCESS_BINDINGS)))
-          .addMethod(
-              getBatchGetAccessBindingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.BatchGetAccessBindingsRequest,
-                      com.google.analytics.admin.v1alpha.BatchGetAccessBindingsResponse>(
-                      this, METHODID_BATCH_GET_ACCESS_BINDINGS)))
-          .addMethod(
-              getBatchUpdateAccessBindingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsRequest,
-                      com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsResponse>(
-                      this, METHODID_BATCH_UPDATE_ACCESS_BINDINGS)))
-          .addMethod(
-              getBatchDeleteAccessBindingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.BatchDeleteAccessBindingsRequest,
-                      com.google.protobuf.Empty>(this, METHODID_BATCH_DELETE_ACCESS_BINDINGS)))
-          .addMethod(
-              getGetExpandedDataSetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest,
-                      com.google.analytics.admin.v1alpha.ExpandedDataSet>(
-                      this, METHODID_GET_EXPANDED_DATA_SET)))
-          .addMethod(
-              getListExpandedDataSetsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.ListExpandedDataSetsRequest,
-                      com.google.analytics.admin.v1alpha.ListExpandedDataSetsResponse>(
-                      this, METHODID_LIST_EXPANDED_DATA_SETS)))
-          .addMethod(
-              getCreateExpandedDataSetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.CreateExpandedDataSetRequest,
-                      com.google.analytics.admin.v1alpha.ExpandedDataSet>(
-                      this, METHODID_CREATE_EXPANDED_DATA_SET)))
-          .addMethod(
-              getUpdateExpandedDataSetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest,
-                      com.google.analytics.admin.v1alpha.ExpandedDataSet>(
-                      this, METHODID_UPDATE_EXPANDED_DATA_SET)))
-          .addMethod(
-              getDeleteExpandedDataSetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.DeleteExpandedDataSetRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_EXPANDED_DATA_SET)))
-          .addMethod(
-              getSetAutomatedGa4ConfigurationOptOutMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest,
-                      com.google.analytics.admin.v1alpha
-                          .SetAutomatedGa4ConfigurationOptOutResponse>(
-                      this, METHODID_SET_AUTOMATED_GA4CONFIGURATION_OPT_OUT)))
-          .addMethod(
-              getFetchAutomatedGa4ConfigurationOptOutMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha
-                          .FetchAutomatedGa4ConfigurationOptOutRequest,
-                      com.google.analytics.admin.v1alpha
-                          .FetchAutomatedGa4ConfigurationOptOutResponse>(
-                      this, METHODID_FETCH_AUTOMATED_GA4CONFIGURATION_OPT_OUT)))
-          .addMethod(
-              getGetBigQueryLinkMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest,
-                      com.google.analytics.admin.v1alpha.BigQueryLink>(
-                      this, METHODID_GET_BIG_QUERY_LINK)))
-          .addMethod(
-              getListBigQueryLinksMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest,
-                      com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse>(
-                      this, METHODID_LIST_BIG_QUERY_LINKS)))
-          .build();
+    /**
+     *
+     *
+     * <pre>
+     * Returns the enhanced measurement settings for this data stream.
+     * Note that the stream must enable enhanced measurement for these settings to
+     * take effect.
+     * </pre>
+     */
+    default void getEnhancedMeasurementSettings(
+        com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetEnhancedMeasurementSettingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the enhanced measurement settings for this data stream.
+     * Note that the stream must enable enhanced measurement for these settings to
+     * take effect.
+     * </pre>
+     */
+    default void updateEnhancedMeasurementSettings(
+        com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateEnhancedMeasurementSettingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a connected site tag for a Universal Analytics property. You can
+     * create a maximum of 20 connected site tags per property.
+     * Note: This API cannot be used on GA4 properties.
+     * </pre>
+     */
+    default void createConnectedSiteTag(
+        com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateConnectedSiteTagMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a connected site tag for a Universal Analytics property.
+     * Note: this has no effect on GA4 properties.
+     * </pre>
+     */
+    default void deleteConnectedSiteTag(
+        com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteConnectedSiteTagMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the connected site tags for a Universal Analytics property. A maximum
+     * of 20 connected site tags will be returned. Note: this has no effect on GA4
+     * property.
+     * </pre>
+     */
+    default void listConnectedSiteTags(
+        com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListConnectedSiteTagsMethod(), responseObserver);
     }
   }
 
   /**
+   * Base class for the server implementation of the service AnalyticsAdminService.
    *
+   * <pre>
+   * Service Interface for the Analytics Admin API (GA4).
+   * </pre>
+   */
+  public abstract static class AnalyticsAdminServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
+
+    @java.lang.Override
+    public final io.grpc.ServerServiceDefinition bindService() {
+      return AnalyticsAdminServiceGrpc.bindService(this);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do asynchronous rpc calls to service AnalyticsAdminService.
    *
    * <pre>
    * Service Interface for the Analytics Admin API (GA4).
@@ -9368,10 +9025,105 @@ public final class AnalyticsAdminServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the enhanced measurement settings for this data stream.
+     * Note that the stream must enable enhanced measurement for these settings to
+     * take effect.
+     * </pre>
+     */
+    public void getEnhancedMeasurementSettings(
+        com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetEnhancedMeasurementSettingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the enhanced measurement settings for this data stream.
+     * Note that the stream must enable enhanced measurement for these settings to
+     * take effect.
+     * </pre>
+     */
+    public void updateEnhancedMeasurementSettings(
+        com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateEnhancedMeasurementSettingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a connected site tag for a Universal Analytics property. You can
+     * create a maximum of 20 connected site tags per property.
+     * Note: This API cannot be used on GA4 properties.
+     * </pre>
+     */
+    public void createConnectedSiteTag(
+        com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateConnectedSiteTagMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a connected site tag for a Universal Analytics property.
+     * Note: this has no effect on GA4 properties.
+     * </pre>
+     */
+    public void deleteConnectedSiteTag(
+        com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteConnectedSiteTagMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the connected site tags for a Universal Analytics property. A maximum
+     * of 20 connected site tags will be returned. Note: this has no effect on GA4
+     * property.
+     * </pre>
+     */
+    public void listConnectedSiteTags(
+        com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListConnectedSiteTagsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service AnalyticsAdminService.
    *
    * <pre>
    * Service Interface for the Analytics Admin API (GA4).
@@ -10835,10 +10587,87 @@ public final class AnalyticsAdminServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListBigQueryLinksMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the enhanced measurement settings for this data stream.
+     * Note that the stream must enable enhanced measurement for these settings to
+     * take effect.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings
+        getEnhancedMeasurementSettings(
+            com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEnhancedMeasurementSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the enhanced measurement settings for this data stream.
+     * Note that the stream must enable enhanced measurement for these settings to
+     * take effect.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings
+        updateEnhancedMeasurementSettings(
+            com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEnhancedMeasurementSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a connected site tag for a Universal Analytics property. You can
+     * create a maximum of 20 connected site tags per property.
+     * Note: This API cannot be used on GA4 properties.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse createConnectedSiteTag(
+        com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateConnectedSiteTagMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a connected site tag for a Universal Analytics property.
+     * Note: this has no effect on GA4 properties.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteConnectedSiteTag(
+        com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteConnectedSiteTagMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the connected site tags for a Universal Analytics property. A maximum
+     * of 20 connected site tags will be returned. Note: this has no effect on GA4
+     * property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse listConnectedSiteTags(
+        com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListConnectedSiteTagsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * AnalyticsAdminService.
    *
    * <pre>
    * Service Interface for the Analytics Admin API (GA4).
@@ -12425,6 +12254,91 @@ public final class AnalyticsAdminServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListBigQueryLinksMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the enhanced measurement settings for this data stream.
+     * Note that the stream must enable enhanced measurement for these settings to
+     * take effect.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
+        getEnhancedMeasurementSettings(
+            com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetEnhancedMeasurementSettingsMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the enhanced measurement settings for this data stream.
+     * Note that the stream must enable enhanced measurement for these settings to
+     * take effect.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>
+        updateEnhancedMeasurementSettings(
+            com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateEnhancedMeasurementSettingsMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a connected site tag for a Universal Analytics property. You can
+     * create a maximum of 20 connected site tags per property.
+     * Note: This API cannot be used on GA4 properties.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse>
+        createConnectedSiteTag(
+            com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateConnectedSiteTagMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a connected site tag for a Universal Analytics property.
+     * Note: this has no effect on GA4 properties.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteConnectedSiteTag(
+            com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteConnectedSiteTagMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the connected site tags for a Universal Analytics property. A maximum
+     * of 20 connected site tags will be returned. Note: this has no effect on GA4
+     * property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse>
+        listConnectedSiteTags(
+            com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListConnectedSiteTagsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_ACCOUNT = 0;
@@ -12529,16 +12443,21 @@ public final class AnalyticsAdminServiceGrpc {
   private static final int METHODID_FETCH_AUTOMATED_GA4CONFIGURATION_OPT_OUT = 99;
   private static final int METHODID_GET_BIG_QUERY_LINK = 100;
   private static final int METHODID_LIST_BIG_QUERY_LINKS = 101;
+  private static final int METHODID_GET_ENHANCED_MEASUREMENT_SETTINGS = 102;
+  private static final int METHODID_UPDATE_ENHANCED_MEASUREMENT_SETTINGS = 103;
+  private static final int METHODID_CREATE_CONNECTED_SITE_TAG = 104;
+  private static final int METHODID_DELETE_CONNECTED_SITE_TAG = 105;
+  private static final int METHODID_LIST_CONNECTED_SITE_TAGS = 106;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final AnalyticsAdminServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(AnalyticsAdminServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -13207,6 +13126,39 @@ public final class AnalyticsAdminServiceGrpc {
                       com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse>)
                   responseObserver);
           break;
+        case METHODID_GET_ENHANCED_MEASUREMENT_SETTINGS:
+          serviceImpl.getEnhancedMeasurementSettings(
+              (com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_ENHANCED_MEASUREMENT_SETTINGS:
+          serviceImpl.updateEnhancedMeasurementSettings(
+              (com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_CONNECTED_SITE_TAG:
+          serviceImpl.createConnectedSiteTag(
+              (com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_CONNECTED_SITE_TAG:
+          serviceImpl.deleteConnectedSiteTag(
+              (com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_LIST_CONNECTED_SITE_TAGS:
+          serviceImpl.listConnectedSiteTags(
+              (com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -13221,6 +13173,749 @@ public final class AnalyticsAdminServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getGetAccountMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetAccountRequest,
+                    com.google.analytics.admin.v1alpha.Account>(service, METHODID_GET_ACCOUNT)))
+        .addMethod(
+            getListAccountsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListAccountsRequest,
+                    com.google.analytics.admin.v1alpha.ListAccountsResponse>(
+                    service, METHODID_LIST_ACCOUNTS)))
+        .addMethod(
+            getDeleteAccountMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.DeleteAccountRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_ACCOUNT)))
+        .addMethod(
+            getUpdateAccountMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateAccountRequest,
+                    com.google.analytics.admin.v1alpha.Account>(service, METHODID_UPDATE_ACCOUNT)))
+        .addMethod(
+            getProvisionAccountTicketMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest,
+                    com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse>(
+                    service, METHODID_PROVISION_ACCOUNT_TICKET)))
+        .addMethod(
+            getListAccountSummariesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListAccountSummariesRequest,
+                    com.google.analytics.admin.v1alpha.ListAccountSummariesResponse>(
+                    service, METHODID_LIST_ACCOUNT_SUMMARIES)))
+        .addMethod(
+            getGetPropertyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetPropertyRequest,
+                    com.google.analytics.admin.v1alpha.Property>(service, METHODID_GET_PROPERTY)))
+        .addMethod(
+            getListPropertiesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListPropertiesRequest,
+                    com.google.analytics.admin.v1alpha.ListPropertiesResponse>(
+                    service, METHODID_LIST_PROPERTIES)))
+        .addMethod(
+            getCreatePropertyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.CreatePropertyRequest,
+                    com.google.analytics.admin.v1alpha.Property>(
+                    service, METHODID_CREATE_PROPERTY)))
+        .addMethod(
+            getDeletePropertyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.DeletePropertyRequest,
+                    com.google.analytics.admin.v1alpha.Property>(
+                    service, METHODID_DELETE_PROPERTY)))
+        .addMethod(
+            getUpdatePropertyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdatePropertyRequest,
+                    com.google.analytics.admin.v1alpha.Property>(
+                    service, METHODID_UPDATE_PROPERTY)))
+        .addMethod(
+            getGetUserLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetUserLinkRequest,
+                    com.google.analytics.admin.v1alpha.UserLink>(service, METHODID_GET_USER_LINK)))
+        .addMethod(
+            getBatchGetUserLinksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.BatchGetUserLinksRequest,
+                    com.google.analytics.admin.v1alpha.BatchGetUserLinksResponse>(
+                    service, METHODID_BATCH_GET_USER_LINKS)))
+        .addMethod(
+            getListUserLinksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListUserLinksRequest,
+                    com.google.analytics.admin.v1alpha.ListUserLinksResponse>(
+                    service, METHODID_LIST_USER_LINKS)))
+        .addMethod(
+            getAuditUserLinksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.AuditUserLinksRequest,
+                    com.google.analytics.admin.v1alpha.AuditUserLinksResponse>(
+                    service, METHODID_AUDIT_USER_LINKS)))
+        .addMethod(
+            getCreateUserLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.CreateUserLinkRequest,
+                    com.google.analytics.admin.v1alpha.UserLink>(
+                    service, METHODID_CREATE_USER_LINK)))
+        .addMethod(
+            getBatchCreateUserLinksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.BatchCreateUserLinksRequest,
+                    com.google.analytics.admin.v1alpha.BatchCreateUserLinksResponse>(
+                    service, METHODID_BATCH_CREATE_USER_LINKS)))
+        .addMethod(
+            getUpdateUserLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateUserLinkRequest,
+                    com.google.analytics.admin.v1alpha.UserLink>(
+                    service, METHODID_UPDATE_USER_LINK)))
+        .addMethod(
+            getBatchUpdateUserLinksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest,
+                    com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse>(
+                    service, METHODID_BATCH_UPDATE_USER_LINKS)))
+        .addMethod(
+            getDeleteUserLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.DeleteUserLinkRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_USER_LINK)))
+        .addMethod(
+            getBatchDeleteUserLinksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.BatchDeleteUserLinksRequest,
+                    com.google.protobuf.Empty>(service, METHODID_BATCH_DELETE_USER_LINKS)))
+        .addMethod(
+            getCreateFirebaseLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest,
+                    com.google.analytics.admin.v1alpha.FirebaseLink>(
+                    service, METHODID_CREATE_FIREBASE_LINK)))
+        .addMethod(
+            getDeleteFirebaseLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_FIREBASE_LINK)))
+        .addMethod(
+            getListFirebaseLinksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest,
+                    com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse>(
+                    service, METHODID_LIST_FIREBASE_LINKS)))
+        .addMethod(
+            getGetGlobalSiteTagMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest,
+                    com.google.analytics.admin.v1alpha.GlobalSiteTag>(
+                    service, METHODID_GET_GLOBAL_SITE_TAG)))
+        .addMethod(
+            getCreateGoogleAdsLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest,
+                    com.google.analytics.admin.v1alpha.GoogleAdsLink>(
+                    service, METHODID_CREATE_GOOGLE_ADS_LINK)))
+        .addMethod(
+            getUpdateGoogleAdsLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest,
+                    com.google.analytics.admin.v1alpha.GoogleAdsLink>(
+                    service, METHODID_UPDATE_GOOGLE_ADS_LINK)))
+        .addMethod(
+            getDeleteGoogleAdsLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_GOOGLE_ADS_LINK)))
+        .addMethod(
+            getListGoogleAdsLinksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest,
+                    com.google.analytics.admin.v1alpha.ListGoogleAdsLinksResponse>(
+                    service, METHODID_LIST_GOOGLE_ADS_LINKS)))
+        .addMethod(
+            getGetDataSharingSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest,
+                    com.google.analytics.admin.v1alpha.DataSharingSettings>(
+                    service, METHODID_GET_DATA_SHARING_SETTINGS)))
+        .addMethod(
+            getGetMeasurementProtocolSecretMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest,
+                    com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>(
+                    service, METHODID_GET_MEASUREMENT_PROTOCOL_SECRET)))
+        .addMethod(
+            getListMeasurementProtocolSecretsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest,
+                    com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse>(
+                    service, METHODID_LIST_MEASUREMENT_PROTOCOL_SECRETS)))
+        .addMethod(
+            getCreateMeasurementProtocolSecretMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest,
+                    com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>(
+                    service, METHODID_CREATE_MEASUREMENT_PROTOCOL_SECRET)))
+        .addMethod(
+            getDeleteMeasurementProtocolSecretMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest,
+                    com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_MEASUREMENT_PROTOCOL_SECRET)))
+        .addMethod(
+            getUpdateMeasurementProtocolSecretMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest,
+                    com.google.analytics.admin.v1alpha.MeasurementProtocolSecret>(
+                    service, METHODID_UPDATE_MEASUREMENT_PROTOCOL_SECRET)))
+        .addMethod(
+            getAcknowledgeUserDataCollectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest,
+                    com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse>(
+                    service, METHODID_ACKNOWLEDGE_USER_DATA_COLLECTION)))
+        .addMethod(
+            getSearchChangeHistoryEventsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest,
+                    com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse>(
+                    service, METHODID_SEARCH_CHANGE_HISTORY_EVENTS)))
+        .addMethod(
+            getGetGoogleSignalsSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest,
+                    com.google.analytics.admin.v1alpha.GoogleSignalsSettings>(
+                    service, METHODID_GET_GOOGLE_SIGNALS_SETTINGS)))
+        .addMethod(
+            getUpdateGoogleSignalsSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest,
+                    com.google.analytics.admin.v1alpha.GoogleSignalsSettings>(
+                    service, METHODID_UPDATE_GOOGLE_SIGNALS_SETTINGS)))
+        .addMethod(
+            getCreateConversionEventMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.CreateConversionEventRequest,
+                    com.google.analytics.admin.v1alpha.ConversionEvent>(
+                    service, METHODID_CREATE_CONVERSION_EVENT)))
+        .addMethod(
+            getGetConversionEventMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetConversionEventRequest,
+                    com.google.analytics.admin.v1alpha.ConversionEvent>(
+                    service, METHODID_GET_CONVERSION_EVENT)))
+        .addMethod(
+            getDeleteConversionEventMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.DeleteConversionEventRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_CONVERSION_EVENT)))
+        .addMethod(
+            getListConversionEventsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListConversionEventsRequest,
+                    com.google.analytics.admin.v1alpha.ListConversionEventsResponse>(
+                    service, METHODID_LIST_CONVERSION_EVENTS)))
+        .addMethod(
+            getGetDisplayVideo360AdvertiserLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest,
+                    com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>(
+                    service, METHODID_GET_DISPLAY_VIDEO360ADVERTISER_LINK)))
+        .addMethod(
+            getListDisplayVideo360AdvertiserLinksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequest,
+                    com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksResponse>(
+                    service, METHODID_LIST_DISPLAY_VIDEO360ADVERTISER_LINKS)))
+        .addMethod(
+            getCreateDisplayVideo360AdvertiserLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest,
+                    com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>(
+                    service, METHODID_CREATE_DISPLAY_VIDEO360ADVERTISER_LINK)))
+        .addMethod(
+            getDeleteDisplayVideo360AdvertiserLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest,
+                    com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_DISPLAY_VIDEO360ADVERTISER_LINK)))
+        .addMethod(
+            getUpdateDisplayVideo360AdvertiserLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest,
+                    com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink>(
+                    service, METHODID_UPDATE_DISPLAY_VIDEO360ADVERTISER_LINK)))
+        .addMethod(
+            getGetDisplayVideo360AdvertiserLinkProposalMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha
+                        .GetDisplayVideo360AdvertiserLinkProposalRequest,
+                    com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>(
+                    service, METHODID_GET_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL)))
+        .addMethod(
+            getListDisplayVideo360AdvertiserLinkProposalsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha
+                        .ListDisplayVideo360AdvertiserLinkProposalsRequest,
+                    com.google.analytics.admin.v1alpha
+                        .ListDisplayVideo360AdvertiserLinkProposalsResponse>(
+                    service, METHODID_LIST_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSALS)))
+        .addMethod(
+            getCreateDisplayVideo360AdvertiserLinkProposalMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha
+                        .CreateDisplayVideo360AdvertiserLinkProposalRequest,
+                    com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>(
+                    service, METHODID_CREATE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL)))
+        .addMethod(
+            getDeleteDisplayVideo360AdvertiserLinkProposalMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha
+                        .DeleteDisplayVideo360AdvertiserLinkProposalRequest,
+                    com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL)))
+        .addMethod(
+            getApproveDisplayVideo360AdvertiserLinkProposalMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha
+                        .ApproveDisplayVideo360AdvertiserLinkProposalRequest,
+                    com.google.analytics.admin.v1alpha
+                        .ApproveDisplayVideo360AdvertiserLinkProposalResponse>(
+                    service, METHODID_APPROVE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL)))
+        .addMethod(
+            getCancelDisplayVideo360AdvertiserLinkProposalMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha
+                        .CancelDisplayVideo360AdvertiserLinkProposalRequest,
+                    com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal>(
+                    service, METHODID_CANCEL_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL)))
+        .addMethod(
+            getCreateCustomDimensionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest,
+                    com.google.analytics.admin.v1alpha.CustomDimension>(
+                    service, METHODID_CREATE_CUSTOM_DIMENSION)))
+        .addMethod(
+            getUpdateCustomDimensionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest,
+                    com.google.analytics.admin.v1alpha.CustomDimension>(
+                    service, METHODID_UPDATE_CUSTOM_DIMENSION)))
+        .addMethod(
+            getListCustomDimensionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest,
+                    com.google.analytics.admin.v1alpha.ListCustomDimensionsResponse>(
+                    service, METHODID_LIST_CUSTOM_DIMENSIONS)))
+        .addMethod(
+            getArchiveCustomDimensionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest,
+                    com.google.protobuf.Empty>(service, METHODID_ARCHIVE_CUSTOM_DIMENSION)))
+        .addMethod(
+            getGetCustomDimensionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetCustomDimensionRequest,
+                    com.google.analytics.admin.v1alpha.CustomDimension>(
+                    service, METHODID_GET_CUSTOM_DIMENSION)))
+        .addMethod(
+            getCreateCustomMetricMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.CreateCustomMetricRequest,
+                    com.google.analytics.admin.v1alpha.CustomMetric>(
+                    service, METHODID_CREATE_CUSTOM_METRIC)))
+        .addMethod(
+            getUpdateCustomMetricMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest,
+                    com.google.analytics.admin.v1alpha.CustomMetric>(
+                    service, METHODID_UPDATE_CUSTOM_METRIC)))
+        .addMethod(
+            getListCustomMetricsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListCustomMetricsRequest,
+                    com.google.analytics.admin.v1alpha.ListCustomMetricsResponse>(
+                    service, METHODID_LIST_CUSTOM_METRICS)))
+        .addMethod(
+            getArchiveCustomMetricMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest,
+                    com.google.protobuf.Empty>(service, METHODID_ARCHIVE_CUSTOM_METRIC)))
+        .addMethod(
+            getGetCustomMetricMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetCustomMetricRequest,
+                    com.google.analytics.admin.v1alpha.CustomMetric>(
+                    service, METHODID_GET_CUSTOM_METRIC)))
+        .addMethod(
+            getGetDataRetentionSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetDataRetentionSettingsRequest,
+                    com.google.analytics.admin.v1alpha.DataRetentionSettings>(
+                    service, METHODID_GET_DATA_RETENTION_SETTINGS)))
+        .addMethod(
+            getUpdateDataRetentionSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest,
+                    com.google.analytics.admin.v1alpha.DataRetentionSettings>(
+                    service, METHODID_UPDATE_DATA_RETENTION_SETTINGS)))
+        .addMethod(
+            getCreateDataStreamMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.CreateDataStreamRequest,
+                    com.google.analytics.admin.v1alpha.DataStream>(
+                    service, METHODID_CREATE_DATA_STREAM)))
+        .addMethod(
+            getDeleteDataStreamMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.DeleteDataStreamRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_DATA_STREAM)))
+        .addMethod(
+            getUpdateDataStreamMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateDataStreamRequest,
+                    com.google.analytics.admin.v1alpha.DataStream>(
+                    service, METHODID_UPDATE_DATA_STREAM)))
+        .addMethod(
+            getListDataStreamsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListDataStreamsRequest,
+                    com.google.analytics.admin.v1alpha.ListDataStreamsResponse>(
+                    service, METHODID_LIST_DATA_STREAMS)))
+        .addMethod(
+            getGetDataStreamMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetDataStreamRequest,
+                    com.google.analytics.admin.v1alpha.DataStream>(
+                    service, METHODID_GET_DATA_STREAM)))
+        .addMethod(
+            getGetAudienceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetAudienceRequest,
+                    com.google.analytics.admin.v1alpha.Audience>(service, METHODID_GET_AUDIENCE)))
+        .addMethod(
+            getListAudiencesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListAudiencesRequest,
+                    com.google.analytics.admin.v1alpha.ListAudiencesResponse>(
+                    service, METHODID_LIST_AUDIENCES)))
+        .addMethod(
+            getCreateAudienceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.CreateAudienceRequest,
+                    com.google.analytics.admin.v1alpha.Audience>(
+                    service, METHODID_CREATE_AUDIENCE)))
+        .addMethod(
+            getUpdateAudienceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateAudienceRequest,
+                    com.google.analytics.admin.v1alpha.Audience>(
+                    service, METHODID_UPDATE_AUDIENCE)))
+        .addMethod(
+            getArchiveAudienceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ArchiveAudienceRequest,
+                    com.google.protobuf.Empty>(service, METHODID_ARCHIVE_AUDIENCE)))
+        .addMethod(
+            getGetSearchAds360LinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest,
+                    com.google.analytics.admin.v1alpha.SearchAds360Link>(
+                    service, METHODID_GET_SEARCH_ADS360LINK)))
+        .addMethod(
+            getListSearchAds360LinksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest,
+                    com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse>(
+                    service, METHODID_LIST_SEARCH_ADS360LINKS)))
+        .addMethod(
+            getCreateSearchAds360LinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.CreateSearchAds360LinkRequest,
+                    com.google.analytics.admin.v1alpha.SearchAds360Link>(
+                    service, METHODID_CREATE_SEARCH_ADS360LINK)))
+        .addMethod(
+            getDeleteSearchAds360LinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_SEARCH_ADS360LINK)))
+        .addMethod(
+            getUpdateSearchAds360LinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest,
+                    com.google.analytics.admin.v1alpha.SearchAds360Link>(
+                    service, METHODID_UPDATE_SEARCH_ADS360LINK)))
+        .addMethod(
+            getGetAttributionSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest,
+                    com.google.analytics.admin.v1alpha.AttributionSettings>(
+                    service, METHODID_GET_ATTRIBUTION_SETTINGS)))
+        .addMethod(
+            getUpdateAttributionSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest,
+                    com.google.analytics.admin.v1alpha.AttributionSettings>(
+                    service, METHODID_UPDATE_ATTRIBUTION_SETTINGS)))
+        .addMethod(
+            getRunAccessReportMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.RunAccessReportRequest,
+                    com.google.analytics.admin.v1alpha.RunAccessReportResponse>(
+                    service, METHODID_RUN_ACCESS_REPORT)))
+        .addMethod(
+            getCreateAccessBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.CreateAccessBindingRequest,
+                    com.google.analytics.admin.v1alpha.AccessBinding>(
+                    service, METHODID_CREATE_ACCESS_BINDING)))
+        .addMethod(
+            getGetAccessBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetAccessBindingRequest,
+                    com.google.analytics.admin.v1alpha.AccessBinding>(
+                    service, METHODID_GET_ACCESS_BINDING)))
+        .addMethod(
+            getUpdateAccessBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest,
+                    com.google.analytics.admin.v1alpha.AccessBinding>(
+                    service, METHODID_UPDATE_ACCESS_BINDING)))
+        .addMethod(
+            getDeleteAccessBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_ACCESS_BINDING)))
+        .addMethod(
+            getListAccessBindingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListAccessBindingsRequest,
+                    com.google.analytics.admin.v1alpha.ListAccessBindingsResponse>(
+                    service, METHODID_LIST_ACCESS_BINDINGS)))
+        .addMethod(
+            getBatchCreateAccessBindingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsRequest,
+                    com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsResponse>(
+                    service, METHODID_BATCH_CREATE_ACCESS_BINDINGS)))
+        .addMethod(
+            getBatchGetAccessBindingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.BatchGetAccessBindingsRequest,
+                    com.google.analytics.admin.v1alpha.BatchGetAccessBindingsResponse>(
+                    service, METHODID_BATCH_GET_ACCESS_BINDINGS)))
+        .addMethod(
+            getBatchUpdateAccessBindingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsRequest,
+                    com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsResponse>(
+                    service, METHODID_BATCH_UPDATE_ACCESS_BINDINGS)))
+        .addMethod(
+            getBatchDeleteAccessBindingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.BatchDeleteAccessBindingsRequest,
+                    com.google.protobuf.Empty>(service, METHODID_BATCH_DELETE_ACCESS_BINDINGS)))
+        .addMethod(
+            getGetExpandedDataSetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest,
+                    com.google.analytics.admin.v1alpha.ExpandedDataSet>(
+                    service, METHODID_GET_EXPANDED_DATA_SET)))
+        .addMethod(
+            getListExpandedDataSetsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListExpandedDataSetsRequest,
+                    com.google.analytics.admin.v1alpha.ListExpandedDataSetsResponse>(
+                    service, METHODID_LIST_EXPANDED_DATA_SETS)))
+        .addMethod(
+            getCreateExpandedDataSetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.CreateExpandedDataSetRequest,
+                    com.google.analytics.admin.v1alpha.ExpandedDataSet>(
+                    service, METHODID_CREATE_EXPANDED_DATA_SET)))
+        .addMethod(
+            getUpdateExpandedDataSetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest,
+                    com.google.analytics.admin.v1alpha.ExpandedDataSet>(
+                    service, METHODID_UPDATE_EXPANDED_DATA_SET)))
+        .addMethod(
+            getDeleteExpandedDataSetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.DeleteExpandedDataSetRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_EXPANDED_DATA_SET)))
+        .addMethod(
+            getSetAutomatedGa4ConfigurationOptOutMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest,
+                    com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse>(
+                    service, METHODID_SET_AUTOMATED_GA4CONFIGURATION_OPT_OUT)))
+        .addMethod(
+            getFetchAutomatedGa4ConfigurationOptOutMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest,
+                    com.google.analytics.admin.v1alpha
+                        .FetchAutomatedGa4ConfigurationOptOutResponse>(
+                    service, METHODID_FETCH_AUTOMATED_GA4CONFIGURATION_OPT_OUT)))
+        .addMethod(
+            getGetBigQueryLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest,
+                    com.google.analytics.admin.v1alpha.BigQueryLink>(
+                    service, METHODID_GET_BIG_QUERY_LINK)))
+        .addMethod(
+            getListBigQueryLinksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest,
+                    com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse>(
+                    service, METHODID_LIST_BIG_QUERY_LINKS)))
+        .addMethod(
+            getGetEnhancedMeasurementSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest,
+                    com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>(
+                    service, METHODID_GET_ENHANCED_MEASUREMENT_SETTINGS)))
+        .addMethod(
+            getUpdateEnhancedMeasurementSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest,
+                    com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>(
+                    service, METHODID_UPDATE_ENHANCED_MEASUREMENT_SETTINGS)))
+        .addMethod(
+            getCreateConnectedSiteTagMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest,
+                    com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse>(
+                    service, METHODID_CREATE_CONNECTED_SITE_TAG)))
+        .addMethod(
+            getDeleteConnectedSiteTagMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_CONNECTED_SITE_TAG)))
+        .addMethod(
+            getListConnectedSiteTagsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest,
+                    com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse>(
+                    service, METHODID_LIST_CONNECTED_SITE_TAGS)))
+        .build();
   }
 
   private abstract static class AnalyticsAdminServiceBaseDescriptorSupplier
@@ -13373,6 +14068,11 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getFetchAutomatedGa4ConfigurationOptOutMethod())
                       .addMethod(getGetBigQueryLinkMethod())
                       .addMethod(getListBigQueryLinksMethod())
+                      .addMethod(getGetEnhancedMeasurementSettingsMethod())
+                      .addMethod(getUpdateEnhancedMeasurementSettingsMethod())
+                      .addMethod(getCreateConnectedSiteTagMethod())
+                      .addMethod(getDeleteConnectedSiteTagMethod())
+                      .addMethod(getListConnectedSiteTagsMethod())
                       .build();
         }
       }

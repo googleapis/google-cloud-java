@@ -479,7 +479,7 @@ public final class AgentsGrpc {
    * Service for managing [Agents][google.cloud.dialogflow.v2beta1.Agent].
    * </pre>
    */
-  public abstract static class AgentsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -488,7 +488,7 @@ public final class AgentsGrpc {
      * Retrieves the specified agent.
      * </pre>
      */
-    public void getAgent(
+    default void getAgent(
         com.google.cloud.dialogflow.v2beta1.GetAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Agent> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAgentMethod(), responseObserver);
@@ -504,7 +504,7 @@ public final class AgentsGrpc {
      * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
-    public void setAgent(
+    default void setAgent(
         com.google.cloud.dialogflow.v2beta1.SetAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Agent> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSetAgentMethod(), responseObserver);
@@ -517,7 +517,7 @@ public final class AgentsGrpc {
      * Deletes the specified agent.
      * </pre>
      */
-    public void deleteAgent(
+    default void deleteAgent(
         com.google.cloud.dialogflow.v2beta1.DeleteAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -536,7 +536,7 @@ public final class AgentsGrpc {
      * Sub-Collections](https://cloud.google.com/apis/design/design_patterns#list_sub-collections).
      * </pre>
      */
-    public void searchAgents(
+    default void searchAgents(
         com.google.cloud.dialogflow.v2beta1.SearchAgentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.SearchAgentsResponse>
             responseObserver) {
@@ -561,7 +561,7 @@ public final class AgentsGrpc {
      * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
-    public void trainAgent(
+    default void trainAgent(
         com.google.cloud.dialogflow.v2beta1.TrainAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTrainAgentMethod(), responseObserver);
@@ -581,7 +581,7 @@ public final class AgentsGrpc {
      * [ExportAgentResponse][google.cloud.dialogflow.v2beta1.ExportAgentResponse]
      * </pre>
      */
-    public void exportAgent(
+    default void exportAgent(
         com.google.cloud.dialogflow.v2beta1.ExportAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -616,7 +616,7 @@ public final class AgentsGrpc {
      * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
-    public void importAgent(
+    default void importAgent(
         com.google.cloud.dialogflow.v2beta1.ImportAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -649,7 +649,7 @@ public final class AgentsGrpc {
      * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
-    public void restoreAgent(
+    default void restoreAgent(
         com.google.cloud.dialogflow.v2beta1.RestoreAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -664,79 +664,32 @@ public final class AgentsGrpc {
      * training time and is updated automatically when training is completed.
      * </pre>
      */
-    public void getValidationResult(
+    default void getValidationResult(
         com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ValidationResult>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetValidationResultMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Agents.
+   *
+   * <pre>
+   * Service for managing [Agents][google.cloud.dialogflow.v2beta1.Agent].
+   * </pre>
+   */
+  public abstract static class AgentsImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getGetAgentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.GetAgentRequest,
-                      com.google.cloud.dialogflow.v2beta1.Agent>(this, METHODID_GET_AGENT)))
-          .addMethod(
-              getSetAgentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.SetAgentRequest,
-                      com.google.cloud.dialogflow.v2beta1.Agent>(this, METHODID_SET_AGENT)))
-          .addMethod(
-              getDeleteAgentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.DeleteAgentRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_AGENT)))
-          .addMethod(
-              getSearchAgentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.SearchAgentsRequest,
-                      com.google.cloud.dialogflow.v2beta1.SearchAgentsResponse>(
-                      this, METHODID_SEARCH_AGENTS)))
-          .addMethod(
-              getTrainAgentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.TrainAgentRequest,
-                      com.google.longrunning.Operation>(this, METHODID_TRAIN_AGENT)))
-          .addMethod(
-              getExportAgentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.ExportAgentRequest,
-                      com.google.longrunning.Operation>(this, METHODID_EXPORT_AGENT)))
-          .addMethod(
-              getImportAgentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.ImportAgentRequest,
-                      com.google.longrunning.Operation>(this, METHODID_IMPORT_AGENT)))
-          .addMethod(
-              getRestoreAgentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.RestoreAgentRequest,
-                      com.google.longrunning.Operation>(this, METHODID_RESTORE_AGENT)))
-          .addMethod(
-              getGetValidationResultMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest,
-                      com.google.cloud.dialogflow.v2beta1.ValidationResult>(
-                      this, METHODID_GET_VALIDATION_RESULT)))
-          .build();
+      return AgentsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Agents.
    *
    * <pre>
    * Service for managing [Agents][google.cloud.dialogflow.v2beta1.Agent].
@@ -960,7 +913,7 @@ public final class AgentsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Agents.
    *
    * <pre>
    * Service for managing [Agents][google.cloud.dialogflow.v2beta1.Agent].
@@ -1162,7 +1115,7 @@ public final class AgentsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Agents.
    *
    * <pre>
    * Service for managing [Agents][google.cloud.dialogflow.v2beta1.Agent].
@@ -1383,10 +1336,10 @@ public final class AgentsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final AgentsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(AgentsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1459,6 +1412,67 @@ public final class AgentsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getGetAgentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.GetAgentRequest,
+                    com.google.cloud.dialogflow.v2beta1.Agent>(service, METHODID_GET_AGENT)))
+        .addMethod(
+            getSetAgentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.SetAgentRequest,
+                    com.google.cloud.dialogflow.v2beta1.Agent>(service, METHODID_SET_AGENT)))
+        .addMethod(
+            getDeleteAgentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.DeleteAgentRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_AGENT)))
+        .addMethod(
+            getSearchAgentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.SearchAgentsRequest,
+                    com.google.cloud.dialogflow.v2beta1.SearchAgentsResponse>(
+                    service, METHODID_SEARCH_AGENTS)))
+        .addMethod(
+            getTrainAgentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.TrainAgentRequest,
+                    com.google.longrunning.Operation>(service, METHODID_TRAIN_AGENT)))
+        .addMethod(
+            getExportAgentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.ExportAgentRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EXPORT_AGENT)))
+        .addMethod(
+            getImportAgentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.ImportAgentRequest,
+                    com.google.longrunning.Operation>(service, METHODID_IMPORT_AGENT)))
+        .addMethod(
+            getRestoreAgentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.RestoreAgentRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RESTORE_AGENT)))
+        .addMethod(
+            getGetValidationResultMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.GetValidationResultRequest,
+                    com.google.cloud.dialogflow.v2beta1.ValidationResult>(
+                    service, METHODID_GET_VALIDATION_RESULT)))
+        .build();
   }
 
   private abstract static class AgentsBaseDescriptorSupplier

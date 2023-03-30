@@ -132,7 +132,7 @@ public final class MessagesV1Beta3Grpc {
    * Dataflow jobs.
    * </pre>
    */
-  public abstract static class MessagesV1Beta3ImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -146,30 +146,34 @@ public final class MessagesV1Beta3Grpc {
      * the status of jobs that are running in `us-central1`.
      * </pre>
      */
-    public void listJobMessages(
+    default void listJobMessages(
         com.google.dataflow.v1beta3.ListJobMessagesRequest request,
         io.grpc.stub.StreamObserver<com.google.dataflow.v1beta3.ListJobMessagesResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListJobMessagesMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service MessagesV1Beta3.
+   *
+   * <pre>
+   * The Dataflow Messages API is used for monitoring the progress of
+   * Dataflow jobs.
+   * </pre>
+   */
+  public abstract static class MessagesV1Beta3ImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListJobMessagesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.dataflow.v1beta3.ListJobMessagesRequest,
-                      com.google.dataflow.v1beta3.ListJobMessagesResponse>(
-                      this, METHODID_LIST_JOB_MESSAGES)))
-          .build();
+      return MessagesV1Beta3Grpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service MessagesV1Beta3.
    *
    * <pre>
    * The Dataflow Messages API is used for monitoring the progress of
@@ -211,7 +215,7 @@ public final class MessagesV1Beta3Grpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service MessagesV1Beta3.
    *
    * <pre>
    * The Dataflow Messages API is used for monitoring the progress of
@@ -250,7 +254,7 @@ public final class MessagesV1Beta3Grpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service MessagesV1Beta3.
    *
    * <pre>
    * The Dataflow Messages API is used for monitoring the progress of
@@ -296,10 +300,10 @@ public final class MessagesV1Beta3Grpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final MessagesV1Beta3ImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(MessagesV1Beta3ImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -328,6 +332,18 @@ public final class MessagesV1Beta3Grpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListJobMessagesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.dataflow.v1beta3.ListJobMessagesRequest,
+                    com.google.dataflow.v1beta3.ListJobMessagesResponse>(
+                    service, METHODID_LIST_JOB_MESSAGES)))
+        .build();
   }
 
   private abstract static class MessagesV1Beta3BaseDescriptorSupplier

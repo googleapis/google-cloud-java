@@ -132,7 +132,7 @@ public final class FlexTemplatesServiceGrpc {
    * Provides a service for Flex templates. This feature is not ready yet.
    * </pre>
    */
-  public abstract static class FlexTemplatesServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -141,30 +141,33 @@ public final class FlexTemplatesServiceGrpc {
      * Launch a job with a FlexTemplate.
      * </pre>
      */
-    public void launchFlexTemplate(
+    default void launchFlexTemplate(
         com.google.dataflow.v1beta3.LaunchFlexTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.dataflow.v1beta3.LaunchFlexTemplateResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getLaunchFlexTemplateMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service FlexTemplatesService.
+   *
+   * <pre>
+   * Provides a service for Flex templates. This feature is not ready yet.
+   * </pre>
+   */
+  public abstract static class FlexTemplatesServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getLaunchFlexTemplateMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.dataflow.v1beta3.LaunchFlexTemplateRequest,
-                      com.google.dataflow.v1beta3.LaunchFlexTemplateResponse>(
-                      this, METHODID_LAUNCH_FLEX_TEMPLATE)))
-          .build();
+      return FlexTemplatesServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service FlexTemplatesService.
    *
    * <pre>
    * Provides a service for Flex templates. This feature is not ready yet.
@@ -201,7 +204,7 @@ public final class FlexTemplatesServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service FlexTemplatesService.
    *
    * <pre>
    * Provides a service for Flex templates. This feature is not ready yet.
@@ -235,7 +238,7 @@ public final class FlexTemplatesServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service FlexTemplatesService.
    *
    * <pre>
    * Provides a service for Flex templates. This feature is not ready yet.
@@ -276,10 +279,10 @@ public final class FlexTemplatesServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final FlexTemplatesServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(FlexTemplatesServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -308,6 +311,18 @@ public final class FlexTemplatesServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getLaunchFlexTemplateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.dataflow.v1beta3.LaunchFlexTemplateRequest,
+                    com.google.dataflow.v1beta3.LaunchFlexTemplateResponse>(
+                    service, METHODID_LAUNCH_FLEX_TEMPLATE)))
+        .build();
   }
 
   private abstract static class FlexTemplatesServiceBaseDescriptorSupplier

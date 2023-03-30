@@ -78,9 +78,11 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The `Channel` [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key] that identifies the input that this
-     * audio mapping applies to. If an active input doesn't have an audio
-     * mapping, the primary audio track in the input stream will be selected.
+     * Required. The `Channel`
+     * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+     * that identifies the input that this audio mapping applies to. If an
+     * active input doesn't have an audio mapping, the primary audio track in
+     * the input stream will be selected.
      * </pre>
      *
      * <code>string input_key = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -92,9 +94,11 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The `Channel` [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key] that identifies the input that this
-     * audio mapping applies to. If an active input doesn't have an audio
-     * mapping, the primary audio track in the input stream will be selected.
+     * Required. The `Channel`
+     * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+     * that identifies the input that this audio mapping applies to. If an
+     * active input doesn't have an audio mapping, the primary audio track in
+     * the input stream will be selected.
      * </pre>
      *
      * <code>string input_key = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -108,8 +112,9 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The zero-based index of the track in the input stream.
-     * All [mapping][google.cloud.video.livestream.v1.AudioStream.mapping]s in the same [AudioStream][google.cloud.video.livestream.v1.AudioStream]
-     * must have the same input track.
+     * All [mapping][google.cloud.video.livestream.v1.AudioStream.mapping]s in
+     * the same [AudioStream][google.cloud.video.livestream.v1.AudioStream] must
+     * have the same input track.
      * </pre>
      *
      * <code>int32 input_track = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -136,7 +141,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The zero-based index of the channel in the output audio stream.
-     * Must be consistent with the [input_channel][google.cloud.video.livestream.v1.AudioStream.AudioMapping.input_channel].
+     * Must be consistent with the
+     * [input_channel][google.cloud.video.livestream.v1.AudioStream.AudioMapping.input_channel].
      * </pre>
      *
      * <code>int32 output_channel = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -144,6 +150,20 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      * @return The outputChannel.
      */
     int getOutputChannel();
+
+    /**
+     *
+     *
+     * <pre>
+     * Audio volume control in dB. Negative values decrease volume,
+     * positive values increase. The default is 0.
+     * </pre>
+     *
+     * <code>double gain_db = 5;</code>
+     *
+     * @return The gainDb.
+     */
+    double getGainDb();
   }
   /**
    *
@@ -202,9 +222,11 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The `Channel` [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key] that identifies the input that this
-     * audio mapping applies to. If an active input doesn't have an audio
-     * mapping, the primary audio track in the input stream will be selected.
+     * Required. The `Channel`
+     * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+     * that identifies the input that this audio mapping applies to. If an
+     * active input doesn't have an audio mapping, the primary audio track in
+     * the input stream will be selected.
      * </pre>
      *
      * <code>string input_key = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -227,9 +249,11 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The `Channel` [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key] that identifies the input that this
-     * audio mapping applies to. If an active input doesn't have an audio
-     * mapping, the primary audio track in the input stream will be selected.
+     * Required. The `Channel`
+     * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+     * that identifies the input that this audio mapping applies to. If an
+     * active input doesn't have an audio mapping, the primary audio track in
+     * the input stream will be selected.
      * </pre>
      *
      * <code>string input_key = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -256,8 +280,9 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The zero-based index of the track in the input stream.
-     * All [mapping][google.cloud.video.livestream.v1.AudioStream.mapping]s in the same [AudioStream][google.cloud.video.livestream.v1.AudioStream]
-     * must have the same input track.
+     * All [mapping][google.cloud.video.livestream.v1.AudioStream.mapping]s in
+     * the same [AudioStream][google.cloud.video.livestream.v1.AudioStream] must
+     * have the same input track.
      * </pre>
      *
      * <code>int32 input_track = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -294,7 +319,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The zero-based index of the channel in the output audio stream.
-     * Must be consistent with the [input_channel][google.cloud.video.livestream.v1.AudioStream.AudioMapping.input_channel].
+     * Must be consistent with the
+     * [input_channel][google.cloud.video.livestream.v1.AudioStream.AudioMapping.input_channel].
      * </pre>
      *
      * <code>int32 output_channel = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -304,6 +330,25 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public int getOutputChannel() {
       return outputChannel_;
+    }
+
+    public static final int GAIN_DB_FIELD_NUMBER = 5;
+    private double gainDb_ = 0D;
+    /**
+     *
+     *
+     * <pre>
+     * Audio volume control in dB. Negative values decrease volume,
+     * positive values increase. The default is 0.
+     * </pre>
+     *
+     * <code>double gain_db = 5;</code>
+     *
+     * @return The gainDb.
+     */
+    @java.lang.Override
+    public double getGainDb() {
+      return gainDb_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -329,6 +374,9 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       if (outputChannel_ != 0) {
         output.writeInt32(4, outputChannel_);
       }
+      if (java.lang.Double.doubleToRawLongBits(gainDb_) != 0) {
+        output.writeDouble(5, gainDb_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputKey_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, inputKey_);
       }
@@ -349,6 +397,9 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       }
       if (outputChannel_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, outputChannel_);
+      }
+      if (java.lang.Double.doubleToRawLongBits(gainDb_) != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeDoubleSize(5, gainDb_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputKey_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, inputKey_);
@@ -373,6 +424,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       if (getInputTrack() != other.getInputTrack()) return false;
       if (getInputChannel() != other.getInputChannel()) return false;
       if (getOutputChannel() != other.getOutputChannel()) return false;
+      if (java.lang.Double.doubleToLongBits(getGainDb())
+          != java.lang.Double.doubleToLongBits(other.getGainDb())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -392,6 +445,11 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getInputChannel();
       hash = (37 * hash) + OUTPUT_CHANNEL_FIELD_NUMBER;
       hash = (53 * hash) + getOutputChannel();
+      hash = (37 * hash) + GAIN_DB_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getGainDb()));
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -538,6 +596,7 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
         inputTrack_ = 0;
         inputChannel_ = 0;
         outputChannel_ = 0;
+        gainDb_ = 0D;
         return this;
       }
 
@@ -587,6 +646,9 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.outputChannel_ = outputChannel_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.gainDb_ = gainDb_;
         }
       }
 
@@ -654,6 +716,9 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
         if (other.getOutputChannel() != 0) {
           setOutputChannel(other.getOutputChannel());
         }
+        if (other.getGainDb() != 0D) {
+          setGainDb(other.getGainDb());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -698,6 +763,12 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000008;
                   break;
                 } // case 32
+              case 41:
+                {
+                  gainDb_ = input.readDouble();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 41
               case 50:
                 {
                   inputKey_ = input.readStringRequireUtf8();
@@ -728,9 +799,11 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The `Channel` [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key] that identifies the input that this
-       * audio mapping applies to. If an active input doesn't have an audio
-       * mapping, the primary audio track in the input stream will be selected.
+       * Required. The `Channel`
+       * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+       * that identifies the input that this audio mapping applies to. If an
+       * active input doesn't have an audio mapping, the primary audio track in
+       * the input stream will be selected.
        * </pre>
        *
        * <code>string input_key = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -752,9 +825,11 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The `Channel` [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key] that identifies the input that this
-       * audio mapping applies to. If an active input doesn't have an audio
-       * mapping, the primary audio track in the input stream will be selected.
+       * Required. The `Channel`
+       * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+       * that identifies the input that this audio mapping applies to. If an
+       * active input doesn't have an audio mapping, the primary audio track in
+       * the input stream will be selected.
        * </pre>
        *
        * <code>string input_key = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -776,9 +851,11 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The `Channel` [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key] that identifies the input that this
-       * audio mapping applies to. If an active input doesn't have an audio
-       * mapping, the primary audio track in the input stream will be selected.
+       * Required. The `Channel`
+       * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+       * that identifies the input that this audio mapping applies to. If an
+       * active input doesn't have an audio mapping, the primary audio track in
+       * the input stream will be selected.
        * </pre>
        *
        * <code>string input_key = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -799,9 +876,11 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The `Channel` [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key] that identifies the input that this
-       * audio mapping applies to. If an active input doesn't have an audio
-       * mapping, the primary audio track in the input stream will be selected.
+       * Required. The `Channel`
+       * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+       * that identifies the input that this audio mapping applies to. If an
+       * active input doesn't have an audio mapping, the primary audio track in
+       * the input stream will be selected.
        * </pre>
        *
        * <code>string input_key = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -818,9 +897,11 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The `Channel` [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key] that identifies the input that this
-       * audio mapping applies to. If an active input doesn't have an audio
-       * mapping, the primary audio track in the input stream will be selected.
+       * Required. The `Channel`
+       * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+       * that identifies the input that this audio mapping applies to. If an
+       * active input doesn't have an audio mapping, the primary audio track in
+       * the input stream will be selected.
        * </pre>
        *
        * <code>string input_key = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -845,8 +926,9 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The zero-based index of the track in the input stream.
-       * All [mapping][google.cloud.video.livestream.v1.AudioStream.mapping]s in the same [AudioStream][google.cloud.video.livestream.v1.AudioStream]
-       * must have the same input track.
+       * All [mapping][google.cloud.video.livestream.v1.AudioStream.mapping]s in
+       * the same [AudioStream][google.cloud.video.livestream.v1.AudioStream] must
+       * have the same input track.
        * </pre>
        *
        * <code>int32 input_track = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -862,8 +944,9 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The zero-based index of the track in the input stream.
-       * All [mapping][google.cloud.video.livestream.v1.AudioStream.mapping]s in the same [AudioStream][google.cloud.video.livestream.v1.AudioStream]
-       * must have the same input track.
+       * All [mapping][google.cloud.video.livestream.v1.AudioStream.mapping]s in
+       * the same [AudioStream][google.cloud.video.livestream.v1.AudioStream] must
+       * have the same input track.
        * </pre>
        *
        * <code>int32 input_track = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -883,8 +966,9 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The zero-based index of the track in the input stream.
-       * All [mapping][google.cloud.video.livestream.v1.AudioStream.mapping]s in the same [AudioStream][google.cloud.video.livestream.v1.AudioStream]
-       * must have the same input track.
+       * All [mapping][google.cloud.video.livestream.v1.AudioStream.mapping]s in
+       * the same [AudioStream][google.cloud.video.livestream.v1.AudioStream] must
+       * have the same input track.
        * </pre>
        *
        * <code>int32 input_track = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -957,7 +1041,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The zero-based index of the channel in the output audio stream.
-       * Must be consistent with the [input_channel][google.cloud.video.livestream.v1.AudioStream.AudioMapping.input_channel].
+       * Must be consistent with the
+       * [input_channel][google.cloud.video.livestream.v1.AudioStream.AudioMapping.input_channel].
        * </pre>
        *
        * <code>int32 output_channel = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -973,7 +1058,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The zero-based index of the channel in the output audio stream.
-       * Must be consistent with the [input_channel][google.cloud.video.livestream.v1.AudioStream.AudioMapping.input_channel].
+       * Must be consistent with the
+       * [input_channel][google.cloud.video.livestream.v1.AudioStream.AudioMapping.input_channel].
        * </pre>
        *
        * <code>int32 output_channel = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -993,7 +1079,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The zero-based index of the channel in the output audio stream.
-       * Must be consistent with the [input_channel][google.cloud.video.livestream.v1.AudioStream.AudioMapping.input_channel].
+       * Must be consistent with the
+       * [input_channel][google.cloud.video.livestream.v1.AudioStream.AudioMapping.input_channel].
        * </pre>
        *
        * <code>int32 output_channel = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1003,6 +1090,62 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
       public Builder clearOutputChannel() {
         bitField0_ = (bitField0_ & ~0x00000008);
         outputChannel_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private double gainDb_;
+      /**
+       *
+       *
+       * <pre>
+       * Audio volume control in dB. Negative values decrease volume,
+       * positive values increase. The default is 0.
+       * </pre>
+       *
+       * <code>double gain_db = 5;</code>
+       *
+       * @return The gainDb.
+       */
+      @java.lang.Override
+      public double getGainDb() {
+        return gainDb_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Audio volume control in dB. Negative values decrease volume,
+       * positive values increase. The default is 0.
+       * </pre>
+       *
+       * <code>double gain_db = 5;</code>
+       *
+       * @param value The gainDb to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGainDb(double value) {
+
+        gainDb_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Audio volume control in dB. Negative values decrease volume,
+       * positive values increase. The default is 0.
+       * </pre>
+       *
+       * <code>double gain_db = 5;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearGainDb() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        gainDb_ = 0D;
         onChanged();
         return this;
       }
@@ -1155,7 +1298,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Audio bitrate in bits per second. Must be between 1 and 10,000,000.
+   * Required. Audio bitrate in bits per second. Must be between 1 and
+   * 10,000,000.
    * </pre>
    *
    * <code>int32 bitrate_bps = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2099,7 +2243,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Audio bitrate in bits per second. Must be between 1 and 10,000,000.
+     * Required. Audio bitrate in bits per second. Must be between 1 and
+     * 10,000,000.
      * </pre>
      *
      * <code>int32 bitrate_bps = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2114,7 +2259,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Audio bitrate in bits per second. Must be between 1 and 10,000,000.
+     * Required. Audio bitrate in bits per second. Must be between 1 and
+     * 10,000,000.
      * </pre>
      *
      * <code>int32 bitrate_bps = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2133,7 +2279,8 @@ public final class AudioStream extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Audio bitrate in bits per second. Must be between 1 and 10,000,000.
+     * Required. Audio bitrate in bits per second. Must be between 1 and
+     * 10,000,000.
      * </pre>
      *
      * <code>int32 bitrate_bps = 2 [(.google.api.field_behavior) = REQUIRED];</code>

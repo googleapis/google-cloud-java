@@ -27,7 +27,8 @@ public interface MetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the Cloud Run Service that is associated with a `Rollout`.
+   * Output only. The name of the Cloud Run Service that is associated with a
+   * `Rollout`.
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface MetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the Cloud Run Service that is associated with a `Rollout`.
+   * Output only. The name of the Cloud Run Service that is associated with a
+   * `Rollout`.
    * </pre>
    *
    * <code>
@@ -55,7 +57,8 @@ public interface MetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the Cloud Run Service that is associated with a `Rollout`.
+   * Output only. The name of the Cloud Run Service that is associated with a
+   * `Rollout`.
    * </pre>
    *
    * <code>

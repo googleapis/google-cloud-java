@@ -580,7 +580,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * @param account Required. The account to update. The account's `name` field is used to identify
    *     the account.
    * @param updateMask Required. The list of fields to be updated. Field names must be in snake case
-   *     (e.g., "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     (for example, "field_to_update"). Omitted fields will not be updated. To replace the entire
    *     entity, use one path with the string "&#42;" to match all fields.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1148,7 +1148,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * resources (eg: GoogleAdsLinks, Streams, UserLinks) will be permanently purged.
    * https://support.google.com/analytics/answer/6154772
    *
-   * <p>Returns an error if the target is not found, or is not an GA4 Property.
+   * <p>Returns an error if the target is not found, or is not a GA4 Property.
    *
    * <p>Sample code:
    *
@@ -1186,7 +1186,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * resources (eg: GoogleAdsLinks, Streams, UserLinks) will be permanently purged.
    * https://support.google.com/analytics/answer/6154772
    *
-   * <p>Returns an error if the target is not found, or is not an GA4 Property.
+   * <p>Returns an error if the target is not found, or is not a GA4 Property.
    *
    * <p>Sample code:
    *
@@ -1223,7 +1223,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * resources (eg: GoogleAdsLinks, Streams, UserLinks) will be permanently purged.
    * https://support.google.com/analytics/answer/6154772
    *
-   * <p>Returns an error if the target is not found, or is not an GA4 Property.
+   * <p>Returns an error if the target is not found, or is not a GA4 Property.
    *
    * <p>Sample code:
    *
@@ -1261,7 +1261,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * resources (eg: GoogleAdsLinks, Streams, UserLinks) will be permanently purged.
    * https://support.google.com/analytics/answer/6154772
    *
-   * <p>Returns an error if the target is not found, or is not an GA4 Property.
+   * <p>Returns an error if the target is not found, or is not a GA4 Property.
    *
    * <p>Sample code:
    *
@@ -3133,8 +3133,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Acknowledges the terms of user data collection for the specified property.
    *
-   * <p>This acknowledgement must be completed (either in the Google Analytics UI or via this API)
-   * before MeasurementProtocolSecret resources may be created.
+   * <p>This acknowledgement must be completed (either in the Google Analytics UI or through this
+   * API) before MeasurementProtocolSecret resources may be created.
    *
    * <p>Sample code:
    *
@@ -3168,8 +3168,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Acknowledges the terms of user data collection for the specified property.
    *
-   * <p>This acknowledgement must be completed (either in the Google Analytics UI or via this API)
-   * before MeasurementProtocolSecret resources may be created.
+   * <p>This acknowledgement must be completed (either in the Google Analytics UI or through this
+   * API) before MeasurementProtocolSecret resources may be created.
    *
    * <p>Sample code:
    *
@@ -5995,6 +5995,105 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<GetDataStreamRequest, DataStream> getDataStreamCallable() {
     return stub.getDataStreamCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a customized report of data access records. The report provides records of each time a
+   * user reads Google Analytics reporting data. Access records are retained for up to 2 years.
+   *
+   * <p>Data Access Reports can be requested for a property. The property must be in Google
+   * Analytics 360. This method is only available to Administrators.
+   *
+   * <p>These data access records include GA4 UI Reporting, GA4 UI Explorations, GA4 Data API, and
+   * other products like Firebase &amp; Admob that can retrieve data from Google Analytics through a
+   * linkage. These records don't include property configuration changes like adding a stream or
+   * changing a property's time zone. For configuration change history, see
+   * [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   RunAccessReportRequest request =
+   *       RunAccessReportRequest.newBuilder()
+   *           .setEntity("entity-1298275357")
+   *           .addAllDimensions(new ArrayList<AccessDimension>())
+   *           .addAllMetrics(new ArrayList<AccessMetric>())
+   *           .addAllDateRanges(new ArrayList<AccessDateRange>())
+   *           .setDimensionFilter(AccessFilterExpression.newBuilder().build())
+   *           .setMetricFilter(AccessFilterExpression.newBuilder().build())
+   *           .setOffset(-1019779949)
+   *           .setLimit(102976443)
+   *           .setTimeZone("timeZone-2077180903")
+   *           .addAllOrderBys(new ArrayList<AccessOrderBy>())
+   *           .setReturnEntityQuota(true)
+   *           .build();
+   *   RunAccessReportResponse response = analyticsAdminServiceClient.runAccessReport(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RunAccessReportResponse runAccessReport(RunAccessReportRequest request) {
+    return runAccessReportCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a customized report of data access records. The report provides records of each time a
+   * user reads Google Analytics reporting data. Access records are retained for up to 2 years.
+   *
+   * <p>Data Access Reports can be requested for a property. The property must be in Google
+   * Analytics 360. This method is only available to Administrators.
+   *
+   * <p>These data access records include GA4 UI Reporting, GA4 UI Explorations, GA4 Data API, and
+   * other products like Firebase &amp; Admob that can retrieve data from Google Analytics through a
+   * linkage. These records don't include property configuration changes like adding a stream or
+   * changing a property's time zone. For configuration change history, see
+   * [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   RunAccessReportRequest request =
+   *       RunAccessReportRequest.newBuilder()
+   *           .setEntity("entity-1298275357")
+   *           .addAllDimensions(new ArrayList<AccessDimension>())
+   *           .addAllMetrics(new ArrayList<AccessMetric>())
+   *           .addAllDateRanges(new ArrayList<AccessDateRange>())
+   *           .setDimensionFilter(AccessFilterExpression.newBuilder().build())
+   *           .setMetricFilter(AccessFilterExpression.newBuilder().build())
+   *           .setOffset(-1019779949)
+   *           .setLimit(102976443)
+   *           .setTimeZone("timeZone-2077180903")
+   *           .addAllOrderBys(new ArrayList<AccessOrderBy>())
+   *           .setReturnEntityQuota(true)
+   *           .build();
+   *   ApiFuture<RunAccessReportResponse> future =
+   *       analyticsAdminServiceClient.runAccessReportCallable().futureCall(request);
+   *   // Do something.
+   *   RunAccessReportResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RunAccessReportRequest, RunAccessReportResponse>
+      runAccessReportCallable() {
+    return stub.runAccessReportCallable();
   }
 
   @Override

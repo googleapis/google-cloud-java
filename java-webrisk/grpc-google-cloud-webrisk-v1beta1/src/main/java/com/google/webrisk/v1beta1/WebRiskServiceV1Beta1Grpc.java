@@ -227,7 +227,7 @@ public final class WebRiskServiceV1Beta1Grpc {
    * website and in client applications.
    * </pre>
    */
-  public abstract static class WebRiskServiceV1Beta1ImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -236,7 +236,7 @@ public final class WebRiskServiceV1Beta1Grpc {
      * Gets the most recent threat list diffs.
      * </pre>
      */
-    public void computeThreatListDiff(
+    default void computeThreatListDiff(
         com.google.webrisk.v1beta1.ComputeThreatListDiffRequest request,
         io.grpc.stub.StreamObserver<com.google.webrisk.v1beta1.ComputeThreatListDiffResponse>
             responseObserver) {
@@ -251,7 +251,7 @@ public final class WebRiskServiceV1Beta1Grpc {
      * This method is used to check whether a URI is on a given threatList.
      * </pre>
      */
-    public void searchUris(
+    default void searchUris(
         com.google.webrisk.v1beta1.SearchUrisRequest request,
         io.grpc.stub.StreamObserver<com.google.webrisk.v1beta1.SearchUrisResponse>
             responseObserver) {
@@ -269,43 +269,34 @@ public final class WebRiskServiceV1Beta1Grpc {
      * hash match of a threat.
      * </pre>
      */
-    public void searchHashes(
+    default void searchHashes(
         com.google.webrisk.v1beta1.SearchHashesRequest request,
         io.grpc.stub.StreamObserver<com.google.webrisk.v1beta1.SearchHashesResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSearchHashesMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service WebRiskServiceV1Beta1.
+   *
+   * <pre>
+   * Web Risk v1beta1 API defines an interface to detect malicious URLs on your
+   * website and in client applications.
+   * </pre>
+   */
+  public abstract static class WebRiskServiceV1Beta1ImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getComputeThreatListDiffMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.webrisk.v1beta1.ComputeThreatListDiffRequest,
-                      com.google.webrisk.v1beta1.ComputeThreatListDiffResponse>(
-                      this, METHODID_COMPUTE_THREAT_LIST_DIFF)))
-          .addMethod(
-              getSearchUrisMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.webrisk.v1beta1.SearchUrisRequest,
-                      com.google.webrisk.v1beta1.SearchUrisResponse>(this, METHODID_SEARCH_URIS)))
-          .addMethod(
-              getSearchHashesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.webrisk.v1beta1.SearchHashesRequest,
-                      com.google.webrisk.v1beta1.SearchHashesResponse>(
-                      this, METHODID_SEARCH_HASHES)))
-          .build();
+      return WebRiskServiceV1Beta1Grpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service WebRiskServiceV1Beta1.
    *
    * <pre>
    * Web Risk v1beta1 API defines an interface to detect malicious URLs on your
@@ -379,7 +370,7 @@ public final class WebRiskServiceV1Beta1Grpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service WebRiskServiceV1Beta1.
    *
    * <pre>
    * Web Risk v1beta1 API defines an interface to detect malicious URLs on your
@@ -444,7 +435,8 @@ public final class WebRiskServiceV1Beta1Grpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * WebRiskServiceV1Beta1.
    *
    * <pre>
    * Web Risk v1beta1 API defines an interface to detect malicious URLs on your
@@ -520,10 +512,10 @@ public final class WebRiskServiceV1Beta1Grpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final WebRiskServiceV1Beta1ImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(WebRiskServiceV1Beta1ImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -565,6 +557,31 @@ public final class WebRiskServiceV1Beta1Grpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getComputeThreatListDiffMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.webrisk.v1beta1.ComputeThreatListDiffRequest,
+                    com.google.webrisk.v1beta1.ComputeThreatListDiffResponse>(
+                    service, METHODID_COMPUTE_THREAT_LIST_DIFF)))
+        .addMethod(
+            getSearchUrisMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.webrisk.v1beta1.SearchUrisRequest,
+                    com.google.webrisk.v1beta1.SearchUrisResponse>(service, METHODID_SEARCH_URIS)))
+        .addMethod(
+            getSearchHashesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.webrisk.v1beta1.SearchHashesRequest,
+                    com.google.webrisk.v1beta1.SearchHashesResponse>(
+                    service, METHODID_SEARCH_HASHES)))
+        .build();
   }
 
   private abstract static class WebRiskServiceV1Beta1BaseDescriptorSupplier

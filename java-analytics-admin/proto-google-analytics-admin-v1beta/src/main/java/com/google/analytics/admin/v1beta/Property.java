@@ -136,10 +136,10 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The property type for this Property resource. When creating a property, if
-   * the type is "PROPERTY_TYPE_UNSPECIFIED", then "ORDINARY_PROPERTY" will be
-   * implied. "SUBPROPERTY" and "ROLLUP_PROPERTY" types cannot yet be created
-   * via Google Analytics Admin API.
+   * Immutable. The property type for this Property resource. When creating a
+   * property, if the type is "PROPERTY_TYPE_UNSPECIFIED", then
+   * "ORDINARY_PROPERTY" will be implied. "SUBPROPERTY" and "ROLLUP_PROPERTY"
+   * types cannot yet be created with the Google Analytics Admin API.
    * </pre>
    *
    * <code>
@@ -156,10 +156,10 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The property type for this Property resource. When creating a property, if
-   * the type is "PROPERTY_TYPE_UNSPECIFIED", then "ORDINARY_PROPERTY" will be
-   * implied. "SUBPROPERTY" and "ROLLUP_PROPERTY" types cannot yet be created
-   * via Google Analytics Admin API.
+   * Immutable. The property type for this Property resource. When creating a
+   * property, if the type is "PROPERTY_TYPE_UNSPECIFIED", then
+   * "ORDINARY_PROPERTY" will be implied. "SUBPROPERTY" and "ROLLUP_PROPERTY"
+   * types cannot yet be created with the Google Analytics Admin API.
    * </pre>
    *
    * <code>
@@ -430,9 +430,9 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Reporting Time Zone, used as the day boundary for reports, regardless of
-   * where the data originates. If the time zone honors DST, Analytics will
-   * automatically adjust for the changes.
+   * Required. Reporting Time Zone, used as the day boundary for reports,
+   * regardless of where the data originates. If the time zone honors DST,
+   * Analytics will automatically adjust for the changes.
    * NOTE: Changing the time zone only affects data going forward, and is not
    * applied retroactively.
    * Format: https://www.iana.org/time-zones
@@ -459,9 +459,9 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Reporting Time Zone, used as the day boundary for reports, regardless of
-   * where the data originates. If the time zone honors DST, Analytics will
-   * automatically adjust for the changes.
+   * Required. Reporting Time Zone, used as the day boundary for reports,
+   * regardless of where the data originates. If the time zone honors DST,
+   * Analytics will automatically adjust for the changes.
    * NOTE: Changing the time zone only affects data going forward, and is not
    * applied retroactively.
    * Format: https://www.iana.org/time-zones
@@ -546,7 +546,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The Google Analytics service level that applies to this property.
+   * Output only. The Google Analytics service level that applies to this
+   * property.
    * </pre>
    *
    * <code>
@@ -563,7 +564,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The Google Analytics service level that applies to this property.
+   * Output only. The Google Analytics service level that applies to this
+   * property.
    * </pre>
    *
    * <code>
@@ -585,8 +587,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. If set, the time at which this property was trashed. If not set, then this
-   * property is not currently in the trash can.
+   * Output only. If set, the time at which this property was trashed. If not
+   * set, then this property is not currently in the trash can.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -602,8 +604,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. If set, the time at which this property was trashed. If not set, then this
-   * property is not currently in the trash can.
+   * Output only. If set, the time at which this property was trashed. If not
+   * set, then this property is not currently in the trash can.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -619,8 +621,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. If set, the time at which this property was trashed. If not set, then this
-   * property is not currently in the trash can.
+   * Output only. If set, the time at which this property was trashed. If not
+   * set, then this property is not currently in the trash can.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -637,9 +639,9 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. If set, the time at which this trashed property will be permanently
-   * deleted. If not set, then this property is not currently in the trash can
-   * and is not slated to be deleted.
+   * Output only. If set, the time at which this trashed property will be
+   * permanently deleted. If not set, then this property is not currently in the
+   * trash can and is not slated to be deleted.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -655,9 +657,9 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. If set, the time at which this trashed property will be permanently
-   * deleted. If not set, then this property is not currently in the trash can
-   * and is not slated to be deleted.
+   * Output only. If set, the time at which this trashed property will be
+   * permanently deleted. If not set, then this property is not currently in the
+   * trash can and is not slated to be deleted.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -673,9 +675,9 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. If set, the time at which this trashed property will be permanently
-   * deleted. If not set, then this property is not currently in the trash can
-   * and is not slated to be deleted.
+   * Output only. If set, the time at which this trashed property will be
+   * permanently deleted. If not set, then this property is not currently in the
+   * trash can and is not slated to be deleted.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1525,10 +1527,10 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The property type for this Property resource. When creating a property, if
-     * the type is "PROPERTY_TYPE_UNSPECIFIED", then "ORDINARY_PROPERTY" will be
-     * implied. "SUBPROPERTY" and "ROLLUP_PROPERTY" types cannot yet be created
-     * via Google Analytics Admin API.
+     * Immutable. The property type for this Property resource. When creating a
+     * property, if the type is "PROPERTY_TYPE_UNSPECIFIED", then
+     * "ORDINARY_PROPERTY" will be implied. "SUBPROPERTY" and "ROLLUP_PROPERTY"
+     * types cannot yet be created with the Google Analytics Admin API.
      * </pre>
      *
      * <code>
@@ -1545,10 +1547,10 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The property type for this Property resource. When creating a property, if
-     * the type is "PROPERTY_TYPE_UNSPECIFIED", then "ORDINARY_PROPERTY" will be
-     * implied. "SUBPROPERTY" and "ROLLUP_PROPERTY" types cannot yet be created
-     * via Google Analytics Admin API.
+     * Immutable. The property type for this Property resource. When creating a
+     * property, if the type is "PROPERTY_TYPE_UNSPECIFIED", then
+     * "ORDINARY_PROPERTY" will be implied. "SUBPROPERTY" and "ROLLUP_PROPERTY"
+     * types cannot yet be created with the Google Analytics Admin API.
      * </pre>
      *
      * <code>
@@ -1568,10 +1570,10 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The property type for this Property resource. When creating a property, if
-     * the type is "PROPERTY_TYPE_UNSPECIFIED", then "ORDINARY_PROPERTY" will be
-     * implied. "SUBPROPERTY" and "ROLLUP_PROPERTY" types cannot yet be created
-     * via Google Analytics Admin API.
+     * Immutable. The property type for this Property resource. When creating a
+     * property, if the type is "PROPERTY_TYPE_UNSPECIFIED", then
+     * "ORDINARY_PROPERTY" will be implied. "SUBPROPERTY" and "ROLLUP_PROPERTY"
+     * types cannot yet be created with the Google Analytics Admin API.
      * </pre>
      *
      * <code>
@@ -1590,10 +1592,10 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The property type for this Property resource. When creating a property, if
-     * the type is "PROPERTY_TYPE_UNSPECIFIED", then "ORDINARY_PROPERTY" will be
-     * implied. "SUBPROPERTY" and "ROLLUP_PROPERTY" types cannot yet be created
-     * via Google Analytics Admin API.
+     * Immutable. The property type for this Property resource. When creating a
+     * property, if the type is "PROPERTY_TYPE_UNSPECIFIED", then
+     * "ORDINARY_PROPERTY" will be implied. "SUBPROPERTY" and "ROLLUP_PROPERTY"
+     * types cannot yet be created with the Google Analytics Admin API.
      * </pre>
      *
      * <code>
@@ -1616,10 +1618,10 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The property type for this Property resource. When creating a property, if
-     * the type is "PROPERTY_TYPE_UNSPECIFIED", then "ORDINARY_PROPERTY" will be
-     * implied. "SUBPROPERTY" and "ROLLUP_PROPERTY" types cannot yet be created
-     * via Google Analytics Admin API.
+     * Immutable. The property type for this Property resource. When creating a
+     * property, if the type is "PROPERTY_TYPE_UNSPECIFIED", then
+     * "ORDINARY_PROPERTY" will be implied. "SUBPROPERTY" and "ROLLUP_PROPERTY"
+     * types cannot yet be created with the Google Analytics Admin API.
      * </pre>
      *
      * <code>
@@ -2371,9 +2373,9 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Reporting Time Zone, used as the day boundary for reports, regardless of
-     * where the data originates. If the time zone honors DST, Analytics will
-     * automatically adjust for the changes.
+     * Required. Reporting Time Zone, used as the day boundary for reports,
+     * regardless of where the data originates. If the time zone honors DST,
+     * Analytics will automatically adjust for the changes.
      * NOTE: Changing the time zone only affects data going forward, and is not
      * applied retroactively.
      * Format: https://www.iana.org/time-zones
@@ -2399,9 +2401,9 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Reporting Time Zone, used as the day boundary for reports, regardless of
-     * where the data originates. If the time zone honors DST, Analytics will
-     * automatically adjust for the changes.
+     * Required. Reporting Time Zone, used as the day boundary for reports,
+     * regardless of where the data originates. If the time zone honors DST,
+     * Analytics will automatically adjust for the changes.
      * NOTE: Changing the time zone only affects data going forward, and is not
      * applied retroactively.
      * Format: https://www.iana.org/time-zones
@@ -2427,9 +2429,9 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Reporting Time Zone, used as the day boundary for reports, regardless of
-     * where the data originates. If the time zone honors DST, Analytics will
-     * automatically adjust for the changes.
+     * Required. Reporting Time Zone, used as the day boundary for reports,
+     * regardless of where the data originates. If the time zone honors DST,
+     * Analytics will automatically adjust for the changes.
      * NOTE: Changing the time zone only affects data going forward, and is not
      * applied retroactively.
      * Format: https://www.iana.org/time-zones
@@ -2454,9 +2456,9 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Reporting Time Zone, used as the day boundary for reports, regardless of
-     * where the data originates. If the time zone honors DST, Analytics will
-     * automatically adjust for the changes.
+     * Required. Reporting Time Zone, used as the day boundary for reports,
+     * regardless of where the data originates. If the time zone honors DST,
+     * Analytics will automatically adjust for the changes.
      * NOTE: Changing the time zone only affects data going forward, and is not
      * applied retroactively.
      * Format: https://www.iana.org/time-zones
@@ -2477,9 +2479,9 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Reporting Time Zone, used as the day boundary for reports, regardless of
-     * where the data originates. If the time zone honors DST, Analytics will
-     * automatically adjust for the changes.
+     * Required. Reporting Time Zone, used as the day boundary for reports,
+     * regardless of where the data originates. If the time zone honors DST,
+     * Analytics will automatically adjust for the changes.
      * NOTE: Changing the time zone only affects data going forward, and is not
      * applied retroactively.
      * Format: https://www.iana.org/time-zones
@@ -2623,7 +2625,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Google Analytics service level that applies to this property.
+     * Output only. The Google Analytics service level that applies to this
+     * property.
      * </pre>
      *
      * <code>
@@ -2640,7 +2643,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Google Analytics service level that applies to this property.
+     * Output only. The Google Analytics service level that applies to this
+     * property.
      * </pre>
      *
      * <code>
@@ -2660,7 +2664,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Google Analytics service level that applies to this property.
+     * Output only. The Google Analytics service level that applies to this
+     * property.
      * </pre>
      *
      * <code>
@@ -2679,7 +2684,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Google Analytics service level that applies to this property.
+     * Output only. The Google Analytics service level that applies to this
+     * property.
      * </pre>
      *
      * <code>
@@ -2702,7 +2708,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The Google Analytics service level that applies to this property.
+     * Output only. The Google Analytics service level that applies to this
+     * property.
      * </pre>
      *
      * <code>
@@ -2728,8 +2735,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the time at which this property was trashed. If not set, then this
-     * property is not currently in the trash can.
+     * Output only. If set, the time at which this property was trashed. If not
+     * set, then this property is not currently in the trash can.
      * </pre>
      *
      * <code>
@@ -2745,8 +2752,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the time at which this property was trashed. If not set, then this
-     * property is not currently in the trash can.
+     * Output only. If set, the time at which this property was trashed. If not
+     * set, then this property is not currently in the trash can.
      * </pre>
      *
      * <code>
@@ -2768,8 +2775,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the time at which this property was trashed. If not set, then this
-     * property is not currently in the trash can.
+     * Output only. If set, the time at which this property was trashed. If not
+     * set, then this property is not currently in the trash can.
      * </pre>
      *
      * <code>
@@ -2793,8 +2800,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the time at which this property was trashed. If not set, then this
-     * property is not currently in the trash can.
+     * Output only. If set, the time at which this property was trashed. If not
+     * set, then this property is not currently in the trash can.
      * </pre>
      *
      * <code>
@@ -2815,8 +2822,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the time at which this property was trashed. If not set, then this
-     * property is not currently in the trash can.
+     * Output only. If set, the time at which this property was trashed. If not
+     * set, then this property is not currently in the trash can.
      * </pre>
      *
      * <code>
@@ -2843,8 +2850,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the time at which this property was trashed. If not set, then this
-     * property is not currently in the trash can.
+     * Output only. If set, the time at which this property was trashed. If not
+     * set, then this property is not currently in the trash can.
      * </pre>
      *
      * <code>
@@ -2865,8 +2872,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the time at which this property was trashed. If not set, then this
-     * property is not currently in the trash can.
+     * Output only. If set, the time at which this property was trashed. If not
+     * set, then this property is not currently in the trash can.
      * </pre>
      *
      * <code>
@@ -2882,8 +2889,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the time at which this property was trashed. If not set, then this
-     * property is not currently in the trash can.
+     * Output only. If set, the time at which this property was trashed. If not
+     * set, then this property is not currently in the trash can.
      * </pre>
      *
      * <code>
@@ -2903,8 +2910,8 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the time at which this property was trashed. If not set, then this
-     * property is not currently in the trash can.
+     * Output only. If set, the time at which this property was trashed. If not
+     * set, then this property is not currently in the trash can.
      * </pre>
      *
      * <code>
@@ -2938,9 +2945,9 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the time at which this trashed property will be permanently
-     * deleted. If not set, then this property is not currently in the trash can
-     * and is not slated to be deleted.
+     * Output only. If set, the time at which this trashed property will be
+     * permanently deleted. If not set, then this property is not currently in the
+     * trash can and is not slated to be deleted.
      * </pre>
      *
      * <code>
@@ -2956,9 +2963,9 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the time at which this trashed property will be permanently
-     * deleted. If not set, then this property is not currently in the trash can
-     * and is not slated to be deleted.
+     * Output only. If set, the time at which this trashed property will be
+     * permanently deleted. If not set, then this property is not currently in the
+     * trash can and is not slated to be deleted.
      * </pre>
      *
      * <code>
@@ -2980,9 +2987,9 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the time at which this trashed property will be permanently
-     * deleted. If not set, then this property is not currently in the trash can
-     * and is not slated to be deleted.
+     * Output only. If set, the time at which this trashed property will be
+     * permanently deleted. If not set, then this property is not currently in the
+     * trash can and is not slated to be deleted.
      * </pre>
      *
      * <code>
@@ -3006,9 +3013,9 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the time at which this trashed property will be permanently
-     * deleted. If not set, then this property is not currently in the trash can
-     * and is not slated to be deleted.
+     * Output only. If set, the time at which this trashed property will be
+     * permanently deleted. If not set, then this property is not currently in the
+     * trash can and is not slated to be deleted.
      * </pre>
      *
      * <code>
@@ -3029,9 +3036,9 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the time at which this trashed property will be permanently
-     * deleted. If not set, then this property is not currently in the trash can
-     * and is not slated to be deleted.
+     * Output only. If set, the time at which this trashed property will be
+     * permanently deleted. If not set, then this property is not currently in the
+     * trash can and is not slated to be deleted.
      * </pre>
      *
      * <code>
@@ -3058,9 +3065,9 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the time at which this trashed property will be permanently
-     * deleted. If not set, then this property is not currently in the trash can
-     * and is not slated to be deleted.
+     * Output only. If set, the time at which this trashed property will be
+     * permanently deleted. If not set, then this property is not currently in the
+     * trash can and is not slated to be deleted.
      * </pre>
      *
      * <code>
@@ -3081,9 +3088,9 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the time at which this trashed property will be permanently
-     * deleted. If not set, then this property is not currently in the trash can
-     * and is not slated to be deleted.
+     * Output only. If set, the time at which this trashed property will be
+     * permanently deleted. If not set, then this property is not currently in the
+     * trash can and is not slated to be deleted.
      * </pre>
      *
      * <code>
@@ -3099,9 +3106,9 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the time at which this trashed property will be permanently
-     * deleted. If not set, then this property is not currently in the trash can
-     * and is not slated to be deleted.
+     * Output only. If set, the time at which this trashed property will be
+     * permanently deleted. If not set, then this property is not currently in the
+     * trash can and is not slated to be deleted.
      * </pre>
      *
      * <code>
@@ -3121,9 +3128,9 @@ public final class Property extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. If set, the time at which this trashed property will be permanently
-     * deleted. If not set, then this property is not currently in the trash can
-     * and is not slated to be deleted.
+     * Output only. If set, the time at which this trashed property will be
+     * permanently deleted. If not set, then this property is not currently in the
+     * trash can and is not slated to be deleted.
      * </pre>
      *
      * <code>

@@ -70,7 +70,8 @@ public interface TargetArtifactOrBuilder
    *
    *
    * <pre>
-   * Output only. File path of the resolved Skaffold configuration relative to the URI.
+   * Output only. File path of the resolved Skaffold configuration relative to
+   * the URI.
    * </pre>
    *
    * <code>string skaffold_config_path = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -82,7 +83,8 @@ public interface TargetArtifactOrBuilder
    *
    *
    * <pre>
-   * Output only. File path of the resolved Skaffold configuration relative to the URI.
+   * Output only. File path of the resolved Skaffold configuration relative to
+   * the URI.
    * </pre>
    *
    * <code>string skaffold_config_path = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -115,6 +117,77 @@ public interface TargetArtifactOrBuilder
    * @return The bytes for manifestPath.
    */
   com.google.protobuf.ByteString getManifestPathBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Map from the phase ID to the phase artifacts for the `Target`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.deploy.v1.TargetArtifact.PhaseArtifact&gt; phase_artifacts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getPhaseArtifactsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Map from the phase ID to the phase artifacts for the `Target`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.deploy.v1.TargetArtifact.PhaseArtifact&gt; phase_artifacts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  boolean containsPhaseArtifacts(java.lang.String key);
+  /** Use {@link #getPhaseArtifactsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.deploy.v1.TargetArtifact.PhaseArtifact>
+      getPhaseArtifacts();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Map from the phase ID to the phase artifacts for the `Target`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.deploy.v1.TargetArtifact.PhaseArtifact&gt; phase_artifacts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.deploy.v1.TargetArtifact.PhaseArtifact>
+      getPhaseArtifactsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Map from the phase ID to the phase artifacts for the `Target`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.deploy.v1.TargetArtifact.PhaseArtifact&gt; phase_artifacts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.deploy.v1.TargetArtifact.PhaseArtifact getPhaseArtifactsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.deploy.v1.TargetArtifact.PhaseArtifact defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Map from the phase ID to the phase artifacts for the `Target`.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.deploy.v1.TargetArtifact.PhaseArtifact&gt; phase_artifacts = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.TargetArtifact.PhaseArtifact getPhaseArtifactsOrThrow(
+      java.lang.String key);
 
   public com.google.cloud.deploy.v1.TargetArtifact.UriCase getUriCase();
 }

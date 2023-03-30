@@ -1767,6 +1767,159 @@ public class NodeGroupsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Simulates maintenance event on specified nodes from the node group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String nodeGroup = "nodeGroup443599261";
+   *   NodeGroupsSimulateMaintenanceEventRequest nodeGroupsSimulateMaintenanceEventRequestResource =
+   *       NodeGroupsSimulateMaintenanceEventRequest.newBuilder().build();
+   *   Operation response =
+   *       nodeGroupsClient
+   *           .simulateMaintenanceEventAsync(
+   *               project, zone, nodeGroup, nodeGroupsSimulateMaintenanceEventRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of the zone for this request.
+   * @param nodeGroup Name of the NodeGroup resource whose nodes will go under maintenance
+   *     simulation.
+   * @param nodeGroupsSimulateMaintenanceEventRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> simulateMaintenanceEventAsync(
+      String project,
+      String zone,
+      String nodeGroup,
+      NodeGroupsSimulateMaintenanceEventRequest nodeGroupsSimulateMaintenanceEventRequestResource) {
+    SimulateMaintenanceEventNodeGroupRequest request =
+        SimulateMaintenanceEventNodeGroupRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setNodeGroup(nodeGroup)
+            .setNodeGroupsSimulateMaintenanceEventRequestResource(
+                nodeGroupsSimulateMaintenanceEventRequestResource)
+            .build();
+    return simulateMaintenanceEventAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Simulates maintenance event on specified nodes from the node group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
+   *   SimulateMaintenanceEventNodeGroupRequest request =
+   *       SimulateMaintenanceEventNodeGroupRequest.newBuilder()
+   *           .setNodeGroup("nodeGroup443599261")
+   *           .setNodeGroupsSimulateMaintenanceEventRequestResource(
+   *               NodeGroupsSimulateMaintenanceEventRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Operation response = nodeGroupsClient.simulateMaintenanceEventAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Operation, Operation> simulateMaintenanceEventAsync(
+      SimulateMaintenanceEventNodeGroupRequest request) {
+    return simulateMaintenanceEventOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Simulates maintenance event on specified nodes from the node group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
+   *   SimulateMaintenanceEventNodeGroupRequest request =
+   *       SimulateMaintenanceEventNodeGroupRequest.newBuilder()
+   *           .setNodeGroup("nodeGroup443599261")
+   *           .setNodeGroupsSimulateMaintenanceEventRequestResource(
+   *               NodeGroupsSimulateMaintenanceEventRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       nodeGroupsClient.simulateMaintenanceEventOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SimulateMaintenanceEventNodeGroupRequest, Operation, Operation>
+      simulateMaintenanceEventOperationCallable() {
+    return stub.simulateMaintenanceEventOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Simulates maintenance event on specified nodes from the node group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
+   *   SimulateMaintenanceEventNodeGroupRequest request =
+   *       SimulateMaintenanceEventNodeGroupRequest.newBuilder()
+   *           .setNodeGroup("nodeGroup443599261")
+   *           .setNodeGroupsSimulateMaintenanceEventRequestResource(
+   *               NodeGroupsSimulateMaintenanceEventRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       nodeGroupsClient.simulateMaintenanceEventCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SimulateMaintenanceEventNodeGroupRequest, Operation>
+      simulateMaintenanceEventCallable() {
+    return stub.simulateMaintenanceEventCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:

@@ -18,6 +18,7 @@ package com.google.cloud.filestore.v1;
 
 import static com.google.cloud.filestore.v1.CloudFilestoreManagerClient.ListBackupsPagedResponse;
 import static com.google.cloud.filestore.v1.CloudFilestoreManagerClient.ListInstancesPagedResponse;
+import static com.google.cloud.filestore.v1.CloudFilestoreManagerClient.ListSnapshotsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -191,6 +192,8 @@ public class CloudFilestoreManagerClientTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setKmsKeyName("kmsKeyName412586233")
+            .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .build();
     mockCloudFilestoreManager.addResponse(expectedResponse);
 
@@ -237,6 +240,8 @@ public class CloudFilestoreManagerClientTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setKmsKeyName("kmsKeyName412586233")
+            .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .build();
     mockCloudFilestoreManager.addResponse(expectedResponse);
 
@@ -283,6 +288,8 @@ public class CloudFilestoreManagerClientTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setKmsKeyName("kmsKeyName412586233")
+            .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -343,6 +350,8 @@ public class CloudFilestoreManagerClientTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setKmsKeyName("kmsKeyName412586233")
+            .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -403,6 +412,8 @@ public class CloudFilestoreManagerClientTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setKmsKeyName("kmsKeyName412586233")
+            .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -460,6 +471,8 @@ public class CloudFilestoreManagerClientTest {
             .addAllNetworks(new ArrayList<NetworkConfig>())
             .setEtag("etag3123477")
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setKmsKeyName("kmsKeyName412586233")
+            .addAllSuspensionReasons(new ArrayList<Instance.SuspensionReason>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -596,6 +609,432 @@ public class CloudFilestoreManagerClientTest {
   }
 
   @Test
+  public void listSnapshotsTest() throws Exception {
+    Snapshot responsesElement = Snapshot.newBuilder().build();
+    ListSnapshotsResponse expectedResponse =
+        ListSnapshotsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSnapshots(Arrays.asList(responsesElement))
+            .build();
+    mockCloudFilestoreManager.addResponse(expectedResponse);
+
+    InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+
+    ListSnapshotsPagedResponse pagedListResponse = client.listSnapshots(parent);
+
+    List<Snapshot> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSnapshotsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCloudFilestoreManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSnapshotsRequest actualRequest = ((ListSnapshotsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSnapshotsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudFilestoreManager.addException(exception);
+
+    try {
+      InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      client.listSnapshots(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSnapshotsTest2() throws Exception {
+    Snapshot responsesElement = Snapshot.newBuilder().build();
+    ListSnapshotsResponse expectedResponse =
+        ListSnapshotsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSnapshots(Arrays.asList(responsesElement))
+            .build();
+    mockCloudFilestoreManager.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListSnapshotsPagedResponse pagedListResponse = client.listSnapshots(parent);
+
+    List<Snapshot> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSnapshotsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCloudFilestoreManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSnapshotsRequest actualRequest = ((ListSnapshotsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSnapshotsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudFilestoreManager.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listSnapshots(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSnapshotTest() throws Exception {
+    Snapshot expectedResponse =
+        Snapshot.newBuilder()
+            .setName(
+                SnapshotName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[SNAPSHOT]").toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setFilesystemUsedBytes(387235709)
+            .build();
+    mockCloudFilestoreManager.addResponse(expectedResponse);
+
+    SnapshotName name = SnapshotName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[SNAPSHOT]");
+
+    Snapshot actualResponse = client.getSnapshot(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudFilestoreManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSnapshotRequest actualRequest = ((GetSnapshotRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSnapshotExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudFilestoreManager.addException(exception);
+
+    try {
+      SnapshotName name = SnapshotName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[SNAPSHOT]");
+      client.getSnapshot(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSnapshotTest2() throws Exception {
+    Snapshot expectedResponse =
+        Snapshot.newBuilder()
+            .setName(
+                SnapshotName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[SNAPSHOT]").toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setFilesystemUsedBytes(387235709)
+            .build();
+    mockCloudFilestoreManager.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Snapshot actualResponse = client.getSnapshot(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudFilestoreManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSnapshotRequest actualRequest = ((GetSnapshotRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSnapshotExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudFilestoreManager.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getSnapshot(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createSnapshotTest() throws Exception {
+    Snapshot expectedResponse =
+        Snapshot.newBuilder()
+            .setName(
+                SnapshotName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[SNAPSHOT]").toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setFilesystemUsedBytes(387235709)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createSnapshotTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudFilestoreManager.addResponse(resultOperation);
+
+    InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    Snapshot snapshot = Snapshot.newBuilder().build();
+    String snapshotId = "snapshotId-1113817601";
+
+    Snapshot actualResponse = client.createSnapshotAsync(parent, snapshot, snapshotId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudFilestoreManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateSnapshotRequest actualRequest = ((CreateSnapshotRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(snapshot, actualRequest.getSnapshot());
+    Assert.assertEquals(snapshotId, actualRequest.getSnapshotId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createSnapshotExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudFilestoreManager.addException(exception);
+
+    try {
+      InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      Snapshot snapshot = Snapshot.newBuilder().build();
+      String snapshotId = "snapshotId-1113817601";
+      client.createSnapshotAsync(parent, snapshot, snapshotId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createSnapshotTest2() throws Exception {
+    Snapshot expectedResponse =
+        Snapshot.newBuilder()
+            .setName(
+                SnapshotName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[SNAPSHOT]").toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setFilesystemUsedBytes(387235709)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createSnapshotTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudFilestoreManager.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    Snapshot snapshot = Snapshot.newBuilder().build();
+    String snapshotId = "snapshotId-1113817601";
+
+    Snapshot actualResponse = client.createSnapshotAsync(parent, snapshot, snapshotId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudFilestoreManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateSnapshotRequest actualRequest = ((CreateSnapshotRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(snapshot, actualRequest.getSnapshot());
+    Assert.assertEquals(snapshotId, actualRequest.getSnapshotId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createSnapshotExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudFilestoreManager.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Snapshot snapshot = Snapshot.newBuilder().build();
+      String snapshotId = "snapshotId-1113817601";
+      client.createSnapshotAsync(parent, snapshot, snapshotId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteSnapshotTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteSnapshotTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudFilestoreManager.addResponse(resultOperation);
+
+    SnapshotName name = SnapshotName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[SNAPSHOT]");
+
+    client.deleteSnapshotAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockCloudFilestoreManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteSnapshotRequest actualRequest = ((DeleteSnapshotRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteSnapshotExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudFilestoreManager.addException(exception);
+
+    try {
+      SnapshotName name = SnapshotName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[SNAPSHOT]");
+      client.deleteSnapshotAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteSnapshotTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteSnapshotTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudFilestoreManager.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteSnapshotAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockCloudFilestoreManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteSnapshotRequest actualRequest = ((DeleteSnapshotRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteSnapshotExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudFilestoreManager.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteSnapshotAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateSnapshotTest() throws Exception {
+    Snapshot expectedResponse =
+        Snapshot.newBuilder()
+            .setName(
+                SnapshotName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[SNAPSHOT]").toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setFilesystemUsedBytes(387235709)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateSnapshotTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudFilestoreManager.addResponse(resultOperation);
+
+    Snapshot snapshot = Snapshot.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Snapshot actualResponse = client.updateSnapshotAsync(snapshot, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudFilestoreManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateSnapshotRequest actualRequest = ((UpdateSnapshotRequest) actualRequests.get(0));
+
+    Assert.assertEquals(snapshot, actualRequest.getSnapshot());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateSnapshotExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudFilestoreManager.addException(exception);
+
+    try {
+      Snapshot snapshot = Snapshot.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateSnapshotAsync(snapshot, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void listBackupsTest() throws Exception {
     Backup responsesElement = Backup.newBuilder().build();
     ListBackupsResponse expectedResponse =
@@ -697,6 +1136,7 @@ public class CloudFilestoreManagerClientTest {
             .setSourceFileShare("sourceFileShare-646832664")
             .setDownloadBytes(971924980)
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     mockCloudFilestoreManager.addResponse(expectedResponse);
 
@@ -744,6 +1184,7 @@ public class CloudFilestoreManagerClientTest {
             .setSourceFileShare("sourceFileShare-646832664")
             .setDownloadBytes(971924980)
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     mockCloudFilestoreManager.addResponse(expectedResponse);
 
@@ -791,6 +1232,7 @@ public class CloudFilestoreManagerClientTest {
             .setSourceFileShare("sourceFileShare-646832664")
             .setDownloadBytes(971924980)
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -852,6 +1294,7 @@ public class CloudFilestoreManagerClientTest {
             .setSourceFileShare("sourceFileShare-646832664")
             .setDownloadBytes(971924980)
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -997,6 +1440,7 @@ public class CloudFilestoreManagerClientTest {
             .setSourceFileShare("sourceFileShare-646832664")
             .setDownloadBytes(971924980)
             .setSatisfiesPzs(BoolValue.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     Operation resultOperation =
         Operation.newBuilder()

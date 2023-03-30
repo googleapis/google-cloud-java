@@ -514,7 +514,7 @@ public final class ConnectionServiceGrpc {
    * Manages external data source connections and credentials.
    * </pre>
    */
-  public abstract static class ConnectionServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -523,7 +523,7 @@ public final class ConnectionServiceGrpc {
      * Creates a new connection.
      * </pre>
      */
-    public void createConnection(
+    default void createConnection(
         com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.CreateConnectionRequest
             request,
         io.grpc.stub.StreamObserver<
@@ -540,7 +540,7 @@ public final class ConnectionServiceGrpc {
      * Returns specified connection.
      * </pre>
      */
-    public void getConnection(
+    default void getConnection(
         com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.GetConnectionRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection>
@@ -556,7 +556,7 @@ public final class ConnectionServiceGrpc {
      * Returns a list of connections in the given project.
      * </pre>
      */
-    public void listConnections(
+    default void listConnections(
         com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.ListConnectionsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
@@ -574,7 +574,7 @@ public final class ConnectionServiceGrpc {
      * credential if connection properties are in the update field mask.
      * </pre>
      */
-    public void updateConnection(
+    default void updateConnection(
         com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.UpdateConnectionRequest
             request,
         io.grpc.stub.StreamObserver<
@@ -591,7 +591,7 @@ public final class ConnectionServiceGrpc {
      * Sets the credential for the specified connection.
      * </pre>
      */
-    public void updateConnectionCredential(
+    default void updateConnectionCredential(
         com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
                 .UpdateConnectionCredentialRequest
             request,
@@ -607,7 +607,7 @@ public final class ConnectionServiceGrpc {
      * Deletes connection and associated credential.
      * </pre>
      */
-    public void deleteConnection(
+    default void deleteConnection(
         com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.DeleteConnectionRequest
             request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -624,7 +624,7 @@ public final class ConnectionServiceGrpc {
      * set.
      * </pre>
      */
-    public void getIamPolicy(
+    default void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -640,7 +640,7 @@ public final class ConnectionServiceGrpc {
      * Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
      * </pre>
      */
-    public void setIamPolicy(
+    default void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -659,88 +659,33 @@ public final class ConnectionServiceGrpc {
      * may "fail open" without warning.
      * </pre>
      */
-    public void testIamPermissions(
+    default void testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getTestIamPermissionsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ConnectionService.
+   *
+   * <pre>
+   * Manages external data source connections and credentials.
+   * </pre>
+   */
+  public abstract static class ConnectionServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateConnectionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
-                          .CreateConnectionRequest,
-                      com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection>(
-                      this, METHODID_CREATE_CONNECTION)))
-          .addMethod(
-              getGetConnectionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
-                          .GetConnectionRequest,
-                      com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection>(
-                      this, METHODID_GET_CONNECTION)))
-          .addMethod(
-              getListConnectionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
-                          .ListConnectionsRequest,
-                      com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
-                          .ListConnectionsResponse>(this, METHODID_LIST_CONNECTIONS)))
-          .addMethod(
-              getUpdateConnectionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
-                          .UpdateConnectionRequest,
-                      com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection>(
-                      this, METHODID_UPDATE_CONNECTION)))
-          .addMethod(
-              getUpdateConnectionCredentialMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
-                          .UpdateConnectionCredentialRequest,
-                      com.google.protobuf.Empty>(this, METHODID_UPDATE_CONNECTION_CREDENTIAL)))
-          .addMethod(
-              getDeleteConnectionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
-                          .DeleteConnectionRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_CONNECTION)))
-          .addMethod(
-              getGetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_GET_IAM_POLICY)))
-          .addMethod(
-              getSetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_SET_IAM_POLICY)))
-          .addMethod(
-              getTestIamPermissionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.TestIamPermissionsRequest,
-                      com.google.iam.v1.TestIamPermissionsResponse>(
-                      this, METHODID_TEST_IAM_PERMISSIONS)))
-          .build();
+      return ConnectionServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ConnectionService.
    *
    * <pre>
    * Manages external data source connections and credentials.
@@ -929,7 +874,7 @@ public final class ConnectionServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ConnectionService.
    *
    * <pre>
    * Manages external data source connections and credentials.
@@ -1082,7 +1027,7 @@ public final class ConnectionServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service ConnectionService.
    *
    * <pre>
    * Manages external data source connections and credentials.
@@ -1261,10 +1206,10 @@ public final class ConnectionServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ConnectionServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ConnectionServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1349,6 +1294,74 @@ public final class ConnectionServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
+                        .CreateConnectionRequest,
+                    com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection>(
+                    service, METHODID_CREATE_CONNECTION)))
+        .addMethod(
+            getGetConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
+                        .GetConnectionRequest,
+                    com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection>(
+                    service, METHODID_GET_CONNECTION)))
+        .addMethod(
+            getListConnectionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
+                        .ListConnectionsRequest,
+                    com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
+                        .ListConnectionsResponse>(service, METHODID_LIST_CONNECTIONS)))
+        .addMethod(
+            getUpdateConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
+                        .UpdateConnectionRequest,
+                    com.google.cloud.bigquery.connection.v1beta1.ConnectionProto.Connection>(
+                    service, METHODID_UPDATE_CONNECTION)))
+        .addMethod(
+            getUpdateConnectionCredentialMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
+                        .UpdateConnectionCredentialRequest,
+                    com.google.protobuf.Empty>(service, METHODID_UPDATE_CONNECTION_CREDENTIAL)))
+        .addMethod(
+            getDeleteConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.connection.v1beta1.ConnectionProto
+                        .DeleteConnectionRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_CONNECTION)))
+        .addMethod(
+            getGetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_GET_IAM_POLICY)))
+        .addMethod(
+            getSetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_SET_IAM_POLICY)))
+        .addMethod(
+            getTestIamPermissionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.v1.TestIamPermissionsRequest,
+                    com.google.iam.v1.TestIamPermissionsResponse>(
+                    service, METHODID_TEST_IAM_PERMISSIONS)))
+        .build();
   }
 
   private abstract static class ConnectionServiceBaseDescriptorSupplier

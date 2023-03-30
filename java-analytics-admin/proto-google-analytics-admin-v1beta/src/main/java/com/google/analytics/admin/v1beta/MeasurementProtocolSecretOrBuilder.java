@@ -27,9 +27,8 @@ public interface MeasurementProtocolSecretOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource name of this secret. This secret may be a child of any type of
-   * stream.
-   * Format:
+   * Output only. Resource name of this secret. This secret may be a child of
+   * any type of stream. Format:
    * properties/{property}/dataStreams/{dataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
    * </pre>
    *
@@ -42,9 +41,8 @@ public interface MeasurementProtocolSecretOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource name of this secret. This secret may be a child of any type of
-   * stream.
-   * Format:
+   * Output only. Resource name of this secret. This secret may be a child of
+   * any type of stream. Format:
    * properties/{property}/dataStreams/{dataStream}/measurementProtocolSecrets/{measurementProtocolSecret}
    * </pre>
    *
@@ -83,8 +81,8 @@ public interface MeasurementProtocolSecretOrBuilder
    *
    *
    * <pre>
-   * Output only. The measurement protocol secret value. Pass this value to the api_secret
-   * field of the Measurement Protocol API when sending hits to this
+   * Output only. The measurement protocol secret value. Pass this value to the
+   * api_secret field of the Measurement Protocol API when sending hits to this
    * secret's parent property.
    * </pre>
    *
@@ -97,8 +95,8 @@ public interface MeasurementProtocolSecretOrBuilder
    *
    *
    * <pre>
-   * Output only. The measurement protocol secret value. Pass this value to the api_secret
-   * field of the Measurement Protocol API when sending hits to this
+   * Output only. The measurement protocol secret value. Pass this value to the
+   * api_secret field of the Measurement Protocol API when sending hits to this
    * secret's parent property.
    * </pre>
    *

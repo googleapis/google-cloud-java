@@ -365,7 +365,7 @@ public final class CatalogServiceGrpc {
    * Service for ingesting catalog information of the customer's website.
    * </pre>
    */
-  public abstract static class CatalogServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -374,7 +374,7 @@ public final class CatalogServiceGrpc {
      * Creates a catalog item.
      * </pre>
      */
-    public void createCatalogItem(
+    default void createCatalogItem(
         com.google.cloud.recommendationengine.v1beta1.CreateCatalogItemRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommendationengine.v1beta1.CatalogItem>
             responseObserver) {
@@ -389,7 +389,7 @@ public final class CatalogServiceGrpc {
      * Gets a specific catalog item.
      * </pre>
      */
-    public void getCatalogItem(
+    default void getCatalogItem(
         com.google.cloud.recommendationengine.v1beta1.GetCatalogItemRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommendationengine.v1beta1.CatalogItem>
             responseObserver) {
@@ -404,7 +404,7 @@ public final class CatalogServiceGrpc {
      * Gets a list of catalog items.
      * </pre>
      */
-    public void listCatalogItems(
+    default void listCatalogItems(
         com.google.cloud.recommendationengine.v1beta1.ListCatalogItemsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.recommendationengine.v1beta1.ListCatalogItemsResponse>
@@ -421,7 +421,7 @@ public final class CatalogServiceGrpc {
      * items will be created.
      * </pre>
      */
-    public void updateCatalogItem(
+    default void updateCatalogItem(
         com.google.cloud.recommendationengine.v1beta1.UpdateCatalogItemRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommendationengine.v1beta1.CatalogItem>
             responseObserver) {
@@ -436,7 +436,7 @@ public final class CatalogServiceGrpc {
      * Deletes a catalog item.
      * </pre>
      */
-    public void deleteCatalogItem(
+    default void deleteCatalogItem(
         com.google.cloud.recommendationengine.v1beta1.DeleteCatalogItemRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -454,62 +454,32 @@ public final class CatalogServiceGrpc {
      * possible for a subset of the items to be successfully updated.
      * </pre>
      */
-    public void importCatalogItems(
+    default void importCatalogItems(
         com.google.cloud.recommendationengine.v1beta1.ImportCatalogItemsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getImportCatalogItemsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service CatalogService.
+   *
+   * <pre>
+   * Service for ingesting catalog information of the customer's website.
+   * </pre>
+   */
+  public abstract static class CatalogServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateCatalogItemMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.recommendationengine.v1beta1.CreateCatalogItemRequest,
-                      com.google.cloud.recommendationengine.v1beta1.CatalogItem>(
-                      this, METHODID_CREATE_CATALOG_ITEM)))
-          .addMethod(
-              getGetCatalogItemMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.recommendationengine.v1beta1.GetCatalogItemRequest,
-                      com.google.cloud.recommendationengine.v1beta1.CatalogItem>(
-                      this, METHODID_GET_CATALOG_ITEM)))
-          .addMethod(
-              getListCatalogItemsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.recommendationengine.v1beta1.ListCatalogItemsRequest,
-                      com.google.cloud.recommendationengine.v1beta1.ListCatalogItemsResponse>(
-                      this, METHODID_LIST_CATALOG_ITEMS)))
-          .addMethod(
-              getUpdateCatalogItemMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.recommendationengine.v1beta1.UpdateCatalogItemRequest,
-                      com.google.cloud.recommendationengine.v1beta1.CatalogItem>(
-                      this, METHODID_UPDATE_CATALOG_ITEM)))
-          .addMethod(
-              getDeleteCatalogItemMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.recommendationengine.v1beta1.DeleteCatalogItemRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_CATALOG_ITEM)))
-          .addMethod(
-              getImportCatalogItemsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.recommendationengine.v1beta1.ImportCatalogItemsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_IMPORT_CATALOG_ITEMS)))
-          .build();
+      return CatalogServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service CatalogService.
    *
    * <pre>
    * Service for ingesting catalog information of the customer's website.
@@ -634,7 +604,7 @@ public final class CatalogServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service CatalogService.
    *
    * <pre>
    * Service for ingesting catalog information of the customer's website.
@@ -737,7 +707,7 @@ public final class CatalogServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service CatalogService.
    *
    * <pre>
    * Service for ingesting catalog information of the customer's website.
@@ -861,10 +831,10 @@ public final class CatalogServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final CatalogServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(CatalogServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -925,6 +895,51 @@ public final class CatalogServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateCatalogItemMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.recommendationengine.v1beta1.CreateCatalogItemRequest,
+                    com.google.cloud.recommendationengine.v1beta1.CatalogItem>(
+                    service, METHODID_CREATE_CATALOG_ITEM)))
+        .addMethod(
+            getGetCatalogItemMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.recommendationengine.v1beta1.GetCatalogItemRequest,
+                    com.google.cloud.recommendationengine.v1beta1.CatalogItem>(
+                    service, METHODID_GET_CATALOG_ITEM)))
+        .addMethod(
+            getListCatalogItemsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.recommendationengine.v1beta1.ListCatalogItemsRequest,
+                    com.google.cloud.recommendationengine.v1beta1.ListCatalogItemsResponse>(
+                    service, METHODID_LIST_CATALOG_ITEMS)))
+        .addMethod(
+            getUpdateCatalogItemMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.recommendationengine.v1beta1.UpdateCatalogItemRequest,
+                    com.google.cloud.recommendationengine.v1beta1.CatalogItem>(
+                    service, METHODID_UPDATE_CATALOG_ITEM)))
+        .addMethod(
+            getDeleteCatalogItemMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.recommendationengine.v1beta1.DeleteCatalogItemRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_CATALOG_ITEM)))
+        .addMethod(
+            getImportCatalogItemsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.recommendationengine.v1beta1.ImportCatalogItemsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_IMPORT_CATALOG_ITEMS)))
+        .build();
   }
 
   private abstract static class CatalogServiceBaseDescriptorSupplier

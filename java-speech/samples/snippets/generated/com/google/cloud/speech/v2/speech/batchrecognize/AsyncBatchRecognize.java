@@ -21,6 +21,7 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.speech.v2.BatchRecognizeFileMetadata;
 import com.google.cloud.speech.v2.BatchRecognizeRequest;
 import com.google.cloud.speech.v2.RecognitionConfig;
+import com.google.cloud.speech.v2.RecognitionOutputConfig;
 import com.google.cloud.speech.v2.RecognizerName;
 import com.google.cloud.speech.v2.SpeechClient;
 import com.google.longrunning.Operation;
@@ -47,6 +48,7 @@ public class AsyncBatchRecognize {
               .setConfig(RecognitionConfig.newBuilder().build())
               .setConfigMask(FieldMask.newBuilder().build())
               .addAllFiles(new ArrayList<BatchRecognizeFileMetadata>())
+              .setRecognitionOutputConfig(RecognitionOutputConfig.newBuilder().build())
               .build();
       ApiFuture<Operation> future = speechClient.batchRecognizeCallable().futureCall(request);
       // Do something.

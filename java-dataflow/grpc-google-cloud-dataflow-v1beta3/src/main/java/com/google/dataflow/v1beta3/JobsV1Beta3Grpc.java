@@ -379,7 +379,7 @@ public final class JobsV1Beta3Grpc {
    * A Job is a multi-stage computation graph run by the Cloud Dataflow service.
    * </pre>
    */
-  public abstract static class JobsV1Beta3ImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -393,7 +393,7 @@ public final class JobsV1Beta3Grpc {
      * in `us-central1`.
      * </pre>
      */
-    public void createJob(
+    default void createJob(
         com.google.dataflow.v1beta3.CreateJobRequest request,
         io.grpc.stub.StreamObserver<com.google.dataflow.v1beta3.Job> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateJobMethod(), responseObserver);
@@ -411,7 +411,7 @@ public final class JobsV1Beta3Grpc {
      * jobs that are running in `us-central1`.
      * </pre>
      */
-    public void getJob(
+    default void getJob(
         com.google.dataflow.v1beta3.GetJobRequest request,
         io.grpc.stub.StreamObserver<com.google.dataflow.v1beta3.Job> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetJobMethod(), responseObserver);
@@ -429,7 +429,7 @@ public final class JobsV1Beta3Grpc {
      * of jobs that are running in `us-central1`.
      * </pre>
      */
-    public void updateJob(
+    default void updateJob(
         com.google.dataflow.v1beta3.UpdateJobRequest request,
         io.grpc.stub.StreamObserver<com.google.dataflow.v1beta3.Job> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateJobMethod(), responseObserver);
@@ -448,7 +448,7 @@ public final class JobsV1Beta3Grpc {
      * jobs that are running in `us-central1`.
      * </pre>
      */
-    public void listJobs(
+    default void listJobs(
         com.google.dataflow.v1beta3.ListJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.dataflow.v1beta3.ListJobsResponse>
             responseObserver) {
@@ -462,7 +462,7 @@ public final class JobsV1Beta3Grpc {
      * List the jobs of a project across all regions.
      * </pre>
      */
-    public void aggregatedListJobs(
+    default void aggregatedListJobs(
         com.google.dataflow.v1beta3.ListJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.dataflow.v1beta3.ListJobsResponse>
             responseObserver) {
@@ -477,7 +477,7 @@ public final class JobsV1Beta3Grpc {
      * Check for existence of active jobs in the given project across all regions.
      * </pre>
      */
-    public void checkActiveJobs(
+    default void checkActiveJobs(
         com.google.dataflow.v1beta3.CheckActiveJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.dataflow.v1beta3.CheckActiveJobsResponse>
             responseObserver) {
@@ -492,66 +492,33 @@ public final class JobsV1Beta3Grpc {
      * Snapshot the state of a streaming job.
      * </pre>
      */
-    public void snapshotJob(
+    default void snapshotJob(
         com.google.dataflow.v1beta3.SnapshotJobRequest request,
         io.grpc.stub.StreamObserver<com.google.dataflow.v1beta3.Snapshot> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSnapshotJobMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service JobsV1Beta3.
+   *
+   * <pre>
+   * Provides a method to create and modify Google Cloud Dataflow jobs.
+   * A Job is a multi-stage computation graph run by the Cloud Dataflow service.
+   * </pre>
+   */
+  public abstract static class JobsV1Beta3ImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.dataflow.v1beta3.CreateJobRequest,
-                      com.google.dataflow.v1beta3.Job>(this, METHODID_CREATE_JOB)))
-          .addMethod(
-              getGetJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.dataflow.v1beta3.GetJobRequest, com.google.dataflow.v1beta3.Job>(
-                      this, METHODID_GET_JOB)))
-          .addMethod(
-              getUpdateJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.dataflow.v1beta3.UpdateJobRequest,
-                      com.google.dataflow.v1beta3.Job>(this, METHODID_UPDATE_JOB)))
-          .addMethod(
-              getListJobsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.dataflow.v1beta3.ListJobsRequest,
-                      com.google.dataflow.v1beta3.ListJobsResponse>(this, METHODID_LIST_JOBS)))
-          .addMethod(
-              getAggregatedListJobsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.dataflow.v1beta3.ListJobsRequest,
-                      com.google.dataflow.v1beta3.ListJobsResponse>(
-                      this, METHODID_AGGREGATED_LIST_JOBS)))
-          .addMethod(
-              getCheckActiveJobsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.dataflow.v1beta3.CheckActiveJobsRequest,
-                      com.google.dataflow.v1beta3.CheckActiveJobsResponse>(
-                      this, METHODID_CHECK_ACTIVE_JOBS)))
-          .addMethod(
-              getSnapshotJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.dataflow.v1beta3.SnapshotJobRequest,
-                      com.google.dataflow.v1beta3.Snapshot>(this, METHODID_SNAPSHOT_JOB)))
-          .build();
+      return JobsV1Beta3Grpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service JobsV1Beta3.
    *
    * <pre>
    * Provides a method to create and modify Google Cloud Dataflow jobs.
@@ -699,7 +666,7 @@ public final class JobsV1Beta3Grpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service JobsV1Beta3.
    *
    * <pre>
    * Provides a method to create and modify Google Cloud Dataflow jobs.
@@ -832,7 +799,7 @@ public final class JobsV1Beta3Grpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service JobsV1Beta3.
    *
    * <pre>
    * Provides a method to create and modify Google Cloud Dataflow jobs.
@@ -980,10 +947,10 @@ public final class JobsV1Beta3Grpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final JobsV1Beta3ImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(JobsV1Beta3ImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1044,6 +1011,55 @@ public final class JobsV1Beta3Grpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.dataflow.v1beta3.CreateJobRequest, com.google.dataflow.v1beta3.Job>(
+                    service, METHODID_CREATE_JOB)))
+        .addMethod(
+            getGetJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.dataflow.v1beta3.GetJobRequest, com.google.dataflow.v1beta3.Job>(
+                    service, METHODID_GET_JOB)))
+        .addMethod(
+            getUpdateJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.dataflow.v1beta3.UpdateJobRequest, com.google.dataflow.v1beta3.Job>(
+                    service, METHODID_UPDATE_JOB)))
+        .addMethod(
+            getListJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.dataflow.v1beta3.ListJobsRequest,
+                    com.google.dataflow.v1beta3.ListJobsResponse>(service, METHODID_LIST_JOBS)))
+        .addMethod(
+            getAggregatedListJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.dataflow.v1beta3.ListJobsRequest,
+                    com.google.dataflow.v1beta3.ListJobsResponse>(
+                    service, METHODID_AGGREGATED_LIST_JOBS)))
+        .addMethod(
+            getCheckActiveJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.dataflow.v1beta3.CheckActiveJobsRequest,
+                    com.google.dataflow.v1beta3.CheckActiveJobsResponse>(
+                    service, METHODID_CHECK_ACTIVE_JOBS)))
+        .addMethod(
+            getSnapshotJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.dataflow.v1beta3.SnapshotJobRequest,
+                    com.google.dataflow.v1beta3.Snapshot>(service, METHODID_SNAPSHOT_JOB)))
+        .build();
   }
 
   private abstract static class JobsV1Beta3BaseDescriptorSupplier

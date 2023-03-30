@@ -253,7 +253,7 @@ public final class BatchControllerGrpc {
    * The BatchController provides methods to manage batch workloads.
    * </pre>
    */
-  public abstract static class BatchControllerImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -262,7 +262,7 @@ public final class BatchControllerGrpc {
      * Creates a batch workload that executes asynchronously.
      * </pre>
      */
-    public void createBatch(
+    default void createBatch(
         com.google.cloud.dataproc.v1.CreateBatchRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -276,7 +276,7 @@ public final class BatchControllerGrpc {
      * Gets the batch workload resource representation.
      * </pre>
      */
-    public void getBatch(
+    default void getBatch(
         com.google.cloud.dataproc.v1.GetBatchRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1.Batch> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBatchMethod(), responseObserver);
@@ -289,7 +289,7 @@ public final class BatchControllerGrpc {
      * Lists batch workloads.
      * </pre>
      */
-    public void listBatches(
+    default void listBatches(
         com.google.cloud.dataproc.v1.ListBatchesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1.ListBatchesResponse>
             responseObserver) {
@@ -305,47 +305,32 @@ public final class BatchControllerGrpc {
      * the delete fails and the response returns `FAILED_PRECONDITION`.
      * </pre>
      */
-    public void deleteBatch(
+    default void deleteBatch(
         com.google.cloud.dataproc.v1.DeleteBatchRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteBatchMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service BatchController.
+   *
+   * <pre>
+   * The BatchController provides methods to manage batch workloads.
+   * </pre>
+   */
+  public abstract static class BatchControllerImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateBatchMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataproc.v1.CreateBatchRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_BATCH)))
-          .addMethod(
-              getGetBatchMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataproc.v1.GetBatchRequest,
-                      com.google.cloud.dataproc.v1.Batch>(this, METHODID_GET_BATCH)))
-          .addMethod(
-              getListBatchesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataproc.v1.ListBatchesRequest,
-                      com.google.cloud.dataproc.v1.ListBatchesResponse>(
-                      this, METHODID_LIST_BATCHES)))
-          .addMethod(
-              getDeleteBatchMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataproc.v1.DeleteBatchRequest, com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_BATCH)))
-          .build();
+      return BatchControllerGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service BatchController.
    *
    * <pre>
    * The BatchController provides methods to manage batch workloads.
@@ -428,7 +413,7 @@ public final class BatchControllerGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service BatchController.
    *
    * <pre>
    * The BatchController provides methods to manage batch workloads.
@@ -501,7 +486,7 @@ public final class BatchControllerGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service BatchController.
    *
    * <pre>
    * The BatchController provides methods to manage batch workloads.
@@ -584,10 +569,10 @@ public final class BatchControllerGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final BatchControllerImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(BatchControllerImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -631,6 +616,36 @@ public final class BatchControllerGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateBatchMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataproc.v1.CreateBatchRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_BATCH)))
+        .addMethod(
+            getGetBatchMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataproc.v1.GetBatchRequest,
+                    com.google.cloud.dataproc.v1.Batch>(service, METHODID_GET_BATCH)))
+        .addMethod(
+            getListBatchesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataproc.v1.ListBatchesRequest,
+                    com.google.cloud.dataproc.v1.ListBatchesResponse>(
+                    service, METHODID_LIST_BATCHES)))
+        .addMethod(
+            getDeleteBatchMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataproc.v1.DeleteBatchRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_BATCH)))
+        .build();
   }
 
   private abstract static class BatchControllerBaseDescriptorSupplier

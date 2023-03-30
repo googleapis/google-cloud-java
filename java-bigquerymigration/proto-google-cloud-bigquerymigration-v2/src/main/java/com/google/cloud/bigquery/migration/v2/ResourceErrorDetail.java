@@ -204,8 +204,8 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. How many errors there are in total for the resource. Truncation can be
-   * indicated by having an `error_count` that is higher than the size of
+   * Required. How many errors there are in total for the resource. Truncation
+   * can be indicated by having an `error_count` that is higher than the size of
    * `error_details`.
    * </pre>
    *
@@ -1256,8 +1256,8 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. How many errors there are in total for the resource. Truncation can be
-     * indicated by having an `error_count` that is higher than the size of
+     * Required. How many errors there are in total for the resource. Truncation
+     * can be indicated by having an `error_count` that is higher than the size of
      * `error_details`.
      * </pre>
      *
@@ -1273,8 +1273,8 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. How many errors there are in total for the resource. Truncation can be
-     * indicated by having an `error_count` that is higher than the size of
+     * Required. How many errors there are in total for the resource. Truncation
+     * can be indicated by having an `error_count` that is higher than the size of
      * `error_details`.
      * </pre>
      *
@@ -1294,8 +1294,8 @@ public final class ResourceErrorDetail extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. How many errors there are in total for the resource. Truncation can be
-     * indicated by having an `error_count` that is higher than the size of
+     * Required. How many errors there are in total for the resource. Truncation
+     * can be indicated by having an `error_count` that is higher than the size of
      * `error_details`.
      * </pre>
      *

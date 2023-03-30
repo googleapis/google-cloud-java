@@ -27,7 +27,7 @@ public interface ImportErrorConfigOrBuilder
    *
    *
    * <pre>
-   * Google Cloud Storage prefix for import errors. This must be an empty,
+   * Cloud Storage prefix for import errors. This must be an empty,
    * existing Cloud Storage directory. Import errors will be written to
    * sharded files in this directory, one per line, as a JSON-encoded
    * `google.rpc.Status` message.
@@ -42,7 +42,7 @@ public interface ImportErrorConfigOrBuilder
    *
    *
    * <pre>
-   * Google Cloud Storage prefix for import errors. This must be an empty,
+   * Cloud Storage prefix for import errors. This must be an empty,
    * existing Cloud Storage directory. Import errors will be written to
    * sharded files in this directory, one per line, as a JSON-encoded
    * `google.rpc.Status` message.
@@ -57,7 +57,7 @@ public interface ImportErrorConfigOrBuilder
    *
    *
    * <pre>
-   * Google Cloud Storage prefix for import errors. This must be an empty,
+   * Cloud Storage prefix for import errors. This must be an empty,
    * existing Cloud Storage directory. Import errors will be written to
    * sharded files in this directory, one per line, as a JSON-encoded
    * `google.rpc.Status` message.

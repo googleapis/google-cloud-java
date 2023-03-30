@@ -343,7 +343,7 @@ public final class AuthorizedCertificatesGrpc {
    * administer any SSL certificates applicable to their authorized domains.
    * </pre>
    */
-  public abstract static class AuthorizedCertificatesImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -352,7 +352,7 @@ public final class AuthorizedCertificatesGrpc {
      * Lists all SSL certificates the user is authorized to administer.
      * </pre>
      */
-    public void listAuthorizedCertificates(
+    default void listAuthorizedCertificates(
         com.google.appengine.v1.ListAuthorizedCertificatesRequest request,
         io.grpc.stub.StreamObserver<com.google.appengine.v1.ListAuthorizedCertificatesResponse>
             responseObserver) {
@@ -367,7 +367,7 @@ public final class AuthorizedCertificatesGrpc {
      * Gets the specified SSL certificate.
      * </pre>
      */
-    public void getAuthorizedCertificate(
+    default void getAuthorizedCertificate(
         com.google.appengine.v1.GetAuthorizedCertificateRequest request,
         io.grpc.stub.StreamObserver<com.google.appengine.v1.AuthorizedCertificate>
             responseObserver) {
@@ -382,7 +382,7 @@ public final class AuthorizedCertificatesGrpc {
      * Uploads the specified SSL certificate.
      * </pre>
      */
-    public void createAuthorizedCertificate(
+    default void createAuthorizedCertificate(
         com.google.appengine.v1.CreateAuthorizedCertificateRequest request,
         io.grpc.stub.StreamObserver<com.google.appengine.v1.AuthorizedCertificate>
             responseObserver) {
@@ -401,7 +401,7 @@ public final class AuthorizedCertificatesGrpc {
      * updated.
      * </pre>
      */
-    public void updateAuthorizedCertificate(
+    default void updateAuthorizedCertificate(
         com.google.appengine.v1.UpdateAuthorizedCertificateRequest request,
         io.grpc.stub.StreamObserver<com.google.appengine.v1.AuthorizedCertificate>
             responseObserver) {
@@ -416,56 +416,33 @@ public final class AuthorizedCertificatesGrpc {
      * Deletes the specified SSL certificate.
      * </pre>
      */
-    public void deleteAuthorizedCertificate(
+    default void deleteAuthorizedCertificate(
         com.google.appengine.v1.DeleteAuthorizedCertificateRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteAuthorizedCertificateMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service AuthorizedCertificates.
+   *
+   * <pre>
+   * Manages SSL certificates a user is authorized to administer. A user can
+   * administer any SSL certificates applicable to their authorized domains.
+   * </pre>
+   */
+  public abstract static class AuthorizedCertificatesImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListAuthorizedCertificatesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.ListAuthorizedCertificatesRequest,
-                      com.google.appengine.v1.ListAuthorizedCertificatesResponse>(
-                      this, METHODID_LIST_AUTHORIZED_CERTIFICATES)))
-          .addMethod(
-              getGetAuthorizedCertificateMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.GetAuthorizedCertificateRequest,
-                      com.google.appengine.v1.AuthorizedCertificate>(
-                      this, METHODID_GET_AUTHORIZED_CERTIFICATE)))
-          .addMethod(
-              getCreateAuthorizedCertificateMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.CreateAuthorizedCertificateRequest,
-                      com.google.appengine.v1.AuthorizedCertificate>(
-                      this, METHODID_CREATE_AUTHORIZED_CERTIFICATE)))
-          .addMethod(
-              getUpdateAuthorizedCertificateMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.UpdateAuthorizedCertificateRequest,
-                      com.google.appengine.v1.AuthorizedCertificate>(
-                      this, METHODID_UPDATE_AUTHORIZED_CERTIFICATE)))
-          .addMethod(
-              getDeleteAuthorizedCertificateMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.DeleteAuthorizedCertificateRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_AUTHORIZED_CERTIFICATE)))
-          .build();
+      return AuthorizedCertificatesGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service AuthorizedCertificates.
    *
    * <pre>
    * Manages SSL certificates a user is authorized to administer. A user can
@@ -574,7 +551,7 @@ public final class AuthorizedCertificatesGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service AuthorizedCertificates.
    *
    * <pre>
    * Manages SSL certificates a user is authorized to administer. A user can
@@ -665,7 +642,8 @@ public final class AuthorizedCertificatesGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * AuthorizedCertificates.
    *
    * <pre>
    * Manages SSL certificates a user is authorized to administer. A user can
@@ -774,10 +752,10 @@ public final class AuthorizedCertificatesGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final AuthorizedCertificatesImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(AuthorizedCertificatesImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -830,6 +808,45 @@ public final class AuthorizedCertificatesGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListAuthorizedCertificatesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.ListAuthorizedCertificatesRequest,
+                    com.google.appengine.v1.ListAuthorizedCertificatesResponse>(
+                    service, METHODID_LIST_AUTHORIZED_CERTIFICATES)))
+        .addMethod(
+            getGetAuthorizedCertificateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.GetAuthorizedCertificateRequest,
+                    com.google.appengine.v1.AuthorizedCertificate>(
+                    service, METHODID_GET_AUTHORIZED_CERTIFICATE)))
+        .addMethod(
+            getCreateAuthorizedCertificateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.CreateAuthorizedCertificateRequest,
+                    com.google.appengine.v1.AuthorizedCertificate>(
+                    service, METHODID_CREATE_AUTHORIZED_CERTIFICATE)))
+        .addMethod(
+            getUpdateAuthorizedCertificateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.UpdateAuthorizedCertificateRequest,
+                    com.google.appengine.v1.AuthorizedCertificate>(
+                    service, METHODID_UPDATE_AUTHORIZED_CERTIFICATE)))
+        .addMethod(
+            getDeleteAuthorizedCertificateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.DeleteAuthorizedCertificateRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_AUTHORIZED_CERTIFICATE)))
+        .build();
   }
 
   private abstract static class AuthorizedCertificatesBaseDescriptorSupplier

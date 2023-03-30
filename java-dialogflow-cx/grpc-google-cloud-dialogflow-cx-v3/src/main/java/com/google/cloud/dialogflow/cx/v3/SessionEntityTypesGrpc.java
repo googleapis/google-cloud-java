@@ -338,7 +338,7 @@ public final class SessionEntityTypesGrpc {
    * [SessionEntityTypes][google.cloud.dialogflow.cx.v3.SessionEntityType].
    * </pre>
    */
-  public abstract static class SessionEntityTypesImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -347,7 +347,7 @@ public final class SessionEntityTypesGrpc {
      * Returns the list of all session entity types in the specified session.
      * </pre>
      */
-    public void listSessionEntityTypes(
+    default void listSessionEntityTypes(
         com.google.cloud.dialogflow.cx.v3.ListSessionEntityTypesRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.dialogflow.cx.v3.ListSessionEntityTypesResponse>
@@ -363,7 +363,7 @@ public final class SessionEntityTypesGrpc {
      * Retrieves the specified session entity type.
      * </pre>
      */
-    public void getSessionEntityType(
+    default void getSessionEntityType(
         com.google.cloud.dialogflow.cx.v3.GetSessionEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.SessionEntityType>
             responseObserver) {
@@ -378,7 +378,7 @@ public final class SessionEntityTypesGrpc {
      * Creates a session entity type.
      * </pre>
      */
-    public void createSessionEntityType(
+    default void createSessionEntityType(
         com.google.cloud.dialogflow.cx.v3.CreateSessionEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.SessionEntityType>
             responseObserver) {
@@ -393,7 +393,7 @@ public final class SessionEntityTypesGrpc {
      * Updates the specified session entity type.
      * </pre>
      */
-    public void updateSessionEntityType(
+    default void updateSessionEntityType(
         com.google.cloud.dialogflow.cx.v3.UpdateSessionEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.SessionEntityType>
             responseObserver) {
@@ -408,56 +408,33 @@ public final class SessionEntityTypesGrpc {
      * Deletes the specified session entity type.
      * </pre>
      */
-    public void deleteSessionEntityType(
+    default void deleteSessionEntityType(
         com.google.cloud.dialogflow.cx.v3.DeleteSessionEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteSessionEntityTypeMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service SessionEntityTypes.
+   *
+   * <pre>
+   * Service for managing
+   * [SessionEntityTypes][google.cloud.dialogflow.cx.v3.SessionEntityType].
+   * </pre>
+   */
+  public abstract static class SessionEntityTypesImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListSessionEntityTypesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.ListSessionEntityTypesRequest,
-                      com.google.cloud.dialogflow.cx.v3.ListSessionEntityTypesResponse>(
-                      this, METHODID_LIST_SESSION_ENTITY_TYPES)))
-          .addMethod(
-              getGetSessionEntityTypeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.GetSessionEntityTypeRequest,
-                      com.google.cloud.dialogflow.cx.v3.SessionEntityType>(
-                      this, METHODID_GET_SESSION_ENTITY_TYPE)))
-          .addMethod(
-              getCreateSessionEntityTypeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.CreateSessionEntityTypeRequest,
-                      com.google.cloud.dialogflow.cx.v3.SessionEntityType>(
-                      this, METHODID_CREATE_SESSION_ENTITY_TYPE)))
-          .addMethod(
-              getUpdateSessionEntityTypeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.UpdateSessionEntityTypeRequest,
-                      com.google.cloud.dialogflow.cx.v3.SessionEntityType>(
-                      this, METHODID_UPDATE_SESSION_ENTITY_TYPE)))
-          .addMethod(
-              getDeleteSessionEntityTypeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.DeleteSessionEntityTypeRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_SESSION_ENTITY_TYPE)))
-          .build();
+      return SessionEntityTypesGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service SessionEntityTypes.
    *
    * <pre>
    * Service for managing
@@ -563,7 +540,7 @@ public final class SessionEntityTypesGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service SessionEntityTypes.
    *
    * <pre>
    * Service for managing
@@ -650,7 +627,7 @@ public final class SessionEntityTypesGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service SessionEntityTypes.
    *
    * <pre>
    * Service for managing
@@ -755,10 +732,10 @@ public final class SessionEntityTypesGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final SessionEntityTypesImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(SessionEntityTypesImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -811,6 +788,45 @@ public final class SessionEntityTypesGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListSessionEntityTypesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.ListSessionEntityTypesRequest,
+                    com.google.cloud.dialogflow.cx.v3.ListSessionEntityTypesResponse>(
+                    service, METHODID_LIST_SESSION_ENTITY_TYPES)))
+        .addMethod(
+            getGetSessionEntityTypeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.GetSessionEntityTypeRequest,
+                    com.google.cloud.dialogflow.cx.v3.SessionEntityType>(
+                    service, METHODID_GET_SESSION_ENTITY_TYPE)))
+        .addMethod(
+            getCreateSessionEntityTypeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.CreateSessionEntityTypeRequest,
+                    com.google.cloud.dialogflow.cx.v3.SessionEntityType>(
+                    service, METHODID_CREATE_SESSION_ENTITY_TYPE)))
+        .addMethod(
+            getUpdateSessionEntityTypeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.UpdateSessionEntityTypeRequest,
+                    com.google.cloud.dialogflow.cx.v3.SessionEntityType>(
+                    service, METHODID_UPDATE_SESSION_ENTITY_TYPE)))
+        .addMethod(
+            getDeleteSessionEntityTypeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.DeleteSessionEntityTypeRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_SESSION_ENTITY_TYPE)))
+        .build();
   }
 
   private abstract static class SessionEntityTypesBaseDescriptorSupplier

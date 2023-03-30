@@ -131,7 +131,7 @@ public final class VideoIntelligenceServiceGrpc {
    * Service that implements the Video Intelligence API.
    * </pre>
    */
-  public abstract static class VideoIntelligenceServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -143,28 +143,32 @@ public final class VideoIntelligenceServiceGrpc {
      * `Operation.response` contains `AnnotateVideoResponse` (results).
      * </pre>
      */
-    public void annotateVideo(
+    default void annotateVideo(
         com.google.cloud.videointelligence.v1.AnnotateVideoRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getAnnotateVideoMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service VideoIntelligenceService.
+   *
+   * <pre>
+   * Service that implements the Video Intelligence API.
+   * </pre>
+   */
+  public abstract static class VideoIntelligenceServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getAnnotateVideoMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.videointelligence.v1.AnnotateVideoRequest,
-                      com.google.longrunning.Operation>(this, METHODID_ANNOTATE_VIDEO)))
-          .build();
+      return VideoIntelligenceServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service VideoIntelligenceService.
    *
    * <pre>
    * Service that implements the Video Intelligence API.
@@ -203,7 +207,7 @@ public final class VideoIntelligenceServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service VideoIntelligenceService.
    *
    * <pre>
    * Service that implements the Video Intelligence API.
@@ -240,7 +244,8 @@ public final class VideoIntelligenceServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * VideoIntelligenceService.
    *
    * <pre>
    * Service that implements the Video Intelligence API.
@@ -283,10 +288,10 @@ public final class VideoIntelligenceServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final VideoIntelligenceServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(VideoIntelligenceServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -314,6 +319,17 @@ public final class VideoIntelligenceServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getAnnotateVideoMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.videointelligence.v1.AnnotateVideoRequest,
+                    com.google.longrunning.Operation>(service, METHODID_ANNOTATE_VIDEO)))
+        .build();
   }
 
   private abstract static class VideoIntelligenceServiceBaseDescriptorSupplier

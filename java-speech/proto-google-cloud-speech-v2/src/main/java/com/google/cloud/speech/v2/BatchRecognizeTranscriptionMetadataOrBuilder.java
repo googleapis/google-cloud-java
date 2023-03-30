@@ -75,7 +75,7 @@ public interface BatchRecognizeTranscriptionMetadataOrBuilder
    *
    *
    * <pre>
-   * The GCS URI to which recognition results will be written.
+   * The Cloud Storage URI to which recognition results will be written.
    * </pre>
    *
    * <code>string uri = 3;</code>
@@ -87,7 +87,7 @@ public interface BatchRecognizeTranscriptionMetadataOrBuilder
    *
    *
    * <pre>
-   * The GCS URI to which recognition results will be written.
+   * The Cloud Storage URI to which recognition results will be written.
    * </pre>
    *
    * <code>string uri = 3;</code>

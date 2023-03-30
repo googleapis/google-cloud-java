@@ -27,8 +27,8 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * Optional. The user response token provided by the reCAPTCHA client-side
-   * integration on your site.
+   * Optional. The user response token provided by the reCAPTCHA Enterprise
+   * client-side integration on your site.
    * </pre>
    *
    * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -40,8 +40,8 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * Optional. The user response token provided by the reCAPTCHA client-side
-   * integration on your site.
+   * Optional. The user response token provided by the reCAPTCHA Enterprise
+   * client-side integration on your site.
    * </pre>
    *
    * <code>string token = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -54,8 +54,8 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * Optional. The site key that was used to invoke reCAPTCHA on your site and
-   * generate the token.
+   * Optional. The site key that was used to invoke reCAPTCHA Enterprise on your
+   * site and generate the token.
    * </pre>
    *
    * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -67,8 +67,8 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * Optional. The site key that was used to invoke reCAPTCHA on your site and
-   * generate the token.
+   * Optional. The site key that was used to invoke reCAPTCHA Enterprise on your
+   * site and generate the token.
    * </pre>
    *
    * <code>string site_key = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -173,4 +173,51 @@ public interface EventOrBuilder
    * @return The hashedAccountId.
    */
   com.google.protobuf.ByteString getHashedAccountId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data describing a payment transaction to be assessed. Sending
+   * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+   * FraudPreventionAssessment component in the response.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TransactionData transaction_data = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the transactionData field is set.
+   */
+  boolean hasTransactionData();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data describing a payment transaction to be assessed. Sending
+   * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+   * FraudPreventionAssessment component in the response.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TransactionData transaction_data = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The transactionData.
+   */
+  com.google.recaptchaenterprise.v1.TransactionData getTransactionData();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data describing a payment transaction to be assessed. Sending
+   * this data enables reCAPTCHA Enterprise Fraud Prevention and the
+   * FraudPreventionAssessment component in the response.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.TransactionData transaction_data = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.recaptchaenterprise.v1.TransactionDataOrBuilder getTransactionDataOrBuilder();
 }

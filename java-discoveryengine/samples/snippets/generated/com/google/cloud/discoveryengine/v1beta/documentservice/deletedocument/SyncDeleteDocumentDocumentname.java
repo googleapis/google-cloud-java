@@ -35,7 +35,8 @@ public class SyncDeleteDocumentDocumentname {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
       DocumentName name =
-          DocumentName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
+          DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+              "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
       documentServiceClient.deleteDocument(name);
     }
   }

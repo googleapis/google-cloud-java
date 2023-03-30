@@ -251,8 +251,11 @@ public interface ChannelOrBuilder
    *
    *
    * <pre>
-   * Output only. The [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key] that serves as the current input source. The
-   * first input in the [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments] is the initial input source.
+   * Output only. The
+   * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+   * that serves as the current input source. The first input in the
+   * [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments]
+   * is the initial input source.
    * </pre>
    *
    * <code>string active_input = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -264,8 +267,11 @@ public interface ChannelOrBuilder
    *
    *
    * <pre>
-   * Output only. The [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key] that serves as the current input source. The
-   * first input in the [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments] is the initial input source.
+   * Output only. The
+   * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+   * that serves as the current input source. The first input in the
+   * [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments]
+   * is the initial input source.
    * </pre>
    *
    * <code>string active_input = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -278,8 +284,8 @@ public interface ChannelOrBuilder
    *
    *
    * <pre>
-   * Required. Information about the output (that is, the Cloud Storage bucket to store
-   * the generated live stream).
+   * Required. Information about the output (that is, the Cloud Storage bucket
+   * to store the generated live stream).
    * </pre>
    *
    * <code>
@@ -293,8 +299,8 @@ public interface ChannelOrBuilder
    *
    *
    * <pre>
-   * Required. Information about the output (that is, the Cloud Storage bucket to store
-   * the generated live stream).
+   * Required. Information about the output (that is, the Cloud Storage bucket
+   * to store the generated live stream).
    * </pre>
    *
    * <code>
@@ -308,8 +314,8 @@ public interface ChannelOrBuilder
    *
    *
    * <pre>
-   * Required. Information about the output (that is, the Cloud Storage bucket to store
-   * the generated live stream).
+   * Required. Information about the output (that is, the Cloud Storage bucket
+   * to store the generated live stream).
    * </pre>
    *
    * <code>
@@ -565,8 +571,10 @@ public interface ChannelOrBuilder
    *
    *
    * <pre>
-   * Output only. A description of the reason for the streaming error. This property is
-   * always present when [streaming_state][google.cloud.video.livestream.v1.Channel.streaming_state] is
+   * Output only. A description of the reason for the streaming error. This
+   * property is always present when
+   * [streaming_state][google.cloud.video.livestream.v1.Channel.streaming_state]
+   * is
    * [STREAMING_ERROR][google.cloud.video.livestream.v1.Channel.StreamingState.STREAMING_ERROR].
    * </pre>
    *
@@ -580,8 +588,10 @@ public interface ChannelOrBuilder
    *
    *
    * <pre>
-   * Output only. A description of the reason for the streaming error. This property is
-   * always present when [streaming_state][google.cloud.video.livestream.v1.Channel.streaming_state] is
+   * Output only. A description of the reason for the streaming error. This
+   * property is always present when
+   * [streaming_state][google.cloud.video.livestream.v1.Channel.streaming_state]
+   * is
    * [STREAMING_ERROR][google.cloud.video.livestream.v1.Channel.StreamingState.STREAMING_ERROR].
    * </pre>
    *
@@ -595,8 +605,10 @@ public interface ChannelOrBuilder
    *
    *
    * <pre>
-   * Output only. A description of the reason for the streaming error. This property is
-   * always present when [streaming_state][google.cloud.video.livestream.v1.Channel.streaming_state] is
+   * Output only. A description of the reason for the streaming error. This
+   * property is always present when
+   * [streaming_state][google.cloud.video.livestream.v1.Channel.streaming_state]
+   * is
    * [STREAMING_ERROR][google.cloud.video.livestream.v1.Channel.StreamingState.STREAMING_ERROR].
    * </pre>
    *
@@ -639,4 +651,139 @@ public interface ChannelOrBuilder
    * <code>.google.cloud.video.livestream.v1.LogConfig log_config = 19;</code>
    */
   com.google.cloud.video.livestream.v1.LogConfigOrBuilder getLogConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of timecode for this channel.
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.TimecodeConfig timecode_config = 21;</code>
+   *
+   * @return Whether the timecodeConfig field is set.
+   */
+  boolean hasTimecodeConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of timecode for this channel.
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.TimecodeConfig timecode_config = 21;</code>
+   *
+   * @return The timecodeConfig.
+   */
+  com.google.cloud.video.livestream.v1.TimecodeConfig getTimecodeConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of timecode for this channel.
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.TimecodeConfig timecode_config = 21;</code>
+   */
+  com.google.cloud.video.livestream.v1.TimecodeConfigOrBuilder getTimecodeConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Encryption configurations for this channel. Each configuration has an ID
+   * which is referred to by each MuxStream to indicate which configuration is
+   * used for that output.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+   */
+  java.util.List<com.google.cloud.video.livestream.v1.Encryption> getEncryptionsList();
+  /**
+   *
+   *
+   * <pre>
+   * Encryption configurations for this channel. Each configuration has an ID
+   * which is referred to by each MuxStream to indicate which configuration is
+   * used for that output.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+   */
+  com.google.cloud.video.livestream.v1.Encryption getEncryptions(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Encryption configurations for this channel. Each configuration has an ID
+   * which is referred to by each MuxStream to indicate which configuration is
+   * used for that output.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+   */
+  int getEncryptionsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Encryption configurations for this channel. Each configuration has an ID
+   * which is referred to by each MuxStream to indicate which configuration is
+   * used for that output.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+   */
+  java.util.List<? extends com.google.cloud.video.livestream.v1.EncryptionOrBuilder>
+      getEncryptionsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Encryption configurations for this channel. Each configuration has an ID
+   * which is referred to by each MuxStream to indicate which configuration is
+   * used for that output.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+   */
+  com.google.cloud.video.livestream.v1.EncryptionOrBuilder getEncryptionsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for input sources defined in
+   * [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments].
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.InputConfig input_config = 25;</code>
+   *
+   * @return Whether the inputConfig field is set.
+   */
+  boolean hasInputConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for input sources defined in
+   * [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments].
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.InputConfig input_config = 25;</code>
+   *
+   * @return The inputConfig.
+   */
+  com.google.cloud.video.livestream.v1.InputConfig getInputConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration for input sources defined in
+   * [input_attachments][google.cloud.video.livestream.v1.Channel.input_attachments].
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.InputConfig input_config = 25;</code>
+   */
+  com.google.cloud.video.livestream.v1.InputConfigOrBuilder getInputConfigOrBuilder();
 }

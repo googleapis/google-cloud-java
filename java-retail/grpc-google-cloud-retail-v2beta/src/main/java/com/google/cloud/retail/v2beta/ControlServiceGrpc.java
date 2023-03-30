@@ -308,7 +308,7 @@ public final class ControlServiceGrpc {
    * Service for modifying Control.
    * </pre>
    */
-  public abstract static class ControlServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -319,7 +319,7 @@ public final class ControlServiceGrpc {
      * exists, an ALREADY_EXISTS error is returned.
      * </pre>
      */
-    public void createControl(
+    default void createControl(
         com.google.cloud.retail.v2beta.CreateControlRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2beta.Control> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -335,7 +335,7 @@ public final class ControlServiceGrpc {
      * exist, a NOT_FOUND error is returned.
      * </pre>
      */
-    public void deleteControl(
+    default void deleteControl(
         com.google.cloud.retail.v2beta.DeleteControlRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -353,7 +353,7 @@ public final class ControlServiceGrpc {
      * NOT_FOUND error is returned.
      * </pre>
      */
-    public void updateControl(
+    default void updateControl(
         com.google.cloud.retail.v2beta.UpdateControlRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2beta.Control> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -367,7 +367,7 @@ public final class ControlServiceGrpc {
      * Gets a Control.
      * </pre>
      */
-    public void getControl(
+    default void getControl(
         com.google.cloud.retail.v2beta.GetControlRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2beta.Control> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetControlMethod(), responseObserver);
@@ -381,54 +381,33 @@ public final class ControlServiceGrpc {
      * [Catalog][google.cloud.retail.v2beta.Catalog].
      * </pre>
      */
-    public void listControls(
+    default void listControls(
         com.google.cloud.retail.v2beta.ListControlsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2beta.ListControlsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListControlsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ControlService.
+   *
+   * <pre>
+   * Service for modifying Control.
+   * </pre>
+   */
+  public abstract static class ControlServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateControlMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2beta.CreateControlRequest,
-                      com.google.cloud.retail.v2beta.Control>(this, METHODID_CREATE_CONTROL)))
-          .addMethod(
-              getDeleteControlMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2beta.DeleteControlRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_CONTROL)))
-          .addMethod(
-              getUpdateControlMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2beta.UpdateControlRequest,
-                      com.google.cloud.retail.v2beta.Control>(this, METHODID_UPDATE_CONTROL)))
-          .addMethod(
-              getGetControlMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2beta.GetControlRequest,
-                      com.google.cloud.retail.v2beta.Control>(this, METHODID_GET_CONTROL)))
-          .addMethod(
-              getListControlsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2beta.ListControlsRequest,
-                      com.google.cloud.retail.v2beta.ListControlsResponse>(
-                      this, METHODID_LIST_CONTROLS)))
-          .build();
+      return ControlServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ControlService.
    *
    * <pre>
    * Service for modifying Control.
@@ -535,7 +514,7 @@ public final class ControlServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ControlService.
    *
    * <pre>
    * Service for modifying Control.
@@ -629,7 +608,7 @@ public final class ControlServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service ControlService.
    *
    * <pre>
    * Service for modifying Control.
@@ -737,10 +716,10 @@ public final class ControlServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ControlServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ControlServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -792,6 +771,42 @@ public final class ControlServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateControlMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2beta.CreateControlRequest,
+                    com.google.cloud.retail.v2beta.Control>(service, METHODID_CREATE_CONTROL)))
+        .addMethod(
+            getDeleteControlMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2beta.DeleteControlRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_CONTROL)))
+        .addMethod(
+            getUpdateControlMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2beta.UpdateControlRequest,
+                    com.google.cloud.retail.v2beta.Control>(service, METHODID_UPDATE_CONTROL)))
+        .addMethod(
+            getGetControlMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2beta.GetControlRequest,
+                    com.google.cloud.retail.v2beta.Control>(service, METHODID_GET_CONTROL)))
+        .addMethod(
+            getListControlsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2beta.ListControlsRequest,
+                    com.google.cloud.retail.v2beta.ListControlsResponse>(
+                    service, METHODID_LIST_CONTROLS)))
+        .build();
   }
 
   private abstract static class ControlServiceBaseDescriptorSupplier

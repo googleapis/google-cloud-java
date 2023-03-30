@@ -371,7 +371,7 @@ public final class FirewallGrpc {
    * set to "allow" if not otherwise specified by the user.
    * </pre>
    */
-  public abstract static class FirewallImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -380,7 +380,7 @@ public final class FirewallGrpc {
      * Lists the firewall rules of an application.
      * </pre>
      */
-    public void listIngressRules(
+    default void listIngressRules(
         com.google.appengine.v1.ListIngressRulesRequest request,
         io.grpc.stub.StreamObserver<com.google.appengine.v1.ListIngressRulesResponse>
             responseObserver) {
@@ -398,7 +398,7 @@ public final class FirewallGrpc {
      * then an "allow all" rule is explicitly added to the end of the list.
      * </pre>
      */
-    public void batchUpdateIngressRules(
+    default void batchUpdateIngressRules(
         com.google.appengine.v1.BatchUpdateIngressRulesRequest request,
         io.grpc.stub.StreamObserver<com.google.appengine.v1.BatchUpdateIngressRulesResponse>
             responseObserver) {
@@ -413,7 +413,7 @@ public final class FirewallGrpc {
      * Creates a firewall rule for the application.
      * </pre>
      */
-    public void createIngressRule(
+    default void createIngressRule(
         com.google.appengine.v1.CreateIngressRuleRequest request,
         io.grpc.stub.StreamObserver<com.google.appengine.v1.firewall.FirewallRule>
             responseObserver) {
@@ -428,7 +428,7 @@ public final class FirewallGrpc {
      * Gets the specified firewall rule.
      * </pre>
      */
-    public void getIngressRule(
+    default void getIngressRule(
         com.google.appengine.v1.GetIngressRuleRequest request,
         io.grpc.stub.StreamObserver<com.google.appengine.v1.firewall.FirewallRule>
             responseObserver) {
@@ -443,7 +443,7 @@ public final class FirewallGrpc {
      * Updates the specified firewall rule.
      * </pre>
      */
-    public void updateIngressRule(
+    default void updateIngressRule(
         com.google.appengine.v1.UpdateIngressRuleRequest request,
         io.grpc.stub.StreamObserver<com.google.appengine.v1.firewall.FirewallRule>
             responseObserver) {
@@ -458,63 +458,39 @@ public final class FirewallGrpc {
      * Deletes the specified firewall rule.
      * </pre>
      */
-    public void deleteIngressRule(
+    default void deleteIngressRule(
         com.google.appengine.v1.DeleteIngressRuleRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteIngressRuleMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Firewall.
+   *
+   * <pre>
+   * Firewall resources are used to define a collection of access control rules
+   * for an Application. Each rule is defined with a position which specifies
+   * the rule's order in the sequence of rules, an IP range to be matched against
+   * requests, and an action to take upon matching requests.
+   * Every request is evaluated against the Firewall rules in priority order.
+   * Processesing stops at the first rule which matches the request's IP address.
+   * A final rule always specifies an action that applies to all remaining
+   * IP addresses. The default final rule for a newly-created application will be
+   * set to "allow" if not otherwise specified by the user.
+   * </pre>
+   */
+  public abstract static class FirewallImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListIngressRulesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.ListIngressRulesRequest,
-                      com.google.appengine.v1.ListIngressRulesResponse>(
-                      this, METHODID_LIST_INGRESS_RULES)))
-          .addMethod(
-              getBatchUpdateIngressRulesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.BatchUpdateIngressRulesRequest,
-                      com.google.appengine.v1.BatchUpdateIngressRulesResponse>(
-                      this, METHODID_BATCH_UPDATE_INGRESS_RULES)))
-          .addMethod(
-              getCreateIngressRuleMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.CreateIngressRuleRequest,
-                      com.google.appengine.v1.firewall.FirewallRule>(
-                      this, METHODID_CREATE_INGRESS_RULE)))
-          .addMethod(
-              getGetIngressRuleMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.GetIngressRuleRequest,
-                      com.google.appengine.v1.firewall.FirewallRule>(
-                      this, METHODID_GET_INGRESS_RULE)))
-          .addMethod(
-              getUpdateIngressRuleMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.UpdateIngressRuleRequest,
-                      com.google.appengine.v1.firewall.FirewallRule>(
-                      this, METHODID_UPDATE_INGRESS_RULE)))
-          .addMethod(
-              getDeleteIngressRuleMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.DeleteIngressRuleRequest, com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_INGRESS_RULE)))
-          .build();
+      return FirewallGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Firewall.
    *
    * <pre>
    * Firewall resources are used to define a collection of access control rules
@@ -644,7 +620,7 @@ public final class FirewallGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Firewall.
    *
    * <pre>
    * Firewall resources are used to define a collection of access control rules
@@ -752,7 +728,7 @@ public final class FirewallGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Firewall.
    *
    * <pre>
    * Firewall resources are used to define a collection of access control rules
@@ -876,10 +852,10 @@ public final class FirewallGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final FirewallImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(FirewallImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -937,6 +913,52 @@ public final class FirewallGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListIngressRulesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.ListIngressRulesRequest,
+                    com.google.appengine.v1.ListIngressRulesResponse>(
+                    service, METHODID_LIST_INGRESS_RULES)))
+        .addMethod(
+            getBatchUpdateIngressRulesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.BatchUpdateIngressRulesRequest,
+                    com.google.appengine.v1.BatchUpdateIngressRulesResponse>(
+                    service, METHODID_BATCH_UPDATE_INGRESS_RULES)))
+        .addMethod(
+            getCreateIngressRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.CreateIngressRuleRequest,
+                    com.google.appengine.v1.firewall.FirewallRule>(
+                    service, METHODID_CREATE_INGRESS_RULE)))
+        .addMethod(
+            getGetIngressRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.GetIngressRuleRequest,
+                    com.google.appengine.v1.firewall.FirewallRule>(
+                    service, METHODID_GET_INGRESS_RULE)))
+        .addMethod(
+            getUpdateIngressRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.UpdateIngressRuleRequest,
+                    com.google.appengine.v1.firewall.FirewallRule>(
+                    service, METHODID_UPDATE_INGRESS_RULE)))
+        .addMethod(
+            getDeleteIngressRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.DeleteIngressRuleRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_INGRESS_RULE)))
+        .build();
   }
 
   private abstract static class FirewallBaseDescriptorSupplier

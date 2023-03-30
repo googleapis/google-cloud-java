@@ -244,7 +244,6 @@ public class ModelServiceClientTest {
             .setModelSourceInfo(ModelSourceInfo.newBuilder().build())
             .setOriginalModelInfo(Model.OriginalModelInfo.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
-            .setLargeModelReference(Model.LargeModelReference.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -312,7 +311,6 @@ public class ModelServiceClientTest {
             .setModelSourceInfo(ModelSourceInfo.newBuilder().build())
             .setOriginalModelInfo(Model.OriginalModelInfo.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
-            .setLargeModelReference(Model.LargeModelReference.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -556,7 +554,6 @@ public class ModelServiceClientTest {
             .setModelSourceInfo(ModelSourceInfo.newBuilder().build())
             .setOriginalModelInfo(Model.OriginalModelInfo.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
-            .setLargeModelReference(Model.LargeModelReference.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -887,7 +884,6 @@ public class ModelServiceClientTest {
             .setModelSourceInfo(ModelSourceInfo.newBuilder().build())
             .setOriginalModelInfo(Model.OriginalModelInfo.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
-            .setLargeModelReference(Model.LargeModelReference.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -958,7 +954,6 @@ public class ModelServiceClientTest {
             .setModelSourceInfo(ModelSourceInfo.newBuilder().build())
             .setOriginalModelInfo(Model.OriginalModelInfo.newBuilder().build())
             .setMetadataArtifact("metadataArtifact1018119713")
-            .setLargeModelReference(Model.LargeModelReference.newBuilder().build())
             .build();
     mockModelService.addResponse(expectedResponse);
 

@@ -327,7 +327,7 @@ public final class Debugger2Grpc {
    * Debuggee and collect the results of the set Breakpoints.
    * </pre>
    */
-  public abstract static class Debugger2ImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -336,7 +336,7 @@ public final class Debugger2Grpc {
      * Sets the breakpoint to the debuggee.
      * </pre>
      */
-    public void setBreakpoint(
+    default void setBreakpoint(
         com.google.devtools.clouddebugger.v2.SetBreakpointRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.clouddebugger.v2.SetBreakpointResponse>
             responseObserver) {
@@ -351,7 +351,7 @@ public final class Debugger2Grpc {
      * Gets breakpoint information.
      * </pre>
      */
-    public void getBreakpoint(
+    default void getBreakpoint(
         com.google.devtools.clouddebugger.v2.GetBreakpointRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.clouddebugger.v2.GetBreakpointResponse>
             responseObserver) {
@@ -366,7 +366,7 @@ public final class Debugger2Grpc {
      * Deletes the breakpoint from the debuggee.
      * </pre>
      */
-    public void deleteBreakpoint(
+    default void deleteBreakpoint(
         com.google.devtools.clouddebugger.v2.DeleteBreakpointRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -380,7 +380,7 @@ public final class Debugger2Grpc {
      * Lists all breakpoints for the debuggee.
      * </pre>
      */
-    public void listBreakpoints(
+    default void listBreakpoints(
         com.google.devtools.clouddebugger.v2.ListBreakpointsRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.clouddebugger.v2.ListBreakpointsResponse>
             responseObserver) {
@@ -395,57 +395,41 @@ public final class Debugger2Grpc {
      * Lists all the debuggees that the user has access to.
      * </pre>
      */
-    public void listDebuggees(
+    default void listDebuggees(
         com.google.devtools.clouddebugger.v2.ListDebuggeesRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.clouddebugger.v2.ListDebuggeesResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListDebuggeesMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Debugger2.
+   *
+   * <pre>
+   * The Debugger service provides the API that allows users to collect run-time
+   * information from a running application, without stopping or slowing it down
+   * and without modifying its state.  An application may include one or
+   * more replicated processes performing the same work.
+   * A debugged application is represented using the Debuggee concept. The
+   * Debugger service provides a way to query for available debuggees, but does
+   * not provide a way to create one.  A debuggee is created using the Controller
+   * service, usually by running a debugger agent with the application.
+   * The Debugger service enables the client to set one or more Breakpoints on a
+   * Debuggee and collect the results of the set Breakpoints.
+   * </pre>
+   */
+  public abstract static class Debugger2ImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getSetBreakpointMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.devtools.clouddebugger.v2.SetBreakpointRequest,
-                      com.google.devtools.clouddebugger.v2.SetBreakpointResponse>(
-                      this, METHODID_SET_BREAKPOINT)))
-          .addMethod(
-              getGetBreakpointMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.devtools.clouddebugger.v2.GetBreakpointRequest,
-                      com.google.devtools.clouddebugger.v2.GetBreakpointResponse>(
-                      this, METHODID_GET_BREAKPOINT)))
-          .addMethod(
-              getDeleteBreakpointMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.devtools.clouddebugger.v2.DeleteBreakpointRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_BREAKPOINT)))
-          .addMethod(
-              getListBreakpointsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.devtools.clouddebugger.v2.ListBreakpointsRequest,
-                      com.google.devtools.clouddebugger.v2.ListBreakpointsResponse>(
-                      this, METHODID_LIST_BREAKPOINTS)))
-          .addMethod(
-              getListDebuggeesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.devtools.clouddebugger.v2.ListDebuggeesRequest,
-                      com.google.devtools.clouddebugger.v2.ListDebuggeesResponse>(
-                      this, METHODID_LIST_DEBUGGEES)))
-          .build();
+      return Debugger2Grpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Debugger2.
    *
    * <pre>
    * The Debugger service provides the API that allows users to collect run-time
@@ -556,7 +540,7 @@ public final class Debugger2Grpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Debugger2.
    *
    * <pre>
    * The Debugger service provides the API that allows users to collect run-time
@@ -650,7 +634,7 @@ public final class Debugger2Grpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Debugger2.
    *
    * <pre>
    * The Debugger service provides the API that allows users to collect run-time
@@ -757,10 +741,10 @@ public final class Debugger2Grpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final Debugger2ImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(Debugger2ImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -816,6 +800,45 @@ public final class Debugger2Grpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getSetBreakpointMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.clouddebugger.v2.SetBreakpointRequest,
+                    com.google.devtools.clouddebugger.v2.SetBreakpointResponse>(
+                    service, METHODID_SET_BREAKPOINT)))
+        .addMethod(
+            getGetBreakpointMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.clouddebugger.v2.GetBreakpointRequest,
+                    com.google.devtools.clouddebugger.v2.GetBreakpointResponse>(
+                    service, METHODID_GET_BREAKPOINT)))
+        .addMethod(
+            getDeleteBreakpointMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.clouddebugger.v2.DeleteBreakpointRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_BREAKPOINT)))
+        .addMethod(
+            getListBreakpointsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.clouddebugger.v2.ListBreakpointsRequest,
+                    com.google.devtools.clouddebugger.v2.ListBreakpointsResponse>(
+                    service, METHODID_LIST_BREAKPOINTS)))
+        .addMethod(
+            getListDebuggeesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.clouddebugger.v2.ListDebuggeesRequest,
+                    com.google.devtools.clouddebugger.v2.ListDebuggeesResponse>(
+                    service, METHODID_LIST_DEBUGGEES)))
+        .build();
   }
 
   private abstract static class Debugger2BaseDescriptorSupplier

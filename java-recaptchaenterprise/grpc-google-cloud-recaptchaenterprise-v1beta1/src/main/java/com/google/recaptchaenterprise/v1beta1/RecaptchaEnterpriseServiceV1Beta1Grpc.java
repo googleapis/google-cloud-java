@@ -189,8 +189,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
    * Service to determine the likelihood an event is legitimate.
    * </pre>
    */
-  public abstract static class RecaptchaEnterpriseServiceV1Beta1ImplBase
-      implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -199,7 +198,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
      * Creates an Assessment of the likelihood an event is legitimate.
      * </pre>
      */
-    public void createAssessment(
+    default void createAssessment(
         com.google.recaptchaenterprise.v1beta1.CreateAssessmentRequest request,
         io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1beta1.Assessment>
             responseObserver) {
@@ -215,7 +214,7 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
      * on whether the event turned out to be authentic or fradulent.
      * </pre>
      */
-    public void annotateAssessment(
+    default void annotateAssessment(
         com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentResponse>
@@ -223,30 +222,27 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getAnnotateAssessmentMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service RecaptchaEnterpriseServiceV1Beta1.
+   *
+   * <pre>
+   * Service to determine the likelihood an event is legitimate.
+   * </pre>
+   */
+  public abstract static class RecaptchaEnterpriseServiceV1Beta1ImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateAssessmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.recaptchaenterprise.v1beta1.CreateAssessmentRequest,
-                      com.google.recaptchaenterprise.v1beta1.Assessment>(
-                      this, METHODID_CREATE_ASSESSMENT)))
-          .addMethod(
-              getAnnotateAssessmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest,
-                      com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentResponse>(
-                      this, METHODID_ANNOTATE_ASSESSMENT)))
-          .build();
+      return RecaptchaEnterpriseServiceV1Beta1Grpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service
+   * RecaptchaEnterpriseServiceV1Beta1.
    *
    * <pre>
    * Service to determine the likelihood an event is legitimate.
@@ -303,7 +299,8 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service
+   * RecaptchaEnterpriseServiceV1Beta1.
    *
    * <pre>
    * Service to determine the likelihood an event is legitimate.
@@ -351,7 +348,8 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * RecaptchaEnterpriseServiceV1Beta1.
    *
    * <pre>
    * Service to determine the likelihood an event is legitimate.
@@ -409,10 +407,10 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final RecaptchaEnterpriseServiceV1Beta1ImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(RecaptchaEnterpriseServiceV1Beta1ImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -448,6 +446,25 @@ public final class RecaptchaEnterpriseServiceV1Beta1Grpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateAssessmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.recaptchaenterprise.v1beta1.CreateAssessmentRequest,
+                    com.google.recaptchaenterprise.v1beta1.Assessment>(
+                    service, METHODID_CREATE_ASSESSMENT)))
+        .addMethod(
+            getAnnotateAssessmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest,
+                    com.google.recaptchaenterprise.v1beta1.AnnotateAssessmentResponse>(
+                    service, METHODID_ANNOTATE_ASSESSMENT)))
+        .build();
   }
 
   private abstract static class RecaptchaEnterpriseServiceV1Beta1BaseDescriptorSupplier

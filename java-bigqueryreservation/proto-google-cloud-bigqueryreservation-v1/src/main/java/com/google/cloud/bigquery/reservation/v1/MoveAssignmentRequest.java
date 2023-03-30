@@ -46,6 +46,7 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
   private MoveAssignmentRequest() {
     name_ = "";
     destinationId_ = "";
+    assignmentId_ = "";
   }
 
   @java.lang.Override
@@ -186,6 +187,63 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
     }
   }
 
+  public static final int ASSIGNMENT_ID_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object assignmentId_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The optional assignment ID. A new assignment name is generated if this
+   * field is empty.
+   * This field can contain only lowercase alphanumeric characters or dashes.
+   * Max length is 64 characters.
+   * </pre>
+   *
+   * <code>string assignment_id = 5;</code>
+   *
+   * @return The assignmentId.
+   */
+  @java.lang.Override
+  public java.lang.String getAssignmentId() {
+    java.lang.Object ref = assignmentId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      assignmentId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The optional assignment ID. A new assignment name is generated if this
+   * field is empty.
+   * This field can contain only lowercase alphanumeric characters or dashes.
+   * Max length is 64 characters.
+   * </pre>
+   *
+   * <code>string assignment_id = 5;</code>
+   *
+   * @return The bytes for assignmentId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAssignmentIdBytes() {
+    java.lang.Object ref = assignmentId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      assignmentId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -206,6 +264,9 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, destinationId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(assignmentId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, assignmentId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -220,6 +281,9 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, destinationId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(assignmentId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, assignmentId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -239,6 +303,7 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
 
     if (!getName().equals(other.getName())) return false;
     if (!getDestinationId().equals(other.getDestinationId())) return false;
+    if (!getAssignmentId().equals(other.getAssignmentId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -254,6 +319,8 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + DESTINATION_ID_FIELD_NUMBER;
     hash = (53 * hash) + getDestinationId().hashCode();
+    hash = (37 * hash) + ASSIGNMENT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getAssignmentId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -402,6 +469,7 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
       bitField0_ = 0;
       name_ = "";
       destinationId_ = "";
+      assignmentId_ = "";
       return this;
     }
 
@@ -445,6 +513,9 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.destinationId_ = destinationId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.assignmentId_ = assignmentId_;
       }
     }
 
@@ -505,6 +576,11 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (!other.getAssignmentId().isEmpty()) {
+        assignmentId_ = other.assignmentId_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -543,6 +619,12 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000002;
                 break;
               } // case 26
+            case 42:
+              {
+                assignmentId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -795,6 +877,127 @@ public final class MoveAssignmentRequest extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       destinationId_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object assignmentId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The optional assignment ID. A new assignment name is generated if this
+     * field is empty.
+     * This field can contain only lowercase alphanumeric characters or dashes.
+     * Max length is 64 characters.
+     * </pre>
+     *
+     * <code>string assignment_id = 5;</code>
+     *
+     * @return The assignmentId.
+     */
+    public java.lang.String getAssignmentId() {
+      java.lang.Object ref = assignmentId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        assignmentId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The optional assignment ID. A new assignment name is generated if this
+     * field is empty.
+     * This field can contain only lowercase alphanumeric characters or dashes.
+     * Max length is 64 characters.
+     * </pre>
+     *
+     * <code>string assignment_id = 5;</code>
+     *
+     * @return The bytes for assignmentId.
+     */
+    public com.google.protobuf.ByteString getAssignmentIdBytes() {
+      java.lang.Object ref = assignmentId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        assignmentId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The optional assignment ID. A new assignment name is generated if this
+     * field is empty.
+     * This field can contain only lowercase alphanumeric characters or dashes.
+     * Max length is 64 characters.
+     * </pre>
+     *
+     * <code>string assignment_id = 5;</code>
+     *
+     * @param value The assignmentId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAssignmentId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      assignmentId_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The optional assignment ID. A new assignment name is generated if this
+     * field is empty.
+     * This field can contain only lowercase alphanumeric characters or dashes.
+     * Max length is 64 characters.
+     * </pre>
+     *
+     * <code>string assignment_id = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAssignmentId() {
+      assignmentId_ = getDefaultInstance().getAssignmentId();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The optional assignment ID. A new assignment name is generated if this
+     * field is empty.
+     * This field can contain only lowercase alphanumeric characters or dashes.
+     * Max length is 64 characters.
+     * </pre>
+     *
+     * <code>string assignment_id = 5;</code>
+     *
+     * @param value The bytes for assignmentId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAssignmentIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      assignmentId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -260,7 +260,7 @@ public final class WebRiskServiceGrpc {
    * website and in client applications.
    * </pre>
    */
-  public abstract static class WebRiskServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -274,7 +274,7 @@ public final class WebRiskServiceGrpc {
      * for each list.
      * </pre>
      */
-    public void computeThreatListDiff(
+    default void computeThreatListDiff(
         com.google.webrisk.v1.ComputeThreatListDiffRequest request,
         io.grpc.stub.StreamObserver<com.google.webrisk.v1.ComputeThreatListDiffResponse>
             responseObserver) {
@@ -293,7 +293,7 @@ public final class WebRiskServiceGrpc {
      * empty response will be returned.
      * </pre>
      */
-    public void searchUris(
+    default void searchUris(
         com.google.webrisk.v1.SearchUrisRequest request,
         io.grpc.stub.StreamObserver<com.google.webrisk.v1.SearchUrisResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSearchUrisMethod(), responseObserver);
@@ -310,7 +310,7 @@ public final class WebRiskServiceGrpc {
      * hash match of a threat.
      * </pre>
      */
-    public void searchHashes(
+    default void searchHashes(
         com.google.webrisk.v1.SearchHashesRequest request,
         io.grpc.stub.StreamObserver<com.google.webrisk.v1.SearchHashesResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -330,47 +330,33 @@ public final class WebRiskServiceGrpc {
      * out to Sales or your customer engineer to obtain access.
      * </pre>
      */
-    public void createSubmission(
+    default void createSubmission(
         com.google.webrisk.v1.CreateSubmissionRequest request,
         io.grpc.stub.StreamObserver<com.google.webrisk.v1.Submission> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCreateSubmissionMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service WebRiskService.
+   *
+   * <pre>
+   * Web Risk API defines an interface to detect malicious URLs on your
+   * website and in client applications.
+   * </pre>
+   */
+  public abstract static class WebRiskServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getComputeThreatListDiffMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.webrisk.v1.ComputeThreatListDiffRequest,
-                      com.google.webrisk.v1.ComputeThreatListDiffResponse>(
-                      this, METHODID_COMPUTE_THREAT_LIST_DIFF)))
-          .addMethod(
-              getSearchUrisMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.webrisk.v1.SearchUrisRequest,
-                      com.google.webrisk.v1.SearchUrisResponse>(this, METHODID_SEARCH_URIS)))
-          .addMethod(
-              getSearchHashesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.webrisk.v1.SearchHashesRequest,
-                      com.google.webrisk.v1.SearchHashesResponse>(this, METHODID_SEARCH_HASHES)))
-          .addMethod(
-              getCreateSubmissionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.webrisk.v1.CreateSubmissionRequest,
-                      com.google.webrisk.v1.Submission>(this, METHODID_CREATE_SUBMISSION)))
-          .build();
+      return WebRiskServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service WebRiskService.
    *
    * <pre>
    * Web Risk API defines an interface to detect malicious URLs on your
@@ -472,7 +458,7 @@ public final class WebRiskServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service WebRiskService.
    *
    * <pre>
    * Web Risk API defines an interface to detect malicious URLs on your
@@ -564,7 +550,7 @@ public final class WebRiskServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service WebRiskService.
    *
    * <pre>
    * Web Risk API defines an interface to detect malicious URLs on your
@@ -668,10 +654,10 @@ public final class WebRiskServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final WebRiskServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(WebRiskServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -717,6 +703,36 @@ public final class WebRiskServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getComputeThreatListDiffMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.webrisk.v1.ComputeThreatListDiffRequest,
+                    com.google.webrisk.v1.ComputeThreatListDiffResponse>(
+                    service, METHODID_COMPUTE_THREAT_LIST_DIFF)))
+        .addMethod(
+            getSearchUrisMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.webrisk.v1.SearchUrisRequest,
+                    com.google.webrisk.v1.SearchUrisResponse>(service, METHODID_SEARCH_URIS)))
+        .addMethod(
+            getSearchHashesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.webrisk.v1.SearchHashesRequest,
+                    com.google.webrisk.v1.SearchHashesResponse>(service, METHODID_SEARCH_HASHES)))
+        .addMethod(
+            getCreateSubmissionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.webrisk.v1.CreateSubmissionRequest,
+                    com.google.webrisk.v1.Submission>(service, METHODID_CREATE_SUBMISSION)))
+        .build();
   }
 
   private abstract static class WebRiskServiceBaseDescriptorSupplier

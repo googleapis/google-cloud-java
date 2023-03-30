@@ -174,7 +174,7 @@ public final class PredictionServiceGrpc {
    * snake_case or kebab-case, either of those cases is accepted.
    * </pre>
    */
-  public abstract static class PredictionServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -200,7 +200,7 @@ public final class PredictionServiceGrpc {
      *                     encoded.
      * </pre>
      */
-    public void predict(
+    default void predict(
         com.google.cloud.automl.v1beta1.PredictRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.PredictResponse>
             responseObserver) {
@@ -225,34 +225,34 @@ public final class PredictionServiceGrpc {
      * * Tables
      * </pre>
      */
-    public void batchPredict(
+    default void batchPredict(
         com.google.cloud.automl.v1beta1.BatchPredictRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getBatchPredictMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service PredictionService.
+   *
+   * <pre>
+   * AutoML Prediction API.
+   * On any input that is documented to expect a string parameter in
+   * snake_case or kebab-case, either of those cases is accepted.
+   * </pre>
+   */
+  public abstract static class PredictionServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getPredictMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.automl.v1beta1.PredictRequest,
-                      com.google.cloud.automl.v1beta1.PredictResponse>(this, METHODID_PREDICT)))
-          .addMethod(
-              getBatchPredictMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.automl.v1beta1.BatchPredictRequest,
-                      com.google.longrunning.Operation>(this, METHODID_BATCH_PREDICT)))
-          .build();
+      return PredictionServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service PredictionService.
    *
    * <pre>
    * AutoML Prediction API.
@@ -333,7 +333,7 @@ public final class PredictionServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service PredictionService.
    *
    * <pre>
    * AutoML Prediction API.
@@ -410,7 +410,7 @@ public final class PredictionServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service PredictionService.
    *
    * <pre>
    * AutoML Prediction API.
@@ -494,10 +494,10 @@ public final class PredictionServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final PredictionServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(PredictionServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -531,6 +531,23 @@ public final class PredictionServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getPredictMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.automl.v1beta1.PredictRequest,
+                    com.google.cloud.automl.v1beta1.PredictResponse>(service, METHODID_PREDICT)))
+        .addMethod(
+            getBatchPredictMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.automl.v1beta1.BatchPredictRequest,
+                    com.google.longrunning.Operation>(service, METHODID_BATCH_PREDICT)))
+        .build();
   }
 
   private abstract static class PredictionServiceBaseDescriptorSupplier

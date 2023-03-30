@@ -21,7 +21,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * This API allows users to manage their flat-rate BigQuery reservations.
+ * This API allows users to manage their BigQuery reservations.
  * A reservation provides computational resource guarantees, in the form of
  * [slots](https://cloud.google.com/bigquery/docs/slots), to users. A slot is a
  * unit of computational power in BigQuery, and serves as the basic unit of
@@ -1127,7 +1127,7 @@ public final class ReservationServiceGrpc {
    *
    *
    * <pre>
-   * This API allows users to manage their flat-rate BigQuery reservations.
+   * This API allows users to manage their BigQuery reservations.
    * A reservation provides computational resource guarantees, in the form of
    * [slots](https://cloud.google.com/bigquery/docs/slots), to users. A slot is a
    * unit of computational power in BigQuery, and serves as the basic unit of
@@ -1142,7 +1142,7 @@ public final class ReservationServiceGrpc {
    *   `projects/myproject/locations/US/capacityCommitments/id`.
    * </pre>
    */
-  public abstract static class ReservationServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -1151,7 +1151,7 @@ public final class ReservationServiceGrpc {
      * Creates a new reservation resource.
      * </pre>
      */
-    public void createReservation(
+    default void createReservation(
         com.google.cloud.bigquery.reservation.v1.CreateReservationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Reservation>
             responseObserver) {
@@ -1166,7 +1166,7 @@ public final class ReservationServiceGrpc {
      * Lists all the reservations for the project in the specified location.
      * </pre>
      */
-    public void listReservations(
+    default void listReservations(
         com.google.cloud.bigquery.reservation.v1.ListReservationsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.reservation.v1.ListReservationsResponse>
@@ -1182,7 +1182,7 @@ public final class ReservationServiceGrpc {
      * Returns information about the reservation.
      * </pre>
      */
-    public void getReservation(
+    default void getReservation(
         com.google.cloud.bigquery.reservation.v1.GetReservationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Reservation>
             responseObserver) {
@@ -1199,7 +1199,7 @@ public final class ReservationServiceGrpc {
      * assignments.
      * </pre>
      */
-    public void deleteReservation(
+    default void deleteReservation(
         com.google.cloud.bigquery.reservation.v1.DeleteReservationRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1213,7 +1213,7 @@ public final class ReservationServiceGrpc {
      * Updates an existing reservation resource.
      * </pre>
      */
-    public void updateReservation(
+    default void updateReservation(
         com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Reservation>
             responseObserver) {
@@ -1228,7 +1228,7 @@ public final class ReservationServiceGrpc {
      * Creates a new capacity commitment resource.
      * </pre>
      */
-    public void createCapacityCommitment(
+    default void createCapacityCommitment(
         com.google.cloud.bigquery.reservation.v1.CreateCapacityCommitmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
             responseObserver) {
@@ -1243,7 +1243,7 @@ public final class ReservationServiceGrpc {
      * Lists all the capacity commitments for the admin project.
      * </pre>
      */
-    public void listCapacityCommitments(
+    default void listCapacityCommitments(
         com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsResponse>
@@ -1259,7 +1259,7 @@ public final class ReservationServiceGrpc {
      * Returns information about the capacity commitment.
      * </pre>
      */
-    public void getCapacityCommitment(
+    default void getCapacityCommitment(
         com.google.cloud.bigquery.reservation.v1.GetCapacityCommitmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
             responseObserver) {
@@ -1276,7 +1276,7 @@ public final class ReservationServiceGrpc {
      * `google.rpc.Code.FAILED_PRECONDITION`.
      * </pre>
      */
-    public void deleteCapacityCommitment(
+    default void deleteCapacityCommitment(
         com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1294,7 +1294,7 @@ public final class ReservationServiceGrpc {
      * with the error code `google.rpc.Code.FAILED_PRECONDITION`.
      * </pre>
      */
-    public void updateCapacityCommitment(
+    default void updateCapacityCommitment(
         com.google.cloud.bigquery.reservation.v1.UpdateCapacityCommitmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
             responseObserver) {
@@ -1314,7 +1314,7 @@ public final class ReservationServiceGrpc {
      * you delete the first one after the commitment end time passes.
      * </pre>
      */
-    public void splitCapacityCommitment(
+    default void splitCapacityCommitment(
         com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentResponse>
@@ -1334,7 +1334,7 @@ public final class ReservationServiceGrpc {
      * with the error code `google.rpc.Code.FAILED_PRECONDITION`.
      * </pre>
      */
-    public void mergeCapacityCommitments(
+    default void mergeCapacityCommitments(
         com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.CapacityCommitment>
             responseObserver) {
@@ -1375,7 +1375,7 @@ public final class ReservationServiceGrpc {
      * does not match location of the reservation.
      * </pre>
      */
-    public void createAssignment(
+    default void createAssignment(
         com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Assignment>
             responseObserver) {
@@ -1404,7 +1404,7 @@ public final class ReservationServiceGrpc {
      * **Note** "-" cannot be used for projects nor locations.
      * </pre>
      */
-    public void listAssignments(
+    default void listAssignments(
         com.google.cloud.bigquery.reservation.v1.ListAssignmentsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.reservation.v1.ListAssignmentsResponse>
@@ -1431,7 +1431,7 @@ public final class ReservationServiceGrpc {
      * `project2` will switch to use on-demand mode.
      * </pre>
      */
-    public void deleteAssignment(
+    default void deleteAssignment(
         com.google.cloud.bigquery.reservation.v1.DeleteAssignmentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1462,7 +1462,7 @@ public final class ReservationServiceGrpc {
      * </pre>
      */
     @java.lang.Deprecated
-    public void searchAssignments(
+    default void searchAssignments(
         com.google.cloud.bigquery.reservation.v1.SearchAssignmentsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.reservation.v1.SearchAssignmentsResponse>
@@ -1492,7 +1492,7 @@ public final class ReservationServiceGrpc {
      *    `projects/&#42;&#47;locations/&#42;reservations/&#42;`.
      * </pre>
      */
-    public void searchAllAssignments(
+    default void searchAllAssignments(
         com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsResponse>
@@ -1511,7 +1511,7 @@ public final class ReservationServiceGrpc {
      * associated reservation.
      * </pre>
      */
-    public void moveAssignment(
+    default void moveAssignment(
         com.google.cloud.bigquery.reservation.v1.MoveAssignmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Assignment>
             responseObserver) {
@@ -1527,7 +1527,7 @@ public final class ReservationServiceGrpc {
      * Only the `priority` field can be updated.
      * </pre>
      */
-    public void updateAssignment(
+    default void updateAssignment(
         com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.Assignment>
             responseObserver) {
@@ -1542,7 +1542,7 @@ public final class ReservationServiceGrpc {
      * Retrieves a BI reservation.
      * </pre>
      */
-    public void getBiReservation(
+    default void getBiReservation(
         com.google.cloud.bigquery.reservation.v1.GetBiReservationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.BiReservation>
             responseObserver) {
@@ -1562,170 +1562,48 @@ public final class ReservationServiceGrpc {
      * must be set to 0.
      * </pre>
      */
-    public void updateBiReservation(
+    default void updateBiReservation(
         com.google.cloud.bigquery.reservation.v1.UpdateBiReservationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.BiReservation>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateBiReservationMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ReservationService.
+   *
+   * <pre>
+   * This API allows users to manage their BigQuery reservations.
+   * A reservation provides computational resource guarantees, in the form of
+   * [slots](https://cloud.google.com/bigquery/docs/slots), to users. A slot is a
+   * unit of computational power in BigQuery, and serves as the basic unit of
+   * parallelism. In a scan of a multi-partitioned table, a single slot operates
+   * on a single partition of the table. A reservation resource exists as a child
+   * resource of the admin project and location, e.g.:
+   *   `projects/myproject/locations/US/reservations/reservationName`.
+   * A capacity commitment is a way to purchase compute capacity for BigQuery jobs
+   * (in the form of slots) with some committed period of usage. A capacity
+   * commitment resource exists as a child resource of the admin project and
+   * location, e.g.:
+   *   `projects/myproject/locations/US/capacityCommitments/id`.
+   * </pre>
+   */
+  public abstract static class ReservationServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateReservationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.reservation.v1.CreateReservationRequest,
-                      com.google.cloud.bigquery.reservation.v1.Reservation>(
-                      this, METHODID_CREATE_RESERVATION)))
-          .addMethod(
-              getListReservationsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.reservation.v1.ListReservationsRequest,
-                      com.google.cloud.bigquery.reservation.v1.ListReservationsResponse>(
-                      this, METHODID_LIST_RESERVATIONS)))
-          .addMethod(
-              getGetReservationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.reservation.v1.GetReservationRequest,
-                      com.google.cloud.bigquery.reservation.v1.Reservation>(
-                      this, METHODID_GET_RESERVATION)))
-          .addMethod(
-              getDeleteReservationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.reservation.v1.DeleteReservationRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_RESERVATION)))
-          .addMethod(
-              getUpdateReservationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest,
-                      com.google.cloud.bigquery.reservation.v1.Reservation>(
-                      this, METHODID_UPDATE_RESERVATION)))
-          .addMethod(
-              getCreateCapacityCommitmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.reservation.v1.CreateCapacityCommitmentRequest,
-                      com.google.cloud.bigquery.reservation.v1.CapacityCommitment>(
-                      this, METHODID_CREATE_CAPACITY_COMMITMENT)))
-          .addMethod(
-              getListCapacityCommitmentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsRequest,
-                      com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsResponse>(
-                      this, METHODID_LIST_CAPACITY_COMMITMENTS)))
-          .addMethod(
-              getGetCapacityCommitmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.reservation.v1.GetCapacityCommitmentRequest,
-                      com.google.cloud.bigquery.reservation.v1.CapacityCommitment>(
-                      this, METHODID_GET_CAPACITY_COMMITMENT)))
-          .addMethod(
-              getDeleteCapacityCommitmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_CAPACITY_COMMITMENT)))
-          .addMethod(
-              getUpdateCapacityCommitmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.reservation.v1.UpdateCapacityCommitmentRequest,
-                      com.google.cloud.bigquery.reservation.v1.CapacityCommitment>(
-                      this, METHODID_UPDATE_CAPACITY_COMMITMENT)))
-          .addMethod(
-              getSplitCapacityCommitmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentRequest,
-                      com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentResponse>(
-                      this, METHODID_SPLIT_CAPACITY_COMMITMENT)))
-          .addMethod(
-              getMergeCapacityCommitmentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest,
-                      com.google.cloud.bigquery.reservation.v1.CapacityCommitment>(
-                      this, METHODID_MERGE_CAPACITY_COMMITMENTS)))
-          .addMethod(
-              getCreateAssignmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest,
-                      com.google.cloud.bigquery.reservation.v1.Assignment>(
-                      this, METHODID_CREATE_ASSIGNMENT)))
-          .addMethod(
-              getListAssignmentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.reservation.v1.ListAssignmentsRequest,
-                      com.google.cloud.bigquery.reservation.v1.ListAssignmentsResponse>(
-                      this, METHODID_LIST_ASSIGNMENTS)))
-          .addMethod(
-              getDeleteAssignmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.reservation.v1.DeleteAssignmentRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_ASSIGNMENT)))
-          .addMethod(
-              getSearchAssignmentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.reservation.v1.SearchAssignmentsRequest,
-                      com.google.cloud.bigquery.reservation.v1.SearchAssignmentsResponse>(
-                      this, METHODID_SEARCH_ASSIGNMENTS)))
-          .addMethod(
-              getSearchAllAssignmentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsRequest,
-                      com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsResponse>(
-                      this, METHODID_SEARCH_ALL_ASSIGNMENTS)))
-          .addMethod(
-              getMoveAssignmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.reservation.v1.MoveAssignmentRequest,
-                      com.google.cloud.bigquery.reservation.v1.Assignment>(
-                      this, METHODID_MOVE_ASSIGNMENT)))
-          .addMethod(
-              getUpdateAssignmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest,
-                      com.google.cloud.bigquery.reservation.v1.Assignment>(
-                      this, METHODID_UPDATE_ASSIGNMENT)))
-          .addMethod(
-              getGetBiReservationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.reservation.v1.GetBiReservationRequest,
-                      com.google.cloud.bigquery.reservation.v1.BiReservation>(
-                      this, METHODID_GET_BI_RESERVATION)))
-          .addMethod(
-              getUpdateBiReservationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.reservation.v1.UpdateBiReservationRequest,
-                      com.google.cloud.bigquery.reservation.v1.BiReservation>(
-                      this, METHODID_UPDATE_BI_RESERVATION)))
-          .build();
+      return ReservationServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ReservationService.
    *
    * <pre>
-   * This API allows users to manage their flat-rate BigQuery reservations.
+   * This API allows users to manage their BigQuery reservations.
    * A reservation provides computational resource guarantees, in the form of
    * [slots](https://cloud.google.com/bigquery/docs/slots), to users. A slot is a
    * unit of computational power in BigQuery, and serves as the basic unit of
@@ -2222,10 +2100,10 @@ public final class ReservationServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ReservationService.
    *
    * <pre>
-   * This API allows users to manage their flat-rate BigQuery reservations.
+   * This API allows users to manage their BigQuery reservations.
    * A reservation provides computational resource guarantees, in the form of
    * [slots](https://cloud.google.com/bigquery/docs/slots), to users. A slot is a
    * unit of computational power in BigQuery, and serves as the basic unit of
@@ -2639,10 +2517,10 @@ public final class ReservationServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service ReservationService.
    *
    * <pre>
-   * This API allows users to manage their flat-rate BigQuery reservations.
+   * This API allows users to manage their BigQuery reservations.
    * A reservation provides computational resource guarantees, in the form of
    * [slots](https://cloud.google.com/bigquery/docs/slots), to users. A slot is a
    * unit of computational power in BigQuery, and serves as the basic unit of
@@ -3109,10 +2987,10 @@ public final class ReservationServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ReservationServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ReservationServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -3268,6 +3146,155 @@ public final class ReservationServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateReservationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.reservation.v1.CreateReservationRequest,
+                    com.google.cloud.bigquery.reservation.v1.Reservation>(
+                    service, METHODID_CREATE_RESERVATION)))
+        .addMethod(
+            getListReservationsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.reservation.v1.ListReservationsRequest,
+                    com.google.cloud.bigquery.reservation.v1.ListReservationsResponse>(
+                    service, METHODID_LIST_RESERVATIONS)))
+        .addMethod(
+            getGetReservationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.reservation.v1.GetReservationRequest,
+                    com.google.cloud.bigquery.reservation.v1.Reservation>(
+                    service, METHODID_GET_RESERVATION)))
+        .addMethod(
+            getDeleteReservationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.reservation.v1.DeleteReservationRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_RESERVATION)))
+        .addMethod(
+            getUpdateReservationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest,
+                    com.google.cloud.bigquery.reservation.v1.Reservation>(
+                    service, METHODID_UPDATE_RESERVATION)))
+        .addMethod(
+            getCreateCapacityCommitmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.reservation.v1.CreateCapacityCommitmentRequest,
+                    com.google.cloud.bigquery.reservation.v1.CapacityCommitment>(
+                    service, METHODID_CREATE_CAPACITY_COMMITMENT)))
+        .addMethod(
+            getListCapacityCommitmentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsRequest,
+                    com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsResponse>(
+                    service, METHODID_LIST_CAPACITY_COMMITMENTS)))
+        .addMethod(
+            getGetCapacityCommitmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.reservation.v1.GetCapacityCommitmentRequest,
+                    com.google.cloud.bigquery.reservation.v1.CapacityCommitment>(
+                    service, METHODID_GET_CAPACITY_COMMITMENT)))
+        .addMethod(
+            getDeleteCapacityCommitmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_CAPACITY_COMMITMENT)))
+        .addMethod(
+            getUpdateCapacityCommitmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.reservation.v1.UpdateCapacityCommitmentRequest,
+                    com.google.cloud.bigquery.reservation.v1.CapacityCommitment>(
+                    service, METHODID_UPDATE_CAPACITY_COMMITMENT)))
+        .addMethod(
+            getSplitCapacityCommitmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentRequest,
+                    com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentResponse>(
+                    service, METHODID_SPLIT_CAPACITY_COMMITMENT)))
+        .addMethod(
+            getMergeCapacityCommitmentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest,
+                    com.google.cloud.bigquery.reservation.v1.CapacityCommitment>(
+                    service, METHODID_MERGE_CAPACITY_COMMITMENTS)))
+        .addMethod(
+            getCreateAssignmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest,
+                    com.google.cloud.bigquery.reservation.v1.Assignment>(
+                    service, METHODID_CREATE_ASSIGNMENT)))
+        .addMethod(
+            getListAssignmentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.reservation.v1.ListAssignmentsRequest,
+                    com.google.cloud.bigquery.reservation.v1.ListAssignmentsResponse>(
+                    service, METHODID_LIST_ASSIGNMENTS)))
+        .addMethod(
+            getDeleteAssignmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.reservation.v1.DeleteAssignmentRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_ASSIGNMENT)))
+        .addMethod(
+            getSearchAssignmentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.reservation.v1.SearchAssignmentsRequest,
+                    com.google.cloud.bigquery.reservation.v1.SearchAssignmentsResponse>(
+                    service, METHODID_SEARCH_ASSIGNMENTS)))
+        .addMethod(
+            getSearchAllAssignmentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsRequest,
+                    com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsResponse>(
+                    service, METHODID_SEARCH_ALL_ASSIGNMENTS)))
+        .addMethod(
+            getMoveAssignmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.reservation.v1.MoveAssignmentRequest,
+                    com.google.cloud.bigquery.reservation.v1.Assignment>(
+                    service, METHODID_MOVE_ASSIGNMENT)))
+        .addMethod(
+            getUpdateAssignmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest,
+                    com.google.cloud.bigquery.reservation.v1.Assignment>(
+                    service, METHODID_UPDATE_ASSIGNMENT)))
+        .addMethod(
+            getGetBiReservationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.reservation.v1.GetBiReservationRequest,
+                    com.google.cloud.bigquery.reservation.v1.BiReservation>(
+                    service, METHODID_GET_BI_RESERVATION)))
+        .addMethod(
+            getUpdateBiReservationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.reservation.v1.UpdateBiReservationRequest,
+                    com.google.cloud.bigquery.reservation.v1.BiReservation>(
+                    service, METHODID_UPDATE_BI_RESERVATION)))
+        .build();
   }
 
   private abstract static class ReservationServiceBaseDescriptorSupplier

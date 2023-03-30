@@ -29,6 +29,10 @@ import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.speech.v2.stub.SpeechStub;
 import com.google.cloud.speech.v2.stub.SpeechStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -545,7 +549,7 @@ public class SpeechClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the requested [Recognizer][google.cloud.speech.v2.Recognizer]. Fails with
-   * [NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested recognizer doesn't exist.
+   * [NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested Recognizer doesn't exist.
    *
    * <p>Sample code:
    *
@@ -574,7 +578,7 @@ public class SpeechClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the requested [Recognizer][google.cloud.speech.v2.Recognizer]. Fails with
-   * [NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested recognizer doesn't exist.
+   * [NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested Recognizer doesn't exist.
    *
    * <p>Sample code:
    *
@@ -602,7 +606,7 @@ public class SpeechClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the requested [Recognizer][google.cloud.speech.v2.Recognizer]. Fails with
-   * [NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested recognizer doesn't exist.
+   * [NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested Recognizer doesn't exist.
    *
    * <p>Sample code:
    *
@@ -631,7 +635,7 @@ public class SpeechClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the requested [Recognizer][google.cloud.speech.v2.Recognizer]. Fails with
-   * [NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested recognizer doesn't exist.
+   * [NOT_FOUND][google.rpc.Code.NOT_FOUND] if the requested Recognizer doesn't exist.
    *
    * <p>Sample code:
    *
@@ -1457,7 +1461,8 @@ public class SpeechClient implements BackgroundResource {
    *     (`&#42;`) is provided, [config][google.cloud.speech.v2.BatchRecognizeRequest.config]
    *     completely overrides and replaces the config in the recognizer for this recognition
    *     request.
-   * @param files Audio files with file metadata for ASR.
+   * @param files Audio files with file metadata for ASR. The maximum number of files allowed to be
+   *     specified is 5.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BatchRecognizeResponse, OperationMetadata> batchRecognizeAsync(
@@ -1516,7 +1521,8 @@ public class SpeechClient implements BackgroundResource {
    *     (`&#42;`) is provided, [config][google.cloud.speech.v2.BatchRecognizeRequest.config]
    *     completely overrides and replaces the config in the recognizer for this recognition
    *     request.
-   * @param files Audio files with file metadata for ASR.
+   * @param files Audio files with file metadata for ASR. The maximum number of files allowed to be
+   *     specified is 5.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BatchRecognizeResponse, OperationMetadata> batchRecognizeAsync(
@@ -1555,6 +1561,7 @@ public class SpeechClient implements BackgroundResource {
    *           .setConfig(RecognitionConfig.newBuilder().build())
    *           .setConfigMask(FieldMask.newBuilder().build())
    *           .addAllFiles(new ArrayList<BatchRecognizeFileMetadata>())
+   *           .setRecognitionOutputConfig(RecognitionOutputConfig.newBuilder().build())
    *           .build();
    *   BatchRecognizeResponse response = speechClient.batchRecognizeAsync(request).get();
    * }
@@ -1589,6 +1596,7 @@ public class SpeechClient implements BackgroundResource {
    *           .setConfig(RecognitionConfig.newBuilder().build())
    *           .setConfigMask(FieldMask.newBuilder().build())
    *           .addAllFiles(new ArrayList<BatchRecognizeFileMetadata>())
+   *           .setRecognitionOutputConfig(RecognitionOutputConfig.newBuilder().build())
    *           .build();
    *   OperationFuture<BatchRecognizeResponse, OperationMetadata> future =
    *       speechClient.batchRecognizeOperationCallable().futureCall(request);
@@ -1623,6 +1631,7 @@ public class SpeechClient implements BackgroundResource {
    *           .setConfig(RecognitionConfig.newBuilder().build())
    *           .setConfigMask(FieldMask.newBuilder().build())
    *           .addAllFiles(new ArrayList<BatchRecognizeFileMetadata>())
+   *           .setRecognitionOutputConfig(RecognitionOutputConfig.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future = speechClient.batchRecognizeCallable().futureCall(request);
    *   // Do something.
@@ -3592,6 +3601,160 @@ public class SpeechClient implements BackgroundResource {
     return stub.undeletePhraseSetCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpeechClient speechClient = SpeechClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Location element : speechClient.listLocations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLocationsPagedResponse listLocations(ListLocationsRequest request) {
+    return listLocationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpeechClient speechClient = SpeechClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Location> future = speechClient.listLocationsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Location element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return stub.listLocationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpeechClient speechClient = SpeechClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListLocationsResponse response = speechClient.listLocationsCallable().call(request);
+   *     for (Location element : response.getLocationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return stub.listLocationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpeechClient speechClient = SpeechClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   Location response = speechClient.getLocation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Location getLocation(GetLocationRequest request) {
+    return getLocationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpeechClient speechClient = SpeechClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Location> future = speechClient.getLocationCallable().futureCall(request);
+   *   // Do something.
+   *   Location response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return stub.getLocationCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -3849,6 +4012,82 @@ public class SpeechClient implements BackgroundResource {
     protected ListPhraseSetsFixedSizeCollection createCollection(
         List<ListPhraseSetsPage> pages, int collectionSize) {
       return new ListPhraseSetsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListLocationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    public static ApiFuture<ListLocationsPagedResponse> createAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      ApiFuture<ListLocationsPage> futurePage =
+          ListLocationsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListLocationsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListLocationsPagedResponse(ListLocationsPage page) {
+      super(page, ListLocationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListLocationsPage
+      extends AbstractPage<
+          ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
+
+    private ListLocationsPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      super(context, response);
+    }
+
+    private static ListLocationsPage createEmptyPage() {
+      return new ListLocationsPage(null, null);
+    }
+
+    @Override
+    protected ListLocationsPage createPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      return new ListLocationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListLocationsPage> createPageAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListLocationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListLocationsFixedSizeCollection createEmptyCollection() {
+      return new ListLocationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListLocationsFixedSizeCollection createCollection(
+        List<ListLocationsPage> pages, int collectionSize) {
+      return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

@@ -315,7 +315,7 @@ public final class GkeHubGrpc {
    * with Membership resources.
    * </pre>
    */
-  public abstract static class GkeHubImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -324,7 +324,7 @@ public final class GkeHubGrpc {
      * Lists Features in a given project and location.
      * </pre>
      */
-    public void listFeatures(
+    default void listFeatures(
         com.google.cloud.gkehub.v1beta.ListFeaturesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1beta.ListFeaturesResponse>
             responseObserver) {
@@ -339,7 +339,7 @@ public final class GkeHubGrpc {
      * Gets details of a single Feature.
      * </pre>
      */
-    public void getFeature(
+    default void getFeature(
         com.google.cloud.gkehub.v1beta.GetFeatureRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkehub.v1beta.Feature> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetFeatureMethod(), responseObserver);
@@ -352,7 +352,7 @@ public final class GkeHubGrpc {
      * Adds a new Feature.
      * </pre>
      */
-    public void createFeature(
+    default void createFeature(
         com.google.cloud.gkehub.v1beta.CreateFeatureRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -366,7 +366,7 @@ public final class GkeHubGrpc {
      * Removes a Feature.
      * </pre>
      */
-    public void deleteFeature(
+    default void deleteFeature(
         com.google.cloud.gkehub.v1beta.DeleteFeatureRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -380,53 +380,40 @@ public final class GkeHubGrpc {
      * Updates an existing Feature.
      * </pre>
      */
-    public void updateFeature(
+    default void updateFeature(
         com.google.cloud.gkehub.v1beta.UpdateFeatureRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateFeatureMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service GkeHub.
+   *
+   * <pre>
+   * The GKE Hub service handles the registration of many Kubernetes clusters to
+   * Google Cloud, and the management of multi-cluster features over those
+   * clusters.
+   * The GKE Hub service operates on the following resources:
+   * * [Membership][google.cloud.gkehub.v1beta.Membership]
+   * * [Feature][google.cloud.gkehub.v1beta.Feature]
+   * GKE Hub is currently only available in the global region.
+   * **Membership management may be non-trivial:** it is recommended to use one
+   * of the Google-provided client libraries or tools where possible when working
+   * with Membership resources.
+   * </pre>
+   */
+  public abstract static class GkeHubImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListFeaturesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkehub.v1beta.ListFeaturesRequest,
-                      com.google.cloud.gkehub.v1beta.ListFeaturesResponse>(
-                      this, METHODID_LIST_FEATURES)))
-          .addMethod(
-              getGetFeatureMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkehub.v1beta.GetFeatureRequest,
-                      com.google.cloud.gkehub.v1beta.Feature>(this, METHODID_GET_FEATURE)))
-          .addMethod(
-              getCreateFeatureMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkehub.v1beta.CreateFeatureRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_FEATURE)))
-          .addMethod(
-              getDeleteFeatureMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkehub.v1beta.DeleteFeatureRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_FEATURE)))
-          .addMethod(
-              getUpdateFeatureMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkehub.v1beta.UpdateFeatureRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_FEATURE)))
-          .build();
+      return GkeHubGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service GkeHub.
    *
    * <pre>
    * The GKE Hub service handles the registration of many Kubernetes clusters to
@@ -532,7 +519,7 @@ public final class GkeHubGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service GkeHub.
    *
    * <pre>
    * The GKE Hub service handles the registration of many Kubernetes clusters to
@@ -625,7 +612,7 @@ public final class GkeHubGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service GkeHub.
    *
    * <pre>
    * The GKE Hub service handles the registration of many Kubernetes clusters to
@@ -730,10 +717,10 @@ public final class GkeHubGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final GkeHubImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(GkeHubImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -783,6 +770,42 @@ public final class GkeHubGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListFeaturesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1beta.ListFeaturesRequest,
+                    com.google.cloud.gkehub.v1beta.ListFeaturesResponse>(
+                    service, METHODID_LIST_FEATURES)))
+        .addMethod(
+            getGetFeatureMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1beta.GetFeatureRequest,
+                    com.google.cloud.gkehub.v1beta.Feature>(service, METHODID_GET_FEATURE)))
+        .addMethod(
+            getCreateFeatureMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1beta.CreateFeatureRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_FEATURE)))
+        .addMethod(
+            getDeleteFeatureMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1beta.DeleteFeatureRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_FEATURE)))
+        .addMethod(
+            getUpdateFeatureMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkehub.v1beta.UpdateFeatureRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_FEATURE)))
+        .build();
   }
 
   private abstract static class GkeHubBaseDescriptorSupplier

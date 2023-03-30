@@ -543,7 +543,7 @@ public final class CloudBillingGrpc {
    * projects.
    * </pre>
    */
-  public abstract static class CloudBillingImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -554,7 +554,7 @@ public final class CloudBillingGrpc {
      * account](https://cloud.google.com/billing/docs/how-to/billing-access).
      * </pre>
      */
-    public void getBillingAccount(
+    default void getBillingAccount(
         com.google.cloud.billing.v1.GetBillingAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.billing.v1.BillingAccount> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -570,7 +570,7 @@ public final class CloudBillingGrpc {
      * [view](https://cloud.google.com/billing/docs/how-to/billing-access).
      * </pre>
      */
-    public void listBillingAccounts(
+    default void listBillingAccounts(
         com.google.cloud.billing.v1.ListBillingAccountsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.billing.v1.ListBillingAccountsResponse>
             responseObserver) {
@@ -590,7 +590,7 @@ public final class CloudBillingGrpc {
      * of the billing account.
      * </pre>
      */
-    public void updateBillingAccount(
+    default void updateBillingAccount(
         com.google.cloud.billing.v1.UpdateBillingAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.billing.v1.BillingAccount> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -616,7 +616,7 @@ public final class CloudBillingGrpc {
      * provisioned as a reseller account.
      * </pre>
      */
-    public void createBillingAccount(
+    default void createBillingAccount(
         com.google.cloud.billing.v1.CreateBillingAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.billing.v1.BillingAccount> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -633,7 +633,7 @@ public final class CloudBillingGrpc {
      * [viewers](https://cloud.google.com/billing/docs/how-to/billing-access).
      * </pre>
      */
-    public void listProjectBillingInfo(
+    default void listProjectBillingInfo(
         com.google.cloud.billing.v1.ListProjectBillingInfoRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.billing.v1.ListProjectBillingInfoResponse>
             responseObserver) {
@@ -652,7 +652,7 @@ public final class CloudBillingGrpc {
      * role.
      * </pre>
      */
-    public void getProjectBillingInfo(
+    default void getProjectBillingInfo(
         com.google.cloud.billing.v1.GetProjectBillingInfoRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.billing.v1.ProjectBillingInfo>
             responseObserver) {
@@ -693,7 +693,7 @@ public final class CloudBillingGrpc {
      * *open* billing account.
      * </pre>
      */
-    public void updateProjectBillingInfo(
+    default void updateProjectBillingInfo(
         com.google.cloud.billing.v1.UpdateProjectBillingInfoRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.billing.v1.ProjectBillingInfo>
             responseObserver) {
@@ -711,7 +711,7 @@ public final class CloudBillingGrpc {
      * [viewers](https://cloud.google.com/billing/docs/how-to/billing-access).
      * </pre>
      */
-    public void getIamPolicy(
+    default void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -729,7 +729,7 @@ public final class CloudBillingGrpc {
      * [administrators](https://cloud.google.com/billing/docs/how-to/billing-access).
      * </pre>
      */
-    public void setIamPolicy(
+    default void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -745,91 +745,34 @@ public final class CloudBillingGrpc {
      * the input permissions that the caller is allowed for that resource.
      * </pre>
      */
-    public void testIamPermissions(
+    default void testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getTestIamPermissionsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service CloudBilling.
+   *
+   * <pre>
+   * Retrieves the Google Cloud Console billing accounts and associates them with
+   * projects.
+   * </pre>
+   */
+  public abstract static class CloudBillingImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getGetBillingAccountMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.billing.v1.GetBillingAccountRequest,
-                      com.google.cloud.billing.v1.BillingAccount>(
-                      this, METHODID_GET_BILLING_ACCOUNT)))
-          .addMethod(
-              getListBillingAccountsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.billing.v1.ListBillingAccountsRequest,
-                      com.google.cloud.billing.v1.ListBillingAccountsResponse>(
-                      this, METHODID_LIST_BILLING_ACCOUNTS)))
-          .addMethod(
-              getUpdateBillingAccountMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.billing.v1.UpdateBillingAccountRequest,
-                      com.google.cloud.billing.v1.BillingAccount>(
-                      this, METHODID_UPDATE_BILLING_ACCOUNT)))
-          .addMethod(
-              getCreateBillingAccountMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.billing.v1.CreateBillingAccountRequest,
-                      com.google.cloud.billing.v1.BillingAccount>(
-                      this, METHODID_CREATE_BILLING_ACCOUNT)))
-          .addMethod(
-              getListProjectBillingInfoMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.billing.v1.ListProjectBillingInfoRequest,
-                      com.google.cloud.billing.v1.ListProjectBillingInfoResponse>(
-                      this, METHODID_LIST_PROJECT_BILLING_INFO)))
-          .addMethod(
-              getGetProjectBillingInfoMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.billing.v1.GetProjectBillingInfoRequest,
-                      com.google.cloud.billing.v1.ProjectBillingInfo>(
-                      this, METHODID_GET_PROJECT_BILLING_INFO)))
-          .addMethod(
-              getUpdateProjectBillingInfoMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.billing.v1.UpdateProjectBillingInfoRequest,
-                      com.google.cloud.billing.v1.ProjectBillingInfo>(
-                      this, METHODID_UPDATE_PROJECT_BILLING_INFO)))
-          .addMethod(
-              getGetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_GET_IAM_POLICY)))
-          .addMethod(
-              getSetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_SET_IAM_POLICY)))
-          .addMethod(
-              getTestIamPermissionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.TestIamPermissionsRequest,
-                      com.google.iam.v1.TestIamPermissionsResponse>(
-                      this, METHODID_TEST_IAM_PERMISSIONS)))
-          .build();
+      return CloudBillingGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service CloudBilling.
    *
    * <pre>
    * Retrieves the Google Cloud Console billing accounts and associates them with
@@ -1077,7 +1020,7 @@ public final class CloudBillingGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service CloudBilling.
    *
    * <pre>
    * Retrieves the Google Cloud Console billing accounts and associates them with
@@ -1289,7 +1232,7 @@ public final class CloudBillingGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service CloudBilling.
    *
    * <pre>
    * Retrieves the Google Cloud Console billing accounts and associates them with
@@ -1527,10 +1470,10 @@ public final class CloudBillingGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final CloudBillingImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(CloudBillingImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1612,6 +1555,77 @@ public final class CloudBillingGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getGetBillingAccountMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.billing.v1.GetBillingAccountRequest,
+                    com.google.cloud.billing.v1.BillingAccount>(
+                    service, METHODID_GET_BILLING_ACCOUNT)))
+        .addMethod(
+            getListBillingAccountsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.billing.v1.ListBillingAccountsRequest,
+                    com.google.cloud.billing.v1.ListBillingAccountsResponse>(
+                    service, METHODID_LIST_BILLING_ACCOUNTS)))
+        .addMethod(
+            getUpdateBillingAccountMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.billing.v1.UpdateBillingAccountRequest,
+                    com.google.cloud.billing.v1.BillingAccount>(
+                    service, METHODID_UPDATE_BILLING_ACCOUNT)))
+        .addMethod(
+            getCreateBillingAccountMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.billing.v1.CreateBillingAccountRequest,
+                    com.google.cloud.billing.v1.BillingAccount>(
+                    service, METHODID_CREATE_BILLING_ACCOUNT)))
+        .addMethod(
+            getListProjectBillingInfoMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.billing.v1.ListProjectBillingInfoRequest,
+                    com.google.cloud.billing.v1.ListProjectBillingInfoResponse>(
+                    service, METHODID_LIST_PROJECT_BILLING_INFO)))
+        .addMethod(
+            getGetProjectBillingInfoMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.billing.v1.GetProjectBillingInfoRequest,
+                    com.google.cloud.billing.v1.ProjectBillingInfo>(
+                    service, METHODID_GET_PROJECT_BILLING_INFO)))
+        .addMethod(
+            getUpdateProjectBillingInfoMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.billing.v1.UpdateProjectBillingInfoRequest,
+                    com.google.cloud.billing.v1.ProjectBillingInfo>(
+                    service, METHODID_UPDATE_PROJECT_BILLING_INFO)))
+        .addMethod(
+            getGetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_GET_IAM_POLICY)))
+        .addMethod(
+            getSetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_SET_IAM_POLICY)))
+        .addMethod(
+            getTestIamPermissionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.v1.TestIamPermissionsRequest,
+                    com.google.iam.v1.TestIamPermissionsResponse>(
+                    service, METHODID_TEST_IAM_PERMISSIONS)))
+        .build();
   }
 
   private abstract static class CloudBillingBaseDescriptorSupplier

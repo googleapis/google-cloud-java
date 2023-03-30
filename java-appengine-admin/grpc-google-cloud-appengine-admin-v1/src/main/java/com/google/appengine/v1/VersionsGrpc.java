@@ -287,7 +287,7 @@ public final class VersionsGrpc {
    * Manages versions of a service.
    * </pre>
    */
-  public abstract static class VersionsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -296,7 +296,7 @@ public final class VersionsGrpc {
      * Lists the versions of a service.
      * </pre>
      */
-    public void listVersions(
+    default void listVersions(
         com.google.appengine.v1.ListVersionsRequest request,
         io.grpc.stub.StreamObserver<com.google.appengine.v1.ListVersionsResponse>
             responseObserver) {
@@ -313,7 +313,7 @@ public final class VersionsGrpc {
      * Specify the `FULL_VIEW` parameter to get the full resource.
      * </pre>
      */
-    public void getVersion(
+    default void getVersion(
         com.google.appengine.v1.GetVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.appengine.v1.Version> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetVersionMethod(), responseObserver);
@@ -326,7 +326,7 @@ public final class VersionsGrpc {
      * Deploys code and resource files to a new version.
      * </pre>
      */
-    public void createVersion(
+    default void createVersion(
         com.google.appengine.v1.CreateVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -363,7 +363,7 @@ public final class VersionsGrpc {
      * * [`manual_scaling.instances`](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#manualscaling)
      * </pre>
      */
-    public void updateVersion(
+    default void updateVersion(
         com.google.appengine.v1.UpdateVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -377,52 +377,31 @@ public final class VersionsGrpc {
      * Deletes an existing Version resource.
      * </pre>
      */
-    public void deleteVersion(
+    default void deleteVersion(
         com.google.appengine.v1.DeleteVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteVersionMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Versions.
+   *
+   * <pre>
+   * Manages versions of a service.
+   * </pre>
+   */
+  public abstract static class VersionsImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListVersionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.ListVersionsRequest,
-                      com.google.appengine.v1.ListVersionsResponse>(this, METHODID_LIST_VERSIONS)))
-          .addMethod(
-              getGetVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.GetVersionRequest, com.google.appengine.v1.Version>(
-                      this, METHODID_GET_VERSION)))
-          .addMethod(
-              getCreateVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.CreateVersionRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_VERSION)))
-          .addMethod(
-              getUpdateVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.UpdateVersionRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_VERSION)))
-          .addMethod(
-              getDeleteVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.DeleteVersionRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_VERSION)))
-          .build();
+      return VersionsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Versions.
    *
    * <pre>
    * Manages versions of a service.
@@ -544,7 +523,7 @@ public final class VersionsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Versions.
    *
    * <pre>
    * Manages versions of a service.
@@ -653,7 +632,7 @@ public final class VersionsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Versions.
    *
    * <pre>
    * Manages versions of a service.
@@ -773,10 +752,10 @@ public final class VersionsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final VersionsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(VersionsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -825,6 +804,41 @@ public final class VersionsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListVersionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.ListVersionsRequest,
+                    com.google.appengine.v1.ListVersionsResponse>(service, METHODID_LIST_VERSIONS)))
+        .addMethod(
+            getGetVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.GetVersionRequest, com.google.appengine.v1.Version>(
+                    service, METHODID_GET_VERSION)))
+        .addMethod(
+            getCreateVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.CreateVersionRequest, com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_VERSION)))
+        .addMethod(
+            getUpdateVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.UpdateVersionRequest, com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_VERSION)))
+        .addMethod(
+            getDeleteVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.DeleteVersionRequest, com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_VERSION)))
+        .build();
   }
 
   private abstract static class VersionsBaseDescriptorSupplier

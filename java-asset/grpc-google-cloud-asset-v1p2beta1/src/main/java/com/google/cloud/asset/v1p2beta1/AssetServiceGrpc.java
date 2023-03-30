@@ -298,7 +298,7 @@ public final class AssetServiceGrpc {
    * Asset service definition.
    * </pre>
    */
-  public abstract static class AssetServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -308,7 +308,7 @@ public final class AssetServiceGrpc {
      * asset updates.
      * </pre>
      */
-    public void createFeed(
+    default void createFeed(
         com.google.cloud.asset.v1p2beta1.CreateFeedRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.asset.v1p2beta1.Feed> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateFeedMethod(), responseObserver);
@@ -321,7 +321,7 @@ public final class AssetServiceGrpc {
      * Gets details about an asset feed.
      * </pre>
      */
-    public void getFeed(
+    default void getFeed(
         com.google.cloud.asset.v1p2beta1.GetFeedRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.asset.v1p2beta1.Feed> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetFeedMethod(), responseObserver);
@@ -334,7 +334,7 @@ public final class AssetServiceGrpc {
      * Lists all asset feeds in a parent project/folder/organization.
      * </pre>
      */
-    public void listFeeds(
+    default void listFeeds(
         com.google.cloud.asset.v1p2beta1.ListFeedsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.asset.v1p2beta1.ListFeedsResponse>
             responseObserver) {
@@ -348,7 +348,7 @@ public final class AssetServiceGrpc {
      * Updates an asset feed configuration.
      * </pre>
      */
-    public void updateFeed(
+    default void updateFeed(
         com.google.cloud.asset.v1p2beta1.UpdateFeedRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.asset.v1p2beta1.Feed> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateFeedMethod(), responseObserver);
@@ -361,52 +361,31 @@ public final class AssetServiceGrpc {
      * Deletes an asset feed.
      * </pre>
      */
-    public void deleteFeed(
+    default void deleteFeed(
         com.google.cloud.asset.v1p2beta1.DeleteFeedRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteFeedMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service AssetService.
+   *
+   * <pre>
+   * Asset service definition.
+   * </pre>
+   */
+  public abstract static class AssetServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateFeedMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.asset.v1p2beta1.CreateFeedRequest,
-                      com.google.cloud.asset.v1p2beta1.Feed>(this, METHODID_CREATE_FEED)))
-          .addMethod(
-              getGetFeedMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.asset.v1p2beta1.GetFeedRequest,
-                      com.google.cloud.asset.v1p2beta1.Feed>(this, METHODID_GET_FEED)))
-          .addMethod(
-              getListFeedsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.asset.v1p2beta1.ListFeedsRequest,
-                      com.google.cloud.asset.v1p2beta1.ListFeedsResponse>(
-                      this, METHODID_LIST_FEEDS)))
-          .addMethod(
-              getUpdateFeedMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.asset.v1p2beta1.UpdateFeedRequest,
-                      com.google.cloud.asset.v1p2beta1.Feed>(this, METHODID_UPDATE_FEED)))
-          .addMethod(
-              getDeleteFeedMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.asset.v1p2beta1.DeleteFeedRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_FEED)))
-          .build();
+      return AssetServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service AssetService.
    *
    * <pre>
    * Asset service definition.
@@ -497,7 +476,7 @@ public final class AssetServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service AssetService.
    *
    * <pre>
    * Asset service definition.
@@ -583,7 +562,7 @@ public final class AssetServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service AssetService.
    *
    * <pre>
    * Asset service definition.
@@ -680,10 +659,10 @@ public final class AssetServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final AssetServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(AssetServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -735,6 +714,42 @@ public final class AssetServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateFeedMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.asset.v1p2beta1.CreateFeedRequest,
+                    com.google.cloud.asset.v1p2beta1.Feed>(service, METHODID_CREATE_FEED)))
+        .addMethod(
+            getGetFeedMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.asset.v1p2beta1.GetFeedRequest,
+                    com.google.cloud.asset.v1p2beta1.Feed>(service, METHODID_GET_FEED)))
+        .addMethod(
+            getListFeedsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.asset.v1p2beta1.ListFeedsRequest,
+                    com.google.cloud.asset.v1p2beta1.ListFeedsResponse>(
+                    service, METHODID_LIST_FEEDS)))
+        .addMethod(
+            getUpdateFeedMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.asset.v1p2beta1.UpdateFeedRequest,
+                    com.google.cloud.asset.v1p2beta1.Feed>(service, METHODID_UPDATE_FEED)))
+        .addMethod(
+            getDeleteFeedMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.asset.v1p2beta1.DeleteFeedRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_FEED)))
+        .build();
   }
 
   private abstract static class AssetServiceBaseDescriptorSupplier

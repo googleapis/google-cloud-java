@@ -538,7 +538,7 @@ public final class HubServiceGrpc {
    * through a simple, centralized connectivity management model.
    * </pre>
    */
-  public abstract static class HubServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -547,7 +547,7 @@ public final class HubServiceGrpc {
      * Lists the Network Connectivity Center hubs associated with a given project.
      * </pre>
      */
-    public void listHubs(
+    default void listHubs(
         com.google.cloud.networkconnectivity.v1.ListHubsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.networkconnectivity.v1.ListHubsResponse>
             responseObserver) {
@@ -561,7 +561,7 @@ public final class HubServiceGrpc {
      * Gets details about a Network Connectivity Center hub.
      * </pre>
      */
-    public void getHub(
+    default void getHub(
         com.google.cloud.networkconnectivity.v1.GetHubRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.networkconnectivity.v1.Hub> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetHubMethod(), responseObserver);
@@ -574,7 +574,7 @@ public final class HubServiceGrpc {
      * Creates a new Network Connectivity Center hub in the specified project.
      * </pre>
      */
-    public void createHub(
+    default void createHub(
         com.google.cloud.networkconnectivity.v1.CreateHubRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateHubMethod(), responseObserver);
@@ -588,7 +588,7 @@ public final class HubServiceGrpc {
      * hub.
      * </pre>
      */
-    public void updateHub(
+    default void updateHub(
         com.google.cloud.networkconnectivity.v1.UpdateHubRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateHubMethod(), responseObserver);
@@ -601,7 +601,7 @@ public final class HubServiceGrpc {
      * Deletes a Network Connectivity Center hub.
      * </pre>
      */
-    public void deleteHub(
+    default void deleteHub(
         com.google.cloud.networkconnectivity.v1.DeleteHubRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteHubMethod(), responseObserver);
@@ -615,7 +615,7 @@ public final class HubServiceGrpc {
      * location.
      * </pre>
      */
-    public void listSpokes(
+    default void listSpokes(
         com.google.cloud.networkconnectivity.v1.ListSpokesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.networkconnectivity.v1.ListSpokesResponse>
             responseObserver) {
@@ -629,7 +629,7 @@ public final class HubServiceGrpc {
      * Gets details about a Network Connectivity Center spoke.
      * </pre>
      */
-    public void getSpoke(
+    default void getSpoke(
         com.google.cloud.networkconnectivity.v1.GetSpokeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.networkconnectivity.v1.Spoke>
             responseObserver) {
@@ -643,7 +643,7 @@ public final class HubServiceGrpc {
      * Creates a Network Connectivity Center spoke.
      * </pre>
      */
-    public void createSpoke(
+    default void createSpoke(
         com.google.cloud.networkconnectivity.v1.CreateSpokeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -657,7 +657,7 @@ public final class HubServiceGrpc {
      * Updates the parameters of a Network Connectivity Center spoke.
      * </pre>
      */
-    public void updateSpoke(
+    default void updateSpoke(
         com.google.cloud.networkconnectivity.v1.UpdateSpokeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -671,84 +671,33 @@ public final class HubServiceGrpc {
      * Deletes a Network Connectivity Center spoke.
      * </pre>
      */
-    public void deleteSpoke(
+    default void deleteSpoke(
         com.google.cloud.networkconnectivity.v1.DeleteSpokeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteSpokeMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service HubService.
+   *
+   * <pre>
+   * Network Connectivity Center is a hub-and-spoke abstraction for network
+   * connectivity management in Google Cloud. It reduces operational complexity
+   * through a simple, centralized connectivity management model.
+   * </pre>
+   */
+  public abstract static class HubServiceImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListHubsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networkconnectivity.v1.ListHubsRequest,
-                      com.google.cloud.networkconnectivity.v1.ListHubsResponse>(
-                      this, METHODID_LIST_HUBS)))
-          .addMethod(
-              getGetHubMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networkconnectivity.v1.GetHubRequest,
-                      com.google.cloud.networkconnectivity.v1.Hub>(this, METHODID_GET_HUB)))
-          .addMethod(
-              getCreateHubMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networkconnectivity.v1.CreateHubRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_HUB)))
-          .addMethod(
-              getUpdateHubMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networkconnectivity.v1.UpdateHubRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_HUB)))
-          .addMethod(
-              getDeleteHubMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networkconnectivity.v1.DeleteHubRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_HUB)))
-          .addMethod(
-              getListSpokesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networkconnectivity.v1.ListSpokesRequest,
-                      com.google.cloud.networkconnectivity.v1.ListSpokesResponse>(
-                      this, METHODID_LIST_SPOKES)))
-          .addMethod(
-              getGetSpokeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networkconnectivity.v1.GetSpokeRequest,
-                      com.google.cloud.networkconnectivity.v1.Spoke>(this, METHODID_GET_SPOKE)))
-          .addMethod(
-              getCreateSpokeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networkconnectivity.v1.CreateSpokeRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_SPOKE)))
-          .addMethod(
-              getUpdateSpokeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networkconnectivity.v1.UpdateSpokeRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_SPOKE)))
-          .addMethod(
-              getDeleteSpokeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networkconnectivity.v1.DeleteSpokeRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_SPOKE)))
-          .build();
+      return HubServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service HubService.
    *
    * <pre>
    * Network Connectivity Center is a hub-and-spoke abstraction for network
@@ -919,7 +868,7 @@ public final class HubServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service HubService.
    *
    * <pre>
    * Network Connectivity Center is a hub-and-spoke abstraction for network
@@ -1073,7 +1022,7 @@ public final class HubServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service HubService.
    *
    * <pre>
    * Network Connectivity Center is a hub-and-spoke abstraction for network
@@ -1245,10 +1194,10 @@ public final class HubServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final HubServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(HubServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1327,6 +1276,73 @@ public final class HubServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListHubsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkconnectivity.v1.ListHubsRequest,
+                    com.google.cloud.networkconnectivity.v1.ListHubsResponse>(
+                    service, METHODID_LIST_HUBS)))
+        .addMethod(
+            getGetHubMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkconnectivity.v1.GetHubRequest,
+                    com.google.cloud.networkconnectivity.v1.Hub>(service, METHODID_GET_HUB)))
+        .addMethod(
+            getCreateHubMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkconnectivity.v1.CreateHubRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_HUB)))
+        .addMethod(
+            getUpdateHubMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkconnectivity.v1.UpdateHubRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_HUB)))
+        .addMethod(
+            getDeleteHubMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkconnectivity.v1.DeleteHubRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_HUB)))
+        .addMethod(
+            getListSpokesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkconnectivity.v1.ListSpokesRequest,
+                    com.google.cloud.networkconnectivity.v1.ListSpokesResponse>(
+                    service, METHODID_LIST_SPOKES)))
+        .addMethod(
+            getGetSpokeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkconnectivity.v1.GetSpokeRequest,
+                    com.google.cloud.networkconnectivity.v1.Spoke>(service, METHODID_GET_SPOKE)))
+        .addMethod(
+            getCreateSpokeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkconnectivity.v1.CreateSpokeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_SPOKE)))
+        .addMethod(
+            getUpdateSpokeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkconnectivity.v1.UpdateSpokeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_SPOKE)))
+        .addMethod(
+            getDeleteSpokeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkconnectivity.v1.DeleteSpokeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_SPOKE)))
+        .build();
   }
 
   private abstract static class HubServiceBaseDescriptorSupplier

@@ -509,7 +509,7 @@ public final class MetricServiceGrpc {
    * time series data.
    * </pre>
    */
-  public abstract static class MetricServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -518,7 +518,7 @@ public final class MetricServiceGrpc {
      * Lists monitored resource descriptors that match a filter. This method does not require a Workspace.
      * </pre>
      */
-    public void listMonitoredResourceDescriptors(
+    default void listMonitoredResourceDescriptors(
         com.google.monitoring.v3.ListMonitoredResourceDescriptorsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.monitoring.v3.ListMonitoredResourceDescriptorsResponse>
@@ -534,7 +534,7 @@ public final class MetricServiceGrpc {
      * Gets a single monitored resource descriptor. This method does not require a Workspace.
      * </pre>
      */
-    public void getMonitoredResourceDescriptor(
+    default void getMonitoredResourceDescriptor(
         com.google.monitoring.v3.GetMonitoredResourceDescriptorRequest request,
         io.grpc.stub.StreamObserver<com.google.api.MonitoredResourceDescriptor> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -548,7 +548,7 @@ public final class MetricServiceGrpc {
      * Lists metric descriptors that match a filter. This method does not require a Workspace.
      * </pre>
      */
-    public void listMetricDescriptors(
+    default void listMetricDescriptors(
         com.google.monitoring.v3.ListMetricDescriptorsRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.ListMetricDescriptorsResponse>
             responseObserver) {
@@ -563,7 +563,7 @@ public final class MetricServiceGrpc {
      * Gets a single metric descriptor. This method does not require a Workspace.
      * </pre>
      */
-    public void getMetricDescriptor(
+    default void getMetricDescriptor(
         com.google.monitoring.v3.GetMetricDescriptorRequest request,
         io.grpc.stub.StreamObserver<com.google.api.MetricDescriptor> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -581,7 +581,7 @@ public final class MetricServiceGrpc {
      * [custom metrics](https://cloud.google.com/monitoring/custom-metrics).
      * </pre>
      */
-    public void createMetricDescriptor(
+    default void createMetricDescriptor(
         com.google.monitoring.v3.CreateMetricDescriptorRequest request,
         io.grpc.stub.StreamObserver<com.google.api.MetricDescriptor> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -597,7 +597,7 @@ public final class MetricServiceGrpc {
      * deleted.
      * </pre>
      */
-    public void deleteMetricDescriptor(
+    default void deleteMetricDescriptor(
         com.google.monitoring.v3.DeleteMetricDescriptorRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -611,7 +611,7 @@ public final class MetricServiceGrpc {
      * Lists time series that match a filter. This method does not require a Workspace.
      * </pre>
      */
-    public void listTimeSeries(
+    default void listTimeSeries(
         com.google.monitoring.v3.ListTimeSeriesRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.ListTimeSeriesResponse>
             responseObserver) {
@@ -629,7 +629,7 @@ public final class MetricServiceGrpc {
      * included in the error response.
      * </pre>
      */
-    public void createTimeSeries(
+    default void createTimeSeries(
         com.google.monitoring.v3.CreateTimeSeriesRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -651,80 +651,33 @@ public final class MetricServiceGrpc {
      * instead.
      * </pre>
      */
-    public void createServiceTimeSeries(
+    default void createServiceTimeSeries(
         com.google.monitoring.v3.CreateTimeSeriesRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCreateServiceTimeSeriesMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service MetricService.
+   *
+   * <pre>
+   * Manages metric descriptors, monitored resource descriptors, and
+   * time series data.
+   * </pre>
+   */
+  public abstract static class MetricServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListMonitoredResourceDescriptorsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.ListMonitoredResourceDescriptorsRequest,
-                      com.google.monitoring.v3.ListMonitoredResourceDescriptorsResponse>(
-                      this, METHODID_LIST_MONITORED_RESOURCE_DESCRIPTORS)))
-          .addMethod(
-              getGetMonitoredResourceDescriptorMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.GetMonitoredResourceDescriptorRequest,
-                      com.google.api.MonitoredResourceDescriptor>(
-                      this, METHODID_GET_MONITORED_RESOURCE_DESCRIPTOR)))
-          .addMethod(
-              getListMetricDescriptorsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.ListMetricDescriptorsRequest,
-                      com.google.monitoring.v3.ListMetricDescriptorsResponse>(
-                      this, METHODID_LIST_METRIC_DESCRIPTORS)))
-          .addMethod(
-              getGetMetricDescriptorMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.GetMetricDescriptorRequest,
-                      com.google.api.MetricDescriptor>(this, METHODID_GET_METRIC_DESCRIPTOR)))
-          .addMethod(
-              getCreateMetricDescriptorMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.CreateMetricDescriptorRequest,
-                      com.google.api.MetricDescriptor>(this, METHODID_CREATE_METRIC_DESCRIPTOR)))
-          .addMethod(
-              getDeleteMetricDescriptorMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.DeleteMetricDescriptorRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_METRIC_DESCRIPTOR)))
-          .addMethod(
-              getListTimeSeriesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.ListTimeSeriesRequest,
-                      com.google.monitoring.v3.ListTimeSeriesResponse>(
-                      this, METHODID_LIST_TIME_SERIES)))
-          .addMethod(
-              getCreateTimeSeriesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.CreateTimeSeriesRequest, com.google.protobuf.Empty>(
-                      this, METHODID_CREATE_TIME_SERIES)))
-          .addMethod(
-              getCreateServiceTimeSeriesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.CreateTimeSeriesRequest, com.google.protobuf.Empty>(
-                      this, METHODID_CREATE_SERVICE_TIME_SERIES)))
-          .build();
+      return MetricServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service MetricService.
    *
    * <pre>
    * Manages metric descriptors, monitored resource descriptors, and
@@ -909,7 +862,7 @@ public final class MetricServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service MetricService.
    *
    * <pre>
    * Manages metric descriptors, monitored resource descriptors, and
@@ -1065,7 +1018,7 @@ public final class MetricServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service MetricService.
    *
    * <pre>
    * Manages metric descriptors, monitored resource descriptors, and
@@ -1242,10 +1195,10 @@ public final class MetricServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final MetricServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(MetricServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1318,6 +1271,69 @@ public final class MetricServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListMonitoredResourceDescriptorsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.ListMonitoredResourceDescriptorsRequest,
+                    com.google.monitoring.v3.ListMonitoredResourceDescriptorsResponse>(
+                    service, METHODID_LIST_MONITORED_RESOURCE_DESCRIPTORS)))
+        .addMethod(
+            getGetMonitoredResourceDescriptorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.GetMonitoredResourceDescriptorRequest,
+                    com.google.api.MonitoredResourceDescriptor>(
+                    service, METHODID_GET_MONITORED_RESOURCE_DESCRIPTOR)))
+        .addMethod(
+            getListMetricDescriptorsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.ListMetricDescriptorsRequest,
+                    com.google.monitoring.v3.ListMetricDescriptorsResponse>(
+                    service, METHODID_LIST_METRIC_DESCRIPTORS)))
+        .addMethod(
+            getGetMetricDescriptorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.GetMetricDescriptorRequest,
+                    com.google.api.MetricDescriptor>(service, METHODID_GET_METRIC_DESCRIPTOR)))
+        .addMethod(
+            getCreateMetricDescriptorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.CreateMetricDescriptorRequest,
+                    com.google.api.MetricDescriptor>(service, METHODID_CREATE_METRIC_DESCRIPTOR)))
+        .addMethod(
+            getDeleteMetricDescriptorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.DeleteMetricDescriptorRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_METRIC_DESCRIPTOR)))
+        .addMethod(
+            getListTimeSeriesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.ListTimeSeriesRequest,
+                    com.google.monitoring.v3.ListTimeSeriesResponse>(
+                    service, METHODID_LIST_TIME_SERIES)))
+        .addMethod(
+            getCreateTimeSeriesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.CreateTimeSeriesRequest, com.google.protobuf.Empty>(
+                    service, METHODID_CREATE_TIME_SERIES)))
+        .addMethod(
+            getCreateServiceTimeSeriesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.CreateTimeSeriesRequest, com.google.protobuf.Empty>(
+                    service, METHODID_CREATE_SERVICE_TIME_SERIES)))
+        .build();
   }
 
   private abstract static class MetricServiceBaseDescriptorSupplier

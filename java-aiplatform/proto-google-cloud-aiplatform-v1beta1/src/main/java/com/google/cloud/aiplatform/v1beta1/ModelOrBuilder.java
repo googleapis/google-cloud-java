@@ -1715,49 +1715,4 @@ public interface ModelOrBuilder
    * @return The bytes for metadataArtifact.
    */
   com.google.protobuf.ByteString getMetadataArtifactBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Used to specify the large model reference.
-   * Only present for Large Models.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.Model.LargeModelReference large_model_reference = 45 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return Whether the largeModelReference field is set.
-   */
-  boolean hasLargeModelReference();
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Used to specify the large model reference.
-   * Only present for Large Models.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.Model.LargeModelReference large_model_reference = 45 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The largeModelReference.
-   */
-  com.google.cloud.aiplatform.v1beta1.Model.LargeModelReference getLargeModelReference();
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Used to specify the large model reference.
-   * Only present for Large Models.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.Model.LargeModelReference large_model_reference = 45 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  com.google.cloud.aiplatform.v1beta1.Model.LargeModelReferenceOrBuilder
-      getLargeModelReferenceOrBuilder();
 }

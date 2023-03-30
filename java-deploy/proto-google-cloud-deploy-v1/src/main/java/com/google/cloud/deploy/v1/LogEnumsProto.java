@@ -36,12 +36,12 @@ public final class LogEnumsProto {
   static {
     java.lang.String[] descriptorData = {
       "\n&google/cloud/deploy/v1/log_enums.proto"
-          + "\022\026google.cloud.deploy.v1*b\n\004Type\022\024\n\020TYPE"
+          + "\022\026google.cloud.deploy.v1*f\n\004Type\022\024\n\020TYPE"
           + "_UNSPECIFIED\020\000\022$\n TYPE_PUBSUB_NOTIFICATI"
-          + "ON_FAILURE\020\001\022\036\n\032TYPE_RENDER_STATUES_CHAN"
-          + "GE\020\002Ba\n\032com.google.cloud.deploy.v1B\rLogE"
-          + "numsProtoP\001Z2cloud.google.com/go/deploy/"
-          + "apiv1/deploypb;deploypbb\006proto3"
+          + "ON_FAILURE\020\001\022\"\n\032TYPE_RENDER_STATUES_CHAN"
+          + "GE\020\002\032\002\010\001Ba\n\032com.google.cloud.deploy.v1B\r"
+          + "LogEnumsProtoP\001Z2cloud.google.com/go/dep"
+          + "loy/apiv1/deploypb;deploypbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

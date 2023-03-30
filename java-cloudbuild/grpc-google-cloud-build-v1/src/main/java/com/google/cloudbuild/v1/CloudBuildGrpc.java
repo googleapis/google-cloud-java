@@ -863,7 +863,7 @@ public final class CloudBuildGrpc {
    * determine the status of the build.
    * </pre>
    */
-  public abstract static class CloudBuildImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -875,7 +875,7 @@ public final class CloudBuildGrpc {
      * `SUCCESS` or `FAILURE`).
      * </pre>
      */
-    public void createBuild(
+    default void createBuild(
         com.google.cloudbuild.v1.CreateBuildRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -891,7 +891,7 @@ public final class CloudBuildGrpc {
      * `FAILURE`, or `WORKING`), and timing information.
      * </pre>
      */
-    public void getBuild(
+    default void getBuild(
         com.google.cloudbuild.v1.GetBuildRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.Build> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBuildMethod(), responseObserver);
@@ -906,7 +906,7 @@ public final class CloudBuildGrpc {
      * successfully or unsuccessfully.
      * </pre>
      */
-    public void listBuilds(
+    default void listBuilds(
         com.google.cloudbuild.v1.ListBuildsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.ListBuildsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListBuildsMethod(), responseObserver);
@@ -919,7 +919,7 @@ public final class CloudBuildGrpc {
      * Cancels a build in progress.
      * </pre>
      */
-    public void cancelBuild(
+    default void cancelBuild(
         com.google.cloudbuild.v1.CancelBuildRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.Build> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -952,7 +952,7 @@ public final class CloudBuildGrpc {
      * lifecycle management settings.
      * </pre>
      */
-    public void retryBuild(
+    default void retryBuild(
         com.google.cloudbuild.v1.RetryBuildRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRetryBuildMethod(), responseObserver);
@@ -968,7 +968,7 @@ public final class CloudBuildGrpc {
      * If rejected, the returned LRO will be immediately done.
      * </pre>
      */
-    public void approveBuild(
+    default void approveBuild(
         com.google.cloudbuild.v1.ApproveBuildRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -983,7 +983,7 @@ public final class CloudBuildGrpc {
      * This API is experimental.
      * </pre>
      */
-    public void createBuildTrigger(
+    default void createBuildTrigger(
         com.google.cloudbuild.v1.CreateBuildTriggerRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.BuildTrigger> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -998,7 +998,7 @@ public final class CloudBuildGrpc {
      * This API is experimental.
      * </pre>
      */
-    public void getBuildTrigger(
+    default void getBuildTrigger(
         com.google.cloudbuild.v1.GetBuildTriggerRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.BuildTrigger> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1013,7 +1013,7 @@ public final class CloudBuildGrpc {
      * This API is experimental.
      * </pre>
      */
-    public void listBuildTriggers(
+    default void listBuildTriggers(
         com.google.cloudbuild.v1.ListBuildTriggersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.ListBuildTriggersResponse>
             responseObserver) {
@@ -1029,7 +1029,7 @@ public final class CloudBuildGrpc {
      * This API is experimental.
      * </pre>
      */
-    public void deleteBuildTrigger(
+    default void deleteBuildTrigger(
         com.google.cloudbuild.v1.DeleteBuildTriggerRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1044,7 +1044,7 @@ public final class CloudBuildGrpc {
      * This API is experimental.
      * </pre>
      */
-    public void updateBuildTrigger(
+    default void updateBuildTrigger(
         com.google.cloudbuild.v1.UpdateBuildTriggerRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.BuildTrigger> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1058,7 +1058,7 @@ public final class CloudBuildGrpc {
      * Runs a `BuildTrigger` at a particular source revision.
      * </pre>
      */
-    public void runBuildTrigger(
+    default void runBuildTrigger(
         com.google.cloudbuild.v1.RunBuildTriggerRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1073,7 +1073,7 @@ public final class CloudBuildGrpc {
      * webhook request targeted at a specific trigger.
      * </pre>
      */
-    public void receiveTriggerWebhook(
+    default void receiveTriggerWebhook(
         com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.ReceiveTriggerWebhookResponse>
             responseObserver) {
@@ -1088,7 +1088,7 @@ public final class CloudBuildGrpc {
      * Creates a `WorkerPool`.
      * </pre>
      */
-    public void createWorkerPool(
+    default void createWorkerPool(
         com.google.cloudbuild.v1.CreateWorkerPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1102,7 +1102,7 @@ public final class CloudBuildGrpc {
      * Returns details of a `WorkerPool`.
      * </pre>
      */
-    public void getWorkerPool(
+    default void getWorkerPool(
         com.google.cloudbuild.v1.GetWorkerPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.WorkerPool> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1116,7 +1116,7 @@ public final class CloudBuildGrpc {
      * Deletes a `WorkerPool`.
      * </pre>
      */
-    public void deleteWorkerPool(
+    default void deleteWorkerPool(
         com.google.cloudbuild.v1.DeleteWorkerPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1130,7 +1130,7 @@ public final class CloudBuildGrpc {
      * Updates a `WorkerPool`.
      * </pre>
      */
-    public void updateWorkerPool(
+    default void updateWorkerPool(
         com.google.cloudbuild.v1.UpdateWorkerPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1144,134 +1144,37 @@ public final class CloudBuildGrpc {
      * Lists `WorkerPool`s.
      * </pre>
      */
-    public void listWorkerPools(
+    default void listWorkerPools(
         com.google.cloudbuild.v1.ListWorkerPoolsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v1.ListWorkerPoolsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListWorkerPoolsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service CloudBuild.
+   *
+   * <pre>
+   * Creates and manages builds on Google Cloud Platform.
+   * The main concept used by this API is a `Build`, which describes the location
+   * of the source to build, how to build the source, and where to store the
+   * built artifacts, if any.
+   * A user can list previously-requested builds or get builds by their ID to
+   * determine the status of the build.
+   * </pre>
+   */
+  public abstract static class CloudBuildImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateBuildMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v1.CreateBuildRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_BUILD)))
-          .addMethod(
-              getGetBuildMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v1.GetBuildRequest, com.google.cloudbuild.v1.Build>(
-                      this, METHODID_GET_BUILD)))
-          .addMethod(
-              getListBuildsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v1.ListBuildsRequest,
-                      com.google.cloudbuild.v1.ListBuildsResponse>(this, METHODID_LIST_BUILDS)))
-          .addMethod(
-              getCancelBuildMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v1.CancelBuildRequest, com.google.cloudbuild.v1.Build>(
-                      this, METHODID_CANCEL_BUILD)))
-          .addMethod(
-              getRetryBuildMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v1.RetryBuildRequest, com.google.longrunning.Operation>(
-                      this, METHODID_RETRY_BUILD)))
-          .addMethod(
-              getApproveBuildMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v1.ApproveBuildRequest,
-                      com.google.longrunning.Operation>(this, METHODID_APPROVE_BUILD)))
-          .addMethod(
-              getCreateBuildTriggerMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v1.CreateBuildTriggerRequest,
-                      com.google.cloudbuild.v1.BuildTrigger>(this, METHODID_CREATE_BUILD_TRIGGER)))
-          .addMethod(
-              getGetBuildTriggerMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v1.GetBuildTriggerRequest,
-                      com.google.cloudbuild.v1.BuildTrigger>(this, METHODID_GET_BUILD_TRIGGER)))
-          .addMethod(
-              getListBuildTriggersMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v1.ListBuildTriggersRequest,
-                      com.google.cloudbuild.v1.ListBuildTriggersResponse>(
-                      this, METHODID_LIST_BUILD_TRIGGERS)))
-          .addMethod(
-              getDeleteBuildTriggerMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v1.DeleteBuildTriggerRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_BUILD_TRIGGER)))
-          .addMethod(
-              getUpdateBuildTriggerMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v1.UpdateBuildTriggerRequest,
-                      com.google.cloudbuild.v1.BuildTrigger>(this, METHODID_UPDATE_BUILD_TRIGGER)))
-          .addMethod(
-              getRunBuildTriggerMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v1.RunBuildTriggerRequest,
-                      com.google.longrunning.Operation>(this, METHODID_RUN_BUILD_TRIGGER)))
-          .addMethod(
-              getReceiveTriggerWebhookMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest,
-                      com.google.cloudbuild.v1.ReceiveTriggerWebhookResponse>(
-                      this, METHODID_RECEIVE_TRIGGER_WEBHOOK)))
-          .addMethod(
-              getCreateWorkerPoolMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v1.CreateWorkerPoolRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_WORKER_POOL)))
-          .addMethod(
-              getGetWorkerPoolMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v1.GetWorkerPoolRequest,
-                      com.google.cloudbuild.v1.WorkerPool>(this, METHODID_GET_WORKER_POOL)))
-          .addMethod(
-              getDeleteWorkerPoolMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v1.DeleteWorkerPoolRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_WORKER_POOL)))
-          .addMethod(
-              getUpdateWorkerPoolMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v1.UpdateWorkerPoolRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_WORKER_POOL)))
-          .addMethod(
-              getListWorkerPoolsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v1.ListWorkerPoolsRequest,
-                      com.google.cloudbuild.v1.ListWorkerPoolsResponse>(
-                      this, METHODID_LIST_WORKER_POOLS)))
-          .build();
+      return CloudBuildGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service CloudBuild.
    *
    * <pre>
    * Creates and manages builds on Google Cloud Platform.
@@ -1614,7 +1517,7 @@ public final class CloudBuildGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service CloudBuild.
    *
    * <pre>
    * Creates and manages builds on Google Cloud Platform.
@@ -1908,7 +1811,7 @@ public final class CloudBuildGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service CloudBuild.
    *
    * <pre>
    * Creates and manages builds on Google Cloud Platform.
@@ -2228,10 +2131,10 @@ public final class CloudBuildGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final CloudBuildImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(CloudBuildImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -2351,6 +2254,122 @@ public final class CloudBuildGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateBuildMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v1.CreateBuildRequest, com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_BUILD)))
+        .addMethod(
+            getGetBuildMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v1.GetBuildRequest, com.google.cloudbuild.v1.Build>(
+                    service, METHODID_GET_BUILD)))
+        .addMethod(
+            getListBuildsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v1.ListBuildsRequest,
+                    com.google.cloudbuild.v1.ListBuildsResponse>(service, METHODID_LIST_BUILDS)))
+        .addMethod(
+            getCancelBuildMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v1.CancelBuildRequest, com.google.cloudbuild.v1.Build>(
+                    service, METHODID_CANCEL_BUILD)))
+        .addMethod(
+            getRetryBuildMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v1.RetryBuildRequest, com.google.longrunning.Operation>(
+                    service, METHODID_RETRY_BUILD)))
+        .addMethod(
+            getApproveBuildMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v1.ApproveBuildRequest, com.google.longrunning.Operation>(
+                    service, METHODID_APPROVE_BUILD)))
+        .addMethod(
+            getCreateBuildTriggerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v1.CreateBuildTriggerRequest,
+                    com.google.cloudbuild.v1.BuildTrigger>(service, METHODID_CREATE_BUILD_TRIGGER)))
+        .addMethod(
+            getGetBuildTriggerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v1.GetBuildTriggerRequest,
+                    com.google.cloudbuild.v1.BuildTrigger>(service, METHODID_GET_BUILD_TRIGGER)))
+        .addMethod(
+            getListBuildTriggersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v1.ListBuildTriggersRequest,
+                    com.google.cloudbuild.v1.ListBuildTriggersResponse>(
+                    service, METHODID_LIST_BUILD_TRIGGERS)))
+        .addMethod(
+            getDeleteBuildTriggerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v1.DeleteBuildTriggerRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_BUILD_TRIGGER)))
+        .addMethod(
+            getUpdateBuildTriggerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v1.UpdateBuildTriggerRequest,
+                    com.google.cloudbuild.v1.BuildTrigger>(service, METHODID_UPDATE_BUILD_TRIGGER)))
+        .addMethod(
+            getRunBuildTriggerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v1.RunBuildTriggerRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RUN_BUILD_TRIGGER)))
+        .addMethod(
+            getReceiveTriggerWebhookMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v1.ReceiveTriggerWebhookRequest,
+                    com.google.cloudbuild.v1.ReceiveTriggerWebhookResponse>(
+                    service, METHODID_RECEIVE_TRIGGER_WEBHOOK)))
+        .addMethod(
+            getCreateWorkerPoolMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v1.CreateWorkerPoolRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_WORKER_POOL)))
+        .addMethod(
+            getGetWorkerPoolMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v1.GetWorkerPoolRequest,
+                    com.google.cloudbuild.v1.WorkerPool>(service, METHODID_GET_WORKER_POOL)))
+        .addMethod(
+            getDeleteWorkerPoolMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v1.DeleteWorkerPoolRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_WORKER_POOL)))
+        .addMethod(
+            getUpdateWorkerPoolMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v1.UpdateWorkerPoolRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_WORKER_POOL)))
+        .addMethod(
+            getListWorkerPoolsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v1.ListWorkerPoolsRequest,
+                    com.google.cloudbuild.v1.ListWorkerPoolsResponse>(
+                    service, METHODID_LIST_WORKER_POOLS)))
+        .build();
   }
 
   private abstract static class CloudBuildBaseDescriptorSupplier

@@ -177,7 +177,7 @@ public final class FulfillmentsGrpc {
    * [Fulfillments][google.cloud.dialogflow.v2beta1.Fulfillment].
    * </pre>
    */
-  public abstract static class FulfillmentsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -186,7 +186,7 @@ public final class FulfillmentsGrpc {
      * Retrieves the fulfillment.
      * </pre>
      */
-    public void getFulfillment(
+    default void getFulfillment(
         com.google.cloud.dialogflow.v2beta1.GetFulfillmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Fulfillment>
             responseObserver) {
@@ -201,37 +201,34 @@ public final class FulfillmentsGrpc {
      * Updates the fulfillment.
      * </pre>
      */
-    public void updateFulfillment(
+    default void updateFulfillment(
         com.google.cloud.dialogflow.v2beta1.UpdateFulfillmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Fulfillment>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateFulfillmentMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Fulfillments.
+   *
+   * <pre>
+   * Service for managing
+   * [Fulfillments][google.cloud.dialogflow.v2beta1.Fulfillment].
+   * </pre>
+   */
+  public abstract static class FulfillmentsImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getGetFulfillmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.GetFulfillmentRequest,
-                      com.google.cloud.dialogflow.v2beta1.Fulfillment>(
-                      this, METHODID_GET_FULFILLMENT)))
-          .addMethod(
-              getUpdateFulfillmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.UpdateFulfillmentRequest,
-                      com.google.cloud.dialogflow.v2beta1.Fulfillment>(
-                      this, METHODID_UPDATE_FULFILLMENT)))
-          .build();
+      return FulfillmentsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Fulfillments.
    *
    * <pre>
    * Service for managing
@@ -285,7 +282,7 @@ public final class FulfillmentsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Fulfillments.
    *
    * <pre>
    * Service for managing
@@ -332,7 +329,7 @@ public final class FulfillmentsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Fulfillments.
    *
    * <pre>
    * Service for managing
@@ -388,10 +385,10 @@ public final class FulfillmentsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final FulfillmentsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(FulfillmentsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -426,6 +423,25 @@ public final class FulfillmentsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getGetFulfillmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.GetFulfillmentRequest,
+                    com.google.cloud.dialogflow.v2beta1.Fulfillment>(
+                    service, METHODID_GET_FULFILLMENT)))
+        .addMethod(
+            getUpdateFulfillmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.UpdateFulfillmentRequest,
+                    com.google.cloud.dialogflow.v2beta1.Fulfillment>(
+                    service, METHODID_UPDATE_FULFILLMENT)))
+        .build();
   }
 
   private abstract static class FulfillmentsBaseDescriptorSupplier

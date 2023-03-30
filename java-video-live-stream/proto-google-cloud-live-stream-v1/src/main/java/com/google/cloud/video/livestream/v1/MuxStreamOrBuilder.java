@@ -83,8 +83,9 @@ public interface MuxStreamOrBuilder
    *
    *
    * <pre>
-   * List of `ElementaryStream` [key][google.cloud.video.livestream.v1.ElementaryStream.key]s multiplexed in this
-   * stream.
+   * List of `ElementaryStream`
+   * [key][google.cloud.video.livestream.v1.ElementaryStream.key]s multiplexed
+   * in this stream.
    * - For `fmp4` container, must contain either one video or one audio stream.
    * - For `ts` container, must contain exactly one audio stream and up to one
    * video stream.
@@ -99,8 +100,9 @@ public interface MuxStreamOrBuilder
    *
    *
    * <pre>
-   * List of `ElementaryStream` [key][google.cloud.video.livestream.v1.ElementaryStream.key]s multiplexed in this
-   * stream.
+   * List of `ElementaryStream`
+   * [key][google.cloud.video.livestream.v1.ElementaryStream.key]s multiplexed
+   * in this stream.
    * - For `fmp4` container, must contain either one video or one audio stream.
    * - For `ts` container, must contain exactly one audio stream and up to one
    * video stream.
@@ -115,8 +117,9 @@ public interface MuxStreamOrBuilder
    *
    *
    * <pre>
-   * List of `ElementaryStream` [key][google.cloud.video.livestream.v1.ElementaryStream.key]s multiplexed in this
-   * stream.
+   * List of `ElementaryStream`
+   * [key][google.cloud.video.livestream.v1.ElementaryStream.key]s multiplexed
+   * in this stream.
    * - For `fmp4` container, must contain either one video or one audio stream.
    * - For `ts` container, must contain exactly one audio stream and up to one
    * video stream.
@@ -132,8 +135,9 @@ public interface MuxStreamOrBuilder
    *
    *
    * <pre>
-   * List of `ElementaryStream` [key][google.cloud.video.livestream.v1.ElementaryStream.key]s multiplexed in this
-   * stream.
+   * List of `ElementaryStream`
+   * [key][google.cloud.video.livestream.v1.ElementaryStream.key]s multiplexed
+   * in this stream.
    * - For `fmp4` container, must contain either one video or one audio stream.
    * - For `ts` container, must contain exactly one audio stream and up to one
    * video stream.
@@ -180,4 +184,31 @@ public interface MuxStreamOrBuilder
    * <code>.google.cloud.video.livestream.v1.SegmentSettings segment_settings = 5;</code>
    */
   com.google.cloud.video.livestream.v1.SegmentSettingsOrBuilder getSegmentSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Identifier of the encryption configuration to use. If omitted, output
+   * will be unencrypted.
+   * </pre>
+   *
+   * <code>string encryption_id = 6;</code>
+   *
+   * @return The encryptionId.
+   */
+  java.lang.String getEncryptionId();
+  /**
+   *
+   *
+   * <pre>
+   * Identifier of the encryption configuration to use. If omitted, output
+   * will be unencrypted.
+   * </pre>
+   *
+   * <code>string encryption_id = 6;</code>
+   *
+   * @return The bytes for encryptionId.
+   */
+  com.google.protobuf.ByteString getEncryptionIdBytes();
 }

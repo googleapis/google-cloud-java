@@ -295,7 +295,7 @@ public final class CompanyServiceGrpc {
    * A service that handles company management, including CRUD and enumeration.
    * </pre>
    */
-  public abstract static class CompanyServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -304,7 +304,7 @@ public final class CompanyServiceGrpc {
      * Creates a new company entity.
      * </pre>
      */
-    public void createCompany(
+    default void createCompany(
         com.google.cloud.talent.v4.CreateCompanyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4.Company> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -318,7 +318,7 @@ public final class CompanyServiceGrpc {
      * Retrieves specified company.
      * </pre>
      */
-    public void getCompany(
+    default void getCompany(
         com.google.cloud.talent.v4.GetCompanyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4.Company> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetCompanyMethod(), responseObserver);
@@ -331,7 +331,7 @@ public final class CompanyServiceGrpc {
      * Updates specified company.
      * </pre>
      */
-    public void updateCompany(
+    default void updateCompany(
         com.google.cloud.talent.v4.UpdateCompanyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4.Company> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -346,7 +346,7 @@ public final class CompanyServiceGrpc {
      * Prerequisite: The company has no jobs associated with it.
      * </pre>
      */
-    public void deleteCompany(
+    default void deleteCompany(
         com.google.cloud.talent.v4.DeleteCompanyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -360,54 +360,33 @@ public final class CompanyServiceGrpc {
      * Lists all companies associated with the project.
      * </pre>
      */
-    public void listCompanies(
+    default void listCompanies(
         com.google.cloud.talent.v4.ListCompaniesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4.ListCompaniesResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListCompaniesMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service CompanyService.
+   *
+   * <pre>
+   * A service that handles company management, including CRUD and enumeration.
+   * </pre>
+   */
+  public abstract static class CompanyServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateCompanyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.talent.v4.CreateCompanyRequest,
-                      com.google.cloud.talent.v4.Company>(this, METHODID_CREATE_COMPANY)))
-          .addMethod(
-              getGetCompanyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.talent.v4.GetCompanyRequest,
-                      com.google.cloud.talent.v4.Company>(this, METHODID_GET_COMPANY)))
-          .addMethod(
-              getUpdateCompanyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.talent.v4.UpdateCompanyRequest,
-                      com.google.cloud.talent.v4.Company>(this, METHODID_UPDATE_COMPANY)))
-          .addMethod(
-              getDeleteCompanyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.talent.v4.DeleteCompanyRequest, com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_COMPANY)))
-          .addMethod(
-              getListCompaniesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.talent.v4.ListCompaniesRequest,
-                      com.google.cloud.talent.v4.ListCompaniesResponse>(
-                      this, METHODID_LIST_COMPANIES)))
-          .build();
+      return CompanyServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service CompanyService.
    *
    * <pre>
    * A service that handles company management, including CRUD and enumeration.
@@ -506,7 +485,7 @@ public final class CompanyServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service CompanyService.
    *
    * <pre>
    * A service that handles company management, including CRUD and enumeration.
@@ -592,7 +571,7 @@ public final class CompanyServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service CompanyService.
    *
    * <pre>
    * A service that handles company management, including CRUD and enumeration.
@@ -689,10 +668,10 @@ public final class CompanyServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final CompanyServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(CompanyServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -741,6 +720,42 @@ public final class CompanyServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateCompanyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.talent.v4.CreateCompanyRequest,
+                    com.google.cloud.talent.v4.Company>(service, METHODID_CREATE_COMPANY)))
+        .addMethod(
+            getGetCompanyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.talent.v4.GetCompanyRequest,
+                    com.google.cloud.talent.v4.Company>(service, METHODID_GET_COMPANY)))
+        .addMethod(
+            getUpdateCompanyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.talent.v4.UpdateCompanyRequest,
+                    com.google.cloud.talent.v4.Company>(service, METHODID_UPDATE_COMPANY)))
+        .addMethod(
+            getDeleteCompanyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.talent.v4.DeleteCompanyRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_COMPANY)))
+        .addMethod(
+            getListCompaniesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.talent.v4.ListCompaniesRequest,
+                    com.google.cloud.talent.v4.ListCompaniesResponse>(
+                    service, METHODID_LIST_COMPANIES)))
+        .build();
   }
 
   private abstract static class CompanyServiceBaseDescriptorSupplier

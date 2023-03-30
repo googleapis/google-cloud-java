@@ -130,7 +130,7 @@ public final class AlphaAnalyticsDataGrpc {
    * Google Analytics reporting data service.
    * </pre>
    */
-  public abstract static class AlphaAnalyticsDataImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -147,30 +147,33 @@ public final class AlphaAnalyticsDataGrpc {
      * Funnel Explorations](https://support.google.com/analytics/answer/9327974).
      * </pre>
      */
-    public void runFunnelReport(
+    default void runFunnelReport(
         com.google.analytics.data.v1alpha.RunFunnelReportRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.RunFunnelReportResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getRunFunnelReportMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service AlphaAnalyticsData.
+   *
+   * <pre>
+   * Google Analytics reporting data service.
+   * </pre>
+   */
+  public abstract static class AlphaAnalyticsDataImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getRunFunnelReportMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.data.v1alpha.RunFunnelReportRequest,
-                      com.google.analytics.data.v1alpha.RunFunnelReportResponse>(
-                      this, METHODID_RUN_FUNNEL_REPORT)))
-          .build();
+      return AlphaAnalyticsDataGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service AlphaAnalyticsData.
    *
    * <pre>
    * Google Analytics reporting data service.
@@ -215,7 +218,7 @@ public final class AlphaAnalyticsDataGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service AlphaAnalyticsData.
    *
    * <pre>
    * Google Analytics reporting data service.
@@ -257,7 +260,7 @@ public final class AlphaAnalyticsDataGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service AlphaAnalyticsData.
    *
    * <pre>
    * Google Analytics reporting data service.
@@ -305,10 +308,10 @@ public final class AlphaAnalyticsDataGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final AlphaAnalyticsDataImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(AlphaAnalyticsDataImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -338,6 +341,18 @@ public final class AlphaAnalyticsDataGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getRunFunnelReportMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.data.v1alpha.RunFunnelReportRequest,
+                    com.google.analytics.data.v1alpha.RunFunnelReportResponse>(
+                    service, METHODID_RUN_FUNNEL_REPORT)))
+        .build();
   }
 
   private abstract static class AlphaAnalyticsDataBaseDescriptorSupplier

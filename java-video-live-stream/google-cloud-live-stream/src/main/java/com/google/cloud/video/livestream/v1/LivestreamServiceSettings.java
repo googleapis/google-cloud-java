@@ -19,6 +19,7 @@ package com.google.cloud.video.livestream.v1;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListChannelsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListEventsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListInputsPagedResponse;
+import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -33,6 +34,10 @@ import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.video.livestream.v1.stub.LivestreamServiceStubSettings;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -209,6 +214,17 @@ public class LivestreamServiceSettings extends ClientSettings<LivestreamServiceS
   /** Returns the object with the settings used for calls to deleteEvent. */
   public UnaryCallSettings<DeleteEventRequest, Empty> deleteEventSettings() {
     return ((LivestreamServiceStubSettings) getStubSettings()).deleteEventSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((LivestreamServiceStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final LivestreamServiceSettings create(LivestreamServiceStubSettings stub)
@@ -458,6 +474,18 @@ public class LivestreamServiceSettings extends ClientSettings<LivestreamServiceS
     /** Returns the builder for the settings used for calls to deleteEvent. */
     public UnaryCallSettings.Builder<DeleteEventRequest, Empty> deleteEventSettings() {
       return getStubSettingsBuilder().deleteEventSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

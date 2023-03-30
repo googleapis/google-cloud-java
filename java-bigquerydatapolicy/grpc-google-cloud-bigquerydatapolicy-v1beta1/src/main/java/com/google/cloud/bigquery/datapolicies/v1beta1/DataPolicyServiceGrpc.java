@@ -440,7 +440,7 @@ public final class DataPolicyServiceGrpc {
    * Data Policy Service provides APIs for managing the label-policy bindings.
    * </pre>
    */
-  public abstract static class DataPolicyServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -450,7 +450,7 @@ public final class DataPolicyServiceGrpc {
      * (used as the display name), policy tag, and data policy type.
      * </pre>
      */
-    public void createDataPolicy(
+    default void createDataPolicy(
         com.google.cloud.bigquery.datapolicies.v1beta1.CreateDataPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.datapolicies.v1beta1.DataPolicy>
             responseObserver) {
@@ -466,7 +466,7 @@ public final class DataPolicyServiceGrpc {
      * can be specified by the resource name.
      * </pre>
      */
-    public void updateDataPolicy(
+    default void updateDataPolicy(
         com.google.cloud.bigquery.datapolicies.v1beta1.UpdateDataPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.datapolicies.v1beta1.DataPolicy>
             responseObserver) {
@@ -481,7 +481,7 @@ public final class DataPolicyServiceGrpc {
      * Deletes the data policy specified by its resource name.
      * </pre>
      */
-    public void deleteDataPolicy(
+    default void deleteDataPolicy(
         com.google.cloud.bigquery.datapolicies.v1beta1.DeleteDataPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -495,7 +495,7 @@ public final class DataPolicyServiceGrpc {
      * Gets the data policy specified by its resource name.
      * </pre>
      */
-    public void getDataPolicy(
+    default void getDataPolicy(
         com.google.cloud.bigquery.datapolicies.v1beta1.GetDataPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.datapolicies.v1beta1.DataPolicy>
             responseObserver) {
@@ -510,7 +510,7 @@ public final class DataPolicyServiceGrpc {
      * List all of the data policies in the specified parent project.
      * </pre>
      */
-    public void listDataPolicies(
+    default void listDataPolicies(
         com.google.cloud.bigquery.datapolicies.v1beta1.ListDataPoliciesRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.datapolicies.v1beta1.ListDataPoliciesResponse>
@@ -526,7 +526,7 @@ public final class DataPolicyServiceGrpc {
      * Gets the IAM policy for the specified data policy.
      * </pre>
      */
-    public void getIamPolicy(
+    default void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -540,7 +540,7 @@ public final class DataPolicyServiceGrpc {
      * Sets the IAM policy for the specified data policy.
      * </pre>
      */
-    public void setIamPolicy(
+    default void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -554,76 +554,33 @@ public final class DataPolicyServiceGrpc {
      * Returns the caller's permission on the specified data policy resource.
      * </pre>
      */
-    public void testIamPermissions(
+    default void testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getTestIamPermissionsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service DataPolicyService.
+   *
+   * <pre>
+   * Data Policy Service provides APIs for managing the label-policy bindings.
+   * </pre>
+   */
+  public abstract static class DataPolicyServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateDataPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.datapolicies.v1beta1.CreateDataPolicyRequest,
-                      com.google.cloud.bigquery.datapolicies.v1beta1.DataPolicy>(
-                      this, METHODID_CREATE_DATA_POLICY)))
-          .addMethod(
-              getUpdateDataPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.datapolicies.v1beta1.UpdateDataPolicyRequest,
-                      com.google.cloud.bigquery.datapolicies.v1beta1.DataPolicy>(
-                      this, METHODID_UPDATE_DATA_POLICY)))
-          .addMethod(
-              getDeleteDataPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.datapolicies.v1beta1.DeleteDataPolicyRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_DATA_POLICY)))
-          .addMethod(
-              getGetDataPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.datapolicies.v1beta1.GetDataPolicyRequest,
-                      com.google.cloud.bigquery.datapolicies.v1beta1.DataPolicy>(
-                      this, METHODID_GET_DATA_POLICY)))
-          .addMethod(
-              getListDataPoliciesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.datapolicies.v1beta1.ListDataPoliciesRequest,
-                      com.google.cloud.bigquery.datapolicies.v1beta1.ListDataPoliciesResponse>(
-                      this, METHODID_LIST_DATA_POLICIES)))
-          .addMethod(
-              getGetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_GET_IAM_POLICY)))
-          .addMethod(
-              getSetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_SET_IAM_POLICY)))
-          .addMethod(
-              getTestIamPermissionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.TestIamPermissionsRequest,
-                      com.google.iam.v1.TestIamPermissionsResponse>(
-                      this, METHODID_TEST_IAM_PERMISSIONS)))
-          .build();
+      return DataPolicyServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service DataPolicyService.
    *
    * <pre>
    * Data Policy Service provides APIs for managing the label-policy bindings.
@@ -779,7 +736,7 @@ public final class DataPolicyServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service DataPolicyService.
    *
    * <pre>
    * Data Policy Service provides APIs for managing the label-policy bindings.
@@ -904,7 +861,7 @@ public final class DataPolicyServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service DataPolicyService.
    *
    * <pre>
    * Data Policy Service provides APIs for managing the label-policy bindings.
@@ -1052,10 +1009,10 @@ public final class DataPolicyServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final DataPolicyServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(DataPolicyServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1127,6 +1084,62 @@ public final class DataPolicyServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateDataPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.datapolicies.v1beta1.CreateDataPolicyRequest,
+                    com.google.cloud.bigquery.datapolicies.v1beta1.DataPolicy>(
+                    service, METHODID_CREATE_DATA_POLICY)))
+        .addMethod(
+            getUpdateDataPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.datapolicies.v1beta1.UpdateDataPolicyRequest,
+                    com.google.cloud.bigquery.datapolicies.v1beta1.DataPolicy>(
+                    service, METHODID_UPDATE_DATA_POLICY)))
+        .addMethod(
+            getDeleteDataPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.datapolicies.v1beta1.DeleteDataPolicyRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_DATA_POLICY)))
+        .addMethod(
+            getGetDataPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.datapolicies.v1beta1.GetDataPolicyRequest,
+                    com.google.cloud.bigquery.datapolicies.v1beta1.DataPolicy>(
+                    service, METHODID_GET_DATA_POLICY)))
+        .addMethod(
+            getListDataPoliciesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.datapolicies.v1beta1.ListDataPoliciesRequest,
+                    com.google.cloud.bigquery.datapolicies.v1beta1.ListDataPoliciesResponse>(
+                    service, METHODID_LIST_DATA_POLICIES)))
+        .addMethod(
+            getGetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_GET_IAM_POLICY)))
+        .addMethod(
+            getSetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_SET_IAM_POLICY)))
+        .addMethod(
+            getTestIamPermissionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.v1.TestIamPermissionsRequest,
+                    com.google.iam.v1.TestIamPermissionsResponse>(
+                    service, METHODID_TEST_IAM_PERMISSIONS)))
+        .build();
   }
 
   private abstract static class DataPolicyServiceBaseDescriptorSupplier

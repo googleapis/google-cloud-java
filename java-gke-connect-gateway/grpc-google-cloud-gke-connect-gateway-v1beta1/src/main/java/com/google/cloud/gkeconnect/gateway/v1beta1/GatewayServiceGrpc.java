@@ -275,7 +275,7 @@ public final class GatewayServiceGrpc {
    * to clusters.
    * </pre>
    */
-  public abstract static class GatewayServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -284,7 +284,7 @@ public final class GatewayServiceGrpc {
      * GetResource performs an HTTP GET request on the Kubernetes API Server.
      * </pre>
      */
-    public void getResource(
+    default void getResource(
         com.google.api.HttpBody request,
         io.grpc.stub.StreamObserver<com.google.api.HttpBody> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -298,7 +298,7 @@ public final class GatewayServiceGrpc {
      * PostResource performs an HTTP POST on the Kubernetes API Server.
      * </pre>
      */
-    public void postResource(
+    default void postResource(
         com.google.api.HttpBody request,
         io.grpc.stub.StreamObserver<com.google.api.HttpBody> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -312,7 +312,7 @@ public final class GatewayServiceGrpc {
      * DeleteResource performs an HTTP DELETE on the Kubernetes API Server.
      * </pre>
      */
-    public void deleteResource(
+    default void deleteResource(
         com.google.api.HttpBody request,
         io.grpc.stub.StreamObserver<com.google.api.HttpBody> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -326,7 +326,7 @@ public final class GatewayServiceGrpc {
      * PutResource performs an HTTP PUT on the Kubernetes API Server.
      * </pre>
      */
-    public void putResource(
+    default void putResource(
         com.google.api.HttpBody request,
         io.grpc.stub.StreamObserver<com.google.api.HttpBody> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -340,47 +340,36 @@ public final class GatewayServiceGrpc {
      * PatchResource performs an HTTP PATCH on the Kubernetes API Server.
      * </pre>
      */
-    public void patchResource(
+    default void patchResource(
         com.google.api.HttpBody request,
         io.grpc.stub.StreamObserver<com.google.api.HttpBody> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getPatchResourceMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service GatewayService.
+   *
+   * <pre>
+   * Gateway service is a public API which works as a Kubernetes resource model
+   * proxy between end users and registered Kubernetes clusters. Each RPC in this
+   * service matches with an HTTP verb. End user will initiate kubectl commands
+   * against the Gateway service, and Gateway service will forward user requests
+   * to clusters.
+   * </pre>
+   */
+  public abstract static class GatewayServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getGetResourceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<com.google.api.HttpBody, com.google.api.HttpBody>(
-                      this, METHODID_GET_RESOURCE)))
-          .addMethod(
-              getPostResourceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<com.google.api.HttpBody, com.google.api.HttpBody>(
-                      this, METHODID_POST_RESOURCE)))
-          .addMethod(
-              getDeleteResourceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<com.google.api.HttpBody, com.google.api.HttpBody>(
-                      this, METHODID_DELETE_RESOURCE)))
-          .addMethod(
-              getPutResourceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<com.google.api.HttpBody, com.google.api.HttpBody>(
-                      this, METHODID_PUT_RESOURCE)))
-          .addMethod(
-              getPatchResourceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<com.google.api.HttpBody, com.google.api.HttpBody>(
-                      this, METHODID_PATCH_RESOURCE)))
-          .build();
+      return GatewayServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service GatewayService.
    *
    * <pre>
    * Gateway service is a public API which works as a Kubernetes resource model
@@ -483,7 +472,7 @@ public final class GatewayServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service GatewayService.
    *
    * <pre>
    * Gateway service is a public API which works as a Kubernetes resource model
@@ -567,7 +556,7 @@ public final class GatewayServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service GatewayService.
    *
    * <pre>
    * Gateway service is a public API which works as a Kubernetes resource model
@@ -666,10 +655,10 @@ public final class GatewayServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final GatewayServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(GatewayServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -717,6 +706,36 @@ public final class GatewayServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getGetResourceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.api.HttpBody, com.google.api.HttpBody>(
+                    service, METHODID_GET_RESOURCE)))
+        .addMethod(
+            getPostResourceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.api.HttpBody, com.google.api.HttpBody>(
+                    service, METHODID_POST_RESOURCE)))
+        .addMethod(
+            getDeleteResourceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.api.HttpBody, com.google.api.HttpBody>(
+                    service, METHODID_DELETE_RESOURCE)))
+        .addMethod(
+            getPutResourceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.api.HttpBody, com.google.api.HttpBody>(
+                    service, METHODID_PUT_RESOURCE)))
+        .addMethod(
+            getPatchResourceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.api.HttpBody, com.google.api.HttpBody>(
+                    service, METHODID_PATCH_RESOURCE)))
+        .build();
   }
 
   private abstract static class GatewayServiceBaseDescriptorSupplier

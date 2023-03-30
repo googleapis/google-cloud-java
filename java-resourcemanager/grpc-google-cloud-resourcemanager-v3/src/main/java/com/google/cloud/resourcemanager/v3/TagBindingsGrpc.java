@@ -223,7 +223,7 @@ public final class TagBindingsGrpc {
    * different cloud resources throughout the GCP resource hierarchy.
    * </pre>
    */
-  public abstract static class TagBindingsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -235,7 +235,7 @@ public final class TagBindingsGrpc {
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
      * </pre>
      */
-    public void listTagBindings(
+    default void listTagBindings(
         com.google.cloud.resourcemanager.v3.ListTagBindingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.resourcemanager.v3.ListTagBindingsResponse>
             responseObserver) {
@@ -251,7 +251,7 @@ public final class TagBindingsGrpc {
      * (currently project, folder, or organization).
      * </pre>
      */
-    public void createTagBinding(
+    default void createTagBinding(
         com.google.cloud.resourcemanager.v3.CreateTagBindingRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -265,41 +265,33 @@ public final class TagBindingsGrpc {
      * Deletes a TagBinding.
      * </pre>
      */
-    public void deleteTagBinding(
+    default void deleteTagBinding(
         com.google.cloud.resourcemanager.v3.DeleteTagBindingRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteTagBindingMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service TagBindings.
+   *
+   * <pre>
+   * Allow users to create and manage TagBindings between TagValues and
+   * different cloud resources throughout the GCP resource hierarchy.
+   * </pre>
+   */
+  public abstract static class TagBindingsImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListTagBindingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.resourcemanager.v3.ListTagBindingsRequest,
-                      com.google.cloud.resourcemanager.v3.ListTagBindingsResponse>(
-                      this, METHODID_LIST_TAG_BINDINGS)))
-          .addMethod(
-              getCreateTagBindingMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.resourcemanager.v3.CreateTagBindingRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_TAG_BINDING)))
-          .addMethod(
-              getDeleteTagBindingMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.resourcemanager.v3.DeleteTagBindingRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_TAG_BINDING)))
-          .build();
+      return TagBindingsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service TagBindings.
    *
    * <pre>
    * Allow users to create and manage TagBindings between TagValues and
@@ -372,7 +364,7 @@ public final class TagBindingsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service TagBindings.
    *
    * <pre>
    * Allow users to create and manage TagBindings between TagValues and
@@ -436,7 +428,7 @@ public final class TagBindingsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service TagBindings.
    *
    * <pre>
    * Allow users to create and manage TagBindings between TagValues and
@@ -509,10 +501,10 @@ public final class TagBindingsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final TagBindingsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(TagBindingsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -552,6 +544,30 @@ public final class TagBindingsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListTagBindingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.resourcemanager.v3.ListTagBindingsRequest,
+                    com.google.cloud.resourcemanager.v3.ListTagBindingsResponse>(
+                    service, METHODID_LIST_TAG_BINDINGS)))
+        .addMethod(
+            getCreateTagBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.resourcemanager.v3.CreateTagBindingRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_TAG_BINDING)))
+        .addMethod(
+            getDeleteTagBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.resourcemanager.v3.DeleteTagBindingRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_TAG_BINDING)))
+        .build();
   }
 
   private abstract static class TagBindingsBaseDescriptorSupplier

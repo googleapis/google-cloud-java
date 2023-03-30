@@ -406,7 +406,7 @@ public final class ServicesGrpc {
    * Cloud Run Service Control Plane API
    * </pre>
    */
-  public abstract static class ServicesImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -415,7 +415,7 @@ public final class ServicesGrpc {
      * Creates a new Service in a given project and location.
      * </pre>
      */
-    public void createService(
+    default void createService(
         com.google.cloud.run.v2.CreateServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -429,7 +429,7 @@ public final class ServicesGrpc {
      * Gets information about a Service.
      * </pre>
      */
-    public void getService(
+    default void getService(
         com.google.cloud.run.v2.GetServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.run.v2.Service> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetServiceMethod(), responseObserver);
@@ -442,7 +442,7 @@ public final class ServicesGrpc {
      * Lists Services.
      * </pre>
      */
-    public void listServices(
+    default void listServices(
         com.google.cloud.run.v2.ListServicesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.run.v2.ListServicesResponse>
             responseObserver) {
@@ -457,7 +457,7 @@ public final class ServicesGrpc {
      * Updates a Service.
      * </pre>
      */
-    public void updateService(
+    default void updateService(
         com.google.cloud.run.v2.UpdateServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -473,7 +473,7 @@ public final class ServicesGrpc {
      * revisions.
      * </pre>
      */
-    public void deleteService(
+    default void deleteService(
         com.google.cloud.run.v2.DeleteServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -488,7 +488,7 @@ public final class ServicesGrpc {
      * Cloud Run Service. This result does not include any inherited policies.
      * </pre>
      */
-    public void getIamPolicy(
+    default void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -503,7 +503,7 @@ public final class ServicesGrpc {
      * any existing policy.
      * </pre>
      */
-    public void setIamPolicy(
+    default void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -518,72 +518,32 @@ public final class ServicesGrpc {
      * There are no permissions required for making this API call.
      * </pre>
      */
-    public void testIamPermissions(
+    default void testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getTestIamPermissionsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Services.
+   *
+   * <pre>
+   * Cloud Run Service Control Plane API
+   * </pre>
+   */
+  public abstract static class ServicesImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateServiceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.run.v2.CreateServiceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_SERVICE)))
-          .addMethod(
-              getGetServiceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.run.v2.GetServiceRequest, com.google.cloud.run.v2.Service>(
-                      this, METHODID_GET_SERVICE)))
-          .addMethod(
-              getListServicesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.run.v2.ListServicesRequest,
-                      com.google.cloud.run.v2.ListServicesResponse>(this, METHODID_LIST_SERVICES)))
-          .addMethod(
-              getUpdateServiceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.run.v2.UpdateServiceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_SERVICE)))
-          .addMethod(
-              getDeleteServiceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.run.v2.DeleteServiceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_SERVICE)))
-          .addMethod(
-              getGetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_GET_IAM_POLICY)))
-          .addMethod(
-              getSetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_SET_IAM_POLICY)))
-          .addMethod(
-              getTestIamPermissionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.TestIamPermissionsRequest,
-                      com.google.iam.v1.TestIamPermissionsResponse>(
-                      this, METHODID_TEST_IAM_PERMISSIONS)))
-          .build();
+      return ServicesGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Services.
    *
    * <pre>
    * Cloud Run Service Control Plane API
@@ -734,7 +694,7 @@ public final class ServicesGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Services.
    *
    * <pre>
    * Cloud Run Service Control Plane API
@@ -860,7 +820,7 @@ public final class ServicesGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Services.
    *
    * <pre>
    * Cloud Run Service Control Plane API
@@ -1003,10 +963,10 @@ public final class ServicesGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ServicesImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ServicesImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1071,6 +1031,58 @@ public final class ServicesGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.run.v2.CreateServiceRequest, com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_SERVICE)))
+        .addMethod(
+            getGetServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.run.v2.GetServiceRequest, com.google.cloud.run.v2.Service>(
+                    service, METHODID_GET_SERVICE)))
+        .addMethod(
+            getListServicesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.run.v2.ListServicesRequest,
+                    com.google.cloud.run.v2.ListServicesResponse>(service, METHODID_LIST_SERVICES)))
+        .addMethod(
+            getUpdateServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.run.v2.UpdateServiceRequest, com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_SERVICE)))
+        .addMethod(
+            getDeleteServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.run.v2.DeleteServiceRequest, com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_SERVICE)))
+        .addMethod(
+            getGetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_GET_IAM_POLICY)))
+        .addMethod(
+            getSetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_SET_IAM_POLICY)))
+        .addMethod(
+            getTestIamPermissionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.v1.TestIamPermissionsRequest,
+                    com.google.iam.v1.TestIamPermissionsResponse>(
+                    service, METHODID_TEST_IAM_PERMISSIONS)))
+        .build();
   }
 
   private abstract static class ServicesBaseDescriptorSupplier

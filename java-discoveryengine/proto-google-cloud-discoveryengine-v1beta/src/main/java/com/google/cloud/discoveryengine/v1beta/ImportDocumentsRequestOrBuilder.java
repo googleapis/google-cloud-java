@@ -69,7 +69,7 @@ public interface ImportDocumentsRequestOrBuilder
    *
    *
    * <pre>
-   * Google Cloud Storage location for the input content.
+   * Cloud Storage location for the input content.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 3;</code>
@@ -81,7 +81,7 @@ public interface ImportDocumentsRequestOrBuilder
    *
    *
    * <pre>
-   * Google Cloud Storage location for the input content.
+   * Cloud Storage location for the input content.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 3;</code>
@@ -93,7 +93,7 @@ public interface ImportDocumentsRequestOrBuilder
    *
    *
    * <pre>
-   * Google Cloud Storage location for the input content.
+   * Cloud Storage location for the input content.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1beta.GcsSource gcs_source = 3;</code>
@@ -140,7 +140,7 @@ public interface ImportDocumentsRequestOrBuilder
    *
    * <pre>
    * Required. The parent branch resource name, such as
-   * `projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}`.
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
    * Requires create/update permission.
    * </pre>
    *
@@ -156,7 +156,7 @@ public interface ImportDocumentsRequestOrBuilder
    *
    * <pre>
    * Required. The parent branch resource name, such as
-   * `projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}`.
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
    * Requires create/update permission.
    * </pre>
    *

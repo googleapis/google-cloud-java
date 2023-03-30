@@ -36,7 +36,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: This API allows users to manage their flat-rate BigQuery reservations.
+ * Service Description: This API allows users to manage their BigQuery reservations.
  *
  * <p>A reservation provides computational resource guarantees, in the form of
  * [slots](https://cloud.google.com/bigquery/docs/slots), to users. A slot is a unit of
@@ -3228,6 +3228,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setDestinationId(
    *               ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
+   *           .setAssignmentId("assignmentId-1603989304")
    *           .build();
    *   Assignment response = reservationServiceClient.moveAssignment(request);
    * }
@@ -3263,6 +3264,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setDestinationId(
    *               ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
+   *           .setAssignmentId("assignmentId-1603989304")
    *           .build();
    *   ApiFuture<Assignment> future =
    *       reservationServiceClient.moveAssignmentCallable().futureCall(request);

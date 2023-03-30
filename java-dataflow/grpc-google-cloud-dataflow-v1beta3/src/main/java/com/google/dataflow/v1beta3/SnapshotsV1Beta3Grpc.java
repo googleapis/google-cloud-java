@@ -219,7 +219,7 @@ public final class SnapshotsV1Beta3Grpc {
    * Provides methods to manage snapshots of Google Cloud Dataflow jobs.
    * </pre>
    */
-  public abstract static class SnapshotsV1Beta3ImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -228,7 +228,7 @@ public final class SnapshotsV1Beta3Grpc {
      * Gets information about a snapshot.
      * </pre>
      */
-    public void getSnapshot(
+    default void getSnapshot(
         com.google.dataflow.v1beta3.GetSnapshotRequest request,
         io.grpc.stub.StreamObserver<com.google.dataflow.v1beta3.Snapshot> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -242,7 +242,7 @@ public final class SnapshotsV1Beta3Grpc {
      * Deletes a snapshot.
      * </pre>
      */
-    public void deleteSnapshot(
+    default void deleteSnapshot(
         com.google.dataflow.v1beta3.DeleteSnapshotRequest request,
         io.grpc.stub.StreamObserver<com.google.dataflow.v1beta3.DeleteSnapshotResponse>
             responseObserver) {
@@ -257,43 +257,33 @@ public final class SnapshotsV1Beta3Grpc {
      * Lists snapshots.
      * </pre>
      */
-    public void listSnapshots(
+    default void listSnapshots(
         com.google.dataflow.v1beta3.ListSnapshotsRequest request,
         io.grpc.stub.StreamObserver<com.google.dataflow.v1beta3.ListSnapshotsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListSnapshotsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service SnapshotsV1Beta3.
+   *
+   * <pre>
+   * Provides methods to manage snapshots of Google Cloud Dataflow jobs.
+   * </pre>
+   */
+  public abstract static class SnapshotsV1Beta3ImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getGetSnapshotMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.dataflow.v1beta3.GetSnapshotRequest,
-                      com.google.dataflow.v1beta3.Snapshot>(this, METHODID_GET_SNAPSHOT)))
-          .addMethod(
-              getDeleteSnapshotMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.dataflow.v1beta3.DeleteSnapshotRequest,
-                      com.google.dataflow.v1beta3.DeleteSnapshotResponse>(
-                      this, METHODID_DELETE_SNAPSHOT)))
-          .addMethod(
-              getListSnapshotsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.dataflow.v1beta3.ListSnapshotsRequest,
-                      com.google.dataflow.v1beta3.ListSnapshotsResponse>(
-                      this, METHODID_LIST_SNAPSHOTS)))
-          .build();
+      return SnapshotsV1Beta3Grpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service SnapshotsV1Beta3.
    *
    * <pre>
    * Provides methods to manage snapshots of Google Cloud Dataflow jobs.
@@ -362,7 +352,7 @@ public final class SnapshotsV1Beta3Grpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service SnapshotsV1Beta3.
    *
    * <pre>
    * Provides methods to manage snapshots of Google Cloud Dataflow jobs.
@@ -421,7 +411,7 @@ public final class SnapshotsV1Beta3Grpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service SnapshotsV1Beta3.
    *
    * <pre>
    * Provides methods to manage snapshots of Google Cloud Dataflow jobs.
@@ -490,10 +480,10 @@ public final class SnapshotsV1Beta3Grpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final SnapshotsV1Beta3ImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(SnapshotsV1Beta3ImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -533,6 +523,31 @@ public final class SnapshotsV1Beta3Grpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getGetSnapshotMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.dataflow.v1beta3.GetSnapshotRequest,
+                    com.google.dataflow.v1beta3.Snapshot>(service, METHODID_GET_SNAPSHOT)))
+        .addMethod(
+            getDeleteSnapshotMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.dataflow.v1beta3.DeleteSnapshotRequest,
+                    com.google.dataflow.v1beta3.DeleteSnapshotResponse>(
+                    service, METHODID_DELETE_SNAPSHOT)))
+        .addMethod(
+            getListSnapshotsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.dataflow.v1beta3.ListSnapshotsRequest,
+                    com.google.dataflow.v1beta3.ListSnapshotsResponse>(
+                    service, METHODID_LIST_SNAPSHOTS)))
+        .build();
   }
 
   private abstract static class SnapshotsV1Beta3BaseDescriptorSupplier

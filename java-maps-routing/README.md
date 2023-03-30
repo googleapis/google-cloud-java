@@ -17,7 +17,6 @@ Java idiomatic client for [Routes API][product-docs].
 
 If you are using Maven, add this to your pom.xml file:
 
-<!-- {x-version-update-start:google-maps-routing:released} -->
 
 ```xml
 <dependency>
@@ -38,7 +37,6 @@ If you are using SBT, add this to your dependencies:
 ```Scala
 libraryDependencies += "com.google.maps" % "google-maps-routing" % "0.7.0"
 ```
-<!-- {x-version-update-end} -->
 
 ## Authentication
 
@@ -55,7 +53,7 @@ The client application making API calls must be granted [authorization scopes][a
 You will need a [Google Cloud Platform Console][developer-console] project with the Routes API [API enabled][enable-api].
 You will need to [enable billing][enable-billing] to use Google Routes API.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
-[installing the Google Cloud SDK][cloud-sdk] and running the following commands in command line:
+[installing the Google Cloud Command Line Interface][cloud-cli] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
 
 ### Installation and setup
@@ -179,14 +177,14 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/java-maps-routing/java11.html
 [stability-image]: https://img.shields.io/badge/stability-preview-yellow
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.maps/google-maps-routing.svg
-[maven-version-link]: https://search.maven.org/search?q=g:com.google.maps%20AND%20a:google-maps-routing&core=gav
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.maps/google-maps-routing/0.7.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles
 [iam-policy]: https://cloud.google.com/iam/docs/overview#cloud-iam-policy
 [developer-console]: https://console.developers.google.com/
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
-[cloud-sdk]: https://cloud.google.com/sdk/
+[cloud-cli]: https://cloud.google.com/cli
 [troubleshooting]: https://github.com/googleapis/google-cloud-common/blob/main/troubleshooting/readme.md#troubleshooting
 [contributing]: https://github.com/googleapis/java-maps-routing/blob/main/CONTRIBUTING.md
 [code-of-conduct]: https://github.com/googleapis/java-maps-routing/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct

@@ -313,7 +313,7 @@ public final class DashboardsServiceGrpc {
    * widgets in a specific layout.
    * </pre>
    */
-  public abstract static class DashboardsServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -327,7 +327,7 @@ public final class DashboardsServiceGrpc {
      * Identity and Access Management](https://cloud.google.com/iam).
      * </pre>
      */
-    public void createDashboard(
+    default void createDashboard(
         com.google.monitoring.dashboard.v1.CreateDashboardRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.dashboard.v1.Dashboard>
             responseObserver) {
@@ -345,7 +345,7 @@ public final class DashboardsServiceGrpc {
      * [Cloud Identity and Access Management](https://cloud.google.com/iam).
      * </pre>
      */
-    public void listDashboards(
+    default void listDashboards(
         com.google.monitoring.dashboard.v1.ListDashboardsRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.dashboard.v1.ListDashboardsResponse>
             responseObserver) {
@@ -363,7 +363,7 @@ public final class DashboardsServiceGrpc {
      * [Cloud Identity and Access Management](https://cloud.google.com/iam).
      * </pre>
      */
-    public void getDashboard(
+    default void getDashboard(
         com.google.monitoring.dashboard.v1.GetDashboardRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.dashboard.v1.Dashboard>
             responseObserver) {
@@ -381,7 +381,7 @@ public final class DashboardsServiceGrpc {
      * [Cloud Identity and Access Management](https://cloud.google.com/iam).
      * </pre>
      */
-    public void deleteDashboard(
+    default void deleteDashboard(
         com.google.monitoring.dashboard.v1.DeleteDashboardRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -398,56 +398,34 @@ public final class DashboardsServiceGrpc {
      * [Cloud Identity and Access Management](https://cloud.google.com/iam).
      * </pre>
      */
-    public void updateDashboard(
+    default void updateDashboard(
         com.google.monitoring.dashboard.v1.UpdateDashboardRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.dashboard.v1.Dashboard>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateDashboardMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service DashboardsService.
+   *
+   * <pre>
+   * Manages Stackdriver dashboards. A dashboard is an arrangement of data display
+   * widgets in a specific layout.
+   * </pre>
+   */
+  public abstract static class DashboardsServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateDashboardMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.dashboard.v1.CreateDashboardRequest,
-                      com.google.monitoring.dashboard.v1.Dashboard>(
-                      this, METHODID_CREATE_DASHBOARD)))
-          .addMethod(
-              getListDashboardsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.dashboard.v1.ListDashboardsRequest,
-                      com.google.monitoring.dashboard.v1.ListDashboardsResponse>(
-                      this, METHODID_LIST_DASHBOARDS)))
-          .addMethod(
-              getGetDashboardMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.dashboard.v1.GetDashboardRequest,
-                      com.google.monitoring.dashboard.v1.Dashboard>(this, METHODID_GET_DASHBOARD)))
-          .addMethod(
-              getDeleteDashboardMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.dashboard.v1.DeleteDashboardRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_DASHBOARD)))
-          .addMethod(
-              getUpdateDashboardMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.dashboard.v1.UpdateDashboardRequest,
-                      com.google.monitoring.dashboard.v1.Dashboard>(
-                      this, METHODID_UPDATE_DASHBOARD)))
-          .build();
+      return DashboardsServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service DashboardsService.
    *
    * <pre>
    * Manages Stackdriver dashboards. A dashboard is an arrangement of data display
@@ -569,7 +547,7 @@ public final class DashboardsServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service DashboardsService.
    *
    * <pre>
    * Manages Stackdriver dashboards. A dashboard is an arrangement of data display
@@ -673,7 +651,7 @@ public final class DashboardsServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service DashboardsService.
    *
    * <pre>
    * Manages Stackdriver dashboards. A dashboard is an arrangement of data display
@@ -790,10 +768,10 @@ public final class DashboardsServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final DashboardsServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(DashboardsServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -846,6 +824,44 @@ public final class DashboardsServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateDashboardMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.dashboard.v1.CreateDashboardRequest,
+                    com.google.monitoring.dashboard.v1.Dashboard>(
+                    service, METHODID_CREATE_DASHBOARD)))
+        .addMethod(
+            getListDashboardsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.dashboard.v1.ListDashboardsRequest,
+                    com.google.monitoring.dashboard.v1.ListDashboardsResponse>(
+                    service, METHODID_LIST_DASHBOARDS)))
+        .addMethod(
+            getGetDashboardMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.dashboard.v1.GetDashboardRequest,
+                    com.google.monitoring.dashboard.v1.Dashboard>(service, METHODID_GET_DASHBOARD)))
+        .addMethod(
+            getDeleteDashboardMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.dashboard.v1.DeleteDashboardRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_DASHBOARD)))
+        .addMethod(
+            getUpdateDashboardMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.dashboard.v1.UpdateDashboardRequest,
+                    com.google.monitoring.dashboard.v1.Dashboard>(
+                    service, METHODID_UPDATE_DASHBOARD)))
+        .build();
   }
 
   private abstract static class DashboardsServiceBaseDescriptorSupplier

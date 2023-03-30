@@ -77,8 +77,10 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s of inputs to failover to when this input is
-     * disconnected. Currently, only up to one backup input is supported.
+     * The
+     * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s
+     * of inputs to failover to when this input is disconnected. Currently, only
+     * up to one backup input is supported.
      * </pre>
      *
      * <code>repeated string input_keys = 1;</code>
@@ -90,8 +92,10 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s of inputs to failover to when this input is
-     * disconnected. Currently, only up to one backup input is supported.
+     * The
+     * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s
+     * of inputs to failover to when this input is disconnected. Currently, only
+     * up to one backup input is supported.
      * </pre>
      *
      * <code>repeated string input_keys = 1;</code>
@@ -103,8 +107,10 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s of inputs to failover to when this input is
-     * disconnected. Currently, only up to one backup input is supported.
+     * The
+     * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s
+     * of inputs to failover to when this input is disconnected. Currently, only
+     * up to one backup input is supported.
      * </pre>
      *
      * <code>repeated string input_keys = 1;</code>
@@ -117,8 +123,10 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s of inputs to failover to when this input is
-     * disconnected. Currently, only up to one backup input is supported.
+     * The
+     * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s
+     * of inputs to failover to when this input is disconnected. Currently, only
+     * up to one backup input is supported.
      * </pre>
      *
      * <code>repeated string input_keys = 1;</code>
@@ -185,8 +193,10 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s of inputs to failover to when this input is
-     * disconnected. Currently, only up to one backup input is supported.
+     * The
+     * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s
+     * of inputs to failover to when this input is disconnected. Currently, only
+     * up to one backup input is supported.
      * </pre>
      *
      * <code>repeated string input_keys = 1;</code>
@@ -200,8 +210,10 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s of inputs to failover to when this input is
-     * disconnected. Currently, only up to one backup input is supported.
+     * The
+     * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s
+     * of inputs to failover to when this input is disconnected. Currently, only
+     * up to one backup input is supported.
      * </pre>
      *
      * <code>repeated string input_keys = 1;</code>
@@ -215,8 +227,10 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s of inputs to failover to when this input is
-     * disconnected. Currently, only up to one backup input is supported.
+     * The
+     * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s
+     * of inputs to failover to when this input is disconnected. Currently, only
+     * up to one backup input is supported.
      * </pre>
      *
      * <code>repeated string input_keys = 1;</code>
@@ -231,8 +245,10 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s of inputs to failover to when this input is
-     * disconnected. Currently, only up to one backup input is supported.
+     * The
+     * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s
+     * of inputs to failover to when this input is disconnected. Currently, only
+     * up to one backup input is supported.
      * </pre>
      *
      * <code>repeated string input_keys = 1;</code>
@@ -637,8 +653,10 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s of inputs to failover to when this input is
-       * disconnected. Currently, only up to one backup input is supported.
+       * The
+       * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s
+       * of inputs to failover to when this input is disconnected. Currently, only
+       * up to one backup input is supported.
        * </pre>
        *
        * <code>repeated string input_keys = 1;</code>
@@ -652,8 +670,10 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s of inputs to failover to when this input is
-       * disconnected. Currently, only up to one backup input is supported.
+       * The
+       * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s
+       * of inputs to failover to when this input is disconnected. Currently, only
+       * up to one backup input is supported.
        * </pre>
        *
        * <code>repeated string input_keys = 1;</code>
@@ -667,8 +687,10 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s of inputs to failover to when this input is
-       * disconnected. Currently, only up to one backup input is supported.
+       * The
+       * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s
+       * of inputs to failover to when this input is disconnected. Currently, only
+       * up to one backup input is supported.
        * </pre>
        *
        * <code>repeated string input_keys = 1;</code>
@@ -683,8 +705,10 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s of inputs to failover to when this input is
-       * disconnected. Currently, only up to one backup input is supported.
+       * The
+       * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s
+       * of inputs to failover to when this input is disconnected. Currently, only
+       * up to one backup input is supported.
        * </pre>
        *
        * <code>repeated string input_keys = 1;</code>
@@ -699,8 +723,10 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s of inputs to failover to when this input is
-       * disconnected. Currently, only up to one backup input is supported.
+       * The
+       * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s
+       * of inputs to failover to when this input is disconnected. Currently, only
+       * up to one backup input is supported.
        * </pre>
        *
        * <code>repeated string input_keys = 1;</code>
@@ -722,8 +748,10 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s of inputs to failover to when this input is
-       * disconnected. Currently, only up to one backup input is supported.
+       * The
+       * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s
+       * of inputs to failover to when this input is disconnected. Currently, only
+       * up to one backup input is supported.
        * </pre>
        *
        * <code>repeated string input_keys = 1;</code>
@@ -744,8 +772,10 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s of inputs to failover to when this input is
-       * disconnected. Currently, only up to one backup input is supported.
+       * The
+       * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s
+       * of inputs to failover to when this input is disconnected. Currently, only
+       * up to one backup input is supported.
        * </pre>
        *
        * <code>repeated string input_keys = 1;</code>
@@ -763,8 +793,10 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s of inputs to failover to when this input is
-       * disconnected. Currently, only up to one backup input is supported.
+       * The
+       * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s
+       * of inputs to failover to when this input is disconnected. Currently, only
+       * up to one backup input is supported.
        * </pre>
        *
        * <code>repeated string input_keys = 1;</code>
@@ -781,8 +813,10 @@ public final class InputAttachment extends com.google.protobuf.GeneratedMessageV
        *
        *
        * <pre>
-       * The [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s of inputs to failover to when this input is
-       * disconnected. Currently, only up to one backup input is supported.
+       * The
+       * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]s
+       * of inputs to failover to when this input is disconnected. Currently, only
+       * up to one backup input is supported.
        * </pre>
        *
        * <code>repeated string input_keys = 1;</code>

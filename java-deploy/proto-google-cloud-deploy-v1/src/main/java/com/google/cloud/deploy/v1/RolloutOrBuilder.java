@@ -563,7 +563,8 @@ public interface RolloutOrBuilder
    *
    *
    * <pre>
-   * Output only. Additional information about the rollout failure, if available.
+   * Output only. Additional information about the rollout failure, if
+   * available.
    * </pre>
    *
    * <code>string failure_reason = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -575,7 +576,8 @@ public interface RolloutOrBuilder
    *
    *
    * <pre>
-   * Output only. Additional information about the rollout failure, if available.
+   * Output only. Additional information about the rollout failure, if
+   * available.
    * </pre>
    *
    * <code>string failure_reason = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -588,8 +590,8 @@ public interface RolloutOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the Cloud Build `Build` object that is used to deploy
-   * the Rollout. Format is
+   * Output only. The resource name of the Cloud Build `Build` object that is
+   * used to deploy the Rollout. Format is
    * `projects/{project}/locations/{location}/builds/{build}`.
    * </pre>
    *
@@ -604,8 +606,8 @@ public interface RolloutOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the Cloud Build `Build` object that is used to deploy
-   * the Rollout. Format is
+   * Output only. The resource name of the Cloud Build `Build` object that is
+   * used to deploy the Rollout. Format is
    * `projects/{project}/locations/{location}/builds/{build}`.
    * </pre>
    *
@@ -650,8 +652,8 @@ public interface RolloutOrBuilder
    *
    *
    * <pre>
-   * Output only. The reason this rollout failed. This will always be unspecified while the
-   * rollout is in progress.
+   * Output only. The reason this rollout failed. This will always be
+   * unspecified while the rollout is in progress.
    * </pre>
    *
    * <code>
@@ -665,8 +667,8 @@ public interface RolloutOrBuilder
    *
    *
    * <pre>
-   * Output only. The reason this rollout failed. This will always be unspecified while the
-   * rollout is in progress.
+   * Output only. The reason this rollout failed. This will always be
+   * unspecified while the rollout is in progress.
    * </pre>
    *
    * <code>
@@ -778,4 +780,33 @@ public interface RolloutOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.MetadataOrBuilder getMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Name of the `ControllerRollout`. Format is projects/{project}/
+   * locations/{location}/deliveryPipelines/{deliveryPipeline}/
+   * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+   * </pre>
+   *
+   * <code>string controller_rollout = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The controllerRollout.
+   */
+  java.lang.String getControllerRollout();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Name of the `ControllerRollout`. Format is projects/{project}/
+   * locations/{location}/deliveryPipelines/{deliveryPipeline}/
+   * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+   * </pre>
+   *
+   * <code>string controller_rollout = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for controllerRollout.
+   */
+  com.google.protobuf.ByteString getControllerRolloutBytes();
 }

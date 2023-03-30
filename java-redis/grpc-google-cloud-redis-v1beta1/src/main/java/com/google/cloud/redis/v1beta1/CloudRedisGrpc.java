@@ -589,7 +589,7 @@ public final class CloudRedisGrpc {
    * * `projects/redpepper-1290/locations/us-central1/instances/my-redis`
    * </pre>
    */
-  public abstract static class CloudRedisImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -603,7 +603,7 @@ public final class CloudRedisGrpc {
      * available to the project are queried, and the results are aggregated.
      * </pre>
      */
-    public void listInstances(
+    default void listInstances(
         com.google.cloud.redis.v1beta1.ListInstancesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.redis.v1beta1.ListInstancesResponse>
             responseObserver) {
@@ -618,7 +618,7 @@ public final class CloudRedisGrpc {
      * Gets the details of a specific Redis instance.
      * </pre>
      */
-    public void getInstance(
+    default void getInstance(
         com.google.cloud.redis.v1beta1.GetInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.redis.v1beta1.Instance> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -634,7 +634,7 @@ public final class CloudRedisGrpc {
      * the details returned to GetInstance.
      * </pre>
      */
-    public void getInstanceAuthString(
+    default void getInstanceAuthString(
         com.google.cloud.redis.v1beta1.GetInstanceAuthStringRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.redis.v1beta1.InstanceAuthString>
             responseObserver) {
@@ -657,7 +657,7 @@ public final class CloudRedisGrpc {
      * is no need to call DeleteOperation.
      * </pre>
      */
-    public void createInstance(
+    default void createInstance(
         com.google.cloud.redis.v1beta1.CreateInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -674,7 +674,7 @@ public final class CloudRedisGrpc {
      * after a few hours, so there is no need to call DeleteOperation.
      * </pre>
      */
-    public void updateInstance(
+    default void updateInstance(
         com.google.cloud.redis.v1beta1.UpdateInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -689,7 +689,7 @@ public final class CloudRedisGrpc {
      * request.
      * </pre>
      */
-    public void upgradeInstance(
+    default void upgradeInstance(
         com.google.cloud.redis.v1beta1.UpgradeInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -708,7 +708,7 @@ public final class CloudRedisGrpc {
      * there is no need to call DeleteOperation.
      * </pre>
      */
-    public void importInstance(
+    default void importInstance(
         com.google.cloud.redis.v1beta1.ImportInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -725,7 +725,7 @@ public final class CloudRedisGrpc {
      * there is no need to call DeleteOperation.
      * </pre>
      */
-    public void exportInstance(
+    default void exportInstance(
         com.google.cloud.redis.v1beta1.ExportInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -740,7 +740,7 @@ public final class CloudRedisGrpc {
      * specific STANDARD tier Cloud Memorystore for Redis instance.
      * </pre>
      */
-    public void failoverInstance(
+    default void failoverInstance(
         com.google.cloud.redis.v1beta1.FailoverInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -755,7 +755,7 @@ public final class CloudRedisGrpc {
      * deleted.
      * </pre>
      */
-    public void deleteInstance(
+    default void deleteInstance(
         com.google.cloud.redis.v1beta1.DeleteInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -770,90 +770,42 @@ public final class CloudRedisGrpc {
      * location.
      * </pre>
      */
-    public void rescheduleMaintenance(
+    default void rescheduleMaintenance(
         com.google.cloud.redis.v1beta1.RescheduleMaintenanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getRescheduleMaintenanceMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service CloudRedis.
+   *
+   * <pre>
+   * Configures and manages Cloud Memorystore for Redis instances
+   * Google Cloud Memorystore for Redis v1beta1
+   * The `redis.googleapis.com` service implements the Google Cloud Memorystore
+   * for Redis API and defines the following resource model for managing Redis
+   * instances:
+   * * The service works with a collection of cloud projects, named: `/projects/&#42;`
+   * * Each project has a collection of available locations, named: `/locations/&#42;`
+   * * Each location has a collection of Redis instances, named: `/instances/&#42;`
+   * * As such, Redis instances are resources of the form:
+   *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+   * Note that location_id must be referring to a GCP `region`; for example:
+   * * `projects/redpepper-1290/locations/us-central1/instances/my-redis`
+   * </pre>
+   */
+  public abstract static class CloudRedisImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListInstancesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.redis.v1beta1.ListInstancesRequest,
-                      com.google.cloud.redis.v1beta1.ListInstancesResponse>(
-                      this, METHODID_LIST_INSTANCES)))
-          .addMethod(
-              getGetInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.redis.v1beta1.GetInstanceRequest,
-                      com.google.cloud.redis.v1beta1.Instance>(this, METHODID_GET_INSTANCE)))
-          .addMethod(
-              getGetInstanceAuthStringMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.redis.v1beta1.GetInstanceAuthStringRequest,
-                      com.google.cloud.redis.v1beta1.InstanceAuthString>(
-                      this, METHODID_GET_INSTANCE_AUTH_STRING)))
-          .addMethod(
-              getCreateInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.redis.v1beta1.CreateInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_INSTANCE)))
-          .addMethod(
-              getUpdateInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.redis.v1beta1.UpdateInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_INSTANCE)))
-          .addMethod(
-              getUpgradeInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.redis.v1beta1.UpgradeInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPGRADE_INSTANCE)))
-          .addMethod(
-              getImportInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.redis.v1beta1.ImportInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_IMPORT_INSTANCE)))
-          .addMethod(
-              getExportInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.redis.v1beta1.ExportInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_EXPORT_INSTANCE)))
-          .addMethod(
-              getFailoverInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.redis.v1beta1.FailoverInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_FAILOVER_INSTANCE)))
-          .addMethod(
-              getDeleteInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.redis.v1beta1.DeleteInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_INSTANCE)))
-          .addMethod(
-              getRescheduleMaintenanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.redis.v1beta1.RescheduleMaintenanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_RESCHEDULE_MAINTENANCE)))
-          .build();
+      return CloudRedisGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service CloudRedis.
    *
    * <pre>
    * Configures and manages Cloud Memorystore for Redis instances
@@ -1090,7 +1042,7 @@ public final class CloudRedisGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service CloudRedis.
    *
    * <pre>
    * Configures and manages Cloud Memorystore for Redis instances
@@ -1294,7 +1246,7 @@ public final class CloudRedisGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service CloudRedis.
    *
    * <pre>
    * Configures and manages Cloud Memorystore for Redis instances
@@ -1516,10 +1468,10 @@ public final class CloudRedisGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final CloudRedisImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(CloudRedisImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1600,6 +1552,79 @@ public final class CloudRedisGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListInstancesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.v1beta1.ListInstancesRequest,
+                    com.google.cloud.redis.v1beta1.ListInstancesResponse>(
+                    service, METHODID_LIST_INSTANCES)))
+        .addMethod(
+            getGetInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.v1beta1.GetInstanceRequest,
+                    com.google.cloud.redis.v1beta1.Instance>(service, METHODID_GET_INSTANCE)))
+        .addMethod(
+            getGetInstanceAuthStringMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.v1beta1.GetInstanceAuthStringRequest,
+                    com.google.cloud.redis.v1beta1.InstanceAuthString>(
+                    service, METHODID_GET_INSTANCE_AUTH_STRING)))
+        .addMethod(
+            getCreateInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.v1beta1.CreateInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_INSTANCE)))
+        .addMethod(
+            getUpdateInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.v1beta1.UpdateInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_INSTANCE)))
+        .addMethod(
+            getUpgradeInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.v1beta1.UpgradeInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPGRADE_INSTANCE)))
+        .addMethod(
+            getImportInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.v1beta1.ImportInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_IMPORT_INSTANCE)))
+        .addMethod(
+            getExportInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.v1beta1.ExportInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EXPORT_INSTANCE)))
+        .addMethod(
+            getFailoverInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.v1beta1.FailoverInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_FAILOVER_INSTANCE)))
+        .addMethod(
+            getDeleteInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.v1beta1.DeleteInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_INSTANCE)))
+        .addMethod(
+            getRescheduleMaintenanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.v1beta1.RescheduleMaintenanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RESCHEDULE_MAINTENANCE)))
+        .build();
   }
 
   private abstract static class CloudRedisBaseDescriptorSupplier

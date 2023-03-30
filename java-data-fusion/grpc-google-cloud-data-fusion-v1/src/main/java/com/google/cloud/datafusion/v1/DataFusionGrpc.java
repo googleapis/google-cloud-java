@@ -395,7 +395,7 @@ public final class DataFusionGrpc {
    * pipelines via a point-and-click UI.
    * </pre>
    */
-  public abstract static class DataFusionImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -405,7 +405,7 @@ public final class DataFusionGrpc {
      * and location.
      * </pre>
      */
-    public void listAvailableVersions(
+    default void listAvailableVersions(
         com.google.cloud.datafusion.v1.ListAvailableVersionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datafusion.v1.ListAvailableVersionsResponse>
             responseObserver) {
@@ -420,7 +420,7 @@ public final class DataFusionGrpc {
      * Lists Data Fusion instances in the specified project and location.
      * </pre>
      */
-    public void listInstances(
+    default void listInstances(
         com.google.cloud.datafusion.v1.ListInstancesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datafusion.v1.ListInstancesResponse>
             responseObserver) {
@@ -435,7 +435,7 @@ public final class DataFusionGrpc {
      * Gets details of a single Data Fusion instance.
      * </pre>
      */
-    public void getInstance(
+    default void getInstance(
         com.google.cloud.datafusion.v1.GetInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datafusion.v1.Instance> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -449,7 +449,7 @@ public final class DataFusionGrpc {
      * Creates a new Data Fusion instance in the specified project and location.
      * </pre>
      */
-    public void createInstance(
+    default void createInstance(
         com.google.cloud.datafusion.v1.CreateInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -463,7 +463,7 @@ public final class DataFusionGrpc {
      * Deletes a single Date Fusion instance.
      * </pre>
      */
-    public void deleteInstance(
+    default void deleteInstance(
         com.google.cloud.datafusion.v1.DeleteInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -477,7 +477,7 @@ public final class DataFusionGrpc {
      * Updates a single Data Fusion instance.
      * </pre>
      */
-    public void updateInstance(
+    default void updateInstance(
         com.google.cloud.datafusion.v1.UpdateInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -492,66 +492,33 @@ public final class DataFusionGrpc {
      * At the end of an operation instance is fully restarted.
      * </pre>
      */
-    public void restartInstance(
+    default void restartInstance(
         com.google.cloud.datafusion.v1.RestartInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getRestartInstanceMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service DataFusion.
+   *
+   * <pre>
+   * Service for creating and managing Data Fusion instances.
+   * Data Fusion enables ETL developers to build code-free, data integration
+   * pipelines via a point-and-click UI.
+   * </pre>
+   */
+  public abstract static class DataFusionImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListAvailableVersionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datafusion.v1.ListAvailableVersionsRequest,
-                      com.google.cloud.datafusion.v1.ListAvailableVersionsResponse>(
-                      this, METHODID_LIST_AVAILABLE_VERSIONS)))
-          .addMethod(
-              getListInstancesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datafusion.v1.ListInstancesRequest,
-                      com.google.cloud.datafusion.v1.ListInstancesResponse>(
-                      this, METHODID_LIST_INSTANCES)))
-          .addMethod(
-              getGetInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datafusion.v1.GetInstanceRequest,
-                      com.google.cloud.datafusion.v1.Instance>(this, METHODID_GET_INSTANCE)))
-          .addMethod(
-              getCreateInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datafusion.v1.CreateInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_INSTANCE)))
-          .addMethod(
-              getDeleteInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datafusion.v1.DeleteInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_INSTANCE)))
-          .addMethod(
-              getUpdateInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datafusion.v1.UpdateInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_INSTANCE)))
-          .addMethod(
-              getRestartInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datafusion.v1.RestartInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_RESTART_INSTANCE)))
-          .build();
+      return DataFusionGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service DataFusion.
    *
    * <pre>
    * Service for creating and managing Data Fusion instances.
@@ -687,7 +654,7 @@ public final class DataFusionGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service DataFusion.
    *
    * <pre>
    * Service for creating and managing Data Fusion instances.
@@ -802,7 +769,7 @@ public final class DataFusionGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service DataFusion.
    *
    * <pre>
    * Service for creating and managing Data Fusion instances.
@@ -931,10 +898,10 @@ public final class DataFusionGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final DataFusionImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(DataFusionImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -996,6 +963,55 @@ public final class DataFusionGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListAvailableVersionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datafusion.v1.ListAvailableVersionsRequest,
+                    com.google.cloud.datafusion.v1.ListAvailableVersionsResponse>(
+                    service, METHODID_LIST_AVAILABLE_VERSIONS)))
+        .addMethod(
+            getListInstancesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datafusion.v1.ListInstancesRequest,
+                    com.google.cloud.datafusion.v1.ListInstancesResponse>(
+                    service, METHODID_LIST_INSTANCES)))
+        .addMethod(
+            getGetInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datafusion.v1.GetInstanceRequest,
+                    com.google.cloud.datafusion.v1.Instance>(service, METHODID_GET_INSTANCE)))
+        .addMethod(
+            getCreateInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datafusion.v1.CreateInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_INSTANCE)))
+        .addMethod(
+            getDeleteInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datafusion.v1.DeleteInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_INSTANCE)))
+        .addMethod(
+            getUpdateInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datafusion.v1.UpdateInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_INSTANCE)))
+        .addMethod(
+            getRestartInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datafusion.v1.RestartInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RESTART_INSTANCE)))
+        .build();
   }
 
   private abstract static class DataFusionBaseDescriptorSupplier

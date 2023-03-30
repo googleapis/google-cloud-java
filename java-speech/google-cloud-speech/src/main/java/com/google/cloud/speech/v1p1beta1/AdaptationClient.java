@@ -197,7 +197,7 @@ public class AdaptationClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource where this phrase set will be created. Format:
-   *     <p>`projects/{project}/locations/{location}/phraseSets`
+   *     <p>`projects/{project}/locations/{location}`
    *     <p>Speech-to-Text supports three locations: `global`, `us` (US North America), and `eu`
    *     (Europe). If you are calling the `speech.googleapis.com` endpoint, use the `global`
    *     location. To specify a region, use a [regional
@@ -244,7 +244,7 @@ public class AdaptationClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource where this phrase set will be created. Format:
-   *     <p>`projects/{project}/locations/{location}/phraseSets`
+   *     <p>`projects/{project}/locations/{location}`
    *     <p>Speech-to-Text supports three locations: `global`, `us` (US North America), and `eu`
    *     (Europe). If you are calling the `speech.googleapis.com` endpoint, use the `global`
    *     location. To specify a region, use a [regional

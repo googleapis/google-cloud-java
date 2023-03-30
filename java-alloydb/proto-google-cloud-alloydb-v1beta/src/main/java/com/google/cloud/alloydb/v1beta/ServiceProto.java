@@ -492,7 +492,7 @@ public final class ServiceProto {
           + "iceProtoP\001Z9cloud.google.com/go/alloydb/"
           + "apiv1beta/alloydbpb;alloydbpb\252\002\033Google.C"
           + "loud.AlloyDb.V1Beta\312\002\033Google\\Cloud\\Alloy"
-          + "Db\\V1beta\352\002\036Google::Cloud::AlloyDb::V1be"
+          + "Db\\V1beta\352\002\036Google::Cloud::AlloyDB::V1be"
           + "tab\006proto3"
     };
     descriptor =

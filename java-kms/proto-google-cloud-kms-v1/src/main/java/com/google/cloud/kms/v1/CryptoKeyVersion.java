@@ -330,6 +330,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * ECDSA on the NIST P-256 curve with a SHA256 digest.
+     * Other hash functions can also be used:
+     * https://cloud.google.com/kms/docs/create-validate-signatures#ecdsa_support_for_other_hash_algorithms
      * </pre>
      *
      * <code>EC_SIGN_P256_SHA256 = 12;</code>
@@ -340,6 +342,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * ECDSA on the NIST P-384 curve with a SHA384 digest.
+     * Other hash functions can also be used:
+     * https://cloud.google.com/kms/docs/create-validate-signatures#ecdsa_support_for_other_hash_algorithms
      * </pre>
      *
      * <code>EC_SIGN_P384_SHA384 = 13;</code>
@@ -351,6 +355,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <pre>
      * ECDSA on the non-NIST secp256k1 curve. This curve is only supported for
      * HSM protection level.
+     * Other hash functions can also be used:
+     * https://cloud.google.com/kms/docs/create-validate-signatures#ecdsa_support_for_other_hash_algorithms
      * </pre>
      *
      * <code>EC_SIGN_SECP256K1_SHA256 = 31;</code>
@@ -624,6 +630,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * ECDSA on the NIST P-256 curve with a SHA256 digest.
+     * Other hash functions can also be used:
+     * https://cloud.google.com/kms/docs/create-validate-signatures#ecdsa_support_for_other_hash_algorithms
      * </pre>
      *
      * <code>EC_SIGN_P256_SHA256 = 12;</code>
@@ -634,6 +642,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * ECDSA on the NIST P-384 curve with a SHA384 digest.
+     * Other hash functions can also be used:
+     * https://cloud.google.com/kms/docs/create-validate-signatures#ecdsa_support_for_other_hash_algorithms
      * </pre>
      *
      * <code>EC_SIGN_P384_SHA384 = 13;</code>
@@ -645,6 +655,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <pre>
      * ECDSA on the non-NIST secp256k1 curve. This curve is only supported for
      * HSM protection level.
+     * Other hash functions can also be used:
+     * https://cloud.google.com/kms/docs/create-validate-signatures#ecdsa_support_for_other_hash_algorithms
      * </pre>
      *
      * <code>EC_SIGN_SECP256K1_SHA256 = 31;</code>

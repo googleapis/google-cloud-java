@@ -417,10 +417,27 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
    *   Best for short form content like commands or single shot directed speech.
    *   When using this model, the service will stop transcribing audio after the
    *   first utterance is detected and completed.
-   * When using this model,
-   * [SEPARATE_RECOGNITION_PER_CHANNEL][google.cloud.speech.v2.RecognitionFeatures.MultiChannelMode.SEPARATE_RECOGNITION_PER_CHANNEL]
-   * is not supported; multi-channel audio is accepted, but only the first
-   * channel will be processed and transcribed.
+   *   When using this model,
+   *   [SEPARATE_RECOGNITION_PER_CHANNEL][google.cloud.speech.v2.RecognitionFeatures.MultiChannelMode.SEPARATE_RECOGNITION_PER_CHANNEL]
+   *   is not supported; multi-channel audio is accepted, but only the first
+   *   channel will be processed and transcribed.
+   * - `telephony`
+   *   Best for audio that originated from a phone call (typically recorded at
+   *   an 8khz sampling rate).
+   * - `medical_conversation`
+   *   For conversations between a medical provider—for example, a doctor or
+   *   nurse—and a patient. Use this model when both a provider and a patient
+   *   are speaking. Words uttered by each speaker are automatically detected
+   *   and labeled in the returned transcript.
+   *   For supported features please see [medical models
+   *   documentation](https://cloud.google.com/speech-to-text/docs/medical-models).
+   * - `medical_dictation`
+   *   For dictated notes spoken by a single medical provider—for example, a
+   *   doctor dictating notes about a patient's blood test results.
+   *   For supported features please see [medical models
+   *   documentation](https://cloud.google.com/speech-to-text/docs/medical-models).
+   * - `usm`
+   *   The next generation of Speech-to-Text models from Google.
    * </pre>
    *
    * <code>string model = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -452,10 +469,27 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
    *   Best for short form content like commands or single shot directed speech.
    *   When using this model, the service will stop transcribing audio after the
    *   first utterance is detected and completed.
-   * When using this model,
-   * [SEPARATE_RECOGNITION_PER_CHANNEL][google.cloud.speech.v2.RecognitionFeatures.MultiChannelMode.SEPARATE_RECOGNITION_PER_CHANNEL]
-   * is not supported; multi-channel audio is accepted, but only the first
-   * channel will be processed and transcribed.
+   *   When using this model,
+   *   [SEPARATE_RECOGNITION_PER_CHANNEL][google.cloud.speech.v2.RecognitionFeatures.MultiChannelMode.SEPARATE_RECOGNITION_PER_CHANNEL]
+   *   is not supported; multi-channel audio is accepted, but only the first
+   *   channel will be processed and transcribed.
+   * - `telephony`
+   *   Best for audio that originated from a phone call (typically recorded at
+   *   an 8khz sampling rate).
+   * - `medical_conversation`
+   *   For conversations between a medical provider—for example, a doctor or
+   *   nurse—and a patient. Use this model when both a provider and a patient
+   *   are speaking. Words uttered by each speaker are automatically detected
+   *   and labeled in the returned transcript.
+   *   For supported features please see [medical models
+   *   documentation](https://cloud.google.com/speech-to-text/docs/medical-models).
+   * - `medical_dictation`
+   *   For dictated notes spoken by a single medical provider—for example, a
+   *   doctor dictating notes about a patient's blood test results.
+   *   For supported features please see [medical models
+   *   documentation](https://cloud.google.com/speech-to-text/docs/medical-models).
+   * - `usm`
+   *   The next generation of Speech-to-Text models from Google.
    * </pre>
    *
    * <code>string model = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -485,10 +519,8 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
-   * Supported languages:
-   * - `en-US`
-   * - `en-GB`
-   * - `fr-FR`
+   * Supported languages for each model are listed at:
+   * https://cloud.google.com/speech-to-text/docs/languages
    * If additional languages are provided, recognition result will contain
    * recognition in the most likely language detected. The recognition result
    * will include the language tag of the language detected in the audio.
@@ -510,10 +542,8 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
-   * Supported languages:
-   * - `en-US`
-   * - `en-GB`
-   * - `fr-FR`
+   * Supported languages for each model are listed at:
+   * https://cloud.google.com/speech-to-text/docs/languages
    * If additional languages are provided, recognition result will contain
    * recognition in the most likely language detected. The recognition result
    * will include the language tag of the language detected in the audio.
@@ -535,10 +565,8 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
-   * Supported languages:
-   * - `en-US`
-   * - `en-GB`
-   * - `fr-FR`
+   * Supported languages for each model are listed at:
+   * https://cloud.google.com/speech-to-text/docs/languages
    * If additional languages are provided, recognition result will contain
    * recognition in the most likely language detected. The recognition result
    * will include the language tag of the language detected in the audio.
@@ -561,10 +589,8 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
-   * Supported languages:
-   * - `en-US`
-   * - `en-GB`
-   * - `fr-FR`
+   * Supported languages for each model are listed at:
+   * https://cloud.google.com/speech-to-text/docs/languages
    * If additional languages are provided, recognition result will contain
    * recognition in the most likely language detected. The recognition result
    * will include the language tag of the language detected in the audio.
@@ -2314,10 +2340,27 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      *   Best for short form content like commands or single shot directed speech.
      *   When using this model, the service will stop transcribing audio after the
      *   first utterance is detected and completed.
-     * When using this model,
-     * [SEPARATE_RECOGNITION_PER_CHANNEL][google.cloud.speech.v2.RecognitionFeatures.MultiChannelMode.SEPARATE_RECOGNITION_PER_CHANNEL]
-     * is not supported; multi-channel audio is accepted, but only the first
-     * channel will be processed and transcribed.
+     *   When using this model,
+     *   [SEPARATE_RECOGNITION_PER_CHANNEL][google.cloud.speech.v2.RecognitionFeatures.MultiChannelMode.SEPARATE_RECOGNITION_PER_CHANNEL]
+     *   is not supported; multi-channel audio is accepted, but only the first
+     *   channel will be processed and transcribed.
+     * - `telephony`
+     *   Best for audio that originated from a phone call (typically recorded at
+     *   an 8khz sampling rate).
+     * - `medical_conversation`
+     *   For conversations between a medical provider—for example, a doctor or
+     *   nurse—and a patient. Use this model when both a provider and a patient
+     *   are speaking. Words uttered by each speaker are automatically detected
+     *   and labeled in the returned transcript.
+     *   For supported features please see [medical models
+     *   documentation](https://cloud.google.com/speech-to-text/docs/medical-models).
+     * - `medical_dictation`
+     *   For dictated notes spoken by a single medical provider—for example, a
+     *   doctor dictating notes about a patient's blood test results.
+     *   For supported features please see [medical models
+     *   documentation](https://cloud.google.com/speech-to-text/docs/medical-models).
+     * - `usm`
+     *   The next generation of Speech-to-Text models from Google.
      * </pre>
      *
      * <code>string model = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2348,10 +2391,27 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      *   Best for short form content like commands or single shot directed speech.
      *   When using this model, the service will stop transcribing audio after the
      *   first utterance is detected and completed.
-     * When using this model,
-     * [SEPARATE_RECOGNITION_PER_CHANNEL][google.cloud.speech.v2.RecognitionFeatures.MultiChannelMode.SEPARATE_RECOGNITION_PER_CHANNEL]
-     * is not supported; multi-channel audio is accepted, but only the first
-     * channel will be processed and transcribed.
+     *   When using this model,
+     *   [SEPARATE_RECOGNITION_PER_CHANNEL][google.cloud.speech.v2.RecognitionFeatures.MultiChannelMode.SEPARATE_RECOGNITION_PER_CHANNEL]
+     *   is not supported; multi-channel audio is accepted, but only the first
+     *   channel will be processed and transcribed.
+     * - `telephony`
+     *   Best for audio that originated from a phone call (typically recorded at
+     *   an 8khz sampling rate).
+     * - `medical_conversation`
+     *   For conversations between a medical provider—for example, a doctor or
+     *   nurse—and a patient. Use this model when both a provider and a patient
+     *   are speaking. Words uttered by each speaker are automatically detected
+     *   and labeled in the returned transcript.
+     *   For supported features please see [medical models
+     *   documentation](https://cloud.google.com/speech-to-text/docs/medical-models).
+     * - `medical_dictation`
+     *   For dictated notes spoken by a single medical provider—for example, a
+     *   doctor dictating notes about a patient's blood test results.
+     *   For supported features please see [medical models
+     *   documentation](https://cloud.google.com/speech-to-text/docs/medical-models).
+     * - `usm`
+     *   The next generation of Speech-to-Text models from Google.
      * </pre>
      *
      * <code>string model = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2382,10 +2442,27 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      *   Best for short form content like commands or single shot directed speech.
      *   When using this model, the service will stop transcribing audio after the
      *   first utterance is detected and completed.
-     * When using this model,
-     * [SEPARATE_RECOGNITION_PER_CHANNEL][google.cloud.speech.v2.RecognitionFeatures.MultiChannelMode.SEPARATE_RECOGNITION_PER_CHANNEL]
-     * is not supported; multi-channel audio is accepted, but only the first
-     * channel will be processed and transcribed.
+     *   When using this model,
+     *   [SEPARATE_RECOGNITION_PER_CHANNEL][google.cloud.speech.v2.RecognitionFeatures.MultiChannelMode.SEPARATE_RECOGNITION_PER_CHANNEL]
+     *   is not supported; multi-channel audio is accepted, but only the first
+     *   channel will be processed and transcribed.
+     * - `telephony`
+     *   Best for audio that originated from a phone call (typically recorded at
+     *   an 8khz sampling rate).
+     * - `medical_conversation`
+     *   For conversations between a medical provider—for example, a doctor or
+     *   nurse—and a patient. Use this model when both a provider and a patient
+     *   are speaking. Words uttered by each speaker are automatically detected
+     *   and labeled in the returned transcript.
+     *   For supported features please see [medical models
+     *   documentation](https://cloud.google.com/speech-to-text/docs/medical-models).
+     * - `medical_dictation`
+     *   For dictated notes spoken by a single medical provider—for example, a
+     *   doctor dictating notes about a patient's blood test results.
+     *   For supported features please see [medical models
+     *   documentation](https://cloud.google.com/speech-to-text/docs/medical-models).
+     * - `usm`
+     *   The next generation of Speech-to-Text models from Google.
      * </pre>
      *
      * <code>string model = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2415,10 +2492,27 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      *   Best for short form content like commands or single shot directed speech.
      *   When using this model, the service will stop transcribing audio after the
      *   first utterance is detected and completed.
-     * When using this model,
-     * [SEPARATE_RECOGNITION_PER_CHANNEL][google.cloud.speech.v2.RecognitionFeatures.MultiChannelMode.SEPARATE_RECOGNITION_PER_CHANNEL]
-     * is not supported; multi-channel audio is accepted, but only the first
-     * channel will be processed and transcribed.
+     *   When using this model,
+     *   [SEPARATE_RECOGNITION_PER_CHANNEL][google.cloud.speech.v2.RecognitionFeatures.MultiChannelMode.SEPARATE_RECOGNITION_PER_CHANNEL]
+     *   is not supported; multi-channel audio is accepted, but only the first
+     *   channel will be processed and transcribed.
+     * - `telephony`
+     *   Best for audio that originated from a phone call (typically recorded at
+     *   an 8khz sampling rate).
+     * - `medical_conversation`
+     *   For conversations between a medical provider—for example, a doctor or
+     *   nurse—and a patient. Use this model when both a provider and a patient
+     *   are speaking. Words uttered by each speaker are automatically detected
+     *   and labeled in the returned transcript.
+     *   For supported features please see [medical models
+     *   documentation](https://cloud.google.com/speech-to-text/docs/medical-models).
+     * - `medical_dictation`
+     *   For dictated notes spoken by a single medical provider—for example, a
+     *   doctor dictating notes about a patient's blood test results.
+     *   For supported features please see [medical models
+     *   documentation](https://cloud.google.com/speech-to-text/docs/medical-models).
+     * - `usm`
+     *   The next generation of Speech-to-Text models from Google.
      * </pre>
      *
      * <code>string model = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2444,10 +2538,27 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      *   Best for short form content like commands or single shot directed speech.
      *   When using this model, the service will stop transcribing audio after the
      *   first utterance is detected and completed.
-     * When using this model,
-     * [SEPARATE_RECOGNITION_PER_CHANNEL][google.cloud.speech.v2.RecognitionFeatures.MultiChannelMode.SEPARATE_RECOGNITION_PER_CHANNEL]
-     * is not supported; multi-channel audio is accepted, but only the first
-     * channel will be processed and transcribed.
+     *   When using this model,
+     *   [SEPARATE_RECOGNITION_PER_CHANNEL][google.cloud.speech.v2.RecognitionFeatures.MultiChannelMode.SEPARATE_RECOGNITION_PER_CHANNEL]
+     *   is not supported; multi-channel audio is accepted, but only the first
+     *   channel will be processed and transcribed.
+     * - `telephony`
+     *   Best for audio that originated from a phone call (typically recorded at
+     *   an 8khz sampling rate).
+     * - `medical_conversation`
+     *   For conversations between a medical provider—for example, a doctor or
+     *   nurse—and a patient. Use this model when both a provider and a patient
+     *   are speaking. Words uttered by each speaker are automatically detected
+     *   and labeled in the returned transcript.
+     *   For supported features please see [medical models
+     *   documentation](https://cloud.google.com/speech-to-text/docs/medical-models).
+     * - `medical_dictation`
+     *   For dictated notes spoken by a single medical provider—for example, a
+     *   doctor dictating notes about a patient's blood test results.
+     *   For supported features please see [medical models
+     *   documentation](https://cloud.google.com/speech-to-text/docs/medical-models).
+     * - `usm`
+     *   The next generation of Speech-to-Text models from Google.
      * </pre>
      *
      * <code>string model = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2481,10 +2592,8 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
-     * Supported languages:
-     * - `en-US`
-     * - `en-GB`
-     * - `fr-FR`
+     * Supported languages for each model are listed at:
+     * https://cloud.google.com/speech-to-text/docs/languages
      * If additional languages are provided, recognition result will contain
      * recognition in the most likely language detected. The recognition result
      * will include the language tag of the language detected in the audio.
@@ -2506,10 +2615,8 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
-     * Supported languages:
-     * - `en-US`
-     * - `en-GB`
-     * - `fr-FR`
+     * Supported languages for each model are listed at:
+     * https://cloud.google.com/speech-to-text/docs/languages
      * If additional languages are provided, recognition result will contain
      * recognition in the most likely language detected. The recognition result
      * will include the language tag of the language detected in the audio.
@@ -2531,10 +2638,8 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
-     * Supported languages:
-     * - `en-US`
-     * - `en-GB`
-     * - `fr-FR`
+     * Supported languages for each model are listed at:
+     * https://cloud.google.com/speech-to-text/docs/languages
      * If additional languages are provided, recognition result will contain
      * recognition in the most likely language detected. The recognition result
      * will include the language tag of the language detected in the audio.
@@ -2557,10 +2662,8 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
-     * Supported languages:
-     * - `en-US`
-     * - `en-GB`
-     * - `fr-FR`
+     * Supported languages for each model are listed at:
+     * https://cloud.google.com/speech-to-text/docs/languages
      * If additional languages are provided, recognition result will contain
      * recognition in the most likely language detected. The recognition result
      * will include the language tag of the language detected in the audio.
@@ -2583,10 +2686,8 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
-     * Supported languages:
-     * - `en-US`
-     * - `en-GB`
-     * - `fr-FR`
+     * Supported languages for each model are listed at:
+     * https://cloud.google.com/speech-to-text/docs/languages
      * If additional languages are provided, recognition result will contain
      * recognition in the most likely language detected. The recognition result
      * will include the language tag of the language detected in the audio.
@@ -2616,10 +2717,8 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
-     * Supported languages:
-     * - `en-US`
-     * - `en-GB`
-     * - `fr-FR`
+     * Supported languages for each model are listed at:
+     * https://cloud.google.com/speech-to-text/docs/languages
      * If additional languages are provided, recognition result will contain
      * recognition in the most likely language detected. The recognition result
      * will include the language tag of the language detected in the audio.
@@ -2648,10 +2747,8 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
-     * Supported languages:
-     * - `en-US`
-     * - `en-GB`
-     * - `fr-FR`
+     * Supported languages for each model are listed at:
+     * https://cloud.google.com/speech-to-text/docs/languages
      * If additional languages are provided, recognition result will contain
      * recognition in the most likely language detected. The recognition result
      * will include the language tag of the language detected in the audio.
@@ -2677,10 +2774,8 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
-     * Supported languages:
-     * - `en-US`
-     * - `en-GB`
-     * - `fr-FR`
+     * Supported languages for each model are listed at:
+     * https://cloud.google.com/speech-to-text/docs/languages
      * If additional languages are provided, recognition result will contain
      * recognition in the most likely language detected. The recognition result
      * will include the language tag of the language detected in the audio.
@@ -2705,10 +2800,8 @@ public final class Recognizer extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
-     * Supported languages:
-     * - `en-US`
-     * - `en-GB`
-     * - `fr-FR`
+     * Supported languages for each model are listed at:
+     * https://cloud.google.com/speech-to-text/docs/languages
      * If additional languages are provided, recognition result will contain
      * recognition in the most likely language detected. The recognition result
      * will include the language tag of the language detected in the audio.

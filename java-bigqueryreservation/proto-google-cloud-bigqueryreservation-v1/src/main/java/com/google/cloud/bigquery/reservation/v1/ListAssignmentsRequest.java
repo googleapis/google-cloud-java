@@ -22,7 +22,8 @@ package com.google.cloud.bigquery.reservation.v1;
  *
  *
  * <pre>
- * The request for [ReservationService.ListAssignments][google.cloud.bigquery.reservation.v1.ReservationService.ListAssignments].
+ * The request for
+ * [ReservationService.ListAssignments][google.cloud.bigquery.reservation.v1.ReservationService.ListAssignments].
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.reservation.v1.ListAssignmentsRequest}
@@ -380,7 +381,8 @@ public final class ListAssignmentsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The request for [ReservationService.ListAssignments][google.cloud.bigquery.reservation.v1.ReservationService.ListAssignments].
+   * The request for
+   * [ReservationService.ListAssignments][google.cloud.bigquery.reservation.v1.ReservationService.ListAssignments].
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.reservation.v1.ListAssignmentsRequest}

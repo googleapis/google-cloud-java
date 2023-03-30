@@ -55,4 +55,5 @@
     <module>proto-google-cloud-kmsinventory-v1</module>
     <module>google-cloud-kmsinventory-bom</module>
   </modules>
-</project>
+
+  </project>

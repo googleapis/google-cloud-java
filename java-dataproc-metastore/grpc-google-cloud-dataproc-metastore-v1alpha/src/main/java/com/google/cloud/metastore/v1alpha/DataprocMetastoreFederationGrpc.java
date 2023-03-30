@@ -350,8 +350,7 @@ public final class DataprocMetastoreFederationGrpc {
    * `projects/{project_number}/locations/{location_id}/federations/{federation_id}`.
    * </pre>
    */
-  public abstract static class DataprocMetastoreFederationImplBase
-      implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -360,7 +359,7 @@ public final class DataprocMetastoreFederationGrpc {
      * Lists federations in a project and location.
      * </pre>
      */
-    public void listFederations(
+    default void listFederations(
         com.google.cloud.metastore.v1alpha.ListFederationsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.metastore.v1alpha.ListFederationsResponse>
             responseObserver) {
@@ -375,7 +374,7 @@ public final class DataprocMetastoreFederationGrpc {
      * Gets the details of a single federation.
      * </pre>
      */
-    public void getFederation(
+    default void getFederation(
         com.google.cloud.metastore.v1alpha.GetFederationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.metastore.v1alpha.Federation>
             responseObserver) {
@@ -390,7 +389,7 @@ public final class DataprocMetastoreFederationGrpc {
      * Creates a metastore federation in a project and location.
      * </pre>
      */
-    public void createFederation(
+    default void createFederation(
         com.google.cloud.metastore.v1alpha.CreateFederationRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -404,7 +403,7 @@ public final class DataprocMetastoreFederationGrpc {
      * Updates the fields of a federation.
      * </pre>
      */
-    public void updateFederation(
+    default void updateFederation(
         com.google.cloud.metastore.v1alpha.UpdateFederationRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -418,54 +417,43 @@ public final class DataprocMetastoreFederationGrpc {
      * Deletes a single federation.
      * </pre>
      */
-    public void deleteFederation(
+    default void deleteFederation(
         com.google.cloud.metastore.v1alpha.DeleteFederationRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteFederationMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service DataprocMetastoreFederation.
+   *
+   * <pre>
+   * Configures and manages metastore federation services.
+   * Dataproc Metastore Federation Service allows federating a collection of
+   * backend metastores like BigQuery, Dataplex Lakes, and other Dataproc
+   * Metastores. The Federation Service exposes a gRPC URL through which metadata
+   * from the backend metastores are served at query time.
+   * The Dataproc Metastore Federation API defines the following resource model:
+   * * The service works with a collection of Google Cloud projects.
+   * * Each project has a collection of available locations.
+   * * Each location has a collection of federations.
+   * * Dataproc Metastore Federations are resources with names of the
+   * form:
+   * `projects/{project_number}/locations/{location_id}/federations/{federation_id}`.
+   * </pre>
+   */
+  public abstract static class DataprocMetastoreFederationImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListFederationsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.metastore.v1alpha.ListFederationsRequest,
-                      com.google.cloud.metastore.v1alpha.ListFederationsResponse>(
-                      this, METHODID_LIST_FEDERATIONS)))
-          .addMethod(
-              getGetFederationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.metastore.v1alpha.GetFederationRequest,
-                      com.google.cloud.metastore.v1alpha.Federation>(
-                      this, METHODID_GET_FEDERATION)))
-          .addMethod(
-              getCreateFederationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.metastore.v1alpha.CreateFederationRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_FEDERATION)))
-          .addMethod(
-              getUpdateFederationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.metastore.v1alpha.UpdateFederationRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_FEDERATION)))
-          .addMethod(
-              getDeleteFederationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.metastore.v1alpha.DeleteFederationRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_FEDERATION)))
-          .build();
+      return DataprocMetastoreFederationGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service DataprocMetastoreFederation.
    *
    * <pre>
    * Configures and manages metastore federation services.
@@ -579,7 +567,7 @@ public final class DataprocMetastoreFederationGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service DataprocMetastoreFederation.
    *
    * <pre>
    * Configures and manages metastore federation services.
@@ -676,7 +664,8 @@ public final class DataprocMetastoreFederationGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * DataprocMetastoreFederation.
    *
    * <pre>
    * Configures and manages metastore federation services.
@@ -785,10 +774,10 @@ public final class DataprocMetastoreFederationGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final DataprocMetastoreFederationImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(DataprocMetastoreFederationImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -839,6 +828,43 @@ public final class DataprocMetastoreFederationGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListFederationsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.metastore.v1alpha.ListFederationsRequest,
+                    com.google.cloud.metastore.v1alpha.ListFederationsResponse>(
+                    service, METHODID_LIST_FEDERATIONS)))
+        .addMethod(
+            getGetFederationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.metastore.v1alpha.GetFederationRequest,
+                    com.google.cloud.metastore.v1alpha.Federation>(
+                    service, METHODID_GET_FEDERATION)))
+        .addMethod(
+            getCreateFederationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.metastore.v1alpha.CreateFederationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_FEDERATION)))
+        .addMethod(
+            getUpdateFederationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.metastore.v1alpha.UpdateFederationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_FEDERATION)))
+        .addMethod(
+            getDeleteFederationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.metastore.v1alpha.DeleteFederationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_FEDERATION)))
+        .build();
   }
 
   private abstract static class DataprocMetastoreFederationBaseDescriptorSupplier

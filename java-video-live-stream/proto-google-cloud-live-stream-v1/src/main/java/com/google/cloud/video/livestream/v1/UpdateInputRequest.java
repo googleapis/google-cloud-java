@@ -79,6 +79,9 @@ public final class UpdateInputRequest extends com.google.protobuf.GeneratedMessa
    * * [`securityRules`](https://cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.inputs#SecurityRule)
    * The fields specified in the update_mask are relative to the resource, not
    * the full request. A field will be overwritten if it is in the mask.
+   * If the mask is not present, then each field from the list above is updated
+   * if the field appears in the request payload. To unset a field, add the
+   * field to the update mask and remove it from the request payload.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1;</code>
@@ -99,6 +102,9 @@ public final class UpdateInputRequest extends com.google.protobuf.GeneratedMessa
    * * [`securityRules`](https://cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.inputs#SecurityRule)
    * The fields specified in the update_mask are relative to the resource, not
    * the full request. A field will be overwritten if it is in the mask.
+   * If the mask is not present, then each field from the list above is updated
+   * if the field appears in the request payload. To unset a field, add the
+   * field to the update mask and remove it from the request payload.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1;</code>
@@ -119,6 +125,9 @@ public final class UpdateInputRequest extends com.google.protobuf.GeneratedMessa
    * * [`securityRules`](https://cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.inputs#SecurityRule)
    * The fields specified in the update_mask are relative to the resource, not
    * the full request. A field will be overwritten if it is in the mask.
+   * If the mask is not present, then each field from the list above is updated
+   * if the field appears in the request payload. To unset a field, add the
+   * field to the update mask and remove it from the request payload.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1;</code>
@@ -676,6 +685,9 @@ public final class UpdateInputRequest extends com.google.protobuf.GeneratedMessa
      * * [`securityRules`](https://cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.inputs#SecurityRule)
      * The fields specified in the update_mask are relative to the resource, not
      * the full request. A field will be overwritten if it is in the mask.
+     * If the mask is not present, then each field from the list above is updated
+     * if the field appears in the request payload. To unset a field, add the
+     * field to the update mask and remove it from the request payload.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1;</code>
@@ -695,6 +707,9 @@ public final class UpdateInputRequest extends com.google.protobuf.GeneratedMessa
      * * [`securityRules`](https://cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.inputs#SecurityRule)
      * The fields specified in the update_mask are relative to the resource, not
      * the full request. A field will be overwritten if it is in the mask.
+     * If the mask is not present, then each field from the list above is updated
+     * if the field appears in the request payload. To unset a field, add the
+     * field to the update mask and remove it from the request payload.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1;</code>
@@ -720,6 +735,9 @@ public final class UpdateInputRequest extends com.google.protobuf.GeneratedMessa
      * * [`securityRules`](https://cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.inputs#SecurityRule)
      * The fields specified in the update_mask are relative to the resource, not
      * the full request. A field will be overwritten if it is in the mask.
+     * If the mask is not present, then each field from the list above is updated
+     * if the field appears in the request payload. To unset a field, add the
+     * field to the update mask and remove it from the request payload.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1;</code>
@@ -747,6 +765,9 @@ public final class UpdateInputRequest extends com.google.protobuf.GeneratedMessa
      * * [`securityRules`](https://cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.inputs#SecurityRule)
      * The fields specified in the update_mask are relative to the resource, not
      * the full request. A field will be overwritten if it is in the mask.
+     * If the mask is not present, then each field from the list above is updated
+     * if the field appears in the request payload. To unset a field, add the
+     * field to the update mask and remove it from the request payload.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1;</code>
@@ -771,6 +792,9 @@ public final class UpdateInputRequest extends com.google.protobuf.GeneratedMessa
      * * [`securityRules`](https://cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.inputs#SecurityRule)
      * The fields specified in the update_mask are relative to the resource, not
      * the full request. A field will be overwritten if it is in the mask.
+     * If the mask is not present, then each field from the list above is updated
+     * if the field appears in the request payload. To unset a field, add the
+     * field to the update mask and remove it from the request payload.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1;</code>
@@ -801,6 +825,9 @@ public final class UpdateInputRequest extends com.google.protobuf.GeneratedMessa
      * * [`securityRules`](https://cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.inputs#SecurityRule)
      * The fields specified in the update_mask are relative to the resource, not
      * the full request. A field will be overwritten if it is in the mask.
+     * If the mask is not present, then each field from the list above is updated
+     * if the field appears in the request payload. To unset a field, add the
+     * field to the update mask and remove it from the request payload.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1;</code>
@@ -825,6 +852,9 @@ public final class UpdateInputRequest extends com.google.protobuf.GeneratedMessa
      * * [`securityRules`](https://cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.inputs#SecurityRule)
      * The fields specified in the update_mask are relative to the resource, not
      * the full request. A field will be overwritten if it is in the mask.
+     * If the mask is not present, then each field from the list above is updated
+     * if the field appears in the request payload. To unset a field, add the
+     * field to the update mask and remove it from the request payload.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1;</code>
@@ -844,6 +874,9 @@ public final class UpdateInputRequest extends com.google.protobuf.GeneratedMessa
      * * [`securityRules`](https://cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.inputs#SecurityRule)
      * The fields specified in the update_mask are relative to the resource, not
      * the full request. A field will be overwritten if it is in the mask.
+     * If the mask is not present, then each field from the list above is updated
+     * if the field appears in the request payload. To unset a field, add the
+     * field to the update mask and remove it from the request payload.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1;</code>
@@ -867,6 +900,9 @@ public final class UpdateInputRequest extends com.google.protobuf.GeneratedMessa
      * * [`securityRules`](https://cloud.google.com/livestream/docs/reference/rest/v1/projects.locations.inputs#SecurityRule)
      * The fields specified in the update_mask are relative to the resource, not
      * the full request. A field will be overwritten if it is in the mask.
+     * If the mask is not present, then each field from the list above is updated
+     * if the field appears in the request payload. To unset a field, add the
+     * field to the update mask and remove it from the request payload.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1;</code>

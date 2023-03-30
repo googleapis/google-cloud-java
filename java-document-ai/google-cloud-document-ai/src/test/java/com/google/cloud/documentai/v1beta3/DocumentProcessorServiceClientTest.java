@@ -1996,6 +1996,108 @@ public class DocumentProcessorServiceClientTest {
   }
 
   @Test
+  public void importProcessorVersionTest() throws Exception {
+    ImportProcessorVersionResponse expectedResponse =
+        ImportProcessorVersionResponse.newBuilder()
+            .setProcessorVersion(
+                ProcessorVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+                    .toString())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importProcessorVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDocumentProcessorService.addResponse(resultOperation);
+
+    ProcessorName parent = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+
+    ImportProcessorVersionResponse actualResponse =
+        client.importProcessorVersionAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDocumentProcessorService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ImportProcessorVersionRequest actualRequest =
+        ((ImportProcessorVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void importProcessorVersionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocumentProcessorService.addException(exception);
+
+    try {
+      ProcessorName parent = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+      client.importProcessorVersionAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void importProcessorVersionTest2() throws Exception {
+    ImportProcessorVersionResponse expectedResponse =
+        ImportProcessorVersionResponse.newBuilder()
+            .setProcessorVersion(
+                ProcessorVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
+                    .toString())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importProcessorVersionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDocumentProcessorService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+
+    ImportProcessorVersionResponse actualResponse =
+        client.importProcessorVersionAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDocumentProcessorService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ImportProcessorVersionRequest actualRequest =
+        ((ImportProcessorVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void importProcessorVersionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocumentProcessorService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.importProcessorVersionAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void listLocationsTest() throws Exception {
     Location responsesElement = Location.newBuilder().build();
     ListLocationsResponse expectedResponse =

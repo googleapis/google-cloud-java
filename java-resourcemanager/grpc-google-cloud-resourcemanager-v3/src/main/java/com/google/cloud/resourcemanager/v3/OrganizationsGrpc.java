@@ -300,7 +300,7 @@ public final class OrganizationsGrpc {
    * Allows users to manage their organization resources.
    * </pre>
    */
-  public abstract static class OrganizationsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -309,7 +309,7 @@ public final class OrganizationsGrpc {
      * Fetches an organization resource identified by the specified resource name.
      * </pre>
      */
-    public void getOrganization(
+    default void getOrganization(
         com.google.cloud.resourcemanager.v3.GetOrganizationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.resourcemanager.v3.Organization>
             responseObserver) {
@@ -329,7 +329,7 @@ public final class OrganizationsGrpc {
      * `resourcemanager.organizations.get`
      * </pre>
      */
-    public void searchOrganizations(
+    default void searchOrganizations(
         com.google.cloud.resourcemanager.v3.SearchOrganizationsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.resourcemanager.v3.SearchOrganizationsResponse>
             responseObserver) {
@@ -348,7 +348,7 @@ public final class OrganizationsGrpc {
      * `resourcemanager.organizations.getIamPolicy` on the specified organization.
      * </pre>
      */
-    public void getIamPolicy(
+    default void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -366,7 +366,7 @@ public final class OrganizationsGrpc {
      * `resourcemanager.organizations.setIamPolicy` on the specified organization.
      * </pre>
      */
-    public void setIamPolicy(
+    default void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -383,56 +383,33 @@ public final class OrganizationsGrpc {
      * There are no permissions required for making this API call.
      * </pre>
      */
-    public void testIamPermissions(
+    default void testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getTestIamPermissionsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Organizations.
+   *
+   * <pre>
+   * Allows users to manage their organization resources.
+   * </pre>
+   */
+  public abstract static class OrganizationsImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getGetOrganizationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.resourcemanager.v3.GetOrganizationRequest,
-                      com.google.cloud.resourcemanager.v3.Organization>(
-                      this, METHODID_GET_ORGANIZATION)))
-          .addMethod(
-              getSearchOrganizationsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.resourcemanager.v3.SearchOrganizationsRequest,
-                      com.google.cloud.resourcemanager.v3.SearchOrganizationsResponse>(
-                      this, METHODID_SEARCH_ORGANIZATIONS)))
-          .addMethod(
-              getGetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_GET_IAM_POLICY)))
-          .addMethod(
-              getSetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_SET_IAM_POLICY)))
-          .addMethod(
-              getTestIamPermissionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.TestIamPermissionsRequest,
-                      com.google.iam.v1.TestIamPermissionsResponse>(
-                      this, METHODID_TEST_IAM_PERMISSIONS)))
-          .build();
+      return OrganizationsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Organizations.
    *
    * <pre>
    * Allows users to manage their organization resources.
@@ -550,7 +527,7 @@ public final class OrganizationsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Organizations.
    *
    * <pre>
    * Allows users to manage their organization resources.
@@ -649,7 +626,7 @@ public final class OrganizationsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Organizations.
    *
    * <pre>
    * Allows users to manage their organization resources.
@@ -764,10 +741,10 @@ public final class OrganizationsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final OrganizationsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(OrganizationsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -819,6 +796,42 @@ public final class OrganizationsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getGetOrganizationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.resourcemanager.v3.GetOrganizationRequest,
+                    com.google.cloud.resourcemanager.v3.Organization>(
+                    service, METHODID_GET_ORGANIZATION)))
+        .addMethod(
+            getSearchOrganizationsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.resourcemanager.v3.SearchOrganizationsRequest,
+                    com.google.cloud.resourcemanager.v3.SearchOrganizationsResponse>(
+                    service, METHODID_SEARCH_ORGANIZATIONS)))
+        .addMethod(
+            getGetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_GET_IAM_POLICY)))
+        .addMethod(
+            getSetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_SET_IAM_POLICY)))
+        .addMethod(
+            getTestIamPermissionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.v1.TestIamPermissionsRequest,
+                    com.google.iam.v1.TestIamPermissionsResponse>(
+                    service, METHODID_TEST_IAM_PERMISSIONS)))
+        .build();
   }
 
   private abstract static class OrganizationsBaseDescriptorSupplier

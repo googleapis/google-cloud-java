@@ -79,7 +79,7 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The parent resource name, such as
-   * `projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}`.
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
    * </pre>
    *
    * <code>
@@ -105,7 +105,7 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The parent resource name, such as
-   * `projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}`.
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
    * </pre>
    *
    * <code>
@@ -672,7 +672,7 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The parent resource name, such as
-     * `projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}`.
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
      * </pre>
      *
      * <code>
@@ -697,7 +697,7 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The parent resource name, such as
-     * `projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}`.
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
      * </pre>
      *
      * <code>
@@ -722,7 +722,7 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The parent resource name, such as
-     * `projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}`.
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
      * </pre>
      *
      * <code>
@@ -746,7 +746,7 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The parent resource name, such as
-     * `projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}`.
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
      * </pre>
      *
      * <code>
@@ -766,7 +766,7 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The parent resource name, such as
-     * `projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}`.
+     * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
      * </pre>
      *
      * <code>

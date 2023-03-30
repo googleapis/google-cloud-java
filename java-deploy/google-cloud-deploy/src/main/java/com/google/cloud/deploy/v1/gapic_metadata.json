@@ -13,8 +13,14 @@
             "AbandonRelease": {
               "methods": ["abandonRelease", "abandonRelease", "abandonRelease", "abandonReleaseCallable"]
             },
+            "AdvanceRollout": {
+              "methods": ["advanceRollout", "advanceRollout", "advanceRollout", "advanceRolloutCallable"]
+            },
             "ApproveRollout": {
               "methods": ["approveRollout", "approveRollout", "approveRollout", "approveRolloutCallable"]
+            },
+            "CancelRollout": {
+              "methods": ["cancelRollout", "cancelRollout", "cancelRollout", "cancelRolloutCallable"]
             },
             "CreateDeliveryPipeline": {
               "methods": ["createDeliveryPipelineAsync", "createDeliveryPipelineAsync", "createDeliveryPipelineAsync", "createDeliveryPipelineOperationCallable", "createDeliveryPipelineCallable"]
@@ -58,6 +64,9 @@
             "GetTarget": {
               "methods": ["getTarget", "getTarget", "getTarget", "getTargetCallable"]
             },
+            "IgnoreJob": {
+              "methods": ["ignoreJob", "ignoreJob", "ignoreJob", "ignoreJobCallable"]
+            },
             "ListDeliveryPipelines": {
               "methods": ["listDeliveryPipelines", "listDeliveryPipelines", "listDeliveryPipelines", "listDeliveryPipelinesPagedCallable", "listDeliveryPipelinesCallable"]
             },
@@ -81,6 +90,9 @@
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TerminateJobRun": {
+              "methods": ["terminateJobRun", "terminateJobRun", "terminateJobRun", "terminateJobRunCallable"]
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]

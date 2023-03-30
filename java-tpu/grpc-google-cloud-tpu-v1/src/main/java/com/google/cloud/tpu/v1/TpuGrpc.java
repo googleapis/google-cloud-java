@@ -549,7 +549,7 @@ public final class TpuGrpc {
    * TPU API v1
    * </pre>
    */
-  public abstract static class TpuImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -558,7 +558,7 @@ public final class TpuGrpc {
      * Lists nodes.
      * </pre>
      */
-    public void listNodes(
+    default void listNodes(
         com.google.cloud.tpu.v1.ListNodesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tpu.v1.ListNodesResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListNodesMethod(), responseObserver);
@@ -571,7 +571,7 @@ public final class TpuGrpc {
      * Gets the details of a node.
      * </pre>
      */
-    public void getNode(
+    default void getNode(
         com.google.cloud.tpu.v1.GetNodeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tpu.v1.Node> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetNodeMethod(), responseObserver);
@@ -584,7 +584,7 @@ public final class TpuGrpc {
      * Creates a node.
      * </pre>
      */
-    public void createNode(
+    default void createNode(
         com.google.cloud.tpu.v1.CreateNodeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateNodeMethod(), responseObserver);
@@ -597,7 +597,7 @@ public final class TpuGrpc {
      * Deletes a node.
      * </pre>
      */
-    public void deleteNode(
+    default void deleteNode(
         com.google.cloud.tpu.v1.DeleteNodeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteNodeMethod(), responseObserver);
@@ -610,7 +610,7 @@ public final class TpuGrpc {
      * Reimages a node's OS.
      * </pre>
      */
-    public void reimageNode(
+    default void reimageNode(
         com.google.cloud.tpu.v1.ReimageNodeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -624,7 +624,7 @@ public final class TpuGrpc {
      * Stops a node, this operation is only available with single TPU nodes.
      * </pre>
      */
-    public void stopNode(
+    default void stopNode(
         com.google.cloud.tpu.v1.StopNodeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStopNodeMethod(), responseObserver);
@@ -637,7 +637,7 @@ public final class TpuGrpc {
      * Starts a node.
      * </pre>
      */
-    public void startNode(
+    default void startNode(
         com.google.cloud.tpu.v1.StartNodeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStartNodeMethod(), responseObserver);
@@ -650,7 +650,7 @@ public final class TpuGrpc {
      * List TensorFlow versions supported by this API.
      * </pre>
      */
-    public void listTensorFlowVersions(
+    default void listTensorFlowVersions(
         com.google.cloud.tpu.v1.ListTensorFlowVersionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tpu.v1.ListTensorFlowVersionsResponse>
             responseObserver) {
@@ -665,7 +665,7 @@ public final class TpuGrpc {
      * Gets TensorFlow Version.
      * </pre>
      */
-    public void getTensorFlowVersion(
+    default void getTensorFlowVersion(
         com.google.cloud.tpu.v1.GetTensorFlowVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tpu.v1.TensorFlowVersion> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -679,7 +679,7 @@ public final class TpuGrpc {
      * Lists accelerator types supported by this API.
      * </pre>
      */
-    public void listAcceleratorTypes(
+    default void listAcceleratorTypes(
         com.google.cloud.tpu.v1.ListAcceleratorTypesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tpu.v1.ListAcceleratorTypesResponse>
             responseObserver) {
@@ -694,92 +694,32 @@ public final class TpuGrpc {
      * Gets AcceleratorType.
      * </pre>
      */
-    public void getAcceleratorType(
+    default void getAcceleratorType(
         com.google.cloud.tpu.v1.GetAcceleratorTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tpu.v1.AcceleratorType> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetAcceleratorTypeMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Tpu.
+   *
+   * <pre>
+   * Manages TPU nodes and other resources
+   * TPU API v1
+   * </pre>
+   */
+  public abstract static class TpuImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListNodesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.tpu.v1.ListNodesRequest,
-                      com.google.cloud.tpu.v1.ListNodesResponse>(this, METHODID_LIST_NODES)))
-          .addMethod(
-              getGetNodeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.tpu.v1.GetNodeRequest, com.google.cloud.tpu.v1.Node>(
-                      this, METHODID_GET_NODE)))
-          .addMethod(
-              getCreateNodeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.tpu.v1.CreateNodeRequest, com.google.longrunning.Operation>(
-                      this, METHODID_CREATE_NODE)))
-          .addMethod(
-              getDeleteNodeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.tpu.v1.DeleteNodeRequest, com.google.longrunning.Operation>(
-                      this, METHODID_DELETE_NODE)))
-          .addMethod(
-              getReimageNodeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.tpu.v1.ReimageNodeRequest, com.google.longrunning.Operation>(
-                      this, METHODID_REIMAGE_NODE)))
-          .addMethod(
-              getStopNodeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.tpu.v1.StopNodeRequest, com.google.longrunning.Operation>(
-                      this, METHODID_STOP_NODE)))
-          .addMethod(
-              getStartNodeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.tpu.v1.StartNodeRequest, com.google.longrunning.Operation>(
-                      this, METHODID_START_NODE)))
-          .addMethod(
-              getListTensorFlowVersionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.tpu.v1.ListTensorFlowVersionsRequest,
-                      com.google.cloud.tpu.v1.ListTensorFlowVersionsResponse>(
-                      this, METHODID_LIST_TENSOR_FLOW_VERSIONS)))
-          .addMethod(
-              getGetTensorFlowVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.tpu.v1.GetTensorFlowVersionRequest,
-                      com.google.cloud.tpu.v1.TensorFlowVersion>(
-                      this, METHODID_GET_TENSOR_FLOW_VERSION)))
-          .addMethod(
-              getListAcceleratorTypesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.tpu.v1.ListAcceleratorTypesRequest,
-                      com.google.cloud.tpu.v1.ListAcceleratorTypesResponse>(
-                      this, METHODID_LIST_ACCELERATOR_TYPES)))
-          .addMethod(
-              getGetAcceleratorTypeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.tpu.v1.GetAcceleratorTypeRequest,
-                      com.google.cloud.tpu.v1.AcceleratorType>(
-                      this, METHODID_GET_ACCELERATOR_TYPE)))
-          .build();
+      return TpuGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Tpu.
    *
    * <pre>
    * Manages TPU nodes and other resources
@@ -964,7 +904,7 @@ public final class TpuGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Tpu.
    *
    * <pre>
    * Manages TPU nodes and other resources
@@ -1126,7 +1066,7 @@ public final class TpuGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Tpu.
    *
    * <pre>
    * Manages TPU nodes and other resources
@@ -1309,10 +1249,10 @@ public final class TpuGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final TpuImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(TpuImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1395,6 +1335,81 @@ public final class TpuGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListNodesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tpu.v1.ListNodesRequest,
+                    com.google.cloud.tpu.v1.ListNodesResponse>(service, METHODID_LIST_NODES)))
+        .addMethod(
+            getGetNodeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tpu.v1.GetNodeRequest, com.google.cloud.tpu.v1.Node>(
+                    service, METHODID_GET_NODE)))
+        .addMethod(
+            getCreateNodeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tpu.v1.CreateNodeRequest, com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_NODE)))
+        .addMethod(
+            getDeleteNodeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tpu.v1.DeleteNodeRequest, com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_NODE)))
+        .addMethod(
+            getReimageNodeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tpu.v1.ReimageNodeRequest, com.google.longrunning.Operation>(
+                    service, METHODID_REIMAGE_NODE)))
+        .addMethod(
+            getStopNodeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tpu.v1.StopNodeRequest, com.google.longrunning.Operation>(
+                    service, METHODID_STOP_NODE)))
+        .addMethod(
+            getStartNodeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tpu.v1.StartNodeRequest, com.google.longrunning.Operation>(
+                    service, METHODID_START_NODE)))
+        .addMethod(
+            getListTensorFlowVersionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tpu.v1.ListTensorFlowVersionsRequest,
+                    com.google.cloud.tpu.v1.ListTensorFlowVersionsResponse>(
+                    service, METHODID_LIST_TENSOR_FLOW_VERSIONS)))
+        .addMethod(
+            getGetTensorFlowVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tpu.v1.GetTensorFlowVersionRequest,
+                    com.google.cloud.tpu.v1.TensorFlowVersion>(
+                    service, METHODID_GET_TENSOR_FLOW_VERSION)))
+        .addMethod(
+            getListAcceleratorTypesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tpu.v1.ListAcceleratorTypesRequest,
+                    com.google.cloud.tpu.v1.ListAcceleratorTypesResponse>(
+                    service, METHODID_LIST_ACCELERATOR_TYPES)))
+        .addMethod(
+            getGetAcceleratorTypeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tpu.v1.GetAcceleratorTypeRequest,
+                    com.google.cloud.tpu.v1.AcceleratorType>(
+                    service, METHODID_GET_ACCELERATOR_TYPE)))
+        .build();
   }
 
   private abstract static class TpuBaseDescriptorSupplier

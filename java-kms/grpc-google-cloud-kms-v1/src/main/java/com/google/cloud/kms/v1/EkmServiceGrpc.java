@@ -350,7 +350,7 @@ public final class EkmServiceGrpc {
    * * [EkmConnection][google.cloud.kms.v1.EkmConnection]
    * </pre>
    */
-  public abstract static class EkmServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -359,7 +359,7 @@ public final class EkmServiceGrpc {
      * Lists [EkmConnections][google.cloud.kms.v1.EkmConnection].
      * </pre>
      */
-    public void listEkmConnections(
+    default void listEkmConnections(
         com.google.cloud.kms.v1.ListEkmConnectionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.ListEkmConnectionsResponse>
             responseObserver) {
@@ -375,7 +375,7 @@ public final class EkmServiceGrpc {
      * [EkmConnection][google.cloud.kms.v1.EkmConnection].
      * </pre>
      */
-    public void getEkmConnection(
+    default void getEkmConnection(
         com.google.cloud.kms.v1.GetEkmConnectionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.EkmConnection> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -390,7 +390,7 @@ public final class EkmServiceGrpc {
      * Project and Location.
      * </pre>
      */
-    public void createEkmConnection(
+    default void createEkmConnection(
         com.google.cloud.kms.v1.CreateEkmConnectionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.EkmConnection> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -404,7 +404,7 @@ public final class EkmServiceGrpc {
      * Updates an [EkmConnection][google.cloud.kms.v1.EkmConnection]'s metadata.
      * </pre>
      */
-    public void updateEkmConnection(
+    default void updateEkmConnection(
         com.google.cloud.kms.v1.UpdateEkmConnectionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.EkmConnection> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -419,7 +419,7 @@ public final class EkmServiceGrpc {
      * for a given project and location.
      * </pre>
      */
-    public void getEkmConfig(
+    default void getEkmConfig(
         com.google.cloud.kms.v1.GetEkmConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.EkmConfig> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -434,59 +434,34 @@ public final class EkmServiceGrpc {
      * for a given project and location.
      * </pre>
      */
-    public void updateEkmConfig(
+    default void updateEkmConfig(
         com.google.cloud.kms.v1.UpdateEkmConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.EkmConfig> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateEkmConfigMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service EkmService.
+   *
+   * <pre>
+   * Google Cloud Key Management EKM Service
+   * Manages external cryptographic keys and operations using those keys.
+   * Implements a REST model with the following objects:
+   * * [EkmConnection][google.cloud.kms.v1.EkmConnection]
+   * </pre>
+   */
+  public abstract static class EkmServiceImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListEkmConnectionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.ListEkmConnectionsRequest,
-                      com.google.cloud.kms.v1.ListEkmConnectionsResponse>(
-                      this, METHODID_LIST_EKM_CONNECTIONS)))
-          .addMethod(
-              getGetEkmConnectionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.GetEkmConnectionRequest,
-                      com.google.cloud.kms.v1.EkmConnection>(this, METHODID_GET_EKM_CONNECTION)))
-          .addMethod(
-              getCreateEkmConnectionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.CreateEkmConnectionRequest,
-                      com.google.cloud.kms.v1.EkmConnection>(this, METHODID_CREATE_EKM_CONNECTION)))
-          .addMethod(
-              getUpdateEkmConnectionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.UpdateEkmConnectionRequest,
-                      com.google.cloud.kms.v1.EkmConnection>(this, METHODID_UPDATE_EKM_CONNECTION)))
-          .addMethod(
-              getGetEkmConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.GetEkmConfigRequest,
-                      com.google.cloud.kms.v1.EkmConfig>(this, METHODID_GET_EKM_CONFIG)))
-          .addMethod(
-              getUpdateEkmConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.v1.UpdateEkmConfigRequest,
-                      com.google.cloud.kms.v1.EkmConfig>(this, METHODID_UPDATE_EKM_CONFIG)))
-          .build();
+      return EkmServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service EkmService.
    *
    * <pre>
    * Google Cloud Key Management EKM Service
@@ -608,7 +583,7 @@ public final class EkmServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service EkmService.
    *
    * <pre>
    * Google Cloud Key Management EKM Service
@@ -713,7 +688,7 @@ public final class EkmServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service EkmService.
    *
    * <pre>
    * Google Cloud Key Management EKM Service
@@ -829,10 +804,10 @@ public final class EkmServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final EkmServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(EkmServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -889,6 +864,50 @@ public final class EkmServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListEkmConnectionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.ListEkmConnectionsRequest,
+                    com.google.cloud.kms.v1.ListEkmConnectionsResponse>(
+                    service, METHODID_LIST_EKM_CONNECTIONS)))
+        .addMethod(
+            getGetEkmConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.GetEkmConnectionRequest,
+                    com.google.cloud.kms.v1.EkmConnection>(service, METHODID_GET_EKM_CONNECTION)))
+        .addMethod(
+            getCreateEkmConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.CreateEkmConnectionRequest,
+                    com.google.cloud.kms.v1.EkmConnection>(
+                    service, METHODID_CREATE_EKM_CONNECTION)))
+        .addMethod(
+            getUpdateEkmConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.UpdateEkmConnectionRequest,
+                    com.google.cloud.kms.v1.EkmConnection>(
+                    service, METHODID_UPDATE_EKM_CONNECTION)))
+        .addMethod(
+            getGetEkmConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.GetEkmConfigRequest, com.google.cloud.kms.v1.EkmConfig>(
+                    service, METHODID_GET_EKM_CONFIG)))
+        .addMethod(
+            getUpdateEkmConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.UpdateEkmConfigRequest,
+                    com.google.cloud.kms.v1.EkmConfig>(service, METHODID_UPDATE_EKM_CONFIG)))
+        .build();
   }
 
   private abstract static class EkmServiceBaseDescriptorSupplier

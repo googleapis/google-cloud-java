@@ -706,6 +706,48 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      */
     com.google.analytics.admin.v1alpha.BigQueryLinkOrBuilder getBigqueryLinkOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of EnhancedMeasurementSettings resource in change history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.EnhancedMeasurementSettings enhanced_measurement_settings = 24;
+     * </code>
+     *
+     * @return Whether the enhancedMeasurementSettings field is set.
+     */
+    boolean hasEnhancedMeasurementSettings();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of EnhancedMeasurementSettings resource in change history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.EnhancedMeasurementSettings enhanced_measurement_settings = 24;
+     * </code>
+     *
+     * @return The enhancedMeasurementSettings.
+     */
+    com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings getEnhancedMeasurementSettings();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of EnhancedMeasurementSettings resource in change history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.EnhancedMeasurementSettings enhanced_measurement_settings = 24;
+     * </code>
+     */
+    com.google.analytics.admin.v1alpha.EnhancedMeasurementSettingsOrBuilder
+        getEnhancedMeasurementSettingsOrBuilder();
+
     public com.google.analytics.admin.v1alpha.ChangeHistoryChange.ChangeHistoryResource.ResourceCase
         getResourceCase();
   }
@@ -782,6 +824,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       ATTRIBUTION_SETTINGS(20),
       EXPANDED_DATA_SET(21),
       BIGQUERY_LINK(23),
+      ENHANCED_MEASUREMENT_SETTINGS(24),
       RESOURCE_NOT_SET(0);
       private final int value;
 
@@ -834,6 +877,8 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             return EXPANDED_DATA_SET;
           case 23:
             return BIGQUERY_LINK;
+          case 24:
+            return ENHANCED_MEASUREMENT_SETTINGS;
           case 0:
             return RESOURCE_NOT_SET;
           default:
@@ -1762,6 +1807,65 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       return com.google.analytics.admin.v1alpha.BigQueryLink.getDefaultInstance();
     }
 
+    public static final int ENHANCED_MEASUREMENT_SETTINGS_FIELD_NUMBER = 24;
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of EnhancedMeasurementSettings resource in change history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.EnhancedMeasurementSettings enhanced_measurement_settings = 24;
+     * </code>
+     *
+     * @return Whether the enhancedMeasurementSettings field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnhancedMeasurementSettings() {
+      return resourceCase_ == 24;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of EnhancedMeasurementSettings resource in change history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.EnhancedMeasurementSettings enhanced_measurement_settings = 24;
+     * </code>
+     *
+     * @return The enhancedMeasurementSettings.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings
+        getEnhancedMeasurementSettings() {
+      if (resourceCase_ == 24) {
+        return (com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of EnhancedMeasurementSettings resource in change history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.EnhancedMeasurementSettings enhanced_measurement_settings = 24;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.EnhancedMeasurementSettingsOrBuilder
+        getEnhancedMeasurementSettingsOrBuilder() {
+      if (resourceCase_ == 24) {
+        return (com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1832,6 +1936,10 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       if (resourceCase_ == 23) {
         output.writeMessage(23, (com.google.analytics.admin.v1alpha.BigQueryLink) resource_);
+      }
+      if (resourceCase_ == 24) {
+        output.writeMessage(
+            24, (com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings) resource_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1929,6 +2037,11 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 23, (com.google.analytics.admin.v1alpha.BigQueryLink) resource_);
       }
+      if (resourceCase_ == 24) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                24, (com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings) resource_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2002,6 +2115,10 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           break;
         case 23:
           if (!getBigqueryLink().equals(other.getBigqueryLink())) return false;
+          break;
+        case 24:
+          if (!getEnhancedMeasurementSettings().equals(other.getEnhancedMeasurementSettings()))
+            return false;
           break;
         case 0:
         default:
@@ -2085,6 +2202,10 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         case 23:
           hash = (37 * hash) + BIGQUERY_LINK_FIELD_NUMBER;
           hash = (53 * hash) + getBigqueryLink().hashCode();
+          break;
+        case 24:
+          hash = (37 * hash) + ENHANCED_MEASUREMENT_SETTINGS_FIELD_NUMBER;
+          hash = (53 * hash) + getEnhancedMeasurementSettings().hashCode();
           break;
         case 0:
         default:
@@ -2292,6 +2413,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         if (bigqueryLinkBuilder_ != null) {
           bigqueryLinkBuilder_.clear();
         }
+        if (enhancedMeasurementSettingsBuilder_ != null) {
+          enhancedMeasurementSettingsBuilder_.clear();
+        }
         resourceCase_ = 0;
         resource_ = null;
         return this;
@@ -2392,6 +2516,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         if (resourceCase_ == 23 && bigqueryLinkBuilder_ != null) {
           result.resource_ = bigqueryLinkBuilder_.build();
+        }
+        if (resourceCase_ == 24 && enhancedMeasurementSettingsBuilder_ != null) {
+          result.resource_ = enhancedMeasurementSettingsBuilder_.build();
         }
       }
 
@@ -2533,6 +2660,11 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           case BIGQUERY_LINK:
             {
               mergeBigqueryLink(other.getBigqueryLink());
+              break;
+            }
+          case ENHANCED_MEASUREMENT_SETTINGS:
+            {
+              mergeEnhancedMeasurementSettings(other.getEnhancedMeasurementSettings());
               break;
             }
           case RESOURCE_NOT_SET:
@@ -2680,6 +2812,13 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
                   resourceCase_ = 23;
                   break;
                 } // case 186
+              case 194:
+                {
+                  input.readMessage(
+                      getEnhancedMeasurementSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                  resourceCase_ = 24;
+                  break;
+                } // case 194
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6434,6 +6573,244 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 23;
         onChanged();
         return bigqueryLinkBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings,
+              com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings.Builder,
+              com.google.analytics.admin.v1alpha.EnhancedMeasurementSettingsOrBuilder>
+          enhancedMeasurementSettingsBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of EnhancedMeasurementSettings resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.EnhancedMeasurementSettings enhanced_measurement_settings = 24;
+       * </code>
+       *
+       * @return Whether the enhancedMeasurementSettings field is set.
+       */
+      @java.lang.Override
+      public boolean hasEnhancedMeasurementSettings() {
+        return resourceCase_ == 24;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of EnhancedMeasurementSettings resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.EnhancedMeasurementSettings enhanced_measurement_settings = 24;
+       * </code>
+       *
+       * @return The enhancedMeasurementSettings.
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings
+          getEnhancedMeasurementSettings() {
+        if (enhancedMeasurementSettingsBuilder_ == null) {
+          if (resourceCase_ == 24) {
+            return (com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings
+              .getDefaultInstance();
+        } else {
+          if (resourceCase_ == 24) {
+            return enhancedMeasurementSettingsBuilder_.getMessage();
+          }
+          return com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of EnhancedMeasurementSettings resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.EnhancedMeasurementSettings enhanced_measurement_settings = 24;
+       * </code>
+       */
+      public Builder setEnhancedMeasurementSettings(
+          com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings value) {
+        if (enhancedMeasurementSettingsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          enhancedMeasurementSettingsBuilder_.setMessage(value);
+        }
+        resourceCase_ = 24;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of EnhancedMeasurementSettings resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.EnhancedMeasurementSettings enhanced_measurement_settings = 24;
+       * </code>
+       */
+      public Builder setEnhancedMeasurementSettings(
+          com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings.Builder builderForValue) {
+        if (enhancedMeasurementSettingsBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          enhancedMeasurementSettingsBuilder_.setMessage(builderForValue.build());
+        }
+        resourceCase_ = 24;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of EnhancedMeasurementSettings resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.EnhancedMeasurementSettings enhanced_measurement_settings = 24;
+       * </code>
+       */
+      public Builder mergeEnhancedMeasurementSettings(
+          com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings value) {
+        if (enhancedMeasurementSettingsBuilder_ == null) {
+          if (resourceCase_ == 24
+              && resource_
+                  != com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings
+                      .getDefaultInstance()) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings.newBuilder(
+                        (com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings) resource_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          if (resourceCase_ == 24) {
+            enhancedMeasurementSettingsBuilder_.mergeFrom(value);
+          } else {
+            enhancedMeasurementSettingsBuilder_.setMessage(value);
+          }
+        }
+        resourceCase_ = 24;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of EnhancedMeasurementSettings resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.EnhancedMeasurementSettings enhanced_measurement_settings = 24;
+       * </code>
+       */
+      public Builder clearEnhancedMeasurementSettings() {
+        if (enhancedMeasurementSettingsBuilder_ == null) {
+          if (resourceCase_ == 24) {
+            resourceCase_ = 0;
+            resource_ = null;
+            onChanged();
+          }
+        } else {
+          if (resourceCase_ == 24) {
+            resourceCase_ = 0;
+            resource_ = null;
+          }
+          enhancedMeasurementSettingsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of EnhancedMeasurementSettings resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.EnhancedMeasurementSettings enhanced_measurement_settings = 24;
+       * </code>
+       */
+      public com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings.Builder
+          getEnhancedMeasurementSettingsBuilder() {
+        return getEnhancedMeasurementSettingsFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of EnhancedMeasurementSettings resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.EnhancedMeasurementSettings enhanced_measurement_settings = 24;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.EnhancedMeasurementSettingsOrBuilder
+          getEnhancedMeasurementSettingsOrBuilder() {
+        if ((resourceCase_ == 24) && (enhancedMeasurementSettingsBuilder_ != null)) {
+          return enhancedMeasurementSettingsBuilder_.getMessageOrBuilder();
+        } else {
+          if (resourceCase_ == 24) {
+            return (com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of EnhancedMeasurementSettings resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.EnhancedMeasurementSettings enhanced_measurement_settings = 24;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings,
+              com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings.Builder,
+              com.google.analytics.admin.v1alpha.EnhancedMeasurementSettingsOrBuilder>
+          getEnhancedMeasurementSettingsFieldBuilder() {
+        if (enhancedMeasurementSettingsBuilder_ == null) {
+          if (!(resourceCase_ == 24)) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings.getDefaultInstance();
+          }
+          enhancedMeasurementSettingsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings,
+                  com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings.Builder,
+                  com.google.analytics.admin.v1alpha.EnhancedMeasurementSettingsOrBuilder>(
+                  (com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings) resource_,
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        resourceCase_ = 24;
+        onChanged();
+        return enhancedMeasurementSettingsBuilder_;
       }
 
       @java.lang.Override

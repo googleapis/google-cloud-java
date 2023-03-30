@@ -28,7 +28,7 @@ public interface ListDocumentsRequestOrBuilder
    *
    * <pre>
    * Required. The parent branch resource name, such as
-   * `projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}`.
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
    * Use `default_branch` as the branch ID, to list documents under the default
    * branch.
    * If the caller does not have permission to list [Documents][]s under this
@@ -48,7 +48,7 @@ public interface ListDocumentsRequestOrBuilder
    *
    * <pre>
    * Required. The parent branch resource name, such as
-   * `projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}`.
+   * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
    * Use `default_branch` as the branch ID, to list documents under the default
    * branch.
    * If the caller does not have permission to list [Documents][]s under this

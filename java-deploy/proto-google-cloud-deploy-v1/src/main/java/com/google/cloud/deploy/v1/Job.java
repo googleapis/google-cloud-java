@@ -40,6 +40,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   private Job() {
     id_ = "";
     state_ = 0;
+    skipMessage_ = "";
     jobRun_ = "";
   }
 
@@ -148,6 +149,26 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>ABORTED = 6;</code>
      */
     ABORTED(6),
+    /**
+     *
+     *
+     * <pre>
+     * The Job was skipped.
+     * </pre>
+     *
+     * <code>SKIPPED = 7;</code>
+     */
+    SKIPPED(7),
+    /**
+     *
+     *
+     * <pre>
+     * The Job was ignored.
+     * </pre>
+     *
+     * <code>IGNORED = 8;</code>
+     */
+    IGNORED(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -221,6 +242,26 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      * <code>ABORTED = 6;</code>
      */
     public static final int ABORTED_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * The Job was skipped.
+     * </pre>
+     *
+     * <code>SKIPPED = 7;</code>
+     */
+    public static final int SKIPPED_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * The Job was ignored.
+     * </pre>
+     *
+     * <code>IGNORED = 8;</code>
+     */
+    public static final int IGNORED_VALUE = 8;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -260,6 +301,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           return FAILED;
         case 6:
           return ABORTED;
+        case 7:
+          return SKIPPED;
+        case 8:
+          return IGNORED;
         default:
           return null;
       }
@@ -322,6 +367,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DEPLOY_JOB(4),
     VERIFY_JOB(5),
+    CREATE_CHILD_ROLLOUT_JOB(6),
+    ADVANCE_CHILD_ROLLOUT_JOB(7),
     JOBTYPE_NOT_SET(0);
     private final int value;
 
@@ -344,6 +391,10 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           return DEPLOY_JOB;
         case 5:
           return VERIFY_JOB;
+        case 6:
+          return CREATE_CHILD_ROLLOUT_JOB;
+        case 7:
+          return ADVANCE_CHILD_ROLLOUT_JOB;
         case 0:
           return JOBTYPE_NOT_SET;
         default:
@@ -448,6 +499,59 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.deploy.v1.Job.State.UNRECOGNIZED : result;
   }
 
+  public static final int SKIP_MESSAGE_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object skipMessage_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional information on why the Job was skipped, if
+   * available.
+   * </pre>
+   *
+   * <code>string skip_message = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The skipMessage.
+   */
+  @java.lang.Override
+  public java.lang.String getSkipMessage() {
+    java.lang.Object ref = skipMessage_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      skipMessage_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional information on why the Job was skipped, if
+   * available.
+   * </pre>
+   *
+   * <code>string skip_message = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for skipMessage.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSkipMessageBytes() {
+    java.lang.Object ref = skipMessage_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      skipMessage_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int JOB_RUN_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
@@ -456,8 +560,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The name of the `JobRun` responsible for the most recent invocation of this
-   * Job.
+   * Output only. The name of the `JobRun` responsible for the most recent
+   * invocation of this Job.
    * </pre>
    *
    * <code>
@@ -482,8 +586,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The name of the `JobRun` responsible for the most recent invocation of this
-   * Job.
+   * Output only. The name of the `JobRun` responsible for the most recent
+   * invocation of this Job.
    * </pre>
    *
    * <code>
@@ -619,6 +723,122 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.deploy.v1.VerifyJob.getDefaultInstance();
   }
 
+  public static final int CREATE_CHILD_ROLLOUT_JOB_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A createChildRollout Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CreateChildRolloutJob create_child_rollout_job = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createChildRolloutJob field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreateChildRolloutJob() {
+    return jobTypeCase_ == 6;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A createChildRollout Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CreateChildRolloutJob create_child_rollout_job = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createChildRolloutJob.
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.CreateChildRolloutJob getCreateChildRolloutJob() {
+    if (jobTypeCase_ == 6) {
+      return (com.google.cloud.deploy.v1.CreateChildRolloutJob) jobType_;
+    }
+    return com.google.cloud.deploy.v1.CreateChildRolloutJob.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A createChildRollout Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CreateChildRolloutJob create_child_rollout_job = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.CreateChildRolloutJobOrBuilder
+      getCreateChildRolloutJobOrBuilder() {
+    if (jobTypeCase_ == 6) {
+      return (com.google.cloud.deploy.v1.CreateChildRolloutJob) jobType_;
+    }
+    return com.google.cloud.deploy.v1.CreateChildRolloutJob.getDefaultInstance();
+  }
+
+  public static final int ADVANCE_CHILD_ROLLOUT_JOB_FIELD_NUMBER = 7;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An advanceChildRollout Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.AdvanceChildRolloutJob advance_child_rollout_job = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the advanceChildRolloutJob field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdvanceChildRolloutJob() {
+    return jobTypeCase_ == 7;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An advanceChildRollout Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.AdvanceChildRolloutJob advance_child_rollout_job = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The advanceChildRolloutJob.
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.AdvanceChildRolloutJob getAdvanceChildRolloutJob() {
+    if (jobTypeCase_ == 7) {
+      return (com.google.cloud.deploy.v1.AdvanceChildRolloutJob) jobType_;
+    }
+    return com.google.cloud.deploy.v1.AdvanceChildRolloutJob.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An advanceChildRollout Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.AdvanceChildRolloutJob advance_child_rollout_job = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.AdvanceChildRolloutJobOrBuilder
+      getAdvanceChildRolloutJobOrBuilder() {
+    if (jobTypeCase_ == 7) {
+      return (com.google.cloud.deploy.v1.AdvanceChildRolloutJob) jobType_;
+    }
+    return com.google.cloud.deploy.v1.AdvanceChildRolloutJob.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -648,6 +868,15 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (jobTypeCase_ == 5) {
       output.writeMessage(5, (com.google.cloud.deploy.v1.VerifyJob) jobType_);
     }
+    if (jobTypeCase_ == 6) {
+      output.writeMessage(6, (com.google.cloud.deploy.v1.CreateChildRolloutJob) jobType_);
+    }
+    if (jobTypeCase_ == 7) {
+      output.writeMessage(7, (com.google.cloud.deploy.v1.AdvanceChildRolloutJob) jobType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(skipMessage_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, skipMessage_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -676,6 +905,19 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               5, (com.google.cloud.deploy.v1.VerifyJob) jobType_);
     }
+    if (jobTypeCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.cloud.deploy.v1.CreateChildRolloutJob) jobType_);
+    }
+    if (jobTypeCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.cloud.deploy.v1.AdvanceChildRolloutJob) jobType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(skipMessage_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, skipMessage_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -693,6 +935,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
 
     if (!getId().equals(other.getId())) return false;
     if (state_ != other.state_) return false;
+    if (!getSkipMessage().equals(other.getSkipMessage())) return false;
     if (!getJobRun().equals(other.getJobRun())) return false;
     if (!getJobTypeCase().equals(other.getJobTypeCase())) return false;
     switch (jobTypeCase_) {
@@ -701,6 +944,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         break;
       case 5:
         if (!getVerifyJob().equals(other.getVerifyJob())) return false;
+        break;
+      case 6:
+        if (!getCreateChildRolloutJob().equals(other.getCreateChildRolloutJob())) return false;
+        break;
+      case 7:
+        if (!getAdvanceChildRolloutJob().equals(other.getAdvanceChildRolloutJob())) return false;
         break;
       case 0:
       default:
@@ -720,6 +969,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getId().hashCode();
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
+    hash = (37 * hash) + SKIP_MESSAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getSkipMessage().hashCode();
     hash = (37 * hash) + JOB_RUN_FIELD_NUMBER;
     hash = (53 * hash) + getJobRun().hashCode();
     switch (jobTypeCase_) {
@@ -730,6 +981,14 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       case 5:
         hash = (37 * hash) + VERIFY_JOB_FIELD_NUMBER;
         hash = (53 * hash) + getVerifyJob().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + CREATE_CHILD_ROLLOUT_JOB_FIELD_NUMBER;
+        hash = (53 * hash) + getCreateChildRolloutJob().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + ADVANCE_CHILD_ROLLOUT_JOB_FIELD_NUMBER;
+        hash = (53 * hash) + getAdvanceChildRolloutJob().hashCode();
         break;
       case 0:
       default:
@@ -873,12 +1132,19 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       id_ = "";
       state_ = 0;
+      skipMessage_ = "";
       jobRun_ = "";
       if (deployJobBuilder_ != null) {
         deployJobBuilder_.clear();
       }
       if (verifyJobBuilder_ != null) {
         verifyJobBuilder_.clear();
+      }
+      if (createChildRolloutJobBuilder_ != null) {
+        createChildRolloutJobBuilder_.clear();
+      }
+      if (advanceChildRolloutJobBuilder_ != null) {
+        advanceChildRolloutJobBuilder_.clear();
       }
       jobTypeCase_ = 0;
       jobType_ = null;
@@ -925,6 +1191,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         result.state_ = state_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.skipMessage_ = skipMessage_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.jobRun_ = jobRun_;
       }
     }
@@ -937,6 +1206,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       if (jobTypeCase_ == 5 && verifyJobBuilder_ != null) {
         result.jobType_ = verifyJobBuilder_.build();
+      }
+      if (jobTypeCase_ == 6 && createChildRolloutJobBuilder_ != null) {
+        result.jobType_ = createChildRolloutJobBuilder_.build();
+      }
+      if (jobTypeCase_ == 7 && advanceChildRolloutJobBuilder_ != null) {
+        result.jobType_ = advanceChildRolloutJobBuilder_.build();
       }
     }
 
@@ -993,9 +1268,14 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
       }
+      if (!other.getSkipMessage().isEmpty()) {
+        skipMessage_ = other.skipMessage_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       if (!other.getJobRun().isEmpty()) {
         jobRun_ = other.jobRun_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       switch (other.getJobTypeCase()) {
@@ -1007,6 +1287,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         case VERIFY_JOB:
           {
             mergeVerifyJob(other.getVerifyJob());
+            break;
+          }
+        case CREATE_CHILD_ROLLOUT_JOB:
+          {
+            mergeCreateChildRolloutJob(other.getCreateChildRolloutJob());
+            break;
+          }
+        case ADVANCE_CHILD_ROLLOUT_JOB:
+          {
+            mergeAdvanceChildRolloutJob(other.getAdvanceChildRolloutJob());
             break;
           }
         case JOBTYPE_NOT_SET:
@@ -1055,7 +1345,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
             case 26:
               {
                 jobRun_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
@@ -1070,6 +1360,26 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
                 jobTypeCase_ = 5;
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getCreateChildRolloutJobFieldBuilder().getBuilder(), extensionRegistry);
+                jobTypeCase_ = 6;
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getAdvanceChildRolloutJobFieldBuilder().getBuilder(), extensionRegistry);
+                jobTypeCase_ = 7;
+                break;
+              } // case 58
+            case 66:
+              {
+                skipMessage_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1309,13 +1619,124 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object skipMessage_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information on why the Job was skipped, if
+     * available.
+     * </pre>
+     *
+     * <code>string skip_message = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The skipMessage.
+     */
+    public java.lang.String getSkipMessage() {
+      java.lang.Object ref = skipMessage_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        skipMessage_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information on why the Job was skipped, if
+     * available.
+     * </pre>
+     *
+     * <code>string skip_message = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for skipMessage.
+     */
+    public com.google.protobuf.ByteString getSkipMessageBytes() {
+      java.lang.Object ref = skipMessage_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        skipMessage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information on why the Job was skipped, if
+     * available.
+     * </pre>
+     *
+     * <code>string skip_message = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The skipMessage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSkipMessage(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      skipMessage_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information on why the Job was skipped, if
+     * available.
+     * </pre>
+     *
+     * <code>string skip_message = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSkipMessage() {
+      skipMessage_ = getDefaultInstance().getSkipMessage();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional information on why the Job was skipped, if
+     * available.
+     * </pre>
+     *
+     * <code>string skip_message = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for skipMessage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSkipMessageBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      skipMessage_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object jobRun_ = "";
     /**
      *
      *
      * <pre>
-     * Output only. The name of the `JobRun` responsible for the most recent invocation of this
-     * Job.
+     * Output only. The name of the `JobRun` responsible for the most recent
+     * invocation of this Job.
      * </pre>
      *
      * <code>
@@ -1339,8 +1760,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the `JobRun` responsible for the most recent invocation of this
-     * Job.
+     * Output only. The name of the `JobRun` responsible for the most recent
+     * invocation of this Job.
      * </pre>
      *
      * <code>
@@ -1364,8 +1785,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the `JobRun` responsible for the most recent invocation of this
-     * Job.
+     * Output only. The name of the `JobRun` responsible for the most recent
+     * invocation of this Job.
      * </pre>
      *
      * <code>
@@ -1380,7 +1801,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       jobRun_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1388,8 +1809,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the `JobRun` responsible for the most recent invocation of this
-     * Job.
+     * Output only. The name of the `JobRun` responsible for the most recent
+     * invocation of this Job.
      * </pre>
      *
      * <code>
@@ -1400,7 +1821,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearJobRun() {
       jobRun_ = getDefaultInstance().getJobRun();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1408,8 +1829,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the `JobRun` responsible for the most recent invocation of this
-     * Job.
+     * Output only. The name of the `JobRun` responsible for the most recent
+     * invocation of this Job.
      * </pre>
      *
      * <code>
@@ -1425,7 +1846,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       jobRun_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1876,6 +2297,468 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       jobTypeCase_ = 5;
       onChanged();
       return verifyJobBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.CreateChildRolloutJob,
+            com.google.cloud.deploy.v1.CreateChildRolloutJob.Builder,
+            com.google.cloud.deploy.v1.CreateChildRolloutJobOrBuilder>
+        createChildRolloutJobBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A createChildRollout Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CreateChildRolloutJob create_child_rollout_job = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the createChildRolloutJob field is set.
+     */
+    @java.lang.Override
+    public boolean hasCreateChildRolloutJob() {
+      return jobTypeCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A createChildRollout Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CreateChildRolloutJob create_child_rollout_job = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The createChildRolloutJob.
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.CreateChildRolloutJob getCreateChildRolloutJob() {
+      if (createChildRolloutJobBuilder_ == null) {
+        if (jobTypeCase_ == 6) {
+          return (com.google.cloud.deploy.v1.CreateChildRolloutJob) jobType_;
+        }
+        return com.google.cloud.deploy.v1.CreateChildRolloutJob.getDefaultInstance();
+      } else {
+        if (jobTypeCase_ == 6) {
+          return createChildRolloutJobBuilder_.getMessage();
+        }
+        return com.google.cloud.deploy.v1.CreateChildRolloutJob.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A createChildRollout Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CreateChildRolloutJob create_child_rollout_job = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateChildRolloutJob(
+        com.google.cloud.deploy.v1.CreateChildRolloutJob value) {
+      if (createChildRolloutJobBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        jobType_ = value;
+        onChanged();
+      } else {
+        createChildRolloutJobBuilder_.setMessage(value);
+      }
+      jobTypeCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A createChildRollout Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CreateChildRolloutJob create_child_rollout_job = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateChildRolloutJob(
+        com.google.cloud.deploy.v1.CreateChildRolloutJob.Builder builderForValue) {
+      if (createChildRolloutJobBuilder_ == null) {
+        jobType_ = builderForValue.build();
+        onChanged();
+      } else {
+        createChildRolloutJobBuilder_.setMessage(builderForValue.build());
+      }
+      jobTypeCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A createChildRollout Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CreateChildRolloutJob create_child_rollout_job = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCreateChildRolloutJob(
+        com.google.cloud.deploy.v1.CreateChildRolloutJob value) {
+      if (createChildRolloutJobBuilder_ == null) {
+        if (jobTypeCase_ == 6
+            && jobType_ != com.google.cloud.deploy.v1.CreateChildRolloutJob.getDefaultInstance()) {
+          jobType_ =
+              com.google.cloud.deploy.v1.CreateChildRolloutJob.newBuilder(
+                      (com.google.cloud.deploy.v1.CreateChildRolloutJob) jobType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          jobType_ = value;
+        }
+        onChanged();
+      } else {
+        if (jobTypeCase_ == 6) {
+          createChildRolloutJobBuilder_.mergeFrom(value);
+        } else {
+          createChildRolloutJobBuilder_.setMessage(value);
+        }
+      }
+      jobTypeCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A createChildRollout Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CreateChildRolloutJob create_child_rollout_job = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCreateChildRolloutJob() {
+      if (createChildRolloutJobBuilder_ == null) {
+        if (jobTypeCase_ == 6) {
+          jobTypeCase_ = 0;
+          jobType_ = null;
+          onChanged();
+        }
+      } else {
+        if (jobTypeCase_ == 6) {
+          jobTypeCase_ = 0;
+          jobType_ = null;
+        }
+        createChildRolloutJobBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A createChildRollout Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CreateChildRolloutJob create_child_rollout_job = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.CreateChildRolloutJob.Builder
+        getCreateChildRolloutJobBuilder() {
+      return getCreateChildRolloutJobFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A createChildRollout Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CreateChildRolloutJob create_child_rollout_job = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.CreateChildRolloutJobOrBuilder
+        getCreateChildRolloutJobOrBuilder() {
+      if ((jobTypeCase_ == 6) && (createChildRolloutJobBuilder_ != null)) {
+        return createChildRolloutJobBuilder_.getMessageOrBuilder();
+      } else {
+        if (jobTypeCase_ == 6) {
+          return (com.google.cloud.deploy.v1.CreateChildRolloutJob) jobType_;
+        }
+        return com.google.cloud.deploy.v1.CreateChildRolloutJob.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A createChildRollout Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.CreateChildRolloutJob create_child_rollout_job = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.CreateChildRolloutJob,
+            com.google.cloud.deploy.v1.CreateChildRolloutJob.Builder,
+            com.google.cloud.deploy.v1.CreateChildRolloutJobOrBuilder>
+        getCreateChildRolloutJobFieldBuilder() {
+      if (createChildRolloutJobBuilder_ == null) {
+        if (!(jobTypeCase_ == 6)) {
+          jobType_ = com.google.cloud.deploy.v1.CreateChildRolloutJob.getDefaultInstance();
+        }
+        createChildRolloutJobBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.deploy.v1.CreateChildRolloutJob,
+                com.google.cloud.deploy.v1.CreateChildRolloutJob.Builder,
+                com.google.cloud.deploy.v1.CreateChildRolloutJobOrBuilder>(
+                (com.google.cloud.deploy.v1.CreateChildRolloutJob) jobType_,
+                getParentForChildren(),
+                isClean());
+        jobType_ = null;
+      }
+      jobTypeCase_ = 6;
+      onChanged();
+      return createChildRolloutJobBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.AdvanceChildRolloutJob,
+            com.google.cloud.deploy.v1.AdvanceChildRolloutJob.Builder,
+            com.google.cloud.deploy.v1.AdvanceChildRolloutJobOrBuilder>
+        advanceChildRolloutJobBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An advanceChildRollout Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.AdvanceChildRolloutJob advance_child_rollout_job = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the advanceChildRolloutJob field is set.
+     */
+    @java.lang.Override
+    public boolean hasAdvanceChildRolloutJob() {
+      return jobTypeCase_ == 7;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An advanceChildRollout Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.AdvanceChildRolloutJob advance_child_rollout_job = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The advanceChildRolloutJob.
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.AdvanceChildRolloutJob getAdvanceChildRolloutJob() {
+      if (advanceChildRolloutJobBuilder_ == null) {
+        if (jobTypeCase_ == 7) {
+          return (com.google.cloud.deploy.v1.AdvanceChildRolloutJob) jobType_;
+        }
+        return com.google.cloud.deploy.v1.AdvanceChildRolloutJob.getDefaultInstance();
+      } else {
+        if (jobTypeCase_ == 7) {
+          return advanceChildRolloutJobBuilder_.getMessage();
+        }
+        return com.google.cloud.deploy.v1.AdvanceChildRolloutJob.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An advanceChildRollout Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.AdvanceChildRolloutJob advance_child_rollout_job = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAdvanceChildRolloutJob(
+        com.google.cloud.deploy.v1.AdvanceChildRolloutJob value) {
+      if (advanceChildRolloutJobBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        jobType_ = value;
+        onChanged();
+      } else {
+        advanceChildRolloutJobBuilder_.setMessage(value);
+      }
+      jobTypeCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An advanceChildRollout Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.AdvanceChildRolloutJob advance_child_rollout_job = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAdvanceChildRolloutJob(
+        com.google.cloud.deploy.v1.AdvanceChildRolloutJob.Builder builderForValue) {
+      if (advanceChildRolloutJobBuilder_ == null) {
+        jobType_ = builderForValue.build();
+        onChanged();
+      } else {
+        advanceChildRolloutJobBuilder_.setMessage(builderForValue.build());
+      }
+      jobTypeCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An advanceChildRollout Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.AdvanceChildRolloutJob advance_child_rollout_job = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeAdvanceChildRolloutJob(
+        com.google.cloud.deploy.v1.AdvanceChildRolloutJob value) {
+      if (advanceChildRolloutJobBuilder_ == null) {
+        if (jobTypeCase_ == 7
+            && jobType_ != com.google.cloud.deploy.v1.AdvanceChildRolloutJob.getDefaultInstance()) {
+          jobType_ =
+              com.google.cloud.deploy.v1.AdvanceChildRolloutJob.newBuilder(
+                      (com.google.cloud.deploy.v1.AdvanceChildRolloutJob) jobType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          jobType_ = value;
+        }
+        onChanged();
+      } else {
+        if (jobTypeCase_ == 7) {
+          advanceChildRolloutJobBuilder_.mergeFrom(value);
+        } else {
+          advanceChildRolloutJobBuilder_.setMessage(value);
+        }
+      }
+      jobTypeCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An advanceChildRollout Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.AdvanceChildRolloutJob advance_child_rollout_job = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearAdvanceChildRolloutJob() {
+      if (advanceChildRolloutJobBuilder_ == null) {
+        if (jobTypeCase_ == 7) {
+          jobTypeCase_ = 0;
+          jobType_ = null;
+          onChanged();
+        }
+      } else {
+        if (jobTypeCase_ == 7) {
+          jobTypeCase_ = 0;
+          jobType_ = null;
+        }
+        advanceChildRolloutJobBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An advanceChildRollout Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.AdvanceChildRolloutJob advance_child_rollout_job = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.AdvanceChildRolloutJob.Builder
+        getAdvanceChildRolloutJobBuilder() {
+      return getAdvanceChildRolloutJobFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An advanceChildRollout Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.AdvanceChildRolloutJob advance_child_rollout_job = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.AdvanceChildRolloutJobOrBuilder
+        getAdvanceChildRolloutJobOrBuilder() {
+      if ((jobTypeCase_ == 7) && (advanceChildRolloutJobBuilder_ != null)) {
+        return advanceChildRolloutJobBuilder_.getMessageOrBuilder();
+      } else {
+        if (jobTypeCase_ == 7) {
+          return (com.google.cloud.deploy.v1.AdvanceChildRolloutJob) jobType_;
+        }
+        return com.google.cloud.deploy.v1.AdvanceChildRolloutJob.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An advanceChildRollout Job.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.AdvanceChildRolloutJob advance_child_rollout_job = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.AdvanceChildRolloutJob,
+            com.google.cloud.deploy.v1.AdvanceChildRolloutJob.Builder,
+            com.google.cloud.deploy.v1.AdvanceChildRolloutJobOrBuilder>
+        getAdvanceChildRolloutJobFieldBuilder() {
+      if (advanceChildRolloutJobBuilder_ == null) {
+        if (!(jobTypeCase_ == 7)) {
+          jobType_ = com.google.cloud.deploy.v1.AdvanceChildRolloutJob.getDefaultInstance();
+        }
+        advanceChildRolloutJobBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.deploy.v1.AdvanceChildRolloutJob,
+                com.google.cloud.deploy.v1.AdvanceChildRolloutJob.Builder,
+                com.google.cloud.deploy.v1.AdvanceChildRolloutJobOrBuilder>(
+                (com.google.cloud.deploy.v1.AdvanceChildRolloutJob) jobType_,
+                getParentForChildren(),
+                isClean());
+        jobType_ = null;
+      }
+      jobTypeCase_ = 7;
+      onChanged();
+      return advanceChildRolloutJobBuilder_;
     }
 
     @java.lang.Override

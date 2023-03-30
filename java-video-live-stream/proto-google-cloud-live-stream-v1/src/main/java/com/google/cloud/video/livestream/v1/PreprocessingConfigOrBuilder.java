@@ -27,6 +27,41 @@ public interface PreprocessingConfigOrBuilder
    *
    *
    * <pre>
+   * Audio preprocessing configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.PreprocessingConfig.Audio audio = 1;</code>
+   *
+   * @return Whether the audio field is set.
+   */
+  boolean hasAudio();
+  /**
+   *
+   *
+   * <pre>
+   * Audio preprocessing configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.PreprocessingConfig.Audio audio = 1;</code>
+   *
+   * @return The audio.
+   */
+  com.google.cloud.video.livestream.v1.PreprocessingConfig.Audio getAudio();
+  /**
+   *
+   *
+   * <pre>
+   * Audio preprocessing configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.PreprocessingConfig.Audio audio = 1;</code>
+   */
+  com.google.cloud.video.livestream.v1.PreprocessingConfig.AudioOrBuilder getAudioOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Specify the video cropping configuration.
    * </pre>
    *

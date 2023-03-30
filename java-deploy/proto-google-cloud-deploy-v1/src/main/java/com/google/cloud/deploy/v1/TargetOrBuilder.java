@@ -129,8 +129,8 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Optional. User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Google Cloud Deploy. See
    * https://google.aip.dev/128#annotations for more details such as format and
    * size limitations.
    * </pre>
@@ -143,8 +143,8 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Optional. User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Google Cloud Deploy. See
    * https://google.aip.dev/128#annotations for more details such as format and
    * size limitations.
    * </pre>
@@ -160,8 +160,8 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Optional. User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Google Cloud Deploy. See
    * https://google.aip.dev/128#annotations for more details such as format and
    * size limitations.
    * </pre>
@@ -174,8 +174,8 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Optional. User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Google Cloud Deploy. See
    * https://google.aip.dev/128#annotations for more details such as format and
    * size limitations.
    * </pre>
@@ -192,8 +192,8 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Optional. User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Google Cloud Deploy. See
    * https://google.aip.dev/128#annotations for more details such as format and
    * size limitations.
    * </pre>
@@ -504,8 +504,43 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Optional. This checksum is computed by the server based on the value of other
-   * fields, and may be sent on update and delete requests to ensure the
+   * Information specifying a multiTarget.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+   *
+   * @return Whether the multiTarget field is set.
+   */
+  boolean hasMultiTarget();
+  /**
+   *
+   *
+   * <pre>
+   * Information specifying a multiTarget.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+   *
+   * @return The multiTarget.
+   */
+  com.google.cloud.deploy.v1.MultiTarget getMultiTarget();
+  /**
+   *
+   *
+   * <pre>
+   * Information specifying a multiTarget.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+   */
+  com.google.cloud.deploy.v1.MultiTargetOrBuilder getMultiTargetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This checksum is computed by the server based on the value of
+   * other fields, and may be sent on update and delete requests to ensure the
    * client has an up-to-date value before proceeding.
    * </pre>
    *
@@ -518,8 +553,8 @@ public interface TargetOrBuilder
    *
    *
    * <pre>
-   * Optional. This checksum is computed by the server based on the value of other
-   * fields, and may be sent on update and delete requests to ensure the
+   * Optional. This checksum is computed by the server based on the value of
+   * other fields, and may be sent on update and delete requests to ensure the
    * client has an up-to-date value before proceeding.
    * </pre>
    *

@@ -44,6 +44,7 @@ public class AsyncMoveAssignment {
                       .toString())
               .setDestinationId(
                   ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
+              .setAssignmentId("assignmentId-1603989304")
               .build();
       ApiFuture<Assignment> future =
           reservationServiceClient.moveAssignmentCallable().futureCall(request);

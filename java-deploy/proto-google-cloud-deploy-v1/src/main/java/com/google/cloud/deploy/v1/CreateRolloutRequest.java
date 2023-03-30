@@ -41,6 +41,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
     parent_ = "";
     rolloutId_ = "";
     requestId_ = "";
+    startingPhaseId_ = "";
   }
 
   @java.lang.Override
@@ -305,8 +306,8 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. If set to true, the request is validated and the user is provided with
-   * an expected result, but no actual change is made.
+   * Optional. If set to true, the request is validated and the user is provided
+   * with an expected result, but no actual change is made.
    * </pre>
    *
    * <code>bool validate_only = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -316,6 +317,59 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public boolean getValidateOnly() {
     return validateOnly_;
+  }
+
+  public static final int STARTING_PHASE_ID_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object startingPhaseId_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The starting phase ID for the `Rollout`. If empty the `Rollout`
+   * will start at the first phase.
+   * </pre>
+   *
+   * <code>string starting_phase_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The startingPhaseId.
+   */
+  @java.lang.Override
+  public java.lang.String getStartingPhaseId() {
+    java.lang.Object ref = startingPhaseId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      startingPhaseId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The starting phase ID for the `Rollout`. If empty the `Rollout`
+   * will start at the first phase.
+   * </pre>
+   *
+   * <code>string starting_phase_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for startingPhaseId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getStartingPhaseIdBytes() {
+    java.lang.Object ref = startingPhaseId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      startingPhaseId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -347,6 +401,9 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
     if (validateOnly_ != false) {
       output.writeBool(5, validateOnly_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(startingPhaseId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, startingPhaseId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -370,6 +427,9 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
     }
     if (validateOnly_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, validateOnly_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(startingPhaseId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, startingPhaseId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -395,6 +455,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
     }
     if (!getRequestId().equals(other.getRequestId())) return false;
     if (getValidateOnly() != other.getValidateOnly()) return false;
+    if (!getStartingPhaseId().equals(other.getStartingPhaseId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -418,6 +479,8 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
     hash = (53 * hash) + getRequestId().hashCode();
     hash = (37 * hash) + VALIDATE_ONLY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getValidateOnly());
+    hash = (37 * hash) + STARTING_PHASE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getStartingPhaseId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -566,6 +629,7 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
       }
       requestId_ = "";
       validateOnly_ = false;
+      startingPhaseId_ = "";
       return this;
     }
 
@@ -616,6 +680,9 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.validateOnly_ = validateOnly_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.startingPhaseId_ = startingPhaseId_;
       }
     }
 
@@ -686,6 +753,11 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
       if (other.getValidateOnly() != false) {
         setValidateOnly(other.getValidateOnly());
       }
+      if (!other.getStartingPhaseId().isEmpty()) {
+        startingPhaseId_ = other.startingPhaseId_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -742,6 +814,12 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000010;
                 break;
               } // case 40
+            case 58:
+              {
+                startingPhaseId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1346,8 +1424,8 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. If set to true, the request is validated and the user is provided with
-     * an expected result, but no actual change is made.
+     * Optional. If set to true, the request is validated and the user is provided
+     * with an expected result, but no actual change is made.
      * </pre>
      *
      * <code>bool validate_only = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1362,8 +1440,8 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. If set to true, the request is validated and the user is provided with
-     * an expected result, but no actual change is made.
+     * Optional. If set to true, the request is validated and the user is provided
+     * with an expected result, but no actual change is made.
      * </pre>
      *
      * <code>bool validate_only = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1382,8 +1460,8 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. If set to true, the request is validated and the user is provided with
-     * an expected result, but no actual change is made.
+     * Optional. If set to true, the request is validated and the user is provided
+     * with an expected result, but no actual change is made.
      * </pre>
      *
      * <code>bool validate_only = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1393,6 +1471,117 @@ public final class CreateRolloutRequest extends com.google.protobuf.GeneratedMes
     public Builder clearValidateOnly() {
       bitField0_ = (bitField0_ & ~0x00000010);
       validateOnly_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object startingPhaseId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The starting phase ID for the `Rollout`. If empty the `Rollout`
+     * will start at the first phase.
+     * </pre>
+     *
+     * <code>string starting_phase_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The startingPhaseId.
+     */
+    public java.lang.String getStartingPhaseId() {
+      java.lang.Object ref = startingPhaseId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        startingPhaseId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The starting phase ID for the `Rollout`. If empty the `Rollout`
+     * will start at the first phase.
+     * </pre>
+     *
+     * <code>string starting_phase_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for startingPhaseId.
+     */
+    public com.google.protobuf.ByteString getStartingPhaseIdBytes() {
+      java.lang.Object ref = startingPhaseId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        startingPhaseId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The starting phase ID for the `Rollout`. If empty the `Rollout`
+     * will start at the first phase.
+     * </pre>
+     *
+     * <code>string starting_phase_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The startingPhaseId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStartingPhaseId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      startingPhaseId_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The starting phase ID for the `Rollout`. If empty the `Rollout`
+     * will start at the first phase.
+     * </pre>
+     *
+     * <code>string starting_phase_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStartingPhaseId() {
+      startingPhaseId_ = getDefaultInstance().getStartingPhaseId();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The starting phase ID for the `Rollout`. If empty the `Rollout`
+     * will start at the first phase.
+     * </pre>
+     *
+     * <code>string starting_phase_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for startingPhaseId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStartingPhaseIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      startingPhaseId_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

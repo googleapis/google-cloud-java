@@ -697,7 +697,7 @@ public final class WebSecurityScannerGrpc {
    * attempts to exercise as many user inputs and event handlers as possible.
    * </pre>
    */
-  public abstract static class WebSecurityScannerImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -706,7 +706,7 @@ public final class WebSecurityScannerGrpc {
      * Creates a new ScanConfig.
      * </pre>
      */
-    public void createScanConfig(
+    default void createScanConfig(
         com.google.cloud.websecurityscanner.v1.CreateScanConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.websecurityscanner.v1.ScanConfig>
             responseObserver) {
@@ -721,7 +721,7 @@ public final class WebSecurityScannerGrpc {
      * Deletes an existing ScanConfig and its child resources.
      * </pre>
      */
-    public void deleteScanConfig(
+    default void deleteScanConfig(
         com.google.cloud.websecurityscanner.v1.DeleteScanConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -735,7 +735,7 @@ public final class WebSecurityScannerGrpc {
      * Gets a ScanConfig.
      * </pre>
      */
-    public void getScanConfig(
+    default void getScanConfig(
         com.google.cloud.websecurityscanner.v1.GetScanConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.websecurityscanner.v1.ScanConfig>
             responseObserver) {
@@ -750,7 +750,7 @@ public final class WebSecurityScannerGrpc {
      * Lists ScanConfigs under a given project.
      * </pre>
      */
-    public void listScanConfigs(
+    default void listScanConfigs(
         com.google.cloud.websecurityscanner.v1.ListScanConfigsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.websecurityscanner.v1.ListScanConfigsResponse>
             responseObserver) {
@@ -765,7 +765,7 @@ public final class WebSecurityScannerGrpc {
      * Updates a ScanConfig. This method support partial update of a ScanConfig.
      * </pre>
      */
-    public void updateScanConfig(
+    default void updateScanConfig(
         com.google.cloud.websecurityscanner.v1.UpdateScanConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.websecurityscanner.v1.ScanConfig>
             responseObserver) {
@@ -780,7 +780,7 @@ public final class WebSecurityScannerGrpc {
      * Start a ScanRun according to the given ScanConfig.
      * </pre>
      */
-    public void startScanRun(
+    default void startScanRun(
         com.google.cloud.websecurityscanner.v1.StartScanRunRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.websecurityscanner.v1.ScanRun>
             responseObserver) {
@@ -795,7 +795,7 @@ public final class WebSecurityScannerGrpc {
      * Gets a ScanRun.
      * </pre>
      */
-    public void getScanRun(
+    default void getScanRun(
         com.google.cloud.websecurityscanner.v1.GetScanRunRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.websecurityscanner.v1.ScanRun>
             responseObserver) {
@@ -810,7 +810,7 @@ public final class WebSecurityScannerGrpc {
      * stop time.
      * </pre>
      */
-    public void listScanRuns(
+    default void listScanRuns(
         com.google.cloud.websecurityscanner.v1.ListScanRunsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.websecurityscanner.v1.ListScanRunsResponse>
             responseObserver) {
@@ -825,7 +825,7 @@ public final class WebSecurityScannerGrpc {
      * Stops a ScanRun. The stopped ScanRun is returned.
      * </pre>
      */
-    public void stopScanRun(
+    default void stopScanRun(
         com.google.cloud.websecurityscanner.v1.StopScanRunRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.websecurityscanner.v1.ScanRun>
             responseObserver) {
@@ -840,7 +840,7 @@ public final class WebSecurityScannerGrpc {
      * List CrawledUrls under a given ScanRun.
      * </pre>
      */
-    public void listCrawledUrls(
+    default void listCrawledUrls(
         com.google.cloud.websecurityscanner.v1.ListCrawledUrlsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.websecurityscanner.v1.ListCrawledUrlsResponse>
             responseObserver) {
@@ -855,7 +855,7 @@ public final class WebSecurityScannerGrpc {
      * Gets a Finding.
      * </pre>
      */
-    public void getFinding(
+    default void getFinding(
         com.google.cloud.websecurityscanner.v1.GetFindingRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.websecurityscanner.v1.Finding>
             responseObserver) {
@@ -869,7 +869,7 @@ public final class WebSecurityScannerGrpc {
      * List Findings under a given ScanRun.
      * </pre>
      */
-    public void listFindings(
+    default void listFindings(
         com.google.cloud.websecurityscanner.v1.ListFindingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.websecurityscanner.v1.ListFindingsResponse>
             responseObserver) {
@@ -884,7 +884,7 @@ public final class WebSecurityScannerGrpc {
      * List all FindingTypeStats under a given ScanRun.
      * </pre>
      */
-    public void listFindingTypeStats(
+    default void listFindingTypeStats(
         com.google.cloud.websecurityscanner.v1.ListFindingTypeStatsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.websecurityscanner.v1.ListFindingTypeStatsResponse>
@@ -892,104 +892,28 @@ public final class WebSecurityScannerGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListFindingTypeStatsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service WebSecurityScanner.
+   *
+   * <pre>
+   * Web Security Scanner Service identifies security vulnerabilities in web
+   * applications hosted on Google Cloud. It crawls your application, and
+   * attempts to exercise as many user inputs and event handlers as possible.
+   * </pre>
+   */
+  public abstract static class WebSecurityScannerImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateScanConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.websecurityscanner.v1.CreateScanConfigRequest,
-                      com.google.cloud.websecurityscanner.v1.ScanConfig>(
-                      this, METHODID_CREATE_SCAN_CONFIG)))
-          .addMethod(
-              getDeleteScanConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.websecurityscanner.v1.DeleteScanConfigRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_SCAN_CONFIG)))
-          .addMethod(
-              getGetScanConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.websecurityscanner.v1.GetScanConfigRequest,
-                      com.google.cloud.websecurityscanner.v1.ScanConfig>(
-                      this, METHODID_GET_SCAN_CONFIG)))
-          .addMethod(
-              getListScanConfigsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.websecurityscanner.v1.ListScanConfigsRequest,
-                      com.google.cloud.websecurityscanner.v1.ListScanConfigsResponse>(
-                      this, METHODID_LIST_SCAN_CONFIGS)))
-          .addMethod(
-              getUpdateScanConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.websecurityscanner.v1.UpdateScanConfigRequest,
-                      com.google.cloud.websecurityscanner.v1.ScanConfig>(
-                      this, METHODID_UPDATE_SCAN_CONFIG)))
-          .addMethod(
-              getStartScanRunMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.websecurityscanner.v1.StartScanRunRequest,
-                      com.google.cloud.websecurityscanner.v1.ScanRun>(
-                      this, METHODID_START_SCAN_RUN)))
-          .addMethod(
-              getGetScanRunMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.websecurityscanner.v1.GetScanRunRequest,
-                      com.google.cloud.websecurityscanner.v1.ScanRun>(this, METHODID_GET_SCAN_RUN)))
-          .addMethod(
-              getListScanRunsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.websecurityscanner.v1.ListScanRunsRequest,
-                      com.google.cloud.websecurityscanner.v1.ListScanRunsResponse>(
-                      this, METHODID_LIST_SCAN_RUNS)))
-          .addMethod(
-              getStopScanRunMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.websecurityscanner.v1.StopScanRunRequest,
-                      com.google.cloud.websecurityscanner.v1.ScanRun>(
-                      this, METHODID_STOP_SCAN_RUN)))
-          .addMethod(
-              getListCrawledUrlsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.websecurityscanner.v1.ListCrawledUrlsRequest,
-                      com.google.cloud.websecurityscanner.v1.ListCrawledUrlsResponse>(
-                      this, METHODID_LIST_CRAWLED_URLS)))
-          .addMethod(
-              getGetFindingMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.websecurityscanner.v1.GetFindingRequest,
-                      com.google.cloud.websecurityscanner.v1.Finding>(this, METHODID_GET_FINDING)))
-          .addMethod(
-              getListFindingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.websecurityscanner.v1.ListFindingsRequest,
-                      com.google.cloud.websecurityscanner.v1.ListFindingsResponse>(
-                      this, METHODID_LIST_FINDINGS)))
-          .addMethod(
-              getListFindingTypeStatsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.websecurityscanner.v1.ListFindingTypeStatsRequest,
-                      com.google.cloud.websecurityscanner.v1.ListFindingTypeStatsResponse>(
-                      this, METHODID_LIST_FINDING_TYPE_STATS)))
-          .build();
+      return WebSecurityScannerGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service WebSecurityScanner.
    *
    * <pre>
    * Web Security Scanner Service identifies security vulnerabilities in web
@@ -1229,7 +1153,7 @@ public final class WebSecurityScannerGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service WebSecurityScanner.
    *
    * <pre>
    * Web Security Scanner Service identifies security vulnerabilities in web
@@ -1422,7 +1346,7 @@ public final class WebSecurityScannerGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service WebSecurityScanner.
    *
    * <pre>
    * Web Security Scanner Service identifies security vulnerabilities in web
@@ -1645,10 +1569,10 @@ public final class WebSecurityScannerGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final WebSecurityScannerImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(WebSecurityScannerImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1753,6 +1677,100 @@ public final class WebSecurityScannerGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateScanConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.websecurityscanner.v1.CreateScanConfigRequest,
+                    com.google.cloud.websecurityscanner.v1.ScanConfig>(
+                    service, METHODID_CREATE_SCAN_CONFIG)))
+        .addMethod(
+            getDeleteScanConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.websecurityscanner.v1.DeleteScanConfigRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_SCAN_CONFIG)))
+        .addMethod(
+            getGetScanConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.websecurityscanner.v1.GetScanConfigRequest,
+                    com.google.cloud.websecurityscanner.v1.ScanConfig>(
+                    service, METHODID_GET_SCAN_CONFIG)))
+        .addMethod(
+            getListScanConfigsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.websecurityscanner.v1.ListScanConfigsRequest,
+                    com.google.cloud.websecurityscanner.v1.ListScanConfigsResponse>(
+                    service, METHODID_LIST_SCAN_CONFIGS)))
+        .addMethod(
+            getUpdateScanConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.websecurityscanner.v1.UpdateScanConfigRequest,
+                    com.google.cloud.websecurityscanner.v1.ScanConfig>(
+                    service, METHODID_UPDATE_SCAN_CONFIG)))
+        .addMethod(
+            getStartScanRunMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.websecurityscanner.v1.StartScanRunRequest,
+                    com.google.cloud.websecurityscanner.v1.ScanRun>(
+                    service, METHODID_START_SCAN_RUN)))
+        .addMethod(
+            getGetScanRunMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.websecurityscanner.v1.GetScanRunRequest,
+                    com.google.cloud.websecurityscanner.v1.ScanRun>(
+                    service, METHODID_GET_SCAN_RUN)))
+        .addMethod(
+            getListScanRunsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.websecurityscanner.v1.ListScanRunsRequest,
+                    com.google.cloud.websecurityscanner.v1.ListScanRunsResponse>(
+                    service, METHODID_LIST_SCAN_RUNS)))
+        .addMethod(
+            getStopScanRunMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.websecurityscanner.v1.StopScanRunRequest,
+                    com.google.cloud.websecurityscanner.v1.ScanRun>(
+                    service, METHODID_STOP_SCAN_RUN)))
+        .addMethod(
+            getListCrawledUrlsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.websecurityscanner.v1.ListCrawledUrlsRequest,
+                    com.google.cloud.websecurityscanner.v1.ListCrawledUrlsResponse>(
+                    service, METHODID_LIST_CRAWLED_URLS)))
+        .addMethod(
+            getGetFindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.websecurityscanner.v1.GetFindingRequest,
+                    com.google.cloud.websecurityscanner.v1.Finding>(service, METHODID_GET_FINDING)))
+        .addMethod(
+            getListFindingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.websecurityscanner.v1.ListFindingsRequest,
+                    com.google.cloud.websecurityscanner.v1.ListFindingsResponse>(
+                    service, METHODID_LIST_FINDINGS)))
+        .addMethod(
+            getListFindingTypeStatsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.websecurityscanner.v1.ListFindingTypeStatsRequest,
+                    com.google.cloud.websecurityscanner.v1.ListFindingTypeStatsResponse>(
+                    service, METHODID_LIST_FINDING_TYPE_STATS)))
+        .build();
   }
 
   private abstract static class WebSecurityScannerBaseDescriptorSupplier

@@ -414,7 +414,7 @@ public final class ResourcesProto {
           + "d.google.com/go/alloydb/apiv1alpha/alloy"
           + "dbpb;alloydbpb\252\002\034Google.Cloud.AlloyDb.V1"
           + "Alpha\312\002\034Google\\Cloud\\AlloyDb\\V1alpha\352\002\037G"
-          + "oogle::Cloud::AlloyDb::V1alpha\352A\246\001\n(clou"
+          + "oogle::Cloud::AlloyDB::V1alpha\352A\246\001\n(clou"
           + "dkms.googleapis.com/CryptoKeyVersion\022zpr"
           + "ojects/{project}/locations/{location}/ke"
           + "yRings/{key_ring}/cryptoKeys/{crypto_key"

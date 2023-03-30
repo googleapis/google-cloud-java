@@ -610,6 +610,16 @@ public enum TollPass implements com.google.protobuf.ProtocolMessageEnum {
    * MI, USA.
    * </pre>
    *
+   * <code>US_MI_BCPASS = 94;</code>
+   */
+  US_MI_BCPASS(94),
+  /**
+   *
+   *
+   * <pre>
+   * MI, USA.
+   * </pre>
+   *
    * <code>US_MI_GROSSE_ILE_TOLL_BRIDGE_PASS_TAG = 37;</code>
    */
   US_MI_GROSSE_ILE_TOLL_BRIDGE_PASS_TAG(37),
@@ -1548,6 +1558,16 @@ public enum TollPass implements com.google.protobuf.ProtocolMessageEnum {
    * MI, USA.
    * </pre>
    *
+   * <code>US_MI_BCPASS = 94;</code>
+   */
+  public static final int US_MI_BCPASS_VALUE = 94;
+  /**
+   *
+   *
+   * <pre>
+   * MI, USA.
+   * </pre>
+   *
    * <code>US_MI_GROSSE_ILE_TOLL_BRIDGE_PASS_TAG = 37;</code>
    */
   public static final int US_MI_GROSSE_ILE_TOLL_BRIDGE_PASS_TAG_VALUE = 37;
@@ -2038,6 +2058,8 @@ public enum TollPass implements com.google.protobuf.ProtocolMessageEnum {
         return US_ME_EZPASSME;
       case 36:
         return US_MI_AMBASSADOR_BRIDGE_PREMIER_COMMUTER_CARD;
+      case 94:
+        return US_MI_BCPASS;
       case 37:
         return US_MI_GROSSE_ILE_TOLL_BRIDGE_PASS_TAG;
       case 38:

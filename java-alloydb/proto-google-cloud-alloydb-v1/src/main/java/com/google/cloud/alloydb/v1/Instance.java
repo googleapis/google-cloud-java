@@ -587,10 +587,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The Availability type of an instance. Potential values:
-   *   &lt;br&gt;&lt;b&gt;ZONAL&lt;/b&gt;: The instance serves data from only one zone.
-   * Outages in that zone affect instance availability.
-   *   &lt;br&gt;&lt;b&gt;REGIONAL&lt;/b&gt;: The instance can serve data from more than one zone
-   *   in a region (it is highly available).
+   * - ZONAL: The instance serves data from only one zone. Outages in that
+   * zone affect instance availability.
+   * - REGIONAL: The instance can serve data from more than one zone in a
+   * region (it is highly available).
    * </pre>
    *
    * Protobuf enum {@code google.cloud.alloydb.v1.Instance.AvailabilityType}

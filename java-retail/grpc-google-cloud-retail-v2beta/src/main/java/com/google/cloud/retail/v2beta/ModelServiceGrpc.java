@@ -398,7 +398,7 @@ public final class ModelServiceGrpc {
    * * Control their tuning schedule.
    * </pre>
    */
-  public abstract static class ModelServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -407,7 +407,7 @@ public final class ModelServiceGrpc {
      * Creates a new model.
      * </pre>
      */
-    public void createModel(
+    default void createModel(
         com.google.cloud.retail.v2beta.CreateModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -421,7 +421,7 @@ public final class ModelServiceGrpc {
      * Pauses the training of an existing model.
      * </pre>
      */
-    public void pauseModel(
+    default void pauseModel(
         com.google.cloud.retail.v2beta.PauseModelRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2beta.Model> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPauseModelMethod(), responseObserver);
@@ -434,7 +434,7 @@ public final class ModelServiceGrpc {
      * Resumes the training of an existing model.
      * </pre>
      */
-    public void resumeModel(
+    default void resumeModel(
         com.google.cloud.retail.v2beta.ResumeModelRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2beta.Model> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -448,7 +448,7 @@ public final class ModelServiceGrpc {
      * Deletes an existing model.
      * </pre>
      */
-    public void deleteModel(
+    default void deleteModel(
         com.google.cloud.retail.v2beta.DeleteModelRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -462,7 +462,7 @@ public final class ModelServiceGrpc {
      * Lists all the models linked to this event store.
      * </pre>
      */
-    public void listModels(
+    default void listModels(
         com.google.cloud.retail.v2beta.ListModelsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2beta.ListModelsResponse>
             responseObserver) {
@@ -479,7 +479,7 @@ public final class ModelServiceGrpc {
      * If other values are provided, this API method ignores them.
      * </pre>
      */
-    public void updateModel(
+    default void updateModel(
         com.google.cloud.retail.v2beta.UpdateModelRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2beta.Model> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -493,64 +493,40 @@ public final class ModelServiceGrpc {
      * Tunes an existing model.
      * </pre>
      */
-    public void tuneModel(
+    default void tuneModel(
         com.google.cloud.retail.v2beta.TuneModelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTuneModelMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ModelService.
+   *
+   * <pre>
+   * Service for performing CRUD operations on models.
+   * Recommendation models contain all the metadata necessary to generate a set of
+   * models for the `Predict()` API. A model is queried
+   * indirectly via a ServingConfig, which associates a model with a
+   * given Placement (e.g. Frequently Bought Together on Home Page).
+   * This service allows you to do the following:
+   * * Initiate training of a model.
+   * * Pause training of an existing model.
+   * * List all the available models along with their metadata.
+   * * Control their tuning schedule.
+   * </pre>
+   */
+  public abstract static class ModelServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateModelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2beta.CreateModelRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_MODEL)))
-          .addMethod(
-              getPauseModelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2beta.PauseModelRequest,
-                      com.google.cloud.retail.v2beta.Model>(this, METHODID_PAUSE_MODEL)))
-          .addMethod(
-              getResumeModelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2beta.ResumeModelRequest,
-                      com.google.cloud.retail.v2beta.Model>(this, METHODID_RESUME_MODEL)))
-          .addMethod(
-              getDeleteModelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2beta.DeleteModelRequest, com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_MODEL)))
-          .addMethod(
-              getListModelsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2beta.ListModelsRequest,
-                      com.google.cloud.retail.v2beta.ListModelsResponse>(
-                      this, METHODID_LIST_MODELS)))
-          .addMethod(
-              getUpdateModelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2beta.UpdateModelRequest,
-                      com.google.cloud.retail.v2beta.Model>(this, METHODID_UPDATE_MODEL)))
-          .addMethod(
-              getTuneModelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2beta.TuneModelRequest,
-                      com.google.longrunning.Operation>(this, METHODID_TUNE_MODEL)))
-          .build();
+      return ModelServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ModelService.
    *
    * <pre>
    * Service for performing CRUD operations on models.
@@ -688,7 +664,7 @@ public final class ModelServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ModelService.
    *
    * <pre>
    * Service for performing CRUD operations on models.
@@ -811,7 +787,7 @@ public final class ModelServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service ModelService.
    *
    * <pre>
    * Service for performing CRUD operations on models.
@@ -947,10 +923,10 @@ public final class ModelServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ModelServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ModelServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1009,6 +985,54 @@ public final class ModelServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2beta.CreateModelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_MODEL)))
+        .addMethod(
+            getPauseModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2beta.PauseModelRequest,
+                    com.google.cloud.retail.v2beta.Model>(service, METHODID_PAUSE_MODEL)))
+        .addMethod(
+            getResumeModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2beta.ResumeModelRequest,
+                    com.google.cloud.retail.v2beta.Model>(service, METHODID_RESUME_MODEL)))
+        .addMethod(
+            getDeleteModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2beta.DeleteModelRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_MODEL)))
+        .addMethod(
+            getListModelsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2beta.ListModelsRequest,
+                    com.google.cloud.retail.v2beta.ListModelsResponse>(
+                    service, METHODID_LIST_MODELS)))
+        .addMethod(
+            getUpdateModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2beta.UpdateModelRequest,
+                    com.google.cloud.retail.v2beta.Model>(service, METHODID_UPDATE_MODEL)))
+        .addMethod(
+            getTuneModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2beta.TuneModelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_TUNE_MODEL)))
+        .build();
   }
 
   private abstract static class ModelServiceBaseDescriptorSupplier

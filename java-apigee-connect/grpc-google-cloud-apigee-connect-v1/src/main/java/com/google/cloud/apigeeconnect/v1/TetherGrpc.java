@@ -131,7 +131,7 @@ public final class TetherGrpc {
    * requiring customers to open firewalls on their runtime plane.
    * </pre>
    */
-  public abstract static class TetherImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -146,28 +146,33 @@ public final class TetherGrpc {
      * The listener streams http requests and the dialer streams http responses.
      * </pre>
      */
-    public io.grpc.stub.StreamObserver<com.google.cloud.apigeeconnect.v1.EgressResponse> egress(
+    default io.grpc.stub.StreamObserver<com.google.cloud.apigeeconnect.v1.EgressResponse> egress(
         io.grpc.stub.StreamObserver<com.google.cloud.apigeeconnect.v1.EgressRequest>
             responseObserver) {
       return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(
           getEgressMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Tether.
+   *
+   * <pre>
+   * Tether provides a way for the control plane to send HTTP API requests to
+   * services in data planes that runs in a remote datacenter without
+   * requiring customers to open firewalls on their runtime plane.
+   * </pre>
+   */
+  public abstract static class TetherImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getEgressMethod(),
-              io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeconnect.v1.EgressResponse,
-                      com.google.cloud.apigeeconnect.v1.EgressRequest>(this, METHODID_EGRESS)))
-          .build();
+      return TetherGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Tether.
    *
    * <pre>
    * Tether provides a way for the control plane to send HTTP API requests to
@@ -207,7 +212,7 @@ public final class TetherGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Tether.
    *
    * <pre>
    * Tether provides a way for the control plane to send HTTP API requests to
@@ -228,7 +233,7 @@ public final class TetherGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Tether.
    *
    * <pre>
    * Tether provides a way for the control plane to send HTTP API requests to
@@ -255,10 +260,10 @@ public final class TetherGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final TetherImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(TetherImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -286,6 +291,17 @@ public final class TetherGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getEgressMethod(),
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeconnect.v1.EgressResponse,
+                    com.google.cloud.apigeeconnect.v1.EgressRequest>(service, METHODID_EGRESS)))
+        .build();
   }
 
   private abstract static class TetherBaseDescriptorSupplier

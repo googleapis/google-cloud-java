@@ -768,6 +768,37 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).listBigQueryLinksSettings();
   }
 
+  /** Returns the object with the settings used for calls to getEnhancedMeasurementSettings. */
+  public UnaryCallSettings<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
+      getEnhancedMeasurementSettingsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .getEnhancedMeasurementSettingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateEnhancedMeasurementSettings. */
+  public UnaryCallSettings<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
+      updateEnhancedMeasurementSettingsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .updateEnhancedMeasurementSettingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createConnectedSiteTag. */
+  public UnaryCallSettings<CreateConnectedSiteTagRequest, CreateConnectedSiteTagResponse>
+      createConnectedSiteTagSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).createConnectedSiteTagSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteConnectedSiteTag. */
+  public UnaryCallSettings<DeleteConnectedSiteTagRequest, Empty> deleteConnectedSiteTagSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).deleteConnectedSiteTagSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listConnectedSiteTags. */
+  public UnaryCallSettings<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
+      listConnectedSiteTagsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).listConnectedSiteTagsSettings();
+  }
+
   public static final AnalyticsAdminServiceSettings create(AnalyticsAdminServiceStubSettings stub)
       throws IOException {
     return new AnalyticsAdminServiceSettings.Builder(stub.toBuilder()).build();
@@ -1563,6 +1594,38 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
             ListBigQueryLinksRequest, ListBigQueryLinksResponse, ListBigQueryLinksPagedResponse>
         listBigQueryLinksSettings() {
       return getStubSettingsBuilder().listBigQueryLinksSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getEnhancedMeasurementSettings. */
+    public UnaryCallSettings.Builder<
+            GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
+        getEnhancedMeasurementSettingsSettings() {
+      return getStubSettingsBuilder().getEnhancedMeasurementSettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateEnhancedMeasurementSettings. */
+    public UnaryCallSettings.Builder<
+            UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
+        updateEnhancedMeasurementSettingsSettings() {
+      return getStubSettingsBuilder().updateEnhancedMeasurementSettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createConnectedSiteTag. */
+    public UnaryCallSettings.Builder<CreateConnectedSiteTagRequest, CreateConnectedSiteTagResponse>
+        createConnectedSiteTagSettings() {
+      return getStubSettingsBuilder().createConnectedSiteTagSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteConnectedSiteTag. */
+    public UnaryCallSettings.Builder<DeleteConnectedSiteTagRequest, Empty>
+        deleteConnectedSiteTagSettings() {
+      return getStubSettingsBuilder().deleteConnectedSiteTagSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listConnectedSiteTags. */
+    public UnaryCallSettings.Builder<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
+        listConnectedSiteTagsSettings() {
+      return getStubSettingsBuilder().listConnectedSiteTagsSettings();
     }
 
     @Override

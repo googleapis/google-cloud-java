@@ -412,7 +412,7 @@ public final class OsLoginServiceGrpc {
    * public keys for logging into virtual machines on Google Cloud Platform.
    * </pre>
    */
-  public abstract static class OsLoginServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -421,7 +421,7 @@ public final class OsLoginServiceGrpc {
      * Create an SSH public key
      * </pre>
      */
-    public void createSshPublicKey(
+    default void createSshPublicKey(
         com.google.cloud.oslogin.v1.CreateSshPublicKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
             responseObserver) {
@@ -436,7 +436,7 @@ public final class OsLoginServiceGrpc {
      * Deletes a POSIX account.
      * </pre>
      */
-    public void deletePosixAccount(
+    default void deletePosixAccount(
         com.google.cloud.oslogin.v1.DeletePosixAccountRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -450,7 +450,7 @@ public final class OsLoginServiceGrpc {
      * Deletes an SSH public key.
      * </pre>
      */
-    public void deleteSshPublicKey(
+    default void deleteSshPublicKey(
         com.google.cloud.oslogin.v1.DeleteSshPublicKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -465,7 +465,7 @@ public final class OsLoginServiceGrpc {
      * on Google Compute Engine.
      * </pre>
      */
-    public void getLoginProfile(
+    default void getLoginProfile(
         com.google.cloud.oslogin.v1.GetLoginProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.oslogin.v1.LoginProfile> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -479,7 +479,7 @@ public final class OsLoginServiceGrpc {
      * Retrieves an SSH public key.
      * </pre>
      */
-    public void getSshPublicKey(
+    default void getSshPublicKey(
         com.google.cloud.oslogin.v1.GetSshPublicKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
             responseObserver) {
@@ -496,7 +496,7 @@ public final class OsLoginServiceGrpc {
      * login profile.
      * </pre>
      */
-    public void importSshPublicKey(
+    default void importSshPublicKey(
         com.google.cloud.oslogin.v1.ImportSshPublicKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.oslogin.v1.ImportSshPublicKeyResponse>
             responseObserver) {
@@ -512,69 +512,35 @@ public final class OsLoginServiceGrpc {
      * supports patch semantics.
      * </pre>
      */
-    public void updateSshPublicKey(
+    default void updateSshPublicKey(
         com.google.cloud.oslogin.v1.UpdateSshPublicKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateSshPublicKeyMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service OsLoginService.
+   *
+   * <pre>
+   * Cloud OS Login API
+   * The Cloud OS Login API allows you to manage users and their associated SSH
+   * public keys for logging into virtual machines on Google Cloud Platform.
+   * </pre>
+   */
+  public abstract static class OsLoginServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateSshPublicKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.oslogin.v1.CreateSshPublicKeyRequest,
-                      com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>(
-                      this, METHODID_CREATE_SSH_PUBLIC_KEY)))
-          .addMethod(
-              getDeletePosixAccountMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.oslogin.v1.DeletePosixAccountRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_POSIX_ACCOUNT)))
-          .addMethod(
-              getDeleteSshPublicKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.oslogin.v1.DeleteSshPublicKeyRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_SSH_PUBLIC_KEY)))
-          .addMethod(
-              getGetLoginProfileMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.oslogin.v1.GetLoginProfileRequest,
-                      com.google.cloud.oslogin.v1.LoginProfile>(this, METHODID_GET_LOGIN_PROFILE)))
-          .addMethod(
-              getGetSshPublicKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.oslogin.v1.GetSshPublicKeyRequest,
-                      com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>(
-                      this, METHODID_GET_SSH_PUBLIC_KEY)))
-          .addMethod(
-              getImportSshPublicKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.oslogin.v1.ImportSshPublicKeyRequest,
-                      com.google.cloud.oslogin.v1.ImportSshPublicKeyResponse>(
-                      this, METHODID_IMPORT_SSH_PUBLIC_KEY)))
-          .addMethod(
-              getUpdateSshPublicKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.oslogin.v1.UpdateSshPublicKeyRequest,
-                      com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>(
-                      this, METHODID_UPDATE_SSH_PUBLIC_KEY)))
-          .build();
+      return OsLoginServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service OsLoginService.
    *
    * <pre>
    * Cloud OS Login API
@@ -715,7 +681,7 @@ public final class OsLoginServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service OsLoginService.
    *
    * <pre>
    * Cloud OS Login API
@@ -832,7 +798,7 @@ public final class OsLoginServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service OsLoginService.
    *
    * <pre>
    * Cloud OS Login API
@@ -966,10 +932,10 @@ public final class OsLoginServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final OsLoginServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(OsLoginServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1035,6 +1001,57 @@ public final class OsLoginServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateSshPublicKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oslogin.v1.CreateSshPublicKeyRequest,
+                    com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>(
+                    service, METHODID_CREATE_SSH_PUBLIC_KEY)))
+        .addMethod(
+            getDeletePosixAccountMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oslogin.v1.DeletePosixAccountRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_POSIX_ACCOUNT)))
+        .addMethod(
+            getDeleteSshPublicKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oslogin.v1.DeleteSshPublicKeyRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_SSH_PUBLIC_KEY)))
+        .addMethod(
+            getGetLoginProfileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oslogin.v1.GetLoginProfileRequest,
+                    com.google.cloud.oslogin.v1.LoginProfile>(service, METHODID_GET_LOGIN_PROFILE)))
+        .addMethod(
+            getGetSshPublicKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oslogin.v1.GetSshPublicKeyRequest,
+                    com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>(
+                    service, METHODID_GET_SSH_PUBLIC_KEY)))
+        .addMethod(
+            getImportSshPublicKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oslogin.v1.ImportSshPublicKeyRequest,
+                    com.google.cloud.oslogin.v1.ImportSshPublicKeyResponse>(
+                    service, METHODID_IMPORT_SSH_PUBLIC_KEY)))
+        .addMethod(
+            getUpdateSshPublicKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oslogin.v1.UpdateSshPublicKeyRequest,
+                    com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey>(
+                    service, METHODID_UPDATE_SSH_PUBLIC_KEY)))
+        .build();
   }
 
   private abstract static class OsLoginServiceBaseDescriptorSupplier

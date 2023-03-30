@@ -1764,7 +1764,7 @@ public final class DataformGrpc {
    * tables in BigQuery.
    * </pre>
    */
-  public abstract static class DataformImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -1773,7 +1773,7 @@ public final class DataformGrpc {
      * Lists Repositories in a given project and location.
      * </pre>
      */
-    public void listRepositories(
+    default void listRepositories(
         com.google.cloud.dataform.v1alpha2.ListRepositoriesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1alpha2.ListRepositoriesResponse>
             responseObserver) {
@@ -1788,7 +1788,7 @@ public final class DataformGrpc {
      * Fetches a single Repository.
      * </pre>
      */
-    public void getRepository(
+    default void getRepository(
         com.google.cloud.dataform.v1alpha2.GetRepositoryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1alpha2.Repository>
             responseObserver) {
@@ -1803,7 +1803,7 @@ public final class DataformGrpc {
      * Creates a new Repository in a given project and location.
      * </pre>
      */
-    public void createRepository(
+    default void createRepository(
         com.google.cloud.dataform.v1alpha2.CreateRepositoryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1alpha2.Repository>
             responseObserver) {
@@ -1818,7 +1818,7 @@ public final class DataformGrpc {
      * Updates a single Repository.
      * </pre>
      */
-    public void updateRepository(
+    default void updateRepository(
         com.google.cloud.dataform.v1alpha2.UpdateRepositoryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1alpha2.Repository>
             responseObserver) {
@@ -1833,7 +1833,7 @@ public final class DataformGrpc {
      * Deletes a single Repository.
      * </pre>
      */
-    public void deleteRepository(
+    default void deleteRepository(
         com.google.cloud.dataform.v1alpha2.DeleteRepositoryRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1847,7 +1847,7 @@ public final class DataformGrpc {
      * Fetches a Repository's remote branches.
      * </pre>
      */
-    public void fetchRemoteBranches(
+    default void fetchRemoteBranches(
         com.google.cloud.dataform.v1alpha2.FetchRemoteBranchesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1alpha2.FetchRemoteBranchesResponse>
             responseObserver) {
@@ -1862,7 +1862,7 @@ public final class DataformGrpc {
      * Lists Workspaces in a given Repository.
      * </pre>
      */
-    public void listWorkspaces(
+    default void listWorkspaces(
         com.google.cloud.dataform.v1alpha2.ListWorkspacesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1alpha2.ListWorkspacesResponse>
             responseObserver) {
@@ -1877,7 +1877,7 @@ public final class DataformGrpc {
      * Fetches a single Workspace.
      * </pre>
      */
-    public void getWorkspace(
+    default void getWorkspace(
         com.google.cloud.dataform.v1alpha2.GetWorkspaceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1alpha2.Workspace>
             responseObserver) {
@@ -1892,7 +1892,7 @@ public final class DataformGrpc {
      * Creates a new Workspace in a given Repository.
      * </pre>
      */
-    public void createWorkspace(
+    default void createWorkspace(
         com.google.cloud.dataform.v1alpha2.CreateWorkspaceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1alpha2.Workspace>
             responseObserver) {
@@ -1907,7 +1907,7 @@ public final class DataformGrpc {
      * Deletes a single Workspace.
      * </pre>
      */
-    public void deleteWorkspace(
+    default void deleteWorkspace(
         com.google.cloud.dataform.v1alpha2.DeleteWorkspaceRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1921,7 +1921,7 @@ public final class DataformGrpc {
      * Installs dependency NPM packages (inside a Workspace).
      * </pre>
      */
-    public void installNpmPackages(
+    default void installNpmPackages(
         com.google.cloud.dataform.v1alpha2.InstallNpmPackagesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1alpha2.InstallNpmPackagesResponse>
             responseObserver) {
@@ -1936,7 +1936,7 @@ public final class DataformGrpc {
      * Pulls Git commits from the Repository's remote into a Workspace.
      * </pre>
      */
-    public void pullGitCommits(
+    default void pullGitCommits(
         com.google.cloud.dataform.v1alpha2.PullGitCommitsRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1950,7 +1950,7 @@ public final class DataformGrpc {
      * Pushes Git commits from a Workspace to the Repository's remote.
      * </pre>
      */
-    public void pushGitCommits(
+    default void pushGitCommits(
         com.google.cloud.dataform.v1alpha2.PushGitCommitsRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1964,7 +1964,7 @@ public final class DataformGrpc {
      * Fetches Git statuses for the files in a Workspace.
      * </pre>
      */
-    public void fetchFileGitStatuses(
+    default void fetchFileGitStatuses(
         com.google.cloud.dataform.v1alpha2.FetchFileGitStatusesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1alpha2.FetchFileGitStatusesResponse>
             responseObserver) {
@@ -1979,7 +1979,7 @@ public final class DataformGrpc {
      * Fetches Git ahead/behind against a remote branch.
      * </pre>
      */
-    public void fetchGitAheadBehind(
+    default void fetchGitAheadBehind(
         com.google.cloud.dataform.v1alpha2.FetchGitAheadBehindRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1alpha2.FetchGitAheadBehindResponse>
             responseObserver) {
@@ -1994,7 +1994,7 @@ public final class DataformGrpc {
      * Applies a Git commit for uncommitted files in a Workspace.
      * </pre>
      */
-    public void commitWorkspaceChanges(
+    default void commitWorkspaceChanges(
         com.google.cloud.dataform.v1alpha2.CommitWorkspaceChangesRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2008,7 +2008,7 @@ public final class DataformGrpc {
      * Performs a Git reset for uncommitted files in a Workspace.
      * </pre>
      */
-    public void resetWorkspaceChanges(
+    default void resetWorkspaceChanges(
         com.google.cloud.dataform.v1alpha2.ResetWorkspaceChangesRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2022,7 +2022,7 @@ public final class DataformGrpc {
      * Fetches Git diff for an uncommitted file in a Workspace.
      * </pre>
      */
-    public void fetchFileDiff(
+    default void fetchFileDiff(
         com.google.cloud.dataform.v1alpha2.FetchFileDiffRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1alpha2.FetchFileDiffResponse>
             responseObserver) {
@@ -2037,7 +2037,7 @@ public final class DataformGrpc {
      * Returns the contents of a given Workspace directory.
      * </pre>
      */
-    public void queryDirectoryContents(
+    default void queryDirectoryContents(
         com.google.cloud.dataform.v1alpha2.QueryDirectoryContentsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.dataform.v1alpha2.QueryDirectoryContentsResponse>
@@ -2053,7 +2053,7 @@ public final class DataformGrpc {
      * Creates a directory inside a Workspace.
      * </pre>
      */
-    public void makeDirectory(
+    default void makeDirectory(
         com.google.cloud.dataform.v1alpha2.MakeDirectoryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1alpha2.MakeDirectoryResponse>
             responseObserver) {
@@ -2068,7 +2068,7 @@ public final class DataformGrpc {
      * Deletes a directory (inside a Workspace) and all of its contents.
      * </pre>
      */
-    public void removeDirectory(
+    default void removeDirectory(
         com.google.cloud.dataform.v1alpha2.RemoveDirectoryRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2083,7 +2083,7 @@ public final class DataformGrpc {
      * location.
      * </pre>
      */
-    public void moveDirectory(
+    default void moveDirectory(
         com.google.cloud.dataform.v1alpha2.MoveDirectoryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1alpha2.MoveDirectoryResponse>
             responseObserver) {
@@ -2098,7 +2098,7 @@ public final class DataformGrpc {
      * Returns the contents of a file (inside a Workspace).
      * </pre>
      */
-    public void readFile(
+    default void readFile(
         com.google.cloud.dataform.v1alpha2.ReadFileRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1alpha2.ReadFileResponse>
             responseObserver) {
@@ -2112,7 +2112,7 @@ public final class DataformGrpc {
      * Deletes a file (inside a Workspace).
      * </pre>
      */
-    public void removeFile(
+    default void removeFile(
         com.google.cloud.dataform.v1alpha2.RemoveFileRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRemoveFileMethod(), responseObserver);
@@ -2125,7 +2125,7 @@ public final class DataformGrpc {
      * Moves a file (inside a Workspace) to a new location.
      * </pre>
      */
-    public void moveFile(
+    default void moveFile(
         com.google.cloud.dataform.v1alpha2.MoveFileRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1alpha2.MoveFileResponse>
             responseObserver) {
@@ -2139,7 +2139,7 @@ public final class DataformGrpc {
      * Writes to a file (inside a Workspace).
      * </pre>
      */
-    public void writeFile(
+    default void writeFile(
         com.google.cloud.dataform.v1alpha2.WriteFileRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1alpha2.WriteFileResponse>
             responseObserver) {
@@ -2153,7 +2153,7 @@ public final class DataformGrpc {
      * Lists CompilationResults in a given Repository.
      * </pre>
      */
-    public void listCompilationResults(
+    default void listCompilationResults(
         com.google.cloud.dataform.v1alpha2.ListCompilationResultsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.dataform.v1alpha2.ListCompilationResultsResponse>
@@ -2169,7 +2169,7 @@ public final class DataformGrpc {
      * Fetches a single CompilationResult.
      * </pre>
      */
-    public void getCompilationResult(
+    default void getCompilationResult(
         com.google.cloud.dataform.v1alpha2.GetCompilationResultRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1alpha2.CompilationResult>
             responseObserver) {
@@ -2184,7 +2184,7 @@ public final class DataformGrpc {
      * Creates a new CompilationResult in a given project and location.
      * </pre>
      */
-    public void createCompilationResult(
+    default void createCompilationResult(
         com.google.cloud.dataform.v1alpha2.CreateCompilationResultRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1alpha2.CompilationResult>
             responseObserver) {
@@ -2199,7 +2199,7 @@ public final class DataformGrpc {
      * Returns CompilationResultActions in a given CompilationResult.
      * </pre>
      */
-    public void queryCompilationResultActions(
+    default void queryCompilationResultActions(
         com.google.cloud.dataform.v1alpha2.QueryCompilationResultActionsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.dataform.v1alpha2.QueryCompilationResultActionsResponse>
@@ -2215,7 +2215,7 @@ public final class DataformGrpc {
      * Lists WorkflowInvocations in a given Repository.
      * </pre>
      */
-    public void listWorkflowInvocations(
+    default void listWorkflowInvocations(
         com.google.cloud.dataform.v1alpha2.ListWorkflowInvocationsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.dataform.v1alpha2.ListWorkflowInvocationsResponse>
@@ -2231,7 +2231,7 @@ public final class DataformGrpc {
      * Fetches a single WorkflowInvocation.
      * </pre>
      */
-    public void getWorkflowInvocation(
+    default void getWorkflowInvocation(
         com.google.cloud.dataform.v1alpha2.GetWorkflowInvocationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1alpha2.WorkflowInvocation>
             responseObserver) {
@@ -2246,7 +2246,7 @@ public final class DataformGrpc {
      * Creates a new WorkflowInvocation in a given Repository.
      * </pre>
      */
-    public void createWorkflowInvocation(
+    default void createWorkflowInvocation(
         com.google.cloud.dataform.v1alpha2.CreateWorkflowInvocationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1alpha2.WorkflowInvocation>
             responseObserver) {
@@ -2261,7 +2261,7 @@ public final class DataformGrpc {
      * Deletes a single WorkflowInvocation.
      * </pre>
      */
-    public void deleteWorkflowInvocation(
+    default void deleteWorkflowInvocation(
         com.google.cloud.dataform.v1alpha2.DeleteWorkflowInvocationRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2275,7 +2275,7 @@ public final class DataformGrpc {
      * Requests cancellation of a running WorkflowInvocation.
      * </pre>
      */
-    public void cancelWorkflowInvocation(
+    default void cancelWorkflowInvocation(
         com.google.cloud.dataform.v1alpha2.CancelWorkflowInvocationRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2289,7 +2289,7 @@ public final class DataformGrpc {
      * Returns WorkflowInvocationActions in a given WorkflowInvocation.
      * </pre>
      */
-    public void queryWorkflowInvocationActions(
+    default void queryWorkflowInvocationActions(
         com.google.cloud.dataform.v1alpha2.QueryWorkflowInvocationActionsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.dataform.v1alpha2.QueryWorkflowInvocationActionsResponse>
@@ -2297,257 +2297,26 @@ public final class DataformGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getQueryWorkflowInvocationActionsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Dataform.
+   *
+   * <pre>
+   * Dataform is a service to develop, create, document, test, and update curated
+   * tables in BigQuery.
+   * </pre>
+   */
+  public abstract static class DataformImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListRepositoriesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.ListRepositoriesRequest,
-                      com.google.cloud.dataform.v1alpha2.ListRepositoriesResponse>(
-                      this, METHODID_LIST_REPOSITORIES)))
-          .addMethod(
-              getGetRepositoryMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.GetRepositoryRequest,
-                      com.google.cloud.dataform.v1alpha2.Repository>(
-                      this, METHODID_GET_REPOSITORY)))
-          .addMethod(
-              getCreateRepositoryMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.CreateRepositoryRequest,
-                      com.google.cloud.dataform.v1alpha2.Repository>(
-                      this, METHODID_CREATE_REPOSITORY)))
-          .addMethod(
-              getUpdateRepositoryMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.UpdateRepositoryRequest,
-                      com.google.cloud.dataform.v1alpha2.Repository>(
-                      this, METHODID_UPDATE_REPOSITORY)))
-          .addMethod(
-              getDeleteRepositoryMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.DeleteRepositoryRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_REPOSITORY)))
-          .addMethod(
-              getFetchRemoteBranchesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.FetchRemoteBranchesRequest,
-                      com.google.cloud.dataform.v1alpha2.FetchRemoteBranchesResponse>(
-                      this, METHODID_FETCH_REMOTE_BRANCHES)))
-          .addMethod(
-              getListWorkspacesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.ListWorkspacesRequest,
-                      com.google.cloud.dataform.v1alpha2.ListWorkspacesResponse>(
-                      this, METHODID_LIST_WORKSPACES)))
-          .addMethod(
-              getGetWorkspaceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.GetWorkspaceRequest,
-                      com.google.cloud.dataform.v1alpha2.Workspace>(this, METHODID_GET_WORKSPACE)))
-          .addMethod(
-              getCreateWorkspaceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.CreateWorkspaceRequest,
-                      com.google.cloud.dataform.v1alpha2.Workspace>(
-                      this, METHODID_CREATE_WORKSPACE)))
-          .addMethod(
-              getDeleteWorkspaceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.DeleteWorkspaceRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_WORKSPACE)))
-          .addMethod(
-              getInstallNpmPackagesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.InstallNpmPackagesRequest,
-                      com.google.cloud.dataform.v1alpha2.InstallNpmPackagesResponse>(
-                      this, METHODID_INSTALL_NPM_PACKAGES)))
-          .addMethod(
-              getPullGitCommitsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.PullGitCommitsRequest,
-                      com.google.protobuf.Empty>(this, METHODID_PULL_GIT_COMMITS)))
-          .addMethod(
-              getPushGitCommitsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.PushGitCommitsRequest,
-                      com.google.protobuf.Empty>(this, METHODID_PUSH_GIT_COMMITS)))
-          .addMethod(
-              getFetchFileGitStatusesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.FetchFileGitStatusesRequest,
-                      com.google.cloud.dataform.v1alpha2.FetchFileGitStatusesResponse>(
-                      this, METHODID_FETCH_FILE_GIT_STATUSES)))
-          .addMethod(
-              getFetchGitAheadBehindMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.FetchGitAheadBehindRequest,
-                      com.google.cloud.dataform.v1alpha2.FetchGitAheadBehindResponse>(
-                      this, METHODID_FETCH_GIT_AHEAD_BEHIND)))
-          .addMethod(
-              getCommitWorkspaceChangesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.CommitWorkspaceChangesRequest,
-                      com.google.protobuf.Empty>(this, METHODID_COMMIT_WORKSPACE_CHANGES)))
-          .addMethod(
-              getResetWorkspaceChangesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.ResetWorkspaceChangesRequest,
-                      com.google.protobuf.Empty>(this, METHODID_RESET_WORKSPACE_CHANGES)))
-          .addMethod(
-              getFetchFileDiffMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.FetchFileDiffRequest,
-                      com.google.cloud.dataform.v1alpha2.FetchFileDiffResponse>(
-                      this, METHODID_FETCH_FILE_DIFF)))
-          .addMethod(
-              getQueryDirectoryContentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.QueryDirectoryContentsRequest,
-                      com.google.cloud.dataform.v1alpha2.QueryDirectoryContentsResponse>(
-                      this, METHODID_QUERY_DIRECTORY_CONTENTS)))
-          .addMethod(
-              getMakeDirectoryMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.MakeDirectoryRequest,
-                      com.google.cloud.dataform.v1alpha2.MakeDirectoryResponse>(
-                      this, METHODID_MAKE_DIRECTORY)))
-          .addMethod(
-              getRemoveDirectoryMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.RemoveDirectoryRequest,
-                      com.google.protobuf.Empty>(this, METHODID_REMOVE_DIRECTORY)))
-          .addMethod(
-              getMoveDirectoryMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.MoveDirectoryRequest,
-                      com.google.cloud.dataform.v1alpha2.MoveDirectoryResponse>(
-                      this, METHODID_MOVE_DIRECTORY)))
-          .addMethod(
-              getReadFileMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.ReadFileRequest,
-                      com.google.cloud.dataform.v1alpha2.ReadFileResponse>(
-                      this, METHODID_READ_FILE)))
-          .addMethod(
-              getRemoveFileMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.RemoveFileRequest,
-                      com.google.protobuf.Empty>(this, METHODID_REMOVE_FILE)))
-          .addMethod(
-              getMoveFileMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.MoveFileRequest,
-                      com.google.cloud.dataform.v1alpha2.MoveFileResponse>(
-                      this, METHODID_MOVE_FILE)))
-          .addMethod(
-              getWriteFileMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.WriteFileRequest,
-                      com.google.cloud.dataform.v1alpha2.WriteFileResponse>(
-                      this, METHODID_WRITE_FILE)))
-          .addMethod(
-              getListCompilationResultsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.ListCompilationResultsRequest,
-                      com.google.cloud.dataform.v1alpha2.ListCompilationResultsResponse>(
-                      this, METHODID_LIST_COMPILATION_RESULTS)))
-          .addMethod(
-              getGetCompilationResultMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.GetCompilationResultRequest,
-                      com.google.cloud.dataform.v1alpha2.CompilationResult>(
-                      this, METHODID_GET_COMPILATION_RESULT)))
-          .addMethod(
-              getCreateCompilationResultMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.CreateCompilationResultRequest,
-                      com.google.cloud.dataform.v1alpha2.CompilationResult>(
-                      this, METHODID_CREATE_COMPILATION_RESULT)))
-          .addMethod(
-              getQueryCompilationResultActionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.QueryCompilationResultActionsRequest,
-                      com.google.cloud.dataform.v1alpha2.QueryCompilationResultActionsResponse>(
-                      this, METHODID_QUERY_COMPILATION_RESULT_ACTIONS)))
-          .addMethod(
-              getListWorkflowInvocationsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.ListWorkflowInvocationsRequest,
-                      com.google.cloud.dataform.v1alpha2.ListWorkflowInvocationsResponse>(
-                      this, METHODID_LIST_WORKFLOW_INVOCATIONS)))
-          .addMethod(
-              getGetWorkflowInvocationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.GetWorkflowInvocationRequest,
-                      com.google.cloud.dataform.v1alpha2.WorkflowInvocation>(
-                      this, METHODID_GET_WORKFLOW_INVOCATION)))
-          .addMethod(
-              getCreateWorkflowInvocationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.CreateWorkflowInvocationRequest,
-                      com.google.cloud.dataform.v1alpha2.WorkflowInvocation>(
-                      this, METHODID_CREATE_WORKFLOW_INVOCATION)))
-          .addMethod(
-              getDeleteWorkflowInvocationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.DeleteWorkflowInvocationRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_WORKFLOW_INVOCATION)))
-          .addMethod(
-              getCancelWorkflowInvocationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.CancelWorkflowInvocationRequest,
-                      com.google.protobuf.Empty>(this, METHODID_CANCEL_WORKFLOW_INVOCATION)))
-          .addMethod(
-              getQueryWorkflowInvocationActionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataform.v1alpha2.QueryWorkflowInvocationActionsRequest,
-                      com.google.cloud.dataform.v1alpha2.QueryWorkflowInvocationActionsResponse>(
-                      this, METHODID_QUERY_WORKFLOW_INVOCATION_ACTIONS)))
-          .build();
+      return DataformGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Dataform.
    *
    * <pre>
    * Dataform is a service to develop, create, document, test, and update curated
@@ -3166,7 +2935,7 @@ public final class DataformGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Dataform.
    *
    * <pre>
    * Dataform is a service to develop, create, document, test, and update curated
@@ -3658,7 +3427,7 @@ public final class DataformGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Dataform.
    *
    * <pre>
    * Dataform is a service to develop, create, document, test, and update curated
@@ -4230,10 +3999,10 @@ public final class DataformGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final DataformImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(DataformImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -4476,6 +4245,252 @@ public final class DataformGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListRepositoriesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.ListRepositoriesRequest,
+                    com.google.cloud.dataform.v1alpha2.ListRepositoriesResponse>(
+                    service, METHODID_LIST_REPOSITORIES)))
+        .addMethod(
+            getGetRepositoryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.GetRepositoryRequest,
+                    com.google.cloud.dataform.v1alpha2.Repository>(
+                    service, METHODID_GET_REPOSITORY)))
+        .addMethod(
+            getCreateRepositoryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.CreateRepositoryRequest,
+                    com.google.cloud.dataform.v1alpha2.Repository>(
+                    service, METHODID_CREATE_REPOSITORY)))
+        .addMethod(
+            getUpdateRepositoryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.UpdateRepositoryRequest,
+                    com.google.cloud.dataform.v1alpha2.Repository>(
+                    service, METHODID_UPDATE_REPOSITORY)))
+        .addMethod(
+            getDeleteRepositoryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.DeleteRepositoryRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_REPOSITORY)))
+        .addMethod(
+            getFetchRemoteBranchesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.FetchRemoteBranchesRequest,
+                    com.google.cloud.dataform.v1alpha2.FetchRemoteBranchesResponse>(
+                    service, METHODID_FETCH_REMOTE_BRANCHES)))
+        .addMethod(
+            getListWorkspacesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.ListWorkspacesRequest,
+                    com.google.cloud.dataform.v1alpha2.ListWorkspacesResponse>(
+                    service, METHODID_LIST_WORKSPACES)))
+        .addMethod(
+            getGetWorkspaceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.GetWorkspaceRequest,
+                    com.google.cloud.dataform.v1alpha2.Workspace>(service, METHODID_GET_WORKSPACE)))
+        .addMethod(
+            getCreateWorkspaceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.CreateWorkspaceRequest,
+                    com.google.cloud.dataform.v1alpha2.Workspace>(
+                    service, METHODID_CREATE_WORKSPACE)))
+        .addMethod(
+            getDeleteWorkspaceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.DeleteWorkspaceRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_WORKSPACE)))
+        .addMethod(
+            getInstallNpmPackagesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.InstallNpmPackagesRequest,
+                    com.google.cloud.dataform.v1alpha2.InstallNpmPackagesResponse>(
+                    service, METHODID_INSTALL_NPM_PACKAGES)))
+        .addMethod(
+            getPullGitCommitsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.PullGitCommitsRequest,
+                    com.google.protobuf.Empty>(service, METHODID_PULL_GIT_COMMITS)))
+        .addMethod(
+            getPushGitCommitsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.PushGitCommitsRequest,
+                    com.google.protobuf.Empty>(service, METHODID_PUSH_GIT_COMMITS)))
+        .addMethod(
+            getFetchFileGitStatusesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.FetchFileGitStatusesRequest,
+                    com.google.cloud.dataform.v1alpha2.FetchFileGitStatusesResponse>(
+                    service, METHODID_FETCH_FILE_GIT_STATUSES)))
+        .addMethod(
+            getFetchGitAheadBehindMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.FetchGitAheadBehindRequest,
+                    com.google.cloud.dataform.v1alpha2.FetchGitAheadBehindResponse>(
+                    service, METHODID_FETCH_GIT_AHEAD_BEHIND)))
+        .addMethod(
+            getCommitWorkspaceChangesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.CommitWorkspaceChangesRequest,
+                    com.google.protobuf.Empty>(service, METHODID_COMMIT_WORKSPACE_CHANGES)))
+        .addMethod(
+            getResetWorkspaceChangesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.ResetWorkspaceChangesRequest,
+                    com.google.protobuf.Empty>(service, METHODID_RESET_WORKSPACE_CHANGES)))
+        .addMethod(
+            getFetchFileDiffMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.FetchFileDiffRequest,
+                    com.google.cloud.dataform.v1alpha2.FetchFileDiffResponse>(
+                    service, METHODID_FETCH_FILE_DIFF)))
+        .addMethod(
+            getQueryDirectoryContentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.QueryDirectoryContentsRequest,
+                    com.google.cloud.dataform.v1alpha2.QueryDirectoryContentsResponse>(
+                    service, METHODID_QUERY_DIRECTORY_CONTENTS)))
+        .addMethod(
+            getMakeDirectoryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.MakeDirectoryRequest,
+                    com.google.cloud.dataform.v1alpha2.MakeDirectoryResponse>(
+                    service, METHODID_MAKE_DIRECTORY)))
+        .addMethod(
+            getRemoveDirectoryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.RemoveDirectoryRequest,
+                    com.google.protobuf.Empty>(service, METHODID_REMOVE_DIRECTORY)))
+        .addMethod(
+            getMoveDirectoryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.MoveDirectoryRequest,
+                    com.google.cloud.dataform.v1alpha2.MoveDirectoryResponse>(
+                    service, METHODID_MOVE_DIRECTORY)))
+        .addMethod(
+            getReadFileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.ReadFileRequest,
+                    com.google.cloud.dataform.v1alpha2.ReadFileResponse>(
+                    service, METHODID_READ_FILE)))
+        .addMethod(
+            getRemoveFileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.RemoveFileRequest,
+                    com.google.protobuf.Empty>(service, METHODID_REMOVE_FILE)))
+        .addMethod(
+            getMoveFileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.MoveFileRequest,
+                    com.google.cloud.dataform.v1alpha2.MoveFileResponse>(
+                    service, METHODID_MOVE_FILE)))
+        .addMethod(
+            getWriteFileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.WriteFileRequest,
+                    com.google.cloud.dataform.v1alpha2.WriteFileResponse>(
+                    service, METHODID_WRITE_FILE)))
+        .addMethod(
+            getListCompilationResultsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.ListCompilationResultsRequest,
+                    com.google.cloud.dataform.v1alpha2.ListCompilationResultsResponse>(
+                    service, METHODID_LIST_COMPILATION_RESULTS)))
+        .addMethod(
+            getGetCompilationResultMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.GetCompilationResultRequest,
+                    com.google.cloud.dataform.v1alpha2.CompilationResult>(
+                    service, METHODID_GET_COMPILATION_RESULT)))
+        .addMethod(
+            getCreateCompilationResultMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.CreateCompilationResultRequest,
+                    com.google.cloud.dataform.v1alpha2.CompilationResult>(
+                    service, METHODID_CREATE_COMPILATION_RESULT)))
+        .addMethod(
+            getQueryCompilationResultActionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.QueryCompilationResultActionsRequest,
+                    com.google.cloud.dataform.v1alpha2.QueryCompilationResultActionsResponse>(
+                    service, METHODID_QUERY_COMPILATION_RESULT_ACTIONS)))
+        .addMethod(
+            getListWorkflowInvocationsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.ListWorkflowInvocationsRequest,
+                    com.google.cloud.dataform.v1alpha2.ListWorkflowInvocationsResponse>(
+                    service, METHODID_LIST_WORKFLOW_INVOCATIONS)))
+        .addMethod(
+            getGetWorkflowInvocationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.GetWorkflowInvocationRequest,
+                    com.google.cloud.dataform.v1alpha2.WorkflowInvocation>(
+                    service, METHODID_GET_WORKFLOW_INVOCATION)))
+        .addMethod(
+            getCreateWorkflowInvocationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.CreateWorkflowInvocationRequest,
+                    com.google.cloud.dataform.v1alpha2.WorkflowInvocation>(
+                    service, METHODID_CREATE_WORKFLOW_INVOCATION)))
+        .addMethod(
+            getDeleteWorkflowInvocationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.DeleteWorkflowInvocationRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_WORKFLOW_INVOCATION)))
+        .addMethod(
+            getCancelWorkflowInvocationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.CancelWorkflowInvocationRequest,
+                    com.google.protobuf.Empty>(service, METHODID_CANCEL_WORKFLOW_INVOCATION)))
+        .addMethod(
+            getQueryWorkflowInvocationActionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1alpha2.QueryWorkflowInvocationActionsRequest,
+                    com.google.cloud.dataform.v1alpha2.QueryWorkflowInvocationActionsResponse>(
+                    service, METHODID_QUERY_WORKFLOW_INVOCATION_ACTIONS)))
+        .build();
   }
 
   private abstract static class DataformBaseDescriptorSupplier

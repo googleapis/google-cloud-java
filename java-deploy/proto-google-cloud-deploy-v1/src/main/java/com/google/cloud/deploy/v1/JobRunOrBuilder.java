@@ -27,7 +27,8 @@ public interface JobRunOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the `JobRun`. Format is projects/{project}/locations/{location}/
+   * Optional. Name of the `JobRun`. Format is
+   * projects/{project}/locations/{location}/
    * deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/
    * {rollouts}/jobRuns/{uuid}.
    * </pre>
@@ -41,7 +42,8 @@ public interface JobRunOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the `JobRun`. Format is projects/{project}/locations/{location}/
+   * Optional. Name of the `JobRun`. Format is
+   * projects/{project}/locations/{location}/
    * deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/
    * {rollouts}/jobRuns/{uuid}.
    * </pre>
@@ -356,8 +358,92 @@ public interface JobRunOrBuilder
    *
    *
    * <pre>
-   * Output only. This checksum is computed by the server based on the value of other
-   * fields, and may be sent on update and delete requests to ensure the
+   * Output only. Information specific to a createChildRollout `JobRun`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CreateChildRolloutJobRun create_child_rollout_job_run = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createChildRolloutJobRun field is set.
+   */
+  boolean hasCreateChildRolloutJobRun();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information specific to a createChildRollout `JobRun`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CreateChildRolloutJobRun create_child_rollout_job_run = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createChildRolloutJobRun.
+   */
+  com.google.cloud.deploy.v1.CreateChildRolloutJobRun getCreateChildRolloutJobRun();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information specific to a createChildRollout `JobRun`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CreateChildRolloutJobRun create_child_rollout_job_run = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.CreateChildRolloutJobRunOrBuilder
+      getCreateChildRolloutJobRunOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information specific to an advanceChildRollout `JobRun`
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.AdvanceChildRolloutJobRun advance_child_rollout_job_run = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the advanceChildRolloutJobRun field is set.
+   */
+  boolean hasAdvanceChildRolloutJobRun();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information specific to an advanceChildRollout `JobRun`
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.AdvanceChildRolloutJobRun advance_child_rollout_job_run = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The advanceChildRolloutJobRun.
+   */
+  com.google.cloud.deploy.v1.AdvanceChildRolloutJobRun getAdvanceChildRolloutJobRun();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information specific to an advanceChildRollout `JobRun`
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.AdvanceChildRolloutJobRun advance_child_rollout_job_run = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.AdvanceChildRolloutJobRunOrBuilder
+      getAdvanceChildRolloutJobRunOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This checksum is computed by the server based on the value of
+   * other fields, and may be sent on update and delete requests to ensure the
    * client has an up-to-date value before proceeding.
    * </pre>
    *
@@ -370,8 +456,8 @@ public interface JobRunOrBuilder
    *
    *
    * <pre>
-   * Output only. This checksum is computed by the server based on the value of other
-   * fields, and may be sent on update and delete requests to ensure the
+   * Output only. This checksum is computed by the server based on the value of
+   * other fields, and may be sent on update and delete requests to ensure the
    * client has an up-to-date value before proceeding.
    * </pre>
    *

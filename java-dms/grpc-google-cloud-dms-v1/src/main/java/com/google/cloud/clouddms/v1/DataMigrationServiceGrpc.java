@@ -897,7 +897,7 @@ public final class DataMigrationServiceGrpc {
    * Database Migration service
    * </pre>
    */
-  public abstract static class DataMigrationServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -906,7 +906,7 @@ public final class DataMigrationServiceGrpc {
      * Lists migration jobs in a given project and location.
      * </pre>
      */
-    public void listMigrationJobs(
+    default void listMigrationJobs(
         com.google.cloud.clouddms.v1.ListMigrationJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.clouddms.v1.ListMigrationJobsResponse>
             responseObserver) {
@@ -921,7 +921,7 @@ public final class DataMigrationServiceGrpc {
      * Gets details of a single migration job.
      * </pre>
      */
-    public void getMigrationJob(
+    default void getMigrationJob(
         com.google.cloud.clouddms.v1.GetMigrationJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.clouddms.v1.MigrationJob> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -935,7 +935,7 @@ public final class DataMigrationServiceGrpc {
      * Creates a new migration job in a given project and location.
      * </pre>
      */
-    public void createMigrationJob(
+    default void createMigrationJob(
         com.google.cloud.clouddms.v1.CreateMigrationJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -949,7 +949,7 @@ public final class DataMigrationServiceGrpc {
      * Updates the parameters of a single migration job.
      * </pre>
      */
-    public void updateMigrationJob(
+    default void updateMigrationJob(
         com.google.cloud.clouddms.v1.UpdateMigrationJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -963,7 +963,7 @@ public final class DataMigrationServiceGrpc {
      * Deletes a single migration job.
      * </pre>
      */
-    public void deleteMigrationJob(
+    default void deleteMigrationJob(
         com.google.cloud.clouddms.v1.DeleteMigrationJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -977,7 +977,7 @@ public final class DataMigrationServiceGrpc {
      * Start an already created migration job.
      * </pre>
      */
-    public void startMigrationJob(
+    default void startMigrationJob(
         com.google.cloud.clouddms.v1.StartMigrationJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -991,7 +991,7 @@ public final class DataMigrationServiceGrpc {
      * Stops a running migration job.
      * </pre>
      */
-    public void stopMigrationJob(
+    default void stopMigrationJob(
         com.google.cloud.clouddms.v1.StopMigrationJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1006,7 +1006,7 @@ public final class DataMigrationServiceGrpc {
      * stopped during CDC phase).
      * </pre>
      */
-    public void resumeMigrationJob(
+    default void resumeMigrationJob(
         com.google.cloud.clouddms.v1.ResumeMigrationJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1021,7 +1021,7 @@ public final class DataMigrationServiceGrpc {
      * promoting the destination to be a standalone database.
      * </pre>
      */
-    public void promoteMigrationJob(
+    default void promoteMigrationJob(
         com.google.cloud.clouddms.v1.PromoteMigrationJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1036,7 +1036,7 @@ public final class DataMigrationServiceGrpc {
      * and that all configuration and prerequisites are met.
      * </pre>
      */
-    public void verifyMigrationJob(
+    default void verifyMigrationJob(
         com.google.cloud.clouddms.v1.VerifyMigrationJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1052,7 +1052,7 @@ public final class DataMigrationServiceGrpc {
      * scratch.
      * </pre>
      */
-    public void restartMigrationJob(
+    default void restartMigrationJob(
         com.google.cloud.clouddms.v1.RestartMigrationJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1067,7 +1067,7 @@ public final class DataMigrationServiceGrpc {
      * connectivity.
      * </pre>
      */
-    public void generateSshScript(
+    default void generateSshScript(
         com.google.cloud.clouddms.v1.GenerateSshScriptRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.clouddms.v1.SshScript> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1081,7 +1081,7 @@ public final class DataMigrationServiceGrpc {
      * Retrieve a list of all connection profiles in a given project and location.
      * </pre>
      */
-    public void listConnectionProfiles(
+    default void listConnectionProfiles(
         com.google.cloud.clouddms.v1.ListConnectionProfilesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.clouddms.v1.ListConnectionProfilesResponse>
             responseObserver) {
@@ -1096,7 +1096,7 @@ public final class DataMigrationServiceGrpc {
      * Gets details of a single connection profile.
      * </pre>
      */
-    public void getConnectionProfile(
+    default void getConnectionProfile(
         com.google.cloud.clouddms.v1.GetConnectionProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.clouddms.v1.ConnectionProfile>
             responseObserver) {
@@ -1111,7 +1111,7 @@ public final class DataMigrationServiceGrpc {
      * Creates a new connection profile in a given project and location.
      * </pre>
      */
-    public void createConnectionProfile(
+    default void createConnectionProfile(
         com.google.cloud.clouddms.v1.CreateConnectionProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1125,7 +1125,7 @@ public final class DataMigrationServiceGrpc {
      * Update the configuration of a single connection profile.
      * </pre>
      */
-    public void updateConnectionProfile(
+    default void updateConnectionProfile(
         com.google.cloud.clouddms.v1.UpdateConnectionProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1141,127 +1141,32 @@ public final class DataMigrationServiceGrpc {
      * active migration jobs.
      * </pre>
      */
-    public void deleteConnectionProfile(
+    default void deleteConnectionProfile(
         com.google.cloud.clouddms.v1.DeleteConnectionProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteConnectionProfileMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service DataMigrationService.
+   *
+   * <pre>
+   * Database Migration service
+   * </pre>
+   */
+  public abstract static class DataMigrationServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListMigrationJobsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.clouddms.v1.ListMigrationJobsRequest,
-                      com.google.cloud.clouddms.v1.ListMigrationJobsResponse>(
-                      this, METHODID_LIST_MIGRATION_JOBS)))
-          .addMethod(
-              getGetMigrationJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.clouddms.v1.GetMigrationJobRequest,
-                      com.google.cloud.clouddms.v1.MigrationJob>(this, METHODID_GET_MIGRATION_JOB)))
-          .addMethod(
-              getCreateMigrationJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.clouddms.v1.CreateMigrationJobRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_MIGRATION_JOB)))
-          .addMethod(
-              getUpdateMigrationJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.clouddms.v1.UpdateMigrationJobRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_MIGRATION_JOB)))
-          .addMethod(
-              getDeleteMigrationJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.clouddms.v1.DeleteMigrationJobRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_MIGRATION_JOB)))
-          .addMethod(
-              getStartMigrationJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.clouddms.v1.StartMigrationJobRequest,
-                      com.google.longrunning.Operation>(this, METHODID_START_MIGRATION_JOB)))
-          .addMethod(
-              getStopMigrationJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.clouddms.v1.StopMigrationJobRequest,
-                      com.google.longrunning.Operation>(this, METHODID_STOP_MIGRATION_JOB)))
-          .addMethod(
-              getResumeMigrationJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.clouddms.v1.ResumeMigrationJobRequest,
-                      com.google.longrunning.Operation>(this, METHODID_RESUME_MIGRATION_JOB)))
-          .addMethod(
-              getPromoteMigrationJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.clouddms.v1.PromoteMigrationJobRequest,
-                      com.google.longrunning.Operation>(this, METHODID_PROMOTE_MIGRATION_JOB)))
-          .addMethod(
-              getVerifyMigrationJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.clouddms.v1.VerifyMigrationJobRequest,
-                      com.google.longrunning.Operation>(this, METHODID_VERIFY_MIGRATION_JOB)))
-          .addMethod(
-              getRestartMigrationJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.clouddms.v1.RestartMigrationJobRequest,
-                      com.google.longrunning.Operation>(this, METHODID_RESTART_MIGRATION_JOB)))
-          .addMethod(
-              getGenerateSshScriptMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.clouddms.v1.GenerateSshScriptRequest,
-                      com.google.cloud.clouddms.v1.SshScript>(this, METHODID_GENERATE_SSH_SCRIPT)))
-          .addMethod(
-              getListConnectionProfilesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.clouddms.v1.ListConnectionProfilesRequest,
-                      com.google.cloud.clouddms.v1.ListConnectionProfilesResponse>(
-                      this, METHODID_LIST_CONNECTION_PROFILES)))
-          .addMethod(
-              getGetConnectionProfileMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.clouddms.v1.GetConnectionProfileRequest,
-                      com.google.cloud.clouddms.v1.ConnectionProfile>(
-                      this, METHODID_GET_CONNECTION_PROFILE)))
-          .addMethod(
-              getCreateConnectionProfileMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.clouddms.v1.CreateConnectionProfileRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_CONNECTION_PROFILE)))
-          .addMethod(
-              getUpdateConnectionProfileMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.clouddms.v1.UpdateConnectionProfileRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_CONNECTION_PROFILE)))
-          .addMethod(
-              getDeleteConnectionProfileMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.clouddms.v1.DeleteConnectionProfileRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_CONNECTION_PROFILE)))
-          .build();
+      return DataMigrationServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service DataMigrationService.
    *
    * <pre>
    * Database Migration service
@@ -1564,7 +1469,7 @@ public final class DataMigrationServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service DataMigrationService.
    *
    * <pre>
    * Database Migration service
@@ -1814,7 +1719,7 @@ public final class DataMigrationServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service DataMigrationService.
    *
    * <pre>
    * Database Migration service
@@ -2094,10 +1999,10 @@ public final class DataMigrationServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final DataMigrationServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(DataMigrationServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -2211,6 +2116,117 @@ public final class DataMigrationServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListMigrationJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.clouddms.v1.ListMigrationJobsRequest,
+                    com.google.cloud.clouddms.v1.ListMigrationJobsResponse>(
+                    service, METHODID_LIST_MIGRATION_JOBS)))
+        .addMethod(
+            getGetMigrationJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.clouddms.v1.GetMigrationJobRequest,
+                    com.google.cloud.clouddms.v1.MigrationJob>(
+                    service, METHODID_GET_MIGRATION_JOB)))
+        .addMethod(
+            getCreateMigrationJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.clouddms.v1.CreateMigrationJobRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_MIGRATION_JOB)))
+        .addMethod(
+            getUpdateMigrationJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.clouddms.v1.UpdateMigrationJobRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_MIGRATION_JOB)))
+        .addMethod(
+            getDeleteMigrationJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.clouddms.v1.DeleteMigrationJobRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_MIGRATION_JOB)))
+        .addMethod(
+            getStartMigrationJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.clouddms.v1.StartMigrationJobRequest,
+                    com.google.longrunning.Operation>(service, METHODID_START_MIGRATION_JOB)))
+        .addMethod(
+            getStopMigrationJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.clouddms.v1.StopMigrationJobRequest,
+                    com.google.longrunning.Operation>(service, METHODID_STOP_MIGRATION_JOB)))
+        .addMethod(
+            getResumeMigrationJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.clouddms.v1.ResumeMigrationJobRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RESUME_MIGRATION_JOB)))
+        .addMethod(
+            getPromoteMigrationJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.clouddms.v1.PromoteMigrationJobRequest,
+                    com.google.longrunning.Operation>(service, METHODID_PROMOTE_MIGRATION_JOB)))
+        .addMethod(
+            getVerifyMigrationJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.clouddms.v1.VerifyMigrationJobRequest,
+                    com.google.longrunning.Operation>(service, METHODID_VERIFY_MIGRATION_JOB)))
+        .addMethod(
+            getRestartMigrationJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.clouddms.v1.RestartMigrationJobRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RESTART_MIGRATION_JOB)))
+        .addMethod(
+            getGenerateSshScriptMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.clouddms.v1.GenerateSshScriptRequest,
+                    com.google.cloud.clouddms.v1.SshScript>(service, METHODID_GENERATE_SSH_SCRIPT)))
+        .addMethod(
+            getListConnectionProfilesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.clouddms.v1.ListConnectionProfilesRequest,
+                    com.google.cloud.clouddms.v1.ListConnectionProfilesResponse>(
+                    service, METHODID_LIST_CONNECTION_PROFILES)))
+        .addMethod(
+            getGetConnectionProfileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.clouddms.v1.GetConnectionProfileRequest,
+                    com.google.cloud.clouddms.v1.ConnectionProfile>(
+                    service, METHODID_GET_CONNECTION_PROFILE)))
+        .addMethod(
+            getCreateConnectionProfileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.clouddms.v1.CreateConnectionProfileRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_CONNECTION_PROFILE)))
+        .addMethod(
+            getUpdateConnectionProfileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.clouddms.v1.UpdateConnectionProfileRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_CONNECTION_PROFILE)))
+        .addMethod(
+            getDeleteConnectionProfileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.clouddms.v1.DeleteConnectionProfileRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_CONNECTION_PROFILE)))
+        .build();
   }
 
   private abstract static class DataMigrationServiceBaseDescriptorSupplier

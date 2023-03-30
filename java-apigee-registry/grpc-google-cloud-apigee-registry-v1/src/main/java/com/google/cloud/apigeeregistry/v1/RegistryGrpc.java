@@ -1680,7 +1680,7 @@ public final class RegistryGrpc {
    * The Registry service allows teams to manage descriptions of APIs.
    * </pre>
    */
-  public abstract static class RegistryImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -1689,7 +1689,7 @@ public final class RegistryGrpc {
      * Returns matching APIs.
      * </pre>
      */
-    public void listApis(
+    default void listApis(
         com.google.cloud.apigeeregistry.v1.ListApisRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigeeregistry.v1.ListApisResponse>
             responseObserver) {
@@ -1703,7 +1703,7 @@ public final class RegistryGrpc {
      * Returns a specified API.
      * </pre>
      */
-    public void getApi(
+    default void getApi(
         com.google.cloud.apigeeregistry.v1.GetApiRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigeeregistry.v1.Api> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetApiMethod(), responseObserver);
@@ -1716,7 +1716,7 @@ public final class RegistryGrpc {
      * Creates a specified API.
      * </pre>
      */
-    public void createApi(
+    default void createApi(
         com.google.cloud.apigeeregistry.v1.CreateApiRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigeeregistry.v1.Api> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateApiMethod(), responseObserver);
@@ -1729,7 +1729,7 @@ public final class RegistryGrpc {
      * Used to modify a specified API.
      * </pre>
      */
-    public void updateApi(
+    default void updateApi(
         com.google.cloud.apigeeregistry.v1.UpdateApiRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigeeregistry.v1.Api> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateApiMethod(), responseObserver);
@@ -1743,7 +1743,7 @@ public final class RegistryGrpc {
      * owns.
      * </pre>
      */
-    public void deleteApi(
+    default void deleteApi(
         com.google.cloud.apigeeregistry.v1.DeleteApiRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteApiMethod(), responseObserver);
@@ -1756,7 +1756,7 @@ public final class RegistryGrpc {
      * Returns matching versions.
      * </pre>
      */
-    public void listApiVersions(
+    default void listApiVersions(
         com.google.cloud.apigeeregistry.v1.ListApiVersionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigeeregistry.v1.ListApiVersionsResponse>
             responseObserver) {
@@ -1771,7 +1771,7 @@ public final class RegistryGrpc {
      * Returns a specified version.
      * </pre>
      */
-    public void getApiVersion(
+    default void getApiVersion(
         com.google.cloud.apigeeregistry.v1.GetApiVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigeeregistry.v1.ApiVersion>
             responseObserver) {
@@ -1786,7 +1786,7 @@ public final class RegistryGrpc {
      * Creates a specified version.
      * </pre>
      */
-    public void createApiVersion(
+    default void createApiVersion(
         com.google.cloud.apigeeregistry.v1.CreateApiVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigeeregistry.v1.ApiVersion>
             responseObserver) {
@@ -1801,7 +1801,7 @@ public final class RegistryGrpc {
      * Used to modify a specified version.
      * </pre>
      */
-    public void updateApiVersion(
+    default void updateApiVersion(
         com.google.cloud.apigeeregistry.v1.UpdateApiVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigeeregistry.v1.ApiVersion>
             responseObserver) {
@@ -1817,7 +1817,7 @@ public final class RegistryGrpc {
      * it owns.
      * </pre>
      */
-    public void deleteApiVersion(
+    default void deleteApiVersion(
         com.google.cloud.apigeeregistry.v1.DeleteApiVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1831,7 +1831,7 @@ public final class RegistryGrpc {
      * Returns matching specs.
      * </pre>
      */
-    public void listApiSpecs(
+    default void listApiSpecs(
         com.google.cloud.apigeeregistry.v1.ListApiSpecsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigeeregistry.v1.ListApiSpecsResponse>
             responseObserver) {
@@ -1846,7 +1846,7 @@ public final class RegistryGrpc {
      * Returns a specified spec.
      * </pre>
      */
-    public void getApiSpec(
+    default void getApiSpec(
         com.google.cloud.apigeeregistry.v1.GetApiSpecRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigeeregistry.v1.ApiSpec> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetApiSpecMethod(), responseObserver);
@@ -1862,7 +1862,7 @@ public final class RegistryGrpc {
      * indicates the exact format returned).
      * </pre>
      */
-    public void getApiSpecContents(
+    default void getApiSpecContents(
         com.google.cloud.apigeeregistry.v1.GetApiSpecContentsRequest request,
         io.grpc.stub.StreamObserver<com.google.api.HttpBody> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1876,7 +1876,7 @@ public final class RegistryGrpc {
      * Creates a specified spec.
      * </pre>
      */
-    public void createApiSpec(
+    default void createApiSpec(
         com.google.cloud.apigeeregistry.v1.CreateApiSpecRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigeeregistry.v1.ApiSpec> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1890,7 +1890,7 @@ public final class RegistryGrpc {
      * Used to modify a specified spec.
      * </pre>
      */
-    public void updateApiSpec(
+    default void updateApiSpec(
         com.google.cloud.apigeeregistry.v1.UpdateApiSpecRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigeeregistry.v1.ApiSpec> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1905,7 +1905,7 @@ public final class RegistryGrpc {
      * resources (e.g., artifacts).
      * </pre>
      */
-    public void deleteApiSpec(
+    default void deleteApiSpec(
         com.google.cloud.apigeeregistry.v1.DeleteApiSpecRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1919,7 +1919,7 @@ public final class RegistryGrpc {
      * Adds a tag to a specified revision of a spec.
      * </pre>
      */
-    public void tagApiSpecRevision(
+    default void tagApiSpecRevision(
         com.google.cloud.apigeeregistry.v1.TagApiSpecRevisionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigeeregistry.v1.ApiSpec> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1934,7 +1934,7 @@ public final class RegistryGrpc {
      * Revisions are returned in descending order of revision creation time.
      * </pre>
      */
-    public void listApiSpecRevisions(
+    default void listApiSpecRevisions(
         com.google.cloud.apigeeregistry.v1.ListApiSpecRevisionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigeeregistry.v1.ListApiSpecRevisionsResponse>
             responseObserver) {
@@ -1950,7 +1950,7 @@ public final class RegistryGrpc {
      * Note that this creates a new revision with a new revision ID.
      * </pre>
      */
-    public void rollbackApiSpec(
+    default void rollbackApiSpec(
         com.google.cloud.apigeeregistry.v1.RollbackApiSpecRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigeeregistry.v1.ApiSpec> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1964,7 +1964,7 @@ public final class RegistryGrpc {
      * Deletes a revision of a spec.
      * </pre>
      */
-    public void deleteApiSpecRevision(
+    default void deleteApiSpecRevision(
         com.google.cloud.apigeeregistry.v1.DeleteApiSpecRevisionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigeeregistry.v1.ApiSpec> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1978,7 +1978,7 @@ public final class RegistryGrpc {
      * Returns matching deployments.
      * </pre>
      */
-    public void listApiDeployments(
+    default void listApiDeployments(
         com.google.cloud.apigeeregistry.v1.ListApiDeploymentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigeeregistry.v1.ListApiDeploymentsResponse>
             responseObserver) {
@@ -1993,7 +1993,7 @@ public final class RegistryGrpc {
      * Returns a specified deployment.
      * </pre>
      */
-    public void getApiDeployment(
+    default void getApiDeployment(
         com.google.cloud.apigeeregistry.v1.GetApiDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigeeregistry.v1.ApiDeployment>
             responseObserver) {
@@ -2008,7 +2008,7 @@ public final class RegistryGrpc {
      * Creates a specified deployment.
      * </pre>
      */
-    public void createApiDeployment(
+    default void createApiDeployment(
         com.google.cloud.apigeeregistry.v1.CreateApiDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigeeregistry.v1.ApiDeployment>
             responseObserver) {
@@ -2023,7 +2023,7 @@ public final class RegistryGrpc {
      * Used to modify a specified deployment.
      * </pre>
      */
-    public void updateApiDeployment(
+    default void updateApiDeployment(
         com.google.cloud.apigeeregistry.v1.UpdateApiDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigeeregistry.v1.ApiDeployment>
             responseObserver) {
@@ -2039,7 +2039,7 @@ public final class RegistryGrpc {
      * child resources (e.g., artifacts).
      * </pre>
      */
-    public void deleteApiDeployment(
+    default void deleteApiDeployment(
         com.google.cloud.apigeeregistry.v1.DeleteApiDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2054,7 +2054,7 @@ public final class RegistryGrpc {
      * deployment.
      * </pre>
      */
-    public void tagApiDeploymentRevision(
+    default void tagApiDeploymentRevision(
         com.google.cloud.apigeeregistry.v1.TagApiDeploymentRevisionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigeeregistry.v1.ApiDeployment>
             responseObserver) {
@@ -2070,7 +2070,7 @@ public final class RegistryGrpc {
      * Revisions are returned in descending order of revision creation time.
      * </pre>
      */
-    public void listApiDeploymentRevisions(
+    default void listApiDeploymentRevisions(
         com.google.cloud.apigeeregistry.v1.ListApiDeploymentRevisionsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.apigeeregistry.v1.ListApiDeploymentRevisionsResponse>
@@ -2087,7 +2087,7 @@ public final class RegistryGrpc {
      * revision. Note that this creates a new revision with a new revision ID.
      * </pre>
      */
-    public void rollbackApiDeployment(
+    default void rollbackApiDeployment(
         com.google.cloud.apigeeregistry.v1.RollbackApiDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigeeregistry.v1.ApiDeployment>
             responseObserver) {
@@ -2102,7 +2102,7 @@ public final class RegistryGrpc {
      * Deletes a revision of a deployment.
      * </pre>
      */
-    public void deleteApiDeploymentRevision(
+    default void deleteApiDeploymentRevision(
         com.google.cloud.apigeeregistry.v1.DeleteApiDeploymentRevisionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigeeregistry.v1.ApiDeployment>
             responseObserver) {
@@ -2117,7 +2117,7 @@ public final class RegistryGrpc {
      * Returns matching artifacts.
      * </pre>
      */
-    public void listArtifacts(
+    default void listArtifacts(
         com.google.cloud.apigeeregistry.v1.ListArtifactsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigeeregistry.v1.ListArtifactsResponse>
             responseObserver) {
@@ -2132,7 +2132,7 @@ public final class RegistryGrpc {
      * Returns a specified artifact.
      * </pre>
      */
-    public void getArtifact(
+    default void getArtifact(
         com.google.cloud.apigeeregistry.v1.GetArtifactRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigeeregistry.v1.Artifact> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2149,7 +2149,7 @@ public final class RegistryGrpc {
      * indicates the exact format returned).
      * </pre>
      */
-    public void getArtifactContents(
+    default void getArtifactContents(
         com.google.cloud.apigeeregistry.v1.GetArtifactContentsRequest request,
         io.grpc.stub.StreamObserver<com.google.api.HttpBody> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2163,7 +2163,7 @@ public final class RegistryGrpc {
      * Creates a specified artifact.
      * </pre>
      */
-    public void createArtifact(
+    default void createArtifact(
         com.google.cloud.apigeeregistry.v1.CreateArtifactRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigeeregistry.v1.Artifact> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2177,7 +2177,7 @@ public final class RegistryGrpc {
      * Used to replace a specified artifact.
      * </pre>
      */
-    public void replaceArtifact(
+    default void replaceArtifact(
         com.google.cloud.apigeeregistry.v1.ReplaceArtifactRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.apigeeregistry.v1.Artifact> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2191,252 +2191,31 @@ public final class RegistryGrpc {
      * Removes a specified artifact.
      * </pre>
      */
-    public void deleteArtifact(
+    default void deleteArtifact(
         com.google.cloud.apigeeregistry.v1.DeleteArtifactRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteArtifactMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Registry.
+   *
+   * <pre>
+   * The Registry service allows teams to manage descriptions of APIs.
+   * </pre>
+   */
+  public abstract static class RegistryImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListApisMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.ListApisRequest,
-                      com.google.cloud.apigeeregistry.v1.ListApisResponse>(
-                      this, METHODID_LIST_APIS)))
-          .addMethod(
-              getGetApiMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.GetApiRequest,
-                      com.google.cloud.apigeeregistry.v1.Api>(this, METHODID_GET_API)))
-          .addMethod(
-              getCreateApiMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.CreateApiRequest,
-                      com.google.cloud.apigeeregistry.v1.Api>(this, METHODID_CREATE_API)))
-          .addMethod(
-              getUpdateApiMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.UpdateApiRequest,
-                      com.google.cloud.apigeeregistry.v1.Api>(this, METHODID_UPDATE_API)))
-          .addMethod(
-              getDeleteApiMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.DeleteApiRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_API)))
-          .addMethod(
-              getListApiVersionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.ListApiVersionsRequest,
-                      com.google.cloud.apigeeregistry.v1.ListApiVersionsResponse>(
-                      this, METHODID_LIST_API_VERSIONS)))
-          .addMethod(
-              getGetApiVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.GetApiVersionRequest,
-                      com.google.cloud.apigeeregistry.v1.ApiVersion>(
-                      this, METHODID_GET_API_VERSION)))
-          .addMethod(
-              getCreateApiVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.CreateApiVersionRequest,
-                      com.google.cloud.apigeeregistry.v1.ApiVersion>(
-                      this, METHODID_CREATE_API_VERSION)))
-          .addMethod(
-              getUpdateApiVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.UpdateApiVersionRequest,
-                      com.google.cloud.apigeeregistry.v1.ApiVersion>(
-                      this, METHODID_UPDATE_API_VERSION)))
-          .addMethod(
-              getDeleteApiVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.DeleteApiVersionRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_API_VERSION)))
-          .addMethod(
-              getListApiSpecsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.ListApiSpecsRequest,
-                      com.google.cloud.apigeeregistry.v1.ListApiSpecsResponse>(
-                      this, METHODID_LIST_API_SPECS)))
-          .addMethod(
-              getGetApiSpecMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.GetApiSpecRequest,
-                      com.google.cloud.apigeeregistry.v1.ApiSpec>(this, METHODID_GET_API_SPEC)))
-          .addMethod(
-              getGetApiSpecContentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.GetApiSpecContentsRequest,
-                      com.google.api.HttpBody>(this, METHODID_GET_API_SPEC_CONTENTS)))
-          .addMethod(
-              getCreateApiSpecMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.CreateApiSpecRequest,
-                      com.google.cloud.apigeeregistry.v1.ApiSpec>(this, METHODID_CREATE_API_SPEC)))
-          .addMethod(
-              getUpdateApiSpecMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.UpdateApiSpecRequest,
-                      com.google.cloud.apigeeregistry.v1.ApiSpec>(this, METHODID_UPDATE_API_SPEC)))
-          .addMethod(
-              getDeleteApiSpecMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.DeleteApiSpecRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_API_SPEC)))
-          .addMethod(
-              getTagApiSpecRevisionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.TagApiSpecRevisionRequest,
-                      com.google.cloud.apigeeregistry.v1.ApiSpec>(
-                      this, METHODID_TAG_API_SPEC_REVISION)))
-          .addMethod(
-              getListApiSpecRevisionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.ListApiSpecRevisionsRequest,
-                      com.google.cloud.apigeeregistry.v1.ListApiSpecRevisionsResponse>(
-                      this, METHODID_LIST_API_SPEC_REVISIONS)))
-          .addMethod(
-              getRollbackApiSpecMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.RollbackApiSpecRequest,
-                      com.google.cloud.apigeeregistry.v1.ApiSpec>(
-                      this, METHODID_ROLLBACK_API_SPEC)))
-          .addMethod(
-              getDeleteApiSpecRevisionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.DeleteApiSpecRevisionRequest,
-                      com.google.cloud.apigeeregistry.v1.ApiSpec>(
-                      this, METHODID_DELETE_API_SPEC_REVISION)))
-          .addMethod(
-              getListApiDeploymentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.ListApiDeploymentsRequest,
-                      com.google.cloud.apigeeregistry.v1.ListApiDeploymentsResponse>(
-                      this, METHODID_LIST_API_DEPLOYMENTS)))
-          .addMethod(
-              getGetApiDeploymentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.GetApiDeploymentRequest,
-                      com.google.cloud.apigeeregistry.v1.ApiDeployment>(
-                      this, METHODID_GET_API_DEPLOYMENT)))
-          .addMethod(
-              getCreateApiDeploymentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.CreateApiDeploymentRequest,
-                      com.google.cloud.apigeeregistry.v1.ApiDeployment>(
-                      this, METHODID_CREATE_API_DEPLOYMENT)))
-          .addMethod(
-              getUpdateApiDeploymentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.UpdateApiDeploymentRequest,
-                      com.google.cloud.apigeeregistry.v1.ApiDeployment>(
-                      this, METHODID_UPDATE_API_DEPLOYMENT)))
-          .addMethod(
-              getDeleteApiDeploymentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.DeleteApiDeploymentRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_API_DEPLOYMENT)))
-          .addMethod(
-              getTagApiDeploymentRevisionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.TagApiDeploymentRevisionRequest,
-                      com.google.cloud.apigeeregistry.v1.ApiDeployment>(
-                      this, METHODID_TAG_API_DEPLOYMENT_REVISION)))
-          .addMethod(
-              getListApiDeploymentRevisionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.ListApiDeploymentRevisionsRequest,
-                      com.google.cloud.apigeeregistry.v1.ListApiDeploymentRevisionsResponse>(
-                      this, METHODID_LIST_API_DEPLOYMENT_REVISIONS)))
-          .addMethod(
-              getRollbackApiDeploymentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.RollbackApiDeploymentRequest,
-                      com.google.cloud.apigeeregistry.v1.ApiDeployment>(
-                      this, METHODID_ROLLBACK_API_DEPLOYMENT)))
-          .addMethod(
-              getDeleteApiDeploymentRevisionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.DeleteApiDeploymentRevisionRequest,
-                      com.google.cloud.apigeeregistry.v1.ApiDeployment>(
-                      this, METHODID_DELETE_API_DEPLOYMENT_REVISION)))
-          .addMethod(
-              getListArtifactsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.ListArtifactsRequest,
-                      com.google.cloud.apigeeregistry.v1.ListArtifactsResponse>(
-                      this, METHODID_LIST_ARTIFACTS)))
-          .addMethod(
-              getGetArtifactMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.GetArtifactRequest,
-                      com.google.cloud.apigeeregistry.v1.Artifact>(this, METHODID_GET_ARTIFACT)))
-          .addMethod(
-              getGetArtifactContentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.GetArtifactContentsRequest,
-                      com.google.api.HttpBody>(this, METHODID_GET_ARTIFACT_CONTENTS)))
-          .addMethod(
-              getCreateArtifactMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.CreateArtifactRequest,
-                      com.google.cloud.apigeeregistry.v1.Artifact>(this, METHODID_CREATE_ARTIFACT)))
-          .addMethod(
-              getReplaceArtifactMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.ReplaceArtifactRequest,
-                      com.google.cloud.apigeeregistry.v1.Artifact>(
-                      this, METHODID_REPLACE_ARTIFACT)))
-          .addMethod(
-              getDeleteArtifactMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.apigeeregistry.v1.DeleteArtifactRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_ARTIFACT)))
-          .build();
+      return RegistryGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Registry.
    *
    * <pre>
    * The Registry service allows teams to manage descriptions of APIs.
@@ -3034,7 +2813,7 @@ public final class RegistryGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Registry.
    *
    * <pre>
    * The Registry service allows teams to manage descriptions of APIs.
@@ -3524,7 +3303,7 @@ public final class RegistryGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Registry.
    *
    * <pre>
    * The Registry service allows teams to manage descriptions of APIs.
@@ -4087,10 +3866,10 @@ public final class RegistryGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final RegistryImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(RegistryImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -4321,6 +4100,242 @@ public final class RegistryGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListApisMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.ListApisRequest,
+                    com.google.cloud.apigeeregistry.v1.ListApisResponse>(
+                    service, METHODID_LIST_APIS)))
+        .addMethod(
+            getGetApiMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.GetApiRequest,
+                    com.google.cloud.apigeeregistry.v1.Api>(service, METHODID_GET_API)))
+        .addMethod(
+            getCreateApiMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.CreateApiRequest,
+                    com.google.cloud.apigeeregistry.v1.Api>(service, METHODID_CREATE_API)))
+        .addMethod(
+            getUpdateApiMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.UpdateApiRequest,
+                    com.google.cloud.apigeeregistry.v1.Api>(service, METHODID_UPDATE_API)))
+        .addMethod(
+            getDeleteApiMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.DeleteApiRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_API)))
+        .addMethod(
+            getListApiVersionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.ListApiVersionsRequest,
+                    com.google.cloud.apigeeregistry.v1.ListApiVersionsResponse>(
+                    service, METHODID_LIST_API_VERSIONS)))
+        .addMethod(
+            getGetApiVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.GetApiVersionRequest,
+                    com.google.cloud.apigeeregistry.v1.ApiVersion>(
+                    service, METHODID_GET_API_VERSION)))
+        .addMethod(
+            getCreateApiVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.CreateApiVersionRequest,
+                    com.google.cloud.apigeeregistry.v1.ApiVersion>(
+                    service, METHODID_CREATE_API_VERSION)))
+        .addMethod(
+            getUpdateApiVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.UpdateApiVersionRequest,
+                    com.google.cloud.apigeeregistry.v1.ApiVersion>(
+                    service, METHODID_UPDATE_API_VERSION)))
+        .addMethod(
+            getDeleteApiVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.DeleteApiVersionRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_API_VERSION)))
+        .addMethod(
+            getListApiSpecsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.ListApiSpecsRequest,
+                    com.google.cloud.apigeeregistry.v1.ListApiSpecsResponse>(
+                    service, METHODID_LIST_API_SPECS)))
+        .addMethod(
+            getGetApiSpecMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.GetApiSpecRequest,
+                    com.google.cloud.apigeeregistry.v1.ApiSpec>(service, METHODID_GET_API_SPEC)))
+        .addMethod(
+            getGetApiSpecContentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.GetApiSpecContentsRequest,
+                    com.google.api.HttpBody>(service, METHODID_GET_API_SPEC_CONTENTS)))
+        .addMethod(
+            getCreateApiSpecMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.CreateApiSpecRequest,
+                    com.google.cloud.apigeeregistry.v1.ApiSpec>(service, METHODID_CREATE_API_SPEC)))
+        .addMethod(
+            getUpdateApiSpecMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.UpdateApiSpecRequest,
+                    com.google.cloud.apigeeregistry.v1.ApiSpec>(service, METHODID_UPDATE_API_SPEC)))
+        .addMethod(
+            getDeleteApiSpecMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.DeleteApiSpecRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_API_SPEC)))
+        .addMethod(
+            getTagApiSpecRevisionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.TagApiSpecRevisionRequest,
+                    com.google.cloud.apigeeregistry.v1.ApiSpec>(
+                    service, METHODID_TAG_API_SPEC_REVISION)))
+        .addMethod(
+            getListApiSpecRevisionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.ListApiSpecRevisionsRequest,
+                    com.google.cloud.apigeeregistry.v1.ListApiSpecRevisionsResponse>(
+                    service, METHODID_LIST_API_SPEC_REVISIONS)))
+        .addMethod(
+            getRollbackApiSpecMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.RollbackApiSpecRequest,
+                    com.google.cloud.apigeeregistry.v1.ApiSpec>(
+                    service, METHODID_ROLLBACK_API_SPEC)))
+        .addMethod(
+            getDeleteApiSpecRevisionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.DeleteApiSpecRevisionRequest,
+                    com.google.cloud.apigeeregistry.v1.ApiSpec>(
+                    service, METHODID_DELETE_API_SPEC_REVISION)))
+        .addMethod(
+            getListApiDeploymentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.ListApiDeploymentsRequest,
+                    com.google.cloud.apigeeregistry.v1.ListApiDeploymentsResponse>(
+                    service, METHODID_LIST_API_DEPLOYMENTS)))
+        .addMethod(
+            getGetApiDeploymentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.GetApiDeploymentRequest,
+                    com.google.cloud.apigeeregistry.v1.ApiDeployment>(
+                    service, METHODID_GET_API_DEPLOYMENT)))
+        .addMethod(
+            getCreateApiDeploymentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.CreateApiDeploymentRequest,
+                    com.google.cloud.apigeeregistry.v1.ApiDeployment>(
+                    service, METHODID_CREATE_API_DEPLOYMENT)))
+        .addMethod(
+            getUpdateApiDeploymentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.UpdateApiDeploymentRequest,
+                    com.google.cloud.apigeeregistry.v1.ApiDeployment>(
+                    service, METHODID_UPDATE_API_DEPLOYMENT)))
+        .addMethod(
+            getDeleteApiDeploymentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.DeleteApiDeploymentRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_API_DEPLOYMENT)))
+        .addMethod(
+            getTagApiDeploymentRevisionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.TagApiDeploymentRevisionRequest,
+                    com.google.cloud.apigeeregistry.v1.ApiDeployment>(
+                    service, METHODID_TAG_API_DEPLOYMENT_REVISION)))
+        .addMethod(
+            getListApiDeploymentRevisionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.ListApiDeploymentRevisionsRequest,
+                    com.google.cloud.apigeeregistry.v1.ListApiDeploymentRevisionsResponse>(
+                    service, METHODID_LIST_API_DEPLOYMENT_REVISIONS)))
+        .addMethod(
+            getRollbackApiDeploymentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.RollbackApiDeploymentRequest,
+                    com.google.cloud.apigeeregistry.v1.ApiDeployment>(
+                    service, METHODID_ROLLBACK_API_DEPLOYMENT)))
+        .addMethod(
+            getDeleteApiDeploymentRevisionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.DeleteApiDeploymentRevisionRequest,
+                    com.google.cloud.apigeeregistry.v1.ApiDeployment>(
+                    service, METHODID_DELETE_API_DEPLOYMENT_REVISION)))
+        .addMethod(
+            getListArtifactsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.ListArtifactsRequest,
+                    com.google.cloud.apigeeregistry.v1.ListArtifactsResponse>(
+                    service, METHODID_LIST_ARTIFACTS)))
+        .addMethod(
+            getGetArtifactMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.GetArtifactRequest,
+                    com.google.cloud.apigeeregistry.v1.Artifact>(service, METHODID_GET_ARTIFACT)))
+        .addMethod(
+            getGetArtifactContentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.GetArtifactContentsRequest,
+                    com.google.api.HttpBody>(service, METHODID_GET_ARTIFACT_CONTENTS)))
+        .addMethod(
+            getCreateArtifactMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.CreateArtifactRequest,
+                    com.google.cloud.apigeeregistry.v1.Artifact>(
+                    service, METHODID_CREATE_ARTIFACT)))
+        .addMethod(
+            getReplaceArtifactMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.ReplaceArtifactRequest,
+                    com.google.cloud.apigeeregistry.v1.Artifact>(
+                    service, METHODID_REPLACE_ARTIFACT)))
+        .addMethod(
+            getDeleteArtifactMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apigeeregistry.v1.DeleteArtifactRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_ARTIFACT)))
+        .build();
   }
 
   private abstract static class RegistryBaseDescriptorSupplier

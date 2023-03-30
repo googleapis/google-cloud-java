@@ -18,6 +18,7 @@ package com.google.cloud.filestore.v1.stub;
 
 import static com.google.cloud.filestore.v1.CloudFilestoreManagerClient.ListBackupsPagedResponse;
 import static com.google.cloud.filestore.v1.CloudFilestoreManagerClient.ListInstancesPagedResponse;
+import static com.google.cloud.filestore.v1.CloudFilestoreManagerClient.ListSnapshotsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
@@ -26,18 +27,25 @@ import com.google.cloud.common.OperationMetadata;
 import com.google.cloud.filestore.v1.Backup;
 import com.google.cloud.filestore.v1.CreateBackupRequest;
 import com.google.cloud.filestore.v1.CreateInstanceRequest;
+import com.google.cloud.filestore.v1.CreateSnapshotRequest;
 import com.google.cloud.filestore.v1.DeleteBackupRequest;
 import com.google.cloud.filestore.v1.DeleteInstanceRequest;
+import com.google.cloud.filestore.v1.DeleteSnapshotRequest;
 import com.google.cloud.filestore.v1.GetBackupRequest;
 import com.google.cloud.filestore.v1.GetInstanceRequest;
+import com.google.cloud.filestore.v1.GetSnapshotRequest;
 import com.google.cloud.filestore.v1.Instance;
 import com.google.cloud.filestore.v1.ListBackupsRequest;
 import com.google.cloud.filestore.v1.ListBackupsResponse;
 import com.google.cloud.filestore.v1.ListInstancesRequest;
 import com.google.cloud.filestore.v1.ListInstancesResponse;
+import com.google.cloud.filestore.v1.ListSnapshotsRequest;
+import com.google.cloud.filestore.v1.ListSnapshotsResponse;
 import com.google.cloud.filestore.v1.RestoreInstanceRequest;
+import com.google.cloud.filestore.v1.Snapshot;
 import com.google.cloud.filestore.v1.UpdateBackupRequest;
 import com.google.cloud.filestore.v1.UpdateInstanceRequest;
+import com.google.cloud.filestore.v1.UpdateSnapshotRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -107,6 +115,46 @@ public abstract class CloudFilestoreManagerStub implements BackgroundResource {
 
   public UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteInstanceCallable()");
+  }
+
+  public UnaryCallable<ListSnapshotsRequest, ListSnapshotsPagedResponse>
+      listSnapshotsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSnapshotsPagedCallable()");
+  }
+
+  public UnaryCallable<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSnapshotsCallable()");
+  }
+
+  public UnaryCallable<GetSnapshotRequest, Snapshot> getSnapshotCallable() {
+    throw new UnsupportedOperationException("Not implemented: getSnapshotCallable()");
+  }
+
+  public OperationCallable<CreateSnapshotRequest, Snapshot, OperationMetadata>
+      createSnapshotOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createSnapshotOperationCallable()");
+  }
+
+  public UnaryCallable<CreateSnapshotRequest, Operation> createSnapshotCallable() {
+    throw new UnsupportedOperationException("Not implemented: createSnapshotCallable()");
+  }
+
+  public OperationCallable<DeleteSnapshotRequest, Empty, OperationMetadata>
+      deleteSnapshotOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteSnapshotOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteSnapshotRequest, Operation> deleteSnapshotCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteSnapshotCallable()");
+  }
+
+  public OperationCallable<UpdateSnapshotRequest, Snapshot, OperationMetadata>
+      updateSnapshotOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateSnapshotOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateSnapshotRequest, Operation> updateSnapshotCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateSnapshotCallable()");
   }
 
   public UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse> listBackupsPagedCallable() {

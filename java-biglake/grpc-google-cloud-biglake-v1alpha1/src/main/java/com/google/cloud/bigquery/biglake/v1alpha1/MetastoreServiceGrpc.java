@@ -937,7 +937,7 @@ public final class MetastoreServiceGrpc {
    * * Each database has a collection of tables: `/tables/&#42;`
    * </pre>
    */
-  public abstract static class MetastoreServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -946,7 +946,7 @@ public final class MetastoreServiceGrpc {
      * Creates a new catalog.
      * </pre>
      */
-    public void createCatalog(
+    default void createCatalog(
         com.google.cloud.bigquery.biglake.v1alpha1.CreateCatalogRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.biglake.v1alpha1.Catalog>
             responseObserver) {
@@ -961,7 +961,7 @@ public final class MetastoreServiceGrpc {
      * Deletes an existing catalog specified by the catalog ID.
      * </pre>
      */
-    public void deleteCatalog(
+    default void deleteCatalog(
         com.google.cloud.bigquery.biglake.v1alpha1.DeleteCatalogRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.biglake.v1alpha1.Catalog>
             responseObserver) {
@@ -976,7 +976,7 @@ public final class MetastoreServiceGrpc {
      * Gets the catalog specified by the resource name.
      * </pre>
      */
-    public void getCatalog(
+    default void getCatalog(
         com.google.cloud.bigquery.biglake.v1alpha1.GetCatalogRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.biglake.v1alpha1.Catalog>
             responseObserver) {
@@ -990,7 +990,7 @@ public final class MetastoreServiceGrpc {
      * List all catalogs in a specified project.
      * </pre>
      */
-    public void listCatalogs(
+    default void listCatalogs(
         com.google.cloud.bigquery.biglake.v1alpha1.ListCatalogsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.biglake.v1alpha1.ListCatalogsResponse>
             responseObserver) {
@@ -1005,7 +1005,7 @@ public final class MetastoreServiceGrpc {
      * Creates a new database.
      * </pre>
      */
-    public void createDatabase(
+    default void createDatabase(
         com.google.cloud.bigquery.biglake.v1alpha1.CreateDatabaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.biglake.v1alpha1.Database>
             responseObserver) {
@@ -1020,7 +1020,7 @@ public final class MetastoreServiceGrpc {
      * Deletes an existing database specified by the database ID.
      * </pre>
      */
-    public void deleteDatabase(
+    default void deleteDatabase(
         com.google.cloud.bigquery.biglake.v1alpha1.DeleteDatabaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.biglake.v1alpha1.Database>
             responseObserver) {
@@ -1035,7 +1035,7 @@ public final class MetastoreServiceGrpc {
      * Updates an existing database specified by the database ID.
      * </pre>
      */
-    public void updateDatabase(
+    default void updateDatabase(
         com.google.cloud.bigquery.biglake.v1alpha1.UpdateDatabaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.biglake.v1alpha1.Database>
             responseObserver) {
@@ -1050,7 +1050,7 @@ public final class MetastoreServiceGrpc {
      * Gets the database specified by the resource name.
      * </pre>
      */
-    public void getDatabase(
+    default void getDatabase(
         com.google.cloud.bigquery.biglake.v1alpha1.GetDatabaseRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.biglake.v1alpha1.Database>
             responseObserver) {
@@ -1065,7 +1065,7 @@ public final class MetastoreServiceGrpc {
      * List all databases in a specified catalog.
      * </pre>
      */
-    public void listDatabases(
+    default void listDatabases(
         com.google.cloud.bigquery.biglake.v1alpha1.ListDatabasesRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.biglake.v1alpha1.ListDatabasesResponse>
@@ -1081,7 +1081,7 @@ public final class MetastoreServiceGrpc {
      * Creates a new table.
      * </pre>
      */
-    public void createTable(
+    default void createTable(
         com.google.cloud.bigquery.biglake.v1alpha1.CreateTableRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.biglake.v1alpha1.Table>
             responseObserver) {
@@ -1096,7 +1096,7 @@ public final class MetastoreServiceGrpc {
      * Deletes an existing table specified by the table ID.
      * </pre>
      */
-    public void deleteTable(
+    default void deleteTable(
         com.google.cloud.bigquery.biglake.v1alpha1.DeleteTableRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.biglake.v1alpha1.Table>
             responseObserver) {
@@ -1111,7 +1111,7 @@ public final class MetastoreServiceGrpc {
      * Updates an existing table specified by the table ID.
      * </pre>
      */
-    public void updateTable(
+    default void updateTable(
         com.google.cloud.bigquery.biglake.v1alpha1.UpdateTableRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.biglake.v1alpha1.Table>
             responseObserver) {
@@ -1126,7 +1126,7 @@ public final class MetastoreServiceGrpc {
      * Gets the table specified by the resource name.
      * </pre>
      */
-    public void getTable(
+    default void getTable(
         com.google.cloud.bigquery.biglake.v1alpha1.GetTableRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.biglake.v1alpha1.Table>
             responseObserver) {
@@ -1140,7 +1140,7 @@ public final class MetastoreServiceGrpc {
      * List all tables in a specified database.
      * </pre>
      */
-    public void listTables(
+    default void listTables(
         com.google.cloud.bigquery.biglake.v1alpha1.ListTablesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.biglake.v1alpha1.ListTablesResponse>
             responseObserver) {
@@ -1154,7 +1154,7 @@ public final class MetastoreServiceGrpc {
      * Creates a new lock.
      * </pre>
      */
-    public void createLock(
+    default void createLock(
         com.google.cloud.bigquery.biglake.v1alpha1.CreateLockRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.biglake.v1alpha1.Lock>
             responseObserver) {
@@ -1168,7 +1168,7 @@ public final class MetastoreServiceGrpc {
      * Deletes an existing lock specified by the lock ID.
      * </pre>
      */
-    public void deleteLock(
+    default void deleteLock(
         com.google.cloud.bigquery.biglake.v1alpha1.DeleteLockRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteLockMethod(), responseObserver);
@@ -1181,7 +1181,7 @@ public final class MetastoreServiceGrpc {
      * Checks the state of a lock specified by the lock ID.
      * </pre>
      */
-    public void checkLock(
+    default void checkLock(
         com.google.cloud.bigquery.biglake.v1alpha1.CheckLockRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.biglake.v1alpha1.Lock>
             responseObserver) {
@@ -1195,144 +1195,39 @@ public final class MetastoreServiceGrpc {
      * List all locks in a specified database.
      * </pre>
      */
-    public void listLocks(
+    default void listLocks(
         com.google.cloud.bigquery.biglake.v1alpha1.ListLocksRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.biglake.v1alpha1.ListLocksResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListLocksMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service MetastoreService.
+   *
+   * <pre>
+   * BigLake Metastore is a serverless, highly available, multi-tenant runtime
+   * metastore for Google Cloud Data Analytics products.
+   * The BigLake Metastore API defines the following resource model:
+   * * A collection of Google Cloud projects: `/projects/&#42;`
+   * * Each project has a collection of available locations: `/locations/&#42;`
+   * * Each location has a collection of catalogs: `/catalogs/&#42;`
+   * * Each catalog has a collection of databases: `/databases/&#42;`
+   * * Each database has a collection of tables: `/tables/&#42;`
+   * </pre>
+   */
+  public abstract static class MetastoreServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateCatalogMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.biglake.v1alpha1.CreateCatalogRequest,
-                      com.google.cloud.bigquery.biglake.v1alpha1.Catalog>(
-                      this, METHODID_CREATE_CATALOG)))
-          .addMethod(
-              getDeleteCatalogMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.biglake.v1alpha1.DeleteCatalogRequest,
-                      com.google.cloud.bigquery.biglake.v1alpha1.Catalog>(
-                      this, METHODID_DELETE_CATALOG)))
-          .addMethod(
-              getGetCatalogMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.biglake.v1alpha1.GetCatalogRequest,
-                      com.google.cloud.bigquery.biglake.v1alpha1.Catalog>(
-                      this, METHODID_GET_CATALOG)))
-          .addMethod(
-              getListCatalogsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.biglake.v1alpha1.ListCatalogsRequest,
-                      com.google.cloud.bigquery.biglake.v1alpha1.ListCatalogsResponse>(
-                      this, METHODID_LIST_CATALOGS)))
-          .addMethod(
-              getCreateDatabaseMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.biglake.v1alpha1.CreateDatabaseRequest,
-                      com.google.cloud.bigquery.biglake.v1alpha1.Database>(
-                      this, METHODID_CREATE_DATABASE)))
-          .addMethod(
-              getDeleteDatabaseMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.biglake.v1alpha1.DeleteDatabaseRequest,
-                      com.google.cloud.bigquery.biglake.v1alpha1.Database>(
-                      this, METHODID_DELETE_DATABASE)))
-          .addMethod(
-              getUpdateDatabaseMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.biglake.v1alpha1.UpdateDatabaseRequest,
-                      com.google.cloud.bigquery.biglake.v1alpha1.Database>(
-                      this, METHODID_UPDATE_DATABASE)))
-          .addMethod(
-              getGetDatabaseMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.biglake.v1alpha1.GetDatabaseRequest,
-                      com.google.cloud.bigquery.biglake.v1alpha1.Database>(
-                      this, METHODID_GET_DATABASE)))
-          .addMethod(
-              getListDatabasesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.biglake.v1alpha1.ListDatabasesRequest,
-                      com.google.cloud.bigquery.biglake.v1alpha1.ListDatabasesResponse>(
-                      this, METHODID_LIST_DATABASES)))
-          .addMethod(
-              getCreateTableMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.biglake.v1alpha1.CreateTableRequest,
-                      com.google.cloud.bigquery.biglake.v1alpha1.Table>(
-                      this, METHODID_CREATE_TABLE)))
-          .addMethod(
-              getDeleteTableMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.biglake.v1alpha1.DeleteTableRequest,
-                      com.google.cloud.bigquery.biglake.v1alpha1.Table>(
-                      this, METHODID_DELETE_TABLE)))
-          .addMethod(
-              getUpdateTableMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.biglake.v1alpha1.UpdateTableRequest,
-                      com.google.cloud.bigquery.biglake.v1alpha1.Table>(
-                      this, METHODID_UPDATE_TABLE)))
-          .addMethod(
-              getGetTableMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.biglake.v1alpha1.GetTableRequest,
-                      com.google.cloud.bigquery.biglake.v1alpha1.Table>(this, METHODID_GET_TABLE)))
-          .addMethod(
-              getListTablesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.biglake.v1alpha1.ListTablesRequest,
-                      com.google.cloud.bigquery.biglake.v1alpha1.ListTablesResponse>(
-                      this, METHODID_LIST_TABLES)))
-          .addMethod(
-              getCreateLockMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.biglake.v1alpha1.CreateLockRequest,
-                      com.google.cloud.bigquery.biglake.v1alpha1.Lock>(this, METHODID_CREATE_LOCK)))
-          .addMethod(
-              getDeleteLockMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.biglake.v1alpha1.DeleteLockRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_LOCK)))
-          .addMethod(
-              getCheckLockMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.biglake.v1alpha1.CheckLockRequest,
-                      com.google.cloud.bigquery.biglake.v1alpha1.Lock>(this, METHODID_CHECK_LOCK)))
-          .addMethod(
-              getListLocksMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.biglake.v1alpha1.ListLocksRequest,
-                      com.google.cloud.bigquery.biglake.v1alpha1.ListLocksResponse>(
-                      this, METHODID_LIST_LOCKS)))
-          .build();
+      return MetastoreServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service MetastoreService.
    *
    * <pre>
    * BigLake Metastore is a serverless, highly available, multi-tenant runtime
@@ -1650,7 +1545,7 @@ public final class MetastoreServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service MetastoreService.
    *
    * <pre>
    * BigLake Metastore is a serverless, highly available, multi-tenant runtime
@@ -1911,7 +1806,7 @@ public final class MetastoreServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service MetastoreService.
    *
    * <pre>
    * BigLake Metastore is a serverless, highly available, multi-tenant runtime
@@ -2212,10 +2107,10 @@ public final class MetastoreServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final MetastoreServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(MetastoreServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -2349,6 +2244,134 @@ public final class MetastoreServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateCatalogMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.biglake.v1alpha1.CreateCatalogRequest,
+                    com.google.cloud.bigquery.biglake.v1alpha1.Catalog>(
+                    service, METHODID_CREATE_CATALOG)))
+        .addMethod(
+            getDeleteCatalogMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.biglake.v1alpha1.DeleteCatalogRequest,
+                    com.google.cloud.bigquery.biglake.v1alpha1.Catalog>(
+                    service, METHODID_DELETE_CATALOG)))
+        .addMethod(
+            getGetCatalogMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.biglake.v1alpha1.GetCatalogRequest,
+                    com.google.cloud.bigquery.biglake.v1alpha1.Catalog>(
+                    service, METHODID_GET_CATALOG)))
+        .addMethod(
+            getListCatalogsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.biglake.v1alpha1.ListCatalogsRequest,
+                    com.google.cloud.bigquery.biglake.v1alpha1.ListCatalogsResponse>(
+                    service, METHODID_LIST_CATALOGS)))
+        .addMethod(
+            getCreateDatabaseMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.biglake.v1alpha1.CreateDatabaseRequest,
+                    com.google.cloud.bigquery.biglake.v1alpha1.Database>(
+                    service, METHODID_CREATE_DATABASE)))
+        .addMethod(
+            getDeleteDatabaseMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.biglake.v1alpha1.DeleteDatabaseRequest,
+                    com.google.cloud.bigquery.biglake.v1alpha1.Database>(
+                    service, METHODID_DELETE_DATABASE)))
+        .addMethod(
+            getUpdateDatabaseMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.biglake.v1alpha1.UpdateDatabaseRequest,
+                    com.google.cloud.bigquery.biglake.v1alpha1.Database>(
+                    service, METHODID_UPDATE_DATABASE)))
+        .addMethod(
+            getGetDatabaseMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.biglake.v1alpha1.GetDatabaseRequest,
+                    com.google.cloud.bigquery.biglake.v1alpha1.Database>(
+                    service, METHODID_GET_DATABASE)))
+        .addMethod(
+            getListDatabasesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.biglake.v1alpha1.ListDatabasesRequest,
+                    com.google.cloud.bigquery.biglake.v1alpha1.ListDatabasesResponse>(
+                    service, METHODID_LIST_DATABASES)))
+        .addMethod(
+            getCreateTableMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.biglake.v1alpha1.CreateTableRequest,
+                    com.google.cloud.bigquery.biglake.v1alpha1.Table>(
+                    service, METHODID_CREATE_TABLE)))
+        .addMethod(
+            getDeleteTableMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.biglake.v1alpha1.DeleteTableRequest,
+                    com.google.cloud.bigquery.biglake.v1alpha1.Table>(
+                    service, METHODID_DELETE_TABLE)))
+        .addMethod(
+            getUpdateTableMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.biglake.v1alpha1.UpdateTableRequest,
+                    com.google.cloud.bigquery.biglake.v1alpha1.Table>(
+                    service, METHODID_UPDATE_TABLE)))
+        .addMethod(
+            getGetTableMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.biglake.v1alpha1.GetTableRequest,
+                    com.google.cloud.bigquery.biglake.v1alpha1.Table>(service, METHODID_GET_TABLE)))
+        .addMethod(
+            getListTablesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.biglake.v1alpha1.ListTablesRequest,
+                    com.google.cloud.bigquery.biglake.v1alpha1.ListTablesResponse>(
+                    service, METHODID_LIST_TABLES)))
+        .addMethod(
+            getCreateLockMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.biglake.v1alpha1.CreateLockRequest,
+                    com.google.cloud.bigquery.biglake.v1alpha1.Lock>(
+                    service, METHODID_CREATE_LOCK)))
+        .addMethod(
+            getDeleteLockMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.biglake.v1alpha1.DeleteLockRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_LOCK)))
+        .addMethod(
+            getCheckLockMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.biglake.v1alpha1.CheckLockRequest,
+                    com.google.cloud.bigquery.biglake.v1alpha1.Lock>(service, METHODID_CHECK_LOCK)))
+        .addMethod(
+            getListLocksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.biglake.v1alpha1.ListLocksRequest,
+                    com.google.cloud.bigquery.biglake.v1alpha1.ListLocksResponse>(
+                    service, METHODID_LIST_LOCKS)))
+        .build();
   }
 
   private abstract static class MetastoreServiceBaseDescriptorSupplier

@@ -43,6 +43,7 @@ public class SyncMoveAssignment {
                       .toString())
               .setDestinationId(
                   ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
+              .setAssignmentId("assignmentId-1603989304")
               .build();
       Assignment response = reservationServiceClient.moveAssignment(request);
     }

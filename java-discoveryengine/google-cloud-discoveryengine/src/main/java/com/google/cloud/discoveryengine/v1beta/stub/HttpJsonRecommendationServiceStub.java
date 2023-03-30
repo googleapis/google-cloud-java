@@ -69,6 +69,8 @@ public class HttpJsonRecommendationServiceStub extends RecommendationServiceStub
                                 fields, "servingConfig", request.getServingConfig());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1beta/{servingConfig=projects/*/locations/*/collections/*/dataStores/*/servingConfigs/*}:recommend")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

@@ -280,7 +280,7 @@ public final class ContainerAnalysisGrpc {
    * image with the vulnerability referring to that note.
    * </pre>
    */
-  public abstract static class ContainerAnalysisImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -295,7 +295,7 @@ public final class ContainerAnalysisGrpc {
      * occurrences.
      * </pre>
      */
-    public void setIamPolicy(
+    default void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -315,7 +315,7 @@ public final class ContainerAnalysisGrpc {
      * occurrences.
      * </pre>
      */
-    public void getIamPolicy(
+    default void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -334,7 +334,7 @@ public final class ContainerAnalysisGrpc {
      * occurrences.
      * </pre>
      */
-    public void testIamPermissions(
+    default void testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
@@ -349,49 +349,43 @@ public final class ContainerAnalysisGrpc {
      * Gets a summary of the number and severity of occurrences.
      * </pre>
      */
-    public void getVulnerabilityOccurrencesSummary(
+    default void getVulnerabilityOccurrencesSummary(
         com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest request,
         io.grpc.stub.StreamObserver<com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetVulnerabilityOccurrencesSummaryMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ContainerAnalysis.
+   *
+   * <pre>
+   * Retrieves analysis results of Cloud components such as Docker container
+   * images. The Container Analysis API is an implementation of the
+   * [Grafeas](https://grafeas.io) API.
+   * Analysis results are stored as a series of occurrences. An `Occurrence`
+   * contains information about a specific analysis instance on a resource. An
+   * occurrence refers to a `Note`. A note contains details describing the
+   * analysis and is generally stored in a separate project, called a `Provider`.
+   * Multiple occurrences can refer to the same note.
+   * For example, an SSL vulnerability could affect multiple images. In this case,
+   * there would be one note for the vulnerability and an occurrence for each
+   * image with the vulnerability referring to that note.
+   * </pre>
+   */
+  public abstract static class ContainerAnalysisImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getSetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_SET_IAM_POLICY)))
-          .addMethod(
-              getGetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_GET_IAM_POLICY)))
-          .addMethod(
-              getTestIamPermissionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.TestIamPermissionsRequest,
-                      com.google.iam.v1.TestIamPermissionsResponse>(
-                      this, METHODID_TEST_IAM_PERMISSIONS)))
-          .addMethod(
-              getGetVulnerabilityOccurrencesSummaryMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest,
-                      com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary>(
-                      this, METHODID_GET_VULNERABILITY_OCCURRENCES_SUMMARY)))
-          .build();
+      return ContainerAnalysisGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ContainerAnalysis.
    *
    * <pre>
    * Retrieves analysis results of Cloud components such as Docker container
@@ -504,7 +498,7 @@ public final class ContainerAnalysisGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ContainerAnalysis.
    *
    * <pre>
    * Retrieves analysis results of Cloud components such as Docker container
@@ -603,7 +597,7 @@ public final class ContainerAnalysisGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service ContainerAnalysis.
    *
    * <pre>
    * Retrieves analysis results of Cloud components such as Docker container
@@ -715,10 +709,10 @@ public final class ContainerAnalysisGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ContainerAnalysisImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ContainerAnalysisImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -764,6 +758,35 @@ public final class ContainerAnalysisGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getSetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_SET_IAM_POLICY)))
+        .addMethod(
+            getGetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_GET_IAM_POLICY)))
+        .addMethod(
+            getTestIamPermissionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.v1.TestIamPermissionsRequest,
+                    com.google.iam.v1.TestIamPermissionsResponse>(
+                    service, METHODID_TEST_IAM_PERMISSIONS)))
+        .addMethod(
+            getGetVulnerabilityOccurrencesSummaryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest,
+                    com.google.containeranalysis.v1.VulnerabilityOccurrencesSummary>(
+                    service, METHODID_GET_VULNERABILITY_OCCURRENCES_SUMMARY)))
+        .build();
   }
 
   private abstract static class ContainerAnalysisBaseDescriptorSupplier

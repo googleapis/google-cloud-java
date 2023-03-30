@@ -218,7 +218,7 @@ public final class PredictionServiceGrpc {
    * A service for online predictions and explanations.
    * </pre>
    */
-  public abstract static class PredictionServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -227,7 +227,7 @@ public final class PredictionServiceGrpc {
      * Perform an online prediction.
      * </pre>
      */
-    public void predict(
+    default void predict(
         com.google.cloud.aiplatform.v1beta1.PredictRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.PredictResponse>
             responseObserver) {
@@ -248,7 +248,7 @@ public final class PredictionServiceGrpc {
      * this prediction.
      * </pre>
      */
-    public void rawPredict(
+    default void rawPredict(
         com.google.cloud.aiplatform.v1beta1.RawPredictRequest request,
         io.grpc.stub.StreamObserver<com.google.api.HttpBody> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRawPredictMethod(), responseObserver);
@@ -271,40 +271,32 @@ public final class PredictionServiceGrpc {
      * explanation_spec.
      * </pre>
      */
-    public void explain(
+    default void explain(
         com.google.cloud.aiplatform.v1beta1.ExplainRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ExplainResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getExplainMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service PredictionService.
+   *
+   * <pre>
+   * A service for online predictions and explanations.
+   * </pre>
+   */
+  public abstract static class PredictionServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getPredictMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.PredictRequest,
-                      com.google.cloud.aiplatform.v1beta1.PredictResponse>(this, METHODID_PREDICT)))
-          .addMethod(
-              getRawPredictMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.RawPredictRequest,
-                      com.google.api.HttpBody>(this, METHODID_RAW_PREDICT)))
-          .addMethod(
-              getExplainMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.ExplainRequest,
-                      com.google.cloud.aiplatform.v1beta1.ExplainResponse>(this, METHODID_EXPLAIN)))
-          .build();
+      return PredictionServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service PredictionService.
    *
    * <pre>
    * A service for online predictions and explanations.
@@ -385,7 +377,7 @@ public final class PredictionServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service PredictionService.
    *
    * <pre>
    * A service for online predictions and explanations.
@@ -462,7 +454,7 @@ public final class PredictionServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service PredictionService.
    *
    * <pre>
    * A service for online predictions and explanations.
@@ -548,10 +540,10 @@ public final class PredictionServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final PredictionServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(PredictionServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -591,6 +583,31 @@ public final class PredictionServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getPredictMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.PredictRequest,
+                    com.google.cloud.aiplatform.v1beta1.PredictResponse>(
+                    service, METHODID_PREDICT)))
+        .addMethod(
+            getRawPredictMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.RawPredictRequest, com.google.api.HttpBody>(
+                    service, METHODID_RAW_PREDICT)))
+        .addMethod(
+            getExplainMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.ExplainRequest,
+                    com.google.cloud.aiplatform.v1beta1.ExplainResponse>(
+                    service, METHODID_EXPLAIN)))
+        .build();
   }
 
   private abstract static class PredictionServiceBaseDescriptorSupplier

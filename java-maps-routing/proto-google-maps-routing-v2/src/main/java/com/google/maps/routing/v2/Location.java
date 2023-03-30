@@ -121,7 +121,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    * This value is used to specify the side of the road to use for pickup and
    * drop-off. Heading values can be from 0 to 360, where 0 specifies a heading
    * of due North, 90 specifies a heading of due East, etc. You can use this
-   * field only for `DRIVE` and `TWO_WHEELER` travel modes.
+   * field only for `DRIVE` and `TWO_WHEELER`
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
    * </pre>
    *
    * <code>.google.protobuf.Int32Value heading = 2;</code>
@@ -140,7 +141,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    * This value is used to specify the side of the road to use for pickup and
    * drop-off. Heading values can be from 0 to 360, where 0 specifies a heading
    * of due North, 90 specifies a heading of due East, etc. You can use this
-   * field only for `DRIVE` and `TWO_WHEELER` travel modes.
+   * field only for `DRIVE` and `TWO_WHEELER`
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
    * </pre>
    *
    * <code>.google.protobuf.Int32Value heading = 2;</code>
@@ -159,7 +161,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
    * This value is used to specify the side of the road to use for pickup and
    * drop-off. Heading values can be from 0 to 360, where 0 specifies a heading
    * of due North, 90 specifies a heading of due East, etc. You can use this
-   * field only for `DRIVE` and `TWO_WHEELER` travel modes.
+   * field only for `DRIVE` and `TWO_WHEELER`
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
    * </pre>
    *
    * <code>.google.protobuf.Int32Value heading = 2;</code>
@@ -733,7 +736,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * This value is used to specify the side of the road to use for pickup and
      * drop-off. Heading values can be from 0 to 360, where 0 specifies a heading
      * of due North, 90 specifies a heading of due East, etc. You can use this
-     * field only for `DRIVE` and `TWO_WHEELER` travel modes.
+     * field only for `DRIVE` and `TWO_WHEELER`
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
      * </pre>
      *
      * <code>.google.protobuf.Int32Value heading = 2;</code>
@@ -751,7 +755,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * This value is used to specify the side of the road to use for pickup and
      * drop-off. Heading values can be from 0 to 360, where 0 specifies a heading
      * of due North, 90 specifies a heading of due East, etc. You can use this
-     * field only for `DRIVE` and `TWO_WHEELER` travel modes.
+     * field only for `DRIVE` and `TWO_WHEELER`
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
      * </pre>
      *
      * <code>.google.protobuf.Int32Value heading = 2;</code>
@@ -773,7 +778,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * This value is used to specify the side of the road to use for pickup and
      * drop-off. Heading values can be from 0 to 360, where 0 specifies a heading
      * of due North, 90 specifies a heading of due East, etc. You can use this
-     * field only for `DRIVE` and `TWO_WHEELER` travel modes.
+     * field only for `DRIVE` and `TWO_WHEELER`
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
      * </pre>
      *
      * <code>.google.protobuf.Int32Value heading = 2;</code>
@@ -799,7 +805,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * This value is used to specify the side of the road to use for pickup and
      * drop-off. Heading values can be from 0 to 360, where 0 specifies a heading
      * of due North, 90 specifies a heading of due East, etc. You can use this
-     * field only for `DRIVE` and `TWO_WHEELER` travel modes.
+     * field only for `DRIVE` and `TWO_WHEELER`
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
      * </pre>
      *
      * <code>.google.protobuf.Int32Value heading = 2;</code>
@@ -822,7 +829,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * This value is used to specify the side of the road to use for pickup and
      * drop-off. Heading values can be from 0 to 360, where 0 specifies a heading
      * of due North, 90 specifies a heading of due East, etc. You can use this
-     * field only for `DRIVE` and `TWO_WHEELER` travel modes.
+     * field only for `DRIVE` and `TWO_WHEELER`
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
      * </pre>
      *
      * <code>.google.protobuf.Int32Value heading = 2;</code>
@@ -851,7 +859,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * This value is used to specify the side of the road to use for pickup and
      * drop-off. Heading values can be from 0 to 360, where 0 specifies a heading
      * of due North, 90 specifies a heading of due East, etc. You can use this
-     * field only for `DRIVE` and `TWO_WHEELER` travel modes.
+     * field only for `DRIVE` and `TWO_WHEELER`
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
      * </pre>
      *
      * <code>.google.protobuf.Int32Value heading = 2;</code>
@@ -874,7 +883,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * This value is used to specify the side of the road to use for pickup and
      * drop-off. Heading values can be from 0 to 360, where 0 specifies a heading
      * of due North, 90 specifies a heading of due East, etc. You can use this
-     * field only for `DRIVE` and `TWO_WHEELER` travel modes.
+     * field only for `DRIVE` and `TWO_WHEELER`
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
      * </pre>
      *
      * <code>.google.protobuf.Int32Value heading = 2;</code>
@@ -892,7 +902,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * This value is used to specify the side of the road to use for pickup and
      * drop-off. Heading values can be from 0 to 360, where 0 specifies a heading
      * of due North, 90 specifies a heading of due East, etc. You can use this
-     * field only for `DRIVE` and `TWO_WHEELER` travel modes.
+     * field only for `DRIVE` and `TWO_WHEELER`
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
      * </pre>
      *
      * <code>.google.protobuf.Int32Value heading = 2;</code>
@@ -912,7 +923,8 @@ public final class Location extends com.google.protobuf.GeneratedMessageV3
      * This value is used to specify the side of the road to use for pickup and
      * drop-off. Heading values can be from 0 to 360, where 0 specifies a heading
      * of due North, 90 specifies a heading of due East, etc. You can use this
-     * field only for `DRIVE` and `TWO_WHEELER` travel modes.
+     * field only for `DRIVE` and `TWO_WHEELER`
+     * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
      * </pre>
      *
      * <code>.google.protobuf.Int32Value heading = 2;</code>

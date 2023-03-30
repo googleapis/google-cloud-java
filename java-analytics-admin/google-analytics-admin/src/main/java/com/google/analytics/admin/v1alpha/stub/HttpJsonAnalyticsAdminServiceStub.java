@@ -69,6 +69,8 @@ import com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkPro
 import com.google.analytics.admin.v1alpha.ConversionEvent;
 import com.google.analytics.admin.v1alpha.CreateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.CreateAudienceRequest;
+import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest;
+import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse;
 import com.google.analytics.admin.v1alpha.CreateConversionEventRequest;
 import com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.CreateCustomMetricRequest;
@@ -89,6 +91,7 @@ import com.google.analytics.admin.v1alpha.DataSharingSettings;
 import com.google.analytics.admin.v1alpha.DataStream;
 import com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
+import com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest;
 import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
 import com.google.analytics.admin.v1alpha.DeleteDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest;
@@ -102,6 +105,7 @@ import com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal;
+import com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings;
 import com.google.analytics.admin.v1alpha.ExpandedDataSet;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse;
@@ -119,6 +123,7 @@ import com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetDataStreamRequest;
 import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest;
+import com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
 import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
@@ -139,6 +144,8 @@ import com.google.analytics.admin.v1alpha.ListAudiencesRequest;
 import com.google.analytics.admin.v1alpha.ListAudiencesResponse;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse;
+import com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest;
+import com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse;
 import com.google.analytics.admin.v1alpha.ListConversionEventsRequest;
 import com.google.analytics.admin.v1alpha.ListConversionEventsResponse;
 import com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest;
@@ -185,6 +192,7 @@ import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest;
+import com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
@@ -3458,6 +3466,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                             serializer.putPathParam(fields, "entity", request.getEntity());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1alpha/{entity=accounts/*}:runAccessReport")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -4180,6 +4189,206 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
+      getEnhancedMeasurementSettingsMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetEnhancedMeasurementSettings")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetEnhancedMeasurementSettingsRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{name=properties/*/dataStreams/*/enhancedMeasurementSettings}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetEnhancedMeasurementSettingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetEnhancedMeasurementSettingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<EnhancedMeasurementSettings>newBuilder()
+                      .setDefaultInstance(EnhancedMeasurementSettings.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
+      updateEnhancedMeasurementSettingsMethodDescriptor =
+          ApiMethodDescriptor
+              .<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateEnhancedMeasurementSettings")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<UpdateEnhancedMeasurementSettingsRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/{enhancedMeasurementSettings.name=properties/*/dataStreams/*/enhancedMeasurementSettings}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateEnhancedMeasurementSettingsRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "enhancedMeasurementSettings.name",
+                                request.getEnhancedMeasurementSettings().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateEnhancedMeasurementSettingsRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "enhancedMeasurementSettings",
+                                      request.getEnhancedMeasurementSettings(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<EnhancedMeasurementSettings>newBuilder()
+                      .setDefaultInstance(EnhancedMeasurementSettings.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          CreateConnectedSiteTagRequest, CreateConnectedSiteTagResponse>
+      createConnectedSiteTagMethodDescriptor =
+          ApiMethodDescriptor
+              .<CreateConnectedSiteTagRequest, CreateConnectedSiteTagResponse>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateConnectedSiteTag")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateConnectedSiteTagRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/properties:createConnectedSiteTag",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateConnectedSiteTagRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateConnectedSiteTagRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CreateConnectedSiteTagResponse>newBuilder()
+                      .setDefaultInstance(CreateConnectedSiteTagResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteConnectedSiteTagRequest, Empty>
+      deleteConnectedSiteTagMethodDescriptor =
+          ApiMethodDescriptor.<DeleteConnectedSiteTagRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteConnectedSiteTag")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteConnectedSiteTagRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/properties:deleteConnectedSiteTag",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteConnectedSiteTagRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteConnectedSiteTagRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
+      listConnectedSiteTagsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListConnectedSiteTags")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListConnectedSiteTagsRequest>newBuilder()
+                      .setPath(
+                          "/v1alpha/properties:listConnectedSiteTags",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListConnectedSiteTagsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListConnectedSiteTagsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListConnectedSiteTagsResponse>newBuilder()
+                      .setDefaultInstance(ListConnectedSiteTagsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetAccountRequest, Account> getAccountCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsResponse> listAccountsCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsPagedResponse>
@@ -4405,6 +4614,15 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
       listBigQueryLinksCallable;
   private final UnaryCallable<ListBigQueryLinksRequest, ListBigQueryLinksPagedResponse>
       listBigQueryLinksPagedCallable;
+  private final UnaryCallable<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
+      getEnhancedMeasurementSettingsCallable;
+  private final UnaryCallable<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
+      updateEnhancedMeasurementSettingsCallable;
+  private final UnaryCallable<CreateConnectedSiteTagRequest, CreateConnectedSiteTagResponse>
+      createConnectedSiteTagCallable;
+  private final UnaryCallable<DeleteConnectedSiteTagRequest, Empty> deleteConnectedSiteTagCallable;
+  private final UnaryCallable<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
+      listConnectedSiteTagsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -5102,6 +5320,40 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                 .setMethodDescriptor(listBigQueryLinksMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
+        getEnhancedMeasurementSettingsTransportSettings =
+            HttpJsonCallSettings
+                .<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>newBuilder()
+                .setMethodDescriptor(getEnhancedMeasurementSettingsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
+        updateEnhancedMeasurementSettingsTransportSettings =
+            HttpJsonCallSettings
+                .<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>newBuilder()
+                .setMethodDescriptor(updateEnhancedMeasurementSettingsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<CreateConnectedSiteTagRequest, CreateConnectedSiteTagResponse>
+        createConnectedSiteTagTransportSettings =
+            HttpJsonCallSettings
+                .<CreateConnectedSiteTagRequest, CreateConnectedSiteTagResponse>newBuilder()
+                .setMethodDescriptor(createConnectedSiteTagMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<DeleteConnectedSiteTagRequest, Empty>
+        deleteConnectedSiteTagTransportSettings =
+            HttpJsonCallSettings.<DeleteConnectedSiteTagRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteConnectedSiteTagMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
+        listConnectedSiteTagsTransportSettings =
+            HttpJsonCallSettings
+                .<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>newBuilder()
+                .setMethodDescriptor(listConnectedSiteTagsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
 
     this.getAccountCallable =
         callableFactory.createUnaryCallable(
@@ -5641,6 +5893,31 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
             listBigQueryLinksTransportSettings,
             settings.listBigQueryLinksSettings(),
             clientContext);
+    this.getEnhancedMeasurementSettingsCallable =
+        callableFactory.createUnaryCallable(
+            getEnhancedMeasurementSettingsTransportSettings,
+            settings.getEnhancedMeasurementSettingsSettings(),
+            clientContext);
+    this.updateEnhancedMeasurementSettingsCallable =
+        callableFactory.createUnaryCallable(
+            updateEnhancedMeasurementSettingsTransportSettings,
+            settings.updateEnhancedMeasurementSettingsSettings(),
+            clientContext);
+    this.createConnectedSiteTagCallable =
+        callableFactory.createUnaryCallable(
+            createConnectedSiteTagTransportSettings,
+            settings.createConnectedSiteTagSettings(),
+            clientContext);
+    this.deleteConnectedSiteTagCallable =
+        callableFactory.createUnaryCallable(
+            deleteConnectedSiteTagTransportSettings,
+            settings.deleteConnectedSiteTagSettings(),
+            clientContext);
+    this.listConnectedSiteTagsCallable =
+        callableFactory.createUnaryCallable(
+            listConnectedSiteTagsTransportSettings,
+            settings.listConnectedSiteTagsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -5751,6 +6028,11 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
     methodDescriptors.add(fetchAutomatedGa4ConfigurationOptOutMethodDescriptor);
     methodDescriptors.add(getBigQueryLinkMethodDescriptor);
     methodDescriptors.add(listBigQueryLinksMethodDescriptor);
+    methodDescriptors.add(getEnhancedMeasurementSettingsMethodDescriptor);
+    methodDescriptors.add(updateEnhancedMeasurementSettingsMethodDescriptor);
+    methodDescriptors.add(createConnectedSiteTagMethodDescriptor);
+    methodDescriptors.add(deleteConnectedSiteTagMethodDescriptor);
+    methodDescriptors.add(listConnectedSiteTagsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -6449,6 +6731,35 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
   public UnaryCallable<ListBigQueryLinksRequest, ListBigQueryLinksPagedResponse>
       listBigQueryLinksPagedCallable() {
     return listBigQueryLinksPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
+      getEnhancedMeasurementSettingsCallable() {
+    return getEnhancedMeasurementSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
+      updateEnhancedMeasurementSettingsCallable() {
+    return updateEnhancedMeasurementSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateConnectedSiteTagRequest, CreateConnectedSiteTagResponse>
+      createConnectedSiteTagCallable() {
+    return createConnectedSiteTagCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteConnectedSiteTagRequest, Empty> deleteConnectedSiteTagCallable() {
+    return deleteConnectedSiteTagCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
+      listConnectedSiteTagsCallable() {
+    return listConnectedSiteTagsCallable;
   }
 
   @Override

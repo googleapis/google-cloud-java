@@ -52,6 +52,9 @@
             "GetProcessorVersion": {
               "methods": ["getProcessorVersion", "getProcessorVersion", "getProcessorVersion", "getProcessorVersionCallable"]
             },
+            "ImportProcessorVersion": {
+              "methods": ["importProcessorVersionAsync", "importProcessorVersionAsync", "importProcessorVersionAsync", "importProcessorVersionOperationCallable", "importProcessorVersionCallable"]
+            },
             "ListEvaluations": {
               "methods": ["listEvaluations", "listEvaluations", "listEvaluations", "listEvaluationsPagedCallable", "listEvaluationsCallable"]
             },

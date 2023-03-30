@@ -416,7 +416,7 @@ public final class BetaAnalyticsDataGrpc {
    * Google Analytics reporting data service.
    * </pre>
    */
-  public abstract static class BetaAnalyticsDataImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -434,7 +434,7 @@ public final class BetaAnalyticsDataGrpc {
      * Report](https://developers.google.com/analytics/devguides/reporting/data/v1/basics).
      * </pre>
      */
-    public void runReport(
+    default void runReport(
         com.google.analytics.data.v1beta.RunReportRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.data.v1beta.RunReportResponse>
             responseObserver) {
@@ -452,7 +452,7 @@ public final class BetaAnalyticsDataGrpc {
      * your data.
      * </pre>
      */
-    public void runPivotReport(
+    default void runPivotReport(
         com.google.analytics.data.v1beta.RunPivotReportRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.data.v1beta.RunPivotReportResponse>
             responseObserver) {
@@ -468,7 +468,7 @@ public final class BetaAnalyticsDataGrpc {
      * GA4 Property.
      * </pre>
      */
-    public void batchRunReports(
+    default void batchRunReports(
         com.google.analytics.data.v1beta.BatchRunReportsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.data.v1beta.BatchRunReportsResponse>
             responseObserver) {
@@ -484,7 +484,7 @@ public final class BetaAnalyticsDataGrpc {
      * GA4 Property.
      * </pre>
      */
-    public void batchRunPivotReports(
+    default void batchRunPivotReports(
         com.google.analytics.data.v1beta.BatchRunPivotReportsRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.data.v1beta.BatchRunPivotReportsResponse>
             responseObserver) {
@@ -507,7 +507,7 @@ public final class BetaAnalyticsDataGrpc {
      * metrics applicable to any property such as `country` and `totalUsers`.
      * </pre>
      */
-    public void getMetadata(
+    default void getMetadata(
         com.google.analytics.data.v1beta.GetMetadataRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.data.v1beta.Metadata> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -528,7 +528,7 @@ public final class BetaAnalyticsDataGrpc {
      * Report](https://developers.google.com/analytics/devguides/reporting/data/v1/realtime-basics).
      * </pre>
      */
-    public void runRealtimeReport(
+    default void runRealtimeReport(
         com.google.analytics.data.v1beta.RunRealtimeReportRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.data.v1beta.RunRealtimeReportResponse>
             responseObserver) {
@@ -550,71 +550,33 @@ public final class BetaAnalyticsDataGrpc {
      * method checks compatibility for Core reports.
      * </pre>
      */
-    public void checkCompatibility(
+    default void checkCompatibility(
         com.google.analytics.data.v1beta.CheckCompatibilityRequest request,
         io.grpc.stub.StreamObserver<com.google.analytics.data.v1beta.CheckCompatibilityResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCheckCompatibilityMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service BetaAnalyticsData.
+   *
+   * <pre>
+   * Google Analytics reporting data service.
+   * </pre>
+   */
+  public abstract static class BetaAnalyticsDataImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getRunReportMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.data.v1beta.RunReportRequest,
-                      com.google.analytics.data.v1beta.RunReportResponse>(
-                      this, METHODID_RUN_REPORT)))
-          .addMethod(
-              getRunPivotReportMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.data.v1beta.RunPivotReportRequest,
-                      com.google.analytics.data.v1beta.RunPivotReportResponse>(
-                      this, METHODID_RUN_PIVOT_REPORT)))
-          .addMethod(
-              getBatchRunReportsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.data.v1beta.BatchRunReportsRequest,
-                      com.google.analytics.data.v1beta.BatchRunReportsResponse>(
-                      this, METHODID_BATCH_RUN_REPORTS)))
-          .addMethod(
-              getBatchRunPivotReportsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.data.v1beta.BatchRunPivotReportsRequest,
-                      com.google.analytics.data.v1beta.BatchRunPivotReportsResponse>(
-                      this, METHODID_BATCH_RUN_PIVOT_REPORTS)))
-          .addMethod(
-              getGetMetadataMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.data.v1beta.GetMetadataRequest,
-                      com.google.analytics.data.v1beta.Metadata>(this, METHODID_GET_METADATA)))
-          .addMethod(
-              getRunRealtimeReportMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.data.v1beta.RunRealtimeReportRequest,
-                      com.google.analytics.data.v1beta.RunRealtimeReportResponse>(
-                      this, METHODID_RUN_REALTIME_REPORT)))
-          .addMethod(
-              getCheckCompatibilityMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.analytics.data.v1beta.CheckCompatibilityRequest,
-                      com.google.analytics.data.v1beta.CheckCompatibilityResponse>(
-                      this, METHODID_CHECK_COMPATIBILITY)))
-          .build();
+      return BetaAnalyticsDataGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service BetaAnalyticsData.
    *
    * <pre>
    * Google Analytics reporting data service.
@@ -787,7 +749,7 @@ public final class BetaAnalyticsDataGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service BetaAnalyticsData.
    *
    * <pre>
    * Google Analytics reporting data service.
@@ -936,7 +898,7 @@ public final class BetaAnalyticsDataGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service BetaAnalyticsData.
    *
    * <pre>
    * Google Analytics reporting data service.
@@ -1103,10 +1065,10 @@ public final class BetaAnalyticsDataGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final BetaAnalyticsDataImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(BetaAnalyticsDataImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1175,6 +1137,59 @@ public final class BetaAnalyticsDataGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getRunReportMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.data.v1beta.RunReportRequest,
+                    com.google.analytics.data.v1beta.RunReportResponse>(
+                    service, METHODID_RUN_REPORT)))
+        .addMethod(
+            getRunPivotReportMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.data.v1beta.RunPivotReportRequest,
+                    com.google.analytics.data.v1beta.RunPivotReportResponse>(
+                    service, METHODID_RUN_PIVOT_REPORT)))
+        .addMethod(
+            getBatchRunReportsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.data.v1beta.BatchRunReportsRequest,
+                    com.google.analytics.data.v1beta.BatchRunReportsResponse>(
+                    service, METHODID_BATCH_RUN_REPORTS)))
+        .addMethod(
+            getBatchRunPivotReportsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.data.v1beta.BatchRunPivotReportsRequest,
+                    com.google.analytics.data.v1beta.BatchRunPivotReportsResponse>(
+                    service, METHODID_BATCH_RUN_PIVOT_REPORTS)))
+        .addMethod(
+            getGetMetadataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.data.v1beta.GetMetadataRequest,
+                    com.google.analytics.data.v1beta.Metadata>(service, METHODID_GET_METADATA)))
+        .addMethod(
+            getRunRealtimeReportMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.data.v1beta.RunRealtimeReportRequest,
+                    com.google.analytics.data.v1beta.RunRealtimeReportResponse>(
+                    service, METHODID_RUN_REALTIME_REPORT)))
+        .addMethod(
+            getCheckCompatibilityMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.data.v1beta.CheckCompatibilityRequest,
+                    com.google.analytics.data.v1beta.CheckCompatibilityResponse>(
+                    service, METHODID_CHECK_COMPATIBILITY)))
+        .build();
   }
 
   private abstract static class BetaAnalyticsDataBaseDescriptorSupplier

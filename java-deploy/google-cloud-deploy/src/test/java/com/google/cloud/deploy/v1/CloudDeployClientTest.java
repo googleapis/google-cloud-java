@@ -1145,6 +1145,7 @@ public class CloudDeployClientTest {
             .setSkaffoldVersion("skaffoldVersion229290234")
             .putAllTargetArtifacts(new HashMap<String, TargetArtifact>())
             .putAllTargetRenders(new HashMap<String, Release.TargetRender>())
+            .setCondition(Release.ReleaseCondition.newBuilder().build())
             .build();
     mockCloudDeploy.addResponse(expectedResponse);
 
@@ -1204,6 +1205,7 @@ public class CloudDeployClientTest {
             .setSkaffoldVersion("skaffoldVersion229290234")
             .putAllTargetArtifacts(new HashMap<String, TargetArtifact>())
             .putAllTargetRenders(new HashMap<String, Release.TargetRender>())
+            .setCondition(Release.ReleaseCondition.newBuilder().build())
             .build();
     mockCloudDeploy.addResponse(expectedResponse);
 
@@ -1261,6 +1263,7 @@ public class CloudDeployClientTest {
             .setSkaffoldVersion("skaffoldVersion229290234")
             .putAllTargetArtifacts(new HashMap<String, TargetArtifact>())
             .putAllTargetRenders(new HashMap<String, Release.TargetRender>())
+            .setCondition(Release.ReleaseCondition.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1334,6 +1337,7 @@ public class CloudDeployClientTest {
             .setSkaffoldVersion("skaffoldVersion229290234")
             .putAllTargetArtifacts(new HashMap<String, TargetArtifact>())
             .putAllTargetRenders(new HashMap<String, Release.TargetRender>())
+            .setCondition(Release.ReleaseCondition.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1527,6 +1531,158 @@ public class CloudDeployClientTest {
   }
 
   @Test
+  public void advanceRolloutTest() throws Exception {
+    AdvanceRolloutResponse expectedResponse = AdvanceRolloutResponse.newBuilder().build();
+    mockCloudDeploy.addResponse(expectedResponse);
+
+    RolloutName name =
+        RolloutName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[RELEASE]", "[ROLLOUT]");
+    String phaseId = "phaseId-608264202";
+
+    AdvanceRolloutResponse actualResponse = client.advanceRollout(name, phaseId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AdvanceRolloutRequest actualRequest = ((AdvanceRolloutRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(phaseId, actualRequest.getPhaseId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void advanceRolloutExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      RolloutName name =
+          RolloutName.of(
+              "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[RELEASE]", "[ROLLOUT]");
+      String phaseId = "phaseId-608264202";
+      client.advanceRollout(name, phaseId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void advanceRolloutTest2() throws Exception {
+    AdvanceRolloutResponse expectedResponse = AdvanceRolloutResponse.newBuilder().build();
+    mockCloudDeploy.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    String phaseId = "phaseId-608264202";
+
+    AdvanceRolloutResponse actualResponse = client.advanceRollout(name, phaseId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AdvanceRolloutRequest actualRequest = ((AdvanceRolloutRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(phaseId, actualRequest.getPhaseId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void advanceRolloutExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String phaseId = "phaseId-608264202";
+      client.advanceRollout(name, phaseId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void cancelRolloutTest() throws Exception {
+    CancelRolloutResponse expectedResponse = CancelRolloutResponse.newBuilder().build();
+    mockCloudDeploy.addResponse(expectedResponse);
+
+    RolloutName name =
+        RolloutName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[RELEASE]", "[ROLLOUT]");
+
+    CancelRolloutResponse actualResponse = client.cancelRollout(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CancelRolloutRequest actualRequest = ((CancelRolloutRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void cancelRolloutExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      RolloutName name =
+          RolloutName.of(
+              "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[RELEASE]", "[ROLLOUT]");
+      client.cancelRollout(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void cancelRolloutTest2() throws Exception {
+    CancelRolloutResponse expectedResponse = CancelRolloutResponse.newBuilder().build();
+    mockCloudDeploy.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    CancelRolloutResponse actualResponse = client.cancelRollout(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CancelRolloutRequest actualRequest = ((CancelRolloutRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void cancelRolloutExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.cancelRollout(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listRolloutsTest() throws Exception {
     Rollout responsesElement = Rollout.newBuilder().build();
     ListRolloutsResponse expectedResponse =
@@ -1639,6 +1795,7 @@ public class CloudDeployClientTest {
             .setEtag("etag3123477")
             .addAllPhases(new ArrayList<Phase>())
             .setMetadata(Metadata.newBuilder().build())
+            .setControllerRollout("controllerRollout-685691275")
             .build();
     mockCloudDeploy.addResponse(expectedResponse);
 
@@ -1698,6 +1855,7 @@ public class CloudDeployClientTest {
             .setEtag("etag3123477")
             .addAllPhases(new ArrayList<Phase>())
             .setMetadata(Metadata.newBuilder().build())
+            .setControllerRollout("controllerRollout-685691275")
             .build();
     mockCloudDeploy.addResponse(expectedResponse);
 
@@ -1754,6 +1912,7 @@ public class CloudDeployClientTest {
             .setEtag("etag3123477")
             .addAllPhases(new ArrayList<Phase>())
             .setMetadata(Metadata.newBuilder().build())
+            .setControllerRollout("controllerRollout-685691275")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1826,6 +1985,7 @@ public class CloudDeployClientTest {
             .setEtag("etag3123477")
             .addAllPhases(new ArrayList<Phase>())
             .setMetadata(Metadata.newBuilder().build())
+            .setControllerRollout("controllerRollout-685691275")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1870,6 +2030,91 @@ public class CloudDeployClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void ignoreJobTest() throws Exception {
+    IgnoreJobResponse expectedResponse = IgnoreJobResponse.newBuilder().build();
+    mockCloudDeploy.addResponse(expectedResponse);
+
+    RolloutName rollout =
+        RolloutName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[RELEASE]", "[ROLLOUT]");
+    String phaseId = "phaseId-608264202";
+    String jobId = "jobId101296568";
+
+    IgnoreJobResponse actualResponse = client.ignoreJob(rollout, phaseId, jobId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    IgnoreJobRequest actualRequest = ((IgnoreJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(rollout.toString(), actualRequest.getRollout());
+    Assert.assertEquals(phaseId, actualRequest.getPhaseId());
+    Assert.assertEquals(jobId, actualRequest.getJobId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void ignoreJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      RolloutName rollout =
+          RolloutName.of(
+              "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[RELEASE]", "[ROLLOUT]");
+      String phaseId = "phaseId-608264202";
+      String jobId = "jobId101296568";
+      client.ignoreJob(rollout, phaseId, jobId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void ignoreJobTest2() throws Exception {
+    IgnoreJobResponse expectedResponse = IgnoreJobResponse.newBuilder().build();
+    mockCloudDeploy.addResponse(expectedResponse);
+
+    String rollout = "rollout1377108401";
+    String phaseId = "phaseId-608264202";
+    String jobId = "jobId101296568";
+
+    IgnoreJobResponse actualResponse = client.ignoreJob(rollout, phaseId, jobId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    IgnoreJobRequest actualRequest = ((IgnoreJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(rollout, actualRequest.getRollout());
+    Assert.assertEquals(phaseId, actualRequest.getPhaseId());
+    Assert.assertEquals(jobId, actualRequest.getJobId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void ignoreJobExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      String rollout = "rollout1377108401";
+      String phaseId = "phaseId-608264202";
+      String jobId = "jobId101296568";
+      client.ignoreJob(rollout, phaseId, jobId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 
@@ -2163,6 +2408,90 @@ public class CloudDeployClientTest {
     try {
       String name = "name3373707";
       client.getJobRun(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void terminateJobRunTest() throws Exception {
+    TerminateJobRunResponse expectedResponse = TerminateJobRunResponse.newBuilder().build();
+    mockCloudDeploy.addResponse(expectedResponse);
+
+    JobRunName name =
+        JobRunName.of(
+            "[PROJECT]",
+            "[LOCATION]",
+            "[DELIVERY_PIPELINE]",
+            "[RELEASE]",
+            "[ROLLOUT]",
+            "[JOB_RUN]");
+
+    TerminateJobRunResponse actualResponse = client.terminateJobRun(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TerminateJobRunRequest actualRequest = ((TerminateJobRunRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void terminateJobRunExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      JobRunName name =
+          JobRunName.of(
+              "[PROJECT]",
+              "[LOCATION]",
+              "[DELIVERY_PIPELINE]",
+              "[RELEASE]",
+              "[ROLLOUT]",
+              "[JOB_RUN]");
+      client.terminateJobRun(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void terminateJobRunTest2() throws Exception {
+    TerminateJobRunResponse expectedResponse = TerminateJobRunResponse.newBuilder().build();
+    mockCloudDeploy.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    TerminateJobRunResponse actualResponse = client.terminateJobRun(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudDeploy.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    TerminateJobRunRequest actualRequest = ((TerminateJobRunRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void terminateJobRunExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudDeploy.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.terminateJobRun(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

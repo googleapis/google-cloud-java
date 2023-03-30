@@ -431,4 +431,108 @@ public interface InstanceOrBuilder
    * </code>
    */
   com.google.protobuf.BoolValueOrBuilder getSatisfiesPzsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * KMS key name used for data encryption.
+   * </pre>
+   *
+   * <code>string kms_key_name = 14;</code>
+   *
+   * @return The kmsKeyName.
+   */
+  java.lang.String getKmsKeyName();
+  /**
+   *
+   *
+   * <pre>
+   * KMS key name used for data encryption.
+   * </pre>
+   *
+   * <code>string kms_key_name = 14;</code>
+   *
+   * @return The bytes for kmsKeyName.
+   */
+  com.google.protobuf.ByteString getKmsKeyNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+   * state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.filestore.v1.Instance.SuspensionReason suspension_reasons = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the suspensionReasons.
+   */
+  java.util.List<com.google.cloud.filestore.v1.Instance.SuspensionReason>
+      getSuspensionReasonsList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+   * state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.filestore.v1.Instance.SuspensionReason suspension_reasons = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of suspensionReasons.
+   */
+  int getSuspensionReasonsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+   * state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.filestore.v1.Instance.SuspensionReason suspension_reasons = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The suspensionReasons at the given index.
+   */
+  com.google.cloud.filestore.v1.Instance.SuspensionReason getSuspensionReasons(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+   * state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.filestore.v1.Instance.SuspensionReason suspension_reasons = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for suspensionReasons.
+   */
+  java.util.List<java.lang.Integer> getSuspensionReasonsValueList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+   * state.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.filestore.v1.Instance.SuspensionReason suspension_reasons = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of suspensionReasons at the given index.
+   */
+  int getSuspensionReasonsValue(int index);
 }

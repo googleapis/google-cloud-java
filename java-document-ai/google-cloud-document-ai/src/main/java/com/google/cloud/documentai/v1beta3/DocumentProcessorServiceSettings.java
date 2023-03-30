@@ -320,6 +320,23 @@ public class DocumentProcessorServiceSettings
     return ((DocumentProcessorServiceStubSettings) getStubSettings()).listEvaluationsSettings();
   }
 
+  /** Returns the object with the settings used for calls to importProcessorVersion. */
+  public UnaryCallSettings<ImportProcessorVersionRequest, Operation>
+      importProcessorVersionSettings() {
+    return ((DocumentProcessorServiceStubSettings) getStubSettings())
+        .importProcessorVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importProcessorVersion. */
+  public OperationCallSettings<
+          ImportProcessorVersionRequest,
+          ImportProcessorVersionResponse,
+          ImportProcessorVersionMetadata>
+      importProcessorVersionOperationSettings() {
+    return ((DocumentProcessorServiceStubSettings) getStubSettings())
+        .importProcessorVersionOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -662,6 +679,21 @@ public class DocumentProcessorServiceSettings
             ListEvaluationsRequest, ListEvaluationsResponse, ListEvaluationsPagedResponse>
         listEvaluationsSettings() {
       return getStubSettingsBuilder().listEvaluationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importProcessorVersion. */
+    public UnaryCallSettings.Builder<ImportProcessorVersionRequest, Operation>
+        importProcessorVersionSettings() {
+      return getStubSettingsBuilder().importProcessorVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importProcessorVersion. */
+    public OperationCallSettings.Builder<
+            ImportProcessorVersionRequest,
+            ImportProcessorVersionResponse,
+            ImportProcessorVersionMetadata>
+        importProcessorVersionOperationSettings() {
+      return getStubSettingsBuilder().importProcessorVersionOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

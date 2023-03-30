@@ -411,7 +411,7 @@ public final class EnvironmentsGrpc {
    * Managed Apache Airflow Environments.
    * </pre>
    */
-  public abstract static class EnvironmentsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -420,7 +420,7 @@ public final class EnvironmentsGrpc {
      * Create a new environment.
      * </pre>
      */
-    public void createEnvironment(
+    default void createEnvironment(
         com.google.cloud.orchestration.airflow.service.v1.CreateEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -434,7 +434,7 @@ public final class EnvironmentsGrpc {
      * Get an existing environment.
      * </pre>
      */
-    public void getEnvironment(
+    default void getEnvironment(
         com.google.cloud.orchestration.airflow.service.v1.GetEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.orchestration.airflow.service.v1.Environment>
             responseObserver) {
@@ -449,7 +449,7 @@ public final class EnvironmentsGrpc {
      * List environments.
      * </pre>
      */
-    public void listEnvironments(
+    default void listEnvironments(
         com.google.cloud.orchestration.airflow.service.v1.ListEnvironmentsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.orchestration.airflow.service.v1.ListEnvironmentsResponse>
@@ -465,7 +465,7 @@ public final class EnvironmentsGrpc {
      * Update an environment.
      * </pre>
      */
-    public void updateEnvironment(
+    default void updateEnvironment(
         com.google.cloud.orchestration.airflow.service.v1.UpdateEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -479,7 +479,7 @@ public final class EnvironmentsGrpc {
      * Delete an environment.
      * </pre>
      */
-    public void deleteEnvironment(
+    default void deleteEnvironment(
         com.google.cloud.orchestration.airflow.service.v1.DeleteEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -495,7 +495,7 @@ public final class EnvironmentsGrpc {
      * in a location specified in the SaveSnapshotRequest.
      * </pre>
      */
-    public void saveSnapshot(
+    default void saveSnapshot(
         com.google.cloud.orchestration.airflow.service.v1.SaveSnapshotRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -511,66 +511,32 @@ public final class EnvironmentsGrpc {
      * LoadSnapshotRequest is loaded into the environment.
      * </pre>
      */
-    public void loadSnapshot(
+    default void loadSnapshot(
         com.google.cloud.orchestration.airflow.service.v1.LoadSnapshotRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getLoadSnapshotMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Environments.
+   *
+   * <pre>
+   * Managed Apache Airflow Environments.
+   * </pre>
+   */
+  public abstract static class EnvironmentsImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateEnvironmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.orchestration.airflow.service.v1.CreateEnvironmentRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_ENVIRONMENT)))
-          .addMethod(
-              getGetEnvironmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.orchestration.airflow.service.v1.GetEnvironmentRequest,
-                      com.google.cloud.orchestration.airflow.service.v1.Environment>(
-                      this, METHODID_GET_ENVIRONMENT)))
-          .addMethod(
-              getListEnvironmentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.orchestration.airflow.service.v1.ListEnvironmentsRequest,
-                      com.google.cloud.orchestration.airflow.service.v1.ListEnvironmentsResponse>(
-                      this, METHODID_LIST_ENVIRONMENTS)))
-          .addMethod(
-              getUpdateEnvironmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.orchestration.airflow.service.v1.UpdateEnvironmentRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_ENVIRONMENT)))
-          .addMethod(
-              getDeleteEnvironmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.orchestration.airflow.service.v1.DeleteEnvironmentRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_ENVIRONMENT)))
-          .addMethod(
-              getSaveSnapshotMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.orchestration.airflow.service.v1.SaveSnapshotRequest,
-                      com.google.longrunning.Operation>(this, METHODID_SAVE_SNAPSHOT)))
-          .addMethod(
-              getLoadSnapshotMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.orchestration.airflow.service.v1.LoadSnapshotRequest,
-                      com.google.longrunning.Operation>(this, METHODID_LOAD_SNAPSHOT)))
-          .build();
+      return EnvironmentsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Environments.
    *
    * <pre>
    * Managed Apache Airflow Environments.
@@ -708,7 +674,7 @@ public final class EnvironmentsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Environments.
    *
    * <pre>
    * Managed Apache Airflow Environments.
@@ -824,7 +790,7 @@ public final class EnvironmentsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Environments.
    *
    * <pre>
    * Managed Apache Airflow Environments.
@@ -960,10 +926,10 @@ public final class EnvironmentsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final EnvironmentsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(EnvironmentsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1025,6 +991,55 @@ public final class EnvironmentsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateEnvironmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orchestration.airflow.service.v1.CreateEnvironmentRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_ENVIRONMENT)))
+        .addMethod(
+            getGetEnvironmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orchestration.airflow.service.v1.GetEnvironmentRequest,
+                    com.google.cloud.orchestration.airflow.service.v1.Environment>(
+                    service, METHODID_GET_ENVIRONMENT)))
+        .addMethod(
+            getListEnvironmentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orchestration.airflow.service.v1.ListEnvironmentsRequest,
+                    com.google.cloud.orchestration.airflow.service.v1.ListEnvironmentsResponse>(
+                    service, METHODID_LIST_ENVIRONMENTS)))
+        .addMethod(
+            getUpdateEnvironmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orchestration.airflow.service.v1.UpdateEnvironmentRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_ENVIRONMENT)))
+        .addMethod(
+            getDeleteEnvironmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orchestration.airflow.service.v1.DeleteEnvironmentRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_ENVIRONMENT)))
+        .addMethod(
+            getSaveSnapshotMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orchestration.airflow.service.v1.SaveSnapshotRequest,
+                    com.google.longrunning.Operation>(service, METHODID_SAVE_SNAPSHOT)))
+        .addMethod(
+            getLoadSnapshotMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orchestration.airflow.service.v1.LoadSnapshotRequest,
+                    com.google.longrunning.Operation>(service, METHODID_LOAD_SNAPSHOT)))
+        .build();
   }
 
   private abstract static class EnvironmentsBaseDescriptorSupplier

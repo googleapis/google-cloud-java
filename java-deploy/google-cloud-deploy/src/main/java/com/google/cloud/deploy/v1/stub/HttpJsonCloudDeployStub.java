@@ -41,8 +41,12 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.deploy.v1.AbandonReleaseRequest;
 import com.google.cloud.deploy.v1.AbandonReleaseResponse;
+import com.google.cloud.deploy.v1.AdvanceRolloutRequest;
+import com.google.cloud.deploy.v1.AdvanceRolloutResponse;
 import com.google.cloud.deploy.v1.ApproveRolloutRequest;
 import com.google.cloud.deploy.v1.ApproveRolloutResponse;
+import com.google.cloud.deploy.v1.CancelRolloutRequest;
+import com.google.cloud.deploy.v1.CancelRolloutResponse;
 import com.google.cloud.deploy.v1.Config;
 import com.google.cloud.deploy.v1.CreateDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.CreateReleaseRequest;
@@ -57,6 +61,8 @@ import com.google.cloud.deploy.v1.GetJobRunRequest;
 import com.google.cloud.deploy.v1.GetReleaseRequest;
 import com.google.cloud.deploy.v1.GetRolloutRequest;
 import com.google.cloud.deploy.v1.GetTargetRequest;
+import com.google.cloud.deploy.v1.IgnoreJobRequest;
+import com.google.cloud.deploy.v1.IgnoreJobResponse;
 import com.google.cloud.deploy.v1.JobRun;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesRequest;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesResponse;
@@ -74,6 +80,8 @@ import com.google.cloud.deploy.v1.RetryJobRequest;
 import com.google.cloud.deploy.v1.RetryJobResponse;
 import com.google.cloud.deploy.v1.Rollout;
 import com.google.cloud.deploy.v1.Target;
+import com.google.cloud.deploy.v1.TerminateJobRunRequest;
+import com.google.cloud.deploy.v1.TerminateJobRunResponse;
 import com.google.cloud.deploy.v1.UpdateDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.UpdateTargetRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -722,6 +730,80 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<AdvanceRolloutRequest, AdvanceRolloutResponse>
+      advanceRolloutMethodDescriptor =
+          ApiMethodDescriptor.<AdvanceRolloutRequest, AdvanceRolloutResponse>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/AdvanceRollout")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AdvanceRolloutRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/deliveryPipelines/*/releases/*/rollouts/*}:advance",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AdvanceRolloutRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AdvanceRolloutRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AdvanceRolloutResponse>newBuilder()
+                      .setDefaultInstance(AdvanceRolloutResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CancelRolloutRequest, CancelRolloutResponse>
+      cancelRolloutMethodDescriptor =
+          ApiMethodDescriptor.<CancelRolloutRequest, CancelRolloutResponse>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/CancelRollout")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CancelRolloutRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/deliveryPipelines/*/releases/*/rollouts/*}:cancel",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CancelRolloutRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CancelRolloutRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CancelRolloutResponse>newBuilder()
+                      .setDefaultInstance(CancelRolloutResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListRolloutsRequest, ListRolloutsResponse>
       listRolloutsMethodDescriptor =
           ApiMethodDescriptor.<ListRolloutsRequest, ListRolloutsResponse>newBuilder()
@@ -818,6 +900,8 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "rolloutId", request.getRolloutId());
                             serializer.putQueryParam(
+                                fields, "startingPhaseId", request.getStartingPhaseId());
+                            serializer.putQueryParam(
                                 fields, "validateOnly", request.getValidateOnly());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
@@ -835,6 +919,43 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
               .setOperationSnapshotFactory(
                   (CreateRolloutRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<IgnoreJobRequest, IgnoreJobResponse>
+      ignoreJobMethodDescriptor =
+          ApiMethodDescriptor.<IgnoreJobRequest, IgnoreJobResponse>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/IgnoreJob")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<IgnoreJobRequest>newBuilder()
+                      .setPath(
+                          "/v1/{rollout=projects/*/locations/*/deliveryPipelines/*/releases/*/rollouts/*}:ignoreJob",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<IgnoreJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "rollout", request.getRollout());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<IgnoreJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearRollout().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<IgnoreJobResponse>newBuilder()
+                      .setDefaultInstance(IgnoreJobResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
               .build();
 
   private static final ApiMethodDescriptor<RetryJobRequest, RetryJobResponse>
@@ -944,6 +1065,43 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                   .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
+
+  private static final ApiMethodDescriptor<TerminateJobRunRequest, TerminateJobRunResponse>
+      terminateJobRunMethodDescriptor =
+          ApiMethodDescriptor.<TerminateJobRunRequest, TerminateJobRunResponse>newBuilder()
+              .setFullMethodName("google.cloud.deploy.v1.CloudDeploy/TerminateJobRun")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TerminateJobRunRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/deliveryPipelines/*/releases/*/rollouts/*/jobRuns/*}:terminate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TerminateJobRunRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TerminateJobRunRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TerminateJobRunResponse>newBuilder()
+                      .setDefaultInstance(TerminateJobRunResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<GetConfigRequest, Config> getConfigMethodDescriptor =
       ApiMethodDescriptor.<GetConfigRequest, Config>newBuilder()
@@ -1202,6 +1360,8 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
       createReleaseOperationCallable;
   private final UnaryCallable<AbandonReleaseRequest, AbandonReleaseResponse> abandonReleaseCallable;
   private final UnaryCallable<ApproveRolloutRequest, ApproveRolloutResponse> approveRolloutCallable;
+  private final UnaryCallable<AdvanceRolloutRequest, AdvanceRolloutResponse> advanceRolloutCallable;
+  private final UnaryCallable<CancelRolloutRequest, CancelRolloutResponse> cancelRolloutCallable;
   private final UnaryCallable<ListRolloutsRequest, ListRolloutsResponse> listRolloutsCallable;
   private final UnaryCallable<ListRolloutsRequest, ListRolloutsPagedResponse>
       listRolloutsPagedCallable;
@@ -1209,11 +1369,14 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
   private final UnaryCallable<CreateRolloutRequest, Operation> createRolloutCallable;
   private final OperationCallable<CreateRolloutRequest, Rollout, OperationMetadata>
       createRolloutOperationCallable;
+  private final UnaryCallable<IgnoreJobRequest, IgnoreJobResponse> ignoreJobCallable;
   private final UnaryCallable<RetryJobRequest, RetryJobResponse> retryJobCallable;
   private final UnaryCallable<ListJobRunsRequest, ListJobRunsResponse> listJobRunsCallable;
   private final UnaryCallable<ListJobRunsRequest, ListJobRunsPagedResponse>
       listJobRunsPagedCallable;
   private final UnaryCallable<GetJobRunRequest, JobRun> getJobRunCallable;
+  private final UnaryCallable<TerminateJobRunRequest, TerminateJobRunResponse>
+      terminateJobRunCallable;
   private final UnaryCallable<GetConfigRequest, Config> getConfigCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
@@ -1377,6 +1540,18 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
                 .setMethodDescriptor(approveRolloutMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<AdvanceRolloutRequest, AdvanceRolloutResponse>
+        advanceRolloutTransportSettings =
+            HttpJsonCallSettings.<AdvanceRolloutRequest, AdvanceRolloutResponse>newBuilder()
+                .setMethodDescriptor(advanceRolloutMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<CancelRolloutRequest, CancelRolloutResponse>
+        cancelRolloutTransportSettings =
+            HttpJsonCallSettings.<CancelRolloutRequest, CancelRolloutResponse>newBuilder()
+                .setMethodDescriptor(cancelRolloutMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<ListRolloutsRequest, ListRolloutsResponse> listRolloutsTransportSettings =
         HttpJsonCallSettings.<ListRolloutsRequest, ListRolloutsResponse>newBuilder()
             .setMethodDescriptor(listRolloutsMethodDescriptor)
@@ -1390,6 +1565,11 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
     HttpJsonCallSettings<CreateRolloutRequest, Operation> createRolloutTransportSettings =
         HttpJsonCallSettings.<CreateRolloutRequest, Operation>newBuilder()
             .setMethodDescriptor(createRolloutMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<IgnoreJobRequest, IgnoreJobResponse> ignoreJobTransportSettings =
+        HttpJsonCallSettings.<IgnoreJobRequest, IgnoreJobResponse>newBuilder()
+            .setMethodDescriptor(ignoreJobMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<RetryJobRequest, RetryJobResponse> retryJobTransportSettings =
@@ -1407,6 +1587,12 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
             .setMethodDescriptor(getJobRunMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<TerminateJobRunRequest, TerminateJobRunResponse>
+        terminateJobRunTransportSettings =
+            HttpJsonCallSettings.<TerminateJobRunRequest, TerminateJobRunResponse>newBuilder()
+                .setMethodDescriptor(terminateJobRunMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<GetConfigRequest, Config> getConfigTransportSettings =
         HttpJsonCallSettings.<GetConfigRequest, Config>newBuilder()
             .setMethodDescriptor(getConfigMethodDescriptor)
@@ -1548,6 +1734,12 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
     this.approveRolloutCallable =
         callableFactory.createUnaryCallable(
             approveRolloutTransportSettings, settings.approveRolloutSettings(), clientContext);
+    this.advanceRolloutCallable =
+        callableFactory.createUnaryCallable(
+            advanceRolloutTransportSettings, settings.advanceRolloutSettings(), clientContext);
+    this.cancelRolloutCallable =
+        callableFactory.createUnaryCallable(
+            cancelRolloutTransportSettings, settings.cancelRolloutSettings(), clientContext);
     this.listRolloutsCallable =
         callableFactory.createUnaryCallable(
             listRolloutsTransportSettings, settings.listRolloutsSettings(), clientContext);
@@ -1566,6 +1758,9 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
             settings.createRolloutOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.ignoreJobCallable =
+        callableFactory.createUnaryCallable(
+            ignoreJobTransportSettings, settings.ignoreJobSettings(), clientContext);
     this.retryJobCallable =
         callableFactory.createUnaryCallable(
             retryJobTransportSettings, settings.retryJobSettings(), clientContext);
@@ -1578,6 +1773,9 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
     this.getJobRunCallable =
         callableFactory.createUnaryCallable(
             getJobRunTransportSettings, settings.getJobRunSettings(), clientContext);
+    this.terminateJobRunCallable =
+        callableFactory.createUnaryCallable(
+            terminateJobRunTransportSettings, settings.terminateJobRunSettings(), clientContext);
     this.getConfigCallable =
         callableFactory.createUnaryCallable(
             getConfigTransportSettings, settings.getConfigSettings(), clientContext);
@@ -1624,12 +1822,16 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
     methodDescriptors.add(createReleaseMethodDescriptor);
     methodDescriptors.add(abandonReleaseMethodDescriptor);
     methodDescriptors.add(approveRolloutMethodDescriptor);
+    methodDescriptors.add(advanceRolloutMethodDescriptor);
+    methodDescriptors.add(cancelRolloutMethodDescriptor);
     methodDescriptors.add(listRolloutsMethodDescriptor);
     methodDescriptors.add(getRolloutMethodDescriptor);
     methodDescriptors.add(createRolloutMethodDescriptor);
+    methodDescriptors.add(ignoreJobMethodDescriptor);
     methodDescriptors.add(retryJobMethodDescriptor);
     methodDescriptors.add(listJobRunsMethodDescriptor);
     methodDescriptors.add(getJobRunMethodDescriptor);
+    methodDescriptors.add(terminateJobRunMethodDescriptor);
     methodDescriptors.add(getConfigMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
@@ -1778,6 +1980,16 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
   }
 
   @Override
+  public UnaryCallable<AdvanceRolloutRequest, AdvanceRolloutResponse> advanceRolloutCallable() {
+    return advanceRolloutCallable;
+  }
+
+  @Override
+  public UnaryCallable<CancelRolloutRequest, CancelRolloutResponse> cancelRolloutCallable() {
+    return cancelRolloutCallable;
+  }
+
+  @Override
   public UnaryCallable<ListRolloutsRequest, ListRolloutsResponse> listRolloutsCallable() {
     return listRolloutsCallable;
   }
@@ -1804,6 +2016,11 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
   }
 
   @Override
+  public UnaryCallable<IgnoreJobRequest, IgnoreJobResponse> ignoreJobCallable() {
+    return ignoreJobCallable;
+  }
+
+  @Override
   public UnaryCallable<RetryJobRequest, RetryJobResponse> retryJobCallable() {
     return retryJobCallable;
   }
@@ -1821,6 +2038,11 @@ public class HttpJsonCloudDeployStub extends CloudDeployStub {
   @Override
   public UnaryCallable<GetJobRunRequest, JobRun> getJobRunCallable() {
     return getJobRunCallable;
+  }
+
+  @Override
+  public UnaryCallable<TerminateJobRunRequest, TerminateJobRunResponse> terminateJobRunCallable() {
+    return terminateJobRunCallable;
   }
 
   @Override

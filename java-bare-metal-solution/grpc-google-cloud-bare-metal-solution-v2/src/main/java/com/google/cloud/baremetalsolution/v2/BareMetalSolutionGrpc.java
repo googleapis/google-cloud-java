@@ -1018,7 +1018,7 @@ public final class BareMetalSolutionGrpc {
    * upon specific servers in your Bare Metal Solution environment.
    * </pre>
    */
-  public abstract static class BareMetalSolutionImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -1027,7 +1027,7 @@ public final class BareMetalSolutionGrpc {
      * List servers in a given project and location.
      * </pre>
      */
-    public void listInstances(
+    default void listInstances(
         com.google.cloud.baremetalsolution.v2.ListInstancesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.ListInstancesResponse>
             responseObserver) {
@@ -1042,7 +1042,7 @@ public final class BareMetalSolutionGrpc {
      * Get details about a single server.
      * </pre>
      */
-    public void getInstance(
+    default void getInstance(
         com.google.cloud.baremetalsolution.v2.GetInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.Instance>
             responseObserver) {
@@ -1057,7 +1057,7 @@ public final class BareMetalSolutionGrpc {
      * Update details of a single server.
      * </pre>
      */
-    public void updateInstance(
+    default void updateInstance(
         com.google.cloud.baremetalsolution.v2.UpdateInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1072,7 +1072,7 @@ public final class BareMetalSolutionGrpc {
      * power off and then turning it back on.
      * </pre>
      */
-    public void resetInstance(
+    default void resetInstance(
         com.google.cloud.baremetalsolution.v2.ResetInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1086,7 +1086,7 @@ public final class BareMetalSolutionGrpc {
      * Starts a server that was shutdown.
      * </pre>
      */
-    public void startInstance(
+    default void startInstance(
         com.google.cloud.baremetalsolution.v2.StartInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1100,7 +1100,7 @@ public final class BareMetalSolutionGrpc {
      * Stop a running server.
      * </pre>
      */
-    public void stopInstance(
+    default void stopInstance(
         com.google.cloud.baremetalsolution.v2.StopInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1114,7 +1114,7 @@ public final class BareMetalSolutionGrpc {
      * Detach LUN from Instance.
      * </pre>
      */
-    public void detachLun(
+    default void detachLun(
         com.google.cloud.baremetalsolution.v2.DetachLunRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDetachLunMethod(), responseObserver);
@@ -1127,7 +1127,7 @@ public final class BareMetalSolutionGrpc {
      * List storage volumes in a given project and location.
      * </pre>
      */
-    public void listVolumes(
+    default void listVolumes(
         com.google.cloud.baremetalsolution.v2.ListVolumesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.ListVolumesResponse>
             responseObserver) {
@@ -1142,7 +1142,7 @@ public final class BareMetalSolutionGrpc {
      * Get details of a single storage volume.
      * </pre>
      */
-    public void getVolume(
+    default void getVolume(
         com.google.cloud.baremetalsolution.v2.GetVolumeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.Volume>
             responseObserver) {
@@ -1156,7 +1156,7 @@ public final class BareMetalSolutionGrpc {
      * Update details of a single storage volume.
      * </pre>
      */
-    public void updateVolume(
+    default void updateVolume(
         com.google.cloud.baremetalsolution.v2.UpdateVolumeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1170,7 +1170,7 @@ public final class BareMetalSolutionGrpc {
      * Emergency Volume resize.
      * </pre>
      */
-    public void resizeVolume(
+    default void resizeVolume(
         com.google.cloud.baremetalsolution.v2.ResizeVolumeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1184,7 +1184,7 @@ public final class BareMetalSolutionGrpc {
      * List network in a given project and location.
      * </pre>
      */
-    public void listNetworks(
+    default void listNetworks(
         com.google.cloud.baremetalsolution.v2.ListNetworksRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.ListNetworksResponse>
             responseObserver) {
@@ -1200,7 +1200,7 @@ public final class BareMetalSolutionGrpc {
      * associated with the specified project.
      * </pre>
      */
-    public void listNetworkUsage(
+    default void listNetworkUsage(
         com.google.cloud.baremetalsolution.v2.ListNetworkUsageRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.ListNetworkUsageResponse>
             responseObserver) {
@@ -1215,7 +1215,7 @@ public final class BareMetalSolutionGrpc {
      * Get details of a single network.
      * </pre>
      */
-    public void getNetwork(
+    default void getNetwork(
         com.google.cloud.baremetalsolution.v2.GetNetworkRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.Network>
             responseObserver) {
@@ -1229,7 +1229,7 @@ public final class BareMetalSolutionGrpc {
      * Update details of a single network.
      * </pre>
      */
-    public void updateNetwork(
+    default void updateNetwork(
         com.google.cloud.baremetalsolution.v2.UpdateNetworkRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1243,7 +1243,7 @@ public final class BareMetalSolutionGrpc {
      * Get details of a single storage logical unit number(LUN).
      * </pre>
      */
-    public void getLun(
+    default void getLun(
         com.google.cloud.baremetalsolution.v2.GetLunRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.Lun> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetLunMethod(), responseObserver);
@@ -1256,7 +1256,7 @@ public final class BareMetalSolutionGrpc {
      * List storage volume luns for given storage volume.
      * </pre>
      */
-    public void listLuns(
+    default void listLuns(
         com.google.cloud.baremetalsolution.v2.ListLunsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.ListLunsResponse>
             responseObserver) {
@@ -1270,7 +1270,7 @@ public final class BareMetalSolutionGrpc {
      * Get details of a single NFS share.
      * </pre>
      */
-    public void getNfsShare(
+    default void getNfsShare(
         com.google.cloud.baremetalsolution.v2.GetNfsShareRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.NfsShare>
             responseObserver) {
@@ -1285,7 +1285,7 @@ public final class BareMetalSolutionGrpc {
      * List NFS shares.
      * </pre>
      */
-    public void listNfsShares(
+    default void listNfsShares(
         com.google.cloud.baremetalsolution.v2.ListNfsSharesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.baremetalsolution.v2.ListNfsSharesResponse>
             responseObserver) {
@@ -1300,149 +1300,38 @@ public final class BareMetalSolutionGrpc {
      * Update details of a single NFS share.
      * </pre>
      */
-    public void updateNfsShare(
+    default void updateNfsShare(
         com.google.cloud.baremetalsolution.v2.UpdateNfsShareRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateNfsShareMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service BareMetalSolution.
+   *
+   * <pre>
+   * Performs management operations on Bare Metal Solution servers.
+   * The `baremetalsolution.googleapis.com` service provides management
+   * capabilities for Bare Metal Solution servers. To access the API methods, you
+   * must assign Bare Metal Solution IAM roles containing the desired permissions
+   * to your staff in your Google Cloud project. You must also enable the Bare
+   * Metal Solution API. Once enabled, the methods act
+   * upon specific servers in your Bare Metal Solution environment.
+   * </pre>
+   */
+  public abstract static class BareMetalSolutionImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListInstancesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.baremetalsolution.v2.ListInstancesRequest,
-                      com.google.cloud.baremetalsolution.v2.ListInstancesResponse>(
-                      this, METHODID_LIST_INSTANCES)))
-          .addMethod(
-              getGetInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.baremetalsolution.v2.GetInstanceRequest,
-                      com.google.cloud.baremetalsolution.v2.Instance>(this, METHODID_GET_INSTANCE)))
-          .addMethod(
-              getUpdateInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.baremetalsolution.v2.UpdateInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_INSTANCE)))
-          .addMethod(
-              getResetInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.baremetalsolution.v2.ResetInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_RESET_INSTANCE)))
-          .addMethod(
-              getStartInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.baremetalsolution.v2.StartInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_START_INSTANCE)))
-          .addMethod(
-              getStopInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.baremetalsolution.v2.StopInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_STOP_INSTANCE)))
-          .addMethod(
-              getDetachLunMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.baremetalsolution.v2.DetachLunRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DETACH_LUN)))
-          .addMethod(
-              getListVolumesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.baremetalsolution.v2.ListVolumesRequest,
-                      com.google.cloud.baremetalsolution.v2.ListVolumesResponse>(
-                      this, METHODID_LIST_VOLUMES)))
-          .addMethod(
-              getGetVolumeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.baremetalsolution.v2.GetVolumeRequest,
-                      com.google.cloud.baremetalsolution.v2.Volume>(this, METHODID_GET_VOLUME)))
-          .addMethod(
-              getUpdateVolumeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.baremetalsolution.v2.UpdateVolumeRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_VOLUME)))
-          .addMethod(
-              getResizeVolumeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.baremetalsolution.v2.ResizeVolumeRequest,
-                      com.google.longrunning.Operation>(this, METHODID_RESIZE_VOLUME)))
-          .addMethod(
-              getListNetworksMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.baremetalsolution.v2.ListNetworksRequest,
-                      com.google.cloud.baremetalsolution.v2.ListNetworksResponse>(
-                      this, METHODID_LIST_NETWORKS)))
-          .addMethod(
-              getListNetworkUsageMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.baremetalsolution.v2.ListNetworkUsageRequest,
-                      com.google.cloud.baremetalsolution.v2.ListNetworkUsageResponse>(
-                      this, METHODID_LIST_NETWORK_USAGE)))
-          .addMethod(
-              getGetNetworkMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.baremetalsolution.v2.GetNetworkRequest,
-                      com.google.cloud.baremetalsolution.v2.Network>(this, METHODID_GET_NETWORK)))
-          .addMethod(
-              getUpdateNetworkMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.baremetalsolution.v2.UpdateNetworkRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_NETWORK)))
-          .addMethod(
-              getGetLunMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.baremetalsolution.v2.GetLunRequest,
-                      com.google.cloud.baremetalsolution.v2.Lun>(this, METHODID_GET_LUN)))
-          .addMethod(
-              getListLunsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.baremetalsolution.v2.ListLunsRequest,
-                      com.google.cloud.baremetalsolution.v2.ListLunsResponse>(
-                      this, METHODID_LIST_LUNS)))
-          .addMethod(
-              getGetNfsShareMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.baremetalsolution.v2.GetNfsShareRequest,
-                      com.google.cloud.baremetalsolution.v2.NfsShare>(
-                      this, METHODID_GET_NFS_SHARE)))
-          .addMethod(
-              getListNfsSharesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.baremetalsolution.v2.ListNfsSharesRequest,
-                      com.google.cloud.baremetalsolution.v2.ListNfsSharesResponse>(
-                      this, METHODID_LIST_NFS_SHARES)))
-          .addMethod(
-              getUpdateNfsShareMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.baremetalsolution.v2.UpdateNfsShareRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_NFS_SHARE)))
-          .build();
+      return BareMetalSolutionGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service BareMetalSolution.
    *
    * <pre>
    * Performs management operations on Bare Metal Solution servers.
@@ -1790,7 +1679,7 @@ public final class BareMetalSolutionGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service BareMetalSolution.
    *
    * <pre>
    * Performs management operations on Bare Metal Solution servers.
@@ -2079,7 +1968,7 @@ public final class BareMetalSolutionGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service BareMetalSolution.
    *
    * <pre>
    * Performs management operations on Bare Metal Solution servers.
@@ -2403,10 +2292,10 @@ public final class BareMetalSolutionGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final BareMetalSolutionImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(BareMetalSolutionImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -2545,6 +2434,139 @@ public final class BareMetalSolutionGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListInstancesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.ListInstancesRequest,
+                    com.google.cloud.baremetalsolution.v2.ListInstancesResponse>(
+                    service, METHODID_LIST_INSTANCES)))
+        .addMethod(
+            getGetInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.GetInstanceRequest,
+                    com.google.cloud.baremetalsolution.v2.Instance>(
+                    service, METHODID_GET_INSTANCE)))
+        .addMethod(
+            getUpdateInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.UpdateInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_INSTANCE)))
+        .addMethod(
+            getResetInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.ResetInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RESET_INSTANCE)))
+        .addMethod(
+            getStartInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.StartInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_START_INSTANCE)))
+        .addMethod(
+            getStopInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.StopInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_STOP_INSTANCE)))
+        .addMethod(
+            getDetachLunMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.DetachLunRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DETACH_LUN)))
+        .addMethod(
+            getListVolumesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.ListVolumesRequest,
+                    com.google.cloud.baremetalsolution.v2.ListVolumesResponse>(
+                    service, METHODID_LIST_VOLUMES)))
+        .addMethod(
+            getGetVolumeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.GetVolumeRequest,
+                    com.google.cloud.baremetalsolution.v2.Volume>(service, METHODID_GET_VOLUME)))
+        .addMethod(
+            getUpdateVolumeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.UpdateVolumeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_VOLUME)))
+        .addMethod(
+            getResizeVolumeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.ResizeVolumeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RESIZE_VOLUME)))
+        .addMethod(
+            getListNetworksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.ListNetworksRequest,
+                    com.google.cloud.baremetalsolution.v2.ListNetworksResponse>(
+                    service, METHODID_LIST_NETWORKS)))
+        .addMethod(
+            getListNetworkUsageMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.ListNetworkUsageRequest,
+                    com.google.cloud.baremetalsolution.v2.ListNetworkUsageResponse>(
+                    service, METHODID_LIST_NETWORK_USAGE)))
+        .addMethod(
+            getGetNetworkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.GetNetworkRequest,
+                    com.google.cloud.baremetalsolution.v2.Network>(service, METHODID_GET_NETWORK)))
+        .addMethod(
+            getUpdateNetworkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.UpdateNetworkRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_NETWORK)))
+        .addMethod(
+            getGetLunMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.GetLunRequest,
+                    com.google.cloud.baremetalsolution.v2.Lun>(service, METHODID_GET_LUN)))
+        .addMethod(
+            getListLunsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.ListLunsRequest,
+                    com.google.cloud.baremetalsolution.v2.ListLunsResponse>(
+                    service, METHODID_LIST_LUNS)))
+        .addMethod(
+            getGetNfsShareMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.GetNfsShareRequest,
+                    com.google.cloud.baremetalsolution.v2.NfsShare>(
+                    service, METHODID_GET_NFS_SHARE)))
+        .addMethod(
+            getListNfsSharesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.ListNfsSharesRequest,
+                    com.google.cloud.baremetalsolution.v2.ListNfsSharesResponse>(
+                    service, METHODID_LIST_NFS_SHARES)))
+        .addMethod(
+            getUpdateNfsShareMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.baremetalsolution.v2.UpdateNfsShareRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_NFS_SHARE)))
+        .build();
   }
 
   private abstract static class BareMetalSolutionBaseDescriptorSupplier

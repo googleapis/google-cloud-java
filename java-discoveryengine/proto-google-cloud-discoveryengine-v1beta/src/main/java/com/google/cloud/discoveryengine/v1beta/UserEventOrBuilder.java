@@ -225,7 +225,7 @@ public interface UserEventOrBuilder
    * A unique identifier for tracking a visitor session with a length limit of
    * 128 bytes. A session is an aggregation of an end user behavior in a time
    * span.
-   * A general guideline to populate the sesion_id:
+   * A general guideline to populate the session_id:
    * 1. If user has no activity for 30 min, a new session_id should be assigned.
    * 2. The session_id should be unique across users, suggest use uuid or add
    * [UserEvent.user_pseudo_id][google.cloud.discoveryengine.v1beta.UserEvent.user_pseudo_id]
@@ -244,7 +244,7 @@ public interface UserEventOrBuilder
    * A unique identifier for tracking a visitor session with a length limit of
    * 128 bytes. A session is an aggregation of an end user behavior in a time
    * span.
-   * A general guideline to populate the sesion_id:
+   * A general guideline to populate the session_id:
    * 1. If user has no activity for 30 min, a new session_id should be assigned.
    * 2. The session_id should be unique across users, suggest use uuid or add
    * [UserEvent.user_pseudo_id][google.cloud.discoveryengine.v1beta.UserEvent.user_pseudo_id]
@@ -789,7 +789,7 @@ public interface UserEventOrBuilder
    * If you provide custom attributes for ingested user events, also include
    * them in the user events that you associate with prediction requests. Custom
    * attribute formatting must be consistent between imported events and events
-   * provided with prediction requests. This lets the DiscoveryEngine API use
+   * provided with prediction requests. This lets the Discovery Engine API use
    * those custom attributes when training models and serving predictions, which
    * helps improve recommendation quality.
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
@@ -820,7 +820,7 @@ public interface UserEventOrBuilder
    * If you provide custom attributes for ingested user events, also include
    * them in the user events that you associate with prediction requests. Custom
    * attribute formatting must be consistent between imported events and events
-   * provided with prediction requests. This lets the DiscoveryEngine API use
+   * provided with prediction requests. This lets the Discovery Engine API use
    * those custom attributes when training models and serving predictions, which
    * helps improve recommendation quality.
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
@@ -855,7 +855,7 @@ public interface UserEventOrBuilder
    * If you provide custom attributes for ingested user events, also include
    * them in the user events that you associate with prediction requests. Custom
    * attribute formatting must be consistent between imported events and events
-   * provided with prediction requests. This lets the DiscoveryEngine API use
+   * provided with prediction requests. This lets the Discovery Engine API use
    * those custom attributes when training models and serving predictions, which
    * helps improve recommendation quality.
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
@@ -887,7 +887,7 @@ public interface UserEventOrBuilder
    * If you provide custom attributes for ingested user events, also include
    * them in the user events that you associate with prediction requests. Custom
    * attribute formatting must be consistent between imported events and events
-   * provided with prediction requests. This lets the DiscoveryEngine API use
+   * provided with prediction requests. This lets the Discovery Engine API use
    * those custom attributes when training models and serving predictions, which
    * helps improve recommendation quality.
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
@@ -922,7 +922,7 @@ public interface UserEventOrBuilder
    * If you provide custom attributes for ingested user events, also include
    * them in the user events that you associate with prediction requests. Custom
    * attribute formatting must be consistent between imported events and events
-   * provided with prediction requests. This lets the DiscoveryEngine API use
+   * provided with prediction requests. This lets the Discovery Engine API use
    * those custom attributes when training models and serving predictions, which
    * helps improve recommendation quality.
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT

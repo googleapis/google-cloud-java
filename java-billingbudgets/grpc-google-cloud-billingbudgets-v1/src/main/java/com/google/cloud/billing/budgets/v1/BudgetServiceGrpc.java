@@ -311,7 +311,7 @@ public final class BudgetServiceGrpc {
    * budget plan and rules to execute as we track spend against that plan.
    * </pre>
    */
-  public abstract static class BudgetServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -322,7 +322,7 @@ public final class BudgetServiceGrpc {
      * for more information on the limits of the number of budgets you can create.
      * </pre>
      */
-    public void createBudget(
+    default void createBudget(
         com.google.cloud.billing.budgets.v1.CreateBudgetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.billing.budgets.v1.Budget> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -339,7 +339,7 @@ public final class BudgetServiceGrpc {
      * this API will not be changed by this method.
      * </pre>
      */
-    public void updateBudget(
+    default void updateBudget(
         com.google.cloud.billing.budgets.v1.UpdateBudgetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.billing.budgets.v1.Budget> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -357,7 +357,7 @@ public final class BudgetServiceGrpc {
      * in the Cloud Console.
      * </pre>
      */
-    public void getBudget(
+    default void getBudget(
         com.google.cloud.billing.budgets.v1.GetBudgetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.billing.budgets.v1.Budget> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBudgetMethod(), responseObserver);
@@ -374,7 +374,7 @@ public final class BudgetServiceGrpc {
      * in the Cloud Console.
      * </pre>
      */
-    public void listBudgets(
+    default void listBudgets(
         com.google.cloud.billing.budgets.v1.ListBudgetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.billing.budgets.v1.ListBudgetsResponse>
             responseObserver) {
@@ -389,53 +389,33 @@ public final class BudgetServiceGrpc {
      * Deletes a budget. Returns successfully if already deleted.
      * </pre>
      */
-    public void deleteBudget(
+    default void deleteBudget(
         com.google.cloud.billing.budgets.v1.DeleteBudgetRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteBudgetMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service BudgetService.
+   *
+   * <pre>
+   * BudgetService stores Cloud Billing budgets, which define a
+   * budget plan and rules to execute as we track spend against that plan.
+   * </pre>
+   */
+  public abstract static class BudgetServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateBudgetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.billing.budgets.v1.CreateBudgetRequest,
-                      com.google.cloud.billing.budgets.v1.Budget>(this, METHODID_CREATE_BUDGET)))
-          .addMethod(
-              getUpdateBudgetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.billing.budgets.v1.UpdateBudgetRequest,
-                      com.google.cloud.billing.budgets.v1.Budget>(this, METHODID_UPDATE_BUDGET)))
-          .addMethod(
-              getGetBudgetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.billing.budgets.v1.GetBudgetRequest,
-                      com.google.cloud.billing.budgets.v1.Budget>(this, METHODID_GET_BUDGET)))
-          .addMethod(
-              getListBudgetsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.billing.budgets.v1.ListBudgetsRequest,
-                      com.google.cloud.billing.budgets.v1.ListBudgetsResponse>(
-                      this, METHODID_LIST_BUDGETS)))
-          .addMethod(
-              getDeleteBudgetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.billing.budgets.v1.DeleteBudgetRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_BUDGET)))
-          .build();
+      return BudgetServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service BudgetService.
    *
    * <pre>
    * BudgetService stores Cloud Billing budgets, which define a
@@ -547,7 +527,7 @@ public final class BudgetServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service BudgetService.
    *
    * <pre>
    * BudgetService stores Cloud Billing budgets, which define a
@@ -646,7 +626,7 @@ public final class BudgetServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service BudgetService.
    *
    * <pre>
    * BudgetService stores Cloud Billing budgets, which define a
@@ -759,10 +739,10 @@ public final class BudgetServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final BudgetServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(BudgetServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -814,6 +794,42 @@ public final class BudgetServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateBudgetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.billing.budgets.v1.CreateBudgetRequest,
+                    com.google.cloud.billing.budgets.v1.Budget>(service, METHODID_CREATE_BUDGET)))
+        .addMethod(
+            getUpdateBudgetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.billing.budgets.v1.UpdateBudgetRequest,
+                    com.google.cloud.billing.budgets.v1.Budget>(service, METHODID_UPDATE_BUDGET)))
+        .addMethod(
+            getGetBudgetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.billing.budgets.v1.GetBudgetRequest,
+                    com.google.cloud.billing.budgets.v1.Budget>(service, METHODID_GET_BUDGET)))
+        .addMethod(
+            getListBudgetsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.billing.budgets.v1.ListBudgetsRequest,
+                    com.google.cloud.billing.budgets.v1.ListBudgetsResponse>(
+                    service, METHODID_LIST_BUDGETS)))
+        .addMethod(
+            getDeleteBudgetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.billing.budgets.v1.DeleteBudgetRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_BUDGET)))
+        .build();
   }
 
   private abstract static class BudgetServiceBaseDescriptorSupplier

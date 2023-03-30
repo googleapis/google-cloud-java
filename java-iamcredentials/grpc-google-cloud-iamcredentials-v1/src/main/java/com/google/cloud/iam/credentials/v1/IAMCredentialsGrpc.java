@@ -285,7 +285,7 @@ public final class IAMCredentialsGrpc {
    * more.
    * </pre>
    */
-  public abstract static class IAMCredentialsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -294,7 +294,7 @@ public final class IAMCredentialsGrpc {
      * Generates an OAuth 2.0 access token for a service account.
      * </pre>
      */
-    public void generateAccessToken(
+    default void generateAccessToken(
         com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iam.credentials.v1.GenerateAccessTokenResponse>
             responseObserver) {
@@ -309,7 +309,7 @@ public final class IAMCredentialsGrpc {
      * Generates an OpenID Connect ID token for a service account.
      * </pre>
      */
-    public void generateIdToken(
+    default void generateIdToken(
         com.google.cloud.iam.credentials.v1.GenerateIdTokenRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iam.credentials.v1.GenerateIdTokenResponse>
             responseObserver) {
@@ -324,7 +324,7 @@ public final class IAMCredentialsGrpc {
      * Signs a blob using a service account's system-managed private key.
      * </pre>
      */
-    public void signBlob(
+    default void signBlob(
         com.google.cloud.iam.credentials.v1.SignBlobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iam.credentials.v1.SignBlobResponse>
             responseObserver) {
@@ -338,50 +338,39 @@ public final class IAMCredentialsGrpc {
      * Signs a JWT using a service account's system-managed private key.
      * </pre>
      */
-    public void signJwt(
+    default void signJwt(
         com.google.cloud.iam.credentials.v1.SignJwtRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.iam.credentials.v1.SignJwtResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSignJwtMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service IAMCredentials.
+   *
+   * <pre>
+   * A service account is a special type of Google account that belongs to your
+   * application or a virtual machine (VM), instead of to an individual end user.
+   * Your application assumes the identity of the service account to call Google
+   * APIs, so that the users aren't directly involved.
+   * Service account credentials are used to temporarily assume the identity
+   * of the service account. Supported credential types include OAuth 2.0 access
+   * tokens, OpenID Connect ID tokens, self-signed JSON Web Tokens (JWTs), and
+   * more.
+   * </pre>
+   */
+  public abstract static class IAMCredentialsImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getGenerateAccessTokenMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest,
-                      com.google.cloud.iam.credentials.v1.GenerateAccessTokenResponse>(
-                      this, METHODID_GENERATE_ACCESS_TOKEN)))
-          .addMethod(
-              getGenerateIdTokenMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.iam.credentials.v1.GenerateIdTokenRequest,
-                      com.google.cloud.iam.credentials.v1.GenerateIdTokenResponse>(
-                      this, METHODID_GENERATE_ID_TOKEN)))
-          .addMethod(
-              getSignBlobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.iam.credentials.v1.SignBlobRequest,
-                      com.google.cloud.iam.credentials.v1.SignBlobResponse>(
-                      this, METHODID_SIGN_BLOB)))
-          .addMethod(
-              getSignJwtMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.iam.credentials.v1.SignJwtRequest,
-                      com.google.cloud.iam.credentials.v1.SignJwtResponse>(
-                      this, METHODID_SIGN_JWT)))
-          .build();
+      return IAMCredentialsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service IAMCredentials.
    *
    * <pre>
    * A service account is a special type of Google account that belongs to your
@@ -471,7 +460,7 @@ public final class IAMCredentialsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service IAMCredentials.
    *
    * <pre>
    * A service account is a special type of Google account that belongs to your
@@ -550,7 +539,7 @@ public final class IAMCredentialsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service IAMCredentials.
    *
    * <pre>
    * A service account is a special type of Google account that belongs to your
@@ -643,10 +632,10 @@ public final class IAMCredentialsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final IAMCredentialsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(IAMCredentialsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -695,6 +684,39 @@ public final class IAMCredentialsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getGenerateAccessTokenMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest,
+                    com.google.cloud.iam.credentials.v1.GenerateAccessTokenResponse>(
+                    service, METHODID_GENERATE_ACCESS_TOKEN)))
+        .addMethod(
+            getGenerateIdTokenMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.iam.credentials.v1.GenerateIdTokenRequest,
+                    com.google.cloud.iam.credentials.v1.GenerateIdTokenResponse>(
+                    service, METHODID_GENERATE_ID_TOKEN)))
+        .addMethod(
+            getSignBlobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.iam.credentials.v1.SignBlobRequest,
+                    com.google.cloud.iam.credentials.v1.SignBlobResponse>(
+                    service, METHODID_SIGN_BLOB)))
+        .addMethod(
+            getSignJwtMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.iam.credentials.v1.SignJwtRequest,
+                    com.google.cloud.iam.credentials.v1.SignJwtResponse>(
+                    service, METHODID_SIGN_JWT)))
+        .build();
   }
 
   private abstract static class IAMCredentialsBaseDescriptorSupplier

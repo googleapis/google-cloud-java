@@ -310,7 +310,7 @@ public final class RuleSetServiceGrpc {
    * Service to manage customer specific RuleSets.
    * </pre>
    */
-  public abstract static class RuleSetServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -319,7 +319,7 @@ public final class RuleSetServiceGrpc {
      * Creates a ruleset.
      * </pre>
      */
-    public void createRuleSet(
+    default void createRuleSet(
         com.google.cloud.contentwarehouse.v1.CreateRuleSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.contentwarehouse.v1.RuleSet>
             responseObserver) {
@@ -334,7 +334,7 @@ public final class RuleSetServiceGrpc {
      * Gets a ruleset. Returns NOT_FOUND if the ruleset does not exist.
      * </pre>
      */
-    public void getRuleSet(
+    default void getRuleSet(
         com.google.cloud.contentwarehouse.v1.GetRuleSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.contentwarehouse.v1.RuleSet>
             responseObserver) {
@@ -349,7 +349,7 @@ public final class RuleSetServiceGrpc {
      * is non-empty and does not equal the existing name.
      * </pre>
      */
-    public void updateRuleSet(
+    default void updateRuleSet(
         com.google.cloud.contentwarehouse.v1.UpdateRuleSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.contentwarehouse.v1.RuleSet>
             responseObserver) {
@@ -364,7 +364,7 @@ public final class RuleSetServiceGrpc {
      * Deletes a ruleset. Returns NOT_FOUND if the document does not exist.
      * </pre>
      */
-    public void deleteRuleSet(
+    default void deleteRuleSet(
         com.google.cloud.contentwarehouse.v1.DeleteRuleSetRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -378,56 +378,33 @@ public final class RuleSetServiceGrpc {
      * Lists rulesets.
      * </pre>
      */
-    public void listRuleSets(
+    default void listRuleSets(
         com.google.cloud.contentwarehouse.v1.ListRuleSetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.contentwarehouse.v1.ListRuleSetsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListRuleSetsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service RuleSetService.
+   *
+   * <pre>
+   * Service to manage customer specific RuleSets.
+   * </pre>
+   */
+  public abstract static class RuleSetServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateRuleSetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.contentwarehouse.v1.CreateRuleSetRequest,
-                      com.google.cloud.contentwarehouse.v1.RuleSet>(
-                      this, METHODID_CREATE_RULE_SET)))
-          .addMethod(
-              getGetRuleSetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.contentwarehouse.v1.GetRuleSetRequest,
-                      com.google.cloud.contentwarehouse.v1.RuleSet>(this, METHODID_GET_RULE_SET)))
-          .addMethod(
-              getUpdateRuleSetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.contentwarehouse.v1.UpdateRuleSetRequest,
-                      com.google.cloud.contentwarehouse.v1.RuleSet>(
-                      this, METHODID_UPDATE_RULE_SET)))
-          .addMethod(
-              getDeleteRuleSetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.contentwarehouse.v1.DeleteRuleSetRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_RULE_SET)))
-          .addMethod(
-              getListRuleSetsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.contentwarehouse.v1.ListRuleSetsRequest,
-                      com.google.cloud.contentwarehouse.v1.ListRuleSetsResponse>(
-                      this, METHODID_LIST_RULE_SETS)))
-          .build();
+      return RuleSetServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service RuleSetService.
    *
    * <pre>
    * Service to manage customer specific RuleSets.
@@ -529,7 +506,7 @@ public final class RuleSetServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service RuleSetService.
    *
    * <pre>
    * Service to manage customer specific RuleSets.
@@ -615,7 +592,7 @@ public final class RuleSetServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service RuleSetService.
    *
    * <pre>
    * Service to manage customer specific RuleSets.
@@ -715,10 +692,10 @@ public final class RuleSetServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final RuleSetServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(RuleSetServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -771,6 +748,44 @@ public final class RuleSetServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateRuleSetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contentwarehouse.v1.CreateRuleSetRequest,
+                    com.google.cloud.contentwarehouse.v1.RuleSet>(
+                    service, METHODID_CREATE_RULE_SET)))
+        .addMethod(
+            getGetRuleSetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contentwarehouse.v1.GetRuleSetRequest,
+                    com.google.cloud.contentwarehouse.v1.RuleSet>(service, METHODID_GET_RULE_SET)))
+        .addMethod(
+            getUpdateRuleSetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contentwarehouse.v1.UpdateRuleSetRequest,
+                    com.google.cloud.contentwarehouse.v1.RuleSet>(
+                    service, METHODID_UPDATE_RULE_SET)))
+        .addMethod(
+            getDeleteRuleSetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contentwarehouse.v1.DeleteRuleSetRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_RULE_SET)))
+        .addMethod(
+            getListRuleSetsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contentwarehouse.v1.ListRuleSetsRequest,
+                    com.google.cloud.contentwarehouse.v1.ListRuleSetsResponse>(
+                    service, METHODID_LIST_RULE_SETS)))
+        .build();
   }
 
   private abstract static class RuleSetServiceBaseDescriptorSupplier

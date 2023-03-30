@@ -82,6 +82,18 @@ public interface SpeedReadingIntervalOrBuilder
    *
    * <code>.google.maps.routing.v2.SpeedReadingInterval.Speed speed = 3;</code>
    *
+   * @return Whether the speed field is set.
+   */
+  boolean hasSpeed();
+  /**
+   *
+   *
+   * <pre>
+   * Traffic speed in this interval.
+   * </pre>
+   *
+   * <code>.google.maps.routing.v2.SpeedReadingInterval.Speed speed = 3;</code>
+   *
    * @return The enum numeric value on the wire for speed.
    */
   int getSpeedValue();
@@ -97,4 +109,6 @@ public interface SpeedReadingIntervalOrBuilder
    * @return The speed.
    */
   com.google.maps.routing.v2.SpeedReadingInterval.Speed getSpeed();
+
+  public com.google.maps.routing.v2.SpeedReadingInterval.SpeedTypeCase getSpeedTypeCase();
 }

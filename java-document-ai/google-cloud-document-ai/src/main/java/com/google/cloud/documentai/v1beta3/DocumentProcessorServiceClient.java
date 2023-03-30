@@ -3500,6 +3500,166 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Imports a processor version from source processor version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ProcessorName parent = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+   *   ImportProcessorVersionResponse response =
+   *       documentProcessorServiceClient.importProcessorVersionAsync(parent).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The destination processor name to create the processor version in.
+   *     Format: `projects/{project}/locations/{location}/processors/{processor}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ImportProcessorVersionResponse, ImportProcessorVersionMetadata>
+      importProcessorVersionAsync(ProcessorName parent) {
+    ImportProcessorVersionRequest request =
+        ImportProcessorVersionRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return importProcessorVersionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports a processor version from source processor version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   String parent = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
+   *   ImportProcessorVersionResponse response =
+   *       documentProcessorServiceClient.importProcessorVersionAsync(parent).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The destination processor name to create the processor version in.
+   *     Format: `projects/{project}/locations/{location}/processors/{processor}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ImportProcessorVersionResponse, ImportProcessorVersionMetadata>
+      importProcessorVersionAsync(String parent) {
+    ImportProcessorVersionRequest request =
+        ImportProcessorVersionRequest.newBuilder().setParent(parent).build();
+    return importProcessorVersionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports a processor version from source processor version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ImportProcessorVersionRequest request =
+   *       ImportProcessorVersionRequest.newBuilder()
+   *           .setParent(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .build();
+   *   ImportProcessorVersionResponse response =
+   *       documentProcessorServiceClient.importProcessorVersionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ImportProcessorVersionResponse, ImportProcessorVersionMetadata>
+      importProcessorVersionAsync(ImportProcessorVersionRequest request) {
+    return importProcessorVersionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports a processor version from source processor version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ImportProcessorVersionRequest request =
+   *       ImportProcessorVersionRequest.newBuilder()
+   *           .setParent(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .build();
+   *   OperationFuture<ImportProcessorVersionResponse, ImportProcessorVersionMetadata> future =
+   *       documentProcessorServiceClient
+   *           .importProcessorVersionOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   ImportProcessorVersionResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          ImportProcessorVersionRequest,
+          ImportProcessorVersionResponse,
+          ImportProcessorVersionMetadata>
+      importProcessorVersionOperationCallable() {
+    return stub.importProcessorVersionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Imports a processor version from source processor version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ImportProcessorVersionRequest request =
+   *       ImportProcessorVersionRequest.newBuilder()
+   *           .setParent(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       documentProcessorServiceClient.importProcessorVersionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ImportProcessorVersionRequest, Operation>
+      importProcessorVersionCallable() {
+    return stub.importProcessorVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:

@@ -342,7 +342,7 @@ public final class SpecialistPoolServiceGrpc {
    * CrowdCompute console.
    * </pre>
    */
-  public abstract static class SpecialistPoolServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -351,7 +351,7 @@ public final class SpecialistPoolServiceGrpc {
      * Creates a SpecialistPool.
      * </pre>
      */
-    public void createSpecialistPool(
+    default void createSpecialistPool(
         com.google.cloud.aiplatform.v1beta1.CreateSpecialistPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -365,7 +365,7 @@ public final class SpecialistPoolServiceGrpc {
      * Gets a SpecialistPool.
      * </pre>
      */
-    public void getSpecialistPool(
+    default void getSpecialistPool(
         com.google.cloud.aiplatform.v1beta1.GetSpecialistPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.SpecialistPool>
             responseObserver) {
@@ -380,7 +380,7 @@ public final class SpecialistPoolServiceGrpc {
      * Lists SpecialistPools in a Location.
      * </pre>
      */
-    public void listSpecialistPools(
+    default void listSpecialistPools(
         com.google.cloud.aiplatform.v1beta1.ListSpecialistPoolsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ListSpecialistPoolsResponse>
             responseObserver) {
@@ -395,7 +395,7 @@ public final class SpecialistPoolServiceGrpc {
      * Deletes a SpecialistPool as well as all Specialists in the pool.
      * </pre>
      */
-    public void deleteSpecialistPool(
+    default void deleteSpecialistPool(
         com.google.cloud.aiplatform.v1beta1.DeleteSpecialistPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -409,54 +409,37 @@ public final class SpecialistPoolServiceGrpc {
      * Updates a SpecialistPool.
      * </pre>
      */
-    public void updateSpecialistPool(
+    default void updateSpecialistPool(
         com.google.cloud.aiplatform.v1beta1.UpdateSpecialistPoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateSpecialistPoolMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service SpecialistPoolService.
+   *
+   * <pre>
+   * A service for creating and managing Customer SpecialistPools.
+   * When customers start Data Labeling jobs, they can reuse/create Specialist
+   * Pools to bring their own Specialists to label the data.
+   * Customers can add/remove Managers for the Specialist Pool on Cloud console,
+   * then Managers will get email notifications to manage Specialists and tasks on
+   * CrowdCompute console.
+   * </pre>
+   */
+  public abstract static class SpecialistPoolServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateSpecialistPoolMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.CreateSpecialistPoolRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_SPECIALIST_POOL)))
-          .addMethod(
-              getGetSpecialistPoolMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.GetSpecialistPoolRequest,
-                      com.google.cloud.aiplatform.v1beta1.SpecialistPool>(
-                      this, METHODID_GET_SPECIALIST_POOL)))
-          .addMethod(
-              getListSpecialistPoolsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.ListSpecialistPoolsRequest,
-                      com.google.cloud.aiplatform.v1beta1.ListSpecialistPoolsResponse>(
-                      this, METHODID_LIST_SPECIALIST_POOLS)))
-          .addMethod(
-              getDeleteSpecialistPoolMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.DeleteSpecialistPoolRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_SPECIALIST_POOL)))
-          .addMethod(
-              getUpdateSpecialistPoolMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.UpdateSpecialistPoolRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_SPECIALIST_POOL)))
-          .build();
+      return SpecialistPoolServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service SpecialistPoolService.
    *
    * <pre>
    * A service for creating and managing Customer SpecialistPools.
@@ -563,7 +546,7 @@ public final class SpecialistPoolServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service SpecialistPoolService.
    *
    * <pre>
    * A service for creating and managing Customer SpecialistPools.
@@ -654,7 +637,8 @@ public final class SpecialistPoolServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * SpecialistPoolService.
    *
    * <pre>
    * A service for creating and managing Customer SpecialistPools.
@@ -761,10 +745,10 @@ public final class SpecialistPoolServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final SpecialistPoolServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(SpecialistPoolServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -815,6 +799,43 @@ public final class SpecialistPoolServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateSpecialistPoolMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.CreateSpecialistPoolRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_SPECIALIST_POOL)))
+        .addMethod(
+            getGetSpecialistPoolMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.GetSpecialistPoolRequest,
+                    com.google.cloud.aiplatform.v1beta1.SpecialistPool>(
+                    service, METHODID_GET_SPECIALIST_POOL)))
+        .addMethod(
+            getListSpecialistPoolsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.ListSpecialistPoolsRequest,
+                    com.google.cloud.aiplatform.v1beta1.ListSpecialistPoolsResponse>(
+                    service, METHODID_LIST_SPECIALIST_POOLS)))
+        .addMethod(
+            getDeleteSpecialistPoolMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.DeleteSpecialistPoolRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_SPECIALIST_POOL)))
+        .addMethod(
+            getUpdateSpecialistPoolMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.UpdateSpecialistPoolRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_SPECIALIST_POOL)))
+        .build();
   }
 
   private abstract static class SpecialistPoolServiceBaseDescriptorSupplier

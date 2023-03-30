@@ -347,8 +347,7 @@ public final class DeploymentResourcePoolServiceGrpc {
    * A service that manages the DeploymentResourcePool resource.
    * </pre>
    */
-  public abstract static class DeploymentResourcePoolServiceImplBase
-      implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -357,7 +356,7 @@ public final class DeploymentResourcePoolServiceGrpc {
      * Create a DeploymentResourcePool.
      * </pre>
      */
-    public void createDeploymentResourcePool(
+    default void createDeploymentResourcePool(
         com.google.cloud.aiplatform.v1beta1.CreateDeploymentResourcePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -371,7 +370,7 @@ public final class DeploymentResourcePoolServiceGrpc {
      * Get a DeploymentResourcePool.
      * </pre>
      */
-    public void getDeploymentResourcePool(
+    default void getDeploymentResourcePool(
         com.google.cloud.aiplatform.v1beta1.GetDeploymentResourcePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.DeploymentResourcePool>
             responseObserver) {
@@ -386,7 +385,7 @@ public final class DeploymentResourcePoolServiceGrpc {
      * List DeploymentResourcePools in a location.
      * </pre>
      */
-    public void listDeploymentResourcePools(
+    default void listDeploymentResourcePools(
         com.google.cloud.aiplatform.v1beta1.ListDeploymentResourcePoolsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.aiplatform.v1beta1.ListDeploymentResourcePoolsResponse>
@@ -402,7 +401,7 @@ public final class DeploymentResourcePoolServiceGrpc {
      * Delete a DeploymentResourcePool.
      * </pre>
      */
-    public void deleteDeploymentResourcePool(
+    default void deleteDeploymentResourcePool(
         com.google.cloud.aiplatform.v1beta1.DeleteDeploymentResourcePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -416,58 +415,33 @@ public final class DeploymentResourcePoolServiceGrpc {
      * List DeployedModels that have been deployed on this DeploymentResourcePool.
      * </pre>
      */
-    public void queryDeployedModels(
+    default void queryDeployedModels(
         com.google.cloud.aiplatform.v1beta1.QueryDeployedModelsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.QueryDeployedModelsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getQueryDeployedModelsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service DeploymentResourcePoolService.
+   *
+   * <pre>
+   * A service that manages the DeploymentResourcePool resource.
+   * </pre>
+   */
+  public abstract static class DeploymentResourcePoolServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateDeploymentResourcePoolMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.CreateDeploymentResourcePoolRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_CREATE_DEPLOYMENT_RESOURCE_POOL)))
-          .addMethod(
-              getGetDeploymentResourcePoolMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.GetDeploymentResourcePoolRequest,
-                      com.google.cloud.aiplatform.v1beta1.DeploymentResourcePool>(
-                      this, METHODID_GET_DEPLOYMENT_RESOURCE_POOL)))
-          .addMethod(
-              getListDeploymentResourcePoolsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.ListDeploymentResourcePoolsRequest,
-                      com.google.cloud.aiplatform.v1beta1.ListDeploymentResourcePoolsResponse>(
-                      this, METHODID_LIST_DEPLOYMENT_RESOURCE_POOLS)))
-          .addMethod(
-              getDeleteDeploymentResourcePoolMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.DeleteDeploymentResourcePoolRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_DELETE_DEPLOYMENT_RESOURCE_POOL)))
-          .addMethod(
-              getQueryDeployedModelsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.QueryDeployedModelsRequest,
-                      com.google.cloud.aiplatform.v1beta1.QueryDeployedModelsResponse>(
-                      this, METHODID_QUERY_DEPLOYED_MODELS)))
-          .build();
+      return DeploymentResourcePoolServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service DeploymentResourcePoolService.
    *
    * <pre>
    * A service that manages the DeploymentResourcePool resource.
@@ -572,7 +546,7 @@ public final class DeploymentResourcePoolServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service DeploymentResourcePoolService.
    *
    * <pre>
    * A service that manages the DeploymentResourcePool resource.
@@ -659,7 +633,8 @@ public final class DeploymentResourcePoolServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * DeploymentResourcePoolService.
    *
    * <pre>
    * A service that manages the DeploymentResourcePool resource.
@@ -763,10 +738,10 @@ public final class DeploymentResourcePoolServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final DeploymentResourcePoolServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(DeploymentResourcePoolServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -820,6 +795,46 @@ public final class DeploymentResourcePoolServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateDeploymentResourcePoolMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.CreateDeploymentResourcePoolRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_DEPLOYMENT_RESOURCE_POOL)))
+        .addMethod(
+            getGetDeploymentResourcePoolMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.GetDeploymentResourcePoolRequest,
+                    com.google.cloud.aiplatform.v1beta1.DeploymentResourcePool>(
+                    service, METHODID_GET_DEPLOYMENT_RESOURCE_POOL)))
+        .addMethod(
+            getListDeploymentResourcePoolsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.ListDeploymentResourcePoolsRequest,
+                    com.google.cloud.aiplatform.v1beta1.ListDeploymentResourcePoolsResponse>(
+                    service, METHODID_LIST_DEPLOYMENT_RESOURCE_POOLS)))
+        .addMethod(
+            getDeleteDeploymentResourcePoolMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.DeleteDeploymentResourcePoolRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_DEPLOYMENT_RESOURCE_POOL)))
+        .addMethod(
+            getQueryDeployedModelsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.QueryDeployedModelsRequest,
+                    com.google.cloud.aiplatform.v1beta1.QueryDeployedModelsResponse>(
+                    service, METHODID_QUERY_DEPLOYED_MODELS)))
+        .build();
   }
 
   private abstract static class DeploymentResourcePoolServiceBaseDescriptorSupplier

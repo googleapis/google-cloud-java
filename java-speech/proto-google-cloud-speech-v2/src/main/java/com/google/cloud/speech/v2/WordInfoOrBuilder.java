@@ -175,8 +175,8 @@ public interface WordInfoOrBuilder
    * A distinct label is assigned for every speaker within the audio. This field
    * specifies which one of those speakers was detected to have spoken this
    * word. `speaker_label` is set if
-   * [enable_speaker_diarization][google.cloud.speech.v2.SpeakerDiarizationConfig.enable_speaker_diarization]
-   * is `true` and only in the top alternative.
+   * [SpeakerDiarizationConfig][google.cloud.speech.v2.SpeakerDiarizationConfig]
+   * is given and only in the top alternative.
    * </pre>
    *
    * <code>string speaker_label = 6;</code>
@@ -191,8 +191,8 @@ public interface WordInfoOrBuilder
    * A distinct label is assigned for every speaker within the audio. This field
    * specifies which one of those speakers was detected to have spoken this
    * word. `speaker_label` is set if
-   * [enable_speaker_diarization][google.cloud.speech.v2.SpeakerDiarizationConfig.enable_speaker_diarization]
-   * is `true` and only in the top alternative.
+   * [SpeakerDiarizationConfig][google.cloud.speech.v2.SpeakerDiarizationConfig]
+   * is given and only in the top alternative.
    * </pre>
    *
    * <code>string speaker_label = 6;</code>

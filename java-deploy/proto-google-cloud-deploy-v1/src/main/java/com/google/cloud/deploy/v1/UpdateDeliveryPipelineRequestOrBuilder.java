@@ -163,8 +163,8 @@ public interface UpdateDeliveryPipelineRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If set to true, updating a `DeliveryPipeline` that does not exist will
-   * result in the creation of a new `DeliveryPipeline`.
+   * Optional. If set to true, updating a `DeliveryPipeline` that does not exist
+   * will result in the creation of a new `DeliveryPipeline`.
    * </pre>
    *
    * <code>bool allow_missing = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -177,8 +177,8 @@ public interface UpdateDeliveryPipelineRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If set to true, the request is validated and the user is provided with
-   * an expected result, but no actual change is made.
+   * Optional. If set to true, the request is validated and the user is provided
+   * with an expected result, but no actual change is made.
    * </pre>
    *
    * <code>bool validate_only = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

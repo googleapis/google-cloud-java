@@ -452,7 +452,7 @@ public final class ConversationProfilesGrpc {
    * [ConversationProfiles][google.cloud.dialogflow.v2beta1.ConversationProfile].
    * </pre>
    */
-  public abstract static class ConversationProfilesImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -461,7 +461,7 @@ public final class ConversationProfilesGrpc {
      * Returns the list of all conversation profiles in the specified project.
      * </pre>
      */
-    public void listConversationProfiles(
+    default void listConversationProfiles(
         com.google.cloud.dialogflow.v2beta1.ListConversationProfilesRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.dialogflow.v2beta1.ListConversationProfilesResponse>
@@ -477,7 +477,7 @@ public final class ConversationProfilesGrpc {
      * Retrieves the specified conversation profile.
      * </pre>
      */
-    public void getConversationProfile(
+    default void getConversationProfile(
         com.google.cloud.dialogflow.v2beta1.GetConversationProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ConversationProfile>
             responseObserver) {
@@ -496,7 +496,7 @@ public final class ConversationProfilesGrpc {
      * API.
      * </pre>
      */
-    public void createConversationProfile(
+    default void createConversationProfile(
         com.google.cloud.dialogflow.v2beta1.CreateConversationProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ConversationProfile>
             responseObserver) {
@@ -515,7 +515,7 @@ public final class ConversationProfilesGrpc {
      * API.
      * </pre>
      */
-    public void updateConversationProfile(
+    default void updateConversationProfile(
         com.google.cloud.dialogflow.v2beta1.UpdateConversationProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ConversationProfile>
             responseObserver) {
@@ -530,7 +530,7 @@ public final class ConversationProfilesGrpc {
      * Deletes the specified conversation profile.
      * </pre>
      */
-    public void deleteConversationProfile(
+    default void deleteConversationProfile(
         com.google.cloud.dialogflow.v2beta1.DeleteConversationProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -558,7 +558,7 @@ public final class ConversationProfilesGrpc {
      * before sending such request, otherwise the request will be rejected.
      * </pre>
      */
-    public void setSuggestionFeatureConfig(
+    default void setSuggestionFeatureConfig(
         com.google.cloud.dialogflow.v2beta1.SetSuggestionFeatureConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -580,70 +580,33 @@ public final class ConversationProfilesGrpc {
      * [ConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfile]
      * </pre>
      */
-    public void clearSuggestionFeatureConfig(
+    default void clearSuggestionFeatureConfig(
         com.google.cloud.dialogflow.v2beta1.ClearSuggestionFeatureConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getClearSuggestionFeatureConfigMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ConversationProfiles.
+   *
+   * <pre>
+   * Service for managing
+   * [ConversationProfiles][google.cloud.dialogflow.v2beta1.ConversationProfile].
+   * </pre>
+   */
+  public abstract static class ConversationProfilesImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListConversationProfilesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.ListConversationProfilesRequest,
-                      com.google.cloud.dialogflow.v2beta1.ListConversationProfilesResponse>(
-                      this, METHODID_LIST_CONVERSATION_PROFILES)))
-          .addMethod(
-              getGetConversationProfileMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.GetConversationProfileRequest,
-                      com.google.cloud.dialogflow.v2beta1.ConversationProfile>(
-                      this, METHODID_GET_CONVERSATION_PROFILE)))
-          .addMethod(
-              getCreateConversationProfileMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.CreateConversationProfileRequest,
-                      com.google.cloud.dialogflow.v2beta1.ConversationProfile>(
-                      this, METHODID_CREATE_CONVERSATION_PROFILE)))
-          .addMethod(
-              getUpdateConversationProfileMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.UpdateConversationProfileRequest,
-                      com.google.cloud.dialogflow.v2beta1.ConversationProfile>(
-                      this, METHODID_UPDATE_CONVERSATION_PROFILE)))
-          .addMethod(
-              getDeleteConversationProfileMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.DeleteConversationProfileRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_CONVERSATION_PROFILE)))
-          .addMethod(
-              getSetSuggestionFeatureConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.SetSuggestionFeatureConfigRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_SET_SUGGESTION_FEATURE_CONFIG)))
-          .addMethod(
-              getClearSuggestionFeatureConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.ClearSuggestionFeatureConfigRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_CLEAR_SUGGESTION_FEATURE_CONFIG)))
-          .build();
+      return ConversationProfilesGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ConversationProfiles.
    *
    * <pre>
    * Service for managing
@@ -811,7 +774,7 @@ public final class ConversationProfilesGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ConversationProfiles.
    *
    * <pre>
    * Service for managing
@@ -955,7 +918,7 @@ public final class ConversationProfilesGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service ConversationProfiles.
    *
    * <pre>
    * Service for managing
@@ -1121,10 +1084,10 @@ public final class ConversationProfilesGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ConversationProfilesImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ConversationProfilesImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1187,6 +1150,59 @@ public final class ConversationProfilesGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListConversationProfilesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.ListConversationProfilesRequest,
+                    com.google.cloud.dialogflow.v2beta1.ListConversationProfilesResponse>(
+                    service, METHODID_LIST_CONVERSATION_PROFILES)))
+        .addMethod(
+            getGetConversationProfileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.GetConversationProfileRequest,
+                    com.google.cloud.dialogflow.v2beta1.ConversationProfile>(
+                    service, METHODID_GET_CONVERSATION_PROFILE)))
+        .addMethod(
+            getCreateConversationProfileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.CreateConversationProfileRequest,
+                    com.google.cloud.dialogflow.v2beta1.ConversationProfile>(
+                    service, METHODID_CREATE_CONVERSATION_PROFILE)))
+        .addMethod(
+            getUpdateConversationProfileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.UpdateConversationProfileRequest,
+                    com.google.cloud.dialogflow.v2beta1.ConversationProfile>(
+                    service, METHODID_UPDATE_CONVERSATION_PROFILE)))
+        .addMethod(
+            getDeleteConversationProfileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.DeleteConversationProfileRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_CONVERSATION_PROFILE)))
+        .addMethod(
+            getSetSuggestionFeatureConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.SetSuggestionFeatureConfigRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_SET_SUGGESTION_FEATURE_CONFIG)))
+        .addMethod(
+            getClearSuggestionFeatureConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.ClearSuggestionFeatureConfigRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CLEAR_SUGGESTION_FEATURE_CONFIG)))
+        .build();
   }
 
   private abstract static class ConversationProfilesBaseDescriptorSupplier

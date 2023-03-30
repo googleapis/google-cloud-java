@@ -951,7 +951,7 @@ public final class ProductSearchGrpc {
    *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;&#47;referenceImages/&#42;`
    * </pre>
    */
-  public abstract static class ProductSearchImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -963,7 +963,7 @@ public final class ProductSearchGrpc {
      *   4096 characters.
      * </pre>
      */
-    public void createProductSet(
+    default void createProductSet(
         com.google.cloud.vision.v1.CreateProductSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.ProductSet> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -980,7 +980,7 @@ public final class ProductSearchGrpc {
      *   than 1.
      * </pre>
      */
-    public void listProductSets(
+    default void listProductSets(
         com.google.cloud.vision.v1.ListProductSetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.ListProductSetsResponse>
             responseObserver) {
@@ -997,7 +997,7 @@ public final class ProductSearchGrpc {
      * * Returns NOT_FOUND if the ProductSet does not exist.
      * </pre>
      */
-    public void getProductSet(
+    default void getProductSet(
         com.google.cloud.vision.v1.GetProductSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.ProductSet> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1016,7 +1016,7 @@ public final class ProductSearchGrpc {
      *   missing from the request or longer than 4096 characters.
      * </pre>
      */
-    public void updateProductSet(
+    default void updateProductSet(
         com.google.cloud.vision.v1.UpdateProductSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.ProductSet> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1032,7 +1032,7 @@ public final class ProductSearchGrpc {
      * The actual image files are not deleted from Google Cloud Storage.
      * </pre>
      */
-    public void deleteProductSet(
+    default void deleteProductSet(
         com.google.cloud.vision.v1.DeleteProductSetRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1051,7 +1051,7 @@ public final class ProductSearchGrpc {
      * * Returns INVALID_ARGUMENT if product_category is missing or invalid.
      * </pre>
      */
-    public void createProduct(
+    default void createProduct(
         com.google.cloud.vision.v1.CreateProductRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.Product> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1067,7 +1067,7 @@ public final class ProductSearchGrpc {
      * * Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
      * </pre>
      */
-    public void listProducts(
+    default void listProducts(
         com.google.cloud.vision.v1.ListProductsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.ListProductsResponse>
             responseObserver) {
@@ -1084,7 +1084,7 @@ public final class ProductSearchGrpc {
      * * Returns NOT_FOUND if the Product does not exist.
      * </pre>
      */
-    public void getProduct(
+    default void getProduct(
         com.google.cloud.vision.v1.GetProductRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.Product> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetProductMethod(), responseObserver);
@@ -1108,7 +1108,7 @@ public final class ProductSearchGrpc {
      * * Returns INVALID_ARGUMENT if product_category is present in update_mask.
      * </pre>
      */
-    public void updateProduct(
+    default void updateProduct(
         com.google.cloud.vision.v1.UpdateProductRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.Product> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1125,7 +1125,7 @@ public final class ProductSearchGrpc {
      * until all related caches are refreshed.
      * </pre>
      */
-    public void deleteProduct(
+    default void deleteProduct(
         com.google.cloud.vision.v1.DeleteProductRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1153,7 +1153,7 @@ public final class ProductSearchGrpc {
      * * Returns INVALID_ARGUMENT if bounding_poly contains more than 10 polygons.
      * </pre>
      */
-    public void createReferenceImage(
+    default void createReferenceImage(
         com.google.cloud.vision.v1.CreateReferenceImageRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.ReferenceImage> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1171,7 +1171,7 @@ public final class ProductSearchGrpc {
      * The actual image files are not deleted from Google Cloud Storage.
      * </pre>
      */
-    public void deleteReferenceImage(
+    default void deleteReferenceImage(
         com.google.cloud.vision.v1.DeleteReferenceImageRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1189,7 +1189,7 @@ public final class ProductSearchGrpc {
      *   than 1.
      * </pre>
      */
-    public void listReferenceImages(
+    default void listReferenceImages(
         com.google.cloud.vision.v1.ListReferenceImagesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.ListReferenceImagesResponse>
             responseObserver) {
@@ -1206,7 +1206,7 @@ public final class ProductSearchGrpc {
      * * Returns NOT_FOUND if the specified image does not exist.
      * </pre>
      */
-    public void getReferenceImage(
+    default void getReferenceImage(
         com.google.cloud.vision.v1.GetReferenceImageRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.ReferenceImage> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1224,7 +1224,7 @@ public final class ProductSearchGrpc {
      * * Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
      * </pre>
      */
-    public void addProductToProductSet(
+    default void addProductToProductSet(
         com.google.cloud.vision.v1.AddProductToProductSetRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1238,7 +1238,7 @@ public final class ProductSearchGrpc {
      * Removes a Product from the specified ProductSet.
      * </pre>
      */
-    public void removeProductFromProductSet(
+    default void removeProductFromProductSet(
         com.google.cloud.vision.v1.RemoveProductFromProductSetRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1256,7 +1256,7 @@ public final class ProductSearchGrpc {
      * * Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
      * </pre>
      */
-    public void listProductsInProductSet(
+    default void listProductsInProductSet(
         com.google.cloud.vision.v1.ListProductsInProductSetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1.ListProductsInProductSetResponse>
             responseObserver) {
@@ -1279,7 +1279,7 @@ public final class ProductSearchGrpc {
      * [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1.ImportProductSetsGcsSource.csv_file_uri].
      * </pre>
      */
-    public void importProductSets(
+    default void importProductSets(
         com.google.cloud.vision.v1.ImportProductSetsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1311,142 +1311,41 @@ public final class ProductSearchGrpc {
      * `Operation.metadata` contains `BatchOperationMetadata`. (progress)
      * </pre>
      */
-    public void purgeProducts(
+    default void purgeProducts(
         com.google.cloud.vision.v1.PurgeProductsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getPurgeProductsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ProductSearch.
+   *
+   * <pre>
+   * Manages Products and ProductSets of reference images for use in product
+   * search. It uses the following resource model:
+   * - The API has a collection of [ProductSet][google.cloud.vision.v1.ProductSet] resources, named
+   * `projects/&#42;&#47;locations/&#42;&#47;productSets/&#42;`, which acts as a way to put different
+   * products into groups to limit identification.
+   * In parallel,
+   * - The API has a collection of [Product][google.cloud.vision.v1.Product] resources, named
+   *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;`
+   * - Each [Product][google.cloud.vision.v1.Product] has a collection of [ReferenceImage][google.cloud.vision.v1.ReferenceImage] resources, named
+   *   `projects/&#42;&#47;locations/&#42;&#47;products/&#42;&#47;referenceImages/&#42;`
+   * </pre>
+   */
+  public abstract static class ProductSearchImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateProductSetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vision.v1.CreateProductSetRequest,
-                      com.google.cloud.vision.v1.ProductSet>(this, METHODID_CREATE_PRODUCT_SET)))
-          .addMethod(
-              getListProductSetsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vision.v1.ListProductSetsRequest,
-                      com.google.cloud.vision.v1.ListProductSetsResponse>(
-                      this, METHODID_LIST_PRODUCT_SETS)))
-          .addMethod(
-              getGetProductSetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vision.v1.GetProductSetRequest,
-                      com.google.cloud.vision.v1.ProductSet>(this, METHODID_GET_PRODUCT_SET)))
-          .addMethod(
-              getUpdateProductSetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vision.v1.UpdateProductSetRequest,
-                      com.google.cloud.vision.v1.ProductSet>(this, METHODID_UPDATE_PRODUCT_SET)))
-          .addMethod(
-              getDeleteProductSetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vision.v1.DeleteProductSetRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_PRODUCT_SET)))
-          .addMethod(
-              getCreateProductMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vision.v1.CreateProductRequest,
-                      com.google.cloud.vision.v1.Product>(this, METHODID_CREATE_PRODUCT)))
-          .addMethod(
-              getListProductsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vision.v1.ListProductsRequest,
-                      com.google.cloud.vision.v1.ListProductsResponse>(
-                      this, METHODID_LIST_PRODUCTS)))
-          .addMethod(
-              getGetProductMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vision.v1.GetProductRequest,
-                      com.google.cloud.vision.v1.Product>(this, METHODID_GET_PRODUCT)))
-          .addMethod(
-              getUpdateProductMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vision.v1.UpdateProductRequest,
-                      com.google.cloud.vision.v1.Product>(this, METHODID_UPDATE_PRODUCT)))
-          .addMethod(
-              getDeleteProductMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vision.v1.DeleteProductRequest, com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_PRODUCT)))
-          .addMethod(
-              getCreateReferenceImageMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vision.v1.CreateReferenceImageRequest,
-                      com.google.cloud.vision.v1.ReferenceImage>(
-                      this, METHODID_CREATE_REFERENCE_IMAGE)))
-          .addMethod(
-              getDeleteReferenceImageMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vision.v1.DeleteReferenceImageRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_REFERENCE_IMAGE)))
-          .addMethod(
-              getListReferenceImagesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vision.v1.ListReferenceImagesRequest,
-                      com.google.cloud.vision.v1.ListReferenceImagesResponse>(
-                      this, METHODID_LIST_REFERENCE_IMAGES)))
-          .addMethod(
-              getGetReferenceImageMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vision.v1.GetReferenceImageRequest,
-                      com.google.cloud.vision.v1.ReferenceImage>(
-                      this, METHODID_GET_REFERENCE_IMAGE)))
-          .addMethod(
-              getAddProductToProductSetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vision.v1.AddProductToProductSetRequest,
-                      com.google.protobuf.Empty>(this, METHODID_ADD_PRODUCT_TO_PRODUCT_SET)))
-          .addMethod(
-              getRemoveProductFromProductSetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vision.v1.RemoveProductFromProductSetRequest,
-                      com.google.protobuf.Empty>(this, METHODID_REMOVE_PRODUCT_FROM_PRODUCT_SET)))
-          .addMethod(
-              getListProductsInProductSetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vision.v1.ListProductsInProductSetRequest,
-                      com.google.cloud.vision.v1.ListProductsInProductSetResponse>(
-                      this, METHODID_LIST_PRODUCTS_IN_PRODUCT_SET)))
-          .addMethod(
-              getImportProductSetsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vision.v1.ImportProductSetsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_IMPORT_PRODUCT_SETS)))
-          .addMethod(
-              getPurgeProductsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vision.v1.PurgeProductsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_PURGE_PRODUCTS)))
-          .build();
+      return ProductSearchGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ProductSearch.
    *
    * <pre>
    * Manages Products and ProductSets of reference images for use in product
@@ -1876,7 +1775,7 @@ public final class ProductSearchGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ProductSearch.
    *
    * <pre>
    * Manages Products and ProductSets of reference images for use in product
@@ -2248,7 +2147,7 @@ public final class ProductSearchGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service ProductSearch.
    *
    * <pre>
    * Manages Products and ProductSets of reference images for use in product
@@ -2652,10 +2551,10 @@ public final class ProductSearchGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ProductSearchImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ProductSearchImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -2783,6 +2682,131 @@ public final class ProductSearchGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateProductSetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vision.v1.CreateProductSetRequest,
+                    com.google.cloud.vision.v1.ProductSet>(service, METHODID_CREATE_PRODUCT_SET)))
+        .addMethod(
+            getListProductSetsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vision.v1.ListProductSetsRequest,
+                    com.google.cloud.vision.v1.ListProductSetsResponse>(
+                    service, METHODID_LIST_PRODUCT_SETS)))
+        .addMethod(
+            getGetProductSetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vision.v1.GetProductSetRequest,
+                    com.google.cloud.vision.v1.ProductSet>(service, METHODID_GET_PRODUCT_SET)))
+        .addMethod(
+            getUpdateProductSetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vision.v1.UpdateProductSetRequest,
+                    com.google.cloud.vision.v1.ProductSet>(service, METHODID_UPDATE_PRODUCT_SET)))
+        .addMethod(
+            getDeleteProductSetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vision.v1.DeleteProductSetRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_PRODUCT_SET)))
+        .addMethod(
+            getCreateProductMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vision.v1.CreateProductRequest,
+                    com.google.cloud.vision.v1.Product>(service, METHODID_CREATE_PRODUCT)))
+        .addMethod(
+            getListProductsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vision.v1.ListProductsRequest,
+                    com.google.cloud.vision.v1.ListProductsResponse>(
+                    service, METHODID_LIST_PRODUCTS)))
+        .addMethod(
+            getGetProductMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vision.v1.GetProductRequest,
+                    com.google.cloud.vision.v1.Product>(service, METHODID_GET_PRODUCT)))
+        .addMethod(
+            getUpdateProductMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vision.v1.UpdateProductRequest,
+                    com.google.cloud.vision.v1.Product>(service, METHODID_UPDATE_PRODUCT)))
+        .addMethod(
+            getDeleteProductMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vision.v1.DeleteProductRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_PRODUCT)))
+        .addMethod(
+            getCreateReferenceImageMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vision.v1.CreateReferenceImageRequest,
+                    com.google.cloud.vision.v1.ReferenceImage>(
+                    service, METHODID_CREATE_REFERENCE_IMAGE)))
+        .addMethod(
+            getDeleteReferenceImageMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vision.v1.DeleteReferenceImageRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_REFERENCE_IMAGE)))
+        .addMethod(
+            getListReferenceImagesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vision.v1.ListReferenceImagesRequest,
+                    com.google.cloud.vision.v1.ListReferenceImagesResponse>(
+                    service, METHODID_LIST_REFERENCE_IMAGES)))
+        .addMethod(
+            getGetReferenceImageMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vision.v1.GetReferenceImageRequest,
+                    com.google.cloud.vision.v1.ReferenceImage>(
+                    service, METHODID_GET_REFERENCE_IMAGE)))
+        .addMethod(
+            getAddProductToProductSetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vision.v1.AddProductToProductSetRequest,
+                    com.google.protobuf.Empty>(service, METHODID_ADD_PRODUCT_TO_PRODUCT_SET)))
+        .addMethod(
+            getRemoveProductFromProductSetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vision.v1.RemoveProductFromProductSetRequest,
+                    com.google.protobuf.Empty>(service, METHODID_REMOVE_PRODUCT_FROM_PRODUCT_SET)))
+        .addMethod(
+            getListProductsInProductSetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vision.v1.ListProductsInProductSetRequest,
+                    com.google.cloud.vision.v1.ListProductsInProductSetResponse>(
+                    service, METHODID_LIST_PRODUCTS_IN_PRODUCT_SET)))
+        .addMethod(
+            getImportProductSetsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vision.v1.ImportProductSetsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_IMPORT_PRODUCT_SETS)))
+        .addMethod(
+            getPurgeProductsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vision.v1.PurgeProductsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_PURGE_PRODUCTS)))
+        .build();
   }
 
   private abstract static class ProductSearchBaseDescriptorSupplier

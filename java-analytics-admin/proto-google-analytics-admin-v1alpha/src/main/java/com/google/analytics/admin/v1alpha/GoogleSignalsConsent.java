@@ -22,8 +22,7 @@ package com.google.analytics.admin.v1alpha;
  *
  *
  * <pre>
- * Consent field of the Google Signals settings (i.e., whether the user has
- * consented to the Google Signals terms of service.)
+ * Consent field of the Google Signals settings.
  * </pre>
  *
  * Protobuf enum {@code google.analytics.admin.v1alpha.GoogleSignalsConsent}

@@ -345,7 +345,7 @@ public final class SecuritySettingsServiceGrpc {
    * Service for managing security settings for Dialogflow.
    * </pre>
    */
-  public abstract static class SecuritySettingsServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -354,7 +354,7 @@ public final class SecuritySettingsServiceGrpc {
      * Create security settings in the specified location.
      * </pre>
      */
-    public void createSecuritySettings(
+    default void createSecuritySettings(
         com.google.cloud.dialogflow.cx.v3.CreateSecuritySettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.SecuritySettings>
             responseObserver) {
@@ -371,7 +371,7 @@ public final class SecuritySettingsServiceGrpc {
      * returned settings may be stale by up to 1 minute.
      * </pre>
      */
-    public void getSecuritySettings(
+    default void getSecuritySettings(
         com.google.cloud.dialogflow.cx.v3.GetSecuritySettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.SecuritySettings>
             responseObserver) {
@@ -387,7 +387,7 @@ public final class SecuritySettingsServiceGrpc {
      * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
      * </pre>
      */
-    public void updateSecuritySettings(
+    default void updateSecuritySettings(
         com.google.cloud.dialogflow.cx.v3.UpdateSecuritySettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.SecuritySettings>
             responseObserver) {
@@ -402,7 +402,7 @@ public final class SecuritySettingsServiceGrpc {
      * Returns the list of all security settings in the specified location.
      * </pre>
      */
-    public void listSecuritySettings(
+    default void listSecuritySettings(
         com.google.cloud.dialogflow.cx.v3.ListSecuritySettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListSecuritySettingsResponse>
             responseObserver) {
@@ -418,56 +418,32 @@ public final class SecuritySettingsServiceGrpc {
      * [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
      * </pre>
      */
-    public void deleteSecuritySettings(
+    default void deleteSecuritySettings(
         com.google.cloud.dialogflow.cx.v3.DeleteSecuritySettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteSecuritySettingsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service SecuritySettingsService.
+   *
+   * <pre>
+   * Service for managing security settings for Dialogflow.
+   * </pre>
+   */
+  public abstract static class SecuritySettingsServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateSecuritySettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.CreateSecuritySettingsRequest,
-                      com.google.cloud.dialogflow.cx.v3.SecuritySettings>(
-                      this, METHODID_CREATE_SECURITY_SETTINGS)))
-          .addMethod(
-              getGetSecuritySettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.GetSecuritySettingsRequest,
-                      com.google.cloud.dialogflow.cx.v3.SecuritySettings>(
-                      this, METHODID_GET_SECURITY_SETTINGS)))
-          .addMethod(
-              getUpdateSecuritySettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.UpdateSecuritySettingsRequest,
-                      com.google.cloud.dialogflow.cx.v3.SecuritySettings>(
-                      this, METHODID_UPDATE_SECURITY_SETTINGS)))
-          .addMethod(
-              getListSecuritySettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.ListSecuritySettingsRequest,
-                      com.google.cloud.dialogflow.cx.v3.ListSecuritySettingsResponse>(
-                      this, METHODID_LIST_SECURITY_SETTINGS)))
-          .addMethod(
-              getDeleteSecuritySettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.DeleteSecuritySettingsRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_SECURITY_SETTINGS)))
-          .build();
+      return SecuritySettingsServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service SecuritySettingsService.
    *
    * <pre>
    * Service for managing security settings for Dialogflow.
@@ -575,7 +551,7 @@ public final class SecuritySettingsServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service SecuritySettingsService.
    *
    * <pre>
    * Service for managing security settings for Dialogflow.
@@ -665,7 +641,8 @@ public final class SecuritySettingsServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * SecuritySettingsService.
    *
    * <pre>
    * Service for managing security settings for Dialogflow.
@@ -773,10 +750,10 @@ public final class SecuritySettingsServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final SecuritySettingsServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(SecuritySettingsServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -829,6 +806,45 @@ public final class SecuritySettingsServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateSecuritySettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.CreateSecuritySettingsRequest,
+                    com.google.cloud.dialogflow.cx.v3.SecuritySettings>(
+                    service, METHODID_CREATE_SECURITY_SETTINGS)))
+        .addMethod(
+            getGetSecuritySettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.GetSecuritySettingsRequest,
+                    com.google.cloud.dialogflow.cx.v3.SecuritySettings>(
+                    service, METHODID_GET_SECURITY_SETTINGS)))
+        .addMethod(
+            getUpdateSecuritySettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.UpdateSecuritySettingsRequest,
+                    com.google.cloud.dialogflow.cx.v3.SecuritySettings>(
+                    service, METHODID_UPDATE_SECURITY_SETTINGS)))
+        .addMethod(
+            getListSecuritySettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.ListSecuritySettingsRequest,
+                    com.google.cloud.dialogflow.cx.v3.ListSecuritySettingsResponse>(
+                    service, METHODID_LIST_SECURITY_SETTINGS)))
+        .addMethod(
+            getDeleteSecuritySettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.DeleteSecuritySettingsRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_SECURITY_SETTINGS)))
+        .build();
   }
 
   private abstract static class SecuritySettingsServiceBaseDescriptorSupplier

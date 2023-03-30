@@ -271,6 +271,24 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     return streamingExportEnabled_;
   }
 
+  public static final int INTRADAY_EXPORT_ENABLED_FIELD_NUMBER = 9;
+  private boolean intradayExportEnabled_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * If set true, enables intraday export to the linked Google Cloud project.
+   * </pre>
+   *
+   * <code>bool intraday_export_enabled = 9;</code>
+   *
+   * @return The intradayExportEnabled.
+   */
+  @java.lang.Override
+  public boolean getIntradayExportEnabled() {
+    return intradayExportEnabled_;
+  }
+
   public static final int INCLUDE_ADVERTISING_ID_FIELD_NUMBER = 6;
   private boolean includeAdvertisingId_ = false;
   /**
@@ -466,6 +484,9 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < excludedEvents_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, excludedEvents_.getRaw(i));
     }
+    if (intradayExportEnabled_ != false) {
+      output.writeBool(9, intradayExportEnabled_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -509,6 +530,9 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getExcludedEventsList().size();
     }
+    if (intradayExportEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, intradayExportEnabled_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -533,6 +557,7 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     }
     if (getDailyExportEnabled() != other.getDailyExportEnabled()) return false;
     if (getStreamingExportEnabled() != other.getStreamingExportEnabled()) return false;
+    if (getIntradayExportEnabled() != other.getIntradayExportEnabled()) return false;
     if (getIncludeAdvertisingId() != other.getIncludeAdvertisingId()) return false;
     if (!getExportStreamsList().equals(other.getExportStreamsList())) return false;
     if (!getExcludedEventsList().equals(other.getExcludedEventsList())) return false;
@@ -559,6 +584,8 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDailyExportEnabled());
     hash = (37 * hash) + STREAMING_EXPORT_ENABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getStreamingExportEnabled());
+    hash = (37 * hash) + INTRADAY_EXPORT_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIntradayExportEnabled());
     hash = (37 * hash) + INCLUDE_ADVERTISING_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeAdvertisingId());
     if (getExportStreamsCount() > 0) {
@@ -717,11 +744,12 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       }
       dailyExportEnabled_ = false;
       streamingExportEnabled_ = false;
+      intradayExportEnabled_ = false;
       includeAdvertisingId_ = false;
       exportStreams_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
-      excludedEvents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000080);
+      excludedEvents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -759,14 +787,14 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(
         com.google.analytics.admin.v1alpha.BigQueryLink result) {
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         exportStreams_ = exportStreams_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
       }
       result.exportStreams_ = exportStreams_;
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         excludedEvents_ = excludedEvents_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
       }
       result.excludedEvents_ = excludedEvents_;
     }
@@ -789,6 +817,9 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
         result.streamingExportEnabled_ = streamingExportEnabled_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.intradayExportEnabled_ = intradayExportEnabled_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.includeAdvertisingId_ = includeAdvertisingId_;
       }
     }
@@ -858,13 +889,16 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       if (other.getStreamingExportEnabled() != false) {
         setStreamingExportEnabled(other.getStreamingExportEnabled());
       }
+      if (other.getIntradayExportEnabled() != false) {
+        setIntradayExportEnabled(other.getIntradayExportEnabled());
+      }
       if (other.getIncludeAdvertisingId() != false) {
         setIncludeAdvertisingId(other.getIncludeAdvertisingId());
       }
       if (!other.exportStreams_.isEmpty()) {
         if (exportStreams_.isEmpty()) {
           exportStreams_ = other.exportStreams_;
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           ensureExportStreamsIsMutable();
           exportStreams_.addAll(other.exportStreams_);
@@ -874,7 +908,7 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       if (!other.excludedEvents_.isEmpty()) {
         if (excludedEvents_.isEmpty()) {
           excludedEvents_ = other.excludedEvents_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           ensureExcludedEventsIsMutable();
           excludedEvents_.addAll(other.excludedEvents_);
@@ -940,7 +974,7 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
             case 48:
               {
                 includeAdvertisingId_ = input.readBool();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 48
             case 58:
@@ -957,6 +991,12 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
                 excludedEvents_.add(s);
                 break;
               } // case 66
+            case 72:
+              {
+                intradayExportEnabled_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 72
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1530,6 +1570,59 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private boolean intradayExportEnabled_;
+    /**
+     *
+     *
+     * <pre>
+     * If set true, enables intraday export to the linked Google Cloud project.
+     * </pre>
+     *
+     * <code>bool intraday_export_enabled = 9;</code>
+     *
+     * @return The intradayExportEnabled.
+     */
+    @java.lang.Override
+    public boolean getIntradayExportEnabled() {
+      return intradayExportEnabled_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set true, enables intraday export to the linked Google Cloud project.
+     * </pre>
+     *
+     * <code>bool intraday_export_enabled = 9;</code>
+     *
+     * @param value The intradayExportEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIntradayExportEnabled(boolean value) {
+
+      intradayExportEnabled_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set true, enables intraday export to the linked Google Cloud project.
+     * </pre>
+     *
+     * <code>bool intraday_export_enabled = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIntradayExportEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      intradayExportEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
     private boolean includeAdvertisingId_;
     /**
      *
@@ -1563,7 +1656,7 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
     public Builder setIncludeAdvertisingId(boolean value) {
 
       includeAdvertisingId_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1580,7 +1673,7 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIncludeAdvertisingId() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       includeAdvertisingId_ = false;
       onChanged();
       return this;
@@ -1590,9 +1683,9 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureExportStreamsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         exportStreams_ = new com.google.protobuf.LazyStringArrayList(exportStreams_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
       }
     }
     /**
@@ -1751,7 +1844,7 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearExportStreams() {
       exportStreams_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -1785,9 +1878,9 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureExcludedEventsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         excludedEvents_ = new com.google.protobuf.LazyStringArrayList(excludedEvents_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
       }
     }
     /**
@@ -1922,7 +2015,7 @@ public final class BigQueryLink extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearExcludedEvents() {
       excludedEvents_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }

@@ -27,9 +27,13 @@ public interface RunAccessReportRequestOrBuilder
    *
    *
    * <pre>
-   * The Data Access Report is requested for this property.
-   * For example if "123" is your GA4 property ID, then entity should be
-   * "properties/123".
+   * The Data Access Report supports requesting at the property level or account
+   * level. If requested at the account level, Data Access Reports include all
+   * access for all properties under that account.
+   * To request at the property level, entity should be for example
+   * 'properties/123' if "123" is your GA4 property ID. To request at the
+   * account level, entity should be for example 'accounts/1234' if "1234" is
+   * your GA4 Account ID.
    * </pre>
    *
    * <code>string entity = 1;</code>
@@ -41,9 +45,13 @@ public interface RunAccessReportRequestOrBuilder
    *
    *
    * <pre>
-   * The Data Access Report is requested for this property.
-   * For example if "123" is your GA4 property ID, then entity should be
-   * "properties/123".
+   * The Data Access Report supports requesting at the property level or account
+   * level. If requested at the account level, Data Access Reports include all
+   * access for all properties under that account.
+   * To request at the property level, entity should be for example
+   * 'properties/123' if "123" is your GA4 property ID. To request at the
+   * account level, entity should be for example 'accounts/1234' if "1234" is
+   * your GA4 Account ID.
    * </pre>
    *
    * <code>string entity = 1;</code>
@@ -460,7 +468,8 @@ public interface RunAccessReportRequestOrBuilder
    *
    * <pre>
    * Toggles whether to return the current state of this Analytics Property's
-   * quota. Quota is returned in [AccessQuota](#AccessQuota).
+   * quota. Quota is returned in [AccessQuota](#AccessQuota). For account-level
+   * requests, this field must be false.
    * </pre>
    *
    * <code>bool return_entity_quota = 11;</code>

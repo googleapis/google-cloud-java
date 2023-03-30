@@ -518,7 +518,7 @@ public final class CloudMemcacheGrpc {
    * * `projects/my-memcached-project/locations/us-central1/instances/my-memcached`
    * </pre>
    */
-  public abstract static class CloudMemcacheImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -527,7 +527,7 @@ public final class CloudMemcacheGrpc {
      * Lists Instances in a given location.
      * </pre>
      */
-    public void listInstances(
+    default void listInstances(
         com.google.cloud.memcache.v1beta2.ListInstancesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.memcache.v1beta2.ListInstancesResponse>
             responseObserver) {
@@ -542,7 +542,7 @@ public final class CloudMemcacheGrpc {
      * Gets details of a single Instance.
      * </pre>
      */
-    public void getInstance(
+    default void getInstance(
         com.google.cloud.memcache.v1beta2.GetInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.memcache.v1beta2.Instance> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -556,7 +556,7 @@ public final class CloudMemcacheGrpc {
      * Creates a new Instance in a given location.
      * </pre>
      */
-    public void createInstance(
+    default void createInstance(
         com.google.cloud.memcache.v1beta2.CreateInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -570,7 +570,7 @@ public final class CloudMemcacheGrpc {
      * Updates an existing Instance in a given project and location.
      * </pre>
      */
-    public void updateInstance(
+    default void updateInstance(
         com.google.cloud.memcache.v1beta2.UpdateInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -587,7 +587,7 @@ public final class CloudMemcacheGrpc {
      * instance.
      * </pre>
      */
-    public void updateParameters(
+    default void updateParameters(
         com.google.cloud.memcache.v1beta2.UpdateParametersRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -601,7 +601,7 @@ public final class CloudMemcacheGrpc {
      * Deletes a single Instance.
      * </pre>
      */
-    public void deleteInstance(
+    default void deleteInstance(
         com.google.cloud.memcache.v1beta2.DeleteInstanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -616,7 +616,7 @@ public final class CloudMemcacheGrpc {
      * them to the current set of parameters for the Memcached Instance.
      * </pre>
      */
-    public void applyParameters(
+    default void applyParameters(
         com.google.cloud.memcache.v1beta2.ApplyParametersRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -630,7 +630,7 @@ public final class CloudMemcacheGrpc {
      * Updates software on the selected nodes of the Instance.
      * </pre>
      */
-    public void applySoftwareUpdate(
+    default void applySoftwareUpdate(
         com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -644,77 +644,43 @@ public final class CloudMemcacheGrpc {
      * Performs the apply phase of the RescheduleMaintenance verb.
      * </pre>
      */
-    public void rescheduleMaintenance(
+    default void rescheduleMaintenance(
         com.google.cloud.memcache.v1beta2.RescheduleMaintenanceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getRescheduleMaintenanceMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service CloudMemcache.
+   *
+   * <pre>
+   * Configures and manages Cloud Memorystore for Memcached instances.
+   * The `memcache.googleapis.com` service implements the Google Cloud Memorystore
+   * for Memcached API and defines the following resource model for managing
+   * Memorystore Memcached (also called Memcached below) instances:
+   * * The service works with a collection of cloud projects, named: `/projects/&#42;`
+   * * Each project has a collection of available locations, named: `/locations/&#42;`
+   * * Each location has a collection of Memcached instances, named:
+   * `/instances/&#42;`
+   * * As such, Memcached instances are resources of the form:
+   *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+   * Note that location_id must be a GCP `region`; for example:
+   * * `projects/my-memcached-project/locations/us-central1/instances/my-memcached`
+   * </pre>
+   */
+  public abstract static class CloudMemcacheImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListInstancesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.memcache.v1beta2.ListInstancesRequest,
-                      com.google.cloud.memcache.v1beta2.ListInstancesResponse>(
-                      this, METHODID_LIST_INSTANCES)))
-          .addMethod(
-              getGetInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.memcache.v1beta2.GetInstanceRequest,
-                      com.google.cloud.memcache.v1beta2.Instance>(this, METHODID_GET_INSTANCE)))
-          .addMethod(
-              getCreateInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.memcache.v1beta2.CreateInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_INSTANCE)))
-          .addMethod(
-              getUpdateInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.memcache.v1beta2.UpdateInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_INSTANCE)))
-          .addMethod(
-              getUpdateParametersMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.memcache.v1beta2.UpdateParametersRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_PARAMETERS)))
-          .addMethod(
-              getDeleteInstanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.memcache.v1beta2.DeleteInstanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_INSTANCE)))
-          .addMethod(
-              getApplyParametersMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.memcache.v1beta2.ApplyParametersRequest,
-                      com.google.longrunning.Operation>(this, METHODID_APPLY_PARAMETERS)))
-          .addMethod(
-              getApplySoftwareUpdateMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest,
-                      com.google.longrunning.Operation>(this, METHODID_APPLY_SOFTWARE_UPDATE)))
-          .addMethod(
-              getRescheduleMaintenanceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.memcache.v1beta2.RescheduleMaintenanceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_RESCHEDULE_MAINTENANCE)))
-          .build();
+      return CloudMemcacheGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service CloudMemcache.
    *
    * <pre>
    * Configures and manages Cloud Memorystore for Memcached instances.
@@ -893,7 +859,7 @@ public final class CloudMemcacheGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service CloudMemcache.
    *
    * <pre>
    * Configures and manages Cloud Memorystore for Memcached instances.
@@ -1045,7 +1011,7 @@ public final class CloudMemcacheGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service CloudMemcache.
    *
    * <pre>
    * Configures and manages Cloud Memorystore for Memcached instances.
@@ -1214,10 +1180,10 @@ public final class CloudMemcacheGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final CloudMemcacheImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(CloudMemcacheImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1287,6 +1253,66 @@ public final class CloudMemcacheGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListInstancesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memcache.v1beta2.ListInstancesRequest,
+                    com.google.cloud.memcache.v1beta2.ListInstancesResponse>(
+                    service, METHODID_LIST_INSTANCES)))
+        .addMethod(
+            getGetInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memcache.v1beta2.GetInstanceRequest,
+                    com.google.cloud.memcache.v1beta2.Instance>(service, METHODID_GET_INSTANCE)))
+        .addMethod(
+            getCreateInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memcache.v1beta2.CreateInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_INSTANCE)))
+        .addMethod(
+            getUpdateInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memcache.v1beta2.UpdateInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_INSTANCE)))
+        .addMethod(
+            getUpdateParametersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memcache.v1beta2.UpdateParametersRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_PARAMETERS)))
+        .addMethod(
+            getDeleteInstanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memcache.v1beta2.DeleteInstanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_INSTANCE)))
+        .addMethod(
+            getApplyParametersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memcache.v1beta2.ApplyParametersRequest,
+                    com.google.longrunning.Operation>(service, METHODID_APPLY_PARAMETERS)))
+        .addMethod(
+            getApplySoftwareUpdateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest,
+                    com.google.longrunning.Operation>(service, METHODID_APPLY_SOFTWARE_UPDATE)))
+        .addMethod(
+            getRescheduleMaintenanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memcache.v1beta2.RescheduleMaintenanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RESCHEDULE_MAINTENANCE)))
+        .build();
   }
 
   private abstract static class CloudMemcacheBaseDescriptorSupplier

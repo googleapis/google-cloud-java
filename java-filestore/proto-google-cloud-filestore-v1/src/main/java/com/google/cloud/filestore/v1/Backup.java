@@ -22,7 +22,7 @@ package com.google.cloud.filestore.v1;
  *
  *
  * <pre>
- * A Cloud Filestore backup.
+ * A Filestore backup.
  * </pre>
  *
  * Protobuf type {@code google.cloud.filestore.v1.Backup}
@@ -44,6 +44,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     sourceInstance_ = "";
     sourceFileShare_ = "";
     sourceInstanceTier_ = 0;
+    kmsKey_ = "";
   }
 
   @java.lang.Override
@@ -627,7 +628,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the source Cloud Filestore instance, in the format
+   * The resource name of the source Filestore instance, in the format
    * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`,
    * used to create this backup.
    * </pre>
@@ -652,7 +653,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the source Cloud Filestore instance, in the format
+   * The resource name of the source Filestore instance, in the format
    * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`,
    * used to create this backup.
    * </pre>
@@ -682,7 +683,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the file share in the source Cloud Filestore instance that the
+   * Name of the file share in the source Filestore instance that the
    * backup is created from.
    * </pre>
    *
@@ -706,7 +707,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the file share in the source Cloud Filestore instance that the
+   * Name of the file share in the source Filestore instance that the
    * backup is created from.
    * </pre>
    *
@@ -733,8 +734,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The service tier of the source Cloud Filestore instance that
-   * this backup is created from.
+   * Output only. The service tier of the source Filestore instance that this
+   * backup is created from.
    * </pre>
    *
    * <code>
@@ -751,8 +752,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The service tier of the source Cloud Filestore instance that
-   * this backup is created from.
+   * Output only. The service tier of the source Filestore instance that this
+   * backup is created from.
    * </pre>
    *
    * <code>
@@ -844,6 +845,57 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         : satisfiesPzs_;
   }
 
+  public static final int KMS_KEY_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKey_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. KMS key name used for data encryption.
+   * </pre>
+   *
+   * <code>string kms_key = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The kmsKey.
+   */
+  @java.lang.Override
+  public java.lang.String getKmsKey() {
+    java.lang.Object ref = kmsKey_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      kmsKey_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. KMS key name used for data encryption.
+   * </pre>
+   *
+   * <code>string kms_key = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The bytes for kmsKey.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getKmsKeyBytes() {
+    java.lang.Object ref = kmsKey_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      kmsKey_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -893,6 +945,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     }
     if (satisfiesPzs_ != null) {
       output.writeMessage(12, getSatisfiesPzs());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKey_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, kmsKey_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -947,6 +1002,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (satisfiesPzs_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getSatisfiesPzs());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKey_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, kmsKey_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -980,6 +1038,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (hasSatisfiesPzs()) {
       if (!getSatisfiesPzs().equals(other.getSatisfiesPzs())) return false;
     }
+    if (!getKmsKey().equals(other.getKmsKey())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1021,6 +1080,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
       hash = (53 * hash) + getSatisfiesPzs().hashCode();
     }
+    hash = (37 * hash) + KMS_KEY_FIELD_NUMBER;
+    hash = (53 * hash) + getKmsKey().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1124,7 +1185,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A Cloud Filestore backup.
+   * A Filestore backup.
    * </pre>
    *
    * Protobuf type {@code google.cloud.filestore.v1.Backup}
@@ -1199,6 +1260,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         satisfiesPzsBuilder_.dispose();
         satisfiesPzsBuilder_ = null;
       }
+      kmsKey_ = "";
       return this;
     }
 
@@ -1271,6 +1333,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.satisfiesPzs_ =
             satisfiesPzsBuilder_ == null ? satisfiesPzs_ : satisfiesPzsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.kmsKey_ = kmsKey_;
       }
     }
 
@@ -1361,6 +1426,11 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSatisfiesPzs()) {
         mergeSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (!other.getKmsKey().isEmpty()) {
+        kmsKey_ = other.kmsKey_;
+        bitField0_ |= 0x00001000;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1466,6 +1536,12 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000800;
                 break;
               } // case 98
+            case 106:
+              {
+                kmsKey_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2285,7 +2361,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the source Cloud Filestore instance, in the format
+     * The resource name of the source Filestore instance, in the format
      * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`,
      * used to create this backup.
      * </pre>
@@ -2309,7 +2385,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the source Cloud Filestore instance, in the format
+     * The resource name of the source Filestore instance, in the format
      * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`,
      * used to create this backup.
      * </pre>
@@ -2333,7 +2409,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the source Cloud Filestore instance, in the format
+     * The resource name of the source Filestore instance, in the format
      * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`,
      * used to create this backup.
      * </pre>
@@ -2356,7 +2432,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the source Cloud Filestore instance, in the format
+     * The resource name of the source Filestore instance, in the format
      * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`,
      * used to create this backup.
      * </pre>
@@ -2375,7 +2451,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the source Cloud Filestore instance, in the format
+     * The resource name of the source Filestore instance, in the format
      * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`,
      * used to create this backup.
      * </pre>
@@ -2401,7 +2477,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the file share in the source Cloud Filestore instance that the
+     * Name of the file share in the source Filestore instance that the
      * backup is created from.
      * </pre>
      *
@@ -2424,7 +2500,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the file share in the source Cloud Filestore instance that the
+     * Name of the file share in the source Filestore instance that the
      * backup is created from.
      * </pre>
      *
@@ -2447,7 +2523,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the file share in the source Cloud Filestore instance that the
+     * Name of the file share in the source Filestore instance that the
      * backup is created from.
      * </pre>
      *
@@ -2469,7 +2545,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the file share in the source Cloud Filestore instance that the
+     * Name of the file share in the source Filestore instance that the
      * backup is created from.
      * </pre>
      *
@@ -2487,7 +2563,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the file share in the source Cloud Filestore instance that the
+     * Name of the file share in the source Filestore instance that the
      * backup is created from.
      * </pre>
      *
@@ -2512,8 +2588,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service tier of the source Cloud Filestore instance that
-     * this backup is created from.
+     * Output only. The service tier of the source Filestore instance that this
+     * backup is created from.
      * </pre>
      *
      * <code>
@@ -2530,8 +2606,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service tier of the source Cloud Filestore instance that
-     * this backup is created from.
+     * Output only. The service tier of the source Filestore instance that this
+     * backup is created from.
      * </pre>
      *
      * <code>
@@ -2551,8 +2627,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service tier of the source Cloud Filestore instance that
-     * this backup is created from.
+     * Output only. The service tier of the source Filestore instance that this
+     * backup is created from.
      * </pre>
      *
      * <code>
@@ -2571,8 +2647,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service tier of the source Cloud Filestore instance that
-     * this backup is created from.
+     * Output only. The service tier of the source Filestore instance that this
+     * backup is created from.
      * </pre>
      *
      * <code>
@@ -2595,8 +2671,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service tier of the source Cloud Filestore instance that
-     * this backup is created from.
+     * Output only. The service tier of the source Filestore instance that this
+     * backup is created from.
      * </pre>
      *
      * <code>
@@ -2870,6 +2946,112 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         satisfiesPzs_ = null;
       }
       return satisfiesPzsBuilder_;
+    }
+
+    private java.lang.Object kmsKey_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. KMS key name used for data encryption.
+     * </pre>
+     *
+     * <code>string kms_key = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The kmsKey.
+     */
+    public java.lang.String getKmsKey() {
+      java.lang.Object ref = kmsKey_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kmsKey_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. KMS key name used for data encryption.
+     * </pre>
+     *
+     * <code>string kms_key = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The bytes for kmsKey.
+     */
+    public com.google.protobuf.ByteString getKmsKeyBytes() {
+      java.lang.Object ref = kmsKey_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kmsKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. KMS key name used for data encryption.
+     * </pre>
+     *
+     * <code>string kms_key = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @param value The kmsKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKey(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      kmsKey_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. KMS key name used for data encryption.
+     * </pre>
+     *
+     * <code>string kms_key = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKmsKey() {
+      kmsKey_ = getDefaultInstance().getKmsKey();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. KMS key name used for data encryption.
+     * </pre>
+     *
+     * <code>string kms_key = 13 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @param value The bytes for kmsKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      kmsKey_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

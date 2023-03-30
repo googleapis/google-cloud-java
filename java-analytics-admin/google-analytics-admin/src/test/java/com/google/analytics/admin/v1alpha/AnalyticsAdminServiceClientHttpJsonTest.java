@@ -8565,6 +8565,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDailyExportEnabled(true)
             .setStreamingExportEnabled(true)
+            .setIntradayExportEnabled(true)
             .setIncludeAdvertisingId(true)
             .addAllExportStreams(new ArrayList<String>())
             .addAllExcludedEvents(new ArrayList<String>())
@@ -8616,6 +8617,7 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDailyExportEnabled(true)
             .setStreamingExportEnabled(true)
+            .setIntradayExportEnabled(true)
             .setIncludeAdvertisingId(true)
             .addAllExportStreams(new ArrayList<String>())
             .addAllExcludedEvents(new ArrayList<String>())
@@ -8752,6 +8754,345 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
     try {
       String parent = "properties/propertie-2024";
       client.listBigQueryLinks(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEnhancedMeasurementSettingsTest() throws Exception {
+    EnhancedMeasurementSettings expectedResponse =
+        EnhancedMeasurementSettings.newBuilder()
+            .setName(EnhancedMeasurementSettingsName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+            .setStreamEnabled(true)
+            .setScrollsEnabled(true)
+            .setOutboundClicksEnabled(true)
+            .setSiteSearchEnabled(true)
+            .setVideoEngagementEnabled(true)
+            .setFileDownloadsEnabled(true)
+            .setPageChangesEnabled(true)
+            .setFormInteractionsEnabled(true)
+            .setSearchQueryParameter("searchQueryParameter-2012788855")
+            .setUriQueryParameter("uriQueryParameter1580843085")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    EnhancedMeasurementSettingsName name =
+        EnhancedMeasurementSettingsName.of("[PROPERTY]", "[DATA_STREAM]");
+
+    EnhancedMeasurementSettings actualResponse = client.getEnhancedMeasurementSettings(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getEnhancedMeasurementSettingsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EnhancedMeasurementSettingsName name =
+          EnhancedMeasurementSettingsName.of("[PROPERTY]", "[DATA_STREAM]");
+      client.getEnhancedMeasurementSettings(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEnhancedMeasurementSettingsTest2() throws Exception {
+    EnhancedMeasurementSettings expectedResponse =
+        EnhancedMeasurementSettings.newBuilder()
+            .setName(EnhancedMeasurementSettingsName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+            .setStreamEnabled(true)
+            .setScrollsEnabled(true)
+            .setOutboundClicksEnabled(true)
+            .setSiteSearchEnabled(true)
+            .setVideoEngagementEnabled(true)
+            .setFileDownloadsEnabled(true)
+            .setPageChangesEnabled(true)
+            .setFormInteractionsEnabled(true)
+            .setSearchQueryParameter("searchQueryParameter-2012788855")
+            .setUriQueryParameter("uriQueryParameter1580843085")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "properties/propertie-5816/dataStreams/dataStream-5816/enhancedMeasurementSettings";
+
+    EnhancedMeasurementSettings actualResponse = client.getEnhancedMeasurementSettings(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getEnhancedMeasurementSettingsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "properties/propertie-5816/dataStreams/dataStream-5816/enhancedMeasurementSettings";
+      client.getEnhancedMeasurementSettings(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateEnhancedMeasurementSettingsTest() throws Exception {
+    EnhancedMeasurementSettings expectedResponse =
+        EnhancedMeasurementSettings.newBuilder()
+            .setName(EnhancedMeasurementSettingsName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+            .setStreamEnabled(true)
+            .setScrollsEnabled(true)
+            .setOutboundClicksEnabled(true)
+            .setSiteSearchEnabled(true)
+            .setVideoEngagementEnabled(true)
+            .setFileDownloadsEnabled(true)
+            .setPageChangesEnabled(true)
+            .setFormInteractionsEnabled(true)
+            .setSearchQueryParameter("searchQueryParameter-2012788855")
+            .setUriQueryParameter("uriQueryParameter1580843085")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    EnhancedMeasurementSettings enhancedMeasurementSettings =
+        EnhancedMeasurementSettings.newBuilder()
+            .setName(EnhancedMeasurementSettingsName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+            .setStreamEnabled(true)
+            .setScrollsEnabled(true)
+            .setOutboundClicksEnabled(true)
+            .setSiteSearchEnabled(true)
+            .setVideoEngagementEnabled(true)
+            .setFileDownloadsEnabled(true)
+            .setPageChangesEnabled(true)
+            .setFormInteractionsEnabled(true)
+            .setSearchQueryParameter("searchQueryParameter-2012788855")
+            .setUriQueryParameter("uriQueryParameter1580843085")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    EnhancedMeasurementSettings actualResponse =
+        client.updateEnhancedMeasurementSettings(enhancedMeasurementSettings, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateEnhancedMeasurementSettingsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EnhancedMeasurementSettings enhancedMeasurementSettings =
+          EnhancedMeasurementSettings.newBuilder()
+              .setName(EnhancedMeasurementSettingsName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+              .setStreamEnabled(true)
+              .setScrollsEnabled(true)
+              .setOutboundClicksEnabled(true)
+              .setSiteSearchEnabled(true)
+              .setVideoEngagementEnabled(true)
+              .setFileDownloadsEnabled(true)
+              .setPageChangesEnabled(true)
+              .setFormInteractionsEnabled(true)
+              .setSearchQueryParameter("searchQueryParameter-2012788855")
+              .setUriQueryParameter("uriQueryParameter1580843085")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateEnhancedMeasurementSettings(enhancedMeasurementSettings, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createConnectedSiteTagTest() throws Exception {
+    CreateConnectedSiteTagResponse expectedResponse =
+        CreateConnectedSiteTagResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    CreateConnectedSiteTagRequest request =
+        CreateConnectedSiteTagRequest.newBuilder()
+            .setProperty("property-993141291")
+            .setConnectedSiteTag(ConnectedSiteTag.newBuilder().build())
+            .build();
+
+    CreateConnectedSiteTagResponse actualResponse = client.createConnectedSiteTag(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createConnectedSiteTagExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CreateConnectedSiteTagRequest request =
+          CreateConnectedSiteTagRequest.newBuilder()
+              .setProperty("property-993141291")
+              .setConnectedSiteTag(ConnectedSiteTag.newBuilder().build())
+              .build();
+      client.createConnectedSiteTag(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteConnectedSiteTagTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    DeleteConnectedSiteTagRequest request =
+        DeleteConnectedSiteTagRequest.newBuilder()
+            .setProperty("property-993141291")
+            .setTagId("tagId110119509")
+            .build();
+
+    client.deleteConnectedSiteTag(request);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteConnectedSiteTagExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DeleteConnectedSiteTagRequest request =
+          DeleteConnectedSiteTagRequest.newBuilder()
+              .setProperty("property-993141291")
+              .setTagId("tagId110119509")
+              .build();
+      client.deleteConnectedSiteTag(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listConnectedSiteTagsTest() throws Exception {
+    ListConnectedSiteTagsResponse expectedResponse =
+        ListConnectedSiteTagsResponse.newBuilder()
+            .addAllConnectedSiteTags(new ArrayList<ConnectedSiteTag>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ListConnectedSiteTagsRequest request =
+        ListConnectedSiteTagsRequest.newBuilder().setProperty("property-993141291").build();
+
+    ListConnectedSiteTagsResponse actualResponse = client.listConnectedSiteTags(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listConnectedSiteTagsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ListConnectedSiteTagsRequest request =
+          ListConnectedSiteTagsRequest.newBuilder().setProperty("property-993141291").build();
+      client.listConnectedSiteTags(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

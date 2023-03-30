@@ -23,8 +23,8 @@ package com.google.cloud.speech.v2;
  *
  * <pre>
  * Provides "hints" to the speech recognizer to favor specific words and phrases
- * in the results. Phrase sets can be specified as an inline resource, or a
- * reference to an existing phrase set resource.
+ * in the results. PhraseSets can be specified as an inline resource, or a
+ * reference to an existing PhraseSet resource.
  * </pre>
  *
  * Protobuf type {@code google.cloud.speech.v2.SpeechAdaptation}
@@ -79,7 +79,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The name of an existing phrase set resource. The user must have read
+     * The name of an existing PhraseSet resource. The user must have read
      * access to the resource and it must not be deleted.
      * </pre>
      *
@@ -92,7 +92,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The name of an existing phrase set resource. The user must have read
+     * The name of an existing PhraseSet resource. The user must have read
      * access to the resource and it must not be deleted.
      * </pre>
      *
@@ -105,7 +105,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The name of an existing phrase set resource. The user must have read
+     * The name of an existing PhraseSet resource. The user must have read
      * access to the resource and it must not be deleted.
      * </pre>
      *
@@ -119,7 +119,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An inline defined phrase set.
+     * An inline defined PhraseSet.
      * </pre>
      *
      * <code>.google.cloud.speech.v2.PhraseSet inline_phrase_set = 2;</code>
@@ -131,7 +131,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An inline defined phrase set.
+     * An inline defined PhraseSet.
      * </pre>
      *
      * <code>.google.cloud.speech.v2.PhraseSet inline_phrase_set = 2;</code>
@@ -143,7 +143,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An inline defined phrase set.
+     * An inline defined PhraseSet.
      * </pre>
      *
      * <code>.google.cloud.speech.v2.PhraseSet inline_phrase_set = 2;</code>
@@ -156,8 +156,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A biasing phrase set, which can be either a string referencing the name of
-   * an existing phrase set resource, or an inline definition of a phrase set.
+   * A biasing PhraseSet, which can be either a string referencing the name of
+   * an existing PhraseSets resource, or an inline definition of a PhraseSet.
    * </pre>
    *
    * Protobuf type {@code google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet}
@@ -252,7 +252,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The name of an existing phrase set resource. The user must have read
+     * The name of an existing PhraseSet resource. The user must have read
      * access to the resource and it must not be deleted.
      * </pre>
      *
@@ -267,7 +267,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The name of an existing phrase set resource. The user must have read
+     * The name of an existing PhraseSet resource. The user must have read
      * access to the resource and it must not be deleted.
      * </pre>
      *
@@ -295,7 +295,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The name of an existing phrase set resource. The user must have read
+     * The name of an existing PhraseSet resource. The user must have read
      * access to the resource and it must not be deleted.
      * </pre>
      *
@@ -325,7 +325,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An inline defined phrase set.
+     * An inline defined PhraseSet.
      * </pre>
      *
      * <code>.google.cloud.speech.v2.PhraseSet inline_phrase_set = 2;</code>
@@ -340,7 +340,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An inline defined phrase set.
+     * An inline defined PhraseSet.
      * </pre>
      *
      * <code>.google.cloud.speech.v2.PhraseSet inline_phrase_set = 2;</code>
@@ -358,7 +358,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An inline defined phrase set.
+     * An inline defined PhraseSet.
      * </pre>
      *
      * <code>.google.cloud.speech.v2.PhraseSet inline_phrase_set = 2;</code>
@@ -565,8 +565,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A biasing phrase set, which can be either a string referencing the name of
-     * an existing phrase set resource, or an inline definition of a phrase set.
+     * A biasing PhraseSet, which can be either a string referencing the name of
+     * an existing PhraseSets resource, or an inline definition of a PhraseSet.
      * </pre>
      *
      * Protobuf type {@code google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet}
@@ -803,7 +803,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The name of an existing phrase set resource. The user must have read
+       * The name of an existing PhraseSet resource. The user must have read
        * access to the resource and it must not be deleted.
        * </pre>
        *
@@ -819,7 +819,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The name of an existing phrase set resource. The user must have read
+       * The name of an existing PhraseSet resource. The user must have read
        * access to the resource and it must not be deleted.
        * </pre>
        *
@@ -848,7 +848,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The name of an existing phrase set resource. The user must have read
+       * The name of an existing PhraseSet resource. The user must have read
        * access to the resource and it must not be deleted.
        * </pre>
        *
@@ -877,7 +877,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The name of an existing phrase set resource. The user must have read
+       * The name of an existing PhraseSet resource. The user must have read
        * access to the resource and it must not be deleted.
        * </pre>
        *
@@ -899,7 +899,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The name of an existing phrase set resource. The user must have read
+       * The name of an existing PhraseSet resource. The user must have read
        * access to the resource and it must not be deleted.
        * </pre>
        *
@@ -919,7 +919,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The name of an existing phrase set resource. The user must have read
+       * The name of an existing PhraseSet resource. The user must have read
        * access to the resource and it must not be deleted.
        * </pre>
        *
@@ -948,7 +948,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * An inline defined phrase set.
+       * An inline defined PhraseSet.
        * </pre>
        *
        * <code>.google.cloud.speech.v2.PhraseSet inline_phrase_set = 2;</code>
@@ -963,7 +963,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * An inline defined phrase set.
+       * An inline defined PhraseSet.
        * </pre>
        *
        * <code>.google.cloud.speech.v2.PhraseSet inline_phrase_set = 2;</code>
@@ -988,7 +988,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * An inline defined phrase set.
+       * An inline defined PhraseSet.
        * </pre>
        *
        * <code>.google.cloud.speech.v2.PhraseSet inline_phrase_set = 2;</code>
@@ -1010,7 +1010,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * An inline defined phrase set.
+       * An inline defined PhraseSet.
        * </pre>
        *
        * <code>.google.cloud.speech.v2.PhraseSet inline_phrase_set = 2;</code>
@@ -1030,7 +1030,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * An inline defined phrase set.
+       * An inline defined PhraseSet.
        * </pre>
        *
        * <code>.google.cloud.speech.v2.PhraseSet inline_phrase_set = 2;</code>
@@ -1062,7 +1062,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * An inline defined phrase set.
+       * An inline defined PhraseSet.
        * </pre>
        *
        * <code>.google.cloud.speech.v2.PhraseSet inline_phrase_set = 2;</code>
@@ -1087,7 +1087,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * An inline defined phrase set.
+       * An inline defined PhraseSet.
        * </pre>
        *
        * <code>.google.cloud.speech.v2.PhraseSet inline_phrase_set = 2;</code>
@@ -1099,7 +1099,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * An inline defined phrase set.
+       * An inline defined PhraseSet.
        * </pre>
        *
        * <code>.google.cloud.speech.v2.PhraseSet inline_phrase_set = 2;</code>
@@ -1119,7 +1119,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * An inline defined phrase set.
+       * An inline defined PhraseSet.
        * </pre>
        *
        * <code>.google.cloud.speech.v2.PhraseSet inline_phrase_set = 2;</code>
@@ -1222,7 +1222,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A list of inline or referenced phrase sets.
+   * A list of inline or referenced PhraseSets.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet phrase_sets = 1;
@@ -1237,7 +1237,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A list of inline or referenced phrase sets.
+   * A list of inline or referenced PhraseSets.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet phrase_sets = 1;
@@ -1253,7 +1253,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A list of inline or referenced phrase sets.
+   * A list of inline or referenced PhraseSets.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet phrase_sets = 1;
@@ -1267,7 +1267,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A list of inline or referenced phrase sets.
+   * A list of inline or referenced PhraseSets.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet phrase_sets = 1;
@@ -1281,7 +1281,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A list of inline or referenced phrase sets.
+   * A list of inline or referenced PhraseSets.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet phrase_sets = 1;
@@ -1301,8 +1301,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A list of inline custom classes. Existing custom class resources can be
-   * referenced directly in a phrase set.
+   * A list of inline CustomClasses. Existing CustomClass resources can be
+   * referenced directly in a PhraseSet.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>
@@ -1315,8 +1315,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A list of inline custom classes. Existing custom class resources can be
-   * referenced directly in a phrase set.
+   * A list of inline CustomClasses. Existing CustomClass resources can be
+   * referenced directly in a PhraseSet.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>
@@ -1330,8 +1330,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A list of inline custom classes. Existing custom class resources can be
-   * referenced directly in a phrase set.
+   * A list of inline CustomClasses. Existing CustomClass resources can be
+   * referenced directly in a PhraseSet.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>
@@ -1344,8 +1344,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A list of inline custom classes. Existing custom class resources can be
-   * referenced directly in a phrase set.
+   * A list of inline CustomClasses. Existing CustomClass resources can be
+   * referenced directly in a PhraseSet.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>
@@ -1358,8 +1358,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A list of inline custom classes. Existing custom class resources can be
-   * referenced directly in a phrase set.
+   * A list of inline CustomClasses. Existing CustomClass resources can be
+   * referenced directly in a PhraseSet.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>
@@ -1546,8 +1546,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Provides "hints" to the speech recognizer to favor specific words and phrases
-   * in the results. Phrase sets can be specified as an inline resource, or a
-   * reference to an existing phrase set resource.
+   * in the results. PhraseSets can be specified as an inline resource, or a
+   * reference to an existing PhraseSet resource.
    * </pre>
    *
    * Protobuf type {@code google.cloud.speech.v2.SpeechAdaptation}
@@ -1849,7 +1849,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline or referenced phrase sets.
+     * A list of inline or referenced PhraseSets.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet phrase_sets = 1;
@@ -1867,7 +1867,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline or referenced phrase sets.
+     * A list of inline or referenced PhraseSets.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet phrase_sets = 1;
@@ -1884,7 +1884,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline or referenced phrase sets.
+     * A list of inline or referenced PhraseSets.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet phrase_sets = 1;
@@ -1902,7 +1902,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline or referenced phrase sets.
+     * A list of inline or referenced PhraseSets.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet phrase_sets = 1;
@@ -1926,7 +1926,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline or referenced phrase sets.
+     * A list of inline or referenced PhraseSets.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet phrase_sets = 1;
@@ -1948,7 +1948,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline or referenced phrase sets.
+     * A list of inline or referenced PhraseSets.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet phrase_sets = 1;
@@ -1972,7 +1972,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline or referenced phrase sets.
+     * A list of inline or referenced PhraseSets.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet phrase_sets = 1;
@@ -1996,7 +1996,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline or referenced phrase sets.
+     * A list of inline or referenced PhraseSets.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet phrase_sets = 1;
@@ -2017,7 +2017,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline or referenced phrase sets.
+     * A list of inline or referenced PhraseSets.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet phrase_sets = 1;
@@ -2039,7 +2039,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline or referenced phrase sets.
+     * A list of inline or referenced PhraseSets.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet phrase_sets = 1;
@@ -2062,7 +2062,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline or referenced phrase sets.
+     * A list of inline or referenced PhraseSets.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet phrase_sets = 1;
@@ -2082,7 +2082,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline or referenced phrase sets.
+     * A list of inline or referenced PhraseSets.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet phrase_sets = 1;
@@ -2102,7 +2102,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline or referenced phrase sets.
+     * A list of inline or referenced PhraseSets.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet phrase_sets = 1;
@@ -2116,7 +2116,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline or referenced phrase sets.
+     * A list of inline or referenced PhraseSets.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet phrase_sets = 1;
@@ -2134,7 +2134,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline or referenced phrase sets.
+     * A list of inline or referenced PhraseSets.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet phrase_sets = 1;
@@ -2153,7 +2153,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline or referenced phrase sets.
+     * A list of inline or referenced PhraseSets.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet phrase_sets = 1;
@@ -2169,7 +2169,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline or referenced phrase sets.
+     * A list of inline or referenced PhraseSets.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet phrase_sets = 1;
@@ -2186,7 +2186,7 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline or referenced phrase sets.
+     * A list of inline or referenced PhraseSets.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.SpeechAdaptation.AdaptationPhraseSet phrase_sets = 1;
@@ -2235,8 +2235,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline custom classes. Existing custom class resources can be
-     * referenced directly in a phrase set.
+     * A list of inline CustomClasses. Existing CustomClass resources can be
+     * referenced directly in a PhraseSet.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>
@@ -2252,8 +2252,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline custom classes. Existing custom class resources can be
-     * referenced directly in a phrase set.
+     * A list of inline CustomClasses. Existing CustomClass resources can be
+     * referenced directly in a PhraseSet.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>
@@ -2269,8 +2269,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline custom classes. Existing custom class resources can be
-     * referenced directly in a phrase set.
+     * A list of inline CustomClasses. Existing CustomClass resources can be
+     * referenced directly in a PhraseSet.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>
@@ -2286,8 +2286,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline custom classes. Existing custom class resources can be
-     * referenced directly in a phrase set.
+     * A list of inline CustomClasses. Existing CustomClass resources can be
+     * referenced directly in a PhraseSet.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>
@@ -2309,8 +2309,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline custom classes. Existing custom class resources can be
-     * referenced directly in a phrase set.
+     * A list of inline CustomClasses. Existing CustomClass resources can be
+     * referenced directly in a PhraseSet.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>
@@ -2330,8 +2330,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline custom classes. Existing custom class resources can be
-     * referenced directly in a phrase set.
+     * A list of inline CustomClasses. Existing CustomClass resources can be
+     * referenced directly in a PhraseSet.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>
@@ -2353,8 +2353,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline custom classes. Existing custom class resources can be
-     * referenced directly in a phrase set.
+     * A list of inline CustomClasses. Existing CustomClass resources can be
+     * referenced directly in a PhraseSet.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>
@@ -2376,8 +2376,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline custom classes. Existing custom class resources can be
-     * referenced directly in a phrase set.
+     * A list of inline CustomClasses. Existing CustomClass resources can be
+     * referenced directly in a PhraseSet.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>
@@ -2397,8 +2397,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline custom classes. Existing custom class resources can be
-     * referenced directly in a phrase set.
+     * A list of inline CustomClasses. Existing CustomClass resources can be
+     * referenced directly in a PhraseSet.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>
@@ -2418,8 +2418,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline custom classes. Existing custom class resources can be
-     * referenced directly in a phrase set.
+     * A list of inline CustomClasses. Existing CustomClass resources can be
+     * referenced directly in a PhraseSet.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>
@@ -2439,8 +2439,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline custom classes. Existing custom class resources can be
-     * referenced directly in a phrase set.
+     * A list of inline CustomClasses. Existing CustomClass resources can be
+     * referenced directly in a PhraseSet.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>
@@ -2459,8 +2459,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline custom classes. Existing custom class resources can be
-     * referenced directly in a phrase set.
+     * A list of inline CustomClasses. Existing CustomClass resources can be
+     * referenced directly in a PhraseSet.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>
@@ -2479,8 +2479,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline custom classes. Existing custom class resources can be
-     * referenced directly in a phrase set.
+     * A list of inline CustomClasses. Existing CustomClass resources can be
+     * referenced directly in a PhraseSet.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>
@@ -2492,8 +2492,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline custom classes. Existing custom class resources can be
-     * referenced directly in a phrase set.
+     * A list of inline CustomClasses. Existing CustomClass resources can be
+     * referenced directly in a PhraseSet.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>
@@ -2509,8 +2509,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline custom classes. Existing custom class resources can be
-     * referenced directly in a phrase set.
+     * A list of inline CustomClasses. Existing CustomClass resources can be
+     * referenced directly in a PhraseSet.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>
@@ -2527,8 +2527,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline custom classes. Existing custom class resources can be
-     * referenced directly in a phrase set.
+     * A list of inline CustomClasses. Existing CustomClass resources can be
+     * referenced directly in a PhraseSet.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>
@@ -2541,8 +2541,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline custom classes. Existing custom class resources can be
-     * referenced directly in a phrase set.
+     * A list of inline CustomClasses. Existing CustomClass resources can be
+     * referenced directly in a PhraseSet.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>
@@ -2555,8 +2555,8 @@ public final class SpeechAdaptation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of inline custom classes. Existing custom class resources can be
-     * referenced directly in a phrase set.
+     * A list of inline CustomClasses. Existing CustomClass resources can be
+     * referenced directly in a PhraseSet.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.CustomClass custom_classes = 2;</code>

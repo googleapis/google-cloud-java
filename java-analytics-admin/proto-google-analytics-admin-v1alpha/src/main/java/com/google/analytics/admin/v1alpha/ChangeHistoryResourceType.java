@@ -208,6 +208,16 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>CHANNEL_GROUP = 22;</code>
    */
   CHANNEL_GROUP(22),
+  /**
+   *
+   *
+   * <pre>
+   * EnhancedMeasurementSettings resource
+   * </pre>
+   *
+   * <code>ENHANCED_MEASUREMENT_SETTINGS = 24;</code>
+   */
+  ENHANCED_MEASUREMENT_SETTINGS(24),
   UNRECOGNIZED(-1),
   ;
 
@@ -391,6 +401,16 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>CHANNEL_GROUP = 22;</code>
    */
   public static final int CHANNEL_GROUP_VALUE = 22;
+  /**
+   *
+   *
+   * <pre>
+   * EnhancedMeasurementSettings resource
+   * </pre>
+   *
+   * <code>ENHANCED_MEASUREMENT_SETTINGS = 24;</code>
+   */
+  public static final int ENHANCED_MEASUREMENT_SETTINGS_VALUE = 24;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -452,6 +472,8 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
         return EXPANDED_DATA_SET;
       case 22:
         return CHANNEL_GROUP;
+      case 24:
+        return ENHANCED_MEASUREMENT_SETTINGS;
       default:
         return null;
     }

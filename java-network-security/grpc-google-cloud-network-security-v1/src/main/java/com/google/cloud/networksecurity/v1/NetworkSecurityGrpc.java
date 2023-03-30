@@ -832,7 +832,7 @@ public final class NetworkSecurityGrpc {
    * information.
    * </pre>
    */
-  public abstract static class NetworkSecurityImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -841,7 +841,7 @@ public final class NetworkSecurityGrpc {
      * Lists AuthorizationPolicies in a given project and location.
      * </pre>
      */
-    public void listAuthorizationPolicies(
+    default void listAuthorizationPolicies(
         com.google.cloud.networksecurity.v1.ListAuthorizationPoliciesRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.networksecurity.v1.ListAuthorizationPoliciesResponse>
@@ -857,7 +857,7 @@ public final class NetworkSecurityGrpc {
      * Gets details of a single AuthorizationPolicy.
      * </pre>
      */
-    public void getAuthorizationPolicy(
+    default void getAuthorizationPolicy(
         com.google.cloud.networksecurity.v1.GetAuthorizationPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.networksecurity.v1.AuthorizationPolicy>
             responseObserver) {
@@ -872,7 +872,7 @@ public final class NetworkSecurityGrpc {
      * Creates a new AuthorizationPolicy in a given project and location.
      * </pre>
      */
-    public void createAuthorizationPolicy(
+    default void createAuthorizationPolicy(
         com.google.cloud.networksecurity.v1.CreateAuthorizationPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -886,7 +886,7 @@ public final class NetworkSecurityGrpc {
      * Updates the parameters of a single AuthorizationPolicy.
      * </pre>
      */
-    public void updateAuthorizationPolicy(
+    default void updateAuthorizationPolicy(
         com.google.cloud.networksecurity.v1.UpdateAuthorizationPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -900,7 +900,7 @@ public final class NetworkSecurityGrpc {
      * Deletes a single AuthorizationPolicy.
      * </pre>
      */
-    public void deleteAuthorizationPolicy(
+    default void deleteAuthorizationPolicy(
         com.google.cloud.networksecurity.v1.DeleteAuthorizationPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -914,7 +914,7 @@ public final class NetworkSecurityGrpc {
      * Lists ServerTlsPolicies in a given project and location.
      * </pre>
      */
-    public void listServerTlsPolicies(
+    default void listServerTlsPolicies(
         com.google.cloud.networksecurity.v1.ListServerTlsPoliciesRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.networksecurity.v1.ListServerTlsPoliciesResponse>
@@ -930,7 +930,7 @@ public final class NetworkSecurityGrpc {
      * Gets details of a single ServerTlsPolicy.
      * </pre>
      */
-    public void getServerTlsPolicy(
+    default void getServerTlsPolicy(
         com.google.cloud.networksecurity.v1.GetServerTlsPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.networksecurity.v1.ServerTlsPolicy>
             responseObserver) {
@@ -945,7 +945,7 @@ public final class NetworkSecurityGrpc {
      * Creates a new ServerTlsPolicy in a given project and location.
      * </pre>
      */
-    public void createServerTlsPolicy(
+    default void createServerTlsPolicy(
         com.google.cloud.networksecurity.v1.CreateServerTlsPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -959,7 +959,7 @@ public final class NetworkSecurityGrpc {
      * Updates the parameters of a single ServerTlsPolicy.
      * </pre>
      */
-    public void updateServerTlsPolicy(
+    default void updateServerTlsPolicy(
         com.google.cloud.networksecurity.v1.UpdateServerTlsPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -973,7 +973,7 @@ public final class NetworkSecurityGrpc {
      * Deletes a single ServerTlsPolicy.
      * </pre>
      */
-    public void deleteServerTlsPolicy(
+    default void deleteServerTlsPolicy(
         com.google.cloud.networksecurity.v1.DeleteServerTlsPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -987,7 +987,7 @@ public final class NetworkSecurityGrpc {
      * Lists ClientTlsPolicies in a given project and location.
      * </pre>
      */
-    public void listClientTlsPolicies(
+    default void listClientTlsPolicies(
         com.google.cloud.networksecurity.v1.ListClientTlsPoliciesRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.networksecurity.v1.ListClientTlsPoliciesResponse>
@@ -1003,7 +1003,7 @@ public final class NetworkSecurityGrpc {
      * Gets details of a single ClientTlsPolicy.
      * </pre>
      */
-    public void getClientTlsPolicy(
+    default void getClientTlsPolicy(
         com.google.cloud.networksecurity.v1.GetClientTlsPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.networksecurity.v1.ClientTlsPolicy>
             responseObserver) {
@@ -1018,7 +1018,7 @@ public final class NetworkSecurityGrpc {
      * Creates a new ClientTlsPolicy in a given project and location.
      * </pre>
      */
-    public void createClientTlsPolicy(
+    default void createClientTlsPolicy(
         com.google.cloud.networksecurity.v1.CreateClientTlsPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1032,7 +1032,7 @@ public final class NetworkSecurityGrpc {
      * Updates the parameters of a single ClientTlsPolicy.
      * </pre>
      */
-    public void updateClientTlsPolicy(
+    default void updateClientTlsPolicy(
         com.google.cloud.networksecurity.v1.UpdateClientTlsPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1046,121 +1046,34 @@ public final class NetworkSecurityGrpc {
      * Deletes a single ClientTlsPolicy.
      * </pre>
      */
-    public void deleteClientTlsPolicy(
+    default void deleteClientTlsPolicy(
         com.google.cloud.networksecurity.v1.DeleteClientTlsPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteClientTlsPolicyMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service NetworkSecurity.
+   *
+   * <pre>
+   * Network Security API provides resources to configure authentication and
+   * authorization policies. Refer to per API resource documentation for more
+   * information.
+   * </pre>
+   */
+  public abstract static class NetworkSecurityImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListAuthorizationPoliciesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networksecurity.v1.ListAuthorizationPoliciesRequest,
-                      com.google.cloud.networksecurity.v1.ListAuthorizationPoliciesResponse>(
-                      this, METHODID_LIST_AUTHORIZATION_POLICIES)))
-          .addMethod(
-              getGetAuthorizationPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networksecurity.v1.GetAuthorizationPolicyRequest,
-                      com.google.cloud.networksecurity.v1.AuthorizationPolicy>(
-                      this, METHODID_GET_AUTHORIZATION_POLICY)))
-          .addMethod(
-              getCreateAuthorizationPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networksecurity.v1.CreateAuthorizationPolicyRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_CREATE_AUTHORIZATION_POLICY)))
-          .addMethod(
-              getUpdateAuthorizationPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networksecurity.v1.UpdateAuthorizationPolicyRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_UPDATE_AUTHORIZATION_POLICY)))
-          .addMethod(
-              getDeleteAuthorizationPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networksecurity.v1.DeleteAuthorizationPolicyRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_DELETE_AUTHORIZATION_POLICY)))
-          .addMethod(
-              getListServerTlsPoliciesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networksecurity.v1.ListServerTlsPoliciesRequest,
-                      com.google.cloud.networksecurity.v1.ListServerTlsPoliciesResponse>(
-                      this, METHODID_LIST_SERVER_TLS_POLICIES)))
-          .addMethod(
-              getGetServerTlsPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networksecurity.v1.GetServerTlsPolicyRequest,
-                      com.google.cloud.networksecurity.v1.ServerTlsPolicy>(
-                      this, METHODID_GET_SERVER_TLS_POLICY)))
-          .addMethod(
-              getCreateServerTlsPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networksecurity.v1.CreateServerTlsPolicyRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_SERVER_TLS_POLICY)))
-          .addMethod(
-              getUpdateServerTlsPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networksecurity.v1.UpdateServerTlsPolicyRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_SERVER_TLS_POLICY)))
-          .addMethod(
-              getDeleteServerTlsPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networksecurity.v1.DeleteServerTlsPolicyRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_SERVER_TLS_POLICY)))
-          .addMethod(
-              getListClientTlsPoliciesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networksecurity.v1.ListClientTlsPoliciesRequest,
-                      com.google.cloud.networksecurity.v1.ListClientTlsPoliciesResponse>(
-                      this, METHODID_LIST_CLIENT_TLS_POLICIES)))
-          .addMethod(
-              getGetClientTlsPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networksecurity.v1.GetClientTlsPolicyRequest,
-                      com.google.cloud.networksecurity.v1.ClientTlsPolicy>(
-                      this, METHODID_GET_CLIENT_TLS_POLICY)))
-          .addMethod(
-              getCreateClientTlsPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networksecurity.v1.CreateClientTlsPolicyRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_CLIENT_TLS_POLICY)))
-          .addMethod(
-              getUpdateClientTlsPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networksecurity.v1.UpdateClientTlsPolicyRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_CLIENT_TLS_POLICY)))
-          .addMethod(
-              getDeleteClientTlsPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networksecurity.v1.DeleteClientTlsPolicyRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_CLIENT_TLS_POLICY)))
-          .build();
+      return NetworkSecurityGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service NetworkSecurity.
    *
    * <pre>
    * Network Security API provides resources to configure authentication and
@@ -1430,7 +1343,7 @@ public final class NetworkSecurityGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service NetworkSecurity.
    *
    * <pre>
    * Network Security API provides resources to configure authentication and
@@ -1648,7 +1561,7 @@ public final class NetworkSecurityGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service NetworkSecurity.
    *
    * <pre>
    * Network Security API provides resources to configure authentication and
@@ -1904,10 +1817,10 @@ public final class NetworkSecurityGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final NetworkSecurityImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(NetworkSecurityImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -2014,6 +1927,110 @@ public final class NetworkSecurityGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListAuthorizationPoliciesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networksecurity.v1.ListAuthorizationPoliciesRequest,
+                    com.google.cloud.networksecurity.v1.ListAuthorizationPoliciesResponse>(
+                    service, METHODID_LIST_AUTHORIZATION_POLICIES)))
+        .addMethod(
+            getGetAuthorizationPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networksecurity.v1.GetAuthorizationPolicyRequest,
+                    com.google.cloud.networksecurity.v1.AuthorizationPolicy>(
+                    service, METHODID_GET_AUTHORIZATION_POLICY)))
+        .addMethod(
+            getCreateAuthorizationPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networksecurity.v1.CreateAuthorizationPolicyRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_AUTHORIZATION_POLICY)))
+        .addMethod(
+            getUpdateAuthorizationPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networksecurity.v1.UpdateAuthorizationPolicyRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_AUTHORIZATION_POLICY)))
+        .addMethod(
+            getDeleteAuthorizationPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networksecurity.v1.DeleteAuthorizationPolicyRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_AUTHORIZATION_POLICY)))
+        .addMethod(
+            getListServerTlsPoliciesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networksecurity.v1.ListServerTlsPoliciesRequest,
+                    com.google.cloud.networksecurity.v1.ListServerTlsPoliciesResponse>(
+                    service, METHODID_LIST_SERVER_TLS_POLICIES)))
+        .addMethod(
+            getGetServerTlsPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networksecurity.v1.GetServerTlsPolicyRequest,
+                    com.google.cloud.networksecurity.v1.ServerTlsPolicy>(
+                    service, METHODID_GET_SERVER_TLS_POLICY)))
+        .addMethod(
+            getCreateServerTlsPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networksecurity.v1.CreateServerTlsPolicyRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_SERVER_TLS_POLICY)))
+        .addMethod(
+            getUpdateServerTlsPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networksecurity.v1.UpdateServerTlsPolicyRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_SERVER_TLS_POLICY)))
+        .addMethod(
+            getDeleteServerTlsPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networksecurity.v1.DeleteServerTlsPolicyRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_SERVER_TLS_POLICY)))
+        .addMethod(
+            getListClientTlsPoliciesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networksecurity.v1.ListClientTlsPoliciesRequest,
+                    com.google.cloud.networksecurity.v1.ListClientTlsPoliciesResponse>(
+                    service, METHODID_LIST_CLIENT_TLS_POLICIES)))
+        .addMethod(
+            getGetClientTlsPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networksecurity.v1.GetClientTlsPolicyRequest,
+                    com.google.cloud.networksecurity.v1.ClientTlsPolicy>(
+                    service, METHODID_GET_CLIENT_TLS_POLICY)))
+        .addMethod(
+            getCreateClientTlsPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networksecurity.v1.CreateClientTlsPolicyRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_CLIENT_TLS_POLICY)))
+        .addMethod(
+            getUpdateClientTlsPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networksecurity.v1.UpdateClientTlsPolicyRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_CLIENT_TLS_POLICY)))
+        .addMethod(
+            getDeleteClientTlsPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networksecurity.v1.DeleteClientTlsPolicyRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_CLIENT_TLS_POLICY)))
+        .build();
   }
 
   private abstract static class NetworkSecurityBaseDescriptorSupplier

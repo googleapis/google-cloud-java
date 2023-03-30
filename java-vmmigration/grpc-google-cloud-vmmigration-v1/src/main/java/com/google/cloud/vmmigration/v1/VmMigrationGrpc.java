@@ -2187,7 +2187,7 @@ public final class VmMigrationGrpc {
    * VM Migration Service
    * </pre>
    */
-  public abstract static class VmMigrationImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -2196,7 +2196,7 @@ public final class VmMigrationGrpc {
      * Lists Sources in a given project and location.
      * </pre>
      */
-    public void listSources(
+    default void listSources(
         com.google.cloud.vmmigration.v1.ListSourcesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.ListSourcesResponse>
             responseObserver) {
@@ -2211,7 +2211,7 @@ public final class VmMigrationGrpc {
      * Gets details of a single Source.
      * </pre>
      */
-    public void getSource(
+    default void getSource(
         com.google.cloud.vmmigration.v1.GetSourceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.Source> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetSourceMethod(), responseObserver);
@@ -2224,7 +2224,7 @@ public final class VmMigrationGrpc {
      * Creates a new Source in a given project and location.
      * </pre>
      */
-    public void createSource(
+    default void createSource(
         com.google.cloud.vmmigration.v1.CreateSourceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2238,7 +2238,7 @@ public final class VmMigrationGrpc {
      * Updates the parameters of a single Source.
      * </pre>
      */
-    public void updateSource(
+    default void updateSource(
         com.google.cloud.vmmigration.v1.UpdateSourceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2252,7 +2252,7 @@ public final class VmMigrationGrpc {
      * Deletes a single Source.
      * </pre>
      */
-    public void deleteSource(
+    default void deleteSource(
         com.google.cloud.vmmigration.v1.DeleteSourceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2270,7 +2270,7 @@ public final class VmMigrationGrpc {
      * opposed to listing the MigratingVms resources in the vmmigration service.
      * </pre>
      */
-    public void fetchInventory(
+    default void fetchInventory(
         com.google.cloud.vmmigration.v1.FetchInventoryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.FetchInventoryResponse>
             responseObserver) {
@@ -2285,7 +2285,7 @@ public final class VmMigrationGrpc {
      * Lists Utilization Reports of the given Source.
      * </pre>
      */
-    public void listUtilizationReports(
+    default void listUtilizationReports(
         com.google.cloud.vmmigration.v1.ListUtilizationReportsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.ListUtilizationReportsResponse>
             responseObserver) {
@@ -2300,7 +2300,7 @@ public final class VmMigrationGrpc {
      * Gets a single Utilization Report.
      * </pre>
      */
-    public void getUtilizationReport(
+    default void getUtilizationReport(
         com.google.cloud.vmmigration.v1.GetUtilizationReportRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.UtilizationReport>
             responseObserver) {
@@ -2315,7 +2315,7 @@ public final class VmMigrationGrpc {
      * Creates a new UtilizationReport.
      * </pre>
      */
-    public void createUtilizationReport(
+    default void createUtilizationReport(
         com.google.cloud.vmmigration.v1.CreateUtilizationReportRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2329,7 +2329,7 @@ public final class VmMigrationGrpc {
      * Deletes a single Utilization Report.
      * </pre>
      */
-    public void deleteUtilizationReport(
+    default void deleteUtilizationReport(
         com.google.cloud.vmmigration.v1.DeleteUtilizationReportRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2343,7 +2343,7 @@ public final class VmMigrationGrpc {
      * Lists DatacenterConnectors in a given Source.
      * </pre>
      */
-    public void listDatacenterConnectors(
+    default void listDatacenterConnectors(
         com.google.cloud.vmmigration.v1.ListDatacenterConnectorsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.vmmigration.v1.ListDatacenterConnectorsResponse>
@@ -2359,7 +2359,7 @@ public final class VmMigrationGrpc {
      * Gets details of a single DatacenterConnector.
      * </pre>
      */
-    public void getDatacenterConnector(
+    default void getDatacenterConnector(
         com.google.cloud.vmmigration.v1.GetDatacenterConnectorRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.DatacenterConnector>
             responseObserver) {
@@ -2374,7 +2374,7 @@ public final class VmMigrationGrpc {
      * Creates a new DatacenterConnector in a given Source.
      * </pre>
      */
-    public void createDatacenterConnector(
+    default void createDatacenterConnector(
         com.google.cloud.vmmigration.v1.CreateDatacenterConnectorRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2388,7 +2388,7 @@ public final class VmMigrationGrpc {
      * Deletes a single DatacenterConnector.
      * </pre>
      */
-    public void deleteDatacenterConnector(
+    default void deleteDatacenterConnector(
         com.google.cloud.vmmigration.v1.DeleteDatacenterConnectorRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2403,7 +2403,7 @@ public final class VmMigrationGrpc {
      * updateable version.
      * </pre>
      */
-    public void upgradeAppliance(
+    default void upgradeAppliance(
         com.google.cloud.vmmigration.v1.UpgradeApplianceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2417,7 +2417,7 @@ public final class VmMigrationGrpc {
      * Creates a new MigratingVm in a given Source.
      * </pre>
      */
-    public void createMigratingVm(
+    default void createMigratingVm(
         com.google.cloud.vmmigration.v1.CreateMigratingVmRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2431,7 +2431,7 @@ public final class VmMigrationGrpc {
      * Lists MigratingVms in a given Source.
      * </pre>
      */
-    public void listMigratingVms(
+    default void listMigratingVms(
         com.google.cloud.vmmigration.v1.ListMigratingVmsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.ListMigratingVmsResponse>
             responseObserver) {
@@ -2446,7 +2446,7 @@ public final class VmMigrationGrpc {
      * Gets details of a single MigratingVm.
      * </pre>
      */
-    public void getMigratingVm(
+    default void getMigratingVm(
         com.google.cloud.vmmigration.v1.GetMigratingVmRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.MigratingVm> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2460,7 +2460,7 @@ public final class VmMigrationGrpc {
      * Updates the parameters of a single MigratingVm.
      * </pre>
      */
-    public void updateMigratingVm(
+    default void updateMigratingVm(
         com.google.cloud.vmmigration.v1.UpdateMigratingVmRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2474,7 +2474,7 @@ public final class VmMigrationGrpc {
      * Deletes a single MigratingVm.
      * </pre>
      */
-    public void deleteMigratingVm(
+    default void deleteMigratingVm(
         com.google.cloud.vmmigration.v1.DeleteMigratingVmRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2489,7 +2489,7 @@ public final class VmMigrationGrpc {
      * data and creating snapshots, in replication cycles scheduled by the policy.
      * </pre>
      */
-    public void startMigration(
+    default void startMigration(
         com.google.cloud.vmmigration.v1.StartMigrationRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2506,7 +2506,7 @@ public final class VmMigrationGrpc {
      * start the process of uploading data and creating snapshots.
      * </pre>
      */
-    public void resumeMigration(
+    default void resumeMigration(
         com.google.cloud.vmmigration.v1.ResumeMigrationRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2522,7 +2522,7 @@ public final class VmMigrationGrpc {
      * be triggered while the VM is paused.
      * </pre>
      */
-    public void pauseMigration(
+    default void pauseMigration(
         com.google.cloud.vmmigration.v1.PauseMigrationRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2537,7 +2537,7 @@ public final class VmMigrationGrpc {
      * longer being used. Only applicable after cutover is done.
      * </pre>
      */
-    public void finalizeMigration(
+    default void finalizeMigration(
         com.google.cloud.vmmigration.v1.FinalizeMigrationRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2551,7 +2551,7 @@ public final class VmMigrationGrpc {
      * Initiates a Clone of a specific migrating VM.
      * </pre>
      */
-    public void createCloneJob(
+    default void createCloneJob(
         com.google.cloud.vmmigration.v1.CreateCloneJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2565,7 +2565,7 @@ public final class VmMigrationGrpc {
      * Initiates the cancellation of a running clone job.
      * </pre>
      */
-    public void cancelCloneJob(
+    default void cancelCloneJob(
         com.google.cloud.vmmigration.v1.CancelCloneJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2579,7 +2579,7 @@ public final class VmMigrationGrpc {
      * Lists CloneJobs of a given migrating VM.
      * </pre>
      */
-    public void listCloneJobs(
+    default void listCloneJobs(
         com.google.cloud.vmmigration.v1.ListCloneJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.ListCloneJobsResponse>
             responseObserver) {
@@ -2594,7 +2594,7 @@ public final class VmMigrationGrpc {
      * Gets details of a single CloneJob.
      * </pre>
      */
-    public void getCloneJob(
+    default void getCloneJob(
         com.google.cloud.vmmigration.v1.GetCloneJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.CloneJob> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2610,7 +2610,7 @@ public final class VmMigrationGrpc {
      * and the job is initiated.
      * </pre>
      */
-    public void createCutoverJob(
+    default void createCutoverJob(
         com.google.cloud.vmmigration.v1.CreateCutoverJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2624,7 +2624,7 @@ public final class VmMigrationGrpc {
      * Initiates the cancellation of a running cutover job.
      * </pre>
      */
-    public void cancelCutoverJob(
+    default void cancelCutoverJob(
         com.google.cloud.vmmigration.v1.CancelCutoverJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2638,7 +2638,7 @@ public final class VmMigrationGrpc {
      * Lists CutoverJobs of a given migrating VM.
      * </pre>
      */
-    public void listCutoverJobs(
+    default void listCutoverJobs(
         com.google.cloud.vmmigration.v1.ListCutoverJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.ListCutoverJobsResponse>
             responseObserver) {
@@ -2653,7 +2653,7 @@ public final class VmMigrationGrpc {
      * Gets details of a single CutoverJob.
      * </pre>
      */
-    public void getCutoverJob(
+    default void getCutoverJob(
         com.google.cloud.vmmigration.v1.GetCutoverJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.CutoverJob> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2667,7 +2667,7 @@ public final class VmMigrationGrpc {
      * Lists Groups in a given project and location.
      * </pre>
      */
-    public void listGroups(
+    default void listGroups(
         com.google.cloud.vmmigration.v1.ListGroupsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.ListGroupsResponse>
             responseObserver) {
@@ -2681,7 +2681,7 @@ public final class VmMigrationGrpc {
      * Gets details of a single Group.
      * </pre>
      */
-    public void getGroup(
+    default void getGroup(
         com.google.cloud.vmmigration.v1.GetGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.Group> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetGroupMethod(), responseObserver);
@@ -2694,7 +2694,7 @@ public final class VmMigrationGrpc {
      * Creates a new Group in a given project and location.
      * </pre>
      */
-    public void createGroup(
+    default void createGroup(
         com.google.cloud.vmmigration.v1.CreateGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2708,7 +2708,7 @@ public final class VmMigrationGrpc {
      * Updates the parameters of a single Group.
      * </pre>
      */
-    public void updateGroup(
+    default void updateGroup(
         com.google.cloud.vmmigration.v1.UpdateGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2722,7 +2722,7 @@ public final class VmMigrationGrpc {
      * Deletes a single Group.
      * </pre>
      */
-    public void deleteGroup(
+    default void deleteGroup(
         com.google.cloud.vmmigration.v1.DeleteGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2736,7 +2736,7 @@ public final class VmMigrationGrpc {
      * Adds a MigratingVm to a Group.
      * </pre>
      */
-    public void addGroupMigration(
+    default void addGroupMigration(
         com.google.cloud.vmmigration.v1.AddGroupMigrationRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2750,7 +2750,7 @@ public final class VmMigrationGrpc {
      * Removes a MigratingVm from a Group.
      * </pre>
      */
-    public void removeGroupMigration(
+    default void removeGroupMigration(
         com.google.cloud.vmmigration.v1.RemoveGroupMigrationRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2766,7 +2766,7 @@ public final class VmMigrationGrpc {
      * for location is `global`.
      * </pre>
      */
-    public void listTargetProjects(
+    default void listTargetProjects(
         com.google.cloud.vmmigration.v1.ListTargetProjectsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.ListTargetProjectsResponse>
             responseObserver) {
@@ -2783,7 +2783,7 @@ public final class VmMigrationGrpc {
      * for location is `global`.
      * </pre>
      */
-    public void getTargetProject(
+    default void getTargetProject(
         com.google.cloud.vmmigration.v1.GetTargetProjectRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.TargetProject>
             responseObserver) {
@@ -2800,7 +2800,7 @@ public final class VmMigrationGrpc {
      * for location is `global`.
      * </pre>
      */
-    public void createTargetProject(
+    default void createTargetProject(
         com.google.cloud.vmmigration.v1.CreateTargetProjectRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2816,7 +2816,7 @@ public final class VmMigrationGrpc {
      * for location is `global`.
      * </pre>
      */
-    public void updateTargetProject(
+    default void updateTargetProject(
         com.google.cloud.vmmigration.v1.UpdateTargetProjectRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2832,7 +2832,7 @@ public final class VmMigrationGrpc {
      * for location is `global`.
      * </pre>
      */
-    public void deleteTargetProject(
+    default void deleteTargetProject(
         com.google.cloud.vmmigration.v1.DeleteTargetProjectRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -2846,7 +2846,7 @@ public final class VmMigrationGrpc {
      * Lists ReplicationCycles in a given MigratingVM.
      * </pre>
      */
-    public void listReplicationCycles(
+    default void listReplicationCycles(
         com.google.cloud.vmmigration.v1.ListReplicationCyclesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.ListReplicationCyclesResponse>
             responseObserver) {
@@ -2861,316 +2861,33 @@ public final class VmMigrationGrpc {
      * Gets details of a single ReplicationCycle.
      * </pre>
      */
-    public void getReplicationCycle(
+    default void getReplicationCycle(
         com.google.cloud.vmmigration.v1.GetReplicationCycleRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vmmigration.v1.ReplicationCycle>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetReplicationCycleMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service VmMigration.
+   *
+   * <pre>
+   * VM Migration Service
+   * </pre>
+   */
+  public abstract static class VmMigrationImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListSourcesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.ListSourcesRequest,
-                      com.google.cloud.vmmigration.v1.ListSourcesResponse>(
-                      this, METHODID_LIST_SOURCES)))
-          .addMethod(
-              getGetSourceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.GetSourceRequest,
-                      com.google.cloud.vmmigration.v1.Source>(this, METHODID_GET_SOURCE)))
-          .addMethod(
-              getCreateSourceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.CreateSourceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_SOURCE)))
-          .addMethod(
-              getUpdateSourceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.UpdateSourceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_SOURCE)))
-          .addMethod(
-              getDeleteSourceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.DeleteSourceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_SOURCE)))
-          .addMethod(
-              getFetchInventoryMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.FetchInventoryRequest,
-                      com.google.cloud.vmmigration.v1.FetchInventoryResponse>(
-                      this, METHODID_FETCH_INVENTORY)))
-          .addMethod(
-              getListUtilizationReportsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.ListUtilizationReportsRequest,
-                      com.google.cloud.vmmigration.v1.ListUtilizationReportsResponse>(
-                      this, METHODID_LIST_UTILIZATION_REPORTS)))
-          .addMethod(
-              getGetUtilizationReportMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.GetUtilizationReportRequest,
-                      com.google.cloud.vmmigration.v1.UtilizationReport>(
-                      this, METHODID_GET_UTILIZATION_REPORT)))
-          .addMethod(
-              getCreateUtilizationReportMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.CreateUtilizationReportRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_UTILIZATION_REPORT)))
-          .addMethod(
-              getDeleteUtilizationReportMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.DeleteUtilizationReportRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_UTILIZATION_REPORT)))
-          .addMethod(
-              getListDatacenterConnectorsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.ListDatacenterConnectorsRequest,
-                      com.google.cloud.vmmigration.v1.ListDatacenterConnectorsResponse>(
-                      this, METHODID_LIST_DATACENTER_CONNECTORS)))
-          .addMethod(
-              getGetDatacenterConnectorMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.GetDatacenterConnectorRequest,
-                      com.google.cloud.vmmigration.v1.DatacenterConnector>(
-                      this, METHODID_GET_DATACENTER_CONNECTOR)))
-          .addMethod(
-              getCreateDatacenterConnectorMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.CreateDatacenterConnectorRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_CREATE_DATACENTER_CONNECTOR)))
-          .addMethod(
-              getDeleteDatacenterConnectorMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.DeleteDatacenterConnectorRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_DELETE_DATACENTER_CONNECTOR)))
-          .addMethod(
-              getUpgradeApplianceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.UpgradeApplianceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPGRADE_APPLIANCE)))
-          .addMethod(
-              getCreateMigratingVmMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.CreateMigratingVmRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_MIGRATING_VM)))
-          .addMethod(
-              getListMigratingVmsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.ListMigratingVmsRequest,
-                      com.google.cloud.vmmigration.v1.ListMigratingVmsResponse>(
-                      this, METHODID_LIST_MIGRATING_VMS)))
-          .addMethod(
-              getGetMigratingVmMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.GetMigratingVmRequest,
-                      com.google.cloud.vmmigration.v1.MigratingVm>(
-                      this, METHODID_GET_MIGRATING_VM)))
-          .addMethod(
-              getUpdateMigratingVmMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.UpdateMigratingVmRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_MIGRATING_VM)))
-          .addMethod(
-              getDeleteMigratingVmMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.DeleteMigratingVmRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_MIGRATING_VM)))
-          .addMethod(
-              getStartMigrationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.StartMigrationRequest,
-                      com.google.longrunning.Operation>(this, METHODID_START_MIGRATION)))
-          .addMethod(
-              getResumeMigrationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.ResumeMigrationRequest,
-                      com.google.longrunning.Operation>(this, METHODID_RESUME_MIGRATION)))
-          .addMethod(
-              getPauseMigrationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.PauseMigrationRequest,
-                      com.google.longrunning.Operation>(this, METHODID_PAUSE_MIGRATION)))
-          .addMethod(
-              getFinalizeMigrationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.FinalizeMigrationRequest,
-                      com.google.longrunning.Operation>(this, METHODID_FINALIZE_MIGRATION)))
-          .addMethod(
-              getCreateCloneJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.CreateCloneJobRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_CLONE_JOB)))
-          .addMethod(
-              getCancelCloneJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.CancelCloneJobRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CANCEL_CLONE_JOB)))
-          .addMethod(
-              getListCloneJobsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.ListCloneJobsRequest,
-                      com.google.cloud.vmmigration.v1.ListCloneJobsResponse>(
-                      this, METHODID_LIST_CLONE_JOBS)))
-          .addMethod(
-              getGetCloneJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.GetCloneJobRequest,
-                      com.google.cloud.vmmigration.v1.CloneJob>(this, METHODID_GET_CLONE_JOB)))
-          .addMethod(
-              getCreateCutoverJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.CreateCutoverJobRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_CUTOVER_JOB)))
-          .addMethod(
-              getCancelCutoverJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.CancelCutoverJobRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CANCEL_CUTOVER_JOB)))
-          .addMethod(
-              getListCutoverJobsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.ListCutoverJobsRequest,
-                      com.google.cloud.vmmigration.v1.ListCutoverJobsResponse>(
-                      this, METHODID_LIST_CUTOVER_JOBS)))
-          .addMethod(
-              getGetCutoverJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.GetCutoverJobRequest,
-                      com.google.cloud.vmmigration.v1.CutoverJob>(this, METHODID_GET_CUTOVER_JOB)))
-          .addMethod(
-              getListGroupsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.ListGroupsRequest,
-                      com.google.cloud.vmmigration.v1.ListGroupsResponse>(
-                      this, METHODID_LIST_GROUPS)))
-          .addMethod(
-              getGetGroupMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.GetGroupRequest,
-                      com.google.cloud.vmmigration.v1.Group>(this, METHODID_GET_GROUP)))
-          .addMethod(
-              getCreateGroupMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.CreateGroupRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_GROUP)))
-          .addMethod(
-              getUpdateGroupMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.UpdateGroupRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_GROUP)))
-          .addMethod(
-              getDeleteGroupMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.DeleteGroupRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_GROUP)))
-          .addMethod(
-              getAddGroupMigrationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.AddGroupMigrationRequest,
-                      com.google.longrunning.Operation>(this, METHODID_ADD_GROUP_MIGRATION)))
-          .addMethod(
-              getRemoveGroupMigrationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.RemoveGroupMigrationRequest,
-                      com.google.longrunning.Operation>(this, METHODID_REMOVE_GROUP_MIGRATION)))
-          .addMethod(
-              getListTargetProjectsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.ListTargetProjectsRequest,
-                      com.google.cloud.vmmigration.v1.ListTargetProjectsResponse>(
-                      this, METHODID_LIST_TARGET_PROJECTS)))
-          .addMethod(
-              getGetTargetProjectMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.GetTargetProjectRequest,
-                      com.google.cloud.vmmigration.v1.TargetProject>(
-                      this, METHODID_GET_TARGET_PROJECT)))
-          .addMethod(
-              getCreateTargetProjectMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.CreateTargetProjectRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_TARGET_PROJECT)))
-          .addMethod(
-              getUpdateTargetProjectMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.UpdateTargetProjectRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_TARGET_PROJECT)))
-          .addMethod(
-              getDeleteTargetProjectMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.DeleteTargetProjectRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_TARGET_PROJECT)))
-          .addMethod(
-              getListReplicationCyclesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.ListReplicationCyclesRequest,
-                      com.google.cloud.vmmigration.v1.ListReplicationCyclesResponse>(
-                      this, METHODID_LIST_REPLICATION_CYCLES)))
-          .addMethod(
-              getGetReplicationCycleMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vmmigration.v1.GetReplicationCycleRequest,
-                      com.google.cloud.vmmigration.v1.ReplicationCycle>(
-                      this, METHODID_GET_REPLICATION_CYCLE)))
-          .build();
+      return VmMigrationGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service VmMigration.
    *
    * <pre>
    * VM Migration Service
@@ -3958,7 +3675,7 @@ public final class VmMigrationGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service VmMigration.
    *
    * <pre>
    * VM Migration Service
@@ -4601,7 +4318,7 @@ public final class VmMigrationGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service VmMigration.
    *
    * <pre>
    * VM Migration Service
@@ -5320,10 +5037,10 @@ public final class VmMigrationGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final VmMigrationImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(VmMigrationImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -5600,6 +5317,304 @@ public final class VmMigrationGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListSourcesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.ListSourcesRequest,
+                    com.google.cloud.vmmigration.v1.ListSourcesResponse>(
+                    service, METHODID_LIST_SOURCES)))
+        .addMethod(
+            getGetSourceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.GetSourceRequest,
+                    com.google.cloud.vmmigration.v1.Source>(service, METHODID_GET_SOURCE)))
+        .addMethod(
+            getCreateSourceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.CreateSourceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_SOURCE)))
+        .addMethod(
+            getUpdateSourceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.UpdateSourceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_SOURCE)))
+        .addMethod(
+            getDeleteSourceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.DeleteSourceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_SOURCE)))
+        .addMethod(
+            getFetchInventoryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.FetchInventoryRequest,
+                    com.google.cloud.vmmigration.v1.FetchInventoryResponse>(
+                    service, METHODID_FETCH_INVENTORY)))
+        .addMethod(
+            getListUtilizationReportsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.ListUtilizationReportsRequest,
+                    com.google.cloud.vmmigration.v1.ListUtilizationReportsResponse>(
+                    service, METHODID_LIST_UTILIZATION_REPORTS)))
+        .addMethod(
+            getGetUtilizationReportMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.GetUtilizationReportRequest,
+                    com.google.cloud.vmmigration.v1.UtilizationReport>(
+                    service, METHODID_GET_UTILIZATION_REPORT)))
+        .addMethod(
+            getCreateUtilizationReportMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.CreateUtilizationReportRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_UTILIZATION_REPORT)))
+        .addMethod(
+            getDeleteUtilizationReportMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.DeleteUtilizationReportRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_UTILIZATION_REPORT)))
+        .addMethod(
+            getListDatacenterConnectorsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.ListDatacenterConnectorsRequest,
+                    com.google.cloud.vmmigration.v1.ListDatacenterConnectorsResponse>(
+                    service, METHODID_LIST_DATACENTER_CONNECTORS)))
+        .addMethod(
+            getGetDatacenterConnectorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.GetDatacenterConnectorRequest,
+                    com.google.cloud.vmmigration.v1.DatacenterConnector>(
+                    service, METHODID_GET_DATACENTER_CONNECTOR)))
+        .addMethod(
+            getCreateDatacenterConnectorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.CreateDatacenterConnectorRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_DATACENTER_CONNECTOR)))
+        .addMethod(
+            getDeleteDatacenterConnectorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.DeleteDatacenterConnectorRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_DATACENTER_CONNECTOR)))
+        .addMethod(
+            getUpgradeApplianceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.UpgradeApplianceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPGRADE_APPLIANCE)))
+        .addMethod(
+            getCreateMigratingVmMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.CreateMigratingVmRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_MIGRATING_VM)))
+        .addMethod(
+            getListMigratingVmsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.ListMigratingVmsRequest,
+                    com.google.cloud.vmmigration.v1.ListMigratingVmsResponse>(
+                    service, METHODID_LIST_MIGRATING_VMS)))
+        .addMethod(
+            getGetMigratingVmMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.GetMigratingVmRequest,
+                    com.google.cloud.vmmigration.v1.MigratingVm>(
+                    service, METHODID_GET_MIGRATING_VM)))
+        .addMethod(
+            getUpdateMigratingVmMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.UpdateMigratingVmRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_MIGRATING_VM)))
+        .addMethod(
+            getDeleteMigratingVmMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.DeleteMigratingVmRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_MIGRATING_VM)))
+        .addMethod(
+            getStartMigrationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.StartMigrationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_START_MIGRATION)))
+        .addMethod(
+            getResumeMigrationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.ResumeMigrationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RESUME_MIGRATION)))
+        .addMethod(
+            getPauseMigrationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.PauseMigrationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_PAUSE_MIGRATION)))
+        .addMethod(
+            getFinalizeMigrationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.FinalizeMigrationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_FINALIZE_MIGRATION)))
+        .addMethod(
+            getCreateCloneJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.CreateCloneJobRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_CLONE_JOB)))
+        .addMethod(
+            getCancelCloneJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.CancelCloneJobRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CANCEL_CLONE_JOB)))
+        .addMethod(
+            getListCloneJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.ListCloneJobsRequest,
+                    com.google.cloud.vmmigration.v1.ListCloneJobsResponse>(
+                    service, METHODID_LIST_CLONE_JOBS)))
+        .addMethod(
+            getGetCloneJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.GetCloneJobRequest,
+                    com.google.cloud.vmmigration.v1.CloneJob>(service, METHODID_GET_CLONE_JOB)))
+        .addMethod(
+            getCreateCutoverJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.CreateCutoverJobRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_CUTOVER_JOB)))
+        .addMethod(
+            getCancelCutoverJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.CancelCutoverJobRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CANCEL_CUTOVER_JOB)))
+        .addMethod(
+            getListCutoverJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.ListCutoverJobsRequest,
+                    com.google.cloud.vmmigration.v1.ListCutoverJobsResponse>(
+                    service, METHODID_LIST_CUTOVER_JOBS)))
+        .addMethod(
+            getGetCutoverJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.GetCutoverJobRequest,
+                    com.google.cloud.vmmigration.v1.CutoverJob>(service, METHODID_GET_CUTOVER_JOB)))
+        .addMethod(
+            getListGroupsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.ListGroupsRequest,
+                    com.google.cloud.vmmigration.v1.ListGroupsResponse>(
+                    service, METHODID_LIST_GROUPS)))
+        .addMethod(
+            getGetGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.GetGroupRequest,
+                    com.google.cloud.vmmigration.v1.Group>(service, METHODID_GET_GROUP)))
+        .addMethod(
+            getCreateGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.CreateGroupRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_GROUP)))
+        .addMethod(
+            getUpdateGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.UpdateGroupRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_GROUP)))
+        .addMethod(
+            getDeleteGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.DeleteGroupRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_GROUP)))
+        .addMethod(
+            getAddGroupMigrationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.AddGroupMigrationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_ADD_GROUP_MIGRATION)))
+        .addMethod(
+            getRemoveGroupMigrationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.RemoveGroupMigrationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_REMOVE_GROUP_MIGRATION)))
+        .addMethod(
+            getListTargetProjectsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.ListTargetProjectsRequest,
+                    com.google.cloud.vmmigration.v1.ListTargetProjectsResponse>(
+                    service, METHODID_LIST_TARGET_PROJECTS)))
+        .addMethod(
+            getGetTargetProjectMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.GetTargetProjectRequest,
+                    com.google.cloud.vmmigration.v1.TargetProject>(
+                    service, METHODID_GET_TARGET_PROJECT)))
+        .addMethod(
+            getCreateTargetProjectMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.CreateTargetProjectRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_TARGET_PROJECT)))
+        .addMethod(
+            getUpdateTargetProjectMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.UpdateTargetProjectRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_TARGET_PROJECT)))
+        .addMethod(
+            getDeleteTargetProjectMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.DeleteTargetProjectRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_TARGET_PROJECT)))
+        .addMethod(
+            getListReplicationCyclesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.ListReplicationCyclesRequest,
+                    com.google.cloud.vmmigration.v1.ListReplicationCyclesResponse>(
+                    service, METHODID_LIST_REPLICATION_CYCLES)))
+        .addMethod(
+            getGetReplicationCycleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vmmigration.v1.GetReplicationCycleRequest,
+                    com.google.cloud.vmmigration.v1.ReplicationCycle>(
+                    service, METHODID_GET_REPLICATION_CYCLE)))
+        .build();
   }
 
   private abstract static class VmMigrationBaseDescriptorSupplier

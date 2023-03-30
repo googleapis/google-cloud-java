@@ -242,8 +242,7 @@ public final class FeaturestoreOnlineServingServiceGrpc {
    * A service for serving online feature values.
    * </pre>
    */
-  public abstract static class FeaturestoreOnlineServingServiceImplBase
-      implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -254,7 +253,7 @@ public final class FeaturestoreOnlineServingServiceGrpc {
      * StreamingReadFeatureValues.
      * </pre>
      */
-    public void readFeatureValues(
+    default void readFeatureValues(
         com.google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ReadFeatureValuesResponse>
             responseObserver) {
@@ -271,7 +270,7 @@ public final class FeaturestoreOnlineServingServiceGrpc {
      * up across multiple responses.
      * </pre>
      */
-    public void streamingReadFeatureValues(
+    default void streamingReadFeatureValues(
         com.google.cloud.aiplatform.v1beta1.StreamingReadFeatureValuesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ReadFeatureValuesResponse>
             responseObserver) {
@@ -289,44 +288,34 @@ public final class FeaturestoreOnlineServingServiceGrpc {
      * retention.
      * </pre>
      */
-    public void writeFeatureValues(
+    default void writeFeatureValues(
         com.google.cloud.aiplatform.v1beta1.WriteFeatureValuesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.WriteFeatureValuesResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getWriteFeatureValuesMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service FeaturestoreOnlineServingService.
+   *
+   * <pre>
+   * A service for serving online feature values.
+   * </pre>
+   */
+  public abstract static class FeaturestoreOnlineServingServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getReadFeatureValuesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest,
-                      com.google.cloud.aiplatform.v1beta1.ReadFeatureValuesResponse>(
-                      this, METHODID_READ_FEATURE_VALUES)))
-          .addMethod(
-              getStreamingReadFeatureValuesMethod(),
-              io.grpc.stub.ServerCalls.asyncServerStreamingCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.StreamingReadFeatureValuesRequest,
-                      com.google.cloud.aiplatform.v1beta1.ReadFeatureValuesResponse>(
-                      this, METHODID_STREAMING_READ_FEATURE_VALUES)))
-          .addMethod(
-              getWriteFeatureValuesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.WriteFeatureValuesRequest,
-                      com.google.cloud.aiplatform.v1beta1.WriteFeatureValuesResponse>(
-                      this, METHODID_WRITE_FEATURE_VALUES)))
-          .build();
+      return FeaturestoreOnlineServingServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service
+   * FeaturestoreOnlineServingService.
    *
    * <pre>
    * A service for serving online feature values.
@@ -405,7 +394,8 @@ public final class FeaturestoreOnlineServingServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service
+   * FeaturestoreOnlineServingService.
    *
    * <pre>
    * A service for serving online feature values.
@@ -473,7 +463,8 @@ public final class FeaturestoreOnlineServingServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * FeaturestoreOnlineServingService.
    *
    * <pre>
    * A service for serving online feature values.
@@ -535,10 +526,10 @@ public final class FeaturestoreOnlineServingServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final FeaturestoreOnlineServingServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(FeaturestoreOnlineServingServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -582,6 +573,32 @@ public final class FeaturestoreOnlineServingServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getReadFeatureValuesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest,
+                    com.google.cloud.aiplatform.v1beta1.ReadFeatureValuesResponse>(
+                    service, METHODID_READ_FEATURE_VALUES)))
+        .addMethod(
+            getStreamingReadFeatureValuesMethod(),
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.StreamingReadFeatureValuesRequest,
+                    com.google.cloud.aiplatform.v1beta1.ReadFeatureValuesResponse>(
+                    service, METHODID_STREAMING_READ_FEATURE_VALUES)))
+        .addMethod(
+            getWriteFeatureValuesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.WriteFeatureValuesRequest,
+                    com.google.cloud.aiplatform.v1beta1.WriteFeatureValuesResponse>(
+                    service, METHODID_WRITE_FEATURE_VALUES)))
+        .build();
   }
 
   private abstract static class FeaturestoreOnlineServingServiceBaseDescriptorSupplier

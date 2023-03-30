@@ -38,7 +38,7 @@ public class SyncGetDocument {
       GetDocumentRequest request =
           GetDocumentRequest.newBuilder()
               .setName(
-                  DocumentName.of(
+                  DocumentName.ofProjectLocationDataStoreBranchDocumentName(
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
                       .toString())
               .build();

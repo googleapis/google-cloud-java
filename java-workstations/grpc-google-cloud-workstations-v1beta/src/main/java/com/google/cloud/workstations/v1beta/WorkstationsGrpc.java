@@ -1052,7 +1052,7 @@ public final class WorkstationsGrpc {
    * Service for interacting with Cloud Workstations.
    * </pre>
    */
-  public abstract static class WorkstationsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -1061,7 +1061,7 @@ public final class WorkstationsGrpc {
      * Returns the requested workstation cluster.
      * </pre>
      */
-    public void getWorkstationCluster(
+    default void getWorkstationCluster(
         com.google.cloud.workstations.v1beta.GetWorkstationClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.workstations.v1beta.WorkstationCluster>
             responseObserver) {
@@ -1076,7 +1076,7 @@ public final class WorkstationsGrpc {
      * Returns all workstation clusters in the specified location.
      * </pre>
      */
-    public void listWorkstationClusters(
+    default void listWorkstationClusters(
         com.google.cloud.workstations.v1beta.ListWorkstationClustersRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.workstations.v1beta.ListWorkstationClustersResponse>
@@ -1092,7 +1092,7 @@ public final class WorkstationsGrpc {
      * Creates a new workstation cluster.
      * </pre>
      */
-    public void createWorkstationCluster(
+    default void createWorkstationCluster(
         com.google.cloud.workstations.v1beta.CreateWorkstationClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1106,7 +1106,7 @@ public final class WorkstationsGrpc {
      * Updates an existing workstation cluster.
      * </pre>
      */
-    public void updateWorkstationCluster(
+    default void updateWorkstationCluster(
         com.google.cloud.workstations.v1beta.UpdateWorkstationClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1120,7 +1120,7 @@ public final class WorkstationsGrpc {
      * Deletes the specified workstation cluster.
      * </pre>
      */
-    public void deleteWorkstationCluster(
+    default void deleteWorkstationCluster(
         com.google.cloud.workstations.v1beta.DeleteWorkstationClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1134,7 +1134,7 @@ public final class WorkstationsGrpc {
      * Returns the requested workstation configuration.
      * </pre>
      */
-    public void getWorkstationConfig(
+    default void getWorkstationConfig(
         com.google.cloud.workstations.v1beta.GetWorkstationConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.workstations.v1beta.WorkstationConfig>
             responseObserver) {
@@ -1149,7 +1149,7 @@ public final class WorkstationsGrpc {
      * Returns all workstation configurations in the specified cluster.
      * </pre>
      */
-    public void listWorkstationConfigs(
+    default void listWorkstationConfigs(
         com.google.cloud.workstations.v1beta.ListWorkstationConfigsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.workstations.v1beta.ListWorkstationConfigsResponse>
@@ -1166,7 +1166,7 @@ public final class WorkstationsGrpc {
      * the caller has the "workstations.workstation.create" permission.
      * </pre>
      */
-    public void listUsableWorkstationConfigs(
+    default void listUsableWorkstationConfigs(
         com.google.cloud.workstations.v1beta.ListUsableWorkstationConfigsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.workstations.v1beta.ListUsableWorkstationConfigsResponse>
@@ -1182,7 +1182,7 @@ public final class WorkstationsGrpc {
      * Creates a new workstation configuration.
      * </pre>
      */
-    public void createWorkstationConfig(
+    default void createWorkstationConfig(
         com.google.cloud.workstations.v1beta.CreateWorkstationConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1196,7 +1196,7 @@ public final class WorkstationsGrpc {
      * Updates an existing workstation configuration.
      * </pre>
      */
-    public void updateWorkstationConfig(
+    default void updateWorkstationConfig(
         com.google.cloud.workstations.v1beta.UpdateWorkstationConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1210,7 +1210,7 @@ public final class WorkstationsGrpc {
      * Deletes the specified workstation configuration.
      * </pre>
      */
-    public void deleteWorkstationConfig(
+    default void deleteWorkstationConfig(
         com.google.cloud.workstations.v1beta.DeleteWorkstationConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1224,7 +1224,7 @@ public final class WorkstationsGrpc {
      * Returns the requested workstation.
      * </pre>
      */
-    public void getWorkstation(
+    default void getWorkstation(
         com.google.cloud.workstations.v1beta.GetWorkstationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.workstations.v1beta.Workstation>
             responseObserver) {
@@ -1239,7 +1239,7 @@ public final class WorkstationsGrpc {
      * Returns all Workstations using the specified config.
      * </pre>
      */
-    public void listWorkstations(
+    default void listWorkstations(
         com.google.cloud.workstations.v1beta.ListWorkstationsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.workstations.v1beta.ListWorkstationsResponse>
             responseObserver) {
@@ -1255,7 +1255,7 @@ public final class WorkstationsGrpc {
      * the "workstations.workstations.use" permission.
      * </pre>
      */
-    public void listUsableWorkstations(
+    default void listUsableWorkstations(
         com.google.cloud.workstations.v1beta.ListUsableWorkstationsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.workstations.v1beta.ListUsableWorkstationsResponse>
@@ -1271,7 +1271,7 @@ public final class WorkstationsGrpc {
      * Creates a new workstation.
      * </pre>
      */
-    public void createWorkstation(
+    default void createWorkstation(
         com.google.cloud.workstations.v1beta.CreateWorkstationRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1285,7 +1285,7 @@ public final class WorkstationsGrpc {
      * Updates an existing workstation.
      * </pre>
      */
-    public void updateWorkstation(
+    default void updateWorkstation(
         com.google.cloud.workstations.v1beta.UpdateWorkstationRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1299,7 +1299,7 @@ public final class WorkstationsGrpc {
      * Deletes the specified workstation.
      * </pre>
      */
-    public void deleteWorkstation(
+    default void deleteWorkstation(
         com.google.cloud.workstations.v1beta.DeleteWorkstationRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1313,7 +1313,7 @@ public final class WorkstationsGrpc {
      * Starts running a workstation so that users can connect to it.
      * </pre>
      */
-    public void startWorkstation(
+    default void startWorkstation(
         com.google.cloud.workstations.v1beta.StartWorkstationRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1327,7 +1327,7 @@ public final class WorkstationsGrpc {
      * Stops running a workstation, reducing costs.
      * </pre>
      */
-    public void stopWorkstation(
+    default void stopWorkstation(
         com.google.cloud.workstations.v1beta.StopWorkstationRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1342,7 +1342,7 @@ public final class WorkstationsGrpc {
      * authorized traffic to a workstation.
      * </pre>
      */
-    public void generateAccessToken(
+    default void generateAccessToken(
         com.google.cloud.workstations.v1beta.GenerateAccessTokenRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.workstations.v1beta.GenerateAccessTokenResponse>
@@ -1350,145 +1350,26 @@ public final class WorkstationsGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGenerateAccessTokenMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Workstations.
+   *
+   * <pre>
+   * Service for interacting with Cloud Workstations.
+   * </pre>
+   */
+  public abstract static class WorkstationsImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getGetWorkstationClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.workstations.v1beta.GetWorkstationClusterRequest,
-                      com.google.cloud.workstations.v1beta.WorkstationCluster>(
-                      this, METHODID_GET_WORKSTATION_CLUSTER)))
-          .addMethod(
-              getListWorkstationClustersMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.workstations.v1beta.ListWorkstationClustersRequest,
-                      com.google.cloud.workstations.v1beta.ListWorkstationClustersResponse>(
-                      this, METHODID_LIST_WORKSTATION_CLUSTERS)))
-          .addMethod(
-              getCreateWorkstationClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.workstations.v1beta.CreateWorkstationClusterRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_WORKSTATION_CLUSTER)))
-          .addMethod(
-              getUpdateWorkstationClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.workstations.v1beta.UpdateWorkstationClusterRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_WORKSTATION_CLUSTER)))
-          .addMethod(
-              getDeleteWorkstationClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.workstations.v1beta.DeleteWorkstationClusterRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_WORKSTATION_CLUSTER)))
-          .addMethod(
-              getGetWorkstationConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.workstations.v1beta.GetWorkstationConfigRequest,
-                      com.google.cloud.workstations.v1beta.WorkstationConfig>(
-                      this, METHODID_GET_WORKSTATION_CONFIG)))
-          .addMethod(
-              getListWorkstationConfigsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.workstations.v1beta.ListWorkstationConfigsRequest,
-                      com.google.cloud.workstations.v1beta.ListWorkstationConfigsResponse>(
-                      this, METHODID_LIST_WORKSTATION_CONFIGS)))
-          .addMethod(
-              getListUsableWorkstationConfigsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.workstations.v1beta.ListUsableWorkstationConfigsRequest,
-                      com.google.cloud.workstations.v1beta.ListUsableWorkstationConfigsResponse>(
-                      this, METHODID_LIST_USABLE_WORKSTATION_CONFIGS)))
-          .addMethod(
-              getCreateWorkstationConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.workstations.v1beta.CreateWorkstationConfigRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_WORKSTATION_CONFIG)))
-          .addMethod(
-              getUpdateWorkstationConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.workstations.v1beta.UpdateWorkstationConfigRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_WORKSTATION_CONFIG)))
-          .addMethod(
-              getDeleteWorkstationConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.workstations.v1beta.DeleteWorkstationConfigRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_WORKSTATION_CONFIG)))
-          .addMethod(
-              getGetWorkstationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.workstations.v1beta.GetWorkstationRequest,
-                      com.google.cloud.workstations.v1beta.Workstation>(
-                      this, METHODID_GET_WORKSTATION)))
-          .addMethod(
-              getListWorkstationsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.workstations.v1beta.ListWorkstationsRequest,
-                      com.google.cloud.workstations.v1beta.ListWorkstationsResponse>(
-                      this, METHODID_LIST_WORKSTATIONS)))
-          .addMethod(
-              getListUsableWorkstationsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.workstations.v1beta.ListUsableWorkstationsRequest,
-                      com.google.cloud.workstations.v1beta.ListUsableWorkstationsResponse>(
-                      this, METHODID_LIST_USABLE_WORKSTATIONS)))
-          .addMethod(
-              getCreateWorkstationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.workstations.v1beta.CreateWorkstationRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_WORKSTATION)))
-          .addMethod(
-              getUpdateWorkstationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.workstations.v1beta.UpdateWorkstationRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_WORKSTATION)))
-          .addMethod(
-              getDeleteWorkstationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.workstations.v1beta.DeleteWorkstationRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_WORKSTATION)))
-          .addMethod(
-              getStartWorkstationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.workstations.v1beta.StartWorkstationRequest,
-                      com.google.longrunning.Operation>(this, METHODID_START_WORKSTATION)))
-          .addMethod(
-              getStopWorkstationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.workstations.v1beta.StopWorkstationRequest,
-                      com.google.longrunning.Operation>(this, METHODID_STOP_WORKSTATION)))
-          .addMethod(
-              getGenerateAccessTokenMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.workstations.v1beta.GenerateAccessTokenRequest,
-                      com.google.cloud.workstations.v1beta.GenerateAccessTokenResponse>(
-                      this, METHODID_GENERATE_ACCESS_TOKEN)))
-          .build();
+      return WorkstationsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Workstations.
    *
    * <pre>
    * Service for interacting with Cloud Workstations.
@@ -1844,7 +1725,7 @@ public final class WorkstationsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Workstations.
    *
    * <pre>
    * Service for interacting with Cloud Workstations.
@@ -2131,7 +2012,7 @@ public final class WorkstationsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Workstations.
    *
    * <pre>
    * Service for interacting with Cloud Workstations.
@@ -2461,10 +2342,10 @@ public final class WorkstationsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final WorkstationsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(WorkstationsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -2602,6 +2483,143 @@ public final class WorkstationsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getGetWorkstationClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workstations.v1beta.GetWorkstationClusterRequest,
+                    com.google.cloud.workstations.v1beta.WorkstationCluster>(
+                    service, METHODID_GET_WORKSTATION_CLUSTER)))
+        .addMethod(
+            getListWorkstationClustersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workstations.v1beta.ListWorkstationClustersRequest,
+                    com.google.cloud.workstations.v1beta.ListWorkstationClustersResponse>(
+                    service, METHODID_LIST_WORKSTATION_CLUSTERS)))
+        .addMethod(
+            getCreateWorkstationClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workstations.v1beta.CreateWorkstationClusterRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_WORKSTATION_CLUSTER)))
+        .addMethod(
+            getUpdateWorkstationClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workstations.v1beta.UpdateWorkstationClusterRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_WORKSTATION_CLUSTER)))
+        .addMethod(
+            getDeleteWorkstationClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workstations.v1beta.DeleteWorkstationClusterRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_WORKSTATION_CLUSTER)))
+        .addMethod(
+            getGetWorkstationConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workstations.v1beta.GetWorkstationConfigRequest,
+                    com.google.cloud.workstations.v1beta.WorkstationConfig>(
+                    service, METHODID_GET_WORKSTATION_CONFIG)))
+        .addMethod(
+            getListWorkstationConfigsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workstations.v1beta.ListWorkstationConfigsRequest,
+                    com.google.cloud.workstations.v1beta.ListWorkstationConfigsResponse>(
+                    service, METHODID_LIST_WORKSTATION_CONFIGS)))
+        .addMethod(
+            getListUsableWorkstationConfigsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workstations.v1beta.ListUsableWorkstationConfigsRequest,
+                    com.google.cloud.workstations.v1beta.ListUsableWorkstationConfigsResponse>(
+                    service, METHODID_LIST_USABLE_WORKSTATION_CONFIGS)))
+        .addMethod(
+            getCreateWorkstationConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workstations.v1beta.CreateWorkstationConfigRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_WORKSTATION_CONFIG)))
+        .addMethod(
+            getUpdateWorkstationConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workstations.v1beta.UpdateWorkstationConfigRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_WORKSTATION_CONFIG)))
+        .addMethod(
+            getDeleteWorkstationConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workstations.v1beta.DeleteWorkstationConfigRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_WORKSTATION_CONFIG)))
+        .addMethod(
+            getGetWorkstationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workstations.v1beta.GetWorkstationRequest,
+                    com.google.cloud.workstations.v1beta.Workstation>(
+                    service, METHODID_GET_WORKSTATION)))
+        .addMethod(
+            getListWorkstationsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workstations.v1beta.ListWorkstationsRequest,
+                    com.google.cloud.workstations.v1beta.ListWorkstationsResponse>(
+                    service, METHODID_LIST_WORKSTATIONS)))
+        .addMethod(
+            getListUsableWorkstationsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workstations.v1beta.ListUsableWorkstationsRequest,
+                    com.google.cloud.workstations.v1beta.ListUsableWorkstationsResponse>(
+                    service, METHODID_LIST_USABLE_WORKSTATIONS)))
+        .addMethod(
+            getCreateWorkstationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workstations.v1beta.CreateWorkstationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_WORKSTATION)))
+        .addMethod(
+            getUpdateWorkstationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workstations.v1beta.UpdateWorkstationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_WORKSTATION)))
+        .addMethod(
+            getDeleteWorkstationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workstations.v1beta.DeleteWorkstationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_WORKSTATION)))
+        .addMethod(
+            getStartWorkstationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workstations.v1beta.StartWorkstationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_START_WORKSTATION)))
+        .addMethod(
+            getStopWorkstationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workstations.v1beta.StopWorkstationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_STOP_WORKSTATION)))
+        .addMethod(
+            getGenerateAccessTokenMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workstations.v1beta.GenerateAccessTokenRequest,
+                    com.google.cloud.workstations.v1beta.GenerateAccessTokenResponse>(
+                    service, METHODID_GENERATE_ACCESS_TOKEN)))
+        .build();
   }
 
   private abstract static class WorkstationsBaseDescriptorSupplier

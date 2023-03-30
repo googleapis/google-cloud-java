@@ -291,7 +291,7 @@ public final class GameServerConfigsServiceGrpc {
    * The game server config configures the game servers in an Agones fleet.
    * </pre>
    */
-  public abstract static class GameServerConfigsServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -301,7 +301,7 @@ public final class GameServerConfigsServiceGrpc {
      * deployment.
      * </pre>
      */
-    public void listGameServerConfigs(
+    default void listGameServerConfigs(
         com.google.cloud.gaming.v1beta.ListGameServerConfigsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1beta.ListGameServerConfigsResponse>
             responseObserver) {
@@ -316,7 +316,7 @@ public final class GameServerConfigsServiceGrpc {
      * Gets details of a single game server config.
      * </pre>
      */
-    public void getGameServerConfig(
+    default void getGameServerConfig(
         com.google.cloud.gaming.v1beta.GetGameServerConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gaming.v1beta.GameServerConfig>
             responseObserver) {
@@ -333,7 +333,7 @@ public final class GameServerConfigsServiceGrpc {
      * until referenced in the game server deployment rollout resource.
      * </pre>
      */
-    public void createGameServerConfig(
+    default void createGameServerConfig(
         com.google.cloud.gaming.v1beta.CreateGameServerConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -348,48 +348,32 @@ public final class GameServerConfigsServiceGrpc {
      * server config is referenced in a game server deployment rollout.
      * </pre>
      */
-    public void deleteGameServerConfig(
+    default void deleteGameServerConfig(
         com.google.cloud.gaming.v1beta.DeleteGameServerConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteGameServerConfigMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service GameServerConfigsService.
+   *
+   * <pre>
+   * The game server config configures the game servers in an Agones fleet.
+   * </pre>
+   */
+  public abstract static class GameServerConfigsServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListGameServerConfigsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gaming.v1beta.ListGameServerConfigsRequest,
-                      com.google.cloud.gaming.v1beta.ListGameServerConfigsResponse>(
-                      this, METHODID_LIST_GAME_SERVER_CONFIGS)))
-          .addMethod(
-              getGetGameServerConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gaming.v1beta.GetGameServerConfigRequest,
-                      com.google.cloud.gaming.v1beta.GameServerConfig>(
-                      this, METHODID_GET_GAME_SERVER_CONFIG)))
-          .addMethod(
-              getCreateGameServerConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gaming.v1beta.CreateGameServerConfigRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_GAME_SERVER_CONFIG)))
-          .addMethod(
-              getDeleteGameServerConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gaming.v1beta.DeleteGameServerConfigRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_GAME_SERVER_CONFIG)))
-          .build();
+      return GameServerConfigsServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service GameServerConfigsService.
    *
    * <pre>
    * The game server config configures the game servers in an Agones fleet.
@@ -479,7 +463,7 @@ public final class GameServerConfigsServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service GameServerConfigsService.
    *
    * <pre>
    * The game server config configures the game servers in an Agones fleet.
@@ -556,7 +540,8 @@ public final class GameServerConfigsServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * GameServerConfigsService.
    *
    * <pre>
    * The game server config configures the game servers in an Agones fleet.
@@ -646,10 +631,10 @@ public final class GameServerConfigsServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final GameServerConfigsServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(GameServerConfigsServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -695,6 +680,37 @@ public final class GameServerConfigsServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListGameServerConfigsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gaming.v1beta.ListGameServerConfigsRequest,
+                    com.google.cloud.gaming.v1beta.ListGameServerConfigsResponse>(
+                    service, METHODID_LIST_GAME_SERVER_CONFIGS)))
+        .addMethod(
+            getGetGameServerConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gaming.v1beta.GetGameServerConfigRequest,
+                    com.google.cloud.gaming.v1beta.GameServerConfig>(
+                    service, METHODID_GET_GAME_SERVER_CONFIG)))
+        .addMethod(
+            getCreateGameServerConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gaming.v1beta.CreateGameServerConfigRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_GAME_SERVER_CONFIG)))
+        .addMethod(
+            getDeleteGameServerConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gaming.v1beta.DeleteGameServerConfigRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_GAME_SERVER_CONFIG)))
+        .build();
   }
 
   private abstract static class GameServerConfigsServiceBaseDescriptorSupplier

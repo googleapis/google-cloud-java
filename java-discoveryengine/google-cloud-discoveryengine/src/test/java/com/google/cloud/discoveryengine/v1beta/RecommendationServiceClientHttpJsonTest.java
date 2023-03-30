@@ -88,7 +88,8 @@ public class RecommendationServiceClientHttpJsonTest {
     RecommendRequest request =
         RecommendRequest.newBuilder()
             .setServingConfig(
-                ServingConfigName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]")
+                ServingConfigName.ofProjectLocationDataStoreServingConfigName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]")
                     .toString())
             .setUserEvent(UserEvent.newBuilder().build())
             .setPageSize(883849137)
@@ -127,7 +128,7 @@ public class RecommendationServiceClientHttpJsonTest {
       RecommendRequest request =
           RecommendRequest.newBuilder()
               .setServingConfig(
-                  ServingConfigName.of(
+                  ServingConfigName.ofProjectLocationDataStoreServingConfigName(
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]")
                       .toString())
               .setUserEvent(UserEvent.newBuilder().build())

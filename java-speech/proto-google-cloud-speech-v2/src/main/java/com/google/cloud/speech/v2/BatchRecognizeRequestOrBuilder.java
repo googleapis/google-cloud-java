@@ -178,6 +178,7 @@ public interface BatchRecognizeRequestOrBuilder
    *
    * <pre>
    * Audio files with file metadata for ASR.
+   * The maximum number of files allowed to be specified is 5.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -188,6 +189,7 @@ public interface BatchRecognizeRequestOrBuilder
    *
    * <pre>
    * Audio files with file metadata for ASR.
+   * The maximum number of files allowed to be specified is 5.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -198,6 +200,7 @@ public interface BatchRecognizeRequestOrBuilder
    *
    * <pre>
    * Audio files with file metadata for ASR.
+   * The maximum number of files allowed to be specified is 5.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -208,6 +211,7 @@ public interface BatchRecognizeRequestOrBuilder
    *
    * <pre>
    * Audio files with file metadata for ASR.
+   * The maximum number of files allowed to be specified is 5.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -219,9 +223,45 @@ public interface BatchRecognizeRequestOrBuilder
    *
    * <pre>
    * Audio files with file metadata for ASR.
+   * The maximum number of files allowed to be specified is 5.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
    */
   com.google.cloud.speech.v2.BatchRecognizeFileMetadataOrBuilder getFilesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for where to output the transcripts of each file.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v2.RecognitionOutputConfig recognition_output_config = 6;</code>
+   *
+   * @return Whether the recognitionOutputConfig field is set.
+   */
+  boolean hasRecognitionOutputConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for where to output the transcripts of each file.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v2.RecognitionOutputConfig recognition_output_config = 6;</code>
+   *
+   * @return The recognitionOutputConfig.
+   */
+  com.google.cloud.speech.v2.RecognitionOutputConfig getRecognitionOutputConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for where to output the transcripts of each file.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v2.RecognitionOutputConfig recognition_output_config = 6;</code>
+   */
+  com.google.cloud.speech.v2.RecognitionOutputConfigOrBuilder getRecognitionOutputConfigOrBuilder();
 }

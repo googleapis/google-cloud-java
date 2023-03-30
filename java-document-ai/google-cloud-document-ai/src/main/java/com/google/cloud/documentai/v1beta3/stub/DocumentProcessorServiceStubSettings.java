@@ -78,6 +78,9 @@ import com.google.cloud.documentai.v1beta3.GetEvaluationRequest;
 import com.google.cloud.documentai.v1beta3.GetProcessorRequest;
 import com.google.cloud.documentai.v1beta3.GetProcessorTypeRequest;
 import com.google.cloud.documentai.v1beta3.GetProcessorVersionRequest;
+import com.google.cloud.documentai.v1beta3.ImportProcessorVersionMetadata;
+import com.google.cloud.documentai.v1beta3.ImportProcessorVersionRequest;
+import com.google.cloud.documentai.v1beta3.ImportProcessorVersionResponse;
 import com.google.cloud.documentai.v1beta3.ListEvaluationsRequest;
 import com.google.cloud.documentai.v1beta3.ListEvaluationsResponse;
 import com.google.cloud.documentai.v1beta3.ListProcessorTypesRequest;
@@ -246,6 +249,13 @@ public class DocumentProcessorServiceStubSettings
   private final PagedCallSettings<
           ListEvaluationsRequest, ListEvaluationsResponse, ListEvaluationsPagedResponse>
       listEvaluationsSettings;
+  private final UnaryCallSettings<ImportProcessorVersionRequest, Operation>
+      importProcessorVersionSettings;
+  private final OperationCallSettings<
+          ImportProcessorVersionRequest,
+          ImportProcessorVersionResponse,
+          ImportProcessorVersionMetadata>
+      importProcessorVersionOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -752,6 +762,21 @@ public class DocumentProcessorServiceStubSettings
     return listEvaluationsSettings;
   }
 
+  /** Returns the object with the settings used for calls to importProcessorVersion. */
+  public UnaryCallSettings<ImportProcessorVersionRequest, Operation>
+      importProcessorVersionSettings() {
+    return importProcessorVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to importProcessorVersion. */
+  public OperationCallSettings<
+          ImportProcessorVersionRequest,
+          ImportProcessorVersionResponse,
+          ImportProcessorVersionMetadata>
+      importProcessorVersionOperationSettings() {
+    return importProcessorVersionOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -910,6 +935,9 @@ public class DocumentProcessorServiceStubSettings
         settingsBuilder.evaluateProcessorVersionOperationSettings().build();
     getEvaluationSettings = settingsBuilder.getEvaluationSettings().build();
     listEvaluationsSettings = settingsBuilder.listEvaluationsSettings().build();
+    importProcessorVersionSettings = settingsBuilder.importProcessorVersionSettings().build();
+    importProcessorVersionOperationSettings =
+        settingsBuilder.importProcessorVersionOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -1009,6 +1037,13 @@ public class DocumentProcessorServiceStubSettings
     private final PagedCallSettings.Builder<
             ListEvaluationsRequest, ListEvaluationsResponse, ListEvaluationsPagedResponse>
         listEvaluationsSettings;
+    private final UnaryCallSettings.Builder<ImportProcessorVersionRequest, Operation>
+        importProcessorVersionSettings;
+    private final OperationCallSettings.Builder<
+            ImportProcessorVersionRequest,
+            ImportProcessorVersionResponse,
+            ImportProcessorVersionMetadata>
+        importProcessorVersionOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -1090,6 +1125,8 @@ public class DocumentProcessorServiceStubSettings
       evaluateProcessorVersionOperationSettings = OperationCallSettings.newBuilder();
       getEvaluationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listEvaluationsSettings = PagedCallSettings.newBuilder(LIST_EVALUATIONS_PAGE_STR_FACT);
+      importProcessorVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      importProcessorVersionOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -1117,6 +1154,7 @@ public class DocumentProcessorServiceStubSettings
               evaluateProcessorVersionSettings,
               getEvaluationSettings,
               listEvaluationsSettings,
+              importProcessorVersionSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -1165,6 +1203,9 @@ public class DocumentProcessorServiceStubSettings
           settings.evaluateProcessorVersionOperationSettings.toBuilder();
       getEvaluationSettings = settings.getEvaluationSettings.toBuilder();
       listEvaluationsSettings = settings.listEvaluationsSettings.toBuilder();
+      importProcessorVersionSettings = settings.importProcessorVersionSettings.toBuilder();
+      importProcessorVersionOperationSettings =
+          settings.importProcessorVersionOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -1192,6 +1233,7 @@ public class DocumentProcessorServiceStubSettings
               evaluateProcessorVersionSettings,
               getEvaluationSettings,
               listEvaluationsSettings,
+              importProcessorVersionSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -1330,6 +1372,11 @@ public class DocumentProcessorServiceStubSettings
 
       builder
           .listEvaluationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .importProcessorVersionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1620,6 +1667,32 @@ public class DocumentProcessorServiceStubSettings
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .importProcessorVersionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ImportProcessorVersionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  ImportProcessorVersionResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  ImportProcessorVersionMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1875,6 +1948,23 @@ public class DocumentProcessorServiceStubSettings
             ListEvaluationsRequest, ListEvaluationsResponse, ListEvaluationsPagedResponse>
         listEvaluationsSettings() {
       return listEvaluationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importProcessorVersion. */
+    public UnaryCallSettings.Builder<ImportProcessorVersionRequest, Operation>
+        importProcessorVersionSettings() {
+      return importProcessorVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to importProcessorVersion. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            ImportProcessorVersionRequest,
+            ImportProcessorVersionResponse,
+            ImportProcessorVersionMetadata>
+        importProcessorVersionOperationSettings() {
+      return importProcessorVersionOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

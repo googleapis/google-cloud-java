@@ -91,10 +91,12 @@ public class ReservationServiceClientHttpJsonTest {
             .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
             .setSlotCapacity(-1516717605)
             .setIgnoreIdleSlots(true)
+            .setAutoscale(Reservation.Autoscale.newBuilder().build())
             .setConcurrency(1476186003)
             .setCreationTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMultiRegionAuxiliary(true)
+            .setEdition(Edition.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -145,10 +147,12 @@ public class ReservationServiceClientHttpJsonTest {
             .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
             .setSlotCapacity(-1516717605)
             .setIgnoreIdleSlots(true)
+            .setAutoscale(Reservation.Autoscale.newBuilder().build())
             .setConcurrency(1476186003)
             .setCreationTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMultiRegionAuxiliary(true)
+            .setEdition(Edition.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -299,10 +303,12 @@ public class ReservationServiceClientHttpJsonTest {
             .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
             .setSlotCapacity(-1516717605)
             .setIgnoreIdleSlots(true)
+            .setAutoscale(Reservation.Autoscale.newBuilder().build())
             .setConcurrency(1476186003)
             .setCreationTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMultiRegionAuxiliary(true)
+            .setEdition(Edition.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -349,10 +355,12 @@ public class ReservationServiceClientHttpJsonTest {
             .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
             .setSlotCapacity(-1516717605)
             .setIgnoreIdleSlots(true)
+            .setAutoscale(Reservation.Autoscale.newBuilder().build())
             .setConcurrency(1476186003)
             .setCreationTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMultiRegionAuxiliary(true)
+            .setEdition(Edition.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -479,10 +487,12 @@ public class ReservationServiceClientHttpJsonTest {
             .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
             .setSlotCapacity(-1516717605)
             .setIgnoreIdleSlots(true)
+            .setAutoscale(Reservation.Autoscale.newBuilder().build())
             .setConcurrency(1476186003)
             .setCreationTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMultiRegionAuxiliary(true)
+            .setEdition(Edition.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -491,10 +501,12 @@ public class ReservationServiceClientHttpJsonTest {
             .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
             .setSlotCapacity(-1516717605)
             .setIgnoreIdleSlots(true)
+            .setAutoscale(Reservation.Autoscale.newBuilder().build())
             .setConcurrency(1476186003)
             .setCreationTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMultiRegionAuxiliary(true)
+            .setEdition(Edition.forNumber(0))
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -529,10 +541,12 @@ public class ReservationServiceClientHttpJsonTest {
               .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
               .setSlotCapacity(-1516717605)
               .setIgnoreIdleSlots(true)
+              .setAutoscale(Reservation.Autoscale.newBuilder().build())
               .setConcurrency(1476186003)
               .setCreationTime(Timestamp.newBuilder().build())
               .setUpdateTime(Timestamp.newBuilder().build())
               .setMultiRegionAuxiliary(true)
+              .setEdition(Edition.forNumber(0))
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateReservation(reservation, updateMask);
@@ -554,6 +568,7 @@ public class ReservationServiceClientHttpJsonTest {
             .setCommitmentEndTime(Timestamp.newBuilder().build())
             .setFailureStatus(Status.newBuilder().build())
             .setMultiRegionAuxiliary(true)
+            .setEdition(Edition.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -607,6 +622,7 @@ public class ReservationServiceClientHttpJsonTest {
             .setCommitmentEndTime(Timestamp.newBuilder().build())
             .setFailureStatus(Status.newBuilder().build())
             .setMultiRegionAuxiliary(true)
+            .setEdition(Edition.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -760,6 +776,7 @@ public class ReservationServiceClientHttpJsonTest {
             .setCommitmentEndTime(Timestamp.newBuilder().build())
             .setFailureStatus(Status.newBuilder().build())
             .setMultiRegionAuxiliary(true)
+            .setEdition(Edition.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -813,6 +830,7 @@ public class ReservationServiceClientHttpJsonTest {
             .setCommitmentEndTime(Timestamp.newBuilder().build())
             .setFailureStatus(Status.newBuilder().build())
             .setMultiRegionAuxiliary(true)
+            .setEdition(Edition.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -950,6 +968,7 @@ public class ReservationServiceClientHttpJsonTest {
             .setCommitmentEndTime(Timestamp.newBuilder().build())
             .setFailureStatus(Status.newBuilder().build())
             .setMultiRegionAuxiliary(true)
+            .setEdition(Edition.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -963,6 +982,7 @@ public class ReservationServiceClientHttpJsonTest {
             .setCommitmentEndTime(Timestamp.newBuilder().build())
             .setFailureStatus(Status.newBuilder().build())
             .setMultiRegionAuxiliary(true)
+            .setEdition(Edition.forNumber(0))
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1003,6 +1023,7 @@ public class ReservationServiceClientHttpJsonTest {
               .setCommitmentEndTime(Timestamp.newBuilder().build())
               .setFailureStatus(Status.newBuilder().build())
               .setMultiRegionAuxiliary(true)
+              .setEdition(Edition.forNumber(0))
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateCapacityCommitment(capacityCommitment, updateMask);
@@ -1124,6 +1145,7 @@ public class ReservationServiceClientHttpJsonTest {
             .setCommitmentEndTime(Timestamp.newBuilder().build())
             .setFailureStatus(Status.newBuilder().build())
             .setMultiRegionAuxiliary(true)
+            .setEdition(Edition.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1178,6 +1200,7 @@ public class ReservationServiceClientHttpJsonTest {
             .setCommitmentEndTime(Timestamp.newBuilder().build())
             .setFailureStatus(Status.newBuilder().build())
             .setMultiRegionAuxiliary(true)
+            .setEdition(Edition.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 

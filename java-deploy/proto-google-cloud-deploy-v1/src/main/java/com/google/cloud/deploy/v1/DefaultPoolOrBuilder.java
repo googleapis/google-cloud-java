@@ -56,8 +56,8 @@ public interface DefaultPoolOrBuilder
    *
    *
    * <pre>
-   * Optional. Cloud Storage location where execution outputs should be stored. This can
-   * either be a bucket ("gs://my-bucket") or a path within a bucket
+   * Optional. Cloud Storage location where execution outputs should be stored.
+   * This can either be a bucket ("gs://my-bucket") or a path within a bucket
    * ("gs://my-bucket/my-dir").
    * If unspecified, a default bucket located in the same region will be used.
    * </pre>
@@ -71,8 +71,8 @@ public interface DefaultPoolOrBuilder
    *
    *
    * <pre>
-   * Optional. Cloud Storage location where execution outputs should be stored. This can
-   * either be a bucket ("gs://my-bucket") or a path within a bucket
+   * Optional. Cloud Storage location where execution outputs should be stored.
+   * This can either be a bucket ("gs://my-bucket") or a path within a bucket
    * ("gs://my-bucket/my-dir").
    * If unspecified, a default bucket located in the same region will be used.
    * </pre>

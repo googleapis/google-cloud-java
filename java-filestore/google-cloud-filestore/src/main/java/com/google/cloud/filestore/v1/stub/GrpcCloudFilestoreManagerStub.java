@@ -18,6 +18,7 @@ package com.google.cloud.filestore.v1.stub;
 
 import static com.google.cloud.filestore.v1.CloudFilestoreManagerClient.ListBackupsPagedResponse;
 import static com.google.cloud.filestore.v1.CloudFilestoreManagerClient.ListInstancesPagedResponse;
+import static com.google.cloud.filestore.v1.CloudFilestoreManagerClient.ListSnapshotsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -30,18 +31,25 @@ import com.google.cloud.common.OperationMetadata;
 import com.google.cloud.filestore.v1.Backup;
 import com.google.cloud.filestore.v1.CreateBackupRequest;
 import com.google.cloud.filestore.v1.CreateInstanceRequest;
+import com.google.cloud.filestore.v1.CreateSnapshotRequest;
 import com.google.cloud.filestore.v1.DeleteBackupRequest;
 import com.google.cloud.filestore.v1.DeleteInstanceRequest;
+import com.google.cloud.filestore.v1.DeleteSnapshotRequest;
 import com.google.cloud.filestore.v1.GetBackupRequest;
 import com.google.cloud.filestore.v1.GetInstanceRequest;
+import com.google.cloud.filestore.v1.GetSnapshotRequest;
 import com.google.cloud.filestore.v1.Instance;
 import com.google.cloud.filestore.v1.ListBackupsRequest;
 import com.google.cloud.filestore.v1.ListBackupsResponse;
 import com.google.cloud.filestore.v1.ListInstancesRequest;
 import com.google.cloud.filestore.v1.ListInstancesResponse;
+import com.google.cloud.filestore.v1.ListSnapshotsRequest;
+import com.google.cloud.filestore.v1.ListSnapshotsResponse;
 import com.google.cloud.filestore.v1.RestoreInstanceRequest;
+import com.google.cloud.filestore.v1.Snapshot;
 import com.google.cloud.filestore.v1.UpdateBackupRequest;
 import com.google.cloud.filestore.v1.UpdateInstanceRequest;
+import com.google.cloud.filestore.v1.UpdateSnapshotRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -119,6 +127,55 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ListSnapshotsRequest, ListSnapshotsResponse>
+      listSnapshotsMethodDescriptor =
+          MethodDescriptor.<ListSnapshotsRequest, ListSnapshotsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.filestore.v1.CloudFilestoreManager/ListSnapshots")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListSnapshotsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListSnapshotsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetSnapshotRequest, Snapshot> getSnapshotMethodDescriptor =
+      MethodDescriptor.<GetSnapshotRequest, Snapshot>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.filestore.v1.CloudFilestoreManager/GetSnapshot")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetSnapshotRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Snapshot.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<CreateSnapshotRequest, Operation>
+      createSnapshotMethodDescriptor =
+          MethodDescriptor.<CreateSnapshotRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.filestore.v1.CloudFilestoreManager/CreateSnapshot")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateSnapshotRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteSnapshotRequest, Operation>
+      deleteSnapshotMethodDescriptor =
+          MethodDescriptor.<DeleteSnapshotRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.filestore.v1.CloudFilestoreManager/DeleteSnapshot")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteSnapshotRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateSnapshotRequest, Operation>
+      updateSnapshotMethodDescriptor =
+          MethodDescriptor.<UpdateSnapshotRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.filestore.v1.CloudFilestoreManager/UpdateSnapshot")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateSnapshotRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListBackupsRequest, ListBackupsResponse>
       listBackupsMethodDescriptor =
           MethodDescriptor.<ListBackupsRequest, ListBackupsResponse>newBuilder()
@@ -180,6 +237,19 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
   private final UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable;
   private final OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationCallable;
+  private final UnaryCallable<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsCallable;
+  private final UnaryCallable<ListSnapshotsRequest, ListSnapshotsPagedResponse>
+      listSnapshotsPagedCallable;
+  private final UnaryCallable<GetSnapshotRequest, Snapshot> getSnapshotCallable;
+  private final UnaryCallable<CreateSnapshotRequest, Operation> createSnapshotCallable;
+  private final OperationCallable<CreateSnapshotRequest, Snapshot, OperationMetadata>
+      createSnapshotOperationCallable;
+  private final UnaryCallable<DeleteSnapshotRequest, Operation> deleteSnapshotCallable;
+  private final OperationCallable<DeleteSnapshotRequest, Empty, OperationMetadata>
+      deleteSnapshotOperationCallable;
+  private final UnaryCallable<UpdateSnapshotRequest, Operation> updateSnapshotCallable;
+  private final OperationCallable<UpdateSnapshotRequest, Snapshot, OperationMetadata>
+      updateSnapshotOperationCallable;
   private final UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable;
   private final UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse>
       listBackupsPagedCallable;
@@ -298,6 +368,56 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsTransportSettings =
+        GrpcCallSettings.<ListSnapshotsRequest, ListSnapshotsResponse>newBuilder()
+            .setMethodDescriptor(listSnapshotsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<GetSnapshotRequest, Snapshot> getSnapshotTransportSettings =
+        GrpcCallSettings.<GetSnapshotRequest, Snapshot>newBuilder()
+            .setMethodDescriptor(getSnapshotMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<CreateSnapshotRequest, Operation> createSnapshotTransportSettings =
+        GrpcCallSettings.<CreateSnapshotRequest, Operation>newBuilder()
+            .setMethodDescriptor(createSnapshotMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteSnapshotRequest, Operation> deleteSnapshotTransportSettings =
+        GrpcCallSettings.<DeleteSnapshotRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteSnapshotMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateSnapshotRequest, Operation> updateSnapshotTransportSettings =
+        GrpcCallSettings.<UpdateSnapshotRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateSnapshotMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("snapshot.name", String.valueOf(request.getSnapshot().getName()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
         GrpcCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
             .setMethodDescriptor(listBackupsMethodDescriptor)
@@ -392,6 +512,42 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
         callableFactory.createOperationCallable(
             deleteInstanceTransportSettings,
             settings.deleteInstanceOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listSnapshotsCallable =
+        callableFactory.createUnaryCallable(
+            listSnapshotsTransportSettings, settings.listSnapshotsSettings(), clientContext);
+    this.listSnapshotsPagedCallable =
+        callableFactory.createPagedCallable(
+            listSnapshotsTransportSettings, settings.listSnapshotsSettings(), clientContext);
+    this.getSnapshotCallable =
+        callableFactory.createUnaryCallable(
+            getSnapshotTransportSettings, settings.getSnapshotSettings(), clientContext);
+    this.createSnapshotCallable =
+        callableFactory.createUnaryCallable(
+            createSnapshotTransportSettings, settings.createSnapshotSettings(), clientContext);
+    this.createSnapshotOperationCallable =
+        callableFactory.createOperationCallable(
+            createSnapshotTransportSettings,
+            settings.createSnapshotOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteSnapshotCallable =
+        callableFactory.createUnaryCallable(
+            deleteSnapshotTransportSettings, settings.deleteSnapshotSettings(), clientContext);
+    this.deleteSnapshotOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteSnapshotTransportSettings,
+            settings.deleteSnapshotOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateSnapshotCallable =
+        callableFactory.createUnaryCallable(
+            updateSnapshotTransportSettings, settings.updateSnapshotSettings(), clientContext);
+    this.updateSnapshotOperationCallable =
+        callableFactory.createOperationCallable(
+            updateSnapshotTransportSettings,
+            settings.updateSnapshotOperationSettings(),
             clientContext,
             operationsStub);
     this.listBackupsCallable =
@@ -497,6 +653,55 @@ public class GrpcCloudFilestoreManagerStub extends CloudFilestoreManagerStub {
   public OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationCallable() {
     return deleteInstanceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsCallable() {
+    return listSnapshotsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSnapshotsRequest, ListSnapshotsPagedResponse>
+      listSnapshotsPagedCallable() {
+    return listSnapshotsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSnapshotRequest, Snapshot> getSnapshotCallable() {
+    return getSnapshotCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateSnapshotRequest, Operation> createSnapshotCallable() {
+    return createSnapshotCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateSnapshotRequest, Snapshot, OperationMetadata>
+      createSnapshotOperationCallable() {
+    return createSnapshotOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSnapshotRequest, Operation> deleteSnapshotCallable() {
+    return deleteSnapshotCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteSnapshotRequest, Empty, OperationMetadata>
+      deleteSnapshotOperationCallable() {
+    return deleteSnapshotOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSnapshotRequest, Operation> updateSnapshotCallable() {
+    return updateSnapshotCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateSnapshotRequest, Snapshot, OperationMetadata>
+      updateSnapshotOperationCallable() {
+    return updateSnapshotOperationCallable;
   }
 
   @Override

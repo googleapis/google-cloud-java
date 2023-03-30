@@ -276,7 +276,7 @@ public final class DocumentLinkServiceGrpc {
    * Document-Links are treated as sub-resources under source documents.
    * </pre>
    */
-  public abstract static class DocumentLinkServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -285,7 +285,7 @@ public final class DocumentLinkServiceGrpc {
      * Return all target document-links from the document.
      * </pre>
      */
-    public void listLinkedTargets(
+    default void listLinkedTargets(
         com.google.cloud.contentwarehouse.v1.ListLinkedTargetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.contentwarehouse.v1.ListLinkedTargetsResponse>
             responseObserver) {
@@ -300,7 +300,7 @@ public final class DocumentLinkServiceGrpc {
      * Return all source document-links from the document.
      * </pre>
      */
-    public void listLinkedSources(
+    default void listLinkedSources(
         com.google.cloud.contentwarehouse.v1.ListLinkedSourcesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.contentwarehouse.v1.ListLinkedSourcesResponse>
             responseObserver) {
@@ -315,7 +315,7 @@ public final class DocumentLinkServiceGrpc {
      * Create a link between a source document and a target document.
      * </pre>
      */
-    public void createDocumentLink(
+    default void createDocumentLink(
         com.google.cloud.contentwarehouse.v1.CreateDocumentLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.contentwarehouse.v1.DocumentLink>
             responseObserver) {
@@ -330,49 +330,33 @@ public final class DocumentLinkServiceGrpc {
      * Remove the link between the source and target documents.
      * </pre>
      */
-    public void deleteDocumentLink(
+    default void deleteDocumentLink(
         com.google.cloud.contentwarehouse.v1.DeleteDocumentLinkRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteDocumentLinkMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service DocumentLinkService.
+   *
+   * <pre>
+   * This service lets you manage document-links.
+   * Document-Links are treated as sub-resources under source documents.
+   * </pre>
+   */
+  public abstract static class DocumentLinkServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListLinkedTargetsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.contentwarehouse.v1.ListLinkedTargetsRequest,
-                      com.google.cloud.contentwarehouse.v1.ListLinkedTargetsResponse>(
-                      this, METHODID_LIST_LINKED_TARGETS)))
-          .addMethod(
-              getListLinkedSourcesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.contentwarehouse.v1.ListLinkedSourcesRequest,
-                      com.google.cloud.contentwarehouse.v1.ListLinkedSourcesResponse>(
-                      this, METHODID_LIST_LINKED_SOURCES)))
-          .addMethod(
-              getCreateDocumentLinkMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.contentwarehouse.v1.CreateDocumentLinkRequest,
-                      com.google.cloud.contentwarehouse.v1.DocumentLink>(
-                      this, METHODID_CREATE_DOCUMENT_LINK)))
-          .addMethod(
-              getDeleteDocumentLinkMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.contentwarehouse.v1.DeleteDocumentLinkRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_DOCUMENT_LINK)))
-          .build();
+      return DocumentLinkServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service DocumentLinkService.
    *
    * <pre>
    * This service lets you manage document-links.
@@ -460,7 +444,7 @@ public final class DocumentLinkServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service DocumentLinkService.
    *
    * <pre>
    * This service lets you manage document-links.
@@ -534,7 +518,7 @@ public final class DocumentLinkServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service DocumentLinkService.
    *
    * <pre>
    * This service lets you manage document-links.
@@ -620,10 +604,10 @@ public final class DocumentLinkServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final DocumentLinkServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(DocumentLinkServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -671,6 +655,38 @@ public final class DocumentLinkServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListLinkedTargetsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contentwarehouse.v1.ListLinkedTargetsRequest,
+                    com.google.cloud.contentwarehouse.v1.ListLinkedTargetsResponse>(
+                    service, METHODID_LIST_LINKED_TARGETS)))
+        .addMethod(
+            getListLinkedSourcesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contentwarehouse.v1.ListLinkedSourcesRequest,
+                    com.google.cloud.contentwarehouse.v1.ListLinkedSourcesResponse>(
+                    service, METHODID_LIST_LINKED_SOURCES)))
+        .addMethod(
+            getCreateDocumentLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contentwarehouse.v1.CreateDocumentLinkRequest,
+                    com.google.cloud.contentwarehouse.v1.DocumentLink>(
+                    service, METHODID_CREATE_DOCUMENT_LINK)))
+        .addMethod(
+            getDeleteDocumentLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contentwarehouse.v1.DeleteDocumentLinkRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_DOCUMENT_LINK)))
+        .build();
   }
 
   private abstract static class DocumentLinkServiceBaseDescriptorSupplier

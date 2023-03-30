@@ -22,8 +22,9 @@ package com.google.maps.routing.v2;
  *
  *
  * <pre>
- * Encapsulates a segment of a `RouteLeg`. A step corresponds to a single
- * navigation instruction. Route legs are made up of steps.
+ * Encapsulates a segment of a [RouteLeg][google.maps.routing.v2.RouteLeg]. A
+ * step corresponds to a single navigation instruction. Route legs are made up
+ * of steps.
  * </pre>
  *
  * Protobuf type {@code google.maps.routing.v2.RouteLegStep}
@@ -639,8 +640,9 @@ public final class RouteLegStep extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encapsulates a segment of a `RouteLeg`. A step corresponds to a single
-   * navigation instruction. Route legs are made up of steps.
+   * Encapsulates a segment of a [RouteLeg][google.maps.routing.v2.RouteLeg]. A
+   * step corresponds to a single navigation instruction. Route legs are made up
+   * of steps.
    * </pre>
    *
    * Protobuf type {@code google.maps.routing.v2.RouteLegStep}

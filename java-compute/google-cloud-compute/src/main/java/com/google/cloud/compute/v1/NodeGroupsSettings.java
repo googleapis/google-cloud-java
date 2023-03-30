@@ -175,6 +175,18 @@ public class NodeGroupsSettings extends ClientSettings<NodeGroupsSettings> {
     return ((NodeGroupsStubSettings) getStubSettings()).setNodeTemplateOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to simulateMaintenanceEvent. */
+  public UnaryCallSettings<SimulateMaintenanceEventNodeGroupRequest, Operation>
+      simulateMaintenanceEventSettings() {
+    return ((NodeGroupsStubSettings) getStubSettings()).simulateMaintenanceEventSettings();
+  }
+
+  /** Returns the object with the settings used for calls to simulateMaintenanceEvent. */
+  public OperationCallSettings<SimulateMaintenanceEventNodeGroupRequest, Operation, Operation>
+      simulateMaintenanceEventOperationSettings() {
+    return ((NodeGroupsStubSettings) getStubSettings()).simulateMaintenanceEventOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to testIamPermissions. */
   public UnaryCallSettings<TestIamPermissionsNodeGroupRequest, TestPermissionsResponse>
       testIamPermissionsSettings() {
@@ -378,6 +390,19 @@ public class NodeGroupsSettings extends ClientSettings<NodeGroupsSettings> {
     public OperationCallSettings.Builder<SetNodeTemplateNodeGroupRequest, Operation, Operation>
         setNodeTemplateOperationSettings() {
       return getStubSettingsBuilder().setNodeTemplateOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to simulateMaintenanceEvent. */
+    public UnaryCallSettings.Builder<SimulateMaintenanceEventNodeGroupRequest, Operation>
+        simulateMaintenanceEventSettings() {
+      return getStubSettingsBuilder().simulateMaintenanceEventSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to simulateMaintenanceEvent. */
+    public OperationCallSettings.Builder<
+            SimulateMaintenanceEventNodeGroupRequest, Operation, Operation>
+        simulateMaintenanceEventOperationSettings() {
+      return getStubSettingsBuilder().simulateMaintenanceEventOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to testIamPermissions. */

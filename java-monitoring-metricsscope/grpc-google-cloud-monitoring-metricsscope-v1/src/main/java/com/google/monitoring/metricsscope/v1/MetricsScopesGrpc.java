@@ -289,7 +289,7 @@ public final class MetricsScopesGrpc {
    * projects and AWS accounts.
    * </pre>
    */
-  public abstract static class MetricsScopesImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -298,7 +298,7 @@ public final class MetricsScopesGrpc {
      * Returns a specific `Metrics Scope`.
      * </pre>
      */
-    public void getMetricsScope(
+    default void getMetricsScope(
         com.google.monitoring.metricsscope.v1.GetMetricsScopeRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.metricsscope.v1.MetricsScope>
             responseObserver) {
@@ -315,7 +315,7 @@ public final class MetricsScopesGrpc {
      * project will always be the first entry in the response.
      * </pre>
      */
-    public void listMetricsScopesByMonitoredProject(
+    default void listMetricsScopesByMonitoredProject(
         com.google.monitoring.metricsscope.v1.ListMetricsScopesByMonitoredProjectRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.monitoring.metricsscope.v1.ListMetricsScopesByMonitoredProjectResponse>
@@ -332,7 +332,7 @@ public final class MetricsScopesGrpc {
      * to the specified `Metrics Scope`.
      * </pre>
      */
-    public void createMonitoredProject(
+    default void createMonitoredProject(
         com.google.monitoring.metricsscope.v1.CreateMonitoredProjectRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -346,50 +346,33 @@ public final class MetricsScopesGrpc {
      * Deletes a `MonitoredProject` from the specified `Metrics Scope`.
      * </pre>
      */
-    public void deleteMonitoredProject(
+    default void deleteMonitoredProject(
         com.google.monitoring.metricsscope.v1.DeleteMonitoredProjectRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteMonitoredProjectMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service MetricsScopes.
+   *
+   * <pre>
+   * Manages Cloud Monitoring Metrics Scopes, and the monitoring of Google Cloud
+   * projects and AWS accounts.
+   * </pre>
+   */
+  public abstract static class MetricsScopesImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getGetMetricsScopeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.metricsscope.v1.GetMetricsScopeRequest,
-                      com.google.monitoring.metricsscope.v1.MetricsScope>(
-                      this, METHODID_GET_METRICS_SCOPE)))
-          .addMethod(
-              getListMetricsScopesByMonitoredProjectMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.metricsscope.v1
-                          .ListMetricsScopesByMonitoredProjectRequest,
-                      com.google.monitoring.metricsscope.v1
-                          .ListMetricsScopesByMonitoredProjectResponse>(
-                      this, METHODID_LIST_METRICS_SCOPES_BY_MONITORED_PROJECT)))
-          .addMethod(
-              getCreateMonitoredProjectMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.metricsscope.v1.CreateMonitoredProjectRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_MONITORED_PROJECT)))
-          .addMethod(
-              getDeleteMonitoredProjectMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.metricsscope.v1.DeleteMonitoredProjectRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_MONITORED_PROJECT)))
-          .build();
+      return MetricsScopesGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service MetricsScopes.
    *
    * <pre>
    * Manages Cloud Monitoring Metrics Scopes, and the monitoring of Google Cloud
@@ -479,7 +462,7 @@ public final class MetricsScopesGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service MetricsScopes.
    *
    * <pre>
    * Manages Cloud Monitoring Metrics Scopes, and the monitoring of Google Cloud
@@ -557,7 +540,7 @@ public final class MetricsScopesGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service MetricsScopes.
    *
    * <pre>
    * Manages Cloud Monitoring Metrics Scopes, and the monitoring of Google Cloud
@@ -649,10 +632,10 @@ public final class MetricsScopesGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final MetricsScopesImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(MetricsScopesImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -700,6 +683,39 @@ public final class MetricsScopesGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getGetMetricsScopeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.metricsscope.v1.GetMetricsScopeRequest,
+                    com.google.monitoring.metricsscope.v1.MetricsScope>(
+                    service, METHODID_GET_METRICS_SCOPE)))
+        .addMethod(
+            getListMetricsScopesByMonitoredProjectMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.metricsscope.v1
+                        .ListMetricsScopesByMonitoredProjectRequest,
+                    com.google.monitoring.metricsscope.v1
+                        .ListMetricsScopesByMonitoredProjectResponse>(
+                    service, METHODID_LIST_METRICS_SCOPES_BY_MONITORED_PROJECT)))
+        .addMethod(
+            getCreateMonitoredProjectMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.metricsscope.v1.CreateMonitoredProjectRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_MONITORED_PROJECT)))
+        .addMethod(
+            getDeleteMonitoredProjectMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.metricsscope.v1.DeleteMonitoredProjectRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_MONITORED_PROJECT)))
+        .build();
   }
 
   private abstract static class MetricsScopesBaseDescriptorSupplier

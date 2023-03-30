@@ -399,7 +399,7 @@ public final class AppConnectionsServiceGrpc {
    * (create/read/update/delete) BeyondCorp AppConnections.
    * </pre>
    */
-  public abstract static class AppConnectionsServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -408,7 +408,7 @@ public final class AppConnectionsServiceGrpc {
      * Lists AppConnections in a given project and location.
      * </pre>
      */
-    public void listAppConnections(
+    default void listAppConnections(
         com.google.cloud.beyondcorp.appconnections.v1.ListAppConnectionsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.beyondcorp.appconnections.v1.ListAppConnectionsResponse>
@@ -424,7 +424,7 @@ public final class AppConnectionsServiceGrpc {
      * Gets details of a single AppConnection.
      * </pre>
      */
-    public void getAppConnection(
+    default void getAppConnection(
         com.google.cloud.beyondcorp.appconnections.v1.GetAppConnectionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.beyondcorp.appconnections.v1.AppConnection>
             responseObserver) {
@@ -439,7 +439,7 @@ public final class AppConnectionsServiceGrpc {
      * Creates a new AppConnection in a given project and location.
      * </pre>
      */
-    public void createAppConnection(
+    default void createAppConnection(
         com.google.cloud.beyondcorp.appconnections.v1.CreateAppConnectionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -453,7 +453,7 @@ public final class AppConnectionsServiceGrpc {
      * Updates the parameters of a single AppConnection.
      * </pre>
      */
-    public void updateAppConnection(
+    default void updateAppConnection(
         com.google.cloud.beyondcorp.appconnections.v1.UpdateAppConnectionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -467,7 +467,7 @@ public final class AppConnectionsServiceGrpc {
      * Deletes a single AppConnection.
      * </pre>
      */
-    public void deleteAppConnection(
+    default void deleteAppConnection(
         com.google.cloud.beyondcorp.appconnections.v1.DeleteAppConnectionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -483,7 +483,7 @@ public final class AppConnectionsServiceGrpc {
      * to.
      * </pre>
      */
-    public void resolveAppConnections(
+    default void resolveAppConnections(
         com.google.cloud.beyondcorp.appconnections.v1.ResolveAppConnectionsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.beyondcorp.appconnections.v1.ResolveAppConnectionsResponse>
@@ -491,55 +491,34 @@ public final class AppConnectionsServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getResolveAppConnectionsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service AppConnectionsService.
+   *
+   * <pre>
+   * API Overview:
+   * The `beyondcorp.googleapis.com` service implements the Google Cloud
+   * BeyondCorp API.
+   * Data Model:
+   * The AppConnectionsService exposes the following resources:
+   * * AppConnections, named as follows:
+   *   `projects/{project_id}/locations/{location_id}/appConnections/{app_connection_id}`.
+   * The AppConnectionsService service provides methods to manage
+   * (create/read/update/delete) BeyondCorp AppConnections.
+   * </pre>
+   */
+  public abstract static class AppConnectionsServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListAppConnectionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.beyondcorp.appconnections.v1.ListAppConnectionsRequest,
-                      com.google.cloud.beyondcorp.appconnections.v1.ListAppConnectionsResponse>(
-                      this, METHODID_LIST_APP_CONNECTIONS)))
-          .addMethod(
-              getGetAppConnectionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.beyondcorp.appconnections.v1.GetAppConnectionRequest,
-                      com.google.cloud.beyondcorp.appconnections.v1.AppConnection>(
-                      this, METHODID_GET_APP_CONNECTION)))
-          .addMethod(
-              getCreateAppConnectionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.beyondcorp.appconnections.v1.CreateAppConnectionRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_APP_CONNECTION)))
-          .addMethod(
-              getUpdateAppConnectionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.beyondcorp.appconnections.v1.UpdateAppConnectionRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_APP_CONNECTION)))
-          .addMethod(
-              getDeleteAppConnectionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.beyondcorp.appconnections.v1.DeleteAppConnectionRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_APP_CONNECTION)))
-          .addMethod(
-              getResolveAppConnectionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.beyondcorp.appconnections.v1.ResolveAppConnectionsRequest,
-                      com.google.cloud.beyondcorp.appconnections.v1.ResolveAppConnectionsResponse>(
-                      this, METHODID_RESOLVE_APP_CONNECTIONS)))
-          .build();
+      return AppConnectionsServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service AppConnectionsService.
    *
    * <pre>
    * API Overview:
@@ -670,7 +649,7 @@ public final class AppConnectionsServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service AppConnectionsService.
    *
    * <pre>
    * API Overview:
@@ -781,7 +760,8 @@ public final class AppConnectionsServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * AppConnectionsService.
    *
    * <pre>
    * API Overview:
@@ -910,10 +890,10 @@ public final class AppConnectionsServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final AppConnectionsServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(AppConnectionsServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -972,6 +952,50 @@ public final class AppConnectionsServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListAppConnectionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.beyondcorp.appconnections.v1.ListAppConnectionsRequest,
+                    com.google.cloud.beyondcorp.appconnections.v1.ListAppConnectionsResponse>(
+                    service, METHODID_LIST_APP_CONNECTIONS)))
+        .addMethod(
+            getGetAppConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.beyondcorp.appconnections.v1.GetAppConnectionRequest,
+                    com.google.cloud.beyondcorp.appconnections.v1.AppConnection>(
+                    service, METHODID_GET_APP_CONNECTION)))
+        .addMethod(
+            getCreateAppConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.beyondcorp.appconnections.v1.CreateAppConnectionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_APP_CONNECTION)))
+        .addMethod(
+            getUpdateAppConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.beyondcorp.appconnections.v1.UpdateAppConnectionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_APP_CONNECTION)))
+        .addMethod(
+            getDeleteAppConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.beyondcorp.appconnections.v1.DeleteAppConnectionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_APP_CONNECTION)))
+        .addMethod(
+            getResolveAppConnectionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.beyondcorp.appconnections.v1.ResolveAppConnectionsRequest,
+                    com.google.cloud.beyondcorp.appconnections.v1.ResolveAppConnectionsResponse>(
+                    service, METHODID_RESOLVE_APP_CONNECTIONS)))
+        .build();
   }
 
   private abstract static class AppConnectionsServiceBaseDescriptorSupplier

@@ -440,11 +440,41 @@ public interface ComputeRoutesRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. The region code, specified as a ccTLD ("top-level domain")
+   * two-character value. For more information see
+   * https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains
+   * </pre>
+   *
+   * <code>string region_code = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The regionCode.
+   */
+  java.lang.String getRegionCode();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The region code, specified as a ccTLD ("top-level domain")
+   * two-character value. For more information see
+   * https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains
+   * </pre>
+   *
+   * <code>string region_code = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for regionCode.
+   */
+  com.google.protobuf.ByteString getRegionCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Specifies the units of measure for the display fields. This
-   * includes the `instruction` field in `NavigationInstruction`. The units of
-   * measure used for the route, leg, step distance, and duration are not
-   * affected by this value. If you don't provide this value, then the display
-   * units are inferred from the location of the request.
+   * includes the `instruction` field in
+   * [NavigationInstruction][google.maps.routing.v2.NavigationInstruction]. The
+   * units of measure used for the route, leg, step distance, and duration are
+   * not affected by this value. If you don't provide this value, then the
+   * display units are inferred from the location of the request.
    * </pre>
    *
    * <code>.google.maps.routing.v2.Units units = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -458,10 +488,11 @@ public interface ComputeRoutesRequestOrBuilder
    *
    * <pre>
    * Optional. Specifies the units of measure for the display fields. This
-   * includes the `instruction` field in `NavigationInstruction`. The units of
-   * measure used for the route, leg, step distance, and duration are not
-   * affected by this value. If you don't provide this value, then the display
-   * units are inferred from the location of the request.
+   * includes the `instruction` field in
+   * [NavigationInstruction][google.maps.routing.v2.NavigationInstruction]. The
+   * units of measure used for the route, leg, step distance, and duration are
+   * not affected by this value. If you don't provide this value, then the
+   * display units are inferred from the location of the request.
    * </pre>
    *
    * <code>.google.maps.routing.v2.Units units = 11 [(.google.api.field_behavior) = OPTIONAL];
@@ -478,7 +509,7 @@ public interface ComputeRoutesRequestOrBuilder
    * Optional. Specifies what reference routes to calculate as part of the
    * request in addition to the default route. A reference route is a route with
    * a different route calculation objective than the default route. For example
-   * an FUEL_EFFICIENT reference route calculation takes into account various
+   * a `FUEL_EFFICIENT` reference route calculation takes into account various
    * parameters that would generate an optimal fuel efficient route.
    * </pre>
    *
@@ -497,7 +528,7 @@ public interface ComputeRoutesRequestOrBuilder
    * Optional. Specifies what reference routes to calculate as part of the
    * request in addition to the default route. A reference route is a route with
    * a different route calculation objective than the default route. For example
-   * an FUEL_EFFICIENT reference route calculation takes into account various
+   * a `FUEL_EFFICIENT` reference route calculation takes into account various
    * parameters that would generate an optimal fuel efficient route.
    * </pre>
    *
@@ -515,7 +546,7 @@ public interface ComputeRoutesRequestOrBuilder
    * Optional. Specifies what reference routes to calculate as part of the
    * request in addition to the default route. A reference route is a route with
    * a different route calculation objective than the default route. For example
-   * an FUEL_EFFICIENT reference route calculation takes into account various
+   * a `FUEL_EFFICIENT` reference route calculation takes into account various
    * parameters that would generate an optimal fuel efficient route.
    * </pre>
    *
@@ -535,7 +566,7 @@ public interface ComputeRoutesRequestOrBuilder
    * Optional. Specifies what reference routes to calculate as part of the
    * request in addition to the default route. A reference route is a route with
    * a different route calculation objective than the default route. For example
-   * an FUEL_EFFICIENT reference route calculation takes into account various
+   * a `FUEL_EFFICIENT` reference route calculation takes into account various
    * parameters that would generate an optimal fuel efficient route.
    * </pre>
    *
@@ -553,7 +584,7 @@ public interface ComputeRoutesRequestOrBuilder
    * Optional. Specifies what reference routes to calculate as part of the
    * request in addition to the default route. A reference route is a route with
    * a different route calculation objective than the default route. For example
-   * an FUEL_EFFICIENT reference route calculation takes into account various
+   * a `FUEL_EFFICIENT` reference route calculation takes into account various
    * parameters that would generate an optimal fuel efficient route.
    * </pre>
    *

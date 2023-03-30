@@ -297,7 +297,7 @@ public final class UserEventServiceGrpc {
    * Service for ingesting end user actions on the customer website.
    * </pre>
    */
-  public abstract static class UserEventServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -306,7 +306,7 @@ public final class UserEventServiceGrpc {
      * Writes a single user event.
      * </pre>
      */
-    public void writeUserEvent(
+    default void writeUserEvent(
         com.google.cloud.retail.v2.WriteUserEventRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2.UserEvent> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -323,7 +323,7 @@ public final class UserEventServiceGrpc {
      * Manager. Users should not call this method directly.
      * </pre>
      */
-    public void collectUserEvent(
+    default void collectUserEvent(
         com.google.cloud.retail.v2.CollectUserEventRequest request,
         io.grpc.stub.StreamObserver<com.google.api.HttpBody> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -340,7 +340,7 @@ public final class UserEventServiceGrpc {
      * command first.
      * </pre>
      */
-    public void purgeUserEvents(
+    default void purgeUserEvents(
         com.google.cloud.retail.v2.PurgeUserEventsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -359,7 +359,7 @@ public final class UserEventServiceGrpc {
      * `Operation.metadata` is of type `ImportMetadata`.
      * </pre>
      */
-    public void importUserEvents(
+    default void importUserEvents(
         com.google.cloud.retail.v2.ImportUserEventsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -380,52 +380,32 @@ public final class UserEventServiceGrpc {
      * operation can take hours or days to complete.
      * </pre>
      */
-    public void rejoinUserEvents(
+    default void rejoinUserEvents(
         com.google.cloud.retail.v2.RejoinUserEventsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getRejoinUserEventsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service UserEventService.
+   *
+   * <pre>
+   * Service for ingesting end user actions on the customer website.
+   * </pre>
+   */
+  public abstract static class UserEventServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getWriteUserEventMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2.WriteUserEventRequest,
-                      com.google.cloud.retail.v2.UserEvent>(this, METHODID_WRITE_USER_EVENT)))
-          .addMethod(
-              getCollectUserEventMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2.CollectUserEventRequest, com.google.api.HttpBody>(
-                      this, METHODID_COLLECT_USER_EVENT)))
-          .addMethod(
-              getPurgeUserEventsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2.PurgeUserEventsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_PURGE_USER_EVENTS)))
-          .addMethod(
-              getImportUserEventsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2.ImportUserEventsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_IMPORT_USER_EVENTS)))
-          .addMethod(
-              getRejoinUserEventsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2.RejoinUserEventsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_REJOIN_USER_EVENTS)))
-          .build();
+      return UserEventServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service UserEventService.
    *
    * <pre>
    * Service for ingesting end user actions on the customer website.
@@ -542,7 +522,7 @@ public final class UserEventServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service UserEventService.
    *
    * <pre>
    * Service for ingesting end user actions on the customer website.
@@ -645,7 +625,7 @@ public final class UserEventServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service UserEventService.
    *
    * <pre>
    * Service for ingesting end user actions on the customer website.
@@ -758,10 +738,10 @@ public final class UserEventServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final UserEventServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(UserEventServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -809,6 +789,41 @@ public final class UserEventServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getWriteUserEventMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2.WriteUserEventRequest,
+                    com.google.cloud.retail.v2.UserEvent>(service, METHODID_WRITE_USER_EVENT)))
+        .addMethod(
+            getCollectUserEventMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2.CollectUserEventRequest, com.google.api.HttpBody>(
+                    service, METHODID_COLLECT_USER_EVENT)))
+        .addMethod(
+            getPurgeUserEventsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2.PurgeUserEventsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_PURGE_USER_EVENTS)))
+        .addMethod(
+            getImportUserEventsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2.ImportUserEventsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_IMPORT_USER_EVENTS)))
+        .addMethod(
+            getRejoinUserEventsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2.RejoinUserEventsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_REJOIN_USER_EVENTS)))
+        .build();
   }
 
   private abstract static class UserEventServiceBaseDescriptorSupplier

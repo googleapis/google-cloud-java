@@ -396,7 +396,7 @@ public final class ReachabilityServiceGrpc {
    * to troubleshoot connectivity issues.
    * </pre>
    */
-  public abstract static class ReachabilityServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -405,7 +405,7 @@ public final class ReachabilityServiceGrpc {
      * Lists all Connectivity Tests owned by a project.
      * </pre>
      */
-    public void listConnectivityTests(
+    default void listConnectivityTests(
         com.google.cloud.networkmanagement.v1.ListConnectivityTestsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.networkmanagement.v1.ListConnectivityTestsResponse>
@@ -421,7 +421,7 @@ public final class ReachabilityServiceGrpc {
      * Gets the details of a specific Connectivity Test.
      * </pre>
      */
-    public void getConnectivityTest(
+    default void getConnectivityTest(
         com.google.cloud.networkmanagement.v1.GetConnectivityTestRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.networkmanagement.v1.ConnectivityTest>
             responseObserver) {
@@ -446,7 +446,7 @@ public final class ReachabilityServiceGrpc {
      * see the Connectivity Test documentation.
      * </pre>
      */
-    public void createConnectivityTest(
+    default void createConnectivityTest(
         com.google.cloud.networkmanagement.v1.CreateConnectivityTestRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -471,7 +471,7 @@ public final class ReachabilityServiceGrpc {
      * in `ConnectivityTest` for for more details.
      * </pre>
      */
-    public void updateConnectivityTest(
+    default void updateConnectivityTest(
         com.google.cloud.networkmanagement.v1.UpdateConnectivityTestRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -494,7 +494,7 @@ public final class ReachabilityServiceGrpc {
      * the reachability result returns a value of `UNKNOWN`.
      * </pre>
      */
-    public void rerunConnectivityTest(
+    default void rerunConnectivityTest(
         com.google.cloud.networkmanagement.v1.RerunConnectivityTestRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -508,60 +508,38 @@ public final class ReachabilityServiceGrpc {
      * Deletes a specific `ConnectivityTest`.
      * </pre>
      */
-    public void deleteConnectivityTest(
+    default void deleteConnectivityTest(
         com.google.cloud.networkmanagement.v1.DeleteConnectivityTestRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteConnectivityTestMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ReachabilityService.
+   *
+   * <pre>
+   * The Reachability service in the Google Cloud Network Management API provides
+   * services that analyze the reachability within a single Google Virtual Private
+   * Cloud (VPC) network, between peered VPC networks, between VPC and on-premises
+   * networks, or between VPC networks and internet hosts. A reachability analysis
+   * is based on Google Cloud network configurations.
+   * You can use the analysis results to verify these configurations and
+   * to troubleshoot connectivity issues.
+   * </pre>
+   */
+  public abstract static class ReachabilityServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListConnectivityTestsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networkmanagement.v1.ListConnectivityTestsRequest,
-                      com.google.cloud.networkmanagement.v1.ListConnectivityTestsResponse>(
-                      this, METHODID_LIST_CONNECTIVITY_TESTS)))
-          .addMethod(
-              getGetConnectivityTestMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networkmanagement.v1.GetConnectivityTestRequest,
-                      com.google.cloud.networkmanagement.v1.ConnectivityTest>(
-                      this, METHODID_GET_CONNECTIVITY_TEST)))
-          .addMethod(
-              getCreateConnectivityTestMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networkmanagement.v1.CreateConnectivityTestRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_CONNECTIVITY_TEST)))
-          .addMethod(
-              getUpdateConnectivityTestMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networkmanagement.v1.UpdateConnectivityTestRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_CONNECTIVITY_TEST)))
-          .addMethod(
-              getRerunConnectivityTestMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networkmanagement.v1.RerunConnectivityTestRequest,
-                      com.google.longrunning.Operation>(this, METHODID_RERUN_CONNECTIVITY_TEST)))
-          .addMethod(
-              getDeleteConnectivityTestMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.networkmanagement.v1.DeleteConnectivityTestRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_CONNECTIVITY_TEST)))
-          .build();
+      return ReachabilityServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ReachabilityService.
    *
    * <pre>
    * The Reachability service in the Google Cloud Network Management API provides
@@ -716,7 +694,7 @@ public final class ReachabilityServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ReachabilityService.
    *
    * <pre>
    * The Reachability service in the Google Cloud Network Management API provides
@@ -852,7 +830,7 @@ public final class ReachabilityServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service ReachabilityService.
    *
    * <pre>
    * The Reachability service in the Google Cloud Network Management API provides
@@ -1006,10 +984,10 @@ public final class ReachabilityServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ReachabilityServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ReachabilityServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1065,6 +1043,49 @@ public final class ReachabilityServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListConnectivityTestsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkmanagement.v1.ListConnectivityTestsRequest,
+                    com.google.cloud.networkmanagement.v1.ListConnectivityTestsResponse>(
+                    service, METHODID_LIST_CONNECTIVITY_TESTS)))
+        .addMethod(
+            getGetConnectivityTestMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkmanagement.v1.GetConnectivityTestRequest,
+                    com.google.cloud.networkmanagement.v1.ConnectivityTest>(
+                    service, METHODID_GET_CONNECTIVITY_TEST)))
+        .addMethod(
+            getCreateConnectivityTestMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkmanagement.v1.CreateConnectivityTestRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_CONNECTIVITY_TEST)))
+        .addMethod(
+            getUpdateConnectivityTestMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkmanagement.v1.UpdateConnectivityTestRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_CONNECTIVITY_TEST)))
+        .addMethod(
+            getRerunConnectivityTestMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkmanagement.v1.RerunConnectivityTestRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RERUN_CONNECTIVITY_TEST)))
+        .addMethod(
+            getDeleteConnectivityTestMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkmanagement.v1.DeleteConnectivityTestRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_CONNECTIVITY_TEST)))
+        .build();
   }
 
   private abstract static class ReachabilityServiceBaseDescriptorSupplier

@@ -439,7 +439,7 @@ public final class JobsGrpc {
    * Cloud Run Job Control Plane API.
    * </pre>
    */
-  public abstract static class JobsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -448,7 +448,7 @@ public final class JobsGrpc {
      * Creates a Job.
      * </pre>
      */
-    public void createJob(
+    default void createJob(
         com.google.cloud.run.v2.CreateJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateJobMethod(), responseObserver);
@@ -461,7 +461,7 @@ public final class JobsGrpc {
      * Gets information about a Job.
      * </pre>
      */
-    public void getJob(
+    default void getJob(
         com.google.cloud.run.v2.GetJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.run.v2.Job> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetJobMethod(), responseObserver);
@@ -474,7 +474,7 @@ public final class JobsGrpc {
      * Lists Jobs.
      * </pre>
      */
-    public void listJobs(
+    default void listJobs(
         com.google.cloud.run.v2.ListJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.run.v2.ListJobsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListJobsMethod(), responseObserver);
@@ -487,7 +487,7 @@ public final class JobsGrpc {
      * Updates a Job.
      * </pre>
      */
-    public void updateJob(
+    default void updateJob(
         com.google.cloud.run.v2.UpdateJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateJobMethod(), responseObserver);
@@ -500,7 +500,7 @@ public final class JobsGrpc {
      * Deletes a Job.
      * </pre>
      */
-    public void deleteJob(
+    default void deleteJob(
         com.google.cloud.run.v2.DeleteJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteJobMethod(), responseObserver);
@@ -513,7 +513,7 @@ public final class JobsGrpc {
      * Triggers creation of a new Execution of this Job.
      * </pre>
      */
-    public void runJob(
+    default void runJob(
         com.google.cloud.run.v2.RunJobRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRunJobMethod(), responseObserver);
@@ -527,7 +527,7 @@ public final class JobsGrpc {
      * This result does not include any inherited policies.
      * </pre>
      */
-    public void getIamPolicy(
+    default void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -542,7 +542,7 @@ public final class JobsGrpc {
      * any existing policy.
      * </pre>
      */
-    public void setIamPolicy(
+    default void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -557,78 +557,32 @@ public final class JobsGrpc {
      * There are no permissions required for making this API call.
      * </pre>
      */
-    public void testIamPermissions(
+    default void testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getTestIamPermissionsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Jobs.
+   *
+   * <pre>
+   * Cloud Run Job Control Plane API.
+   * </pre>
+   */
+  public abstract static class JobsImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.run.v2.CreateJobRequest, com.google.longrunning.Operation>(
-                      this, METHODID_CREATE_JOB)))
-          .addMethod(
-              getGetJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.run.v2.GetJobRequest, com.google.cloud.run.v2.Job>(
-                      this, METHODID_GET_JOB)))
-          .addMethod(
-              getListJobsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.run.v2.ListJobsRequest,
-                      com.google.cloud.run.v2.ListJobsResponse>(this, METHODID_LIST_JOBS)))
-          .addMethod(
-              getUpdateJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.run.v2.UpdateJobRequest, com.google.longrunning.Operation>(
-                      this, METHODID_UPDATE_JOB)))
-          .addMethod(
-              getDeleteJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.run.v2.DeleteJobRequest, com.google.longrunning.Operation>(
-                      this, METHODID_DELETE_JOB)))
-          .addMethod(
-              getRunJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.run.v2.RunJobRequest, com.google.longrunning.Operation>(
-                      this, METHODID_RUN_JOB)))
-          .addMethod(
-              getGetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_GET_IAM_POLICY)))
-          .addMethod(
-              getSetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_SET_IAM_POLICY)))
-          .addMethod(
-              getTestIamPermissionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.TestIamPermissionsRequest,
-                      com.google.iam.v1.TestIamPermissionsResponse>(
-                      this, METHODID_TEST_IAM_PERMISSIONS)))
-          .build();
+      return JobsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Jobs.
    *
    * <pre>
    * Cloud Run Job Control Plane API.
@@ -782,7 +736,7 @@ public final class JobsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Jobs.
    *
    * <pre>
    * Cloud Run Job Control Plane API.
@@ -917,7 +871,7 @@ public final class JobsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Jobs.
    *
    * <pre>
    * Cloud Run Job Control Plane API.
@@ -1071,10 +1025,10 @@ public final class JobsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final JobsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(JobsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1144,6 +1098,64 @@ public final class JobsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.run.v2.CreateJobRequest, com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_JOB)))
+        .addMethod(
+            getGetJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.run.v2.GetJobRequest, com.google.cloud.run.v2.Job>(
+                    service, METHODID_GET_JOB)))
+        .addMethod(
+            getListJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.run.v2.ListJobsRequest,
+                    com.google.cloud.run.v2.ListJobsResponse>(service, METHODID_LIST_JOBS)))
+        .addMethod(
+            getUpdateJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.run.v2.UpdateJobRequest, com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_JOB)))
+        .addMethod(
+            getDeleteJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.run.v2.DeleteJobRequest, com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_JOB)))
+        .addMethod(
+            getRunJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.run.v2.RunJobRequest, com.google.longrunning.Operation>(
+                    service, METHODID_RUN_JOB)))
+        .addMethod(
+            getGetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_GET_IAM_POLICY)))
+        .addMethod(
+            getSetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_SET_IAM_POLICY)))
+        .addMethod(
+            getTestIamPermissionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.v1.TestIamPermissionsRequest,
+                    com.google.iam.v1.TestIamPermissionsResponse>(
+                    service, METHODID_TEST_IAM_PERMISSIONS)))
+        .build();
   }
 
   private abstract static class JobsBaseDescriptorSupplier

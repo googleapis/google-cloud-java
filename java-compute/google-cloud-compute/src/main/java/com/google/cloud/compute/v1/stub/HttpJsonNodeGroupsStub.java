@@ -53,6 +53,7 @@ import com.google.cloud.compute.v1.PatchNodeGroupRequest;
 import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.SetIamPolicyNodeGroupRequest;
 import com.google.cloud.compute.v1.SetNodeTemplateNodeGroupRequest;
+import com.google.cloud.compute.v1.SimulateMaintenanceEventNodeGroupRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsNodeGroupRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.protobuf.TypeRegistry;
@@ -686,6 +687,65 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<SimulateMaintenanceEventNodeGroupRequest, Operation>
+      simulateMaintenanceEventMethodDescriptor =
+          ApiMethodDescriptor.<SimulateMaintenanceEventNodeGroupRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.NodeGroups/SimulateMaintenanceEvent")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<SimulateMaintenanceEventNodeGroupRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/nodeGroups/{nodeGroup}/simulateMaintenanceEvent",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SimulateMaintenanceEventNodeGroupRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "nodeGroup", request.getNodeGroup());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SimulateMaintenanceEventNodeGroupRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "nodeGroupsSimulateMaintenanceEventRequestResource",
+                                      request
+                                          .getNodeGroupsSimulateMaintenanceEventRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (SimulateMaintenanceEventNodeGroupRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private static final ApiMethodDescriptor<
           TestIamPermissionsNodeGroupRequest, TestPermissionsResponse>
       testIamPermissionsMethodDescriptor =
@@ -759,6 +819,10 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
   private final UnaryCallable<SetNodeTemplateNodeGroupRequest, Operation> setNodeTemplateCallable;
   private final OperationCallable<SetNodeTemplateNodeGroupRequest, Operation, Operation>
       setNodeTemplateOperationCallable;
+  private final UnaryCallable<SimulateMaintenanceEventNodeGroupRequest, Operation>
+      simulateMaintenanceEventCallable;
+  private final OperationCallable<SimulateMaintenanceEventNodeGroupRequest, Operation, Operation>
+      simulateMaintenanceEventOperationCallable;
   private final UnaryCallable<TestIamPermissionsNodeGroupRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
 
@@ -869,6 +933,12 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
                 .setMethodDescriptor(setNodeTemplateMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<SimulateMaintenanceEventNodeGroupRequest, Operation>
+        simulateMaintenanceEventTransportSettings =
+            HttpJsonCallSettings.<SimulateMaintenanceEventNodeGroupRequest, Operation>newBuilder()
+                .setMethodDescriptor(simulateMaintenanceEventMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<TestIamPermissionsNodeGroupRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
             HttpJsonCallSettings
@@ -958,6 +1028,17 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
             settings.setNodeTemplateOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.simulateMaintenanceEventCallable =
+        callableFactory.createUnaryCallable(
+            simulateMaintenanceEventTransportSettings,
+            settings.simulateMaintenanceEventSettings(),
+            clientContext);
+    this.simulateMaintenanceEventOperationCallable =
+        callableFactory.createOperationCallable(
+            simulateMaintenanceEventTransportSettings,
+            settings.simulateMaintenanceEventOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.testIamPermissionsCallable =
         callableFactory.createUnaryCallable(
             testIamPermissionsTransportSettings,
@@ -983,6 +1064,7 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
     methodDescriptors.add(patchMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(setNodeTemplateMethodDescriptor);
+    methodDescriptors.add(simulateMaintenanceEventMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
   }
@@ -1096,6 +1178,18 @@ public class HttpJsonNodeGroupsStub extends NodeGroupsStub {
   public OperationCallable<SetNodeTemplateNodeGroupRequest, Operation, Operation>
       setNodeTemplateOperationCallable() {
     return setNodeTemplateOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SimulateMaintenanceEventNodeGroupRequest, Operation>
+      simulateMaintenanceEventCallable() {
+    return simulateMaintenanceEventCallable;
+  }
+
+  @Override
+  public OperationCallable<SimulateMaintenanceEventNodeGroupRequest, Operation, Operation>
+      simulateMaintenanceEventOperationCallable() {
+    return simulateMaintenanceEventOperationCallable;
   }
 
   @Override

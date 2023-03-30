@@ -133,7 +133,7 @@ public final class QueryServiceGrpc {
    * the time-varying values of a metric.
    * </pre>
    */
-  public abstract static class QueryServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -142,30 +142,35 @@ public final class QueryServiceGrpc {
      * Queries time series using Monitoring Query Language. This method does not require a Workspace.
      * </pre>
      */
-    public void queryTimeSeries(
+    default void queryTimeSeries(
         com.google.monitoring.v3.QueryTimeSeriesRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.QueryTimeSeriesResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getQueryTimeSeriesMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service QueryService.
+   *
+   * <pre>
+   * The QueryService API is used to manage time series data in Stackdriver
+   * Monitoring. Time series data is a collection of data points that describes
+   * the time-varying values of a metric.
+   * </pre>
+   */
+  public abstract static class QueryServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getQueryTimeSeriesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.QueryTimeSeriesRequest,
-                      com.google.monitoring.v3.QueryTimeSeriesResponse>(
-                      this, METHODID_QUERY_TIME_SERIES)))
-          .build();
+      return QueryServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service QueryService.
    *
    * <pre>
    * The QueryService API is used to manage time series data in Stackdriver
@@ -203,7 +208,7 @@ public final class QueryServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service QueryService.
    *
    * <pre>
    * The QueryService API is used to manage time series data in Stackdriver
@@ -238,7 +243,7 @@ public final class QueryServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service QueryService.
    *
    * <pre>
    * The QueryService API is used to manage time series data in Stackdriver
@@ -280,10 +285,10 @@ public final class QueryServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final QueryServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(QueryServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -312,6 +317,18 @@ public final class QueryServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getQueryTimeSeriesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.QueryTimeSeriesRequest,
+                    com.google.monitoring.v3.QueryTimeSeriesResponse>(
+                    service, METHODID_QUERY_TIME_SERIES)))
+        .build();
   }
 
   private abstract static class QueryServiceBaseDescriptorSupplier

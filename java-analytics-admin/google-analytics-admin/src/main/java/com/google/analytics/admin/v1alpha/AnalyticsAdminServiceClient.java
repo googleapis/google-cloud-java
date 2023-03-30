@@ -12424,6 +12424,432 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     return stub.listBigQueryLinksCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the enhanced measurement settings for this data stream. Note that the stream must
+   * enable enhanced measurement for these settings to take effect.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   EnhancedMeasurementSettingsName name =
+   *       EnhancedMeasurementSettingsName.of("[PROPERTY]", "[DATA_STREAM]");
+   *   EnhancedMeasurementSettings response =
+   *       analyticsAdminServiceClient.getEnhancedMeasurementSettings(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the settings to lookup. Format:
+   *     properties/{property}/dataStreams/{data_stream}/enhancedMeasurementSettings Example:
+   *     "properties/1000/dataStreams/2000/enhancedMeasurementSettings"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EnhancedMeasurementSettings getEnhancedMeasurementSettings(
+      EnhancedMeasurementSettingsName name) {
+    GetEnhancedMeasurementSettingsRequest request =
+        GetEnhancedMeasurementSettingsRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getEnhancedMeasurementSettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the enhanced measurement settings for this data stream. Note that the stream must
+   * enable enhanced measurement for these settings to take effect.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = EnhancedMeasurementSettingsName.of("[PROPERTY]", "[DATA_STREAM]").toString();
+   *   EnhancedMeasurementSettings response =
+   *       analyticsAdminServiceClient.getEnhancedMeasurementSettings(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the settings to lookup. Format:
+   *     properties/{property}/dataStreams/{data_stream}/enhancedMeasurementSettings Example:
+   *     "properties/1000/dataStreams/2000/enhancedMeasurementSettings"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EnhancedMeasurementSettings getEnhancedMeasurementSettings(String name) {
+    GetEnhancedMeasurementSettingsRequest request =
+        GetEnhancedMeasurementSettingsRequest.newBuilder().setName(name).build();
+    return getEnhancedMeasurementSettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the enhanced measurement settings for this data stream. Note that the stream must
+   * enable enhanced measurement for these settings to take effect.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetEnhancedMeasurementSettingsRequest request =
+   *       GetEnhancedMeasurementSettingsRequest.newBuilder()
+   *           .setName(EnhancedMeasurementSettingsName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+   *           .build();
+   *   EnhancedMeasurementSettings response =
+   *       analyticsAdminServiceClient.getEnhancedMeasurementSettings(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EnhancedMeasurementSettings getEnhancedMeasurementSettings(
+      GetEnhancedMeasurementSettingsRequest request) {
+    return getEnhancedMeasurementSettingsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the enhanced measurement settings for this data stream. Note that the stream must
+   * enable enhanced measurement for these settings to take effect.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetEnhancedMeasurementSettingsRequest request =
+   *       GetEnhancedMeasurementSettingsRequest.newBuilder()
+   *           .setName(EnhancedMeasurementSettingsName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+   *           .build();
+   *   ApiFuture<EnhancedMeasurementSettings> future =
+   *       analyticsAdminServiceClient.getEnhancedMeasurementSettingsCallable().futureCall(request);
+   *   // Do something.
+   *   EnhancedMeasurementSettings response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
+      getEnhancedMeasurementSettingsCallable() {
+    return stub.getEnhancedMeasurementSettingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the enhanced measurement settings for this data stream. Note that the stream must
+   * enable enhanced measurement for these settings to take effect.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   EnhancedMeasurementSettings enhancedMeasurementSettings =
+   *       EnhancedMeasurementSettings.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   EnhancedMeasurementSettings response =
+   *       analyticsAdminServiceClient.updateEnhancedMeasurementSettings(
+   *           enhancedMeasurementSettings, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param enhancedMeasurementSettings Required. The settings to update. The `name` field is used
+   *     to identify the settings to be updated.
+   * @param updateMask Required. The list of fields to be updated. Field names must be in snake case
+   *     (e.g., "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     entity, use one path with the string "&#42;" to match all fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EnhancedMeasurementSettings updateEnhancedMeasurementSettings(
+      EnhancedMeasurementSettings enhancedMeasurementSettings, FieldMask updateMask) {
+    UpdateEnhancedMeasurementSettingsRequest request =
+        UpdateEnhancedMeasurementSettingsRequest.newBuilder()
+            .setEnhancedMeasurementSettings(enhancedMeasurementSettings)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateEnhancedMeasurementSettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the enhanced measurement settings for this data stream. Note that the stream must
+   * enable enhanced measurement for these settings to take effect.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateEnhancedMeasurementSettingsRequest request =
+   *       UpdateEnhancedMeasurementSettingsRequest.newBuilder()
+   *           .setEnhancedMeasurementSettings(EnhancedMeasurementSettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   EnhancedMeasurementSettings response =
+   *       analyticsAdminServiceClient.updateEnhancedMeasurementSettings(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EnhancedMeasurementSettings updateEnhancedMeasurementSettings(
+      UpdateEnhancedMeasurementSettingsRequest request) {
+    return updateEnhancedMeasurementSettingsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the enhanced measurement settings for this data stream. Note that the stream must
+   * enable enhanced measurement for these settings to take effect.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateEnhancedMeasurementSettingsRequest request =
+   *       UpdateEnhancedMeasurementSettingsRequest.newBuilder()
+   *           .setEnhancedMeasurementSettings(EnhancedMeasurementSettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<EnhancedMeasurementSettings> future =
+   *       analyticsAdminServiceClient
+   *           .updateEnhancedMeasurementSettingsCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   EnhancedMeasurementSettings response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
+      updateEnhancedMeasurementSettingsCallable() {
+    return stub.updateEnhancedMeasurementSettingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a connected site tag for a Universal Analytics property. You can create a maximum of 20
+   * connected site tags per property. Note: This API cannot be used on GA4 properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateConnectedSiteTagRequest request =
+   *       CreateConnectedSiteTagRequest.newBuilder()
+   *           .setProperty("property-993141291")
+   *           .setConnectedSiteTag(ConnectedSiteTag.newBuilder().build())
+   *           .build();
+   *   CreateConnectedSiteTagResponse response =
+   *       analyticsAdminServiceClient.createConnectedSiteTag(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CreateConnectedSiteTagResponse createConnectedSiteTag(
+      CreateConnectedSiteTagRequest request) {
+    return createConnectedSiteTagCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a connected site tag for a Universal Analytics property. You can create a maximum of 20
+   * connected site tags per property. Note: This API cannot be used on GA4 properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateConnectedSiteTagRequest request =
+   *       CreateConnectedSiteTagRequest.newBuilder()
+   *           .setProperty("property-993141291")
+   *           .setConnectedSiteTag(ConnectedSiteTag.newBuilder().build())
+   *           .build();
+   *   ApiFuture<CreateConnectedSiteTagResponse> future =
+   *       analyticsAdminServiceClient.createConnectedSiteTagCallable().futureCall(request);
+   *   // Do something.
+   *   CreateConnectedSiteTagResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateConnectedSiteTagRequest, CreateConnectedSiteTagResponse>
+      createConnectedSiteTagCallable() {
+    return stub.createConnectedSiteTagCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a connected site tag for a Universal Analytics property. Note: this has no effect on
+   * GA4 properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteConnectedSiteTagRequest request =
+   *       DeleteConnectedSiteTagRequest.newBuilder()
+   *           .setProperty("property-993141291")
+   *           .setTagId("tagId110119509")
+   *           .build();
+   *   analyticsAdminServiceClient.deleteConnectedSiteTag(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteConnectedSiteTag(DeleteConnectedSiteTagRequest request) {
+    deleteConnectedSiteTagCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a connected site tag for a Universal Analytics property. Note: this has no effect on
+   * GA4 properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteConnectedSiteTagRequest request =
+   *       DeleteConnectedSiteTagRequest.newBuilder()
+   *           .setProperty("property-993141291")
+   *           .setTagId("tagId110119509")
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.deleteConnectedSiteTagCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteConnectedSiteTagRequest, Empty>
+      deleteConnectedSiteTagCallable() {
+    return stub.deleteConnectedSiteTagCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the connected site tags for a Universal Analytics property. A maximum of 20 connected
+   * site tags will be returned. Note: this has no effect on GA4 property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListConnectedSiteTagsRequest request =
+   *       ListConnectedSiteTagsRequest.newBuilder().setProperty("property-993141291").build();
+   *   ListConnectedSiteTagsResponse response =
+   *       analyticsAdminServiceClient.listConnectedSiteTags(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListConnectedSiteTagsResponse listConnectedSiteTags(
+      ListConnectedSiteTagsRequest request) {
+    return listConnectedSiteTagsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the connected site tags for a Universal Analytics property. A maximum of 20 connected
+   * site tags will be returned. Note: this has no effect on GA4 property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListConnectedSiteTagsRequest request =
+   *       ListConnectedSiteTagsRequest.newBuilder().setProperty("property-993141291").build();
+   *   ApiFuture<ListConnectedSiteTagsResponse> future =
+   *       analyticsAdminServiceClient.listConnectedSiteTagsCallable().futureCall(request);
+   *   // Do something.
+   *   ListConnectedSiteTagsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
+      listConnectedSiteTagsCallable() {
+    return stub.listConnectedSiteTagsCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();

@@ -500,10 +500,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The timestamp corresponding to the creation of this Key.
+   * Output only. The timestamp corresponding to the creation of this Key.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -515,10 +516,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The timestamp corresponding to the creation of this Key.
+   * Output only. The timestamp corresponding to the creation of this Key.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -530,10 +532,11 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The timestamp corresponding to the creation of this Key.
+   * Output only. The timestamp corresponding to the creation of this Key.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
@@ -2320,10 +2323,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The timestamp corresponding to the creation of this Key.
+     * Output only. The timestamp corresponding to the creation of this Key.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the createTime field is set.
      */
@@ -2334,10 +2339,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The timestamp corresponding to the creation of this Key.
+     * Output only. The timestamp corresponding to the creation of this Key.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The createTime.
      */
@@ -2354,10 +2361,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The timestamp corresponding to the creation of this Key.
+     * Output only. The timestamp corresponding to the creation of this Key.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -2376,10 +2385,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The timestamp corresponding to the creation of this Key.
+     * Output only. The timestamp corresponding to the creation of this Key.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
@@ -2395,10 +2406,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The timestamp corresponding to the creation of this Key.
+     * Output only. The timestamp corresponding to the creation of this Key.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -2420,10 +2433,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The timestamp corresponding to the creation of this Key.
+     * Output only. The timestamp corresponding to the creation of this Key.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearCreateTime() {
       bitField0_ = (bitField0_ & ~0x00000040);
@@ -2439,10 +2454,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The timestamp corresponding to the creation of this Key.
+     * Output only. The timestamp corresponding to the creation of this Key.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
       bitField0_ |= 0x00000040;
@@ -2453,10 +2470,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The timestamp corresponding to the creation of this Key.
+     * Output only. The timestamp corresponding to the creation of this Key.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -2471,10 +2490,12 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The timestamp corresponding to the creation of this Key.
+     * Output only. The timestamp corresponding to the creation of this Key.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,

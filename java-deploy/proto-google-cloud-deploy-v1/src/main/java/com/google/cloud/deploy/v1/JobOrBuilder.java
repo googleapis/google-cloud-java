@@ -79,8 +79,35 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the `JobRun` responsible for the most recent invocation of this
-   * Job.
+   * Output only. Additional information on why the Job was skipped, if
+   * available.
+   * </pre>
+   *
+   * <code>string skip_message = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The skipMessage.
+   */
+  java.lang.String getSkipMessage();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional information on why the Job was skipped, if
+   * available.
+   * </pre>
+   *
+   * <code>string skip_message = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for skipMessage.
+   */
+  com.google.protobuf.ByteString getSkipMessageBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the `JobRun` responsible for the most recent
+   * invocation of this Job.
    * </pre>
    *
    * <code>
@@ -94,8 +121,8 @@ public interface JobOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the `JobRun` responsible for the most recent invocation of this
-   * Job.
+   * Output only. The name of the `JobRun` responsible for the most recent
+   * invocation of this Job.
    * </pre>
    *
    * <code>
@@ -187,6 +214,88 @@ public interface JobOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.VerifyJobOrBuilder getVerifyJobOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A createChildRollout Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CreateChildRolloutJob create_child_rollout_job = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createChildRolloutJob field is set.
+   */
+  boolean hasCreateChildRolloutJob();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A createChildRollout Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CreateChildRolloutJob create_child_rollout_job = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createChildRolloutJob.
+   */
+  com.google.cloud.deploy.v1.CreateChildRolloutJob getCreateChildRolloutJob();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A createChildRollout Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.CreateChildRolloutJob create_child_rollout_job = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.CreateChildRolloutJobOrBuilder getCreateChildRolloutJobOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An advanceChildRollout Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.AdvanceChildRolloutJob advance_child_rollout_job = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the advanceChildRolloutJob field is set.
+   */
+  boolean hasAdvanceChildRolloutJob();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An advanceChildRollout Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.AdvanceChildRolloutJob advance_child_rollout_job = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The advanceChildRolloutJob.
+   */
+  com.google.cloud.deploy.v1.AdvanceChildRolloutJob getAdvanceChildRolloutJob();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An advanceChildRollout Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.AdvanceChildRolloutJob advance_child_rollout_job = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.AdvanceChildRolloutJobOrBuilder getAdvanceChildRolloutJobOrBuilder();
 
   public com.google.cloud.deploy.v1.Job.JobTypeCase getJobTypeCase();
 }

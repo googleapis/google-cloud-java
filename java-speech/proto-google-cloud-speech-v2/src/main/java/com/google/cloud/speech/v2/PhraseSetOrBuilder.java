@@ -135,7 +135,8 @@ public interface PhraseSetOrBuilder
    * phrase will be recognized over other similar sounding phrases. The higher
    * the boost, the higher the chance of false positive recognition as well.
    * Valid `boost` values are between 0 (exclusive) and 20. We recommend using a
-   * binary search approach to finding the optimal value for your use case.
+   * binary search approach to finding the optimal value for your use case as
+   * well as adding phrases both with and without boost to your requests.
    * </pre>
    *
    * <code>float boost = 4;</code>

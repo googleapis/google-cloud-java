@@ -659,7 +659,7 @@ public final class CatalogServiceGrpc {
    * Service for managing catalog configuration.
    * </pre>
    */
-  public abstract static class CatalogServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -669,7 +669,7 @@ public final class CatalogServiceGrpc {
      * with the project.
      * </pre>
      */
-    public void listCatalogs(
+    default void listCatalogs(
         com.google.cloud.retail.v2beta.ListCatalogsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2beta.ListCatalogsResponse>
             responseObserver) {
@@ -684,7 +684,7 @@ public final class CatalogServiceGrpc {
      * Updates the [Catalog][google.cloud.retail.v2beta.Catalog]s.
      * </pre>
      */
-    public void updateCatalog(
+    default void updateCatalog(
         com.google.cloud.retail.v2beta.UpdateCatalogRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2beta.Catalog> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -725,7 +725,7 @@ public final class CatalogServiceGrpc {
      *   {newBranch}.
      * </pre>
      */
-    public void setDefaultBranch(
+    default void setDefaultBranch(
         com.google.cloud.retail.v2beta.SetDefaultBranchRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -741,7 +741,7 @@ public final class CatalogServiceGrpc {
      * method under a specified parent catalog.
      * </pre>
      */
-    public void getDefaultBranch(
+    default void getDefaultBranch(
         com.google.cloud.retail.v2beta.GetDefaultBranchRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2beta.GetDefaultBranchResponse>
             responseObserver) {
@@ -756,7 +756,7 @@ public final class CatalogServiceGrpc {
      * Gets a [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig].
      * </pre>
      */
-    public void getCompletionConfig(
+    default void getCompletionConfig(
         com.google.cloud.retail.v2beta.GetCompletionConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2beta.CompletionConfig>
             responseObserver) {
@@ -772,7 +772,7 @@ public final class CatalogServiceGrpc {
      * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig]s.
      * </pre>
      */
-    public void updateCompletionConfig(
+    default void updateCompletionConfig(
         com.google.cloud.retail.v2beta.UpdateCompletionConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2beta.CompletionConfig>
             responseObserver) {
@@ -787,7 +787,7 @@ public final class CatalogServiceGrpc {
      * Gets an [AttributesConfig][google.cloud.retail.v2beta.AttributesConfig].
      * </pre>
      */
-    public void getAttributesConfig(
+    default void getAttributesConfig(
         com.google.cloud.retail.v2beta.GetAttributesConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2beta.AttributesConfig>
             responseObserver) {
@@ -809,7 +809,7 @@ public final class CatalogServiceGrpc {
      * catalog attribute fields, e.g., searchable and dynamic facetable options.
      * </pre>
      */
-    public void updateAttributesConfig(
+    default void updateAttributesConfig(
         com.google.cloud.retail.v2beta.UpdateAttributesConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2beta.AttributesConfig>
             responseObserver) {
@@ -828,7 +828,7 @@ public final class CatalogServiceGrpc {
      * add already exists, an ALREADY_EXISTS error is returned.
      * </pre>
      */
-    public void addCatalogAttribute(
+    default void addCatalogAttribute(
         com.google.cloud.retail.v2beta.AddCatalogAttributeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2beta.AttributesConfig>
             responseObserver) {
@@ -847,7 +847,7 @@ public final class CatalogServiceGrpc {
      * remove does not exist, a NOT_FOUND error is returned.
      * </pre>
      */
-    public void removeCatalogAttribute(
+    default void removeCatalogAttribute(
         com.google.cloud.retail.v2beta.RemoveCatalogAttributeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2beta.AttributesConfig>
             responseObserver) {
@@ -864,7 +864,7 @@ public final class CatalogServiceGrpc {
      * [AttributesConfig][google.cloud.retail.v2beta.AttributesConfig].
      * </pre>
      */
-    public void batchRemoveCatalogAttributes(
+    default void batchRemoveCatalogAttributes(
         com.google.cloud.retail.v2beta.BatchRemoveCatalogAttributesRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.retail.v2beta.BatchRemoveCatalogAttributesResponse>
@@ -886,105 +886,33 @@ public final class CatalogServiceGrpc {
      * replace does not exist, a NOT_FOUND error is returned.
      * </pre>
      */
-    public void replaceCatalogAttribute(
+    default void replaceCatalogAttribute(
         com.google.cloud.retail.v2beta.ReplaceCatalogAttributeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2beta.AttributesConfig>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getReplaceCatalogAttributeMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service CatalogService.
+   *
+   * <pre>
+   * Service for managing catalog configuration.
+   * </pre>
+   */
+  public abstract static class CatalogServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListCatalogsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2beta.ListCatalogsRequest,
-                      com.google.cloud.retail.v2beta.ListCatalogsResponse>(
-                      this, METHODID_LIST_CATALOGS)))
-          .addMethod(
-              getUpdateCatalogMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2beta.UpdateCatalogRequest,
-                      com.google.cloud.retail.v2beta.Catalog>(this, METHODID_UPDATE_CATALOG)))
-          .addMethod(
-              getSetDefaultBranchMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2beta.SetDefaultBranchRequest,
-                      com.google.protobuf.Empty>(this, METHODID_SET_DEFAULT_BRANCH)))
-          .addMethod(
-              getGetDefaultBranchMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2beta.GetDefaultBranchRequest,
-                      com.google.cloud.retail.v2beta.GetDefaultBranchResponse>(
-                      this, METHODID_GET_DEFAULT_BRANCH)))
-          .addMethod(
-              getGetCompletionConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2beta.GetCompletionConfigRequest,
-                      com.google.cloud.retail.v2beta.CompletionConfig>(
-                      this, METHODID_GET_COMPLETION_CONFIG)))
-          .addMethod(
-              getUpdateCompletionConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2beta.UpdateCompletionConfigRequest,
-                      com.google.cloud.retail.v2beta.CompletionConfig>(
-                      this, METHODID_UPDATE_COMPLETION_CONFIG)))
-          .addMethod(
-              getGetAttributesConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2beta.GetAttributesConfigRequest,
-                      com.google.cloud.retail.v2beta.AttributesConfig>(
-                      this, METHODID_GET_ATTRIBUTES_CONFIG)))
-          .addMethod(
-              getUpdateAttributesConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2beta.UpdateAttributesConfigRequest,
-                      com.google.cloud.retail.v2beta.AttributesConfig>(
-                      this, METHODID_UPDATE_ATTRIBUTES_CONFIG)))
-          .addMethod(
-              getAddCatalogAttributeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2beta.AddCatalogAttributeRequest,
-                      com.google.cloud.retail.v2beta.AttributesConfig>(
-                      this, METHODID_ADD_CATALOG_ATTRIBUTE)))
-          .addMethod(
-              getRemoveCatalogAttributeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2beta.RemoveCatalogAttributeRequest,
-                      com.google.cloud.retail.v2beta.AttributesConfig>(
-                      this, METHODID_REMOVE_CATALOG_ATTRIBUTE)))
-          .addMethod(
-              getBatchRemoveCatalogAttributesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2beta.BatchRemoveCatalogAttributesRequest,
-                      com.google.cloud.retail.v2beta.BatchRemoveCatalogAttributesResponse>(
-                      this, METHODID_BATCH_REMOVE_CATALOG_ATTRIBUTES)))
-          .addMethod(
-              getReplaceCatalogAttributeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2beta.ReplaceCatalogAttributeRequest,
-                      com.google.cloud.retail.v2beta.AttributesConfig>(
-                      this, METHODID_REPLACE_CATALOG_ATTRIBUTE)))
-          .build();
+      return CatalogServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service CatalogService.
    *
    * <pre>
    * Service for managing catalog configuration.
@@ -1260,7 +1188,7 @@ public final class CatalogServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service CatalogService.
    *
    * <pre>
    * Service for managing catalog configuration.
@@ -1491,7 +1419,7 @@ public final class CatalogServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service CatalogService.
    *
    * <pre>
    * Service for managing catalog configuration.
@@ -1754,10 +1682,10 @@ public final class CatalogServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final CatalogServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(CatalogServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1852,6 +1780,93 @@ public final class CatalogServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListCatalogsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2beta.ListCatalogsRequest,
+                    com.google.cloud.retail.v2beta.ListCatalogsResponse>(
+                    service, METHODID_LIST_CATALOGS)))
+        .addMethod(
+            getUpdateCatalogMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2beta.UpdateCatalogRequest,
+                    com.google.cloud.retail.v2beta.Catalog>(service, METHODID_UPDATE_CATALOG)))
+        .addMethod(
+            getSetDefaultBranchMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2beta.SetDefaultBranchRequest,
+                    com.google.protobuf.Empty>(service, METHODID_SET_DEFAULT_BRANCH)))
+        .addMethod(
+            getGetDefaultBranchMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2beta.GetDefaultBranchRequest,
+                    com.google.cloud.retail.v2beta.GetDefaultBranchResponse>(
+                    service, METHODID_GET_DEFAULT_BRANCH)))
+        .addMethod(
+            getGetCompletionConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2beta.GetCompletionConfigRequest,
+                    com.google.cloud.retail.v2beta.CompletionConfig>(
+                    service, METHODID_GET_COMPLETION_CONFIG)))
+        .addMethod(
+            getUpdateCompletionConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2beta.UpdateCompletionConfigRequest,
+                    com.google.cloud.retail.v2beta.CompletionConfig>(
+                    service, METHODID_UPDATE_COMPLETION_CONFIG)))
+        .addMethod(
+            getGetAttributesConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2beta.GetAttributesConfigRequest,
+                    com.google.cloud.retail.v2beta.AttributesConfig>(
+                    service, METHODID_GET_ATTRIBUTES_CONFIG)))
+        .addMethod(
+            getUpdateAttributesConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2beta.UpdateAttributesConfigRequest,
+                    com.google.cloud.retail.v2beta.AttributesConfig>(
+                    service, METHODID_UPDATE_ATTRIBUTES_CONFIG)))
+        .addMethod(
+            getAddCatalogAttributeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2beta.AddCatalogAttributeRequest,
+                    com.google.cloud.retail.v2beta.AttributesConfig>(
+                    service, METHODID_ADD_CATALOG_ATTRIBUTE)))
+        .addMethod(
+            getRemoveCatalogAttributeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2beta.RemoveCatalogAttributeRequest,
+                    com.google.cloud.retail.v2beta.AttributesConfig>(
+                    service, METHODID_REMOVE_CATALOG_ATTRIBUTE)))
+        .addMethod(
+            getBatchRemoveCatalogAttributesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2beta.BatchRemoveCatalogAttributesRequest,
+                    com.google.cloud.retail.v2beta.BatchRemoveCatalogAttributesResponse>(
+                    service, METHODID_BATCH_REMOVE_CATALOG_ATTRIBUTES)))
+        .addMethod(
+            getReplaceCatalogAttributeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2beta.ReplaceCatalogAttributeRequest,
+                    com.google.cloud.retail.v2beta.AttributesConfig>(
+                    service, METHODID_REPLACE_CATALOG_ATTRIBUTE)))
+        .build();
   }
 
   private abstract static class CatalogServiceBaseDescriptorSupplier

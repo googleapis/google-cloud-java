@@ -279,13 +279,16 @@ public final class ServiceProto {
           + "1/{name=projects/*/locations/*/channels/"
           + "*/events/*}\332A\004name\032M\312A\031livestream.google"
           + "apis.com\322A.https://www.googleapis.com/au"
-          + "th/cloud-platformB\351\001\n$com.google.cloud.v"
+          + "th/cloud-platformB\320\002\n$com.google.cloud.v"
           + "ideo.livestream.v1B\014ServiceProtoP\001ZDclou"
           + "d.google.com/go/video/livestream/apiv1/l"
           + "ivestreampb;livestreampb\252\002 Google.Cloud."
           + "Video.LiveStream.V1\312\002 Google\\Cloud\\Video"
           + "\\LiveStream\\V1\352\002$Google::Cloud::Video::L"
-          + "iveStream::V1b\006proto3"
+          + "iveStream::V1\352Ad\n*secretmanager.googleap"
+          + "is.com/SecretVersion\0226projects/{project}"
+          + "/secrets/{secret}/versions/{version}b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -474,6 +477,7 @@ public final class ServiceProto {
     registry.add(com.google.api.AnnotationsProto.http);
     registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
     registry.add(com.google.longrunning.OperationsProto.operationInfo);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(

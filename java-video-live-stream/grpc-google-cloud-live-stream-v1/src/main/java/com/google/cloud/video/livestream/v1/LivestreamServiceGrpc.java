@@ -819,7 +819,7 @@ public final class LivestreamServiceGrpc {
    * Protocol (RTMP) and Secure Reliable Transport (SRT).
    * </pre>
    */
-  public abstract static class LivestreamServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -829,7 +829,7 @@ public final class LivestreamServiceGrpc {
      * region.
      * </pre>
      */
-    public void createChannel(
+    default void createChannel(
         com.google.cloud.video.livestream.v1.CreateChannelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -843,7 +843,7 @@ public final class LivestreamServiceGrpc {
      * Returns a list of all channels in the specified region.
      * </pre>
      */
-    public void listChannels(
+    default void listChannels(
         com.google.cloud.video.livestream.v1.ListChannelsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.video.livestream.v1.ListChannelsResponse>
             responseObserver) {
@@ -858,7 +858,7 @@ public final class LivestreamServiceGrpc {
      * Returns the specified channel.
      * </pre>
      */
-    public void getChannel(
+    default void getChannel(
         com.google.cloud.video.livestream.v1.GetChannelRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.video.livestream.v1.Channel>
             responseObserver) {
@@ -872,7 +872,7 @@ public final class LivestreamServiceGrpc {
      * Deletes the specified channel.
      * </pre>
      */
-    public void deleteChannel(
+    default void deleteChannel(
         com.google.cloud.video.livestream.v1.DeleteChannelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -886,7 +886,7 @@ public final class LivestreamServiceGrpc {
      * Updates the specified channel.
      * </pre>
      */
-    public void updateChannel(
+    default void updateChannel(
         com.google.cloud.video.livestream.v1.UpdateChannelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -901,7 +901,7 @@ public final class LivestreamServiceGrpc {
      * only when the StartChannel request is received by the server.
      * </pre>
      */
-    public void startChannel(
+    default void startChannel(
         com.google.cloud.video.livestream.v1.StartChannelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -916,7 +916,7 @@ public final class LivestreamServiceGrpc {
      * when the StopChannel request is received by the server.
      * </pre>
      */
-    public void stopChannel(
+    default void stopChannel(
         com.google.cloud.video.livestream.v1.StopChannelRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -930,7 +930,7 @@ public final class LivestreamServiceGrpc {
      * Creates an input with the provided unique ID in the specified region.
      * </pre>
      */
-    public void createInput(
+    default void createInput(
         com.google.cloud.video.livestream.v1.CreateInputRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -944,7 +944,7 @@ public final class LivestreamServiceGrpc {
      * Returns a list of all inputs in the specified region.
      * </pre>
      */
-    public void listInputs(
+    default void listInputs(
         com.google.cloud.video.livestream.v1.ListInputsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.video.livestream.v1.ListInputsResponse>
             responseObserver) {
@@ -958,7 +958,7 @@ public final class LivestreamServiceGrpc {
      * Returns the specified input.
      * </pre>
      */
-    public void getInput(
+    default void getInput(
         com.google.cloud.video.livestream.v1.GetInputRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.video.livestream.v1.Input> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetInputMethod(), responseObserver);
@@ -971,7 +971,7 @@ public final class LivestreamServiceGrpc {
      * Deletes the specified input.
      * </pre>
      */
-    public void deleteInput(
+    default void deleteInput(
         com.google.cloud.video.livestream.v1.DeleteInputRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -985,7 +985,7 @@ public final class LivestreamServiceGrpc {
      * Updates the specified input.
      * </pre>
      */
-    public void updateInput(
+    default void updateInput(
         com.google.cloud.video.livestream.v1.UpdateInputRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -999,7 +999,7 @@ public final class LivestreamServiceGrpc {
      * Creates an event with the provided unique ID in the specified channel.
      * </pre>
      */
-    public void createEvent(
+    default void createEvent(
         com.google.cloud.video.livestream.v1.CreateEventRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.video.livestream.v1.Event> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1013,7 +1013,7 @@ public final class LivestreamServiceGrpc {
      * Returns a list of all events in the specified channel.
      * </pre>
      */
-    public void listEvents(
+    default void listEvents(
         com.google.cloud.video.livestream.v1.ListEventsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.video.livestream.v1.ListEventsResponse>
             responseObserver) {
@@ -1027,7 +1027,7 @@ public final class LivestreamServiceGrpc {
      * Returns the specified event.
      * </pre>
      */
-    public void getEvent(
+    default void getEvent(
         com.google.cloud.video.livestream.v1.GetEventRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.video.livestream.v1.Event> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetEventMethod(), responseObserver);
@@ -1040,121 +1040,36 @@ public final class LivestreamServiceGrpc {
      * Deletes the specified event.
      * </pre>
      */
-    public void deleteEvent(
+    default void deleteEvent(
         com.google.cloud.video.livestream.v1.DeleteEventRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteEventMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service LivestreamService.
+   *
+   * <pre>
+   * Using Live Stream API, you can generate live streams in the various
+   * renditions and streaming formats. The streaming format include HTTP Live
+   * Streaming (HLS) and Dynamic Adaptive Streaming over HTTP (DASH). You can send
+   * a source stream in the various ways, including Real-Time Messaging
+   * Protocol (RTMP) and Secure Reliable Transport (SRT).
+   * </pre>
+   */
+  public abstract static class LivestreamServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateChannelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.video.livestream.v1.CreateChannelRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_CHANNEL)))
-          .addMethod(
-              getListChannelsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.video.livestream.v1.ListChannelsRequest,
-                      com.google.cloud.video.livestream.v1.ListChannelsResponse>(
-                      this, METHODID_LIST_CHANNELS)))
-          .addMethod(
-              getGetChannelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.video.livestream.v1.GetChannelRequest,
-                      com.google.cloud.video.livestream.v1.Channel>(this, METHODID_GET_CHANNEL)))
-          .addMethod(
-              getDeleteChannelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.video.livestream.v1.DeleteChannelRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_CHANNEL)))
-          .addMethod(
-              getUpdateChannelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.video.livestream.v1.UpdateChannelRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_CHANNEL)))
-          .addMethod(
-              getStartChannelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.video.livestream.v1.StartChannelRequest,
-                      com.google.longrunning.Operation>(this, METHODID_START_CHANNEL)))
-          .addMethod(
-              getStopChannelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.video.livestream.v1.StopChannelRequest,
-                      com.google.longrunning.Operation>(this, METHODID_STOP_CHANNEL)))
-          .addMethod(
-              getCreateInputMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.video.livestream.v1.CreateInputRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_INPUT)))
-          .addMethod(
-              getListInputsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.video.livestream.v1.ListInputsRequest,
-                      com.google.cloud.video.livestream.v1.ListInputsResponse>(
-                      this, METHODID_LIST_INPUTS)))
-          .addMethod(
-              getGetInputMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.video.livestream.v1.GetInputRequest,
-                      com.google.cloud.video.livestream.v1.Input>(this, METHODID_GET_INPUT)))
-          .addMethod(
-              getDeleteInputMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.video.livestream.v1.DeleteInputRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_INPUT)))
-          .addMethod(
-              getUpdateInputMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.video.livestream.v1.UpdateInputRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_INPUT)))
-          .addMethod(
-              getCreateEventMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.video.livestream.v1.CreateEventRequest,
-                      com.google.cloud.video.livestream.v1.Event>(this, METHODID_CREATE_EVENT)))
-          .addMethod(
-              getListEventsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.video.livestream.v1.ListEventsRequest,
-                      com.google.cloud.video.livestream.v1.ListEventsResponse>(
-                      this, METHODID_LIST_EVENTS)))
-          .addMethod(
-              getGetEventMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.video.livestream.v1.GetEventRequest,
-                      com.google.cloud.video.livestream.v1.Event>(this, METHODID_GET_EVENT)))
-          .addMethod(
-              getDeleteEventMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.video.livestream.v1.DeleteEventRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_EVENT)))
-          .build();
+      return LivestreamServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service LivestreamService.
    *
    * <pre>
    * Using Live Stream API, you can generate live streams in the various
@@ -1431,7 +1346,7 @@ public final class LivestreamServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service LivestreamService.
    *
    * <pre>
    * Using Live Stream API, you can generate live streams in the various
@@ -1667,7 +1582,7 @@ public final class LivestreamServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service LivestreamService.
    *
    * <pre>
    * Using Live Stream API, you can generate live streams in the various
@@ -1930,10 +1845,10 @@ public final class LivestreamServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final LivestreamServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(LivestreamServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -2044,6 +1959,110 @@ public final class LivestreamServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateChannelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.CreateChannelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_CHANNEL)))
+        .addMethod(
+            getListChannelsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.ListChannelsRequest,
+                    com.google.cloud.video.livestream.v1.ListChannelsResponse>(
+                    service, METHODID_LIST_CHANNELS)))
+        .addMethod(
+            getGetChannelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.GetChannelRequest,
+                    com.google.cloud.video.livestream.v1.Channel>(service, METHODID_GET_CHANNEL)))
+        .addMethod(
+            getDeleteChannelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.DeleteChannelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_CHANNEL)))
+        .addMethod(
+            getUpdateChannelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.UpdateChannelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_CHANNEL)))
+        .addMethod(
+            getStartChannelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.StartChannelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_START_CHANNEL)))
+        .addMethod(
+            getStopChannelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.StopChannelRequest,
+                    com.google.longrunning.Operation>(service, METHODID_STOP_CHANNEL)))
+        .addMethod(
+            getCreateInputMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.CreateInputRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_INPUT)))
+        .addMethod(
+            getListInputsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.ListInputsRequest,
+                    com.google.cloud.video.livestream.v1.ListInputsResponse>(
+                    service, METHODID_LIST_INPUTS)))
+        .addMethod(
+            getGetInputMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.GetInputRequest,
+                    com.google.cloud.video.livestream.v1.Input>(service, METHODID_GET_INPUT)))
+        .addMethod(
+            getDeleteInputMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.DeleteInputRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_INPUT)))
+        .addMethod(
+            getUpdateInputMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.UpdateInputRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_INPUT)))
+        .addMethod(
+            getCreateEventMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.CreateEventRequest,
+                    com.google.cloud.video.livestream.v1.Event>(service, METHODID_CREATE_EVENT)))
+        .addMethod(
+            getListEventsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.ListEventsRequest,
+                    com.google.cloud.video.livestream.v1.ListEventsResponse>(
+                    service, METHODID_LIST_EVENTS)))
+        .addMethod(
+            getGetEventMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.GetEventRequest,
+                    com.google.cloud.video.livestream.v1.Event>(service, METHODID_GET_EVENT)))
+        .addMethod(
+            getDeleteEventMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.DeleteEventRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_EVENT)))
+        .build();
   }
 
   private abstract static class LivestreamServiceBaseDescriptorSupplier

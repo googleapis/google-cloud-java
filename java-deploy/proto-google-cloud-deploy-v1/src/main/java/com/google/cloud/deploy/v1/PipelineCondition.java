@@ -122,7 +122,7 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Detalis around targets enumerated in the pipeline.
+   * Details around targets enumerated in the pipeline.
    * </pre>
    *
    * <code>.google.cloud.deploy.v1.TargetsPresentCondition targets_present_condition = 3;</code>
@@ -137,7 +137,7 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Detalis around targets enumerated in the pipeline.
+   * Details around targets enumerated in the pipeline.
    * </pre>
    *
    * <code>.google.cloud.deploy.v1.TargetsPresentCondition targets_present_condition = 3;</code>
@@ -154,7 +154,7 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Detalis around targets enumerated in the pipeline.
+   * Details around targets enumerated in the pipeline.
    * </pre>
    *
    * <code>.google.cloud.deploy.v1.TargetsPresentCondition targets_present_condition = 3;</code>
@@ -165,6 +165,60 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
     return targetsPresentCondition_ == null
         ? com.google.cloud.deploy.v1.TargetsPresentCondition.getDefaultInstance()
         : targetsPresentCondition_;
+  }
+
+  public static final int TARGETS_TYPE_CONDITION_FIELD_NUMBER = 4;
+  private com.google.cloud.deploy.v1.TargetsTypeCondition targetsTypeCondition_;
+  /**
+   *
+   *
+   * <pre>
+   * Details on the whether the targets enumerated in the pipeline are of the
+   * same type.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.TargetsTypeCondition targets_type_condition = 4;</code>
+   *
+   * @return Whether the targetsTypeCondition field is set.
+   */
+  @java.lang.Override
+  public boolean hasTargetsTypeCondition() {
+    return targetsTypeCondition_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details on the whether the targets enumerated in the pipeline are of the
+   * same type.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.TargetsTypeCondition targets_type_condition = 4;</code>
+   *
+   * @return The targetsTypeCondition.
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.TargetsTypeCondition getTargetsTypeCondition() {
+    return targetsTypeCondition_ == null
+        ? com.google.cloud.deploy.v1.TargetsTypeCondition.getDefaultInstance()
+        : targetsTypeCondition_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details on the whether the targets enumerated in the pipeline are of the
+   * same type.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.TargetsTypeCondition targets_type_condition = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.TargetsTypeConditionOrBuilder
+      getTargetsTypeConditionOrBuilder() {
+    return targetsTypeCondition_ == null
+        ? com.google.cloud.deploy.v1.TargetsTypeCondition.getDefaultInstance()
+        : targetsTypeCondition_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -187,6 +241,9 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
     if (targetsPresentCondition_ != null) {
       output.writeMessage(3, getTargetsPresentCondition());
     }
+    if (targetsTypeCondition_ != null) {
+      output.writeMessage(4, getTargetsTypeCondition());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -203,6 +260,10 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
     if (targetsPresentCondition_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(3, getTargetsPresentCondition());
+    }
+    if (targetsTypeCondition_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(4, getTargetsTypeCondition());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -228,6 +289,10 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
     if (hasTargetsPresentCondition()) {
       if (!getTargetsPresentCondition().equals(other.getTargetsPresentCondition())) return false;
     }
+    if (hasTargetsTypeCondition() != other.hasTargetsTypeCondition()) return false;
+    if (hasTargetsTypeCondition()) {
+      if (!getTargetsTypeCondition().equals(other.getTargetsTypeCondition())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -246,6 +311,10 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
     if (hasTargetsPresentCondition()) {
       hash = (37 * hash) + TARGETS_PRESENT_CONDITION_FIELD_NUMBER;
       hash = (53 * hash) + getTargetsPresentCondition().hashCode();
+    }
+    if (hasTargetsTypeCondition()) {
+      hash = (37 * hash) + TARGETS_TYPE_CONDITION_FIELD_NUMBER;
+      hash = (53 * hash) + getTargetsTypeCondition().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -396,6 +465,11 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
         targetsPresentConditionBuilder_.dispose();
         targetsPresentConditionBuilder_ = null;
       }
+      targetsTypeCondition_ = null;
+      if (targetsTypeConditionBuilder_ != null) {
+        targetsTypeConditionBuilder_.dispose();
+        targetsTypeConditionBuilder_ = null;
+      }
       return this;
     }
 
@@ -443,6 +517,12 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
             targetsPresentConditionBuilder_ == null
                 ? targetsPresentCondition_
                 : targetsPresentConditionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.targetsTypeCondition_ =
+            targetsTypeConditionBuilder_ == null
+                ? targetsTypeCondition_
+                : targetsTypeConditionBuilder_.build();
       }
     }
 
@@ -497,6 +577,9 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
       if (other.hasTargetsPresentCondition()) {
         mergeTargetsPresentCondition(other.getTargetsPresentCondition());
       }
+      if (other.hasTargetsTypeCondition()) {
+        mergeTargetsTypeCondition(other.getTargetsTypeCondition());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -537,6 +620,13 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000002;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getTargetsTypeConditionFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -755,7 +845,7 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Detalis around targets enumerated in the pipeline.
+     * Details around targets enumerated in the pipeline.
      * </pre>
      *
      * <code>.google.cloud.deploy.v1.TargetsPresentCondition targets_present_condition = 3;</code>
@@ -769,7 +859,7 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Detalis around targets enumerated in the pipeline.
+     * Details around targets enumerated in the pipeline.
      * </pre>
      *
      * <code>.google.cloud.deploy.v1.TargetsPresentCondition targets_present_condition = 3;</code>
@@ -789,7 +879,7 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Detalis around targets enumerated in the pipeline.
+     * Details around targets enumerated in the pipeline.
      * </pre>
      *
      * <code>.google.cloud.deploy.v1.TargetsPresentCondition targets_present_condition = 3;</code>
@@ -812,7 +902,7 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Detalis around targets enumerated in the pipeline.
+     * Details around targets enumerated in the pipeline.
      * </pre>
      *
      * <code>.google.cloud.deploy.v1.TargetsPresentCondition targets_present_condition = 3;</code>
@@ -832,7 +922,7 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Detalis around targets enumerated in the pipeline.
+     * Details around targets enumerated in the pipeline.
      * </pre>
      *
      * <code>.google.cloud.deploy.v1.TargetsPresentCondition targets_present_condition = 3;</code>
@@ -859,7 +949,7 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Detalis around targets enumerated in the pipeline.
+     * Details around targets enumerated in the pipeline.
      * </pre>
      *
      * <code>.google.cloud.deploy.v1.TargetsPresentCondition targets_present_condition = 3;</code>
@@ -878,7 +968,7 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Detalis around targets enumerated in the pipeline.
+     * Details around targets enumerated in the pipeline.
      * </pre>
      *
      * <code>.google.cloud.deploy.v1.TargetsPresentCondition targets_present_condition = 3;</code>
@@ -893,7 +983,7 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Detalis around targets enumerated in the pipeline.
+     * Details around targets enumerated in the pipeline.
      * </pre>
      *
      * <code>.google.cloud.deploy.v1.TargetsPresentCondition targets_present_condition = 3;</code>
@@ -912,7 +1002,7 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Detalis around targets enumerated in the pipeline.
+     * Details around targets enumerated in the pipeline.
      * </pre>
      *
      * <code>.google.cloud.deploy.v1.TargetsPresentCondition targets_present_condition = 3;</code>
@@ -932,6 +1022,203 @@ public final class PipelineCondition extends com.google.protobuf.GeneratedMessag
         targetsPresentCondition_ = null;
       }
       return targetsPresentConditionBuilder_;
+    }
+
+    private com.google.cloud.deploy.v1.TargetsTypeCondition targetsTypeCondition_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.TargetsTypeCondition,
+            com.google.cloud.deploy.v1.TargetsTypeCondition.Builder,
+            com.google.cloud.deploy.v1.TargetsTypeConditionOrBuilder>
+        targetsTypeConditionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Details on the whether the targets enumerated in the pipeline are of the
+     * same type.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.TargetsTypeCondition targets_type_condition = 4;</code>
+     *
+     * @return Whether the targetsTypeCondition field is set.
+     */
+    public boolean hasTargetsTypeCondition() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details on the whether the targets enumerated in the pipeline are of the
+     * same type.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.TargetsTypeCondition targets_type_condition = 4;</code>
+     *
+     * @return The targetsTypeCondition.
+     */
+    public com.google.cloud.deploy.v1.TargetsTypeCondition getTargetsTypeCondition() {
+      if (targetsTypeConditionBuilder_ == null) {
+        return targetsTypeCondition_ == null
+            ? com.google.cloud.deploy.v1.TargetsTypeCondition.getDefaultInstance()
+            : targetsTypeCondition_;
+      } else {
+        return targetsTypeConditionBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details on the whether the targets enumerated in the pipeline are of the
+     * same type.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.TargetsTypeCondition targets_type_condition = 4;</code>
+     */
+    public Builder setTargetsTypeCondition(com.google.cloud.deploy.v1.TargetsTypeCondition value) {
+      if (targetsTypeConditionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        targetsTypeCondition_ = value;
+      } else {
+        targetsTypeConditionBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details on the whether the targets enumerated in the pipeline are of the
+     * same type.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.TargetsTypeCondition targets_type_condition = 4;</code>
+     */
+    public Builder setTargetsTypeCondition(
+        com.google.cloud.deploy.v1.TargetsTypeCondition.Builder builderForValue) {
+      if (targetsTypeConditionBuilder_ == null) {
+        targetsTypeCondition_ = builderForValue.build();
+      } else {
+        targetsTypeConditionBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details on the whether the targets enumerated in the pipeline are of the
+     * same type.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.TargetsTypeCondition targets_type_condition = 4;</code>
+     */
+    public Builder mergeTargetsTypeCondition(
+        com.google.cloud.deploy.v1.TargetsTypeCondition value) {
+      if (targetsTypeConditionBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && targetsTypeCondition_ != null
+            && targetsTypeCondition_
+                != com.google.cloud.deploy.v1.TargetsTypeCondition.getDefaultInstance()) {
+          getTargetsTypeConditionBuilder().mergeFrom(value);
+        } else {
+          targetsTypeCondition_ = value;
+        }
+      } else {
+        targetsTypeConditionBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details on the whether the targets enumerated in the pipeline are of the
+     * same type.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.TargetsTypeCondition targets_type_condition = 4;</code>
+     */
+    public Builder clearTargetsTypeCondition() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      targetsTypeCondition_ = null;
+      if (targetsTypeConditionBuilder_ != null) {
+        targetsTypeConditionBuilder_.dispose();
+        targetsTypeConditionBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details on the whether the targets enumerated in the pipeline are of the
+     * same type.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.TargetsTypeCondition targets_type_condition = 4;</code>
+     */
+    public com.google.cloud.deploy.v1.TargetsTypeCondition.Builder
+        getTargetsTypeConditionBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getTargetsTypeConditionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details on the whether the targets enumerated in the pipeline are of the
+     * same type.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.TargetsTypeCondition targets_type_condition = 4;</code>
+     */
+    public com.google.cloud.deploy.v1.TargetsTypeConditionOrBuilder
+        getTargetsTypeConditionOrBuilder() {
+      if (targetsTypeConditionBuilder_ != null) {
+        return targetsTypeConditionBuilder_.getMessageOrBuilder();
+      } else {
+        return targetsTypeCondition_ == null
+            ? com.google.cloud.deploy.v1.TargetsTypeCondition.getDefaultInstance()
+            : targetsTypeCondition_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details on the whether the targets enumerated in the pipeline are of the
+     * same type.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.TargetsTypeCondition targets_type_condition = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.TargetsTypeCondition,
+            com.google.cloud.deploy.v1.TargetsTypeCondition.Builder,
+            com.google.cloud.deploy.v1.TargetsTypeConditionOrBuilder>
+        getTargetsTypeConditionFieldBuilder() {
+      if (targetsTypeConditionBuilder_ == null) {
+        targetsTypeConditionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.deploy.v1.TargetsTypeCondition,
+                com.google.cloud.deploy.v1.TargetsTypeCondition.Builder,
+                com.google.cloud.deploy.v1.TargetsTypeConditionOrBuilder>(
+                getTargetsTypeCondition(), getParentForChildren(), isClean());
+        targetsTypeCondition_ = null;
+      }
+      return targetsTypeConditionBuilder_;
     }
 
     @java.lang.Override

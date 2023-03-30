@@ -62,7 +62,7 @@ public interface PipelineConditionOrBuilder
    *
    *
    * <pre>
-   * Detalis around targets enumerated in the pipeline.
+   * Details around targets enumerated in the pipeline.
    * </pre>
    *
    * <code>.google.cloud.deploy.v1.TargetsPresentCondition targets_present_condition = 3;</code>
@@ -74,7 +74,7 @@ public interface PipelineConditionOrBuilder
    *
    *
    * <pre>
-   * Detalis around targets enumerated in the pipeline.
+   * Details around targets enumerated in the pipeline.
    * </pre>
    *
    * <code>.google.cloud.deploy.v1.TargetsPresentCondition targets_present_condition = 3;</code>
@@ -86,10 +86,48 @@ public interface PipelineConditionOrBuilder
    *
    *
    * <pre>
-   * Detalis around targets enumerated in the pipeline.
+   * Details around targets enumerated in the pipeline.
    * </pre>
    *
    * <code>.google.cloud.deploy.v1.TargetsPresentCondition targets_present_condition = 3;</code>
    */
   com.google.cloud.deploy.v1.TargetsPresentConditionOrBuilder getTargetsPresentConditionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details on the whether the targets enumerated in the pipeline are of the
+   * same type.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.TargetsTypeCondition targets_type_condition = 4;</code>
+   *
+   * @return Whether the targetsTypeCondition field is set.
+   */
+  boolean hasTargetsTypeCondition();
+  /**
+   *
+   *
+   * <pre>
+   * Details on the whether the targets enumerated in the pipeline are of the
+   * same type.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.TargetsTypeCondition targets_type_condition = 4;</code>
+   *
+   * @return The targetsTypeCondition.
+   */
+  com.google.cloud.deploy.v1.TargetsTypeCondition getTargetsTypeCondition();
+  /**
+   *
+   *
+   * <pre>
+   * Details on the whether the targets enumerated in the pipeline are of the
+   * same type.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.TargetsTypeCondition targets_type_condition = 4;</code>
+   */
+  com.google.cloud.deploy.v1.TargetsTypeConditionOrBuilder getTargetsTypeConditionOrBuilder();
 }

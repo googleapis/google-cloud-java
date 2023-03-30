@@ -431,7 +431,7 @@ public final class ClusterControllerGrpc {
    * of Compute Engine instances.
    * </pre>
    */
-  public abstract static class ClusterControllerImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -442,7 +442,7 @@ public final class ClusterControllerGrpc {
      * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
      * </pre>
      */
-    public void createCluster(
+    default void createCluster(
         com.google.cloud.dataproc.v1.CreateClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -461,7 +461,7 @@ public final class ClusterControllerGrpc {
      * is returned.
      * </pre>
      */
-    public void updateCluster(
+    default void updateCluster(
         com.google.cloud.dataproc.v1.UpdateClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -475,7 +475,7 @@ public final class ClusterControllerGrpc {
      * Stops a cluster in a project.
      * </pre>
      */
-    public void stopCluster(
+    default void stopCluster(
         com.google.cloud.dataproc.v1.StopClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -489,7 +489,7 @@ public final class ClusterControllerGrpc {
      * Starts a cluster in a project.
      * </pre>
      */
-    public void startCluster(
+    default void startCluster(
         com.google.cloud.dataproc.v1.StartClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -505,7 +505,7 @@ public final class ClusterControllerGrpc {
      * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
      * </pre>
      */
-    public void deleteCluster(
+    default void deleteCluster(
         com.google.cloud.dataproc.v1.DeleteClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -519,7 +519,7 @@ public final class ClusterControllerGrpc {
      * Gets the resource representation for a cluster in a project.
      * </pre>
      */
-    public void getCluster(
+    default void getCluster(
         com.google.cloud.dataproc.v1.GetClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1.Cluster> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetClusterMethod(), responseObserver);
@@ -532,7 +532,7 @@ public final class ClusterControllerGrpc {
      * Lists all regions/{region}/clusters in a project alphabetically.
      * </pre>
      */
-    public void listClusters(
+    default void listClusters(
         com.google.cloud.dataproc.v1.ListClustersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataproc.v1.ListClustersResponse>
             responseObserver) {
@@ -553,71 +553,33 @@ public final class ClusterControllerGrpc {
      * [DiagnoseClusterResults](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
      * </pre>
      */
-    public void diagnoseCluster(
+    default void diagnoseCluster(
         com.google.cloud.dataproc.v1.DiagnoseClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDiagnoseClusterMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ClusterController.
+   *
+   * <pre>
+   * The ClusterControllerService provides methods to manage clusters
+   * of Compute Engine instances.
+   * </pre>
+   */
+  public abstract static class ClusterControllerImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataproc.v1.CreateClusterRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_CLUSTER)))
-          .addMethod(
-              getUpdateClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataproc.v1.UpdateClusterRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_CLUSTER)))
-          .addMethod(
-              getStopClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataproc.v1.StopClusterRequest,
-                      com.google.longrunning.Operation>(this, METHODID_STOP_CLUSTER)))
-          .addMethod(
-              getStartClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataproc.v1.StartClusterRequest,
-                      com.google.longrunning.Operation>(this, METHODID_START_CLUSTER)))
-          .addMethod(
-              getDeleteClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataproc.v1.DeleteClusterRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_CLUSTER)))
-          .addMethod(
-              getGetClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataproc.v1.GetClusterRequest,
-                      com.google.cloud.dataproc.v1.Cluster>(this, METHODID_GET_CLUSTER)))
-          .addMethod(
-              getListClustersMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataproc.v1.ListClustersRequest,
-                      com.google.cloud.dataproc.v1.ListClustersResponse>(
-                      this, METHODID_LIST_CLUSTERS)))
-          .addMethod(
-              getDiagnoseClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataproc.v1.DiagnoseClusterRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DIAGNOSE_CLUSTER)))
-          .build();
+      return ClusterControllerGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ClusterController.
    *
    * <pre>
    * The ClusterControllerService provides methods to manage clusters
@@ -780,7 +742,7 @@ public final class ClusterControllerGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ClusterController.
    *
    * <pre>
    * The ClusterControllerService provides methods to manage clusters
@@ -921,7 +883,7 @@ public final class ClusterControllerGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service ClusterController.
    *
    * <pre>
    * The ClusterControllerService provides methods to manage clusters
@@ -1075,10 +1037,10 @@ public final class ClusterControllerGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ClusterControllerImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ClusterControllerImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1142,6 +1104,60 @@ public final class ClusterControllerGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataproc.v1.CreateClusterRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_CLUSTER)))
+        .addMethod(
+            getUpdateClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataproc.v1.UpdateClusterRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_CLUSTER)))
+        .addMethod(
+            getStopClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataproc.v1.StopClusterRequest,
+                    com.google.longrunning.Operation>(service, METHODID_STOP_CLUSTER)))
+        .addMethod(
+            getStartClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataproc.v1.StartClusterRequest,
+                    com.google.longrunning.Operation>(service, METHODID_START_CLUSTER)))
+        .addMethod(
+            getDeleteClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataproc.v1.DeleteClusterRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_CLUSTER)))
+        .addMethod(
+            getGetClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataproc.v1.GetClusterRequest,
+                    com.google.cloud.dataproc.v1.Cluster>(service, METHODID_GET_CLUSTER)))
+        .addMethod(
+            getListClustersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataproc.v1.ListClustersRequest,
+                    com.google.cloud.dataproc.v1.ListClustersResponse>(
+                    service, METHODID_LIST_CLUSTERS)))
+        .addMethod(
+            getDiagnoseClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataproc.v1.DiagnoseClusterRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DIAGNOSE_CLUSTER)))
+        .build();
   }
 
   private abstract static class ClusterControllerBaseDescriptorSupplier

@@ -29,7 +29,7 @@ public interface RouteModifiersOrBuilder
    * <pre>
    * Specifies whether to avoid toll roads where reasonable. Preference will be
    * given to routes not containing toll roads. Applies only to the `DRIVE` and
-   * `TWO_WHEELER` travel modes.
+   * `TWO_WHEELER` [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
    * </pre>
    *
    * <code>bool avoid_tolls = 1;</code>
@@ -44,7 +44,7 @@ public interface RouteModifiersOrBuilder
    * <pre>
    * Specifies whether to avoid highways where reasonable. Preference will be
    * given to routes not containing highways. Applies only to the `DRIVE` and
-   * `TWO_WHEELER` travel modes.
+   * `TWO_WHEELER` [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
    * </pre>
    *
    * <code>bool avoid_highways = 2;</code>
@@ -59,7 +59,8 @@ public interface RouteModifiersOrBuilder
    * <pre>
    * Specifies whether to avoid ferries where reasonable. Preference will be
    * given to routes not containing travel by ferries.
-   * Applies only to the `DRIVE` and`TWO_WHEELER` travel modes.
+   * Applies only to the `DRIVE` and`TWO_WHEELER`
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
    * </pre>
    *
    * <code>bool avoid_ferries = 3;</code>
@@ -74,7 +75,8 @@ public interface RouteModifiersOrBuilder
    * <pre>
    * Specifies whether to avoid navigating indoors where reasonable. Preference
    * will be given to routes not containing indoor navigation.
-   * Applies only to the `WALK` travel mode.
+   * Applies only to the `WALK`
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
    * </pre>
    *
    * <code>bool avoid_indoor = 4;</code>
@@ -126,7 +128,8 @@ public interface RouteModifiersOrBuilder
    * If toll passes are provided, the API tries to return the pass price. If
    * toll passes are not provided, the API treats the toll pass as unknown and
    * tries to return the cash price.
-   * Applies only to the DRIVE and TWO_WHEELER travel modes.
+   * Applies only to the `DRIVE` and `TWO_WHEELER`
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
    * </pre>
    *
    * <code>repeated .google.maps.routing.v2.TollPass toll_passes = 6;</code>
@@ -142,7 +145,8 @@ public interface RouteModifiersOrBuilder
    * If toll passes are provided, the API tries to return the pass price. If
    * toll passes are not provided, the API treats the toll pass as unknown and
    * tries to return the cash price.
-   * Applies only to the DRIVE and TWO_WHEELER travel modes.
+   * Applies only to the `DRIVE` and `TWO_WHEELER`
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
    * </pre>
    *
    * <code>repeated .google.maps.routing.v2.TollPass toll_passes = 6;</code>
@@ -158,7 +162,8 @@ public interface RouteModifiersOrBuilder
    * If toll passes are provided, the API tries to return the pass price. If
    * toll passes are not provided, the API treats the toll pass as unknown and
    * tries to return the cash price.
-   * Applies only to the DRIVE and TWO_WHEELER travel modes.
+   * Applies only to the `DRIVE` and `TWO_WHEELER`
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
    * </pre>
    *
    * <code>repeated .google.maps.routing.v2.TollPass toll_passes = 6;</code>
@@ -175,7 +180,8 @@ public interface RouteModifiersOrBuilder
    * If toll passes are provided, the API tries to return the pass price. If
    * toll passes are not provided, the API treats the toll pass as unknown and
    * tries to return the cash price.
-   * Applies only to the DRIVE and TWO_WHEELER travel modes.
+   * Applies only to the `DRIVE` and `TWO_WHEELER`
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
    * </pre>
    *
    * <code>repeated .google.maps.routing.v2.TollPass toll_passes = 6;</code>
@@ -191,7 +197,8 @@ public interface RouteModifiersOrBuilder
    * If toll passes are provided, the API tries to return the pass price. If
    * toll passes are not provided, the API treats the toll pass as unknown and
    * tries to return the cash price.
-   * Applies only to the DRIVE and TWO_WHEELER travel modes.
+   * Applies only to the `DRIVE` and `TWO_WHEELER`
+   * [RouteTravelMode][google.maps.routing.v2.RouteTravelMode].
    * </pre>
    *
    * <code>repeated .google.maps.routing.v2.TollPass toll_passes = 6;</code>

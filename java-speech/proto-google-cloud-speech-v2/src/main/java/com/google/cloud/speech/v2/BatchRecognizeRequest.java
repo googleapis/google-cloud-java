@@ -281,6 +281,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Audio files with file metadata for ASR.
+   * The maximum number of files allowed to be specified is 5.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -294,6 +295,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Audio files with file metadata for ASR.
+   * The maximum number of files allowed to be specified is 5.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -308,6 +310,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Audio files with file metadata for ASR.
+   * The maximum number of files allowed to be specified is 5.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -321,6 +324,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Audio files with file metadata for ASR.
+   * The maximum number of files allowed to be specified is 5.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -334,6 +338,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Audio files with file metadata for ASR.
+   * The maximum number of files allowed to be specified is 5.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -342,6 +347,57 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
   public com.google.cloud.speech.v2.BatchRecognizeFileMetadataOrBuilder getFilesOrBuilder(
       int index) {
     return files_.get(index);
+  }
+
+  public static final int RECOGNITION_OUTPUT_CONFIG_FIELD_NUMBER = 6;
+  private com.google.cloud.speech.v2.RecognitionOutputConfig recognitionOutputConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for where to output the transcripts of each file.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v2.RecognitionOutputConfig recognition_output_config = 6;</code>
+   *
+   * @return Whether the recognitionOutputConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasRecognitionOutputConfig() {
+    return recognitionOutputConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for where to output the transcripts of each file.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v2.RecognitionOutputConfig recognition_output_config = 6;</code>
+   *
+   * @return The recognitionOutputConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v2.RecognitionOutputConfig getRecognitionOutputConfig() {
+    return recognitionOutputConfig_ == null
+        ? com.google.cloud.speech.v2.RecognitionOutputConfig.getDefaultInstance()
+        : recognitionOutputConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration options for where to output the transcripts of each file.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v2.RecognitionOutputConfig recognition_output_config = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v2.RecognitionOutputConfigOrBuilder
+      getRecognitionOutputConfigOrBuilder() {
+    return recognitionOutputConfig_ == null
+        ? com.google.cloud.speech.v2.RecognitionOutputConfig.getDefaultInstance()
+        : recognitionOutputConfig_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -370,6 +426,9 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
     if (configMask_ != null) {
       output.writeMessage(5, getConfigMask());
     }
+    if (recognitionOutputConfig_ != null) {
+      output.writeMessage(6, getRecognitionOutputConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -390,6 +449,10 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
     }
     if (configMask_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getConfigMask());
+    }
+    if (recognitionOutputConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(6, getRecognitionOutputConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -417,6 +480,10 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
       if (!getConfigMask().equals(other.getConfigMask())) return false;
     }
     if (!getFilesList().equals(other.getFilesList())) return false;
+    if (hasRecognitionOutputConfig() != other.hasRecognitionOutputConfig()) return false;
+    if (hasRecognitionOutputConfig()) {
+      if (!getRecognitionOutputConfig().equals(other.getRecognitionOutputConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -441,6 +508,10 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
     if (getFilesCount() > 0) {
       hash = (37 * hash) + FILES_FIELD_NUMBER;
       hash = (53 * hash) + getFilesList().hashCode();
+    }
+    if (hasRecognitionOutputConfig()) {
+      hash = (37 * hash) + RECOGNITION_OUTPUT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getRecognitionOutputConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -601,6 +672,11 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
         filesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000008);
+      recognitionOutputConfig_ = null;
+      if (recognitionOutputConfigBuilder_ != null) {
+        recognitionOutputConfigBuilder_.dispose();
+        recognitionOutputConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -659,6 +735,12 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.configMask_ = configMaskBuilder_ == null ? configMask_ : configMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.recognitionOutputConfig_ =
+            recognitionOutputConfigBuilder_ == null
+                ? recognitionOutputConfig_
+                : recognitionOutputConfigBuilder_.build();
       }
     }
 
@@ -746,6 +828,9 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
           }
         }
       }
+      if (other.hasRecognitionOutputConfig()) {
+        mergeRecognitionOutputConfig(other.getRecognitionOutputConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -804,6 +889,13 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000004;
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getRecognitionOutputConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1480,6 +1572,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
+     * The maximum number of files allowed to be specified is 5.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -1496,6 +1589,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
+     * The maximum number of files allowed to be specified is 5.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -1512,6 +1606,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
+     * The maximum number of files allowed to be specified is 5.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -1528,6 +1623,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
+     * The maximum number of files allowed to be specified is 5.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -1551,6 +1647,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
+     * The maximum number of files allowed to be specified is 5.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -1571,6 +1668,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
+     * The maximum number of files allowed to be specified is 5.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -1593,6 +1691,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
+     * The maximum number of files allowed to be specified is 5.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -1616,6 +1715,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
+     * The maximum number of files allowed to be specified is 5.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -1636,6 +1736,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
+     * The maximum number of files allowed to be specified is 5.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -1656,6 +1757,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
+     * The maximum number of files allowed to be specified is 5.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -1677,6 +1779,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
+     * The maximum number of files allowed to be specified is 5.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -1696,6 +1799,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
+     * The maximum number of files allowed to be specified is 5.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -1715,6 +1819,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
+     * The maximum number of files allowed to be specified is 5.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -1728,6 +1833,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
+     * The maximum number of files allowed to be specified is 5.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -1745,6 +1851,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
+     * The maximum number of files allowed to be specified is 5.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -1762,6 +1869,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
+     * The maximum number of files allowed to be specified is 5.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -1775,6 +1883,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
+     * The maximum number of files allowed to be specified is 5.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -1790,6 +1899,7 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Audio files with file metadata for ASR.
+     * The maximum number of files allowed to be specified is 5.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.BatchRecognizeFileMetadata files = 3;</code>
@@ -1814,6 +1924,195 @@ public final class BatchRecognizeRequest extends com.google.protobuf.GeneratedMe
         files_ = null;
       }
       return filesBuilder_;
+    }
+
+    private com.google.cloud.speech.v2.RecognitionOutputConfig recognitionOutputConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v2.RecognitionOutputConfig,
+            com.google.cloud.speech.v2.RecognitionOutputConfig.Builder,
+            com.google.cloud.speech.v2.RecognitionOutputConfigOrBuilder>
+        recognitionOutputConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for where to output the transcripts of each file.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v2.RecognitionOutputConfig recognition_output_config = 6;</code>
+     *
+     * @return Whether the recognitionOutputConfig field is set.
+     */
+    public boolean hasRecognitionOutputConfig() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for where to output the transcripts of each file.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v2.RecognitionOutputConfig recognition_output_config = 6;</code>
+     *
+     * @return The recognitionOutputConfig.
+     */
+    public com.google.cloud.speech.v2.RecognitionOutputConfig getRecognitionOutputConfig() {
+      if (recognitionOutputConfigBuilder_ == null) {
+        return recognitionOutputConfig_ == null
+            ? com.google.cloud.speech.v2.RecognitionOutputConfig.getDefaultInstance()
+            : recognitionOutputConfig_;
+      } else {
+        return recognitionOutputConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for where to output the transcripts of each file.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v2.RecognitionOutputConfig recognition_output_config = 6;</code>
+     */
+    public Builder setRecognitionOutputConfig(
+        com.google.cloud.speech.v2.RecognitionOutputConfig value) {
+      if (recognitionOutputConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        recognitionOutputConfig_ = value;
+      } else {
+        recognitionOutputConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for where to output the transcripts of each file.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v2.RecognitionOutputConfig recognition_output_config = 6;</code>
+     */
+    public Builder setRecognitionOutputConfig(
+        com.google.cloud.speech.v2.RecognitionOutputConfig.Builder builderForValue) {
+      if (recognitionOutputConfigBuilder_ == null) {
+        recognitionOutputConfig_ = builderForValue.build();
+      } else {
+        recognitionOutputConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for where to output the transcripts of each file.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v2.RecognitionOutputConfig recognition_output_config = 6;</code>
+     */
+    public Builder mergeRecognitionOutputConfig(
+        com.google.cloud.speech.v2.RecognitionOutputConfig value) {
+      if (recognitionOutputConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && recognitionOutputConfig_ != null
+            && recognitionOutputConfig_
+                != com.google.cloud.speech.v2.RecognitionOutputConfig.getDefaultInstance()) {
+          getRecognitionOutputConfigBuilder().mergeFrom(value);
+        } else {
+          recognitionOutputConfig_ = value;
+        }
+      } else {
+        recognitionOutputConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for where to output the transcripts of each file.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v2.RecognitionOutputConfig recognition_output_config = 6;</code>
+     */
+    public Builder clearRecognitionOutputConfig() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      recognitionOutputConfig_ = null;
+      if (recognitionOutputConfigBuilder_ != null) {
+        recognitionOutputConfigBuilder_.dispose();
+        recognitionOutputConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for where to output the transcripts of each file.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v2.RecognitionOutputConfig recognition_output_config = 6;</code>
+     */
+    public com.google.cloud.speech.v2.RecognitionOutputConfig.Builder
+        getRecognitionOutputConfigBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getRecognitionOutputConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for where to output the transcripts of each file.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v2.RecognitionOutputConfig recognition_output_config = 6;</code>
+     */
+    public com.google.cloud.speech.v2.RecognitionOutputConfigOrBuilder
+        getRecognitionOutputConfigOrBuilder() {
+      if (recognitionOutputConfigBuilder_ != null) {
+        return recognitionOutputConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return recognitionOutputConfig_ == null
+            ? com.google.cloud.speech.v2.RecognitionOutputConfig.getDefaultInstance()
+            : recognitionOutputConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration options for where to output the transcripts of each file.
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v2.RecognitionOutputConfig recognition_output_config = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v2.RecognitionOutputConfig,
+            com.google.cloud.speech.v2.RecognitionOutputConfig.Builder,
+            com.google.cloud.speech.v2.RecognitionOutputConfigOrBuilder>
+        getRecognitionOutputConfigFieldBuilder() {
+      if (recognitionOutputConfigBuilder_ == null) {
+        recognitionOutputConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.speech.v2.RecognitionOutputConfig,
+                com.google.cloud.speech.v2.RecognitionOutputConfig.Builder,
+                com.google.cloud.speech.v2.RecognitionOutputConfigOrBuilder>(
+                getRecognitionOutputConfig(), getParentForChildren(), isClean());
+        recognitionOutputConfig_ = null;
+      }
+      return recognitionOutputConfigBuilder_;
     }
 
     @java.lang.Override

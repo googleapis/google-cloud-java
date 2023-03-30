@@ -72,6 +72,8 @@ import com.google.analytics.admin.v1alpha.ChangeHistoryEvent;
 import com.google.analytics.admin.v1alpha.ConversionEvent;
 import com.google.analytics.admin.v1alpha.CreateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.CreateAudienceRequest;
+import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest;
+import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse;
 import com.google.analytics.admin.v1alpha.CreateConversionEventRequest;
 import com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.CreateCustomMetricRequest;
@@ -92,6 +94,7 @@ import com.google.analytics.admin.v1alpha.DataSharingSettings;
 import com.google.analytics.admin.v1alpha.DataStream;
 import com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
+import com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest;
 import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
 import com.google.analytics.admin.v1alpha.DeleteDataStreamRequest;
 import com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest;
@@ -105,6 +108,7 @@ import com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal;
+import com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings;
 import com.google.analytics.admin.v1alpha.ExpandedDataSet;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse;
@@ -122,6 +126,7 @@ import com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetDataStreamRequest;
 import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkProposalRequest;
 import com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest;
+import com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
 import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
@@ -142,6 +147,8 @@ import com.google.analytics.admin.v1alpha.ListAudiencesRequest;
 import com.google.analytics.admin.v1alpha.ListAudiencesResponse;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse;
+import com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest;
+import com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse;
 import com.google.analytics.admin.v1alpha.ListConversionEventsRequest;
 import com.google.analytics.admin.v1alpha.ListConversionEventsResponse;
 import com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest;
@@ -188,6 +195,7 @@ import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest;
+import com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
@@ -510,6 +518,18 @@ public class AnalyticsAdminServiceStubSettings
   private final PagedCallSettings<
           ListBigQueryLinksRequest, ListBigQueryLinksResponse, ListBigQueryLinksPagedResponse>
       listBigQueryLinksSettings;
+  private final UnaryCallSettings<
+          GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
+      getEnhancedMeasurementSettingsSettings;
+  private final UnaryCallSettings<
+          UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
+      updateEnhancedMeasurementSettingsSettings;
+  private final UnaryCallSettings<CreateConnectedSiteTagRequest, CreateConnectedSiteTagResponse>
+      createConnectedSiteTagSettings;
+  private final UnaryCallSettings<DeleteConnectedSiteTagRequest, Empty>
+      deleteConnectedSiteTagSettings;
+  private final UnaryCallSettings<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
+      listConnectedSiteTagsSettings;
 
   private static final PagedListDescriptor<ListAccountsRequest, ListAccountsResponse, Account>
       LIST_ACCOUNTS_PAGE_STR_DESC =
@@ -2432,6 +2452,35 @@ public class AnalyticsAdminServiceStubSettings
     return listBigQueryLinksSettings;
   }
 
+  /** Returns the object with the settings used for calls to getEnhancedMeasurementSettings. */
+  public UnaryCallSettings<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
+      getEnhancedMeasurementSettingsSettings() {
+    return getEnhancedMeasurementSettingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateEnhancedMeasurementSettings. */
+  public UnaryCallSettings<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
+      updateEnhancedMeasurementSettingsSettings() {
+    return updateEnhancedMeasurementSettingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createConnectedSiteTag. */
+  public UnaryCallSettings<CreateConnectedSiteTagRequest, CreateConnectedSiteTagResponse>
+      createConnectedSiteTagSettings() {
+    return createConnectedSiteTagSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteConnectedSiteTag. */
+  public UnaryCallSettings<DeleteConnectedSiteTagRequest, Empty> deleteConnectedSiteTagSettings() {
+    return deleteConnectedSiteTagSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listConnectedSiteTags. */
+  public UnaryCallSettings<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
+      listConnectedSiteTagsSettings() {
+    return listConnectedSiteTagsSettings;
+  }
+
   public AnalyticsAdminServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -2661,6 +2710,13 @@ public class AnalyticsAdminServiceStubSettings
         settingsBuilder.fetchAutomatedGa4ConfigurationOptOutSettings().build();
     getBigQueryLinkSettings = settingsBuilder.getBigQueryLinkSettings().build();
     listBigQueryLinksSettings = settingsBuilder.listBigQueryLinksSettings().build();
+    getEnhancedMeasurementSettingsSettings =
+        settingsBuilder.getEnhancedMeasurementSettingsSettings().build();
+    updateEnhancedMeasurementSettingsSettings =
+        settingsBuilder.updateEnhancedMeasurementSettingsSettings().build();
+    createConnectedSiteTagSettings = settingsBuilder.createConnectedSiteTagSettings().build();
+    deleteConnectedSiteTagSettings = settingsBuilder.deleteConnectedSiteTagSettings().build();
+    listConnectedSiteTagsSettings = settingsBuilder.listConnectedSiteTagsSettings().build();
   }
 
   /** Builder for AnalyticsAdminServiceStubSettings. */
@@ -2919,6 +2975,20 @@ public class AnalyticsAdminServiceStubSettings
     private final PagedCallSettings.Builder<
             ListBigQueryLinksRequest, ListBigQueryLinksResponse, ListBigQueryLinksPagedResponse>
         listBigQueryLinksSettings;
+    private final UnaryCallSettings.Builder<
+            GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
+        getEnhancedMeasurementSettingsSettings;
+    private final UnaryCallSettings.Builder<
+            UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
+        updateEnhancedMeasurementSettingsSettings;
+    private final UnaryCallSettings.Builder<
+            CreateConnectedSiteTagRequest, CreateConnectedSiteTagResponse>
+        createConnectedSiteTagSettings;
+    private final UnaryCallSettings.Builder<DeleteConnectedSiteTagRequest, Empty>
+        deleteConnectedSiteTagSettings;
+    private final UnaryCallSettings.Builder<
+            ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
+        listConnectedSiteTagsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -3088,6 +3158,11 @@ public class AnalyticsAdminServiceStubSettings
           UnaryCallSettings.newUnaryCallSettingsBuilder();
       getBigQueryLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listBigQueryLinksSettings = PagedCallSettings.newBuilder(LIST_BIG_QUERY_LINKS_PAGE_STR_FACT);
+      getEnhancedMeasurementSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateEnhancedMeasurementSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createConnectedSiteTagSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteConnectedSiteTagSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listConnectedSiteTagsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -3192,7 +3267,12 @@ public class AnalyticsAdminServiceStubSettings
               setAutomatedGa4ConfigurationOptOutSettings,
               fetchAutomatedGa4ConfigurationOptOutSettings,
               getBigQueryLinkSettings,
-              listBigQueryLinksSettings);
+              listBigQueryLinksSettings,
+              getEnhancedMeasurementSettingsSettings,
+              updateEnhancedMeasurementSettingsSettings,
+              createConnectedSiteTagSettings,
+              deleteConnectedSiteTagSettings,
+              listConnectedSiteTagsSettings);
       initDefaults(this);
     }
 
@@ -3322,6 +3402,13 @@ public class AnalyticsAdminServiceStubSettings
           settings.fetchAutomatedGa4ConfigurationOptOutSettings.toBuilder();
       getBigQueryLinkSettings = settings.getBigQueryLinkSettings.toBuilder();
       listBigQueryLinksSettings = settings.listBigQueryLinksSettings.toBuilder();
+      getEnhancedMeasurementSettingsSettings =
+          settings.getEnhancedMeasurementSettingsSettings.toBuilder();
+      updateEnhancedMeasurementSettingsSettings =
+          settings.updateEnhancedMeasurementSettingsSettings.toBuilder();
+      createConnectedSiteTagSettings = settings.createConnectedSiteTagSettings.toBuilder();
+      deleteConnectedSiteTagSettings = settings.deleteConnectedSiteTagSettings.toBuilder();
+      listConnectedSiteTagsSettings = settings.listConnectedSiteTagsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -3426,7 +3513,12 @@ public class AnalyticsAdminServiceStubSettings
               setAutomatedGa4ConfigurationOptOutSettings,
               fetchAutomatedGa4ConfigurationOptOutSettings,
               getBigQueryLinkSettings,
-              listBigQueryLinksSettings);
+              listBigQueryLinksSettings,
+              getEnhancedMeasurementSettingsSettings,
+              updateEnhancedMeasurementSettingsSettings,
+              createConnectedSiteTagSettings,
+              deleteConnectedSiteTagSettings,
+              listConnectedSiteTagsSettings);
     }
 
     private static Builder createDefault() {
@@ -3963,6 +4055,31 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .listBigQueryLinksSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getEnhancedMeasurementSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateEnhancedMeasurementSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .createConnectedSiteTagSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteConnectedSiteTagSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listConnectedSiteTagsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -4663,6 +4780,38 @@ public class AnalyticsAdminServiceStubSettings
             ListBigQueryLinksRequest, ListBigQueryLinksResponse, ListBigQueryLinksPagedResponse>
         listBigQueryLinksSettings() {
       return listBigQueryLinksSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getEnhancedMeasurementSettings. */
+    public UnaryCallSettings.Builder<
+            GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
+        getEnhancedMeasurementSettingsSettings() {
+      return getEnhancedMeasurementSettingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateEnhancedMeasurementSettings. */
+    public UnaryCallSettings.Builder<
+            UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
+        updateEnhancedMeasurementSettingsSettings() {
+      return updateEnhancedMeasurementSettingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createConnectedSiteTag. */
+    public UnaryCallSettings.Builder<CreateConnectedSiteTagRequest, CreateConnectedSiteTagResponse>
+        createConnectedSiteTagSettings() {
+      return createConnectedSiteTagSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteConnectedSiteTag. */
+    public UnaryCallSettings.Builder<DeleteConnectedSiteTagRequest, Empty>
+        deleteConnectedSiteTagSettings() {
+      return deleteConnectedSiteTagSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listConnectedSiteTags. */
+    public UnaryCallSettings.Builder<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
+        listConnectedSiteTagsSettings() {
+      return listConnectedSiteTagsSettings;
     }
 
     @Override

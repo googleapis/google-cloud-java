@@ -537,7 +537,7 @@ public final class GSuiteAddOnsGrpc {
    * for details.
    * </pre>
    */
-  public abstract static class GSuiteAddOnsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -546,7 +546,7 @@ public final class GSuiteAddOnsGrpc {
      * Gets the authorization information for deployments in a given project.
      * </pre>
      */
-    public void getAuthorization(
+    default void getAuthorization(
         com.google.cloud.gsuiteaddons.v1.GetAuthorizationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gsuiteaddons.v1.Authorization>
             responseObserver) {
@@ -561,7 +561,7 @@ public final class GSuiteAddOnsGrpc {
      * Creates a deployment with the specified name and configuration.
      * </pre>
      */
-    public void createDeployment(
+    default void createDeployment(
         com.google.cloud.gsuiteaddons.v1.CreateDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gsuiteaddons.v1.Deployment> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -575,7 +575,7 @@ public final class GSuiteAddOnsGrpc {
      * Creates or replaces a deployment with the specified name.
      * </pre>
      */
-    public void replaceDeployment(
+    default void replaceDeployment(
         com.google.cloud.gsuiteaddons.v1.ReplaceDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gsuiteaddons.v1.Deployment> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -589,7 +589,7 @@ public final class GSuiteAddOnsGrpc {
      * Gets the deployment with the specified name.
      * </pre>
      */
-    public void getDeployment(
+    default void getDeployment(
         com.google.cloud.gsuiteaddons.v1.GetDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gsuiteaddons.v1.Deployment> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -603,7 +603,7 @@ public final class GSuiteAddOnsGrpc {
      * Lists all deployments in a particular project.
      * </pre>
      */
-    public void listDeployments(
+    default void listDeployments(
         com.google.cloud.gsuiteaddons.v1.ListDeploymentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gsuiteaddons.v1.ListDeploymentsResponse>
             responseObserver) {
@@ -618,7 +618,7 @@ public final class GSuiteAddOnsGrpc {
      * Deletes the deployment with the given name.
      * </pre>
      */
-    public void deleteDeployment(
+    default void deleteDeployment(
         com.google.cloud.gsuiteaddons.v1.DeleteDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -634,7 +634,7 @@ public final class GSuiteAddOnsGrpc {
      * https://developers.google.com/gsuite/add-ons/how-tos/testing-gsuite-addons.
      * </pre>
      */
-    public void installDeployment(
+    default void installDeployment(
         com.google.cloud.gsuiteaddons.v1.InstallDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -650,7 +650,7 @@ public final class GSuiteAddOnsGrpc {
      * https://developers.google.com/gsuite/add-ons/how-tos/testing-gsuite-addons.
      * </pre>
      */
-    public void uninstallDeployment(
+    default void uninstallDeployment(
         com.google.cloud.gsuiteaddons.v1.UninstallDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -664,82 +664,56 @@ public final class GSuiteAddOnsGrpc {
      * Fetches the install status of a developer mode deployment.
      * </pre>
      */
-    public void getInstallStatus(
+    default void getInstallStatus(
         com.google.cloud.gsuiteaddons.v1.GetInstallStatusRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gsuiteaddons.v1.InstallStatus>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetInstallStatusMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service GSuiteAddOns.
+   *
+   * <pre>
+   * A service for managing Google Workspace Add-ons deployments.
+   * A Google Workspace Add-on is a third-party embedded component that can be
+   * installed in Google Workspace Applications like Gmail, Calendar, Drive, and
+   * the Google Docs, Sheets, and Slides editors. Google Workspace Add-ons can
+   * display UI cards, receive contextual information from the host application,
+   * and perform actions in the host application (See:
+   * https://developers.google.com/gsuite/add-ons/overview for more information).
+   * A Google Workspace Add-on deployment resource specifies metadata about the
+   * add-on, including a specification of the entry points in the host application
+   * that trigger add-on executions (see:
+   * https://developers.google.com/gsuite/add-ons/concepts/gsuite-manifests).
+   * Add-on deployments defined via the Google Workspace Add-ons API define their
+   * entrypoints using HTTPS URLs (See:
+   * https://developers.google.com/gsuite/add-ons/guides/alternate-runtimes),
+   * A Google Workspace Add-on deployment can be installed in developer mode,
+   * which allows an add-on developer to test the experience an end-user would see
+   * when installing and running the add-on in their G Suite applications.  When
+   * running in developer mode, more detailed error messages are exposed in the
+   * add-on UI to aid in debugging.
+   * A Google Workspace Add-on deployment can be published to Google Workspace
+   * Marketplace, which allows other Google Workspace users to discover and
+   * install the add-on.  See:
+   * https://developers.google.com/gsuite/add-ons/how-tos/publish-add-on-overview
+   * for details.
+   * </pre>
+   */
+  public abstract static class GSuiteAddOnsImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getGetAuthorizationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gsuiteaddons.v1.GetAuthorizationRequest,
-                      com.google.cloud.gsuiteaddons.v1.Authorization>(
-                      this, METHODID_GET_AUTHORIZATION)))
-          .addMethod(
-              getCreateDeploymentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gsuiteaddons.v1.CreateDeploymentRequest,
-                      com.google.cloud.gsuiteaddons.v1.Deployment>(
-                      this, METHODID_CREATE_DEPLOYMENT)))
-          .addMethod(
-              getReplaceDeploymentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gsuiteaddons.v1.ReplaceDeploymentRequest,
-                      com.google.cloud.gsuiteaddons.v1.Deployment>(
-                      this, METHODID_REPLACE_DEPLOYMENT)))
-          .addMethod(
-              getGetDeploymentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gsuiteaddons.v1.GetDeploymentRequest,
-                      com.google.cloud.gsuiteaddons.v1.Deployment>(this, METHODID_GET_DEPLOYMENT)))
-          .addMethod(
-              getListDeploymentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gsuiteaddons.v1.ListDeploymentsRequest,
-                      com.google.cloud.gsuiteaddons.v1.ListDeploymentsResponse>(
-                      this, METHODID_LIST_DEPLOYMENTS)))
-          .addMethod(
-              getDeleteDeploymentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gsuiteaddons.v1.DeleteDeploymentRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_DEPLOYMENT)))
-          .addMethod(
-              getInstallDeploymentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gsuiteaddons.v1.InstallDeploymentRequest,
-                      com.google.protobuf.Empty>(this, METHODID_INSTALL_DEPLOYMENT)))
-          .addMethod(
-              getUninstallDeploymentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gsuiteaddons.v1.UninstallDeploymentRequest,
-                      com.google.protobuf.Empty>(this, METHODID_UNINSTALL_DEPLOYMENT)))
-          .addMethod(
-              getGetInstallStatusMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gsuiteaddons.v1.GetInstallStatusRequest,
-                      com.google.cloud.gsuiteaddons.v1.InstallStatus>(
-                      this, METHODID_GET_INSTALL_STATUS)))
-          .build();
+      return GSuiteAddOnsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service GSuiteAddOns.
    *
    * <pre>
    * A service for managing Google Workspace Add-ons deployments.
@@ -932,7 +906,7 @@ public final class GSuiteAddOnsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service GSuiteAddOns.
    *
    * <pre>
    * A service for managing Google Workspace Add-ons deployments.
@@ -1096,7 +1070,7 @@ public final class GSuiteAddOnsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service GSuiteAddOns.
    *
    * <pre>
    * A service for managing Google Workspace Add-ons deployments.
@@ -1280,10 +1254,10 @@ public final class GSuiteAddOnsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final GSuiteAddOnsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(GSuiteAddOnsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1358,6 +1332,70 @@ public final class GSuiteAddOnsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getGetAuthorizationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gsuiteaddons.v1.GetAuthorizationRequest,
+                    com.google.cloud.gsuiteaddons.v1.Authorization>(
+                    service, METHODID_GET_AUTHORIZATION)))
+        .addMethod(
+            getCreateDeploymentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gsuiteaddons.v1.CreateDeploymentRequest,
+                    com.google.cloud.gsuiteaddons.v1.Deployment>(
+                    service, METHODID_CREATE_DEPLOYMENT)))
+        .addMethod(
+            getReplaceDeploymentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gsuiteaddons.v1.ReplaceDeploymentRequest,
+                    com.google.cloud.gsuiteaddons.v1.Deployment>(
+                    service, METHODID_REPLACE_DEPLOYMENT)))
+        .addMethod(
+            getGetDeploymentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gsuiteaddons.v1.GetDeploymentRequest,
+                    com.google.cloud.gsuiteaddons.v1.Deployment>(service, METHODID_GET_DEPLOYMENT)))
+        .addMethod(
+            getListDeploymentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gsuiteaddons.v1.ListDeploymentsRequest,
+                    com.google.cloud.gsuiteaddons.v1.ListDeploymentsResponse>(
+                    service, METHODID_LIST_DEPLOYMENTS)))
+        .addMethod(
+            getDeleteDeploymentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gsuiteaddons.v1.DeleteDeploymentRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_DEPLOYMENT)))
+        .addMethod(
+            getInstallDeploymentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gsuiteaddons.v1.InstallDeploymentRequest,
+                    com.google.protobuf.Empty>(service, METHODID_INSTALL_DEPLOYMENT)))
+        .addMethod(
+            getUninstallDeploymentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gsuiteaddons.v1.UninstallDeploymentRequest,
+                    com.google.protobuf.Empty>(service, METHODID_UNINSTALL_DEPLOYMENT)))
+        .addMethod(
+            getGetInstallStatusMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gsuiteaddons.v1.GetInstallStatusRequest,
+                    com.google.cloud.gsuiteaddons.v1.InstallStatus>(
+                    service, METHODID_GET_INSTALL_STATUS)))
+        .build();
   }
 
   private abstract static class GSuiteAddOnsBaseDescriptorSupplier

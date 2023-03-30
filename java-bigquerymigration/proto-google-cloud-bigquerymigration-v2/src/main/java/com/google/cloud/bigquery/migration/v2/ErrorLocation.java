@@ -71,8 +71,8 @@ public final class ErrorLocation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. If applicable, denotes the line where the error occurred. A zero value
-   * means that there is no line information.
+   * Optional. If applicable, denotes the line where the error occurred. A zero
+   * value means that there is no line information.
    * </pre>
    *
    * <code>int32 line = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -90,8 +90,8 @@ public final class ErrorLocation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. If applicable, denotes the column where the error occurred. A zero value
-   * means that there is no columns information.
+   * Optional. If applicable, denotes the column where the error occurred. A
+   * zero value means that there is no columns information.
    * </pre>
    *
    * <code>int32 column = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -470,8 +470,8 @@ public final class ErrorLocation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If applicable, denotes the line where the error occurred. A zero value
-     * means that there is no line information.
+     * Optional. If applicable, denotes the line where the error occurred. A zero
+     * value means that there is no line information.
      * </pre>
      *
      * <code>int32 line = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -486,8 +486,8 @@ public final class ErrorLocation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If applicable, denotes the line where the error occurred. A zero value
-     * means that there is no line information.
+     * Optional. If applicable, denotes the line where the error occurred. A zero
+     * value means that there is no line information.
      * </pre>
      *
      * <code>int32 line = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -506,8 +506,8 @@ public final class ErrorLocation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If applicable, denotes the line where the error occurred. A zero value
-     * means that there is no line information.
+     * Optional. If applicable, denotes the line where the error occurred. A zero
+     * value means that there is no line information.
      * </pre>
      *
      * <code>int32 line = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -526,8 +526,8 @@ public final class ErrorLocation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If applicable, denotes the column where the error occurred. A zero value
-     * means that there is no columns information.
+     * Optional. If applicable, denotes the column where the error occurred. A
+     * zero value means that there is no columns information.
      * </pre>
      *
      * <code>int32 column = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -542,8 +542,8 @@ public final class ErrorLocation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If applicable, denotes the column where the error occurred. A zero value
-     * means that there is no columns information.
+     * Optional. If applicable, denotes the column where the error occurred. A
+     * zero value means that there is no columns information.
      * </pre>
      *
      * <code>int32 column = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -562,8 +562,8 @@ public final class ErrorLocation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If applicable, denotes the column where the error occurred. A zero value
-     * means that there is no columns information.
+     * Optional. If applicable, denotes the column where the error occurred. A
+     * zero value means that there is no columns information.
      * </pre>
      *
      * <code>int32 column = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -423,7 +423,7 @@ public final class ConversationsGrpc {
    * [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
    * </pre>
    */
-  public abstract static class ConversationsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -448,7 +448,7 @@ public final class ConversationsGrpc {
      * is triggered, conversation will transfer to Assist Stage.
      * </pre>
      */
-    public void createConversation(
+    default void createConversation(
         com.google.cloud.dialogflow.v2beta1.CreateConversationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Conversation>
             responseObserver) {
@@ -463,7 +463,7 @@ public final class ConversationsGrpc {
      * Returns the list of all conversations in the specified project.
      * </pre>
      */
-    public void listConversations(
+    default void listConversations(
         com.google.cloud.dialogflow.v2beta1.ListConversationsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListConversationsResponse>
             responseObserver) {
@@ -478,7 +478,7 @@ public final class ConversationsGrpc {
      * Retrieves the specific conversation.
      * </pre>
      */
-    public void getConversation(
+    default void getConversation(
         com.google.cloud.dialogflow.v2beta1.GetConversationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Conversation>
             responseObserver) {
@@ -494,7 +494,7 @@ public final class ConversationsGrpc {
      * from the database after 30 days.
      * </pre>
      */
-    public void completeConversation(
+    default void completeConversation(
         com.google.cloud.dialogflow.v2beta1.CompleteConversationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Conversation>
             responseObserver) {
@@ -510,7 +510,7 @@ public final class ConversationsGrpc {
      * ingest historical messages to conversation.
      * </pre>
      */
-    public void batchCreateMessages(
+    default void batchCreateMessages(
         com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesResponse>
             responseObserver) {
@@ -529,7 +529,7 @@ public final class ConversationsGrpc {
      * [first item's create_time of previous request]` and empty page_token.
      * </pre>
      */
-    public void listMessages(
+    default void listMessages(
         com.google.cloud.dialogflow.v2beta1.ListMessagesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListMessagesResponse>
             responseObserver) {
@@ -546,7 +546,7 @@ public final class ConversationsGrpc {
      * request.
      * </pre>
      */
-    public void suggestConversationSummary(
+    default void suggestConversationSummary(
         com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse>
@@ -554,65 +554,27 @@ public final class ConversationsGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSuggestConversationSummaryMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Conversations.
+   *
+   * <pre>
+   * Service for managing
+   * [Conversations][google.cloud.dialogflow.v2beta1.Conversation].
+   * </pre>
+   */
+  public abstract static class ConversationsImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateConversationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.CreateConversationRequest,
-                      com.google.cloud.dialogflow.v2beta1.Conversation>(
-                      this, METHODID_CREATE_CONVERSATION)))
-          .addMethod(
-              getListConversationsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.ListConversationsRequest,
-                      com.google.cloud.dialogflow.v2beta1.ListConversationsResponse>(
-                      this, METHODID_LIST_CONVERSATIONS)))
-          .addMethod(
-              getGetConversationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.GetConversationRequest,
-                      com.google.cloud.dialogflow.v2beta1.Conversation>(
-                      this, METHODID_GET_CONVERSATION)))
-          .addMethod(
-              getCompleteConversationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.CompleteConversationRequest,
-                      com.google.cloud.dialogflow.v2beta1.Conversation>(
-                      this, METHODID_COMPLETE_CONVERSATION)))
-          .addMethod(
-              getBatchCreateMessagesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesRequest,
-                      com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesResponse>(
-                      this, METHODID_BATCH_CREATE_MESSAGES)))
-          .addMethod(
-              getListMessagesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.ListMessagesRequest,
-                      com.google.cloud.dialogflow.v2beta1.ListMessagesResponse>(
-                      this, METHODID_LIST_MESSAGES)))
-          .addMethod(
-              getSuggestConversationSummaryMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryRequest,
-                      com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse>(
-                      this, METHODID_SUGGEST_CONVERSATION_SUMMARY)))
-          .build();
+      return ConversationsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Conversations.
    *
    * <pre>
    * Service for managing
@@ -776,7 +738,7 @@ public final class ConversationsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Conversations.
    *
    * <pre>
    * Service for managing
@@ -913,7 +875,7 @@ public final class ConversationsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Conversations.
    *
    * <pre>
    * Service for managing
@@ -1071,10 +1033,10 @@ public final class ConversationsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ConversationsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ConversationsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1143,6 +1105,60 @@ public final class ConversationsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateConversationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.CreateConversationRequest,
+                    com.google.cloud.dialogflow.v2beta1.Conversation>(
+                    service, METHODID_CREATE_CONVERSATION)))
+        .addMethod(
+            getListConversationsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.ListConversationsRequest,
+                    com.google.cloud.dialogflow.v2beta1.ListConversationsResponse>(
+                    service, METHODID_LIST_CONVERSATIONS)))
+        .addMethod(
+            getGetConversationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.GetConversationRequest,
+                    com.google.cloud.dialogflow.v2beta1.Conversation>(
+                    service, METHODID_GET_CONVERSATION)))
+        .addMethod(
+            getCompleteConversationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.CompleteConversationRequest,
+                    com.google.cloud.dialogflow.v2beta1.Conversation>(
+                    service, METHODID_COMPLETE_CONVERSATION)))
+        .addMethod(
+            getBatchCreateMessagesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesRequest,
+                    com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesResponse>(
+                    service, METHODID_BATCH_CREATE_MESSAGES)))
+        .addMethod(
+            getListMessagesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.ListMessagesRequest,
+                    com.google.cloud.dialogflow.v2beta1.ListMessagesResponse>(
+                    service, METHODID_LIST_MESSAGES)))
+        .addMethod(
+            getSuggestConversationSummaryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryRequest,
+                    com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse>(
+                    service, METHODID_SUGGEST_CONVERSATION_SUMMARY)))
+        .build();
   }
 
   private abstract static class ConversationsBaseDescriptorSupplier

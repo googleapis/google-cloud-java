@@ -247,8 +247,8 @@ public interface ExecutionConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Cloud Storage location in which to store execution outputs. This can
-   * either be a bucket ("gs://my-bucket") or a path within a bucket
+   * Optional. Cloud Storage location in which to store execution outputs. This
+   * can either be a bucket ("gs://my-bucket") or a path within a bucket
    * ("gs://my-bucket/my-dir").
    * If unspecified, a default bucket located in the same region will be used.
    * </pre>
@@ -262,8 +262,8 @@ public interface ExecutionConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Cloud Storage location in which to store execution outputs. This can
-   * either be a bucket ("gs://my-bucket") or a path within a bucket
+   * Optional. Cloud Storage location in which to store execution outputs. This
+   * can either be a bucket ("gs://my-bucket") or a path within a bucket
    * ("gs://my-bucket/my-dir").
    * If unspecified, a default bucket located in the same region will be used.
    * </pre>
@@ -278,9 +278,9 @@ public interface ExecutionConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Execution timeout for a Cloud Build Execution. This must be between 10m and
-   * 24h in seconds format.
-   * If unspecified, a default timeout of 1h is used.
+   * Optional. Execution timeout for a Cloud Build Execution. This must be
+   * between 10m and 24h in seconds format. If unspecified, a default timeout of
+   * 1h is used.
    * </pre>
    *
    * <code>
@@ -294,9 +294,9 @@ public interface ExecutionConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Execution timeout for a Cloud Build Execution. This must be between 10m and
-   * 24h in seconds format.
-   * If unspecified, a default timeout of 1h is used.
+   * Optional. Execution timeout for a Cloud Build Execution. This must be
+   * between 10m and 24h in seconds format. If unspecified, a default timeout of
+   * 1h is used.
    * </pre>
    *
    * <code>
@@ -310,9 +310,9 @@ public interface ExecutionConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Execution timeout for a Cloud Build Execution. This must be between 10m and
-   * 24h in seconds format.
-   * If unspecified, a default timeout of 1h is used.
+   * Optional. Execution timeout for a Cloud Build Execution. This must be
+   * between 10m and 24h in seconds format. If unspecified, a default timeout of
+   * 1h is used.
    * </pre>
    *
    * <code>

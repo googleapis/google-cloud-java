@@ -119,7 +119,8 @@ public interface ConversionEventOrBuilder
    *
    *
    * <pre>
-   * Output only. If set, this event can currently be deleted via DeleteConversionEvent.
+   * Output only. If set, this event can currently be deleted with
+   * DeleteConversionEvent.
    * </pre>
    *
    * <code>bool deletable = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -132,11 +133,11 @@ public interface ConversionEventOrBuilder
    *
    *
    * <pre>
-   * Output only. If set to true, this conversion event refers to a custom event.  If set to
-   * false, this conversion event refers to a default event in GA. Default
-   * events typically have special meaning in GA. Default events are usually
-   * created for you by the GA system, but in some cases can be created by
-   * property admins. Custom events count towards the maximum number of
+   * Output only. If set to true, this conversion event refers to a custom
+   * event.  If set to false, this conversion event refers to a default event in
+   * GA. Default events typically have special meaning in GA. Default events are
+   * usually created for you by the GA system, but in some cases can be created
+   * by property admins. Custom events count towards the maximum number of
    * custom conversion events that may be created per property.
    * </pre>
    *

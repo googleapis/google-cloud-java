@@ -181,7 +181,7 @@ public final class SessionsGrpc {
    * guide](https://cloud.google.com/dialogflow/docs/api-overview).
    * </pre>
    */
-  public abstract static class SessionsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -202,7 +202,7 @@ public final class SessionsGrpc {
      * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
      * </pre>
      */
-    public void detectIntent(
+    default void detectIntent(
         com.google.cloud.dialogflow.v2.DetectIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.DetectIntentResponse>
             responseObserver) {
@@ -228,7 +228,7 @@ public final class SessionsGrpc {
      * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
      * </pre>
      */
-    public io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.StreamingDetectIntentRequest>
+    default io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.StreamingDetectIntentRequest>
         streamingDetectIntent(
             io.grpc.stub.StreamObserver<
                     com.google.cloud.dialogflow.v2.StreamingDetectIntentResponse>
@@ -236,30 +236,27 @@ public final class SessionsGrpc {
       return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(
           getStreamingDetectIntentMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Sessions.
+   *
+   * <pre>
+   * A service used for session interactions.
+   * For more information, see the [API interactions
+   * guide](https://cloud.google.com/dialogflow/docs/api-overview).
+   * </pre>
+   */
+  public abstract static class SessionsImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getDetectIntentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.DetectIntentRequest,
-                      com.google.cloud.dialogflow.v2.DetectIntentResponse>(
-                      this, METHODID_DETECT_INTENT)))
-          .addMethod(
-              getStreamingDetectIntentMethod(),
-              io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.StreamingDetectIntentRequest,
-                      com.google.cloud.dialogflow.v2.StreamingDetectIntentResponse>(
-                      this, METHODID_STREAMING_DETECT_INTENT)))
-          .build();
+      return SessionsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Sessions.
    *
    * <pre>
    * A service used for session interactions.
@@ -336,7 +333,7 @@ public final class SessionsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Sessions.
    *
    * <pre>
    * A service used for session interactions.
@@ -382,7 +379,7 @@ public final class SessionsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Sessions.
    *
    * <pre>
    * A service used for session interactions.
@@ -436,10 +433,10 @@ public final class SessionsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final SessionsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(SessionsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -474,6 +471,25 @@ public final class SessionsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getDetectIntentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.DetectIntentRequest,
+                    com.google.cloud.dialogflow.v2.DetectIntentResponse>(
+                    service, METHODID_DETECT_INTENT)))
+        .addMethod(
+            getStreamingDetectIntentMethod(),
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.StreamingDetectIntentRequest,
+                    com.google.cloud.dialogflow.v2.StreamingDetectIntentResponse>(
+                    service, METHODID_STREAMING_DETECT_INTENT)))
+        .build();
   }
 
   private abstract static class SessionsBaseDescriptorSupplier

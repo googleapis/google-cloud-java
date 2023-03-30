@@ -27,7 +27,7 @@ public interface GcsSourceOrBuilder
    *
    *
    * <pre>
-   * Required. Google Cloud Storage URIs to input files. URI can be up to
+   * Required. Cloud Storage URIs to input files. URI can be up to
    * 2000 characters long. URIs can match the full object path (for example,
    * `gs://bucket/directory/object.json`) or a pattern matching one or more
    * files, such as `gs://bucket/directory/&#42;.json`. A request can
@@ -43,7 +43,7 @@ public interface GcsSourceOrBuilder
    *
    *
    * <pre>
-   * Required. Google Cloud Storage URIs to input files. URI can be up to
+   * Required. Cloud Storage URIs to input files. URI can be up to
    * 2000 characters long. URIs can match the full object path (for example,
    * `gs://bucket/directory/object.json`) or a pattern matching one or more
    * files, such as `gs://bucket/directory/&#42;.json`. A request can
@@ -59,7 +59,7 @@ public interface GcsSourceOrBuilder
    *
    *
    * <pre>
-   * Required. Google Cloud Storage URIs to input files. URI can be up to
+   * Required. Cloud Storage URIs to input files. URI can be up to
    * 2000 characters long. URIs can match the full object path (for example,
    * `gs://bucket/directory/object.json`) or a pattern matching one or more
    * files, such as `gs://bucket/directory/&#42;.json`. A request can
@@ -76,7 +76,7 @@ public interface GcsSourceOrBuilder
    *
    *
    * <pre>
-   * Required. Google Cloud Storage URIs to input files. URI can be up to
+   * Required. Cloud Storage URIs to input files. URI can be up to
    * 2000 characters long. URIs can match the full object path (for example,
    * `gs://bucket/directory/object.json`) or a pattern matching one or more
    * files, such as `gs://bucket/directory/&#42;.json`. A request can
@@ -95,14 +95,15 @@ public interface GcsSourceOrBuilder
    *
    * <pre>
    * The schema to use when parsing the data from the source.
-   * Supported values for imports:
-   * * `user_event` (default): One JSON
-   * [UserEvent][google.cloud.discoveryengine.v1beta.UserEvent] per line.
+   * Supported values for document imports:
    * * `document` (default): One JSON
    * [Document][google.cloud.discoveryengine.v1beta.Document] per line. Each
    * document must
    *   have a valid
    *   [Document.id][google.cloud.discoveryengine.v1beta.Document.id].
+   * Supported values for user even imports:
+   * * `user_event` (default): One JSON
+   * [UserEvent][google.cloud.discoveryengine.v1beta.UserEvent] per line.
    * </pre>
    *
    * <code>string data_schema = 2;</code>
@@ -115,14 +116,15 @@ public interface GcsSourceOrBuilder
    *
    * <pre>
    * The schema to use when parsing the data from the source.
-   * Supported values for imports:
-   * * `user_event` (default): One JSON
-   * [UserEvent][google.cloud.discoveryengine.v1beta.UserEvent] per line.
+   * Supported values for document imports:
    * * `document` (default): One JSON
    * [Document][google.cloud.discoveryengine.v1beta.Document] per line. Each
    * document must
    *   have a valid
    *   [Document.id][google.cloud.discoveryengine.v1beta.Document.id].
+   * Supported values for user even imports:
+   * * `user_event` (default): One JSON
+   * [UserEvent][google.cloud.discoveryengine.v1beta.UserEvent] per line.
    * </pre>
    *
    * <code>string data_schema = 2;</code>

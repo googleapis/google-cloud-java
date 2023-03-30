@@ -161,7 +161,7 @@ public final class TasksGrpc {
    * Cloud Run Task Control Plane API.
    * </pre>
    */
-  public abstract static class TasksImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -170,7 +170,7 @@ public final class TasksGrpc {
      * Gets information about a Task.
      * </pre>
      */
-    public void getTask(
+    default void getTask(
         com.google.cloud.run.v2.GetTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.run.v2.Task> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetTaskMethod(), responseObserver);
@@ -183,33 +183,30 @@ public final class TasksGrpc {
      * Lists Tasks from an Execution of a Job.
      * </pre>
      */
-    public void listTasks(
+    default void listTasks(
         com.google.cloud.run.v2.ListTasksRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.run.v2.ListTasksResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListTasksMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Tasks.
+   *
+   * <pre>
+   * Cloud Run Task Control Plane API.
+   * </pre>
+   */
+  public abstract static class TasksImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getGetTaskMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.run.v2.GetTaskRequest, com.google.cloud.run.v2.Task>(
-                      this, METHODID_GET_TASK)))
-          .addMethod(
-              getListTasksMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.run.v2.ListTasksRequest,
-                      com.google.cloud.run.v2.ListTasksResponse>(this, METHODID_LIST_TASKS)))
-          .build();
+      return TasksGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Tasks.
    *
    * <pre>
    * Cloud Run Task Control Plane API.
@@ -255,7 +252,7 @@ public final class TasksGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Tasks.
    *
    * <pre>
    * Cloud Run Task Control Plane API.
@@ -299,7 +296,7 @@ public final class TasksGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Tasks.
    *
    * <pre>
    * Cloud Run Task Control Plane API.
@@ -352,10 +349,10 @@ public final class TasksGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final TasksImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(TasksImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -389,6 +386,23 @@ public final class TasksGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getGetTaskMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.run.v2.GetTaskRequest, com.google.cloud.run.v2.Task>(
+                    service, METHODID_GET_TASK)))
+        .addMethod(
+            getListTasksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.run.v2.ListTasksRequest,
+                    com.google.cloud.run.v2.ListTasksResponse>(service, METHODID_LIST_TASKS)))
+        .build();
   }
 
   private abstract static class TasksBaseDescriptorSupplier

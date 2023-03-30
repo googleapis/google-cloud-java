@@ -227,7 +227,7 @@ public final class ErrorStatsServiceGrpc {
    * individual events.
    * </pre>
    */
-  public abstract static class ErrorStatsServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -236,7 +236,7 @@ public final class ErrorStatsServiceGrpc {
      * Lists the specified groups.
      * </pre>
      */
-    public void listGroupStats(
+    default void listGroupStats(
         com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse>
@@ -252,7 +252,7 @@ public final class ErrorStatsServiceGrpc {
      * Lists the specified events.
      * </pre>
      */
-    public void listEvents(
+    default void listEvents(
         com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse>
@@ -267,7 +267,7 @@ public final class ErrorStatsServiceGrpc {
      * Deletes all error events of a given project.
      * </pre>
      */
-    public void deleteEvents(
+    default void deleteEvents(
         com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse>
@@ -275,37 +275,27 @@ public final class ErrorStatsServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteEventsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ErrorStatsService.
+   *
+   * <pre>
+   * An API for retrieving and managing error statistics as well as data for
+   * individual events.
+   * </pre>
+   */
+  public abstract static class ErrorStatsServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListGroupStatsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest,
-                      com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse>(
-                      this, METHODID_LIST_GROUP_STATS)))
-          .addMethod(
-              getListEventsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest,
-                      com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse>(
-                      this, METHODID_LIST_EVENTS)))
-          .addMethod(
-              getDeleteEventsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest,
-                      com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse>(
-                      this, METHODID_DELETE_EVENTS)))
-          .build();
+      return ErrorStatsServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ErrorStatsService.
    *
    * <pre>
    * An API for retrieving and managing error statistics as well as data for
@@ -378,7 +368,7 @@ public final class ErrorStatsServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ErrorStatsService.
    *
    * <pre>
    * An API for retrieving and managing error statistics as well as data for
@@ -439,7 +429,7 @@ public final class ErrorStatsServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service ErrorStatsService.
    *
    * <pre>
    * An API for retrieving and managing error statistics as well as data for
@@ -511,10 +501,10 @@ public final class ErrorStatsServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ErrorStatsServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ErrorStatsServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -558,6 +548,32 @@ public final class ErrorStatsServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListGroupStatsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest,
+                    com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse>(
+                    service, METHODID_LIST_GROUP_STATS)))
+        .addMethod(
+            getListEventsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest,
+                    com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse>(
+                    service, METHODID_LIST_EVENTS)))
+        .addMethod(
+            getDeleteEventsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest,
+                    com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse>(
+                    service, METHODID_DELETE_EVENTS)))
+        .build();
   }
 
   private abstract static class ErrorStatsServiceBaseDescriptorSupplier

@@ -38,7 +38,9 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
     super(builder);
   }
 
-  private TranslationConfigDetails() {}
+  private TranslationConfigDetails() {
+    requestSource_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -338,6 +340,58 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
     }
   }
 
+  public static final int NAME_MAPPING_LIST_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * The mapping of objects to their desired output names in list form.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.ObjectNameMappingList name_mapping_list = 5;</code>
+   *
+   * @return Whether the nameMappingList field is set.
+   */
+  @java.lang.Override
+  public boolean hasNameMappingList() {
+    return outputNameMappingCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The mapping of objects to their desired output names in list form.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.ObjectNameMappingList name_mapping_list = 5;</code>
+   *
+   * @return The nameMappingList.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.migration.v2.ObjectNameMappingList getNameMappingList() {
+    if (outputNameMappingCase_ == 5) {
+      return (com.google.cloud.bigquery.migration.v2.ObjectNameMappingList) outputNameMapping_;
+    }
+    return com.google.cloud.bigquery.migration.v2.ObjectNameMappingList.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The mapping of objects to their desired output names in list form.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.migration.v2.ObjectNameMappingList name_mapping_list = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.migration.v2.ObjectNameMappingListOrBuilder
+      getNameMappingListOrBuilder() {
+    if (outputNameMappingCase_ == 5) {
+      return (com.google.cloud.bigquery.migration.v2.ObjectNameMappingList) outputNameMapping_;
+    }
+    return com.google.cloud.bigquery.migration.v2.ObjectNameMappingList.getDefaultInstance();
+  }
+
   public static final int SOURCE_DIALECT_FIELD_NUMBER = 3;
   private com.google.cloud.bigquery.migration.v2.Dialect sourceDialect_;
   /**
@@ -438,58 +492,6 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
         : targetDialect_;
   }
 
-  public static final int NAME_MAPPING_LIST_FIELD_NUMBER = 5;
-  /**
-   *
-   *
-   * <pre>
-   * The mapping of objects to their desired output names in list form.
-   * </pre>
-   *
-   * <code>.google.cloud.bigquery.migration.v2.ObjectNameMappingList name_mapping_list = 5;</code>
-   *
-   * @return Whether the nameMappingList field is set.
-   */
-  @java.lang.Override
-  public boolean hasNameMappingList() {
-    return outputNameMappingCase_ == 5;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The mapping of objects to their desired output names in list form.
-   * </pre>
-   *
-   * <code>.google.cloud.bigquery.migration.v2.ObjectNameMappingList name_mapping_list = 5;</code>
-   *
-   * @return The nameMappingList.
-   */
-  @java.lang.Override
-  public com.google.cloud.bigquery.migration.v2.ObjectNameMappingList getNameMappingList() {
-    if (outputNameMappingCase_ == 5) {
-      return (com.google.cloud.bigquery.migration.v2.ObjectNameMappingList) outputNameMapping_;
-    }
-    return com.google.cloud.bigquery.migration.v2.ObjectNameMappingList.getDefaultInstance();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The mapping of objects to their desired output names in list form.
-   * </pre>
-   *
-   * <code>.google.cloud.bigquery.migration.v2.ObjectNameMappingList name_mapping_list = 5;</code>
-   */
-  @java.lang.Override
-  public com.google.cloud.bigquery.migration.v2.ObjectNameMappingListOrBuilder
-      getNameMappingListOrBuilder() {
-    if (outputNameMappingCase_ == 5) {
-      return (com.google.cloud.bigquery.migration.v2.ObjectNameMappingList) outputNameMapping_;
-    }
-    return com.google.cloud.bigquery.migration.v2.ObjectNameMappingList.getDefaultInstance();
-  }
-
   public static final int SOURCE_ENV_FIELD_NUMBER = 6;
   private com.google.cloud.bigquery.migration.v2.SourceEnv sourceEnv_;
   /**
@@ -540,6 +542,57 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
         : sourceEnv_;
   }
 
+  public static final int REQUEST_SOURCE_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestSource_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The indicator to show translation request initiator.
+   * </pre>
+   *
+   * <code>string request_source = 8;</code>
+   *
+   * @return The requestSource.
+   */
+  @java.lang.Override
+  public java.lang.String getRequestSource() {
+    java.lang.Object ref = requestSource_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      requestSource_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The indicator to show translation request initiator.
+   * </pre>
+   *
+   * <code>string request_source = 8;</code>
+   *
+   * @return The bytes for requestSource.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRequestSourceBytes() {
+    java.lang.Object ref = requestSource_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      requestSource_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -573,6 +626,9 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
     if (sourceEnv_ != null) {
       output.writeMessage(6, getSourceEnv());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestSource_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, requestSource_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -602,6 +658,9 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
     if (sourceEnv_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getSourceEnv());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestSource_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, requestSource_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -630,6 +689,7 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
     if (hasSourceEnv()) {
       if (!getSourceEnv().equals(other.getSourceEnv())) return false;
     }
+    if (!getRequestSource().equals(other.getRequestSource())) return false;
     if (!getSourceLocationCase().equals(other.getSourceLocationCase())) return false;
     switch (sourceLocationCase_) {
       case 1:
@@ -677,6 +737,8 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
       hash = (37 * hash) + SOURCE_ENV_FIELD_NUMBER;
       hash = (53 * hash) + getSourceEnv().hashCode();
     }
+    hash = (37 * hash) + REQUEST_SOURCE_FIELD_NUMBER;
+    hash = (53 * hash) + getRequestSource().hashCode();
     switch (sourceLocationCase_) {
       case 1:
         hash = (37 * hash) + GCS_SOURCE_PATH_FIELD_NUMBER;
@@ -842,6 +904,9 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (nameMappingListBuilder_ != null) {
+        nameMappingListBuilder_.clear();
+      }
       sourceDialect_ = null;
       if (sourceDialectBuilder_ != null) {
         sourceDialectBuilder_.dispose();
@@ -852,14 +917,12 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
         targetDialectBuilder_.dispose();
         targetDialectBuilder_ = null;
       }
-      if (nameMappingListBuilder_ != null) {
-        nameMappingListBuilder_.clear();
-      }
       sourceEnv_ = null;
       if (sourceEnvBuilder_ != null) {
         sourceEnvBuilder_.dispose();
         sourceEnvBuilder_ = null;
       }
+      requestSource_ = "";
       sourceLocationCase_ = 0;
       sourceLocation_ = null;
       targetLocationCase_ = 0;
@@ -905,16 +968,19 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
     private void buildPartial0(
         com.google.cloud.bigquery.migration.v2.TranslationConfigDetails result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.sourceDialect_ =
             sourceDialectBuilder_ == null ? sourceDialect_ : sourceDialectBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.targetDialect_ =
             targetDialectBuilder_ == null ? targetDialect_ : targetDialectBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.sourceEnv_ = sourceEnvBuilder_ == null ? sourceEnv_ : sourceEnvBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.requestSource_ = requestSource_;
       }
     }
 
@@ -987,6 +1053,11 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
       }
       if (other.hasSourceEnv()) {
         mergeSourceEnv(other.getSourceEnv());
+      }
+      if (!other.getRequestSource().isEmpty()) {
+        requestSource_ = other.requestSource_;
+        bitField0_ |= 0x00000040;
+        onChanged();
       }
       switch (other.getSourceLocationCase()) {
         case GCS_SOURCE_PATH:
@@ -1068,13 +1139,13 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
             case 26:
               {
                 input.readMessage(getSourceDialectFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getTargetDialectFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
@@ -1089,6 +1160,12 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 66:
+              {
+                requestSource_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1418,376 +1495,6 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
       return this;
     }
 
-    private com.google.cloud.bigquery.migration.v2.Dialect sourceDialect_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.bigquery.migration.v2.Dialect,
-            com.google.cloud.bigquery.migration.v2.Dialect.Builder,
-            com.google.cloud.bigquery.migration.v2.DialectOrBuilder>
-        sourceDialectBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * The dialect of the input files.
-     * </pre>
-     *
-     * <code>.google.cloud.bigquery.migration.v2.Dialect source_dialect = 3;</code>
-     *
-     * @return Whether the sourceDialect field is set.
-     */
-    public boolean hasSourceDialect() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The dialect of the input files.
-     * </pre>
-     *
-     * <code>.google.cloud.bigquery.migration.v2.Dialect source_dialect = 3;</code>
-     *
-     * @return The sourceDialect.
-     */
-    public com.google.cloud.bigquery.migration.v2.Dialect getSourceDialect() {
-      if (sourceDialectBuilder_ == null) {
-        return sourceDialect_ == null
-            ? com.google.cloud.bigquery.migration.v2.Dialect.getDefaultInstance()
-            : sourceDialect_;
-      } else {
-        return sourceDialectBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The dialect of the input files.
-     * </pre>
-     *
-     * <code>.google.cloud.bigquery.migration.v2.Dialect source_dialect = 3;</code>
-     */
-    public Builder setSourceDialect(com.google.cloud.bigquery.migration.v2.Dialect value) {
-      if (sourceDialectBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        sourceDialect_ = value;
-      } else {
-        sourceDialectBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The dialect of the input files.
-     * </pre>
-     *
-     * <code>.google.cloud.bigquery.migration.v2.Dialect source_dialect = 3;</code>
-     */
-    public Builder setSourceDialect(
-        com.google.cloud.bigquery.migration.v2.Dialect.Builder builderForValue) {
-      if (sourceDialectBuilder_ == null) {
-        sourceDialect_ = builderForValue.build();
-      } else {
-        sourceDialectBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The dialect of the input files.
-     * </pre>
-     *
-     * <code>.google.cloud.bigquery.migration.v2.Dialect source_dialect = 3;</code>
-     */
-    public Builder mergeSourceDialect(com.google.cloud.bigquery.migration.v2.Dialect value) {
-      if (sourceDialectBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
-            && sourceDialect_ != null
-            && sourceDialect_
-                != com.google.cloud.bigquery.migration.v2.Dialect.getDefaultInstance()) {
-          getSourceDialectBuilder().mergeFrom(value);
-        } else {
-          sourceDialect_ = value;
-        }
-      } else {
-        sourceDialectBuilder_.mergeFrom(value);
-      }
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The dialect of the input files.
-     * </pre>
-     *
-     * <code>.google.cloud.bigquery.migration.v2.Dialect source_dialect = 3;</code>
-     */
-    public Builder clearSourceDialect() {
-      bitField0_ = (bitField0_ & ~0x00000004);
-      sourceDialect_ = null;
-      if (sourceDialectBuilder_ != null) {
-        sourceDialectBuilder_.dispose();
-        sourceDialectBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The dialect of the input files.
-     * </pre>
-     *
-     * <code>.google.cloud.bigquery.migration.v2.Dialect source_dialect = 3;</code>
-     */
-    public com.google.cloud.bigquery.migration.v2.Dialect.Builder getSourceDialectBuilder() {
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return getSourceDialectFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The dialect of the input files.
-     * </pre>
-     *
-     * <code>.google.cloud.bigquery.migration.v2.Dialect source_dialect = 3;</code>
-     */
-    public com.google.cloud.bigquery.migration.v2.DialectOrBuilder getSourceDialectOrBuilder() {
-      if (sourceDialectBuilder_ != null) {
-        return sourceDialectBuilder_.getMessageOrBuilder();
-      } else {
-        return sourceDialect_ == null
-            ? com.google.cloud.bigquery.migration.v2.Dialect.getDefaultInstance()
-            : sourceDialect_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The dialect of the input files.
-     * </pre>
-     *
-     * <code>.google.cloud.bigquery.migration.v2.Dialect source_dialect = 3;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.bigquery.migration.v2.Dialect,
-            com.google.cloud.bigquery.migration.v2.Dialect.Builder,
-            com.google.cloud.bigquery.migration.v2.DialectOrBuilder>
-        getSourceDialectFieldBuilder() {
-      if (sourceDialectBuilder_ == null) {
-        sourceDialectBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.bigquery.migration.v2.Dialect,
-                com.google.cloud.bigquery.migration.v2.Dialect.Builder,
-                com.google.cloud.bigquery.migration.v2.DialectOrBuilder>(
-                getSourceDialect(), getParentForChildren(), isClean());
-        sourceDialect_ = null;
-      }
-      return sourceDialectBuilder_;
-    }
-
-    private com.google.cloud.bigquery.migration.v2.Dialect targetDialect_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.bigquery.migration.v2.Dialect,
-            com.google.cloud.bigquery.migration.v2.Dialect.Builder,
-            com.google.cloud.bigquery.migration.v2.DialectOrBuilder>
-        targetDialectBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * The target dialect for the engine to translate the input to.
-     * </pre>
-     *
-     * <code>.google.cloud.bigquery.migration.v2.Dialect target_dialect = 4;</code>
-     *
-     * @return Whether the targetDialect field is set.
-     */
-    public boolean hasTargetDialect() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The target dialect for the engine to translate the input to.
-     * </pre>
-     *
-     * <code>.google.cloud.bigquery.migration.v2.Dialect target_dialect = 4;</code>
-     *
-     * @return The targetDialect.
-     */
-    public com.google.cloud.bigquery.migration.v2.Dialect getTargetDialect() {
-      if (targetDialectBuilder_ == null) {
-        return targetDialect_ == null
-            ? com.google.cloud.bigquery.migration.v2.Dialect.getDefaultInstance()
-            : targetDialect_;
-      } else {
-        return targetDialectBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The target dialect for the engine to translate the input to.
-     * </pre>
-     *
-     * <code>.google.cloud.bigquery.migration.v2.Dialect target_dialect = 4;</code>
-     */
-    public Builder setTargetDialect(com.google.cloud.bigquery.migration.v2.Dialect value) {
-      if (targetDialectBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        targetDialect_ = value;
-      } else {
-        targetDialectBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The target dialect for the engine to translate the input to.
-     * </pre>
-     *
-     * <code>.google.cloud.bigquery.migration.v2.Dialect target_dialect = 4;</code>
-     */
-    public Builder setTargetDialect(
-        com.google.cloud.bigquery.migration.v2.Dialect.Builder builderForValue) {
-      if (targetDialectBuilder_ == null) {
-        targetDialect_ = builderForValue.build();
-      } else {
-        targetDialectBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The target dialect for the engine to translate the input to.
-     * </pre>
-     *
-     * <code>.google.cloud.bigquery.migration.v2.Dialect target_dialect = 4;</code>
-     */
-    public Builder mergeTargetDialect(com.google.cloud.bigquery.migration.v2.Dialect value) {
-      if (targetDialectBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
-            && targetDialect_ != null
-            && targetDialect_
-                != com.google.cloud.bigquery.migration.v2.Dialect.getDefaultInstance()) {
-          getTargetDialectBuilder().mergeFrom(value);
-        } else {
-          targetDialect_ = value;
-        }
-      } else {
-        targetDialectBuilder_.mergeFrom(value);
-      }
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The target dialect for the engine to translate the input to.
-     * </pre>
-     *
-     * <code>.google.cloud.bigquery.migration.v2.Dialect target_dialect = 4;</code>
-     */
-    public Builder clearTargetDialect() {
-      bitField0_ = (bitField0_ & ~0x00000008);
-      targetDialect_ = null;
-      if (targetDialectBuilder_ != null) {
-        targetDialectBuilder_.dispose();
-        targetDialectBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The target dialect for the engine to translate the input to.
-     * </pre>
-     *
-     * <code>.google.cloud.bigquery.migration.v2.Dialect target_dialect = 4;</code>
-     */
-    public com.google.cloud.bigquery.migration.v2.Dialect.Builder getTargetDialectBuilder() {
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return getTargetDialectFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The target dialect for the engine to translate the input to.
-     * </pre>
-     *
-     * <code>.google.cloud.bigquery.migration.v2.Dialect target_dialect = 4;</code>
-     */
-    public com.google.cloud.bigquery.migration.v2.DialectOrBuilder getTargetDialectOrBuilder() {
-      if (targetDialectBuilder_ != null) {
-        return targetDialectBuilder_.getMessageOrBuilder();
-      } else {
-        return targetDialect_ == null
-            ? com.google.cloud.bigquery.migration.v2.Dialect.getDefaultInstance()
-            : targetDialect_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The target dialect for the engine to translate the input to.
-     * </pre>
-     *
-     * <code>.google.cloud.bigquery.migration.v2.Dialect target_dialect = 4;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.bigquery.migration.v2.Dialect,
-            com.google.cloud.bigquery.migration.v2.Dialect.Builder,
-            com.google.cloud.bigquery.migration.v2.DialectOrBuilder>
-        getTargetDialectFieldBuilder() {
-      if (targetDialectBuilder_ == null) {
-        targetDialectBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.bigquery.migration.v2.Dialect,
-                com.google.cloud.bigquery.migration.v2.Dialect.Builder,
-                com.google.cloud.bigquery.migration.v2.DialectOrBuilder>(
-                getTargetDialect(), getParentForChildren(), isClean());
-        targetDialect_ = null;
-      }
-      return targetDialectBuilder_;
-    }
-
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.bigquery.migration.v2.ObjectNameMappingList,
             com.google.cloud.bigquery.migration.v2.ObjectNameMappingList.Builder,
@@ -2005,6 +1712,376 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
       return nameMappingListBuilder_;
     }
 
+    private com.google.cloud.bigquery.migration.v2.Dialect sourceDialect_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.migration.v2.Dialect,
+            com.google.cloud.bigquery.migration.v2.Dialect.Builder,
+            com.google.cloud.bigquery.migration.v2.DialectOrBuilder>
+        sourceDialectBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The dialect of the input files.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.Dialect source_dialect = 3;</code>
+     *
+     * @return Whether the sourceDialect field is set.
+     */
+    public boolean hasSourceDialect() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The dialect of the input files.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.Dialect source_dialect = 3;</code>
+     *
+     * @return The sourceDialect.
+     */
+    public com.google.cloud.bigquery.migration.v2.Dialect getSourceDialect() {
+      if (sourceDialectBuilder_ == null) {
+        return sourceDialect_ == null
+            ? com.google.cloud.bigquery.migration.v2.Dialect.getDefaultInstance()
+            : sourceDialect_;
+      } else {
+        return sourceDialectBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The dialect of the input files.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.Dialect source_dialect = 3;</code>
+     */
+    public Builder setSourceDialect(com.google.cloud.bigquery.migration.v2.Dialect value) {
+      if (sourceDialectBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceDialect_ = value;
+      } else {
+        sourceDialectBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The dialect of the input files.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.Dialect source_dialect = 3;</code>
+     */
+    public Builder setSourceDialect(
+        com.google.cloud.bigquery.migration.v2.Dialect.Builder builderForValue) {
+      if (sourceDialectBuilder_ == null) {
+        sourceDialect_ = builderForValue.build();
+      } else {
+        sourceDialectBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The dialect of the input files.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.Dialect source_dialect = 3;</code>
+     */
+    public Builder mergeSourceDialect(com.google.cloud.bigquery.migration.v2.Dialect value) {
+      if (sourceDialectBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && sourceDialect_ != null
+            && sourceDialect_
+                != com.google.cloud.bigquery.migration.v2.Dialect.getDefaultInstance()) {
+          getSourceDialectBuilder().mergeFrom(value);
+        } else {
+          sourceDialect_ = value;
+        }
+      } else {
+        sourceDialectBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The dialect of the input files.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.Dialect source_dialect = 3;</code>
+     */
+    public Builder clearSourceDialect() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      sourceDialect_ = null;
+      if (sourceDialectBuilder_ != null) {
+        sourceDialectBuilder_.dispose();
+        sourceDialectBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The dialect of the input files.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.Dialect source_dialect = 3;</code>
+     */
+    public com.google.cloud.bigquery.migration.v2.Dialect.Builder getSourceDialectBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getSourceDialectFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The dialect of the input files.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.Dialect source_dialect = 3;</code>
+     */
+    public com.google.cloud.bigquery.migration.v2.DialectOrBuilder getSourceDialectOrBuilder() {
+      if (sourceDialectBuilder_ != null) {
+        return sourceDialectBuilder_.getMessageOrBuilder();
+      } else {
+        return sourceDialect_ == null
+            ? com.google.cloud.bigquery.migration.v2.Dialect.getDefaultInstance()
+            : sourceDialect_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The dialect of the input files.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.Dialect source_dialect = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.migration.v2.Dialect,
+            com.google.cloud.bigquery.migration.v2.Dialect.Builder,
+            com.google.cloud.bigquery.migration.v2.DialectOrBuilder>
+        getSourceDialectFieldBuilder() {
+      if (sourceDialectBuilder_ == null) {
+        sourceDialectBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.migration.v2.Dialect,
+                com.google.cloud.bigquery.migration.v2.Dialect.Builder,
+                com.google.cloud.bigquery.migration.v2.DialectOrBuilder>(
+                getSourceDialect(), getParentForChildren(), isClean());
+        sourceDialect_ = null;
+      }
+      return sourceDialectBuilder_;
+    }
+
+    private com.google.cloud.bigquery.migration.v2.Dialect targetDialect_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.migration.v2.Dialect,
+            com.google.cloud.bigquery.migration.v2.Dialect.Builder,
+            com.google.cloud.bigquery.migration.v2.DialectOrBuilder>
+        targetDialectBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The target dialect for the engine to translate the input to.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.Dialect target_dialect = 4;</code>
+     *
+     * @return Whether the targetDialect field is set.
+     */
+    public boolean hasTargetDialect() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The target dialect for the engine to translate the input to.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.Dialect target_dialect = 4;</code>
+     *
+     * @return The targetDialect.
+     */
+    public com.google.cloud.bigquery.migration.v2.Dialect getTargetDialect() {
+      if (targetDialectBuilder_ == null) {
+        return targetDialect_ == null
+            ? com.google.cloud.bigquery.migration.v2.Dialect.getDefaultInstance()
+            : targetDialect_;
+      } else {
+        return targetDialectBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The target dialect for the engine to translate the input to.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.Dialect target_dialect = 4;</code>
+     */
+    public Builder setTargetDialect(com.google.cloud.bigquery.migration.v2.Dialect value) {
+      if (targetDialectBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        targetDialect_ = value;
+      } else {
+        targetDialectBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The target dialect for the engine to translate the input to.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.Dialect target_dialect = 4;</code>
+     */
+    public Builder setTargetDialect(
+        com.google.cloud.bigquery.migration.v2.Dialect.Builder builderForValue) {
+      if (targetDialectBuilder_ == null) {
+        targetDialect_ = builderForValue.build();
+      } else {
+        targetDialectBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The target dialect for the engine to translate the input to.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.Dialect target_dialect = 4;</code>
+     */
+    public Builder mergeTargetDialect(com.google.cloud.bigquery.migration.v2.Dialect value) {
+      if (targetDialectBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && targetDialect_ != null
+            && targetDialect_
+                != com.google.cloud.bigquery.migration.v2.Dialect.getDefaultInstance()) {
+          getTargetDialectBuilder().mergeFrom(value);
+        } else {
+          targetDialect_ = value;
+        }
+      } else {
+        targetDialectBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The target dialect for the engine to translate the input to.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.Dialect target_dialect = 4;</code>
+     */
+    public Builder clearTargetDialect() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      targetDialect_ = null;
+      if (targetDialectBuilder_ != null) {
+        targetDialectBuilder_.dispose();
+        targetDialectBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The target dialect for the engine to translate the input to.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.Dialect target_dialect = 4;</code>
+     */
+    public com.google.cloud.bigquery.migration.v2.Dialect.Builder getTargetDialectBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getTargetDialectFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The target dialect for the engine to translate the input to.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.Dialect target_dialect = 4;</code>
+     */
+    public com.google.cloud.bigquery.migration.v2.DialectOrBuilder getTargetDialectOrBuilder() {
+      if (targetDialectBuilder_ != null) {
+        return targetDialectBuilder_.getMessageOrBuilder();
+      } else {
+        return targetDialect_ == null
+            ? com.google.cloud.bigquery.migration.v2.Dialect.getDefaultInstance()
+            : targetDialect_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The target dialect for the engine to translate the input to.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.migration.v2.Dialect target_dialect = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.migration.v2.Dialect,
+            com.google.cloud.bigquery.migration.v2.Dialect.Builder,
+            com.google.cloud.bigquery.migration.v2.DialectOrBuilder>
+        getTargetDialectFieldBuilder() {
+      if (targetDialectBuilder_ == null) {
+        targetDialectBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.migration.v2.Dialect,
+                com.google.cloud.bigquery.migration.v2.Dialect.Builder,
+                com.google.cloud.bigquery.migration.v2.DialectOrBuilder>(
+                getTargetDialect(), getParentForChildren(), isClean());
+        targetDialect_ = null;
+      }
+      return targetDialectBuilder_;
+    }
+
     private com.google.cloud.bigquery.migration.v2.SourceEnv sourceEnv_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.bigquery.migration.v2.SourceEnv,
@@ -2188,6 +2265,112 @@ public final class TranslationConfigDetails extends com.google.protobuf.Generate
         sourceEnv_ = null;
       }
       return sourceEnvBuilder_;
+    }
+
+    private java.lang.Object requestSource_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The indicator to show translation request initiator.
+     * </pre>
+     *
+     * <code>string request_source = 8;</code>
+     *
+     * @return The requestSource.
+     */
+    public java.lang.String getRequestSource() {
+      java.lang.Object ref = requestSource_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestSource_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The indicator to show translation request initiator.
+     * </pre>
+     *
+     * <code>string request_source = 8;</code>
+     *
+     * @return The bytes for requestSource.
+     */
+    public com.google.protobuf.ByteString getRequestSourceBytes() {
+      java.lang.Object ref = requestSource_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        requestSource_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The indicator to show translation request initiator.
+     * </pre>
+     *
+     * <code>string request_source = 8;</code>
+     *
+     * @param value The requestSource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestSource(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      requestSource_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The indicator to show translation request initiator.
+     * </pre>
+     *
+     * <code>string request_source = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRequestSource() {
+      requestSource_ = getDefaultInstance().getRequestSource();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The indicator to show translation request initiator.
+     * </pre>
+     *
+     * <code>string request_source = 8;</code>
+     *
+     * @param value The bytes for requestSource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestSourceBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      requestSource_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

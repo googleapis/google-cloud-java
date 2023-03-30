@@ -492,7 +492,8 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
    * Translation_Oracle2BQ, Translation_HiveQL2BQ, Translation_SparkSQL2BQ,
    * Translation_Snowflake2BQ, Translation_Netezza2BQ,
    * Translation_AzureSynapse2BQ, Translation_Vertica2BQ,
-   * Translation_SQLServer2BQ, Translation_Presto2BQ, Translation_MySQL2BQ.
+   * Translation_SQLServer2BQ, Translation_Presto2BQ, Translation_MySQL2BQ,
+   * Translation_Postgresql2BQ.
    * </pre>
    *
    * <code>string type = 2;</code>
@@ -520,7 +521,8 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
    * Translation_Oracle2BQ, Translation_HiveQL2BQ, Translation_SparkSQL2BQ,
    * Translation_Snowflake2BQ, Translation_Netezza2BQ,
    * Translation_AzureSynapse2BQ, Translation_Vertica2BQ,
-   * Translation_SQLServer2BQ, Translation_Presto2BQ, Translation_MySQL2BQ.
+   * Translation_SQLServer2BQ, Translation_Presto2BQ, Translation_MySQL2BQ,
+   * Translation_Postgresql2BQ.
    * </pre>
    *
    * <code>string type = 2;</code>
@@ -1660,7 +1662,8 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * Translation_Oracle2BQ, Translation_HiveQL2BQ, Translation_SparkSQL2BQ,
      * Translation_Snowflake2BQ, Translation_Netezza2BQ,
      * Translation_AzureSynapse2BQ, Translation_Vertica2BQ,
-     * Translation_SQLServer2BQ, Translation_Presto2BQ, Translation_MySQL2BQ.
+     * Translation_SQLServer2BQ, Translation_Presto2BQ, Translation_MySQL2BQ,
+     * Translation_Postgresql2BQ.
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -1687,7 +1690,8 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * Translation_Oracle2BQ, Translation_HiveQL2BQ, Translation_SparkSQL2BQ,
      * Translation_Snowflake2BQ, Translation_Netezza2BQ,
      * Translation_AzureSynapse2BQ, Translation_Vertica2BQ,
-     * Translation_SQLServer2BQ, Translation_Presto2BQ, Translation_MySQL2BQ.
+     * Translation_SQLServer2BQ, Translation_Presto2BQ, Translation_MySQL2BQ,
+     * Translation_Postgresql2BQ.
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -1714,7 +1718,8 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * Translation_Oracle2BQ, Translation_HiveQL2BQ, Translation_SparkSQL2BQ,
      * Translation_Snowflake2BQ, Translation_Netezza2BQ,
      * Translation_AzureSynapse2BQ, Translation_Vertica2BQ,
-     * Translation_SQLServer2BQ, Translation_Presto2BQ, Translation_MySQL2BQ.
+     * Translation_SQLServer2BQ, Translation_Presto2BQ, Translation_MySQL2BQ,
+     * Translation_Postgresql2BQ.
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -1740,7 +1745,8 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * Translation_Oracle2BQ, Translation_HiveQL2BQ, Translation_SparkSQL2BQ,
      * Translation_Snowflake2BQ, Translation_Netezza2BQ,
      * Translation_AzureSynapse2BQ, Translation_Vertica2BQ,
-     * Translation_SQLServer2BQ, Translation_Presto2BQ, Translation_MySQL2BQ.
+     * Translation_SQLServer2BQ, Translation_Presto2BQ, Translation_MySQL2BQ,
+     * Translation_Postgresql2BQ.
      * </pre>
      *
      * <code>string type = 2;</code>
@@ -1762,7 +1768,8 @@ public final class MigrationTask extends com.google.protobuf.GeneratedMessageV3
      * Translation_Oracle2BQ, Translation_HiveQL2BQ, Translation_SparkSQL2BQ,
      * Translation_Snowflake2BQ, Translation_Netezza2BQ,
      * Translation_AzureSynapse2BQ, Translation_Vertica2BQ,
-     * Translation_SQLServer2BQ, Translation_Presto2BQ, Translation_MySQL2BQ.
+     * Translation_SQLServer2BQ, Translation_Presto2BQ, Translation_MySQL2BQ,
+     * Translation_Postgresql2BQ.
      * </pre>
      *
      * <code>string type = 2;</code>

@@ -671,7 +671,7 @@ public final class RepositoryManagerGrpc {
    * Manages connections to source code repostiories.
    * </pre>
    */
-  public abstract static class RepositoryManagerImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -680,7 +680,7 @@ public final class RepositoryManagerGrpc {
      * Creates a Connection.
      * </pre>
      */
-    public void createConnection(
+    default void createConnection(
         com.google.cloudbuild.v2.CreateConnectionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -694,7 +694,7 @@ public final class RepositoryManagerGrpc {
      * Gets details of a single connection.
      * </pre>
      */
-    public void getConnection(
+    default void getConnection(
         com.google.cloudbuild.v2.GetConnectionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v2.Connection> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -708,7 +708,7 @@ public final class RepositoryManagerGrpc {
      * Lists Connections in a given project and location.
      * </pre>
      */
-    public void listConnections(
+    default void listConnections(
         com.google.cloudbuild.v2.ListConnectionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v2.ListConnectionsResponse>
             responseObserver) {
@@ -723,7 +723,7 @@ public final class RepositoryManagerGrpc {
      * Updates a single connection.
      * </pre>
      */
-    public void updateConnection(
+    default void updateConnection(
         com.google.cloudbuild.v2.UpdateConnectionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -737,7 +737,7 @@ public final class RepositoryManagerGrpc {
      * Deletes a single connection.
      * </pre>
      */
-    public void deleteConnection(
+    default void deleteConnection(
         com.google.cloudbuild.v2.DeleteConnectionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -751,7 +751,7 @@ public final class RepositoryManagerGrpc {
      * Creates a Repository.
      * </pre>
      */
-    public void createRepository(
+    default void createRepository(
         com.google.cloudbuild.v2.CreateRepositoryRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -765,7 +765,7 @@ public final class RepositoryManagerGrpc {
      * Creates multiple repositories inside a connection.
      * </pre>
      */
-    public void batchCreateRepositories(
+    default void batchCreateRepositories(
         com.google.cloudbuild.v2.BatchCreateRepositoriesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -779,7 +779,7 @@ public final class RepositoryManagerGrpc {
      * Gets details of a single repository.
      * </pre>
      */
-    public void getRepository(
+    default void getRepository(
         com.google.cloudbuild.v2.GetRepositoryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v2.Repository> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -793,7 +793,7 @@ public final class RepositoryManagerGrpc {
      * Lists Repositories in a given connection.
      * </pre>
      */
-    public void listRepositories(
+    default void listRepositories(
         com.google.cloudbuild.v2.ListRepositoriesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v2.ListRepositoriesResponse>
             responseObserver) {
@@ -808,7 +808,7 @@ public final class RepositoryManagerGrpc {
      * Deletes a single repository.
      * </pre>
      */
-    public void deleteRepository(
+    default void deleteRepository(
         com.google.cloudbuild.v2.DeleteRepositoryRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -822,7 +822,7 @@ public final class RepositoryManagerGrpc {
      * Fetches read/write token of a given repository.
      * </pre>
      */
-    public void fetchReadWriteToken(
+    default void fetchReadWriteToken(
         com.google.cloudbuild.v2.FetchReadWriteTokenRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v2.FetchReadWriteTokenResponse>
             responseObserver) {
@@ -837,7 +837,7 @@ public final class RepositoryManagerGrpc {
      * Fetches read token of a given repository.
      * </pre>
      */
-    public void fetchReadToken(
+    default void fetchReadToken(
         com.google.cloudbuild.v2.FetchReadTokenRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v2.FetchReadTokenResponse>
             responseObserver) {
@@ -853,106 +853,33 @@ public final class RepositoryManagerGrpc {
      * accessible and could be added to the connection.
      * </pre>
      */
-    public void fetchLinkableRepositories(
+    default void fetchLinkableRepositories(
         com.google.cloudbuild.v2.FetchLinkableRepositoriesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloudbuild.v2.FetchLinkableRepositoriesResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getFetchLinkableRepositoriesMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service RepositoryManager.
+   *
+   * <pre>
+   * Manages connections to source code repostiories.
+   * </pre>
+   */
+  public abstract static class RepositoryManagerImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateConnectionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v2.CreateConnectionRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_CONNECTION)))
-          .addMethod(
-              getGetConnectionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v2.GetConnectionRequest,
-                      com.google.cloudbuild.v2.Connection>(this, METHODID_GET_CONNECTION)))
-          .addMethod(
-              getListConnectionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v2.ListConnectionsRequest,
-                      com.google.cloudbuild.v2.ListConnectionsResponse>(
-                      this, METHODID_LIST_CONNECTIONS)))
-          .addMethod(
-              getUpdateConnectionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v2.UpdateConnectionRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_CONNECTION)))
-          .addMethod(
-              getDeleteConnectionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v2.DeleteConnectionRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_CONNECTION)))
-          .addMethod(
-              getCreateRepositoryMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v2.CreateRepositoryRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_REPOSITORY)))
-          .addMethod(
-              getBatchCreateRepositoriesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v2.BatchCreateRepositoriesRequest,
-                      com.google.longrunning.Operation>(this, METHODID_BATCH_CREATE_REPOSITORIES)))
-          .addMethod(
-              getGetRepositoryMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v2.GetRepositoryRequest,
-                      com.google.cloudbuild.v2.Repository>(this, METHODID_GET_REPOSITORY)))
-          .addMethod(
-              getListRepositoriesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v2.ListRepositoriesRequest,
-                      com.google.cloudbuild.v2.ListRepositoriesResponse>(
-                      this, METHODID_LIST_REPOSITORIES)))
-          .addMethod(
-              getDeleteRepositoryMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v2.DeleteRepositoryRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_REPOSITORY)))
-          .addMethod(
-              getFetchReadWriteTokenMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v2.FetchReadWriteTokenRequest,
-                      com.google.cloudbuild.v2.FetchReadWriteTokenResponse>(
-                      this, METHODID_FETCH_READ_WRITE_TOKEN)))
-          .addMethod(
-              getFetchReadTokenMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v2.FetchReadTokenRequest,
-                      com.google.cloudbuild.v2.FetchReadTokenResponse>(
-                      this, METHODID_FETCH_READ_TOKEN)))
-          .addMethod(
-              getFetchLinkableRepositoriesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloudbuild.v2.FetchLinkableRepositoriesRequest,
-                      com.google.cloudbuild.v2.FetchLinkableRepositoriesResponse>(
-                      this, METHODID_FETCH_LINKABLE_REPOSITORIES)))
-          .build();
+      return RepositoryManagerGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service RepositoryManager.
    *
    * <pre>
    * Manages connections to source code repostiories.
@@ -1186,7 +1113,7 @@ public final class RepositoryManagerGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service RepositoryManager.
    *
    * <pre>
    * Manages connections to source code repostiories.
@@ -1377,7 +1304,7 @@ public final class RepositoryManagerGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service RepositoryManager.
    *
    * <pre>
    * Manages connections to source code repostiories.
@@ -1591,10 +1518,10 @@ public final class RepositoryManagerGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final RepositoryManagerImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(RepositoryManagerImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1688,6 +1615,94 @@ public final class RepositoryManagerGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v2.CreateConnectionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_CONNECTION)))
+        .addMethod(
+            getGetConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v2.GetConnectionRequest,
+                    com.google.cloudbuild.v2.Connection>(service, METHODID_GET_CONNECTION)))
+        .addMethod(
+            getListConnectionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v2.ListConnectionsRequest,
+                    com.google.cloudbuild.v2.ListConnectionsResponse>(
+                    service, METHODID_LIST_CONNECTIONS)))
+        .addMethod(
+            getUpdateConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v2.UpdateConnectionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_CONNECTION)))
+        .addMethod(
+            getDeleteConnectionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v2.DeleteConnectionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_CONNECTION)))
+        .addMethod(
+            getCreateRepositoryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v2.CreateRepositoryRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_REPOSITORY)))
+        .addMethod(
+            getBatchCreateRepositoriesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v2.BatchCreateRepositoriesRequest,
+                    com.google.longrunning.Operation>(service, METHODID_BATCH_CREATE_REPOSITORIES)))
+        .addMethod(
+            getGetRepositoryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v2.GetRepositoryRequest,
+                    com.google.cloudbuild.v2.Repository>(service, METHODID_GET_REPOSITORY)))
+        .addMethod(
+            getListRepositoriesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v2.ListRepositoriesRequest,
+                    com.google.cloudbuild.v2.ListRepositoriesResponse>(
+                    service, METHODID_LIST_REPOSITORIES)))
+        .addMethod(
+            getDeleteRepositoryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v2.DeleteRepositoryRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_REPOSITORY)))
+        .addMethod(
+            getFetchReadWriteTokenMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v2.FetchReadWriteTokenRequest,
+                    com.google.cloudbuild.v2.FetchReadWriteTokenResponse>(
+                    service, METHODID_FETCH_READ_WRITE_TOKEN)))
+        .addMethod(
+            getFetchReadTokenMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v2.FetchReadTokenRequest,
+                    com.google.cloudbuild.v2.FetchReadTokenResponse>(
+                    service, METHODID_FETCH_READ_TOKEN)))
+        .addMethod(
+            getFetchLinkableRepositoriesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloudbuild.v2.FetchLinkableRepositoriesRequest,
+                    com.google.cloudbuild.v2.FetchLinkableRepositoriesResponse>(
+                    service, METHODID_FETCH_LINKABLE_REPOSITORIES)))
+        .build();
   }
 
   private abstract static class RepositoryManagerBaseDescriptorSupplier

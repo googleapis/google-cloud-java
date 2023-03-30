@@ -508,7 +508,7 @@ public final class ParticipantsGrpc {
    * Service for managing [Participants][google.cloud.dialogflow.v2.Participant].
    * </pre>
    */
-  public abstract static class ParticipantsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -517,7 +517,7 @@ public final class ParticipantsGrpc {
      * Creates a new participant in a conversation.
      * </pre>
      */
-    public void createParticipant(
+    default void createParticipant(
         com.google.cloud.dialogflow.v2.CreateParticipantRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Participant> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -531,7 +531,7 @@ public final class ParticipantsGrpc {
      * Retrieves a conversation participant.
      * </pre>
      */
-    public void getParticipant(
+    default void getParticipant(
         com.google.cloud.dialogflow.v2.GetParticipantRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Participant> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -545,7 +545,7 @@ public final class ParticipantsGrpc {
      * Returns the list of all participants in the specified conversation.
      * </pre>
      */
-    public void listParticipants(
+    default void listParticipants(
         com.google.cloud.dialogflow.v2.ListParticipantsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.ListParticipantsResponse>
             responseObserver) {
@@ -560,7 +560,7 @@ public final class ParticipantsGrpc {
      * Updates the specified participant.
      * </pre>
      */
-    public void updateParticipant(
+    default void updateParticipant(
         com.google.cloud.dialogflow.v2.UpdateParticipantRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Participant> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -578,7 +578,7 @@ public final class ParticipantsGrpc {
      * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
      * </pre>
      */
-    public void analyzeContent(
+    default void analyzeContent(
         com.google.cloud.dialogflow.v2.AnalyzeContentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.AnalyzeContentResponse>
             responseObserver) {
@@ -605,7 +605,7 @@ public final class ParticipantsGrpc {
      * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
      * </pre>
      */
-    public io.grpc.stub.StreamObserver<
+    default io.grpc.stub.StreamObserver<
             com.google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest>
         streamingAnalyzeContent(
             io.grpc.stub.StreamObserver<
@@ -623,7 +623,7 @@ public final class ParticipantsGrpc {
      * messages.
      * </pre>
      */
-    public void suggestArticles(
+    default void suggestArticles(
         com.google.cloud.dialogflow.v2.SuggestArticlesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.SuggestArticlesResponse>
             responseObserver) {
@@ -639,7 +639,7 @@ public final class ParticipantsGrpc {
      * messages.
      * </pre>
      */
-    public void suggestFaqAnswers(
+    default void suggestFaqAnswers(
         com.google.cloud.dialogflow.v2.SuggestFaqAnswersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.SuggestFaqAnswersResponse>
             responseObserver) {
@@ -655,85 +655,33 @@ public final class ParticipantsGrpc {
      * messages.
      * </pre>
      */
-    public void suggestSmartReplies(
+    default void suggestSmartReplies(
         com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSuggestSmartRepliesMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Participants.
+   *
+   * <pre>
+   * Service for managing [Participants][google.cloud.dialogflow.v2.Participant].
+   * </pre>
+   */
+  public abstract static class ParticipantsImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateParticipantMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.CreateParticipantRequest,
-                      com.google.cloud.dialogflow.v2.Participant>(
-                      this, METHODID_CREATE_PARTICIPANT)))
-          .addMethod(
-              getGetParticipantMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.GetParticipantRequest,
-                      com.google.cloud.dialogflow.v2.Participant>(this, METHODID_GET_PARTICIPANT)))
-          .addMethod(
-              getListParticipantsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.ListParticipantsRequest,
-                      com.google.cloud.dialogflow.v2.ListParticipantsResponse>(
-                      this, METHODID_LIST_PARTICIPANTS)))
-          .addMethod(
-              getUpdateParticipantMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.UpdateParticipantRequest,
-                      com.google.cloud.dialogflow.v2.Participant>(
-                      this, METHODID_UPDATE_PARTICIPANT)))
-          .addMethod(
-              getAnalyzeContentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.AnalyzeContentRequest,
-                      com.google.cloud.dialogflow.v2.AnalyzeContentResponse>(
-                      this, METHODID_ANALYZE_CONTENT)))
-          .addMethod(
-              getStreamingAnalyzeContentMethod(),
-              io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest,
-                      com.google.cloud.dialogflow.v2.StreamingAnalyzeContentResponse>(
-                      this, METHODID_STREAMING_ANALYZE_CONTENT)))
-          .addMethod(
-              getSuggestArticlesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.SuggestArticlesRequest,
-                      com.google.cloud.dialogflow.v2.SuggestArticlesResponse>(
-                      this, METHODID_SUGGEST_ARTICLES)))
-          .addMethod(
-              getSuggestFaqAnswersMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.SuggestFaqAnswersRequest,
-                      com.google.cloud.dialogflow.v2.SuggestFaqAnswersResponse>(
-                      this, METHODID_SUGGEST_FAQ_ANSWERS)))
-          .addMethod(
-              getSuggestSmartRepliesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest,
-                      com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse>(
-                      this, METHODID_SUGGEST_SMART_REPLIES)))
-          .build();
+      return ParticipantsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Participants.
    *
    * <pre>
    * Service for managing [Participants][google.cloud.dialogflow.v2.Participant].
@@ -922,7 +870,7 @@ public final class ParticipantsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Participants.
    *
    * <pre>
    * Service for managing [Participants][google.cloud.dialogflow.v2.Participant].
@@ -1053,7 +1001,7 @@ public final class ParticipantsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Participants.
    *
    * <pre>
    * Service for managing [Participants][google.cloud.dialogflow.v2.Participant].
@@ -1206,10 +1154,10 @@ public final class ParticipantsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ParticipantsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ParticipantsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1288,6 +1236,73 @@ public final class ParticipantsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateParticipantMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.CreateParticipantRequest,
+                    com.google.cloud.dialogflow.v2.Participant>(
+                    service, METHODID_CREATE_PARTICIPANT)))
+        .addMethod(
+            getGetParticipantMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.GetParticipantRequest,
+                    com.google.cloud.dialogflow.v2.Participant>(service, METHODID_GET_PARTICIPANT)))
+        .addMethod(
+            getListParticipantsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.ListParticipantsRequest,
+                    com.google.cloud.dialogflow.v2.ListParticipantsResponse>(
+                    service, METHODID_LIST_PARTICIPANTS)))
+        .addMethod(
+            getUpdateParticipantMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.UpdateParticipantRequest,
+                    com.google.cloud.dialogflow.v2.Participant>(
+                    service, METHODID_UPDATE_PARTICIPANT)))
+        .addMethod(
+            getAnalyzeContentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.AnalyzeContentRequest,
+                    com.google.cloud.dialogflow.v2.AnalyzeContentResponse>(
+                    service, METHODID_ANALYZE_CONTENT)))
+        .addMethod(
+            getStreamingAnalyzeContentMethod(),
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest,
+                    com.google.cloud.dialogflow.v2.StreamingAnalyzeContentResponse>(
+                    service, METHODID_STREAMING_ANALYZE_CONTENT)))
+        .addMethod(
+            getSuggestArticlesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.SuggestArticlesRequest,
+                    com.google.cloud.dialogflow.v2.SuggestArticlesResponse>(
+                    service, METHODID_SUGGEST_ARTICLES)))
+        .addMethod(
+            getSuggestFaqAnswersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.SuggestFaqAnswersRequest,
+                    com.google.cloud.dialogflow.v2.SuggestFaqAnswersResponse>(
+                    service, METHODID_SUGGEST_FAQ_ANSWERS)))
+        .addMethod(
+            getSuggestSmartRepliesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.SuggestSmartRepliesRequest,
+                    com.google.cloud.dialogflow.v2.SuggestSmartRepliesResponse>(
+                    service, METHODID_SUGGEST_SMART_REPLIES)))
+        .build();
   }
 
   private abstract static class ParticipantsBaseDescriptorSupplier

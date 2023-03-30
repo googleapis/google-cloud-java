@@ -793,7 +793,7 @@ public final class AnalyticsHubServiceGrpc {
    * dataset in your project.
    * </pre>
    */
-  public abstract static class AnalyticsHubServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -802,7 +802,7 @@ public final class AnalyticsHubServiceGrpc {
      * Lists all data exchanges in a given project and location.
      * </pre>
      */
-    public void listDataExchanges(
+    default void listDataExchanges(
         com.google.cloud.bigquery.dataexchange.v1beta1.ListDataExchangesRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.dataexchange.v1beta1.ListDataExchangesResponse>
@@ -819,7 +819,7 @@ public final class AnalyticsHubServiceGrpc {
      * location.
      * </pre>
      */
-    public void listOrgDataExchanges(
+    default void listOrgDataExchanges(
         com.google.cloud.bigquery.dataexchange.v1beta1.ListOrgDataExchangesRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.dataexchange.v1beta1.ListOrgDataExchangesResponse>
@@ -835,7 +835,7 @@ public final class AnalyticsHubServiceGrpc {
      * Gets the details of a data exchange.
      * </pre>
      */
-    public void getDataExchange(
+    default void getDataExchange(
         com.google.cloud.bigquery.dataexchange.v1beta1.GetDataExchangeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange>
             responseObserver) {
@@ -850,7 +850,7 @@ public final class AnalyticsHubServiceGrpc {
      * Creates a new data exchange.
      * </pre>
      */
-    public void createDataExchange(
+    default void createDataExchange(
         com.google.cloud.bigquery.dataexchange.v1beta1.CreateDataExchangeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange>
             responseObserver) {
@@ -865,7 +865,7 @@ public final class AnalyticsHubServiceGrpc {
      * Updates an existing data exchange.
      * </pre>
      */
-    public void updateDataExchange(
+    default void updateDataExchange(
         com.google.cloud.bigquery.dataexchange.v1beta1.UpdateDataExchangeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange>
             responseObserver) {
@@ -880,7 +880,7 @@ public final class AnalyticsHubServiceGrpc {
      * Deletes an existing data exchange.
      * </pre>
      */
-    public void deleteDataExchange(
+    default void deleteDataExchange(
         com.google.cloud.bigquery.dataexchange.v1beta1.DeleteDataExchangeRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -894,7 +894,7 @@ public final class AnalyticsHubServiceGrpc {
      * Lists all listings in a given project and location.
      * </pre>
      */
-    public void listListings(
+    default void listListings(
         com.google.cloud.bigquery.dataexchange.v1beta1.ListListingsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.dataexchange.v1beta1.ListListingsResponse>
@@ -910,7 +910,7 @@ public final class AnalyticsHubServiceGrpc {
      * Gets the details of a listing.
      * </pre>
      */
-    public void getListing(
+    default void getListing(
         com.google.cloud.bigquery.dataexchange.v1beta1.GetListingRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.dataexchange.v1beta1.Listing>
             responseObserver) {
@@ -924,7 +924,7 @@ public final class AnalyticsHubServiceGrpc {
      * Creates a new listing.
      * </pre>
      */
-    public void createListing(
+    default void createListing(
         com.google.cloud.bigquery.dataexchange.v1beta1.CreateListingRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.dataexchange.v1beta1.Listing>
             responseObserver) {
@@ -939,7 +939,7 @@ public final class AnalyticsHubServiceGrpc {
      * Updates an existing listing.
      * </pre>
      */
-    public void updateListing(
+    default void updateListing(
         com.google.cloud.bigquery.dataexchange.v1beta1.UpdateListingRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.dataexchange.v1beta1.Listing>
             responseObserver) {
@@ -954,7 +954,7 @@ public final class AnalyticsHubServiceGrpc {
      * Deletes a listing.
      * </pre>
      */
-    public void deleteListing(
+    default void deleteListing(
         com.google.cloud.bigquery.dataexchange.v1beta1.DeleteListingRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -972,7 +972,7 @@ public final class AnalyticsHubServiceGrpc {
      * creates a linked dataset in the subscriber's project.
      * </pre>
      */
-    public void subscribeListing(
+    default void subscribeListing(
         com.google.cloud.bigquery.dataexchange.v1beta1.SubscribeListingRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.dataexchange.v1beta1.SubscribeListingResponse>
@@ -988,7 +988,7 @@ public final class AnalyticsHubServiceGrpc {
      * Gets the IAM policy.
      * </pre>
      */
-    public void getIamPolicy(
+    default void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1002,7 +1002,7 @@ public final class AnalyticsHubServiceGrpc {
      * Sets the IAM policy.
      * </pre>
      */
-    public void setIamPolicy(
+    default void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1016,124 +1016,38 @@ public final class AnalyticsHubServiceGrpc {
      * Returns the permissions that a caller has.
      * </pre>
      */
-    public void testIamPermissions(
+    default void testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getTestIamPermissionsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service AnalyticsHubService.
+   *
+   * <pre>
+   * The `AnalyticsHubService` API facilitates data sharing within and across
+   * organizations. It allows data providers to publish listings that reference
+   * shared datasets. With Analytics Hub, users can discover and search for
+   * listings that they have access to. Subscribers can view and subscribe to
+   * listings. When you subscribe to a listing, Analytics Hub creates a linked
+   * dataset in your project.
+   * </pre>
+   */
+  public abstract static class AnalyticsHubServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListDataExchangesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.dataexchange.v1beta1.ListDataExchangesRequest,
-                      com.google.cloud.bigquery.dataexchange.v1beta1.ListDataExchangesResponse>(
-                      this, METHODID_LIST_DATA_EXCHANGES)))
-          .addMethod(
-              getListOrgDataExchangesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.dataexchange.v1beta1.ListOrgDataExchangesRequest,
-                      com.google.cloud.bigquery.dataexchange.v1beta1.ListOrgDataExchangesResponse>(
-                      this, METHODID_LIST_ORG_DATA_EXCHANGES)))
-          .addMethod(
-              getGetDataExchangeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.dataexchange.v1beta1.GetDataExchangeRequest,
-                      com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange>(
-                      this, METHODID_GET_DATA_EXCHANGE)))
-          .addMethod(
-              getCreateDataExchangeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.dataexchange.v1beta1.CreateDataExchangeRequest,
-                      com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange>(
-                      this, METHODID_CREATE_DATA_EXCHANGE)))
-          .addMethod(
-              getUpdateDataExchangeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.dataexchange.v1beta1.UpdateDataExchangeRequest,
-                      com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange>(
-                      this, METHODID_UPDATE_DATA_EXCHANGE)))
-          .addMethod(
-              getDeleteDataExchangeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.dataexchange.v1beta1.DeleteDataExchangeRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_DATA_EXCHANGE)))
-          .addMethod(
-              getListListingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.dataexchange.v1beta1.ListListingsRequest,
-                      com.google.cloud.bigquery.dataexchange.v1beta1.ListListingsResponse>(
-                      this, METHODID_LIST_LISTINGS)))
-          .addMethod(
-              getGetListingMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.dataexchange.v1beta1.GetListingRequest,
-                      com.google.cloud.bigquery.dataexchange.v1beta1.Listing>(
-                      this, METHODID_GET_LISTING)))
-          .addMethod(
-              getCreateListingMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.dataexchange.v1beta1.CreateListingRequest,
-                      com.google.cloud.bigquery.dataexchange.v1beta1.Listing>(
-                      this, METHODID_CREATE_LISTING)))
-          .addMethod(
-              getUpdateListingMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.dataexchange.v1beta1.UpdateListingRequest,
-                      com.google.cloud.bigquery.dataexchange.v1beta1.Listing>(
-                      this, METHODID_UPDATE_LISTING)))
-          .addMethod(
-              getDeleteListingMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.dataexchange.v1beta1.DeleteListingRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_LISTING)))
-          .addMethod(
-              getSubscribeListingMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.dataexchange.v1beta1.SubscribeListingRequest,
-                      com.google.cloud.bigquery.dataexchange.v1beta1.SubscribeListingResponse>(
-                      this, METHODID_SUBSCRIBE_LISTING)))
-          .addMethod(
-              getGetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_GET_IAM_POLICY)))
-          .addMethod(
-              getSetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_SET_IAM_POLICY)))
-          .addMethod(
-              getTestIamPermissionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.TestIamPermissionsRequest,
-                      com.google.iam.v1.TestIamPermissionsResponse>(
-                      this, METHODID_TEST_IAM_PERMISSIONS)))
-          .build();
+      return AnalyticsHubServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service AnalyticsHubService.
    *
    * <pre>
    * The `AnalyticsHubService` API facilitates data sharing within and across
@@ -1416,7 +1330,7 @@ public final class AnalyticsHubServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service AnalyticsHubService.
    *
    * <pre>
    * The `AnalyticsHubService` API facilitates data sharing within and across
@@ -1642,7 +1556,7 @@ public final class AnalyticsHubServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service AnalyticsHubService.
    *
    * <pre>
    * The `AnalyticsHubService` API facilitates data sharing within and across
@@ -1906,10 +1820,10 @@ public final class AnalyticsHubServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final AnalyticsHubServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(AnalyticsHubServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -2025,6 +1939,110 @@ public final class AnalyticsHubServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListDataExchangesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.dataexchange.v1beta1.ListDataExchangesRequest,
+                    com.google.cloud.bigquery.dataexchange.v1beta1.ListDataExchangesResponse>(
+                    service, METHODID_LIST_DATA_EXCHANGES)))
+        .addMethod(
+            getListOrgDataExchangesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.dataexchange.v1beta1.ListOrgDataExchangesRequest,
+                    com.google.cloud.bigquery.dataexchange.v1beta1.ListOrgDataExchangesResponse>(
+                    service, METHODID_LIST_ORG_DATA_EXCHANGES)))
+        .addMethod(
+            getGetDataExchangeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.dataexchange.v1beta1.GetDataExchangeRequest,
+                    com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange>(
+                    service, METHODID_GET_DATA_EXCHANGE)))
+        .addMethod(
+            getCreateDataExchangeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.dataexchange.v1beta1.CreateDataExchangeRequest,
+                    com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange>(
+                    service, METHODID_CREATE_DATA_EXCHANGE)))
+        .addMethod(
+            getUpdateDataExchangeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.dataexchange.v1beta1.UpdateDataExchangeRequest,
+                    com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange>(
+                    service, METHODID_UPDATE_DATA_EXCHANGE)))
+        .addMethod(
+            getDeleteDataExchangeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.dataexchange.v1beta1.DeleteDataExchangeRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_DATA_EXCHANGE)))
+        .addMethod(
+            getListListingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.dataexchange.v1beta1.ListListingsRequest,
+                    com.google.cloud.bigquery.dataexchange.v1beta1.ListListingsResponse>(
+                    service, METHODID_LIST_LISTINGS)))
+        .addMethod(
+            getGetListingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.dataexchange.v1beta1.GetListingRequest,
+                    com.google.cloud.bigquery.dataexchange.v1beta1.Listing>(
+                    service, METHODID_GET_LISTING)))
+        .addMethod(
+            getCreateListingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.dataexchange.v1beta1.CreateListingRequest,
+                    com.google.cloud.bigquery.dataexchange.v1beta1.Listing>(
+                    service, METHODID_CREATE_LISTING)))
+        .addMethod(
+            getUpdateListingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.dataexchange.v1beta1.UpdateListingRequest,
+                    com.google.cloud.bigquery.dataexchange.v1beta1.Listing>(
+                    service, METHODID_UPDATE_LISTING)))
+        .addMethod(
+            getDeleteListingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.dataexchange.v1beta1.DeleteListingRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_LISTING)))
+        .addMethod(
+            getSubscribeListingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.dataexchange.v1beta1.SubscribeListingRequest,
+                    com.google.cloud.bigquery.dataexchange.v1beta1.SubscribeListingResponse>(
+                    service, METHODID_SUBSCRIBE_LISTING)))
+        .addMethod(
+            getGetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_GET_IAM_POLICY)))
+        .addMethod(
+            getSetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_SET_IAM_POLICY)))
+        .addMethod(
+            getTestIamPermissionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.v1.TestIamPermissionsRequest,
+                    com.google.iam.v1.TestIamPermissionsResponse>(
+                    service, METHODID_TEST_IAM_PERMISSIONS)))
+        .build();
   }
 
   private abstract static class AnalyticsHubServiceBaseDescriptorSupplier

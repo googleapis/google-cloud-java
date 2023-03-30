@@ -49,6 +49,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     plan_ = 0;
     state_ = 0;
     renewalPlan_ = 0;
+    edition_ = 0;
   }
 
   @java.lang.Override
@@ -115,6 +116,18 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
+     * Same as FLEX, should only be used if flat-rate commitments are still
+     * available.
+     * </pre>
+     *
+     * <code>FLEX_FLAT_RATE = 7 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated
+    FLEX_FLAT_RATE(7),
+    /**
+     *
+     *
+     * <pre>
      * Trial commitments have a committed period of 182 days after becoming
      * ACTIVE. After that, they are converted to a new commitment based on the
      * `renewal_plan`. Default `renewal_plan` for Trial commitment is Flex so
@@ -140,6 +153,18 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
+     * Same as MONTHLY, should only be used if flat-rate commitments are still
+     * available.
+     * </pre>
+     *
+     * <code>MONTHLY_FLAT_RATE = 8 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated
+    MONTHLY_FLAT_RATE(8),
+    /**
+     *
+     *
+     * <pre>
      * Annual commitments have a committed period of 365 days after becoming
      * ACTIVE. After that they are converted to a new commitment based on the
      * renewal_plan.
@@ -148,6 +173,45 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <code>ANNUAL = 4;</code>
      */
     ANNUAL(4),
+    /**
+     *
+     *
+     * <pre>
+     * Same as ANNUAL, should only be used if flat-rate commitments are still
+     * available.
+     * </pre>
+     *
+     * <code>ANNUAL_FLAT_RATE = 9 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated
+    ANNUAL_FLAT_RATE(9),
+    /**
+     *
+     *
+     * <pre>
+     * 3-year commitments have a committed period of 1095(3 * 365) days after
+     * becoming ACTIVE. After that they are converted to a new commitment based
+     * on the renewal_plan.
+     * </pre>
+     *
+     * <code>THREE_YEAR = 10;</code>
+     */
+    THREE_YEAR(10),
+    /**
+     *
+     *
+     * <pre>
+     * Should only be used for `renewal_plan` and is only meaningful if
+     * edition is specified to values other than EDITION_UNSPECIFIED. Otherwise
+     * CreateCapacityCommitmentRequest or UpdateCapacityCommitmentRequest will
+     * be rejected with error code `google.rpc.Code.INVALID_ARGUMENT`. If the
+     * renewal_plan is NONE, capacity commitment will be removed at the end of
+     * its commitment period.
+     * </pre>
+     *
+     * <code>NONE = 6;</code>
+     */
+    NONE(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -178,6 +242,17 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
+     * Same as FLEX, should only be used if flat-rate commitments are still
+     * available.
+     * </pre>
+     *
+     * <code>FLEX_FLAT_RATE = 7 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public static final int FLEX_FLAT_RATE_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
      * Trial commitments have a committed period of 182 days after becoming
      * ACTIVE. After that, they are converted to a new commitment based on the
      * `renewal_plan`. Default `renewal_plan` for Trial commitment is Flex so
@@ -203,6 +278,17 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
+     * Same as MONTHLY, should only be used if flat-rate commitments are still
+     * available.
+     * </pre>
+     *
+     * <code>MONTHLY_FLAT_RATE = 8 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public static final int MONTHLY_FLAT_RATE_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
      * Annual commitments have a committed period of 365 days after becoming
      * ACTIVE. After that they are converted to a new commitment based on the
      * renewal_plan.
@@ -211,6 +297,44 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <code>ANNUAL = 4;</code>
      */
     public static final int ANNUAL_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Same as ANNUAL, should only be used if flat-rate commitments are still
+     * available.
+     * </pre>
+     *
+     * <code>ANNUAL_FLAT_RATE = 9 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public static final int ANNUAL_FLAT_RATE_VALUE = 9;
+    /**
+     *
+     *
+     * <pre>
+     * 3-year commitments have a committed period of 1095(3 * 365) days after
+     * becoming ACTIVE. After that they are converted to a new commitment based
+     * on the renewal_plan.
+     * </pre>
+     *
+     * <code>THREE_YEAR = 10;</code>
+     */
+    public static final int THREE_YEAR_VALUE = 10;
+    /**
+     *
+     *
+     * <pre>
+     * Should only be used for `renewal_plan` and is only meaningful if
+     * edition is specified to values other than EDITION_UNSPECIFIED. Otherwise
+     * CreateCapacityCommitmentRequest or UpdateCapacityCommitmentRequest will
+     * be rejected with error code `google.rpc.Code.INVALID_ARGUMENT`. If the
+     * renewal_plan is NONE, capacity commitment will be removed at the end of
+     * its commitment period.
+     * </pre>
+     *
+     * <code>NONE = 6;</code>
+     */
+    public static final int NONE_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -240,12 +364,22 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
           return COMMITMENT_PLAN_UNSPECIFIED;
         case 3:
           return FLEX;
+        case 7:
+          return FLEX_FLAT_RATE;
         case 5:
           return TRIAL;
         case 2:
           return MONTHLY;
+        case 8:
+          return MONTHLY_FLAT_RATE;
         case 4:
           return ANNUAL;
+        case 9:
+          return ANNUAL_FLAT_RATE;
+        case 10:
+          return THREE_YEAR;
+        case 6:
+          return NONE;
         default:
           return null;
       }
@@ -648,8 +782,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. The start of the current commitment period. It is applicable only for
-   * ACTIVE capacity commitments.
+   * Output only. The start of the current commitment period. It is applicable
+   * only for ACTIVE capacity commitments.
    * </pre>
    *
    * <code>
@@ -666,8 +800,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. The start of the current commitment period. It is applicable only for
-   * ACTIVE capacity commitments.
+   * Output only. The start of the current commitment period. It is applicable
+   * only for ACTIVE capacity commitments.
    * </pre>
    *
    * <code>
@@ -686,8 +820,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. The start of the current commitment period. It is applicable only for
-   * ACTIVE capacity commitments.
+   * Output only. The start of the current commitment period. It is applicable
+   * only for ACTIVE capacity commitments.
    * </pre>
    *
    * <code>
@@ -707,8 +841,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. The end of the current commitment period. It is applicable only for ACTIVE
-   * capacity commitments.
+   * Output only. The end of the current commitment period. It is applicable
+   * only for ACTIVE capacity commitments.
    * </pre>
    *
    * <code>
@@ -725,8 +859,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. The end of the current commitment period. It is applicable only for ACTIVE
-   * capacity commitments.
+   * Output only. The end of the current commitment period. It is applicable
+   * only for ACTIVE capacity commitments.
    * </pre>
    *
    * <code>
@@ -745,8 +879,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. The end of the current commitment period. It is applicable only for ACTIVE
-   * capacity commitments.
+   * Output only. The end of the current commitment period. It is applicable
+   * only for ACTIVE capacity commitments.
    * </pre>
    *
    * <code>
@@ -865,6 +999,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    * If set to true, this commitment is placed in the organization's
    * secondary region which is designated for disaster recovery purposes.
    * If false, this commitment is placed in the organization's default region.
+   * NOTE: this is a preview feature. Project must be allow-listed in order to
+   * set this field.
    * </pre>
    *
    * <code>bool multi_region_auxiliary = 10;</code>
@@ -874,6 +1010,41 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public boolean getMultiRegionAuxiliary() {
     return multiRegionAuxiliary_;
+  }
+
+  public static final int EDITION_FIELD_NUMBER = 12;
+  private int edition_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Edition of the capacity commitment.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 12;</code>
+   *
+   * @return The enum numeric value on the wire for edition.
+   */
+  @java.lang.Override
+  public int getEditionValue() {
+    return edition_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Edition of the capacity commitment.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 12;</code>
+   *
+   * @return The edition.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.reservation.v1.Edition getEdition() {
+    com.google.cloud.bigquery.reservation.v1.Edition result =
+        com.google.cloud.bigquery.reservation.v1.Edition.forNumber(edition_);
+    return result == null ? com.google.cloud.bigquery.reservation.v1.Edition.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -925,6 +1096,10 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     if (multiRegionAuxiliary_ != false) {
       output.writeBool(10, multiRegionAuxiliary_);
     }
+    if (edition_
+        != com.google.cloud.bigquery.reservation.v1.Edition.EDITION_UNSPECIFIED.getNumber()) {
+      output.writeEnum(12, edition_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -969,6 +1144,10 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     if (multiRegionAuxiliary_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, multiRegionAuxiliary_);
     }
+    if (edition_
+        != com.google.cloud.bigquery.reservation.v1.Edition.EDITION_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, edition_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1003,6 +1182,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     }
     if (renewalPlan_ != other.renewalPlan_) return false;
     if (getMultiRegionAuxiliary() != other.getMultiRegionAuxiliary()) return false;
+    if (edition_ != other.edition_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1038,6 +1218,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + renewalPlan_;
     hash = (37 * hash) + MULTI_REGION_AUXILIARY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMultiRegionAuxiliary());
+    hash = (37 * hash) + EDITION_FIELD_NUMBER;
+    hash = (53 * hash) + edition_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1206,6 +1388,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       }
       renewalPlan_ = 0;
       multiRegionAuxiliary_ = false;
+      edition_ = 0;
       return this;
     }
 
@@ -1275,6 +1458,9 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.multiRegionAuxiliary_ = multiRegionAuxiliary_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.edition_ = edition_;
       }
     }
 
@@ -1352,6 +1538,9 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
       }
       if (other.getMultiRegionAuxiliary() != false) {
         setMultiRegionAuxiliary(other.getMultiRegionAuxiliary());
+      }
+      if (other.edition_ != 0) {
+        setEditionValue(other.getEditionValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1435,6 +1624,12 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000100;
                 break;
               } // case 80
+            case 96:
+              {
+                edition_ = input.readEnum();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 96
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1845,8 +2040,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The start of the current commitment period. It is applicable only for
-     * ACTIVE capacity commitments.
+     * Output only. The start of the current commitment period. It is applicable
+     * only for ACTIVE capacity commitments.
      * </pre>
      *
      * <code>
@@ -1862,8 +2057,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The start of the current commitment period. It is applicable only for
-     * ACTIVE capacity commitments.
+     * Output only. The start of the current commitment period. It is applicable
+     * only for ACTIVE capacity commitments.
      * </pre>
      *
      * <code>
@@ -1885,8 +2080,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The start of the current commitment period. It is applicable only for
-     * ACTIVE capacity commitments.
+     * Output only. The start of the current commitment period. It is applicable
+     * only for ACTIVE capacity commitments.
      * </pre>
      *
      * <code>
@@ -1910,8 +2105,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The start of the current commitment period. It is applicable only for
-     * ACTIVE capacity commitments.
+     * Output only. The start of the current commitment period. It is applicable
+     * only for ACTIVE capacity commitments.
      * </pre>
      *
      * <code>
@@ -1932,8 +2127,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The start of the current commitment period. It is applicable only for
-     * ACTIVE capacity commitments.
+     * Output only. The start of the current commitment period. It is applicable
+     * only for ACTIVE capacity commitments.
      * </pre>
      *
      * <code>
@@ -1960,8 +2155,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The start of the current commitment period. It is applicable only for
-     * ACTIVE capacity commitments.
+     * Output only. The start of the current commitment period. It is applicable
+     * only for ACTIVE capacity commitments.
      * </pre>
      *
      * <code>
@@ -1982,8 +2177,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The start of the current commitment period. It is applicable only for
-     * ACTIVE capacity commitments.
+     * Output only. The start of the current commitment period. It is applicable
+     * only for ACTIVE capacity commitments.
      * </pre>
      *
      * <code>
@@ -1999,8 +2194,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The start of the current commitment period. It is applicable only for
-     * ACTIVE capacity commitments.
+     * Output only. The start of the current commitment period. It is applicable
+     * only for ACTIVE capacity commitments.
      * </pre>
      *
      * <code>
@@ -2020,8 +2215,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The start of the current commitment period. It is applicable only for
-     * ACTIVE capacity commitments.
+     * Output only. The start of the current commitment period. It is applicable
+     * only for ACTIVE capacity commitments.
      * </pre>
      *
      * <code>
@@ -2055,8 +2250,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The end of the current commitment period. It is applicable only for ACTIVE
-     * capacity commitments.
+     * Output only. The end of the current commitment period. It is applicable
+     * only for ACTIVE capacity commitments.
      * </pre>
      *
      * <code>
@@ -2072,8 +2267,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The end of the current commitment period. It is applicable only for ACTIVE
-     * capacity commitments.
+     * Output only. The end of the current commitment period. It is applicable
+     * only for ACTIVE capacity commitments.
      * </pre>
      *
      * <code>
@@ -2095,8 +2290,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The end of the current commitment period. It is applicable only for ACTIVE
-     * capacity commitments.
+     * Output only. The end of the current commitment period. It is applicable
+     * only for ACTIVE capacity commitments.
      * </pre>
      *
      * <code>
@@ -2120,8 +2315,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The end of the current commitment period. It is applicable only for ACTIVE
-     * capacity commitments.
+     * Output only. The end of the current commitment period. It is applicable
+     * only for ACTIVE capacity commitments.
      * </pre>
      *
      * <code>
@@ -2142,8 +2337,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The end of the current commitment period. It is applicable only for ACTIVE
-     * capacity commitments.
+     * Output only. The end of the current commitment period. It is applicable
+     * only for ACTIVE capacity commitments.
      * </pre>
      *
      * <code>
@@ -2170,8 +2365,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The end of the current commitment period. It is applicable only for ACTIVE
-     * capacity commitments.
+     * Output only. The end of the current commitment period. It is applicable
+     * only for ACTIVE capacity commitments.
      * </pre>
      *
      * <code>
@@ -2192,8 +2387,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The end of the current commitment period. It is applicable only for ACTIVE
-     * capacity commitments.
+     * Output only. The end of the current commitment period. It is applicable
+     * only for ACTIVE capacity commitments.
      * </pre>
      *
      * <code>
@@ -2209,8 +2404,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The end of the current commitment period. It is applicable only for ACTIVE
-     * capacity commitments.
+     * Output only. The end of the current commitment period. It is applicable
+     * only for ACTIVE capacity commitments.
      * </pre>
      *
      * <code>
@@ -2230,8 +2425,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The end of the current commitment period. It is applicable only for ACTIVE
-     * capacity commitments.
+     * Output only. The end of the current commitment period. It is applicable
+     * only for ACTIVE capacity commitments.
      * </pre>
      *
      * <code>
@@ -2564,6 +2759,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * If set to true, this commitment is placed in the organization's
      * secondary region which is designated for disaster recovery purposes.
      * If false, this commitment is placed in the organization's default region.
+     * NOTE: this is a preview feature. Project must be allow-listed in order to
+     * set this field.
      * </pre>
      *
      * <code>bool multi_region_auxiliary = 10;</code>
@@ -2583,6 +2780,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * If set to true, this commitment is placed in the organization's
      * secondary region which is designated for disaster recovery purposes.
      * If false, this commitment is placed in the organization's default region.
+     * NOTE: this is a preview feature. Project must be allow-listed in order to
+     * set this field.
      * </pre>
      *
      * <code>bool multi_region_auxiliary = 10;</code>
@@ -2606,6 +2805,8 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * If set to true, this commitment is placed in the organization's
      * secondary region which is designated for disaster recovery purposes.
      * If false, this commitment is placed in the organization's default region.
+     * NOTE: this is a preview feature. Project must be allow-listed in order to
+     * set this field.
      * </pre>
      *
      * <code>bool multi_region_auxiliary = 10;</code>
@@ -2615,6 +2816,98 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
     public Builder clearMultiRegionAuxiliary() {
       bitField0_ = (bitField0_ & ~0x00000100);
       multiRegionAuxiliary_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int edition_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Edition of the capacity commitment.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 12;</code>
+     *
+     * @return The enum numeric value on the wire for edition.
+     */
+    @java.lang.Override
+    public int getEditionValue() {
+      return edition_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Edition of the capacity commitment.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 12;</code>
+     *
+     * @param value The enum numeric value on the wire for edition to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEditionValue(int value) {
+      edition_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Edition of the capacity commitment.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 12;</code>
+     *
+     * @return The edition.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.reservation.v1.Edition getEdition() {
+      com.google.cloud.bigquery.reservation.v1.Edition result =
+          com.google.cloud.bigquery.reservation.v1.Edition.forNumber(edition_);
+      return result == null
+          ? com.google.cloud.bigquery.reservation.v1.Edition.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Edition of the capacity commitment.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 12;</code>
+     *
+     * @param value The edition to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEdition(com.google.cloud.bigquery.reservation.v1.Edition value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000200;
+      edition_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Edition of the capacity commitment.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEdition() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      edition_ = 0;
       onChanged();
       return this;
     }

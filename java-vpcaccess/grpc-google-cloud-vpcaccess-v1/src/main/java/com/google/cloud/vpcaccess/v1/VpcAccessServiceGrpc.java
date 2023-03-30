@@ -266,7 +266,7 @@ public final class VpcAccessServiceGrpc {
    * Virtual Private Cloud networks.
    * </pre>
    */
-  public abstract static class VpcAccessServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -275,7 +275,7 @@ public final class VpcAccessServiceGrpc {
      * Creates a Serverless VPC Access connector, returns an operation.
      * </pre>
      */
-    public void createConnector(
+    default void createConnector(
         com.google.cloud.vpcaccess.v1.CreateConnectorRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -290,7 +290,7 @@ public final class VpcAccessServiceGrpc {
      * does not exist.
      * </pre>
      */
-    public void getConnector(
+    default void getConnector(
         com.google.cloud.vpcaccess.v1.GetConnectorRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vpcaccess.v1.Connector> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -304,7 +304,7 @@ public final class VpcAccessServiceGrpc {
      * Lists Serverless VPC Access connectors.
      * </pre>
      */
-    public void listConnectors(
+    default void listConnectors(
         com.google.cloud.vpcaccess.v1.ListConnectorsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vpcaccess.v1.ListConnectorsResponse>
             responseObserver) {
@@ -320,47 +320,34 @@ public final class VpcAccessServiceGrpc {
      * resource does not exist.
      * </pre>
      */
-    public void deleteConnector(
+    default void deleteConnector(
         com.google.cloud.vpcaccess.v1.DeleteConnectorRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteConnectorMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service VpcAccessService.
+   *
+   * <pre>
+   * Serverless VPC Access API allows users to create and manage connectors for
+   * App Engine, Cloud Functions and Cloud Run to have internal connections to
+   * Virtual Private Cloud networks.
+   * </pre>
+   */
+  public abstract static class VpcAccessServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateConnectorMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vpcaccess.v1.CreateConnectorRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_CONNECTOR)))
-          .addMethod(
-              getGetConnectorMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vpcaccess.v1.GetConnectorRequest,
-                      com.google.cloud.vpcaccess.v1.Connector>(this, METHODID_GET_CONNECTOR)))
-          .addMethod(
-              getListConnectorsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vpcaccess.v1.ListConnectorsRequest,
-                      com.google.cloud.vpcaccess.v1.ListConnectorsResponse>(
-                      this, METHODID_LIST_CONNECTORS)))
-          .addMethod(
-              getDeleteConnectorMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vpcaccess.v1.DeleteConnectorRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_CONNECTOR)))
-          .build();
+      return VpcAccessServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service VpcAccessService.
    *
    * <pre>
    * Serverless VPC Access API allows users to create and manage connectors for
@@ -448,7 +435,7 @@ public final class VpcAccessServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service VpcAccessService.
    *
    * <pre>
    * Serverless VPC Access API allows users to create and manage connectors for
@@ -524,7 +511,7 @@ public final class VpcAccessServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service VpcAccessService.
    *
    * <pre>
    * Serverless VPC Access API allows users to create and manage connectors for
@@ -611,10 +598,10 @@ public final class VpcAccessServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final VpcAccessServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(VpcAccessServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -659,6 +646,36 @@ public final class VpcAccessServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateConnectorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vpcaccess.v1.CreateConnectorRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_CONNECTOR)))
+        .addMethod(
+            getGetConnectorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vpcaccess.v1.GetConnectorRequest,
+                    com.google.cloud.vpcaccess.v1.Connector>(service, METHODID_GET_CONNECTOR)))
+        .addMethod(
+            getListConnectorsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vpcaccess.v1.ListConnectorsRequest,
+                    com.google.cloud.vpcaccess.v1.ListConnectorsResponse>(
+                    service, METHODID_LIST_CONNECTORS)))
+        .addMethod(
+            getDeleteConnectorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vpcaccess.v1.DeleteConnectorRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_CONNECTOR)))
+        .build();
   }
 
   private abstract static class VpcAccessServiceBaseDescriptorSupplier

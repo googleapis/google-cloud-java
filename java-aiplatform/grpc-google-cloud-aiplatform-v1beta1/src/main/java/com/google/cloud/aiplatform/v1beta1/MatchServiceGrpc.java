@@ -181,7 +181,7 @@ public final class MatchServiceGrpc {
    * search at scale.
    * </pre>
    */
-  public abstract static class MatchServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -190,7 +190,7 @@ public final class MatchServiceGrpc {
      * Finds the nearest neighbors of each vector within the request.
      * </pre>
      */
-    public void findNeighbors(
+    default void findNeighbors(
         com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.FindNeighborsResponse>
             responseObserver) {
@@ -206,37 +206,34 @@ public final class MatchServiceGrpc {
      * A maximum of 1000 datapoints can be retrieved in a batch.
      * </pre>
      */
-    public void readIndexDatapoints(
+    default void readIndexDatapoints(
         com.google.cloud.aiplatform.v1beta1.ReadIndexDatapointsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.ReadIndexDatapointsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getReadIndexDatapointsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service MatchService.
+   *
+   * <pre>
+   * MatchService is a Google managed service for efficient vector similarity
+   * search at scale.
+   * </pre>
+   */
+  public abstract static class MatchServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getFindNeighborsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest,
-                      com.google.cloud.aiplatform.v1beta1.FindNeighborsResponse>(
-                      this, METHODID_FIND_NEIGHBORS)))
-          .addMethod(
-              getReadIndexDatapointsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.aiplatform.v1beta1.ReadIndexDatapointsRequest,
-                      com.google.cloud.aiplatform.v1beta1.ReadIndexDatapointsResponse>(
-                      this, METHODID_READ_INDEX_DATAPOINTS)))
-          .build();
+      return MatchServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service MatchService.
    *
    * <pre>
    * MatchService is a Google managed service for efficient vector similarity
@@ -291,7 +288,7 @@ public final class MatchServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service MatchService.
    *
    * <pre>
    * MatchService is a Google managed service for efficient vector similarity
@@ -339,7 +336,7 @@ public final class MatchServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service MatchService.
    *
    * <pre>
    * MatchService is a Google managed service for efficient vector similarity
@@ -397,10 +394,10 @@ public final class MatchServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final MatchServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(MatchServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -437,6 +434,25 @@ public final class MatchServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getFindNeighborsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.FindNeighborsRequest,
+                    com.google.cloud.aiplatform.v1beta1.FindNeighborsResponse>(
+                    service, METHODID_FIND_NEIGHBORS)))
+        .addMethod(
+            getReadIndexDatapointsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.ReadIndexDatapointsRequest,
+                    com.google.cloud.aiplatform.v1beta1.ReadIndexDatapointsResponse>(
+                    service, METHODID_READ_INDEX_DATAPOINTS)))
+        .build();
   }
 
   private abstract static class MatchServiceBaseDescriptorSupplier

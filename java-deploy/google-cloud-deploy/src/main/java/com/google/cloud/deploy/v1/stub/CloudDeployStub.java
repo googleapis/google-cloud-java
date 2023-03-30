@@ -28,8 +28,12 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.deploy.v1.AbandonReleaseRequest;
 import com.google.cloud.deploy.v1.AbandonReleaseResponse;
+import com.google.cloud.deploy.v1.AdvanceRolloutRequest;
+import com.google.cloud.deploy.v1.AdvanceRolloutResponse;
 import com.google.cloud.deploy.v1.ApproveRolloutRequest;
 import com.google.cloud.deploy.v1.ApproveRolloutResponse;
+import com.google.cloud.deploy.v1.CancelRolloutRequest;
+import com.google.cloud.deploy.v1.CancelRolloutResponse;
 import com.google.cloud.deploy.v1.Config;
 import com.google.cloud.deploy.v1.CreateDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.CreateReleaseRequest;
@@ -44,6 +48,8 @@ import com.google.cloud.deploy.v1.GetJobRunRequest;
 import com.google.cloud.deploy.v1.GetReleaseRequest;
 import com.google.cloud.deploy.v1.GetRolloutRequest;
 import com.google.cloud.deploy.v1.GetTargetRequest;
+import com.google.cloud.deploy.v1.IgnoreJobRequest;
+import com.google.cloud.deploy.v1.IgnoreJobResponse;
 import com.google.cloud.deploy.v1.JobRun;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesRequest;
 import com.google.cloud.deploy.v1.ListDeliveryPipelinesResponse;
@@ -61,6 +67,8 @@ import com.google.cloud.deploy.v1.RetryJobRequest;
 import com.google.cloud.deploy.v1.RetryJobResponse;
 import com.google.cloud.deploy.v1.Rollout;
 import com.google.cloud.deploy.v1.Target;
+import com.google.cloud.deploy.v1.TerminateJobRunRequest;
+import com.google.cloud.deploy.v1.TerminateJobRunResponse;
 import com.google.cloud.deploy.v1.UpdateDeliveryPipelineRequest;
 import com.google.cloud.deploy.v1.UpdateTargetRequest;
 import com.google.cloud.location.GetLocationRequest;
@@ -207,6 +215,14 @@ public abstract class CloudDeployStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: approveRolloutCallable()");
   }
 
+  public UnaryCallable<AdvanceRolloutRequest, AdvanceRolloutResponse> advanceRolloutCallable() {
+    throw new UnsupportedOperationException("Not implemented: advanceRolloutCallable()");
+  }
+
+  public UnaryCallable<CancelRolloutRequest, CancelRolloutResponse> cancelRolloutCallable() {
+    throw new UnsupportedOperationException("Not implemented: cancelRolloutCallable()");
+  }
+
   public UnaryCallable<ListRolloutsRequest, ListRolloutsPagedResponse> listRolloutsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listRolloutsPagedCallable()");
   }
@@ -228,6 +244,10 @@ public abstract class CloudDeployStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createRolloutCallable()");
   }
 
+  public UnaryCallable<IgnoreJobRequest, IgnoreJobResponse> ignoreJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: ignoreJobCallable()");
+  }
+
   public UnaryCallable<RetryJobRequest, RetryJobResponse> retryJobCallable() {
     throw new UnsupportedOperationException("Not implemented: retryJobCallable()");
   }
@@ -242,6 +262,10 @@ public abstract class CloudDeployStub implements BackgroundResource {
 
   public UnaryCallable<GetJobRunRequest, JobRun> getJobRunCallable() {
     throw new UnsupportedOperationException("Not implemented: getJobRunCallable()");
+  }
+
+  public UnaryCallable<TerminateJobRunRequest, TerminateJobRunResponse> terminateJobRunCallable() {
+    throw new UnsupportedOperationException("Not implemented: terminateJobRunCallable()");
   }
 
   public UnaryCallable<GetConfigRequest, Config> getConfigCallable() {

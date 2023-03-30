@@ -270,7 +270,7 @@ public final class ExecutionsGrpc {
    * [Workflows][google.cloud.workflows.v1beta.Workflow] called executions.
    * </pre>
    */
-  public abstract static class ExecutionsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -282,7 +282,7 @@ public final class ExecutionsGrpc {
      * first).
      * </pre>
      */
-    public void listExecutions(
+    default void listExecutions(
         com.google.cloud.workflows.executions.v1beta.ListExecutionsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.workflows.executions.v1beta.ListExecutionsResponse>
@@ -298,7 +298,7 @@ public final class ExecutionsGrpc {
      * Creates a new execution using the latest revision of the given workflow.
      * </pre>
      */
-    public void createExecution(
+    default void createExecution(
         com.google.cloud.workflows.executions.v1beta.CreateExecutionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.workflows.executions.v1beta.Execution>
             responseObserver) {
@@ -313,7 +313,7 @@ public final class ExecutionsGrpc {
      * Returns an execution of the given name.
      * </pre>
      */
-    public void getExecution(
+    default void getExecution(
         com.google.cloud.workflows.executions.v1beta.GetExecutionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.workflows.executions.v1beta.Execution>
             responseObserver) {
@@ -328,51 +328,33 @@ public final class ExecutionsGrpc {
      * Cancels an execution of the given name.
      * </pre>
      */
-    public void cancelExecution(
+    default void cancelExecution(
         com.google.cloud.workflows.executions.v1beta.CancelExecutionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.workflows.executions.v1beta.Execution>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCancelExecutionMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Executions.
+   *
+   * <pre>
+   * Executions is used to start and manage running instances of
+   * [Workflows][google.cloud.workflows.v1beta.Workflow] called executions.
+   * </pre>
+   */
+  public abstract static class ExecutionsImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListExecutionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.workflows.executions.v1beta.ListExecutionsRequest,
-                      com.google.cloud.workflows.executions.v1beta.ListExecutionsResponse>(
-                      this, METHODID_LIST_EXECUTIONS)))
-          .addMethod(
-              getCreateExecutionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.workflows.executions.v1beta.CreateExecutionRequest,
-                      com.google.cloud.workflows.executions.v1beta.Execution>(
-                      this, METHODID_CREATE_EXECUTION)))
-          .addMethod(
-              getGetExecutionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.workflows.executions.v1beta.GetExecutionRequest,
-                      com.google.cloud.workflows.executions.v1beta.Execution>(
-                      this, METHODID_GET_EXECUTION)))
-          .addMethod(
-              getCancelExecutionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.workflows.executions.v1beta.CancelExecutionRequest,
-                      com.google.cloud.workflows.executions.v1beta.Execution>(
-                      this, METHODID_CANCEL_EXECUTION)))
-          .build();
+      return ExecutionsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Executions.
    *
    * <pre>
    * Executions is used to start and manage running instances of
@@ -463,7 +445,7 @@ public final class ExecutionsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Executions.
    *
    * <pre>
    * Executions is used to start and manage running instances of
@@ -539,7 +521,7 @@ public final class ExecutionsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Executions.
    *
    * <pre>
    * Executions is used to start and manage running instances of
@@ -629,10 +611,10 @@ public final class ExecutionsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ExecutionsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ExecutionsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -680,6 +662,39 @@ public final class ExecutionsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListExecutionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workflows.executions.v1beta.ListExecutionsRequest,
+                    com.google.cloud.workflows.executions.v1beta.ListExecutionsResponse>(
+                    service, METHODID_LIST_EXECUTIONS)))
+        .addMethod(
+            getCreateExecutionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workflows.executions.v1beta.CreateExecutionRequest,
+                    com.google.cloud.workflows.executions.v1beta.Execution>(
+                    service, METHODID_CREATE_EXECUTION)))
+        .addMethod(
+            getGetExecutionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workflows.executions.v1beta.GetExecutionRequest,
+                    com.google.cloud.workflows.executions.v1beta.Execution>(
+                    service, METHODID_GET_EXECUTION)))
+        .addMethod(
+            getCancelExecutionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.workflows.executions.v1beta.CancelExecutionRequest,
+                    com.google.cloud.workflows.executions.v1beta.Execution>(
+                    service, METHODID_CANCEL_EXECUTION)))
+        .build();
   }
 
   private abstract static class ExecutionsBaseDescriptorSupplier

@@ -16,7 +16,9 @@
 
 package com.google.cloud.discoveryengine.v1beta;
 
+import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -32,12 +34,18 @@ public class DocumentName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_DATA_STORE_BRANCH_DOCUMENT =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}/documents/{document}");
+  private static final PathTemplate PROJECT_LOCATION_COLLECTION_DATA_STORE_BRANCH_DOCUMENT =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document}");
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
   private final String project;
   private final String location;
   private final String dataStore;
   private final String branch;
   private final String document;
+  private final String collection;
 
   @Deprecated
   protected DocumentName() {
@@ -46,6 +54,7 @@ public class DocumentName implements ResourceName {
     dataStore = null;
     branch = null;
     document = null;
+    collection = null;
   }
 
   private DocumentName(Builder builder) {
@@ -54,6 +63,18 @@ public class DocumentName implements ResourceName {
     dataStore = Preconditions.checkNotNull(builder.getDataStore());
     branch = Preconditions.checkNotNull(builder.getBranch());
     document = Preconditions.checkNotNull(builder.getDocument());
+    collection = null;
+    pathTemplate = PROJECT_LOCATION_DATA_STORE_BRANCH_DOCUMENT;
+  }
+
+  private DocumentName(ProjectLocationCollectionDataStoreBranchDocumentBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    collection = Preconditions.checkNotNull(builder.getCollection());
+    dataStore = Preconditions.checkNotNull(builder.getDataStore());
+    branch = Preconditions.checkNotNull(builder.getBranch());
+    document = Preconditions.checkNotNull(builder.getDocument());
+    pathTemplate = PROJECT_LOCATION_COLLECTION_DATA_STORE_BRANCH_DOCUMENT;
   }
 
   public String getProject() {
@@ -76,8 +97,23 @@ public class DocumentName implements ResourceName {
     return document;
   }
 
+  public String getCollection() {
+    return collection;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static Builder newProjectLocationDataStoreBranchDocumentBuilder() {
+    return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static ProjectLocationCollectionDataStoreBranchDocumentBuilder
+      newProjectLocationCollectionDataStoreBranchDocumentBuilder() {
+    return new ProjectLocationCollectionDataStoreBranchDocumentBuilder();
   }
 
   public Builder toBuilder() {
@@ -89,6 +125,36 @@ public class DocumentName implements ResourceName {
     return newBuilder()
         .setProject(project)
         .setLocation(location)
+        .setDataStore(dataStore)
+        .setBranch(branch)
+        .setDocument(document)
+        .build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static DocumentName ofProjectLocationDataStoreBranchDocumentName(
+      String project, String location, String dataStore, String branch, String document) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setDataStore(dataStore)
+        .setBranch(branch)
+        .setDocument(document)
+        .build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static DocumentName ofProjectLocationCollectionDataStoreBranchDocumentName(
+      String project,
+      String location,
+      String collection,
+      String dataStore,
+      String branch,
+      String document) {
+    return newProjectLocationCollectionDataStoreBranchDocumentBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setCollection(collection)
         .setDataStore(dataStore)
         .setBranch(branch)
         .setDocument(document)
@@ -107,19 +173,63 @@ public class DocumentName implements ResourceName {
         .toString();
   }
 
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectLocationDataStoreBranchDocumentName(
+      String project, String location, String dataStore, String branch, String document) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setDataStore(dataStore)
+        .setBranch(branch)
+        .setDocument(document)
+        .build()
+        .toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectLocationCollectionDataStoreBranchDocumentName(
+      String project,
+      String location,
+      String collection,
+      String dataStore,
+      String branch,
+      String document) {
+    return newProjectLocationCollectionDataStoreBranchDocumentBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setCollection(collection)
+        .setDataStore(dataStore)
+        .setBranch(branch)
+        .setDocument(document)
+        .build()
+        .toString();
+  }
+
   public static DocumentName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        PROJECT_LOCATION_DATA_STORE_BRANCH_DOCUMENT.validatedMatch(
-            formattedString, "DocumentName.parse: formattedString not in valid format");
-    return of(
-        matchMap.get("project"),
-        matchMap.get("location"),
-        matchMap.get("data_store"),
-        matchMap.get("branch"),
-        matchMap.get("document"));
+    if (PROJECT_LOCATION_DATA_STORE_BRANCH_DOCUMENT.matches(formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_LOCATION_DATA_STORE_BRANCH_DOCUMENT.match(formattedString);
+      return ofProjectLocationDataStoreBranchDocumentName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("data_store"),
+          matchMap.get("branch"),
+          matchMap.get("document"));
+    } else if (PROJECT_LOCATION_COLLECTION_DATA_STORE_BRANCH_DOCUMENT.matches(formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_LOCATION_COLLECTION_DATA_STORE_BRANCH_DOCUMENT.match(formattedString);
+      return ofProjectLocationCollectionDataStoreBranchDocumentName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("collection"),
+          matchMap.get("data_store"),
+          matchMap.get("branch"),
+          matchMap.get("document"));
+    }
+    throw new ValidationException("DocumentName.parse: formattedString not in valid format");
   }
 
   public static List<DocumentName> parseList(List<String> formattedStrings) {
@@ -143,7 +253,8 @@ public class DocumentName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_LOCATION_DATA_STORE_BRANCH_DOCUMENT.matches(formattedString);
+    return PROJECT_LOCATION_DATA_STORE_BRANCH_DOCUMENT.matches(formattedString)
+        || PROJECT_LOCATION_COLLECTION_DATA_STORE_BRANCH_DOCUMENT.matches(formattedString);
   }
 
   @Override
@@ -167,6 +278,9 @@ public class DocumentName implements ResourceName {
           if (document != null) {
             fieldMapBuilder.put("document", document);
           }
+          if (collection != null) {
+            fieldMapBuilder.put("collection", collection);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -180,17 +294,7 @@ public class DocumentName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_LOCATION_DATA_STORE_BRANCH_DOCUMENT.instantiate(
-        "project",
-        project,
-        "location",
-        location,
-        "data_store",
-        dataStore,
-        "branch",
-        branch,
-        "document",
-        document);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override
@@ -204,7 +308,8 @@ public class DocumentName implements ResourceName {
           && Objects.equals(this.location, that.location)
           && Objects.equals(this.dataStore, that.dataStore)
           && Objects.equals(this.branch, that.branch)
-          && Objects.equals(this.document, that.document);
+          && Objects.equals(this.document, that.document)
+          && Objects.equals(this.collection, that.collection);
     }
     return false;
   }
@@ -212,6 +317,8 @@ public class DocumentName implements ResourceName {
   @Override
   public int hashCode() {
     int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
     h *= 1000003;
     h ^= Objects.hashCode(project);
     h *= 1000003;
@@ -222,6 +329,8 @@ public class DocumentName implements ResourceName {
     h ^= Objects.hashCode(branch);
     h *= 1000003;
     h ^= Objects.hashCode(document);
+    h *= 1000003;
+    h ^= Objects.hashCode(collection);
     return h;
   }
 
@@ -284,11 +393,89 @@ public class DocumentName implements ResourceName {
     }
 
     private Builder(DocumentName documentName) {
+      Preconditions.checkArgument(
+          Objects.equals(documentName.pathTemplate, PROJECT_LOCATION_DATA_STORE_BRANCH_DOCUMENT),
+          "toBuilder is only supported when DocumentName has the pattern of projects/{project}/locations/{location}/dataStores/{data_store}/branches/{branch}/documents/{document}");
       this.project = documentName.project;
       this.location = documentName.location;
       this.dataStore = documentName.dataStore;
       this.branch = documentName.branch;
       this.document = documentName.document;
+    }
+
+    public DocumentName build() {
+      return new DocumentName(this);
+    }
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document}.
+   */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class ProjectLocationCollectionDataStoreBranchDocumentBuilder {
+    private String project;
+    private String location;
+    private String collection;
+    private String dataStore;
+    private String branch;
+    private String document;
+
+    protected ProjectLocationCollectionDataStoreBranchDocumentBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getCollection() {
+      return collection;
+    }
+
+    public String getDataStore() {
+      return dataStore;
+    }
+
+    public String getBranch() {
+      return branch;
+    }
+
+    public String getDocument() {
+      return document;
+    }
+
+    public ProjectLocationCollectionDataStoreBranchDocumentBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationCollectionDataStoreBranchDocumentBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public ProjectLocationCollectionDataStoreBranchDocumentBuilder setCollection(
+        String collection) {
+      this.collection = collection;
+      return this;
+    }
+
+    public ProjectLocationCollectionDataStoreBranchDocumentBuilder setDataStore(String dataStore) {
+      this.dataStore = dataStore;
+      return this;
+    }
+
+    public ProjectLocationCollectionDataStoreBranchDocumentBuilder setBranch(String branch) {
+      this.branch = branch;
+      return this;
+    }
+
+    public ProjectLocationCollectionDataStoreBranchDocumentBuilder setDocument(String document) {
+      this.document = document;
+      return this;
     }
 
     public DocumentName build() {

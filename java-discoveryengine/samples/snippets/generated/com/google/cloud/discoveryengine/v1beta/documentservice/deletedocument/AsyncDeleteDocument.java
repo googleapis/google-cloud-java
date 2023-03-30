@@ -39,7 +39,7 @@ public class AsyncDeleteDocument {
       DeleteDocumentRequest request =
           DeleteDocumentRequest.newBuilder()
               .setName(
-                  DocumentName.of(
+                  DocumentName.ofProjectLocationDataStoreBranchDocumentName(
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
                       .toString())
               .build();

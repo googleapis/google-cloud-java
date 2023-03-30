@@ -702,7 +702,7 @@ public final class OsConfigZonalServiceGrpc {
    * manage package installations and patch jobs for Compute Engine VM instances.
    * </pre>
    */
-  public abstract static class OsConfigZonalServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -716,7 +716,7 @@ public final class OsConfigZonalServiceGrpc {
      * projects.locations.osPolicyAssignments.operations.cancel](https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel).
      * </pre>
      */
-    public void createOSPolicyAssignment(
+    default void createOSPolicyAssignment(
         com.google.cloud.osconfig.v1.CreateOSPolicyAssignmentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -735,7 +735,7 @@ public final class OsConfigZonalServiceGrpc {
      * projects.locations.osPolicyAssignments.operations.cancel](https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel).
      * </pre>
      */
-    public void updateOSPolicyAssignment(
+    default void updateOSPolicyAssignment(
         com.google.cloud.osconfig.v1.UpdateOSPolicyAssignmentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -752,7 +752,7 @@ public final class OsConfigZonalServiceGrpc {
      * `name` parameter.
      * </pre>
      */
-    public void getOSPolicyAssignment(
+    default void getOSPolicyAssignment(
         com.google.cloud.osconfig.v1.GetOSPolicyAssignmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.osconfig.v1.OSPolicyAssignment>
             responseObserver) {
@@ -768,7 +768,7 @@ public final class OsConfigZonalServiceGrpc {
      * For each OS policy assignment, the latest revision is returned.
      * </pre>
      */
-    public void listOSPolicyAssignments(
+    default void listOSPolicyAssignments(
         com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsResponse>
             responseObserver) {
@@ -783,7 +783,7 @@ public final class OsConfigZonalServiceGrpc {
      * List the OS policy assignment revisions for a given OS policy assignment.
      * </pre>
      */
-    public void listOSPolicyAssignmentRevisions(
+    default void listOSPolicyAssignmentRevisions(
         com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsResponse>
@@ -806,7 +806,7 @@ public final class OsConfigZonalServiceGrpc {
      * projects.locations.osPolicyAssignments.operations.cancel](https://cloud.google.com/compute/docs/osconfig/rest/v1/projects.locations.osPolicyAssignments.operations/cancel).
      * </pre>
      */
-    public void deleteOSPolicyAssignment(
+    default void deleteOSPolicyAssignment(
         com.google.cloud.osconfig.v1.DeleteOSPolicyAssignmentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -821,7 +821,7 @@ public final class OsConfigZonalServiceGrpc {
      * instance.
      * </pre>
      */
-    public void getOSPolicyAssignmentReport(
+    default void getOSPolicyAssignmentReport(
         com.google.cloud.osconfig.v1.GetOSPolicyAssignmentReportRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.osconfig.v1.OSPolicyAssignmentReport>
             responseObserver) {
@@ -837,7 +837,7 @@ public final class OsConfigZonalServiceGrpc {
      * the specified zone.
      * </pre>
      */
-    public void listOSPolicyAssignmentReports(
+    default void listOSPolicyAssignmentReports(
         com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsResponse>
@@ -854,7 +854,7 @@ public final class OsConfigZonalServiceGrpc {
      * associated inventory, the message `NOT_FOUND` is returned.
      * </pre>
      */
-    public void getInventory(
+    default void getInventory(
         com.google.cloud.osconfig.v1.GetInventoryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.osconfig.v1.Inventory> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -868,7 +868,7 @@ public final class OsConfigZonalServiceGrpc {
      * List inventory data for all VM instances in the specified zone.
      * </pre>
      */
-    public void listInventories(
+    default void listInventories(
         com.google.cloud.osconfig.v1.ListInventoriesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.osconfig.v1.ListInventoriesResponse>
             responseObserver) {
@@ -884,7 +884,7 @@ public final class OsConfigZonalServiceGrpc {
      * inventory data have vulnerability reports associated with them.
      * </pre>
      */
-    public void getVulnerabilityReport(
+    default void getVulnerabilityReport(
         com.google.cloud.osconfig.v1.GetVulnerabilityReportRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.osconfig.v1.VulnerabilityReport>
             responseObserver) {
@@ -899,103 +899,35 @@ public final class OsConfigZonalServiceGrpc {
      * List vulnerability reports for all VM instances in the specified zone.
      * </pre>
      */
-    public void listVulnerabilityReports(
+    default void listVulnerabilityReports(
         com.google.cloud.osconfig.v1.ListVulnerabilityReportsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.osconfig.v1.ListVulnerabilityReportsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListVulnerabilityReportsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service OsConfigZonalService.
+   *
+   * <pre>
+   * Zonal OS Config API
+   * The OS Config service is the server-side component that allows users to
+   * manage package installations and patch jobs for Compute Engine VM instances.
+   * </pre>
+   */
+  public abstract static class OsConfigZonalServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateOSPolicyAssignmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.osconfig.v1.CreateOSPolicyAssignmentRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_OSPOLICY_ASSIGNMENT)))
-          .addMethod(
-              getUpdateOSPolicyAssignmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.osconfig.v1.UpdateOSPolicyAssignmentRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_OSPOLICY_ASSIGNMENT)))
-          .addMethod(
-              getGetOSPolicyAssignmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.osconfig.v1.GetOSPolicyAssignmentRequest,
-                      com.google.cloud.osconfig.v1.OSPolicyAssignment>(
-                      this, METHODID_GET_OSPOLICY_ASSIGNMENT)))
-          .addMethod(
-              getListOSPolicyAssignmentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsRequest,
-                      com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsResponse>(
-                      this, METHODID_LIST_OSPOLICY_ASSIGNMENTS)))
-          .addMethod(
-              getListOSPolicyAssignmentRevisionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsRequest,
-                      com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsResponse>(
-                      this, METHODID_LIST_OSPOLICY_ASSIGNMENT_REVISIONS)))
-          .addMethod(
-              getDeleteOSPolicyAssignmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.osconfig.v1.DeleteOSPolicyAssignmentRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_OSPOLICY_ASSIGNMENT)))
-          .addMethod(
-              getGetOSPolicyAssignmentReportMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.osconfig.v1.GetOSPolicyAssignmentReportRequest,
-                      com.google.cloud.osconfig.v1.OSPolicyAssignmentReport>(
-                      this, METHODID_GET_OSPOLICY_ASSIGNMENT_REPORT)))
-          .addMethod(
-              getListOSPolicyAssignmentReportsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsRequest,
-                      com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsResponse>(
-                      this, METHODID_LIST_OSPOLICY_ASSIGNMENT_REPORTS)))
-          .addMethod(
-              getGetInventoryMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.osconfig.v1.GetInventoryRequest,
-                      com.google.cloud.osconfig.v1.Inventory>(this, METHODID_GET_INVENTORY)))
-          .addMethod(
-              getListInventoriesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.osconfig.v1.ListInventoriesRequest,
-                      com.google.cloud.osconfig.v1.ListInventoriesResponse>(
-                      this, METHODID_LIST_INVENTORIES)))
-          .addMethod(
-              getGetVulnerabilityReportMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.osconfig.v1.GetVulnerabilityReportRequest,
-                      com.google.cloud.osconfig.v1.VulnerabilityReport>(
-                      this, METHODID_GET_VULNERABILITY_REPORT)))
-          .addMethod(
-              getListVulnerabilityReportsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.osconfig.v1.ListVulnerabilityReportsRequest,
-                      com.google.cloud.osconfig.v1.ListVulnerabilityReportsResponse>(
-                      this, METHODID_LIST_VULNERABILITY_REPORTS)))
-          .build();
+      return OsConfigZonalServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service OsConfigZonalService.
    *
    * <pre>
    * Zonal OS Config API
@@ -1244,7 +1176,7 @@ public final class OsConfigZonalServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service OsConfigZonalService.
    *
    * <pre>
    * Zonal OS Config API
@@ -1450,7 +1382,7 @@ public final class OsConfigZonalServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service OsConfigZonalService.
    *
    * <pre>
    * Zonal OS Config API
@@ -1690,10 +1622,10 @@ public final class OsConfigZonalServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final OsConfigZonalServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(OsConfigZonalServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1789,6 +1721,94 @@ public final class OsConfigZonalServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateOSPolicyAssignmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.osconfig.v1.CreateOSPolicyAssignmentRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_OSPOLICY_ASSIGNMENT)))
+        .addMethod(
+            getUpdateOSPolicyAssignmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.osconfig.v1.UpdateOSPolicyAssignmentRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_OSPOLICY_ASSIGNMENT)))
+        .addMethod(
+            getGetOSPolicyAssignmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.osconfig.v1.GetOSPolicyAssignmentRequest,
+                    com.google.cloud.osconfig.v1.OSPolicyAssignment>(
+                    service, METHODID_GET_OSPOLICY_ASSIGNMENT)))
+        .addMethod(
+            getListOSPolicyAssignmentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsRequest,
+                    com.google.cloud.osconfig.v1.ListOSPolicyAssignmentsResponse>(
+                    service, METHODID_LIST_OSPOLICY_ASSIGNMENTS)))
+        .addMethod(
+            getListOSPolicyAssignmentRevisionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsRequest,
+                    com.google.cloud.osconfig.v1.ListOSPolicyAssignmentRevisionsResponse>(
+                    service, METHODID_LIST_OSPOLICY_ASSIGNMENT_REVISIONS)))
+        .addMethod(
+            getDeleteOSPolicyAssignmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.osconfig.v1.DeleteOSPolicyAssignmentRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_OSPOLICY_ASSIGNMENT)))
+        .addMethod(
+            getGetOSPolicyAssignmentReportMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.osconfig.v1.GetOSPolicyAssignmentReportRequest,
+                    com.google.cloud.osconfig.v1.OSPolicyAssignmentReport>(
+                    service, METHODID_GET_OSPOLICY_ASSIGNMENT_REPORT)))
+        .addMethod(
+            getListOSPolicyAssignmentReportsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsRequest,
+                    com.google.cloud.osconfig.v1.ListOSPolicyAssignmentReportsResponse>(
+                    service, METHODID_LIST_OSPOLICY_ASSIGNMENT_REPORTS)))
+        .addMethod(
+            getGetInventoryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.osconfig.v1.GetInventoryRequest,
+                    com.google.cloud.osconfig.v1.Inventory>(service, METHODID_GET_INVENTORY)))
+        .addMethod(
+            getListInventoriesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.osconfig.v1.ListInventoriesRequest,
+                    com.google.cloud.osconfig.v1.ListInventoriesResponse>(
+                    service, METHODID_LIST_INVENTORIES)))
+        .addMethod(
+            getGetVulnerabilityReportMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.osconfig.v1.GetVulnerabilityReportRequest,
+                    com.google.cloud.osconfig.v1.VulnerabilityReport>(
+                    service, METHODID_GET_VULNERABILITY_REPORT)))
+        .addMethod(
+            getListVulnerabilityReportsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.osconfig.v1.ListVulnerabilityReportsRequest,
+                    com.google.cloud.osconfig.v1.ListVulnerabilityReportsResponse>(
+                    service, METHODID_LIST_VULNERABILITY_REPORTS)))
+        .build();
   }
 
   private abstract static class OsConfigZonalServiceBaseDescriptorSupplier

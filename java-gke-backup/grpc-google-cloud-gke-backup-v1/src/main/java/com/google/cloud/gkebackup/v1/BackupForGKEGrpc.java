@@ -1147,7 +1147,7 @@ public final class BackupForGKEGrpc {
    * manage backup and restore operations for their GKE clusters.
    * </pre>
    */
-  public abstract static class BackupForGKEImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -1156,7 +1156,7 @@ public final class BackupForGKEGrpc {
      * Creates a new BackupPlan in a given location.
      * </pre>
      */
-    public void createBackupPlan(
+    default void createBackupPlan(
         com.google.cloud.gkebackup.v1.CreateBackupPlanRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1170,7 +1170,7 @@ public final class BackupForGKEGrpc {
      * Lists BackupPlans in a given location.
      * </pre>
      */
-    public void listBackupPlans(
+    default void listBackupPlans(
         com.google.cloud.gkebackup.v1.ListBackupPlansRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.ListBackupPlansResponse>
             responseObserver) {
@@ -1185,7 +1185,7 @@ public final class BackupForGKEGrpc {
      * Retrieve the details of a single BackupPlan.
      * </pre>
      */
-    public void getBackupPlan(
+    default void getBackupPlan(
         com.google.cloud.gkebackup.v1.GetBackupPlanRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.BackupPlan> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1199,7 +1199,7 @@ public final class BackupForGKEGrpc {
      * Update a BackupPlan.
      * </pre>
      */
-    public void updateBackupPlan(
+    default void updateBackupPlan(
         com.google.cloud.gkebackup.v1.UpdateBackupPlanRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1213,7 +1213,7 @@ public final class BackupForGKEGrpc {
      * Deletes an existing BackupPlan.
      * </pre>
      */
-    public void deleteBackupPlan(
+    default void deleteBackupPlan(
         com.google.cloud.gkebackup.v1.DeleteBackupPlanRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1227,7 +1227,7 @@ public final class BackupForGKEGrpc {
      * Creates a Backup for the given BackupPlan.
      * </pre>
      */
-    public void createBackup(
+    default void createBackup(
         com.google.cloud.gkebackup.v1.CreateBackupRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1241,7 +1241,7 @@ public final class BackupForGKEGrpc {
      * Lists the Backups for a given BackupPlan.
      * </pre>
      */
-    public void listBackups(
+    default void listBackups(
         com.google.cloud.gkebackup.v1.ListBackupsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.ListBackupsResponse>
             responseObserver) {
@@ -1256,7 +1256,7 @@ public final class BackupForGKEGrpc {
      * Retrieve the details of a single Backup.
      * </pre>
      */
-    public void getBackup(
+    default void getBackup(
         com.google.cloud.gkebackup.v1.GetBackupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.Backup> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBackupMethod(), responseObserver);
@@ -1269,7 +1269,7 @@ public final class BackupForGKEGrpc {
      * Update a Backup.
      * </pre>
      */
-    public void updateBackup(
+    default void updateBackup(
         com.google.cloud.gkebackup.v1.UpdateBackupRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1283,7 +1283,7 @@ public final class BackupForGKEGrpc {
      * Deletes an existing Backup.
      * </pre>
      */
-    public void deleteBackup(
+    default void deleteBackup(
         com.google.cloud.gkebackup.v1.DeleteBackupRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1297,7 +1297,7 @@ public final class BackupForGKEGrpc {
      * Lists the VolumeBackups for a given Backup.
      * </pre>
      */
-    public void listVolumeBackups(
+    default void listVolumeBackups(
         com.google.cloud.gkebackup.v1.ListVolumeBackupsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.ListVolumeBackupsResponse>
             responseObserver) {
@@ -1312,7 +1312,7 @@ public final class BackupForGKEGrpc {
      * Retrieve the details of a single VolumeBackup.
      * </pre>
      */
-    public void getVolumeBackup(
+    default void getVolumeBackup(
         com.google.cloud.gkebackup.v1.GetVolumeBackupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.VolumeBackup> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1326,7 +1326,7 @@ public final class BackupForGKEGrpc {
      * Creates a new RestorePlan in a given location.
      * </pre>
      */
-    public void createRestorePlan(
+    default void createRestorePlan(
         com.google.cloud.gkebackup.v1.CreateRestorePlanRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1340,7 +1340,7 @@ public final class BackupForGKEGrpc {
      * Lists RestorePlans in a given location.
      * </pre>
      */
-    public void listRestorePlans(
+    default void listRestorePlans(
         com.google.cloud.gkebackup.v1.ListRestorePlansRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.ListRestorePlansResponse>
             responseObserver) {
@@ -1355,7 +1355,7 @@ public final class BackupForGKEGrpc {
      * Retrieve the details of a single RestorePlan.
      * </pre>
      */
-    public void getRestorePlan(
+    default void getRestorePlan(
         com.google.cloud.gkebackup.v1.GetRestorePlanRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.RestorePlan> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1369,7 +1369,7 @@ public final class BackupForGKEGrpc {
      * Update a RestorePlan.
      * </pre>
      */
-    public void updateRestorePlan(
+    default void updateRestorePlan(
         com.google.cloud.gkebackup.v1.UpdateRestorePlanRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1383,7 +1383,7 @@ public final class BackupForGKEGrpc {
      * Deletes an existing RestorePlan.
      * </pre>
      */
-    public void deleteRestorePlan(
+    default void deleteRestorePlan(
         com.google.cloud.gkebackup.v1.DeleteRestorePlanRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1397,7 +1397,7 @@ public final class BackupForGKEGrpc {
      * Creates a new Restore for the given RestorePlan.
      * </pre>
      */
-    public void createRestore(
+    default void createRestore(
         com.google.cloud.gkebackup.v1.CreateRestoreRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1411,7 +1411,7 @@ public final class BackupForGKEGrpc {
      * Lists the Restores for a given RestorePlan.
      * </pre>
      */
-    public void listRestores(
+    default void listRestores(
         com.google.cloud.gkebackup.v1.ListRestoresRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.ListRestoresResponse>
             responseObserver) {
@@ -1426,7 +1426,7 @@ public final class BackupForGKEGrpc {
      * Retrieves the details of a single Restore.
      * </pre>
      */
-    public void getRestore(
+    default void getRestore(
         com.google.cloud.gkebackup.v1.GetRestoreRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.Restore> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetRestoreMethod(), responseObserver);
@@ -1439,7 +1439,7 @@ public final class BackupForGKEGrpc {
      * Update a Restore.
      * </pre>
      */
-    public void updateRestore(
+    default void updateRestore(
         com.google.cloud.gkebackup.v1.UpdateRestoreRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1453,7 +1453,7 @@ public final class BackupForGKEGrpc {
      * Deletes an existing Restore.
      * </pre>
      */
-    public void deleteRestore(
+    default void deleteRestore(
         com.google.cloud.gkebackup.v1.DeleteRestoreRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1467,7 +1467,7 @@ public final class BackupForGKEGrpc {
      * Lists the VolumeRestores for a given Restore.
      * </pre>
      */
-    public void listVolumeRestores(
+    default void listVolumeRestores(
         com.google.cloud.gkebackup.v1.ListVolumeRestoresRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.ListVolumeRestoresResponse>
             responseObserver) {
@@ -1482,174 +1482,33 @@ public final class BackupForGKEGrpc {
      * Retrieve the details of a single VolumeRestore.
      * </pre>
      */
-    public void getVolumeRestore(
+    default void getVolumeRestore(
         com.google.cloud.gkebackup.v1.GetVolumeRestoreRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkebackup.v1.VolumeRestore> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetVolumeRestoreMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service BackupForGKE.
+   *
+   * <pre>
+   * BackupForGKE allows Kubernetes administrators to configure, execute, and
+   * manage backup and restore operations for their GKE clusters.
+   * </pre>
+   */
+  public abstract static class BackupForGKEImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateBackupPlanMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkebackup.v1.CreateBackupPlanRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_BACKUP_PLAN)))
-          .addMethod(
-              getListBackupPlansMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkebackup.v1.ListBackupPlansRequest,
-                      com.google.cloud.gkebackup.v1.ListBackupPlansResponse>(
-                      this, METHODID_LIST_BACKUP_PLANS)))
-          .addMethod(
-              getGetBackupPlanMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkebackup.v1.GetBackupPlanRequest,
-                      com.google.cloud.gkebackup.v1.BackupPlan>(this, METHODID_GET_BACKUP_PLAN)))
-          .addMethod(
-              getUpdateBackupPlanMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkebackup.v1.UpdateBackupPlanRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_BACKUP_PLAN)))
-          .addMethod(
-              getDeleteBackupPlanMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkebackup.v1.DeleteBackupPlanRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_BACKUP_PLAN)))
-          .addMethod(
-              getCreateBackupMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkebackup.v1.CreateBackupRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_BACKUP)))
-          .addMethod(
-              getListBackupsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkebackup.v1.ListBackupsRequest,
-                      com.google.cloud.gkebackup.v1.ListBackupsResponse>(
-                      this, METHODID_LIST_BACKUPS)))
-          .addMethod(
-              getGetBackupMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkebackup.v1.GetBackupRequest,
-                      com.google.cloud.gkebackup.v1.Backup>(this, METHODID_GET_BACKUP)))
-          .addMethod(
-              getUpdateBackupMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkebackup.v1.UpdateBackupRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_BACKUP)))
-          .addMethod(
-              getDeleteBackupMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkebackup.v1.DeleteBackupRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_BACKUP)))
-          .addMethod(
-              getListVolumeBackupsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkebackup.v1.ListVolumeBackupsRequest,
-                      com.google.cloud.gkebackup.v1.ListVolumeBackupsResponse>(
-                      this, METHODID_LIST_VOLUME_BACKUPS)))
-          .addMethod(
-              getGetVolumeBackupMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkebackup.v1.GetVolumeBackupRequest,
-                      com.google.cloud.gkebackup.v1.VolumeBackup>(
-                      this, METHODID_GET_VOLUME_BACKUP)))
-          .addMethod(
-              getCreateRestorePlanMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkebackup.v1.CreateRestorePlanRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_RESTORE_PLAN)))
-          .addMethod(
-              getListRestorePlansMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkebackup.v1.ListRestorePlansRequest,
-                      com.google.cloud.gkebackup.v1.ListRestorePlansResponse>(
-                      this, METHODID_LIST_RESTORE_PLANS)))
-          .addMethod(
-              getGetRestorePlanMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkebackup.v1.GetRestorePlanRequest,
-                      com.google.cloud.gkebackup.v1.RestorePlan>(this, METHODID_GET_RESTORE_PLAN)))
-          .addMethod(
-              getUpdateRestorePlanMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkebackup.v1.UpdateRestorePlanRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_RESTORE_PLAN)))
-          .addMethod(
-              getDeleteRestorePlanMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkebackup.v1.DeleteRestorePlanRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_RESTORE_PLAN)))
-          .addMethod(
-              getCreateRestoreMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkebackup.v1.CreateRestoreRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_RESTORE)))
-          .addMethod(
-              getListRestoresMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkebackup.v1.ListRestoresRequest,
-                      com.google.cloud.gkebackup.v1.ListRestoresResponse>(
-                      this, METHODID_LIST_RESTORES)))
-          .addMethod(
-              getGetRestoreMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkebackup.v1.GetRestoreRequest,
-                      com.google.cloud.gkebackup.v1.Restore>(this, METHODID_GET_RESTORE)))
-          .addMethod(
-              getUpdateRestoreMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkebackup.v1.UpdateRestoreRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_RESTORE)))
-          .addMethod(
-              getDeleteRestoreMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkebackup.v1.DeleteRestoreRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_RESTORE)))
-          .addMethod(
-              getListVolumeRestoresMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkebackup.v1.ListVolumeRestoresRequest,
-                      com.google.cloud.gkebackup.v1.ListVolumeRestoresResponse>(
-                      this, METHODID_LIST_VOLUME_RESTORES)))
-          .addMethod(
-              getGetVolumeRestoreMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkebackup.v1.GetVolumeRestoreRequest,
-                      com.google.cloud.gkebackup.v1.VolumeRestore>(
-                      this, METHODID_GET_VOLUME_RESTORE)))
-          .build();
+      return BackupForGKEGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service BackupForGKE.
    *
    * <pre>
    * BackupForGKE allows Kubernetes administrators to configure, execute, and
@@ -2055,7 +1914,7 @@ public final class BackupForGKEGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service BackupForGKE.
    *
    * <pre>
    * BackupForGKE allows Kubernetes administrators to configure, execute, and
@@ -2388,7 +2247,7 @@ public final class BackupForGKEGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service BackupForGKE.
    *
    * <pre>
    * BackupForGKE allows Kubernetes administrators to configure, execute, and
@@ -2760,10 +2619,10 @@ public final class BackupForGKEGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final BackupForGKEImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(BackupForGKEImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -2918,6 +2777,163 @@ public final class BackupForGKEGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateBackupPlanMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.CreateBackupPlanRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_BACKUP_PLAN)))
+        .addMethod(
+            getListBackupPlansMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.ListBackupPlansRequest,
+                    com.google.cloud.gkebackup.v1.ListBackupPlansResponse>(
+                    service, METHODID_LIST_BACKUP_PLANS)))
+        .addMethod(
+            getGetBackupPlanMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.GetBackupPlanRequest,
+                    com.google.cloud.gkebackup.v1.BackupPlan>(service, METHODID_GET_BACKUP_PLAN)))
+        .addMethod(
+            getUpdateBackupPlanMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.UpdateBackupPlanRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_BACKUP_PLAN)))
+        .addMethod(
+            getDeleteBackupPlanMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.DeleteBackupPlanRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_BACKUP_PLAN)))
+        .addMethod(
+            getCreateBackupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.CreateBackupRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_BACKUP)))
+        .addMethod(
+            getListBackupsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.ListBackupsRequest,
+                    com.google.cloud.gkebackup.v1.ListBackupsResponse>(
+                    service, METHODID_LIST_BACKUPS)))
+        .addMethod(
+            getGetBackupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.GetBackupRequest,
+                    com.google.cloud.gkebackup.v1.Backup>(service, METHODID_GET_BACKUP)))
+        .addMethod(
+            getUpdateBackupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.UpdateBackupRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_BACKUP)))
+        .addMethod(
+            getDeleteBackupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.DeleteBackupRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_BACKUP)))
+        .addMethod(
+            getListVolumeBackupsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.ListVolumeBackupsRequest,
+                    com.google.cloud.gkebackup.v1.ListVolumeBackupsResponse>(
+                    service, METHODID_LIST_VOLUME_BACKUPS)))
+        .addMethod(
+            getGetVolumeBackupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.GetVolumeBackupRequest,
+                    com.google.cloud.gkebackup.v1.VolumeBackup>(
+                    service, METHODID_GET_VOLUME_BACKUP)))
+        .addMethod(
+            getCreateRestorePlanMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.CreateRestorePlanRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_RESTORE_PLAN)))
+        .addMethod(
+            getListRestorePlansMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.ListRestorePlansRequest,
+                    com.google.cloud.gkebackup.v1.ListRestorePlansResponse>(
+                    service, METHODID_LIST_RESTORE_PLANS)))
+        .addMethod(
+            getGetRestorePlanMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.GetRestorePlanRequest,
+                    com.google.cloud.gkebackup.v1.RestorePlan>(service, METHODID_GET_RESTORE_PLAN)))
+        .addMethod(
+            getUpdateRestorePlanMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.UpdateRestorePlanRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_RESTORE_PLAN)))
+        .addMethod(
+            getDeleteRestorePlanMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.DeleteRestorePlanRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_RESTORE_PLAN)))
+        .addMethod(
+            getCreateRestoreMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.CreateRestoreRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_RESTORE)))
+        .addMethod(
+            getListRestoresMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.ListRestoresRequest,
+                    com.google.cloud.gkebackup.v1.ListRestoresResponse>(
+                    service, METHODID_LIST_RESTORES)))
+        .addMethod(
+            getGetRestoreMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.GetRestoreRequest,
+                    com.google.cloud.gkebackup.v1.Restore>(service, METHODID_GET_RESTORE)))
+        .addMethod(
+            getUpdateRestoreMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.UpdateRestoreRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_RESTORE)))
+        .addMethod(
+            getDeleteRestoreMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.DeleteRestoreRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_RESTORE)))
+        .addMethod(
+            getListVolumeRestoresMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.ListVolumeRestoresRequest,
+                    com.google.cloud.gkebackup.v1.ListVolumeRestoresResponse>(
+                    service, METHODID_LIST_VOLUME_RESTORES)))
+        .addMethod(
+            getGetVolumeRestoreMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkebackup.v1.GetVolumeRestoreRequest,
+                    com.google.cloud.gkebackup.v1.VolumeRestore>(
+                    service, METHODID_GET_VOLUME_RESTORE)))
+        .build();
   }
 
   private abstract static class BackupForGKEBaseDescriptorSupplier

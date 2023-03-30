@@ -140,6 +140,18 @@ public final class CloudSpeechProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_speech_v2_BatchRecognizeRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_speech_v2_GcsOutputConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_speech_v2_GcsOutputConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_speech_v2_InlineOutputConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_speech_v2_InlineOutputConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_speech_v2_RecognitionOutputConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_speech_v2_RecognitionOutputConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_speech_v2_BatchRecognizeResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_speech_v2_BatchRecognizeResponse_fieldAccessorTable;
@@ -147,6 +159,10 @@ public final class CloudSpeechProto {
       internal_static_google_cloud_speech_v2_BatchRecognizeResponse_ResultsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_speech_v2_BatchRecognizeResponse_ResultsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_speech_v2_BatchRecognizeResults_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_speech_v2_BatchRecognizeResults_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_speech_v2_BatchRecognizeFileResult_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -289,7 +305,7 @@ public final class CloudSpeechProto {
           + ".cloud.speech.v2.RecognizerB\003\340A\002\022\025\n\rvali"
           + "date_only\030\002 \001(\010\022\025\n\rrecognizer_id\030\003 \001(\t\0228"
           + "\n\006parent\030\004 \001(\tB(\340A\002\372A\"\022 speech.googleapi"
-          + "s.com/Recognizer\"\343\014\n\021OperationMetadata\022/"
+          + "s.com/Recognizer\"\347\014\n\021OperationMetadata\022/"
           + "\n\013create_time\030\001 \001(\0132\032.google.protobuf.Ti"
           + "mestamp\022/\n\013update_time\030\002 \001(\0132\032.google.pr"
           + "otobuf.Timestamp\022\020\n\010resource\030\003 \001(\t\022\016\n\006me"
@@ -325,418 +341,435 @@ public final class CloudSpeechProto {
           + "speech.v2.DeletePhraseSetRequestH\000\022W\n\033un"
           + "delete_phrase_set_request\030\024 \001(\01320.google"
           + ".cloud.speech.v2.UndeletePhraseSetReques"
-          + "tH\000\022L\n\025update_config_request\030\025 \001(\0132+.goo"
-          + "gle.cloud.speech.v2.UpdateConfigRequestH"
-          + "\000\022\030\n\020progress_percent\030\026 \001(\005\022R\n\030batch_rec"
-          + "ognize_metadata\030\027 \001(\0132..google.cloud.spe"
-          + "ech.v2.BatchRecognizeMetadataH\001B\t\n\007reque"
-          + "stB\n\n\010metadata\"\220\001\n\026ListRecognizersReques"
-          + "t\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations.goo"
-          + "gleapis.com/Location\022\021\n\tpage_size\030\002 \001(\005\022"
-          + "\022\n\npage_token\030\003 \001(\t\022\024\n\014show_deleted\030\004 \001("
-          + "\010\"k\n\027ListRecognizersResponse\0227\n\013recogniz"
-          + "ers\030\001 \003(\0132\".google.cloud.speech.v2.Recog"
-          + "nizer\022\027\n\017next_page_token\030\002 \001(\t\"N\n\024GetRec"
-          + "ognizerRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n sp"
-          + "eech.googleapis.com/Recognizer\"\236\001\n\027Updat"
-          + "eRecognizerRequest\022;\n\nrecognizer\030\001 \001(\0132\""
-          + ".google.cloud.speech.v2.RecognizerB\003\340A\002\022"
-          + "/\n\013update_mask\030\002 \001(\0132\032.google.protobuf.F"
-          + "ieldMask\022\025\n\rvalidate_only\030\004 \001(\010\"\215\001\n\027Dele"
-          + "teRecognizerRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372A"
-          + "\"\n speech.googleapis.com/Recognizer\022\025\n\rv"
-          + "alidate_only\030\002 \001(\010\022\025\n\rallow_missing\030\004 \001("
-          + "\010\022\014\n\004etag\030\003 \001(\t\"x\n\031UndeleteRecognizerReq"
-          + "uest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n speech.googl"
-          + "eapis.com/Recognizer\022\025\n\rvalidate_only\030\003 "
-          + "\001(\010\022\014\n\004etag\030\004 \001(\t\"\276\007\n\nRecognizer\022\021\n\004name"
-          + "\030\001 \001(\tB\003\340A\003\022\020\n\003uid\030\002 \001(\tB\003\340A\003\022\024\n\014display"
-          + "_name\030\003 \001(\t\022\022\n\005model\030\004 \001(\tB\003\340A\002\022\033\n\016langu"
-          + "age_codes\030\021 \003(\tB\003\340A\002\022M\n\032default_recognit"
-          + "ion_config\030\006 \001(\0132).google.cloud.speech.v"
-          + "2.RecognitionConfig\022H\n\013annotations\030\007 \003(\013"
-          + "23.google.cloud.speech.v2.Recognizer.Ann"
-          + "otationsEntry\022<\n\005state\030\010 \001(\0162(.google.cl"
-          + "oud.speech.v2.Recognizer.StateB\003\340A\003\0224\n\013c"
-          + "reate_time\030\t \001(\0132\032.google.protobuf.Times"
-          + "tampB\003\340A\003\0224\n\013update_time\030\n \001(\0132\032.google."
-          + "protobuf.TimestampB\003\340A\003\0224\n\013delete_time\030\013"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
-          + "\013expire_time\030\016 \001(\0132\032.google.protobuf.Tim"
-          + "estampB\003\340A\003\022\021\n\004etag\030\014 \001(\tB\003\340A\003\022\030\n\013reconc"
-          + "iling\030\r \001(\010B\003\340A\003\022?\n\014kms_key_name\030\017 \001(\tB)"
-          + "\340A\003\372A#\n!cloudkms.googleapis.com/CryptoKe"
-          + "y\022N\n\024kms_key_version_name\030\020 \001(\tB0\340A\003\372A*\n"
-          + "(cloudkms.googleapis.com/CryptoKeyVersio"
-          + "n\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va"
-          + "lue\030\002 \001(\t:\0028\001\"7\n\005State\022\025\n\021STATE_UNSPECIF"
-          + "IED\020\000\022\n\n\006ACTIVE\020\002\022\013\n\007DELETED\020\004:j\352Ag\n spe"
-          + "ech.googleapis.com/Recognizer\022@projects/"
-          + "{project}/locations/{location}/recognize"
-          + "rs/{recognizer}R\001\001\"\032\n\030AutoDetectDecoding"
-          + "Config\"\371\001\n\026ExplicitDecodingConfig\022S\n\010enc"
-          + "oding\030\001 \001(\0162<.google.cloud.speech.v2.Exp"
-          + "licitDecodingConfig.AudioEncodingB\003\340A\002\022\031"
-          + "\n\021sample_rate_hertz\030\002 \001(\005\022\033\n\023audio_chann"
-          + "el_count\030\003 \001(\005\"R\n\rAudioEncoding\022\036\n\032AUDIO"
-          + "_ENCODING_UNSPECIFIED\020\000\022\014\n\010LINEAR16\020\001\022\t\n"
-          + "\005MULAW\020\002\022\010\n\004ALAW\020\003\"Z\n\030SpeakerDiarization"
-          + "Config\022\036\n\021min_speaker_count\030\002 \001(\005B\003\340A\002\022\036"
-          + "\n\021max_speaker_count\030\003 \001(\005B\003\340A\002\"\370\003\n\023Recog"
-          + "nitionFeatures\022\030\n\020profanity_filter\030\001 \001(\010"
-          + "\022 \n\030enable_word_time_offsets\030\002 \001(\010\022\036\n\026en"
-          + "able_word_confidence\030\003 \001(\010\022$\n\034enable_aut"
-          + "omatic_punctuation\030\004 \001(\010\022!\n\031enable_spoke"
-          + "n_punctuation\030\016 \001(\010\022\034\n\024enable_spoken_emo"
-          + "jis\030\017 \001(\010\022X\n\022multi_channel_mode\030\021 \001(\0162<."
-          + "google.cloud.speech.v2.RecognitionFeatur"
-          + "es.MultiChannelMode\022L\n\022diarization_confi"
-          + "g\030\t \001(\01320.google.cloud.speech.v2.Speaker"
-          + "DiarizationConfig\022\030\n\020max_alternatives\030\020 "
-          + "\001(\005\"\\\n\020MultiChannelMode\022\"\n\036MULTI_CHANNEL"
-          + "_MODE_UNSPECIFIED\020\000\022$\n SEPARATE_RECOGNIT"
-          + "ION_PER_CHANNEL\020\001\"\277\002\n\020SpeechAdaptation\022Q"
-          + "\n\013phrase_sets\030\001 \003(\0132<.google.cloud.speec"
-          + "h.v2.SpeechAdaptation.AdaptationPhraseSe"
-          + "t\022;\n\016custom_classes\030\002 \003(\0132#.google.cloud"
-          + ".speech.v2.CustomClass\032\232\001\n\023AdaptationPhr"
-          + "aseSet\022:\n\nphrase_set\030\001 \001(\tB$\372A!\n\037speech."
-          + "googleapis.com/PhraseSetH\000\022>\n\021inline_phr"
-          + "ase_set\030\002 \001(\0132!.google.cloud.speech.v2.P"
-          + "hraseSetH\000B\007\n\005value\"\311\002\n\021RecognitionConfi"
-          + "g\022P\n\024auto_decoding_config\030\007 \001(\01320.google"
-          + ".cloud.speech.v2.AutoDetectDecodingConfi"
-          + "gH\000\022R\n\030explicit_decoding_config\030\010 \001(\0132.."
-          + "google.cloud.speech.v2.ExplicitDecodingC"
-          + "onfigH\000\022=\n\010features\030\002 \001(\0132+.google.cloud"
-          + ".speech.v2.RecognitionFeatures\022<\n\nadapta"
-          + "tion\030\006 \001(\0132(.google.cloud.speech.v2.Spee"
-          + "chAdaptationB\021\n\017decoding_config\"\356\001\n\020Reco"
-          + "gnizeRequest\022<\n\nrecognizer\030\003 \001(\tB(\340A\002\372A\""
-          + "\n speech.googleapis.com/Recognizer\0229\n\006co"
-          + "nfig\030\001 \001(\0132).google.cloud.speech.v2.Reco"
-          + "gnitionConfig\022/\n\013config_mask\030\010 \001(\0132\032.goo"
-          + "gle.protobuf.FieldMask\022\021\n\007content\030\005 \001(\014H"
-          + "\000\022\r\n\003uri\030\006 \001(\tH\000B\016\n\014audio_source\"W\n\033Reco"
-          + "gnitionResponseMetadata\0228\n\025total_billed_"
-          + "duration\030\006 \001(\0132\031.google.protobuf.Duratio"
-          + "n\"w\n\034SpeechRecognitionAlternative\022\022\n\ntra"
-          + "nscript\030\001 \001(\t\022\022\n\nconfidence\030\002 \001(\002\022/\n\005wor"
-          + "ds\030\003 \003(\0132 .google.cloud.speech.v2.WordIn"
-          + "fo\"\243\001\n\010WordInfo\022/\n\014start_offset\030\001 \001(\0132\031."
-          + "google.protobuf.Duration\022-\n\nend_offset\030\002"
-          + " \001(\0132\031.google.protobuf.Duration\022\014\n\004word\030"
-          + "\003 \001(\t\022\022\n\nconfidence\030\004 \001(\002\022\025\n\rspeaker_lab"
-          + "el\030\006 \001(\t\"\314\001\n\027SpeechRecognitionResult\022J\n\014"
-          + "alternatives\030\001 \003(\01324.google.cloud.speech"
-          + ".v2.SpeechRecognitionAlternative\022\023\n\013chan"
-          + "nel_tag\030\002 \001(\005\0224\n\021result_end_offset\030\004 \001(\013"
-          + "2\031.google.protobuf.Duration\022\032\n\rlanguage_"
-          + "code\030\005 \001(\tB\003\340A\003\"\234\001\n\021RecognizeResponse\022@\n"
-          + "\007results\030\003 \003(\0132/.google.cloud.speech.v2."
-          + "SpeechRecognitionResult\022E\n\010metadata\030\002 \001("
-          + "\01323.google.cloud.speech.v2.RecognitionRe"
-          + "sponseMetadata\"\321\002\n\034StreamingRecognitionF"
-          + "eatures\022$\n\034enable_voice_activity_events\030"
-          + "\001 \001(\010\022\027\n\017interim_results\030\002 \001(\010\022i\n\026voice_"
-          + "activity_timeout\030\003 \001(\0132I.google.cloud.sp"
-          + "eech.v2.StreamingRecognitionFeatures.Voi"
-          + "ceActivityTimeout\032\206\001\n\024VoiceActivityTimeo"
-          + "ut\0227\n\024speech_start_timeout\030\001 \001(\0132\031.googl"
-          + "e.protobuf.Duration\0225\n\022speech_end_timeou"
-          + "t\030\002 \001(\0132\031.google.protobuf.Duration\"\337\001\n\032S"
-          + "treamingRecognitionConfig\022>\n\006config\030\001 \001("
-          + "\0132).google.cloud.speech.v2.RecognitionCo"
-          + "nfigB\003\340A\002\022/\n\013config_mask\030\003 \001(\0132\032.google."
-          + "protobuf.FieldMask\022P\n\022streaming_features"
-          + "\030\002 \001(\01324.google.cloud.speech.v2.Streamin"
-          + "gRecognitionFeatures\"\317\001\n\031StreamingRecogn"
-          + "izeRequest\022<\n\nrecognizer\030\003 \001(\tB(\340A\002\372A\"\n "
-          + "speech.googleapis.com/Recognizer\022N\n\020stre"
-          + "aming_config\030\006 \001(\01322.google.cloud.speech"
-          + ".v2.StreamingRecognitionConfigH\000\022\017\n\005audi"
-          + "o\030\005 \001(\014H\000B\023\n\021streaming_request\"\204\002\n\025Batch"
-          + "RecognizeRequest\022<\n\nrecognizer\030\001 \001(\tB(\340A"
+          + "tH\000\022P\n\025update_config_request\030\025 \001(\0132+.goo"
+          + "gle.cloud.speech.v2.UpdateConfigRequestB"
+          + "\002\030\001H\000\022\030\n\020progress_percent\030\026 \001(\005\022R\n\030batch"
+          + "_recognize_metadata\030\027 \001(\0132..google.cloud"
+          + ".speech.v2.BatchRecognizeMetadataH\001B\t\n\007r"
+          + "equestB\n\n\010metadata\"\220\001\n\026ListRecognizersRe"
+          + "quest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations"
+          + ".googleapis.com/Location\022\021\n\tpage_size\030\002 "
+          + "\001(\005\022\022\n\npage_token\030\003 \001(\t\022\024\n\014show_deleted\030"
+          + "\004 \001(\010\"k\n\027ListRecognizersResponse\0227\n\013reco"
+          + "gnizers\030\001 \003(\0132\".google.cloud.speech.v2.R"
+          + "ecognizer\022\027\n\017next_page_token\030\002 \001(\t\"N\n\024Ge"
+          + "tRecognizerRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\""
+          + "\n speech.googleapis.com/Recognizer\"\236\001\n\027U"
+          + "pdateRecognizerRequest\022;\n\nrecognizer\030\001 \001"
+          + "(\0132\".google.cloud.speech.v2.RecognizerB\003"
+          + "\340A\002\022/\n\013update_mask\030\002 \001(\0132\032.google.protob"
+          + "uf.FieldMask\022\025\n\rvalidate_only\030\004 \001(\010\"\215\001\n\027"
+          + "DeleteRecognizerRequest\0226\n\004name\030\001 \001(\tB(\340"
+          + "A\002\372A\"\n speech.googleapis.com/Recognizer\022"
+          + "\025\n\rvalidate_only\030\002 \001(\010\022\025\n\rallow_missing\030"
+          + "\004 \001(\010\022\014\n\004etag\030\003 \001(\t\"x\n\031UndeleteRecognize"
+          + "rRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n speech.g"
+          + "oogleapis.com/Recognizer\022\025\n\rvalidate_onl"
+          + "y\030\003 \001(\010\022\014\n\004etag\030\004 \001(\t\"\276\007\n\nRecognizer\022\021\n\004"
+          + "name\030\001 \001(\tB\003\340A\003\022\020\n\003uid\030\002 \001(\tB\003\340A\003\022\024\n\014dis"
+          + "play_name\030\003 \001(\t\022\022\n\005model\030\004 \001(\tB\003\340A\002\022\033\n\016l"
+          + "anguage_codes\030\021 \003(\tB\003\340A\002\022M\n\032default_reco"
+          + "gnition_config\030\006 \001(\0132).google.cloud.spee"
+          + "ch.v2.RecognitionConfig\022H\n\013annotations\030\007"
+          + " \003(\01323.google.cloud.speech.v2.Recognizer"
+          + ".AnnotationsEntry\022<\n\005state\030\010 \001(\0162(.googl"
+          + "e.cloud.speech.v2.Recognizer.StateB\003\340A\003\022"
+          + "4\n\013create_time\030\t \001(\0132\032.google.protobuf.T"
+          + "imestampB\003\340A\003\0224\n\013update_time\030\n \001(\0132\032.goo"
+          + "gle.protobuf.TimestampB\003\340A\003\0224\n\013delete_ti"
+          + "me\030\013 \001(\0132\032.google.protobuf.TimestampB\003\340A"
+          + "\003\0224\n\013expire_time\030\016 \001(\0132\032.google.protobuf"
+          + ".TimestampB\003\340A\003\022\021\n\004etag\030\014 \001(\tB\003\340A\003\022\030\n\013re"
+          + "conciling\030\r \001(\010B\003\340A\003\022?\n\014kms_key_name\030\017 \001"
+          + "(\tB)\340A\003\372A#\n!cloudkms.googleapis.com/Cryp"
+          + "toKey\022N\n\024kms_key_version_name\030\020 \001(\tB0\340A\003"
+          + "\372A*\n(cloudkms.googleapis.com/CryptoKeyVe"
+          + "rsion\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r"
+          + "\n\005value\030\002 \001(\t:\0028\001\"7\n\005State\022\025\n\021STATE_UNSP"
+          + "ECIFIED\020\000\022\n\n\006ACTIVE\020\002\022\013\n\007DELETED\020\004:j\352Ag\n"
+          + " speech.googleapis.com/Recognizer\022@proje"
+          + "cts/{project}/locations/{location}/recog"
+          + "nizers/{recognizer}R\001\001\"\032\n\030AutoDetectDeco"
+          + "dingConfig\"\371\001\n\026ExplicitDecodingConfig\022S\n"
+          + "\010encoding\030\001 \001(\0162<.google.cloud.speech.v2"
+          + ".ExplicitDecodingConfig.AudioEncodingB\003\340"
+          + "A\002\022\031\n\021sample_rate_hertz\030\002 \001(\005\022\033\n\023audio_c"
+          + "hannel_count\030\003 \001(\005\"R\n\rAudioEncoding\022\036\n\032A"
+          + "UDIO_ENCODING_UNSPECIFIED\020\000\022\014\n\010LINEAR16\020"
+          + "\001\022\t\n\005MULAW\020\002\022\010\n\004ALAW\020\003\"Z\n\030SpeakerDiariza"
+          + "tionConfig\022\036\n\021min_speaker_count\030\002 \001(\005B\003\340"
+          + "A\002\022\036\n\021max_speaker_count\030\003 \001(\005B\003\340A\002\"\370\003\n\023R"
+          + "ecognitionFeatures\022\030\n\020profanity_filter\030\001"
+          + " \001(\010\022 \n\030enable_word_time_offsets\030\002 \001(\010\022\036"
+          + "\n\026enable_word_confidence\030\003 \001(\010\022$\n\034enable"
+          + "_automatic_punctuation\030\004 \001(\010\022!\n\031enable_s"
+          + "poken_punctuation\030\016 \001(\010\022\034\n\024enable_spoken"
+          + "_emojis\030\017 \001(\010\022X\n\022multi_channel_mode\030\021 \001("
+          + "\0162<.google.cloud.speech.v2.RecognitionFe"
+          + "atures.MultiChannelMode\022L\n\022diarization_c"
+          + "onfig\030\t \001(\01320.google.cloud.speech.v2.Spe"
+          + "akerDiarizationConfig\022\030\n\020max_alternative"
+          + "s\030\020 \001(\005\"\\\n\020MultiChannelMode\022\"\n\036MULTI_CHA"
+          + "NNEL_MODE_UNSPECIFIED\020\000\022$\n SEPARATE_RECO"
+          + "GNITION_PER_CHANNEL\020\001\"\277\002\n\020SpeechAdaptati"
+          + "on\022Q\n\013phrase_sets\030\001 \003(\0132<.google.cloud.s"
+          + "peech.v2.SpeechAdaptation.AdaptationPhra"
+          + "seSet\022;\n\016custom_classes\030\002 \003(\0132#.google.c"
+          + "loud.speech.v2.CustomClass\032\232\001\n\023Adaptatio"
+          + "nPhraseSet\022:\n\nphrase_set\030\001 \001(\tB$\372A!\n\037spe"
+          + "ech.googleapis.com/PhraseSetH\000\022>\n\021inline"
+          + "_phrase_set\030\002 \001(\0132!.google.cloud.speech."
+          + "v2.PhraseSetH\000B\007\n\005value\"\311\002\n\021RecognitionC"
+          + "onfig\022P\n\024auto_decoding_config\030\007 \001(\01320.go"
+          + "ogle.cloud.speech.v2.AutoDetectDecodingC"
+          + "onfigH\000\022R\n\030explicit_decoding_config\030\010 \001("
+          + "\0132..google.cloud.speech.v2.ExplicitDecod"
+          + "ingConfigH\000\022=\n\010features\030\002 \001(\0132+.google.c"
+          + "loud.speech.v2.RecognitionFeatures\022<\n\nad"
+          + "aptation\030\006 \001(\0132(.google.cloud.speech.v2."
+          + "SpeechAdaptationB\021\n\017decoding_config\"\356\001\n\020"
+          + "RecognizeRequest\022<\n\nrecognizer\030\003 \001(\tB(\340A"
           + "\002\372A\"\n speech.googleapis.com/Recognizer\0229"
-          + "\n\006config\030\004 \001(\0132).google.cloud.speech.v2."
-          + "RecognitionConfig\022/\n\013config_mask\030\005 \001(\0132\032"
-          + ".google.protobuf.FieldMask\022A\n\005files\030\003 \003("
-          + "\01322.google.cloud.speech.v2.BatchRecogniz"
-          + "eFileMetadata\"\310\001\n\026BatchRecognizeResponse"
-          + "\022L\n\007results\030\001 \003(\0132;.google.cloud.speech."
-          + "v2.BatchRecognizeResponse.ResultsEntry\032`"
-          + "\n\014ResultsEntry\022\013\n\003key\030\001 \001(\t\022?\n\005value\030\002 \001"
-          + "(\01320.google.cloud.speech.v2.BatchRecogni"
-          + "zeFileResult:\0028\001\"J\n\030BatchRecognizeFileRe"
-          + "sult\022\013\n\003uri\030\001 \001(\t\022!\n\005error\030\002 \001(\0132\022.googl"
-          + "e.rpc.Status\"o\n#BatchRecognizeTranscript"
-          + "ionMetadata\022\030\n\020progress_percent\030\001 \001(\005\022!\n"
-          + "\005error\030\002 \001(\0132\022.google.rpc.Status\022\013\n\003uri\030"
-          + "\003 \001(\t\"\376\001\n\026BatchRecognizeMetadata\022i\n\026tran"
-          + "scription_metadata\030\001 \003(\0132I.google.cloud."
-          + "speech.v2.BatchRecognizeMetadata.Transcr"
-          + "iptionMetadataEntry\032y\n\032TranscriptionMeta"
-          + "dataEntry\022\013\n\003key\030\001 \001(\t\022J\n\005value\030\002 \001(\0132;."
-          + "google.cloud.speech.v2.BatchRecognizeTra"
-          + "nscriptionMetadata:\0028\001\"\247\001\n\032BatchRecogniz"
-          + "eFileMetadata\022\r\n\003uri\030\001 \001(\tH\000\0229\n\006config\030\004"
-          + " \001(\0132).google.cloud.speech.v2.Recognitio"
-          + "nConfig\022/\n\013config_mask\030\005 \001(\0132\032.google.pr"
-          + "otobuf.FieldMaskB\016\n\014audio_source\"\364\001\n\032Str"
-          + "eamingRecognitionResult\022J\n\014alternatives\030"
-          + "\001 \003(\01324.google.cloud.speech.v2.SpeechRec"
-          + "ognitionAlternative\022\020\n\010is_final\030\002 \001(\010\022\021\n"
-          + "\tstability\030\003 \001(\002\0224\n\021result_end_offset\030\004 "
-          + "\001(\0132\031.google.protobuf.Duration\022\023\n\013channe"
-          + "l_tag\030\005 \001(\005\022\032\n\rlanguage_code\030\006 \001(\tB\003\340A\003\""
-          + "\307\003\n\032StreamingRecognizeResponse\022C\n\007result"
-          + "s\030\006 \003(\01322.google.cloud.speech.v2.Streami"
-          + "ngRecognitionResult\022]\n\021speech_event_type"
-          + "\030\003 \001(\0162B.google.cloud.speech.v2.Streamin"
-          + "gRecognizeResponse.SpeechEventType\0226\n\023sp"
-          + "eech_event_offset\030\007 \001(\0132\031.google.protobu"
-          + "f.Duration\022E\n\010metadata\030\005 \001(\01323.google.cl"
-          + "oud.speech.v2.RecognitionResponseMetadat"
-          + "a\"\205\001\n\017SpeechEventType\022!\n\035SPEECH_EVENT_TY"
-          + "PE_UNSPECIFIED\020\000\022\033\n\027END_OF_SINGLE_UTTERA"
-          + "NCE\020\001\022\031\n\025SPEECH_ACTIVITY_BEGIN\020\002\022\027\n\023SPEE"
-          + "CH_ACTIVITY_END\020\003\"\345\001\n\006Config\022\021\n\004name\030\001 \001"
-          + "(\tB\003\340A\003\022?\n\014kms_key_name\030\002 \001(\tB)\340A\001\372A#\n!c"
-          + "loudkms.googleapis.com/CryptoKey\0224\n\013upda"
-          + "te_time\030\003 \001(\0132\032.google.protobuf.Timestam"
-          + "pB\003\340A\003:Q\352AN\n\034speech.googleapis.com/Confi"
-          + "g\022.projects/{project}/locations/{locatio"
-          + "n}/config\"F\n\020GetConfigRequest\0222\n\004name\030\001 "
-          + "\001(\tB$\340A\002\372A\036\n\034speech.googleapis.com/Confi"
-          + "g\"{\n\023UpdateConfigRequest\0223\n\006config\030\001 \001(\013"
-          + "2\036.google.cloud.speech.v2.ConfigB\003\340A\002\022/\n"
-          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.Fie"
-          + "ldMask\"\240\007\n\013CustomClass\022\021\n\004name\030\001 \001(\tB\003\340A"
-          + "\003\022\020\n\003uid\030\002 \001(\tB\003\340A\003\022\024\n\014display_name\030\004 \001("
-          + "\t\022<\n\005items\030\005 \003(\0132-.google.cloud.speech.v"
-          + "2.CustomClass.ClassItem\022=\n\005state\030\017 \001(\0162)"
-          + ".google.cloud.speech.v2.CustomClass.Stat"
-          + "eB\003\340A\003\0224\n\013create_time\030\006 \001(\0132\032.google.pro"
-          + "tobuf.TimestampB\003\340A\003\0224\n\013update_time\030\007 \001("
-          + "\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n\013de"
-          + "lete_time\030\010 \001(\0132\032.google.protobuf.Timest"
-          + "ampB\003\340A\003\0224\n\013expire_time\030\t \001(\0132\032.google.p"
-          + "rotobuf.TimestampB\003\340A\003\022I\n\013annotations\030\n "
-          + "\003(\01324.google.cloud.speech.v2.CustomClass"
-          + ".AnnotationsEntry\022\021\n\004etag\030\013 \001(\tB\003\340A\003\022\030\n\013"
-          + "reconciling\030\014 \001(\010B\003\340A\003\022?\n\014kms_key_name\030\r"
-          + " \001(\tB)\340A\003\372A#\n!cloudkms.googleapis.com/Cr"
-          + "yptoKey\022N\n\024kms_key_version_name\030\016 \001(\tB0\340"
-          + "A\003\372A*\n(cloudkms.googleapis.com/CryptoKey"
-          + "Version\032\032\n\tClassItem\022\r\n\005value\030\001 \001(\t\0322\n\020A"
-          + "nnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 "
-          + "\001(\t:\0028\001\"7\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022"
-          + "\n\n\006ACTIVE\020\002\022\013\n\007DELETED\020\004:o\352Al\n!speech.go"
-          + "ogleapis.com/CustomClass\022Dprojects/{proj"
-          + "ect}/locations/{location}/customClasses/"
-          + "{custom_class}R\001\001\"\253\007\n\tPhraseSet\022\021\n\004name\030"
-          + "\001 \001(\tB\003\340A\003\022\020\n\003uid\030\002 \001(\tB\003\340A\003\0229\n\007phrases\030"
-          + "\003 \003(\0132(.google.cloud.speech.v2.PhraseSet"
-          + ".Phrase\022\r\n\005boost\030\004 \001(\002\022\024\n\014display_name\030\005"
-          + " \001(\t\022;\n\005state\030\017 \001(\0162\'.google.cloud.speec"
-          + "h.v2.PhraseSet.StateB\003\340A\003\0224\n\013create_time"
-          + "\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022"
-          + "4\n\013update_time\030\007 \001(\0132\032.google.protobuf.T"
-          + "imestampB\003\340A\003\0224\n\013delete_time\030\010 \001(\0132\032.goo"
-          + "gle.protobuf.TimestampB\003\340A\003\0224\n\013expire_ti"
-          + "me\030\t \001(\0132\032.google.protobuf.TimestampB\003\340A"
-          + "\003\022G\n\013annotations\030\n \003(\01322.google.cloud.sp"
-          + "eech.v2.PhraseSet.AnnotationsEntry\022\021\n\004et"
-          + "ag\030\013 \001(\tB\003\340A\003\022\030\n\013reconciling\030\014 \001(\010B\003\340A\003\022"
-          + "?\n\014kms_key_name\030\r \001(\tB)\340A\003\372A#\n!cloudkms."
-          + "googleapis.com/CryptoKey\022N\n\024kms_key_vers"
-          + "ion_name\030\016 \001(\tB0\340A\003\372A*\n(cloudkms.googlea"
-          + "pis.com/CryptoKeyVersion\032&\n\006Phrase\022\r\n\005va"
-          + "lue\030\001 \001(\t\022\r\n\005boost\030\002 \001(\002\0322\n\020AnnotationsE"
-          + "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"7\n\005"
-          + "State\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\002"
-          + "\022\013\n\007DELETED\020\004:h\352Ae\n\037speech.googleapis.co"
-          + "m/PhraseSet\022?projects/{project}/location"
-          + "s/{location}/phraseSets/{phrase_set}R\001\001\""
-          + "\305\001\n\030CreateCustomClassRequest\022>\n\014custom_c"
-          + "lass\030\001 \001(\0132#.google.cloud.speech.v2.Cust"
-          + "omClassB\003\340A\002\022\025\n\rvalidate_only\030\002 \001(\010\022\027\n\017c"
-          + "ustom_class_id\030\003 \001(\t\0229\n\006parent\030\004 \001(\tB)\340A"
-          + "\002\372A#\022!speech.googleapis.com/CustomClass\""
-          + "\222\001\n\030ListCustomClassesRequest\0229\n\006parent\030\001"
-          + " \001(\tB)\340A\002\372A#\n!locations.googleapis.com/L"
-          + "ocation\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token"
-          + "\030\003 \001(\t\022\024\n\014show_deleted\030\004 \001(\010\"q\n\031ListCust"
-          + "omClassesResponse\022;\n\016custom_classes\030\001 \003("
-          + "\0132#.google.cloud.speech.v2.CustomClass\022\027"
-          + "\n\017next_page_token\030\002 \001(\t\"P\n\025GetCustomClas"
-          + "sRequest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!speech.g"
-          + "oogleapis.com/CustomClass\"\242\001\n\030UpdateCust"
-          + "omClassRequest\022>\n\014custom_class\030\001 \001(\0132#.g"
-          + "oogle.cloud.speech.v2.CustomClassB\003\340A\002\022/"
-          + "\n\013update_mask\030\002 \001(\0132\032.google.protobuf.Fi"
-          + "eldMask\022\025\n\rvalidate_only\030\004 \001(\010\"\217\001\n\030Delet"
-          + "eCustomClassRequest\0227\n\004name\030\001 \001(\tB)\340A\002\372A"
-          + "#\n!speech.googleapis.com/CustomClass\022\025\n\r"
-          + "validate_only\030\002 \001(\010\022\025\n\rallow_missing\030\004 \001"
-          + "(\010\022\014\n\004etag\030\003 \001(\t\"z\n\032UndeleteCustomClassR"
-          + "equest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!speech.goo"
-          + "gleapis.com/CustomClass\022\025\n\rvalidate_only"
-          + "\030\003 \001(\010\022\014\n\004etag\030\004 \001(\t\"\273\001\n\026CreatePhraseSet"
-          + "Request\022:\n\nphrase_set\030\001 \001(\0132!.google.clo"
-          + "ud.speech.v2.PhraseSetB\003\340A\002\022\025\n\rvalidate_"
-          + "only\030\002 \001(\010\022\025\n\rphrase_set_id\030\003 \001(\t\0227\n\006par"
-          + "ent\030\004 \001(\tB\'\340A\002\372A!\022\037speech.googleapis.com"
-          + "/PhraseSet\"\217\001\n\025ListPhraseSetsRequest\0229\n\006"
+          + "\n\006config\030\001 \001(\0132).google.cloud.speech.v2."
+          + "RecognitionConfig\022/\n\013config_mask\030\010 \001(\0132\032"
+          + ".google.protobuf.FieldMask\022\021\n\007content\030\005 "
+          + "\001(\014H\000\022\r\n\003uri\030\006 \001(\tH\000B\016\n\014audio_source\"W\n\033"
+          + "RecognitionResponseMetadata\0228\n\025total_bil"
+          + "led_duration\030\006 \001(\0132\031.google.protobuf.Dur"
+          + "ation\"w\n\034SpeechRecognitionAlternative\022\022\n"
+          + "\ntranscript\030\001 \001(\t\022\022\n\nconfidence\030\002 \001(\002\022/\n"
+          + "\005words\030\003 \003(\0132 .google.cloud.speech.v2.Wo"
+          + "rdInfo\"\243\001\n\010WordInfo\022/\n\014start_offset\030\001 \001("
+          + "\0132\031.google.protobuf.Duration\022-\n\nend_offs"
+          + "et\030\002 \001(\0132\031.google.protobuf.Duration\022\014\n\004w"
+          + "ord\030\003 \001(\t\022\022\n\nconfidence\030\004 \001(\002\022\025\n\rspeaker"
+          + "_label\030\006 \001(\t\"\314\001\n\027SpeechRecognitionResult"
+          + "\022J\n\014alternatives\030\001 \003(\01324.google.cloud.sp"
+          + "eech.v2.SpeechRecognitionAlternative\022\023\n\013"
+          + "channel_tag\030\002 \001(\005\0224\n\021result_end_offset\030\004"
+          + " \001(\0132\031.google.protobuf.Duration\022\032\n\rlangu"
+          + "age_code\030\005 \001(\tB\003\340A\003\"\234\001\n\021RecognizeRespons"
+          + "e\022@\n\007results\030\003 \003(\0132/.google.cloud.speech"
+          + ".v2.SpeechRecognitionResult\022E\n\010metadata\030"
+          + "\002 \001(\01323.google.cloud.speech.v2.Recogniti"
+          + "onResponseMetadata\"\321\002\n\034StreamingRecognit"
+          + "ionFeatures\022$\n\034enable_voice_activity_eve"
+          + "nts\030\001 \001(\010\022\027\n\017interim_results\030\002 \001(\010\022i\n\026vo"
+          + "ice_activity_timeout\030\003 \001(\0132I.google.clou"
+          + "d.speech.v2.StreamingRecognitionFeatures"
+          + ".VoiceActivityTimeout\032\206\001\n\024VoiceActivityT"
+          + "imeout\0227\n\024speech_start_timeout\030\001 \001(\0132\031.g"
+          + "oogle.protobuf.Duration\0225\n\022speech_end_ti"
+          + "meout\030\002 \001(\0132\031.google.protobuf.Duration\"\337"
+          + "\001\n\032StreamingRecognitionConfig\022>\n\006config\030"
+          + "\001 \001(\0132).google.cloud.speech.v2.Recogniti"
+          + "onConfigB\003\340A\002\022/\n\013config_mask\030\003 \001(\0132\032.goo"
+          + "gle.protobuf.FieldMask\022P\n\022streaming_feat"
+          + "ures\030\002 \001(\01324.google.cloud.speech.v2.Stre"
+          + "amingRecognitionFeatures\"\317\001\n\031StreamingRe"
+          + "cognizeRequest\022<\n\nrecognizer\030\003 \001(\tB(\340A\002\372"
+          + "A\"\n speech.googleapis.com/Recognizer\022N\n\020"
+          + "streaming_config\030\006 \001(\01322.google.cloud.sp"
+          + "eech.v2.StreamingRecognitionConfigH\000\022\017\n\005"
+          + "audio\030\005 \001(\014H\000B\023\n\021streaming_request\"\330\002\n\025B"
+          + "atchRecognizeRequest\022<\n\nrecognizer\030\001 \001(\t"
+          + "B(\340A\002\372A\"\n speech.googleapis.com/Recogniz"
+          + "er\0229\n\006config\030\004 \001(\0132).google.cloud.speech"
+          + ".v2.RecognitionConfig\022/\n\013config_mask\030\005 \001"
+          + "(\0132\032.google.protobuf.FieldMask\022A\n\005files\030"
+          + "\003 \003(\01322.google.cloud.speech.v2.BatchReco"
+          + "gnizeFileMetadata\022R\n\031recognition_output_"
+          + "config\030\006 \001(\0132/.google.cloud.speech.v2.Re"
+          + "cognitionOutputConfig\"\036\n\017GcsOutputConfig"
+          + "\022\013\n\003uri\030\001 \001(\t\"\024\n\022InlineOutputConfig\"\267\001\n\027"
+          + "RecognitionOutputConfig\022D\n\021gcs_output_co"
+          + "nfig\030\001 \001(\0132\'.google.cloud.speech.v2.GcsO"
+          + "utputConfigH\000\022L\n\026inline_response_config\030"
+          + "\002 \001(\0132*.google.cloud.speech.v2.InlineOut"
+          + "putConfigH\000B\010\n\006output\"\202\002\n\026BatchRecognize"
+          + "Response\022L\n\007results\030\001 \003(\0132;.google.cloud"
+          + ".speech.v2.BatchRecognizeResponse.Result"
+          + "sEntry\0228\n\025total_billed_duration\030\002 \001(\0132\031."
+          + "google.protobuf.Duration\032`\n\014ResultsEntry"
+          + "\022\013\n\003key\030\001 \001(\t\022?\n\005value\030\002 \001(\01320.google.cl"
+          + "oud.speech.v2.BatchRecognizeFileResult:\002"
+          + "8\001\"\240\001\n\025BatchRecognizeResults\022@\n\007results\030"
+          + "\001 \003(\0132/.google.cloud.speech.v2.SpeechRec"
+          + "ognitionResult\022E\n\010metadata\030\002 \001(\01323.googl"
+          + "e.cloud.speech.v2.RecognitionResponseMet"
+          + "adata\"\324\001\n\030BatchRecognizeFileResult\022\013\n\003ur"
+          + "i\030\001 \001(\t\022!\n\005error\030\002 \001(\0132\022.google.rpc.Stat"
+          + "us\022E\n\010metadata\030\003 \001(\01323.google.cloud.spee"
+          + "ch.v2.RecognitionResponseMetadata\022A\n\ntra"
+          + "nscript\030\004 \001(\0132-.google.cloud.speech.v2.B"
+          + "atchRecognizeResults\"o\n#BatchRecognizeTr"
+          + "anscriptionMetadata\022\030\n\020progress_percent\030"
+          + "\001 \001(\005\022!\n\005error\030\002 \001(\0132\022.google.rpc.Status"
+          + "\022\013\n\003uri\030\003 \001(\t\"\376\001\n\026BatchRecognizeMetadata"
+          + "\022i\n\026transcription_metadata\030\001 \003(\0132I.googl"
+          + "e.cloud.speech.v2.BatchRecognizeMetadata"
+          + ".TranscriptionMetadataEntry\032y\n\032Transcrip"
+          + "tionMetadataEntry\022\013\n\003key\030\001 \001(\t\022J\n\005value\030"
+          + "\002 \001(\0132;.google.cloud.speech.v2.BatchReco"
+          + "gnizeTranscriptionMetadata:\0028\001\"\247\001\n\032Batch"
+          + "RecognizeFileMetadata\022\r\n\003uri\030\001 \001(\tH\000\0229\n\006"
+          + "config\030\004 \001(\0132).google.cloud.speech.v2.Re"
+          + "cognitionConfig\022/\n\013config_mask\030\005 \001(\0132\032.g"
+          + "oogle.protobuf.FieldMaskB\016\n\014audio_source"
+          + "\"\364\001\n\032StreamingRecognitionResult\022J\n\014alter"
+          + "natives\030\001 \003(\01324.google.cloud.speech.v2.S"
+          + "peechRecognitionAlternative\022\020\n\010is_final\030"
+          + "\002 \001(\010\022\021\n\tstability\030\003 \001(\002\0224\n\021result_end_o"
+          + "ffset\030\004 \001(\0132\031.google.protobuf.Duration\022\023"
+          + "\n\013channel_tag\030\005 \001(\005\022\032\n\rlanguage_code\030\006 \001"
+          + "(\tB\003\340A\003\"\307\003\n\032StreamingRecognizeResponse\022C"
+          + "\n\007results\030\006 \003(\01322.google.cloud.speech.v2"
+          + ".StreamingRecognitionResult\022]\n\021speech_ev"
+          + "ent_type\030\003 \001(\0162B.google.cloud.speech.v2."
+          + "StreamingRecognizeResponse.SpeechEventTy"
+          + "pe\0226\n\023speech_event_offset\030\007 \001(\0132\031.google"
+          + ".protobuf.Duration\022E\n\010metadata\030\005 \001(\01323.g"
+          + "oogle.cloud.speech.v2.RecognitionRespons"
+          + "eMetadata\"\205\001\n\017SpeechEventType\022!\n\035SPEECH_"
+          + "EVENT_TYPE_UNSPECIFIED\020\000\022\033\n\027END_OF_SINGL"
+          + "E_UTTERANCE\020\001\022\031\n\025SPEECH_ACTIVITY_BEGIN\020\002"
+          + "\022\027\n\023SPEECH_ACTIVITY_END\020\003\"\345\001\n\006Config\022\021\n\004"
+          + "name\030\001 \001(\tB\003\340A\003\022?\n\014kms_key_name\030\002 \001(\tB)\340"
+          + "A\001\372A#\n!cloudkms.googleapis.com/CryptoKey"
+          + "\0224\n\013update_time\030\003 \001(\0132\032.google.protobuf."
+          + "TimestampB\003\340A\003:Q\352AN\n\034speech.googleapis.c"
+          + "om/Config\022.projects/{project}/locations/"
+          + "{location}/config\"F\n\020GetConfigRequest\0222\n"
+          + "\004name\030\001 \001(\tB$\340A\002\372A\036\n\034speech.googleapis.c"
+          + "om/Config\"{\n\023UpdateConfigRequest\0223\n\006conf"
+          + "ig\030\001 \001(\0132\036.google.cloud.speech.v2.Config"
+          + "B\003\340A\002\022/\n\013update_mask\030\002 \001(\0132\032.google.prot"
+          + "obuf.FieldMask\"\240\007\n\013CustomClass\022\021\n\004name\030\001"
+          + " \001(\tB\003\340A\003\022\020\n\003uid\030\002 \001(\tB\003\340A\003\022\024\n\014display_n"
+          + "ame\030\004 \001(\t\022<\n\005items\030\005 \003(\0132-.google.cloud."
+          + "speech.v2.CustomClass.ClassItem\022=\n\005state"
+          + "\030\017 \001(\0162).google.cloud.speech.v2.CustomCl"
+          + "ass.StateB\003\340A\003\0224\n\013create_time\030\006 \001(\0132\032.go"
+          + "ogle.protobuf.TimestampB\003\340A\003\0224\n\013update_t"
+          + "ime\030\007 \001(\0132\032.google.protobuf.TimestampB\003\340"
+          + "A\003\0224\n\013delete_time\030\010 \001(\0132\032.google.protobu"
+          + "f.TimestampB\003\340A\003\0224\n\013expire_time\030\t \001(\0132\032."
+          + "google.protobuf.TimestampB\003\340A\003\022I\n\013annota"
+          + "tions\030\n \003(\01324.google.cloud.speech.v2.Cus"
+          + "tomClass.AnnotationsEntry\022\021\n\004etag\030\013 \001(\tB"
+          + "\003\340A\003\022\030\n\013reconciling\030\014 \001(\010B\003\340A\003\022?\n\014kms_ke"
+          + "y_name\030\r \001(\tB)\340A\003\372A#\n!cloudkms.googleapi"
+          + "s.com/CryptoKey\022N\n\024kms_key_version_name\030"
+          + "\016 \001(\tB0\340A\003\372A*\n(cloudkms.googleapis.com/C"
+          + "ryptoKeyVersion\032\032\n\tClassItem\022\r\n\005value\030\001 "
+          + "\001(\t\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
+          + "value\030\002 \001(\t:\0028\001\"7\n\005State\022\025\n\021STATE_UNSPEC"
+          + "IFIED\020\000\022\n\n\006ACTIVE\020\002\022\013\n\007DELETED\020\004:o\352Al\n!s"
+          + "peech.googleapis.com/CustomClass\022Dprojec"
+          + "ts/{project}/locations/{location}/custom"
+          + "Classes/{custom_class}R\001\001\"\253\007\n\tPhraseSet\022"
+          + "\021\n\004name\030\001 \001(\tB\003\340A\003\022\020\n\003uid\030\002 \001(\tB\003\340A\003\0229\n\007"
+          + "phrases\030\003 \003(\0132(.google.cloud.speech.v2.P"
+          + "hraseSet.Phrase\022\r\n\005boost\030\004 \001(\002\022\024\n\014displa"
+          + "y_name\030\005 \001(\t\022;\n\005state\030\017 \001(\0162\'.google.clo"
+          + "ud.speech.v2.PhraseSet.StateB\003\340A\003\0224\n\013cre"
+          + "ate_time\030\006 \001(\0132\032.google.protobuf.Timesta"
+          + "mpB\003\340A\003\0224\n\013update_time\030\007 \001(\0132\032.google.pr"
+          + "otobuf.TimestampB\003\340A\003\0224\n\013delete_time\030\010 \001"
+          + "(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n\013e"
+          + "xpire_time\030\t \001(\0132\032.google.protobuf.Times"
+          + "tampB\003\340A\003\022G\n\013annotations\030\n \003(\01322.google."
+          + "cloud.speech.v2.PhraseSet.AnnotationsEnt"
+          + "ry\022\021\n\004etag\030\013 \001(\tB\003\340A\003\022\030\n\013reconciling\030\014 \001"
+          + "(\010B\003\340A\003\022?\n\014kms_key_name\030\r \001(\tB)\340A\003\372A#\n!c"
+          + "loudkms.googleapis.com/CryptoKey\022N\n\024kms_"
+          + "key_version_name\030\016 \001(\tB0\340A\003\372A*\n(cloudkms"
+          + ".googleapis.com/CryptoKeyVersion\032&\n\006Phra"
+          + "se\022\r\n\005value\030\001 \001(\t\022\r\n\005boost\030\002 \001(\002\0322\n\020Anno"
+          + "tationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t"
+          + ":\0028\001\"7\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006"
+          + "ACTIVE\020\002\022\013\n\007DELETED\020\004:h\352Ae\n\037speech.googl"
+          + "eapis.com/PhraseSet\022?projects/{project}/"
+          + "locations/{location}/phraseSets/{phrase_"
+          + "set}R\001\001\"\305\001\n\030CreateCustomClassRequest\022>\n\014"
+          + "custom_class\030\001 \001(\0132#.google.cloud.speech"
+          + ".v2.CustomClassB\003\340A\002\022\025\n\rvalidate_only\030\002 "
+          + "\001(\010\022\027\n\017custom_class_id\030\003 \001(\t\0229\n\006parent\030\004"
+          + " \001(\tB)\340A\002\372A#\022!speech.googleapis.com/Cust"
+          + "omClass\"\222\001\n\030ListCustomClassesRequest\0229\n\006"
           + "parent\030\001 \001(\tB)\340A\002\372A#\n!locations.googleap"
           + "is.com/Location\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npa"
-          + "ge_token\030\003 \001(\t\022\024\n\014show_deleted\030\004 \001(\010\"i\n\026"
-          + "ListPhraseSetsResponse\0226\n\013phrase_sets\030\001 "
-          + "\003(\0132!.google.cloud.speech.v2.PhraseSet\022\027"
-          + "\n\017next_page_token\030\002 \001(\t\"L\n\023GetPhraseSetR"
-          + "equest\0225\n\004name\030\001 \001(\tB\'\340A\002\372A!\n\037speech.goo"
-          + "gleapis.com/PhraseSet\"\234\001\n\026UpdatePhraseSe"
-          + "tRequest\022:\n\nphrase_set\030\001 \001(\0132!.google.cl"
-          + "oud.speech.v2.PhraseSetB\003\340A\002\022/\n\013update_m"
-          + "ask\030\002 \001(\0132\032.google.protobuf.FieldMask\022\025\n"
-          + "\rvalidate_only\030\004 \001(\010\"\213\001\n\026DeletePhraseSet"
-          + "Request\0225\n\004name\030\001 \001(\tB\'\340A\002\372A!\n\037speech.go"
-          + "ogleapis.com/PhraseSet\022\025\n\rvalidate_only\030"
-          + "\002 \001(\010\022\025\n\rallow_missing\030\004 \001(\010\022\014\n\004etag\030\003 \001"
-          + "(\t\"v\n\030UndeletePhraseSetRequest\0225\n\004name\030\001"
-          + " \001(\tB\'\340A\002\372A!\n\037speech.googleapis.com/Phra"
-          + "seSet\022\025\n\rvalidate_only\030\003 \001(\010\022\014\n\004etag\030\004 \001"
-          + "(\t2\277%\n\006Speech\022\354\001\n\020CreateRecognizer\022/.goo"
-          + "gle.cloud.speech.v2.CreateRecognizerRequ"
-          + "est\032\035.google.longrunning.Operation\"\207\001\202\323\344"
-          + "\223\002=\"//v2/{parent=projects/*/locations/*}"
-          + "/recognizers:\nrecognizer\332A\037parent,recogn"
-          + "izer,recognizer_id\312A\037\n\nRecognizer\022\021Opera"
-          + "tionMetadata\022\264\001\n\017ListRecognizers\022..googl"
-          + "e.cloud.speech.v2.ListRecognizersRequest"
-          + "\032/.google.cloud.speech.v2.ListRecognizer"
-          + "sResponse\"@\202\323\344\223\0021\022//v2/{parent=projects/"
-          + "*/locations/*}/recognizers\332A\006parent\022\241\001\n\r"
-          + "GetRecognizer\022,.google.cloud.speech.v2.G"
-          + "etRecognizerRequest\032\".google.cloud.speec"
-          + "h.v2.Recognizer\">\202\323\344\223\0021\022//v2/{name=proje"
-          + "cts/*/locations/*/recognizers/*}\332A\004name\022"
-          + "\356\001\n\020UpdateRecognizer\022/.google.cloud.spee"
-          + "ch.v2.UpdateRecognizerRequest\032\035.google.l"
-          + "ongrunning.Operation\"\211\001\202\323\344\223\002H2:/v2/{reco"
-          + "gnizer.name=projects/*/locations/*/recog"
-          + "nizers/*}:\nrecognizer\332A\026recognizer,updat"
-          + "e_mask\312A\037\n\nRecognizer\022\021OperationMetadata"
-          + "\022\304\001\n\020DeleteRecognizer\022/.google.cloud.spe"
-          + "ech.v2.DeleteRecognizerRequest\032\035.google."
-          + "longrunning.Operation\"`\202\323\344\223\0021*//v2/{name"
-          + "=projects/*/locations/*/recognizers/*}\332A"
-          + "\004name\312A\037\n\nRecognizer\022\021OperationMetadata\022"
-          + "\324\001\n\022UndeleteRecognizer\0221.google.cloud.sp"
-          + "eech.v2.UndeleteRecognizerRequest\032\035.goog"
-          + "le.longrunning.Operation\"l\202\323\344\223\002=\"8/v2/{n"
-          + "ame=projects/*/locations/*/recognizers/*"
-          + "}:undelete:\001*\332A\004name\312A\037\n\nRecognizer\022\021Ope"
-          + "rationMetadata\022\371\001\n\tRecognize\022(.google.cl"
-          + "oud.speech.v2.RecognizeRequest\032).google."
-          + "cloud.speech.v2.RecognizeResponse\"\226\001\202\323\344\223"
-          + "\002D\"?/v2/{recognizer=projects/*/locations"
-          + "/*/recognizers/*}:recognize:\001*\332A%recogni"
-          + "zer,config,config_mask,content\332A!recogni"
-          + "zer,config,config_mask,uri\022\201\001\n\022Streaming"
-          + "Recognize\0221.google.cloud.speech.v2.Strea"
-          + "mingRecognizeRequest\0322.google.cloud.spee"
-          + "ch.v2.StreamingRecognizeResponse\"\000(\0010\001\022\204"
-          + "\002\n\016BatchRecognize\022-.google.cloud.speech."
-          + "v2.BatchRecognizeRequest\032\035.google.longru"
-          + "nning.Operation\"\243\001\202\323\344\223\002I\"D/v2/{recognize"
-          + "r=projects/*/locations/*/recognizers/*}:"
-          + "batchRecognize:\001*\332A#recognizer,config,co"
-          + "nfig_mask,files\312A+\n\026BatchRecognizeRespon"
-          + "se\022\021OperationMetadata\022\216\001\n\tGetConfig\022(.go"
-          + "ogle.cloud.speech.v2.GetConfigRequest\032\036."
-          + "google.cloud.speech.v2.Config\"7\202\323\344\223\002*\022(/"
-          + "v2/{name=projects/*/locations/*/config}\332"
-          + "A\004name\022\261\001\n\014UpdateConfig\022+.google.cloud.s"
-          + "peech.v2.UpdateConfigRequest\032\036.google.cl"
-          + "oud.speech.v2.Config\"T\202\323\344\223\00292//v2/{confi"
-          + "g.name=projects/*/locations/*/config}:\006c"
-          + "onfig\332A\022config,update_mask\022\367\001\n\021CreateCus"
-          + "tomClass\0220.google.cloud.speech.v2.Create"
-          + "CustomClassRequest\032\035.google.longrunning."
-          + "Operation\"\220\001\202\323\344\223\002A\"1/v2/{parent=projects"
-          + "/*/locations/*}/customClasses:\014custom_cl"
-          + "ass\332A#parent,custom_class,custom_class_i"
-          + "d\312A \n\013CustomClass\022\021OperationMetadata\022\274\001\n"
-          + "\021ListCustomClasses\0220.google.cloud.speech"
-          + ".v2.ListCustomClassesRequest\0321.google.cl"
-          + "oud.speech.v2.ListCustomClassesResponse\""
-          + "B\202\323\344\223\0023\0221/v2/{parent=projects/*/location"
-          + "s/*}/customClasses\332A\006parent\022\246\001\n\016GetCusto"
-          + "mClass\022-.google.cloud.speech.v2.GetCusto"
-          + "mClassRequest\032#.google.cloud.speech.v2.C"
-          + "ustomClass\"@\202\323\344\223\0023\0221/v2/{name=projects/*",
-      "/locations/*/customClasses/*}\332A\004name\022\371\001\n"
-          + "\021UpdateCustomClass\0220.google.cloud.speech"
-          + ".v2.UpdateCustomClassRequest\032\035.google.lo"
-          + "ngrunning.Operation\"\222\001\202\323\344\223\002N2>/v2/{custo"
-          + "m_class.name=projects/*/locations/*/cust"
-          + "omClasses/*}:\014custom_class\332A\030custom_clas"
-          + "s,update_mask\312A \n\013CustomClass\022\021Operation"
-          + "Metadata\022\311\001\n\021DeleteCustomClass\0220.google."
-          + "cloud.speech.v2.DeleteCustomClassRequest"
-          + "\032\035.google.longrunning.Operation\"c\202\323\344\223\0023*"
-          + "1/v2/{name=projects/*/locations/*/custom"
-          + "Classes/*}\332A\004name\312A \n\013CustomClass\022\021Opera"
-          + "tionMetadata\022\331\001\n\023UndeleteCustomClass\0222.g"
-          + "oogle.cloud.speech.v2.UndeleteCustomClas"
+          + "ge_token\030\003 \001(\t\022\024\n\014show_deleted\030\004 \001(\010\"q\n\031"
+          + "ListCustomClassesResponse\022;\n\016custom_clas"
+          + "ses\030\001 \003(\0132#.google.cloud.speech.v2.Custo"
+          + "mClass\022\027\n\017next_page_token\030\002 \001(\t\"P\n\025GetCu"
+          + "stomClassRequest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!"
+          + "speech.googleapis.com/CustomClass\"\242\001\n\030Up"
+          + "dateCustomClassRequest\022>\n\014custom_class\030\001"
+          + " \001(\0132#.google.cloud.speech.v2.CustomClas"
+          + "sB\003\340A\002\022/\n\013update_mask\030\002 \001(\0132\032.google.pro"
+          + "tobuf.FieldMask\022\025\n\rvalidate_only\030\004 \001(\010\"\217"
+          + "\001\n\030DeleteCustomClassRequest\0227\n\004name\030\001 \001("
+          + "\tB)\340A\002\372A#\n!speech.googleapis.com/CustomC"
+          + "lass\022\025\n\rvalidate_only\030\002 \001(\010\022\025\n\rallow_mis"
+          + "sing\030\004 \001(\010\022\014\n\004etag\030\003 \001(\t\"z\n\032UndeleteCust"
+          + "omClassRequest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!sp"
+          + "eech.googleapis.com/CustomClass\022\025\n\rvalid"
+          + "ate_only\030\003 \001(\010\022\014\n\004etag\030\004 \001(\t\"\273\001\n\026CreateP"
+          + "hraseSetRequest\022:\n\nphrase_set\030\001 \001(\0132!.go"
+          + "ogle.cloud.speech.v2.PhraseSetB\003\340A\002\022\025\n\rv"
+          + "alidate_only\030\002 \001(\010\022\025\n\rphrase_set_id\030\003 \001("
+          + "\t\0227\n\006parent\030\004 \001(\tB\'\340A\002\372A!\022\037speech.google"
+          + "apis.com/PhraseSet\"\217\001\n\025ListPhraseSetsReq"
+          + "uest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations."
+          + "googleapis.com/Location\022\021\n\tpage_size\030\002 \001"
+          + "(\005\022\022\n\npage_token\030\003 \001(\t\022\024\n\014show_deleted\030\004"
+          + " \001(\010\"i\n\026ListPhraseSetsResponse\0226\n\013phrase"
+          + "_sets\030\001 \003(\0132!.google.cloud.speech.v2.Phr"
+          + "aseSet\022\027\n\017next_page_token\030\002 \001(\t\"L\n\023GetPh"
+          + "raseSetRequest\0225\n\004name\030\001 \001(\tB\'\340A\002\372A!\n\037sp"
+          + "eech.googleapis.com/PhraseSet\"\234\001\n\026Update"
+          + "PhraseSetRequest\022:\n\nphrase_set\030\001 \001(\0132!.g"
+          + "oogle.cloud.speech.v2.PhraseSetB\003\340A\002\022/\n\013"
+          + "update_mask\030\002 \001(\0132\032.google.protobuf.Fiel"
+          + "dMask\022\025\n\rvalidate_only\030\004 \001(\010\"\213\001\n\026DeleteP"
+          + "hraseSetRequest\0225\n\004name\030\001 \001(\tB\'\340A\002\372A!\n\037s"
+          + "peech.googleapis.com/PhraseSet\022\025\n\rvalida"
+          + "te_only\030\002 \001(\010\022\025\n\rallow_missing\030\004 \001(\010\022\014\n\004"
+          + "etag\030\003 \001(\t\"v\n\030UndeletePhraseSetRequest\0225"
+          + "\n\004name\030\001 \001(\tB\'\340A\002\372A!\n\037speech.googleapis."
+          + "com/PhraseSet\022\025\n\rvalidate_only\030\003 \001(\010\022\014\n\004"
+          + "etag\030\004 \001(\t2\277%\n\006Speech\022\354\001\n\020CreateRecogniz"
+          + "er\022/.google.cloud.speech.v2.CreateRecogn"
+          + "izerRequest\032\035.google.longrunning.Operati"
+          + "on\"\207\001\202\323\344\223\002=\"//v2/{parent=projects/*/loca"
+          + "tions/*}/recognizers:\nrecognizer\332A\037paren"
+          + "t,recognizer,recognizer_id\312A\037\n\nRecognize"
+          + "r\022\021OperationMetadata\022\264\001\n\017ListRecognizers"
+          + "\022..google.cloud.speech.v2.ListRecognizer"
+          + "sRequest\032/.google.cloud.speech.v2.ListRe"
+          + "cognizersResponse\"@\202\323\344\223\0021\022//v2/{parent=p"
+          + "rojects/*/locations/*}/recognizers\332A\006par"
+          + "ent\022\241\001\n\rGetRecognizer\022,.google.cloud.spe"
+          + "ech.v2.GetRecognizerRequest\032\".google.clo"
+          + "ud.speech.v2.Recognizer\">\202\323\344\223\0021\022//v2/{na"
+          + "me=projects/*/locations/*/recognizers/*}"
+          + "\332A\004name\022\356\001\n\020UpdateRecognizer\022/.google.cl"
+          + "oud.speech.v2.UpdateRecognizerRequest\032\035."
+          + "google.longrunning.Operation\"\211\001\202\323\344\223\002H2:/"
+          + "v2/{recognizer.name=projects/*/locations"
+          + "/*/recognizers/*}:\nrecognizer\332A\026recogniz"
+          + "er,update_mask\312A\037\n\nRecognizer\022\021Operation"
+          + "Metadata\022\304\001\n\020DeleteRecognizer\022/.google.c"
+          + "loud.speech.v2.DeleteRecognizerRequest\032\035"
+          + ".google.longrunning.Operation\"`\202\323\344\223\0021*//"
+          + "v2/{name=projects/*/locations/*/recogniz"
+          + "ers/*}\332A\004name\312A\037\n\nRecognizer\022\021OperationM"
+          + "etadata\022\324\001\n\022UndeleteRecognizer\0221.google."
+          + "cloud.speech.v2.UndeleteRecognizerReques"
+          + "t\032\035.google.longrunning.Operation\"l\202\323\344\223\002="
+          + "\"8/v2/{name=projects/*/locations/*/recog"
+          + "nizers/*}:undelete:\001*\332A\004name\312A\037\n\nRecogni"
+          + "zer\022\021OperationMetadata\022\371\001\n\tRecognize\022(.g"
+          + "oogle.cloud.speech.v2.RecognizeRequest\032)"
+          + ".google.cloud.speech.v2.RecognizeRespons"
+          + "e\"\226\001\202\323\344\223\002D\"?/v2/{recognizer=projects/*/l"
+          + "ocations/*/recognizers/*}:recognize:\001*\332A"
+          + "%recognizer,config,config_mask,content\332A"
+          + "!recognizer,config,config_mask,uri\022\201\001\n\022S"
+          + "treamingRecognize\0221.google.cloud.speech."
+          + "v2.StreamingRecognizeRequest\0322.google.cl"
+          + "oud.speech.v2.StreamingRecognizeResponse"
+          + "\"\000(\0010\001\022\204\002\n\016BatchRecognize\022-.google.cloud"
+          + ".speech.v2.BatchRecognizeRequest\032\035.googl"
+          + "e.longrunning.Operation\"\243\001\202\323\344\223\002I\"D/v2/{r"
+          + "ecognizer=projects/*/locations/*/recogni"
+          + "zers/*}:batchRecognize:\001*\332A#recognizer,c"
+          + "onfig,config_mask,files\312A+\n\026BatchRecogni"
+          + "zeResponse\022\021OperationMetadata\022\216\001\n\tGetCon"
+          + "fig\022(.google.cloud.speech.v2.GetConfigRe"
+          + "quest\032\036.google.cloud.speech.v2.Config\"7\202"
+          + "\323\344\223\002*\022(/v2/{name=projects/*/locations/*/"
+          + "config}\332A\004name\022\261\001\n\014UpdateConfig\022+.google"
+          + ".cloud.speech.v2.UpdateConfigRequest\032\036.g",
+      "oogle.cloud.speech.v2.Config\"T\202\323\344\223\00292//v"
+          + "2/{config.name=projects/*/locations/*/co"
+          + "nfig}:\006config\332A\022config,update_mask\022\367\001\n\021C"
+          + "reateCustomClass\0220.google.cloud.speech.v"
+          + "2.CreateCustomClassRequest\032\035.google.long"
+          + "running.Operation\"\220\001\202\323\344\223\002A\"1/v2/{parent="
+          + "projects/*/locations/*}/customClasses:\014c"
+          + "ustom_class\332A#parent,custom_class,custom"
+          + "_class_id\312A \n\013CustomClass\022\021OperationMeta"
+          + "data\022\274\001\n\021ListCustomClasses\0220.google.clou"
+          + "d.speech.v2.ListCustomClassesRequest\0321.g"
+          + "oogle.cloud.speech.v2.ListCustomClassesR"
+          + "esponse\"B\202\323\344\223\0023\0221/v2/{parent=projects/*/"
+          + "locations/*}/customClasses\332A\006parent\022\246\001\n\016"
+          + "GetCustomClass\022-.google.cloud.speech.v2."
+          + "GetCustomClassRequest\032#.google.cloud.spe"
+          + "ech.v2.CustomClass\"@\202\323\344\223\0023\0221/v2/{name=pr"
+          + "ojects/*/locations/*/customClasses/*}\332A\004"
+          + "name\022\371\001\n\021UpdateCustomClass\0220.google.clou"
+          + "d.speech.v2.UpdateCustomClassRequest\032\035.g"
+          + "oogle.longrunning.Operation\"\222\001\202\323\344\223\002N2>/v"
+          + "2/{custom_class.name=projects/*/location"
+          + "s/*/customClasses/*}:\014custom_class\332A\030cus"
+          + "tom_class,update_mask\312A \n\013CustomClass\022\021O"
+          + "perationMetadata\022\311\001\n\021DeleteCustomClass\0220"
+          + ".google.cloud.speech.v2.DeleteCustomClas"
           + "sRequest\032\035.google.longrunning.Operation\""
-          + "o\202\323\344\223\002?\":/v2/{name=projects/*/locations/"
-          + "*/customClasses/*}:undelete:\001*\332A\004name\312A "
-          + "\n\013CustomClass\022\021OperationMetadata\022\350\001\n\017Cre"
-          + "atePhraseSet\022..google.cloud.speech.v2.Cr"
-          + "eatePhraseSetRequest\032\035.google.longrunnin"
-          + "g.Operation\"\205\001\202\323\344\223\002<\"./v2/{parent=projec"
-          + "ts/*/locations/*}/phraseSets:\nphrase_set"
-          + "\332A\037parent,phrase_set,phrase_set_id\312A\036\n\tP"
-          + "hraseSet\022\021OperationMetadata\022\260\001\n\016ListPhra"
-          + "seSets\022-.google.cloud.speech.v2.ListPhra"
-          + "seSetsRequest\032..google.cloud.speech.v2.L"
-          + "istPhraseSetsResponse\"?\202\323\344\223\0020\022./v2/{pare"
-          + "nt=projects/*/locations/*}/phraseSets\332A\006"
-          + "parent\022\235\001\n\014GetPhraseSet\022+.google.cloud.s"
-          + "peech.v2.GetPhraseSetRequest\032!.google.cl"
-          + "oud.speech.v2.PhraseSet\"=\202\323\344\223\0020\022./v2/{na"
-          + "me=projects/*/locations/*/phraseSets/*}\332"
-          + "A\004name\022\352\001\n\017UpdatePhraseSet\022..google.clou"
-          + "d.speech.v2.UpdatePhraseSetRequest\032\035.goo"
-          + "gle.longrunning.Operation\"\207\001\202\323\344\223\002G29/v2/"
-          + "{phrase_set.name=projects/*/locations/*/"
-          + "phraseSets/*}:\nphrase_set\332A\026phrase_set,u"
-          + "pdate_mask\312A\036\n\tPhraseSet\022\021OperationMetad"
-          + "ata\022\300\001\n\017DeletePhraseSet\022..google.cloud.s"
-          + "peech.v2.DeletePhraseSetRequest\032\035.google"
-          + ".longrunning.Operation\"^\202\323\344\223\0020*./v2/{nam"
-          + "e=projects/*/locations/*/phraseSets/*}\332A"
-          + "\004name\312A\036\n\tPhraseSet\022\021OperationMetadata\022\320"
-          + "\001\n\021UndeletePhraseSet\0220.google.cloud.spee"
-          + "ch.v2.UndeletePhraseSetRequest\032\035.google."
-          + "longrunning.Operation\"j\202\323\344\223\002<\"7/v2/{name"
-          + "=projects/*/locations/*/phraseSets/*}:un"
-          + "delete:\001*\332A\004name\312A\036\n\tPhraseSet\022\021Operatio"
-          + "nMetadata\032I\312A\025speech.googleapis.com\322A.ht"
-          + "tps://www.googleapis.com/auth/cloud-plat"
-          + "formB\211\003\n\032com.google.cloud.speech.v2B\020Clo"
-          + "udSpeechProtoP\001Z2cloud.google.com/go/spe"
-          + "ech/apiv2/speechpb;speechpb\352Ax\n!cloudkms"
-          + ".googleapis.com/CryptoKey\022Sprojects/{pro"
-          + "ject}/locations/{location}/keyRings/{key"
-          + "_ring}/cryptoKeys/{crypto_key}\352A\246\001\n(clou"
-          + "dkms.googleapis.com/CryptoKeyVersion\022zpr"
-          + "ojects/{project}/locations/{location}/ke"
-          + "yRings/{key_ring}/cryptoKeys/{crypto_key"
-          + "}/cryptoKeyVersions/{crypto_key_version}"
-          + "b\006proto3"
+          + "c\202\323\344\223\0023*1/v2/{name=projects/*/locations/"
+          + "*/customClasses/*}\332A\004name\312A \n\013CustomClas"
+          + "s\022\021OperationMetadata\022\331\001\n\023UndeleteCustomC"
+          + "lass\0222.google.cloud.speech.v2.UndeleteCu"
+          + "stomClassRequest\032\035.google.longrunning.Op"
+          + "eration\"o\202\323\344\223\002?\":/v2/{name=projects/*/lo"
+          + "cations/*/customClasses/*}:undelete:\001*\332A"
+          + "\004name\312A \n\013CustomClass\022\021OperationMetadata"
+          + "\022\350\001\n\017CreatePhraseSet\022..google.cloud.spee"
+          + "ch.v2.CreatePhraseSetRequest\032\035.google.lo"
+          + "ngrunning.Operation\"\205\001\202\323\344\223\002<\"./v2/{paren"
+          + "t=projects/*/locations/*}/phraseSets:\nph"
+          + "rase_set\332A\037parent,phrase_set,phrase_set_"
+          + "id\312A\036\n\tPhraseSet\022\021OperationMetadata\022\260\001\n\016"
+          + "ListPhraseSets\022-.google.cloud.speech.v2."
+          + "ListPhraseSetsRequest\032..google.cloud.spe"
+          + "ech.v2.ListPhraseSetsResponse\"?\202\323\344\223\0020\022./"
+          + "v2/{parent=projects/*/locations/*}/phras"
+          + "eSets\332A\006parent\022\235\001\n\014GetPhraseSet\022+.google"
+          + ".cloud.speech.v2.GetPhraseSetRequest\032!.g"
+          + "oogle.cloud.speech.v2.PhraseSet\"=\202\323\344\223\0020\022"
+          + "./v2/{name=projects/*/locations/*/phrase"
+          + "Sets/*}\332A\004name\022\352\001\n\017UpdatePhraseSet\022..goo"
+          + "gle.cloud.speech.v2.UpdatePhraseSetReque"
+          + "st\032\035.google.longrunning.Operation\"\207\001\202\323\344\223"
+          + "\002G29/v2/{phrase_set.name=projects/*/loca"
+          + "tions/*/phraseSets/*}:\nphrase_set\332A\026phra"
+          + "se_set,update_mask\312A\036\n\tPhraseSet\022\021Operat"
+          + "ionMetadata\022\300\001\n\017DeletePhraseSet\022..google"
+          + ".cloud.speech.v2.DeletePhraseSetRequest\032"
+          + "\035.google.longrunning.Operation\"^\202\323\344\223\0020*."
+          + "/v2/{name=projects/*/locations/*/phraseS"
+          + "ets/*}\332A\004name\312A\036\n\tPhraseSet\022\021OperationMe"
+          + "tadata\022\320\001\n\021UndeletePhraseSet\0220.google.cl"
+          + "oud.speech.v2.UndeletePhraseSetRequest\032\035"
+          + ".google.longrunning.Operation\"j\202\323\344\223\002<\"7/"
+          + "v2/{name=projects/*/locations/*/phraseSe"
+          + "ts/*}:undelete:\001*\332A\004name\312A\036\n\tPhraseSet\022\021"
+          + "OperationMetadata\032I\312A\025speech.googleapis."
+          + "com\322A.https://www.googleapis.com/auth/cl"
+          + "oud-platformB\211\003\n\032com.google.cloud.speech"
+          + ".v2B\020CloudSpeechProtoP\001Z2cloud.google.co"
+          + "m/go/speech/apiv2/speechpb;speechpb\352Ax\n!"
+          + "cloudkms.googleapis.com/CryptoKey\022Sproje"
+          + "cts/{project}/locations/{location}/keyRi"
+          + "ngs/{key_ring}/cryptoKeys/{crypto_key}\352A"
+          + "\246\001\n(cloudkms.googleapis.com/CryptoKeyVer"
+          + "sion\022zprojects/{project}/locations/{loca"
+          + "tion}/keyRings/{key_ring}/cryptoKeys/{cr"
+          + "ypto_key}/cryptoKeyVersions/{crypto_key_"
+          + "version}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -1024,15 +1057,37 @@ public final class CloudSpeechProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v2_BatchRecognizeRequest_descriptor,
             new java.lang.String[] {
-              "Recognizer", "Config", "ConfigMask", "Files",
+              "Recognizer", "Config", "ConfigMask", "Files", "RecognitionOutputConfig",
+            });
+    internal_static_google_cloud_speech_v2_GcsOutputConfig_descriptor =
+        getDescriptor().getMessageTypes().get(25);
+    internal_static_google_cloud_speech_v2_GcsOutputConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_speech_v2_GcsOutputConfig_descriptor,
+            new java.lang.String[] {
+              "Uri",
+            });
+    internal_static_google_cloud_speech_v2_InlineOutputConfig_descriptor =
+        getDescriptor().getMessageTypes().get(26);
+    internal_static_google_cloud_speech_v2_InlineOutputConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_speech_v2_InlineOutputConfig_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_speech_v2_RecognitionOutputConfig_descriptor =
+        getDescriptor().getMessageTypes().get(27);
+    internal_static_google_cloud_speech_v2_RecognitionOutputConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_speech_v2_RecognitionOutputConfig_descriptor,
+            new java.lang.String[] {
+              "GcsOutputConfig", "InlineResponseConfig", "Output",
             });
     internal_static_google_cloud_speech_v2_BatchRecognizeResponse_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_speech_v2_BatchRecognizeResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v2_BatchRecognizeResponse_descriptor,
             new java.lang.String[] {
-              "Results",
+              "Results", "TotalBilledDuration",
             });
     internal_static_google_cloud_speech_v2_BatchRecognizeResponse_ResultsEntry_descriptor =
         internal_static_google_cloud_speech_v2_BatchRecognizeResponse_descriptor
@@ -1044,16 +1099,24 @@ public final class CloudSpeechProto {
             new java.lang.String[] {
               "Key", "Value",
             });
+    internal_static_google_cloud_speech_v2_BatchRecognizeResults_descriptor =
+        getDescriptor().getMessageTypes().get(29);
+    internal_static_google_cloud_speech_v2_BatchRecognizeResults_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_speech_v2_BatchRecognizeResults_descriptor,
+            new java.lang.String[] {
+              "Results", "Metadata",
+            });
     internal_static_google_cloud_speech_v2_BatchRecognizeFileResult_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_speech_v2_BatchRecognizeFileResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v2_BatchRecognizeFileResult_descriptor,
             new java.lang.String[] {
-              "Uri", "Error",
+              "Uri", "Error", "Metadata", "Transcript",
             });
     internal_static_google_cloud_speech_v2_BatchRecognizeTranscriptionMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_speech_v2_BatchRecognizeTranscriptionMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v2_BatchRecognizeTranscriptionMetadata_descriptor,
@@ -1061,7 +1124,7 @@ public final class CloudSpeechProto {
               "ProgressPercent", "Error", "Uri",
             });
     internal_static_google_cloud_speech_v2_BatchRecognizeMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_speech_v2_BatchRecognizeMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v2_BatchRecognizeMetadata_descriptor,
@@ -1079,7 +1142,7 @@ public final class CloudSpeechProto {
               "Key", "Value",
             });
     internal_static_google_cloud_speech_v2_BatchRecognizeFileMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_cloud_speech_v2_BatchRecognizeFileMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v2_BatchRecognizeFileMetadata_descriptor,
@@ -1087,7 +1150,7 @@ public final class CloudSpeechProto {
               "Uri", "Config", "ConfigMask", "AudioSource",
             });
     internal_static_google_cloud_speech_v2_StreamingRecognitionResult_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_cloud_speech_v2_StreamingRecognitionResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v2_StreamingRecognitionResult_descriptor,
@@ -1100,7 +1163,7 @@ public final class CloudSpeechProto {
               "LanguageCode",
             });
     internal_static_google_cloud_speech_v2_StreamingRecognizeResponse_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_cloud_speech_v2_StreamingRecognizeResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v2_StreamingRecognizeResponse_descriptor,
@@ -1108,7 +1171,7 @@ public final class CloudSpeechProto {
               "Results", "SpeechEventType", "SpeechEventOffset", "Metadata",
             });
     internal_static_google_cloud_speech_v2_Config_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_cloud_speech_v2_Config_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v2_Config_descriptor,
@@ -1116,7 +1179,7 @@ public final class CloudSpeechProto {
               "Name", "KmsKeyName", "UpdateTime",
             });
     internal_static_google_cloud_speech_v2_GetConfigRequest_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_cloud_speech_v2_GetConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v2_GetConfigRequest_descriptor,
@@ -1124,7 +1187,7 @@ public final class CloudSpeechProto {
               "Name",
             });
     internal_static_google_cloud_speech_v2_UpdateConfigRequest_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_cloud_speech_v2_UpdateConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v2_UpdateConfigRequest_descriptor,
@@ -1132,7 +1195,7 @@ public final class CloudSpeechProto {
               "Config", "UpdateMask",
             });
     internal_static_google_cloud_speech_v2_CustomClass_descriptor =
-        getDescriptor().getMessageTypes().get(35);
+        getDescriptor().getMessageTypes().get(39);
     internal_static_google_cloud_speech_v2_CustomClass_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v2_CustomClass_descriptor,
@@ -1169,7 +1232,7 @@ public final class CloudSpeechProto {
               "Key", "Value",
             });
     internal_static_google_cloud_speech_v2_PhraseSet_descriptor =
-        getDescriptor().getMessageTypes().get(36);
+        getDescriptor().getMessageTypes().get(40);
     internal_static_google_cloud_speech_v2_PhraseSet_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v2_PhraseSet_descriptor,
@@ -1207,7 +1270,7 @@ public final class CloudSpeechProto {
               "Key", "Value",
             });
     internal_static_google_cloud_speech_v2_CreateCustomClassRequest_descriptor =
-        getDescriptor().getMessageTypes().get(37);
+        getDescriptor().getMessageTypes().get(41);
     internal_static_google_cloud_speech_v2_CreateCustomClassRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v2_CreateCustomClassRequest_descriptor,
@@ -1215,7 +1278,7 @@ public final class CloudSpeechProto {
               "CustomClass", "ValidateOnly", "CustomClassId", "Parent",
             });
     internal_static_google_cloud_speech_v2_ListCustomClassesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(38);
+        getDescriptor().getMessageTypes().get(42);
     internal_static_google_cloud_speech_v2_ListCustomClassesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v2_ListCustomClassesRequest_descriptor,
@@ -1223,7 +1286,7 @@ public final class CloudSpeechProto {
               "Parent", "PageSize", "PageToken", "ShowDeleted",
             });
     internal_static_google_cloud_speech_v2_ListCustomClassesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(39);
+        getDescriptor().getMessageTypes().get(43);
     internal_static_google_cloud_speech_v2_ListCustomClassesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v2_ListCustomClassesResponse_descriptor,
@@ -1231,7 +1294,7 @@ public final class CloudSpeechProto {
               "CustomClasses", "NextPageToken",
             });
     internal_static_google_cloud_speech_v2_GetCustomClassRequest_descriptor =
-        getDescriptor().getMessageTypes().get(40);
+        getDescriptor().getMessageTypes().get(44);
     internal_static_google_cloud_speech_v2_GetCustomClassRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v2_GetCustomClassRequest_descriptor,
@@ -1239,7 +1302,7 @@ public final class CloudSpeechProto {
               "Name",
             });
     internal_static_google_cloud_speech_v2_UpdateCustomClassRequest_descriptor =
-        getDescriptor().getMessageTypes().get(41);
+        getDescriptor().getMessageTypes().get(45);
     internal_static_google_cloud_speech_v2_UpdateCustomClassRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v2_UpdateCustomClassRequest_descriptor,
@@ -1247,7 +1310,7 @@ public final class CloudSpeechProto {
               "CustomClass", "UpdateMask", "ValidateOnly",
             });
     internal_static_google_cloud_speech_v2_DeleteCustomClassRequest_descriptor =
-        getDescriptor().getMessageTypes().get(42);
+        getDescriptor().getMessageTypes().get(46);
     internal_static_google_cloud_speech_v2_DeleteCustomClassRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v2_DeleteCustomClassRequest_descriptor,
@@ -1255,7 +1318,7 @@ public final class CloudSpeechProto {
               "Name", "ValidateOnly", "AllowMissing", "Etag",
             });
     internal_static_google_cloud_speech_v2_UndeleteCustomClassRequest_descriptor =
-        getDescriptor().getMessageTypes().get(43);
+        getDescriptor().getMessageTypes().get(47);
     internal_static_google_cloud_speech_v2_UndeleteCustomClassRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v2_UndeleteCustomClassRequest_descriptor,
@@ -1263,7 +1326,7 @@ public final class CloudSpeechProto {
               "Name", "ValidateOnly", "Etag",
             });
     internal_static_google_cloud_speech_v2_CreatePhraseSetRequest_descriptor =
-        getDescriptor().getMessageTypes().get(44);
+        getDescriptor().getMessageTypes().get(48);
     internal_static_google_cloud_speech_v2_CreatePhraseSetRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v2_CreatePhraseSetRequest_descriptor,
@@ -1271,7 +1334,7 @@ public final class CloudSpeechProto {
               "PhraseSet", "ValidateOnly", "PhraseSetId", "Parent",
             });
     internal_static_google_cloud_speech_v2_ListPhraseSetsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(45);
+        getDescriptor().getMessageTypes().get(49);
     internal_static_google_cloud_speech_v2_ListPhraseSetsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v2_ListPhraseSetsRequest_descriptor,
@@ -1279,7 +1342,7 @@ public final class CloudSpeechProto {
               "Parent", "PageSize", "PageToken", "ShowDeleted",
             });
     internal_static_google_cloud_speech_v2_ListPhraseSetsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(46);
+        getDescriptor().getMessageTypes().get(50);
     internal_static_google_cloud_speech_v2_ListPhraseSetsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v2_ListPhraseSetsResponse_descriptor,
@@ -1287,7 +1350,7 @@ public final class CloudSpeechProto {
               "PhraseSets", "NextPageToken",
             });
     internal_static_google_cloud_speech_v2_GetPhraseSetRequest_descriptor =
-        getDescriptor().getMessageTypes().get(47);
+        getDescriptor().getMessageTypes().get(51);
     internal_static_google_cloud_speech_v2_GetPhraseSetRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v2_GetPhraseSetRequest_descriptor,
@@ -1295,7 +1358,7 @@ public final class CloudSpeechProto {
               "Name",
             });
     internal_static_google_cloud_speech_v2_UpdatePhraseSetRequest_descriptor =
-        getDescriptor().getMessageTypes().get(48);
+        getDescriptor().getMessageTypes().get(52);
     internal_static_google_cloud_speech_v2_UpdatePhraseSetRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v2_UpdatePhraseSetRequest_descriptor,
@@ -1303,7 +1366,7 @@ public final class CloudSpeechProto {
               "PhraseSet", "UpdateMask", "ValidateOnly",
             });
     internal_static_google_cloud_speech_v2_DeletePhraseSetRequest_descriptor =
-        getDescriptor().getMessageTypes().get(49);
+        getDescriptor().getMessageTypes().get(53);
     internal_static_google_cloud_speech_v2_DeletePhraseSetRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v2_DeletePhraseSetRequest_descriptor,
@@ -1311,7 +1374,7 @@ public final class CloudSpeechProto {
               "Name", "ValidateOnly", "AllowMissing", "Etag",
             });
     internal_static_google_cloud_speech_v2_UndeletePhraseSetRequest_descriptor =
-        getDescriptor().getMessageTypes().get(50);
+        getDescriptor().getMessageTypes().get(54);
     internal_static_google_cloud_speech_v2_UndeletePhraseSetRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v2_UndeletePhraseSetRequest_descriptor,

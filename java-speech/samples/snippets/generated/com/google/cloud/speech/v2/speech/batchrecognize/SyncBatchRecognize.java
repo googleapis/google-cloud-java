@@ -21,6 +21,7 @@ import com.google.cloud.speech.v2.BatchRecognizeFileMetadata;
 import com.google.cloud.speech.v2.BatchRecognizeRequest;
 import com.google.cloud.speech.v2.BatchRecognizeResponse;
 import com.google.cloud.speech.v2.RecognitionConfig;
+import com.google.cloud.speech.v2.RecognitionOutputConfig;
 import com.google.cloud.speech.v2.RecognizerName;
 import com.google.cloud.speech.v2.SpeechClient;
 import com.google.protobuf.FieldMask;
@@ -46,6 +47,7 @@ public class SyncBatchRecognize {
               .setConfig(RecognitionConfig.newBuilder().build())
               .setConfigMask(FieldMask.newBuilder().build())
               .addAllFiles(new ArrayList<BatchRecognizeFileMetadata>())
+              .setRecognitionOutputConfig(RecognitionOutputConfig.newBuilder().build())
               .build();
       BatchRecognizeResponse response = speechClient.batchRecognizeAsync(request).get();
     }

@@ -229,7 +229,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Output only. If set, this event can currently be deleted via
+   * Output only. If set, this event can currently be deleted with
    * DeleteConversionEvent.
    * </pre>
    *
@@ -1134,7 +1134,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. If set, this event can currently be deleted via
+     * Output only. If set, this event can currently be deleted with
      * DeleteConversionEvent.
      * </pre>
      *
@@ -1150,7 +1150,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. If set, this event can currently be deleted via
+     * Output only. If set, this event can currently be deleted with
      * DeleteConversionEvent.
      * </pre>
      *
@@ -1170,7 +1170,7 @@ public final class ConversionEvent extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Output only. If set, this event can currently be deleted via
+     * Output only. If set, this event can currently be deleted with
      * DeleteConversionEvent.
      * </pre>
      *

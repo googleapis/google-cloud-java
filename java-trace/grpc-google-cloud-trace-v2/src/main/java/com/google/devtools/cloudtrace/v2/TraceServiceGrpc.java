@@ -175,7 +175,7 @@ public final class TraceServiceGrpc {
    * A single trace can contain spans from multiple services.
    * </pre>
    */
-  public abstract static class TraceServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -185,7 +185,7 @@ public final class TraceServiceGrpc {
      * existing spans.
      * </pre>
      */
-    public void batchWriteSpans(
+    default void batchWriteSpans(
         com.google.devtools.cloudtrace.v2.BatchWriteSpansRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -199,33 +199,35 @@ public final class TraceServiceGrpc {
      * Creates a new span.
      * </pre>
      */
-    public void createSpan(
+    default void createSpan(
         com.google.devtools.cloudtrace.v2.Span request,
         io.grpc.stub.StreamObserver<com.google.devtools.cloudtrace.v2.Span> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateSpanMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service TraceService.
+   *
+   * <pre>
+   * Service for collecting and viewing traces and spans within a trace.
+   * A trace is a collection of spans corresponding to a single
+   * operation or a set of operations in an application.
+   * A span is an individual timed event which forms a node of the trace tree.
+   * A single trace can contain spans from multiple services.
+   * </pre>
+   */
+  public abstract static class TraceServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getBatchWriteSpansMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.devtools.cloudtrace.v2.BatchWriteSpansRequest,
-                      com.google.protobuf.Empty>(this, METHODID_BATCH_WRITE_SPANS)))
-          .addMethod(
-              getCreateSpanMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.devtools.cloudtrace.v2.Span,
-                      com.google.devtools.cloudtrace.v2.Span>(this, METHODID_CREATE_SPAN)))
-          .build();
+      return TraceServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service TraceService.
    *
    * <pre>
    * Service for collecting and viewing traces and spans within a trace.
@@ -279,7 +281,7 @@ public final class TraceServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service TraceService.
    *
    * <pre>
    * Service for collecting and viewing traces and spans within a trace.
@@ -330,7 +332,7 @@ public final class TraceServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service TraceService.
    *
    * <pre>
    * Service for collecting and viewing traces and spans within a trace.
@@ -389,10 +391,10 @@ public final class TraceServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final TraceServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(TraceServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -426,6 +428,23 @@ public final class TraceServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getBatchWriteSpansMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.cloudtrace.v2.BatchWriteSpansRequest,
+                    com.google.protobuf.Empty>(service, METHODID_BATCH_WRITE_SPANS)))
+        .addMethod(
+            getCreateSpanMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.cloudtrace.v2.Span, com.google.devtools.cloudtrace.v2.Span>(
+                    service, METHODID_CREATE_SPAN)))
+        .build();
   }
 
   private abstract static class TraceServiceBaseDescriptorSupplier

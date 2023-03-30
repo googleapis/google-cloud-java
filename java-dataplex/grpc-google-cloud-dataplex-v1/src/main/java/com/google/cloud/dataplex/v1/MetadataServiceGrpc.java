@@ -481,7 +481,7 @@ public final class MetadataServiceGrpc {
    * partitions.
    * </pre>
    */
-  public abstract static class MetadataServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -490,7 +490,7 @@ public final class MetadataServiceGrpc {
      * Create a metadata entity.
      * </pre>
      */
-    public void createEntity(
+    default void createEntity(
         com.google.cloud.dataplex.v1.CreateEntityRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Entity> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -504,7 +504,7 @@ public final class MetadataServiceGrpc {
      * Update a metadata entity. Only supports full resource update.
      * </pre>
      */
-    public void updateEntity(
+    default void updateEntity(
         com.google.cloud.dataplex.v1.UpdateEntityRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Entity> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -518,7 +518,7 @@ public final class MetadataServiceGrpc {
      * Delete a metadata entity.
      * </pre>
      */
-    public void deleteEntity(
+    default void deleteEntity(
         com.google.cloud.dataplex.v1.DeleteEntityRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -532,7 +532,7 @@ public final class MetadataServiceGrpc {
      * Get a metadata entity.
      * </pre>
      */
-    public void getEntity(
+    default void getEntity(
         com.google.cloud.dataplex.v1.GetEntityRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Entity> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetEntityMethod(), responseObserver);
@@ -545,7 +545,7 @@ public final class MetadataServiceGrpc {
      * List metadata entities in a zone.
      * </pre>
      */
-    public void listEntities(
+    default void listEntities(
         com.google.cloud.dataplex.v1.ListEntitiesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListEntitiesResponse>
             responseObserver) {
@@ -560,7 +560,7 @@ public final class MetadataServiceGrpc {
      * Create a metadata partition.
      * </pre>
      */
-    public void createPartition(
+    default void createPartition(
         com.google.cloud.dataplex.v1.CreatePartitionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Partition> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -574,7 +574,7 @@ public final class MetadataServiceGrpc {
      * Delete a metadata partition.
      * </pre>
      */
-    public void deletePartition(
+    default void deletePartition(
         com.google.cloud.dataplex.v1.DeletePartitionRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -588,7 +588,7 @@ public final class MetadataServiceGrpc {
      * Get a metadata partition of an entity.
      * </pre>
      */
-    public void getPartition(
+    default void getPartition(
         com.google.cloud.dataplex.v1.GetPartitionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Partition> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -602,79 +602,34 @@ public final class MetadataServiceGrpc {
      * List metadata partitions of an entity.
      * </pre>
      */
-    public void listPartitions(
+    default void listPartitions(
         com.google.cloud.dataplex.v1.ListPartitionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListPartitionsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListPartitionsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service MetadataService.
+   *
+   * <pre>
+   * Metadata service manages metadata resources such as tables, filesets and
+   * partitions.
+   * </pre>
+   */
+  public abstract static class MetadataServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateEntityMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.CreateEntityRequest,
-                      com.google.cloud.dataplex.v1.Entity>(this, METHODID_CREATE_ENTITY)))
-          .addMethod(
-              getUpdateEntityMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.UpdateEntityRequest,
-                      com.google.cloud.dataplex.v1.Entity>(this, METHODID_UPDATE_ENTITY)))
-          .addMethod(
-              getDeleteEntityMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.DeleteEntityRequest, com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_ENTITY)))
-          .addMethod(
-              getGetEntityMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.GetEntityRequest,
-                      com.google.cloud.dataplex.v1.Entity>(this, METHODID_GET_ENTITY)))
-          .addMethod(
-              getListEntitiesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.ListEntitiesRequest,
-                      com.google.cloud.dataplex.v1.ListEntitiesResponse>(
-                      this, METHODID_LIST_ENTITIES)))
-          .addMethod(
-              getCreatePartitionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.CreatePartitionRequest,
-                      com.google.cloud.dataplex.v1.Partition>(this, METHODID_CREATE_PARTITION)))
-          .addMethod(
-              getDeletePartitionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.DeletePartitionRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_PARTITION)))
-          .addMethod(
-              getGetPartitionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.GetPartitionRequest,
-                      com.google.cloud.dataplex.v1.Partition>(this, METHODID_GET_PARTITION)))
-          .addMethod(
-              getListPartitionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.ListPartitionsRequest,
-                      com.google.cloud.dataplex.v1.ListPartitionsResponse>(
-                      this, METHODID_LIST_PARTITIONS)))
-          .build();
+      return MetadataServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service MetadataService.
    *
    * <pre>
    * Metadata service manages metadata resources such as tables, filesets and
@@ -838,7 +793,7 @@ public final class MetadataServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service MetadataService.
    *
    * <pre>
    * Metadata service manages metadata resources such as tables, filesets and
@@ -976,7 +931,7 @@ public final class MetadataServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service MetadataService.
    *
    * <pre>
    * Metadata service manages metadata resources such as tables, filesets and
@@ -1132,10 +1087,10 @@ public final class MetadataServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final MetadataServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(MetadataServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1207,6 +1162,67 @@ public final class MetadataServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateEntityMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.CreateEntityRequest,
+                    com.google.cloud.dataplex.v1.Entity>(service, METHODID_CREATE_ENTITY)))
+        .addMethod(
+            getUpdateEntityMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.UpdateEntityRequest,
+                    com.google.cloud.dataplex.v1.Entity>(service, METHODID_UPDATE_ENTITY)))
+        .addMethod(
+            getDeleteEntityMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.DeleteEntityRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_ENTITY)))
+        .addMethod(
+            getGetEntityMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.GetEntityRequest,
+                    com.google.cloud.dataplex.v1.Entity>(service, METHODID_GET_ENTITY)))
+        .addMethod(
+            getListEntitiesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.ListEntitiesRequest,
+                    com.google.cloud.dataplex.v1.ListEntitiesResponse>(
+                    service, METHODID_LIST_ENTITIES)))
+        .addMethod(
+            getCreatePartitionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.CreatePartitionRequest,
+                    com.google.cloud.dataplex.v1.Partition>(service, METHODID_CREATE_PARTITION)))
+        .addMethod(
+            getDeletePartitionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.DeletePartitionRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_PARTITION)))
+        .addMethod(
+            getGetPartitionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.GetPartitionRequest,
+                    com.google.cloud.dataplex.v1.Partition>(service, METHODID_GET_PARTITION)))
+        .addMethod(
+            getListPartitionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.ListPartitionsRequest,
+                    com.google.cloud.dataplex.v1.ListPartitionsResponse>(
+                    service, METHODID_LIST_PARTITIONS)))
+        .build();
   }
 
   private abstract static class MetadataServiceBaseDescriptorSupplier

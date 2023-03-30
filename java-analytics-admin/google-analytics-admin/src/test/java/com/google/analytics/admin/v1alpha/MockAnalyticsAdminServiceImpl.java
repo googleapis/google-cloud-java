@@ -2235,4 +2235,113 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void getEnhancedMeasurementSettings(
+      GetEnhancedMeasurementSettingsRequest request,
+      StreamObserver<EnhancedMeasurementSettings> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof EnhancedMeasurementSettings) {
+      requests.add(request);
+      responseObserver.onNext(((EnhancedMeasurementSettings) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetEnhancedMeasurementSettings, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  EnhancedMeasurementSettings.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateEnhancedMeasurementSettings(
+      UpdateEnhancedMeasurementSettingsRequest request,
+      StreamObserver<EnhancedMeasurementSettings> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof EnhancedMeasurementSettings) {
+      requests.add(request);
+      responseObserver.onNext(((EnhancedMeasurementSettings) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateEnhancedMeasurementSettings, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  EnhancedMeasurementSettings.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createConnectedSiteTag(
+      CreateConnectedSiteTagRequest request,
+      StreamObserver<CreateConnectedSiteTagResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CreateConnectedSiteTagResponse) {
+      requests.add(request);
+      responseObserver.onNext(((CreateConnectedSiteTagResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateConnectedSiteTag, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CreateConnectedSiteTagResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteConnectedSiteTag(
+      DeleteConnectedSiteTagRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteConnectedSiteTag, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listConnectedSiteTags(
+      ListConnectedSiteTagsRequest request,
+      StreamObserver<ListConnectedSiteTagsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListConnectedSiteTagsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListConnectedSiteTagsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListConnectedSiteTags, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListConnectedSiteTagsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

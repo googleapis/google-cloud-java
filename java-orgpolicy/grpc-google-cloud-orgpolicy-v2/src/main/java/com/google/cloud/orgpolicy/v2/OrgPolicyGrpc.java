@@ -417,7 +417,7 @@ public final class OrgPolicyGrpc {
    * particular resource and its child resources.
    * </pre>
    */
-  public abstract static class OrgPolicyImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -426,7 +426,7 @@ public final class OrgPolicyGrpc {
      * Lists `Constraints` that could be applied on the specified resource.
      * </pre>
      */
-    public void listConstraints(
+    default void listConstraints(
         com.google.cloud.orgpolicy.v2.ListConstraintsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.orgpolicy.v2.ListConstraintsResponse>
             responseObserver) {
@@ -441,7 +441,7 @@ public final class OrgPolicyGrpc {
      * Retrieves all of the `Policies` that exist on a particular resource.
      * </pre>
      */
-    public void listPolicies(
+    default void listPolicies(
         com.google.cloud.orgpolicy.v2.ListPoliciesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.orgpolicy.v2.ListPoliciesResponse>
             responseObserver) {
@@ -459,7 +459,7 @@ public final class OrgPolicyGrpc {
      * `Policy` during read-modify-write.
      * </pre>
      */
-    public void getPolicy(
+    default void getPolicy(
         com.google.cloud.orgpolicy.v2.GetPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.orgpolicy.v2.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPolicyMethod(), responseObserver);
@@ -477,7 +477,7 @@ public final class OrgPolicyGrpc {
      * not be expanded.
      * </pre>
      */
-    public void getEffectivePolicy(
+    default void getEffectivePolicy(
         com.google.cloud.orgpolicy.v2.GetEffectivePolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.orgpolicy.v2.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -495,7 +495,7 @@ public final class OrgPolicyGrpc {
      * policy already exists on the given Cloud resource.
      * </pre>
      */
-    public void createPolicy(
+    default void createPolicy(
         com.google.cloud.orgpolicy.v2.CreatePolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.orgpolicy.v2.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -515,7 +515,7 @@ public final class OrgPolicyGrpc {
      * fields.
      * </pre>
      */
-    public void updatePolicy(
+    default void updatePolicy(
         com.google.cloud.orgpolicy.v2.UpdatePolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.orgpolicy.v2.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -531,66 +531,46 @@ public final class OrgPolicyGrpc {
      * constraint or Org Policy does not exist.
      * </pre>
      */
-    public void deletePolicy(
+    default void deletePolicy(
         com.google.cloud.orgpolicy.v2.DeletePolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeletePolicyMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service OrgPolicy.
+   *
+   * <pre>
+   * An interface for managing organization policies.
+   * The Cloud Org Policy service provides a simple mechanism for organizations to
+   * restrict the allowed configurations across their entire Cloud Resource
+   * hierarchy.
+   * You can use a `policy` to configure restrictions in Cloud resources. For
+   * example, you can enforce a `policy` that restricts which Google
+   * Cloud Platform APIs can be activated in a certain part of your resource
+   * hierarchy, or prevents serial port access to VM instances in a particular
+   * folder.
+   * `Policies` are inherited down through the resource hierarchy. A `policy`
+   * applied to a parent resource automatically applies to all its child resources
+   * unless overridden with a `policy` lower in the hierarchy.
+   * A `constraint` defines an aspect of a resource's configuration that can be
+   * controlled by an organization's policy administrator. `Policies` are a
+   * collection of `constraints` that defines their allowable configuration on a
+   * particular resource and its child resources.
+   * </pre>
+   */
+  public abstract static class OrgPolicyImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListConstraintsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.orgpolicy.v2.ListConstraintsRequest,
-                      com.google.cloud.orgpolicy.v2.ListConstraintsResponse>(
-                      this, METHODID_LIST_CONSTRAINTS)))
-          .addMethod(
-              getListPoliciesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.orgpolicy.v2.ListPoliciesRequest,
-                      com.google.cloud.orgpolicy.v2.ListPoliciesResponse>(
-                      this, METHODID_LIST_POLICIES)))
-          .addMethod(
-              getGetPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.orgpolicy.v2.GetPolicyRequest,
-                      com.google.cloud.orgpolicy.v2.Policy>(this, METHODID_GET_POLICY)))
-          .addMethod(
-              getGetEffectivePolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.orgpolicy.v2.GetEffectivePolicyRequest,
-                      com.google.cloud.orgpolicy.v2.Policy>(this, METHODID_GET_EFFECTIVE_POLICY)))
-          .addMethod(
-              getCreatePolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.orgpolicy.v2.CreatePolicyRequest,
-                      com.google.cloud.orgpolicy.v2.Policy>(this, METHODID_CREATE_POLICY)))
-          .addMethod(
-              getUpdatePolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.orgpolicy.v2.UpdatePolicyRequest,
-                      com.google.cloud.orgpolicy.v2.Policy>(this, METHODID_UPDATE_POLICY)))
-          .addMethod(
-              getDeletePolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.orgpolicy.v2.DeletePolicyRequest, com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_POLICY)))
-          .build();
+      return OrgPolicyGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service OrgPolicy.
    *
    * <pre>
    * An interface for managing organization policies.
@@ -755,7 +735,7 @@ public final class OrgPolicyGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service OrgPolicy.
    *
    * <pre>
    * An interface for managing organization policies.
@@ -901,7 +881,7 @@ public final class OrgPolicyGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service OrgPolicy.
    *
    * <pre>
    * An interface for managing organization policies.
@@ -1060,10 +1040,10 @@ public final class OrgPolicyGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final OrgPolicyImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(OrgPolicyImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1123,6 +1103,55 @@ public final class OrgPolicyGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListConstraintsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orgpolicy.v2.ListConstraintsRequest,
+                    com.google.cloud.orgpolicy.v2.ListConstraintsResponse>(
+                    service, METHODID_LIST_CONSTRAINTS)))
+        .addMethod(
+            getListPoliciesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orgpolicy.v2.ListPoliciesRequest,
+                    com.google.cloud.orgpolicy.v2.ListPoliciesResponse>(
+                    service, METHODID_LIST_POLICIES)))
+        .addMethod(
+            getGetPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orgpolicy.v2.GetPolicyRequest,
+                    com.google.cloud.orgpolicy.v2.Policy>(service, METHODID_GET_POLICY)))
+        .addMethod(
+            getGetEffectivePolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orgpolicy.v2.GetEffectivePolicyRequest,
+                    com.google.cloud.orgpolicy.v2.Policy>(service, METHODID_GET_EFFECTIVE_POLICY)))
+        .addMethod(
+            getCreatePolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orgpolicy.v2.CreatePolicyRequest,
+                    com.google.cloud.orgpolicy.v2.Policy>(service, METHODID_CREATE_POLICY)))
+        .addMethod(
+            getUpdatePolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orgpolicy.v2.UpdatePolicyRequest,
+                    com.google.cloud.orgpolicy.v2.Policy>(service, METHODID_UPDATE_POLICY)))
+        .addMethod(
+            getDeletePolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.orgpolicy.v2.DeletePolicyRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_POLICY)))
+        .build();
   }
 
   private abstract static class OrgPolicyBaseDescriptorSupplier

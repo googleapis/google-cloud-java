@@ -64,10 +64,9 @@ public interface ReservationOrBuilder
    * computational power in BigQuery, and serves as the unit of parallelism.
    * Queries using this reservation might use more slots during runtime if
    * ignore_idle_slots is set to false.
-   * If the new reservation's slot capacity exceeds the project's slot capacity
-   * or if total slot capacity of the new reservation and its siblings exceeds
-   * the project's slot capacity, the request will fail with
-   * `google.rpc.Code.RESOURCE_EXHAUSTED`.
+   * If total slot_capacity of the reservation and its siblings
+   * exceeds the total slot_count of all capacity commitments, the request will
+   * fail with `google.rpc.Code.RESOURCE_EXHAUSTED`.
    * NOTE: for reservations in US or EU multi-regions, slot capacity constraints
    * are checked separately for default and auxiliary regions. See
    * multi_region_auxiliary flag for more details.
@@ -99,11 +98,52 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * Maximum number of queries that are allowed to run concurrently in this
-   * reservation. This is a soft limit due to asynchronous nature of the system
-   * and various optimizations for small queries.
-   * Default value is 0 which means that concurrency will be automatically set
-   * based on the reservation size.
+   * The configuration parameters for the auto scaling feature. Note this is an
+   * alpha feature.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
+   *
+   * @return Whether the autoscale field is set.
+   */
+  boolean hasAutoscale();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration parameters for the auto scaling feature. Note this is an
+   * alpha feature.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
+   *
+   * @return The autoscale.
+   */
+  com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale getAutoscale();
+  /**
+   *
+   *
+   * <pre>
+   * The configuration parameters for the auto scaling feature. Note this is an
+   * alpha feature.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
+   */
+  com.google.cloud.bigquery.reservation.v1.Reservation.AutoscaleOrBuilder getAutoscaleOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Job concurrency target which sets a soft upper bound on the number of jobs
+   * that can run concurrently in this reservation. This is a soft target due to
+   * asynchronous nature of the system and various optimizations for small
+   * queries.
+   * Default value is 0 which means that concurrency target will be
+   * automatically computed by the system.
+   * NOTE: this field is exposed as `target_job_concurrency` in the Information
+   * Schema, DDL and BQ CLI.
    * </pre>
    *
    * <code>int64 concurrency = 16;</code>
@@ -200,6 +240,8 @@ public interface ReservationOrBuilder
    * If set to true, this reservation is placed in the organization's
    * secondary region which is designated for disaster recovery purposes.
    * If false, this reservation is placed in the organization's default region.
+   * NOTE: this is a preview feature. Project must be allow-listed in order to
+   * set this field.
    * </pre>
    *
    * <code>bool multi_region_auxiliary = 14;</code>
@@ -207,4 +249,29 @@ public interface ReservationOrBuilder
    * @return The multiRegionAuxiliary.
    */
   boolean getMultiRegionAuxiliary();
+
+  /**
+   *
+   *
+   * <pre>
+   * Edition of the reservation.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 17;</code>
+   *
+   * @return The enum numeric value on the wire for edition.
+   */
+  int getEditionValue();
+  /**
+   *
+   *
+   * <pre>
+   * Edition of the reservation.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 17;</code>
+   *
+   * @return The edition.
+   */
+  com.google.cloud.bigquery.reservation.v1.Edition getEdition();
 }

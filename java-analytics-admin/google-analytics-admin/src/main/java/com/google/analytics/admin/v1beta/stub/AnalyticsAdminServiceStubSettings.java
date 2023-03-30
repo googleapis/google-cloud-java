@@ -91,6 +91,8 @@ import com.google.analytics.admin.v1beta.MeasurementProtocolSecret;
 import com.google.analytics.admin.v1beta.Property;
 import com.google.analytics.admin.v1beta.ProvisionAccountTicketRequest;
 import com.google.analytics.admin.v1beta.ProvisionAccountTicketResponse;
+import com.google.analytics.admin.v1beta.RunAccessReportRequest;
+import com.google.analytics.admin.v1beta.RunAccessReportResponse;
 import com.google.analytics.admin.v1beta.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1beta.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1beta.UpdateAccountRequest;
@@ -287,6 +289,8 @@ public class AnalyticsAdminServiceStubSettings
           ListDataStreamsRequest, ListDataStreamsResponse, ListDataStreamsPagedResponse>
       listDataStreamsSettings;
   private final UnaryCallSettings<GetDataStreamRequest, DataStream> getDataStreamSettings;
+  private final UnaryCallSettings<RunAccessReportRequest, RunAccessReportResponse>
+      runAccessReportSettings;
 
   private static final PagedListDescriptor<ListAccountsRequest, ListAccountsResponse, Account>
       LIST_ACCOUNTS_PAGE_STR_DESC =
@@ -1267,6 +1271,12 @@ public class AnalyticsAdminServiceStubSettings
     return getDataStreamSettings;
   }
 
+  /** Returns the object with the settings used for calls to runAccessReport. */
+  public UnaryCallSettings<RunAccessReportRequest, RunAccessReportResponse>
+      runAccessReportSettings() {
+    return runAccessReportSettings;
+  }
+
   public AnalyticsAdminServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -1427,6 +1437,7 @@ public class AnalyticsAdminServiceStubSettings
     updateDataStreamSettings = settingsBuilder.updateDataStreamSettings().build();
     listDataStreamsSettings = settingsBuilder.listDataStreamsSettings().build();
     getDataStreamSettings = settingsBuilder.getDataStreamSettings().build();
+    runAccessReportSettings = settingsBuilder.runAccessReportSettings().build();
   }
 
   /** Builder for AnalyticsAdminServiceStubSettings. */
@@ -1546,14 +1557,14 @@ public class AnalyticsAdminServiceStubSettings
             ListDataStreamsRequest, ListDataStreamsResponse, ListDataStreamsPagedResponse>
         listDataStreamsSettings;
     private final UnaryCallSettings.Builder<GetDataStreamRequest, DataStream> getDataStreamSettings;
+    private final UnaryCallSettings.Builder<RunAccessReportRequest, RunAccessReportResponse>
+        runAccessReportSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
     static {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(
@@ -1567,14 +1578,6 @@ public class AnalyticsAdminServiceStubSettings
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(60000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(60000L))
-              .setTotalTimeout(Duration.ofMillis(60000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(1000L))
@@ -1649,6 +1652,7 @@ public class AnalyticsAdminServiceStubSettings
       updateDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listDataStreamsSettings = PagedCallSettings.newBuilder(LIST_DATA_STREAMS_PAGE_STR_FACT);
       getDataStreamSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      runAccessReportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1698,7 +1702,8 @@ public class AnalyticsAdminServiceStubSettings
               deleteDataStreamSettings,
               updateDataStreamSettings,
               listDataStreamsSettings,
-              getDataStreamSettings);
+              getDataStreamSettings,
+              runAccessReportSettings);
       initDefaults(this);
     }
 
@@ -1759,6 +1764,7 @@ public class AnalyticsAdminServiceStubSettings
       updateDataStreamSettings = settings.updateDataStreamSettings.toBuilder();
       listDataStreamsSettings = settings.listDataStreamsSettings.toBuilder();
       getDataStreamSettings = settings.getDataStreamSettings.toBuilder();
+      runAccessReportSettings = settings.runAccessReportSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1808,7 +1814,8 @@ public class AnalyticsAdminServiceStubSettings
               deleteDataStreamSettings,
               updateDataStreamSettings,
               listDataStreamsSettings,
-              getDataStreamSettings);
+              getDataStreamSettings,
+              runAccessReportSettings);
     }
 
     private static Builder createDefault() {
@@ -1840,28 +1847,28 @@ public class AnalyticsAdminServiceStubSettings
     private static Builder initDefaults(Builder builder) {
       builder
           .getAccountSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listAccountsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .deleteAccountSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .updateAccountSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .provisionAccountTicketSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listAccountSummariesSettings()
@@ -1870,63 +1877,63 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .getPropertySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listPropertiesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .createPropertySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .deletePropertySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .updatePropertySettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .createFirebaseLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .deleteFirebaseLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listFirebaseLinksSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .createGoogleAdsLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .updateGoogleAdsLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .deleteGoogleAdsLinkSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listGoogleAdsLinksSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .getDataSharingSettingsSettings()
@@ -2070,6 +2077,11 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .getDataStreamSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .runAccessReportSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -2386,6 +2398,12 @@ public class AnalyticsAdminServiceStubSettings
     /** Returns the builder for the settings used for calls to getDataStream. */
     public UnaryCallSettings.Builder<GetDataStreamRequest, DataStream> getDataStreamSettings() {
       return getDataStreamSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to runAccessReport. */
+    public UnaryCallSettings.Builder<RunAccessReportRequest, RunAccessReportResponse>
+        runAccessReportSettings() {
+      return runAccessReportSettings;
     }
 
     @Override

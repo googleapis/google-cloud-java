@@ -175,7 +175,7 @@ public final class ServiceControllerGrpc {
    * service](https://cloud.google.com/service-management/reference/rpc/google.api/servicemanagement.v1#google.api.servicemanagement.v1.ManagedService).
    * </pre>
    */
-  public abstract static class ServiceControllerImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -197,7 +197,7 @@ public final class ServiceControllerGrpc {
      * [Cloud IAM](https://cloud.google.com/iam).
      * </pre>
      */
-    public void check(
+    default void check(
         com.google.api.servicecontrol.v1.CheckRequest request,
         io.grpc.stub.StreamObserver<com.google.api.servicecontrol.v1.CheckResponse>
             responseObserver) {
@@ -222,34 +222,34 @@ public final class ServiceControllerGrpc {
      * [Google Cloud IAM](https://cloud.google.com/iam).
      * </pre>
      */
-    public void report(
+    default void report(
         com.google.api.servicecontrol.v1.ReportRequest request,
         io.grpc.stub.StreamObserver<com.google.api.servicecontrol.v1.ReportResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getReportMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ServiceController.
+   *
+   * <pre>
+   * [Google Service Control API](/service-control/overview)
+   * Lets clients check and report operations against a [managed
+   * service](https://cloud.google.com/service-management/reference/rpc/google.api/servicemanagement.v1#google.api.servicemanagement.v1.ManagedService).
+   * </pre>
+   */
+  public abstract static class ServiceControllerImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCheckMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.servicecontrol.v1.CheckRequest,
-                      com.google.api.servicecontrol.v1.CheckResponse>(this, METHODID_CHECK)))
-          .addMethod(
-              getReportMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.servicecontrol.v1.ReportRequest,
-                      com.google.api.servicecontrol.v1.ReportResponse>(this, METHODID_REPORT)))
-          .build();
+      return ServiceControllerGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ServiceController.
    *
    * <pre>
    * [Google Service Control API](/service-control/overview)
@@ -325,7 +325,7 @@ public final class ServiceControllerGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ServiceController.
    *
    * <pre>
    * [Google Service Control API](/service-control/overview)
@@ -398,7 +398,7 @@ public final class ServiceControllerGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service ServiceController.
    *
    * <pre>
    * [Google Service Control API](/service-control/overview)
@@ -479,10 +479,10 @@ public final class ServiceControllerGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ServiceControllerImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ServiceControllerImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -517,6 +517,23 @@ public final class ServiceControllerGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCheckMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.servicecontrol.v1.CheckRequest,
+                    com.google.api.servicecontrol.v1.CheckResponse>(service, METHODID_CHECK)))
+        .addMethod(
+            getReportMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.servicecontrol.v1.ReportRequest,
+                    com.google.api.servicecontrol.v1.ReportResponse>(service, METHODID_REPORT)))
+        .build();
   }
 
   private abstract static class ServiceControllerBaseDescriptorSupplier

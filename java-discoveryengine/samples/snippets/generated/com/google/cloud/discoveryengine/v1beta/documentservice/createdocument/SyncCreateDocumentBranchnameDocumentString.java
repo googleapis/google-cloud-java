@@ -34,7 +34,9 @@ public class SyncCreateDocumentBranchnameDocumentString {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
-      BranchName parent = BranchName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]");
+      BranchName parent =
+          BranchName.ofProjectLocationDataStoreBranchName(
+              "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]");
       Document document = Document.newBuilder().build();
       String documentId = "documentId-814940266";
       Document response = documentServiceClient.createDocument(parent, document, documentId);

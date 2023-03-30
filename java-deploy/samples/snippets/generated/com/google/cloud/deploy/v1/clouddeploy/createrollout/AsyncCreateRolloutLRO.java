@@ -46,6 +46,7 @@ public class AsyncCreateRolloutLRO {
               .setRollout(Rollout.newBuilder().build())
               .setRequestId("requestId693933066")
               .setValidateOnly(true)
+              .setStartingPhaseId("startingPhaseId-326529130")
               .build();
       OperationFuture<Rollout, OperationMetadata> future =
           cloudDeployClient.createRolloutOperationCallable().futureCall(request);

@@ -97,6 +97,8 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
     SECURE_BOOT(376811194),
     /** <code>SEV_CAPABLE = 87083793;</code> */
     SEV_CAPABLE(87083793),
+    /** <code>SEV_LIVE_MIGRATABLE = 392039820;</code> */
+    SEV_LIVE_MIGRATABLE(392039820),
     /** <code>SEV_SNP_CAPABLE = 426919;</code> */
     SEV_SNP_CAPABLE(426919),
     /** <code>UEFI_COMPATIBLE = 195865408;</code> */
@@ -128,6 +130,8 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
     public static final int SECURE_BOOT_VALUE = 376811194;
     /** <code>SEV_CAPABLE = 87083793;</code> */
     public static final int SEV_CAPABLE_VALUE = 87083793;
+    /** <code>SEV_LIVE_MIGRATABLE = 392039820;</code> */
+    public static final int SEV_LIVE_MIGRATABLE_VALUE = 392039820;
     /** <code>SEV_SNP_CAPABLE = 426919;</code> */
     public static final int SEV_SNP_CAPABLE_VALUE = 426919;
     /** <code>UEFI_COMPATIBLE = 195865408;</code> */
@@ -173,6 +177,8 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
           return SECURE_BOOT;
         case 87083793:
           return SEV_CAPABLE;
+        case 392039820:
+          return SEV_LIVE_MIGRATABLE;
         case 426919:
           return SEV_SNP_CAPABLE;
         case 195865408:

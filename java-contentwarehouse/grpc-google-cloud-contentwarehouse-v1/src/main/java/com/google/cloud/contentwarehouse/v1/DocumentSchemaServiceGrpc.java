@@ -335,7 +335,7 @@ public final class DocumentSchemaServiceGrpc {
    * This service lets you manage document schema.
    * </pre>
    */
-  public abstract static class DocumentSchemaServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -344,7 +344,7 @@ public final class DocumentSchemaServiceGrpc {
      * Creates a document schema.
      * </pre>
      */
-    public void createDocumentSchema(
+    default void createDocumentSchema(
         com.google.cloud.contentwarehouse.v1.CreateDocumentSchemaRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.contentwarehouse.v1.DocumentSchema>
             responseObserver) {
@@ -364,7 +364,7 @@ public final class DocumentSchemaServiceGrpc {
      * INVALID_ARGUMENT.
      * </pre>
      */
-    public void updateDocumentSchema(
+    default void updateDocumentSchema(
         com.google.cloud.contentwarehouse.v1.UpdateDocumentSchemaRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.contentwarehouse.v1.DocumentSchema>
             responseObserver) {
@@ -380,7 +380,7 @@ public final class DocumentSchemaServiceGrpc {
      * exist.
      * </pre>
      */
-    public void getDocumentSchema(
+    default void getDocumentSchema(
         com.google.cloud.contentwarehouse.v1.GetDocumentSchemaRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.contentwarehouse.v1.DocumentSchema>
             responseObserver) {
@@ -397,7 +397,7 @@ public final class DocumentSchemaServiceGrpc {
      * depending on it.
      * </pre>
      */
-    public void deleteDocumentSchema(
+    default void deleteDocumentSchema(
         com.google.cloud.contentwarehouse.v1.DeleteDocumentSchemaRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -411,7 +411,7 @@ public final class DocumentSchemaServiceGrpc {
      * Lists document schemas.
      * </pre>
      */
-    public void listDocumentSchemas(
+    default void listDocumentSchemas(
         com.google.cloud.contentwarehouse.v1.ListDocumentSchemasRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.contentwarehouse.v1.ListDocumentSchemasResponse>
@@ -419,50 +419,26 @@ public final class DocumentSchemaServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListDocumentSchemasMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service DocumentSchemaService.
+   *
+   * <pre>
+   * This service lets you manage document schema.
+   * </pre>
+   */
+  public abstract static class DocumentSchemaServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateDocumentSchemaMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.contentwarehouse.v1.CreateDocumentSchemaRequest,
-                      com.google.cloud.contentwarehouse.v1.DocumentSchema>(
-                      this, METHODID_CREATE_DOCUMENT_SCHEMA)))
-          .addMethod(
-              getUpdateDocumentSchemaMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.contentwarehouse.v1.UpdateDocumentSchemaRequest,
-                      com.google.cloud.contentwarehouse.v1.DocumentSchema>(
-                      this, METHODID_UPDATE_DOCUMENT_SCHEMA)))
-          .addMethod(
-              getGetDocumentSchemaMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.contentwarehouse.v1.GetDocumentSchemaRequest,
-                      com.google.cloud.contentwarehouse.v1.DocumentSchema>(
-                      this, METHODID_GET_DOCUMENT_SCHEMA)))
-          .addMethod(
-              getDeleteDocumentSchemaMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.contentwarehouse.v1.DeleteDocumentSchemaRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_DOCUMENT_SCHEMA)))
-          .addMethod(
-              getListDocumentSchemasMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.contentwarehouse.v1.ListDocumentSchemasRequest,
-                      com.google.cloud.contentwarehouse.v1.ListDocumentSchemasResponse>(
-                      this, METHODID_LIST_DOCUMENT_SCHEMAS)))
-          .build();
+      return DocumentSchemaServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service DocumentSchemaService.
    *
    * <pre>
    * This service lets you manage document schema.
@@ -575,7 +551,7 @@ public final class DocumentSchemaServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service DocumentSchemaService.
    *
    * <pre>
    * This service lets you manage document schema.
@@ -669,7 +645,8 @@ public final class DocumentSchemaServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * DocumentSchemaService.
    *
    * <pre>
    * This service lets you manage document schema.
@@ -781,10 +758,10 @@ public final class DocumentSchemaServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final DocumentSchemaServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(DocumentSchemaServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -837,6 +814,45 @@ public final class DocumentSchemaServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateDocumentSchemaMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contentwarehouse.v1.CreateDocumentSchemaRequest,
+                    com.google.cloud.contentwarehouse.v1.DocumentSchema>(
+                    service, METHODID_CREATE_DOCUMENT_SCHEMA)))
+        .addMethod(
+            getUpdateDocumentSchemaMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contentwarehouse.v1.UpdateDocumentSchemaRequest,
+                    com.google.cloud.contentwarehouse.v1.DocumentSchema>(
+                    service, METHODID_UPDATE_DOCUMENT_SCHEMA)))
+        .addMethod(
+            getGetDocumentSchemaMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contentwarehouse.v1.GetDocumentSchemaRequest,
+                    com.google.cloud.contentwarehouse.v1.DocumentSchema>(
+                    service, METHODID_GET_DOCUMENT_SCHEMA)))
+        .addMethod(
+            getDeleteDocumentSchemaMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contentwarehouse.v1.DeleteDocumentSchemaRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_DOCUMENT_SCHEMA)))
+        .addMethod(
+            getListDocumentSchemasMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contentwarehouse.v1.ListDocumentSchemasRequest,
+                    com.google.cloud.contentwarehouse.v1.ListDocumentSchemasResponse>(
+                    service, METHODID_LIST_DOCUMENT_SCHEMAS)))
+        .build();
   }
 
   private abstract static class DocumentSchemaServiceBaseDescriptorSupplier

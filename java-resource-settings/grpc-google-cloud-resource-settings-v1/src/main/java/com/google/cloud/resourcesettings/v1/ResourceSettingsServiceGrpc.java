@@ -241,7 +241,7 @@ public final class ResourceSettingsServiceGrpc {
    * `google.rpc.Code.INVALID_ARGUMENT` if the request is malformed.
    * </pre>
    */
-  public abstract static class ResourceSettingsServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -250,7 +250,7 @@ public final class ResourceSettingsServiceGrpc {
      * Lists all the settings that are available on the Cloud resource `parent`.
      * </pre>
      */
-    public void listSettings(
+    default void listSettings(
         com.google.cloud.resourcesettings.v1.ListSettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.resourcesettings.v1.ListSettingsResponse>
             responseObserver) {
@@ -267,7 +267,7 @@ public final class ResourceSettingsServiceGrpc {
      * setting does not exist.
      * </pre>
      */
-    public void getSetting(
+    default void getSetting(
         com.google.cloud.resourcesettings.v1.GetSettingRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.resourcesettings.v1.Setting>
             responseObserver) {
@@ -293,42 +293,42 @@ public final class ResourceSettingsServiceGrpc {
      * `local_value` field.
      * </pre>
      */
-    public void updateSetting(
+    default void updateSetting(
         com.google.cloud.resourcesettings.v1.UpdateSettingRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.resourcesettings.v1.Setting>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateSettingMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ResourceSettingsService.
+   *
+   * <pre>
+   * An interface to interact with resource settings and setting values throughout
+   * the resource hierarchy.
+   * Services may surface a number of settings for users to control how their
+   * resources behave. Values of settings applied on a given Cloud resource are
+   * evaluated hierarchically and inherited by all descendants of that resource.
+   * For all requests, returns a `google.rpc.Status` with
+   * `google.rpc.Code.PERMISSION_DENIED` if the IAM check fails or the `parent`
+   * resource is not in a Cloud Organization.
+   * For all requests, returns a `google.rpc.Status` with
+   * `google.rpc.Code.INVALID_ARGUMENT` if the request is malformed.
+   * </pre>
+   */
+  public abstract static class ResourceSettingsServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListSettingsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.resourcesettings.v1.ListSettingsRequest,
-                      com.google.cloud.resourcesettings.v1.ListSettingsResponse>(
-                      this, METHODID_LIST_SETTINGS)))
-          .addMethod(
-              getGetSettingMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.resourcesettings.v1.GetSettingRequest,
-                      com.google.cloud.resourcesettings.v1.Setting>(this, METHODID_GET_SETTING)))
-          .addMethod(
-              getUpdateSettingMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.resourcesettings.v1.UpdateSettingRequest,
-                      com.google.cloud.resourcesettings.v1.Setting>(this, METHODID_UPDATE_SETTING)))
-          .build();
+      return ResourceSettingsServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ResourceSettingsService.
    *
    * <pre>
    * An interface to interact with resource settings and setting values throughout
@@ -420,7 +420,7 @@ public final class ResourceSettingsServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ResourceSettingsService.
    *
    * <pre>
    * An interface to interact with resource settings and setting values throughout
@@ -503,7 +503,8 @@ public final class ResourceSettingsServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * ResourceSettingsService.
    *
    * <pre>
    * An interface to interact with resource settings and setting values throughout
@@ -597,10 +598,10 @@ public final class ResourceSettingsServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ResourceSettingsServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ResourceSettingsServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -642,6 +643,31 @@ public final class ResourceSettingsServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.resourcesettings.v1.ListSettingsRequest,
+                    com.google.cloud.resourcesettings.v1.ListSettingsResponse>(
+                    service, METHODID_LIST_SETTINGS)))
+        .addMethod(
+            getGetSettingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.resourcesettings.v1.GetSettingRequest,
+                    com.google.cloud.resourcesettings.v1.Setting>(service, METHODID_GET_SETTING)))
+        .addMethod(
+            getUpdateSettingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.resourcesettings.v1.UpdateSettingRequest,
+                    com.google.cloud.resourcesettings.v1.Setting>(
+                    service, METHODID_UPDATE_SETTING)))
+        .build();
   }
 
   private abstract static class ResourceSettingsServiceBaseDescriptorSupplier

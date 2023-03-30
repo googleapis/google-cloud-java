@@ -185,7 +185,7 @@ public final class ImageAnnotatorGrpc {
    * ImageAnnotator service returns detected entities from the images.
    * </pre>
    */
-  public abstract static class ImageAnnotatorImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -194,7 +194,7 @@ public final class ImageAnnotatorGrpc {
      * Run image detection and annotation for a batch of images.
      * </pre>
      */
-    public void batchAnnotateImages(
+    default void batchAnnotateImages(
         com.google.cloud.vision.v1p3beta1.BatchAnnotateImagesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.vision.v1p3beta1.BatchAnnotateImagesResponse>
             responseObserver) {
@@ -214,35 +214,34 @@ public final class ImageAnnotatorGrpc {
      * `Operation.response` contains `AsyncBatchAnnotateFilesResponse` (results).
      * </pre>
      */
-    public void asyncBatchAnnotateFiles(
+    default void asyncBatchAnnotateFiles(
         com.google.cloud.vision.v1p3beta1.AsyncBatchAnnotateFilesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getAsyncBatchAnnotateFilesMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ImageAnnotator.
+   *
+   * <pre>
+   * Service that performs Google Cloud Vision API detection tasks over client
+   * images, such as face, landmark, logo, label, and text detection. The
+   * ImageAnnotator service returns detected entities from the images.
+   * </pre>
+   */
+  public abstract static class ImageAnnotatorImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getBatchAnnotateImagesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vision.v1p3beta1.BatchAnnotateImagesRequest,
-                      com.google.cloud.vision.v1p3beta1.BatchAnnotateImagesResponse>(
-                      this, METHODID_BATCH_ANNOTATE_IMAGES)))
-          .addMethod(
-              getAsyncBatchAnnotateFilesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.vision.v1p3beta1.AsyncBatchAnnotateFilesRequest,
-                      com.google.longrunning.Operation>(this, METHODID_ASYNC_BATCH_ANNOTATE_FILES)))
-          .build();
+      return ImageAnnotatorGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ImageAnnotator.
    *
    * <pre>
    * Service that performs Google Cloud Vision API detection tasks over client
@@ -301,7 +300,7 @@ public final class ImageAnnotatorGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ImageAnnotator.
    *
    * <pre>
    * Service that performs Google Cloud Vision API detection tasks over client
@@ -354,7 +353,7 @@ public final class ImageAnnotatorGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service ImageAnnotator.
    *
    * <pre>
    * Service that performs Google Cloud Vision API detection tasks over client
@@ -416,10 +415,10 @@ public final class ImageAnnotatorGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ImageAnnotatorImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ImageAnnotatorImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -454,6 +453,25 @@ public final class ImageAnnotatorGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getBatchAnnotateImagesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vision.v1p3beta1.BatchAnnotateImagesRequest,
+                    com.google.cloud.vision.v1p3beta1.BatchAnnotateImagesResponse>(
+                    service, METHODID_BATCH_ANNOTATE_IMAGES)))
+        .addMethod(
+            getAsyncBatchAnnotateFilesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vision.v1p3beta1.AsyncBatchAnnotateFilesRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_ASYNC_BATCH_ANNOTATE_FILES)))
+        .build();
   }
 
   private abstract static class ImageAnnotatorBaseDescriptorSupplier

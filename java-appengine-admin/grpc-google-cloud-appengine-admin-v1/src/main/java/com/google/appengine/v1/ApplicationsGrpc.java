@@ -254,7 +254,7 @@ public final class ApplicationsGrpc {
    * Manages App Engine applications.
    * </pre>
    */
-  public abstract static class ApplicationsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -263,7 +263,7 @@ public final class ApplicationsGrpc {
      * Gets information about an application.
      * </pre>
      */
-    public void getApplication(
+    default void getApplication(
         com.google.appengine.v1.GetApplicationRequest request,
         io.grpc.stub.StreamObserver<com.google.appengine.v1.Application> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -281,7 +281,7 @@ public final class ApplicationsGrpc {
      * For more information about App Engine applications, see [Managing Projects, Applications, and Billing](https://cloud.google.com/appengine/docs/standard/python/console/).
      * </pre>
      */
-    public void createApplication(
+    default void createApplication(
         com.google.appengine.v1.CreateApplicationRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -299,7 +299,7 @@ public final class ApplicationsGrpc {
      * * `iap` - Identity-Aware Proxy properties for the application.
      * </pre>
      */
-    public void updateApplication(
+    default void updateApplication(
         com.google.appengine.v1.UpdateApplicationRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -322,46 +322,32 @@ public final class ApplicationsGrpc {
      * Console Activity Log.
      * </pre>
      */
-    public void repairApplication(
+    default void repairApplication(
         com.google.appengine.v1.RepairApplicationRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getRepairApplicationMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Applications.
+   *
+   * <pre>
+   * Manages App Engine applications.
+   * </pre>
+   */
+  public abstract static class ApplicationsImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getGetApplicationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.GetApplicationRequest,
-                      com.google.appengine.v1.Application>(this, METHODID_GET_APPLICATION)))
-          .addMethod(
-              getCreateApplicationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.CreateApplicationRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_APPLICATION)))
-          .addMethod(
-              getUpdateApplicationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.UpdateApplicationRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_APPLICATION)))
-          .addMethod(
-              getRepairApplicationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.appengine.v1.RepairApplicationRequest,
-                      com.google.longrunning.Operation>(this, METHODID_REPAIR_APPLICATION)))
-          .build();
+      return ApplicationsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Applications.
    *
    * <pre>
    * Manages App Engine applications.
@@ -461,7 +447,7 @@ public final class ApplicationsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Applications.
    *
    * <pre>
    * Manages App Engine applications.
@@ -550,7 +536,7 @@ public final class ApplicationsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Applications.
    *
    * <pre>
    * Manages App Engine applications.
@@ -648,10 +634,10 @@ public final class ApplicationsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ApplicationsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ApplicationsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -694,6 +680,35 @@ public final class ApplicationsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getGetApplicationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.GetApplicationRequest,
+                    com.google.appengine.v1.Application>(service, METHODID_GET_APPLICATION)))
+        .addMethod(
+            getCreateApplicationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.CreateApplicationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_APPLICATION)))
+        .addMethod(
+            getUpdateApplicationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.UpdateApplicationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_APPLICATION)))
+        .addMethod(
+            getRepairApplicationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.appengine.v1.RepairApplicationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_REPAIR_APPLICATION)))
+        .build();
   }
 
   private abstract static class ApplicationsBaseDescriptorSupplier

@@ -89,6 +89,8 @@ import com.google.analytics.admin.v1beta.MeasurementProtocolSecret;
 import com.google.analytics.admin.v1beta.Property;
 import com.google.analytics.admin.v1beta.ProvisionAccountTicketRequest;
 import com.google.analytics.admin.v1beta.ProvisionAccountTicketResponse;
+import com.google.analytics.admin.v1beta.RunAccessReportRequest;
+import com.google.analytics.admin.v1beta.RunAccessReportResponse;
 import com.google.analytics.admin.v1beta.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1beta.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1beta.UpdateAccountRequest;
@@ -386,6 +388,10 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
 
   public UnaryCallable<GetDataStreamRequest, DataStream> getDataStreamCallable() {
     throw new UnsupportedOperationException("Not implemented: getDataStreamCallable()");
+  }
+
+  public UnaryCallable<RunAccessReportRequest, RunAccessReportResponse> runAccessReportCallable() {
+    throw new UnsupportedOperationException("Not implemented: runAccessReportCallable()");
   }
 
   @Override

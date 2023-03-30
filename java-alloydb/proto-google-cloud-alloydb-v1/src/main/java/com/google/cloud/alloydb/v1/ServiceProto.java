@@ -402,7 +402,7 @@ public final class ServiceProto {
           + "cloud.google.com/go/alloydb/apiv1/alloyd"
           + "bpb;alloydbpb\252\002\027Google.Cloud.AlloyDb.V1\312"
           + "\002\027Google\\Cloud\\AlloyDb\\V1\352\002\032Google::Clou"
-          + "d::AlloyDb::V1b\006proto3"
+          + "d::AlloyDB::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

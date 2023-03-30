@@ -523,7 +523,7 @@ public final class FlowsGrpc {
    * Service for managing [Flows][google.cloud.dialogflow.cx.v3.Flow].
    * </pre>
    */
-  public abstract static class FlowsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -535,7 +535,7 @@ public final class FlowsGrpc {
      * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
-    public void createFlow(
+    default void createFlow(
         com.google.cloud.dialogflow.cx.v3.CreateFlowRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Flow> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateFlowMethod(), responseObserver);
@@ -548,7 +548,7 @@ public final class FlowsGrpc {
      * Deletes a specified flow.
      * </pre>
      */
-    public void deleteFlow(
+    default void deleteFlow(
         com.google.cloud.dialogflow.cx.v3.DeleteFlowRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteFlowMethod(), responseObserver);
@@ -561,7 +561,7 @@ public final class FlowsGrpc {
      * Returns the list of all flows in the specified agent.
      * </pre>
      */
-    public void listFlows(
+    default void listFlows(
         com.google.cloud.dialogflow.cx.v3.ListFlowsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListFlowsResponse>
             responseObserver) {
@@ -575,7 +575,7 @@ public final class FlowsGrpc {
      * Retrieves the specified flow.
      * </pre>
      */
-    public void getFlow(
+    default void getFlow(
         com.google.cloud.dialogflow.cx.v3.GetFlowRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Flow> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetFlowMethod(), responseObserver);
@@ -591,7 +591,7 @@ public final class FlowsGrpc {
      * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
-    public void updateFlow(
+    default void updateFlow(
         com.google.cloud.dialogflow.cx.v3.UpdateFlowRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Flow> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateFlowMethod(), responseObserver);
@@ -615,7 +615,7 @@ public final class FlowsGrpc {
      * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
-    public void trainFlow(
+    default void trainFlow(
         com.google.cloud.dialogflow.cx.v3.TrainFlowRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getTrainFlowMethod(), responseObserver);
@@ -630,7 +630,7 @@ public final class FlowsGrpc {
      * validation results.
      * </pre>
      */
-    public void validateFlow(
+    default void validateFlow(
         com.google.cloud.dialogflow.cx.v3.ValidateFlowRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.FlowValidationResult>
             responseObserver) {
@@ -646,7 +646,7 @@ public final class FlowsGrpc {
      * when ValidateFlow is called.
      * </pre>
      */
-    public void getFlowValidationResult(
+    default void getFlowValidationResult(
         com.google.cloud.dialogflow.cx.v3.GetFlowValidationResultRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.FlowValidationResult>
             responseObserver) {
@@ -671,7 +671,7 @@ public final class FlowsGrpc {
      * documentation](https://cloud.google.com/dialogflow/cx/docs/concept/training).
      * </pre>
      */
-    public void importFlow(
+    default void importFlow(
         com.google.cloud.dialogflow.cx.v3.ImportFlowRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getImportFlowMethod(), responseObserver);
@@ -693,84 +693,30 @@ public final class FlowsGrpc {
      * references will also be exported.
      * </pre>
      */
-    public void exportFlow(
+    default void exportFlow(
         com.google.cloud.dialogflow.cx.v3.ExportFlowRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getExportFlowMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Flows.
+   *
+   * <pre>
+   * Service for managing [Flows][google.cloud.dialogflow.cx.v3.Flow].
+   * </pre>
+   */
+  public abstract static class FlowsImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateFlowMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.CreateFlowRequest,
-                      com.google.cloud.dialogflow.cx.v3.Flow>(this, METHODID_CREATE_FLOW)))
-          .addMethod(
-              getDeleteFlowMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.DeleteFlowRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_FLOW)))
-          .addMethod(
-              getListFlowsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.ListFlowsRequest,
-                      com.google.cloud.dialogflow.cx.v3.ListFlowsResponse>(
-                      this, METHODID_LIST_FLOWS)))
-          .addMethod(
-              getGetFlowMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.GetFlowRequest,
-                      com.google.cloud.dialogflow.cx.v3.Flow>(this, METHODID_GET_FLOW)))
-          .addMethod(
-              getUpdateFlowMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.UpdateFlowRequest,
-                      com.google.cloud.dialogflow.cx.v3.Flow>(this, METHODID_UPDATE_FLOW)))
-          .addMethod(
-              getTrainFlowMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.TrainFlowRequest,
-                      com.google.longrunning.Operation>(this, METHODID_TRAIN_FLOW)))
-          .addMethod(
-              getValidateFlowMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.ValidateFlowRequest,
-                      com.google.cloud.dialogflow.cx.v3.FlowValidationResult>(
-                      this, METHODID_VALIDATE_FLOW)))
-          .addMethod(
-              getGetFlowValidationResultMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.GetFlowValidationResultRequest,
-                      com.google.cloud.dialogflow.cx.v3.FlowValidationResult>(
-                      this, METHODID_GET_FLOW_VALIDATION_RESULT)))
-          .addMethod(
-              getImportFlowMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.ImportFlowRequest,
-                      com.google.longrunning.Operation>(this, METHODID_IMPORT_FLOW)))
-          .addMethod(
-              getExportFlowMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.ExportFlowRequest,
-                      com.google.longrunning.Operation>(this, METHODID_EXPORT_FLOW)))
-          .build();
+      return FlowsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Flows.
    *
    * <pre>
    * Service for managing [Flows][google.cloud.dialogflow.cx.v3.Flow].
@@ -974,7 +920,7 @@ public final class FlowsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Flows.
    *
    * <pre>
    * Service for managing [Flows][google.cloud.dialogflow.cx.v3.Flow].
@@ -1162,7 +1108,7 @@ public final class FlowsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Flows.
    *
    * <pre>
    * Service for managing [Flows][google.cloud.dialogflow.cx.v3.Flow].
@@ -1372,10 +1318,10 @@ public final class FlowsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final FlowsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(FlowsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1454,6 +1400,74 @@ public final class FlowsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateFlowMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.CreateFlowRequest,
+                    com.google.cloud.dialogflow.cx.v3.Flow>(service, METHODID_CREATE_FLOW)))
+        .addMethod(
+            getDeleteFlowMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.DeleteFlowRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_FLOW)))
+        .addMethod(
+            getListFlowsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.ListFlowsRequest,
+                    com.google.cloud.dialogflow.cx.v3.ListFlowsResponse>(
+                    service, METHODID_LIST_FLOWS)))
+        .addMethod(
+            getGetFlowMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.GetFlowRequest,
+                    com.google.cloud.dialogflow.cx.v3.Flow>(service, METHODID_GET_FLOW)))
+        .addMethod(
+            getUpdateFlowMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.UpdateFlowRequest,
+                    com.google.cloud.dialogflow.cx.v3.Flow>(service, METHODID_UPDATE_FLOW)))
+        .addMethod(
+            getTrainFlowMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.TrainFlowRequest,
+                    com.google.longrunning.Operation>(service, METHODID_TRAIN_FLOW)))
+        .addMethod(
+            getValidateFlowMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.ValidateFlowRequest,
+                    com.google.cloud.dialogflow.cx.v3.FlowValidationResult>(
+                    service, METHODID_VALIDATE_FLOW)))
+        .addMethod(
+            getGetFlowValidationResultMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.GetFlowValidationResultRequest,
+                    com.google.cloud.dialogflow.cx.v3.FlowValidationResult>(
+                    service, METHODID_GET_FLOW_VALIDATION_RESULT)))
+        .addMethod(
+            getImportFlowMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.ImportFlowRequest,
+                    com.google.longrunning.Operation>(service, METHODID_IMPORT_FLOW)))
+        .addMethod(
+            getExportFlowMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.ExportFlowRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EXPORT_FLOW)))
+        .build();
   }
 
   private abstract static class FlowsBaseDescriptorSupplier

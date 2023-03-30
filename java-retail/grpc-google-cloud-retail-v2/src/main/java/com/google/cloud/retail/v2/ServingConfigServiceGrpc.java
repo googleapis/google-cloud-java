@@ -408,7 +408,7 @@ public final class ServingConfigServiceGrpc {
    * Service for modifying ServingConfig.
    * </pre>
    */
-  public abstract static class ServingConfigServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -420,7 +420,7 @@ public final class ServingConfigServiceGrpc {
      * FAILED_PRECONDITION error is returned.
      * </pre>
      */
-    public void createServingConfig(
+    default void createServingConfig(
         com.google.cloud.retail.v2.CreateServingConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2.ServingConfig> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -435,7 +435,7 @@ public final class ServingConfigServiceGrpc {
      * Returns a NotFound error if the ServingConfig does not exist.
      * </pre>
      */
-    public void deleteServingConfig(
+    default void deleteServingConfig(
         com.google.cloud.retail.v2.DeleteServingConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -449,7 +449,7 @@ public final class ServingConfigServiceGrpc {
      * Updates a ServingConfig.
      * </pre>
      */
-    public void updateServingConfig(
+    default void updateServingConfig(
         com.google.cloud.retail.v2.UpdateServingConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2.ServingConfig> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -464,7 +464,7 @@ public final class ServingConfigServiceGrpc {
      * Returns a NotFound error if the ServingConfig does not exist.
      * </pre>
      */
-    public void getServingConfig(
+    default void getServingConfig(
         com.google.cloud.retail.v2.GetServingConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2.ServingConfig> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -478,7 +478,7 @@ public final class ServingConfigServiceGrpc {
      * Lists all ServingConfigs linked to this catalog.
      * </pre>
      */
-    public void listServingConfigs(
+    default void listServingConfigs(
         com.google.cloud.retail.v2.ListServingConfigsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2.ListServingConfigsResponse>
             responseObserver) {
@@ -499,7 +499,7 @@ public final class ServingConfigServiceGrpc {
      * number of control allowed for that type of control.
      * </pre>
      */
-    public void addControl(
+    default void addControl(
         com.google.cloud.retail.v2.AddControlRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2.ServingConfig> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAddControlMethod(), responseObserver);
@@ -515,67 +515,32 @@ public final class ServingConfigServiceGrpc {
      * ServingConfig.
      * </pre>
      */
-    public void removeControl(
+    default void removeControl(
         com.google.cloud.retail.v2.RemoveControlRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2.ServingConfig> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getRemoveControlMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ServingConfigService.
+   *
+   * <pre>
+   * Service for modifying ServingConfig.
+   * </pre>
+   */
+  public abstract static class ServingConfigServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateServingConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2.CreateServingConfigRequest,
-                      com.google.cloud.retail.v2.ServingConfig>(
-                      this, METHODID_CREATE_SERVING_CONFIG)))
-          .addMethod(
-              getDeleteServingConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2.DeleteServingConfigRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_SERVING_CONFIG)))
-          .addMethod(
-              getUpdateServingConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2.UpdateServingConfigRequest,
-                      com.google.cloud.retail.v2.ServingConfig>(
-                      this, METHODID_UPDATE_SERVING_CONFIG)))
-          .addMethod(
-              getGetServingConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2.GetServingConfigRequest,
-                      com.google.cloud.retail.v2.ServingConfig>(this, METHODID_GET_SERVING_CONFIG)))
-          .addMethod(
-              getListServingConfigsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2.ListServingConfigsRequest,
-                      com.google.cloud.retail.v2.ListServingConfigsResponse>(
-                      this, METHODID_LIST_SERVING_CONFIGS)))
-          .addMethod(
-              getAddControlMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2.AddControlRequest,
-                      com.google.cloud.retail.v2.ServingConfig>(this, METHODID_ADD_CONTROL)))
-          .addMethod(
-              getRemoveControlMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2.RemoveControlRequest,
-                      com.google.cloud.retail.v2.ServingConfig>(this, METHODID_REMOVE_CONTROL)))
-          .build();
+      return ServingConfigServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ServingConfigService.
    *
    * <pre>
    * Service for modifying ServingConfig.
@@ -720,7 +685,7 @@ public final class ServingConfigServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ServingConfigService.
    *
    * <pre>
    * Service for modifying ServingConfig.
@@ -846,7 +811,7 @@ public final class ServingConfigServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service ServingConfigService.
    *
    * <pre>
    * Service for modifying ServingConfig.
@@ -990,10 +955,10 @@ public final class ServingConfigServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ServingConfigServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ServingConfigServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1057,6 +1022,57 @@ public final class ServingConfigServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateServingConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2.CreateServingConfigRequest,
+                    com.google.cloud.retail.v2.ServingConfig>(
+                    service, METHODID_CREATE_SERVING_CONFIG)))
+        .addMethod(
+            getDeleteServingConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2.DeleteServingConfigRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_SERVING_CONFIG)))
+        .addMethod(
+            getUpdateServingConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2.UpdateServingConfigRequest,
+                    com.google.cloud.retail.v2.ServingConfig>(
+                    service, METHODID_UPDATE_SERVING_CONFIG)))
+        .addMethod(
+            getGetServingConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2.GetServingConfigRequest,
+                    com.google.cloud.retail.v2.ServingConfig>(
+                    service, METHODID_GET_SERVING_CONFIG)))
+        .addMethod(
+            getListServingConfigsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2.ListServingConfigsRequest,
+                    com.google.cloud.retail.v2.ListServingConfigsResponse>(
+                    service, METHODID_LIST_SERVING_CONFIGS)))
+        .addMethod(
+            getAddControlMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2.AddControlRequest,
+                    com.google.cloud.retail.v2.ServingConfig>(service, METHODID_ADD_CONTROL)))
+        .addMethod(
+            getRemoveControlMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2.RemoveControlRequest,
+                    com.google.cloud.retail.v2.ServingConfig>(service, METHODID_REMOVE_CONTROL)))
+        .build();
   }
 
   private abstract static class ServingConfigServiceBaseDescriptorSupplier

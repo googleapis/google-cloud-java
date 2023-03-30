@@ -267,7 +267,7 @@ public final class PredictionApiKeyRegistryGrpc {
    * key. You can register up to 20 API keys per project.
    * </pre>
    */
-  public abstract static class PredictionApiKeyRegistryImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -276,7 +276,7 @@ public final class PredictionApiKeyRegistryGrpc {
      * Register an API key for use with predict method.
      * </pre>
      */
-    public void createPredictionApiKeyRegistration(
+    default void createPredictionApiKeyRegistration(
         com.google.cloud.recommendationengine.v1beta1.CreatePredictionApiKeyRegistrationRequest
             request,
         io.grpc.stub.StreamObserver<
@@ -293,7 +293,7 @@ public final class PredictionApiKeyRegistryGrpc {
      * List the registered apiKeys for use with predict method.
      * </pre>
      */
-    public void listPredictionApiKeyRegistrations(
+    default void listPredictionApiKeyRegistrations(
         com.google.cloud.recommendationengine.v1beta1.ListPredictionApiKeyRegistrationsRequest
             request,
         io.grpc.stub.StreamObserver<
@@ -311,48 +311,37 @@ public final class PredictionApiKeyRegistryGrpc {
      * Unregister an apiKey from using for predict method.
      * </pre>
      */
-    public void deletePredictionApiKeyRegistration(
+    default void deletePredictionApiKeyRegistration(
         com.google.cloud.recommendationengine.v1beta1.DeletePredictionApiKeyRegistrationRequest
             request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeletePredictionApiKeyRegistrationMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service PredictionApiKeyRegistry.
+   *
+   * <pre>
+   * Service for registering API keys for use with the `predict` method. If you
+   * use an API key to request predictions, you must first register the API key.
+   * Otherwise, your prediction request is rejected. If you use OAuth to
+   * authenticate your `predict` method call, you do not need to register an API
+   * key. You can register up to 20 API keys per project.
+   * </pre>
+   */
+  public abstract static class PredictionApiKeyRegistryImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreatePredictionApiKeyRegistrationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.recommendationengine.v1beta1
-                          .CreatePredictionApiKeyRegistrationRequest,
-                      com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration>(
-                      this, METHODID_CREATE_PREDICTION_API_KEY_REGISTRATION)))
-          .addMethod(
-              getListPredictionApiKeyRegistrationsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.recommendationengine.v1beta1
-                          .ListPredictionApiKeyRegistrationsRequest,
-                      com.google.cloud.recommendationengine.v1beta1
-                          .ListPredictionApiKeyRegistrationsResponse>(
-                      this, METHODID_LIST_PREDICTION_API_KEY_REGISTRATIONS)))
-          .addMethod(
-              getDeletePredictionApiKeyRegistrationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.recommendationengine.v1beta1
-                          .DeletePredictionApiKeyRegistrationRequest,
-                      com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_PREDICTION_API_KEY_REGISTRATION)))
-          .build();
+      return PredictionApiKeyRegistryGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service PredictionApiKeyRegistry.
    *
    * <pre>
    * Service for registering API keys for use with the `predict` method. If you
@@ -432,7 +421,7 @@ public final class PredictionApiKeyRegistryGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service PredictionApiKeyRegistry.
    *
    * <pre>
    * Service for registering API keys for use with the `predict` method. If you
@@ -501,7 +490,8 @@ public final class PredictionApiKeyRegistryGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * PredictionApiKeyRegistry.
    *
    * <pre>
    * Service for registering API keys for use with the `predict` method. If you
@@ -584,10 +574,10 @@ public final class PredictionApiKeyRegistryGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final PredictionApiKeyRegistryImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(PredictionApiKeyRegistryImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -636,6 +626,36 @@ public final class PredictionApiKeyRegistryGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreatePredictionApiKeyRegistrationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.recommendationengine.v1beta1
+                        .CreatePredictionApiKeyRegistrationRequest,
+                    com.google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistration>(
+                    service, METHODID_CREATE_PREDICTION_API_KEY_REGISTRATION)))
+        .addMethod(
+            getListPredictionApiKeyRegistrationsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.recommendationengine.v1beta1
+                        .ListPredictionApiKeyRegistrationsRequest,
+                    com.google.cloud.recommendationengine.v1beta1
+                        .ListPredictionApiKeyRegistrationsResponse>(
+                    service, METHODID_LIST_PREDICTION_API_KEY_REGISTRATIONS)))
+        .addMethod(
+            getDeletePredictionApiKeyRegistrationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.recommendationengine.v1beta1
+                        .DeletePredictionApiKeyRegistrationRequest,
+                    com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_PREDICTION_API_KEY_REGISTRATION)))
+        .build();
   }
 
   private abstract static class PredictionApiKeyRegistryBaseDescriptorSupplier

@@ -28,8 +28,8 @@ public interface BatchDeleteAccessBindingsRequestOrBuilder
    *
    * <pre>
    * Required. The account or property that owns the access bindings. The parent
-   * field in the DeleteAccessBindingRequest messages must either be empty or
-   * match this field. Formats:
+   * of all provided values for the 'names' field in DeleteAccessBindingRequest
+   * messages must match this field. Formats:
    * - accounts/{account}
    * - properties/{property}
    * </pre>
@@ -46,8 +46,8 @@ public interface BatchDeleteAccessBindingsRequestOrBuilder
    *
    * <pre>
    * Required. The account or property that owns the access bindings. The parent
-   * field in the DeleteAccessBindingRequest messages must either be empty or
-   * match this field. Formats:
+   * of all provided values for the 'names' field in DeleteAccessBindingRequest
+   * messages must match this field. Formats:
    * - accounts/{account}
    * - properties/{property}
    * </pre>

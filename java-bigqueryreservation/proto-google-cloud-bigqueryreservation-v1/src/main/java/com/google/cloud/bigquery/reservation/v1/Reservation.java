@@ -39,6 +39,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
 
   private Reservation() {
     name_ = "";
+    edition_ = 0;
   }
 
   @java.lang.Override
@@ -65,6 +66,669 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.bigquery.reservation.v1.Reservation.class,
             com.google.cloud.bigquery.reservation.v1.Reservation.Builder.class);
+  }
+
+  public interface AutoscaleOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.reservation.v1.Reservation.Autoscale)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The slot capacity added to this reservation when autoscale
+     * happens. Will be between [0, max_slots].
+     * </pre>
+     *
+     * <code>int64 current_slots = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The currentSlots.
+     */
+    long getCurrentSlots();
+
+    /**
+     *
+     *
+     * <pre>
+     * Number of slots to be scaled when needed.
+     * </pre>
+     *
+     * <code>int64 max_slots = 2;</code>
+     *
+     * @return The maxSlots.
+     */
+    long getMaxSlots();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Auto scaling settings.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.bigquery.reservation.v1.Reservation.Autoscale}
+   */
+  public static final class Autoscale extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.bigquery.reservation.v1.Reservation.Autoscale)
+      AutoscaleOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use Autoscale.newBuilder() to construct.
+    private Autoscale(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Autoscale() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Autoscale();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.bigquery.reservation.v1.ReservationProto
+          .internal_static_google_cloud_bigquery_reservation_v1_Reservation_Autoscale_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.bigquery.reservation.v1.ReservationProto
+          .internal_static_google_cloud_bigquery_reservation_v1_Reservation_Autoscale_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale.class,
+              com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale.Builder.class);
+    }
+
+    public static final int CURRENT_SLOTS_FIELD_NUMBER = 1;
+    private long currentSlots_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The slot capacity added to this reservation when autoscale
+     * happens. Will be between [0, max_slots].
+     * </pre>
+     *
+     * <code>int64 current_slots = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The currentSlots.
+     */
+    @java.lang.Override
+    public long getCurrentSlots() {
+      return currentSlots_;
+    }
+
+    public static final int MAX_SLOTS_FIELD_NUMBER = 2;
+    private long maxSlots_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Number of slots to be scaled when needed.
+     * </pre>
+     *
+     * <code>int64 max_slots = 2;</code>
+     *
+     * @return The maxSlots.
+     */
+    @java.lang.Override
+    public long getMaxSlots() {
+      return maxSlots_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (currentSlots_ != 0L) {
+        output.writeInt64(1, currentSlots_);
+      }
+      if (maxSlots_ != 0L) {
+        output.writeInt64(2, maxSlots_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (currentSlots_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, currentSlots_);
+      }
+      if (maxSlots_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, maxSlots_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale other =
+          (com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale) obj;
+
+      if (getCurrentSlots() != other.getCurrentSlots()) return false;
+      if (getMaxSlots() != other.getMaxSlots()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CURRENT_SLOTS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getCurrentSlots());
+      hash = (37 * hash) + MAX_SLOTS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxSlots());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Auto scaling settings.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.bigquery.reservation.v1.Reservation.Autoscale}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.bigquery.reservation.v1.Reservation.Autoscale)
+        com.google.cloud.bigquery.reservation.v1.Reservation.AutoscaleOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.bigquery.reservation.v1.ReservationProto
+            .internal_static_google_cloud_bigquery_reservation_v1_Reservation_Autoscale_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.bigquery.reservation.v1.ReservationProto
+            .internal_static_google_cloud_bigquery_reservation_v1_Reservation_Autoscale_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale.class,
+                com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale.Builder.class);
+      }
+
+      // Construct using com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        currentSlots_ = 0L;
+        maxSlots_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.bigquery.reservation.v1.ReservationProto
+            .internal_static_google_cloud_bigquery_reservation_v1_Reservation_Autoscale_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale
+          getDefaultInstanceForType() {
+        return com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale build() {
+        com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale buildPartial() {
+        com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale result =
+            new com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.currentSlots_ = currentSlots_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.maxSlots_ = maxSlots_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale) {
+          return mergeFrom((com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale other) {
+        if (other
+            == com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale.getDefaultInstance())
+          return this;
+        if (other.getCurrentSlots() != 0L) {
+          setCurrentSlots(other.getCurrentSlots());
+        }
+        if (other.getMaxSlots() != 0L) {
+          setMaxSlots(other.getMaxSlots());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  currentSlots_ = input.readInt64();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  maxSlots_ = input.readInt64();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private long currentSlots_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The slot capacity added to this reservation when autoscale
+       * happens. Will be between [0, max_slots].
+       * </pre>
+       *
+       * <code>int64 current_slots = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The currentSlots.
+       */
+      @java.lang.Override
+      public long getCurrentSlots() {
+        return currentSlots_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The slot capacity added to this reservation when autoscale
+       * happens. Will be between [0, max_slots].
+       * </pre>
+       *
+       * <code>int64 current_slots = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The currentSlots to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurrentSlots(long value) {
+
+        currentSlots_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The slot capacity added to this reservation when autoscale
+       * happens. Will be between [0, max_slots].
+       * </pre>
+       *
+       * <code>int64 current_slots = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCurrentSlots() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        currentSlots_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long maxSlots_;
+      /**
+       *
+       *
+       * <pre>
+       * Number of slots to be scaled when needed.
+       * </pre>
+       *
+       * <code>int64 max_slots = 2;</code>
+       *
+       * @return The maxSlots.
+       */
+      @java.lang.Override
+      public long getMaxSlots() {
+        return maxSlots_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of slots to be scaled when needed.
+       * </pre>
+       *
+       * <code>int64 max_slots = 2;</code>
+       *
+       * @param value The maxSlots to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxSlots(long value) {
+
+        maxSlots_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of slots to be scaled when needed.
+       * </pre>
+       *
+       * <code>int64 max_slots = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxSlots() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        maxSlots_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.reservation.v1.Reservation.Autoscale)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.bigquery.reservation.v1.Reservation.Autoscale)
+    private static final com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale();
+    }
+
+    public static com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Autoscale> PARSER =
+        new com.google.protobuf.AbstractParser<Autoscale>() {
+          @java.lang.Override
+          public Autoscale parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Autoscale> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Autoscale> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -136,10 +800,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * computational power in BigQuery, and serves as the unit of parallelism.
    * Queries using this reservation might use more slots during runtime if
    * ignore_idle_slots is set to false.
-   * If the new reservation's slot capacity exceeds the project's slot capacity
-   * or if total slot capacity of the new reservation and its siblings exceeds
-   * the project's slot capacity, the request will fail with
-   * `google.rpc.Code.RESOURCE_EXHAUSTED`.
+   * If total slot_capacity of the reservation and its siblings
+   * exceeds the total slot_count of all capacity commitments, the request will
+   * fail with `google.rpc.Code.RESOURCE_EXHAUSTED`.
    * NOTE: for reservations in US or EU multi-regions, slot capacity constraints
    * are checked separately for default and auxiliary regions. See
    * multi_region_auxiliary flag for more details.
@@ -175,17 +838,74 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     return ignoreIdleSlots_;
   }
 
+  public static final int AUTOSCALE_FIELD_NUMBER = 7;
+  private com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale_;
+  /**
+   *
+   *
+   * <pre>
+   * The configuration parameters for the auto scaling feature. Note this is an
+   * alpha feature.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
+   *
+   * @return Whether the autoscale field is set.
+   */
+  @java.lang.Override
+  public boolean hasAutoscale() {
+    return autoscale_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration parameters for the auto scaling feature. Note this is an
+   * alpha feature.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
+   *
+   * @return The autoscale.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale getAutoscale() {
+    return autoscale_ == null
+        ? com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale.getDefaultInstance()
+        : autoscale_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The configuration parameters for the auto scaling feature. Note this is an
+   * alpha feature.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.reservation.v1.Reservation.AutoscaleOrBuilder
+      getAutoscaleOrBuilder() {
+    return autoscale_ == null
+        ? com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale.getDefaultInstance()
+        : autoscale_;
+  }
+
   public static final int CONCURRENCY_FIELD_NUMBER = 16;
   private long concurrency_ = 0L;
   /**
    *
    *
    * <pre>
-   * Maximum number of queries that are allowed to run concurrently in this
-   * reservation. This is a soft limit due to asynchronous nature of the system
-   * and various optimizations for small queries.
-   * Default value is 0 which means that concurrency will be automatically set
-   * based on the reservation size.
+   * Job concurrency target which sets a soft upper bound on the number of jobs
+   * that can run concurrently in this reservation. This is a soft target due to
+   * asynchronous nature of the system and various optimizations for small
+   * queries.
+   * Default value is 0 which means that concurrency target will be
+   * automatically computed by the system.
+   * NOTE: this field is exposed as `target_job_concurrency` in the Information
+   * Schema, DDL and BQ CLI.
    * </pre>
    *
    * <code>int64 concurrency = 16;</code>
@@ -313,6 +1033,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * If set to true, this reservation is placed in the organization's
    * secondary region which is designated for disaster recovery purposes.
    * If false, this reservation is placed in the organization's default region.
+   * NOTE: this is a preview feature. Project must be allow-listed in order to
+   * set this field.
    * </pre>
    *
    * <code>bool multi_region_auxiliary = 14;</code>
@@ -322,6 +1044,41 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean getMultiRegionAuxiliary() {
     return multiRegionAuxiliary_;
+  }
+
+  public static final int EDITION_FIELD_NUMBER = 17;
+  private int edition_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Edition of the reservation.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 17;</code>
+   *
+   * @return The enum numeric value on the wire for edition.
+   */
+  @java.lang.Override
+  public int getEditionValue() {
+    return edition_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Edition of the reservation.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 17;</code>
+   *
+   * @return The edition.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.reservation.v1.Edition getEdition() {
+    com.google.cloud.bigquery.reservation.v1.Edition result =
+        com.google.cloud.bigquery.reservation.v1.Edition.forNumber(edition_);
+    return result == null ? com.google.cloud.bigquery.reservation.v1.Edition.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -347,6 +1104,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     if (ignoreIdleSlots_ != false) {
       output.writeBool(4, ignoreIdleSlots_);
     }
+    if (autoscale_ != null) {
+      output.writeMessage(7, getAutoscale());
+    }
     if (creationTime_ != null) {
       output.writeMessage(8, getCreationTime());
     }
@@ -358,6 +1118,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     }
     if (concurrency_ != 0L) {
       output.writeInt64(16, concurrency_);
+    }
+    if (edition_
+        != com.google.cloud.bigquery.reservation.v1.Edition.EDITION_UNSPECIFIED.getNumber()) {
+      output.writeEnum(17, edition_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -377,6 +1141,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     if (ignoreIdleSlots_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, ignoreIdleSlots_);
     }
+    if (autoscale_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getAutoscale());
+    }
     if (creationTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getCreationTime());
     }
@@ -388,6 +1155,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     }
     if (concurrency_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(16, concurrency_);
+    }
+    if (edition_
+        != com.google.cloud.bigquery.reservation.v1.Edition.EDITION_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(17, edition_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -408,6 +1179,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     if (!getName().equals(other.getName())) return false;
     if (getSlotCapacity() != other.getSlotCapacity()) return false;
     if (getIgnoreIdleSlots() != other.getIgnoreIdleSlots()) return false;
+    if (hasAutoscale() != other.hasAutoscale()) return false;
+    if (hasAutoscale()) {
+      if (!getAutoscale().equals(other.getAutoscale())) return false;
+    }
     if (getConcurrency() != other.getConcurrency()) return false;
     if (hasCreationTime() != other.hasCreationTime()) return false;
     if (hasCreationTime()) {
@@ -418,6 +1193,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (getMultiRegionAuxiliary() != other.getMultiRegionAuxiliary()) return false;
+    if (edition_ != other.edition_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -435,6 +1211,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSlotCapacity());
     hash = (37 * hash) + IGNORE_IDLE_SLOTS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIgnoreIdleSlots());
+    if (hasAutoscale()) {
+      hash = (37 * hash) + AUTOSCALE_FIELD_NUMBER;
+      hash = (53 * hash) + getAutoscale().hashCode();
+    }
     hash = (37 * hash) + CONCURRENCY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getConcurrency());
     if (hasCreationTime()) {
@@ -447,6 +1227,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + MULTI_REGION_AUXILIARY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMultiRegionAuxiliary());
+    hash = (37 * hash) + EDITION_FIELD_NUMBER;
+    hash = (53 * hash) + edition_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -589,6 +1371,11 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       name_ = "";
       slotCapacity_ = 0L;
       ignoreIdleSlots_ = false;
+      autoscale_ = null;
+      if (autoscaleBuilder_ != null) {
+        autoscaleBuilder_.dispose();
+        autoscaleBuilder_ = null;
+      }
       concurrency_ = 0L;
       creationTime_ = null;
       if (creationTimeBuilder_ != null) {
@@ -601,6 +1388,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_ = null;
       }
       multiRegionAuxiliary_ = false;
+      edition_ = 0;
       return this;
     }
 
@@ -647,17 +1435,23 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         result.ignoreIdleSlots_ = ignoreIdleSlots_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.concurrency_ = concurrency_;
+        result.autoscale_ = autoscaleBuilder_ == null ? autoscale_ : autoscaleBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.concurrency_ = concurrency_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.creationTime_ =
             creationTimeBuilder_ == null ? creationTime_ : creationTimeBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.multiRegionAuxiliary_ = multiRegionAuxiliary_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.edition_ = edition_;
       }
     }
 
@@ -718,6 +1512,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       if (other.getIgnoreIdleSlots() != false) {
         setIgnoreIdleSlots(other.getIgnoreIdleSlots());
       }
+      if (other.hasAutoscale()) {
+        mergeAutoscale(other.getAutoscale());
+      }
       if (other.getConcurrency() != 0L) {
         setConcurrency(other.getConcurrency());
       }
@@ -729,6 +1526,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getMultiRegionAuxiliary() != false) {
         setMultiRegionAuxiliary(other.getMultiRegionAuxiliary());
+      }
+      if (other.edition_ != 0) {
+        setEditionValue(other.getEditionValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -774,30 +1574,42 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 32
+            case 58:
+              {
+                input.readMessage(getAutoscaleFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 58
             case 66:
               {
                 input.readMessage(getCreationTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 74
             case 112:
               {
                 multiRegionAuxiliary_ = input.readBool();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 112
             case 128:
               {
                 concurrency_ = input.readInt64();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 128
+            case 136:
+              {
+                edition_ = input.readEnum();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 136
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -952,10 +1764,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * computational power in BigQuery, and serves as the unit of parallelism.
      * Queries using this reservation might use more slots during runtime if
      * ignore_idle_slots is set to false.
-     * If the new reservation's slot capacity exceeds the project's slot capacity
-     * or if total slot capacity of the new reservation and its siblings exceeds
-     * the project's slot capacity, the request will fail with
-     * `google.rpc.Code.RESOURCE_EXHAUSTED`.
+     * If total slot_capacity of the reservation and its siblings
+     * exceeds the total slot_count of all capacity commitments, the request will
+     * fail with `google.rpc.Code.RESOURCE_EXHAUSTED`.
      * NOTE: for reservations in US or EU multi-regions, slot capacity constraints
      * are checked separately for default and auxiliary regions. See
      * multi_region_auxiliary flag for more details.
@@ -977,10 +1788,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * computational power in BigQuery, and serves as the unit of parallelism.
      * Queries using this reservation might use more slots during runtime if
      * ignore_idle_slots is set to false.
-     * If the new reservation's slot capacity exceeds the project's slot capacity
-     * or if total slot capacity of the new reservation and its siblings exceeds
-     * the project's slot capacity, the request will fail with
-     * `google.rpc.Code.RESOURCE_EXHAUSTED`.
+     * If total slot_capacity of the reservation and its siblings
+     * exceeds the total slot_count of all capacity commitments, the request will
+     * fail with `google.rpc.Code.RESOURCE_EXHAUSTED`.
      * NOTE: for reservations in US or EU multi-regions, slot capacity constraints
      * are checked separately for default and auxiliary regions. See
      * multi_region_auxiliary flag for more details.
@@ -1006,10 +1816,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * computational power in BigQuery, and serves as the unit of parallelism.
      * Queries using this reservation might use more slots during runtime if
      * ignore_idle_slots is set to false.
-     * If the new reservation's slot capacity exceeds the project's slot capacity
-     * or if total slot capacity of the new reservation and its siblings exceeds
-     * the project's slot capacity, the request will fail with
-     * `google.rpc.Code.RESOURCE_EXHAUSTED`.
+     * If total slot_capacity of the reservation and its siblings
+     * exceeds the total slot_count of all capacity commitments, the request will
+     * fail with `google.rpc.Code.RESOURCE_EXHAUSTED`.
      * NOTE: for reservations in US or EU multi-regions, slot capacity constraints
      * are checked separately for default and auxiliary regions. See
      * multi_region_auxiliary flag for more details.
@@ -1088,16 +1897,218 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale,
+            com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale.Builder,
+            com.google.cloud.bigquery.reservation.v1.Reservation.AutoscaleOrBuilder>
+        autoscaleBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The configuration parameters for the auto scaling feature. Note this is an
+     * alpha feature.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
+     *
+     * @return Whether the autoscale field is set.
+     */
+    public boolean hasAutoscale() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration parameters for the auto scaling feature. Note this is an
+     * alpha feature.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
+     *
+     * @return The autoscale.
+     */
+    public com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale getAutoscale() {
+      if (autoscaleBuilder_ == null) {
+        return autoscale_ == null
+            ? com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale.getDefaultInstance()
+            : autoscale_;
+      } else {
+        return autoscaleBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration parameters for the auto scaling feature. Note this is an
+     * alpha feature.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
+     */
+    public Builder setAutoscale(
+        com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale value) {
+      if (autoscaleBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        autoscale_ = value;
+      } else {
+        autoscaleBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration parameters for the auto scaling feature. Note this is an
+     * alpha feature.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
+     */
+    public Builder setAutoscale(
+        com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale.Builder builderForValue) {
+      if (autoscaleBuilder_ == null) {
+        autoscale_ = builderForValue.build();
+      } else {
+        autoscaleBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration parameters for the auto scaling feature. Note this is an
+     * alpha feature.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
+     */
+    public Builder mergeAutoscale(
+        com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale value) {
+      if (autoscaleBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && autoscale_ != null
+            && autoscale_
+                != com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale
+                    .getDefaultInstance()) {
+          getAutoscaleBuilder().mergeFrom(value);
+        } else {
+          autoscale_ = value;
+        }
+      } else {
+        autoscaleBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration parameters for the auto scaling feature. Note this is an
+     * alpha feature.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
+     */
+    public Builder clearAutoscale() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      autoscale_ = null;
+      if (autoscaleBuilder_ != null) {
+        autoscaleBuilder_.dispose();
+        autoscaleBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration parameters for the auto scaling feature. Note this is an
+     * alpha feature.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
+     */
+    public com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale.Builder
+        getAutoscaleBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getAutoscaleFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration parameters for the auto scaling feature. Note this is an
+     * alpha feature.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
+     */
+    public com.google.cloud.bigquery.reservation.v1.Reservation.AutoscaleOrBuilder
+        getAutoscaleOrBuilder() {
+      if (autoscaleBuilder_ != null) {
+        return autoscaleBuilder_.getMessageOrBuilder();
+      } else {
+        return autoscale_ == null
+            ? com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale.getDefaultInstance()
+            : autoscale_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The configuration parameters for the auto scaling feature. Note this is an
+     * alpha feature.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale,
+            com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale.Builder,
+            com.google.cloud.bigquery.reservation.v1.Reservation.AutoscaleOrBuilder>
+        getAutoscaleFieldBuilder() {
+      if (autoscaleBuilder_ == null) {
+        autoscaleBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale,
+                com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale.Builder,
+                com.google.cloud.bigquery.reservation.v1.Reservation.AutoscaleOrBuilder>(
+                getAutoscale(), getParentForChildren(), isClean());
+        autoscale_ = null;
+      }
+      return autoscaleBuilder_;
+    }
+
     private long concurrency_;
     /**
      *
      *
      * <pre>
-     * Maximum number of queries that are allowed to run concurrently in this
-     * reservation. This is a soft limit due to asynchronous nature of the system
-     * and various optimizations for small queries.
-     * Default value is 0 which means that concurrency will be automatically set
-     * based on the reservation size.
+     * Job concurrency target which sets a soft upper bound on the number of jobs
+     * that can run concurrently in this reservation. This is a soft target due to
+     * asynchronous nature of the system and various optimizations for small
+     * queries.
+     * Default value is 0 which means that concurrency target will be
+     * automatically computed by the system.
+     * NOTE: this field is exposed as `target_job_concurrency` in the Information
+     * Schema, DDL and BQ CLI.
      * </pre>
      *
      * <code>int64 concurrency = 16;</code>
@@ -1112,11 +2123,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum number of queries that are allowed to run concurrently in this
-     * reservation. This is a soft limit due to asynchronous nature of the system
-     * and various optimizations for small queries.
-     * Default value is 0 which means that concurrency will be automatically set
-     * based on the reservation size.
+     * Job concurrency target which sets a soft upper bound on the number of jobs
+     * that can run concurrently in this reservation. This is a soft target due to
+     * asynchronous nature of the system and various optimizations for small
+     * queries.
+     * Default value is 0 which means that concurrency target will be
+     * automatically computed by the system.
+     * NOTE: this field is exposed as `target_job_concurrency` in the Information
+     * Schema, DDL and BQ CLI.
      * </pre>
      *
      * <code>int64 concurrency = 16;</code>
@@ -1127,7 +2141,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     public Builder setConcurrency(long value) {
 
       concurrency_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1135,11 +2149,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum number of queries that are allowed to run concurrently in this
-     * reservation. This is a soft limit due to asynchronous nature of the system
-     * and various optimizations for small queries.
-     * Default value is 0 which means that concurrency will be automatically set
-     * based on the reservation size.
+     * Job concurrency target which sets a soft upper bound on the number of jobs
+     * that can run concurrently in this reservation. This is a soft target due to
+     * asynchronous nature of the system and various optimizations for small
+     * queries.
+     * Default value is 0 which means that concurrency target will be
+     * automatically computed by the system.
+     * NOTE: this field is exposed as `target_job_concurrency` in the Information
+     * Schema, DDL and BQ CLI.
      * </pre>
      *
      * <code>int64 concurrency = 16;</code>
@@ -1147,7 +2164,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearConcurrency() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       concurrency_ = 0L;
       onChanged();
       return this;
@@ -1173,7 +2190,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the creationTime field is set.
      */
     public boolean hasCreationTime() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -1217,7 +2234,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       } else {
         creationTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1238,7 +2255,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       } else {
         creationTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1255,7 +2272,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreationTime(com.google.protobuf.Timestamp value) {
       if (creationTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && creationTime_ != null
             && creationTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreationTimeBuilder().mergeFrom(value);
@@ -1265,7 +2282,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       } else {
         creationTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1281,7 +2298,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreationTime() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       creationTime_ = null;
       if (creationTimeBuilder_ != null) {
         creationTimeBuilder_.dispose();
@@ -1302,7 +2319,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreationTimeBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getCreationTimeFieldBuilder().getBuilder();
     }
@@ -1374,7 +2391,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1418,7 +2435,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1439,7 +2456,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1456,7 +2473,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -1466,7 +2483,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1482,7 +2499,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -1503,7 +2520,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -1565,6 +2582,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * If set to true, this reservation is placed in the organization's
      * secondary region which is designated for disaster recovery purposes.
      * If false, this reservation is placed in the organization's default region.
+     * NOTE: this is a preview feature. Project must be allow-listed in order to
+     * set this field.
      * </pre>
      *
      * <code>bool multi_region_auxiliary = 14;</code>
@@ -1584,6 +2603,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * If set to true, this reservation is placed in the organization's
      * secondary region which is designated for disaster recovery purposes.
      * If false, this reservation is placed in the organization's default region.
+     * NOTE: this is a preview feature. Project must be allow-listed in order to
+     * set this field.
      * </pre>
      *
      * <code>bool multi_region_auxiliary = 14;</code>
@@ -1594,7 +2615,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     public Builder setMultiRegionAuxiliary(boolean value) {
 
       multiRegionAuxiliary_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1607,6 +2628,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * If set to true, this reservation is placed in the organization's
      * secondary region which is designated for disaster recovery purposes.
      * If false, this reservation is placed in the organization's default region.
+     * NOTE: this is a preview feature. Project must be allow-listed in order to
+     * set this field.
      * </pre>
      *
      * <code>bool multi_region_auxiliary = 14;</code>
@@ -1614,8 +2637,100 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMultiRegionAuxiliary() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       multiRegionAuxiliary_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int edition_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Edition of the reservation.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 17;</code>
+     *
+     * @return The enum numeric value on the wire for edition.
+     */
+    @java.lang.Override
+    public int getEditionValue() {
+      return edition_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Edition of the reservation.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 17;</code>
+     *
+     * @param value The enum numeric value on the wire for edition to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEditionValue(int value) {
+      edition_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Edition of the reservation.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 17;</code>
+     *
+     * @return The edition.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.reservation.v1.Edition getEdition() {
+      com.google.cloud.bigquery.reservation.v1.Edition result =
+          com.google.cloud.bigquery.reservation.v1.Edition.forNumber(edition_);
+      return result == null
+          ? com.google.cloud.bigquery.reservation.v1.Edition.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Edition of the reservation.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 17;</code>
+     *
+     * @param value The edition to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEdition(com.google.cloud.bigquery.reservation.v1.Edition value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000100;
+      edition_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Edition of the reservation.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 17;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEdition() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      edition_ = 0;
       onChanged();
       return this;
     }

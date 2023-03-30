@@ -642,7 +642,7 @@ public final class AwsClustersGrpc {
    * to create and manage Anthos clusters that run on AWS infrastructure.
    * </pre>
    */
-  public abstract static class AwsClustersImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -655,7 +655,7 @@ public final class AwsClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
-    public void createAwsCluster(
+    default void createAwsCluster(
         com.google.cloud.gkemulticloud.v1.CreateAwsClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -669,7 +669,7 @@ public final class AwsClustersGrpc {
      * Updates an [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
      * </pre>
      */
-    public void updateAwsCluster(
+    default void updateAwsCluster(
         com.google.cloud.gkemulticloud.v1.UpdateAwsClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -684,7 +684,7 @@ public final class AwsClustersGrpc {
      * resource.
      * </pre>
      */
-    public void getAwsCluster(
+    default void getAwsCluster(
         com.google.cloud.gkemulticloud.v1.GetAwsClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AwsCluster>
             responseObserver) {
@@ -700,7 +700,7 @@ public final class AwsClustersGrpc {
      * on a given Google Cloud project and region.
      * </pre>
      */
-    public void listAwsClusters(
+    default void listAwsClusters(
         com.google.cloud.gkemulticloud.v1.ListAwsClustersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.ListAwsClustersResponse>
             responseObserver) {
@@ -721,7 +721,7 @@ public final class AwsClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
-    public void deleteAwsCluster(
+    default void deleteAwsCluster(
         com.google.cloud.gkemulticloud.v1.DeleteAwsClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -736,7 +736,7 @@ public final class AwsClustersGrpc {
      * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource.
      * </pre>
      */
-    public void generateAwsAccessToken(
+    default void generateAwsAccessToken(
         com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenResponse>
@@ -756,7 +756,7 @@ public final class AwsClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
-    public void createAwsNodePool(
+    default void createAwsNodePool(
         com.google.cloud.gkemulticloud.v1.CreateAwsNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -770,7 +770,7 @@ public final class AwsClustersGrpc {
      * Updates an [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool].
      * </pre>
      */
-    public void updateAwsNodePool(
+    default void updateAwsNodePool(
         com.google.cloud.gkemulticloud.v1.UpdateAwsNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -785,7 +785,7 @@ public final class AwsClustersGrpc {
      * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource.
      * </pre>
      */
-    public void getAwsNodePool(
+    default void getAwsNodePool(
         com.google.cloud.gkemulticloud.v1.GetAwsNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AwsNodePool>
             responseObserver) {
@@ -802,7 +802,7 @@ public final class AwsClustersGrpc {
      * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
      * </pre>
      */
-    public void listAwsNodePools(
+    default void listAwsNodePools(
         com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsResponse>
             responseObserver) {
@@ -821,7 +821,7 @@ public final class AwsClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
-    public void deleteAwsNodePool(
+    default void deleteAwsNodePool(
         com.google.cloud.gkemulticloud.v1.DeleteAwsNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -836,101 +836,34 @@ public final class AwsClustersGrpc {
      * versions, on a given Google Cloud location.
      * </pre>
      */
-    public void getAwsServerConfig(
+    default void getAwsServerConfig(
         com.google.cloud.gkemulticloud.v1.GetAwsServerConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AwsServerConfig>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetAwsServerConfigMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service AwsClusters.
+   *
+   * <pre>
+   * The AwsClusters API provides a single centrally managed service
+   * to create and manage Anthos clusters that run on AWS infrastructure.
+   * </pre>
+   */
+  public abstract static class AwsClustersImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateAwsClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.CreateAwsClusterRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_AWS_CLUSTER)))
-          .addMethod(
-              getUpdateAwsClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.UpdateAwsClusterRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_AWS_CLUSTER)))
-          .addMethod(
-              getGetAwsClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.GetAwsClusterRequest,
-                      com.google.cloud.gkemulticloud.v1.AwsCluster>(
-                      this, METHODID_GET_AWS_CLUSTER)))
-          .addMethod(
-              getListAwsClustersMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.ListAwsClustersRequest,
-                      com.google.cloud.gkemulticloud.v1.ListAwsClustersResponse>(
-                      this, METHODID_LIST_AWS_CLUSTERS)))
-          .addMethod(
-              getDeleteAwsClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.DeleteAwsClusterRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_AWS_CLUSTER)))
-          .addMethod(
-              getGenerateAwsAccessTokenMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenRequest,
-                      com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenResponse>(
-                      this, METHODID_GENERATE_AWS_ACCESS_TOKEN)))
-          .addMethod(
-              getCreateAwsNodePoolMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.CreateAwsNodePoolRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_AWS_NODE_POOL)))
-          .addMethod(
-              getUpdateAwsNodePoolMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.UpdateAwsNodePoolRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_AWS_NODE_POOL)))
-          .addMethod(
-              getGetAwsNodePoolMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.GetAwsNodePoolRequest,
-                      com.google.cloud.gkemulticloud.v1.AwsNodePool>(
-                      this, METHODID_GET_AWS_NODE_POOL)))
-          .addMethod(
-              getListAwsNodePoolsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsRequest,
-                      com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsResponse>(
-                      this, METHODID_LIST_AWS_NODE_POOLS)))
-          .addMethod(
-              getDeleteAwsNodePoolMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.DeleteAwsNodePoolRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_AWS_NODE_POOL)))
-          .addMethod(
-              getGetAwsServerConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.GetAwsServerConfigRequest,
-                      com.google.cloud.gkemulticloud.v1.AwsServerConfig>(
-                      this, METHODID_GET_AWS_SERVER_CONFIG)))
-          .build();
+      return AwsClustersGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service AwsClusters.
    *
    * <pre>
    * The AwsClusters API provides a single centrally managed service
@@ -1174,7 +1107,7 @@ public final class AwsClustersGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service AwsClusters.
    *
    * <pre>
    * The AwsClusters API provides a single centrally managed service
@@ -1376,7 +1309,7 @@ public final class AwsClustersGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service AwsClusters.
    *
    * <pre>
    * The AwsClusters API provides a single centrally managed service
@@ -1602,10 +1535,10 @@ public final class AwsClustersGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final AwsClustersImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(AwsClustersImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1697,6 +1630,89 @@ public final class AwsClustersGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateAwsClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.CreateAwsClusterRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_AWS_CLUSTER)))
+        .addMethod(
+            getUpdateAwsClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.UpdateAwsClusterRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_AWS_CLUSTER)))
+        .addMethod(
+            getGetAwsClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.GetAwsClusterRequest,
+                    com.google.cloud.gkemulticloud.v1.AwsCluster>(
+                    service, METHODID_GET_AWS_CLUSTER)))
+        .addMethod(
+            getListAwsClustersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.ListAwsClustersRequest,
+                    com.google.cloud.gkemulticloud.v1.ListAwsClustersResponse>(
+                    service, METHODID_LIST_AWS_CLUSTERS)))
+        .addMethod(
+            getDeleteAwsClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.DeleteAwsClusterRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_AWS_CLUSTER)))
+        .addMethod(
+            getGenerateAwsAccessTokenMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenRequest,
+                    com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenResponse>(
+                    service, METHODID_GENERATE_AWS_ACCESS_TOKEN)))
+        .addMethod(
+            getCreateAwsNodePoolMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.CreateAwsNodePoolRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_AWS_NODE_POOL)))
+        .addMethod(
+            getUpdateAwsNodePoolMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.UpdateAwsNodePoolRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_AWS_NODE_POOL)))
+        .addMethod(
+            getGetAwsNodePoolMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.GetAwsNodePoolRequest,
+                    com.google.cloud.gkemulticloud.v1.AwsNodePool>(
+                    service, METHODID_GET_AWS_NODE_POOL)))
+        .addMethod(
+            getListAwsNodePoolsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsRequest,
+                    com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsResponse>(
+                    service, METHODID_LIST_AWS_NODE_POOLS)))
+        .addMethod(
+            getDeleteAwsNodePoolMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.DeleteAwsNodePoolRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_AWS_NODE_POOL)))
+        .addMethod(
+            getGetAwsServerConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.GetAwsServerConfigRequest,
+                    com.google.cloud.gkemulticloud.v1.AwsServerConfig>(
+                    service, METHODID_GET_AWS_SERVER_CONFIG)))
+        .build();
   }
 
   private abstract static class AwsClustersBaseDescriptorSupplier

@@ -50,6 +50,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     etag_ = "";
     deployFailureCause_ = 0;
     phases_ = java.util.Collections.emptyList();
+    controllerRollout_ = "";
   }
 
   @java.lang.Override
@@ -383,6 +384,36 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>PENDING_RELEASE = 7;</code>
      */
     PENDING_RELEASE(7),
+    /**
+     *
+     *
+     * <pre>
+     * The `Rollout` is in the process of being cancelled.
+     * </pre>
+     *
+     * <code>CANCELLING = 8;</code>
+     */
+    CANCELLING(8),
+    /**
+     *
+     *
+     * <pre>
+     * The `Rollout` has been cancelled.
+     * </pre>
+     *
+     * <code>CANCELLED = 9;</code>
+     */
+    CANCELLED(9),
+    /**
+     *
+     *
+     * <pre>
+     * The `Rollout` is halted.
+     * </pre>
+     *
+     * <code>HALTED = 10;</code>
+     */
+    HALTED(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -467,6 +498,36 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>PENDING_RELEASE = 7;</code>
      */
     public static final int PENDING_RELEASE_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * The `Rollout` is in the process of being cancelled.
+     * </pre>
+     *
+     * <code>CANCELLING = 8;</code>
+     */
+    public static final int CANCELLING_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
+     * The `Rollout` has been cancelled.
+     * </pre>
+     *
+     * <code>CANCELLED = 9;</code>
+     */
+    public static final int CANCELLED_VALUE = 9;
+    /**
+     *
+     *
+     * <pre>
+     * The `Rollout` is halted.
+     * </pre>
+     *
+     * <code>HALTED = 10;</code>
+     */
+    public static final int HALTED_VALUE = 10;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -508,6 +569,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
           return PENDING;
         case 7:
           return PENDING_RELEASE;
+        case 8:
+          return CANCELLING;
+        case 9:
+          return CANCELLED;
+        case 10:
+          return HALTED;
         default:
           return null;
       }
@@ -644,6 +711,17 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>VERIFICATION_CONFIG_NOT_FOUND = 6;</code>
      */
     VERIFICATION_CONFIG_NOT_FOUND(6),
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Build failed to fulfill Google Cloud Deploy's request. See
+     * failure_message for additional details.
+     * </pre>
+     *
+     * <code>CLOUD_BUILD_REQUEST_FAILED = 7;</code>
+     */
+    CLOUD_BUILD_REQUEST_FAILED(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -720,6 +798,17 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <code>VERIFICATION_CONFIG_NOT_FOUND = 6;</code>
      */
     public static final int VERIFICATION_CONFIG_NOT_FOUND_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Build failed to fulfill Google Cloud Deploy's request. See
+     * failure_message for additional details.
+     * </pre>
+     *
+     * <code>CLOUD_BUILD_REQUEST_FAILED = 7;</code>
+     */
+    public static final int CLOUD_BUILD_REQUEST_FAILED_VALUE = 7;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -759,6 +848,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
           return RELEASE_ABANDONED;
         case 6:
           return VERIFICATION_CONFIG_NOT_FOUND;
+        case 7:
+          return CLOUD_BUILD_REQUEST_FAILED;
         default:
           return null;
       }
@@ -1620,7 +1711,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Additional information about the rollout failure, if available.
+   * Output only. Additional information about the rollout failure, if
+   * available.
    * </pre>
    *
    * <code>string failure_reason = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1643,7 +1735,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Additional information about the rollout failure, if available.
+   * Output only. Additional information about the rollout failure, if
+   * available.
    * </pre>
    *
    * <code>string failure_reason = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1671,8 +1764,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name of the Cloud Build `Build` object that is used to deploy
-   * the Rollout. Format is
+   * Output only. The resource name of the Cloud Build `Build` object that is
+   * used to deploy the Rollout. Format is
    * `projects/{project}/locations/{location}/builds/{build}`.
    * </pre>
    *
@@ -1698,8 +1791,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name of the Cloud Build `Build` object that is used to deploy
-   * the Rollout. Format is
+   * Output only. The resource name of the Cloud Build `Build` object that is
+   * used to deploy the Rollout. Format is
    * `projects/{project}/locations/{location}/builds/{build}`.
    * </pre>
    *
@@ -1783,8 +1876,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The reason this rollout failed. This will always be unspecified while the
-   * rollout is in progress.
+   * Output only. The reason this rollout failed. This will always be
+   * unspecified while the rollout is in progress.
    * </pre>
    *
    * <code>
@@ -1801,8 +1894,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The reason this rollout failed. This will always be unspecified while the
-   * rollout is in progress.
+   * Output only. The reason this rollout failed. This will always be
+   * unspecified while the rollout is in progress.
    * </pre>
    *
    * <code>
@@ -1951,6 +2044,61 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     return metadata_ == null ? com.google.cloud.deploy.v1.Metadata.getDefaultInstance() : metadata_;
   }
 
+  public static final int CONTROLLER_ROLLOUT_FIELD_NUMBER = 25;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object controllerRollout_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Name of the `ControllerRollout`. Format is projects/{project}/
+   * locations/{location}/deliveryPipelines/{deliveryPipeline}/
+   * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+   * </pre>
+   *
+   * <code>string controller_rollout = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The controllerRollout.
+   */
+  @java.lang.Override
+  public java.lang.String getControllerRollout() {
+    java.lang.Object ref = controllerRollout_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      controllerRollout_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Name of the `ControllerRollout`. Format is projects/{project}/
+   * locations/{location}/deliveryPipelines/{deliveryPipeline}/
+   * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+   * </pre>
+   *
+   * <code>string controller_rollout = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for controllerRollout.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getControllerRolloutBytes() {
+    java.lang.Object ref = controllerRollout_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      controllerRollout_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2022,6 +2170,9 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     }
     if (metadata_ != null) {
       output.writeMessage(24, getMetadata());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(controllerRollout_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 25, controllerRollout_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2106,6 +2257,9 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     if (metadata_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getMetadata());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(controllerRollout_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, controllerRollout_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2158,6 +2312,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
     if (hasMetadata()) {
       if (!getMetadata().equals(other.getMetadata())) return false;
     }
+    if (!getControllerRollout().equals(other.getControllerRollout())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2225,6 +2380,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMetadata().hashCode();
     }
+    hash = (37 * hash) + CONTROLLER_ROLLOUT_FIELD_NUMBER;
+    hash = (53 * hash) + getControllerRollout().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2437,6 +2594,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
+      controllerRollout_ = "";
       return this;
     }
 
@@ -2544,6 +2702,9 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
         result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.controllerRollout_ = controllerRollout_;
       }
     }
 
@@ -2684,6 +2845,11 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasMetadata()) {
         mergeMetadata(other.getMetadata());
+      }
+      if (!other.getControllerRollout().isEmpty()) {
+        controllerRollout_ = other.controllerRollout_;
+        bitField0_ |= 0x00080000;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2843,6 +3009,12 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00040000;
                 break;
               } // case 194
+            case 202:
+              {
+                controllerRollout_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 202
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4926,7 +5098,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Additional information about the rollout failure, if available.
+     * Output only. Additional information about the rollout failure, if
+     * available.
      * </pre>
      *
      * <code>string failure_reason = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4948,7 +5121,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Additional information about the rollout failure, if available.
+     * Output only. Additional information about the rollout failure, if
+     * available.
      * </pre>
      *
      * <code>string failure_reason = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4970,7 +5144,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Additional information about the rollout failure, if available.
+     * Output only. Additional information about the rollout failure, if
+     * available.
      * </pre>
      *
      * <code>string failure_reason = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4991,7 +5166,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Additional information about the rollout failure, if available.
+     * Output only. Additional information about the rollout failure, if
+     * available.
      * </pre>
      *
      * <code>string failure_reason = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5008,7 +5184,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Additional information about the rollout failure, if available.
+     * Output only. Additional information about the rollout failure, if
+     * available.
      * </pre>
      *
      * <code>string failure_reason = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5032,8 +5209,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Cloud Build `Build` object that is used to deploy
-     * the Rollout. Format is
+     * Output only. The resource name of the Cloud Build `Build` object that is
+     * used to deploy the Rollout. Format is
      * `projects/{project}/locations/{location}/builds/{build}`.
      * </pre>
      *
@@ -5058,8 +5235,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Cloud Build `Build` object that is used to deploy
-     * the Rollout. Format is
+     * Output only. The resource name of the Cloud Build `Build` object that is
+     * used to deploy the Rollout. Format is
      * `projects/{project}/locations/{location}/builds/{build}`.
      * </pre>
      *
@@ -5084,8 +5261,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Cloud Build `Build` object that is used to deploy
-     * the Rollout. Format is
+     * Output only. The resource name of the Cloud Build `Build` object that is
+     * used to deploy the Rollout. Format is
      * `projects/{project}/locations/{location}/builds/{build}`.
      * </pre>
      *
@@ -5109,8 +5286,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Cloud Build `Build` object that is used to deploy
-     * the Rollout. Format is
+     * Output only. The resource name of the Cloud Build `Build` object that is
+     * used to deploy the Rollout. Format is
      * `projects/{project}/locations/{location}/builds/{build}`.
      * </pre>
      *
@@ -5130,8 +5307,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Cloud Build `Build` object that is used to deploy
-     * the Rollout. Format is
+     * Output only. The resource name of the Cloud Build `Build` object that is
+     * used to deploy the Rollout. Format is
      * `projects/{project}/locations/{location}/builds/{build}`.
      * </pre>
      *
@@ -5274,8 +5451,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The reason this rollout failed. This will always be unspecified while the
-     * rollout is in progress.
+     * Output only. The reason this rollout failed. This will always be
+     * unspecified while the rollout is in progress.
      * </pre>
      *
      * <code>
@@ -5292,8 +5469,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The reason this rollout failed. This will always be unspecified while the
-     * rollout is in progress.
+     * Output only. The reason this rollout failed. This will always be
+     * unspecified while the rollout is in progress.
      * </pre>
      *
      * <code>
@@ -5313,8 +5490,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The reason this rollout failed. This will always be unspecified while the
-     * rollout is in progress.
+     * Output only. The reason this rollout failed. This will always be
+     * unspecified while the rollout is in progress.
      * </pre>
      *
      * <code>
@@ -5333,8 +5510,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The reason this rollout failed. This will always be unspecified while the
-     * rollout is in progress.
+     * Output only. The reason this rollout failed. This will always be
+     * unspecified while the rollout is in progress.
      * </pre>
      *
      * <code>
@@ -5357,8 +5534,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The reason this rollout failed. This will always be unspecified while the
-     * rollout is in progress.
+     * Output only. The reason this rollout failed. This will always be
+     * unspecified while the rollout is in progress.
      * </pre>
      *
      * <code>
@@ -5955,6 +6132,122 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
         metadata_ = null;
       }
       return metadataBuilder_;
+    }
+
+    private java.lang.Object controllerRollout_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the `ControllerRollout`. Format is projects/{project}/
+     * locations/{location}/deliveryPipelines/{deliveryPipeline}/
+     * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+     * </pre>
+     *
+     * <code>string controller_rollout = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The controllerRollout.
+     */
+    public java.lang.String getControllerRollout() {
+      java.lang.Object ref = controllerRollout_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        controllerRollout_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the `ControllerRollout`. Format is projects/{project}/
+     * locations/{location}/deliveryPipelines/{deliveryPipeline}/
+     * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+     * </pre>
+     *
+     * <code>string controller_rollout = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for controllerRollout.
+     */
+    public com.google.protobuf.ByteString getControllerRolloutBytes() {
+      java.lang.Object ref = controllerRollout_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        controllerRollout_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the `ControllerRollout`. Format is projects/{project}/
+     * locations/{location}/deliveryPipelines/{deliveryPipeline}/
+     * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+     * </pre>
+     *
+     * <code>string controller_rollout = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The controllerRollout to set.
+     * @return This builder for chaining.
+     */
+    public Builder setControllerRollout(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      controllerRollout_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the `ControllerRollout`. Format is projects/{project}/
+     * locations/{location}/deliveryPipelines/{deliveryPipeline}/
+     * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+     * </pre>
+     *
+     * <code>string controller_rollout = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearControllerRollout() {
+      controllerRollout_ = getDefaultInstance().getControllerRollout();
+      bitField0_ = (bitField0_ & ~0x00080000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Name of the `ControllerRollout`. Format is projects/{project}/
+     * locations/{location}/deliveryPipelines/{deliveryPipeline}/
+     * releases/{release}/rollouts/[a-z][a-z0-9&#92;-]{0,62}.
+     * </pre>
+     *
+     * <code>string controller_rollout = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for controllerRollout to set.
+     * @return This builder for chaining.
+     */
+    public Builder setControllerRolloutBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      controllerRollout_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

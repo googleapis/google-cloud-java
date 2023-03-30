@@ -258,7 +258,7 @@ public final class PrivateCatalogGrpc {
    * [google.cloud.privatecatalogproducer.v1beta.Version][].
    * </pre>
    */
-  public abstract static class PrivateCatalogImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -268,7 +268,7 @@ public final class PrivateCatalogGrpc {
      * scope of the consumer cloud resource hierarchy context.
      * </pre>
      */
-    public void searchCatalogs(
+    default void searchCatalogs(
         com.google.cloud.privatecatalog.v1beta1.SearchCatalogsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.privatecatalog.v1beta1.SearchCatalogsResponse>
             responseObserver) {
@@ -284,7 +284,7 @@ public final class PrivateCatalogGrpc {
      * scope of the consumer cloud resource hierarchy context.
      * </pre>
      */
-    public void searchProducts(
+    default void searchProducts(
         com.google.cloud.privatecatalog.v1beta1.SearchProductsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.privatecatalog.v1beta1.SearchProductsResponse>
             responseObserver) {
@@ -300,44 +300,50 @@ public final class PrivateCatalogGrpc {
      * scope of the consumer cloud resource hierarchy context.
      * </pre>
      */
-    public void searchVersions(
+    default void searchVersions(
         com.google.cloud.privatecatalog.v1beta1.SearchVersionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.privatecatalog.v1beta1.SearchVersionsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSearchVersionsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service PrivateCatalog.
+   *
+   * <pre>
+   * `PrivateCatalog` allows catalog consumers to retrieve `Catalog`, `Product`
+   * and `Version` resources under a target resource context.
+   * `Catalog` is computed based on the [Association][]s linked to the target
+   * resource and its ancestors. Each association's
+   * [google.cloud.privatecatalogproducer.v1beta.Catalog][] is transformed into a
+   * `Catalog`. If multiple associations have the same parent
+   * [google.cloud.privatecatalogproducer.v1beta.Catalog][], they are
+   * de-duplicated into one `Catalog`. Users must have
+   * `cloudprivatecatalog.catalogTargets.get` IAM permission on the resource
+   * context in order to access catalogs. `Catalog` contains the resource name and
+   * a subset of data of the original
+   * [google.cloud.privatecatalogproducer.v1beta.Catalog][].
+   * `Product` is child resource of the catalog. A `Product` contains the resource
+   * name and a subset of the data of the original
+   * [google.cloud.privatecatalogproducer.v1beta.Product][].
+   * `Version` is child resource of the product. A `Version` contains the resource
+   * name and a subset of the data of the original
+   * [google.cloud.privatecatalogproducer.v1beta.Version][].
+   * </pre>
+   */
+  public abstract static class PrivateCatalogImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getSearchCatalogsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.privatecatalog.v1beta1.SearchCatalogsRequest,
-                      com.google.cloud.privatecatalog.v1beta1.SearchCatalogsResponse>(
-                      this, METHODID_SEARCH_CATALOGS)))
-          .addMethod(
-              getSearchProductsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.privatecatalog.v1beta1.SearchProductsRequest,
-                      com.google.cloud.privatecatalog.v1beta1.SearchProductsResponse>(
-                      this, METHODID_SEARCH_PRODUCTS)))
-          .addMethod(
-              getSearchVersionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.privatecatalog.v1beta1.SearchVersionsRequest,
-                      com.google.cloud.privatecatalog.v1beta1.SearchVersionsResponse>(
-                      this, METHODID_SEARCH_VERSIONS)))
-          .build();
+      return PrivateCatalogGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service PrivateCatalog.
    *
    * <pre>
    * `PrivateCatalog` allows catalog consumers to retrieve `Catalog`, `Product`
@@ -427,7 +433,7 @@ public final class PrivateCatalogGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service PrivateCatalog.
    *
    * <pre>
    * `PrivateCatalog` allows catalog consumers to retrieve `Catalog`, `Product`
@@ -506,7 +512,7 @@ public final class PrivateCatalogGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service PrivateCatalog.
    *
    * <pre>
    * `PrivateCatalog` allows catalog consumers to retrieve `Catalog`, `Product`
@@ -596,10 +602,10 @@ public final class PrivateCatalogGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final PrivateCatalogImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(PrivateCatalogImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -643,6 +649,32 @@ public final class PrivateCatalogGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getSearchCatalogsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.privatecatalog.v1beta1.SearchCatalogsRequest,
+                    com.google.cloud.privatecatalog.v1beta1.SearchCatalogsResponse>(
+                    service, METHODID_SEARCH_CATALOGS)))
+        .addMethod(
+            getSearchProductsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.privatecatalog.v1beta1.SearchProductsRequest,
+                    com.google.cloud.privatecatalog.v1beta1.SearchProductsResponse>(
+                    service, METHODID_SEARCH_PRODUCTS)))
+        .addMethod(
+            getSearchVersionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.privatecatalog.v1beta1.SearchVersionsRequest,
+                    com.google.cloud.privatecatalog.v1beta1.SearchVersionsResponse>(
+                    service, METHODID_SEARCH_VERSIONS)))
+        .build();
   }
 
   private abstract static class PrivateCatalogBaseDescriptorSupplier

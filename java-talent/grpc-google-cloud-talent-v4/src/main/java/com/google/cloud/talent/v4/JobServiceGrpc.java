@@ -500,7 +500,7 @@ public final class JobServiceGrpc {
    * A service handles job management, including job CRUD, enumeration and search.
    * </pre>
    */
-  public abstract static class JobServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -511,7 +511,7 @@ public final class JobServiceGrpc {
      * up to 5 minutes.
      * </pre>
      */
-    public void createJob(
+    default void createJob(
         com.google.cloud.talent.v4.CreateJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4.Job> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateJobMethod(), responseObserver);
@@ -524,7 +524,7 @@ public final class JobServiceGrpc {
      * Begins executing a batch create jobs operation.
      * </pre>
      */
-    public void batchCreateJobs(
+    default void batchCreateJobs(
         com.google.cloud.talent.v4.BatchCreateJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -539,7 +539,7 @@ public final class JobServiceGrpc {
      * within the last 90 days.
      * </pre>
      */
-    public void getJob(
+    default void getJob(
         com.google.cloud.talent.v4.GetJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4.Job> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetJobMethod(), responseObserver);
@@ -554,7 +554,7 @@ public final class JobServiceGrpc {
      * seconds, but it may take up to 5 minutes.
      * </pre>
      */
-    public void updateJob(
+    default void updateJob(
         com.google.cloud.talent.v4.UpdateJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4.Job> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateJobMethod(), responseObserver);
@@ -567,7 +567,7 @@ public final class JobServiceGrpc {
      * Begins executing a batch update jobs operation.
      * </pre>
      */
-    public void batchUpdateJobs(
+    default void batchUpdateJobs(
         com.google.cloud.talent.v4.BatchUpdateJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -583,7 +583,7 @@ public final class JobServiceGrpc {
      * up to 5 minutes.
      * </pre>
      */
-    public void deleteJob(
+    default void deleteJob(
         com.google.cloud.talent.v4.DeleteJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteJobMethod(), responseObserver);
@@ -596,7 +596,7 @@ public final class JobServiceGrpc {
      * Begins executing a batch delete jobs operation.
      * </pre>
      */
-    public void batchDeleteJobs(
+    default void batchDeleteJobs(
         com.google.cloud.talent.v4.BatchDeleteJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -610,7 +610,7 @@ public final class JobServiceGrpc {
      * Lists jobs by filter.
      * </pre>
      */
-    public void listJobs(
+    default void listJobs(
         com.google.cloud.talent.v4.ListJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4.ListJobsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListJobsMethod(), responseObserver);
@@ -628,7 +628,7 @@ public final class JobServiceGrpc {
      * against.
      * </pre>
      */
-    public void searchJobs(
+    default void searchJobs(
         com.google.cloud.talent.v4.SearchJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4.SearchJobsResponse>
             responseObserver) {
@@ -651,84 +651,32 @@ public final class JobServiceGrpc {
      * against.
      * </pre>
      */
-    public void searchJobsForAlert(
+    default void searchJobsForAlert(
         com.google.cloud.talent.v4.SearchJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.talent.v4.SearchJobsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSearchJobsForAlertMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service JobService.
+   *
+   * <pre>
+   * A service handles job management, including job CRUD, enumeration and search.
+   * </pre>
+   */
+  public abstract static class JobServiceImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.talent.v4.CreateJobRequest, com.google.cloud.talent.v4.Job>(
-                      this, METHODID_CREATE_JOB)))
-          .addMethod(
-              getBatchCreateJobsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.talent.v4.BatchCreateJobsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_BATCH_CREATE_JOBS)))
-          .addMethod(
-              getGetJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.talent.v4.GetJobRequest, com.google.cloud.talent.v4.Job>(
-                      this, METHODID_GET_JOB)))
-          .addMethod(
-              getUpdateJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.talent.v4.UpdateJobRequest, com.google.cloud.talent.v4.Job>(
-                      this, METHODID_UPDATE_JOB)))
-          .addMethod(
-              getBatchUpdateJobsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.talent.v4.BatchUpdateJobsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_BATCH_UPDATE_JOBS)))
-          .addMethod(
-              getDeleteJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.talent.v4.DeleteJobRequest, com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_JOB)))
-          .addMethod(
-              getBatchDeleteJobsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.talent.v4.BatchDeleteJobsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_BATCH_DELETE_JOBS)))
-          .addMethod(
-              getListJobsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.talent.v4.ListJobsRequest,
-                      com.google.cloud.talent.v4.ListJobsResponse>(this, METHODID_LIST_JOBS)))
-          .addMethod(
-              getSearchJobsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.talent.v4.SearchJobsRequest,
-                      com.google.cloud.talent.v4.SearchJobsResponse>(this, METHODID_SEARCH_JOBS)))
-          .addMethod(
-              getSearchJobsForAlertMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.talent.v4.SearchJobsRequest,
-                      com.google.cloud.talent.v4.SearchJobsResponse>(
-                      this, METHODID_SEARCH_JOBS_FOR_ALERT)))
-          .build();
+      return JobServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service JobService.
    *
    * <pre>
    * A service handles job management, including job CRUD, enumeration and search.
@@ -917,7 +865,7 @@ public final class JobServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service JobService.
    *
    * <pre>
    * A service handles job management, including job CRUD, enumeration and search.
@@ -1087,7 +1035,7 @@ public final class JobServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service JobService.
    *
    * <pre>
    * A service handles job management, including job CRUD, enumeration and search.
@@ -1275,10 +1223,10 @@ public final class JobServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final JobServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(JobServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1354,6 +1302,72 @@ public final class JobServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.talent.v4.CreateJobRequest, com.google.cloud.talent.v4.Job>(
+                    service, METHODID_CREATE_JOB)))
+        .addMethod(
+            getBatchCreateJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.talent.v4.BatchCreateJobsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_BATCH_CREATE_JOBS)))
+        .addMethod(
+            getGetJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.talent.v4.GetJobRequest, com.google.cloud.talent.v4.Job>(
+                    service, METHODID_GET_JOB)))
+        .addMethod(
+            getUpdateJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.talent.v4.UpdateJobRequest, com.google.cloud.talent.v4.Job>(
+                    service, METHODID_UPDATE_JOB)))
+        .addMethod(
+            getBatchUpdateJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.talent.v4.BatchUpdateJobsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_BATCH_UPDATE_JOBS)))
+        .addMethod(
+            getDeleteJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.talent.v4.DeleteJobRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_JOB)))
+        .addMethod(
+            getBatchDeleteJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.talent.v4.BatchDeleteJobsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_BATCH_DELETE_JOBS)))
+        .addMethod(
+            getListJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.talent.v4.ListJobsRequest,
+                    com.google.cloud.talent.v4.ListJobsResponse>(service, METHODID_LIST_JOBS)))
+        .addMethod(
+            getSearchJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.talent.v4.SearchJobsRequest,
+                    com.google.cloud.talent.v4.SearchJobsResponse>(service, METHODID_SEARCH_JOBS)))
+        .addMethod(
+            getSearchJobsForAlertMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.talent.v4.SearchJobsRequest,
+                    com.google.cloud.talent.v4.SearchJobsResponse>(
+                    service, METHODID_SEARCH_JOBS_FOR_ALERT)))
+        .build();
   }
 
   private abstract static class JobServiceBaseDescriptorSupplier

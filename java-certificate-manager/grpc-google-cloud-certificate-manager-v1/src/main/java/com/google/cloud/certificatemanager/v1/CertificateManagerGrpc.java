@@ -1329,7 +1329,7 @@ public final class CertificateManagerGrpc {
    * Provides methods to manage Cloud Certificate Manager entities.
    * </pre>
    */
-  public abstract static class CertificateManagerImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -1338,7 +1338,7 @@ public final class CertificateManagerGrpc {
      * Lists Certificates in a given project and location.
      * </pre>
      */
-    public void listCertificates(
+    default void listCertificates(
         com.google.cloud.certificatemanager.v1.ListCertificatesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.certificatemanager.v1.ListCertificatesResponse>
             responseObserver) {
@@ -1353,7 +1353,7 @@ public final class CertificateManagerGrpc {
      * Gets details of a single Certificate.
      * </pre>
      */
-    public void getCertificate(
+    default void getCertificate(
         com.google.cloud.certificatemanager.v1.GetCertificateRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.certificatemanager.v1.Certificate>
             responseObserver) {
@@ -1368,7 +1368,7 @@ public final class CertificateManagerGrpc {
      * Creates a new Certificate in a given project and location.
      * </pre>
      */
-    public void createCertificate(
+    default void createCertificate(
         com.google.cloud.certificatemanager.v1.CreateCertificateRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1382,7 +1382,7 @@ public final class CertificateManagerGrpc {
      * Updates a Certificate.
      * </pre>
      */
-    public void updateCertificate(
+    default void updateCertificate(
         com.google.cloud.certificatemanager.v1.UpdateCertificateRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1396,7 +1396,7 @@ public final class CertificateManagerGrpc {
      * Deletes a single Certificate.
      * </pre>
      */
-    public void deleteCertificate(
+    default void deleteCertificate(
         com.google.cloud.certificatemanager.v1.DeleteCertificateRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1410,7 +1410,7 @@ public final class CertificateManagerGrpc {
      * Lists CertificateMaps in a given project and location.
      * </pre>
      */
-    public void listCertificateMaps(
+    default void listCertificateMaps(
         com.google.cloud.certificatemanager.v1.ListCertificateMapsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.certificatemanager.v1.ListCertificateMapsResponse>
@@ -1426,7 +1426,7 @@ public final class CertificateManagerGrpc {
      * Gets details of a single CertificateMap.
      * </pre>
      */
-    public void getCertificateMap(
+    default void getCertificateMap(
         com.google.cloud.certificatemanager.v1.GetCertificateMapRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.certificatemanager.v1.CertificateMap>
             responseObserver) {
@@ -1441,7 +1441,7 @@ public final class CertificateManagerGrpc {
      * Creates a new CertificateMap in a given project and location.
      * </pre>
      */
-    public void createCertificateMap(
+    default void createCertificateMap(
         com.google.cloud.certificatemanager.v1.CreateCertificateMapRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1455,7 +1455,7 @@ public final class CertificateManagerGrpc {
      * Updates a CertificateMap.
      * </pre>
      */
-    public void updateCertificateMap(
+    default void updateCertificateMap(
         com.google.cloud.certificatemanager.v1.UpdateCertificateMapRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1471,7 +1471,7 @@ public final class CertificateManagerGrpc {
      * the map before calling this method.
      * </pre>
      */
-    public void deleteCertificateMap(
+    default void deleteCertificateMap(
         com.google.cloud.certificatemanager.v1.DeleteCertificateMapRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1485,7 +1485,7 @@ public final class CertificateManagerGrpc {
      * Lists CertificateMapEntries in a given project and location.
      * </pre>
      */
-    public void listCertificateMapEntries(
+    default void listCertificateMapEntries(
         com.google.cloud.certificatemanager.v1.ListCertificateMapEntriesRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.certificatemanager.v1.ListCertificateMapEntriesResponse>
@@ -1501,7 +1501,7 @@ public final class CertificateManagerGrpc {
      * Gets details of a single CertificateMapEntry.
      * </pre>
      */
-    public void getCertificateMapEntry(
+    default void getCertificateMapEntry(
         com.google.cloud.certificatemanager.v1.GetCertificateMapEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.certificatemanager.v1.CertificateMapEntry>
             responseObserver) {
@@ -1516,7 +1516,7 @@ public final class CertificateManagerGrpc {
      * Creates a new CertificateMapEntry in a given project and location.
      * </pre>
      */
-    public void createCertificateMapEntry(
+    default void createCertificateMapEntry(
         com.google.cloud.certificatemanager.v1.CreateCertificateMapEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1530,7 +1530,7 @@ public final class CertificateManagerGrpc {
      * Updates a CertificateMapEntry.
      * </pre>
      */
-    public void updateCertificateMapEntry(
+    default void updateCertificateMapEntry(
         com.google.cloud.certificatemanager.v1.UpdateCertificateMapEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1544,7 +1544,7 @@ public final class CertificateManagerGrpc {
      * Deletes a single CertificateMapEntry.
      * </pre>
      */
-    public void deleteCertificateMapEntry(
+    default void deleteCertificateMapEntry(
         com.google.cloud.certificatemanager.v1.DeleteCertificateMapEntryRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1558,7 +1558,7 @@ public final class CertificateManagerGrpc {
      * Lists DnsAuthorizations in a given project and location.
      * </pre>
      */
-    public void listDnsAuthorizations(
+    default void listDnsAuthorizations(
         com.google.cloud.certificatemanager.v1.ListDnsAuthorizationsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.certificatemanager.v1.ListDnsAuthorizationsResponse>
@@ -1574,7 +1574,7 @@ public final class CertificateManagerGrpc {
      * Gets details of a single DnsAuthorization.
      * </pre>
      */
-    public void getDnsAuthorization(
+    default void getDnsAuthorization(
         com.google.cloud.certificatemanager.v1.GetDnsAuthorizationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.certificatemanager.v1.DnsAuthorization>
             responseObserver) {
@@ -1589,7 +1589,7 @@ public final class CertificateManagerGrpc {
      * Creates a new DnsAuthorization in a given project and location.
      * </pre>
      */
-    public void createDnsAuthorization(
+    default void createDnsAuthorization(
         com.google.cloud.certificatemanager.v1.CreateDnsAuthorizationRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1603,7 +1603,7 @@ public final class CertificateManagerGrpc {
      * Updates a DnsAuthorization.
      * </pre>
      */
-    public void updateDnsAuthorization(
+    default void updateDnsAuthorization(
         com.google.cloud.certificatemanager.v1.UpdateDnsAuthorizationRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1617,7 +1617,7 @@ public final class CertificateManagerGrpc {
      * Deletes a single DnsAuthorization.
      * </pre>
      */
-    public void deleteDnsAuthorization(
+    default void deleteDnsAuthorization(
         com.google.cloud.certificatemanager.v1.DeleteDnsAuthorizationRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1631,7 +1631,7 @@ public final class CertificateManagerGrpc {
      * Lists CertificateIssuanceConfigs in a given project and location.
      * </pre>
      */
-    public void listCertificateIssuanceConfigs(
+    default void listCertificateIssuanceConfigs(
         com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsResponse>
@@ -1647,7 +1647,7 @@ public final class CertificateManagerGrpc {
      * Gets details of a single CertificateIssuanceConfig.
      * </pre>
      */
-    public void getCertificateIssuanceConfig(
+    default void getCertificateIssuanceConfig(
         com.google.cloud.certificatemanager.v1.GetCertificateIssuanceConfigRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig>
@@ -1663,7 +1663,7 @@ public final class CertificateManagerGrpc {
      * Creates a new CertificateIssuanceConfig in a given project and location.
      * </pre>
      */
-    public void createCertificateIssuanceConfig(
+    default void createCertificateIssuanceConfig(
         com.google.cloud.certificatemanager.v1.CreateCertificateIssuanceConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1677,182 +1677,50 @@ public final class CertificateManagerGrpc {
      * Deletes a single CertificateIssuanceConfig.
      * </pre>
      */
-    public void deleteCertificateIssuanceConfig(
+    default void deleteCertificateIssuanceConfig(
         com.google.cloud.certificatemanager.v1.DeleteCertificateIssuanceConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteCertificateIssuanceConfigMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service CertificateManager.
+   *
+   * <pre>
+   * API Overview
+   * Certificates Manager API allows customers to see and manage all their TLS
+   * certificates.
+   * Certificates Manager API service provides methods to manage certificates,
+   * group them into collections, and create serving configuration that can be
+   * easily applied to other Cloud resources e.g. Target Proxies.
+   * Data Model
+   * The Certificates Manager service exposes the following resources:
+   * * `Certificate` that describes a single TLS certificate.
+   * * `CertificateMap` that describes a collection of certificates that can be
+   * attached to a target resource.
+   * * `CertificateMapEntry` that describes a single configuration entry that
+   * consists of a SNI and a group of certificates. It's a subresource of
+   * CertificateMap.
+   * Certificate, CertificateMap and CertificateMapEntry IDs
+   * have to fully match the regexp `[a-z0-9-]{1,63}`. In other words,
+   * - only lower case letters, digits, and hyphen are allowed
+   * - length of the resource ID has to be in [1,63] range.
+   * Provides methods to manage Cloud Certificate Manager entities.
+   * </pre>
+   */
+  public abstract static class CertificateManagerImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListCertificatesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.certificatemanager.v1.ListCertificatesRequest,
-                      com.google.cloud.certificatemanager.v1.ListCertificatesResponse>(
-                      this, METHODID_LIST_CERTIFICATES)))
-          .addMethod(
-              getGetCertificateMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.certificatemanager.v1.GetCertificateRequest,
-                      com.google.cloud.certificatemanager.v1.Certificate>(
-                      this, METHODID_GET_CERTIFICATE)))
-          .addMethod(
-              getCreateCertificateMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.certificatemanager.v1.CreateCertificateRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_CERTIFICATE)))
-          .addMethod(
-              getUpdateCertificateMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.certificatemanager.v1.UpdateCertificateRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_CERTIFICATE)))
-          .addMethod(
-              getDeleteCertificateMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.certificatemanager.v1.DeleteCertificateRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_CERTIFICATE)))
-          .addMethod(
-              getListCertificateMapsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.certificatemanager.v1.ListCertificateMapsRequest,
-                      com.google.cloud.certificatemanager.v1.ListCertificateMapsResponse>(
-                      this, METHODID_LIST_CERTIFICATE_MAPS)))
-          .addMethod(
-              getGetCertificateMapMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.certificatemanager.v1.GetCertificateMapRequest,
-                      com.google.cloud.certificatemanager.v1.CertificateMap>(
-                      this, METHODID_GET_CERTIFICATE_MAP)))
-          .addMethod(
-              getCreateCertificateMapMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.certificatemanager.v1.CreateCertificateMapRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_CERTIFICATE_MAP)))
-          .addMethod(
-              getUpdateCertificateMapMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.certificatemanager.v1.UpdateCertificateMapRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_CERTIFICATE_MAP)))
-          .addMethod(
-              getDeleteCertificateMapMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.certificatemanager.v1.DeleteCertificateMapRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_CERTIFICATE_MAP)))
-          .addMethod(
-              getListCertificateMapEntriesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.certificatemanager.v1.ListCertificateMapEntriesRequest,
-                      com.google.cloud.certificatemanager.v1.ListCertificateMapEntriesResponse>(
-                      this, METHODID_LIST_CERTIFICATE_MAP_ENTRIES)))
-          .addMethod(
-              getGetCertificateMapEntryMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.certificatemanager.v1.GetCertificateMapEntryRequest,
-                      com.google.cloud.certificatemanager.v1.CertificateMapEntry>(
-                      this, METHODID_GET_CERTIFICATE_MAP_ENTRY)))
-          .addMethod(
-              getCreateCertificateMapEntryMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.certificatemanager.v1.CreateCertificateMapEntryRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_CREATE_CERTIFICATE_MAP_ENTRY)))
-          .addMethod(
-              getUpdateCertificateMapEntryMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.certificatemanager.v1.UpdateCertificateMapEntryRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_UPDATE_CERTIFICATE_MAP_ENTRY)))
-          .addMethod(
-              getDeleteCertificateMapEntryMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.certificatemanager.v1.DeleteCertificateMapEntryRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_DELETE_CERTIFICATE_MAP_ENTRY)))
-          .addMethod(
-              getListDnsAuthorizationsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.certificatemanager.v1.ListDnsAuthorizationsRequest,
-                      com.google.cloud.certificatemanager.v1.ListDnsAuthorizationsResponse>(
-                      this, METHODID_LIST_DNS_AUTHORIZATIONS)))
-          .addMethod(
-              getGetDnsAuthorizationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.certificatemanager.v1.GetDnsAuthorizationRequest,
-                      com.google.cloud.certificatemanager.v1.DnsAuthorization>(
-                      this, METHODID_GET_DNS_AUTHORIZATION)))
-          .addMethod(
-              getCreateDnsAuthorizationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.certificatemanager.v1.CreateDnsAuthorizationRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_DNS_AUTHORIZATION)))
-          .addMethod(
-              getUpdateDnsAuthorizationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.certificatemanager.v1.UpdateDnsAuthorizationRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_DNS_AUTHORIZATION)))
-          .addMethod(
-              getDeleteDnsAuthorizationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.certificatemanager.v1.DeleteDnsAuthorizationRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_DNS_AUTHORIZATION)))
-          .addMethod(
-              getListCertificateIssuanceConfigsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsRequest,
-                      com.google.cloud.certificatemanager.v1
-                          .ListCertificateIssuanceConfigsResponse>(
-                      this, METHODID_LIST_CERTIFICATE_ISSUANCE_CONFIGS)))
-          .addMethod(
-              getGetCertificateIssuanceConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.certificatemanager.v1.GetCertificateIssuanceConfigRequest,
-                      com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig>(
-                      this, METHODID_GET_CERTIFICATE_ISSUANCE_CONFIG)))
-          .addMethod(
-              getCreateCertificateIssuanceConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.certificatemanager.v1.CreateCertificateIssuanceConfigRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_CREATE_CERTIFICATE_ISSUANCE_CONFIG)))
-          .addMethod(
-              getDeleteCertificateIssuanceConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.certificatemanager.v1.DeleteCertificateIssuanceConfigRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_DELETE_CERTIFICATE_ISSUANCE_CONFIG)))
-          .build();
+      return CertificateManagerGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service CertificateManager.
    *
    * <pre>
    * API Overview
@@ -2291,7 +2159,7 @@ public final class CertificateManagerGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service CertificateManager.
    *
    * <pre>
    * API Overview
@@ -2648,7 +2516,7 @@ public final class CertificateManagerGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service CertificateManager.
    *
    * <pre>
    * API Overview
@@ -3060,10 +2928,10 @@ public final class CertificateManagerGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final CertificateManagerImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(CertificateManagerImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -3227,6 +3095,170 @@ public final class CertificateManagerGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListCertificatesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.certificatemanager.v1.ListCertificatesRequest,
+                    com.google.cloud.certificatemanager.v1.ListCertificatesResponse>(
+                    service, METHODID_LIST_CERTIFICATES)))
+        .addMethod(
+            getGetCertificateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.certificatemanager.v1.GetCertificateRequest,
+                    com.google.cloud.certificatemanager.v1.Certificate>(
+                    service, METHODID_GET_CERTIFICATE)))
+        .addMethod(
+            getCreateCertificateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.certificatemanager.v1.CreateCertificateRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_CERTIFICATE)))
+        .addMethod(
+            getUpdateCertificateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.certificatemanager.v1.UpdateCertificateRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_CERTIFICATE)))
+        .addMethod(
+            getDeleteCertificateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.certificatemanager.v1.DeleteCertificateRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_CERTIFICATE)))
+        .addMethod(
+            getListCertificateMapsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.certificatemanager.v1.ListCertificateMapsRequest,
+                    com.google.cloud.certificatemanager.v1.ListCertificateMapsResponse>(
+                    service, METHODID_LIST_CERTIFICATE_MAPS)))
+        .addMethod(
+            getGetCertificateMapMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.certificatemanager.v1.GetCertificateMapRequest,
+                    com.google.cloud.certificatemanager.v1.CertificateMap>(
+                    service, METHODID_GET_CERTIFICATE_MAP)))
+        .addMethod(
+            getCreateCertificateMapMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.certificatemanager.v1.CreateCertificateMapRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_CERTIFICATE_MAP)))
+        .addMethod(
+            getUpdateCertificateMapMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.certificatemanager.v1.UpdateCertificateMapRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_CERTIFICATE_MAP)))
+        .addMethod(
+            getDeleteCertificateMapMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.certificatemanager.v1.DeleteCertificateMapRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_CERTIFICATE_MAP)))
+        .addMethod(
+            getListCertificateMapEntriesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.certificatemanager.v1.ListCertificateMapEntriesRequest,
+                    com.google.cloud.certificatemanager.v1.ListCertificateMapEntriesResponse>(
+                    service, METHODID_LIST_CERTIFICATE_MAP_ENTRIES)))
+        .addMethod(
+            getGetCertificateMapEntryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.certificatemanager.v1.GetCertificateMapEntryRequest,
+                    com.google.cloud.certificatemanager.v1.CertificateMapEntry>(
+                    service, METHODID_GET_CERTIFICATE_MAP_ENTRY)))
+        .addMethod(
+            getCreateCertificateMapEntryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.certificatemanager.v1.CreateCertificateMapEntryRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_CERTIFICATE_MAP_ENTRY)))
+        .addMethod(
+            getUpdateCertificateMapEntryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.certificatemanager.v1.UpdateCertificateMapEntryRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_CERTIFICATE_MAP_ENTRY)))
+        .addMethod(
+            getDeleteCertificateMapEntryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.certificatemanager.v1.DeleteCertificateMapEntryRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_CERTIFICATE_MAP_ENTRY)))
+        .addMethod(
+            getListDnsAuthorizationsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.certificatemanager.v1.ListDnsAuthorizationsRequest,
+                    com.google.cloud.certificatemanager.v1.ListDnsAuthorizationsResponse>(
+                    service, METHODID_LIST_DNS_AUTHORIZATIONS)))
+        .addMethod(
+            getGetDnsAuthorizationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.certificatemanager.v1.GetDnsAuthorizationRequest,
+                    com.google.cloud.certificatemanager.v1.DnsAuthorization>(
+                    service, METHODID_GET_DNS_AUTHORIZATION)))
+        .addMethod(
+            getCreateDnsAuthorizationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.certificatemanager.v1.CreateDnsAuthorizationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_DNS_AUTHORIZATION)))
+        .addMethod(
+            getUpdateDnsAuthorizationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.certificatemanager.v1.UpdateDnsAuthorizationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_DNS_AUTHORIZATION)))
+        .addMethod(
+            getDeleteDnsAuthorizationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.certificatemanager.v1.DeleteDnsAuthorizationRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_DNS_AUTHORIZATION)))
+        .addMethod(
+            getListCertificateIssuanceConfigsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsRequest,
+                    com.google.cloud.certificatemanager.v1.ListCertificateIssuanceConfigsResponse>(
+                    service, METHODID_LIST_CERTIFICATE_ISSUANCE_CONFIGS)))
+        .addMethod(
+            getGetCertificateIssuanceConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.certificatemanager.v1.GetCertificateIssuanceConfigRequest,
+                    com.google.cloud.certificatemanager.v1.CertificateIssuanceConfig>(
+                    service, METHODID_GET_CERTIFICATE_ISSUANCE_CONFIG)))
+        .addMethod(
+            getCreateCertificateIssuanceConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.certificatemanager.v1.CreateCertificateIssuanceConfigRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_CERTIFICATE_ISSUANCE_CONFIG)))
+        .addMethod(
+            getDeleteCertificateIssuanceConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.certificatemanager.v1.DeleteCertificateIssuanceConfigRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_CERTIFICATE_ISSUANCE_CONFIG)))
+        .build();
   }
 
   private abstract static class CertificateManagerBaseDescriptorSupplier

@@ -247,10 +247,11 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * The timestamp corresponding to the creation of this Key.
+   * Output only. The timestamp corresponding to the creation of this Key.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -259,10 +260,11 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * The timestamp corresponding to the creation of this Key.
+   * Output only. The timestamp corresponding to the creation of this Key.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -271,10 +273,11 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * The timestamp corresponding to the creation of this Key.
+   * Output only. The timestamp corresponding to the creation of this Key.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 

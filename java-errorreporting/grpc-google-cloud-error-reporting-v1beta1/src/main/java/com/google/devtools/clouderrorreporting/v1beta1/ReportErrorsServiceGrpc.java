@@ -132,7 +132,7 @@ public final class ReportErrorsServiceGrpc {
    * An API for reporting error events.
    * </pre>
    */
-  public abstract static class ReportErrorsServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -150,7 +150,7 @@ public final class ReportErrorsServiceGrpc {
      * in regional log buckets or logs routed to other Google Cloud projects.
      * </pre>
      */
-    public void reportErrorEvent(
+    default void reportErrorEvent(
         com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse>
@@ -158,23 +158,26 @@ public final class ReportErrorsServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getReportErrorEventMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ReportErrorsService.
+   *
+   * <pre>
+   * An API for reporting error events.
+   * </pre>
+   */
+  public abstract static class ReportErrorsServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getReportErrorEventMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest,
-                      com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse>(
-                      this, METHODID_REPORT_ERROR_EVENT)))
-          .build();
+      return ReportErrorsServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ReportErrorsService.
    *
    * <pre>
    * An API for reporting error events.
@@ -221,7 +224,7 @@ public final class ReportErrorsServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ReportErrorsService.
    *
    * <pre>
    * An API for reporting error events.
@@ -265,7 +268,7 @@ public final class ReportErrorsServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service ReportErrorsService.
    *
    * <pre>
    * An API for reporting error events.
@@ -316,10 +319,10 @@ public final class ReportErrorsServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ReportErrorsServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ReportErrorsServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -349,6 +352,18 @@ public final class ReportErrorsServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getReportErrorEventMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest,
+                    com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse>(
+                    service, METHODID_REPORT_ERROR_EVENT)))
+        .build();
   }
 
   private abstract static class ReportErrorsServiceBaseDescriptorSupplier

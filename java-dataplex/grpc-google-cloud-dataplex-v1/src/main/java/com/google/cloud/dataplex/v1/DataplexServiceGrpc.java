@@ -1471,7 +1471,7 @@ public final class DataplexServiceGrpc {
    * systems including Cloud Storage and BigQuery.
    * </pre>
    */
-  public abstract static class DataplexServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -1480,7 +1480,7 @@ public final class DataplexServiceGrpc {
      * Creates a lake resource.
      * </pre>
      */
-    public void createLake(
+    default void createLake(
         com.google.cloud.dataplex.v1.CreateLakeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateLakeMethod(), responseObserver);
@@ -1493,7 +1493,7 @@ public final class DataplexServiceGrpc {
      * Updates a lake resource.
      * </pre>
      */
-    public void updateLake(
+    default void updateLake(
         com.google.cloud.dataplex.v1.UpdateLakeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateLakeMethod(), responseObserver);
@@ -1507,7 +1507,7 @@ public final class DataplexServiceGrpc {
      * the lake can be deleted.
      * </pre>
      */
-    public void deleteLake(
+    default void deleteLake(
         com.google.cloud.dataplex.v1.DeleteLakeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteLakeMethod(), responseObserver);
@@ -1520,7 +1520,7 @@ public final class DataplexServiceGrpc {
      * Lists lake resources in a project and location.
      * </pre>
      */
-    public void listLakes(
+    default void listLakes(
         com.google.cloud.dataplex.v1.ListLakesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListLakesResponse>
             responseObserver) {
@@ -1534,7 +1534,7 @@ public final class DataplexServiceGrpc {
      * Retrieves a lake resource.
      * </pre>
      */
-    public void getLake(
+    default void getLake(
         com.google.cloud.dataplex.v1.GetLakeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Lake> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetLakeMethod(), responseObserver);
@@ -1547,7 +1547,7 @@ public final class DataplexServiceGrpc {
      * Lists action resources in a lake.
      * </pre>
      */
-    public void listLakeActions(
+    default void listLakeActions(
         com.google.cloud.dataplex.v1.ListLakeActionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListActionsResponse>
             responseObserver) {
@@ -1562,7 +1562,7 @@ public final class DataplexServiceGrpc {
      * Creates a zone resource within a lake.
      * </pre>
      */
-    public void createZone(
+    default void createZone(
         com.google.cloud.dataplex.v1.CreateZoneRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateZoneMethod(), responseObserver);
@@ -1575,7 +1575,7 @@ public final class DataplexServiceGrpc {
      * Updates a zone resource.
      * </pre>
      */
-    public void updateZone(
+    default void updateZone(
         com.google.cloud.dataplex.v1.UpdateZoneRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateZoneMethod(), responseObserver);
@@ -1589,7 +1589,7 @@ public final class DataplexServiceGrpc {
      * the zone can be deleted.
      * </pre>
      */
-    public void deleteZone(
+    default void deleteZone(
         com.google.cloud.dataplex.v1.DeleteZoneRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteZoneMethod(), responseObserver);
@@ -1602,7 +1602,7 @@ public final class DataplexServiceGrpc {
      * Lists zone resources in a lake.
      * </pre>
      */
-    public void listZones(
+    default void listZones(
         com.google.cloud.dataplex.v1.ListZonesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListZonesResponse>
             responseObserver) {
@@ -1616,7 +1616,7 @@ public final class DataplexServiceGrpc {
      * Retrieves a zone resource.
      * </pre>
      */
-    public void getZone(
+    default void getZone(
         com.google.cloud.dataplex.v1.GetZoneRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Zone> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetZoneMethod(), responseObserver);
@@ -1629,7 +1629,7 @@ public final class DataplexServiceGrpc {
      * Lists action resources in a zone.
      * </pre>
      */
-    public void listZoneActions(
+    default void listZoneActions(
         com.google.cloud.dataplex.v1.ListZoneActionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListActionsResponse>
             responseObserver) {
@@ -1644,7 +1644,7 @@ public final class DataplexServiceGrpc {
      * Creates an asset resource.
      * </pre>
      */
-    public void createAsset(
+    default void createAsset(
         com.google.cloud.dataplex.v1.CreateAssetRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1658,7 +1658,7 @@ public final class DataplexServiceGrpc {
      * Updates an asset resource.
      * </pre>
      */
-    public void updateAsset(
+    default void updateAsset(
         com.google.cloud.dataplex.v1.UpdateAssetRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1673,7 +1673,7 @@ public final class DataplexServiceGrpc {
      * (default) or deleted based on the associated Lifecycle policy.
      * </pre>
      */
-    public void deleteAsset(
+    default void deleteAsset(
         com.google.cloud.dataplex.v1.DeleteAssetRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1687,7 +1687,7 @@ public final class DataplexServiceGrpc {
      * Lists asset resources in a zone.
      * </pre>
      */
-    public void listAssets(
+    default void listAssets(
         com.google.cloud.dataplex.v1.ListAssetsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListAssetsResponse>
             responseObserver) {
@@ -1701,7 +1701,7 @@ public final class DataplexServiceGrpc {
      * Retrieves an asset resource.
      * </pre>
      */
-    public void getAsset(
+    default void getAsset(
         com.google.cloud.dataplex.v1.GetAssetRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Asset> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAssetMethod(), responseObserver);
@@ -1714,7 +1714,7 @@ public final class DataplexServiceGrpc {
      * Lists action resources in an asset.
      * </pre>
      */
-    public void listAssetActions(
+    default void listAssetActions(
         com.google.cloud.dataplex.v1.ListAssetActionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListActionsResponse>
             responseObserver) {
@@ -1729,7 +1729,7 @@ public final class DataplexServiceGrpc {
      * Creates a task resource within a lake.
      * </pre>
      */
-    public void createTask(
+    default void createTask(
         com.google.cloud.dataplex.v1.CreateTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateTaskMethod(), responseObserver);
@@ -1742,7 +1742,7 @@ public final class DataplexServiceGrpc {
      * Update the task resource.
      * </pre>
      */
-    public void updateTask(
+    default void updateTask(
         com.google.cloud.dataplex.v1.UpdateTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateTaskMethod(), responseObserver);
@@ -1755,7 +1755,7 @@ public final class DataplexServiceGrpc {
      * Delete the task resource.
      * </pre>
      */
-    public void deleteTask(
+    default void deleteTask(
         com.google.cloud.dataplex.v1.DeleteTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteTaskMethod(), responseObserver);
@@ -1768,7 +1768,7 @@ public final class DataplexServiceGrpc {
      * Lists tasks under the given lake.
      * </pre>
      */
-    public void listTasks(
+    default void listTasks(
         com.google.cloud.dataplex.v1.ListTasksRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListTasksResponse>
             responseObserver) {
@@ -1782,7 +1782,7 @@ public final class DataplexServiceGrpc {
      * Get task resource.
      * </pre>
      */
-    public void getTask(
+    default void getTask(
         com.google.cloud.dataplex.v1.GetTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Task> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetTaskMethod(), responseObserver);
@@ -1795,7 +1795,7 @@ public final class DataplexServiceGrpc {
      * Lists Jobs under the given task.
      * </pre>
      */
-    public void listJobs(
+    default void listJobs(
         com.google.cloud.dataplex.v1.ListJobsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListJobsResponse>
             responseObserver) {
@@ -1809,7 +1809,7 @@ public final class DataplexServiceGrpc {
      * Get job resource.
      * </pre>
      */
-    public void getJob(
+    default void getJob(
         com.google.cloud.dataplex.v1.GetJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Job> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetJobMethod(), responseObserver);
@@ -1822,7 +1822,7 @@ public final class DataplexServiceGrpc {
      * Cancel jobs running for the task resource.
      * </pre>
      */
-    public void cancelJob(
+    default void cancelJob(
         com.google.cloud.dataplex.v1.CancelJobRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCancelJobMethod(), responseObserver);
@@ -1835,7 +1835,7 @@ public final class DataplexServiceGrpc {
      * Create an environment resource.
      * </pre>
      */
-    public void createEnvironment(
+    default void createEnvironment(
         com.google.cloud.dataplex.v1.CreateEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1849,7 +1849,7 @@ public final class DataplexServiceGrpc {
      * Update the environment resource.
      * </pre>
      */
-    public void updateEnvironment(
+    default void updateEnvironment(
         com.google.cloud.dataplex.v1.UpdateEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1864,7 +1864,7 @@ public final class DataplexServiceGrpc {
      * deleted before environment deletion can be initiated.
      * </pre>
      */
-    public void deleteEnvironment(
+    default void deleteEnvironment(
         com.google.cloud.dataplex.v1.DeleteEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1878,7 +1878,7 @@ public final class DataplexServiceGrpc {
      * Lists environments under the given lake.
      * </pre>
      */
-    public void listEnvironments(
+    default void listEnvironments(
         com.google.cloud.dataplex.v1.ListEnvironmentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListEnvironmentsResponse>
             responseObserver) {
@@ -1893,7 +1893,7 @@ public final class DataplexServiceGrpc {
      * Get environment resource.
      * </pre>
      */
-    public void getEnvironment(
+    default void getEnvironment(
         com.google.cloud.dataplex.v1.GetEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Environment> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1907,220 +1907,37 @@ public final class DataplexServiceGrpc {
      * Lists session resources in an environment.
      * </pre>
      */
-    public void listSessions(
+    default void listSessions(
         com.google.cloud.dataplex.v1.ListSessionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListSessionsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListSessionsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service DataplexService.
+   *
+   * <pre>
+   * Dataplex service provides data lakes as a service. The primary resources
+   * offered by this service are Lakes, Zones and Assets which collectively allow
+   * a data administrator to organize, manage, secure and catalog data across
+   * their organization located across cloud projects in a variety of storage
+   * systems including Cloud Storage and BigQuery.
+   * </pre>
+   */
+  public abstract static class DataplexServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateLakeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.CreateLakeRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_LAKE)))
-          .addMethod(
-              getUpdateLakeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.UpdateLakeRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_LAKE)))
-          .addMethod(
-              getDeleteLakeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.DeleteLakeRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_LAKE)))
-          .addMethod(
-              getListLakesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.ListLakesRequest,
-                      com.google.cloud.dataplex.v1.ListLakesResponse>(this, METHODID_LIST_LAKES)))
-          .addMethod(
-              getGetLakeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.GetLakeRequest,
-                      com.google.cloud.dataplex.v1.Lake>(this, METHODID_GET_LAKE)))
-          .addMethod(
-              getListLakeActionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.ListLakeActionsRequest,
-                      com.google.cloud.dataplex.v1.ListActionsResponse>(
-                      this, METHODID_LIST_LAKE_ACTIONS)))
-          .addMethod(
-              getCreateZoneMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.CreateZoneRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_ZONE)))
-          .addMethod(
-              getUpdateZoneMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.UpdateZoneRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_ZONE)))
-          .addMethod(
-              getDeleteZoneMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.DeleteZoneRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_ZONE)))
-          .addMethod(
-              getListZonesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.ListZonesRequest,
-                      com.google.cloud.dataplex.v1.ListZonesResponse>(this, METHODID_LIST_ZONES)))
-          .addMethod(
-              getGetZoneMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.GetZoneRequest,
-                      com.google.cloud.dataplex.v1.Zone>(this, METHODID_GET_ZONE)))
-          .addMethod(
-              getListZoneActionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.ListZoneActionsRequest,
-                      com.google.cloud.dataplex.v1.ListActionsResponse>(
-                      this, METHODID_LIST_ZONE_ACTIONS)))
-          .addMethod(
-              getCreateAssetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.CreateAssetRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_ASSET)))
-          .addMethod(
-              getUpdateAssetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.UpdateAssetRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_ASSET)))
-          .addMethod(
-              getDeleteAssetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.DeleteAssetRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_ASSET)))
-          .addMethod(
-              getListAssetsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.ListAssetsRequest,
-                      com.google.cloud.dataplex.v1.ListAssetsResponse>(this, METHODID_LIST_ASSETS)))
-          .addMethod(
-              getGetAssetMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.GetAssetRequest,
-                      com.google.cloud.dataplex.v1.Asset>(this, METHODID_GET_ASSET)))
-          .addMethod(
-              getListAssetActionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.ListAssetActionsRequest,
-                      com.google.cloud.dataplex.v1.ListActionsResponse>(
-                      this, METHODID_LIST_ASSET_ACTIONS)))
-          .addMethod(
-              getCreateTaskMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.CreateTaskRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_TASK)))
-          .addMethod(
-              getUpdateTaskMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.UpdateTaskRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_TASK)))
-          .addMethod(
-              getDeleteTaskMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.DeleteTaskRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_TASK)))
-          .addMethod(
-              getListTasksMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.ListTasksRequest,
-                      com.google.cloud.dataplex.v1.ListTasksResponse>(this, METHODID_LIST_TASKS)))
-          .addMethod(
-              getGetTaskMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.GetTaskRequest,
-                      com.google.cloud.dataplex.v1.Task>(this, METHODID_GET_TASK)))
-          .addMethod(
-              getListJobsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.ListJobsRequest,
-                      com.google.cloud.dataplex.v1.ListJobsResponse>(this, METHODID_LIST_JOBS)))
-          .addMethod(
-              getGetJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.GetJobRequest, com.google.cloud.dataplex.v1.Job>(
-                      this, METHODID_GET_JOB)))
-          .addMethod(
-              getCancelJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.CancelJobRequest, com.google.protobuf.Empty>(
-                      this, METHODID_CANCEL_JOB)))
-          .addMethod(
-              getCreateEnvironmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.CreateEnvironmentRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_ENVIRONMENT)))
-          .addMethod(
-              getUpdateEnvironmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.UpdateEnvironmentRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_ENVIRONMENT)))
-          .addMethod(
-              getDeleteEnvironmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.DeleteEnvironmentRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_ENVIRONMENT)))
-          .addMethod(
-              getListEnvironmentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.ListEnvironmentsRequest,
-                      com.google.cloud.dataplex.v1.ListEnvironmentsResponse>(
-                      this, METHODID_LIST_ENVIRONMENTS)))
-          .addMethod(
-              getGetEnvironmentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.GetEnvironmentRequest,
-                      com.google.cloud.dataplex.v1.Environment>(this, METHODID_GET_ENVIRONMENT)))
-          .addMethod(
-              getListSessionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.ListSessionsRequest,
-                      com.google.cloud.dataplex.v1.ListSessionsResponse>(
-                      this, METHODID_LIST_SESSIONS)))
-          .build();
+      return DataplexServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service DataplexService.
    *
    * <pre>
    * Dataplex service provides data lakes as a service. The primary resources
@@ -2629,7 +2446,7 @@ public final class DataplexServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service DataplexService.
    *
    * <pre>
    * Dataplex service provides data lakes as a service. The primary resources
@@ -3073,7 +2890,7 @@ public final class DataplexServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service DataplexService.
    *
    * <pre>
    * Dataplex service provides data lakes as a service. The primary resources
@@ -3565,10 +3382,10 @@ public final class DataplexServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final DataplexServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(DataplexServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -3762,6 +3579,209 @@ public final class DataplexServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateLakeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.CreateLakeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_LAKE)))
+        .addMethod(
+            getUpdateLakeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.UpdateLakeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_LAKE)))
+        .addMethod(
+            getDeleteLakeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.DeleteLakeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_LAKE)))
+        .addMethod(
+            getListLakesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.ListLakesRequest,
+                    com.google.cloud.dataplex.v1.ListLakesResponse>(service, METHODID_LIST_LAKES)))
+        .addMethod(
+            getGetLakeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.GetLakeRequest, com.google.cloud.dataplex.v1.Lake>(
+                    service, METHODID_GET_LAKE)))
+        .addMethod(
+            getListLakeActionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.ListLakeActionsRequest,
+                    com.google.cloud.dataplex.v1.ListActionsResponse>(
+                    service, METHODID_LIST_LAKE_ACTIONS)))
+        .addMethod(
+            getCreateZoneMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.CreateZoneRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_ZONE)))
+        .addMethod(
+            getUpdateZoneMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.UpdateZoneRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_ZONE)))
+        .addMethod(
+            getDeleteZoneMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.DeleteZoneRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_ZONE)))
+        .addMethod(
+            getListZonesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.ListZonesRequest,
+                    com.google.cloud.dataplex.v1.ListZonesResponse>(service, METHODID_LIST_ZONES)))
+        .addMethod(
+            getGetZoneMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.GetZoneRequest, com.google.cloud.dataplex.v1.Zone>(
+                    service, METHODID_GET_ZONE)))
+        .addMethod(
+            getListZoneActionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.ListZoneActionsRequest,
+                    com.google.cloud.dataplex.v1.ListActionsResponse>(
+                    service, METHODID_LIST_ZONE_ACTIONS)))
+        .addMethod(
+            getCreateAssetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.CreateAssetRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_ASSET)))
+        .addMethod(
+            getUpdateAssetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.UpdateAssetRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_ASSET)))
+        .addMethod(
+            getDeleteAssetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.DeleteAssetRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_ASSET)))
+        .addMethod(
+            getListAssetsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.ListAssetsRequest,
+                    com.google.cloud.dataplex.v1.ListAssetsResponse>(
+                    service, METHODID_LIST_ASSETS)))
+        .addMethod(
+            getGetAssetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.GetAssetRequest,
+                    com.google.cloud.dataplex.v1.Asset>(service, METHODID_GET_ASSET)))
+        .addMethod(
+            getListAssetActionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.ListAssetActionsRequest,
+                    com.google.cloud.dataplex.v1.ListActionsResponse>(
+                    service, METHODID_LIST_ASSET_ACTIONS)))
+        .addMethod(
+            getCreateTaskMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.CreateTaskRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_TASK)))
+        .addMethod(
+            getUpdateTaskMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.UpdateTaskRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_TASK)))
+        .addMethod(
+            getDeleteTaskMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.DeleteTaskRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_TASK)))
+        .addMethod(
+            getListTasksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.ListTasksRequest,
+                    com.google.cloud.dataplex.v1.ListTasksResponse>(service, METHODID_LIST_TASKS)))
+        .addMethod(
+            getGetTaskMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.GetTaskRequest, com.google.cloud.dataplex.v1.Task>(
+                    service, METHODID_GET_TASK)))
+        .addMethod(
+            getListJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.ListJobsRequest,
+                    com.google.cloud.dataplex.v1.ListJobsResponse>(service, METHODID_LIST_JOBS)))
+        .addMethod(
+            getGetJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.GetJobRequest, com.google.cloud.dataplex.v1.Job>(
+                    service, METHODID_GET_JOB)))
+        .addMethod(
+            getCancelJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.CancelJobRequest, com.google.protobuf.Empty>(
+                    service, METHODID_CANCEL_JOB)))
+        .addMethod(
+            getCreateEnvironmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.CreateEnvironmentRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_ENVIRONMENT)))
+        .addMethod(
+            getUpdateEnvironmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.UpdateEnvironmentRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_ENVIRONMENT)))
+        .addMethod(
+            getDeleteEnvironmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.DeleteEnvironmentRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_ENVIRONMENT)))
+        .addMethod(
+            getListEnvironmentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.ListEnvironmentsRequest,
+                    com.google.cloud.dataplex.v1.ListEnvironmentsResponse>(
+                    service, METHODID_LIST_ENVIRONMENTS)))
+        .addMethod(
+            getGetEnvironmentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.GetEnvironmentRequest,
+                    com.google.cloud.dataplex.v1.Environment>(service, METHODID_GET_ENVIRONMENT)))
+        .addMethod(
+            getListSessionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.ListSessionsRequest,
+                    com.google.cloud.dataplex.v1.ListSessionsResponse>(
+                    service, METHODID_LIST_SESSIONS)))
+        .build();
   }
 
   private abstract static class DataplexServiceBaseDescriptorSupplier

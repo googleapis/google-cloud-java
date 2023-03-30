@@ -2454,6 +2454,279 @@ public class CloudDeployClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Advances a Rollout in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   RolloutName name =
+   *       RolloutName.of(
+   *           "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[RELEASE]", "[ROLLOUT]");
+   *   String phaseId = "phaseId-608264202";
+   *   AdvanceRolloutResponse response = cloudDeployClient.advanceRollout(name, phaseId);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the Rollout. Format is
+   *     projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
+   *     releases/{release}/rollouts/{rollout}.
+   * @param phaseId Required. The phase ID to advance the `Rollout` to.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AdvanceRolloutResponse advanceRollout(RolloutName name, String phaseId) {
+    AdvanceRolloutRequest request =
+        AdvanceRolloutRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setPhaseId(phaseId)
+            .build();
+    return advanceRollout(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Advances a Rollout in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   String name =
+   *       RolloutName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[RELEASE]", "[ROLLOUT]")
+   *           .toString();
+   *   String phaseId = "phaseId-608264202";
+   *   AdvanceRolloutResponse response = cloudDeployClient.advanceRollout(name, phaseId);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the Rollout. Format is
+   *     projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
+   *     releases/{release}/rollouts/{rollout}.
+   * @param phaseId Required. The phase ID to advance the `Rollout` to.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AdvanceRolloutResponse advanceRollout(String name, String phaseId) {
+    AdvanceRolloutRequest request =
+        AdvanceRolloutRequest.newBuilder().setName(name).setPhaseId(phaseId).build();
+    return advanceRollout(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Advances a Rollout in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   AdvanceRolloutRequest request =
+   *       AdvanceRolloutRequest.newBuilder()
+   *           .setName(
+   *               RolloutName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[DELIVERY_PIPELINE]",
+   *                       "[RELEASE]",
+   *                       "[ROLLOUT]")
+   *                   .toString())
+   *           .setPhaseId("phaseId-608264202")
+   *           .build();
+   *   AdvanceRolloutResponse response = cloudDeployClient.advanceRollout(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AdvanceRolloutResponse advanceRollout(AdvanceRolloutRequest request) {
+    return advanceRolloutCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Advances a Rollout in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   AdvanceRolloutRequest request =
+   *       AdvanceRolloutRequest.newBuilder()
+   *           .setName(
+   *               RolloutName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[DELIVERY_PIPELINE]",
+   *                       "[RELEASE]",
+   *                       "[ROLLOUT]")
+   *                   .toString())
+   *           .setPhaseId("phaseId-608264202")
+   *           .build();
+   *   ApiFuture<AdvanceRolloutResponse> future =
+   *       cloudDeployClient.advanceRolloutCallable().futureCall(request);
+   *   // Do something.
+   *   AdvanceRolloutResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AdvanceRolloutRequest, AdvanceRolloutResponse>
+      advanceRolloutCallable() {
+    return stub.advanceRolloutCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels a Rollout in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   RolloutName name =
+   *       RolloutName.of(
+   *           "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[RELEASE]", "[ROLLOUT]");
+   *   CancelRolloutResponse response = cloudDeployClient.cancelRollout(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the Rollout. Format is
+   *     projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
+   *     releases/{release}/rollouts/{rollout}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CancelRolloutResponse cancelRollout(RolloutName name) {
+    CancelRolloutRequest request =
+        CancelRolloutRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return cancelRollout(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels a Rollout in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   String name =
+   *       RolloutName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[RELEASE]", "[ROLLOUT]")
+   *           .toString();
+   *   CancelRolloutResponse response = cloudDeployClient.cancelRollout(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the Rollout. Format is
+   *     projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
+   *     releases/{release}/rollouts/{rollout}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CancelRolloutResponse cancelRollout(String name) {
+    CancelRolloutRequest request = CancelRolloutRequest.newBuilder().setName(name).build();
+    return cancelRollout(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels a Rollout in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   CancelRolloutRequest request =
+   *       CancelRolloutRequest.newBuilder()
+   *           .setName(
+   *               RolloutName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[DELIVERY_PIPELINE]",
+   *                       "[RELEASE]",
+   *                       "[ROLLOUT]")
+   *                   .toString())
+   *           .build();
+   *   CancelRolloutResponse response = cloudDeployClient.cancelRollout(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CancelRolloutResponse cancelRollout(CancelRolloutRequest request) {
+    return cancelRolloutCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels a Rollout in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   CancelRolloutRequest request =
+   *       CancelRolloutRequest.newBuilder()
+   *           .setName(
+   *               RolloutName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[DELIVERY_PIPELINE]",
+   *                       "[RELEASE]",
+   *                       "[ROLLOUT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<CancelRolloutResponse> future =
+   *       cloudDeployClient.cancelRolloutCallable().futureCall(request);
+   *   // Do something.
+   *   CancelRolloutResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CancelRolloutRequest, CancelRolloutResponse> cancelRolloutCallable() {
+    return stub.cancelRolloutCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists Rollouts in a given project and location.
    *
    * <p>Sample code:
@@ -2855,6 +3128,7 @@ public class CloudDeployClient implements BackgroundResource {
    *           .setRollout(Rollout.newBuilder().build())
    *           .setRequestId("requestId693933066")
    *           .setValidateOnly(true)
+   *           .setStartingPhaseId("startingPhaseId-326529130")
    *           .build();
    *   Rollout response = cloudDeployClient.createRolloutAsync(request).get();
    * }
@@ -2890,6 +3164,7 @@ public class CloudDeployClient implements BackgroundResource {
    *           .setRollout(Rollout.newBuilder().build())
    *           .setRequestId("requestId693933066")
    *           .setValidateOnly(true)
+   *           .setStartingPhaseId("startingPhaseId-326529130")
    *           .build();
    *   OperationFuture<Rollout, OperationMetadata> future =
    *       cloudDeployClient.createRolloutOperationCallable().futureCall(request);
@@ -2925,6 +3200,7 @@ public class CloudDeployClient implements BackgroundResource {
    *           .setRollout(Rollout.newBuilder().build())
    *           .setRequestId("requestId693933066")
    *           .setValidateOnly(true)
+   *           .setStartingPhaseId("startingPhaseId-326529130")
    *           .build();
    *   ApiFuture<Operation> future = cloudDeployClient.createRolloutCallable().futureCall(request);
    *   // Do something.
@@ -2934,6 +3210,158 @@ public class CloudDeployClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateRolloutRequest, Operation> createRolloutCallable() {
     return stub.createRolloutCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Ignores the specified Job in a Rollout.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   RolloutName rollout =
+   *       RolloutName.of(
+   *           "[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[RELEASE]", "[ROLLOUT]");
+   *   String phaseId = "phaseId-608264202";
+   *   String jobId = "jobId101296568";
+   *   IgnoreJobResponse response = cloudDeployClient.ignoreJob(rollout, phaseId, jobId);
+   * }
+   * }</pre>
+   *
+   * @param rollout Required. Name of the Rollout. Format is
+   *     projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
+   *     releases/{release}/rollouts/{rollout}.
+   * @param phaseId Required. The phase ID the Job to ignore belongs to.
+   * @param jobId Required. The job ID for the Job to ignore.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final IgnoreJobResponse ignoreJob(RolloutName rollout, String phaseId, String jobId) {
+    IgnoreJobRequest request =
+        IgnoreJobRequest.newBuilder()
+            .setRollout(rollout == null ? null : rollout.toString())
+            .setPhaseId(phaseId)
+            .setJobId(jobId)
+            .build();
+    return ignoreJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Ignores the specified Job in a Rollout.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   String rollout =
+   *       RolloutName.of("[PROJECT]", "[LOCATION]", "[DELIVERY_PIPELINE]", "[RELEASE]", "[ROLLOUT]")
+   *           .toString();
+   *   String phaseId = "phaseId-608264202";
+   *   String jobId = "jobId101296568";
+   *   IgnoreJobResponse response = cloudDeployClient.ignoreJob(rollout, phaseId, jobId);
+   * }
+   * }</pre>
+   *
+   * @param rollout Required. Name of the Rollout. Format is
+   *     projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
+   *     releases/{release}/rollouts/{rollout}.
+   * @param phaseId Required. The phase ID the Job to ignore belongs to.
+   * @param jobId Required. The job ID for the Job to ignore.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final IgnoreJobResponse ignoreJob(String rollout, String phaseId, String jobId) {
+    IgnoreJobRequest request =
+        IgnoreJobRequest.newBuilder()
+            .setRollout(rollout)
+            .setPhaseId(phaseId)
+            .setJobId(jobId)
+            .build();
+    return ignoreJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Ignores the specified Job in a Rollout.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   IgnoreJobRequest request =
+   *       IgnoreJobRequest.newBuilder()
+   *           .setRollout(
+   *               RolloutName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[DELIVERY_PIPELINE]",
+   *                       "[RELEASE]",
+   *                       "[ROLLOUT]")
+   *                   .toString())
+   *           .setPhaseId("phaseId-608264202")
+   *           .setJobId("jobId101296568")
+   *           .build();
+   *   IgnoreJobResponse response = cloudDeployClient.ignoreJob(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final IgnoreJobResponse ignoreJob(IgnoreJobRequest request) {
+    return ignoreJobCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Ignores the specified Job in a Rollout.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   IgnoreJobRequest request =
+   *       IgnoreJobRequest.newBuilder()
+   *           .setRollout(
+   *               RolloutName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[DELIVERY_PIPELINE]",
+   *                       "[RELEASE]",
+   *                       "[ROLLOUT]")
+   *                   .toString())
+   *           .setPhaseId("phaseId-608264202")
+   *           .setJobId("jobId101296568")
+   *           .build();
+   *   ApiFuture<IgnoreJobResponse> future =
+   *       cloudDeployClient.ignoreJobCallable().futureCall(request);
+   *   // Do something.
+   *   IgnoreJobResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<IgnoreJobRequest, IgnoreJobResponse> ignoreJobCallable() {
+    return stub.ignoreJobCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3418,6 +3846,151 @@ public class CloudDeployClient implements BackgroundResource {
    */
   public final UnaryCallable<GetJobRunRequest, JobRun> getJobRunCallable() {
     return stub.getJobRunCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Terminates a Job Run in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   JobRunName name =
+   *       JobRunName.of(
+   *           "[PROJECT]",
+   *           "[LOCATION]",
+   *           "[DELIVERY_PIPELINE]",
+   *           "[RELEASE]",
+   *           "[ROLLOUT]",
+   *           "[JOB_RUN]");
+   *   TerminateJobRunResponse response = cloudDeployClient.terminateJobRun(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the `JobRun`. Format must be
+   *     projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
+   *     releases/{release}/rollouts/{rollout}/jobRuns/{jobRun}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TerminateJobRunResponse terminateJobRun(JobRunName name) {
+    TerminateJobRunRequest request =
+        TerminateJobRunRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return terminateJobRun(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Terminates a Job Run in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   String name =
+   *       JobRunName.of(
+   *               "[PROJECT]",
+   *               "[LOCATION]",
+   *               "[DELIVERY_PIPELINE]",
+   *               "[RELEASE]",
+   *               "[ROLLOUT]",
+   *               "[JOB_RUN]")
+   *           .toString();
+   *   TerminateJobRunResponse response = cloudDeployClient.terminateJobRun(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the `JobRun`. Format must be
+   *     projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/
+   *     releases/{release}/rollouts/{rollout}/jobRuns/{jobRun}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TerminateJobRunResponse terminateJobRun(String name) {
+    TerminateJobRunRequest request = TerminateJobRunRequest.newBuilder().setName(name).build();
+    return terminateJobRun(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Terminates a Job Run in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   TerminateJobRunRequest request =
+   *       TerminateJobRunRequest.newBuilder()
+   *           .setName(
+   *               JobRunName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[DELIVERY_PIPELINE]",
+   *                       "[RELEASE]",
+   *                       "[ROLLOUT]",
+   *                       "[JOB_RUN]")
+   *                   .toString())
+   *           .build();
+   *   TerminateJobRunResponse response = cloudDeployClient.terminateJobRun(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TerminateJobRunResponse terminateJobRun(TerminateJobRunRequest request) {
+    return terminateJobRunCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Terminates a Job Run in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudDeployClient cloudDeployClient = CloudDeployClient.create()) {
+   *   TerminateJobRunRequest request =
+   *       TerminateJobRunRequest.newBuilder()
+   *           .setName(
+   *               JobRunName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[DELIVERY_PIPELINE]",
+   *                       "[RELEASE]",
+   *                       "[ROLLOUT]",
+   *                       "[JOB_RUN]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<TerminateJobRunResponse> future =
+   *       cloudDeployClient.terminateJobRunCallable().futureCall(request);
+   *   // Do something.
+   *   TerminateJobRunResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TerminateJobRunRequest, TerminateJobRunResponse>
+      terminateJobRunCallable() {
+    return stub.terminateJobRunCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

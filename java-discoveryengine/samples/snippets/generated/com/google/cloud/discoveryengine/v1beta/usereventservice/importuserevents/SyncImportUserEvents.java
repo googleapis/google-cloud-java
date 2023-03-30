@@ -38,7 +38,10 @@ public class SyncImportUserEvents {
     try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
       ImportUserEventsRequest request =
           ImportUserEventsRequest.newBuilder()
-              .setParent(DataStoreName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]").toString())
+              .setParent(
+                  DataStoreName.ofProjectLocationDataStoreName(
+                          "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                      .toString())
               .setErrorConfig(ImportErrorConfig.newBuilder().build())
               .build();
       ImportUserEventsResponse response =

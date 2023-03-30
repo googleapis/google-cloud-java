@@ -193,6 +193,56 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
     return map.get(key);
   }
 
+  public static final int TOTAL_BILLED_DURATION_FIELD_NUMBER = 2;
+  private com.google.protobuf.Duration totalBilledDuration_;
+  /**
+   *
+   *
+   * <pre>
+   * When available, billed audio seconds for the corresponding request.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration total_billed_duration = 2;</code>
+   *
+   * @return Whether the totalBilledDuration field is set.
+   */
+  @java.lang.Override
+  public boolean hasTotalBilledDuration() {
+    return totalBilledDuration_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * When available, billed audio seconds for the corresponding request.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration total_billed_duration = 2;</code>
+   *
+   * @return The totalBilledDuration.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getTotalBilledDuration() {
+    return totalBilledDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : totalBilledDuration_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * When available, billed audio seconds for the corresponding request.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration total_billed_duration = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getTotalBilledDurationOrBuilder() {
+    return totalBilledDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : totalBilledDuration_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -209,6 +259,9 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetResults(), ResultsDefaultEntryHolder.defaultEntry, 1);
+    if (totalBilledDuration_ != null) {
+      output.writeMessage(2, getTotalBilledDuration());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -230,6 +283,9 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, results__);
     }
+    if (totalBilledDuration_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getTotalBilledDuration());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -247,6 +303,10 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
         (com.google.cloud.speech.v2.BatchRecognizeResponse) obj;
 
     if (!internalGetResults().equals(other.internalGetResults())) return false;
+    if (hasTotalBilledDuration() != other.hasTotalBilledDuration()) return false;
+    if (hasTotalBilledDuration()) {
+      if (!getTotalBilledDuration().equals(other.getTotalBilledDuration())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -261,6 +321,10 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
     if (!internalGetResults().getMap().isEmpty()) {
       hash = (37 * hash) + RESULTS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetResults().hashCode();
+    }
+    if (hasTotalBilledDuration()) {
+      hash = (37 * hash) + TOTAL_BILLED_DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getTotalBilledDuration().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -424,6 +488,11 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
       super.clear();
       bitField0_ = 0;
       internalGetMutableResults().clear();
+      totalBilledDuration_ = null;
+      if (totalBilledDurationBuilder_ != null) {
+        totalBilledDurationBuilder_.dispose();
+        totalBilledDurationBuilder_ = null;
+      }
       return this;
     }
 
@@ -463,6 +532,12 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.results_ = internalGetResults();
         result.results_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.totalBilledDuration_ =
+            totalBilledDurationBuilder_ == null
+                ? totalBilledDuration_
+                : totalBilledDurationBuilder_.build();
       }
     }
 
@@ -514,6 +589,9 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
         return this;
       internalGetMutableResults().mergeFrom(other.internalGetResults());
       bitField0_ |= 0x00000001;
+      if (other.hasTotalBilledDuration()) {
+        mergeTotalBilledDuration(other.getTotalBilledDuration());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -554,6 +632,13 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    getTotalBilledDurationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -748,6 +833,189 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
       internalGetMutableResults().getMutableMap().putAll(values);
       bitField0_ |= 0x00000001;
       return this;
+    }
+
+    private com.google.protobuf.Duration totalBilledDuration_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        totalBilledDurationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * When available, billed audio seconds for the corresponding request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration total_billed_duration = 2;</code>
+     *
+     * @return Whether the totalBilledDuration field is set.
+     */
+    public boolean hasTotalBilledDuration() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When available, billed audio seconds for the corresponding request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration total_billed_duration = 2;</code>
+     *
+     * @return The totalBilledDuration.
+     */
+    public com.google.protobuf.Duration getTotalBilledDuration() {
+      if (totalBilledDurationBuilder_ == null) {
+        return totalBilledDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : totalBilledDuration_;
+      } else {
+        return totalBilledDurationBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When available, billed audio seconds for the corresponding request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration total_billed_duration = 2;</code>
+     */
+    public Builder setTotalBilledDuration(com.google.protobuf.Duration value) {
+      if (totalBilledDurationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        totalBilledDuration_ = value;
+      } else {
+        totalBilledDurationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When available, billed audio seconds for the corresponding request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration total_billed_duration = 2;</code>
+     */
+    public Builder setTotalBilledDuration(com.google.protobuf.Duration.Builder builderForValue) {
+      if (totalBilledDurationBuilder_ == null) {
+        totalBilledDuration_ = builderForValue.build();
+      } else {
+        totalBilledDurationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When available, billed audio seconds for the corresponding request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration total_billed_duration = 2;</code>
+     */
+    public Builder mergeTotalBilledDuration(com.google.protobuf.Duration value) {
+      if (totalBilledDurationBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && totalBilledDuration_ != null
+            && totalBilledDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getTotalBilledDurationBuilder().mergeFrom(value);
+        } else {
+          totalBilledDuration_ = value;
+        }
+      } else {
+        totalBilledDurationBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When available, billed audio seconds for the corresponding request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration total_billed_duration = 2;</code>
+     */
+    public Builder clearTotalBilledDuration() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      totalBilledDuration_ = null;
+      if (totalBilledDurationBuilder_ != null) {
+        totalBilledDurationBuilder_.dispose();
+        totalBilledDurationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When available, billed audio seconds for the corresponding request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration total_billed_duration = 2;</code>
+     */
+    public com.google.protobuf.Duration.Builder getTotalBilledDurationBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getTotalBilledDurationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When available, billed audio seconds for the corresponding request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration total_billed_duration = 2;</code>
+     */
+    public com.google.protobuf.DurationOrBuilder getTotalBilledDurationOrBuilder() {
+      if (totalBilledDurationBuilder_ != null) {
+        return totalBilledDurationBuilder_.getMessageOrBuilder();
+      } else {
+        return totalBilledDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : totalBilledDuration_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * When available, billed audio seconds for the corresponding request.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration total_billed_duration = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        getTotalBilledDurationFieldBuilder() {
+      if (totalBilledDurationBuilder_ == null) {
+        totalBilledDurationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getTotalBilledDuration(), getParentForChildren(), isClean());
+        totalBilledDuration_ = null;
+      }
+      return totalBilledDurationBuilder_;
     }
 
     @java.lang.Override

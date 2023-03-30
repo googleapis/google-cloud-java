@@ -273,8 +273,8 @@ public final class UpdateTargetRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. If set to true, the request is validated and the user is provided with
-   * an expected result, but no actual change is made.
+   * Optional. If set to true, the request is validated and the user is provided
+   * with an expected result, but no actual change is made.
    * </pre>
    *
    * <code>bool validate_only = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1366,8 +1366,8 @@ public final class UpdateTargetRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. If set to true, the request is validated and the user is provided with
-     * an expected result, but no actual change is made.
+     * Optional. If set to true, the request is validated and the user is provided
+     * with an expected result, but no actual change is made.
      * </pre>
      *
      * <code>bool validate_only = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1382,8 +1382,8 @@ public final class UpdateTargetRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. If set to true, the request is validated and the user is provided with
-     * an expected result, but no actual change is made.
+     * Optional. If set to true, the request is validated and the user is provided
+     * with an expected result, but no actual change is made.
      * </pre>
      *
      * <code>bool validate_only = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1402,8 +1402,8 @@ public final class UpdateTargetRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. If set to true, the request is validated and the user is provided with
-     * an expected result, but no actual change is made.
+     * Optional. If set to true, the request is validated and the user is provided
+     * with an expected result, but no actual change is made.
      * </pre>
      *
      * <code>bool validate_only = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -104,8 +104,9 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * IN_USE_SERVICE denotes that this range is claimed by a cluster for
-     * services. It cannot be used for other clusters.
+     * IN_USE_SERVICE denotes that this range is claimed by cluster(s) for
+     * services. User-managed services range can be shared between clusters
+     * within the same subnetwork.
      * </pre>
      *
      * <code>IN_USE_SERVICE = 2;</code>
@@ -161,8 +162,9 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * IN_USE_SERVICE denotes that this range is claimed by a cluster for
-     * services. It cannot be used for other clusters.
+     * IN_USE_SERVICE denotes that this range is claimed by cluster(s) for
+     * services. User-managed services range can be shared between clusters
+     * within the same subnetwork.
      * </pre>
      *
      * <code>IN_USE_SERVICE = 2;</code>

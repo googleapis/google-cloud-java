@@ -22,8 +22,7 @@ package com.google.analytics.admin.v1alpha;
  *
  *
  * <pre>
- * Status of the Google Signals settings (i.e., whether this feature has been
- * enabled for the property).
+ * Status of the Google Signals settings.
  * </pre>
  *
  * Protobuf enum {@code google.analytics.admin.v1alpha.GoogleSignalsState}

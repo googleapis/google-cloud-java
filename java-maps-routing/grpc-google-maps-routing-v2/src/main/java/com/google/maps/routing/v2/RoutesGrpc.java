@@ -172,7 +172,7 @@ public final class RoutesGrpc {
    * The Routes API.
    * </pre>
    */
-  public abstract static class RoutesImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -210,7 +210,7 @@ public final class RoutesGrpc {
      * size, and thus higher network throughput.
      * </pre>
      */
-    public void computeRoutes(
+    default void computeRoutes(
         com.google.maps.routing.v2.ComputeRoutesRequest request,
         io.grpc.stub.StreamObserver<com.google.maps.routing.v2.ComputeRoutesResponse>
             responseObserver) {
@@ -254,37 +254,32 @@ public final class RoutesGrpc {
      * size, and thus higher network throughput.
      * </pre>
      */
-    public void computeRouteMatrix(
+    default void computeRouteMatrix(
         com.google.maps.routing.v2.ComputeRouteMatrixRequest request,
         io.grpc.stub.StreamObserver<com.google.maps.routing.v2.RouteMatrixElement>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getComputeRouteMatrixMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Routes.
+   *
+   * <pre>
+   * The Routes API.
+   * </pre>
+   */
+  public abstract static class RoutesImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getComputeRoutesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.maps.routing.v2.ComputeRoutesRequest,
-                      com.google.maps.routing.v2.ComputeRoutesResponse>(
-                      this, METHODID_COMPUTE_ROUTES)))
-          .addMethod(
-              getComputeRouteMatrixMethod(),
-              io.grpc.stub.ServerCalls.asyncServerStreamingCall(
-                  new MethodHandlers<
-                      com.google.maps.routing.v2.ComputeRouteMatrixRequest,
-                      com.google.maps.routing.v2.RouteMatrixElement>(
-                      this, METHODID_COMPUTE_ROUTE_MATRIX)))
-          .build();
+      return RoutesGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Routes.
    *
    * <pre>
    * The Routes API.
@@ -394,7 +389,7 @@ public final class RoutesGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Routes.
    *
    * <pre>
    * The Routes API.
@@ -497,7 +492,7 @@ public final class RoutesGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Routes.
    *
    * <pre>
    * The Routes API.
@@ -566,10 +561,10 @@ public final class RoutesGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final RoutesImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(RoutesImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -604,6 +599,25 @@ public final class RoutesGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getComputeRoutesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.maps.routing.v2.ComputeRoutesRequest,
+                    com.google.maps.routing.v2.ComputeRoutesResponse>(
+                    service, METHODID_COMPUTE_ROUTES)))
+        .addMethod(
+            getComputeRouteMatrixMethod(),
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
+                new MethodHandlers<
+                    com.google.maps.routing.v2.ComputeRouteMatrixRequest,
+                    com.google.maps.routing.v2.RouteMatrixElement>(
+                    service, METHODID_COMPUTE_ROUTE_MATRIX)))
+        .build();
   }
 
   private abstract static class RoutesBaseDescriptorSupplier

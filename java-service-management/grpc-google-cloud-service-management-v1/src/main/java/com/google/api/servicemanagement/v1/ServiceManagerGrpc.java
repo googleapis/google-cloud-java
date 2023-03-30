@@ -693,7 +693,7 @@ public final class ServiceManagerGrpc {
    * API](https://cloud.google.com/service-infrastructure/docs/overview)
    * </pre>
    */
-  public abstract static class ServiceManagerImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -705,7 +705,7 @@ public final class ServiceManagerGrpc {
      * for.
      * </pre>
      */
-    public void listServices(
+    default void listServices(
         com.google.api.servicemanagement.v1.ListServicesRequest request,
         io.grpc.stub.StreamObserver<com.google.api.servicemanagement.v1.ListServicesResponse>
             responseObserver) {
@@ -721,7 +721,7 @@ public final class ServiceManagerGrpc {
      * public.
      * </pre>
      */
-    public void getService(
+    default void getService(
         com.google.api.servicemanagement.v1.GetServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.api.servicemanagement.v1.ManagedService>
             responseObserver) {
@@ -742,7 +742,7 @@ public final class ServiceManagerGrpc {
      * Operation&lt;response: ManagedService&gt;
      * </pre>
      */
-    public void createService(
+    default void createService(
         com.google.api.servicemanagement.v1.CreateServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -762,7 +762,7 @@ public final class ServiceManagerGrpc {
      * Operation&lt;response: google.protobuf.Empty&gt;
      * </pre>
      */
-    public void deleteService(
+    default void deleteService(
         com.google.api.servicemanagement.v1.DeleteServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -780,7 +780,7 @@ public final class ServiceManagerGrpc {
      * Operation&lt;response: UndeleteServiceResponse&gt;
      * </pre>
      */
-    public void undeleteService(
+    default void undeleteService(
         com.google.api.servicemanagement.v1.UndeleteServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -795,7 +795,7 @@ public final class ServiceManagerGrpc {
      * from the newest to the oldest.
      * </pre>
      */
-    public void listServiceConfigs(
+    default void listServiceConfigs(
         com.google.api.servicemanagement.v1.ListServiceConfigsRequest request,
         io.grpc.stub.StreamObserver<com.google.api.servicemanagement.v1.ListServiceConfigsResponse>
             responseObserver) {
@@ -810,7 +810,7 @@ public final class ServiceManagerGrpc {
      * Gets a service configuration (version) for a managed service.
      * </pre>
      */
-    public void getServiceConfig(
+    default void getServiceConfig(
         com.google.api.servicemanagement.v1.GetServiceConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.api.Service> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -830,7 +830,7 @@ public final class ServiceManagerGrpc {
      * eventually.
      * </pre>
      */
-    public void createServiceConfig(
+    default void createServiceConfig(
         com.google.api.servicemanagement.v1.CreateServiceConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.api.Service> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -855,7 +855,7 @@ public final class ServiceManagerGrpc {
      * Operation&lt;response: SubmitConfigSourceResponse&gt;
      * </pre>
      */
-    public void submitConfigSource(
+    default void submitConfigSource(
         com.google.api.servicemanagement.v1.SubmitConfigSourceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -870,7 +870,7 @@ public final class ServiceManagerGrpc {
      * service, from the newest to the oldest.
      * </pre>
      */
-    public void listServiceRollouts(
+    default void listServiceRollouts(
         com.google.api.servicemanagement.v1.ListServiceRolloutsRequest request,
         io.grpc.stub.StreamObserver<com.google.api.servicemanagement.v1.ListServiceRolloutsResponse>
             responseObserver) {
@@ -886,7 +886,7 @@ public final class ServiceManagerGrpc {
      * [rollout][google.api.servicemanagement.v1.Rollout].
      * </pre>
      */
-    public void getServiceRollout(
+    default void getServiceRollout(
         com.google.api.servicemanagement.v1.GetServiceRolloutRequest request,
         io.grpc.stub.StreamObserver<com.google.api.servicemanagement.v1.Rollout> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -910,7 +910,7 @@ public final class ServiceManagerGrpc {
      * Operation&lt;response: Rollout&gt;
      * </pre>
      */
-    public void createServiceRollout(
+    default void createServiceRollout(
         com.google.api.servicemanagement.v1.CreateServiceRolloutRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -933,7 +933,7 @@ public final class ServiceManagerGrpc {
      * service configuration.
      * </pre>
      */
-    public void generateConfigReport(
+    default void generateConfigReport(
         com.google.api.servicemanagement.v1.GenerateConfigReportRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.api.servicemanagement.v1.GenerateConfigReportResponse>
@@ -941,100 +941,27 @@ public final class ServiceManagerGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGenerateConfigReportMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ServiceManager.
+   *
+   * <pre>
+   * [Google Service Management
+   * API](https://cloud.google.com/service-infrastructure/docs/overview)
+   * </pre>
+   */
+  public abstract static class ServiceManagerImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListServicesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.servicemanagement.v1.ListServicesRequest,
-                      com.google.api.servicemanagement.v1.ListServicesResponse>(
-                      this, METHODID_LIST_SERVICES)))
-          .addMethod(
-              getGetServiceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.servicemanagement.v1.GetServiceRequest,
-                      com.google.api.servicemanagement.v1.ManagedService>(
-                      this, METHODID_GET_SERVICE)))
-          .addMethod(
-              getCreateServiceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.servicemanagement.v1.CreateServiceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_SERVICE)))
-          .addMethod(
-              getDeleteServiceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.servicemanagement.v1.DeleteServiceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_SERVICE)))
-          .addMethod(
-              getUndeleteServiceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.servicemanagement.v1.UndeleteServiceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UNDELETE_SERVICE)))
-          .addMethod(
-              getListServiceConfigsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.servicemanagement.v1.ListServiceConfigsRequest,
-                      com.google.api.servicemanagement.v1.ListServiceConfigsResponse>(
-                      this, METHODID_LIST_SERVICE_CONFIGS)))
-          .addMethod(
-              getGetServiceConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.servicemanagement.v1.GetServiceConfigRequest,
-                      com.google.api.Service>(this, METHODID_GET_SERVICE_CONFIG)))
-          .addMethod(
-              getCreateServiceConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.servicemanagement.v1.CreateServiceConfigRequest,
-                      com.google.api.Service>(this, METHODID_CREATE_SERVICE_CONFIG)))
-          .addMethod(
-              getSubmitConfigSourceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.servicemanagement.v1.SubmitConfigSourceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_SUBMIT_CONFIG_SOURCE)))
-          .addMethod(
-              getListServiceRolloutsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.servicemanagement.v1.ListServiceRolloutsRequest,
-                      com.google.api.servicemanagement.v1.ListServiceRolloutsResponse>(
-                      this, METHODID_LIST_SERVICE_ROLLOUTS)))
-          .addMethod(
-              getGetServiceRolloutMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.servicemanagement.v1.GetServiceRolloutRequest,
-                      com.google.api.servicemanagement.v1.Rollout>(
-                      this, METHODID_GET_SERVICE_ROLLOUT)))
-          .addMethod(
-              getCreateServiceRolloutMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.servicemanagement.v1.CreateServiceRolloutRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_SERVICE_ROLLOUT)))
-          .addMethod(
-              getGenerateConfigReportMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.servicemanagement.v1.GenerateConfigReportRequest,
-                      com.google.api.servicemanagement.v1.GenerateConfigReportResponse>(
-                      this, METHODID_GENERATE_CONFIG_REPORT)))
-          .build();
+      return ServiceManagerGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ServiceManager.
    *
    * <pre>
    * [Google Service Management
@@ -1326,7 +1253,7 @@ public final class ServiceManagerGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ServiceManager.
    *
    * <pre>
    * [Google Service Management
@@ -1576,7 +1503,7 @@ public final class ServiceManagerGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service ServiceManager.
    *
    * <pre>
    * [Google Service Management
@@ -1854,10 +1781,10 @@ public final class ServiceManagerGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ServiceManagerImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ServiceManagerImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1955,6 +1882,95 @@ public final class ServiceManagerGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListServicesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.servicemanagement.v1.ListServicesRequest,
+                    com.google.api.servicemanagement.v1.ListServicesResponse>(
+                    service, METHODID_LIST_SERVICES)))
+        .addMethod(
+            getGetServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.servicemanagement.v1.GetServiceRequest,
+                    com.google.api.servicemanagement.v1.ManagedService>(
+                    service, METHODID_GET_SERVICE)))
+        .addMethod(
+            getCreateServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.servicemanagement.v1.CreateServiceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_SERVICE)))
+        .addMethod(
+            getDeleteServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.servicemanagement.v1.DeleteServiceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_SERVICE)))
+        .addMethod(
+            getUndeleteServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.servicemanagement.v1.UndeleteServiceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UNDELETE_SERVICE)))
+        .addMethod(
+            getListServiceConfigsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.servicemanagement.v1.ListServiceConfigsRequest,
+                    com.google.api.servicemanagement.v1.ListServiceConfigsResponse>(
+                    service, METHODID_LIST_SERVICE_CONFIGS)))
+        .addMethod(
+            getGetServiceConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.servicemanagement.v1.GetServiceConfigRequest,
+                    com.google.api.Service>(service, METHODID_GET_SERVICE_CONFIG)))
+        .addMethod(
+            getCreateServiceConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.servicemanagement.v1.CreateServiceConfigRequest,
+                    com.google.api.Service>(service, METHODID_CREATE_SERVICE_CONFIG)))
+        .addMethod(
+            getSubmitConfigSourceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.servicemanagement.v1.SubmitConfigSourceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_SUBMIT_CONFIG_SOURCE)))
+        .addMethod(
+            getListServiceRolloutsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.servicemanagement.v1.ListServiceRolloutsRequest,
+                    com.google.api.servicemanagement.v1.ListServiceRolloutsResponse>(
+                    service, METHODID_LIST_SERVICE_ROLLOUTS)))
+        .addMethod(
+            getGetServiceRolloutMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.servicemanagement.v1.GetServiceRolloutRequest,
+                    com.google.api.servicemanagement.v1.Rollout>(
+                    service, METHODID_GET_SERVICE_ROLLOUT)))
+        .addMethod(
+            getCreateServiceRolloutMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.servicemanagement.v1.CreateServiceRolloutRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_SERVICE_ROLLOUT)))
+        .addMethod(
+            getGenerateConfigReportMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.servicemanagement.v1.GenerateConfigReportRequest,
+                    com.google.api.servicemanagement.v1.GenerateConfigReportResponse>(
+                    service, METHODID_GENERATE_CONFIG_REPORT)))
+        .build();
   }
 
   private abstract static class ServiceManagerBaseDescriptorSupplier

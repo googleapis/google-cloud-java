@@ -389,7 +389,7 @@ public final class IntentsGrpc {
    * Service for managing [Intents][google.cloud.dialogflow.v2.Intent].
    * </pre>
    */
-  public abstract static class IntentsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -398,7 +398,7 @@ public final class IntentsGrpc {
      * Returns the list of all intents in the specified agent.
      * </pre>
      */
-    public void listIntents(
+    default void listIntents(
         com.google.cloud.dialogflow.v2.ListIntentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.ListIntentsResponse>
             responseObserver) {
@@ -413,7 +413,7 @@ public final class IntentsGrpc {
      * Retrieves the specified intent.
      * </pre>
      */
-    public void getIntent(
+    default void getIntent(
         com.google.cloud.dialogflow.v2.GetIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Intent> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetIntentMethod(), responseObserver);
@@ -429,7 +429,7 @@ public final class IntentsGrpc {
      * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
-    public void createIntent(
+    default void createIntent(
         com.google.cloud.dialogflow.v2.CreateIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Intent> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -446,7 +446,7 @@ public final class IntentsGrpc {
      * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
-    public void updateIntent(
+    default void updateIntent(
         com.google.cloud.dialogflow.v2.UpdateIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Intent> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -463,7 +463,7 @@ public final class IntentsGrpc {
      * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
-    public void deleteIntent(
+    default void deleteIntent(
         com.google.cloud.dialogflow.v2.DeleteIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -487,7 +487,7 @@ public final class IntentsGrpc {
      * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
-    public void batchUpdateIntents(
+    default void batchUpdateIntents(
         com.google.cloud.dialogflow.v2.BatchUpdateIntentsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -511,65 +511,31 @@ public final class IntentsGrpc {
      * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
-    public void batchDeleteIntents(
+    default void batchDeleteIntents(
         com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getBatchDeleteIntentsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Intents.
+   *
+   * <pre>
+   * Service for managing [Intents][google.cloud.dialogflow.v2.Intent].
+   * </pre>
+   */
+  public abstract static class IntentsImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListIntentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.ListIntentsRequest,
-                      com.google.cloud.dialogflow.v2.ListIntentsResponse>(
-                      this, METHODID_LIST_INTENTS)))
-          .addMethod(
-              getGetIntentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.GetIntentRequest,
-                      com.google.cloud.dialogflow.v2.Intent>(this, METHODID_GET_INTENT)))
-          .addMethod(
-              getCreateIntentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.CreateIntentRequest,
-                      com.google.cloud.dialogflow.v2.Intent>(this, METHODID_CREATE_INTENT)))
-          .addMethod(
-              getUpdateIntentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.UpdateIntentRequest,
-                      com.google.cloud.dialogflow.v2.Intent>(this, METHODID_UPDATE_INTENT)))
-          .addMethod(
-              getDeleteIntentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.DeleteIntentRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_INTENT)))
-          .addMethod(
-              getBatchUpdateIntentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.BatchUpdateIntentsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_BATCH_UPDATE_INTENTS)))
-          .addMethod(
-              getBatchDeleteIntentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_BATCH_DELETE_INTENTS)))
-          .build();
+      return IntentsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Intents.
    *
    * <pre>
    * Service for managing [Intents][google.cloud.dialogflow.v2.Intent].
@@ -727,7 +693,7 @@ public final class IntentsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Intents.
    *
    * <pre>
    * Service for managing [Intents][google.cloud.dialogflow.v2.Intent].
@@ -866,7 +832,7 @@ public final class IntentsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Intents.
    *
    * <pre>
    * Service for managing [Intents][google.cloud.dialogflow.v2.Intent].
@@ -1018,10 +984,10 @@ public final class IntentsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final IntentsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(IntentsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1083,6 +1049,54 @@ public final class IntentsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListIntentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.ListIntentsRequest,
+                    com.google.cloud.dialogflow.v2.ListIntentsResponse>(
+                    service, METHODID_LIST_INTENTS)))
+        .addMethod(
+            getGetIntentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.GetIntentRequest,
+                    com.google.cloud.dialogflow.v2.Intent>(service, METHODID_GET_INTENT)))
+        .addMethod(
+            getCreateIntentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.CreateIntentRequest,
+                    com.google.cloud.dialogflow.v2.Intent>(service, METHODID_CREATE_INTENT)))
+        .addMethod(
+            getUpdateIntentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.UpdateIntentRequest,
+                    com.google.cloud.dialogflow.v2.Intent>(service, METHODID_UPDATE_INTENT)))
+        .addMethod(
+            getDeleteIntentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.DeleteIntentRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_INTENT)))
+        .addMethod(
+            getBatchUpdateIntentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.BatchUpdateIntentsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_BATCH_UPDATE_INTENTS)))
+        .addMethod(
+            getBatchDeleteIntentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_BATCH_DELETE_INTENTS)))
+        .build();
   }
 
   private abstract static class IntentsBaseDescriptorSupplier

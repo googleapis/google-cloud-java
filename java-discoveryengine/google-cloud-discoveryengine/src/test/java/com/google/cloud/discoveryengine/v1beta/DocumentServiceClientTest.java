@@ -90,7 +90,8 @@ public class DocumentServiceClientTest {
     Document expectedResponse =
         Document.newBuilder()
             .setName(
-                DocumentName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
+                DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
                     .toString())
             .setId("id3355")
             .setSchemaId("schemaId-697673060")
@@ -99,7 +100,8 @@ public class DocumentServiceClientTest {
     mockDocumentService.addResponse(expectedResponse);
 
     DocumentName name =
-        DocumentName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
+        DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+            "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
 
     Document actualResponse = client.getDocument(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -122,7 +124,8 @@ public class DocumentServiceClientTest {
 
     try {
       DocumentName name =
-          DocumentName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
+          DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+              "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
       client.getDocument(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -135,7 +138,8 @@ public class DocumentServiceClientTest {
     Document expectedResponse =
         Document.newBuilder()
             .setName(
-                DocumentName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
+                DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
                     .toString())
             .setId("id3355")
             .setSchemaId("schemaId-697673060")
@@ -183,7 +187,9 @@ public class DocumentServiceClientTest {
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
-    BranchName parent = BranchName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]");
+    BranchName parent =
+        BranchName.ofProjectLocationDataStoreBranchName(
+            "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]");
 
     ListDocumentsPagedResponse pagedListResponse = client.listDocuments(parent);
 
@@ -209,7 +215,9 @@ public class DocumentServiceClientTest {
     mockDocumentService.addException(exception);
 
     try {
-      BranchName parent = BranchName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]");
+      BranchName parent =
+          BranchName.ofProjectLocationDataStoreBranchName(
+              "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]");
       client.listDocuments(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -266,7 +274,8 @@ public class DocumentServiceClientTest {
     Document expectedResponse =
         Document.newBuilder()
             .setName(
-                DocumentName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
+                DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
                     .toString())
             .setId("id3355")
             .setSchemaId("schemaId-697673060")
@@ -274,7 +283,9 @@ public class DocumentServiceClientTest {
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
-    BranchName parent = BranchName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]");
+    BranchName parent =
+        BranchName.ofProjectLocationDataStoreBranchName(
+            "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]");
     Document document = Document.newBuilder().build();
     String documentId = "documentId-814940266";
 
@@ -300,7 +311,9 @@ public class DocumentServiceClientTest {
     mockDocumentService.addException(exception);
 
     try {
-      BranchName parent = BranchName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]");
+      BranchName parent =
+          BranchName.ofProjectLocationDataStoreBranchName(
+              "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]");
       Document document = Document.newBuilder().build();
       String documentId = "documentId-814940266";
       client.createDocument(parent, document, documentId);
@@ -315,7 +328,8 @@ public class DocumentServiceClientTest {
     Document expectedResponse =
         Document.newBuilder()
             .setName(
-                DocumentName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
+                DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
                     .toString())
             .setId("id3355")
             .setSchemaId("schemaId-697673060")
@@ -364,7 +378,8 @@ public class DocumentServiceClientTest {
     Document expectedResponse =
         Document.newBuilder()
             .setName(
-                DocumentName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
+                DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]")
                     .toString())
             .setId("id3355")
             .setSchemaId("schemaId-697673060")
@@ -417,7 +432,8 @@ public class DocumentServiceClientTest {
     mockDocumentService.addResponse(expectedResponse);
 
     DocumentName name =
-        DocumentName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
+        DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+            "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
 
     client.deleteDocument(name);
 
@@ -439,7 +455,8 @@ public class DocumentServiceClientTest {
 
     try {
       DocumentName name =
-          DocumentName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
+          DocumentName.ofProjectLocationDataStoreBranchDocumentName(
+              "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]", "[DOCUMENT]");
       client.deleteDocument(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -499,7 +516,9 @@ public class DocumentServiceClientTest {
     ImportDocumentsRequest request =
         ImportDocumentsRequest.newBuilder()
             .setParent(
-                BranchName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]").toString())
+                BranchName.ofProjectLocationDataStoreBranchName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+                    .toString())
             .setErrorConfig(ImportErrorConfig.newBuilder().build())
             .build();
 
@@ -531,7 +550,9 @@ public class DocumentServiceClientTest {
       ImportDocumentsRequest request =
           ImportDocumentsRequest.newBuilder()
               .setParent(
-                  BranchName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]").toString())
+                  BranchName.ofProjectLocationDataStoreBranchName(
+                          "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+                      .toString())
               .setErrorConfig(ImportErrorConfig.newBuilder().build())
               .build();
       client.importDocumentsAsync(request).get();

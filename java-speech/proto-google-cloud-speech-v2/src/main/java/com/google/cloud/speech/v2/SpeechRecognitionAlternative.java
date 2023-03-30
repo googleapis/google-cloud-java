@@ -153,9 +153,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    *
    * <pre>
    * A list of word-specific information for each recognized word.
-   * When
-   * [enable_speaker_diarization][google.cloud.speech.v2.SpeakerDiarizationConfig.enable_speaker_diarization]
-   * is true, you will see all the words from the beginning of the audio.
+   * When the
+   * [SpeakerDiarizationConfig][google.cloud.speech.v2.SpeakerDiarizationConfig]
+   * is set, you will see all the words from the beginning of the audio.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.WordInfo words = 3;</code>
@@ -169,9 +169,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    *
    * <pre>
    * A list of word-specific information for each recognized word.
-   * When
-   * [enable_speaker_diarization][google.cloud.speech.v2.SpeakerDiarizationConfig.enable_speaker_diarization]
-   * is true, you will see all the words from the beginning of the audio.
+   * When the
+   * [SpeakerDiarizationConfig][google.cloud.speech.v2.SpeakerDiarizationConfig]
+   * is set, you will see all the words from the beginning of the audio.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.WordInfo words = 3;</code>
@@ -186,9 +186,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    *
    * <pre>
    * A list of word-specific information for each recognized word.
-   * When
-   * [enable_speaker_diarization][google.cloud.speech.v2.SpeakerDiarizationConfig.enable_speaker_diarization]
-   * is true, you will see all the words from the beginning of the audio.
+   * When the
+   * [SpeakerDiarizationConfig][google.cloud.speech.v2.SpeakerDiarizationConfig]
+   * is set, you will see all the words from the beginning of the audio.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.WordInfo words = 3;</code>
@@ -202,9 +202,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    *
    * <pre>
    * A list of word-specific information for each recognized word.
-   * When
-   * [enable_speaker_diarization][google.cloud.speech.v2.SpeakerDiarizationConfig.enable_speaker_diarization]
-   * is true, you will see all the words from the beginning of the audio.
+   * When the
+   * [SpeakerDiarizationConfig][google.cloud.speech.v2.SpeakerDiarizationConfig]
+   * is set, you will see all the words from the beginning of the audio.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.WordInfo words = 3;</code>
@@ -218,9 +218,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
    *
    * <pre>
    * A list of word-specific information for each recognized word.
-   * When
-   * [enable_speaker_diarization][google.cloud.speech.v2.SpeakerDiarizationConfig.enable_speaker_diarization]
-   * is true, you will see all the words from the beginning of the audio.
+   * When the
+   * [SpeakerDiarizationConfig][google.cloud.speech.v2.SpeakerDiarizationConfig]
+   * is set, you will see all the words from the beginning of the audio.
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v2.WordInfo words = 3;</code>
@@ -869,9 +869,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * A list of word-specific information for each recognized word.
-     * When
-     * [enable_speaker_diarization][google.cloud.speech.v2.SpeakerDiarizationConfig.enable_speaker_diarization]
-     * is true, you will see all the words from the beginning of the audio.
+     * When the
+     * [SpeakerDiarizationConfig][google.cloud.speech.v2.SpeakerDiarizationConfig]
+     * is set, you will see all the words from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.WordInfo words = 3;</code>
@@ -888,9 +888,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * A list of word-specific information for each recognized word.
-     * When
-     * [enable_speaker_diarization][google.cloud.speech.v2.SpeakerDiarizationConfig.enable_speaker_diarization]
-     * is true, you will see all the words from the beginning of the audio.
+     * When the
+     * [SpeakerDiarizationConfig][google.cloud.speech.v2.SpeakerDiarizationConfig]
+     * is set, you will see all the words from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.WordInfo words = 3;</code>
@@ -907,9 +907,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * A list of word-specific information for each recognized word.
-     * When
-     * [enable_speaker_diarization][google.cloud.speech.v2.SpeakerDiarizationConfig.enable_speaker_diarization]
-     * is true, you will see all the words from the beginning of the audio.
+     * When the
+     * [SpeakerDiarizationConfig][google.cloud.speech.v2.SpeakerDiarizationConfig]
+     * is set, you will see all the words from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.WordInfo words = 3;</code>
@@ -926,9 +926,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * A list of word-specific information for each recognized word.
-     * When
-     * [enable_speaker_diarization][google.cloud.speech.v2.SpeakerDiarizationConfig.enable_speaker_diarization]
-     * is true, you will see all the words from the beginning of the audio.
+     * When the
+     * [SpeakerDiarizationConfig][google.cloud.speech.v2.SpeakerDiarizationConfig]
+     * is set, you will see all the words from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.WordInfo words = 3;</code>
@@ -951,9 +951,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * A list of word-specific information for each recognized word.
-     * When
-     * [enable_speaker_diarization][google.cloud.speech.v2.SpeakerDiarizationConfig.enable_speaker_diarization]
-     * is true, you will see all the words from the beginning of the audio.
+     * When the
+     * [SpeakerDiarizationConfig][google.cloud.speech.v2.SpeakerDiarizationConfig]
+     * is set, you will see all the words from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.WordInfo words = 3;</code>
@@ -974,9 +974,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * A list of word-specific information for each recognized word.
-     * When
-     * [enable_speaker_diarization][google.cloud.speech.v2.SpeakerDiarizationConfig.enable_speaker_diarization]
-     * is true, you will see all the words from the beginning of the audio.
+     * When the
+     * [SpeakerDiarizationConfig][google.cloud.speech.v2.SpeakerDiarizationConfig]
+     * is set, you will see all the words from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.WordInfo words = 3;</code>
@@ -999,9 +999,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * A list of word-specific information for each recognized word.
-     * When
-     * [enable_speaker_diarization][google.cloud.speech.v2.SpeakerDiarizationConfig.enable_speaker_diarization]
-     * is true, you will see all the words from the beginning of the audio.
+     * When the
+     * [SpeakerDiarizationConfig][google.cloud.speech.v2.SpeakerDiarizationConfig]
+     * is set, you will see all the words from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.WordInfo words = 3;</code>
@@ -1024,9 +1024,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * A list of word-specific information for each recognized word.
-     * When
-     * [enable_speaker_diarization][google.cloud.speech.v2.SpeakerDiarizationConfig.enable_speaker_diarization]
-     * is true, you will see all the words from the beginning of the audio.
+     * When the
+     * [SpeakerDiarizationConfig][google.cloud.speech.v2.SpeakerDiarizationConfig]
+     * is set, you will see all the words from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.WordInfo words = 3;</code>
@@ -1046,9 +1046,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * A list of word-specific information for each recognized word.
-     * When
-     * [enable_speaker_diarization][google.cloud.speech.v2.SpeakerDiarizationConfig.enable_speaker_diarization]
-     * is true, you will see all the words from the beginning of the audio.
+     * When the
+     * [SpeakerDiarizationConfig][google.cloud.speech.v2.SpeakerDiarizationConfig]
+     * is set, you will see all the words from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.WordInfo words = 3;</code>
@@ -1069,9 +1069,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * A list of word-specific information for each recognized word.
-     * When
-     * [enable_speaker_diarization][google.cloud.speech.v2.SpeakerDiarizationConfig.enable_speaker_diarization]
-     * is true, you will see all the words from the beginning of the audio.
+     * When the
+     * [SpeakerDiarizationConfig][google.cloud.speech.v2.SpeakerDiarizationConfig]
+     * is set, you will see all the words from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.WordInfo words = 3;</code>
@@ -1092,9 +1092,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * A list of word-specific information for each recognized word.
-     * When
-     * [enable_speaker_diarization][google.cloud.speech.v2.SpeakerDiarizationConfig.enable_speaker_diarization]
-     * is true, you will see all the words from the beginning of the audio.
+     * When the
+     * [SpeakerDiarizationConfig][google.cloud.speech.v2.SpeakerDiarizationConfig]
+     * is set, you will see all the words from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.WordInfo words = 3;</code>
@@ -1114,9 +1114,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * A list of word-specific information for each recognized word.
-     * When
-     * [enable_speaker_diarization][google.cloud.speech.v2.SpeakerDiarizationConfig.enable_speaker_diarization]
-     * is true, you will see all the words from the beginning of the audio.
+     * When the
+     * [SpeakerDiarizationConfig][google.cloud.speech.v2.SpeakerDiarizationConfig]
+     * is set, you will see all the words from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.WordInfo words = 3;</code>
@@ -1136,9 +1136,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * A list of word-specific information for each recognized word.
-     * When
-     * [enable_speaker_diarization][google.cloud.speech.v2.SpeakerDiarizationConfig.enable_speaker_diarization]
-     * is true, you will see all the words from the beginning of the audio.
+     * When the
+     * [SpeakerDiarizationConfig][google.cloud.speech.v2.SpeakerDiarizationConfig]
+     * is set, you will see all the words from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.WordInfo words = 3;</code>
@@ -1151,9 +1151,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * A list of word-specific information for each recognized word.
-     * When
-     * [enable_speaker_diarization][google.cloud.speech.v2.SpeakerDiarizationConfig.enable_speaker_diarization]
-     * is true, you will see all the words from the beginning of the audio.
+     * When the
+     * [SpeakerDiarizationConfig][google.cloud.speech.v2.SpeakerDiarizationConfig]
+     * is set, you will see all the words from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.WordInfo words = 3;</code>
@@ -1170,9 +1170,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * A list of word-specific information for each recognized word.
-     * When
-     * [enable_speaker_diarization][google.cloud.speech.v2.SpeakerDiarizationConfig.enable_speaker_diarization]
-     * is true, you will see all the words from the beginning of the audio.
+     * When the
+     * [SpeakerDiarizationConfig][google.cloud.speech.v2.SpeakerDiarizationConfig]
+     * is set, you will see all the words from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.WordInfo words = 3;</code>
@@ -1190,9 +1190,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * A list of word-specific information for each recognized word.
-     * When
-     * [enable_speaker_diarization][google.cloud.speech.v2.SpeakerDiarizationConfig.enable_speaker_diarization]
-     * is true, you will see all the words from the beginning of the audio.
+     * When the
+     * [SpeakerDiarizationConfig][google.cloud.speech.v2.SpeakerDiarizationConfig]
+     * is set, you will see all the words from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.WordInfo words = 3;</code>
@@ -1206,9 +1206,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * A list of word-specific information for each recognized word.
-     * When
-     * [enable_speaker_diarization][google.cloud.speech.v2.SpeakerDiarizationConfig.enable_speaker_diarization]
-     * is true, you will see all the words from the beginning of the audio.
+     * When the
+     * [SpeakerDiarizationConfig][google.cloud.speech.v2.SpeakerDiarizationConfig]
+     * is set, you will see all the words from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.WordInfo words = 3;</code>
@@ -1222,9 +1222,9 @@ public final class SpeechRecognitionAlternative extends com.google.protobuf.Gene
      *
      * <pre>
      * A list of word-specific information for each recognized word.
-     * When
-     * [enable_speaker_diarization][google.cloud.speech.v2.SpeakerDiarizationConfig.enable_speaker_diarization]
-     * is true, you will see all the words from the beginning of the audio.
+     * When the
+     * [SpeakerDiarizationConfig][google.cloud.speech.v2.SpeakerDiarizationConfig]
+     * is set, you will see all the words from the beginning of the audio.
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v2.WordInfo words = 3;</code>

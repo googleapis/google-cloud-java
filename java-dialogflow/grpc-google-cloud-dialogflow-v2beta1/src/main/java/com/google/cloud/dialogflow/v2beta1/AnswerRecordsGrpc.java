@@ -226,7 +226,7 @@ public final class AnswerRecordsGrpc {
    * [AnswerRecords][google.cloud.dialogflow.v2beta1.AnswerRecord].
    * </pre>
    */
-  public abstract static class AnswerRecordsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -237,7 +237,7 @@ public final class AnswerRecordsGrpc {
      * </pre>
      */
     @java.lang.Deprecated
-    public void getAnswerRecord(
+    default void getAnswerRecord(
         com.google.cloud.dialogflow.v2beta1.GetAnswerRecordRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.AnswerRecord>
             responseObserver) {
@@ -253,7 +253,7 @@ public final class AnswerRecordsGrpc {
      * chronological order.
      * </pre>
      */
-    public void listAnswerRecords(
+    default void listAnswerRecords(
         com.google.cloud.dialogflow.v2beta1.ListAnswerRecordsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListAnswerRecordsResponse>
             responseObserver) {
@@ -268,44 +268,34 @@ public final class AnswerRecordsGrpc {
      * Updates the specified answer record.
      * </pre>
      */
-    public void updateAnswerRecord(
+    default void updateAnswerRecord(
         com.google.cloud.dialogflow.v2beta1.UpdateAnswerRecordRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.AnswerRecord>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateAnswerRecordMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service AnswerRecords.
+   *
+   * <pre>
+   * Service for managing
+   * [AnswerRecords][google.cloud.dialogflow.v2beta1.AnswerRecord].
+   * </pre>
+   */
+  public abstract static class AnswerRecordsImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getGetAnswerRecordMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.GetAnswerRecordRequest,
-                      com.google.cloud.dialogflow.v2beta1.AnswerRecord>(
-                      this, METHODID_GET_ANSWER_RECORD)))
-          .addMethod(
-              getListAnswerRecordsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.ListAnswerRecordsRequest,
-                      com.google.cloud.dialogflow.v2beta1.ListAnswerRecordsResponse>(
-                      this, METHODID_LIST_ANSWER_RECORDS)))
-          .addMethod(
-              getUpdateAnswerRecordMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.UpdateAnswerRecordRequest,
-                      com.google.cloud.dialogflow.v2beta1.AnswerRecord>(
-                      this, METHODID_UPDATE_ANSWER_RECORD)))
-          .build();
+      return AnswerRecordsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service AnswerRecords.
    *
    * <pre>
    * Service for managing
@@ -379,7 +369,7 @@ public final class AnswerRecordsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service AnswerRecords.
    *
    * <pre>
    * Service for managing
@@ -442,7 +432,7 @@ public final class AnswerRecordsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service AnswerRecords.
    *
    * <pre>
    * Service for managing
@@ -516,10 +506,10 @@ public final class AnswerRecordsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final AnswerRecordsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(AnswerRecordsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -561,6 +551,32 @@ public final class AnswerRecordsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getGetAnswerRecordMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.GetAnswerRecordRequest,
+                    com.google.cloud.dialogflow.v2beta1.AnswerRecord>(
+                    service, METHODID_GET_ANSWER_RECORD)))
+        .addMethod(
+            getListAnswerRecordsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.ListAnswerRecordsRequest,
+                    com.google.cloud.dialogflow.v2beta1.ListAnswerRecordsResponse>(
+                    service, METHODID_LIST_ANSWER_RECORDS)))
+        .addMethod(
+            getUpdateAnswerRecordMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.UpdateAnswerRecordRequest,
+                    com.google.cloud.dialogflow.v2beta1.AnswerRecord>(
+                    service, METHODID_UPDATE_ANSWER_RECORD)))
+        .build();
   }
 
   private abstract static class AnswerRecordsBaseDescriptorSupplier

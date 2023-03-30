@@ -348,7 +348,7 @@ public final class ContextsGrpc {
    * Service for managing [Contexts][google.cloud.dialogflow.v2beta1.Context].
    * </pre>
    */
-  public abstract static class ContextsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -357,7 +357,7 @@ public final class ContextsGrpc {
      * Returns the list of all contexts in the specified session.
      * </pre>
      */
-    public void listContexts(
+    default void listContexts(
         com.google.cloud.dialogflow.v2beta1.ListContextsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.ListContextsResponse>
             responseObserver) {
@@ -372,7 +372,7 @@ public final class ContextsGrpc {
      * Retrieves the specified context.
      * </pre>
      */
-    public void getContext(
+    default void getContext(
         com.google.cloud.dialogflow.v2beta1.GetContextRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Context> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetContextMethod(), responseObserver);
@@ -386,7 +386,7 @@ public final class ContextsGrpc {
      * If the specified context already exists, overrides the context.
      * </pre>
      */
-    public void createContext(
+    default void createContext(
         com.google.cloud.dialogflow.v2beta1.CreateContextRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Context> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -400,7 +400,7 @@ public final class ContextsGrpc {
      * Updates the specified context.
      * </pre>
      */
-    public void updateContext(
+    default void updateContext(
         com.google.cloud.dialogflow.v2beta1.UpdateContextRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2beta1.Context> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -414,7 +414,7 @@ public final class ContextsGrpc {
      * Deletes the specified context.
      * </pre>
      */
-    public void deleteContext(
+    default void deleteContext(
         com.google.cloud.dialogflow.v2beta1.DeleteContextRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -428,59 +428,31 @@ public final class ContextsGrpc {
      * Deletes all active contexts in the specified session.
      * </pre>
      */
-    public void deleteAllContexts(
+    default void deleteAllContexts(
         com.google.cloud.dialogflow.v2beta1.DeleteAllContextsRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteAllContextsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Contexts.
+   *
+   * <pre>
+   * Service for managing [Contexts][google.cloud.dialogflow.v2beta1.Context].
+   * </pre>
+   */
+  public abstract static class ContextsImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListContextsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.ListContextsRequest,
-                      com.google.cloud.dialogflow.v2beta1.ListContextsResponse>(
-                      this, METHODID_LIST_CONTEXTS)))
-          .addMethod(
-              getGetContextMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.GetContextRequest,
-                      com.google.cloud.dialogflow.v2beta1.Context>(this, METHODID_GET_CONTEXT)))
-          .addMethod(
-              getCreateContextMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.CreateContextRequest,
-                      com.google.cloud.dialogflow.v2beta1.Context>(this, METHODID_CREATE_CONTEXT)))
-          .addMethod(
-              getUpdateContextMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.UpdateContextRequest,
-                      com.google.cloud.dialogflow.v2beta1.Context>(this, METHODID_UPDATE_CONTEXT)))
-          .addMethod(
-              getDeleteContextMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.DeleteContextRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_CONTEXT)))
-          .addMethod(
-              getDeleteAllContextsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2beta1.DeleteAllContextsRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_ALL_CONTEXTS)))
-          .build();
+      return ContextsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Contexts.
    *
    * <pre>
    * Service for managing [Contexts][google.cloud.dialogflow.v2beta1.Context].
@@ -594,7 +566,7 @@ public final class ContextsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Contexts.
    *
    * <pre>
    * Service for managing [Contexts][google.cloud.dialogflow.v2beta1.Context].
@@ -692,7 +664,7 @@ public final class ContextsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Contexts.
    *
    * <pre>
    * Service for managing [Contexts][google.cloud.dialogflow.v2beta1.Context].
@@ -805,10 +777,10 @@ public final class ContextsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ContextsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ContextsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -866,6 +838,48 @@ public final class ContextsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListContextsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.ListContextsRequest,
+                    com.google.cloud.dialogflow.v2beta1.ListContextsResponse>(
+                    service, METHODID_LIST_CONTEXTS)))
+        .addMethod(
+            getGetContextMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.GetContextRequest,
+                    com.google.cloud.dialogflow.v2beta1.Context>(service, METHODID_GET_CONTEXT)))
+        .addMethod(
+            getCreateContextMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.CreateContextRequest,
+                    com.google.cloud.dialogflow.v2beta1.Context>(service, METHODID_CREATE_CONTEXT)))
+        .addMethod(
+            getUpdateContextMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.UpdateContextRequest,
+                    com.google.cloud.dialogflow.v2beta1.Context>(service, METHODID_UPDATE_CONTEXT)))
+        .addMethod(
+            getDeleteContextMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.DeleteContextRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_CONTEXT)))
+        .addMethod(
+            getDeleteAllContextsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.DeleteAllContextsRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_ALL_CONTEXTS)))
+        .build();
   }
 
   private abstract static class ContextsBaseDescriptorSupplier

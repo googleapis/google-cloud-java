@@ -151,10 +151,11 @@ public interface RouteMatrixElementOrBuilder
    *
    * <pre>
    * The length of time needed to navigate the route. If you set the
-   * `routing_preference` to `TRAFFIC_UNAWARE`, then this value is the same as
-   * `static_duration`. If you set the `routing_preference` to either
-   * `TRAFFIC_AWARE` or `TRAFFIC_AWARE_OPTIMAL`, then this value is calculated
-   * taking traffic conditions into account.
+   * [routing_preference][google.maps.routing.v2.ComputeRouteMatrixRequest.routing_preference]
+   * to `TRAFFIC_UNAWARE`, then this value is the same as `static_duration`. If
+   * you set the `routing_preference` to either `TRAFFIC_AWARE` or
+   * `TRAFFIC_AWARE_OPTIMAL`, then this value is calculated taking traffic
+   * conditions into account.
    * </pre>
    *
    * <code>.google.protobuf.Duration duration = 5;</code>
@@ -167,10 +168,11 @@ public interface RouteMatrixElementOrBuilder
    *
    * <pre>
    * The length of time needed to navigate the route. If you set the
-   * `routing_preference` to `TRAFFIC_UNAWARE`, then this value is the same as
-   * `static_duration`. If you set the `routing_preference` to either
-   * `TRAFFIC_AWARE` or `TRAFFIC_AWARE_OPTIMAL`, then this value is calculated
-   * taking traffic conditions into account.
+   * [routing_preference][google.maps.routing.v2.ComputeRouteMatrixRequest.routing_preference]
+   * to `TRAFFIC_UNAWARE`, then this value is the same as `static_duration`. If
+   * you set the `routing_preference` to either `TRAFFIC_AWARE` or
+   * `TRAFFIC_AWARE_OPTIMAL`, then this value is calculated taking traffic
+   * conditions into account.
    * </pre>
    *
    * <code>.google.protobuf.Duration duration = 5;</code>
@@ -183,10 +185,11 @@ public interface RouteMatrixElementOrBuilder
    *
    * <pre>
    * The length of time needed to navigate the route. If you set the
-   * `routing_preference` to `TRAFFIC_UNAWARE`, then this value is the same as
-   * `static_duration`. If you set the `routing_preference` to either
-   * `TRAFFIC_AWARE` or `TRAFFIC_AWARE_OPTIMAL`, then this value is calculated
-   * taking traffic conditions into account.
+   * [routing_preference][google.maps.routing.v2.ComputeRouteMatrixRequest.routing_preference]
+   * to `TRAFFIC_UNAWARE`, then this value is the same as `static_duration`. If
+   * you set the `routing_preference` to either `TRAFFIC_AWARE` or
+   * `TRAFFIC_AWARE_OPTIMAL`, then this value is calculated taking traffic
+   * conditions into account.
    * </pre>
    *
    * <code>.google.protobuf.Duration duration = 5;</code>

@@ -168,8 +168,8 @@ public interface CreateRolloutRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If set to true, the request is validated and the user is provided with
-   * an expected result, but no actual change is made.
+   * Optional. If set to true, the request is validated and the user is provided
+   * with an expected result, but no actual change is made.
    * </pre>
    *
    * <code>bool validate_only = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -177,4 +177,31 @@ public interface CreateRolloutRequestOrBuilder
    * @return The validateOnly.
    */
   boolean getValidateOnly();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The starting phase ID for the `Rollout`. If empty the `Rollout`
+   * will start at the first phase.
+   * </pre>
+   *
+   * <code>string starting_phase_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The startingPhaseId.
+   */
+  java.lang.String getStartingPhaseId();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The starting phase ID for the `Rollout`. If empty the `Rollout`
+   * will start at the first phase.
+   * </pre>
+   *
+   * <code>string starting_phase_id = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for startingPhaseId.
+   */
+  com.google.protobuf.ByteString getStartingPhaseIdBytes();
 }

@@ -180,7 +180,7 @@ public final class CompletionServiceGrpc {
    * Enable Retail Search on Cloud Console before using this feature.
    * </pre>
    */
-  public abstract static class CompletionServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -191,7 +191,7 @@ public final class CompletionServiceGrpc {
      * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
-    public void completeQuery(
+    default void completeQuery(
         com.google.cloud.retail.v2.CompleteQueryRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2.CompleteQueryResponse>
             responseObserver) {
@@ -211,35 +211,34 @@ public final class CompletionServiceGrpc {
      * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
-    public void importCompletionData(
+    default void importCompletionData(
         com.google.cloud.retail.v2.ImportCompletionDataRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getImportCompletionDataMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service CompletionService.
+   *
+   * <pre>
+   * Auto-completion service for retail.
+   * This feature is only available for users who have Retail Search enabled.
+   * Enable Retail Search on Cloud Console before using this feature.
+   * </pre>
+   */
+  public abstract static class CompletionServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCompleteQueryMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2.CompleteQueryRequest,
-                      com.google.cloud.retail.v2.CompleteQueryResponse>(
-                      this, METHODID_COMPLETE_QUERY)))
-          .addMethod(
-              getImportCompletionDataMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2.ImportCompletionDataRequest,
-                      com.google.longrunning.Operation>(this, METHODID_IMPORT_COMPLETION_DATA)))
-          .build();
+      return CompletionServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service CompletionService.
    *
    * <pre>
    * Auto-completion service for retail.
@@ -301,7 +300,7 @@ public final class CompletionServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service CompletionService.
    *
    * <pre>
    * Auto-completion service for retail.
@@ -357,7 +356,7 @@ public final class CompletionServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service CompletionService.
    *
    * <pre>
    * Auto-completion service for retail.
@@ -420,10 +419,10 @@ public final class CompletionServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final CompletionServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(CompletionServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -457,6 +456,24 @@ public final class CompletionServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCompleteQueryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2.CompleteQueryRequest,
+                    com.google.cloud.retail.v2.CompleteQueryResponse>(
+                    service, METHODID_COMPLETE_QUERY)))
+        .addMethod(
+            getImportCompletionDataMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2.ImportCompletionDataRequest,
+                    com.google.longrunning.Operation>(service, METHODID_IMPORT_COMPLETION_DATA)))
+        .build();
   }
 
   private abstract static class CompletionServiceBaseDescriptorSupplier

@@ -321,7 +321,7 @@ public final class AlertPolicyServiceGrpc {
    * [Cloud console](https://console.cloud.google.com/).
    * </pre>
    */
-  public abstract static class AlertPolicyServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -330,7 +330,7 @@ public final class AlertPolicyServiceGrpc {
      * Lists the existing alerting policies for the workspace.
      * </pre>
      */
-    public void listAlertPolicies(
+    default void listAlertPolicies(
         com.google.monitoring.v3.ListAlertPoliciesRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.ListAlertPoliciesResponse>
             responseObserver) {
@@ -345,7 +345,7 @@ public final class AlertPolicyServiceGrpc {
      * Gets a single alerting policy.
      * </pre>
      */
-    public void getAlertPolicy(
+    default void getAlertPolicy(
         com.google.monitoring.v3.GetAlertPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.AlertPolicy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -359,7 +359,7 @@ public final class AlertPolicyServiceGrpc {
      * Creates a new alerting policy.
      * </pre>
      */
-    public void createAlertPolicy(
+    default void createAlertPolicy(
         com.google.monitoring.v3.CreateAlertPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.AlertPolicy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -373,7 +373,7 @@ public final class AlertPolicyServiceGrpc {
      * Deletes an alerting policy.
      * </pre>
      */
-    public void deleteAlertPolicy(
+    default void deleteAlertPolicy(
         com.google.monitoring.v3.DeleteAlertPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -390,53 +390,40 @@ public final class AlertPolicyServiceGrpc {
      * updated alerting policy.
      * </pre>
      */
-    public void updateAlertPolicy(
+    default void updateAlertPolicy(
         com.google.monitoring.v3.UpdateAlertPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.AlertPolicy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateAlertPolicyMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service AlertPolicyService.
+   *
+   * <pre>
+   * The AlertPolicyService API is used to manage (list, create, delete,
+   * edit) alert policies in Cloud Monitoring. An alerting policy is
+   * a description of the conditions under which some aspect of your
+   * system is considered to be "unhealthy" and the ways to notify
+   * people or services about this state. In addition to using this API, alert
+   * policies can also be managed through
+   * [Cloud Monitoring](https://cloud.google.com/monitoring/docs/),
+   * which can be reached by clicking the "Monitoring" tab in
+   * [Cloud console](https://console.cloud.google.com/).
+   * </pre>
+   */
+  public abstract static class AlertPolicyServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListAlertPoliciesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.ListAlertPoliciesRequest,
-                      com.google.monitoring.v3.ListAlertPoliciesResponse>(
-                      this, METHODID_LIST_ALERT_POLICIES)))
-          .addMethod(
-              getGetAlertPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.GetAlertPolicyRequest,
-                      com.google.monitoring.v3.AlertPolicy>(this, METHODID_GET_ALERT_POLICY)))
-          .addMethod(
-              getCreateAlertPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.CreateAlertPolicyRequest,
-                      com.google.monitoring.v3.AlertPolicy>(this, METHODID_CREATE_ALERT_POLICY)))
-          .addMethod(
-              getDeleteAlertPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.DeleteAlertPolicyRequest, com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_ALERT_POLICY)))
-          .addMethod(
-              getUpdateAlertPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.UpdateAlertPolicyRequest,
-                      com.google.monitoring.v3.AlertPolicy>(this, METHODID_UPDATE_ALERT_POLICY)))
-          .build();
+      return AlertPolicyServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service AlertPolicyService.
    *
    * <pre>
    * The AlertPolicyService API is used to manage (list, create, delete,
@@ -548,7 +535,7 @@ public final class AlertPolicyServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service AlertPolicyService.
    *
    * <pre>
    * The AlertPolicyService API is used to manage (list, create, delete,
@@ -645,7 +632,7 @@ public final class AlertPolicyServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service AlertPolicyService.
    *
    * <pre>
    * The AlertPolicyService API is used to manage (list, create, delete,
@@ -752,10 +739,10 @@ public final class AlertPolicyServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final AlertPolicyServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(AlertPolicyServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -804,6 +791,42 @@ public final class AlertPolicyServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListAlertPoliciesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.ListAlertPoliciesRequest,
+                    com.google.monitoring.v3.ListAlertPoliciesResponse>(
+                    service, METHODID_LIST_ALERT_POLICIES)))
+        .addMethod(
+            getGetAlertPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.GetAlertPolicyRequest,
+                    com.google.monitoring.v3.AlertPolicy>(service, METHODID_GET_ALERT_POLICY)))
+        .addMethod(
+            getCreateAlertPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.CreateAlertPolicyRequest,
+                    com.google.monitoring.v3.AlertPolicy>(service, METHODID_CREATE_ALERT_POLICY)))
+        .addMethod(
+            getDeleteAlertPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.DeleteAlertPolicyRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_ALERT_POLICY)))
+        .addMethod(
+            getUpdateAlertPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.UpdateAlertPolicyRequest,
+                    com.google.monitoring.v3.AlertPolicy>(service, METHODID_UPDATE_ALERT_POLICY)))
+        .build();
   }
 
   private abstract static class AlertPolicyServiceBaseDescriptorSupplier

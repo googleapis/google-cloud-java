@@ -27,7 +27,7 @@ public interface SearchLinksRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project and location you want search in.
+   * Required. The project and location you want search in the format `projects/&#42;&#47;locations/&#42;`
    * </pre>
    *
    * <code>
@@ -41,7 +41,7 @@ public interface SearchLinksRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The project and location you want search in.
+   * Required. The project and location you want search in the format `projects/&#42;&#47;locations/&#42;`
    * </pre>
    *
    * <code>

@@ -421,7 +421,7 @@ public final class ContentServiceGrpc {
    * ContentService manages Notebook and SQL Scripts for Dataplex.
    * </pre>
    */
-  public abstract static class ContentServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -430,7 +430,7 @@ public final class ContentServiceGrpc {
      * Create a content.
      * </pre>
      */
-    public void createContent(
+    default void createContent(
         com.google.cloud.dataplex.v1.CreateContentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Content> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -444,7 +444,7 @@ public final class ContentServiceGrpc {
      * Update a content. Only supports full resource update.
      * </pre>
      */
-    public void updateContent(
+    default void updateContent(
         com.google.cloud.dataplex.v1.UpdateContentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Content> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -458,7 +458,7 @@ public final class ContentServiceGrpc {
      * Delete a content.
      * </pre>
      */
-    public void deleteContent(
+    default void deleteContent(
         com.google.cloud.dataplex.v1.DeleteContentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -472,7 +472,7 @@ public final class ContentServiceGrpc {
      * Get a content resource.
      * </pre>
      */
-    public void getContent(
+    default void getContent(
         com.google.cloud.dataplex.v1.GetContentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.Content> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetContentMethod(), responseObserver);
@@ -489,7 +489,7 @@ public final class ContentServiceGrpc {
      * on the resource.
      * </pre>
      */
-    public void getIamPolicy(
+    default void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -506,7 +506,7 @@ public final class ContentServiceGrpc {
      * on the resource.
      * </pre>
      */
-    public void setIamPolicy(
+    default void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -527,7 +527,7 @@ public final class ContentServiceGrpc {
      * may "fail open" without warning.
      * </pre>
      */
-    public void testIamPermissions(
+    default void testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
@@ -542,73 +542,33 @@ public final class ContentServiceGrpc {
      * List content.
      * </pre>
      */
-    public void listContent(
+    default void listContent(
         com.google.cloud.dataplex.v1.ListContentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListContentResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListContentMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ContentService.
+   *
+   * <pre>
+   * ContentService manages Notebook and SQL Scripts for Dataplex.
+   * </pre>
+   */
+  public abstract static class ContentServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateContentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.CreateContentRequest,
-                      com.google.cloud.dataplex.v1.Content>(this, METHODID_CREATE_CONTENT)))
-          .addMethod(
-              getUpdateContentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.UpdateContentRequest,
-                      com.google.cloud.dataplex.v1.Content>(this, METHODID_UPDATE_CONTENT)))
-          .addMethod(
-              getDeleteContentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.DeleteContentRequest, com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_CONTENT)))
-          .addMethod(
-              getGetContentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.GetContentRequest,
-                      com.google.cloud.dataplex.v1.Content>(this, METHODID_GET_CONTENT)))
-          .addMethod(
-              getGetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_GET_IAM_POLICY)))
-          .addMethod(
-              getSetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_SET_IAM_POLICY)))
-          .addMethod(
-              getTestIamPermissionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.TestIamPermissionsRequest,
-                      com.google.iam.v1.TestIamPermissionsResponse>(
-                      this, METHODID_TEST_IAM_PERMISSIONS)))
-          .addMethod(
-              getListContentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dataplex.v1.ListContentRequest,
-                      com.google.cloud.dataplex.v1.ListContentResponse>(
-                      this, METHODID_LIST_CONTENT)))
-          .build();
+      return ContentServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ContentService.
    *
    * <pre>
    * ContentService manages Notebook and SQL Scripts for Dataplex.
@@ -769,7 +729,7 @@ public final class ContentServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ContentService.
    *
    * <pre>
    * ContentService manages Notebook and SQL Scripts for Dataplex.
@@ -905,7 +865,7 @@ public final class ContentServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service ContentService.
    *
    * <pre>
    * ContentService manages Notebook and SQL Scripts for Dataplex.
@@ -1058,10 +1018,10 @@ public final class ContentServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ContentServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ContentServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1126,6 +1086,59 @@ public final class ContentServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateContentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.CreateContentRequest,
+                    com.google.cloud.dataplex.v1.Content>(service, METHODID_CREATE_CONTENT)))
+        .addMethod(
+            getUpdateContentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.UpdateContentRequest,
+                    com.google.cloud.dataplex.v1.Content>(service, METHODID_UPDATE_CONTENT)))
+        .addMethod(
+            getDeleteContentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.DeleteContentRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_CONTENT)))
+        .addMethod(
+            getGetContentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.GetContentRequest,
+                    com.google.cloud.dataplex.v1.Content>(service, METHODID_GET_CONTENT)))
+        .addMethod(
+            getGetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_GET_IAM_POLICY)))
+        .addMethod(
+            getSetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_SET_IAM_POLICY)))
+        .addMethod(
+            getTestIamPermissionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.v1.TestIamPermissionsRequest,
+                    com.google.iam.v1.TestIamPermissionsResponse>(
+                    service, METHODID_TEST_IAM_PERMISSIONS)))
+        .addMethod(
+            getListContentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.ListContentRequest,
+                    com.google.cloud.dataplex.v1.ListContentResponse>(
+                    service, METHODID_LIST_CONTENT)))
+        .build();
   }
 
   private abstract static class ContentServiceBaseDescriptorSupplier

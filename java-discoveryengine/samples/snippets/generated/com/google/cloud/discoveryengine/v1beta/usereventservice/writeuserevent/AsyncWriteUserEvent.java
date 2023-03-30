@@ -38,7 +38,10 @@ public class AsyncWriteUserEvent {
     try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
       WriteUserEventRequest request =
           WriteUserEventRequest.newBuilder()
-              .setParent(DataStoreName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]").toString())
+              .setParent(
+                  DataStoreName.ofProjectLocationDataStoreName(
+                          "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                      .toString())
               .setUserEvent(UserEvent.newBuilder().build())
               .build();
       ApiFuture<UserEvent> future =

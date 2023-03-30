@@ -838,7 +838,7 @@ public final class AzureClustersGrpc {
    * to create and manage Anthos clusters that run on Azure infrastructure.
    * </pre>
    */
-  public abstract static class AzureClustersImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -854,7 +854,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
-    public void createAzureClient(
+    default void createAzureClient(
         com.google.cloud.gkemulticloud.v1.CreateAzureClientRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -869,7 +869,7 @@ public final class AzureClustersGrpc {
      * [AzureClient][google.cloud.gkemulticloud.v1.AzureClient] resource.
      * </pre>
      */
-    public void getAzureClient(
+    default void getAzureClient(
         com.google.cloud.gkemulticloud.v1.GetAzureClientRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AzureClient>
             responseObserver) {
@@ -885,7 +885,7 @@ public final class AzureClustersGrpc {
      * resources on a given Google Cloud project and region.
      * </pre>
      */
-    public void listAzureClients(
+    default void listAzureClients(
         com.google.cloud.gkemulticloud.v1.ListAzureClientsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.ListAzureClientsResponse>
             responseObserver) {
@@ -906,7 +906,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
-    public void deleteAzureClient(
+    default void deleteAzureClient(
         com.google.cloud.gkemulticloud.v1.DeleteAzureClientRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -924,7 +924,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
-    public void createAzureCluster(
+    default void createAzureCluster(
         com.google.cloud.gkemulticloud.v1.CreateAzureClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -938,7 +938,7 @@ public final class AzureClustersGrpc {
      * Updates an [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
      * </pre>
      */
-    public void updateAzureCluster(
+    default void updateAzureCluster(
         com.google.cloud.gkemulticloud.v1.UpdateAzureClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -953,7 +953,7 @@ public final class AzureClustersGrpc {
      * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
      * </pre>
      */
-    public void getAzureCluster(
+    default void getAzureCluster(
         com.google.cloud.gkemulticloud.v1.GetAzureClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AzureCluster>
             responseObserver) {
@@ -969,7 +969,7 @@ public final class AzureClustersGrpc {
      * resources on a given Google Cloud project and region.
      * </pre>
      */
-    public void listAzureClusters(
+    default void listAzureClusters(
         com.google.cloud.gkemulticloud.v1.ListAzureClustersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.ListAzureClustersResponse>
             responseObserver) {
@@ -990,7 +990,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
-    public void deleteAzureCluster(
+    default void deleteAzureCluster(
         com.google.cloud.gkemulticloud.v1.DeleteAzureClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1005,7 +1005,7 @@ public final class AzureClustersGrpc {
      * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster] resource.
      * </pre>
      */
-    public void generateAzureAccessToken(
+    default void generateAzureAccessToken(
         com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenResponse>
@@ -1026,7 +1026,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
-    public void createAzureNodePool(
+    default void createAzureNodePool(
         com.google.cloud.gkemulticloud.v1.CreateAzureNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1040,7 +1040,7 @@ public final class AzureClustersGrpc {
      * Updates an [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool].
      * </pre>
      */
-    public void updateAzureNodePool(
+    default void updateAzureNodePool(
         com.google.cloud.gkemulticloud.v1.UpdateAzureNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1055,7 +1055,7 @@ public final class AzureClustersGrpc {
      * [AzureNodePool][google.cloud.gkemulticloud.v1.AzureNodePool] resource.
      * </pre>
      */
-    public void getAzureNodePool(
+    default void getAzureNodePool(
         com.google.cloud.gkemulticloud.v1.GetAzureNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AzureNodePool>
             responseObserver) {
@@ -1072,7 +1072,7 @@ public final class AzureClustersGrpc {
      * [AzureCluster][google.cloud.gkemulticloud.v1.AzureCluster].
      * </pre>
      */
-    public void listAzureNodePools(
+    default void listAzureNodePools(
         com.google.cloud.gkemulticloud.v1.ListAzureNodePoolsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.ListAzureNodePoolsResponse>
             responseObserver) {
@@ -1091,7 +1091,7 @@ public final class AzureClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
-    public void deleteAzureNodePool(
+    default void deleteAzureNodePool(
         com.google.cloud.gkemulticloud.v1.DeleteAzureNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1106,127 +1106,34 @@ public final class AzureClustersGrpc {
      * versions, on a given Google Cloud location.
      * </pre>
      */
-    public void getAzureServerConfig(
+    default void getAzureServerConfig(
         com.google.cloud.gkemulticloud.v1.GetAzureServerConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AzureServerConfig>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetAzureServerConfigMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service AzureClusters.
+   *
+   * <pre>
+   * The AzureClusters API provides a single centrally managed service
+   * to create and manage Anthos clusters that run on Azure infrastructure.
+   * </pre>
+   */
+  public abstract static class AzureClustersImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateAzureClientMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.CreateAzureClientRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_AZURE_CLIENT)))
-          .addMethod(
-              getGetAzureClientMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.GetAzureClientRequest,
-                      com.google.cloud.gkemulticloud.v1.AzureClient>(
-                      this, METHODID_GET_AZURE_CLIENT)))
-          .addMethod(
-              getListAzureClientsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.ListAzureClientsRequest,
-                      com.google.cloud.gkemulticloud.v1.ListAzureClientsResponse>(
-                      this, METHODID_LIST_AZURE_CLIENTS)))
-          .addMethod(
-              getDeleteAzureClientMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.DeleteAzureClientRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_AZURE_CLIENT)))
-          .addMethod(
-              getCreateAzureClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.CreateAzureClusterRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_AZURE_CLUSTER)))
-          .addMethod(
-              getUpdateAzureClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.UpdateAzureClusterRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_AZURE_CLUSTER)))
-          .addMethod(
-              getGetAzureClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.GetAzureClusterRequest,
-                      com.google.cloud.gkemulticloud.v1.AzureCluster>(
-                      this, METHODID_GET_AZURE_CLUSTER)))
-          .addMethod(
-              getListAzureClustersMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.ListAzureClustersRequest,
-                      com.google.cloud.gkemulticloud.v1.ListAzureClustersResponse>(
-                      this, METHODID_LIST_AZURE_CLUSTERS)))
-          .addMethod(
-              getDeleteAzureClusterMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.DeleteAzureClusterRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_AZURE_CLUSTER)))
-          .addMethod(
-              getGenerateAzureAccessTokenMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenRequest,
-                      com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenResponse>(
-                      this, METHODID_GENERATE_AZURE_ACCESS_TOKEN)))
-          .addMethod(
-              getCreateAzureNodePoolMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.CreateAzureNodePoolRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_AZURE_NODE_POOL)))
-          .addMethod(
-              getUpdateAzureNodePoolMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.UpdateAzureNodePoolRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_AZURE_NODE_POOL)))
-          .addMethod(
-              getGetAzureNodePoolMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.GetAzureNodePoolRequest,
-                      com.google.cloud.gkemulticloud.v1.AzureNodePool>(
-                      this, METHODID_GET_AZURE_NODE_POOL)))
-          .addMethod(
-              getListAzureNodePoolsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.ListAzureNodePoolsRequest,
-                      com.google.cloud.gkemulticloud.v1.ListAzureNodePoolsResponse>(
-                      this, METHODID_LIST_AZURE_NODE_POOLS)))
-          .addMethod(
-              getDeleteAzureNodePoolMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.DeleteAzureNodePoolRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_AZURE_NODE_POOL)))
-          .addMethod(
-              getGetAzureServerConfigMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.gkemulticloud.v1.GetAzureServerConfigRequest,
-                      com.google.cloud.gkemulticloud.v1.AzureServerConfig>(
-                      this, METHODID_GET_AZURE_SERVER_CONFIG)))
-          .build();
+      return AzureClustersGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service AzureClusters.
    *
    * <pre>
    * The AzureClusters API provides a single centrally managed service
@@ -1552,7 +1459,7 @@ public final class AzureClustersGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service AzureClusters.
    *
    * <pre>
    * The AzureClusters API provides a single centrally managed service
@@ -1823,7 +1730,7 @@ public final class AzureClustersGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service AzureClusters.
    *
    * <pre>
    * The AzureClusters API provides a single centrally managed service
@@ -2124,10 +2031,10 @@ public final class AzureClustersGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final AzureClustersImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(AzureClustersImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -2242,6 +2149,115 @@ public final class AzureClustersGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateAzureClientMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.CreateAzureClientRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_AZURE_CLIENT)))
+        .addMethod(
+            getGetAzureClientMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.GetAzureClientRequest,
+                    com.google.cloud.gkemulticloud.v1.AzureClient>(
+                    service, METHODID_GET_AZURE_CLIENT)))
+        .addMethod(
+            getListAzureClientsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.ListAzureClientsRequest,
+                    com.google.cloud.gkemulticloud.v1.ListAzureClientsResponse>(
+                    service, METHODID_LIST_AZURE_CLIENTS)))
+        .addMethod(
+            getDeleteAzureClientMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.DeleteAzureClientRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_AZURE_CLIENT)))
+        .addMethod(
+            getCreateAzureClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.CreateAzureClusterRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_AZURE_CLUSTER)))
+        .addMethod(
+            getUpdateAzureClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.UpdateAzureClusterRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_AZURE_CLUSTER)))
+        .addMethod(
+            getGetAzureClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.GetAzureClusterRequest,
+                    com.google.cloud.gkemulticloud.v1.AzureCluster>(
+                    service, METHODID_GET_AZURE_CLUSTER)))
+        .addMethod(
+            getListAzureClustersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.ListAzureClustersRequest,
+                    com.google.cloud.gkemulticloud.v1.ListAzureClustersResponse>(
+                    service, METHODID_LIST_AZURE_CLUSTERS)))
+        .addMethod(
+            getDeleteAzureClusterMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.DeleteAzureClusterRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_AZURE_CLUSTER)))
+        .addMethod(
+            getGenerateAzureAccessTokenMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenRequest,
+                    com.google.cloud.gkemulticloud.v1.GenerateAzureAccessTokenResponse>(
+                    service, METHODID_GENERATE_AZURE_ACCESS_TOKEN)))
+        .addMethod(
+            getCreateAzureNodePoolMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.CreateAzureNodePoolRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_AZURE_NODE_POOL)))
+        .addMethod(
+            getUpdateAzureNodePoolMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.UpdateAzureNodePoolRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_AZURE_NODE_POOL)))
+        .addMethod(
+            getGetAzureNodePoolMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.GetAzureNodePoolRequest,
+                    com.google.cloud.gkemulticloud.v1.AzureNodePool>(
+                    service, METHODID_GET_AZURE_NODE_POOL)))
+        .addMethod(
+            getListAzureNodePoolsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.ListAzureNodePoolsRequest,
+                    com.google.cloud.gkemulticloud.v1.ListAzureNodePoolsResponse>(
+                    service, METHODID_LIST_AZURE_NODE_POOLS)))
+        .addMethod(
+            getDeleteAzureNodePoolMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.DeleteAzureNodePoolRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_AZURE_NODE_POOL)))
+        .addMethod(
+            getGetAzureServerConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gkemulticloud.v1.GetAzureServerConfigRequest,
+                    com.google.cloud.gkemulticloud.v1.AzureServerConfig>(
+                    service, METHODID_GET_AZURE_SERVER_CONFIG)))
+        .build();
   }
 
   private abstract static class AzureClustersBaseDescriptorSupplier

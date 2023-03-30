@@ -38,7 +38,10 @@ public class AsyncCollectUserEvent {
     try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
       CollectUserEventRequest request =
           CollectUserEventRequest.newBuilder()
-              .setParent(DataStoreName.of("[PROJECT]", "[LOCATION]", "[DATA_STORE]").toString())
+              .setParent(
+                  DataStoreName.ofProjectLocationDataStoreName(
+                          "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+                      .toString())
               .setUserEvent("userEvent315571599")
               .setUri("uri116076")
               .setEts(100772)

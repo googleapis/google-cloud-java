@@ -222,7 +222,7 @@ public final class TemplatesServiceGrpc {
    * Provides a method to create Cloud Dataflow jobs from templates.
    * </pre>
    */
-  public abstract static class TemplatesServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -231,7 +231,7 @@ public final class TemplatesServiceGrpc {
      * Creates a Cloud Dataflow job from a template.
      * </pre>
      */
-    public void createJobFromTemplate(
+    default void createJobFromTemplate(
         com.google.dataflow.v1beta3.CreateJobFromTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.dataflow.v1beta3.Job> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -245,7 +245,7 @@ public final class TemplatesServiceGrpc {
      * Launch a template.
      * </pre>
      */
-    public void launchTemplate(
+    default void launchTemplate(
         com.google.dataflow.v1beta3.LaunchTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.dataflow.v1beta3.LaunchTemplateResponse>
             responseObserver) {
@@ -260,43 +260,33 @@ public final class TemplatesServiceGrpc {
      * Get the template associated with a template.
      * </pre>
      */
-    public void getTemplate(
+    default void getTemplate(
         com.google.dataflow.v1beta3.GetTemplateRequest request,
         io.grpc.stub.StreamObserver<com.google.dataflow.v1beta3.GetTemplateResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetTemplateMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service TemplatesService.
+   *
+   * <pre>
+   * Provides a method to create Cloud Dataflow jobs from templates.
+   * </pre>
+   */
+  public abstract static class TemplatesServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateJobFromTemplateMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.dataflow.v1beta3.CreateJobFromTemplateRequest,
-                      com.google.dataflow.v1beta3.Job>(this, METHODID_CREATE_JOB_FROM_TEMPLATE)))
-          .addMethod(
-              getLaunchTemplateMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.dataflow.v1beta3.LaunchTemplateRequest,
-                      com.google.dataflow.v1beta3.LaunchTemplateResponse>(
-                      this, METHODID_LAUNCH_TEMPLATE)))
-          .addMethod(
-              getGetTemplateMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.dataflow.v1beta3.GetTemplateRequest,
-                      com.google.dataflow.v1beta3.GetTemplateResponse>(
-                      this, METHODID_GET_TEMPLATE)))
-          .build();
+      return TemplatesServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service TemplatesService.
    *
    * <pre>
    * Provides a method to create Cloud Dataflow jobs from templates.
@@ -365,7 +355,7 @@ public final class TemplatesServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service TemplatesService.
    *
    * <pre>
    * Provides a method to create Cloud Dataflow jobs from templates.
@@ -424,7 +414,7 @@ public final class TemplatesServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service TemplatesService.
    *
    * <pre>
    * Provides a method to create Cloud Dataflow jobs from templates.
@@ -493,10 +483,10 @@ public final class TemplatesServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final TemplatesServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(TemplatesServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -536,6 +526,31 @@ public final class TemplatesServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateJobFromTemplateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.dataflow.v1beta3.CreateJobFromTemplateRequest,
+                    com.google.dataflow.v1beta3.Job>(service, METHODID_CREATE_JOB_FROM_TEMPLATE)))
+        .addMethod(
+            getLaunchTemplateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.dataflow.v1beta3.LaunchTemplateRequest,
+                    com.google.dataflow.v1beta3.LaunchTemplateResponse>(
+                    service, METHODID_LAUNCH_TEMPLATE)))
+        .addMethod(
+            getGetTemplateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.dataflow.v1beta3.GetTemplateRequest,
+                    com.google.dataflow.v1beta3.GetTemplateResponse>(
+                    service, METHODID_GET_TEMPLATE)))
+        .build();
   }
 
   private abstract static class TemplatesServiceBaseDescriptorSupplier

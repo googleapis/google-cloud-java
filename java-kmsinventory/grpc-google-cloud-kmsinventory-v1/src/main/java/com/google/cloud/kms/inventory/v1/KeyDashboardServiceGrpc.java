@@ -130,7 +130,7 @@ public final class KeyDashboardServiceGrpc {
    * Provides a cross-region view of all Cloud KMS keys in a given Cloud project.
    * </pre>
    */
-  public abstract static class KeyDashboardServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -141,30 +141,33 @@ public final class KeyDashboardServiceGrpc {
      * completely reflect the actual state of key metadata at call time.
      * </pre>
      */
-    public void listCryptoKeys(
+    default void listCryptoKeys(
         com.google.cloud.kms.inventory.v1.ListCryptoKeysRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.kms.inventory.v1.ListCryptoKeysResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListCryptoKeysMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service KeyDashboardService.
+   *
+   * <pre>
+   * Provides a cross-region view of all Cloud KMS keys in a given Cloud project.
+   * </pre>
+   */
+  public abstract static class KeyDashboardServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListCryptoKeysMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.kms.inventory.v1.ListCryptoKeysRequest,
-                      com.google.cloud.kms.inventory.v1.ListCryptoKeysResponse>(
-                      this, METHODID_LIST_CRYPTO_KEYS)))
-          .build();
+      return KeyDashboardServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service KeyDashboardService.
    *
    * <pre>
    * Provides a cross-region view of all Cloud KMS keys in a given Cloud project.
@@ -203,7 +206,7 @@ public final class KeyDashboardServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service KeyDashboardService.
    *
    * <pre>
    * Provides a cross-region view of all Cloud KMS keys in a given Cloud project.
@@ -239,7 +242,7 @@ public final class KeyDashboardServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service KeyDashboardService.
    *
    * <pre>
    * Provides a cross-region view of all Cloud KMS keys in a given Cloud project.
@@ -282,10 +285,10 @@ public final class KeyDashboardServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final KeyDashboardServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(KeyDashboardServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -315,6 +318,18 @@ public final class KeyDashboardServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListCryptoKeysMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.inventory.v1.ListCryptoKeysRequest,
+                    com.google.cloud.kms.inventory.v1.ListCryptoKeysResponse>(
+                    service, METHODID_LIST_CRYPTO_KEYS)))
+        .build();
   }
 
   private abstract static class KeyDashboardServiceBaseDescriptorSupplier

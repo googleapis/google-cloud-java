@@ -325,6 +325,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
    * * LINEAR16: Headerless 16-bit signed little-endian PCM samples.
    * * MULAW: Headerless 8-bit companded mulaw samples.
    * * ALAW: Headerless 8-bit companded alaw samples.
+   * The maximum allowed value is 8.
    * </pre>
    *
    * <code>int32 audio_channel_count = 3;</code>
@@ -913,6 +914,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      * * LINEAR16: Headerless 16-bit signed little-endian PCM samples.
      * * MULAW: Headerless 8-bit companded mulaw samples.
      * * ALAW: Headerless 8-bit companded alaw samples.
+     * The maximum allowed value is 8.
      * </pre>
      *
      * <code>int32 audio_channel_count = 3;</code>
@@ -932,6 +934,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      * * LINEAR16: Headerless 16-bit signed little-endian PCM samples.
      * * MULAW: Headerless 8-bit companded mulaw samples.
      * * ALAW: Headerless 8-bit companded alaw samples.
+     * The maximum allowed value is 8.
      * </pre>
      *
      * <code>int32 audio_channel_count = 3;</code>
@@ -955,6 +958,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      * * LINEAR16: Headerless 16-bit signed little-endian PCM samples.
      * * MULAW: Headerless 8-bit companded mulaw samples.
      * * ALAW: Headerless 8-bit companded alaw samples.
+     * The maximum allowed value is 8.
      * </pre>
      *
      * <code>int32 audio_channel_count = 3;</code>

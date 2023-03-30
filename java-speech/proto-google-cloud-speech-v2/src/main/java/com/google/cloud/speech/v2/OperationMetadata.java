@@ -90,6 +90,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     UPDATE_PHRASE_SET_REQUEST(18),
     DELETE_PHRASE_SET_REQUEST(19),
     UNDELETE_PHRASE_SET_REQUEST(20),
+    @java.lang.Deprecated
     UPDATE_CONFIG_REQUEST(21),
     REQUEST_NOT_SET(0);
     private final int value;
@@ -1195,11 +1196,16 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * The UpdateConfigRequest that spawned the Operation.
    * </pre>
    *
-   * <code>.google.cloud.speech.v2.UpdateConfigRequest update_config_request = 21;</code>
+   * <code>
+   * .google.cloud.speech.v2.UpdateConfigRequest update_config_request = 21 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.speech.v2.OperationMetadata.update_config_request is deprecated. See
+   *     google/cloud/speech/v2/cloud_speech.proto;l=419
    * @return Whether the updateConfigRequest field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasUpdateConfigRequest() {
     return requestCase_ == 21;
   }
@@ -1210,11 +1216,16 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * The UpdateConfigRequest that spawned the Operation.
    * </pre>
    *
-   * <code>.google.cloud.speech.v2.UpdateConfigRequest update_config_request = 21;</code>
+   * <code>
+   * .google.cloud.speech.v2.UpdateConfigRequest update_config_request = 21 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.speech.v2.OperationMetadata.update_config_request is deprecated. See
+   *     google/cloud/speech/v2/cloud_speech.proto;l=419
    * @return The updateConfigRequest.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.speech.v2.UpdateConfigRequest getUpdateConfigRequest() {
     if (requestCase_ == 21) {
       return (com.google.cloud.speech.v2.UpdateConfigRequest) request_;
@@ -1228,9 +1239,12 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * The UpdateConfigRequest that spawned the Operation.
    * </pre>
    *
-   * <code>.google.cloud.speech.v2.UpdateConfigRequest update_config_request = 21;</code>
+   * <code>
+   * .google.cloud.speech.v2.UpdateConfigRequest update_config_request = 21 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.speech.v2.UpdateConfigRequestOrBuilder getUpdateConfigRequestOrBuilder() {
     if (requestCase_ == 21) {
       return (com.google.cloud.speech.v2.UpdateConfigRequest) request_;
@@ -6041,11 +6055,16 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * The UpdateConfigRequest that spawned the Operation.
      * </pre>
      *
-     * <code>.google.cloud.speech.v2.UpdateConfigRequest update_config_request = 21;</code>
+     * <code>
+     * .google.cloud.speech.v2.UpdateConfigRequest update_config_request = 21 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.speech.v2.OperationMetadata.update_config_request is deprecated. See
+     *     google/cloud/speech/v2/cloud_speech.proto;l=419
      * @return Whether the updateConfigRequest field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasUpdateConfigRequest() {
       return requestCase_ == 21;
     }
@@ -6056,11 +6075,16 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * The UpdateConfigRequest that spawned the Operation.
      * </pre>
      *
-     * <code>.google.cloud.speech.v2.UpdateConfigRequest update_config_request = 21;</code>
+     * <code>
+     * .google.cloud.speech.v2.UpdateConfigRequest update_config_request = 21 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.speech.v2.OperationMetadata.update_config_request is deprecated. See
+     *     google/cloud/speech/v2/cloud_speech.proto;l=419
      * @return The updateConfigRequest.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.speech.v2.UpdateConfigRequest getUpdateConfigRequest() {
       if (updateConfigRequestBuilder_ == null) {
         if (requestCase_ == 21) {
@@ -6081,8 +6105,11 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * The UpdateConfigRequest that spawned the Operation.
      * </pre>
      *
-     * <code>.google.cloud.speech.v2.UpdateConfigRequest update_config_request = 21;</code>
+     * <code>
+     * .google.cloud.speech.v2.UpdateConfigRequest update_config_request = 21 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setUpdateConfigRequest(com.google.cloud.speech.v2.UpdateConfigRequest value) {
       if (updateConfigRequestBuilder_ == null) {
         if (value == null) {
@@ -6103,8 +6130,11 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * The UpdateConfigRequest that spawned the Operation.
      * </pre>
      *
-     * <code>.google.cloud.speech.v2.UpdateConfigRequest update_config_request = 21;</code>
+     * <code>
+     * .google.cloud.speech.v2.UpdateConfigRequest update_config_request = 21 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setUpdateConfigRequest(
         com.google.cloud.speech.v2.UpdateConfigRequest.Builder builderForValue) {
       if (updateConfigRequestBuilder_ == null) {
@@ -6123,8 +6153,11 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * The UpdateConfigRequest that spawned the Operation.
      * </pre>
      *
-     * <code>.google.cloud.speech.v2.UpdateConfigRequest update_config_request = 21;</code>
+     * <code>
+     * .google.cloud.speech.v2.UpdateConfigRequest update_config_request = 21 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeUpdateConfigRequest(com.google.cloud.speech.v2.UpdateConfigRequest value) {
       if (updateConfigRequestBuilder_ == null) {
         if (requestCase_ == 21
@@ -6155,8 +6188,11 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * The UpdateConfigRequest that spawned the Operation.
      * </pre>
      *
-     * <code>.google.cloud.speech.v2.UpdateConfigRequest update_config_request = 21;</code>
+     * <code>
+     * .google.cloud.speech.v2.UpdateConfigRequest update_config_request = 21 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder clearUpdateConfigRequest() {
       if (updateConfigRequestBuilder_ == null) {
         if (requestCase_ == 21) {
@@ -6180,8 +6216,11 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * The UpdateConfigRequest that spawned the Operation.
      * </pre>
      *
-     * <code>.google.cloud.speech.v2.UpdateConfigRequest update_config_request = 21;</code>
+     * <code>
+     * .google.cloud.speech.v2.UpdateConfigRequest update_config_request = 21 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.speech.v2.UpdateConfigRequest.Builder getUpdateConfigRequestBuilder() {
       return getUpdateConfigRequestFieldBuilder().getBuilder();
     }
@@ -6192,9 +6231,12 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * The UpdateConfigRequest that spawned the Operation.
      * </pre>
      *
-     * <code>.google.cloud.speech.v2.UpdateConfigRequest update_config_request = 21;</code>
+     * <code>
+     * .google.cloud.speech.v2.UpdateConfigRequest update_config_request = 21 [deprecated = true];
+     * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.speech.v2.UpdateConfigRequestOrBuilder
         getUpdateConfigRequestOrBuilder() {
       if ((requestCase_ == 21) && (updateConfigRequestBuilder_ != null)) {
@@ -6213,7 +6255,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * The UpdateConfigRequest that spawned the Operation.
      * </pre>
      *
-     * <code>.google.cloud.speech.v2.UpdateConfigRequest update_config_request = 21;</code>
+     * <code>
+     * .google.cloud.speech.v2.UpdateConfigRequest update_config_request = 21 [deprecated = true];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.speech.v2.UpdateConfigRequest,

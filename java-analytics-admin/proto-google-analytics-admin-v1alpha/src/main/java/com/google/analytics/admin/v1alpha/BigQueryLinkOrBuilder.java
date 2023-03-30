@@ -155,6 +155,19 @@ public interface BigQueryLinkOrBuilder
    *
    *
    * <pre>
+   * If set true, enables intraday export to the linked Google Cloud project.
+   * </pre>
+   *
+   * <code>bool intraday_export_enabled = 9;</code>
+   *
+   * @return The intradayExportEnabled.
+   */
+  boolean getIntradayExportEnabled();
+
+  /**
+   *
+   *
+   * <pre>
    * If set true, exported data will include advertising identifiers for mobile
    * app streams.
    * </pre>

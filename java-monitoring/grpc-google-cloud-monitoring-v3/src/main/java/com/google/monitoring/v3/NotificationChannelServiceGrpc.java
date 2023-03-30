@@ -611,8 +611,7 @@ public final class NotificationChannelServiceGrpc {
    * controls how messages related to incidents are sent.
    * </pre>
    */
-  public abstract static class NotificationChannelServiceImplBase
-      implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -622,7 +621,7 @@ public final class NotificationChannelServiceGrpc {
      * makes it possible for new channel types to be dynamically added.
      * </pre>
      */
-    public void listNotificationChannelDescriptors(
+    default void listNotificationChannelDescriptors(
         com.google.monitoring.v3.ListNotificationChannelDescriptorsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.monitoring.v3.ListNotificationChannelDescriptorsResponse>
@@ -639,7 +638,7 @@ public final class NotificationChannelServiceGrpc {
      * are expected / permitted for a notification channel of the given type.
      * </pre>
      */
-    public void getNotificationChannelDescriptor(
+    default void getNotificationChannelDescriptor(
         com.google.monitoring.v3.GetNotificationChannelDescriptorRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.NotificationChannelDescriptor>
             responseObserver) {
@@ -654,7 +653,7 @@ public final class NotificationChannelServiceGrpc {
      * Lists the notification channels that have been created for the project.
      * </pre>
      */
-    public void listNotificationChannels(
+    default void listNotificationChannels(
         com.google.monitoring.v3.ListNotificationChannelsRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.ListNotificationChannelsResponse>
             responseObserver) {
@@ -673,7 +672,7 @@ public final class NotificationChannelServiceGrpc {
      * that was supplied in the call to the create method.
      * </pre>
      */
-    public void getNotificationChannel(
+    default void getNotificationChannel(
         com.google.monitoring.v3.GetNotificationChannelRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.NotificationChannel>
             responseObserver) {
@@ -689,7 +688,7 @@ public final class NotificationChannelServiceGrpc {
      * endpoint such as an email address, SMS number, or PagerDuty service.
      * </pre>
      */
-    public void createNotificationChannel(
+    default void createNotificationChannel(
         com.google.monitoring.v3.CreateNotificationChannelRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.NotificationChannel>
             responseObserver) {
@@ -705,7 +704,7 @@ public final class NotificationChannelServiceGrpc {
      * remain unchanged.
      * </pre>
      */
-    public void updateNotificationChannel(
+    default void updateNotificationChannel(
         com.google.monitoring.v3.UpdateNotificationChannelRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.NotificationChannel>
             responseObserver) {
@@ -720,7 +719,7 @@ public final class NotificationChannelServiceGrpc {
      * Deletes a notification channel.
      * </pre>
      */
-    public void deleteNotificationChannel(
+    default void deleteNotificationChannel(
         com.google.monitoring.v3.DeleteNotificationChannelRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -735,7 +734,7 @@ public final class NotificationChannelServiceGrpc {
      * can then be supplied in `VerifyNotificationChannel` to verify the channel.
      * </pre>
      */
-    public void sendNotificationChannelVerificationCode(
+    default void sendNotificationChannelVerificationCode(
         com.google.monitoring.v3.SendNotificationChannelVerificationCodeRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -768,7 +767,7 @@ public final class NotificationChannelServiceGrpc {
      * 64 encoded string that has a longer expiration time.
      * </pre>
      */
-    public void getNotificationChannelVerificationCode(
+    default void getNotificationChannelVerificationCode(
         com.google.monitoring.v3.GetNotificationChannelVerificationCodeRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse>
@@ -786,92 +785,34 @@ public final class NotificationChannelServiceGrpc {
      * `SendNotificationChannelVerificationCode`.
      * </pre>
      */
-    public void verifyNotificationChannel(
+    default void verifyNotificationChannel(
         com.google.monitoring.v3.VerifyNotificationChannelRequest request,
         io.grpc.stub.StreamObserver<com.google.monitoring.v3.NotificationChannel>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getVerifyNotificationChannelMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service NotificationChannelService.
+   *
+   * <pre>
+   * The Notification Channel API provides access to configuration that
+   * controls how messages related to incidents are sent.
+   * </pre>
+   */
+  public abstract static class NotificationChannelServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListNotificationChannelDescriptorsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.ListNotificationChannelDescriptorsRequest,
-                      com.google.monitoring.v3.ListNotificationChannelDescriptorsResponse>(
-                      this, METHODID_LIST_NOTIFICATION_CHANNEL_DESCRIPTORS)))
-          .addMethod(
-              getGetNotificationChannelDescriptorMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.GetNotificationChannelDescriptorRequest,
-                      com.google.monitoring.v3.NotificationChannelDescriptor>(
-                      this, METHODID_GET_NOTIFICATION_CHANNEL_DESCRIPTOR)))
-          .addMethod(
-              getListNotificationChannelsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.ListNotificationChannelsRequest,
-                      com.google.monitoring.v3.ListNotificationChannelsResponse>(
-                      this, METHODID_LIST_NOTIFICATION_CHANNELS)))
-          .addMethod(
-              getGetNotificationChannelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.GetNotificationChannelRequest,
-                      com.google.monitoring.v3.NotificationChannel>(
-                      this, METHODID_GET_NOTIFICATION_CHANNEL)))
-          .addMethod(
-              getCreateNotificationChannelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.CreateNotificationChannelRequest,
-                      com.google.monitoring.v3.NotificationChannel>(
-                      this, METHODID_CREATE_NOTIFICATION_CHANNEL)))
-          .addMethod(
-              getUpdateNotificationChannelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.UpdateNotificationChannelRequest,
-                      com.google.monitoring.v3.NotificationChannel>(
-                      this, METHODID_UPDATE_NOTIFICATION_CHANNEL)))
-          .addMethod(
-              getDeleteNotificationChannelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.DeleteNotificationChannelRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_NOTIFICATION_CHANNEL)))
-          .addMethod(
-              getSendNotificationChannelVerificationCodeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.SendNotificationChannelVerificationCodeRequest,
-                      com.google.protobuf.Empty>(
-                      this, METHODID_SEND_NOTIFICATION_CHANNEL_VERIFICATION_CODE)))
-          .addMethod(
-              getGetNotificationChannelVerificationCodeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.GetNotificationChannelVerificationCodeRequest,
-                      com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse>(
-                      this, METHODID_GET_NOTIFICATION_CHANNEL_VERIFICATION_CODE)))
-          .addMethod(
-              getVerifyNotificationChannelMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.monitoring.v3.VerifyNotificationChannelRequest,
-                      com.google.monitoring.v3.NotificationChannel>(
-                      this, METHODID_VERIFY_NOTIFICATION_CHANNEL)))
-          .build();
+      return NotificationChannelServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service NotificationChannelService.
    *
    * <pre>
    * The Notification Channel API provides access to configuration that
@@ -1094,7 +1035,7 @@ public final class NotificationChannelServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service NotificationChannelService.
    *
    * <pre>
    * The Notification Channel API provides access to configuration that
@@ -1284,7 +1225,8 @@ public final class NotificationChannelServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * NotificationChannelService.
    *
    * <pre>
    * The Notification Channel API provides access to configuration that
@@ -1502,10 +1444,10 @@ public final class NotificationChannelServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final NotificationChannelServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(NotificationChannelServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1589,6 +1531,80 @@ public final class NotificationChannelServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListNotificationChannelDescriptorsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.ListNotificationChannelDescriptorsRequest,
+                    com.google.monitoring.v3.ListNotificationChannelDescriptorsResponse>(
+                    service, METHODID_LIST_NOTIFICATION_CHANNEL_DESCRIPTORS)))
+        .addMethod(
+            getGetNotificationChannelDescriptorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.GetNotificationChannelDescriptorRequest,
+                    com.google.monitoring.v3.NotificationChannelDescriptor>(
+                    service, METHODID_GET_NOTIFICATION_CHANNEL_DESCRIPTOR)))
+        .addMethod(
+            getListNotificationChannelsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.ListNotificationChannelsRequest,
+                    com.google.monitoring.v3.ListNotificationChannelsResponse>(
+                    service, METHODID_LIST_NOTIFICATION_CHANNELS)))
+        .addMethod(
+            getGetNotificationChannelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.GetNotificationChannelRequest,
+                    com.google.monitoring.v3.NotificationChannel>(
+                    service, METHODID_GET_NOTIFICATION_CHANNEL)))
+        .addMethod(
+            getCreateNotificationChannelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.CreateNotificationChannelRequest,
+                    com.google.monitoring.v3.NotificationChannel>(
+                    service, METHODID_CREATE_NOTIFICATION_CHANNEL)))
+        .addMethod(
+            getUpdateNotificationChannelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.UpdateNotificationChannelRequest,
+                    com.google.monitoring.v3.NotificationChannel>(
+                    service, METHODID_UPDATE_NOTIFICATION_CHANNEL)))
+        .addMethod(
+            getDeleteNotificationChannelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.DeleteNotificationChannelRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_NOTIFICATION_CHANNEL)))
+        .addMethod(
+            getSendNotificationChannelVerificationCodeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.SendNotificationChannelVerificationCodeRequest,
+                    com.google.protobuf.Empty>(
+                    service, METHODID_SEND_NOTIFICATION_CHANNEL_VERIFICATION_CODE)))
+        .addMethod(
+            getGetNotificationChannelVerificationCodeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.GetNotificationChannelVerificationCodeRequest,
+                    com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse>(
+                    service, METHODID_GET_NOTIFICATION_CHANNEL_VERIFICATION_CODE)))
+        .addMethod(
+            getVerifyNotificationChannelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.monitoring.v3.VerifyNotificationChannelRequest,
+                    com.google.monitoring.v3.NotificationChannel>(
+                    service, METHODID_VERIFY_NOTIFICATION_CHANNEL)))
+        .build();
   }
 
   private abstract static class NotificationChannelServiceBaseDescriptorSupplier

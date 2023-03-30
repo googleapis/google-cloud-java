@@ -1306,6 +1306,9 @@
             "SetNodeTemplate": {
               "methods": ["setNodeTemplateAsync", "setNodeTemplateAsync", "setNodeTemplateOperationCallable", "setNodeTemplateCallable"]
             },
+            "SimulateMaintenanceEvent": {
+              "methods": ["simulateMaintenanceEventAsync", "simulateMaintenanceEventAsync", "simulateMaintenanceEventOperationCallable", "simulateMaintenanceEventCallable"]
+            },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }

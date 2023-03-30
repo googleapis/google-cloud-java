@@ -89,6 +89,8 @@ import com.google.analytics.admin.v1beta.MeasurementProtocolSecret;
 import com.google.analytics.admin.v1beta.Property;
 import com.google.analytics.admin.v1beta.ProvisionAccountTicketRequest;
 import com.google.analytics.admin.v1beta.ProvisionAccountTicketResponse;
+import com.google.analytics.admin.v1beta.RunAccessReportRequest;
+import com.google.analytics.admin.v1beta.RunAccessReportResponse;
 import com.google.analytics.admin.v1beta.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1beta.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1beta.UpdateAccountRequest;
@@ -1913,6 +1915,45 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<RunAccessReportRequest, RunAccessReportResponse>
+      runAccessReportMethodDescriptor =
+          ApiMethodDescriptor.<RunAccessReportRequest, RunAccessReportResponse>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1beta.AnalyticsAdminService/RunAccessReport")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RunAccessReportRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{entity=properties/*}:runAccessReport",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RunAccessReportRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "entity", request.getEntity());
+                            return fields;
+                          })
+                      .setAdditionalPaths("/v1beta/{entity=accounts/*}:runAccessReport")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RunAccessReportRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearEntity().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RunAccessReportResponse>newBuilder()
+                      .setDefaultInstance(RunAccessReportResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetAccountRequest, Account> getAccountCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsResponse> listAccountsCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsPagedResponse>
@@ -2011,6 +2052,8 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
   private final UnaryCallable<ListDataStreamsRequest, ListDataStreamsPagedResponse>
       listDataStreamsPagedCallable;
   private final UnaryCallable<GetDataStreamRequest, DataStream> getDataStreamCallable;
+  private final UnaryCallable<RunAccessReportRequest, RunAccessReportResponse>
+      runAccessReportCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -2338,6 +2381,12 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
             .setMethodDescriptor(getDataStreamMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<RunAccessReportRequest, RunAccessReportResponse>
+        runAccessReportTransportSettings =
+            HttpJsonCallSettings.<RunAccessReportRequest, RunAccessReportResponse>newBuilder()
+                .setMethodDescriptor(runAccessReportMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
 
     this.getAccountCallable =
         callableFactory.createUnaryCallable(
@@ -2593,6 +2642,9 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
     this.getDataStreamCallable =
         callableFactory.createUnaryCallable(
             getDataStreamTransportSettings, settings.getDataStreamSettings(), clientContext);
+    this.runAccessReportCallable =
+        callableFactory.createUnaryCallable(
+            runAccessReportTransportSettings, settings.runAccessReportSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -2648,6 +2700,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
     methodDescriptors.add(updateDataStreamMethodDescriptor);
     methodDescriptors.add(listDataStreamsMethodDescriptor);
     methodDescriptors.add(getDataStreamMethodDescriptor);
+    methodDescriptors.add(runAccessReportMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -2971,6 +3024,11 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
   @Override
   public UnaryCallable<GetDataStreamRequest, DataStream> getDataStreamCallable() {
     return getDataStreamCallable;
+  }
+
+  @Override
+  public UnaryCallable<RunAccessReportRequest, RunAccessReportResponse> runAccessReportCallable() {
+    return runAccessReportCallable;
   }
 
   @Override

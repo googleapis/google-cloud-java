@@ -495,7 +495,7 @@ public final class ServiceProto {
           + "alloydb/apiv1alpha/alloydbpb;alloydbpb\252\002"
           + "\034Google.Cloud.AlloyDb.V1Alpha\312\002\034Google\\C"
           + "loud\\AlloyDb\\V1alpha\352\002\037Google::Cloud::Al"
-          + "loyDb::V1alphab\006proto3"
+          + "loyDB::V1alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -1135,6 +1135,58 @@ public final class DocumentProcessorServiceGrpc {
     return getListEvaluationsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.documentai.v1beta3.ImportProcessorVersionRequest,
+          com.google.longrunning.Operation>
+      getImportProcessorVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ImportProcessorVersion",
+      requestType = com.google.cloud.documentai.v1beta3.ImportProcessorVersionRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.documentai.v1beta3.ImportProcessorVersionRequest,
+          com.google.longrunning.Operation>
+      getImportProcessorVersionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.documentai.v1beta3.ImportProcessorVersionRequest,
+            com.google.longrunning.Operation>
+        getImportProcessorVersionMethod;
+    if ((getImportProcessorVersionMethod =
+            DocumentProcessorServiceGrpc.getImportProcessorVersionMethod)
+        == null) {
+      synchronized (DocumentProcessorServiceGrpc.class) {
+        if ((getImportProcessorVersionMethod =
+                DocumentProcessorServiceGrpc.getImportProcessorVersionMethod)
+            == null) {
+          DocumentProcessorServiceGrpc.getImportProcessorVersionMethod =
+              getImportProcessorVersionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.documentai.v1beta3.ImportProcessorVersionRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ImportProcessorVersion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.documentai.v1beta3.ImportProcessorVersionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DocumentProcessorServiceMethodDescriptorSupplier(
+                              "ImportProcessorVersion"))
+                      .build();
+        }
+      }
+    }
+    return getImportProcessorVersionMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static DocumentProcessorServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<DocumentProcessorServiceStub> factory =
@@ -1186,7 +1238,7 @@ public final class DocumentProcessorServiceGrpc {
    * structured information from unstructured or semi-structured documents.
    * </pre>
    */
-  public abstract static class DocumentProcessorServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -1195,7 +1247,7 @@ public final class DocumentProcessorServiceGrpc {
      * Processes a single document.
      * </pre>
      */
-    public void processDocument(
+    default void processDocument(
         com.google.cloud.documentai.v1beta3.ProcessRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.documentai.v1beta3.ProcessResponse>
             responseObserver) {
@@ -1211,7 +1263,7 @@ public final class DocumentProcessorServiceGrpc {
      * to Cloud Storage as JSON in the [Document] format.
      * </pre>
      */
-    public void batchProcessDocuments(
+    default void batchProcessDocuments(
         com.google.cloud.documentai.v1beta3.BatchProcessRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1226,7 +1278,7 @@ public final class DocumentProcessorServiceGrpc {
      * because it is not paginated.
      * </pre>
      */
-    public void fetchProcessorTypes(
+    default void fetchProcessorTypes(
         com.google.cloud.documentai.v1beta3.FetchProcessorTypesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.documentai.v1beta3.FetchProcessorTypesResponse>
             responseObserver) {
@@ -1241,7 +1293,7 @@ public final class DocumentProcessorServiceGrpc {
      * Lists the processor types that exist.
      * </pre>
      */
-    public void listProcessorTypes(
+    default void listProcessorTypes(
         com.google.cloud.documentai.v1beta3.ListProcessorTypesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.documentai.v1beta3.ListProcessorTypesResponse>
             responseObserver) {
@@ -1256,7 +1308,7 @@ public final class DocumentProcessorServiceGrpc {
      * Gets a processor type detail.
      * </pre>
      */
-    public void getProcessorType(
+    default void getProcessorType(
         com.google.cloud.documentai.v1beta3.GetProcessorTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.documentai.v1beta3.ProcessorType>
             responseObserver) {
@@ -1271,7 +1323,7 @@ public final class DocumentProcessorServiceGrpc {
      * Lists all processors which belong to this project.
      * </pre>
      */
-    public void listProcessors(
+    default void listProcessors(
         com.google.cloud.documentai.v1beta3.ListProcessorsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.documentai.v1beta3.ListProcessorsResponse>
             responseObserver) {
@@ -1286,7 +1338,7 @@ public final class DocumentProcessorServiceGrpc {
      * Gets a processor detail.
      * </pre>
      */
-    public void getProcessor(
+    default void getProcessor(
         com.google.cloud.documentai.v1beta3.GetProcessorRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.documentai.v1beta3.Processor>
             responseObserver) {
@@ -1303,7 +1355,7 @@ public final class DocumentProcessorServiceGrpc {
      * cloud_documentai_core.TrainProcessorVersionMetadata.
      * </pre>
      */
-    public void trainProcessorVersion(
+    default void trainProcessorVersion(
         com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1317,7 +1369,7 @@ public final class DocumentProcessorServiceGrpc {
      * Gets a processor version detail.
      * </pre>
      */
-    public void getProcessorVersion(
+    default void getProcessorVersion(
         com.google.cloud.documentai.v1beta3.GetProcessorVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.documentai.v1beta3.ProcessorVersion>
             responseObserver) {
@@ -1332,7 +1384,7 @@ public final class DocumentProcessorServiceGrpc {
      * Lists all versions of a processor.
      * </pre>
      */
-    public void listProcessorVersions(
+    default void listProcessorVersions(
         com.google.cloud.documentai.v1beta3.ListProcessorVersionsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.documentai.v1beta3.ListProcessorVersionsResponse>
@@ -1349,7 +1401,7 @@ public final class DocumentProcessorServiceGrpc {
      * will be deleted.
      * </pre>
      */
-    public void deleteProcessorVersion(
+    default void deleteProcessorVersion(
         com.google.cloud.documentai.v1beta3.DeleteProcessorVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1363,7 +1415,7 @@ public final class DocumentProcessorServiceGrpc {
      * Deploys the processor version.
      * </pre>
      */
-    public void deployProcessorVersion(
+    default void deployProcessorVersion(
         com.google.cloud.documentai.v1beta3.DeployProcessorVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1377,7 +1429,7 @@ public final class DocumentProcessorServiceGrpc {
      * Undeploys the processor version.
      * </pre>
      */
-    public void undeployProcessorVersion(
+    default void undeployProcessorVersion(
         com.google.cloud.documentai.v1beta3.UndeployProcessorVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1392,7 +1444,7 @@ public final class DocumentProcessorServiceGrpc {
      * The processor will be at "ENABLED" state by default after its creation.
      * </pre>
      */
-    public void createProcessor(
+    default void createProcessor(
         com.google.cloud.documentai.v1beta3.CreateProcessorRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.documentai.v1beta3.Processor>
             responseObserver) {
@@ -1408,7 +1460,7 @@ public final class DocumentProcessorServiceGrpc {
      * enabled and then deletes all artifacts associated with this processor.
      * </pre>
      */
-    public void deleteProcessor(
+    default void deleteProcessor(
         com.google.cloud.documentai.v1beta3.DeleteProcessorRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1422,7 +1474,7 @@ public final class DocumentProcessorServiceGrpc {
      * Enables a processor
      * </pre>
      */
-    public void enableProcessor(
+    default void enableProcessor(
         com.google.cloud.documentai.v1beta3.EnableProcessorRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1436,7 +1488,7 @@ public final class DocumentProcessorServiceGrpc {
      * Disables a processor
      * </pre>
      */
-    public void disableProcessor(
+    default void disableProcessor(
         com.google.cloud.documentai.v1beta3.DisableProcessorRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1454,7 +1506,7 @@ public final class DocumentProcessorServiceGrpc {
      * [BatchProcessDocuments][google.cloud.documentai.v1beta3.DocumentProcessorService.BatchProcessDocuments].
      * </pre>
      */
-    public void setDefaultProcessorVersion(
+    default void setDefaultProcessorVersion(
         com.google.cloud.documentai.v1beta3.SetDefaultProcessorVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1469,7 +1521,7 @@ public final class DocumentProcessorServiceGrpc {
      * the specified processor.
      * </pre>
      */
-    public void reviewDocument(
+    default void reviewDocument(
         com.google.cloud.documentai.v1beta3.ReviewDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1484,7 +1536,7 @@ public final class DocumentProcessorServiceGrpc {
      * Evaluation.
      * </pre>
      */
-    public void evaluateProcessorVersion(
+    default void evaluateProcessorVersion(
         com.google.cloud.documentai.v1beta3.EvaluateProcessorVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1498,7 +1550,7 @@ public final class DocumentProcessorServiceGrpc {
      * Retrieves a specific evaluation.
      * </pre>
      */
-    public void getEvaluation(
+    default void getEvaluation(
         com.google.cloud.documentai.v1beta3.GetEvaluationRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.documentai.v1beta3.Evaluation>
             responseObserver) {
@@ -1513,7 +1565,7 @@ public final class DocumentProcessorServiceGrpc {
      * Retrieves a set of evaluations for a given processor version.
      * </pre>
      */
-    public void listEvaluations(
+    default void listEvaluations(
         com.google.cloud.documentai.v1beta3.ListEvaluationsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.documentai.v1beta3.ListEvaluationsResponse>
             responseObserver) {
@@ -1521,158 +1573,42 @@ public final class DocumentProcessorServiceGrpc {
           getListEvaluationsMethod(), responseObserver);
     }
 
-    @java.lang.Override
-    public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getProcessDocumentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.documentai.v1beta3.ProcessRequest,
-                      com.google.cloud.documentai.v1beta3.ProcessResponse>(
-                      this, METHODID_PROCESS_DOCUMENT)))
-          .addMethod(
-              getBatchProcessDocumentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.documentai.v1beta3.BatchProcessRequest,
-                      com.google.longrunning.Operation>(this, METHODID_BATCH_PROCESS_DOCUMENTS)))
-          .addMethod(
-              getFetchProcessorTypesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.documentai.v1beta3.FetchProcessorTypesRequest,
-                      com.google.cloud.documentai.v1beta3.FetchProcessorTypesResponse>(
-                      this, METHODID_FETCH_PROCESSOR_TYPES)))
-          .addMethod(
-              getListProcessorTypesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.documentai.v1beta3.ListProcessorTypesRequest,
-                      com.google.cloud.documentai.v1beta3.ListProcessorTypesResponse>(
-                      this, METHODID_LIST_PROCESSOR_TYPES)))
-          .addMethod(
-              getGetProcessorTypeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.documentai.v1beta3.GetProcessorTypeRequest,
-                      com.google.cloud.documentai.v1beta3.ProcessorType>(
-                      this, METHODID_GET_PROCESSOR_TYPE)))
-          .addMethod(
-              getListProcessorsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.documentai.v1beta3.ListProcessorsRequest,
-                      com.google.cloud.documentai.v1beta3.ListProcessorsResponse>(
-                      this, METHODID_LIST_PROCESSORS)))
-          .addMethod(
-              getGetProcessorMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.documentai.v1beta3.GetProcessorRequest,
-                      com.google.cloud.documentai.v1beta3.Processor>(this, METHODID_GET_PROCESSOR)))
-          .addMethod(
-              getTrainProcessorVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest,
-                      com.google.longrunning.Operation>(this, METHODID_TRAIN_PROCESSOR_VERSION)))
-          .addMethod(
-              getGetProcessorVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.documentai.v1beta3.GetProcessorVersionRequest,
-                      com.google.cloud.documentai.v1beta3.ProcessorVersion>(
-                      this, METHODID_GET_PROCESSOR_VERSION)))
-          .addMethod(
-              getListProcessorVersionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.documentai.v1beta3.ListProcessorVersionsRequest,
-                      com.google.cloud.documentai.v1beta3.ListProcessorVersionsResponse>(
-                      this, METHODID_LIST_PROCESSOR_VERSIONS)))
-          .addMethod(
-              getDeleteProcessorVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.documentai.v1beta3.DeleteProcessorVersionRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_PROCESSOR_VERSION)))
-          .addMethod(
-              getDeployProcessorVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.documentai.v1beta3.DeployProcessorVersionRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DEPLOY_PROCESSOR_VERSION)))
-          .addMethod(
-              getUndeployProcessorVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.documentai.v1beta3.UndeployProcessorVersionRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UNDEPLOY_PROCESSOR_VERSION)))
-          .addMethod(
-              getCreateProcessorMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.documentai.v1beta3.CreateProcessorRequest,
-                      com.google.cloud.documentai.v1beta3.Processor>(
-                      this, METHODID_CREATE_PROCESSOR)))
-          .addMethod(
-              getDeleteProcessorMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.documentai.v1beta3.DeleteProcessorRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_PROCESSOR)))
-          .addMethod(
-              getEnableProcessorMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.documentai.v1beta3.EnableProcessorRequest,
-                      com.google.longrunning.Operation>(this, METHODID_ENABLE_PROCESSOR)))
-          .addMethod(
-              getDisableProcessorMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.documentai.v1beta3.DisableProcessorRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DISABLE_PROCESSOR)))
-          .addMethod(
-              getSetDefaultProcessorVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.documentai.v1beta3.SetDefaultProcessorVersionRequest,
-                      com.google.longrunning.Operation>(
-                      this, METHODID_SET_DEFAULT_PROCESSOR_VERSION)))
-          .addMethod(
-              getReviewDocumentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.documentai.v1beta3.ReviewDocumentRequest,
-                      com.google.longrunning.Operation>(this, METHODID_REVIEW_DOCUMENT)))
-          .addMethod(
-              getEvaluateProcessorVersionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.documentai.v1beta3.EvaluateProcessorVersionRequest,
-                      com.google.longrunning.Operation>(this, METHODID_EVALUATE_PROCESSOR_VERSION)))
-          .addMethod(
-              getGetEvaluationMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.documentai.v1beta3.GetEvaluationRequest,
-                      com.google.cloud.documentai.v1beta3.Evaluation>(
-                      this, METHODID_GET_EVALUATION)))
-          .addMethod(
-              getListEvaluationsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.documentai.v1beta3.ListEvaluationsRequest,
-                      com.google.cloud.documentai.v1beta3.ListEvaluationsResponse>(
-                      this, METHODID_LIST_EVALUATIONS)))
-          .build();
+    /**
+     *
+     *
+     * <pre>
+     * Imports a processor version from source processor version.
+     * </pre>
+     */
+    default void importProcessorVersion(
+        com.google.cloud.documentai.v1beta3.ImportProcessorVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getImportProcessorVersionMethod(), responseObserver);
     }
   }
 
   /**
+   * Base class for the server implementation of the service DocumentProcessorService.
    *
+   * <pre>
+   * Service to call Cloud DocumentAI to process documents according to the
+   * processor's definition. Processors are built using state-of-the-art Google
+   * AI such as natural language, computer vision, and translation to extract
+   * structured information from unstructured or semi-structured documents.
+   * </pre>
+   */
+  public abstract static class DocumentProcessorServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
+
+    @java.lang.Override
+    public final io.grpc.ServerServiceDefinition bindService() {
+      return DocumentProcessorServiceGrpc.bindService(this);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do asynchronous rpc calls to service DocumentProcessorService.
    *
    * <pre>
    * Service to call Cloud DocumentAI to process documents according to the
@@ -2069,10 +2005,26 @@ public final class DocumentProcessorServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports a processor version from source processor version.
+     * </pre>
+     */
+    public void importProcessorVersion(
+        com.google.cloud.documentai.v1beta3.ImportProcessorVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getImportProcessorVersionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service DocumentProcessorService.
    *
    * <pre>
    * Service to call Cloud DocumentAI to process documents according to the
@@ -2392,10 +2344,24 @@ public final class DocumentProcessorServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListEvaluationsMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports a processor version from source processor version.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importProcessorVersion(
+        com.google.cloud.documentai.v1beta3.ImportProcessorVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportProcessorVersionMethod(), getCallOptions(), request);
+    }
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * DocumentProcessorService.
    *
    * <pre>
    * Service to call Cloud DocumentAI to process documents according to the
@@ -2735,6 +2701,20 @@ public final class DocumentProcessorServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListEvaluationsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports a processor version from source processor version.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        importProcessorVersion(
+            com.google.cloud.documentai.v1beta3.ImportProcessorVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getImportProcessorVersionMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_PROCESS_DOCUMENT = 0;
@@ -2759,16 +2739,17 @@ public final class DocumentProcessorServiceGrpc {
   private static final int METHODID_EVALUATE_PROCESSOR_VERSION = 19;
   private static final int METHODID_GET_EVALUATION = 20;
   private static final int METHODID_LIST_EVALUATIONS = 21;
+  private static final int METHODID_IMPORT_PROCESSOR_VERSION = 22;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final DocumentProcessorServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(DocumentProcessorServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -2903,6 +2884,11 @@ public final class DocumentProcessorServiceGrpc {
                       com.google.cloud.documentai.v1beta3.ListEvaluationsResponse>)
                   responseObserver);
           break;
+        case METHODID_IMPORT_PROCESSOR_VERSION:
+          serviceImpl.importProcessorVersion(
+              (com.google.cloud.documentai.v1beta3.ImportProcessorVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -2917,6 +2903,163 @@ public final class DocumentProcessorServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getProcessDocumentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.documentai.v1beta3.ProcessRequest,
+                    com.google.cloud.documentai.v1beta3.ProcessResponse>(
+                    service, METHODID_PROCESS_DOCUMENT)))
+        .addMethod(
+            getBatchProcessDocumentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.documentai.v1beta3.BatchProcessRequest,
+                    com.google.longrunning.Operation>(service, METHODID_BATCH_PROCESS_DOCUMENTS)))
+        .addMethod(
+            getFetchProcessorTypesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.documentai.v1beta3.FetchProcessorTypesRequest,
+                    com.google.cloud.documentai.v1beta3.FetchProcessorTypesResponse>(
+                    service, METHODID_FETCH_PROCESSOR_TYPES)))
+        .addMethod(
+            getListProcessorTypesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.documentai.v1beta3.ListProcessorTypesRequest,
+                    com.google.cloud.documentai.v1beta3.ListProcessorTypesResponse>(
+                    service, METHODID_LIST_PROCESSOR_TYPES)))
+        .addMethod(
+            getGetProcessorTypeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.documentai.v1beta3.GetProcessorTypeRequest,
+                    com.google.cloud.documentai.v1beta3.ProcessorType>(
+                    service, METHODID_GET_PROCESSOR_TYPE)))
+        .addMethod(
+            getListProcessorsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.documentai.v1beta3.ListProcessorsRequest,
+                    com.google.cloud.documentai.v1beta3.ListProcessorsResponse>(
+                    service, METHODID_LIST_PROCESSORS)))
+        .addMethod(
+            getGetProcessorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.documentai.v1beta3.GetProcessorRequest,
+                    com.google.cloud.documentai.v1beta3.Processor>(
+                    service, METHODID_GET_PROCESSOR)))
+        .addMethod(
+            getTrainProcessorVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.documentai.v1beta3.TrainProcessorVersionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_TRAIN_PROCESSOR_VERSION)))
+        .addMethod(
+            getGetProcessorVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.documentai.v1beta3.GetProcessorVersionRequest,
+                    com.google.cloud.documentai.v1beta3.ProcessorVersion>(
+                    service, METHODID_GET_PROCESSOR_VERSION)))
+        .addMethod(
+            getListProcessorVersionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.documentai.v1beta3.ListProcessorVersionsRequest,
+                    com.google.cloud.documentai.v1beta3.ListProcessorVersionsResponse>(
+                    service, METHODID_LIST_PROCESSOR_VERSIONS)))
+        .addMethod(
+            getDeleteProcessorVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.documentai.v1beta3.DeleteProcessorVersionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_PROCESSOR_VERSION)))
+        .addMethod(
+            getDeployProcessorVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.documentai.v1beta3.DeployProcessorVersionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DEPLOY_PROCESSOR_VERSION)))
+        .addMethod(
+            getUndeployProcessorVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.documentai.v1beta3.UndeployProcessorVersionRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UNDEPLOY_PROCESSOR_VERSION)))
+        .addMethod(
+            getCreateProcessorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.documentai.v1beta3.CreateProcessorRequest,
+                    com.google.cloud.documentai.v1beta3.Processor>(
+                    service, METHODID_CREATE_PROCESSOR)))
+        .addMethod(
+            getDeleteProcessorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.documentai.v1beta3.DeleteProcessorRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_PROCESSOR)))
+        .addMethod(
+            getEnableProcessorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.documentai.v1beta3.EnableProcessorRequest,
+                    com.google.longrunning.Operation>(service, METHODID_ENABLE_PROCESSOR)))
+        .addMethod(
+            getDisableProcessorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.documentai.v1beta3.DisableProcessorRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DISABLE_PROCESSOR)))
+        .addMethod(
+            getSetDefaultProcessorVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.documentai.v1beta3.SetDefaultProcessorVersionRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_SET_DEFAULT_PROCESSOR_VERSION)))
+        .addMethod(
+            getReviewDocumentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.documentai.v1beta3.ReviewDocumentRequest,
+                    com.google.longrunning.Operation>(service, METHODID_REVIEW_DOCUMENT)))
+        .addMethod(
+            getEvaluateProcessorVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.documentai.v1beta3.EvaluateProcessorVersionRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_EVALUATE_PROCESSOR_VERSION)))
+        .addMethod(
+            getGetEvaluationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.documentai.v1beta3.GetEvaluationRequest,
+                    com.google.cloud.documentai.v1beta3.Evaluation>(
+                    service, METHODID_GET_EVALUATION)))
+        .addMethod(
+            getListEvaluationsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.documentai.v1beta3.ListEvaluationsRequest,
+                    com.google.cloud.documentai.v1beta3.ListEvaluationsResponse>(
+                    service, METHODID_LIST_EVALUATIONS)))
+        .addMethod(
+            getImportProcessorVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.documentai.v1beta3.ImportProcessorVersionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_IMPORT_PROCESSOR_VERSION)))
+        .build();
   }
 
   private abstract static class DocumentProcessorServiceBaseDescriptorSupplier
@@ -2989,6 +3132,7 @@ public final class DocumentProcessorServiceGrpc {
                       .addMethod(getEvaluateProcessorVersionMethod())
                       .addMethod(getGetEvaluationMethod())
                       .addMethod(getListEvaluationsMethod())
+                      .addMethod(getImportProcessorVersionMethod())
                       .build();
         }
       }

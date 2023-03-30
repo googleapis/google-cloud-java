@@ -173,7 +173,7 @@ public final class ChangelogsGrpc {
    * Service for managing [Changelogs][google.cloud.dialogflow.cx.v3.Changelog].
    * </pre>
    */
-  public abstract static class ChangelogsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -182,7 +182,7 @@ public final class ChangelogsGrpc {
      * Returns the list of Changelogs.
      * </pre>
      */
-    public void listChangelogs(
+    default void listChangelogs(
         com.google.cloud.dialogflow.cx.v3.ListChangelogsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListChangelogsResponse>
             responseObserver) {
@@ -197,35 +197,31 @@ public final class ChangelogsGrpc {
      * Retrieves the specified Changelog.
      * </pre>
      */
-    public void getChangelog(
+    default void getChangelog(
         com.google.cloud.dialogflow.cx.v3.GetChangelogRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Changelog> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetChangelogMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Changelogs.
+   *
+   * <pre>
+   * Service for managing [Changelogs][google.cloud.dialogflow.cx.v3.Changelog].
+   * </pre>
+   */
+  public abstract static class ChangelogsImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListChangelogsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.ListChangelogsRequest,
-                      com.google.cloud.dialogflow.cx.v3.ListChangelogsResponse>(
-                      this, METHODID_LIST_CHANGELOGS)))
-          .addMethod(
-              getGetChangelogMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.cx.v3.GetChangelogRequest,
-                      com.google.cloud.dialogflow.cx.v3.Changelog>(this, METHODID_GET_CHANGELOG)))
-          .build();
+      return ChangelogsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Changelogs.
    *
    * <pre>
    * Service for managing [Changelogs][google.cloud.dialogflow.cx.v3.Changelog].
@@ -276,7 +272,7 @@ public final class ChangelogsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Changelogs.
    *
    * <pre>
    * Service for managing [Changelogs][google.cloud.dialogflow.cx.v3.Changelog].
@@ -322,7 +318,7 @@ public final class ChangelogsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Changelogs.
    *
    * <pre>
    * Service for managing [Changelogs][google.cloud.dialogflow.cx.v3.Changelog].
@@ -376,10 +372,10 @@ public final class ChangelogsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ChangelogsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ChangelogsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -415,6 +411,24 @@ public final class ChangelogsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListChangelogsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.ListChangelogsRequest,
+                    com.google.cloud.dialogflow.cx.v3.ListChangelogsResponse>(
+                    service, METHODID_LIST_CHANGELOGS)))
+        .addMethod(
+            getGetChangelogMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.GetChangelogRequest,
+                    com.google.cloud.dialogflow.cx.v3.Changelog>(service, METHODID_GET_CHANGELOG)))
+        .build();
   }
 
   private abstract static class ChangelogsBaseDescriptorSupplier

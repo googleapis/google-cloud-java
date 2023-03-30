@@ -669,7 +669,7 @@ public final class PolicyTagManagerGrpc {
    * classify data along a common axis.
    * </pre>
    */
-  public abstract static class PolicyTagManagerImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -679,7 +679,7 @@ public final class PolicyTagManagerGrpc {
      * The taxonomy is initially empty, that is, it doesn't contain policy tags.
      * </pre>
      */
-    public void createTaxonomy(
+    default void createTaxonomy(
         com.google.cloud.datacatalog.v1.CreateTaxonomyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.Taxonomy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -695,7 +695,7 @@ public final class PolicyTagManagerGrpc {
      * BigQuery columns.
      * </pre>
      */
-    public void deleteTaxonomy(
+    default void deleteTaxonomy(
         com.google.cloud.datacatalog.v1.DeleteTaxonomyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -710,7 +710,7 @@ public final class PolicyTagManagerGrpc {
      * description, and activated policy types.
      * </pre>
      */
-    public void updateTaxonomy(
+    default void updateTaxonomy(
         com.google.cloud.datacatalog.v1.UpdateTaxonomyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.Taxonomy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -725,7 +725,7 @@ public final class PolicyTagManagerGrpc {
      * have a permission to view.
      * </pre>
      */
-    public void listTaxonomies(
+    default void listTaxonomies(
         com.google.cloud.datacatalog.v1.ListTaxonomiesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.ListTaxonomiesResponse>
             responseObserver) {
@@ -740,7 +740,7 @@ public final class PolicyTagManagerGrpc {
      * Gets a taxonomy.
      * </pre>
      */
-    public void getTaxonomy(
+    default void getTaxonomy(
         com.google.cloud.datacatalog.v1.GetTaxonomyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.Taxonomy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -754,7 +754,7 @@ public final class PolicyTagManagerGrpc {
      * Creates a policy tag in a taxonomy.
      * </pre>
      */
-    public void createPolicyTag(
+    default void createPolicyTag(
         com.google.cloud.datacatalog.v1.CreatePolicyTagRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.PolicyTag> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -772,7 +772,7 @@ public final class PolicyTagManagerGrpc {
      *   descendants
      * </pre>
      */
-    public void deletePolicyTag(
+    default void deletePolicyTag(
         com.google.cloud.datacatalog.v1.DeletePolicyTagRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -787,7 +787,7 @@ public final class PolicyTagManagerGrpc {
      * name, description, and parent policy tag.
      * </pre>
      */
-    public void updatePolicyTag(
+    default void updatePolicyTag(
         com.google.cloud.datacatalog.v1.UpdatePolicyTagRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.PolicyTag> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -801,7 +801,7 @@ public final class PolicyTagManagerGrpc {
      * Lists all policy tags in a taxonomy.
      * </pre>
      */
-    public void listPolicyTags(
+    default void listPolicyTags(
         com.google.cloud.datacatalog.v1.ListPolicyTagsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.ListPolicyTagsResponse>
             responseObserver) {
@@ -816,7 +816,7 @@ public final class PolicyTagManagerGrpc {
      * Gets a policy tag.
      * </pre>
      */
-    public void getPolicyTag(
+    default void getPolicyTag(
         com.google.cloud.datacatalog.v1.GetPolicyTagRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.PolicyTag> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -830,7 +830,7 @@ public final class PolicyTagManagerGrpc {
      * Gets the IAM policy for a policy tag or a taxonomy.
      * </pre>
      */
-    public void getIamPolicy(
+    default void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -844,7 +844,7 @@ public final class PolicyTagManagerGrpc {
      * Sets the IAM policy for a policy tag or a taxonomy.
      * </pre>
      */
-    public void setIamPolicy(
+    default void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -859,104 +859,37 @@ public final class PolicyTagManagerGrpc {
      * taxonomy.
      * </pre>
      */
-    public void testIamPermissions(
+    default void testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getTestIamPermissionsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service PolicyTagManager.
+   *
+   * <pre>
+   * Policy Tag Manager API service allows you to manage your policy tags and
+   * taxonomies.
+   * Policy tags are used to tag BigQuery columns and apply additional access
+   * control policies. A taxonomy is a hierarchical grouping of policy tags that
+   * classify data along a common axis.
+   * </pre>
+   */
+  public abstract static class PolicyTagManagerImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateTaxonomyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datacatalog.v1.CreateTaxonomyRequest,
-                      com.google.cloud.datacatalog.v1.Taxonomy>(this, METHODID_CREATE_TAXONOMY)))
-          .addMethod(
-              getDeleteTaxonomyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datacatalog.v1.DeleteTaxonomyRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_TAXONOMY)))
-          .addMethod(
-              getUpdateTaxonomyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datacatalog.v1.UpdateTaxonomyRequest,
-                      com.google.cloud.datacatalog.v1.Taxonomy>(this, METHODID_UPDATE_TAXONOMY)))
-          .addMethod(
-              getListTaxonomiesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datacatalog.v1.ListTaxonomiesRequest,
-                      com.google.cloud.datacatalog.v1.ListTaxonomiesResponse>(
-                      this, METHODID_LIST_TAXONOMIES)))
-          .addMethod(
-              getGetTaxonomyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datacatalog.v1.GetTaxonomyRequest,
-                      com.google.cloud.datacatalog.v1.Taxonomy>(this, METHODID_GET_TAXONOMY)))
-          .addMethod(
-              getCreatePolicyTagMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datacatalog.v1.CreatePolicyTagRequest,
-                      com.google.cloud.datacatalog.v1.PolicyTag>(this, METHODID_CREATE_POLICY_TAG)))
-          .addMethod(
-              getDeletePolicyTagMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datacatalog.v1.DeletePolicyTagRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_POLICY_TAG)))
-          .addMethod(
-              getUpdatePolicyTagMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datacatalog.v1.UpdatePolicyTagRequest,
-                      com.google.cloud.datacatalog.v1.PolicyTag>(this, METHODID_UPDATE_POLICY_TAG)))
-          .addMethod(
-              getListPolicyTagsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datacatalog.v1.ListPolicyTagsRequest,
-                      com.google.cloud.datacatalog.v1.ListPolicyTagsResponse>(
-                      this, METHODID_LIST_POLICY_TAGS)))
-          .addMethod(
-              getGetPolicyTagMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.datacatalog.v1.GetPolicyTagRequest,
-                      com.google.cloud.datacatalog.v1.PolicyTag>(this, METHODID_GET_POLICY_TAG)))
-          .addMethod(
-              getGetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_GET_IAM_POLICY)))
-          .addMethod(
-              getSetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_SET_IAM_POLICY)))
-          .addMethod(
-              getTestIamPermissionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.TestIamPermissionsRequest,
-                      com.google.iam.v1.TestIamPermissionsResponse>(
-                      this, METHODID_TEST_IAM_PERMISSIONS)))
-          .build();
+      return PolicyTagManagerGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service PolicyTagManager.
    *
    * <pre>
    * Policy Tag Manager API service allows you to manage your policy tags and
@@ -1201,7 +1134,7 @@ public final class PolicyTagManagerGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service PolicyTagManager.
    *
    * <pre>
    * Policy Tag Manager API service allows you to manage your policy tags and
@@ -1403,7 +1336,7 @@ public final class PolicyTagManagerGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service PolicyTagManager.
    *
    * <pre>
    * Policy Tag Manager API service allows you to manage your policy tags and
@@ -1634,10 +1567,10 @@ public final class PolicyTagManagerGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final PolicyTagManagerImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(PolicyTagManagerImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1734,6 +1667,92 @@ public final class PolicyTagManagerGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateTaxonomyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.v1.CreateTaxonomyRequest,
+                    com.google.cloud.datacatalog.v1.Taxonomy>(service, METHODID_CREATE_TAXONOMY)))
+        .addMethod(
+            getDeleteTaxonomyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.v1.DeleteTaxonomyRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_TAXONOMY)))
+        .addMethod(
+            getUpdateTaxonomyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.v1.UpdateTaxonomyRequest,
+                    com.google.cloud.datacatalog.v1.Taxonomy>(service, METHODID_UPDATE_TAXONOMY)))
+        .addMethod(
+            getListTaxonomiesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.v1.ListTaxonomiesRequest,
+                    com.google.cloud.datacatalog.v1.ListTaxonomiesResponse>(
+                    service, METHODID_LIST_TAXONOMIES)))
+        .addMethod(
+            getGetTaxonomyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.v1.GetTaxonomyRequest,
+                    com.google.cloud.datacatalog.v1.Taxonomy>(service, METHODID_GET_TAXONOMY)))
+        .addMethod(
+            getCreatePolicyTagMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.v1.CreatePolicyTagRequest,
+                    com.google.cloud.datacatalog.v1.PolicyTag>(
+                    service, METHODID_CREATE_POLICY_TAG)))
+        .addMethod(
+            getDeletePolicyTagMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.v1.DeletePolicyTagRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_POLICY_TAG)))
+        .addMethod(
+            getUpdatePolicyTagMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.v1.UpdatePolicyTagRequest,
+                    com.google.cloud.datacatalog.v1.PolicyTag>(
+                    service, METHODID_UPDATE_POLICY_TAG)))
+        .addMethod(
+            getListPolicyTagsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.v1.ListPolicyTagsRequest,
+                    com.google.cloud.datacatalog.v1.ListPolicyTagsResponse>(
+                    service, METHODID_LIST_POLICY_TAGS)))
+        .addMethod(
+            getGetPolicyTagMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.datacatalog.v1.GetPolicyTagRequest,
+                    com.google.cloud.datacatalog.v1.PolicyTag>(service, METHODID_GET_POLICY_TAG)))
+        .addMethod(
+            getGetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_GET_IAM_POLICY)))
+        .addMethod(
+            getSetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_SET_IAM_POLICY)))
+        .addMethod(
+            getTestIamPermissionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.v1.TestIamPermissionsRequest,
+                    com.google.iam.v1.TestIamPermissionsResponse>(
+                    service, METHODID_TEST_IAM_PERMISSIONS)))
+        .build();
   }
 
   private abstract static class PolicyTagManagerBaseDescriptorSupplier

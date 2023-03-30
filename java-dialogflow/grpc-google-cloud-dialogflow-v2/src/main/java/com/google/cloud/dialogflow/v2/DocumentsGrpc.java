@@ -427,7 +427,7 @@ public final class DocumentsGrpc {
    * [Documents][google.cloud.dialogflow.v2.Document].
    * </pre>
    */
-  public abstract static class DocumentsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -436,7 +436,7 @@ public final class DocumentsGrpc {
      * Returns the list of all documents of the knowledge base.
      * </pre>
      */
-    public void listDocuments(
+    default void listDocuments(
         com.google.cloud.dialogflow.v2.ListDocumentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.ListDocumentsResponse>
             responseObserver) {
@@ -451,7 +451,7 @@ public final class DocumentsGrpc {
      * Retrieves the specified document.
      * </pre>
      */
-    public void getDocument(
+    default void getDocument(
         com.google.cloud.dialogflow.v2.GetDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.Document> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -471,7 +471,7 @@ public final class DocumentsGrpc {
      * - `response`: [Document][google.cloud.dialogflow.v2.Document]
      * </pre>
      */
-    public void createDocument(
+    default void createDocument(
         com.google.cloud.dialogflow.v2.CreateDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -494,7 +494,7 @@ public final class DocumentsGrpc {
      * [ImportDocumentsResponse][google.cloud.dialogflow.v2.ImportDocumentsResponse]
      * </pre>
      */
-    public void importDocuments(
+    default void importDocuments(
         com.google.cloud.dialogflow.v2.ImportDocumentsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -515,7 +515,7 @@ public final class DocumentsGrpc {
      *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
      * </pre>
      */
-    public void deleteDocument(
+    default void deleteDocument(
         com.google.cloud.dialogflow.v2.DeleteDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -535,7 +535,7 @@ public final class DocumentsGrpc {
      * - `response`: [Document][google.cloud.dialogflow.v2.Document]
      * </pre>
      */
-    public void updateDocument(
+    default void updateDocument(
         com.google.cloud.dialogflow.v2.UpdateDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -560,7 +560,7 @@ public final class DocumentsGrpc {
      * only use `projects.knowledgeBases.documents`.
      * </pre>
      */
-    public void reloadDocument(
+    default void reloadDocument(
         com.google.cloud.dialogflow.v2.ReloadDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -581,71 +581,32 @@ public final class DocumentsGrpc {
      * - `response`: [Document][google.cloud.dialogflow.v2.Document]
      * </pre>
      */
-    public void exportDocument(
+    default void exportDocument(
         com.google.cloud.dialogflow.v2.ExportDocumentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getExportDocumentMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Documents.
+   *
+   * <pre>
+   * Service for managing knowledge
+   * [Documents][google.cloud.dialogflow.v2.Document].
+   * </pre>
+   */
+  public abstract static class DocumentsImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListDocumentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.ListDocumentsRequest,
-                      com.google.cloud.dialogflow.v2.ListDocumentsResponse>(
-                      this, METHODID_LIST_DOCUMENTS)))
-          .addMethod(
-              getGetDocumentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.GetDocumentRequest,
-                      com.google.cloud.dialogflow.v2.Document>(this, METHODID_GET_DOCUMENT)))
-          .addMethod(
-              getCreateDocumentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.CreateDocumentRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_DOCUMENT)))
-          .addMethod(
-              getImportDocumentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.ImportDocumentsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_IMPORT_DOCUMENTS)))
-          .addMethod(
-              getDeleteDocumentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.DeleteDocumentRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_DOCUMENT)))
-          .addMethod(
-              getUpdateDocumentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.UpdateDocumentRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_DOCUMENT)))
-          .addMethod(
-              getReloadDocumentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.ReloadDocumentRequest,
-                      com.google.longrunning.Operation>(this, METHODID_RELOAD_DOCUMENT)))
-          .addMethod(
-              getExportDocumentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.dialogflow.v2.ExportDocumentRequest,
-                      com.google.longrunning.Operation>(this, METHODID_EXPORT_DOCUMENT)))
-          .build();
+      return DocumentsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Documents.
    *
    * <pre>
    * Service for managing knowledge
@@ -839,7 +800,7 @@ public final class DocumentsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Documents.
    *
    * <pre>
    * Service for managing knowledge
@@ -1010,7 +971,7 @@ public final class DocumentsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Documents.
    *
    * <pre>
    * Service for managing knowledge
@@ -1195,10 +1156,10 @@ public final class DocumentsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final DocumentsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(DocumentsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1263,6 +1224,60 @@ public final class DocumentsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListDocumentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.ListDocumentsRequest,
+                    com.google.cloud.dialogflow.v2.ListDocumentsResponse>(
+                    service, METHODID_LIST_DOCUMENTS)))
+        .addMethod(
+            getGetDocumentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.GetDocumentRequest,
+                    com.google.cloud.dialogflow.v2.Document>(service, METHODID_GET_DOCUMENT)))
+        .addMethod(
+            getCreateDocumentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.CreateDocumentRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_DOCUMENT)))
+        .addMethod(
+            getImportDocumentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.ImportDocumentsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_IMPORT_DOCUMENTS)))
+        .addMethod(
+            getDeleteDocumentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.DeleteDocumentRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_DOCUMENT)))
+        .addMethod(
+            getUpdateDocumentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.UpdateDocumentRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_DOCUMENT)))
+        .addMethod(
+            getReloadDocumentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.ReloadDocumentRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RELOAD_DOCUMENT)))
+        .addMethod(
+            getExportDocumentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.ExportDocumentRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EXPORT_DOCUMENT)))
+        .build();
   }
 
   private abstract static class DocumentsBaseDescriptorSupplier

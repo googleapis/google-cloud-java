@@ -97,6 +97,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     GKE(15),
     ANTHOS_CLUSTER(17),
     RUN(18),
+    MULTI_TARGET(19),
     DEPLOYMENTTARGET_NOT_SET(0);
     private final int value;
 
@@ -121,6 +122,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
           return ANTHOS_CLUSTER;
         case 18:
           return RUN;
+        case 19:
+          return MULTI_TARGET;
         case 0:
           return DEPLOYMENTTARGET_NOT_SET;
         default:
@@ -374,8 +377,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Google Cloud Deploy. See
    * https://google.aip.dev/128#annotations for more details such as format and
    * size limitations.
    * </pre>
@@ -400,8 +403,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Google Cloud Deploy. See
    * https://google.aip.dev/128#annotations for more details such as format and
    * size limitations.
    * </pre>
@@ -417,8 +420,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Google Cloud Deploy. See
    * https://google.aip.dev/128#annotations for more details such as format and
    * size limitations.
    * </pre>
@@ -441,8 +444,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
+   * Optional. User annotations. These attributes can only be set and used by
+   * the user, and not by Google Cloud Deploy. See
    * https://google.aip.dev/128#annotations for more details such as format and
    * size limitations.
    * </pre>
@@ -869,6 +872,57 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.deploy.v1.CloudRunLocation.getDefaultInstance();
   }
 
+  public static final int MULTI_TARGET_FIELD_NUMBER = 19;
+  /**
+   *
+   *
+   * <pre>
+   * Information specifying a multiTarget.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+   *
+   * @return Whether the multiTarget field is set.
+   */
+  @java.lang.Override
+  public boolean hasMultiTarget() {
+    return deploymentTargetCase_ == 19;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Information specifying a multiTarget.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+   *
+   * @return The multiTarget.
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.MultiTarget getMultiTarget() {
+    if (deploymentTargetCase_ == 19) {
+      return (com.google.cloud.deploy.v1.MultiTarget) deploymentTarget_;
+    }
+    return com.google.cloud.deploy.v1.MultiTarget.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Information specifying a multiTarget.
+   * </pre>
+   *
+   * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.MultiTargetOrBuilder getMultiTargetOrBuilder() {
+    if (deploymentTargetCase_ == 19) {
+      return (com.google.cloud.deploy.v1.MultiTarget) deploymentTarget_;
+    }
+    return com.google.cloud.deploy.v1.MultiTarget.getDefaultInstance();
+  }
+
   public static final int ETAG_FIELD_NUMBER = 12;
 
   @SuppressWarnings("serial")
@@ -877,8 +931,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. This checksum is computed by the server based on the value of other
-   * fields, and may be sent on update and delete requests to ensure the
+   * Optional. This checksum is computed by the server based on the value of
+   * other fields, and may be sent on update and delete requests to ensure the
    * client has an up-to-date value before proceeding.
    * </pre>
    *
@@ -902,8 +956,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. This checksum is computed by the server based on the value of other
-   * fields, and may be sent on update and delete requests to ensure the
+   * Optional. This checksum is computed by the server based on the value of
+   * other fields, and may be sent on update and delete requests to ensure the
    * client has an up-to-date value before proceeding.
    * </pre>
    *
@@ -1080,6 +1134,9 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     if (deploymentTargetCase_ == 18) {
       output.writeMessage(18, (com.google.cloud.deploy.v1.CloudRunLocation) deploymentTarget_);
     }
+    if (deploymentTargetCase_ == 19) {
+      output.writeMessage(19, (com.google.cloud.deploy.v1.MultiTarget) deploymentTarget_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1152,6 +1209,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               18, (com.google.cloud.deploy.v1.CloudRunLocation) deploymentTarget_);
     }
+    if (deploymentTargetCase_ == 19) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              19, (com.google.cloud.deploy.v1.MultiTarget) deploymentTarget_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1194,6 +1256,9 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         break;
       case 18:
         if (!getRun().equals(other.getRun())) return false;
+        break;
+      case 19:
+        if (!getMultiTarget().equals(other.getMultiTarget())) return false;
         break;
       case 0:
       default:
@@ -1253,6 +1318,10 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       case 18:
         hash = (37 * hash) + RUN_FIELD_NUMBER;
         hash = (53 * hash) + getRun().hashCode();
+        break;
+      case 19:
+        hash = (37 * hash) + MULTI_TARGET_FIELD_NUMBER;
+        hash = (53 * hash) + getMultiTarget().hashCode();
         break;
       case 0:
       default:
@@ -1447,6 +1516,9 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       if (runBuilder_ != null) {
         runBuilder_.clear();
       }
+      if (multiTargetBuilder_ != null) {
+        multiTargetBuilder_.clear();
+      }
       etag_ = "";
       if (executionConfigsBuilder_ == null) {
         executionConfigs_ = java.util.Collections.emptyList();
@@ -1454,7 +1526,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         executionConfigs_ = null;
         executionConfigsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       deploymentTargetCase_ = 0;
       deploymentTarget_ = null;
       return this;
@@ -1494,9 +1566,9 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.deploy.v1.Target result) {
       if (executionConfigsBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)) {
+        if (((bitField0_ & 0x00004000) != 0)) {
           executionConfigs_ = java.util.Collections.unmodifiableList(executionConfigs_);
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ = (bitField0_ & ~0x00004000);
         }
         result.executionConfigs_ = executionConfigs_;
       } else {
@@ -1535,7 +1607,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.etag_ = etag_;
       }
     }
@@ -1551,6 +1623,9 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       }
       if (deploymentTargetCase_ == 18 && runBuilder_ != null) {
         result.deploymentTarget_ = runBuilder_.build();
+      }
+      if (deploymentTargetCase_ == 19 && multiTargetBuilder_ != null) {
+        result.deploymentTarget_ = multiTargetBuilder_.build();
       }
     }
 
@@ -1634,14 +1709,14 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (executionConfigsBuilder_ == null) {
         if (!other.executionConfigs_.isEmpty()) {
           if (executionConfigs_.isEmpty()) {
             executionConfigs_ = other.executionConfigs_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00004000);
           } else {
             ensureExecutionConfigsIsMutable();
             executionConfigs_.addAll(other.executionConfigs_);
@@ -1654,7 +1729,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
             executionConfigsBuilder_.dispose();
             executionConfigsBuilder_ = null;
             executionConfigs_ = other.executionConfigs_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00004000);
             executionConfigsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getExecutionConfigsFieldBuilder()
@@ -1678,6 +1753,11 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         case RUN:
           {
             mergeRun(other.getRun());
+            break;
+          }
+        case MULTI_TARGET:
+          {
+            mergeMultiTarget(other.getMultiTarget());
             break;
           }
         case DEPLOYMENTTARGET_NOT_SET:
@@ -1774,7 +1854,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
             case 98:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 98
             case 104:
@@ -1814,6 +1894,12 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
                 deploymentTargetCase_ = 18;
                 break;
               } // case 146
+            case 154:
+              {
+                input.readMessage(getMultiTargetFieldBuilder().getBuilder(), extensionRegistry);
+                deploymentTargetCase_ = 19;
+                break;
+              } // case 154
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2308,8 +2394,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Google Cloud Deploy. See
      * https://google.aip.dev/128#annotations for more details such as format and
      * size limitations.
      * </pre>
@@ -2334,8 +2420,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Google Cloud Deploy. See
      * https://google.aip.dev/128#annotations for more details such as format and
      * size limitations.
      * </pre>
@@ -2351,8 +2437,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Google Cloud Deploy. See
      * https://google.aip.dev/128#annotations for more details such as format and
      * size limitations.
      * </pre>
@@ -2375,8 +2461,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Google Cloud Deploy. See
      * https://google.aip.dev/128#annotations for more details such as format and
      * size limitations.
      * </pre>
@@ -2405,8 +2491,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Google Cloud Deploy. See
      * https://google.aip.dev/128#annotations for more details such as format and
      * size limitations.
      * </pre>
@@ -2431,8 +2517,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Google Cloud Deploy. See
      * https://google.aip.dev/128#annotations for more details such as format and
      * size limitations.
      * </pre>
@@ -2455,8 +2541,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
+     * Optional. User annotations. These attributes can only be set and used by
+     * the user, and not by Google Cloud Deploy. See
      * https://google.aip.dev/128#annotations for more details such as format and
      * size limitations.
      * </pre>
@@ -3777,13 +3863,221 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       return runBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.MultiTarget,
+            com.google.cloud.deploy.v1.MultiTarget.Builder,
+            com.google.cloud.deploy.v1.MultiTargetOrBuilder>
+        multiTargetBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Information specifying a multiTarget.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+     *
+     * @return Whether the multiTarget field is set.
+     */
+    @java.lang.Override
+    public boolean hasMultiTarget() {
+      return deploymentTargetCase_ == 19;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information specifying a multiTarget.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+     *
+     * @return The multiTarget.
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.MultiTarget getMultiTarget() {
+      if (multiTargetBuilder_ == null) {
+        if (deploymentTargetCase_ == 19) {
+          return (com.google.cloud.deploy.v1.MultiTarget) deploymentTarget_;
+        }
+        return com.google.cloud.deploy.v1.MultiTarget.getDefaultInstance();
+      } else {
+        if (deploymentTargetCase_ == 19) {
+          return multiTargetBuilder_.getMessage();
+        }
+        return com.google.cloud.deploy.v1.MultiTarget.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information specifying a multiTarget.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+     */
+    public Builder setMultiTarget(com.google.cloud.deploy.v1.MultiTarget value) {
+      if (multiTargetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        deploymentTarget_ = value;
+        onChanged();
+      } else {
+        multiTargetBuilder_.setMessage(value);
+      }
+      deploymentTargetCase_ = 19;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information specifying a multiTarget.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+     */
+    public Builder setMultiTarget(com.google.cloud.deploy.v1.MultiTarget.Builder builderForValue) {
+      if (multiTargetBuilder_ == null) {
+        deploymentTarget_ = builderForValue.build();
+        onChanged();
+      } else {
+        multiTargetBuilder_.setMessage(builderForValue.build());
+      }
+      deploymentTargetCase_ = 19;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information specifying a multiTarget.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+     */
+    public Builder mergeMultiTarget(com.google.cloud.deploy.v1.MultiTarget value) {
+      if (multiTargetBuilder_ == null) {
+        if (deploymentTargetCase_ == 19
+            && deploymentTarget_ != com.google.cloud.deploy.v1.MultiTarget.getDefaultInstance()) {
+          deploymentTarget_ =
+              com.google.cloud.deploy.v1.MultiTarget.newBuilder(
+                      (com.google.cloud.deploy.v1.MultiTarget) deploymentTarget_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          deploymentTarget_ = value;
+        }
+        onChanged();
+      } else {
+        if (deploymentTargetCase_ == 19) {
+          multiTargetBuilder_.mergeFrom(value);
+        } else {
+          multiTargetBuilder_.setMessage(value);
+        }
+      }
+      deploymentTargetCase_ = 19;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information specifying a multiTarget.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+     */
+    public Builder clearMultiTarget() {
+      if (multiTargetBuilder_ == null) {
+        if (deploymentTargetCase_ == 19) {
+          deploymentTargetCase_ = 0;
+          deploymentTarget_ = null;
+          onChanged();
+        }
+      } else {
+        if (deploymentTargetCase_ == 19) {
+          deploymentTargetCase_ = 0;
+          deploymentTarget_ = null;
+        }
+        multiTargetBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information specifying a multiTarget.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+     */
+    public com.google.cloud.deploy.v1.MultiTarget.Builder getMultiTargetBuilder() {
+      return getMultiTargetFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information specifying a multiTarget.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.deploy.v1.MultiTargetOrBuilder getMultiTargetOrBuilder() {
+      if ((deploymentTargetCase_ == 19) && (multiTargetBuilder_ != null)) {
+        return multiTargetBuilder_.getMessageOrBuilder();
+      } else {
+        if (deploymentTargetCase_ == 19) {
+          return (com.google.cloud.deploy.v1.MultiTarget) deploymentTarget_;
+        }
+        return com.google.cloud.deploy.v1.MultiTarget.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information specifying a multiTarget.
+     * </pre>
+     *
+     * <code>.google.cloud.deploy.v1.MultiTarget multi_target = 19;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.MultiTarget,
+            com.google.cloud.deploy.v1.MultiTarget.Builder,
+            com.google.cloud.deploy.v1.MultiTargetOrBuilder>
+        getMultiTargetFieldBuilder() {
+      if (multiTargetBuilder_ == null) {
+        if (!(deploymentTargetCase_ == 19)) {
+          deploymentTarget_ = com.google.cloud.deploy.v1.MultiTarget.getDefaultInstance();
+        }
+        multiTargetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.deploy.v1.MultiTarget,
+                com.google.cloud.deploy.v1.MultiTarget.Builder,
+                com.google.cloud.deploy.v1.MultiTargetOrBuilder>(
+                (com.google.cloud.deploy.v1.MultiTarget) deploymentTarget_,
+                getParentForChildren(),
+                isClean());
+        deploymentTarget_ = null;
+      }
+      deploymentTargetCase_ = 19;
+      onChanged();
+      return multiTargetBuilder_;
+    }
+
     private java.lang.Object etag_ = "";
     /**
      *
      *
      * <pre>
-     * Optional. This checksum is computed by the server based on the value of other
-     * fields, and may be sent on update and delete requests to ensure the
+     * Optional. This checksum is computed by the server based on the value of
+     * other fields, and may be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
      * </pre>
      *
@@ -3806,8 +4100,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. This checksum is computed by the server based on the value of other
-     * fields, and may be sent on update and delete requests to ensure the
+     * Optional. This checksum is computed by the server based on the value of
+     * other fields, and may be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
      * </pre>
      *
@@ -3830,8 +4124,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. This checksum is computed by the server based on the value of other
-     * fields, and may be sent on update and delete requests to ensure the
+     * Optional. This checksum is computed by the server based on the value of
+     * other fields, and may be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
      * </pre>
      *
@@ -3845,7 +4139,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3853,8 +4147,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. This checksum is computed by the server based on the value of other
-     * fields, and may be sent on update and delete requests to ensure the
+     * Optional. This checksum is computed by the server based on the value of
+     * other fields, and may be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
      * </pre>
      *
@@ -3864,7 +4158,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -3872,8 +4166,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. This checksum is computed by the server based on the value of other
-     * fields, and may be sent on update and delete requests to ensure the
+     * Optional. This checksum is computed by the server based on the value of
+     * other fields, and may be sent on update and delete requests to ensure the
      * client has an up-to-date value before proceeding.
      * </pre>
      *
@@ -3888,7 +4182,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3897,10 +4191,10 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureExecutionConfigsIsMutable() {
-      if (!((bitField0_ & 0x00002000) != 0)) {
+      if (!((bitField0_ & 0x00004000) != 0)) {
         executionConfigs_ =
             new java.util.ArrayList<com.google.cloud.deploy.v1.ExecutionConfig>(executionConfigs_);
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
       }
     }
 
@@ -4184,7 +4478,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     public Builder clearExecutionConfigs() {
       if (executionConfigsBuilder_ == null) {
         executionConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         onChanged();
       } else {
         executionConfigsBuilder_.clear();
@@ -4352,7 +4646,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.deploy.v1.ExecutionConfig.Builder,
                 com.google.cloud.deploy.v1.ExecutionConfigOrBuilder>(
                 executionConfigs_,
-                ((bitField0_ & 0x00002000) != 0),
+                ((bitField0_ & 0x00004000) != 0),
                 getParentForChildren(),
                 isClean());
         executionConfigs_ = null;

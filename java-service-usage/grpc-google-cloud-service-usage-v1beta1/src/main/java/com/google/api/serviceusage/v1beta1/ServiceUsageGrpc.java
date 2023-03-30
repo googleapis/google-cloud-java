@@ -998,7 +998,7 @@ public final class ServiceUsageGrpc {
    * [Service Usage API](https://cloud.google.com/service-usage/docs/overview)
    * </pre>
    */
-  public abstract static class ServiceUsageImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -1009,7 +1009,7 @@ public final class ServiceUsageGrpc {
      * </pre>
      */
     @java.lang.Deprecated
-    public void enableService(
+    default void enableService(
         com.google.api.serviceusage.v1beta1.EnableServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1030,7 +1030,7 @@ public final class ServiceUsageGrpc {
      * </pre>
      */
     @java.lang.Deprecated
-    public void disableService(
+    default void disableService(
         com.google.api.serviceusage.v1beta1.DisableServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1045,7 +1045,7 @@ public final class ServiceUsageGrpc {
      * </pre>
      */
     @java.lang.Deprecated
-    public void getService(
+    default void getService(
         com.google.api.serviceusage.v1beta1.GetServiceRequest request,
         io.grpc.stub.StreamObserver<com.google.api.serviceusage.v1beta1.Service> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetServiceMethod(), responseObserver);
@@ -1065,7 +1065,7 @@ public final class ServiceUsageGrpc {
      * </pre>
      */
     @java.lang.Deprecated
-    public void listServices(
+    default void listServices(
         com.google.api.serviceusage.v1beta1.ListServicesRequest request,
         io.grpc.stub.StreamObserver<com.google.api.serviceusage.v1beta1.ListServicesResponse>
             responseObserver) {
@@ -1084,7 +1084,7 @@ public final class ServiceUsageGrpc {
      * </pre>
      */
     @java.lang.Deprecated
-    public void batchEnableServices(
+    default void batchEnableServices(
         com.google.api.serviceusage.v1beta1.BatchEnableServicesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1102,7 +1102,7 @@ public final class ServiceUsageGrpc {
      * effective limit value, and all of the overrides applied to the limit.
      * </pre>
      */
-    public void listConsumerQuotaMetrics(
+    default void listConsumerQuotaMetrics(
         com.google.api.serviceusage.v1beta1.ListConsumerQuotaMetricsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.api.serviceusage.v1beta1.ListConsumerQuotaMetricsResponse>
@@ -1118,7 +1118,7 @@ public final class ServiceUsageGrpc {
      * Retrieves a summary of quota information for a specific quota metric
      * </pre>
      */
-    public void getConsumerQuotaMetric(
+    default void getConsumerQuotaMetric(
         com.google.api.serviceusage.v1beta1.GetConsumerQuotaMetricRequest request,
         io.grpc.stub.StreamObserver<com.google.api.serviceusage.v1beta1.ConsumerQuotaMetric>
             responseObserver) {
@@ -1133,7 +1133,7 @@ public final class ServiceUsageGrpc {
      * Retrieves a summary of quota information for a specific quota limit.
      * </pre>
      */
-    public void getConsumerQuotaLimit(
+    default void getConsumerQuotaLimit(
         com.google.api.serviceusage.v1beta1.GetConsumerQuotaLimitRequest request,
         io.grpc.stub.StreamObserver<com.google.api.serviceusage.v1beta1.ConsumerQuotaLimit>
             responseObserver) {
@@ -1153,7 +1153,7 @@ public final class ServiceUsageGrpc {
      * organization.
      * </pre>
      */
-    public void createAdminOverride(
+    default void createAdminOverride(
         com.google.api.serviceusage.v1beta1.CreateAdminOverrideRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1167,7 +1167,7 @@ public final class ServiceUsageGrpc {
      * Updates an admin override.
      * </pre>
      */
-    public void updateAdminOverride(
+    default void updateAdminOverride(
         com.google.api.serviceusage.v1beta1.UpdateAdminOverrideRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1181,7 +1181,7 @@ public final class ServiceUsageGrpc {
      * Deletes an admin override.
      * </pre>
      */
-    public void deleteAdminOverride(
+    default void deleteAdminOverride(
         com.google.api.serviceusage.v1beta1.DeleteAdminOverrideRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1195,7 +1195,7 @@ public final class ServiceUsageGrpc {
      * Lists all admin overrides on this limit.
      * </pre>
      */
-    public void listAdminOverrides(
+    default void listAdminOverrides(
         com.google.api.serviceusage.v1beta1.ListAdminOverridesRequest request,
         io.grpc.stub.StreamObserver<com.google.api.serviceusage.v1beta1.ListAdminOverridesResponse>
             responseObserver) {
@@ -1212,7 +1212,7 @@ public final class ServiceUsageGrpc {
      * The name field in the quota override message should not be set.
      * </pre>
      */
-    public void importAdminOverrides(
+    default void importAdminOverrides(
         com.google.api.serviceusage.v1beta1.ImportAdminOverridesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1230,7 +1230,7 @@ public final class ServiceUsageGrpc {
      * default limit of the service.
      * </pre>
      */
-    public void createConsumerOverride(
+    default void createConsumerOverride(
         com.google.api.serviceusage.v1beta1.CreateConsumerOverrideRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1244,7 +1244,7 @@ public final class ServiceUsageGrpc {
      * Updates a consumer override.
      * </pre>
      */
-    public void updateConsumerOverride(
+    default void updateConsumerOverride(
         com.google.api.serviceusage.v1beta1.UpdateConsumerOverrideRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1258,7 +1258,7 @@ public final class ServiceUsageGrpc {
      * Deletes a consumer override.
      * </pre>
      */
-    public void deleteConsumerOverride(
+    default void deleteConsumerOverride(
         com.google.api.serviceusage.v1beta1.DeleteConsumerOverrideRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1272,7 +1272,7 @@ public final class ServiceUsageGrpc {
      * Lists all consumer overrides on this limit.
      * </pre>
      */
-    public void listConsumerOverrides(
+    default void listConsumerOverrides(
         com.google.api.serviceusage.v1beta1.ListConsumerOverridesRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.api.serviceusage.v1beta1.ListConsumerOverridesResponse>
@@ -1290,7 +1290,7 @@ public final class ServiceUsageGrpc {
      * The name field in the quota override message should not be set.
      * </pre>
      */
-    public void importConsumerOverrides(
+    default void importConsumerOverrides(
         com.google.api.serviceusage.v1beta1.ImportConsumerOverridesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1304,142 +1304,32 @@ public final class ServiceUsageGrpc {
      * Generates service identity for service.
      * </pre>
      */
-    public void generateServiceIdentity(
+    default void generateServiceIdentity(
         com.google.api.serviceusage.v1beta1.GenerateServiceIdentityRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGenerateServiceIdentityMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ServiceUsage.
+   *
+   * <pre>
+   * [Service Usage API](https://cloud.google.com/service-usage/docs/overview)
+   * </pre>
+   */
+  public abstract static class ServiceUsageImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getEnableServiceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.serviceusage.v1beta1.EnableServiceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_ENABLE_SERVICE)))
-          .addMethod(
-              getDisableServiceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.serviceusage.v1beta1.DisableServiceRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DISABLE_SERVICE)))
-          .addMethod(
-              getGetServiceMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.serviceusage.v1beta1.GetServiceRequest,
-                      com.google.api.serviceusage.v1beta1.Service>(this, METHODID_GET_SERVICE)))
-          .addMethod(
-              getListServicesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.serviceusage.v1beta1.ListServicesRequest,
-                      com.google.api.serviceusage.v1beta1.ListServicesResponse>(
-                      this, METHODID_LIST_SERVICES)))
-          .addMethod(
-              getBatchEnableServicesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.serviceusage.v1beta1.BatchEnableServicesRequest,
-                      com.google.longrunning.Operation>(this, METHODID_BATCH_ENABLE_SERVICES)))
-          .addMethod(
-              getListConsumerQuotaMetricsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.serviceusage.v1beta1.ListConsumerQuotaMetricsRequest,
-                      com.google.api.serviceusage.v1beta1.ListConsumerQuotaMetricsResponse>(
-                      this, METHODID_LIST_CONSUMER_QUOTA_METRICS)))
-          .addMethod(
-              getGetConsumerQuotaMetricMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.serviceusage.v1beta1.GetConsumerQuotaMetricRequest,
-                      com.google.api.serviceusage.v1beta1.ConsumerQuotaMetric>(
-                      this, METHODID_GET_CONSUMER_QUOTA_METRIC)))
-          .addMethod(
-              getGetConsumerQuotaLimitMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.serviceusage.v1beta1.GetConsumerQuotaLimitRequest,
-                      com.google.api.serviceusage.v1beta1.ConsumerQuotaLimit>(
-                      this, METHODID_GET_CONSUMER_QUOTA_LIMIT)))
-          .addMethod(
-              getCreateAdminOverrideMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.serviceusage.v1beta1.CreateAdminOverrideRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_ADMIN_OVERRIDE)))
-          .addMethod(
-              getUpdateAdminOverrideMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.serviceusage.v1beta1.UpdateAdminOverrideRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_ADMIN_OVERRIDE)))
-          .addMethod(
-              getDeleteAdminOverrideMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.serviceusage.v1beta1.DeleteAdminOverrideRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_ADMIN_OVERRIDE)))
-          .addMethod(
-              getListAdminOverridesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.serviceusage.v1beta1.ListAdminOverridesRequest,
-                      com.google.api.serviceusage.v1beta1.ListAdminOverridesResponse>(
-                      this, METHODID_LIST_ADMIN_OVERRIDES)))
-          .addMethod(
-              getImportAdminOverridesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.serviceusage.v1beta1.ImportAdminOverridesRequest,
-                      com.google.longrunning.Operation>(this, METHODID_IMPORT_ADMIN_OVERRIDES)))
-          .addMethod(
-              getCreateConsumerOverrideMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.serviceusage.v1beta1.CreateConsumerOverrideRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_CONSUMER_OVERRIDE)))
-          .addMethod(
-              getUpdateConsumerOverrideMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.serviceusage.v1beta1.UpdateConsumerOverrideRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_CONSUMER_OVERRIDE)))
-          .addMethod(
-              getDeleteConsumerOverrideMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.serviceusage.v1beta1.DeleteConsumerOverrideRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_CONSUMER_OVERRIDE)))
-          .addMethod(
-              getListConsumerOverridesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.serviceusage.v1beta1.ListConsumerOverridesRequest,
-                      com.google.api.serviceusage.v1beta1.ListConsumerOverridesResponse>(
-                      this, METHODID_LIST_CONSUMER_OVERRIDES)))
-          .addMethod(
-              getImportConsumerOverridesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.serviceusage.v1beta1.ImportConsumerOverridesRequest,
-                      com.google.longrunning.Operation>(this, METHODID_IMPORT_CONSUMER_OVERRIDES)))
-          .addMethod(
-              getGenerateServiceIdentityMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.api.serviceusage.v1beta1.GenerateServiceIdentityRequest,
-                      com.google.longrunning.Operation>(this, METHODID_GENERATE_SERVICE_IDENTITY)))
-          .build();
+      return ServiceUsageGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ServiceUsage.
    *
    * <pre>
    * [Service Usage API](https://cloud.google.com/service-usage/docs/overview)
@@ -1806,7 +1696,7 @@ public final class ServiceUsageGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ServiceUsage.
    *
    * <pre>
    * [Service Usage API](https://cloud.google.com/service-usage/docs/overview)
@@ -2112,7 +2002,7 @@ public final class ServiceUsageGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service ServiceUsage.
    *
    * <pre>
    * [Service Usage API](https://cloud.google.com/service-usage/docs/overview)
@@ -2462,10 +2352,10 @@ public final class ServiceUsageGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ServiceUsageImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ServiceUsageImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -2594,6 +2484,131 @@ public final class ServiceUsageGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getEnableServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.serviceusage.v1beta1.EnableServiceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_ENABLE_SERVICE)))
+        .addMethod(
+            getDisableServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.serviceusage.v1beta1.DisableServiceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DISABLE_SERVICE)))
+        .addMethod(
+            getGetServiceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.serviceusage.v1beta1.GetServiceRequest,
+                    com.google.api.serviceusage.v1beta1.Service>(service, METHODID_GET_SERVICE)))
+        .addMethod(
+            getListServicesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.serviceusage.v1beta1.ListServicesRequest,
+                    com.google.api.serviceusage.v1beta1.ListServicesResponse>(
+                    service, METHODID_LIST_SERVICES)))
+        .addMethod(
+            getBatchEnableServicesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.serviceusage.v1beta1.BatchEnableServicesRequest,
+                    com.google.longrunning.Operation>(service, METHODID_BATCH_ENABLE_SERVICES)))
+        .addMethod(
+            getListConsumerQuotaMetricsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.serviceusage.v1beta1.ListConsumerQuotaMetricsRequest,
+                    com.google.api.serviceusage.v1beta1.ListConsumerQuotaMetricsResponse>(
+                    service, METHODID_LIST_CONSUMER_QUOTA_METRICS)))
+        .addMethod(
+            getGetConsumerQuotaMetricMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.serviceusage.v1beta1.GetConsumerQuotaMetricRequest,
+                    com.google.api.serviceusage.v1beta1.ConsumerQuotaMetric>(
+                    service, METHODID_GET_CONSUMER_QUOTA_METRIC)))
+        .addMethod(
+            getGetConsumerQuotaLimitMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.serviceusage.v1beta1.GetConsumerQuotaLimitRequest,
+                    com.google.api.serviceusage.v1beta1.ConsumerQuotaLimit>(
+                    service, METHODID_GET_CONSUMER_QUOTA_LIMIT)))
+        .addMethod(
+            getCreateAdminOverrideMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.serviceusage.v1beta1.CreateAdminOverrideRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_ADMIN_OVERRIDE)))
+        .addMethod(
+            getUpdateAdminOverrideMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.serviceusage.v1beta1.UpdateAdminOverrideRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_ADMIN_OVERRIDE)))
+        .addMethod(
+            getDeleteAdminOverrideMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.serviceusage.v1beta1.DeleteAdminOverrideRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_ADMIN_OVERRIDE)))
+        .addMethod(
+            getListAdminOverridesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.serviceusage.v1beta1.ListAdminOverridesRequest,
+                    com.google.api.serviceusage.v1beta1.ListAdminOverridesResponse>(
+                    service, METHODID_LIST_ADMIN_OVERRIDES)))
+        .addMethod(
+            getImportAdminOverridesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.serviceusage.v1beta1.ImportAdminOverridesRequest,
+                    com.google.longrunning.Operation>(service, METHODID_IMPORT_ADMIN_OVERRIDES)))
+        .addMethod(
+            getCreateConsumerOverrideMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.serviceusage.v1beta1.CreateConsumerOverrideRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_CONSUMER_OVERRIDE)))
+        .addMethod(
+            getUpdateConsumerOverrideMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.serviceusage.v1beta1.UpdateConsumerOverrideRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_CONSUMER_OVERRIDE)))
+        .addMethod(
+            getDeleteConsumerOverrideMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.serviceusage.v1beta1.DeleteConsumerOverrideRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_CONSUMER_OVERRIDE)))
+        .addMethod(
+            getListConsumerOverridesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.serviceusage.v1beta1.ListConsumerOverridesRequest,
+                    com.google.api.serviceusage.v1beta1.ListConsumerOverridesResponse>(
+                    service, METHODID_LIST_CONSUMER_OVERRIDES)))
+        .addMethod(
+            getImportConsumerOverridesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.serviceusage.v1beta1.ImportConsumerOverridesRequest,
+                    com.google.longrunning.Operation>(service, METHODID_IMPORT_CONSUMER_OVERRIDES)))
+        .addMethod(
+            getGenerateServiceIdentityMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.api.serviceusage.v1beta1.GenerateServiceIdentityRequest,
+                    com.google.longrunning.Operation>(service, METHODID_GENERATE_SERVICE_IDENTITY)))
+        .build();
   }
 
   private abstract static class ServiceUsageBaseDescriptorSupplier
