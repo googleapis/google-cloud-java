@@ -1,5 +1,20 @@
 # Changelog
 
+## [2.34.2](https://github.com/googleapis/java-bigquerystorage/compare/v2.34.1...v2.34.2) (2023-03-30)
+
+
+### Bug Fixes
+
+* Correct AppendSerializtionError typo ([#2037](https://github.com/googleapis/java-bigquerystorage/issues/2037)) ([e67e913](https://github.com/googleapis/java-bigquerystorage/commit/e67e913f34fda4f4cc523c0248e5344232c0b736))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.24.0 ([#2054](https://github.com/googleapis/java-bigquerystorage/issues/2054)) ([e3156c7](https://github.com/googleapis/java-bigquerystorage/commit/e3156c7b525f7df2f3fe756f096e7fb1352fae8e))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.24.1 ([#2056](https://github.com/googleapis/java-bigquerystorage/issues/2056)) ([a989ac6](https://github.com/googleapis/java-bigquerystorage/commit/a989ac63d813cc98dcc13200a950fe3edad10bdf))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.24.3 ([#2058](https://github.com/googleapis/java-bigquerystorage/issues/2058)) ([9346667](https://github.com/googleapis/java-bigquerystorage/commit/934666737a92ec3220c6a186cc1af0f1adabb00c))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.6.0 ([#2063](https://github.com/googleapis/java-bigquerystorage/issues/2063)) ([965de7b](https://github.com/googleapis/java-bigquerystorage/commit/965de7bf78884cca30e6e6d672b74d734bda840d))
+
 ## [2.34.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.34.0...v2.34.1) (2023-03-21)
 
 
