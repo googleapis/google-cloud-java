@@ -20,7 +20,8 @@
     },
     {
       "packagePatterns": [
-        "*"
+        "*",
+        "^com.google.cloud:google-cloud-bigquerystorage"
       ],
       "semanticCommitType": "deps",
       "semanticCommitScope": null
