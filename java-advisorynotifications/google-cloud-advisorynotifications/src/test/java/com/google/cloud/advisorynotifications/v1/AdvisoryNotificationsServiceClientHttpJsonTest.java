@@ -186,6 +186,7 @@ public class AdvisoryNotificationsServiceClientHttpJsonTest {
             .setSubject(Subject.newBuilder().build())
             .addAllMessages(new ArrayList<Message>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setNotificationType(NotificationType.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -234,6 +235,7 @@ public class AdvisoryNotificationsServiceClientHttpJsonTest {
             .setSubject(Subject.newBuilder().build())
             .addAllMessages(new ArrayList<Message>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setNotificationType(NotificationType.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 

@@ -41,6 +41,7 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
   private Notification() {
     name_ = "";
     messages_ = java.util.Collections.emptyList();
+    notificationType_ = 0;
   }
 
   @java.lang.Override
@@ -295,6 +296,43 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
+  public static final int NOTIFICATION_TYPE_FIELD_NUMBER = 12;
+  private int notificationType_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Type of notification
+   * </pre>
+   *
+   * <code>.google.cloud.advisorynotifications.v1.NotificationType notification_type = 12;</code>
+   *
+   * @return The enum numeric value on the wire for notificationType.
+   */
+  @java.lang.Override
+  public int getNotificationTypeValue() {
+    return notificationType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Type of notification
+   * </pre>
+   *
+   * <code>.google.cloud.advisorynotifications.v1.NotificationType notification_type = 12;</code>
+   *
+   * @return The notificationType.
+   */
+  @java.lang.Override
+  public com.google.cloud.advisorynotifications.v1.NotificationType getNotificationType() {
+    com.google.cloud.advisorynotifications.v1.NotificationType result =
+        com.google.cloud.advisorynotifications.v1.NotificationType.forNumber(notificationType_);
+    return result == null
+        ? com.google.cloud.advisorynotifications.v1.NotificationType.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -321,6 +359,11 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
     if (createTime_ != null) {
       output.writeMessage(4, getCreateTime());
     }
+    if (notificationType_
+        != com.google.cloud.advisorynotifications.v1.NotificationType.NOTIFICATION_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(12, notificationType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -341,6 +384,11 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
     }
     if (createTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getCreateTime());
+    }
+    if (notificationType_
+        != com.google.cloud.advisorynotifications.v1.NotificationType.NOTIFICATION_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, notificationType_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -368,6 +416,7 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
+    if (notificationType_ != other.notificationType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -393,6 +442,8 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
     }
+    hash = (37 * hash) + NOTIFICATION_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + notificationType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -552,6 +603,7 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
         createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
+      notificationType_ = 0;
       return this;
     }
 
@@ -610,6 +662,9 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.notificationType_ = notificationType_;
       }
     }
 
@@ -697,6 +752,9 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
+      if (other.notificationType_ != 0) {
+        setNotificationTypeValue(other.getNotificationTypeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -755,6 +813,12 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 96:
+              {
+                notificationType_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 96
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1626,6 +1690,99 @@ public final class Notification extends com.google.protobuf.GeneratedMessageV3
         createTime_ = null;
       }
       return createTimeBuilder_;
+    }
+
+    private int notificationType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Type of notification
+     * </pre>
+     *
+     * <code>.google.cloud.advisorynotifications.v1.NotificationType notification_type = 12;</code>
+     *
+     * @return The enum numeric value on the wire for notificationType.
+     */
+    @java.lang.Override
+    public int getNotificationTypeValue() {
+      return notificationType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type of notification
+     * </pre>
+     *
+     * <code>.google.cloud.advisorynotifications.v1.NotificationType notification_type = 12;</code>
+     *
+     * @param value The enum numeric value on the wire for notificationType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNotificationTypeValue(int value) {
+      notificationType_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type of notification
+     * </pre>
+     *
+     * <code>.google.cloud.advisorynotifications.v1.NotificationType notification_type = 12;</code>
+     *
+     * @return The notificationType.
+     */
+    @java.lang.Override
+    public com.google.cloud.advisorynotifications.v1.NotificationType getNotificationType() {
+      com.google.cloud.advisorynotifications.v1.NotificationType result =
+          com.google.cloud.advisorynotifications.v1.NotificationType.forNumber(notificationType_);
+      return result == null
+          ? com.google.cloud.advisorynotifications.v1.NotificationType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type of notification
+     * </pre>
+     *
+     * <code>.google.cloud.advisorynotifications.v1.NotificationType notification_type = 12;</code>
+     *
+     * @param value The notificationType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNotificationType(
+        com.google.cloud.advisorynotifications.v1.NotificationType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      notificationType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Type of notification
+     * </pre>
+     *
+     * <code>.google.cloud.advisorynotifications.v1.NotificationType notification_type = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNotificationType() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      notificationType_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

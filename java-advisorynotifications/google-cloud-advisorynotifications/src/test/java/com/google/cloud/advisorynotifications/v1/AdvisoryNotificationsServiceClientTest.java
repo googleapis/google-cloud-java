@@ -178,6 +178,7 @@ public class AdvisoryNotificationsServiceClientTest {
             .setSubject(Subject.newBuilder().build())
             .addAllMessages(new ArrayList<Message>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setNotificationType(NotificationType.forNumber(0))
             .build();
     mockAdvisoryNotificationsService.addResponse(expectedResponse);
 
@@ -220,6 +221,7 @@ public class AdvisoryNotificationsServiceClientTest {
             .setSubject(Subject.newBuilder().build())
             .addAllMessages(new ArrayList<Message>())
             .setCreateTime(Timestamp.newBuilder().build())
+            .setNotificationType(NotificationType.forNumber(0))
             .build();
     mockAdvisoryNotificationsService.addResponse(expectedResponse);
 

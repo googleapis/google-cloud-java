@@ -176,4 +176,29 @@ public interface NotificationOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Type of notification
+   * </pre>
+   *
+   * <code>.google.cloud.advisorynotifications.v1.NotificationType notification_type = 12;</code>
+   *
+   * @return The enum numeric value on the wire for notificationType.
+   */
+  int getNotificationTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Type of notification
+   * </pre>
+   *
+   * <code>.google.cloud.advisorynotifications.v1.NotificationType notification_type = 12;</code>
+   *
+   * @return The notificationType.
+   */
+  com.google.cloud.advisorynotifications.v1.NotificationType getNotificationType();
 }
