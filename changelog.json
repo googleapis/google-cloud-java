@@ -5,6 +5,23 @@
       "changes": [
         {
           "type": "feat",
+          "sha": "3c73dee1834ae21fc6dc1b6d4638ba6c0b7d4715",
+          "message": "[advisorynotifications] updating Cloud Client Libraries with new field NotificationType for advisorynotifications.googleapis.com",
+          "issues": [
+            "9290"
+          ]
+        }
+      ],
+      "version": "1.8.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-advisorynotifications",
+      "id": "6a90c241-c24d-4d5b-90fd-efe7a90920ed",
+      "createTime": "2023-03-30T15:24:12.890Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
           "sha": "8e44284d33ff8f43f28cea98dda509b5a798e543",
           "message": "[cloudfunctions] add `available_cpu ` field",
           "issues": [
@@ -3449,5 +3466,5 @@
       "createTime": "2023-02-03T16:27:23.198Z"
     }
   ],
-  "updateTime": "2023-03-16T23:38:34.048Z"
+  "updateTime": "2023-03-30T15:24:12.890Z"
 }

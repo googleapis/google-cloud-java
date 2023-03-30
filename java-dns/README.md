@@ -20,20 +20,20 @@ If you are using Maven, add this to your pom.xml file
   <dependency>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-dns</artifactId>
-    <version>2.11.0</version>
+    <version>2.12.0</version>
   </dependency>
 ```
 
 If you are using Gradle, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-dns:2.11.0'
+implementation 'com.google.cloud:google-cloud-dns:2.12.0'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-dns" % "2.11.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-dns" % "2.12.0"
 ```
 <!--- {x-version-update-end} -->
 
