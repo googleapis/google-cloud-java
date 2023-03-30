@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.14.2](https://github.com/googleapis/java-datastore/compare/v2.14.1...v2.14.2) (2023-03-29)
+
+
+### Documentation
+
+* Adds OR filter sample ([#1032](https://github.com/googleapis/java-datastore/issues/1032)) ([e319efa](https://github.com/googleapis/java-datastore/commit/e319efa402539f0297179d270aa8c8f50e6e3e93))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.6.0 ([#1035](https://github.com/googleapis/java-datastore/issues/1035)) ([b2f4cb3](https://github.com/googleapis/java-datastore/commit/b2f4cb361afb1398b10edc0fcfe744b414926e07))
+* Update gapic-generator-java to 2.16.0 ([8c96c55](https://github.com/googleapis/java-datastore/commit/8c96c555159d48f1dc6d53616f0412f60e3095d7))
+
 ## [2.14.1](https://github.com/googleapis/java-datastore/compare/v2.14.0...v2.14.1) (2023-03-20)
 
 
