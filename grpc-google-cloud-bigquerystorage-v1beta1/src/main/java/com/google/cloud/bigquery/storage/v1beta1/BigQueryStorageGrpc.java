@@ -332,7 +332,7 @@ public final class BigQueryStorageGrpc {
    * The BigQuery storage API can be used to read data stored in BigQuery.
    * </pre>
    */
-  public abstract static class BigQueryStorageImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -350,7 +350,7 @@ public final class BigQueryStorageGrpc {
      * not require manual clean-up by the caller.
      * </pre>
      */
-    public void createReadSession(
+    default void createReadSession(
         com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession>
             responseObserver) {
@@ -372,7 +372,7 @@ public final class BigQueryStorageGrpc {
      * session, and may change as other streams continue to read data.
      * </pre>
      */
-    public void readRows(
+    default void readRows(
         com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse>
@@ -389,7 +389,7 @@ public final class BigQueryStorageGrpc {
      * adding additional workers.
      * </pre>
      */
-    public void batchCreateReadSessionStreams(
+    default void batchCreateReadSessionStreams(
         com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsRequest
             request,
         io.grpc.stub.StreamObserver<
@@ -418,7 +418,7 @@ public final class BigQueryStorageGrpc {
      * Stream.
      * </pre>
      */
-    public void finalizeStream(
+    default void finalizeStream(
         com.google.cloud.bigquery.storage.v1beta1.Storage.FinalizeStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -442,7 +442,7 @@ public final class BigQueryStorageGrpc {
      * This method is guaranteed to be idempotent.
      * </pre>
      */
-    public void splitReadStream(
+    default void splitReadStream(
         com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse>
@@ -450,52 +450,27 @@ public final class BigQueryStorageGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSplitReadStreamMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service BigQueryStorage.
+   *
+   * <pre>
+   * BigQuery storage API.
+   * The BigQuery storage API can be used to read data stored in BigQuery.
+   * </pre>
+   */
+  public abstract static class BigQueryStorageImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateReadSessionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest,
-                      com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession>(
-                      this, METHODID_CREATE_READ_SESSION)))
-          .addMethod(
-              getReadRowsMethod(),
-              io.grpc.stub.ServerCalls.asyncServerStreamingCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsRequest,
-                      com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse>(
-                      this, METHODID_READ_ROWS)))
-          .addMethod(
-              getBatchCreateReadSessionStreamsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.storage.v1beta1.Storage
-                          .BatchCreateReadSessionStreamsRequest,
-                      com.google.cloud.bigquery.storage.v1beta1.Storage
-                          .BatchCreateReadSessionStreamsResponse>(
-                      this, METHODID_BATCH_CREATE_READ_SESSION_STREAMS)))
-          .addMethod(
-              getFinalizeStreamMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.storage.v1beta1.Storage.FinalizeStreamRequest,
-                      com.google.protobuf.Empty>(this, METHODID_FINALIZE_STREAM)))
-          .addMethod(
-              getSplitReadStreamMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamRequest,
-                      com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse>(
-                      this, METHODID_SPLIT_READ_STREAM)))
-          .build();
+      return BigQueryStorageGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service BigQueryStorage.
    *
    * <pre>
    * BigQuery storage API.
@@ -641,7 +616,7 @@ public final class BigQueryStorageGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service BigQueryStorage.
    *
    * <pre>
    * BigQuery storage API.
@@ -769,7 +744,7 @@ public final class BigQueryStorageGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service BigQueryStorage.
    *
    * <pre>
    * BigQuery storage API.
@@ -893,10 +868,10 @@ public final class BigQueryStorageGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final BigQueryStorageImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(BigQueryStorageImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -955,6 +930,47 @@ public final class BigQueryStorageGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateReadSessionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest,
+                    com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession>(
+                    service, METHODID_CREATE_READ_SESSION)))
+        .addMethod(
+            getReadRowsMethod(),
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsRequest,
+                    com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse>(
+                    service, METHODID_READ_ROWS)))
+        .addMethod(
+            getBatchCreateReadSessionStreamsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.storage.v1beta1.Storage
+                        .BatchCreateReadSessionStreamsRequest,
+                    com.google.cloud.bigquery.storage.v1beta1.Storage
+                        .BatchCreateReadSessionStreamsResponse>(
+                    service, METHODID_BATCH_CREATE_READ_SESSION_STREAMS)))
+        .addMethod(
+            getFinalizeStreamMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.storage.v1beta1.Storage.FinalizeStreamRequest,
+                    com.google.protobuf.Empty>(service, METHODID_FINALIZE_STREAM)))
+        .addMethod(
+            getSplitReadStreamMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamRequest,
+                    com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse>(
+                    service, METHODID_SPLIT_READ_STREAM)))
+        .build();
   }
 
   private abstract static class BigQueryStorageBaseDescriptorSupplier

@@ -374,7 +374,7 @@ public final class BigQueryWriteGrpc {
    * https://cloud.google.com/bigquery/docs/write-api
    * </pre>
    */
-  public abstract static class BigQueryWriteImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -388,7 +388,7 @@ public final class BigQueryWriteGrpc {
      * soon as an acknowledgement is received.
      * </pre>
      */
-    public void createWriteStream(
+    default void createWriteStream(
         com.google.cloud.bigquery.storage.v1.CreateWriteStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1.WriteStream>
             responseObserver) {
@@ -426,7 +426,7 @@ public final class BigQueryWriteGrpc {
      * committed via the `BatchCommitWriteStreams` rpc.
      * </pre>
      */
-    public io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1.AppendRowsRequest>
+    default io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1.AppendRowsRequest>
         appendRows(
             io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1.AppendRowsResponse>
                 responseObserver) {
@@ -441,7 +441,7 @@ public final class BigQueryWriteGrpc {
      * Gets information about a write stream.
      * </pre>
      */
-    public void getWriteStream(
+    default void getWriteStream(
         com.google.cloud.bigquery.storage.v1.GetWriteStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1.WriteStream>
             responseObserver) {
@@ -457,7 +457,7 @@ public final class BigQueryWriteGrpc {
      * stream. Finalize is not supported on the '_default' stream.
      * </pre>
      */
-    public void finalizeWriteStream(
+    default void finalizeWriteStream(
         com.google.cloud.bigquery.storage.v1.FinalizeWriteStreamRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.storage.v1.FinalizeWriteStreamResponse>
@@ -477,7 +477,7 @@ public final class BigQueryWriteGrpc {
      * for read operations.
      * </pre>
      */
-    public void batchCommitWriteStreams(
+    default void batchCommitWriteStreams(
         com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsResponse>
@@ -498,64 +498,35 @@ public final class BigQueryWriteGrpc {
      * Flush is not supported on the _default stream, since it is not BUFFERED.
      * </pre>
      */
-    public void flushRows(
+    default void flushRows(
         com.google.cloud.bigquery.storage.v1.FlushRowsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1.FlushRowsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFlushRowsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service BigQueryWrite.
+   *
+   * <pre>
+   * BigQuery Write API.
+   * The Write API can be used to write data to BigQuery.
+   * For supplementary information about the Write API, see:
+   * https://cloud.google.com/bigquery/docs/write-api
+   * </pre>
+   */
+  public abstract static class BigQueryWriteImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateWriteStreamMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.storage.v1.CreateWriteStreamRequest,
-                      com.google.cloud.bigquery.storage.v1.WriteStream>(
-                      this, METHODID_CREATE_WRITE_STREAM)))
-          .addMethod(
-              getAppendRowsMethod(),
-              io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.storage.v1.AppendRowsRequest,
-                      com.google.cloud.bigquery.storage.v1.AppendRowsResponse>(
-                      this, METHODID_APPEND_ROWS)))
-          .addMethod(
-              getGetWriteStreamMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.storage.v1.GetWriteStreamRequest,
-                      com.google.cloud.bigquery.storage.v1.WriteStream>(
-                      this, METHODID_GET_WRITE_STREAM)))
-          .addMethod(
-              getFinalizeWriteStreamMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.storage.v1.FinalizeWriteStreamRequest,
-                      com.google.cloud.bigquery.storage.v1.FinalizeWriteStreamResponse>(
-                      this, METHODID_FINALIZE_WRITE_STREAM)))
-          .addMethod(
-              getBatchCommitWriteStreamsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsRequest,
-                      com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsResponse>(
-                      this, METHODID_BATCH_COMMIT_WRITE_STREAMS)))
-          .addMethod(
-              getFlushRowsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.storage.v1.FlushRowsRequest,
-                      com.google.cloud.bigquery.storage.v1.FlushRowsResponse>(
-                      this, METHODID_FLUSH_ROWS)))
-          .build();
+      return BigQueryWriteGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service BigQueryWrite.
    *
    * <pre>
    * BigQuery Write API.
@@ -715,7 +686,7 @@ public final class BigQueryWriteGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service BigQueryWrite.
    *
    * <pre>
    * BigQuery Write API.
@@ -819,7 +790,7 @@ public final class BigQueryWriteGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service BigQueryWrite.
    *
    * <pre>
    * BigQuery Write API.
@@ -940,10 +911,10 @@ public final class BigQueryWriteGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final BigQueryWriteImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(BigQueryWriteImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1004,6 +975,53 @@ public final class BigQueryWriteGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateWriteStreamMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.storage.v1.CreateWriteStreamRequest,
+                    com.google.cloud.bigquery.storage.v1.WriteStream>(
+                    service, METHODID_CREATE_WRITE_STREAM)))
+        .addMethod(
+            getAppendRowsMethod(),
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.storage.v1.AppendRowsRequest,
+                    com.google.cloud.bigquery.storage.v1.AppendRowsResponse>(
+                    service, METHODID_APPEND_ROWS)))
+        .addMethod(
+            getGetWriteStreamMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.storage.v1.GetWriteStreamRequest,
+                    com.google.cloud.bigquery.storage.v1.WriteStream>(
+                    service, METHODID_GET_WRITE_STREAM)))
+        .addMethod(
+            getFinalizeWriteStreamMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.storage.v1.FinalizeWriteStreamRequest,
+                    com.google.cloud.bigquery.storage.v1.FinalizeWriteStreamResponse>(
+                    service, METHODID_FINALIZE_WRITE_STREAM)))
+        .addMethod(
+            getBatchCommitWriteStreamsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsRequest,
+                    com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsResponse>(
+                    service, METHODID_BATCH_COMMIT_WRITE_STREAMS)))
+        .addMethod(
+            getFlushRowsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.storage.v1.FlushRowsRequest,
+                    com.google.cloud.bigquery.storage.v1.FlushRowsResponse>(
+                    service, METHODID_FLUSH_ROWS)))
+        .build();
   }
 
   private abstract static class BigQueryWriteBaseDescriptorSupplier

@@ -225,7 +225,7 @@ public final class BigQueryReadGrpc {
    * The Read API can be used to read data from BigQuery.
    * </pre>
    */
-  public abstract static class BigQueryReadImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -249,7 +249,7 @@ public final class BigQueryReadGrpc {
      * not require manual clean-up by the caller.
      * </pre>
      */
-    public void createReadSession(
+    default void createReadSession(
         com.google.cloud.bigquery.storage.v1.CreateReadSessionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1.ReadSession>
             responseObserver) {
@@ -269,7 +269,7 @@ public final class BigQueryReadGrpc {
      * state of the stream.
      * </pre>
      */
-    public void readRows(
+    default void readRows(
         com.google.cloud.bigquery.storage.v1.ReadRowsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1.ReadRowsResponse>
             responseObserver) {
@@ -293,44 +293,34 @@ public final class BigQueryReadGrpc {
      * completion.
      * </pre>
      */
-    public void splitReadStream(
+    default void splitReadStream(
         com.google.cloud.bigquery.storage.v1.SplitReadStreamRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.storage.v1.SplitReadStreamResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSplitReadStreamMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service BigQueryRead.
+   *
+   * <pre>
+   * BigQuery Read API.
+   * The Read API can be used to read data from BigQuery.
+   * </pre>
+   */
+  public abstract static class BigQueryReadImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateReadSessionMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.storage.v1.CreateReadSessionRequest,
-                      com.google.cloud.bigquery.storage.v1.ReadSession>(
-                      this, METHODID_CREATE_READ_SESSION)))
-          .addMethod(
-              getReadRowsMethod(),
-              io.grpc.stub.ServerCalls.asyncServerStreamingCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.storage.v1.ReadRowsRequest,
-                      com.google.cloud.bigquery.storage.v1.ReadRowsResponse>(
-                      this, METHODID_READ_ROWS)))
-          .addMethod(
-              getSplitReadStreamMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.bigquery.storage.v1.SplitReadStreamRequest,
-                      com.google.cloud.bigquery.storage.v1.SplitReadStreamResponse>(
-                      this, METHODID_SPLIT_READ_STREAM)))
-          .build();
+      return BigQueryReadGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service BigQueryRead.
    *
    * <pre>
    * BigQuery Read API.
@@ -429,7 +419,7 @@ public final class BigQueryReadGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service BigQueryRead.
    *
    * <pre>
    * BigQuery Read API.
@@ -519,7 +509,7 @@ public final class BigQueryReadGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service BigQueryRead.
    *
    * <pre>
    * BigQuery Read API.
@@ -601,10 +591,10 @@ public final class BigQueryReadGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final BigQueryReadImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(BigQueryReadImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -646,6 +636,32 @@ public final class BigQueryReadGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateReadSessionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.storage.v1.CreateReadSessionRequest,
+                    com.google.cloud.bigquery.storage.v1.ReadSession>(
+                    service, METHODID_CREATE_READ_SESSION)))
+        .addMethod(
+            getReadRowsMethod(),
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.storage.v1.ReadRowsRequest,
+                    com.google.cloud.bigquery.storage.v1.ReadRowsResponse>(
+                    service, METHODID_READ_ROWS)))
+        .addMethod(
+            getSplitReadStreamMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.storage.v1.SplitReadStreamRequest,
+                    com.google.cloud.bigquery.storage.v1.SplitReadStreamResponse>(
+                    service, METHODID_SPLIT_READ_STREAM)))
+        .build();
   }
 
   private abstract static class BigQueryReadBaseDescriptorSupplier
