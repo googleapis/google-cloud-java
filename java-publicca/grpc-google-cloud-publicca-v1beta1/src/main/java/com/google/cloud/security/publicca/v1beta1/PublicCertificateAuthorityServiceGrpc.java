@@ -143,8 +143,7 @@ public final class PublicCertificateAuthorityServiceGrpc {
    * the public certificate authority service.
    * </pre>
    */
-  public abstract static class PublicCertificateAuthorityServiceImplBase
-      implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -153,30 +152,36 @@ public final class PublicCertificateAuthorityServiceGrpc {
      * Creates a new [ExternalAccountKey][google.cloud.security.publicca.v1beta1.ExternalAccountKey] bound to the project.
      * </pre>
      */
-    public void createExternalAccountKey(
+    default void createExternalAccountKey(
         com.google.cloud.security.publicca.v1beta1.CreateExternalAccountKeyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.security.publicca.v1beta1.ExternalAccountKey>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCreateExternalAccountKeyMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service PublicCertificateAuthorityService.
+   *
+   * <pre>
+   * Manages the resources required for ACME [external account
+   * binding](https://tools.ietf.org/html/rfc8555#section-7.3.4) for
+   * the public certificate authority service.
+   * </pre>
+   */
+  public abstract static class PublicCertificateAuthorityServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateExternalAccountKeyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.security.publicca.v1beta1.CreateExternalAccountKeyRequest,
-                      com.google.cloud.security.publicca.v1beta1.ExternalAccountKey>(
-                      this, METHODID_CREATE_EXTERNAL_ACCOUNT_KEY)))
-          .build();
+      return PublicCertificateAuthorityServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service
+   * PublicCertificateAuthorityService.
    *
    * <pre>
    * Manages the resources required for ACME [external account
@@ -216,7 +221,8 @@ public final class PublicCertificateAuthorityServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service
+   * PublicCertificateAuthorityService.
    *
    * <pre>
    * Manages the resources required for ACME [external account
@@ -252,7 +258,8 @@ public final class PublicCertificateAuthorityServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * PublicCertificateAuthorityService.
    *
    * <pre>
    * Manages the resources required for ACME [external account
@@ -296,10 +303,10 @@ public final class PublicCertificateAuthorityServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final PublicCertificateAuthorityServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(PublicCertificateAuthorityServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -329,6 +336,18 @@ public final class PublicCertificateAuthorityServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateExternalAccountKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.security.publicca.v1beta1.CreateExternalAccountKeyRequest,
+                    com.google.cloud.security.publicca.v1beta1.ExternalAccountKey>(
+                    service, METHODID_CREATE_EXTERNAL_ACCOUNT_KEY)))
+        .build();
   }
 
   private abstract static class PublicCertificateAuthorityServiceBaseDescriptorSupplier

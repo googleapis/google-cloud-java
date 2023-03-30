@@ -427,7 +427,7 @@ public final class TagValuesGrpc {
    * Allow users to create and manage tag values.
    * </pre>
    */
-  public abstract static class TagValuesImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -436,7 +436,7 @@ public final class TagValuesGrpc {
      * Lists all TagValues for a specific TagKey.
      * </pre>
      */
-    public void listTagValues(
+    default void listTagValues(
         com.google.cloud.resourcemanager.v3.ListTagValuesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.resourcemanager.v3.ListTagValuesResponse>
             responseObserver) {
@@ -453,7 +453,7 @@ public final class TagValuesGrpc {
      * `PERMISSION_DENIED`.
      * </pre>
      */
-    public void getTagValue(
+    default void getTagValue(
         com.google.cloud.resourcemanager.v3.GetTagValueRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.resourcemanager.v3.TagValue>
             responseObserver) {
@@ -471,7 +471,7 @@ public final class TagValuesGrpc {
      * TagValues can exist under a TagKey at any given time.
      * </pre>
      */
-    public void createTagValue(
+    default void createTagValue(
         com.google.cloud.resourcemanager.v3.CreateTagValueRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -485,7 +485,7 @@ public final class TagValuesGrpc {
      * Updates the attributes of the TagValue resource.
      * </pre>
      */
-    public void updateTagValue(
+    default void updateTagValue(
         com.google.cloud.resourcemanager.v3.UpdateTagValueRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -500,7 +500,7 @@ public final class TagValuesGrpc {
      * deleted.
      * </pre>
      */
-    public void deleteTagValue(
+    default void deleteTagValue(
         com.google.cloud.resourcemanager.v3.DeleteTagValueRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -519,7 +519,7 @@ public final class TagValuesGrpc {
      * the identified TagValue to get the access control policy.
      * </pre>
      */
-    public void getIamPolicy(
+    default void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -537,7 +537,7 @@ public final class TagValuesGrpc {
      * on the identified tagValue.
      * </pre>
      */
-    public void setIamPolicy(
+    default void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -554,73 +554,32 @@ public final class TagValuesGrpc {
      * There are no permissions required for making this API call.
      * </pre>
      */
-    public void testIamPermissions(
+    default void testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getTestIamPermissionsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service TagValues.
+   *
+   * <pre>
+   * Allow users to create and manage tag values.
+   * </pre>
+   */
+  public abstract static class TagValuesImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListTagValuesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.resourcemanager.v3.ListTagValuesRequest,
-                      com.google.cloud.resourcemanager.v3.ListTagValuesResponse>(
-                      this, METHODID_LIST_TAG_VALUES)))
-          .addMethod(
-              getGetTagValueMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.resourcemanager.v3.GetTagValueRequest,
-                      com.google.cloud.resourcemanager.v3.TagValue>(this, METHODID_GET_TAG_VALUE)))
-          .addMethod(
-              getCreateTagValueMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.resourcemanager.v3.CreateTagValueRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_TAG_VALUE)))
-          .addMethod(
-              getUpdateTagValueMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.resourcemanager.v3.UpdateTagValueRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_TAG_VALUE)))
-          .addMethod(
-              getDeleteTagValueMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.resourcemanager.v3.DeleteTagValueRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_TAG_VALUE)))
-          .addMethod(
-              getGetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_GET_IAM_POLICY)))
-          .addMethod(
-              getSetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_SET_IAM_POLICY)))
-          .addMethod(
-              getTestIamPermissionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.TestIamPermissionsRequest,
-                      com.google.iam.v1.TestIamPermissionsResponse>(
-                      this, METHODID_TEST_IAM_PERMISSIONS)))
-          .build();
+      return TagValuesGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service TagValues.
    *
    * <pre>
    * Allow users to create and manage tag values.
@@ -787,7 +746,7 @@ public final class TagValuesGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service TagValues.
    *
    * <pre>
    * Allow users to create and manage tag values.
@@ -927,7 +886,7 @@ public final class TagValuesGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service TagValues.
    *
    * <pre>
    * Allow users to create and manage tag values.
@@ -1084,10 +1043,10 @@ public final class TagValuesGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final TagValuesImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(TagValuesImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1154,6 +1113,59 @@ public final class TagValuesGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListTagValuesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.resourcemanager.v3.ListTagValuesRequest,
+                    com.google.cloud.resourcemanager.v3.ListTagValuesResponse>(
+                    service, METHODID_LIST_TAG_VALUES)))
+        .addMethod(
+            getGetTagValueMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.resourcemanager.v3.GetTagValueRequest,
+                    com.google.cloud.resourcemanager.v3.TagValue>(service, METHODID_GET_TAG_VALUE)))
+        .addMethod(
+            getCreateTagValueMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.resourcemanager.v3.CreateTagValueRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_TAG_VALUE)))
+        .addMethod(
+            getUpdateTagValueMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.resourcemanager.v3.UpdateTagValueRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_TAG_VALUE)))
+        .addMethod(
+            getDeleteTagValueMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.resourcemanager.v3.DeleteTagValueRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_TAG_VALUE)))
+        .addMethod(
+            getGetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_GET_IAM_POLICY)))
+        .addMethod(
+            getSetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_SET_IAM_POLICY)))
+        .addMethod(
+            getTestIamPermissionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.v1.TestIamPermissionsRequest,
+                    com.google.iam.v1.TestIamPermissionsResponse>(
+                    service, METHODID_TEST_IAM_PERMISSIONS)))
+        .build();
   }
 
   private abstract static class TagValuesBaseDescriptorSupplier

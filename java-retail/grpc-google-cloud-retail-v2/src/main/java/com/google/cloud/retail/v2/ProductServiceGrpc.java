@@ -571,7 +571,7 @@ public final class ProductServiceGrpc {
    * of the customer's website.
    * </pre>
    */
-  public abstract static class ProductServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -580,7 +580,7 @@ public final class ProductServiceGrpc {
      * Creates a [Product][google.cloud.retail.v2.Product].
      * </pre>
      */
-    public void createProduct(
+    default void createProduct(
         com.google.cloud.retail.v2.CreateProductRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2.Product> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -594,7 +594,7 @@ public final class ProductServiceGrpc {
      * Gets a [Product][google.cloud.retail.v2.Product].
      * </pre>
      */
-    public void getProduct(
+    default void getProduct(
         com.google.cloud.retail.v2.GetProductRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2.Product> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetProductMethod(), responseObserver);
@@ -607,7 +607,7 @@ public final class ProductServiceGrpc {
      * Gets a list of [Product][google.cloud.retail.v2.Product]s.
      * </pre>
      */
-    public void listProducts(
+    default void listProducts(
         com.google.cloud.retail.v2.ListProductsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2.ListProductsResponse>
             responseObserver) {
@@ -622,7 +622,7 @@ public final class ProductServiceGrpc {
      * Updates a [Product][google.cloud.retail.v2.Product].
      * </pre>
      */
-    public void updateProduct(
+    default void updateProduct(
         com.google.cloud.retail.v2.UpdateProductRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2.Product> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -636,7 +636,7 @@ public final class ProductServiceGrpc {
      * Deletes a [Product][google.cloud.retail.v2.Product].
      * </pre>
      */
-    public void deleteProduct(
+    default void deleteProduct(
         com.google.cloud.retail.v2.DeleteProductRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -654,7 +654,7 @@ public final class ProductServiceGrpc {
      * [Product][google.cloud.retail.v2.Product]s to be successfully updated.
      * </pre>
      */
-    public void importProducts(
+    default void importProducts(
         com.google.cloud.retail.v2.ImportProductsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -711,7 +711,7 @@ public final class ProductServiceGrpc {
      * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
-    public void setInventory(
+    default void setInventory(
         com.google.cloud.retail.v2.SetInventoryRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -744,7 +744,7 @@ public final class ProductServiceGrpc {
      * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
-    public void addFulfillmentPlaces(
+    default void addFulfillmentPlaces(
         com.google.cloud.retail.v2.AddFulfillmentPlacesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -777,7 +777,7 @@ public final class ProductServiceGrpc {
      * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
-    public void removeFulfillmentPlaces(
+    default void removeFulfillmentPlaces(
         com.google.cloud.retail.v2.RemoveFulfillmentPlacesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -816,7 +816,7 @@ public final class ProductServiceGrpc {
      * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
-    public void addLocalInventories(
+    default void addLocalInventories(
         com.google.cloud.retail.v2.AddLocalInventoriesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -853,89 +853,33 @@ public final class ProductServiceGrpc {
      * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
-    public void removeLocalInventories(
+    default void removeLocalInventories(
         com.google.cloud.retail.v2.RemoveLocalInventoriesRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getRemoveLocalInventoriesMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ProductService.
+   *
+   * <pre>
+   * Service for ingesting [Product][google.cloud.retail.v2.Product] information
+   * of the customer's website.
+   * </pre>
+   */
+  public abstract static class ProductServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateProductMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2.CreateProductRequest,
-                      com.google.cloud.retail.v2.Product>(this, METHODID_CREATE_PRODUCT)))
-          .addMethod(
-              getGetProductMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2.GetProductRequest,
-                      com.google.cloud.retail.v2.Product>(this, METHODID_GET_PRODUCT)))
-          .addMethod(
-              getListProductsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2.ListProductsRequest,
-                      com.google.cloud.retail.v2.ListProductsResponse>(
-                      this, METHODID_LIST_PRODUCTS)))
-          .addMethod(
-              getUpdateProductMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2.UpdateProductRequest,
-                      com.google.cloud.retail.v2.Product>(this, METHODID_UPDATE_PRODUCT)))
-          .addMethod(
-              getDeleteProductMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2.DeleteProductRequest, com.google.protobuf.Empty>(
-                      this, METHODID_DELETE_PRODUCT)))
-          .addMethod(
-              getImportProductsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2.ImportProductsRequest,
-                      com.google.longrunning.Operation>(this, METHODID_IMPORT_PRODUCTS)))
-          .addMethod(
-              getSetInventoryMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2.SetInventoryRequest,
-                      com.google.longrunning.Operation>(this, METHODID_SET_INVENTORY)))
-          .addMethod(
-              getAddFulfillmentPlacesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2.AddFulfillmentPlacesRequest,
-                      com.google.longrunning.Operation>(this, METHODID_ADD_FULFILLMENT_PLACES)))
-          .addMethod(
-              getRemoveFulfillmentPlacesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2.RemoveFulfillmentPlacesRequest,
-                      com.google.longrunning.Operation>(this, METHODID_REMOVE_FULFILLMENT_PLACES)))
-          .addMethod(
-              getAddLocalInventoriesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2.AddLocalInventoriesRequest,
-                      com.google.longrunning.Operation>(this, METHODID_ADD_LOCAL_INVENTORIES)))
-          .addMethod(
-              getRemoveLocalInventoriesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2.RemoveLocalInventoriesRequest,
-                      com.google.longrunning.Operation>(this, METHODID_REMOVE_LOCAL_INVENTORIES)))
-          .build();
+      return ProductServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ProductService.
    *
    * <pre>
    * Service for ingesting [Product][google.cloud.retail.v2.Product] information
@@ -1263,7 +1207,7 @@ public final class ProductServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ProductService.
    *
    * <pre>
    * Service for ingesting [Product][google.cloud.retail.v2.Product] information
@@ -1560,7 +1504,7 @@ public final class ProductServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service ProductService.
    *
    * <pre>
    * Service for ingesting [Product][google.cloud.retail.v2.Product] information
@@ -1874,10 +1818,10 @@ public final class ProductServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ProductServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ProductServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1956,6 +1900,78 @@ public final class ProductServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateProductMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2.CreateProductRequest,
+                    com.google.cloud.retail.v2.Product>(service, METHODID_CREATE_PRODUCT)))
+        .addMethod(
+            getGetProductMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2.GetProductRequest,
+                    com.google.cloud.retail.v2.Product>(service, METHODID_GET_PRODUCT)))
+        .addMethod(
+            getListProductsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2.ListProductsRequest,
+                    com.google.cloud.retail.v2.ListProductsResponse>(
+                    service, METHODID_LIST_PRODUCTS)))
+        .addMethod(
+            getUpdateProductMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2.UpdateProductRequest,
+                    com.google.cloud.retail.v2.Product>(service, METHODID_UPDATE_PRODUCT)))
+        .addMethod(
+            getDeleteProductMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2.DeleteProductRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_PRODUCT)))
+        .addMethod(
+            getImportProductsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2.ImportProductsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_IMPORT_PRODUCTS)))
+        .addMethod(
+            getSetInventoryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2.SetInventoryRequest,
+                    com.google.longrunning.Operation>(service, METHODID_SET_INVENTORY)))
+        .addMethod(
+            getAddFulfillmentPlacesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2.AddFulfillmentPlacesRequest,
+                    com.google.longrunning.Operation>(service, METHODID_ADD_FULFILLMENT_PLACES)))
+        .addMethod(
+            getRemoveFulfillmentPlacesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2.RemoveFulfillmentPlacesRequest,
+                    com.google.longrunning.Operation>(service, METHODID_REMOVE_FULFILLMENT_PLACES)))
+        .addMethod(
+            getAddLocalInventoriesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2.AddLocalInventoriesRequest,
+                    com.google.longrunning.Operation>(service, METHODID_ADD_LOCAL_INVENTORIES)))
+        .addMethod(
+            getRemoveLocalInventoriesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2.RemoveLocalInventoriesRequest,
+                    com.google.longrunning.Operation>(service, METHODID_REMOVE_LOCAL_INVENTORIES)))
+        .build();
   }
 
   private abstract static class ProductServiceBaseDescriptorSupplier

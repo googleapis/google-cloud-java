@@ -232,7 +232,7 @@ public final class ProfilerServiceGrpc {
    * * Profiles can be created in either online or offline mode, see below.
    * </pre>
    */
-  public abstract static class ProfilerServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -251,7 +251,7 @@ public final class ProfilerServiceGrpc {
      * "google.rpc.retryinfo-bin".
      * </pre>
      */
-    public void createProfile(
+    default void createProfile(
         com.google.devtools.cloudprofiler.v2.CreateProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.cloudprofiler.v2.Profile>
             responseObserver) {
@@ -268,7 +268,7 @@ public final class ProfilerServiceGrpc {
      * server records it.
      * </pre>
      */
-    public void createOfflineProfile(
+    default void createOfflineProfile(
         com.google.devtools.cloudprofiler.v2.CreateOfflineProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.cloudprofiler.v2.Profile>
             responseObserver) {
@@ -286,42 +286,37 @@ public final class ProfilerServiceGrpc {
      * provided at the time of the profile creation.
      * </pre>
      */
-    public void updateProfile(
+    default void updateProfile(
         com.google.devtools.cloudprofiler.v2.UpdateProfileRequest request,
         io.grpc.stub.StreamObserver<com.google.devtools.cloudprofiler.v2.Profile>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateProfileMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ProfilerService.
+   *
+   * <pre>
+   * Manage the collection of continuous profiling data provided by profiling
+   * agents running in the cloud or by an offline provider of profiling data.
+   * General guidelines:
+   * * Profiles for a single deployment must be created in ascending time order.
+   * * Profiles can be created in either online or offline mode, see below.
+   * </pre>
+   */
+  public abstract static class ProfilerServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getCreateProfileMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.devtools.cloudprofiler.v2.CreateProfileRequest,
-                      com.google.devtools.cloudprofiler.v2.Profile>(this, METHODID_CREATE_PROFILE)))
-          .addMethod(
-              getCreateOfflineProfileMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.devtools.cloudprofiler.v2.CreateOfflineProfileRequest,
-                      com.google.devtools.cloudprofiler.v2.Profile>(
-                      this, METHODID_CREATE_OFFLINE_PROFILE)))
-          .addMethod(
-              getUpdateProfileMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.devtools.cloudprofiler.v2.UpdateProfileRequest,
-                      com.google.devtools.cloudprofiler.v2.Profile>(this, METHODID_UPDATE_PROFILE)))
-          .build();
+      return ProfilerServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ProfilerService.
    *
    * <pre>
    * Manage the collection of continuous profiling data provided by profiling
@@ -410,7 +405,7 @@ public final class ProfilerServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ProfilerService.
    *
    * <pre>
    * Manage the collection of continuous profiling data provided by profiling
@@ -488,7 +483,7 @@ public final class ProfilerServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service ProfilerService.
    *
    * <pre>
    * Manage the collection of continuous profiling data provided by profiling
@@ -578,10 +573,10 @@ public final class ProfilerServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ProfilerServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ProfilerServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -622,6 +617,32 @@ public final class ProfilerServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateProfileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.cloudprofiler.v2.CreateProfileRequest,
+                    com.google.devtools.cloudprofiler.v2.Profile>(
+                    service, METHODID_CREATE_PROFILE)))
+        .addMethod(
+            getCreateOfflineProfileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.cloudprofiler.v2.CreateOfflineProfileRequest,
+                    com.google.devtools.cloudprofiler.v2.Profile>(
+                    service, METHODID_CREATE_OFFLINE_PROFILE)))
+        .addMethod(
+            getUpdateProfileMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.cloudprofiler.v2.UpdateProfileRequest,
+                    com.google.devtools.cloudprofiler.v2.Profile>(
+                    service, METHODID_UPDATE_PROFILE)))
+        .build();
   }
 
   private abstract static class ProfilerServiceBaseDescriptorSupplier

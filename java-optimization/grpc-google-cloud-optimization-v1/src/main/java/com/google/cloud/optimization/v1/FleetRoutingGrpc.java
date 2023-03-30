@@ -204,7 +204,7 @@ public final class FleetRoutingGrpc {
    *     * at least one of latitude and longitude must be non-zero.
    * </pre>
    */
-  public abstract static class FleetRoutingImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -224,7 +224,7 @@ public final class FleetRoutingGrpc {
      * `ShipmentModel`.
      * </pre>
      */
-    public void optimizeTours(
+    default void optimizeTours(
         com.google.cloud.optimization.v1.OptimizeToursRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.optimization.v1.OptimizeToursResponse>
             responseObserver) {
@@ -247,35 +247,46 @@ public final class FleetRoutingGrpc {
      * vehicles minimizing the overall cost.
      * </pre>
      */
-    public void batchOptimizeTours(
+    default void batchOptimizeTours(
         com.google.cloud.optimization.v1.BatchOptimizeToursRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getBatchOptimizeToursMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service FleetRouting.
+   *
+   * <pre>
+   * A service for optimizing vehicle tours.
+   * Validity of certain types of fields:
+   *   * `google.protobuf.Timestamp`
+   *     * Times are in Unix time: seconds since 1970-01-01T00:00:00+00:00.
+   *     * seconds must be in [0, 253402300799],
+   *       i.e. in [1970-01-01T00:00:00+00:00, 9999-12-31T23:59:59+00:00].
+   *     * nanos must be unset or set to 0.
+   *   * `google.protobuf.Duration`
+   *     * seconds must be in [0, 253402300799],
+   *       i.e. in [1970-01-01T00:00:00+00:00, 9999-12-31T23:59:59+00:00].
+   *     * nanos must be unset or set to 0.
+   *   * `google.type.LatLng`
+   *     * latitude must be in [-90.0, 90.0].
+   *     * longitude must be in [-180.0, 180.0].
+   *     * at least one of latitude and longitude must be non-zero.
+   * </pre>
+   */
+  public abstract static class FleetRoutingImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getOptimizeToursMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.optimization.v1.OptimizeToursRequest,
-                      com.google.cloud.optimization.v1.OptimizeToursResponse>(
-                      this, METHODID_OPTIMIZE_TOURS)))
-          .addMethod(
-              getBatchOptimizeToursMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.optimization.v1.BatchOptimizeToursRequest,
-                      com.google.longrunning.Operation>(this, METHODID_BATCH_OPTIMIZE_TOURS)))
-          .build();
+      return FleetRoutingGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service FleetRouting.
    *
    * <pre>
    * A service for optimizing vehicle tours.
@@ -360,7 +371,7 @@ public final class FleetRoutingGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service FleetRouting.
    *
    * <pre>
    * A service for optimizing vehicle tours.
@@ -439,7 +450,7 @@ public final class FleetRoutingGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service FleetRouting.
    *
    * <pre>
    * A service for optimizing vehicle tours.
@@ -526,10 +537,10 @@ public final class FleetRoutingGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final FleetRoutingImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(FleetRoutingImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -563,6 +574,24 @@ public final class FleetRoutingGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getOptimizeToursMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.optimization.v1.OptimizeToursRequest,
+                    com.google.cloud.optimization.v1.OptimizeToursResponse>(
+                    service, METHODID_OPTIMIZE_TOURS)))
+        .addMethod(
+            getBatchOptimizeToursMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.optimization.v1.BatchOptimizeToursRequest,
+                    com.google.longrunning.Operation>(service, METHODID_BATCH_OPTIMIZE_TOURS)))
+        .build();
   }
 
   private abstract static class FleetRoutingBaseDescriptorSupplier

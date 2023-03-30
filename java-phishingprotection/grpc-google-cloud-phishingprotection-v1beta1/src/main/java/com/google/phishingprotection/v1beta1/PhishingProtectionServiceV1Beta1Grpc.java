@@ -135,8 +135,7 @@ public final class PhishingProtectionServiceV1Beta1Grpc {
    * Service to report phishing URIs.
    * </pre>
    */
-  public abstract static class PhishingProtectionServiceV1Beta1ImplBase
-      implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -151,30 +150,34 @@ public final class PhishingProtectionServiceV1Beta1Grpc {
      * protect users that could get exposed to this threat in the future.
      * </pre>
      */
-    public void reportPhishing(
+    default void reportPhishing(
         com.google.phishingprotection.v1beta1.ReportPhishingRequest request,
         io.grpc.stub.StreamObserver<com.google.phishingprotection.v1beta1.ReportPhishingResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getReportPhishingMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service PhishingProtectionServiceV1Beta1.
+   *
+   * <pre>
+   * Service to report phishing URIs.
+   * </pre>
+   */
+  public abstract static class PhishingProtectionServiceV1Beta1ImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getReportPhishingMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.phishingprotection.v1beta1.ReportPhishingRequest,
-                      com.google.phishingprotection.v1beta1.ReportPhishingResponse>(
-                      this, METHODID_REPORT_PHISHING)))
-          .build();
+      return PhishingProtectionServiceV1Beta1Grpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service
+   * PhishingProtectionServiceV1Beta1.
    *
    * <pre>
    * Service to report phishing URIs.
@@ -218,7 +221,8 @@ public final class PhishingProtectionServiceV1Beta1Grpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service
+   * PhishingProtectionServiceV1Beta1.
    *
    * <pre>
    * Service to report phishing URIs.
@@ -258,7 +262,8 @@ public final class PhishingProtectionServiceV1Beta1Grpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * PhishingProtectionServiceV1Beta1.
    *
    * <pre>
    * Service to report phishing URIs.
@@ -305,10 +310,10 @@ public final class PhishingProtectionServiceV1Beta1Grpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final PhishingProtectionServiceV1Beta1ImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(PhishingProtectionServiceV1Beta1ImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -338,6 +343,18 @@ public final class PhishingProtectionServiceV1Beta1Grpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getReportPhishingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.phishingprotection.v1beta1.ReportPhishingRequest,
+                    com.google.phishingprotection.v1beta1.ReportPhishingResponse>(
+                    service, METHODID_REPORT_PHISHING)))
+        .build();
   }
 
   private abstract static class PhishingProtectionServiceV1Beta1BaseDescriptorSupplier

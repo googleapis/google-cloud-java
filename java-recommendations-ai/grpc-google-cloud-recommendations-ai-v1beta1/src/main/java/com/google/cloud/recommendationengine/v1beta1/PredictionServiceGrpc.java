@@ -130,7 +130,7 @@ public final class PredictionServiceGrpc {
    * Service for making recommendation prediction.
    * </pre>
    */
-  public abstract static class PredictionServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -142,29 +142,32 @@ public final class PredictionServiceGrpc {
      * service. [Learn more](/recommendations-ai/docs/setting-up#register-key).
      * </pre>
      */
-    public void predict(
+    default void predict(
         com.google.cloud.recommendationengine.v1beta1.PredictRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.recommendationengine.v1beta1.PredictResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPredictMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service PredictionService.
+   *
+   * <pre>
+   * Service for making recommendation prediction.
+   * </pre>
+   */
+  public abstract static class PredictionServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getPredictMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.recommendationengine.v1beta1.PredictRequest,
-                      com.google.cloud.recommendationengine.v1beta1.PredictResponse>(
-                      this, METHODID_PREDICT)))
-          .build();
+      return PredictionServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service PredictionService.
    *
    * <pre>
    * Service for making recommendation prediction.
@@ -202,7 +205,7 @@ public final class PredictionServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service PredictionService.
    *
    * <pre>
    * Service for making recommendation prediction.
@@ -239,7 +242,7 @@ public final class PredictionServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service PredictionService.
    *
    * <pre>
    * Service for making recommendation prediction.
@@ -282,10 +285,10 @@ public final class PredictionServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final PredictionServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(PredictionServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -315,6 +318,18 @@ public final class PredictionServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getPredictMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.recommendationengine.v1beta1.PredictRequest,
+                    com.google.cloud.recommendationengine.v1beta1.PredictResponse>(
+                    service, METHODID_PREDICT)))
+        .build();
   }
 
   private abstract static class PredictionServiceBaseDescriptorSupplier

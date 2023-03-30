@@ -660,7 +660,7 @@ public final class ManagedNotebookServiceGrpc {
    * API v1 service for Managed Notebooks.
    * </pre>
    */
-  public abstract static class ManagedNotebookServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -669,7 +669,7 @@ public final class ManagedNotebookServiceGrpc {
      * Lists Runtimes in a given project and location.
      * </pre>
      */
-    public void listRuntimes(
+    default void listRuntimes(
         com.google.cloud.notebooks.v1.ListRuntimesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.notebooks.v1.ListRuntimesResponse>
             responseObserver) {
@@ -685,7 +685,7 @@ public final class ManagedNotebookServiceGrpc {
      * rather than zonal.
      * </pre>
      */
-    public void getRuntime(
+    default void getRuntime(
         com.google.cloud.notebooks.v1.GetRuntimeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.notebooks.v1.Runtime> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetRuntimeMethod(), responseObserver);
@@ -698,7 +698,7 @@ public final class ManagedNotebookServiceGrpc {
      * Creates a new Runtime in a given project and location.
      * </pre>
      */
-    public void createRuntime(
+    default void createRuntime(
         com.google.cloud.notebooks.v1.CreateRuntimeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -712,7 +712,7 @@ public final class ManagedNotebookServiceGrpc {
      * Update Notebook Runtime configuration.
      * </pre>
      */
-    public void updateRuntime(
+    default void updateRuntime(
         com.google.cloud.notebooks.v1.UpdateRuntimeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -726,7 +726,7 @@ public final class ManagedNotebookServiceGrpc {
      * Deletes a single Runtime.
      * </pre>
      */
-    public void deleteRuntime(
+    default void deleteRuntime(
         com.google.cloud.notebooks.v1.DeleteRuntimeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -744,7 +744,7 @@ public final class ManagedNotebookServiceGrpc {
      * https://cloud.google.com/compute/docs/instances/suspend-resume-instance
      * </pre>
      */
-    public void startRuntime(
+    default void startRuntime(
         com.google.cloud.notebooks.v1.StartRuntimeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -762,7 +762,7 @@ public final class ManagedNotebookServiceGrpc {
      * https://cloud.google.com/compute/docs/instances/suspend-resume-instance
      * </pre>
      */
-    public void stopRuntime(
+    default void stopRuntime(
         com.google.cloud.notebooks.v1.StopRuntimeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -776,7 +776,7 @@ public final class ManagedNotebookServiceGrpc {
      * Switch a Managed Notebook Runtime.
      * </pre>
      */
-    public void switchRuntime(
+    default void switchRuntime(
         com.google.cloud.notebooks.v1.SwitchRuntimeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -790,7 +790,7 @@ public final class ManagedNotebookServiceGrpc {
      * Resets a Managed Notebook Runtime.
      * </pre>
      */
-    public void resetRuntime(
+    default void resetRuntime(
         com.google.cloud.notebooks.v1.ResetRuntimeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -804,7 +804,7 @@ public final class ManagedNotebookServiceGrpc {
      * Upgrades a Managed Notebook Runtime to the latest version.
      * </pre>
      */
-    public void upgradeRuntime(
+    default void upgradeRuntime(
         com.google.cloud.notebooks.v1.UpgradeRuntimeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -818,7 +818,7 @@ public final class ManagedNotebookServiceGrpc {
      * Report and process a runtime event.
      * </pre>
      */
-    public void reportRuntimeEvent(
+    default void reportRuntimeEvent(
         com.google.cloud.notebooks.v1.ReportRuntimeEventRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -833,7 +833,7 @@ public final class ManagedNotebookServiceGrpc {
      * attached to the runtime. Only accessible from the tenant instance.
      * </pre>
      */
-    public void refreshRuntimeTokenInternal(
+    default void refreshRuntimeTokenInternal(
         com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalResponse>
@@ -849,102 +849,32 @@ public final class ManagedNotebookServiceGrpc {
      * Creates a Diagnostic File and runs Diagnostic Tool given a Runtime.
      * </pre>
      */
-    public void diagnoseRuntime(
+    default void diagnoseRuntime(
         com.google.cloud.notebooks.v1.DiagnoseRuntimeRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDiagnoseRuntimeMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service ManagedNotebookService.
+   *
+   * <pre>
+   * API v1 service for Managed Notebooks.
+   * </pre>
+   */
+  public abstract static class ManagedNotebookServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getListRuntimesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.notebooks.v1.ListRuntimesRequest,
-                      com.google.cloud.notebooks.v1.ListRuntimesResponse>(
-                      this, METHODID_LIST_RUNTIMES)))
-          .addMethod(
-              getGetRuntimeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.notebooks.v1.GetRuntimeRequest,
-                      com.google.cloud.notebooks.v1.Runtime>(this, METHODID_GET_RUNTIME)))
-          .addMethod(
-              getCreateRuntimeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.notebooks.v1.CreateRuntimeRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_RUNTIME)))
-          .addMethod(
-              getUpdateRuntimeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.notebooks.v1.UpdateRuntimeRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_RUNTIME)))
-          .addMethod(
-              getDeleteRuntimeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.notebooks.v1.DeleteRuntimeRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_RUNTIME)))
-          .addMethod(
-              getStartRuntimeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.notebooks.v1.StartRuntimeRequest,
-                      com.google.longrunning.Operation>(this, METHODID_START_RUNTIME)))
-          .addMethod(
-              getStopRuntimeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.notebooks.v1.StopRuntimeRequest,
-                      com.google.longrunning.Operation>(this, METHODID_STOP_RUNTIME)))
-          .addMethod(
-              getSwitchRuntimeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.notebooks.v1.SwitchRuntimeRequest,
-                      com.google.longrunning.Operation>(this, METHODID_SWITCH_RUNTIME)))
-          .addMethod(
-              getResetRuntimeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.notebooks.v1.ResetRuntimeRequest,
-                      com.google.longrunning.Operation>(this, METHODID_RESET_RUNTIME)))
-          .addMethod(
-              getUpgradeRuntimeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.notebooks.v1.UpgradeRuntimeRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPGRADE_RUNTIME)))
-          .addMethod(
-              getReportRuntimeEventMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.notebooks.v1.ReportRuntimeEventRequest,
-                      com.google.longrunning.Operation>(this, METHODID_REPORT_RUNTIME_EVENT)))
-          .addMethod(
-              getRefreshRuntimeTokenInternalMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalRequest,
-                      com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalResponse>(
-                      this, METHODID_REFRESH_RUNTIME_TOKEN_INTERNAL)))
-          .addMethod(
-              getDiagnoseRuntimeMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.notebooks.v1.DiagnoseRuntimeRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DIAGNOSE_RUNTIME)))
-          .build();
+      return ManagedNotebookServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service ManagedNotebookService.
    *
    * <pre>
    * API v1 service for Managed Notebooks.
@@ -1183,7 +1113,7 @@ public final class ManagedNotebookServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service ManagedNotebookService.
    *
    * <pre>
    * API v1 service for Managed Notebooks.
@@ -1384,7 +1314,8 @@ public final class ManagedNotebookServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service
+   * ManagedNotebookService.
    *
    * <pre>
    * API v1 service for Managed Notebooks.
@@ -1605,10 +1536,10 @@ public final class ManagedNotebookServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ManagedNotebookServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ManagedNotebookServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1700,6 +1631,91 @@ public final class ManagedNotebookServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getListRuntimesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.notebooks.v1.ListRuntimesRequest,
+                    com.google.cloud.notebooks.v1.ListRuntimesResponse>(
+                    service, METHODID_LIST_RUNTIMES)))
+        .addMethod(
+            getGetRuntimeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.notebooks.v1.GetRuntimeRequest,
+                    com.google.cloud.notebooks.v1.Runtime>(service, METHODID_GET_RUNTIME)))
+        .addMethod(
+            getCreateRuntimeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.notebooks.v1.CreateRuntimeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_RUNTIME)))
+        .addMethod(
+            getUpdateRuntimeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.notebooks.v1.UpdateRuntimeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_RUNTIME)))
+        .addMethod(
+            getDeleteRuntimeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.notebooks.v1.DeleteRuntimeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_RUNTIME)))
+        .addMethod(
+            getStartRuntimeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.notebooks.v1.StartRuntimeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_START_RUNTIME)))
+        .addMethod(
+            getStopRuntimeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.notebooks.v1.StopRuntimeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_STOP_RUNTIME)))
+        .addMethod(
+            getSwitchRuntimeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.notebooks.v1.SwitchRuntimeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_SWITCH_RUNTIME)))
+        .addMethod(
+            getResetRuntimeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.notebooks.v1.ResetRuntimeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RESET_RUNTIME)))
+        .addMethod(
+            getUpgradeRuntimeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.notebooks.v1.UpgradeRuntimeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPGRADE_RUNTIME)))
+        .addMethod(
+            getReportRuntimeEventMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.notebooks.v1.ReportRuntimeEventRequest,
+                    com.google.longrunning.Operation>(service, METHODID_REPORT_RUNTIME_EVENT)))
+        .addMethod(
+            getRefreshRuntimeTokenInternalMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalRequest,
+                    com.google.cloud.notebooks.v1.RefreshRuntimeTokenInternalResponse>(
+                    service, METHODID_REFRESH_RUNTIME_TOKEN_INTERNAL)))
+        .addMethod(
+            getDiagnoseRuntimeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.notebooks.v1.DiagnoseRuntimeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DIAGNOSE_RUNTIME)))
+        .build();
   }
 
   private abstract static class ManagedNotebookServiceBaseDescriptorSupplier

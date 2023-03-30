@@ -982,7 +982,7 @@ public final class OsConfigServiceGrpc {
    * manage package installations and patch jobs for virtual machine instances.
    * </pre>
    */
-  public abstract static class OsConfigServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -991,7 +991,7 @@ public final class OsConfigServiceGrpc {
      * Patch VM instances by creating and running a patch job.
      * </pre>
      */
-    public void executePatchJob(
+    default void executePatchJob(
         com.google.cloud.osconfig.v1beta.PatchJobs.ExecutePatchJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.osconfig.v1beta.PatchJobs.PatchJob>
             responseObserver) {
@@ -1007,7 +1007,7 @@ public final class OsConfigServiceGrpc {
      * ongoing patch job or review the details of completed jobs.
      * </pre>
      */
-    public void getPatchJob(
+    default void getPatchJob(
         com.google.cloud.osconfig.v1beta.PatchJobs.GetPatchJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.osconfig.v1beta.PatchJobs.PatchJob>
             responseObserver) {
@@ -1023,7 +1023,7 @@ public final class OsConfigServiceGrpc {
      * cannot be restarted.
      * </pre>
      */
-    public void cancelPatchJob(
+    default void cancelPatchJob(
         com.google.cloud.osconfig.v1beta.PatchJobs.CancelPatchJobRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.osconfig.v1beta.PatchJobs.PatchJob>
             responseObserver) {
@@ -1038,7 +1038,7 @@ public final class OsConfigServiceGrpc {
      * Get a list of patch jobs.
      * </pre>
      */
-    public void listPatchJobs(
+    default void listPatchJobs(
         com.google.cloud.osconfig.v1beta.PatchJobs.ListPatchJobsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.osconfig.v1beta.PatchJobs.ListPatchJobsResponse>
@@ -1054,7 +1054,7 @@ public final class OsConfigServiceGrpc {
      * Get a list of instance details for a given patch job.
      * </pre>
      */
-    public void listPatchJobInstanceDetails(
+    default void listPatchJobInstanceDetails(
         com.google.cloud.osconfig.v1beta.PatchJobs.ListPatchJobInstanceDetailsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.osconfig.v1beta.PatchJobs.ListPatchJobInstanceDetailsResponse>
@@ -1070,7 +1070,7 @@ public final class OsConfigServiceGrpc {
      * Create an OS Config patch deployment.
      * </pre>
      */
-    public void createPatchDeployment(
+    default void createPatchDeployment(
         com.google.cloud.osconfig.v1beta.PatchDeployments.CreatePatchDeploymentRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>
@@ -1086,7 +1086,7 @@ public final class OsConfigServiceGrpc {
      * Get an OS Config patch deployment.
      * </pre>
      */
-    public void getPatchDeployment(
+    default void getPatchDeployment(
         com.google.cloud.osconfig.v1beta.PatchDeployments.GetPatchDeploymentRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>
@@ -1102,7 +1102,7 @@ public final class OsConfigServiceGrpc {
      * Get a page of OS Config patch deployments.
      * </pre>
      */
-    public void listPatchDeployments(
+    default void listPatchDeployments(
         com.google.cloud.osconfig.v1beta.PatchDeployments.ListPatchDeploymentsRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.osconfig.v1beta.PatchDeployments.ListPatchDeploymentsResponse>
@@ -1118,7 +1118,7 @@ public final class OsConfigServiceGrpc {
      * Delete an OS Config patch deployment.
      * </pre>
      */
-    public void deletePatchDeployment(
+    default void deletePatchDeployment(
         com.google.cloud.osconfig.v1beta.PatchDeployments.DeletePatchDeploymentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1132,7 +1132,7 @@ public final class OsConfigServiceGrpc {
      * Update an OS Config patch deployment.
      * </pre>
      */
-    public void updatePatchDeployment(
+    default void updatePatchDeployment(
         com.google.cloud.osconfig.v1beta.PatchDeployments.UpdatePatchDeploymentRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>
@@ -1149,7 +1149,7 @@ public final class OsConfigServiceGrpc {
      * Patch deployment in paused state doesn't generate patch jobs.
      * </pre>
      */
-    public void pausePatchDeployment(
+    default void pausePatchDeployment(
         com.google.cloud.osconfig.v1beta.PatchDeployments.PausePatchDeploymentRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>
@@ -1166,7 +1166,7 @@ public final class OsConfigServiceGrpc {
      * Patch deployment in active state continues to generate patch jobs.
      * </pre>
      */
-    public void resumePatchDeployment(
+    default void resumePatchDeployment(
         com.google.cloud.osconfig.v1beta.PatchDeployments.ResumePatchDeploymentRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>
@@ -1182,7 +1182,7 @@ public final class OsConfigServiceGrpc {
      * Create an OS Config guest policy.
      * </pre>
      */
-    public void createGuestPolicy(
+    default void createGuestPolicy(
         com.google.cloud.osconfig.v1beta.GuestPolicies.CreateGuestPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy>
             responseObserver) {
@@ -1197,7 +1197,7 @@ public final class OsConfigServiceGrpc {
      * Get an OS Config guest policy.
      * </pre>
      */
-    public void getGuestPolicy(
+    default void getGuestPolicy(
         com.google.cloud.osconfig.v1beta.GuestPolicies.GetGuestPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy>
             responseObserver) {
@@ -1212,7 +1212,7 @@ public final class OsConfigServiceGrpc {
      * Get a page of OS Config guest policies.
      * </pre>
      */
-    public void listGuestPolicies(
+    default void listGuestPolicies(
         com.google.cloud.osconfig.v1beta.GuestPolicies.ListGuestPoliciesRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.osconfig.v1beta.GuestPolicies.ListGuestPoliciesResponse>
@@ -1228,7 +1228,7 @@ public final class OsConfigServiceGrpc {
      * Update an OS Config guest policy.
      * </pre>
      */
-    public void updateGuestPolicy(
+    default void updateGuestPolicy(
         com.google.cloud.osconfig.v1beta.GuestPolicies.UpdateGuestPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy>
             responseObserver) {
@@ -1243,7 +1243,7 @@ public final class OsConfigServiceGrpc {
      * Delete an OS Config guest policy.
      * </pre>
      */
-    public void deleteGuestPolicy(
+    default void deleteGuestPolicy(
         com.google.cloud.osconfig.v1beta.GuestPolicies.DeleteGuestPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -1258,7 +1258,7 @@ public final class OsConfigServiceGrpc {
      * lookup merges all policies that are assigned to the instance ancestry.
      * </pre>
      */
-    public void lookupEffectiveGuestPolicy(
+    default void lookupEffectiveGuestPolicy(
         com.google.cloud.osconfig.v1beta.GuestPolicies.LookupEffectiveGuestPolicyRequest request,
         io.grpc.stub.StreamObserver<
                 com.google.cloud.osconfig.v1beta.GuestPolicies.EffectiveGuestPolicy>
@@ -1266,146 +1266,28 @@ public final class OsConfigServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getLookupEffectiveGuestPolicyMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service OsConfigService.
+   *
+   * <pre>
+   * OS Config API
+   * The OS Config service is a server-side component that you can use to
+   * manage package installations and patch jobs for virtual machine instances.
+   * </pre>
+   */
+  public abstract static class OsConfigServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getExecutePatchJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.osconfig.v1beta.PatchJobs.ExecutePatchJobRequest,
-                      com.google.cloud.osconfig.v1beta.PatchJobs.PatchJob>(
-                      this, METHODID_EXECUTE_PATCH_JOB)))
-          .addMethod(
-              getGetPatchJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.osconfig.v1beta.PatchJobs.GetPatchJobRequest,
-                      com.google.cloud.osconfig.v1beta.PatchJobs.PatchJob>(
-                      this, METHODID_GET_PATCH_JOB)))
-          .addMethod(
-              getCancelPatchJobMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.osconfig.v1beta.PatchJobs.CancelPatchJobRequest,
-                      com.google.cloud.osconfig.v1beta.PatchJobs.PatchJob>(
-                      this, METHODID_CANCEL_PATCH_JOB)))
-          .addMethod(
-              getListPatchJobsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.osconfig.v1beta.PatchJobs.ListPatchJobsRequest,
-                      com.google.cloud.osconfig.v1beta.PatchJobs.ListPatchJobsResponse>(
-                      this, METHODID_LIST_PATCH_JOBS)))
-          .addMethod(
-              getListPatchJobInstanceDetailsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.osconfig.v1beta.PatchJobs.ListPatchJobInstanceDetailsRequest,
-                      com.google.cloud.osconfig.v1beta.PatchJobs
-                          .ListPatchJobInstanceDetailsResponse>(
-                      this, METHODID_LIST_PATCH_JOB_INSTANCE_DETAILS)))
-          .addMethod(
-              getCreatePatchDeploymentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.osconfig.v1beta.PatchDeployments
-                          .CreatePatchDeploymentRequest,
-                      com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>(
-                      this, METHODID_CREATE_PATCH_DEPLOYMENT)))
-          .addMethod(
-              getGetPatchDeploymentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.osconfig.v1beta.PatchDeployments.GetPatchDeploymentRequest,
-                      com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>(
-                      this, METHODID_GET_PATCH_DEPLOYMENT)))
-          .addMethod(
-              getListPatchDeploymentsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.osconfig.v1beta.PatchDeployments.ListPatchDeploymentsRequest,
-                      com.google.cloud.osconfig.v1beta.PatchDeployments
-                          .ListPatchDeploymentsResponse>(this, METHODID_LIST_PATCH_DEPLOYMENTS)))
-          .addMethod(
-              getDeletePatchDeploymentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.osconfig.v1beta.PatchDeployments
-                          .DeletePatchDeploymentRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_PATCH_DEPLOYMENT)))
-          .addMethod(
-              getUpdatePatchDeploymentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.osconfig.v1beta.PatchDeployments
-                          .UpdatePatchDeploymentRequest,
-                      com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>(
-                      this, METHODID_UPDATE_PATCH_DEPLOYMENT)))
-          .addMethod(
-              getPausePatchDeploymentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.osconfig.v1beta.PatchDeployments.PausePatchDeploymentRequest,
-                      com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>(
-                      this, METHODID_PAUSE_PATCH_DEPLOYMENT)))
-          .addMethod(
-              getResumePatchDeploymentMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.osconfig.v1beta.PatchDeployments
-                          .ResumePatchDeploymentRequest,
-                      com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>(
-                      this, METHODID_RESUME_PATCH_DEPLOYMENT)))
-          .addMethod(
-              getCreateGuestPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.osconfig.v1beta.GuestPolicies.CreateGuestPolicyRequest,
-                      com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy>(
-                      this, METHODID_CREATE_GUEST_POLICY)))
-          .addMethod(
-              getGetGuestPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.osconfig.v1beta.GuestPolicies.GetGuestPolicyRequest,
-                      com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy>(
-                      this, METHODID_GET_GUEST_POLICY)))
-          .addMethod(
-              getListGuestPoliciesMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.osconfig.v1beta.GuestPolicies.ListGuestPoliciesRequest,
-                      com.google.cloud.osconfig.v1beta.GuestPolicies.ListGuestPoliciesResponse>(
-                      this, METHODID_LIST_GUEST_POLICIES)))
-          .addMethod(
-              getUpdateGuestPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.osconfig.v1beta.GuestPolicies.UpdateGuestPolicyRequest,
-                      com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy>(
-                      this, METHODID_UPDATE_GUEST_POLICY)))
-          .addMethod(
-              getDeleteGuestPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.osconfig.v1beta.GuestPolicies.DeleteGuestPolicyRequest,
-                      com.google.protobuf.Empty>(this, METHODID_DELETE_GUEST_POLICY)))
-          .addMethod(
-              getLookupEffectiveGuestPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.osconfig.v1beta.GuestPolicies
-                          .LookupEffectiveGuestPolicyRequest,
-                      com.google.cloud.osconfig.v1beta.GuestPolicies.EffectiveGuestPolicy>(
-                      this, METHODID_LOOKUP_EFFECTIVE_GUEST_POLICY)))
-          .build();
+      return OsConfigServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service OsConfigService.
    *
    * <pre>
    * OS Config API
@@ -1745,7 +1627,7 @@ public final class OsConfigServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service OsConfigService.
    *
    * <pre>
    * OS Config API
@@ -2011,7 +1893,7 @@ public final class OsConfigServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service OsConfigService.
    *
    * <pre>
    * OS Config API
@@ -2330,10 +2212,10 @@ public final class OsConfigServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final OsConfigServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(OsConfigServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -2485,6 +2367,136 @@ public final class OsConfigServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getExecutePatchJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.osconfig.v1beta.PatchJobs.ExecutePatchJobRequest,
+                    com.google.cloud.osconfig.v1beta.PatchJobs.PatchJob>(
+                    service, METHODID_EXECUTE_PATCH_JOB)))
+        .addMethod(
+            getGetPatchJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.osconfig.v1beta.PatchJobs.GetPatchJobRequest,
+                    com.google.cloud.osconfig.v1beta.PatchJobs.PatchJob>(
+                    service, METHODID_GET_PATCH_JOB)))
+        .addMethod(
+            getCancelPatchJobMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.osconfig.v1beta.PatchJobs.CancelPatchJobRequest,
+                    com.google.cloud.osconfig.v1beta.PatchJobs.PatchJob>(
+                    service, METHODID_CANCEL_PATCH_JOB)))
+        .addMethod(
+            getListPatchJobsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.osconfig.v1beta.PatchJobs.ListPatchJobsRequest,
+                    com.google.cloud.osconfig.v1beta.PatchJobs.ListPatchJobsResponse>(
+                    service, METHODID_LIST_PATCH_JOBS)))
+        .addMethod(
+            getListPatchJobInstanceDetailsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.osconfig.v1beta.PatchJobs.ListPatchJobInstanceDetailsRequest,
+                    com.google.cloud.osconfig.v1beta.PatchJobs.ListPatchJobInstanceDetailsResponse>(
+                    service, METHODID_LIST_PATCH_JOB_INSTANCE_DETAILS)))
+        .addMethod(
+            getCreatePatchDeploymentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.osconfig.v1beta.PatchDeployments.CreatePatchDeploymentRequest,
+                    com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>(
+                    service, METHODID_CREATE_PATCH_DEPLOYMENT)))
+        .addMethod(
+            getGetPatchDeploymentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.osconfig.v1beta.PatchDeployments.GetPatchDeploymentRequest,
+                    com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>(
+                    service, METHODID_GET_PATCH_DEPLOYMENT)))
+        .addMethod(
+            getListPatchDeploymentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.osconfig.v1beta.PatchDeployments.ListPatchDeploymentsRequest,
+                    com.google.cloud.osconfig.v1beta.PatchDeployments.ListPatchDeploymentsResponse>(
+                    service, METHODID_LIST_PATCH_DEPLOYMENTS)))
+        .addMethod(
+            getDeletePatchDeploymentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.osconfig.v1beta.PatchDeployments.DeletePatchDeploymentRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_PATCH_DEPLOYMENT)))
+        .addMethod(
+            getUpdatePatchDeploymentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.osconfig.v1beta.PatchDeployments.UpdatePatchDeploymentRequest,
+                    com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>(
+                    service, METHODID_UPDATE_PATCH_DEPLOYMENT)))
+        .addMethod(
+            getPausePatchDeploymentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.osconfig.v1beta.PatchDeployments.PausePatchDeploymentRequest,
+                    com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>(
+                    service, METHODID_PAUSE_PATCH_DEPLOYMENT)))
+        .addMethod(
+            getResumePatchDeploymentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.osconfig.v1beta.PatchDeployments.ResumePatchDeploymentRequest,
+                    com.google.cloud.osconfig.v1beta.PatchDeployments.PatchDeployment>(
+                    service, METHODID_RESUME_PATCH_DEPLOYMENT)))
+        .addMethod(
+            getCreateGuestPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.osconfig.v1beta.GuestPolicies.CreateGuestPolicyRequest,
+                    com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy>(
+                    service, METHODID_CREATE_GUEST_POLICY)))
+        .addMethod(
+            getGetGuestPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.osconfig.v1beta.GuestPolicies.GetGuestPolicyRequest,
+                    com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy>(
+                    service, METHODID_GET_GUEST_POLICY)))
+        .addMethod(
+            getListGuestPoliciesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.osconfig.v1beta.GuestPolicies.ListGuestPoliciesRequest,
+                    com.google.cloud.osconfig.v1beta.GuestPolicies.ListGuestPoliciesResponse>(
+                    service, METHODID_LIST_GUEST_POLICIES)))
+        .addMethod(
+            getUpdateGuestPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.osconfig.v1beta.GuestPolicies.UpdateGuestPolicyRequest,
+                    com.google.cloud.osconfig.v1beta.GuestPolicies.GuestPolicy>(
+                    service, METHODID_UPDATE_GUEST_POLICY)))
+        .addMethod(
+            getDeleteGuestPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.osconfig.v1beta.GuestPolicies.DeleteGuestPolicyRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_GUEST_POLICY)))
+        .addMethod(
+            getLookupEffectiveGuestPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.osconfig.v1beta.GuestPolicies
+                        .LookupEffectiveGuestPolicyRequest,
+                    com.google.cloud.osconfig.v1beta.GuestPolicies.EffectiveGuestPolicy>(
+                    service, METHODID_LOOKUP_EFFECTIVE_GUEST_POLICY)))
+        .build();
   }
 
   private abstract static class OsConfigServiceBaseDescriptorSupplier

@@ -561,7 +561,7 @@ public final class ProjectsGrpc {
    * Manages Google Cloud Projects.
    * </pre>
    */
-  public abstract static class ProjectsImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -573,7 +573,7 @@ public final class ProjectsGrpc {
      * for this project.
      * </pre>
      */
-    public void getProject(
+    default void getProject(
         com.google.cloud.resourcemanager.v3.GetProjectRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.resourcemanager.v3.Project> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetProjectMethod(), responseObserver);
@@ -591,7 +591,7 @@ public final class ProjectsGrpc {
      * permission on the identified parent.
      * </pre>
      */
-    public void listProjects(
+    default void listProjects(
         com.google.cloud.resourcemanager.v3.ListProjectsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.resourcemanager.v3.ListProjectsResponse>
             responseObserver) {
@@ -613,7 +613,7 @@ public final class ProjectsGrpc {
      * [GetProject][google.cloud.resourcemanager.v3.Projects.GetProject] method.
      * </pre>
      */
-    public void searchProjects(
+    default void searchProjects(
         com.google.cloud.resourcemanager.v3.SearchProjectsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.resourcemanager.v3.SearchProjectsResponse>
             responseObserver) {
@@ -632,7 +632,7 @@ public final class ProjectsGrpc {
      * `DeleteOperation`.
      * </pre>
      */
-    public void createProject(
+    default void createProject(
         com.google.cloud.resourcemanager.v3.CreateProjectRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -650,7 +650,7 @@ public final class ProjectsGrpc {
      * project.
      * </pre>
      */
-    public void updateProject(
+    default void updateProject(
         com.google.cloud.resourcemanager.v3.UpdateProjectRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -672,7 +672,7 @@ public final class ProjectsGrpc {
      * project's current and proposed new parent.
      * </pre>
      */
-    public void moveProject(
+    default void moveProject(
         com.google.cloud.resourcemanager.v3.MoveProjectRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -711,7 +711,7 @@ public final class ProjectsGrpc {
      * project.
      * </pre>
      */
-    public void deleteProject(
+    default void deleteProject(
         com.google.cloud.resourcemanager.v3.DeleteProjectRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -732,7 +732,7 @@ public final class ProjectsGrpc {
      * this project.
      * </pre>
      */
-    public void undeleteProject(
+    default void undeleteProject(
         com.google.cloud.resourcemanager.v3.UndeleteProjectRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -747,7 +747,7 @@ public final class ProjectsGrpc {
      * Permission is denied if the policy or the resource do not exist.
      * </pre>
      */
-    public void getIamPolicy(
+    default void getIamPolicy(
         com.google.iam.v1.GetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -793,7 +793,7 @@ public final class ProjectsGrpc {
      * + Calling this method requires enabling the App Engine Admin API.
      * </pre>
      */
-    public void setIamPolicy(
+    default void setIamPolicy(
         com.google.iam.v1.SetIamPolicyRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
@@ -807,92 +807,32 @@ public final class ProjectsGrpc {
      * Returns permissions that a caller has on the specified project.
      * </pre>
      */
-    public void testIamPermissions(
+    default void testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request,
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getTestIamPermissionsMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service Projects.
+   *
+   * <pre>
+   * Manages Google Cloud Projects.
+   * </pre>
+   */
+  public abstract static class ProjectsImplBase implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getGetProjectMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.resourcemanager.v3.GetProjectRequest,
-                      com.google.cloud.resourcemanager.v3.Project>(this, METHODID_GET_PROJECT)))
-          .addMethod(
-              getListProjectsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.resourcemanager.v3.ListProjectsRequest,
-                      com.google.cloud.resourcemanager.v3.ListProjectsResponse>(
-                      this, METHODID_LIST_PROJECTS)))
-          .addMethod(
-              getSearchProjectsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.resourcemanager.v3.SearchProjectsRequest,
-                      com.google.cloud.resourcemanager.v3.SearchProjectsResponse>(
-                      this, METHODID_SEARCH_PROJECTS)))
-          .addMethod(
-              getCreateProjectMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.resourcemanager.v3.CreateProjectRequest,
-                      com.google.longrunning.Operation>(this, METHODID_CREATE_PROJECT)))
-          .addMethod(
-              getUpdateProjectMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.resourcemanager.v3.UpdateProjectRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UPDATE_PROJECT)))
-          .addMethod(
-              getMoveProjectMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.resourcemanager.v3.MoveProjectRequest,
-                      com.google.longrunning.Operation>(this, METHODID_MOVE_PROJECT)))
-          .addMethod(
-              getDeleteProjectMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.resourcemanager.v3.DeleteProjectRequest,
-                      com.google.longrunning.Operation>(this, METHODID_DELETE_PROJECT)))
-          .addMethod(
-              getUndeleteProjectMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.resourcemanager.v3.UndeleteProjectRequest,
-                      com.google.longrunning.Operation>(this, METHODID_UNDELETE_PROJECT)))
-          .addMethod(
-              getGetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_GET_IAM_POLICY)))
-          .addMethod(
-              getSetIamPolicyMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
-                      this, METHODID_SET_IAM_POLICY)))
-          .addMethod(
-              getTestIamPermissionsMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.iam.v1.TestIamPermissionsRequest,
-                      com.google.iam.v1.TestIamPermissionsResponse>(
-                      this, METHODID_TEST_IAM_PERMISSIONS)))
-          .build();
+      return ProjectsGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service Projects.
    *
    * <pre>
    * Manages Google Cloud Projects.
@@ -1183,7 +1123,7 @@ public final class ProjectsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service Projects.
    *
    * <pre>
    * Manages Google Cloud Projects.
@@ -1439,7 +1379,7 @@ public final class ProjectsGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Projects.
    *
    * <pre>
    * Manages Google Cloud Projects.
@@ -1717,10 +1657,10 @@ public final class ProjectsGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final ProjectsImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(ProjectsImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -1804,6 +1744,78 @@ public final class ProjectsGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getGetProjectMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.resourcemanager.v3.GetProjectRequest,
+                    com.google.cloud.resourcemanager.v3.Project>(service, METHODID_GET_PROJECT)))
+        .addMethod(
+            getListProjectsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.resourcemanager.v3.ListProjectsRequest,
+                    com.google.cloud.resourcemanager.v3.ListProjectsResponse>(
+                    service, METHODID_LIST_PROJECTS)))
+        .addMethod(
+            getSearchProjectsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.resourcemanager.v3.SearchProjectsRequest,
+                    com.google.cloud.resourcemanager.v3.SearchProjectsResponse>(
+                    service, METHODID_SEARCH_PROJECTS)))
+        .addMethod(
+            getCreateProjectMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.resourcemanager.v3.CreateProjectRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_PROJECT)))
+        .addMethod(
+            getUpdateProjectMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.resourcemanager.v3.UpdateProjectRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_PROJECT)))
+        .addMethod(
+            getMoveProjectMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.resourcemanager.v3.MoveProjectRequest,
+                    com.google.longrunning.Operation>(service, METHODID_MOVE_PROJECT)))
+        .addMethod(
+            getDeleteProjectMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.resourcemanager.v3.DeleteProjectRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_PROJECT)))
+        .addMethod(
+            getUndeleteProjectMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.resourcemanager.v3.UndeleteProjectRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UNDELETE_PROJECT)))
+        .addMethod(
+            getGetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_GET_IAM_POLICY)))
+        .addMethod(
+            getSetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_SET_IAM_POLICY)))
+        .addMethod(
+            getTestIamPermissionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.iam.v1.TestIamPermissionsRequest,
+                    com.google.iam.v1.TestIamPermissionsResponse>(
+                    service, METHODID_TEST_IAM_PERMISSIONS)))
+        .build();
   }
 
   private abstract static class ProjectsBaseDescriptorSupplier

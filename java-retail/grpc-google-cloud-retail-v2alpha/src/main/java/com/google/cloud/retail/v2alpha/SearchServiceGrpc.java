@@ -131,7 +131,7 @@ public final class SearchServiceGrpc {
    * Enable Retail Search on Cloud Console before using this feature.
    * </pre>
    */
-  public abstract static class SearchServiceImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      *
@@ -142,28 +142,34 @@ public final class SearchServiceGrpc {
      * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
-    public void search(
+    default void search(
         com.google.cloud.retail.v2alpha.SearchRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.retail.v2alpha.SearchResponse>
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSearchMethod(), responseObserver);
     }
+  }
+
+  /**
+   * Base class for the server implementation of the service SearchService.
+   *
+   * <pre>
+   * Service for search.
+   * This feature is only available for users who have Retail Search enabled.
+   * Enable Retail Search on Cloud Console before using this feature.
+   * </pre>
+   */
+  public abstract static class SearchServiceImplBase
+      implements io.grpc.BindableService, AsyncService {
 
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-              getSearchMethod(),
-              io.grpc.stub.ServerCalls.asyncUnaryCall(
-                  new MethodHandlers<
-                      com.google.cloud.retail.v2alpha.SearchRequest,
-                      com.google.cloud.retail.v2alpha.SearchResponse>(this, METHODID_SEARCH)))
-          .build();
+      return SearchServiceGrpc.bindService(this);
     }
   }
 
   /**
-   *
+   * A stub to allow clients to do asynchronous rpc calls to service SearchService.
    *
    * <pre>
    * Service for search.
@@ -201,7 +207,7 @@ public final class SearchServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do synchronous rpc calls to service SearchService.
    *
    * <pre>
    * Service for search.
@@ -238,7 +244,7 @@ public final class SearchServiceGrpc {
   }
 
   /**
-   *
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service SearchService.
    *
    * <pre>
    * Service for search.
@@ -282,10 +288,10 @@ public final class SearchServiceGrpc {
           io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
           io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final SearchServiceImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(SearchServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -314,6 +320,17 @@ public final class SearchServiceGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getSearchMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2alpha.SearchRequest,
+                    com.google.cloud.retail.v2alpha.SearchResponse>(service, METHODID_SEARCH)))
+        .build();
   }
 
   private abstract static class SearchServiceBaseDescriptorSupplier
