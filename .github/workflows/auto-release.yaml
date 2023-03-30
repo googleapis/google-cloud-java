@@ -16,7 +16,10 @@
 on:
   pull_request:
 name: auto-release
+permissions:
+  contents: read
 jobs:
+  permissions: write-all
   approve:
     runs-on: ubuntu-latest
     if: contains(github.head_ref, 'release-please')
