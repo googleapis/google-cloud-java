@@ -150,4 +150,3 @@ public class ITSystemTest {
     topicAdminClient.deleteTopic(topic);
   }
 }
-

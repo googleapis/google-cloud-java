@@ -12,8 +12,7 @@ Java idiomatic client for [Natural Language][product-docs].
 ## Quickstart
 
 
-If you are using Maven with [BOM][libraries-bom], add the following elements to
-your pom.xml file:
+If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
 ```xml
 <dependencyManagement>
