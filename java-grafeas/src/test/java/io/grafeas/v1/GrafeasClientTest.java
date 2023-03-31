@@ -1348,4 +1348,3 @@ public class GrafeasClientTest {
     }
   }
 }
-

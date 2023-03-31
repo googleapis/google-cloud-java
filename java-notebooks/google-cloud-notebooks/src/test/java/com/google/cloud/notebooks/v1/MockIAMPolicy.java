@@ -57,4 +57,3 @@ public class MockIAMPolicy implements MockGrpcService {
     serviceImpl.reset();
   }
 }
-

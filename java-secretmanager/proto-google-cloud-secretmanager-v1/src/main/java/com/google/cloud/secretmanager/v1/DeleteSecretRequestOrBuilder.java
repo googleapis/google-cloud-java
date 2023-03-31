@@ -83,4 +83,3 @@ public interface DeleteSecretRequestOrBuilder
    */
   com.google.protobuf.ByteString getEtagBytes();
 }
-

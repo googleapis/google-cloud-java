@@ -75,4 +75,3 @@ public interface BatchCreateRepositoriesResponseOrBuilder
    */
   com.google.cloudbuild.v2.RepositoryOrBuilder getRepositoriesOrBuilder(int index);
 }
-

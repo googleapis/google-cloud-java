@@ -931,4 +931,3 @@ public final class FetchStaticIpsRequest extends com.google.protobuf.GeneratedMe
     return DEFAULT_INSTANCE;
   }
 }
-

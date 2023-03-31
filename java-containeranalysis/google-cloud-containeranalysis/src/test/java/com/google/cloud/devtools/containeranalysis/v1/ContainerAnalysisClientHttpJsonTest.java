@@ -564,4 +564,3 @@ public class ContainerAnalysisClientHttpJsonTest {
     }
   }
 }
-

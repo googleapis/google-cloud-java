@@ -1160,4 +1160,3 @@ public final class ServingConfigServiceGrpc {
     return result;
   }
 }
-

@@ -414,4 +414,3 @@ public final class PhishingProtectionServiceV1Beta1Grpc {
     return result;
   }
 }
-

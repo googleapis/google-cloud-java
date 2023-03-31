@@ -58,4 +58,3 @@ public interface GetContactRequestOrBuilder
    */
   com.google.protobuf.ByteString getNameBytes();
 }
-

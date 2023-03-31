@@ -820,4 +820,3 @@ public final class Controller2Grpc {
     return result;
   }
 }
-
