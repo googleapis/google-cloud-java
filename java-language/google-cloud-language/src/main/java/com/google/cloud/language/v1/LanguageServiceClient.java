@@ -908,3 +908,4 @@ public class LanguageServiceClient implements BackgroundResource {
     return stub.awaitTermination(duration, unit);
   }
 }
+
