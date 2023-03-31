@@ -518,6 +518,16 @@ public class StreamWriter implements AutoCloseable {
         : null;
   }
 
+  /**
+   * Sets the maximum time a request is allowed to be waiting in request waiting queue. Under very
+   * low chance, it's possible for append request to be waiting indefintely for request callback
+   * when Google networking SDK does not detect the networking breakage. The default timeout is 15
+   * minutes. We are investigating the root cause for callback not triggered by networking SDK.
+   */
+  public static void setMaxRequestCallbackWaitTime(Duration waitTime) {
+    ConnectionWorker.MAXIMUM_REQUEST_CALLBACK_WAIT_TIME = waitTime;
+  }
+
   long getCreationTimestamp() {
     return creationTimestamp;
   }
