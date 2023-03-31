@@ -48,3 +48,4 @@ public class SyncCreateCdnKey {
   }
 }
 // [END videostitcher_v1_generated_VideoStitcherServiceStubSettings_CreateCdnKey_sync]
+

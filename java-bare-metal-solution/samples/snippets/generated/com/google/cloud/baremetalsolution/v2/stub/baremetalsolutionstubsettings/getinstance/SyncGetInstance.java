@@ -48,3 +48,4 @@ public class SyncGetInstance {
   }
 }
 // [END baremetalsolution_v2_generated_BareMetalSolutionStubSettings_GetInstance_sync]
+

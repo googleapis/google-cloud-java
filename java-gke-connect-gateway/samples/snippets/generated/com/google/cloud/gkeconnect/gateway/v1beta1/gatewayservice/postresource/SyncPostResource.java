@@ -47,3 +47,4 @@ public class SyncPostResource {
   }
 }
 // [END connectgateway_v1beta1_generated_GatewayService_PostResource_sync]
+

@@ -46,3 +46,4 @@ public class SyncGetInstance {
   }
 }
 // [END datafusion_v1_generated_DataFusionStubSettings_GetInstance_sync]
+

@@ -45,3 +45,4 @@ public class SyncUpdateTaxonomy {
   }
 }
 // [END datacatalog_v1_generated_PolicyTagManager_UpdateTaxonomy_sync]
+

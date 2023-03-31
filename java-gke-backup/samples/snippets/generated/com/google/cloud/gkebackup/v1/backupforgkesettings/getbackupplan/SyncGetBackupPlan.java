@@ -46,3 +46,4 @@ public class SyncGetBackupPlan {
   }
 }
 // [END gkebackup_v1_generated_BackupForGKESettings_GetBackupPlan_sync]
+

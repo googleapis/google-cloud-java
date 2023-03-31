@@ -532,3 +532,4 @@ public final class SettingsServiceProto {
 
   // @@protoc_insertion_point(outer_class_scope)
 }
+

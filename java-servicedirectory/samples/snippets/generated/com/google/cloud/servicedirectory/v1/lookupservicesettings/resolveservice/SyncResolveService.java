@@ -46,3 +46,4 @@ public class SyncResolveService {
   }
 }
 // [END servicedirectory_v1_generated_LookupServiceSettings_ResolveService_sync]
+

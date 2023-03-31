@@ -47,3 +47,4 @@ public class SyncCreateJob {
   }
 }
 // [END batch_v1_generated_BatchServiceStubSettings_CreateJob_sync]
+

@@ -48,3 +48,4 @@ public class SyncCreateWorkflowTemplate {
   }
 }
 // [END dataproc_v1_generated_WorkflowTemplateServiceSettings_CreateWorkflowTemplate_sync]
+

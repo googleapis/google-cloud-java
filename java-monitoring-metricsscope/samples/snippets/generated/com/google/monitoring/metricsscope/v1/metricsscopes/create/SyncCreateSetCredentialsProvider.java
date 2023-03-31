@@ -42,3 +42,4 @@ public class SyncCreateSetCredentialsProvider {
   }
 }
 // [END monitoring_v1_generated_MetricsScopes_Create_SetCredentialsProvider_sync]
+

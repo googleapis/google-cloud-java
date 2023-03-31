@@ -47,3 +47,4 @@ public class SyncGetService {
   }
 }
 // [END servicemanagement_v1_generated_ServiceManagerStubSettings_GetService_sync]
+

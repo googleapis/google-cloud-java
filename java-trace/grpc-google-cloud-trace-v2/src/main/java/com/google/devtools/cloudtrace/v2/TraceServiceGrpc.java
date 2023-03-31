@@ -504,3 +504,4 @@ public final class TraceServiceGrpc {
     return result;
   }
 }
+

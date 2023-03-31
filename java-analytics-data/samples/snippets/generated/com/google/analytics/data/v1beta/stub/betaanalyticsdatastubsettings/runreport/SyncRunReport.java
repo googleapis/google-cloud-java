@@ -48,3 +48,4 @@ public class SyncRunReport {
   }
 }
 // [END analyticsdata_v1beta_generated_BetaAnalyticsDataStubSettings_RunReport_sync]
+

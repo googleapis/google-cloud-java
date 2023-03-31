@@ -48,3 +48,4 @@ public class SyncGetAppConnection {
   }
 }
 // [END beyondcorp_v1_generated_AppConnectionsServiceStubSettings_GetAppConnection_sync]
+

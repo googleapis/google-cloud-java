@@ -866,3 +866,4 @@ public final class GkeHubGrpc {
     return result;
   }
 }
+

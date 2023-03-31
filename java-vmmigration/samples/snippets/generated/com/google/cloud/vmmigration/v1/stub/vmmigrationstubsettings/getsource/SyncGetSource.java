@@ -47,3 +47,4 @@ public class SyncGetSource {
   }
 }
 // [END vmmigration_v1_generated_VmMigrationStubSettings_GetSource_sync]
+

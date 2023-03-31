@@ -47,3 +47,4 @@ public class SyncPublishEvents {
   }
 }
 // [END eventarcpublishing_v1_generated_Publisher_PublishEvents_sync]
+

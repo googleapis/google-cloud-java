@@ -46,3 +46,4 @@ public class SyncGetWorkflow {
   }
 }
 // [END workflows_v1beta_generated_WorkflowsSettings_GetWorkflow_sync]
+

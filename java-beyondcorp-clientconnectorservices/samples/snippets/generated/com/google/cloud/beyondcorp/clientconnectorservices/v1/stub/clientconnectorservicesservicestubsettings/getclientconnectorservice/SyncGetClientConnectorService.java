@@ -49,3 +49,4 @@ public class SyncGetClientConnectorService {
   }
 }
 // [END beyondcorp_v1_generated_ClientConnectorServicesServiceStubSettings_GetClientConnectorService_sync]
+

@@ -48,3 +48,4 @@ public class SyncGetGoogleServiceAccount {
   }
 }
 // [END storagetransfer_v1_generated_StorageTransferServiceStubSettings_GetGoogleServiceAccount_sync]
+

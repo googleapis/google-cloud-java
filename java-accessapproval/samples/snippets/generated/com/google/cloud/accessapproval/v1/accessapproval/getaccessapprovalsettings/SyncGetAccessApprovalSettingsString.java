@@ -40,3 +40,4 @@ public class SyncGetAccessApprovalSettingsString {
   }
 }
 // [END accessapproval_v1_generated_AccessApproval_GetAccessApprovalSettings_String_sync]
+

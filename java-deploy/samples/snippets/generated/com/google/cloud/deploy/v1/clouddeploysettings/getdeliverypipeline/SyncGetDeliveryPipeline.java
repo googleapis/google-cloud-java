@@ -46,3 +46,4 @@ public class SyncGetDeliveryPipeline {
   }
 }
 // [END clouddeploy_v1_generated_CloudDeploySettings_GetDeliveryPipeline_sync]
+

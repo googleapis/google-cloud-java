@@ -47,3 +47,4 @@ public class SyncGenerateAccessToken {
   }
 }
 // [END iamcredentials_v1_generated_IamCredentialsStubSettings_GenerateAccessToken_sync]
+

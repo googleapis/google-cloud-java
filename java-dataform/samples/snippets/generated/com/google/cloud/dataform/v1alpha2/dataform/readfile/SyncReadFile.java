@@ -47,3 +47,4 @@ public class SyncReadFile {
   }
 }
 // [END dataform_v1alpha2_generated_Dataform_ReadFile_sync]
+

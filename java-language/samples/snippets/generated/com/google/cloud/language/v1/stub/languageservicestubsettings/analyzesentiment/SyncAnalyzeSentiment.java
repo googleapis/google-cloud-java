@@ -47,3 +47,4 @@ public class SyncAnalyzeSentiment {
   }
 }
 // [END language_v1_generated_LanguageServiceStubSettings_AnalyzeSentiment_sync]
+

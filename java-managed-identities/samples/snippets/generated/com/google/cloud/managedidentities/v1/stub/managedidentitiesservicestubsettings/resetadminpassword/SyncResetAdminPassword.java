@@ -48,3 +48,4 @@ public class SyncResetAdminPassword {
   }
 }
 // [END managedidentities_v1_generated_ManagedIdentitiesServiceStubSettings_ResetAdminPassword_sync]
+

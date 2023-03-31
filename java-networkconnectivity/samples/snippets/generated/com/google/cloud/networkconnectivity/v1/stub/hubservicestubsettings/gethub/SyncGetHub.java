@@ -46,3 +46,4 @@ public class SyncGetHub {
   }
 }
 // [END networkconnectivity_v1_generated_HubServiceStubSettings_GetHub_sync]
+

@@ -42,3 +42,4 @@ public class SyncListNodePoolsStringStringString {
   }
 }
 // [END container_v1_generated_ClusterManager_ListNodePools_StringStringString_sync]
+

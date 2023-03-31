@@ -48,3 +48,4 @@ public class SyncGetConnectivityTest {
   }
 }
 // [END networkmanagement_v1_generated_ReachabilityServiceStubSettings_GetConnectivityTest_sync]
+

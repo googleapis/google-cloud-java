@@ -48,3 +48,4 @@ public class SyncCreateCertificate {
   }
 }
 // [END privateca_v1_generated_CertificateAuthorityServiceSettings_CreateCertificate_sync]
+

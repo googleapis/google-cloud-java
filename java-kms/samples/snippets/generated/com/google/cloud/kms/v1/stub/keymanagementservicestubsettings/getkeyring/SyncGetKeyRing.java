@@ -48,3 +48,4 @@ public class SyncGetKeyRing {
   }
 }
 // [END cloudkms_v1_generated_KeyManagementServiceStubSettings_GetKeyRing_sync]
+

@@ -95,3 +95,4 @@ public interface ListListingsRequestOrBuilder
    */
   com.google.protobuf.ByteString getPageTokenBytes();
 }
+

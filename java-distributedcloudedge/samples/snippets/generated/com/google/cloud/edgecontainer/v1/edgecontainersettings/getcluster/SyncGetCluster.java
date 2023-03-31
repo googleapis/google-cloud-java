@@ -46,3 +46,4 @@ public class SyncGetCluster {
   }
 }
 // [END edgecontainer_v1_generated_EdgeContainerSettings_GetCluster_sync]
+

@@ -42,3 +42,4 @@ public class SyncUpdateCapacityCommitmentCapacitycommitmentFieldmask {
   }
 }
 // [END bigqueryreservation_v1_generated_ReservationService_UpdateCapacityCommitment_CapacitycommitmentFieldmask_sync]
+

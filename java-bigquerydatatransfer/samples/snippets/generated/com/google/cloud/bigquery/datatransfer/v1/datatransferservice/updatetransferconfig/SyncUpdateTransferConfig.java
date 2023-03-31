@@ -48,3 +48,4 @@ public class SyncUpdateTransferConfig {
   }
 }
 // [END bigquerydatatransfer_v1_generated_DataTransferService_UpdateTransferConfig_sync]
+

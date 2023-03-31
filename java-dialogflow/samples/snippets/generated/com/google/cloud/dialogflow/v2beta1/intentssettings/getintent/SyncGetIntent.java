@@ -46,3 +46,4 @@ public class SyncGetIntent {
   }
 }
 // [END dialogflow_v2beta1_generated_IntentsSettings_GetIntent_sync]
+
