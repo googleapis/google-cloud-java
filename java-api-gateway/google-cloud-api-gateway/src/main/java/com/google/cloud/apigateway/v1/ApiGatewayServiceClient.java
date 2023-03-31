@@ -2574,5 +2574,3 @@ public class ApiGatewayServiceClient implements BackgroundResource {
     }
   }
 }
-
-
