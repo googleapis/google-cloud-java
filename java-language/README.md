@@ -35,6 +35,9 @@ your pom.xml file:
   </dependency>
 ```
 
+If you are using Maven without the BOM, add this to your dependencies:
+
+<!-- {x-version-update-start:google-cloud-language:released} -->
 
 ```xml
 <dependency>

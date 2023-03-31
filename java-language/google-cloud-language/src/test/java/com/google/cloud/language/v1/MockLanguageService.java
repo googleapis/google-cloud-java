@@ -57,4 +57,3 @@ public class MockLanguageService implements MockGrpcService {
     serviceImpl.reset();
   }
 }
-
