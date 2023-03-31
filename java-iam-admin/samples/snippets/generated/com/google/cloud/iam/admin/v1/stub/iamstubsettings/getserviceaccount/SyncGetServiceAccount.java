@@ -46,4 +46,3 @@ public class SyncGetServiceAccount {
   }
 }
 // [END iam_v1_generated_IAMStubSettings_GetServiceAccount_sync]
-

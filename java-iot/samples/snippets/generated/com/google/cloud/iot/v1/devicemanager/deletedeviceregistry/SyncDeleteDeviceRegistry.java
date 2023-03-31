@@ -44,4 +44,3 @@ public class SyncDeleteDeviceRegistry {
   }
 }
 // [END cloudiot_v1_generated_DeviceManager_DeleteDeviceRegistry_sync]
-

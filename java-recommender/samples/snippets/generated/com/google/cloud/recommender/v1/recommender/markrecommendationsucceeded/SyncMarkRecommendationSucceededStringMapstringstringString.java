@@ -48,4 +48,3 @@ public class SyncMarkRecommendationSucceededStringMapstringstringString {
   }
 }
 // [END recommender_v1_generated_Recommender_MarkRecommendationSucceeded_StringMapstringstringString_sync]
-

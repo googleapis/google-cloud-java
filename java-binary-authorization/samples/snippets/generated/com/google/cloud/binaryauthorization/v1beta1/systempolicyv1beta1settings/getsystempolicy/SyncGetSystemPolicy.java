@@ -48,4 +48,3 @@ public class SyncGetSystemPolicy {
   }
 }
 // [END binaryauthorization_v1beta1_generated_SystemPolicyV1Beta1Settings_GetSystemPolicy_sync]
-

@@ -47,4 +47,3 @@ public class SyncCreateSource {
   }
 }
 // [END securitycenter_v1_generated_SecurityCenterSettings_CreateSource_sync]
-

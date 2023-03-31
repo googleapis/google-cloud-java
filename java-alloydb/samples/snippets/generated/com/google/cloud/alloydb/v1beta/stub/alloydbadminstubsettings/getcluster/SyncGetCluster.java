@@ -47,4 +47,3 @@ public class SyncGetCluster {
   }
 }
 // [END alloydb_v1beta_generated_AlloyDBAdminStubSettings_GetCluster_sync]
-

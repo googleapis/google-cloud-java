@@ -48,4 +48,3 @@ public class SyncCreateDataPolicy {
   }
 }
 // [END bigquerydatapolicy_v1_generated_DataPolicyServiceStubSettings_CreateDataPolicy_sync]
-

@@ -42,4 +42,3 @@ public class SyncCreateSetCredentialsProvider {
   }
 }
 // [END appengine_v1_generated_Applications_Create_SetCredentialsProvider_sync]
-

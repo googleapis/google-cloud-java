@@ -50,4 +50,3 @@ public class AsyncUpdateServerTlsPolicy {
   }
 }
 // [END networksecurity_v1_generated_NetworkSecurity_UpdateServerTlsPolicy_async]
-

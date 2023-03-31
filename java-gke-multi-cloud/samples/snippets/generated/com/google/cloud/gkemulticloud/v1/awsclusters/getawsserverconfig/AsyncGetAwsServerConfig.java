@@ -48,4 +48,3 @@ public class AsyncGetAwsServerConfig {
   }
 }
 // [END gkemulticloud_v1_generated_AwsClusters_GetAwsServerConfig_async]
-

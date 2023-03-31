@@ -55,4 +55,3 @@ public class AsyncAnnotateAssessment {
   }
 }
 // [END recaptchaenterprise_v1_generated_RecaptchaEnterpriseService_AnnotateAssessment_async]
-

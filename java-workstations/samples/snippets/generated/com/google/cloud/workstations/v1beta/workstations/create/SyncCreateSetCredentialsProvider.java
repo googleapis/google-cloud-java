@@ -42,4 +42,3 @@ public class SyncCreateSetCredentialsProvider {
   }
 }
 // [END workstations_v1beta_generated_Workstations_Create_SetCredentialsProvider_sync]
-

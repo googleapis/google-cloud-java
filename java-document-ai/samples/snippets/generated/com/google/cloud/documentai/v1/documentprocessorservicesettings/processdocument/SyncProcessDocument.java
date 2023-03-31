@@ -48,4 +48,3 @@ public class SyncProcessDocument {
   }
 }
 // [END documentai_v1_generated_DocumentProcessorServiceSettings_ProcessDocument_sync]
-

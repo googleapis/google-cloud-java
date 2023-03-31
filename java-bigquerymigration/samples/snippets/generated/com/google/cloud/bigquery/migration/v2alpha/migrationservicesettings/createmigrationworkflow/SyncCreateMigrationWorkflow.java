@@ -47,4 +47,3 @@ public class SyncCreateMigrationWorkflow {
   }
 }
 // [END bigquerymigration_v2alpha_generated_MigrationServiceSettings_CreateMigrationWorkflow_sync]
-

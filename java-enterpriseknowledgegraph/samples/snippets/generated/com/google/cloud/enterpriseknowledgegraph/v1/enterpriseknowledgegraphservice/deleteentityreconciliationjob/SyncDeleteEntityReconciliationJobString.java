@@ -43,4 +43,3 @@ public class SyncDeleteEntityReconciliationJobString {
   }
 }
 // [END enterpriseknowledgegraph_v1_generated_EnterpriseKnowledgeGraphService_DeleteEntityReconciliationJob_String_sync]
-

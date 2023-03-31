@@ -43,4 +43,3 @@ public class SyncCreateSetCredentialsProvider {
   }
 }
 // [END videointelligence_v1_generated_VideoIntelligenceService_Create_SetCredentialsProvider_sync]
-

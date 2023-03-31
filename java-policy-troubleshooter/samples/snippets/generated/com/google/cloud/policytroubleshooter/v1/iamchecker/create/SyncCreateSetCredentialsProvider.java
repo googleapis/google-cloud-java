@@ -42,4 +42,3 @@ public class SyncCreateSetCredentialsProvider {
   }
 }
 // [END policytroubleshooter_v1_generated_IamChecker_Create_SetCredentialsProvider_sync]
-

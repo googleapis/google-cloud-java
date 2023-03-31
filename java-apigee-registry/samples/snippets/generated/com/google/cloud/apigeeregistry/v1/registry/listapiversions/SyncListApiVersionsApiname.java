@@ -42,4 +42,3 @@ public class SyncListApiVersionsApiname {
   }
 }
 // [END apigeeregistry_v1_generated_Registry_ListApiVersions_Apiname_sync]
-

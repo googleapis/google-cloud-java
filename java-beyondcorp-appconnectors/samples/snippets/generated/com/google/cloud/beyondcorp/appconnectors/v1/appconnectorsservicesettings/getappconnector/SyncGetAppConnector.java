@@ -48,4 +48,3 @@ public class SyncGetAppConnector {
   }
 }
 // [END beyondcorp_v1_generated_AppConnectorsServiceSettings_GetAppConnector_sync]
-

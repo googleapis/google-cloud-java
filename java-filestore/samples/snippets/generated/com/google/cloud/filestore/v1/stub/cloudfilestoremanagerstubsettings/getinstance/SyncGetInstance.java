@@ -48,4 +48,3 @@ public class SyncGetInstance {
   }
 }
 // [END file_v1_generated_CloudFilestoreManagerStubSettings_GetInstance_sync]
-

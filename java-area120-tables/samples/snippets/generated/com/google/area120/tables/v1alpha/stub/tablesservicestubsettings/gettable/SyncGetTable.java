@@ -47,4 +47,3 @@ public class SyncGetTable {
   }
 }
 // [END area120tables_v1alpha1_generated_TablesServiceStubSettings_GetTable_sync]
-

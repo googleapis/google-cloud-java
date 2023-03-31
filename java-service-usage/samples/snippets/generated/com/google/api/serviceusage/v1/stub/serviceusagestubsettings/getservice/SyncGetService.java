@@ -47,4 +47,3 @@ public class SyncGetService {
   }
 }
 // [END serviceusage_v1_generated_ServiceUsageStubSettings_GetService_sync]
-

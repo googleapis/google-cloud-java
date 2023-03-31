@@ -47,4 +47,3 @@ public class SyncSearchCatalogs {
   }
 }
 // [END cloudprivatecatalog_v1beta1_generated_PrivateCatalogSettings_SearchCatalogs_sync]
-

@@ -42,4 +42,3 @@ public class SyncCreateSetCredentialsProvider {
   }
 }
 // [END jobs_v4beta1_generated_Completion_Create_SetCredentialsProvider_sync]
-

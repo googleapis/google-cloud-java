@@ -48,4 +48,3 @@ public class SyncGetEnvironment {
   }
 }
 // [END cloudshell_v1_generated_CloudShellServiceStubSettings_GetEnvironment_sync]
-

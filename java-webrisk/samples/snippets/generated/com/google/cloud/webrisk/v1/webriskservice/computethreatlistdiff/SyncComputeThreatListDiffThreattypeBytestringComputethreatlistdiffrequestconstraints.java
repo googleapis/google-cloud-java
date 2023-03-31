@@ -48,4 +48,3 @@ public class SyncComputeThreatListDiffThreattypeBytestringComputethreatlistdiffr
   }
 }
 // [END webrisk_v1_generated_WebRiskService_ComputeThreatListDiff_ThreattypeBytestringComputethreatlistdiffrequestconstraints_sync]
-

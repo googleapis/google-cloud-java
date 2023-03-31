@@ -48,4 +48,3 @@ public class AsyncDeleteSynonymSet {
   }
 }
 // [END contentwarehouse_v1_generated_SynonymSetService_DeleteSynonymSet_async]
-

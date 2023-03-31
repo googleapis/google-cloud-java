@@ -49,4 +49,3 @@ public class SyncListReports {
   }
 }
 // [END cloudchannel_v1_generated_CloudChannelReportsService_ListReports_sync]
-

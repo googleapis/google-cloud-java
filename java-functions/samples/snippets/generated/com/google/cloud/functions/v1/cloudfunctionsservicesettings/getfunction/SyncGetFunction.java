@@ -48,4 +48,3 @@ public class SyncGetFunction {
   }
 }
 // [END cloudfunctions_v1_generated_CloudFunctionsServiceSettings_GetFunction_sync]
-

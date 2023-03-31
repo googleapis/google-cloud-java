@@ -47,4 +47,3 @@ public class SyncOptimizeTours {
   }
 }
 // [END cloudoptimization_v1_generated_FleetRoutingStubSettings_OptimizeTours_sync]
-

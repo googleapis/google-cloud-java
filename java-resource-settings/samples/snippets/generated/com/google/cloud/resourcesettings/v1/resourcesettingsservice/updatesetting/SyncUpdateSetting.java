@@ -42,4 +42,3 @@ public class SyncUpdateSetting {
   }
 }
 // [END resourcesettings_v1_generated_ResourceSettingsService_UpdateSetting_sync]
-

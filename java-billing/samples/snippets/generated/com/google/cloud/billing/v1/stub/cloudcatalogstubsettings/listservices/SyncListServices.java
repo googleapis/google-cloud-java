@@ -47,4 +47,3 @@ public class SyncListServices {
   }
 }
 // [END cloudbilling_v1_generated_CloudCatalogStubSettings_ListServices_sync]
-

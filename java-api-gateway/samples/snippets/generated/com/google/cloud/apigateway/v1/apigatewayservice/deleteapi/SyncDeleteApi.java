@@ -44,4 +44,3 @@ public class SyncDeleteApi {
   }
 }
 // [END apigateway_v1_generated_ApiGatewayService_DeleteApi_sync]
-

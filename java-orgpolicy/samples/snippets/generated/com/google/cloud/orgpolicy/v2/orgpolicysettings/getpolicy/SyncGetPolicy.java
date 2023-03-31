@@ -46,4 +46,3 @@ public class SyncGetPolicy {
   }
 }
 // [END orgpolicy_v2_generated_OrgPolicySettings_GetPolicy_sync]
-

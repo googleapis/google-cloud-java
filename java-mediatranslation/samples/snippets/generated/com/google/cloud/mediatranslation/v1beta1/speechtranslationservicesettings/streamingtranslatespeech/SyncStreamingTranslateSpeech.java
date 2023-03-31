@@ -48,4 +48,3 @@ public class SyncStreamingTranslateSpeech {
   }
 }
 // [END mediatranslation_v1beta1_generated_SpeechTranslationServiceSettings_StreamingTranslateSpeech_sync]
-

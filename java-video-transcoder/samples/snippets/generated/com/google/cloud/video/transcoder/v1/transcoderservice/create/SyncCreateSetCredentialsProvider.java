@@ -43,4 +43,3 @@ public class SyncCreateSetCredentialsProvider {
   }
 }
 // [END transcoder_v1_generated_TranscoderService_Create_SetCredentialsProvider_sync]
-

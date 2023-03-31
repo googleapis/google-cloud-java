@@ -46,4 +46,3 @@ public class SyncGetEndpoint {
   }
 }
 // [END ids_v1_generated_IDSStubSettings_GetEndpoint_sync]
-

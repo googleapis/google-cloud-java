@@ -47,4 +47,3 @@ public class SyncGetPrivateCloud {
   }
 }
 // [END vmwareengine_v1_generated_VmwareEngineStubSettings_GetPrivateCloud_sync]
-

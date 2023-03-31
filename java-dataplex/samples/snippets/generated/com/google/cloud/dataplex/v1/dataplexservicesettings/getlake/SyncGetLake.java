@@ -47,4 +47,3 @@ public class SyncGetLake {
   }
 }
 // [END dataplex_v1_generated_DataplexServiceSettings_GetLake_sync]
-

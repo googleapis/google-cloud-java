@@ -43,4 +43,3 @@ public class SyncCreateSetCredentialsProvider {
   }
 }
 // [END mapsplatformdatasets_v1alpha_generated_MapsPlatformDatasetsV1Alpha_Create_SetCredentialsProvider_sync]
-

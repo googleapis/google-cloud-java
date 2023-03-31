@@ -47,4 +47,3 @@ public class SyncCreateCatalog {
   }
 }
 // [END biglake_v1alpha1_generated_MetastoreServiceSettings_CreateCatalog_sync]
-

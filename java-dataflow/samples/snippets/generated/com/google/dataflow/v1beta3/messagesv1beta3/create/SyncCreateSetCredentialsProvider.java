@@ -43,4 +43,3 @@ public class SyncCreateSetCredentialsProvider {
   }
 }
 // [END dataflow_v1beta3_generated_MessagesV1Beta3_Create_SetCredentialsProvider_sync]
-

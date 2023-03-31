@@ -42,4 +42,3 @@ public class SyncCreateSetCredentialsProvider {
   }
 }
 // [END compute_v1_generated_BackendBuckets_Create_SetCredentialsProvider_sync]
-

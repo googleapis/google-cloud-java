@@ -48,4 +48,3 @@ public class SyncUpdateWorkload {
   }
 }
 // [END assuredworkloads_v1_generated_AssuredWorkloadsServiceSettings_UpdateWorkload_sync]
-

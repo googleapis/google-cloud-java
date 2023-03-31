@@ -47,4 +47,3 @@ public class SyncGetAuthorization {
   }
 }
 // [END gsuiteaddons_v1_generated_GSuiteAddOnsStubSettings_GetAuthorization_sync]
-

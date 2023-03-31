@@ -49,4 +49,3 @@ public class SyncCreateExternalAccountKey {
   }
 }
 // [END publicca_v1beta1_generated_PublicCertificateAuthorityServiceStubSettings_CreateExternalAccountKey_sync]
-

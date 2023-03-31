@@ -47,4 +47,3 @@ public class SyncGetJob {
   }
 }
 // [END cloudscheduler_v1_generated_CloudSchedulerStubSettings_GetJob_sync]
-

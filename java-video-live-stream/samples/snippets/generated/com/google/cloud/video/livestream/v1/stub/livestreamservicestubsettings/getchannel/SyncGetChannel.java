@@ -48,4 +48,3 @@ public class SyncGetChannel {
   }
 }
 // [END livestream_v1_generated_LivestreamServiceStubSettings_GetChannel_sync]
-

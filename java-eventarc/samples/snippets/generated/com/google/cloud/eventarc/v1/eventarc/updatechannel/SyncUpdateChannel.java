@@ -46,4 +46,3 @@ public class SyncUpdateChannel {
   }
 }
 // [END eventarc_v1_generated_Eventarc_UpdateChannel_sync]
-

@@ -43,4 +43,3 @@ public class SyncCreateSetCredentialsProvider {
   }
 }
 // [END servicecontrol_v1_generated_QuotaController_Create_SetCredentialsProvider_sync]
-

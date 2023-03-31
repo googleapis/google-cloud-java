@@ -48,4 +48,3 @@ public class SyncGetOrder {
   }
 }
 // [END cloudcommerceconsumerprocurement_v1alpha1_generated_ConsumerProcurementServiceSettings_GetOrder_sync]
-

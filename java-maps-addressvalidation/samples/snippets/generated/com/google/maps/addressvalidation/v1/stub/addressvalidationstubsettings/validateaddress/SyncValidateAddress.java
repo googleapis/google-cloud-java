@@ -48,4 +48,3 @@ public class SyncValidateAddress {
   }
 }
 // [END addressvalidation_v1_generated_AddressValidationStubSettings_ValidateAddress_sync]
-

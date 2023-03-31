@@ -48,4 +48,3 @@ public class SyncGetCertificate {
   }
 }
 // [END certificatemanager_v1_generated_CertificateManagerStubSettings_GetCertificate_sync]
-

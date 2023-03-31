@@ -48,4 +48,3 @@ public class SyncGetGameServerConfig {
   }
 }
 // [END gameservices_v1beta_generated_GameServerConfigsServiceSettings_GetGameServerConfig_sync]
-

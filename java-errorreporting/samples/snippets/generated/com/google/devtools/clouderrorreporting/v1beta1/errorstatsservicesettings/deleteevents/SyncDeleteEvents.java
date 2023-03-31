@@ -47,4 +47,3 @@ public class SyncDeleteEvents {
   }
 }
 // [END clouderrorreporting_v1beta1_generated_ErrorStatsServiceSettings_DeleteEvents_sync]
-

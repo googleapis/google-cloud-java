@@ -43,4 +43,3 @@ public class SyncCreateSetCredentialsProvider {
   }
 }
 // [END automl_v1_generated_PredictionService_Create_SetCredentialsProvider_sync]
-

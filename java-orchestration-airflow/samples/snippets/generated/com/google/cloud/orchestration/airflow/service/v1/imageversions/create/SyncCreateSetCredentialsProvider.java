@@ -42,4 +42,3 @@ public class SyncCreateSetCredentialsProvider {
   }
 }
 // [END composer_v1_generated_ImageVersions_Create_SetCredentialsProvider_sync]
-
