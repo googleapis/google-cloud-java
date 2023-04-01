@@ -121,6 +121,8 @@ public class IndexEndpointServiceClientTest {
             .setNetwork("network1843485230")
             .setEnablePrivateServiceConnect(true)
             .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
+            .setPublicEndpointEnabled(true)
+            .setPublicEndpointDomainName("publicEndpointDomainName1244171053")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -180,6 +182,8 @@ public class IndexEndpointServiceClientTest {
             .setNetwork("network1843485230")
             .setEnablePrivateServiceConnect(true)
             .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
+            .setPublicEndpointEnabled(true)
+            .setPublicEndpointDomainName("publicEndpointDomainName1244171053")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -239,6 +243,8 @@ public class IndexEndpointServiceClientTest {
             .setNetwork("network1843485230")
             .setEnablePrivateServiceConnect(true)
             .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
+            .setPublicEndpointEnabled(true)
+            .setPublicEndpointDomainName("publicEndpointDomainName1244171053")
             .build();
     mockIndexEndpointService.addResponse(expectedResponse);
 
@@ -287,6 +293,8 @@ public class IndexEndpointServiceClientTest {
             .setNetwork("network1843485230")
             .setEnablePrivateServiceConnect(true)
             .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
+            .setPublicEndpointEnabled(true)
+            .setPublicEndpointDomainName("publicEndpointDomainName1244171053")
             .build();
     mockIndexEndpointService.addResponse(expectedResponse);
 
@@ -423,6 +431,8 @@ public class IndexEndpointServiceClientTest {
             .setNetwork("network1843485230")
             .setEnablePrivateServiceConnect(true)
             .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
+            .setPublicEndpointEnabled(true)
+            .setPublicEndpointDomainName("publicEndpointDomainName1244171053")
             .build();
     mockIndexEndpointService.addResponse(expectedResponse);
 
