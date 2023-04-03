@@ -80,13 +80,13 @@ public final class MigrationProto {
           + "_WRITES_SYNCHRONOUSLY\020\007\022\023\n\017COPY_AND_VERI"
           + "FY\020\002\022(\n$REDIRECT_EVENTUALLY_CONSISTENT_R"
           + "EADS\020\003\022&\n\"REDIRECT_STRONGLY_CONSISTENT_R"
-          + "EADS\020\004\022\023\n\017REDIRECT_WRITES\020\005B\333\001\n\035com.goog"
+          + "EADS\020\004\022\023\n\017REDIRECT_WRITES\020\005B\326\001\n\035com.goog"
           + "le.datastore.admin.v1B\016MigrationProtoP\001Z"
-          + ">google.golang.org/genproto/googleapis/d"
-          + "atastore/admin/v1;admin\252\002\037Google.Cloud.D"
-          + "atastore.Admin.V1\312\002\037Google\\Cloud\\Datasto"
-          + "re\\Admin\\V1\352\002#Google::Cloud::Datastore::"
-          + "Admin::V1b\006proto3"
+          + "9cloud.google.com/go/datastore/admin/api"
+          + "v1/adminpb;adminpb\252\002\037Google.Cloud.Datast"
+          + "ore.Admin.V1\312\002\037Google\\Cloud\\Datastore\\Ad"
+          + "min\\V1\352\002#Google::Cloud::Datastore::Admin"
+          + "::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

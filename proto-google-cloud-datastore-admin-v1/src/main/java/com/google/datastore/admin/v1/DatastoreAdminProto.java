@@ -214,13 +214,13 @@ public final class DatastoreAdminProto {
           + "1/projects/{project_id}/indexes\032v\312A\030data"
           + "store.googleapis.com\322AXhttps://www.googl"
           + "eapis.com/auth/cloud-platform,https://ww"
-          + "w.googleapis.com/auth/datastoreB\340\001\n\035com."
+          + "w.googleapis.com/auth/datastoreB\333\001\n\035com."
           + "google.datastore.admin.v1B\023DatastoreAdmi"
-          + "nProtoP\001Z>google.golang.org/genproto/goo"
-          + "gleapis/datastore/admin/v1;admin\252\002\037Googl"
-          + "e.Cloud.Datastore.Admin.V1\312\002\037Google\\Clou"
-          + "d\\Datastore\\Admin\\V1\352\002#Google::Cloud::Da"
-          + "tastore::Admin::V1b\006proto3"
+          + "nProtoP\001Z9cloud.google.com/go/datastore/"
+          + "admin/apiv1/adminpb;adminpb\252\002\037Google.Clo"
+          + "ud.Datastore.Admin.V1\312\002\037Google\\Cloud\\Dat"
+          + "astore\\Admin\\V1\352\002#Google::Cloud::Datasto"
+          + "re::Admin::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

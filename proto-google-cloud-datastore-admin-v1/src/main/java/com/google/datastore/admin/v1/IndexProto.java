@@ -61,13 +61,13 @@ public final class IndexProto {
           + "S\020\002\"E\n\tDirection\022\031\n\025DIRECTION_UNSPECIFIE"
           + "D\020\000\022\r\n\tASCENDING\020\001\022\016\n\nDESCENDING\020\002\"P\n\005St"
           + "ate\022\025\n\021STATE_UNSPECIFIED\020\000\022\014\n\010CREATING\020\001"
-          + "\022\t\n\005READY\020\002\022\014\n\010DELETING\020\003\022\t\n\005ERROR\020\004B\327\001\n"
+          + "\022\t\n\005READY\020\002\022\014\n\010DELETING\020\003\022\t\n\005ERROR\020\004B\322\001\n"
           + "\035com.google.datastore.admin.v1B\nIndexPro"
-          + "toP\001Z>google.golang.org/genproto/googlea"
-          + "pis/datastore/admin/v1;admin\252\002\037Google.Cl"
-          + "oud.Datastore.Admin.V1\312\002\037Google\\Cloud\\Da"
-          + "tastore\\Admin\\V1\352\002#Google::Cloud::Datast"
-          + "ore::Admin::V1b\006proto3"
+          + "toP\001Z9cloud.google.com/go/datastore/admi"
+          + "n/apiv1/adminpb;adminpb\252\002\037Google.Cloud.D"
+          + "atastore.Admin.V1\312\002\037Google\\Cloud\\Datasto"
+          + "re\\Admin\\V1\352\002#Google::Cloud::Datastore::"
+          + "Admin::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
