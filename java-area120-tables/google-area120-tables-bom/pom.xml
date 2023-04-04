@@ -30,12 +30,12 @@
         <version>0.18.0</version><!-- {x-version-update:google-area120-tables:current} -->
       </dependency>
       <dependency>
-        <groupId>com.google.area120.api.grpc</groupId>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-area120-tables-v1alpha1</artifactId>
         <version>0.18.0</version><!-- {x-version-update:grpc-google-area120-tables-v1alpha1:current} -->
       </dependency>
       <dependency>
-        <groupId>com.google.area120.api.grpc</groupId>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-area120-tables-v1alpha1</artifactId>
         <version>0.18.0</version><!-- {x-version-update:proto-google-area120-tables-v1alpha1:current} -->
       </dependency>
