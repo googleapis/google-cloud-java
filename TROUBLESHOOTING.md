@@ -25,12 +25,16 @@ java.util.logging.ConsoleHandler.level=ALL
 java.util.logging.ConsoleHandler.formatter=java.util.logging.SimpleFormatter
 .level=INFO
 
-# Specify logging level for certain packages
+# --- Specify logging level for certain packages ---
+# com.google.api is for HTTP 1.1 layer
 com.google.api.level=ALL
-com.google.auth.level=FINE
+# io.grpc is for gRPC + Netty layer
 io.grpc.level=FINE
+# com.google.auth is for authentication
+com.google.auth.level=FINE
 
-# Example when we want to specify storge library's level
+# Example when we want to specify storge library's level. This works when
+# the target Cloud library uses the logging API.
 com.google.cloud.storage.level=INFO
 ```
 
