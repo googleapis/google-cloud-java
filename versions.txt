@@ -584,9 +584,9 @@ grpc-google-cloud-workflows-v1:2.14.0:2.15.0-SNAPSHOT
 proto-google-cloud-workflows-v1beta:0.20.0:0.21.0-SNAPSHOT
 proto-google-cloud-workflows-v1:2.14.0:2.15.0-SNAPSHOT
 google-cloud-dns:2.12.0:2.13.0-SNAPSHOT
-google-maps-routing:0.8.0:0.9.0-SNAPSHOT
-proto-google-maps-routing-v2:0.8.0:0.9.0-SNAPSHOT
-grpc-google-maps-routing-v2:0.8.0:0.9.0-SNAPSHOT
+google-maps-routing:0.9.0:1.0.0-SNAPSHOT
+proto-google-maps-routing-v2:0.9.0:1.0.0-SNAPSHOT
+grpc-google-maps-routing-v2:0.9.0:1.0.0-SNAPSHOT
 google-cloud-vmwareengine:0.8.0:0.9.0-SNAPSHOT
 proto-google-cloud-vmwareengine-v1:0.8.0:0.9.0-SNAPSHOT
 grpc-google-cloud-vmwareengine-v1:0.8.0:0.9.0-SNAPSHOT
