@@ -3,8 +3,10 @@
   "versioning": "always-bump-minor",
   "separate-pull-requests": false,
   "include-component-in-tag": false,
-  ".": {},
-  "java-maps-routing": {
-    "release-as": "1.0.0"
+  "packages": {
+    ".": {},
+    "java-maps-routing": {
+      "release-as": "1.0.0"
+    }
   }
 }
