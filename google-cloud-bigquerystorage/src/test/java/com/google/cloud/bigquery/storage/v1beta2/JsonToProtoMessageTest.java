@@ -618,7 +618,7 @@ public class JsonToProtoMessageTest {
     json.put("fooBar", "hello");
 
     DynamicMessage protoMsg =
-        com.google.cloud.bigquery.storage.v1.JsonToProtoMessage.convertJsonToProtoMessage(
+        com.google.cloud.bigquery.storage.v1.JsonToProtoMessage.INSTANCE.convertToProtoMessage(
             TestMixedCaseFieldNames.getDescriptor(), tableSchema, json);
   }
 

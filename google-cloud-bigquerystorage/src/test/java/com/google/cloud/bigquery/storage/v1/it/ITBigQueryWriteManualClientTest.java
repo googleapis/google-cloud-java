@@ -742,9 +742,7 @@ public class ITBigQueryWriteManualClientTest {
         new ArrayList<ApiFuture<AppendRowsResponse>>(totalRequest);
     // Sends a total of 30MB over the wire.
     try (JsonStreamWriter jsonStreamWriter =
-        JsonStreamWriter.newBuilder(writeStream.getName(), writeStream.getTableSchema())
-            .setReconnectAfter10M(true)
-            .build()) {
+        JsonStreamWriter.newBuilder(writeStream.getName(), writeStream.getTableSchema()).build()) {
       for (int k = 0; k < totalRequest; k++) {
         JSONObject row = new JSONObject();
         row.put("col1", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");

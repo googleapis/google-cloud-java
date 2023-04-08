@@ -23,11 +23,9 @@ import com.google.api.client.util.Sleeper;
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController;
-import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
-import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.cloud.bigquery.storage.test.JsonTest;
 import com.google.cloud.bigquery.storage.test.SchemaTest;
@@ -52,7 +50,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
-import java.util.logging.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.After;
@@ -67,13 +64,10 @@ import org.threeten.bp.LocalTime;
 
 @RunWith(JUnit4.class)
 public class JsonStreamWriterTest {
-  private static final Logger LOG = Logger.getLogger(JsonStreamWriterTest.class.getName());
-  private static int NUMERIC_SCALE = 9;
+  private static final int NUMERIC_SCALE = 9;
   private static final String TEST_STREAM = "projects/p/datasets/d/tables/t/streams/_default";
   private static final String TEST_STREAM_2 = "projects/p/datasets/d2/tables/t2/streams/_default";
   private static final String TEST_TABLE = "projects/p/datasets/d/tables/t";
-  private static final ExecutorProvider SINGLE_THREAD_EXECUTOR =
-      InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(1).build();
   private static LocalChannelProvider channelProvider;
   private FakeScheduledExecutorService fakeExecutor;
   private FakeBigQueryWrite testBigQueryWrite;
@@ -136,8 +130,7 @@ public class JsonStreamWriterTest {
   public void setUp() throws Exception {
     testBigQueryWrite = new FakeBigQueryWrite();
     serviceHelper =
-        new MockServiceHelper(
-            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(testBigQueryWrite));
+        new MockServiceHelper(UUID.randomUUID().toString(), Arrays.asList(testBigQueryWrite));
     serviceHelper.start();
     channelProvider = serviceHelper.createChannelProvider();
     fakeExecutor = new FakeScheduledExecutorService();
@@ -638,7 +631,7 @@ public class JsonStreamWriterTest {
   }
 
   @Test
-  public void testCreateDefaultStreamWrongLocation() throws Exception {
+  public void testCreateDefaultStreamWrongLocation() {
     TableSchema tableSchema =
         TableSchema.newBuilder().addFields(0, TEST_INT).addFields(1, TEST_STRING).build();
     testBigQueryWrite.addResponse(
@@ -1098,7 +1091,7 @@ public class JsonStreamWriterTest {
         Assert.fail("expected ExecutionException");
       } catch (AppendSerializationError ex) {
         assertEquals(
-            "JSONObject has fields unknown to BigQuery: root.test_unknown.",
+            "The source object has fields unknown to BigQuery: root.test_unknown.",
             ex.getRowIndexToErrorMessage().get(1));
         assertEquals(TEST_STREAM, ex.getStreamName());
       }
@@ -1219,7 +1212,7 @@ public class JsonStreamWriterTest {
             appendSerializationError.getRowIndexToErrorMessage();
         assertEquals(2, rowIndexToErrorMessage.size());
         assertEquals(
-            "JSONObject has fields unknown to BigQuery: root.not_foo.",
+            "The source object has fields unknown to BigQuery: root.not_foo.",
             rowIndexToErrorMessage.get(0));
         assertEquals(
             "Field root.foo failed to convert to STRING. Error: JSONObject does not have a string field at root.foo.",
@@ -1310,7 +1303,7 @@ public class JsonStreamWriterTest {
     try (JsonStreamWriter writer =
         getTestJsonStreamWriterBuilder(TEST_STREAM, tableSchema).setTraceId("test:empty").build()) {
 
-      Map<String, AppendRowsRequest.MissingValueInterpretation> missingValueMap = new HashMap();
+      Map<String, AppendRowsRequest.MissingValueInterpretation> missingValueMap = new HashMap<>();
       missingValueMap.put("col1", AppendRowsRequest.MissingValueInterpretation.NULL_VALUE);
       missingValueMap.put("col3", AppendRowsRequest.MissingValueInterpretation.DEFAULT_VALUE);
       writer.setMissingValueInterpretationMap(missingValueMap);

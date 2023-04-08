@@ -541,7 +541,7 @@ public class JsonToProtoMessageTest {
     json.put("inT", 1);
     json.put("lONg", 1L);
     DynamicMessage protoMsg =
-        JsonToProtoMessage.convertJsonToProtoMessage(TestInt64.getDescriptor(), json);
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(TestInt64.getDescriptor(), json);
     assertEquals(expectedProto, protoMsg);
   }
 
@@ -554,7 +554,7 @@ public class JsonToProtoMessageTest {
     json.put("uppercase", "TRUE");
     json.put("lowercase", "false");
     DynamicMessage protoMsg =
-        JsonToProtoMessage.convertJsonToProtoMessage(TestBool.getDescriptor(), json);
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(TestBool.getDescriptor(), json);
     assertEquals(expectedProto, protoMsg);
   }
 
@@ -569,7 +569,7 @@ public class JsonToProtoMessageTest {
     json.put("long", 1L);
     json.put("string", "1");
     DynamicMessage protoMsg =
-        JsonToProtoMessage.convertJsonToProtoMessage(TestInt64.getDescriptor(), json);
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(TestInt64.getDescriptor(), json);
     assertEquals(expectedProto, protoMsg);
   }
 
@@ -583,7 +583,7 @@ public class JsonToProtoMessageTest {
     json.put("int", 1);
     json.put("string", 1);
     DynamicMessage protoMsg =
-        JsonToProtoMessage.convertJsonToProtoMessage(TestInt32.getDescriptor(), json);
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(TestInt32.getDescriptor(), json);
     assertEquals(expectedProto, protoMsg);
   }
 
@@ -595,7 +595,7 @@ public class JsonToProtoMessageTest {
     json.put("int", 1L);
     try {
       DynamicMessage protoMsg =
-          JsonToProtoMessage.convertJsonToProtoMessage(TestInt32.getDescriptor(), json);
+          JsonToProtoMessage.INSTANCE.convertToProtoMessage(TestInt32.getDescriptor(), json);
       Assert.fail("should fail");
     } catch (IllegalArgumentException e) {
       assertEquals("JSONObject does not have a int32 field at root.int.", e.getMessage());
@@ -615,7 +615,7 @@ public class JsonToProtoMessageTest {
     json.put("datetime", 1.0);
     try {
       DynamicMessage protoMsg =
-          JsonToProtoMessage.convertJsonToProtoMessage(
+          JsonToProtoMessage.INSTANCE.convertToProtoMessage(
               TestDatetime.getDescriptor(), tableSchema, json);
       Assert.fail("should fail");
     } catch (IllegalArgumentException e) {
@@ -636,7 +636,8 @@ public class JsonToProtoMessageTest {
     json.put("time", new JSONArray(new Double[] {1.0}));
     try {
       DynamicMessage protoMsg =
-          JsonToProtoMessage.convertJsonToProtoMessage(TestTime.getDescriptor(), tableSchema, json);
+          JsonToProtoMessage.INSTANCE.convertToProtoMessage(
+              TestTime.getDescriptor(), tableSchema, json);
       Assert.fail("should fail");
     } catch (IllegalArgumentException e) {
       assertEquals("JSONObject does not have a int64 field at root.time[0].", e.getMessage());
@@ -657,7 +658,7 @@ public class JsonToProtoMessageTest {
     json.put("fooBar", "hello");
 
     DynamicMessage protoMsg =
-        JsonToProtoMessage.convertJsonToProtoMessage(
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(
             TestMixedCaseFieldNames.getDescriptor(), tableSchema, json);
   }
 
@@ -682,7 +683,7 @@ public class JsonToProtoMessageTest {
     json.put("long", 8L);
     json.put("string", "9.1");
     DynamicMessage protoMsg =
-        JsonToProtoMessage.convertJsonToProtoMessage(TestDouble.getDescriptor(), json);
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(TestDouble.getDescriptor(), json);
     assertEquals(expectedProto, protoMsg);
   }
 
@@ -705,7 +706,7 @@ public class JsonToProtoMessageTest {
     JSONObject json = new JSONObject();
     json.put("numeric", 3.400500512978076);
     DynamicMessage protoMsg =
-        JsonToProtoMessage.convertJsonToProtoMessage(
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(
             TestNumeric.getDescriptor(), tableSchema, json);
     assertEquals(expectedProto, protoMsg);
   }
@@ -735,7 +736,7 @@ public class JsonToProtoMessageTest {
     JSONObject json = new JSONObject();
     json.put("bignumeric", ImmutableList.of(3.400500512978076, 0.10000000000055, 0.12));
     DynamicMessage protoMsg =
-        JsonToProtoMessage.convertJsonToProtoMessage(
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(
             TestBignumeric.getDescriptor(), tableSchema, json);
     assertEquals(expectedProto, protoMsg);
   }
@@ -775,7 +776,7 @@ public class JsonToProtoMessageTest {
     json.put("test_timezone", "2022-04-05 09:06:11 PST");
     json.put("test_saformat", "2018/08/19 12:11");
     DynamicMessage protoMsg =
-        JsonToProtoMessage.convertJsonToProtoMessage(
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(
             TestTimestamp.getDescriptor(), tableSchema, json);
     assertEquals(expectedProto, protoMsg);
   }
@@ -792,7 +793,8 @@ public class JsonToProtoMessageTest {
     json.put("test_string", "2021-11-04");
     json.put("test_long", 18935L);
     DynamicMessage protoMsg =
-        JsonToProtoMessage.convertJsonToProtoMessage(TestDate.getDescriptor(), tableSchema, json);
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(
+            TestDate.getDescriptor(), tableSchema, json);
     assertEquals(expectedProto, protoMsg);
   }
 
@@ -804,7 +806,7 @@ public class JsonToProtoMessageTest {
         try {
           LOG.info("Testing " + json + " over " + entry.getKey().getFullName());
           DynamicMessage protoMsg =
-              JsonToProtoMessage.convertJsonToProtoMessage(entry.getKey(), json);
+              JsonToProtoMessage.INSTANCE.convertToProtoMessage(entry.getKey(), json);
           LOG.info("Convert Success!");
           assertEquals(protoMsg, AllTypesToCorrectProto.get(entry.getKey())[success]);
           success += 1;
@@ -833,7 +835,7 @@ public class JsonToProtoMessageTest {
         try {
           LOG.info("Testing " + json + " over " + entry.getKey().getFullName());
           DynamicMessage protoMsg =
-              JsonToProtoMessage.convertJsonToProtoMessage(entry.getKey(), json);
+              JsonToProtoMessage.INSTANCE.convertToProtoMessage(entry.getKey(), json);
           LOG.info("Convert Success!");
           assertEquals(
               protoMsg.toString(),
@@ -869,7 +871,7 @@ public class JsonToProtoMessageTest {
     json.put("byte", 1);
 
     DynamicMessage protoMsg =
-        JsonToProtoMessage.convertJsonToProtoMessage(TestInt64.getDescriptor(), json);
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(TestInt64.getDescriptor(), json);
     assertEquals(expectedProto, protoMsg);
   }
 
@@ -881,7 +883,8 @@ public class JsonToProtoMessageTest {
     json.put("required_double", 1.1);
 
     DynamicMessage protoMsg =
-        JsonToProtoMessage.convertJsonToProtoMessage(TestRepeatedIsOptional.getDescriptor(), json);
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(
+            TestRepeatedIsOptional.getDescriptor(), json);
     assertEquals(expectedProto, protoMsg);
   }
 
@@ -891,7 +894,7 @@ public class JsonToProtoMessageTest {
     json.put("optional_double", 1.1);
     try {
       DynamicMessage protoMsg =
-          JsonToProtoMessage.convertJsonToProtoMessage(TestRequired.getDescriptor(), json);
+          JsonToProtoMessage.INSTANCE.convertToProtoMessage(TestRequired.getDescriptor(), json);
       Assert.fail("should fail");
     } catch (IllegalArgumentException e) {
       assertEquals(
@@ -911,7 +914,7 @@ public class JsonToProtoMessageTest {
     json.put("test_field_type", stringType);
 
     DynamicMessage protoMsg =
-        JsonToProtoMessage.convertJsonToProtoMessage(MessageType.getDescriptor(), json);
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(MessageType.getDescriptor(), json);
     assertEquals(expectedProto, protoMsg);
   }
 
@@ -923,7 +926,7 @@ public class JsonToProtoMessageTest {
     json.put("test_field_type", stringType);
     try {
       DynamicMessage protoMsg =
-          JsonToProtoMessage.convertJsonToProtoMessage(MessageType.getDescriptor(), json);
+          JsonToProtoMessage.INSTANCE.convertToProtoMessage(MessageType.getDescriptor(), json);
       Assert.fail("should fail");
     } catch (IllegalArgumentException e) {
       assertEquals(
@@ -1057,7 +1060,7 @@ public class JsonToProtoMessageTest {
     json.put("test_interval", "0-0 0 0:0:0.000005");
     json.put("test_json", new JSONArray(new String[] {"{'a':'b'}"}));
     DynamicMessage protoMsg =
-        JsonToProtoMessage.convertJsonToProtoMessage(
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(
             ComplexRoot.getDescriptor(), COMPLEX_TABLE_SCHEMA, json);
     assertEquals(expectedProto, protoMsg);
   }
@@ -1083,7 +1086,7 @@ public class JsonToProtoMessageTest {
 
     try {
       DynamicMessage protoMsg =
-          JsonToProtoMessage.convertJsonToProtoMessage(ComplexRoot.getDescriptor(), json);
+          JsonToProtoMessage.INSTANCE.convertToProtoMessage(ComplexRoot.getDescriptor(), json);
       Assert.fail("should fail");
     } catch (IllegalArgumentException e) {
       assertEquals(
@@ -1097,7 +1100,7 @@ public class JsonToProtoMessageTest {
     json.put("test_repeated", new JSONArray("[1.1, 2.2, true]"));
     try {
       DynamicMessage protoMsg =
-          JsonToProtoMessage.convertJsonToProtoMessage(RepeatedDouble.getDescriptor(), json);
+          JsonToProtoMessage.INSTANCE.convertToProtoMessage(RepeatedDouble.getDescriptor(), json);
       Assert.fail("should fail");
     } catch (IllegalArgumentException e) {
       assertEquals(
@@ -1140,7 +1143,7 @@ public class JsonToProtoMessageTest {
     json.put("repeated_string", jsonRepeatedString);
 
     DynamicMessage protoMsg =
-        JsonToProtoMessage.convertJsonToProtoMessage(NestedRepeated.getDescriptor(), json);
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(NestedRepeated.getDescriptor(), json);
     assertEquals(protoMsg, expectedProto);
   }
 
@@ -1159,7 +1162,7 @@ public class JsonToProtoMessageTest {
 
     try {
       DynamicMessage protoMsg =
-          JsonToProtoMessage.convertJsonToProtoMessage(NestedRepeated.getDescriptor(), json);
+          JsonToProtoMessage.INSTANCE.convertToProtoMessage(NestedRepeated.getDescriptor(), json);
       Assert.fail("should fail");
     } catch (IllegalArgumentException e) {
       assertEquals(
@@ -1181,7 +1184,7 @@ public class JsonToProtoMessageTest {
     json.put("complex_lvl2", complexLvl2);
 
     DynamicMessage protoMsg =
-        JsonToProtoMessage.convertJsonToProtoMessage(ComplexLvl1.getDescriptor(), json);
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(ComplexLvl1.getDescriptor(), json);
     assertEquals(expectedProto, protoMsg);
   }
 
@@ -1193,10 +1196,11 @@ public class JsonToProtoMessageTest {
 
     try {
       DynamicMessage protoMsg =
-          JsonToProtoMessage.convertJsonToProtoMessage(RepeatedInt64.getDescriptor(), json);
+          JsonToProtoMessage.INSTANCE.convertToProtoMessage(RepeatedInt64.getDescriptor(), json);
       Assert.fail("Should fail");
-    } catch (Exceptions.JsonDataHasUnknownFieldException e) {
-      assertEquals("JSONObject has fields unknown to BigQuery: root.string.", e.getMessage());
+    } catch (Exceptions.DataHasUnknownFieldException e) {
+      assertEquals(
+          "The source object has fields unknown to BigQuery: root.string.", e.getMessage());
       assertEquals("root.string", e.getFieldName());
     }
   }
@@ -1207,7 +1211,7 @@ public class JsonToProtoMessageTest {
     json.put("test_repeated", new JSONArray(new int[0]));
 
     DynamicMessage protoMsg =
-        JsonToProtoMessage.convertJsonToProtoMessage(RepeatedInt64.getDescriptor(), json);
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(RepeatedInt64.getDescriptor(), json);
     assertEquals(protoMsg.getAllFields().size(), 0);
   }
 
@@ -1216,7 +1220,7 @@ public class JsonToProtoMessageTest {
     JSONObject json = new JSONObject();
     try {
       DynamicMessage protoMsg =
-          JsonToProtoMessage.convertJsonToProtoMessage(Int64Type.getDescriptor(), json);
+          JsonToProtoMessage.INSTANCE.convertToProtoMessage(Int64Type.getDescriptor(), json);
       Assert.fail("Should fail");
     } catch (IllegalStateException e) {
       assertEquals("JSONObject is empty.", e.getMessage());
@@ -1227,7 +1231,7 @@ public class JsonToProtoMessageTest {
   public void testNullJson() throws Exception {
     try {
       DynamicMessage protoMsg =
-          JsonToProtoMessage.convertJsonToProtoMessage(Int64Type.getDescriptor(), null);
+          JsonToProtoMessage.INSTANCE.convertToProtoMessage(Int64Type.getDescriptor(), null);
       Assert.fail("Should fail");
     } catch (NullPointerException e) {
       assertEquals("JSONObject is null.", e.getMessage());
@@ -1238,7 +1242,7 @@ public class JsonToProtoMessageTest {
   public void testNullDescriptor() throws Exception {
     try {
       DynamicMessage protoMsg =
-          JsonToProtoMessage.convertJsonToProtoMessage(null, new JSONObject());
+          JsonToProtoMessage.INSTANCE.convertToProtoMessage(null, new JSONObject());
       Assert.fail("Should fail");
     } catch (NullPointerException e) {
       assertEquals("Protobuf descriptor is null.", e.getMessage());
@@ -1255,11 +1259,12 @@ public class JsonToProtoMessageTest {
 
     try {
       DynamicMessage protoMsg =
-          JsonToProtoMessage.convertJsonToProtoMessage(ComplexLvl1.getDescriptor(), json);
+          JsonToProtoMessage.INSTANCE.convertToProtoMessage(ComplexLvl1.getDescriptor(), json);
       Assert.fail("Should fail");
     } catch (IllegalArgumentException e) {
       assertEquals(
-          "JSONObject has fields unknown to BigQuery: root.complex_lvl2.no_match.", e.getMessage());
+          "The source object has fields unknown to BigQuery: root.complex_lvl2.no_match.",
+          e.getMessage());
     }
   }
 
@@ -1276,7 +1281,7 @@ public class JsonToProtoMessageTest {
     json.put("complex_lvl2", complex_lvl2);
 
     DynamicMessage protoMsg =
-        JsonToProtoMessage.convertJsonToProtoMessage(ComplexLvl1.getDescriptor(), json);
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(ComplexLvl1.getDescriptor(), json);
     assertEquals(expectedProto, protoMsg);
   }
 
@@ -1287,7 +1292,7 @@ public class JsonToProtoMessageTest {
     json.put("long", JSONObject.NULL);
     json.put("int", 1);
     DynamicMessage protoMsg =
-        JsonToProtoMessage.convertJsonToProtoMessage(TestInt64.getDescriptor(), json);
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(TestInt64.getDescriptor(), json);
     assertEquals(expectedProto, protoMsg);
   }
 
@@ -1298,7 +1303,7 @@ public class JsonToProtoMessageTest {
     json.put("long", JSONObject.NULL);
     json.put("int", JSONObject.NULL);
     DynamicMessage protoMsg =
-        JsonToProtoMessage.convertJsonToProtoMessage(TestInt64.getDescriptor(), json);
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(TestInt64.getDescriptor(), json);
     assertEquals(expectedProto, protoMsg);
   }
 
@@ -1319,7 +1324,8 @@ public class JsonToProtoMessageTest {
 
     try {
       DynamicMessage protoMsg =
-          JsonToProtoMessage.convertJsonToProtoMessage(RepeatedBytes.getDescriptor(), ts, json);
+          JsonToProtoMessage.INSTANCE.convertToProtoMessage(
+              RepeatedBytes.getDescriptor(), ts, json);
       Assert.fail("Should fail");
     } catch (Exceptions.FieldParseError ex) {
       assertEquals(ex.getBqType(), "NUMERIC");
@@ -1344,7 +1350,8 @@ public class JsonToProtoMessageTest {
 
     try {
       DynamicMessage protoMsg =
-          JsonToProtoMessage.convertJsonToProtoMessage(RepeatedInt32.getDescriptor(), ts, json);
+          JsonToProtoMessage.INSTANCE.convertToProtoMessage(
+              RepeatedInt32.getDescriptor(), ts, json);
       Assert.fail("Should fail");
     } catch (IllegalArgumentException ex) {
       assertEquals(ex.getMessage(), "Text 'blah' could not be parsed at index 0");
@@ -1375,7 +1382,7 @@ public class JsonToProtoMessageTest {
     json.put("test_repeated", JSONObject.NULL);
 
     DynamicMessage protoMsg =
-        JsonToProtoMessage.convertJsonToProtoMessage(RepeatedInt32.getDescriptor(), ts, json);
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(RepeatedInt32.getDescriptor(), ts, json);
     assertTrue(protoMsg.getAllFields().isEmpty());
 
     // Missing repeated field.
@@ -1383,7 +1390,7 @@ public class JsonToProtoMessageTest {
     json.put("test_non_repeated", JSONObject.NULL);
 
     protoMsg =
-        JsonToProtoMessage.convertJsonToProtoMessage(RepeatedInt32.getDescriptor(), ts, json);
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(RepeatedInt32.getDescriptor(), ts, json);
     assertTrue(protoMsg.getAllFields().isEmpty());
   }
 
@@ -1406,10 +1413,11 @@ public class JsonToProtoMessageTest {
     JSONObject json = new JSONObject();
     json.put("numeric", new Double(24.678));
     DynamicMessage protoMsg =
-        JsonToProtoMessage.convertJsonToProtoMessage(TestNumeric.getDescriptor(), ts, json);
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(TestNumeric.getDescriptor(), ts, json);
     assertEquals(expectedProto, protoMsg);
     json.put("numeric", new Float(24.678));
-    protoMsg = JsonToProtoMessage.convertJsonToProtoMessage(TestNumeric.getDescriptor(), ts, json);
+    protoMsg =
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(TestNumeric.getDescriptor(), ts, json);
     assertEquals(expectedProto, protoMsg);
   }
 
@@ -1434,7 +1442,7 @@ public class JsonToProtoMessageTest {
     JSONObject json = new JSONObject();
     json.put("bignumeric", Collections.singletonList(new BigDecimal("24.6789012345")));
     DynamicMessage protoMsg =
-        JsonToProtoMessage.convertJsonToProtoMessage(TestBignumeric.getDescriptor(), ts, json);
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(TestBignumeric.getDescriptor(), ts, json);
     assertEquals(expectedProto, protoMsg);
   }
 
@@ -1458,11 +1466,11 @@ public class JsonToProtoMessageTest {
     JSONObject json = new JSONObject();
     json.put("bignumeric", Collections.singletonList(new Double(24.678)));
     DynamicMessage protoMsg =
-        JsonToProtoMessage.convertJsonToProtoMessage(TestBignumeric.getDescriptor(), ts, json);
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(TestBignumeric.getDescriptor(), ts, json);
     assertEquals(expectedProto, protoMsg);
     json.put("bignumeric", Collections.singletonList(new Float(24.678)));
     protoMsg =
-        JsonToProtoMessage.convertJsonToProtoMessage(TestBignumeric.getDescriptor(), ts, json);
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(TestBignumeric.getDescriptor(), ts, json);
     assertEquals(expectedProto, protoMsg);
   }
 }
