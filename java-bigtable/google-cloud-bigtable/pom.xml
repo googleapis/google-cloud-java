@@ -608,33 +608,6 @@
     </extensions>
     <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-enforcer-plugin</artifactId>
-        <version>3.1.0</version>
-        <executions>
-          <execution>
-            <id>enforce-declared-grpc-and-proto-version</id>
-            <goals>
-              <goal>enforce</goal>
-            </goals>
-            <configuration>
-              <rules>
-                <bannedDependencies>
-                  <includes>
-                    <dependency>io.grpc:*:[${grpc.version}]</dependency>
-                    <dependency>com.google.protobuf:*:[${protobuf.version}]</dependency>
-                  </includes>
-                  <excludes>
-                    <dependency>io.grpc:*</dependency>
-                    <dependency>com.google.protobuf:*</dependency>
-                  </excludes>
-                </bannedDependencies>
-              </rules>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
         <groupId>org.xolstice.maven.plugins</groupId>
         <artifactId>protobuf-maven-plugin</artifactId>
         <version>0.6.1</version>
@@ -678,7 +651,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
-        <version>3.2.1</version>
+        <version>3.3.0</version>
         <executions>
           <!-- Prevent users from mistyping a profile name -->
           <execution>
@@ -703,6 +676,26 @@
             <goals>
               <goal>enforce</goal>
             </goals>
+          </execution>
+          <execution>
+            <id>enforce-declared-grpc-and-proto-version</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <bannedDependencies>
+                  <includes>
+                    <dependency>io.grpc:*:[${grpc.version}]</dependency>
+                    <dependency>com.google.protobuf:*:[${protobuf.version}]</dependency>
+                  </includes>
+                  <excludes>
+                    <dependency>io.grpc:*</dependency>
+                    <dependency>com.google.protobuf:*</dependency>
+                  </excludes>
+                </bannedDependencies>
+              </rules>
+            </configuration>
           </execution>
         </executions>
         <!--
