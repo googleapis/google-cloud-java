@@ -170,7 +170,9 @@ public class MobileTimeSeriesBaseTest extends BigtableBaseTest {
   public static void cleanupTable() throws IOException {
     try (BigtableTableAdminClient adminClient =
         BigtableTableAdminClient.create(projectId, instanceId)) {
-      adminClient.deleteTable(TABLE_ID);
+      if (adminClient.exists(TABLE_ID)) {
+        adminClient.deleteTable(TABLE_ID);
+      }
     } catch (Exception e) {
       System.out.println("Error during afterClass: \n" + e.toString());
       throw (e);
