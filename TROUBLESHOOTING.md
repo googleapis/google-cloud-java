@@ -1,5 +1,72 @@
 # Troubleshooting
 
+## Logging
+
+Our libraries use the Java logging API via `java.util.logging` package.
+Configuring logging level reveals various facts that help your troubleshooting,
+including:
+
+- The timing of underlying client-server communication
+- Request and response message headers
+- Verbose messages in underlying dependency libraries
+
+While there are various ways to configure the logging,
+to quickly enable verbose logging for the Google Cloud Java libraries, create
+a file `logging.properties` with the following content:
+
+```
+# run java program pointing to this properties file with the java arg
+#   -Djava.util.logging.config.file=path/to/logging.properties
+handlers=java.util.logging.ConsoleHandler
+java.util.logging.SimpleFormatter.format=%1$tF %1$tT,%1$tL %4$-8s %3$-50s - %5$s %6$s%n
+
+# --- ConsoleHandler ---
+java.util.logging.ConsoleHandler.level=ALL
+java.util.logging.ConsoleHandler.formatter=java.util.logging.SimpleFormatter
+.level=INFO
+
+# --- Specify logging level for certain packages ---
+# com.google.api is for HTTP 1.1 layer
+com.google.api.level=ALL
+# io.grpc is for gRPC + Netty layer
+io.grpc.level=FINE
+# com.google.auth is for authentication
+com.google.auth.level=FINE
+
+# Example when we want to specify storge library's level. This works when
+# the target Cloud library uses the logging API.
+com.google.cloud.storage.level=INFO
+```
+
+and run your application with `-Djava.util.logging.config.file=path/to/logging.properties`
+as the "VM argument" (not "Program argument").
+
+If you use IntelliJ, you specify the VM argument in "Run/Debug Configuration":
+
+![Screenshot of IntelliJ configuration](docs/logging_vm_options.png)
+
+If the JVM of your program is running with the configuration correctly, you see
+the FINE-level logging in your console. Example output:
+
+```
+2023-04-05 13:03:01,761 FINE     com.google.auth.oauth2.DefaultCredentialsProvider  - Attempting to load credentials from well known file: /usr/local/google/home/suztomo/.config/gcloud/application_default_credentials.json
+2023-04-05 13:03:01,847 FINE     io.grpc.ManagedChannelRegistry                     - Unable to find OkHttpChannelProvider
+java.lang.ClassNotFoundException: io.grpc.okhttp.OkHttpChannelProvider
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:315)
+...
+```
+
+Note that you may see many stacktraces printed there.
+As long as it's "FINE" level, they are not errors.
+
+This is just one way to configure logging level.
+For more details about Java logging API usage, see [Java Logging Overview](
+https://docs.oracle.com/javase/8/docs/technotes/guides/logging/overview.html).
+
 ## ALPN is not configured properly
 
 If you see exceptions related to `ALPN is not configured properly`, such as:
