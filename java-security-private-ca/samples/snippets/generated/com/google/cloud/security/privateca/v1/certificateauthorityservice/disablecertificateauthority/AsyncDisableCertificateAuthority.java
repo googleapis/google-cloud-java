@@ -44,6 +44,7 @@ public class AsyncDisableCertificateAuthority {
                           "[PROJECT]", "[LOCATION]", "[CA_POOL]", "[CERTIFICATE_AUTHORITY]")
                       .toString())
               .setRequestId("requestId693933066")
+              .setIgnoreDependentResources(true)
               .build();
       ApiFuture<Operation> future =
           certificateAuthorityServiceClient

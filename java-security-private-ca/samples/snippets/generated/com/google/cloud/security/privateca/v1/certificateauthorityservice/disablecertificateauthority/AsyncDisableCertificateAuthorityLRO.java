@@ -45,6 +45,7 @@ public class AsyncDisableCertificateAuthorityLRO {
                           "[PROJECT]", "[LOCATION]", "[CA_POOL]", "[CERTIFICATE_AUTHORITY]")
                       .toString())
               .setRequestId("requestId693933066")
+              .setIgnoreDependentResources(true)
               .build();
       OperationFuture<CertificateAuthority, OperationMetadata> future =
           certificateAuthorityServiceClient

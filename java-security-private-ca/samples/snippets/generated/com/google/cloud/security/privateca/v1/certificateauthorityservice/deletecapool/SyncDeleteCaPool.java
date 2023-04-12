@@ -40,6 +40,7 @@ public class SyncDeleteCaPool {
           DeleteCaPoolRequest.newBuilder()
               .setName(CaPoolName.of("[PROJECT]", "[LOCATION]", "[CA_POOL]").toString())
               .setRequestId("requestId693933066")
+              .setIgnoreDependentResources(true)
               .build();
       certificateAuthorityServiceClient.deleteCaPoolAsync(request).get();
     }

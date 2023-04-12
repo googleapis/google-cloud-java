@@ -675,6 +675,10 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                                 fields,
                                 "ignoreActiveCertificates",
                                 request.getIgnoreActiveCertificates());
+                            serializer.putQueryParam(
+                                fields,
+                                "ignoreDependentResources",
+                                request.getIgnoreDependentResources());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(
                                 fields, "skipGracePeriod", request.getSkipGracePeriod());
@@ -925,6 +929,10 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteCaPoolRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields,
+                                "ignoreDependentResources",
+                                request.getIgnoreDependentResources());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;

@@ -100,4 +100,20 @@ public interface DisableCertificateAuthorityRequestOrBuilder
    * @return The bytes for requestId.
    */
   com.google.protobuf.ByteString getRequestIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field allows this CA to be disabled even if it's being
+   * depended on by another resource. However, doing so may result in unintended
+   * and unrecoverable effects on any dependent resource(s) since the CA will
+   * no longer be able to issue certificates.
+   * </pre>
+   *
+   * <code>bool ignore_dependent_resources = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The ignoreDependentResources.
+   */
+  boolean getIgnoreDependentResources();
 }

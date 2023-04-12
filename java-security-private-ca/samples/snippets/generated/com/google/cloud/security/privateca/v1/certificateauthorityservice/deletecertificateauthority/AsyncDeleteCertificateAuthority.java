@@ -46,6 +46,7 @@ public class AsyncDeleteCertificateAuthority {
               .setRequestId("requestId693933066")
               .setIgnoreActiveCertificates(true)
               .setSkipGracePeriod(true)
+              .setIgnoreDependentResources(true)
               .build();
       ApiFuture<Operation> future =
           certificateAuthorityServiceClient
