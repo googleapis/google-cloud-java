@@ -93,7 +93,7 @@ function generate_modified_modules_list() {
   echo "ls -alt:"
   ls -alt
   echo "----------"
-  echo "git -v: $(git -v)"
+  echo "git --version: $(git --version)"
   echo "Comparing commits: git diff --name-only ${KOKORO_GITHUB_PULL_REQUEST_TARGET_BRANCH}...${KOKORO_GITHUB_PULL_REQUEST_COMMIT}"
   modified_files=$(git diff --name-only "${KOKORO_GITHUB_PULL_REQUEST_TARGET_BRANCH}...${KOKORO_GITHUB_PULL_REQUEST_COMMIT}")
   printf "Modified files:\n%s\n" "${modified_files}"
