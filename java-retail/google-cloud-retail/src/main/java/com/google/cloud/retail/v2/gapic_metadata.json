@@ -86,6 +86,39 @@
         }
       }
     },
+    "ModelService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ModelServiceClient",
+          "rpcs": {
+            "CreateModel": {
+              "methods": ["createModelAsync", "createModelAsync", "createModelAsync", "createModelOperationCallable", "createModelCallable"]
+            },
+            "DeleteModel": {
+              "methods": ["deleteModel", "deleteModel", "deleteModel", "deleteModelCallable"]
+            },
+            "GetModel": {
+              "methods": ["getModel", "getModel", "getModel", "getModelCallable"]
+            },
+            "ListModels": {
+              "methods": ["listModels", "listModels", "listModels", "listModelsPagedCallable", "listModelsCallable"]
+            },
+            "PauseModel": {
+              "methods": ["pauseModel", "pauseModel", "pauseModel", "pauseModelCallable"]
+            },
+            "ResumeModel": {
+              "methods": ["resumeModel", "resumeModel", "resumeModelCallable"]
+            },
+            "TuneModel": {
+              "methods": ["tuneModelAsync", "tuneModelAsync", "tuneModelAsync", "tuneModelOperationCallable", "tuneModelCallable"]
+            },
+            "UpdateModel": {
+              "methods": ["updateModel", "updateModel", "updateModelCallable"]
+            }
+          }
+        }
+      }
+    },
     "PredictionService": {
       "clients": {
         "grpc": {

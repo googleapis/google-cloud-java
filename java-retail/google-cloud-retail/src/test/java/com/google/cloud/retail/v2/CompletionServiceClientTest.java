@@ -100,6 +100,7 @@ public class CompletionServiceClientTest {
             .setDeviceType("deviceType781190832")
             .setDataset("dataset1443214456")
             .setMaxSuggestions(618824852)
+            .setEntity("entity-1298275357")
             .build();
 
     CompleteQueryResponse actualResponse = client.completeQuery(request);
@@ -116,6 +117,7 @@ public class CompletionServiceClientTest {
     Assert.assertEquals(request.getDeviceType(), actualRequest.getDeviceType());
     Assert.assertEquals(request.getDataset(), actualRequest.getDataset());
     Assert.assertEquals(request.getMaxSuggestions(), actualRequest.getMaxSuggestions());
+    Assert.assertEquals(request.getEntity(), actualRequest.getEntity());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -137,6 +139,7 @@ public class CompletionServiceClientTest {
               .setDeviceType("deviceType781190832")
               .setDataset("dataset1443214456")
               .setMaxSuggestions(618824852)
+              .setEntity("entity-1298275357")
               .build();
       client.completeQuery(request);
       Assert.fail("No exception raised");

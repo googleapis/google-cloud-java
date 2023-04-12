@@ -50,6 +50,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2beta.CreateModelMetadata;
 import com.google.cloud.retail.v2beta.CreateModelRequest;
 import com.google.cloud.retail.v2beta.DeleteModelRequest;
+import com.google.cloud.retail.v2beta.GetModelRequest;
 import com.google.cloud.retail.v2beta.ListModelsRequest;
 import com.google.cloud.retail.v2beta.ListModelsResponse;
 import com.google.cloud.retail.v2beta.Model;
@@ -85,7 +86,7 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of pauseModel to 30 seconds:
+ * <p>For example, to set the total timeout of getModel to 30 seconds:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -96,10 +97,10 @@ import org.threeten.bp.Duration;
  * ModelServiceStubSettings.Builder modelServiceSettingsBuilder =
  *     ModelServiceStubSettings.newBuilder();
  * modelServiceSettingsBuilder
- *     .pauseModelSettings()
+ *     .getModelSettings()
  *     .setRetrySettings(
  *         modelServiceSettingsBuilder
- *             .pauseModelSettings()
+ *             .getModelSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -117,6 +118,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
   private final UnaryCallSettings<CreateModelRequest, Operation> createModelSettings;
   private final OperationCallSettings<CreateModelRequest, Model, CreateModelMetadata>
       createModelOperationSettings;
+  private final UnaryCallSettings<GetModelRequest, Model> getModelSettings;
   private final UnaryCallSettings<PauseModelRequest, Model> pauseModelSettings;
   private final UnaryCallSettings<ResumeModelRequest, Model> resumeModelSettings;
   private final UnaryCallSettings<DeleteModelRequest, Empty> deleteModelSettings;
@@ -189,6 +191,11 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
   public OperationCallSettings<CreateModelRequest, Model, CreateModelMetadata>
       createModelOperationSettings() {
     return createModelOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getModel. */
+  public UnaryCallSettings<GetModelRequest, Model> getModelSettings() {
+    return getModelSettings;
   }
 
   /** Returns the object with the settings used for calls to pauseModel. */
@@ -336,6 +343,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
 
     createModelSettings = settingsBuilder.createModelSettings().build();
     createModelOperationSettings = settingsBuilder.createModelOperationSettings().build();
+    getModelSettings = settingsBuilder.getModelSettings().build();
     pauseModelSettings = settingsBuilder.pauseModelSettings().build();
     resumeModelSettings = settingsBuilder.resumeModelSettings().build();
     deleteModelSettings = settingsBuilder.deleteModelSettings().build();
@@ -351,6 +359,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     private final UnaryCallSettings.Builder<CreateModelRequest, Operation> createModelSettings;
     private final OperationCallSettings.Builder<CreateModelRequest, Model, CreateModelMetadata>
         createModelOperationSettings;
+    private final UnaryCallSettings.Builder<GetModelRequest, Model> getModelSettings;
     private final UnaryCallSettings.Builder<PauseModelRequest, Model> pauseModelSettings;
     private final UnaryCallSettings.Builder<ResumeModelRequest, Model> resumeModelSettings;
     private final UnaryCallSettings.Builder<DeleteModelRequest, Empty> deleteModelSettings;
@@ -391,6 +400,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
 
       createModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createModelOperationSettings = OperationCallSettings.newBuilder();
+      getModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       pauseModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       resumeModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -402,6 +412,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createModelSettings,
+              getModelSettings,
               pauseModelSettings,
               resumeModelSettings,
               deleteModelSettings,
@@ -416,6 +427,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
 
       createModelSettings = settings.createModelSettings.toBuilder();
       createModelOperationSettings = settings.createModelOperationSettings.toBuilder();
+      getModelSettings = settings.getModelSettings.toBuilder();
       pauseModelSettings = settings.pauseModelSettings.toBuilder();
       resumeModelSettings = settings.resumeModelSettings.toBuilder();
       deleteModelSettings = settings.deleteModelSettings.toBuilder();
@@ -427,6 +439,7 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createModelSettings,
+              getModelSettings,
               pauseModelSettings,
               resumeModelSettings,
               deleteModelSettings,
@@ -464,6 +477,11 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     private static Builder initDefaults(Builder builder) {
       builder
           .createModelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getModelSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -572,6 +590,11 @@ public class ModelServiceStubSettings extends StubSettings<ModelServiceStubSetti
     public OperationCallSettings.Builder<CreateModelRequest, Model, CreateModelMetadata>
         createModelOperationSettings() {
       return createModelOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getModel. */
+    public UnaryCallSettings.Builder<GetModelRequest, Model> getModelSettings() {
+      return getModelSettings;
     }
 
     /** Returns the builder for the settings used for calls to pauseModel. */

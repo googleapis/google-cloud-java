@@ -81,6 +81,26 @@ public class MockModelServiceImpl extends ModelServiceImplBase {
   }
 
   @Override
+  public void getModel(GetModelRequest request, StreamObserver<Model> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Model) {
+      requests.add(request);
+      responseObserver.onNext(((Model) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetModel, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Model.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void pauseModel(PauseModelRequest request, StreamObserver<Model> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Model) {

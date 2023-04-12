@@ -87,6 +87,47 @@ public final class ModelServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.retail.v2beta.GetModelRequest, com.google.cloud.retail.v2beta.Model>
+      getGetModelMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetModel",
+      requestType = com.google.cloud.retail.v2beta.GetModelRequest.class,
+      responseType = com.google.cloud.retail.v2beta.Model.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.retail.v2beta.GetModelRequest, com.google.cloud.retail.v2beta.Model>
+      getGetModelMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.retail.v2beta.GetModelRequest, com.google.cloud.retail.v2beta.Model>
+        getGetModelMethod;
+    if ((getGetModelMethod = ModelServiceGrpc.getGetModelMethod) == null) {
+      synchronized (ModelServiceGrpc.class) {
+        if ((getGetModelMethod = ModelServiceGrpc.getGetModelMethod) == null) {
+          ModelServiceGrpc.getGetModelMethod =
+              getGetModelMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.retail.v2beta.GetModelRequest,
+                          com.google.cloud.retail.v2beta.Model>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetModel"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.retail.v2beta.GetModelRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.retail.v2beta.Model.getDefaultInstance()))
+                      .setSchemaDescriptor(new ModelServiceMethodDescriptorSupplier("GetModel"))
+                      .build();
+        }
+      }
+    }
+    return getGetModelMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.retail.v2beta.PauseModelRequest, com.google.cloud.retail.v2beta.Model>
       getPauseModelMethod;
 
@@ -418,6 +459,19 @@ public final class ModelServiceGrpc {
      *
      *
      * <pre>
+     * Gets a model.
+     * </pre>
+     */
+    default void getModel(
+        com.google.cloud.retail.v2beta.GetModelRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.retail.v2beta.Model> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetModelMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Pauses the training of an existing model.
      * </pre>
      */
@@ -572,6 +626,20 @@ public final class ModelServiceGrpc {
      *
      *
      * <pre>
+     * Gets a model.
+     * </pre>
+     */
+    public void getModel(
+        com.google.cloud.retail.v2beta.GetModelRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.retail.v2beta.Model> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetModelMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Pauses the training of an existing model.
      * </pre>
      */
@@ -708,6 +776,19 @@ public final class ModelServiceGrpc {
      *
      *
      * <pre>
+     * Gets a model.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2beta.Model getModel(
+        com.google.cloud.retail.v2beta.GetModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Pauses the training of an existing model.
      * </pre>
      */
@@ -831,6 +912,19 @@ public final class ModelServiceGrpc {
      *
      *
      * <pre>
+     * Gets a model.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.retail.v2beta.Model>
+        getModel(com.google.cloud.retail.v2beta.GetModelRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetModelMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Pauses the training of an existing model.
      * </pre>
      */
@@ -911,12 +1005,13 @@ public final class ModelServiceGrpc {
   }
 
   private static final int METHODID_CREATE_MODEL = 0;
-  private static final int METHODID_PAUSE_MODEL = 1;
-  private static final int METHODID_RESUME_MODEL = 2;
-  private static final int METHODID_DELETE_MODEL = 3;
-  private static final int METHODID_LIST_MODELS = 4;
-  private static final int METHODID_UPDATE_MODEL = 5;
-  private static final int METHODID_TUNE_MODEL = 6;
+  private static final int METHODID_GET_MODEL = 1;
+  private static final int METHODID_PAUSE_MODEL = 2;
+  private static final int METHODID_RESUME_MODEL = 3;
+  private static final int METHODID_DELETE_MODEL = 4;
+  private static final int METHODID_LIST_MODELS = 5;
+  private static final int METHODID_UPDATE_MODEL = 6;
+  private static final int METHODID_TUNE_MODEL = 7;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -939,6 +1034,11 @@ public final class ModelServiceGrpc {
           serviceImpl.createModel(
               (com.google.cloud.retail.v2beta.CreateModelRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_MODEL:
+          serviceImpl.getModel(
+              (com.google.cloud.retail.v2beta.GetModelRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.retail.v2beta.Model>) responseObserver);
           break;
         case METHODID_PAUSE_MODEL:
           serviceImpl.pauseModel(
@@ -995,6 +1095,12 @@ public final class ModelServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.retail.v2beta.CreateModelRequest,
                     com.google.longrunning.Operation>(service, METHODID_CREATE_MODEL)))
+        .addMethod(
+            getGetModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.retail.v2beta.GetModelRequest,
+                    com.google.cloud.retail.v2beta.Model>(service, METHODID_GET_MODEL)))
         .addMethod(
             getPauseModelMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1084,6 +1190,7 @@ public final class ModelServiceGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new ModelServiceFileDescriptorSupplier())
                       .addMethod(getCreateModelMethod())
+                      .addMethod(getGetModelMethod())
                       .addMethod(getPauseModelMethod())
                       .addMethod(getResumeModelMethod())
                       .addMethod(getDeleteModelMethod())

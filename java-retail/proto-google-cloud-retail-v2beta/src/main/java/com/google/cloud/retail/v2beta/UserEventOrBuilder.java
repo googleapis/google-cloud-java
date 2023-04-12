@@ -1056,4 +1056,37 @@ public interface UserEventOrBuilder
    * @return The bytes for pageViewId.
    */
   com.google.protobuf.ByteString getPageViewIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The entity for customers that may run multiple different entities, domains,
+   * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+   * `google.com`, `youtube.com`, etc.
+   * It is recommended to set this field to get better per-entity search,
+   * completion and prediction results.
+   * </pre>
+   *
+   * <code>string entity = 23;</code>
+   *
+   * @return The entity.
+   */
+  java.lang.String getEntity();
+  /**
+   *
+   *
+   * <pre>
+   * The entity for customers that may run multiple different entities, domains,
+   * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+   * `google.com`, `youtube.com`, etc.
+   * It is recommended to set this field to get better per-entity search,
+   * completion and prediction results.
+   * </pre>
+   *
+   * <code>string entity = 23;</code>
+   *
+   * @return The bytes for entity.
+   */
+  com.google.protobuf.ByteString getEntityBytes();
 }

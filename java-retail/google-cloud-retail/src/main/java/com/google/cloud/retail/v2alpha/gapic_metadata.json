@@ -89,6 +89,24 @@
         }
       }
     },
+    "MerchantCenterAccountLinkService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "MerchantCenterAccountLinkServiceClient",
+          "rpcs": {
+            "CreateMerchantCenterAccountLink": {
+              "methods": ["createMerchantCenterAccountLinkAsync", "createMerchantCenterAccountLinkAsync", "createMerchantCenterAccountLinkAsync", "createMerchantCenterAccountLinkOperationCallable", "createMerchantCenterAccountLinkCallable"]
+            },
+            "DeleteMerchantCenterAccountLink": {
+              "methods": ["deleteMerchantCenterAccountLink", "deleteMerchantCenterAccountLink", "deleteMerchantCenterAccountLink", "deleteMerchantCenterAccountLinkCallable"]
+            },
+            "ListMerchantCenterAccountLinks": {
+              "methods": ["listMerchantCenterAccountLinks", "listMerchantCenterAccountLinks", "listMerchantCenterAccountLinks", "listMerchantCenterAccountLinksCallable"]
+            }
+          }
+        }
+      }
+    },
     "ModelService": {
       "clients": {
         "grpc": {
@@ -99,6 +117,9 @@
             },
             "DeleteModel": {
               "methods": ["deleteModel", "deleteModel", "deleteModel", "deleteModelCallable"]
+            },
+            "GetModel": {
+              "methods": ["getModel", "getModel", "getModel", "getModelCallable"]
             },
             "ListModels": {
               "methods": ["listModels", "listModels", "listModels", "listModelsPagedCallable", "listModelsCallable"]

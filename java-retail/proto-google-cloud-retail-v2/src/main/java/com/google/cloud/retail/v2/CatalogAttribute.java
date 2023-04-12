@@ -727,8 +727,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Value used when unset. Defaults to
-     * [EXACT_SEARCHABLE_DISABLED][google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption.EXACT_SEARCHABLE_DISABLED].
+     * Value used when unset.
      * </pre>
      *
      * <code>EXACT_SEARCHABLE_OPTION_UNSPECIFIED = 0;</code>
@@ -761,8 +760,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Value used when unset. Defaults to
-     * [EXACT_SEARCHABLE_DISABLED][google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption.EXACT_SEARCHABLE_DISABLED].
+     * Value used when unset.
      * </pre>
      *
      * <code>EXACT_SEARCHABLE_OPTION_UNSPECIFIED = 0;</code>
@@ -889,8 +887,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Value used when unset. Defaults to
-     * [RETRIEVABLE_DISABLED][google.cloud.retail.v2.CatalogAttribute.RetrievableOption.RETRIEVABLE_DISABLED].
+     * Value used when unset.
      * </pre>
      *
      * <code>RETRIEVABLE_OPTION_UNSPECIFIED = 0;</code>
@@ -923,8 +920,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Value used when unset. Defaults to
-     * [RETRIEVABLE_DISABLED][google.cloud.retail.v2.CatalogAttribute.RetrievableOption.RETRIEVABLE_DISABLED].
+     * Value used when unset.
      * </pre>
      *
      * <code>RETRIEVABLE_OPTION_UNSPECIFIED = 0;</code>
@@ -1052,6 +1048,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    * characters and underscores. For example, an attribute named
    * `attributes.abc_xyz` can be indexed, but an attribute named
    * `attributes.abc-xyz` cannot be indexed.
+   * If the attribute key starts with `attributes.`, then the attribute is a
+   * custom attribute. Attributes such as `brands`, `patterns`, and `title` are
+   * built-in and called system attributes.
    * </pre>
    *
    * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1081,6 +1080,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    * characters and underscores. For example, an attribute named
    * `attributes.abc_xyz` can be indexed, but an attribute named
    * `attributes.abc-xyz` cannot be indexed.
+   * If the attribute key starts with `attributes.`, then the attribute is a
+   * custom attribute. Attributes such as `brands`, `patterns`, and `title` are
+   * built-in and called system attributes.
    * </pre>
    *
    * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1341,7 +1343,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    * <pre>
    * If EXACT_SEARCHABLE_ENABLED, attribute values will be exact searchable.
    * This property only applies to textual custom attributes and requires
-   * indexable set to enabled to enable exact-searchable.
+   * indexable set to enabled to enable exact-searchable. If unset, the server
+   * behavior defaults to
+   * [EXACT_SEARCHABLE_DISABLED][google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption.EXACT_SEARCHABLE_DISABLED].
    * </pre>
    *
    * <code>
@@ -1360,7 +1364,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    * <pre>
    * If EXACT_SEARCHABLE_ENABLED, attribute values will be exact searchable.
    * This property only applies to textual custom attributes and requires
-   * indexable set to enabled to enable exact-searchable.
+   * indexable set to enabled to enable exact-searchable. If unset, the server
+   * behavior defaults to
+   * [EXACT_SEARCHABLE_DISABLED][google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption.EXACT_SEARCHABLE_DISABLED].
    * </pre>
    *
    * <code>
@@ -1387,7 +1393,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * If RETRIEVABLE_ENABLED, attribute values are retrievable in the search
-   * results.
+   * results. If unset, the server behavior defaults to
+   * [RETRIEVABLE_DISABLED][google.cloud.retail.v2.CatalogAttribute.RetrievableOption.RETRIEVABLE_DISABLED].
    * </pre>
    *
    * <code>.google.cloud.retail.v2.CatalogAttribute.RetrievableOption retrievable_option = 12;
@@ -1404,7 +1411,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * If RETRIEVABLE_ENABLED, attribute values are retrievable in the search
-   * results.
+   * results. If unset, the server behavior defaults to
+   * [RETRIEVABLE_DISABLED][google.cloud.retail.v2.CatalogAttribute.RetrievableOption.RETRIEVABLE_DISABLED].
    * </pre>
    *
    * <code>.google.cloud.retail.v2.CatalogAttribute.RetrievableOption retrievable_option = 12;
@@ -1957,6 +1965,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * characters and underscores. For example, an attribute named
      * `attributes.abc_xyz` can be indexed, but an attribute named
      * `attributes.abc-xyz` cannot be indexed.
+     * If the attribute key starts with `attributes.`, then the attribute is a
+     * custom attribute. Attributes such as `brands`, `patterns`, and `title` are
+     * built-in and called system attributes.
      * </pre>
      *
      * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1985,6 +1996,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * characters and underscores. For example, an attribute named
      * `attributes.abc_xyz` can be indexed, but an attribute named
      * `attributes.abc-xyz` cannot be indexed.
+     * If the attribute key starts with `attributes.`, then the attribute is a
+     * custom attribute. Attributes such as `brands`, `patterns`, and `title` are
+     * built-in and called system attributes.
      * </pre>
      *
      * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2013,6 +2027,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * characters and underscores. For example, an attribute named
      * `attributes.abc_xyz` can be indexed, but an attribute named
      * `attributes.abc-xyz` cannot be indexed.
+     * If the attribute key starts with `attributes.`, then the attribute is a
+     * custom attribute. Attributes such as `brands`, `patterns`, and `title` are
+     * built-in and called system attributes.
      * </pre>
      *
      * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2040,6 +2057,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * characters and underscores. For example, an attribute named
      * `attributes.abc_xyz` can be indexed, but an attribute named
      * `attributes.abc-xyz` cannot be indexed.
+     * If the attribute key starts with `attributes.`, then the attribute is a
+     * custom attribute. Attributes such as `brands`, `patterns`, and `title` are
+     * built-in and called system attributes.
      * </pre>
      *
      * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2063,6 +2083,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * characters and underscores. For example, an attribute named
      * `attributes.abc_xyz` can be indexed, but an attribute named
      * `attributes.abc-xyz` cannot be indexed.
+     * If the attribute key starts with `attributes.`, then the attribute is a
+     * custom attribute. Attributes such as `brands`, `patterns`, and `title` are
+     * built-in and called system attributes.
      * </pre>
      *
      * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2686,7 +2709,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * <pre>
      * If EXACT_SEARCHABLE_ENABLED, attribute values will be exact searchable.
      * This property only applies to textual custom attributes and requires
-     * indexable set to enabled to enable exact-searchable.
+     * indexable set to enabled to enable exact-searchable. If unset, the server
+     * behavior defaults to
+     * [EXACT_SEARCHABLE_DISABLED][google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption.EXACT_SEARCHABLE_DISABLED].
      * </pre>
      *
      * <code>
@@ -2705,7 +2730,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * <pre>
      * If EXACT_SEARCHABLE_ENABLED, attribute values will be exact searchable.
      * This property only applies to textual custom attributes and requires
-     * indexable set to enabled to enable exact-searchable.
+     * indexable set to enabled to enable exact-searchable. If unset, the server
+     * behavior defaults to
+     * [EXACT_SEARCHABLE_DISABLED][google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption.EXACT_SEARCHABLE_DISABLED].
      * </pre>
      *
      * <code>
@@ -2727,7 +2754,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * <pre>
      * If EXACT_SEARCHABLE_ENABLED, attribute values will be exact searchable.
      * This property only applies to textual custom attributes and requires
-     * indexable set to enabled to enable exact-searchable.
+     * indexable set to enabled to enable exact-searchable. If unset, the server
+     * behavior defaults to
+     * [EXACT_SEARCHABLE_DISABLED][google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption.EXACT_SEARCHABLE_DISABLED].
      * </pre>
      *
      * <code>
@@ -2752,7 +2781,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * <pre>
      * If EXACT_SEARCHABLE_ENABLED, attribute values will be exact searchable.
      * This property only applies to textual custom attributes and requires
-     * indexable set to enabled to enable exact-searchable.
+     * indexable set to enabled to enable exact-searchable. If unset, the server
+     * behavior defaults to
+     * [EXACT_SEARCHABLE_DISABLED][google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption.EXACT_SEARCHABLE_DISABLED].
      * </pre>
      *
      * <code>
@@ -2778,7 +2809,9 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      * <pre>
      * If EXACT_SEARCHABLE_ENABLED, attribute values will be exact searchable.
      * This property only applies to textual custom attributes and requires
-     * indexable set to enabled to enable exact-searchable.
+     * indexable set to enabled to enable exact-searchable. If unset, the server
+     * behavior defaults to
+     * [EXACT_SEARCHABLE_DISABLED][google.cloud.retail.v2.CatalogAttribute.ExactSearchableOption.EXACT_SEARCHABLE_DISABLED].
      * </pre>
      *
      * <code>
@@ -2800,7 +2833,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * If RETRIEVABLE_ENABLED, attribute values are retrievable in the search
-     * results.
+     * results. If unset, the server behavior defaults to
+     * [RETRIEVABLE_DISABLED][google.cloud.retail.v2.CatalogAttribute.RetrievableOption.RETRIEVABLE_DISABLED].
      * </pre>
      *
      * <code>.google.cloud.retail.v2.CatalogAttribute.RetrievableOption retrievable_option = 12;
@@ -2817,7 +2851,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * If RETRIEVABLE_ENABLED, attribute values are retrievable in the search
-     * results.
+     * results. If unset, the server behavior defaults to
+     * [RETRIEVABLE_DISABLED][google.cloud.retail.v2.CatalogAttribute.RetrievableOption.RETRIEVABLE_DISABLED].
      * </pre>
      *
      * <code>.google.cloud.retail.v2.CatalogAttribute.RetrievableOption retrievable_option = 12;
@@ -2837,7 +2872,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * If RETRIEVABLE_ENABLED, attribute values are retrievable in the search
-     * results.
+     * results. If unset, the server behavior defaults to
+     * [RETRIEVABLE_DISABLED][google.cloud.retail.v2.CatalogAttribute.RetrievableOption.RETRIEVABLE_DISABLED].
      * </pre>
      *
      * <code>.google.cloud.retail.v2.CatalogAttribute.RetrievableOption retrievable_option = 12;
@@ -2859,7 +2895,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * If RETRIEVABLE_ENABLED, attribute values are retrievable in the search
-     * results.
+     * results. If unset, the server behavior defaults to
+     * [RETRIEVABLE_DISABLED][google.cloud.retail.v2.CatalogAttribute.RetrievableOption.RETRIEVABLE_DISABLED].
      * </pre>
      *
      * <code>.google.cloud.retail.v2.CatalogAttribute.RetrievableOption retrievable_option = 12;
@@ -2883,7 +2920,8 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * If RETRIEVABLE_ENABLED, attribute values are retrievable in the search
-     * results.
+     * results. If unset, the server behavior defaults to
+     * [RETRIEVABLE_DISABLED][google.cloud.retail.v2.CatalogAttribute.RetrievableOption.RETRIEVABLE_DISABLED].
      * </pre>
      *
      * <code>.google.cloud.retail.v2.CatalogAttribute.RetrievableOption retrievable_option = 12;

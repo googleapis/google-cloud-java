@@ -158,6 +158,31 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public static final int FORCE_FIELD_NUMBER = 4;
+  private boolean force_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * This value only applies to the case when the target product is of type
+   * PRIMARY.
+   * When deleting a product of VARIANT/COLLECTION type, this value
+   * will be ignored.
+   * When set to true, the subsequent variant products will be
+   * deleted.
+   * When set to false, if the primary product has active variant products, an
+   * error will be returned.
+   * </pre>
+   *
+   * <code>bool force = 4;</code>
+   *
+   * @return The force.
+   */
+  @java.lang.Override
+  public boolean getForce() {
+    return force_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -175,6 +200,9 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (force_ != false) {
+      output.writeBool(4, force_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -186,6 +214,9 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (force_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, force_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -204,6 +235,7 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
         (com.google.cloud.retail.v2alpha.DeleteProductRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (getForce() != other.getForce()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -217,6 +249,8 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + FORCE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getForce());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -359,6 +393,7 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      force_ = false;
       return this;
     }
 
@@ -397,6 +432,9 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.force_ = force_;
       }
     }
 
@@ -451,6 +489,9 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.getForce() != false) {
+        setForce(other.getForce());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -483,6 +524,12 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 32:
+              {
+                force_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -699,6 +746,80 @@ public final class DeleteProductRequest extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       name_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private boolean force_;
+    /**
+     *
+     *
+     * <pre>
+     * This value only applies to the case when the target product is of type
+     * PRIMARY.
+     * When deleting a product of VARIANT/COLLECTION type, this value
+     * will be ignored.
+     * When set to true, the subsequent variant products will be
+     * deleted.
+     * When set to false, if the primary product has active variant products, an
+     * error will be returned.
+     * </pre>
+     *
+     * <code>bool force = 4;</code>
+     *
+     * @return The force.
+     */
+    @java.lang.Override
+    public boolean getForce() {
+      return force_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This value only applies to the case when the target product is of type
+     * PRIMARY.
+     * When deleting a product of VARIANT/COLLECTION type, this value
+     * will be ignored.
+     * When set to true, the subsequent variant products will be
+     * deleted.
+     * When set to false, if the primary product has active variant products, an
+     * error will be returned.
+     * </pre>
+     *
+     * <code>bool force = 4;</code>
+     *
+     * @param value The force to set.
+     * @return This builder for chaining.
+     */
+    public Builder setForce(boolean value) {
+
+      force_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This value only applies to the case when the target product is of type
+     * PRIMARY.
+     * When deleting a product of VARIANT/COLLECTION type, this value
+     * will be ignored.
+     * When set to true, the subsequent variant products will be
+     * deleted.
+     * When set to false, if the primary product has active variant products, an
+     * error will be returned.
+     * </pre>
+     *
+     * <code>bool force = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearForce() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      force_ = false;
       onChanged();
       return this;
     }

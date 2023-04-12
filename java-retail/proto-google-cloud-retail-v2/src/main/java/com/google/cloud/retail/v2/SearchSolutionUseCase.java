@@ -159,7 +159,7 @@ public enum SearchSolutionUseCase implements com.google.protobuf.ProtocolMessage
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.retail.v2.CommonProto.getDescriptor().getEnumTypes().get(2);
+    return com.google.cloud.retail.v2.CommonProto.getDescriptor().getEnumTypes().get(3);
   }
 
   private static final SearchSolutionUseCase[] VALUES = values();

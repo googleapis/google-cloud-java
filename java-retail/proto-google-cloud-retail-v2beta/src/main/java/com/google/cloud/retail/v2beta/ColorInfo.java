@@ -183,7 +183,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
    * names, such as the color aliases used in the website frontend. Normally
    * it is expected to have only 1 color. May consider using single "Mixed"
    * instead of multiple values.
-   * A maximum of 25 colors are allowed. Each value must be a UTF-8 encoded
+   * A maximum of 75 colors are allowed. Each value must be a UTF-8 encoded
    * string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
    * Google Merchant Center property
@@ -206,7 +206,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
    * names, such as the color aliases used in the website frontend. Normally
    * it is expected to have only 1 color. May consider using single "Mixed"
    * instead of multiple values.
-   * A maximum of 25 colors are allowed. Each value must be a UTF-8 encoded
+   * A maximum of 75 colors are allowed. Each value must be a UTF-8 encoded
    * string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
    * Google Merchant Center property
@@ -229,7 +229,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
    * names, such as the color aliases used in the website frontend. Normally
    * it is expected to have only 1 color. May consider using single "Mixed"
    * instead of multiple values.
-   * A maximum of 25 colors are allowed. Each value must be a UTF-8 encoded
+   * A maximum of 75 colors are allowed. Each value must be a UTF-8 encoded
    * string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
    * Google Merchant Center property
@@ -253,7 +253,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
    * names, such as the color aliases used in the website frontend. Normally
    * it is expected to have only 1 color. May consider using single "Mixed"
    * instead of multiple values.
-   * A maximum of 25 colors are allowed. Each value must be a UTF-8 encoded
+   * A maximum of 75 colors are allowed. Each value must be a UTF-8 encoded
    * string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
    * Google Merchant Center property
@@ -945,7 +945,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * names, such as the color aliases used in the website frontend. Normally
      * it is expected to have only 1 color. May consider using single "Mixed"
      * instead of multiple values.
-     * A maximum of 25 colors are allowed. Each value must be a UTF-8 encoded
+     * A maximum of 75 colors are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
@@ -968,7 +968,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * names, such as the color aliases used in the website frontend. Normally
      * it is expected to have only 1 color. May consider using single "Mixed"
      * instead of multiple values.
-     * A maximum of 25 colors are allowed. Each value must be a UTF-8 encoded
+     * A maximum of 75 colors are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
@@ -991,7 +991,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * names, such as the color aliases used in the website frontend. Normally
      * it is expected to have only 1 color. May consider using single "Mixed"
      * instead of multiple values.
-     * A maximum of 25 colors are allowed. Each value must be a UTF-8 encoded
+     * A maximum of 75 colors are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
@@ -1015,7 +1015,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * names, such as the color aliases used in the website frontend. Normally
      * it is expected to have only 1 color. May consider using single "Mixed"
      * instead of multiple values.
-     * A maximum of 25 colors are allowed. Each value must be a UTF-8 encoded
+     * A maximum of 75 colors are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
@@ -1039,7 +1039,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * names, such as the color aliases used in the website frontend. Normally
      * it is expected to have only 1 color. May consider using single "Mixed"
      * instead of multiple values.
-     * A maximum of 25 colors are allowed. Each value must be a UTF-8 encoded
+     * A maximum of 75 colors are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
@@ -1070,7 +1070,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * names, such as the color aliases used in the website frontend. Normally
      * it is expected to have only 1 color. May consider using single "Mixed"
      * instead of multiple values.
-     * A maximum of 25 colors are allowed. Each value must be a UTF-8 encoded
+     * A maximum of 75 colors are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
@@ -1100,7 +1100,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * names, such as the color aliases used in the website frontend. Normally
      * it is expected to have only 1 color. May consider using single "Mixed"
      * instead of multiple values.
-     * A maximum of 25 colors are allowed. Each value must be a UTF-8 encoded
+     * A maximum of 75 colors are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
@@ -1127,7 +1127,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * names, such as the color aliases used in the website frontend. Normally
      * it is expected to have only 1 color. May consider using single "Mixed"
      * instead of multiple values.
-     * A maximum of 25 colors are allowed. Each value must be a UTF-8 encoded
+     * A maximum of 75 colors are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
@@ -1153,7 +1153,7 @@ public final class ColorInfo extends com.google.protobuf.GeneratedMessageV3
      * names, such as the color aliases used in the website frontend. Normally
      * it is expected to have only 1 color. May consider using single "Mixed"
      * instead of multiple values.
-     * A maximum of 25 colors are allowed. Each value must be a UTF-8 encoded
+     * A maximum of 75 colors are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
      * Google Merchant Center property

@@ -1075,9 +1075,6 @@ public class ProductServiceClient implements BackgroundResource {
    * with the stale updates are not marked as [done][google.longrunning.Operation.done] until they
    * are obsolete.
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
-   * Search on Cloud Console before using this feature.
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1201,9 +1198,6 @@ public class ProductServiceClient implements BackgroundResource {
    * with the stale updates are not marked as [done][google.longrunning.Operation.done] until they
    * are obsolete.
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
-   * Search on Cloud Console before using this feature.
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1274,9 +1268,6 @@ public class ProductServiceClient implements BackgroundResource {
    * <p>If conflicting updates are issued, the [Operation][google.longrunning.Operation]s associated
    * with the stale updates are not marked as [done][google.longrunning.Operation.done] until they
    * are obsolete.
-   *
-   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
-   * Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -1349,9 +1340,6 @@ public class ProductServiceClient implements BackgroundResource {
    * with the stale updates are not marked as [done][google.longrunning.Operation.done] until they
    * are obsolete.
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
-   * Search on Cloud Console before using this feature.
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1380,7 +1368,15 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Incrementally adds place IDs to
+   * It is recommended to use the
+   * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+   * method instead of
+   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces].
+   * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+   * achieves the same results but provides more fine-grained control over ingesting local inventory
+   * data.
+   *
+   * <p>Incrementally adds place IDs to
    * [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
    *
    * <p>This process is asynchronous and does not require the
@@ -1398,9 +1394,6 @@ public class ProductServiceClient implements BackgroundResource {
    * <p>If conflicting updates are issued, the [Operation][google.longrunning.Operation]s associated
    * with the stale updates will not be marked as [done][google.longrunning.Operation.done] until
    * being obsolete.
-   *
-   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
-   * Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -1437,7 +1430,15 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Incrementally adds place IDs to
+   * It is recommended to use the
+   * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+   * method instead of
+   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces].
+   * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+   * achieves the same results but provides more fine-grained control over ingesting local inventory
+   * data.
+   *
+   * <p>Incrementally adds place IDs to
    * [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
    *
    * <p>This process is asynchronous and does not require the
@@ -1455,9 +1456,6 @@ public class ProductServiceClient implements BackgroundResource {
    * <p>If conflicting updates are issued, the [Operation][google.longrunning.Operation]s associated
    * with the stale updates will not be marked as [done][google.longrunning.Operation.done] until
    * being obsolete.
-   *
-   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
-   * Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -1493,7 +1491,15 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Incrementally adds place IDs to
+   * It is recommended to use the
+   * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+   * method instead of
+   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces].
+   * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+   * achieves the same results but provides more fine-grained control over ingesting local inventory
+   * data.
+   *
+   * <p>Incrementally adds place IDs to
    * [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
    *
    * <p>This process is asynchronous and does not require the
@@ -1511,9 +1517,6 @@ public class ProductServiceClient implements BackgroundResource {
    * <p>If conflicting updates are issued, the [Operation][google.longrunning.Operation]s associated
    * with the stale updates will not be marked as [done][google.longrunning.Operation.done] until
    * being obsolete.
-   *
-   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
-   * Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -1549,7 +1552,15 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Incrementally adds place IDs to
+   * It is recommended to use the
+   * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+   * method instead of
+   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces].
+   * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+   * achieves the same results but provides more fine-grained control over ingesting local inventory
+   * data.
+   *
+   * <p>Incrementally adds place IDs to
    * [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
    *
    * <p>This process is asynchronous and does not require the
@@ -1567,9 +1578,6 @@ public class ProductServiceClient implements BackgroundResource {
    * <p>If conflicting updates are issued, the [Operation][google.longrunning.Operation]s associated
    * with the stale updates will not be marked as [done][google.longrunning.Operation.done] until
    * being obsolete.
-   *
-   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
-   * Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -1605,7 +1613,15 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Incrementally adds place IDs to
+   * It is recommended to use the
+   * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+   * method instead of
+   * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2.ProductService.AddFulfillmentPlaces].
+   * [ProductService.AddLocalInventories][google.cloud.retail.v2.ProductService.AddLocalInventories]
+   * achieves the same results but provides more fine-grained control over ingesting local inventory
+   * data.
+   *
+   * <p>Incrementally adds place IDs to
    * [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
    *
    * <p>This process is asynchronous and does not require the
@@ -1623,9 +1639,6 @@ public class ProductServiceClient implements BackgroundResource {
    * <p>If conflicting updates are issued, the [Operation][google.longrunning.Operation]s associated
    * with the stale updates will not be marked as [done][google.longrunning.Operation.done] until
    * being obsolete.
-   *
-   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
-   * Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -1660,7 +1673,15 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Incrementally removes place IDs from a
+   * It is recommended to use the
+   * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+   * method instead of
+   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+   * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+   * achieves the same results but provides more fine-grained control over ingesting local inventory
+   * data.
+   *
+   * <p>Incrementally removes place IDs from a
    * [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
    *
    * <p>This process is asynchronous and does not require the
@@ -1678,9 +1699,6 @@ public class ProductServiceClient implements BackgroundResource {
    * <p>If conflicting updates are issued, the [Operation][google.longrunning.Operation]s associated
    * with the stale updates will not be marked as [done][google.longrunning.Operation.done] until
    * being obsolete.
-   *
-   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
-   * Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -1717,7 +1735,15 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Incrementally removes place IDs from a
+   * It is recommended to use the
+   * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+   * method instead of
+   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+   * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+   * achieves the same results but provides more fine-grained control over ingesting local inventory
+   * data.
+   *
+   * <p>Incrementally removes place IDs from a
    * [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
    *
    * <p>This process is asynchronous and does not require the
@@ -1735,9 +1761,6 @@ public class ProductServiceClient implements BackgroundResource {
    * <p>If conflicting updates are issued, the [Operation][google.longrunning.Operation]s associated
    * with the stale updates will not be marked as [done][google.longrunning.Operation.done] until
    * being obsolete.
-   *
-   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
-   * Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -1773,7 +1796,15 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Incrementally removes place IDs from a
+   * It is recommended to use the
+   * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+   * method instead of
+   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+   * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+   * achieves the same results but provides more fine-grained control over ingesting local inventory
+   * data.
+   *
+   * <p>Incrementally removes place IDs from a
    * [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
    *
    * <p>This process is asynchronous and does not require the
@@ -1791,9 +1822,6 @@ public class ProductServiceClient implements BackgroundResource {
    * <p>If conflicting updates are issued, the [Operation][google.longrunning.Operation]s associated
    * with the stale updates will not be marked as [done][google.longrunning.Operation.done] until
    * being obsolete.
-   *
-   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
-   * Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -1829,7 +1857,15 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Incrementally removes place IDs from a
+   * It is recommended to use the
+   * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+   * method instead of
+   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+   * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+   * achieves the same results but provides more fine-grained control over ingesting local inventory
+   * data.
+   *
+   * <p>Incrementally removes place IDs from a
    * [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
    *
    * <p>This process is asynchronous and does not require the
@@ -1847,9 +1883,6 @@ public class ProductServiceClient implements BackgroundResource {
    * <p>If conflicting updates are issued, the [Operation][google.longrunning.Operation]s associated
    * with the stale updates will not be marked as [done][google.longrunning.Operation.done] until
    * being obsolete.
-   *
-   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
-   * Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -1887,7 +1920,15 @@ public class ProductServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Incrementally removes place IDs from a
+   * It is recommended to use the
+   * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+   * method instead of
+   * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
+   * [ProductService.RemoveLocalInventories][google.cloud.retail.v2.ProductService.RemoveLocalInventories]
+   * achieves the same results but provides more fine-grained control over ingesting local inventory
+   * data.
+   *
+   * <p>Incrementally removes place IDs from a
    * [Product.fulfillment_info.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids].
    *
    * <p>This process is asynchronous and does not require the
@@ -1905,9 +1946,6 @@ public class ProductServiceClient implements BackgroundResource {
    * <p>If conflicting updates are issued, the [Operation][google.longrunning.Operation]s associated
    * with the stale updates will not be marked as [done][google.longrunning.Operation.done] until
    * being obsolete.
-   *
-   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
-   * Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -1965,9 +2003,6 @@ public class ProductServiceClient implements BackgroundResource {
    * <p>If conflicting updates are issued, the [Operation][google.longrunning.Operation]s associated
    * with the stale updates will not be marked as [done][google.longrunning.Operation.done] until
    * being obsolete.
-   *
-   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
-   * Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -2028,9 +2063,6 @@ public class ProductServiceClient implements BackgroundResource {
    * with the stale updates will not be marked as [done][google.longrunning.Operation.done] until
    * being obsolete.
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
-   * Search on Cloud Console before using this feature.
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -2088,9 +2120,6 @@ public class ProductServiceClient implements BackgroundResource {
    * <p>If conflicting updates are issued, the [Operation][google.longrunning.Operation]s associated
    * with the stale updates will not be marked as [done][google.longrunning.Operation.done] until
    * being obsolete.
-   *
-   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
-   * Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -2150,9 +2179,6 @@ public class ProductServiceClient implements BackgroundResource {
    * with the stale updates will not be marked as [done][google.longrunning.Operation.done] until
    * being obsolete.
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
-   * Search on Cloud Console before using this feature.
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -2211,9 +2237,6 @@ public class ProductServiceClient implements BackgroundResource {
    * with the stale updates will not be marked as [done][google.longrunning.Operation.done] until
    * being obsolete.
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
-   * Search on Cloud Console before using this feature.
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -2267,9 +2290,6 @@ public class ProductServiceClient implements BackgroundResource {
    * <p>If conflicting updates are issued, the [Operation][google.longrunning.Operation]s associated
    * with the stale updates will not be marked as [done][google.longrunning.Operation.done] until
    * being obsolete.
-   *
-   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
-   * Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -2328,9 +2348,6 @@ public class ProductServiceClient implements BackgroundResource {
    * with the stale updates will not be marked as [done][google.longrunning.Operation.done] until
    * being obsolete.
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
-   * Search on Cloud Console before using this feature.
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -2387,9 +2404,6 @@ public class ProductServiceClient implements BackgroundResource {
    * with the stale updates will not be marked as [done][google.longrunning.Operation.done] until
    * being obsolete.
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
-   * Search on Cloud Console before using this feature.
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -2444,9 +2458,6 @@ public class ProductServiceClient implements BackgroundResource {
    * <p>If conflicting updates are issued, the [Operation][google.longrunning.Operation]s associated
    * with the stale updates will not be marked as [done][google.longrunning.Operation.done] until
    * being obsolete.
-   *
-   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
-   * Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *
@@ -2504,9 +2515,6 @@ public class ProductServiceClient implements BackgroundResource {
    * <p>If conflicting updates are issued, the [Operation][google.longrunning.Operation]s associated
    * with the stale updates will not be marked as [done][google.longrunning.Operation.done] until
    * being obsolete.
-   *
-   * <p>This feature is only available for users who have Retail Search enabled. Enable Retail
-   * Search on Cloud Console before using this feature.
    *
    * <p>Sample code:
    *

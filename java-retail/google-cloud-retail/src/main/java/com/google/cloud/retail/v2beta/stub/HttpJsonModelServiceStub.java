@@ -37,6 +37,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2beta.CreateModelMetadata;
 import com.google.cloud.retail.v2beta.CreateModelRequest;
 import com.google.cloud.retail.v2beta.DeleteModelRequest;
+import com.google.cloud.retail.v2beta.GetModelRequest;
 import com.google.cloud.retail.v2beta.ListModelsRequest;
 import com.google.cloud.retail.v2beta.ListModelsResponse;
 import com.google.cloud.retail.v2beta.Model;
@@ -115,6 +116,39 @@ public class HttpJsonModelServiceStub extends ModelServiceStub {
                   (CreateModelRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
               .build();
+
+  private static final ApiMethodDescriptor<GetModelRequest, Model> getModelMethodDescriptor =
+      ApiMethodDescriptor.<GetModelRequest, Model>newBuilder()
+          .setFullMethodName("google.cloud.retail.v2beta.ModelService/GetModel")
+          .setHttpMethod("GET")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<GetModelRequest>newBuilder()
+                  .setPath(
+                      "/v2beta/{name=projects/*/locations/*/catalogs/*/models/*}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetModelRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetModelRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Model>newBuilder()
+                  .setDefaultInstance(Model.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
 
   private static final ApiMethodDescriptor<PauseModelRequest, Model> pauseModelMethodDescriptor =
       ApiMethodDescriptor.<PauseModelRequest, Model>newBuilder()
@@ -335,6 +369,7 @@ public class HttpJsonModelServiceStub extends ModelServiceStub {
   private final UnaryCallable<CreateModelRequest, Operation> createModelCallable;
   private final OperationCallable<CreateModelRequest, Model, CreateModelMetadata>
       createModelOperationCallable;
+  private final UnaryCallable<GetModelRequest, Model> getModelCallable;
   private final UnaryCallable<PauseModelRequest, Model> pauseModelCallable;
   private final UnaryCallable<ResumeModelRequest, Model> resumeModelCallable;
   private final UnaryCallable<DeleteModelRequest, Empty> deleteModelCallable;
@@ -432,6 +467,11 @@ public class HttpJsonModelServiceStub extends ModelServiceStub {
             .setMethodDescriptor(createModelMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<GetModelRequest, Model> getModelTransportSettings =
+        HttpJsonCallSettings.<GetModelRequest, Model>newBuilder()
+            .setMethodDescriptor(getModelMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
     HttpJsonCallSettings<PauseModelRequest, Model> pauseModelTransportSettings =
         HttpJsonCallSettings.<PauseModelRequest, Model>newBuilder()
             .setMethodDescriptor(pauseModelMethodDescriptor)
@@ -472,6 +512,9 @@ public class HttpJsonModelServiceStub extends ModelServiceStub {
             settings.createModelOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.getModelCallable =
+        callableFactory.createUnaryCallable(
+            getModelTransportSettings, settings.getModelSettings(), clientContext);
     this.pauseModelCallable =
         callableFactory.createUnaryCallable(
             pauseModelTransportSettings, settings.pauseModelSettings(), clientContext);
@@ -508,6 +551,7 @@ public class HttpJsonModelServiceStub extends ModelServiceStub {
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(createModelMethodDescriptor);
+    methodDescriptors.add(getModelMethodDescriptor);
     methodDescriptors.add(pauseModelMethodDescriptor);
     methodDescriptors.add(resumeModelMethodDescriptor);
     methodDescriptors.add(deleteModelMethodDescriptor);
@@ -530,6 +574,11 @@ public class HttpJsonModelServiceStub extends ModelServiceStub {
   public OperationCallable<CreateModelRequest, Model, CreateModelMetadata>
       createModelOperationCallable() {
     return createModelOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetModelRequest, Model> getModelCallable() {
+    return getModelCallable;
   }
 
   @Override

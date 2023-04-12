@@ -40,7 +40,7 @@
  *
  * <p>======================= CompletionServiceClient =======================
  *
- * <p>Service Description: Auto-completion service for retail.
+ * <p>Service Description: Autocomplete service for retail.
  *
  * <p>This feature is only available for users who have Retail Search enabled. Enable Retail Search
  * on Cloud Console before using this feature.
@@ -64,6 +64,7 @@
  *           .setDataset("dataset1443214456")
  *           .setMaxSuggestions(618824852)
  *           .setEnableAttributeSuggestions(true)
+ *           .setEntity("entity-1298275357")
  *           .build();
  *   CompleteQueryResponse response = completionServiceClient.completeQuery(request);
  * }
@@ -86,6 +87,27 @@
  *   Control control = Control.newBuilder().build();
  *   String controlId = "controlId-395080872";
  *   Control response = controlServiceClient.createControl(parent, control, controlId);
+ * }
+ * }</pre>
+ *
+ * <p>======================= MerchantCenterAccountLinkServiceClient =======================
+ *
+ * <p>Service Description: Merchant Center Link service to link a Branch to a Merchant Center
+ * Account.
+ *
+ * <p>Sample for MerchantCenterAccountLinkServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (MerchantCenterAccountLinkServiceClient merchantCenterAccountLinkServiceClient =
+ *     MerchantCenterAccountLinkServiceClient.create()) {
+ *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
+ *   ListMerchantCenterAccountLinksResponse response =
+ *       merchantCenterAccountLinkServiceClient.listMerchantCenterAccountLinks(parent);
  * }
  * }</pre>
  *
@@ -115,7 +137,7 @@
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
  *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[MODEL]");
- *   Model response = modelServiceClient.pauseModel(name);
+ *   Model response = modelServiceClient.getModel(name);
  * }
  * }</pre>
  *
@@ -207,6 +229,7 @@
  *           .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
  *           .putAllLabels(new HashMap<String, String>())
  *           .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
+ *           .setEntity("entity-1298275357")
  *           .build();
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
  *     // doThingsWith(element);

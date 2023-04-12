@@ -46,6 +46,7 @@ public class SyncCompleteQuery {
               .setDataset("dataset1443214456")
               .setMaxSuggestions(618824852)
               .setEnableAttributeSuggestions(true)
+              .setEntity("entity-1298275357")
               .build();
       CompleteQueryResponse response = completionServiceClient.completeQuery(request);
     }

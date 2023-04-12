@@ -25,6 +25,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2alpha.CreateModelMetadata;
 import com.google.cloud.retail.v2alpha.CreateModelRequest;
 import com.google.cloud.retail.v2alpha.DeleteModelRequest;
+import com.google.cloud.retail.v2alpha.GetModelRequest;
 import com.google.cloud.retail.v2alpha.ListModelsRequest;
 import com.google.cloud.retail.v2alpha.ListModelsResponse;
 import com.google.cloud.retail.v2alpha.Model;
@@ -64,6 +65,10 @@ public abstract class ModelServiceStub implements BackgroundResource {
 
   public UnaryCallable<CreateModelRequest, Operation> createModelCallable() {
     throw new UnsupportedOperationException("Not implemented: createModelCallable()");
+  }
+
+  public UnaryCallable<GetModelRequest, Model> getModelCallable() {
+    throw new UnsupportedOperationException("Not implemented: getModelCallable()");
   }
 
   public UnaryCallable<PauseModelRequest, Model> pauseModelCallable() {

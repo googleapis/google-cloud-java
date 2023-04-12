@@ -91,6 +91,7 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
                                 fields,
                                 "enableAttributeSuggestions",
                                 request.getEnableAttributeSuggestions());
+                            serializer.putQueryParam(fields, "entity", request.getEntity());
                             serializer.putQueryParam(
                                 fields, "languageCodes", request.getLanguageCodesList());
                             serializer.putQueryParam(

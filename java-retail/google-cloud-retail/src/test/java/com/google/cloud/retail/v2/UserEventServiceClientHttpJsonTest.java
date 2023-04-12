@@ -104,6 +104,7 @@ public class UserEventServiceClientHttpJsonTest {
             .setUri("uri116076")
             .setReferrerUri("referrerUri348088525")
             .setPageViewId("pageViewId1362499087")
+            .setEntity("entity-1298275357")
             .build();
     mockService.addResponse(expectedResponse);
 

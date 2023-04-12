@@ -34,6 +34,9 @@ public interface CatalogAttributeOrBuilder
    * characters and underscores. For example, an attribute named
    * `attributes.abc_xyz` can be indexed, but an attribute named
    * `attributes.abc-xyz` cannot be indexed.
+   * If the attribute key starts with `attributes.`, then the attribute is a
+   * custom attribute. Attributes such as `brands`, `patterns`, and `title` are
+   * built-in and called system attributes.
    * </pre>
    *
    * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -52,6 +55,9 @@ public interface CatalogAttributeOrBuilder
    * characters and underscores. For example, an attribute named
    * `attributes.abc_xyz` can be indexed, but an attribute named
    * `attributes.abc-xyz` cannot be indexed.
+   * If the attribute key starts with `attributes.`, then the attribute is a
+   * custom attribute. Attributes such as `brands`, `patterns`, and `title` are
+   * built-in and called system attributes.
    * </pre>
    *
    * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -290,7 +296,9 @@ public interface CatalogAttributeOrBuilder
    * <pre>
    * If EXACT_SEARCHABLE_ENABLED, attribute values will be exact searchable.
    * This property only applies to textual custom attributes and requires
-   * indexable set to enabled to enable exact-searchable.
+   * indexable set to enabled to enable exact-searchable. If unset, the server
+   * behavior defaults to
+   * [EXACT_SEARCHABLE_DISABLED][google.cloud.retail.v2alpha.CatalogAttribute.ExactSearchableOption.EXACT_SEARCHABLE_DISABLED].
    * </pre>
    *
    * <code>
@@ -306,7 +314,9 @@ public interface CatalogAttributeOrBuilder
    * <pre>
    * If EXACT_SEARCHABLE_ENABLED, attribute values will be exact searchable.
    * This property only applies to textual custom attributes and requires
-   * indexable set to enabled to enable exact-searchable.
+   * indexable set to enabled to enable exact-searchable. If unset, the server
+   * behavior defaults to
+   * [EXACT_SEARCHABLE_DISABLED][google.cloud.retail.v2alpha.CatalogAttribute.ExactSearchableOption.EXACT_SEARCHABLE_DISABLED].
    * </pre>
    *
    * <code>
@@ -322,7 +332,8 @@ public interface CatalogAttributeOrBuilder
    *
    * <pre>
    * If RETRIEVABLE_ENABLED, attribute values are retrievable in the search
-   * results.
+   * results. If unset, the server behavior defaults to
+   * [RETRIEVABLE_DISABLED][google.cloud.retail.v2alpha.CatalogAttribute.RetrievableOption.RETRIEVABLE_DISABLED].
    * </pre>
    *
    * <code>.google.cloud.retail.v2alpha.CatalogAttribute.RetrievableOption retrievable_option = 12;
@@ -336,7 +347,8 @@ public interface CatalogAttributeOrBuilder
    *
    * <pre>
    * If RETRIEVABLE_ENABLED, attribute values are retrievable in the search
-   * results.
+   * results. If unset, the server behavior defaults to
+   * [RETRIEVABLE_DISABLED][google.cloud.retail.v2alpha.CatalogAttribute.RetrievableOption.RETRIEVABLE_DISABLED].
    * </pre>
    *
    * <code>.google.cloud.retail.v2alpha.CatalogAttribute.RetrievableOption retrievable_option = 12;

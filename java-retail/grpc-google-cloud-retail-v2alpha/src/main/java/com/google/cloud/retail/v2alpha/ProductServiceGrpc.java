@@ -800,8 +800,6 @@ public final class ProductServiceGrpc {
      * [Operation][google.longrunning.Operation]s associated with the stale
      * updates are not marked as [done][google.longrunning.Operation.done] until
      * they are obsolete.
-     * This feature is only available for users who have Retail Search enabled.
-     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     default void setInventory(
@@ -815,6 +813,13 @@ public final class ProductServiceGrpc {
      *
      *
      * <pre>
+     * It is recommended to use the
+     * [ProductService.AddLocalInventories][google.cloud.retail.v2alpha.ProductService.AddLocalInventories]
+     * method instead of
+     * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces].
+     * [ProductService.AddLocalInventories][google.cloud.retail.v2alpha.ProductService.AddLocalInventories]
+     * achieves the same results but provides more fine-grained control over
+     * ingesting local inventory data.
      * Incrementally adds place IDs to
      * [Product.fulfillment_info.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids].
      * This process is asynchronous and does not require the
@@ -833,8 +838,6 @@ public final class ProductServiceGrpc {
      * [Operation][google.longrunning.Operation]s associated with the stale
      * updates will not be marked as [done][google.longrunning.Operation.done]
      * until being obsolete.
-     * This feature is only available for users who have Retail Search enabled.
-     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     default void addFulfillmentPlaces(
@@ -848,6 +851,13 @@ public final class ProductServiceGrpc {
      *
      *
      * <pre>
+     * It is recommended to use the
+     * [ProductService.RemoveLocalInventories][google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories]
+     * method instead of
+     * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces].
+     * [ProductService.RemoveLocalInventories][google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories]
+     * achieves the same results but provides more fine-grained control over
+     * ingesting local inventory data.
      * Incrementally removes place IDs from a
      * [Product.fulfillment_info.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids].
      * This process is asynchronous and does not require the
@@ -866,8 +876,6 @@ public final class ProductServiceGrpc {
      * [Operation][google.longrunning.Operation]s associated with the stale
      * updates will not be marked as [done][google.longrunning.Operation.done]
      * until being obsolete.
-     * This feature is only available for users who have Retail Search enabled.
-     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     default void removeFulfillmentPlaces(
@@ -905,8 +913,6 @@ public final class ProductServiceGrpc {
      * [Operation][google.longrunning.Operation]s associated with the stale
      * updates will not be marked as [done][google.longrunning.Operation.done]
      * until being obsolete.
-     * This feature is only available for users who have Retail Search enabled.
-     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     default void addLocalInventories(
@@ -942,8 +948,6 @@ public final class ProductServiceGrpc {
      * [Operation][google.longrunning.Operation]s associated with the stale
      * updates will not be marked as [done][google.longrunning.Operation.done]
      * until being obsolete.
-     * This feature is only available for users who have Retail Search enabled.
-     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     default void removeLocalInventories(
@@ -1165,8 +1169,6 @@ public final class ProductServiceGrpc {
      * [Operation][google.longrunning.Operation]s associated with the stale
      * updates are not marked as [done][google.longrunning.Operation.done] until
      * they are obsolete.
-     * This feature is only available for users who have Retail Search enabled.
-     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public void setInventory(
@@ -1182,6 +1184,13 @@ public final class ProductServiceGrpc {
      *
      *
      * <pre>
+     * It is recommended to use the
+     * [ProductService.AddLocalInventories][google.cloud.retail.v2alpha.ProductService.AddLocalInventories]
+     * method instead of
+     * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces].
+     * [ProductService.AddLocalInventories][google.cloud.retail.v2alpha.ProductService.AddLocalInventories]
+     * achieves the same results but provides more fine-grained control over
+     * ingesting local inventory data.
      * Incrementally adds place IDs to
      * [Product.fulfillment_info.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids].
      * This process is asynchronous and does not require the
@@ -1200,8 +1209,6 @@ public final class ProductServiceGrpc {
      * [Operation][google.longrunning.Operation]s associated with the stale
      * updates will not be marked as [done][google.longrunning.Operation.done]
      * until being obsolete.
-     * This feature is only available for users who have Retail Search enabled.
-     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public void addFulfillmentPlaces(
@@ -1217,6 +1224,13 @@ public final class ProductServiceGrpc {
      *
      *
      * <pre>
+     * It is recommended to use the
+     * [ProductService.RemoveLocalInventories][google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories]
+     * method instead of
+     * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces].
+     * [ProductService.RemoveLocalInventories][google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories]
+     * achieves the same results but provides more fine-grained control over
+     * ingesting local inventory data.
      * Incrementally removes place IDs from a
      * [Product.fulfillment_info.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids].
      * This process is asynchronous and does not require the
@@ -1235,8 +1249,6 @@ public final class ProductServiceGrpc {
      * [Operation][google.longrunning.Operation]s associated with the stale
      * updates will not be marked as [done][google.longrunning.Operation.done]
      * until being obsolete.
-     * This feature is only available for users who have Retail Search enabled.
-     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public void removeFulfillmentPlaces(
@@ -1276,8 +1288,6 @@ public final class ProductServiceGrpc {
      * [Operation][google.longrunning.Operation]s associated with the stale
      * updates will not be marked as [done][google.longrunning.Operation.done]
      * until being obsolete.
-     * This feature is only available for users who have Retail Search enabled.
-     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public void addLocalInventories(
@@ -1315,8 +1325,6 @@ public final class ProductServiceGrpc {
      * [Operation][google.longrunning.Operation]s associated with the stale
      * updates will not be marked as [done][google.longrunning.Operation.done]
      * until being obsolete.
-     * This feature is only available for users who have Retail Search enabled.
-     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public void removeLocalInventories(
@@ -1504,8 +1512,6 @@ public final class ProductServiceGrpc {
      * [Operation][google.longrunning.Operation]s associated with the stale
      * updates are not marked as [done][google.longrunning.Operation.done] until
      * they are obsolete.
-     * This feature is only available for users who have Retail Search enabled.
-     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public com.google.longrunning.Operation setInventory(
@@ -1518,6 +1524,13 @@ public final class ProductServiceGrpc {
      *
      *
      * <pre>
+     * It is recommended to use the
+     * [ProductService.AddLocalInventories][google.cloud.retail.v2alpha.ProductService.AddLocalInventories]
+     * method instead of
+     * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces].
+     * [ProductService.AddLocalInventories][google.cloud.retail.v2alpha.ProductService.AddLocalInventories]
+     * achieves the same results but provides more fine-grained control over
+     * ingesting local inventory data.
      * Incrementally adds place IDs to
      * [Product.fulfillment_info.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids].
      * This process is asynchronous and does not require the
@@ -1536,8 +1549,6 @@ public final class ProductServiceGrpc {
      * [Operation][google.longrunning.Operation]s associated with the stale
      * updates will not be marked as [done][google.longrunning.Operation.done]
      * until being obsolete.
-     * This feature is only available for users who have Retail Search enabled.
-     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public com.google.longrunning.Operation addFulfillmentPlaces(
@@ -1550,6 +1561,13 @@ public final class ProductServiceGrpc {
      *
      *
      * <pre>
+     * It is recommended to use the
+     * [ProductService.RemoveLocalInventories][google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories]
+     * method instead of
+     * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces].
+     * [ProductService.RemoveLocalInventories][google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories]
+     * achieves the same results but provides more fine-grained control over
+     * ingesting local inventory data.
      * Incrementally removes place IDs from a
      * [Product.fulfillment_info.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids].
      * This process is asynchronous and does not require the
@@ -1568,8 +1586,6 @@ public final class ProductServiceGrpc {
      * [Operation][google.longrunning.Operation]s associated with the stale
      * updates will not be marked as [done][google.longrunning.Operation.done]
      * until being obsolete.
-     * This feature is only available for users who have Retail Search enabled.
-     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public com.google.longrunning.Operation removeFulfillmentPlaces(
@@ -1606,8 +1622,6 @@ public final class ProductServiceGrpc {
      * [Operation][google.longrunning.Operation]s associated with the stale
      * updates will not be marked as [done][google.longrunning.Operation.done]
      * until being obsolete.
-     * This feature is only available for users who have Retail Search enabled.
-     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public com.google.longrunning.Operation addLocalInventories(
@@ -1642,8 +1656,6 @@ public final class ProductServiceGrpc {
      * [Operation][google.longrunning.Operation]s associated with the stale
      * updates will not be marked as [done][google.longrunning.Operation.done]
      * until being obsolete.
-     * This feature is only available for users who have Retail Search enabled.
-     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public com.google.longrunning.Operation removeLocalInventories(
@@ -1832,8 +1844,6 @@ public final class ProductServiceGrpc {
      * [Operation][google.longrunning.Operation]s associated with the stale
      * updates are not marked as [done][google.longrunning.Operation.done] until
      * they are obsolete.
-     * This feature is only available for users who have Retail Search enabled.
-     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1846,6 +1856,13 @@ public final class ProductServiceGrpc {
      *
      *
      * <pre>
+     * It is recommended to use the
+     * [ProductService.AddLocalInventories][google.cloud.retail.v2alpha.ProductService.AddLocalInventories]
+     * method instead of
+     * [ProductService.AddFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces].
+     * [ProductService.AddLocalInventories][google.cloud.retail.v2alpha.ProductService.AddLocalInventories]
+     * achieves the same results but provides more fine-grained control over
+     * ingesting local inventory data.
      * Incrementally adds place IDs to
      * [Product.fulfillment_info.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids].
      * This process is asynchronous and does not require the
@@ -1864,8 +1881,6 @@ public final class ProductServiceGrpc {
      * [Operation][google.longrunning.Operation]s associated with the stale
      * updates will not be marked as [done][google.longrunning.Operation.done]
      * until being obsolete.
-     * This feature is only available for users who have Retail Search enabled.
-     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1878,6 +1893,13 @@ public final class ProductServiceGrpc {
      *
      *
      * <pre>
+     * It is recommended to use the
+     * [ProductService.RemoveLocalInventories][google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories]
+     * method instead of
+     * [ProductService.RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces].
+     * [ProductService.RemoveLocalInventories][google.cloud.retail.v2alpha.ProductService.RemoveLocalInventories]
+     * achieves the same results but provides more fine-grained control over
+     * ingesting local inventory data.
      * Incrementally removes place IDs from a
      * [Product.fulfillment_info.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids].
      * This process is asynchronous and does not require the
@@ -1896,8 +1918,6 @@ public final class ProductServiceGrpc {
      * [Operation][google.longrunning.Operation]s associated with the stale
      * updates will not be marked as [done][google.longrunning.Operation.done]
      * until being obsolete.
-     * This feature is only available for users who have Retail Search enabled.
-     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1935,8 +1955,6 @@ public final class ProductServiceGrpc {
      * [Operation][google.longrunning.Operation]s associated with the stale
      * updates will not be marked as [done][google.longrunning.Operation.done]
      * until being obsolete.
-     * This feature is only available for users who have Retail Search enabled.
-     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1971,8 +1989,6 @@ public final class ProductServiceGrpc {
      * [Operation][google.longrunning.Operation]s associated with the stale
      * updates will not be marked as [done][google.longrunning.Operation.done]
      * until being obsolete.
-     * This feature is only available for users who have Retail Search enabled.
-     * Enable Retail Search on Cloud Console before using this feature.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

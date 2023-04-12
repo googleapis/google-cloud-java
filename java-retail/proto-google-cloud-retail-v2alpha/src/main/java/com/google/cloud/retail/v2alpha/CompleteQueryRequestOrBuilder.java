@@ -313,4 +313,39 @@ public interface CompleteQueryRequestOrBuilder
    * @return The enableAttributeSuggestions.
    */
   boolean getEnableAttributeSuggestions();
+
+  /**
+   *
+   *
+   * <pre>
+   * The entity for customers that may run multiple different entities, domains,
+   * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+   * `google.com`, `youtube.com`, etc.
+   * If this is set, it should be exactly matched with
+   * [UserEvent.entity][google.cloud.retail.v2alpha.UserEvent.entity] to get
+   * per-entity autocomplete results.
+   * </pre>
+   *
+   * <code>string entity = 10;</code>
+   *
+   * @return The entity.
+   */
+  java.lang.String getEntity();
+  /**
+   *
+   *
+   * <pre>
+   * The entity for customers that may run multiple different entities, domains,
+   * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+   * `google.com`, `youtube.com`, etc.
+   * If this is set, it should be exactly matched with
+   * [UserEvent.entity][google.cloud.retail.v2alpha.UserEvent.entity] to get
+   * per-entity autocomplete results.
+   * </pre>
+   *
+   * <code>string entity = 10;</code>
+   *
+   * @return The bytes for entity.
+   */
+  com.google.protobuf.ByteString getEntityBytes();
 }

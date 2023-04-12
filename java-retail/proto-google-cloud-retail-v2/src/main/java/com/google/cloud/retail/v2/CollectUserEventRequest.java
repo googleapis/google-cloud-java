@@ -120,7 +120,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * The prebuilt rule name that can convert a specific type of raw_json.
-   * For example: "default_schema/v1.0"
+   * For example: "ga4_bq" rule for the GA4 user event schema.
    * </pre>
    *
    * <code>string prebuilt_rule = 6;</code>
@@ -135,7 +135,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * The prebuilt rule name that can convert a specific type of raw_json.
-   * For example: "default_schema/v1.0"
+   * For example: "ga4_bq" rule for the GA4 user event schema.
    * </pre>
    *
    * <code>string prebuilt_rule = 6;</code>
@@ -163,7 +163,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * The prebuilt rule name that can convert a specific type of raw_json.
-   * For example: "default_schema/v1.0"
+   * For example: "ga4_bq" rule for the GA4 user event schema.
    * </pre>
    *
    * <code>string prebuilt_rule = 6;</code>
@@ -932,7 +932,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The prebuilt rule name that can convert a specific type of raw_json.
-     * For example: "default_schema/v1.0"
+     * For example: "ga4_bq" rule for the GA4 user event schema.
      * </pre>
      *
      * <code>string prebuilt_rule = 6;</code>
@@ -948,7 +948,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The prebuilt rule name that can convert a specific type of raw_json.
-     * For example: "default_schema/v1.0"
+     * For example: "ga4_bq" rule for the GA4 user event schema.
      * </pre>
      *
      * <code>string prebuilt_rule = 6;</code>
@@ -977,7 +977,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The prebuilt rule name that can convert a specific type of raw_json.
-     * For example: "default_schema/v1.0"
+     * For example: "ga4_bq" rule for the GA4 user event schema.
      * </pre>
      *
      * <code>string prebuilt_rule = 6;</code>
@@ -1006,7 +1006,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The prebuilt rule name that can convert a specific type of raw_json.
-     * For example: "default_schema/v1.0"
+     * For example: "ga4_bq" rule for the GA4 user event schema.
      * </pre>
      *
      * <code>string prebuilt_rule = 6;</code>
@@ -1028,7 +1028,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The prebuilt rule name that can convert a specific type of raw_json.
-     * For example: "default_schema/v1.0"
+     * For example: "ga4_bq" rule for the GA4 user event schema.
      * </pre>
      *
      * <code>string prebuilt_rule = 6;</code>
@@ -1048,7 +1048,7 @@ public final class CollectUserEventRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * The prebuilt rule name that can convert a specific type of raw_json.
-     * For example: "default_schema/v1.0"
+     * For example: "ga4_bq" rule for the GA4 user event schema.
      * </pre>
      *
      * <code>string prebuilt_rule = 6;</code>

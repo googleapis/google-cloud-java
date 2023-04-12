@@ -53,6 +53,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     variantRollupKeys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     pageCategories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     searchMode_ = 0;
+    entity_ = "";
   }
 
   @java.lang.Override
@@ -898,7 +899,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Set only if values should be bucketized into intervals. Must be set
        * for facets with numerical values. Must not be set for facet with text
-       * values. Maximum number of intervals is 30.
+       * values. Maximum number of intervals is 40.
+       * For all numerical facet keys that appear in the list of products from
+       * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+       * computed from their distribution weekly. If the model assigns a high
+       * score to a numerical facet key and its intervals are not specified in
+       * the search request, these percentiles will become the bounds
+       * for its intervals and will be returned in the response. If the
+       * facet key intervals are specified in the request, then the specified
+       * intervals will be returned instead.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -910,7 +919,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Set only if values should be bucketized into intervals. Must be set
        * for facets with numerical values. Must not be set for facet with text
-       * values. Maximum number of intervals is 30.
+       * values. Maximum number of intervals is 40.
+       * For all numerical facet keys that appear in the list of products from
+       * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+       * computed from their distribution weekly. If the model assigns a high
+       * score to a numerical facet key and its intervals are not specified in
+       * the search request, these percentiles will become the bounds
+       * for its intervals and will be returned in the response. If the
+       * facet key intervals are specified in the request, then the specified
+       * intervals will be returned instead.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -922,7 +939,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Set only if values should be bucketized into intervals. Must be set
        * for facets with numerical values. Must not be set for facet with text
-       * values. Maximum number of intervals is 30.
+       * values. Maximum number of intervals is 40.
+       * For all numerical facet keys that appear in the list of products from
+       * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+       * computed from their distribution weekly. If the model assigns a high
+       * score to a numerical facet key and its intervals are not specified in
+       * the search request, these percentiles will become the bounds
+       * for its intervals and will be returned in the response. If the
+       * facet key intervals are specified in the request, then the specified
+       * intervals will be returned instead.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -934,7 +959,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Set only if values should be bucketized into intervals. Must be set
        * for facets with numerical values. Must not be set for facet with text
-       * values. Maximum number of intervals is 30.
+       * values. Maximum number of intervals is 40.
+       * For all numerical facet keys that appear in the list of products from
+       * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+       * computed from their distribution weekly. If the model assigns a high
+       * score to a numerical facet key and its intervals are not specified in
+       * the search request, these percentiles will become the bounds
+       * for its intervals and will be returned in the response. If the
+       * facet key intervals are specified in the request, then the specified
+       * intervals will be returned instead.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -947,7 +980,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Set only if values should be bucketized into intervals. Must be set
        * for facets with numerical values. Must not be set for facet with text
-       * values. Maximum number of intervals is 30.
+       * values. Maximum number of intervals is 40.
+       * For all numerical facet keys that appear in the list of products from
+       * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+       * computed from their distribution weekly. If the model assigns a high
+       * score to a numerical facet key and its intervals are not specified in
+       * the search request, these percentiles will become the bounds
+       * for its intervals and will be returned in the response. If the
+       * facet key intervals are specified in the request, then the specified
+       * intervals will be returned instead.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -1537,7 +1578,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Set only if values should be bucketized into intervals. Must be set
        * for facets with numerical values. Must not be set for facet with text
-       * values. Maximum number of intervals is 30.
+       * values. Maximum number of intervals is 40.
+       * For all numerical facet keys that appear in the list of products from
+       * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+       * computed from their distribution weekly. If the model assigns a high
+       * score to a numerical facet key and its intervals are not specified in
+       * the search request, these percentiles will become the bounds
+       * for its intervals and will be returned in the response. If the
+       * facet key intervals are specified in the request, then the specified
+       * intervals will be returned instead.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -1552,7 +1601,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Set only if values should be bucketized into intervals. Must be set
        * for facets with numerical values. Must not be set for facet with text
-       * values. Maximum number of intervals is 30.
+       * values. Maximum number of intervals is 40.
+       * For all numerical facet keys that appear in the list of products from
+       * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+       * computed from their distribution weekly. If the model assigns a high
+       * score to a numerical facet key and its intervals are not specified in
+       * the search request, these percentiles will become the bounds
+       * for its intervals and will be returned in the response. If the
+       * facet key intervals are specified in the request, then the specified
+       * intervals will be returned instead.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -1568,7 +1625,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Set only if values should be bucketized into intervals. Must be set
        * for facets with numerical values. Must not be set for facet with text
-       * values. Maximum number of intervals is 30.
+       * values. Maximum number of intervals is 40.
+       * For all numerical facet keys that appear in the list of products from
+       * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+       * computed from their distribution weekly. If the model assigns a high
+       * score to a numerical facet key and its intervals are not specified in
+       * the search request, these percentiles will become the bounds
+       * for its intervals and will be returned in the response. If the
+       * facet key intervals are specified in the request, then the specified
+       * intervals will be returned instead.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -1583,7 +1648,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Set only if values should be bucketized into intervals. Must be set
        * for facets with numerical values. Must not be set for facet with text
-       * values. Maximum number of intervals is 30.
+       * values. Maximum number of intervals is 40.
+       * For all numerical facet keys that appear in the list of products from
+       * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+       * computed from their distribution weekly. If the model assigns a high
+       * score to a numerical facet key and its intervals are not specified in
+       * the search request, these percentiles will become the bounds
+       * for its intervals and will be returned in the response. If the
+       * facet key intervals are specified in the request, then the specified
+       * intervals will be returned instead.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -1598,7 +1671,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Set only if values should be bucketized into intervals. Must be set
        * for facets with numerical values. Must not be set for facet with text
-       * values. Maximum number of intervals is 30.
+       * values. Maximum number of intervals is 40.
+       * For all numerical facet keys that appear in the list of products from
+       * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+       * computed from their distribution weekly. If the model assigns a high
+       * score to a numerical facet key and its intervals are not specified in
+       * the search request, these percentiles will become the bounds
+       * for its intervals and will be returned in the response. If the
+       * facet key intervals are specified in the request, then the specified
+       * intervals will be returned instead.
        * </pre>
        *
        * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3054,7 +3135,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Set only if values should be bucketized into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
-         * values. Maximum number of intervals is 30.
+         * values. Maximum number of intervals is 40.
+         * For all numerical facet keys that appear in the list of products from
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * computed from their distribution weekly. If the model assigns a high
+         * score to a numerical facet key and its intervals are not specified in
+         * the search request, these percentiles will become the bounds
+         * for its intervals and will be returned in the response. If the
+         * facet key intervals are specified in the request, then the specified
+         * intervals will be returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3072,7 +3161,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Set only if values should be bucketized into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
-         * values. Maximum number of intervals is 30.
+         * values. Maximum number of intervals is 40.
+         * For all numerical facet keys that appear in the list of products from
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * computed from their distribution weekly. If the model assigns a high
+         * score to a numerical facet key and its intervals are not specified in
+         * the search request, these percentiles will become the bounds
+         * for its intervals and will be returned in the response. If the
+         * facet key intervals are specified in the request, then the specified
+         * intervals will be returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3090,7 +3187,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Set only if values should be bucketized into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
-         * values. Maximum number of intervals is 30.
+         * values. Maximum number of intervals is 40.
+         * For all numerical facet keys that appear in the list of products from
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * computed from their distribution weekly. If the model assigns a high
+         * score to a numerical facet key and its intervals are not specified in
+         * the search request, these percentiles will become the bounds
+         * for its intervals and will be returned in the response. If the
+         * facet key intervals are specified in the request, then the specified
+         * intervals will be returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3108,7 +3213,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Set only if values should be bucketized into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
-         * values. Maximum number of intervals is 30.
+         * values. Maximum number of intervals is 40.
+         * For all numerical facet keys that appear in the list of products from
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * computed from their distribution weekly. If the model assigns a high
+         * score to a numerical facet key and its intervals are not specified in
+         * the search request, these percentiles will become the bounds
+         * for its intervals and will be returned in the response. If the
+         * facet key intervals are specified in the request, then the specified
+         * intervals will be returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3132,7 +3245,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Set only if values should be bucketized into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
-         * values. Maximum number of intervals is 30.
+         * values. Maximum number of intervals is 40.
+         * For all numerical facet keys that appear in the list of products from
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * computed from their distribution weekly. If the model assigns a high
+         * score to a numerical facet key and its intervals are not specified in
+         * the search request, these percentiles will become the bounds
+         * for its intervals and will be returned in the response. If the
+         * facet key intervals are specified in the request, then the specified
+         * intervals will be returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3154,7 +3275,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Set only if values should be bucketized into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
-         * values. Maximum number of intervals is 30.
+         * values. Maximum number of intervals is 40.
+         * For all numerical facet keys that appear in the list of products from
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * computed from their distribution weekly. If the model assigns a high
+         * score to a numerical facet key and its intervals are not specified in
+         * the search request, these percentiles will become the bounds
+         * for its intervals and will be returned in the response. If the
+         * facet key intervals are specified in the request, then the specified
+         * intervals will be returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3178,7 +3307,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Set only if values should be bucketized into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
-         * values. Maximum number of intervals is 30.
+         * values. Maximum number of intervals is 40.
+         * For all numerical facet keys that appear in the list of products from
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * computed from their distribution weekly. If the model assigns a high
+         * score to a numerical facet key and its intervals are not specified in
+         * the search request, these percentiles will become the bounds
+         * for its intervals and will be returned in the response. If the
+         * facet key intervals are specified in the request, then the specified
+         * intervals will be returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3202,7 +3339,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Set only if values should be bucketized into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
-         * values. Maximum number of intervals is 30.
+         * values. Maximum number of intervals is 40.
+         * For all numerical facet keys that appear in the list of products from
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * computed from their distribution weekly. If the model assigns a high
+         * score to a numerical facet key and its intervals are not specified in
+         * the search request, these percentiles will become the bounds
+         * for its intervals and will be returned in the response. If the
+         * facet key intervals are specified in the request, then the specified
+         * intervals will be returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3224,7 +3369,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Set only if values should be bucketized into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
-         * values. Maximum number of intervals is 30.
+         * values. Maximum number of intervals is 40.
+         * For all numerical facet keys that appear in the list of products from
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * computed from their distribution weekly. If the model assigns a high
+         * score to a numerical facet key and its intervals are not specified in
+         * the search request, these percentiles will become the bounds
+         * for its intervals and will be returned in the response. If the
+         * facet key intervals are specified in the request, then the specified
+         * intervals will be returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3246,7 +3399,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Set only if values should be bucketized into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
-         * values. Maximum number of intervals is 30.
+         * values. Maximum number of intervals is 40.
+         * For all numerical facet keys that appear in the list of products from
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * computed from their distribution weekly. If the model assigns a high
+         * score to a numerical facet key and its intervals are not specified in
+         * the search request, these percentiles will become the bounds
+         * for its intervals and will be returned in the response. If the
+         * facet key intervals are specified in the request, then the specified
+         * intervals will be returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3268,7 +3429,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Set only if values should be bucketized into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
-         * values. Maximum number of intervals is 30.
+         * values. Maximum number of intervals is 40.
+         * For all numerical facet keys that appear in the list of products from
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * computed from their distribution weekly. If the model assigns a high
+         * score to a numerical facet key and its intervals are not specified in
+         * the search request, these percentiles will become the bounds
+         * for its intervals and will be returned in the response. If the
+         * facet key intervals are specified in the request, then the specified
+         * intervals will be returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3289,7 +3458,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Set only if values should be bucketized into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
-         * values. Maximum number of intervals is 30.
+         * values. Maximum number of intervals is 40.
+         * For all numerical facet keys that appear in the list of products from
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * computed from their distribution weekly. If the model assigns a high
+         * score to a numerical facet key and its intervals are not specified in
+         * the search request, these percentiles will become the bounds
+         * for its intervals and will be returned in the response. If the
+         * facet key intervals are specified in the request, then the specified
+         * intervals will be returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3310,7 +3487,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Set only if values should be bucketized into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
-         * values. Maximum number of intervals is 30.
+         * values. Maximum number of intervals is 40.
+         * For all numerical facet keys that appear in the list of products from
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * computed from their distribution weekly. If the model assigns a high
+         * score to a numerical facet key and its intervals are not specified in
+         * the search request, these percentiles will become the bounds
+         * for its intervals and will be returned in the response. If the
+         * facet key intervals are specified in the request, then the specified
+         * intervals will be returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3324,7 +3509,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Set only if values should be bucketized into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
-         * values. Maximum number of intervals is 30.
+         * values. Maximum number of intervals is 40.
+         * For all numerical facet keys that appear in the list of products from
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * computed from their distribution weekly. If the model assigns a high
+         * score to a numerical facet key and its intervals are not specified in
+         * the search request, these percentiles will become the bounds
+         * for its intervals and will be returned in the response. If the
+         * facet key intervals are specified in the request, then the specified
+         * intervals will be returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3342,7 +3535,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Set only if values should be bucketized into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
-         * values. Maximum number of intervals is 30.
+         * values. Maximum number of intervals is 40.
+         * For all numerical facet keys that appear in the list of products from
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * computed from their distribution weekly. If the model assigns a high
+         * score to a numerical facet key and its intervals are not specified in
+         * the search request, these percentiles will become the bounds
+         * for its intervals and will be returned in the response. If the
+         * facet key intervals are specified in the request, then the specified
+         * intervals will be returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3361,7 +3562,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Set only if values should be bucketized into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
-         * values. Maximum number of intervals is 30.
+         * values. Maximum number of intervals is 40.
+         * For all numerical facet keys that appear in the list of products from
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * computed from their distribution weekly. If the model assigns a high
+         * score to a numerical facet key and its intervals are not specified in
+         * the search request, these percentiles will become the bounds
+         * for its intervals and will be returned in the response. If the
+         * facet key intervals are specified in the request, then the specified
+         * intervals will be returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3376,7 +3585,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Set only if values should be bucketized into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
-         * values. Maximum number of intervals is 30.
+         * values. Maximum number of intervals is 40.
+         * For all numerical facet keys that appear in the list of products from
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * computed from their distribution weekly. If the model assigns a high
+         * score to a numerical facet key and its intervals are not specified in
+         * the search request, these percentiles will become the bounds
+         * for its intervals and will be returned in the response. If the
+         * facet key intervals are specified in the request, then the specified
+         * intervals will be returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -3391,7 +3608,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * Set only if values should be bucketized into intervals. Must be set
          * for facets with numerical values. Must not be set for facet with text
-         * values. Maximum number of intervals is 30.
+         * values. Maximum number of intervals is 40.
+         * For all numerical facet keys that appear in the list of products from
+         * the catalog, the percentiles 0, 10, 30, 50, 70, 90 and 100 are
+         * computed from their distribution weekly. If the model assigns a high
+         * score to a numerical facet key and its intervals are not specified in
+         * the search request, these percentiles will become the bounds
+         * for its intervals and will be returned in the response. If the
+         * facet key intervals are specified in the request, then the specified
+         * intervals will be returned instead.
          * </pre>
          *
          * <code>repeated .google.cloud.retail.v2alpha.Interval intervals = 2;</code>
@@ -12519,7 +12744,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Facet specifications for faceted search. If empty, no facets are returned.
-   * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
+   * A maximum of 200 values are allowed. Otherwise, an INVALID_ARGUMENT error
    * is returned.
    * </pre>
    *
@@ -12535,7 +12760,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Facet specifications for faceted search. If empty, no facets are returned.
-   * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
+   * A maximum of 200 values are allowed. Otherwise, an INVALID_ARGUMENT error
    * is returned.
    * </pre>
    *
@@ -12551,7 +12776,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Facet specifications for faceted search. If empty, no facets are returned.
-   * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
+   * A maximum of 200 values are allowed. Otherwise, an INVALID_ARGUMENT error
    * is returned.
    * </pre>
    *
@@ -12566,7 +12791,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Facet specifications for faceted search. If empty, no facets are returned.
-   * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
+   * A maximum of 200 values are allowed. Otherwise, an INVALID_ARGUMENT error
    * is returned.
    * </pre>
    *
@@ -12581,7 +12806,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Facet specifications for faceted search. If empty, no facets are returned.
-   * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
+   * A maximum of 200 values are allowed. Otherwise, an INVALID_ARGUMENT error
    * is returned.
    * </pre>
    *
@@ -12610,7 +12835,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.retail.v2alpha.SearchRequest.dynamic_facet_spec is deprecated. See
-   *     google/cloud/retail/v2alpha/search_service.proto;l=609
+   *     google/cloud/retail/v2alpha/search_service.proto;l=622
    * @return Whether the dynamicFacetSpec field is set.
    */
   @java.lang.Override
@@ -12633,7 +12858,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.retail.v2alpha.SearchRequest.dynamic_facet_spec is deprecated. See
-   *     google/cloud/retail/v2alpha/search_service.proto;l=609
+   *     google/cloud/retail/v2alpha/search_service.proto;l=622
    * @return The dynamicFacetSpec.
    */
   @java.lang.Override
@@ -13217,7 +13442,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The categories associated with a category page. Required for category
+   * The categories associated with a category page. Must be set for category
    * navigation queries to achieve good search quality. The format should be
    * the same as
    * [UserEvent.page_categories][google.cloud.retail.v2alpha.UserEvent.page_categories];
@@ -13240,7 +13465,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The categories associated with a category page. Required for category
+   * The categories associated with a category page. Must be set for category
    * navigation queries to achieve good search quality. The format should be
    * the same as
    * [UserEvent.page_categories][google.cloud.retail.v2alpha.UserEvent.page_categories];
@@ -13263,7 +13488,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The categories associated with a category page. Required for category
+   * The categories associated with a category page. Must be set for category
    * navigation queries to achieve good search quality. The format should be
    * the same as
    * [UserEvent.page_categories][google.cloud.retail.v2alpha.UserEvent.page_categories];
@@ -13287,7 +13512,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The categories associated with a category page. Required for category
+   * The categories associated with a category page. Must be set for category
    * navigation queries to achieve good search quality. The format should be
    * the same as
    * [UserEvent.page_categories][google.cloud.retail.v2alpha.UserEvent.page_categories];
@@ -13645,6 +13870,67 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         : spellCorrectionSpec_;
   }
 
+  public static final int ENTITY_FIELD_NUMBER = 38;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object entity_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The entity for customers that may run multiple different entities, domains,
+   * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+   * `google.com`, `youtube.com`, etc.
+   * If this is set, it should be exactly matched with
+   * [UserEvent.entity][google.cloud.retail.v2alpha.UserEvent.entity] to get
+   * search results boosted by entity.
+   * </pre>
+   *
+   * <code>string entity = 38;</code>
+   *
+   * @return The entity.
+   */
+  @java.lang.Override
+  public java.lang.String getEntity() {
+    java.lang.Object ref = entity_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      entity_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The entity for customers that may run multiple different entities, domains,
+   * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+   * `google.com`, `youtube.com`, etc.
+   * If this is set, it should be exactly matched with
+   * [UserEvent.entity][google.cloud.retail.v2alpha.UserEvent.entity] to get
+   * search results boosted by entity.
+   * </pre>
+   *
+   * <code>string entity = 38;</code>
+   *
+   * @return The bytes for entity.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEntityBytes() {
+    java.lang.Object ref = entity_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      entity_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -13728,6 +14014,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 34);
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(35, getSpellCorrectionSpec());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entity_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 38, entity_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -13828,6 +14117,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(35, getSpellCorrectionSpec());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entity_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(38, entity_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -13884,6 +14176,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (hasSpellCorrectionSpec()) {
       if (!getSpellCorrectionSpec().equals(other.getSpellCorrectionSpec())) return false;
     }
+    if (!getEntity().equals(other.getEntity())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -13959,6 +14252,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SPELL_CORRECTION_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getSpellCorrectionSpec().hashCode();
     }
+    hash = (37 * hash) + ENTITY_FIELD_NUMBER;
+    hash = (53 * hash) + getEntity().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -14189,6 +14484,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         spellCorrectionSpecBuilder_.dispose();
         spellCorrectionSpecBuilder_ = null;
       }
+      entity_ = "";
       return this;
     }
 
@@ -14317,6 +14613,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 ? spellCorrectionSpec_
                 : spellCorrectionSpecBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.entity_ = entity_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -14484,6 +14783,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00100000;
       if (other.hasSpellCorrectionSpec()) {
         mergeSpellCorrectionSpec(other.getSpellCorrectionSpec());
+      }
+      if (!other.getEntity().isEmpty()) {
+        entity_ = other.entity_;
+        bitField0_ |= 0x00400000;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -14663,6 +14967,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00200000;
                 break;
               } // case 282
+            case 306:
+              {
+                entity_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 306
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -16099,7 +16409,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
-     * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
+     * A maximum of 200 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
      *
@@ -16118,7 +16428,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
-     * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
+     * A maximum of 200 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
      *
@@ -16136,7 +16446,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
-     * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
+     * A maximum of 200 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
      *
@@ -16154,7 +16464,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
-     * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
+     * A maximum of 200 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
      *
@@ -16179,7 +16489,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
-     * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
+     * A maximum of 200 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
      *
@@ -16202,7 +16512,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
-     * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
+     * A maximum of 200 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
      *
@@ -16226,7 +16536,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
-     * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
+     * A maximum of 200 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
      *
@@ -16251,7 +16561,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
-     * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
+     * A maximum of 200 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
      *
@@ -16273,7 +16583,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
-     * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
+     * A maximum of 200 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
      *
@@ -16296,7 +16606,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
-     * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
+     * A maximum of 200 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
      *
@@ -16319,7 +16629,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
-     * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
+     * A maximum of 200 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
      *
@@ -16340,7 +16650,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
-     * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
+     * A maximum of 200 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
      *
@@ -16361,7 +16671,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
-     * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
+     * A maximum of 200 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
      *
@@ -16376,7 +16686,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
-     * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
+     * A maximum of 200 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
      *
@@ -16395,7 +16705,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
-     * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
+     * A maximum of 200 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
      *
@@ -16415,7 +16725,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
-     * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
+     * A maximum of 200 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
      *
@@ -16430,7 +16740,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
-     * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
+     * A maximum of 200 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
      *
@@ -16447,7 +16757,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Facet specifications for faceted search. If empty, no facets are returned.
-     * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
+     * A maximum of 200 values are allowed. Otherwise, an INVALID_ARGUMENT error
      * is returned.
      * </pre>
      *
@@ -16496,7 +16806,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.retail.v2alpha.SearchRequest.dynamic_facet_spec is deprecated. See
-     *     google/cloud/retail/v2alpha/search_service.proto;l=609
+     *     google/cloud/retail/v2alpha/search_service.proto;l=622
      * @return Whether the dynamicFacetSpec field is set.
      */
     @java.lang.Deprecated
@@ -16518,7 +16828,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.retail.v2alpha.SearchRequest.dynamic_facet_spec is deprecated. See
-     *     google/cloud/retail/v2alpha/search_service.proto;l=609
+     *     google/cloud/retail/v2alpha/search_service.proto;l=622
      * @return The dynamicFacetSpec.
      */
     @java.lang.Deprecated
@@ -18179,7 +18489,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The categories associated with a category page. Required for category
+     * The categories associated with a category page. Must be set for category
      * navigation queries to achieve good search quality. The format should be
      * the same as
      * [UserEvent.page_categories][google.cloud.retail.v2alpha.UserEvent.page_categories];
@@ -18202,7 +18512,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The categories associated with a category page. Required for category
+     * The categories associated with a category page. Must be set for category
      * navigation queries to achieve good search quality. The format should be
      * the same as
      * [UserEvent.page_categories][google.cloud.retail.v2alpha.UserEvent.page_categories];
@@ -18225,7 +18535,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The categories associated with a category page. Required for category
+     * The categories associated with a category page. Must be set for category
      * navigation queries to achieve good search quality. The format should be
      * the same as
      * [UserEvent.page_categories][google.cloud.retail.v2alpha.UserEvent.page_categories];
@@ -18249,7 +18559,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The categories associated with a category page. Required for category
+     * The categories associated with a category page. Must be set for category
      * navigation queries to achieve good search quality. The format should be
      * the same as
      * [UserEvent.page_categories][google.cloud.retail.v2alpha.UserEvent.page_categories];
@@ -18273,7 +18583,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The categories associated with a category page. Required for category
+     * The categories associated with a category page. Must be set for category
      * navigation queries to achieve good search quality. The format should be
      * the same as
      * [UserEvent.page_categories][google.cloud.retail.v2alpha.UserEvent.page_categories];
@@ -18304,7 +18614,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The categories associated with a category page. Required for category
+     * The categories associated with a category page. Must be set for category
      * navigation queries to achieve good search quality. The format should be
      * the same as
      * [UserEvent.page_categories][google.cloud.retail.v2alpha.UserEvent.page_categories];
@@ -18334,7 +18644,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The categories associated with a category page. Required for category
+     * The categories associated with a category page. Must be set for category
      * navigation queries to achieve good search quality. The format should be
      * the same as
      * [UserEvent.page_categories][google.cloud.retail.v2alpha.UserEvent.page_categories];
@@ -18361,7 +18671,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The categories associated with a category page. Required for category
+     * The categories associated with a category page. Must be set for category
      * navigation queries to achieve good search quality. The format should be
      * the same as
      * [UserEvent.page_categories][google.cloud.retail.v2alpha.UserEvent.page_categories];
@@ -18387,7 +18697,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The categories associated with a category page. Required for category
+     * The categories associated with a category page. Must be set for category
      * navigation queries to achieve good search quality. The format should be
      * the same as
      * [UserEvent.page_categories][google.cloud.retail.v2alpha.UserEvent.page_categories];
@@ -19270,6 +19580,137 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         spellCorrectionSpec_ = null;
       }
       return spellCorrectionSpecBuilder_;
+    }
+
+    private java.lang.Object entity_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The entity for customers that may run multiple different entities, domains,
+     * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+     * `google.com`, `youtube.com`, etc.
+     * If this is set, it should be exactly matched with
+     * [UserEvent.entity][google.cloud.retail.v2alpha.UserEvent.entity] to get
+     * search results boosted by entity.
+     * </pre>
+     *
+     * <code>string entity = 38;</code>
+     *
+     * @return The entity.
+     */
+    public java.lang.String getEntity() {
+      java.lang.Object ref = entity_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        entity_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The entity for customers that may run multiple different entities, domains,
+     * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+     * `google.com`, `youtube.com`, etc.
+     * If this is set, it should be exactly matched with
+     * [UserEvent.entity][google.cloud.retail.v2alpha.UserEvent.entity] to get
+     * search results boosted by entity.
+     * </pre>
+     *
+     * <code>string entity = 38;</code>
+     *
+     * @return The bytes for entity.
+     */
+    public com.google.protobuf.ByteString getEntityBytes() {
+      java.lang.Object ref = entity_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        entity_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The entity for customers that may run multiple different entities, domains,
+     * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+     * `google.com`, `youtube.com`, etc.
+     * If this is set, it should be exactly matched with
+     * [UserEvent.entity][google.cloud.retail.v2alpha.UserEvent.entity] to get
+     * search results boosted by entity.
+     * </pre>
+     *
+     * <code>string entity = 38;</code>
+     *
+     * @param value The entity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEntity(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      entity_ = value;
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The entity for customers that may run multiple different entities, domains,
+     * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+     * `google.com`, `youtube.com`, etc.
+     * If this is set, it should be exactly matched with
+     * [UserEvent.entity][google.cloud.retail.v2alpha.UserEvent.entity] to get
+     * search results boosted by entity.
+     * </pre>
+     *
+     * <code>string entity = 38;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEntity() {
+      entity_ = getDefaultInstance().getEntity();
+      bitField0_ = (bitField0_ & ~0x00400000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The entity for customers that may run multiple different entities, domains,
+     * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+     * `google.com`, `youtube.com`, etc.
+     * If this is set, it should be exactly matched with
+     * [UserEvent.entity][google.cloud.retail.v2alpha.UserEvent.entity] to get
+     * search results boosted by entity.
+     * </pre>
+     *
+     * <code>string entity = 38;</code>
+     *
+     * @param value The bytes for entity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEntityBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      entity_ = value;
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

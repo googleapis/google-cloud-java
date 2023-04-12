@@ -203,6 +203,100 @@ public class ModelServiceClientTest {
   }
 
   @Test
+  public void getModelTest() throws Exception {
+    Model expectedResponse =
+        Model.newBuilder()
+            .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[MODEL]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setType("type3575610")
+            .setOptimizationObjective("optimizationObjective-1014459828")
+            .setLastTuneTime(Timestamp.newBuilder().build())
+            .setTuningOperation("tuningOperation-1269747150")
+            .setFilteringOption(RecommendationsFilteringOption.forNumber(0))
+            .addAllServingConfigLists(new ArrayList<Model.ServingConfigList>())
+            .build();
+    mockModelService.addResponse(expectedResponse);
+
+    ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[MODEL]");
+
+    Model actualResponse = client.getModel(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetModelRequest actualRequest = ((GetModelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getModelExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[MODEL]");
+      client.getModel(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getModelTest2() throws Exception {
+    Model expectedResponse =
+        Model.newBuilder()
+            .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[MODEL]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setType("type3575610")
+            .setOptimizationObjective("optimizationObjective-1014459828")
+            .setLastTuneTime(Timestamp.newBuilder().build())
+            .setTuningOperation("tuningOperation-1269747150")
+            .setFilteringOption(RecommendationsFilteringOption.forNumber(0))
+            .addAllServingConfigLists(new ArrayList<Model.ServingConfigList>())
+            .build();
+    mockModelService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Model actualResponse = client.getModel(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockModelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetModelRequest actualRequest = ((GetModelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getModelExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getModel(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void pauseModelTest() throws Exception {
     Model expectedResponse =
         Model.newBuilder()

@@ -40,6 +40,7 @@ public class SyncDeleteProduct {
               .setName(
                   ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]")
                       .toString())
+              .setForce(true)
               .build();
       productServiceClient.deleteProduct(request);
     }

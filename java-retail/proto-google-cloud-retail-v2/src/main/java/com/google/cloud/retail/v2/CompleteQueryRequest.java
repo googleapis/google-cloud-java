@@ -22,7 +22,7 @@ package com.google.cloud.retail.v2;
  *
  *
  * <pre>
- * Auto-complete parameters.
+ * Autocomplete parameters.
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2.CompleteQueryRequest}
@@ -44,6 +44,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     languageCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     deviceType_ = "";
     dataset_ = "";
+    entity_ = "";
   }
 
   @java.lang.Override
@@ -496,6 +497,67 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     return maxSuggestions_;
   }
 
+  public static final int ENTITY_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object entity_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The entity for customers that may run multiple different entities, domains,
+   * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+   * `google.com`, `youtube.com`, etc.
+   * If this is set, it should be exactly matched with
+   * [UserEvent.entity][google.cloud.retail.v2.UserEvent.entity] to get
+   * per-entity autocomplete results.
+   * </pre>
+   *
+   * <code>string entity = 10;</code>
+   *
+   * @return The entity.
+   */
+  @java.lang.Override
+  public java.lang.String getEntity() {
+    java.lang.Object ref = entity_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      entity_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The entity for customers that may run multiple different entities, domains,
+   * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+   * `google.com`, `youtube.com`, etc.
+   * If this is set, it should be exactly matched with
+   * [UserEvent.entity][google.cloud.retail.v2.UserEvent.entity] to get
+   * per-entity autocomplete results.
+   * </pre>
+   *
+   * <code>string entity = 10;</code>
+   *
+   * @return The bytes for entity.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEntityBytes() {
+    java.lang.Object ref = entity_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      entity_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -530,6 +592,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(visitorId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, visitorId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entity_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, entity_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -566,6 +631,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(visitorId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, visitorId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entity_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, entity_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -589,6 +657,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     if (!getDeviceType().equals(other.getDeviceType())) return false;
     if (!getDataset().equals(other.getDataset())) return false;
     if (getMaxSuggestions() != other.getMaxSuggestions()) return false;
+    if (!getEntity().equals(other.getEntity())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -616,6 +685,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     hash = (53 * hash) + getDataset().hashCode();
     hash = (37 * hash) + MAX_SUGGESTIONS_FIELD_NUMBER;
     hash = (53 * hash) + getMaxSuggestions();
+    hash = (37 * hash) + ENTITY_FIELD_NUMBER;
+    hash = (53 * hash) + getEntity().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -720,7 +791,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Auto-complete parameters.
+   * Autocomplete parameters.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2.CompleteQueryRequest}
@@ -763,6 +834,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       deviceType_ = "";
       dataset_ = "";
       maxSuggestions_ = 0;
+      entity_ = "";
       return this;
     }
 
@@ -826,6 +898,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.maxSuggestions_ = maxSuggestions_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.entity_ = entity_;
       }
     }
 
@@ -913,6 +988,11 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       if (other.getMaxSuggestions() != 0) {
         setMaxSuggestions(other.getMaxSuggestions());
       }
+      if (!other.getEntity().isEmpty()) {
+        entity_ = other.entity_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -982,6 +1062,12 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000004;
                 break;
               } // case 58
+            case 82:
+              {
+                entity_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1963,6 +2049,137 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     public Builder clearMaxSuggestions() {
       bitField0_ = (bitField0_ & ~0x00000040);
       maxSuggestions_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object entity_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The entity for customers that may run multiple different entities, domains,
+     * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+     * `google.com`, `youtube.com`, etc.
+     * If this is set, it should be exactly matched with
+     * [UserEvent.entity][google.cloud.retail.v2.UserEvent.entity] to get
+     * per-entity autocomplete results.
+     * </pre>
+     *
+     * <code>string entity = 10;</code>
+     *
+     * @return The entity.
+     */
+    public java.lang.String getEntity() {
+      java.lang.Object ref = entity_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        entity_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The entity for customers that may run multiple different entities, domains,
+     * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+     * `google.com`, `youtube.com`, etc.
+     * If this is set, it should be exactly matched with
+     * [UserEvent.entity][google.cloud.retail.v2.UserEvent.entity] to get
+     * per-entity autocomplete results.
+     * </pre>
+     *
+     * <code>string entity = 10;</code>
+     *
+     * @return The bytes for entity.
+     */
+    public com.google.protobuf.ByteString getEntityBytes() {
+      java.lang.Object ref = entity_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        entity_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The entity for customers that may run multiple different entities, domains,
+     * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+     * `google.com`, `youtube.com`, etc.
+     * If this is set, it should be exactly matched with
+     * [UserEvent.entity][google.cloud.retail.v2.UserEvent.entity] to get
+     * per-entity autocomplete results.
+     * </pre>
+     *
+     * <code>string entity = 10;</code>
+     *
+     * @param value The entity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEntity(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      entity_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The entity for customers that may run multiple different entities, domains,
+     * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+     * `google.com`, `youtube.com`, etc.
+     * If this is set, it should be exactly matched with
+     * [UserEvent.entity][google.cloud.retail.v2.UserEvent.entity] to get
+     * per-entity autocomplete results.
+     * </pre>
+     *
+     * <code>string entity = 10;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEntity() {
+      entity_ = getDefaultInstance().getEntity();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The entity for customers that may run multiple different entities, domains,
+     * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+     * `google.com`, `youtube.com`, etc.
+     * If this is set, it should be exactly matched with
+     * [UserEvent.entity][google.cloud.retail.v2.UserEvent.entity] to get
+     * per-entity autocomplete results.
+     * </pre>
+     *
+     * <code>string entity = 10;</code>
+     *
+     * @param value The bytes for entity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEntityBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      entity_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

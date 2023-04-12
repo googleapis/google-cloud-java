@@ -3483,12 +3483,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. A list of local inventories specific to different places.
-   * This is only available for users who have Retail Search enabled, and it can
-   * be managed by
+   * This field can be managed by
    * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
    * and
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
-   * APIs.
+   * APIs if fine-grained, high-volume updates are necessary.
    * </pre>
    *
    * <code>
@@ -3504,12 +3503,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. A list of local inventories specific to different places.
-   * This is only available for users who have Retail Search enabled, and it can
-   * be managed by
+   * This field can be managed by
    * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
    * and
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
-   * APIs.
+   * APIs if fine-grained, high-volume updates are necessary.
    * </pre>
    *
    * <code>
@@ -3526,12 +3524,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. A list of local inventories specific to different places.
-   * This is only available for users who have Retail Search enabled, and it can
-   * be managed by
+   * This field can be managed by
    * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
    * and
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
-   * APIs.
+   * APIs if fine-grained, high-volume updates are necessary.
    * </pre>
    *
    * <code>
@@ -3547,12 +3544,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. A list of local inventories specific to different places.
-   * This is only available for users who have Retail Search enabled, and it can
-   * be managed by
+   * This field can be managed by
    * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
    * and
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
-   * APIs.
+   * APIs if fine-grained, high-volume updates are necessary.
    * </pre>
    *
    * <code>
@@ -3568,12 +3564,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. A list of local inventories specific to different places.
-   * This is only available for users who have Retail Search enabled, and it can
-   * be managed by
+   * This field can be managed by
    * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
    * and
    * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
-   * APIs.
+   * APIs if fine-grained, high-volume updates are necessary.
    * </pre>
    *
    * <code>
@@ -13778,12 +13773,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of local inventories specific to different places.
-     * This is only available for users who have Retail Search enabled, and it can
-     * be managed by
+     * This field can be managed by
      * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
      * and
      * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
-     * APIs.
+     * APIs if fine-grained, high-volume updates are necessary.
      * </pre>
      *
      * <code>
@@ -13802,12 +13796,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of local inventories specific to different places.
-     * This is only available for users who have Retail Search enabled, and it can
-     * be managed by
+     * This field can be managed by
      * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
      * and
      * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
-     * APIs.
+     * APIs if fine-grained, high-volume updates are necessary.
      * </pre>
      *
      * <code>
@@ -13826,12 +13819,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of local inventories specific to different places.
-     * This is only available for users who have Retail Search enabled, and it can
-     * be managed by
+     * This field can be managed by
      * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
      * and
      * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
-     * APIs.
+     * APIs if fine-grained, high-volume updates are necessary.
      * </pre>
      *
      * <code>
@@ -13850,12 +13842,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of local inventories specific to different places.
-     * This is only available for users who have Retail Search enabled, and it can
-     * be managed by
+     * This field can be managed by
      * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
      * and
      * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
-     * APIs.
+     * APIs if fine-grained, high-volume updates are necessary.
      * </pre>
      *
      * <code>
@@ -13881,12 +13872,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of local inventories specific to different places.
-     * This is only available for users who have Retail Search enabled, and it can
-     * be managed by
+     * This field can be managed by
      * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
      * and
      * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
-     * APIs.
+     * APIs if fine-grained, high-volume updates are necessary.
      * </pre>
      *
      * <code>
@@ -13909,12 +13899,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of local inventories specific to different places.
-     * This is only available for users who have Retail Search enabled, and it can
-     * be managed by
+     * This field can be managed by
      * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
      * and
      * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
-     * APIs.
+     * APIs if fine-grained, high-volume updates are necessary.
      * </pre>
      *
      * <code>
@@ -13939,12 +13928,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of local inventories specific to different places.
-     * This is only available for users who have Retail Search enabled, and it can
-     * be managed by
+     * This field can be managed by
      * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
      * and
      * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
-     * APIs.
+     * APIs if fine-grained, high-volume updates are necessary.
      * </pre>
      *
      * <code>
@@ -13970,12 +13958,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of local inventories specific to different places.
-     * This is only available for users who have Retail Search enabled, and it can
-     * be managed by
+     * This field can be managed by
      * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
      * and
      * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
-     * APIs.
+     * APIs if fine-grained, high-volume updates are necessary.
      * </pre>
      *
      * <code>
@@ -13998,12 +13985,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of local inventories specific to different places.
-     * This is only available for users who have Retail Search enabled, and it can
-     * be managed by
+     * This field can be managed by
      * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
      * and
      * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
-     * APIs.
+     * APIs if fine-grained, high-volume updates are necessary.
      * </pre>
      *
      * <code>
@@ -14026,12 +14012,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of local inventories specific to different places.
-     * This is only available for users who have Retail Search enabled, and it can
-     * be managed by
+     * This field can be managed by
      * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
      * and
      * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
-     * APIs.
+     * APIs if fine-grained, high-volume updates are necessary.
      * </pre>
      *
      * <code>
@@ -14054,12 +14039,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of local inventories specific to different places.
-     * This is only available for users who have Retail Search enabled, and it can
-     * be managed by
+     * This field can be managed by
      * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
      * and
      * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
-     * APIs.
+     * APIs if fine-grained, high-volume updates are necessary.
      * </pre>
      *
      * <code>
@@ -14081,12 +14065,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of local inventories specific to different places.
-     * This is only available for users who have Retail Search enabled, and it can
-     * be managed by
+     * This field can be managed by
      * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
      * and
      * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
-     * APIs.
+     * APIs if fine-grained, high-volume updates are necessary.
      * </pre>
      *
      * <code>
@@ -14108,12 +14091,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of local inventories specific to different places.
-     * This is only available for users who have Retail Search enabled, and it can
-     * be managed by
+     * This field can be managed by
      * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
      * and
      * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
-     * APIs.
+     * APIs if fine-grained, high-volume updates are necessary.
      * </pre>
      *
      * <code>
@@ -14129,12 +14111,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of local inventories specific to different places.
-     * This is only available for users who have Retail Search enabled, and it can
-     * be managed by
+     * This field can be managed by
      * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
      * and
      * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
-     * APIs.
+     * APIs if fine-grained, high-volume updates are necessary.
      * </pre>
      *
      * <code>
@@ -14154,12 +14135,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of local inventories specific to different places.
-     * This is only available for users who have Retail Search enabled, and it can
-     * be managed by
+     * This field can be managed by
      * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
      * and
      * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
-     * APIs.
+     * APIs if fine-grained, high-volume updates are necessary.
      * </pre>
      *
      * <code>
@@ -14179,12 +14159,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of local inventories specific to different places.
-     * This is only available for users who have Retail Search enabled, and it can
-     * be managed by
+     * This field can be managed by
      * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
      * and
      * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
-     * APIs.
+     * APIs if fine-grained, high-volume updates are necessary.
      * </pre>
      *
      * <code>
@@ -14200,12 +14179,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of local inventories specific to different places.
-     * This is only available for users who have Retail Search enabled, and it can
-     * be managed by
+     * This field can be managed by
      * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
      * and
      * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
-     * APIs.
+     * APIs if fine-grained, high-volume updates are necessary.
      * </pre>
      *
      * <code>
@@ -14222,12 +14200,11 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. A list of local inventories specific to different places.
-     * This is only available for users who have Retail Search enabled, and it can
-     * be managed by
+     * This field can be managed by
      * [ProductService.AddLocalInventories][google.cloud.retail.v2beta.ProductService.AddLocalInventories]
      * and
      * [ProductService.RemoveLocalInventories][google.cloud.retail.v2beta.ProductService.RemoveLocalInventories]
-     * APIs.
+     * APIs if fine-grained, high-volume updates are necessary.
      * </pre>
      *
      * <code>

@@ -203,6 +203,114 @@ public class ModelServiceClientHttpJsonTest {
   }
 
   @Test
+  public void getModelTest() throws Exception {
+    Model expectedResponse =
+        Model.newBuilder()
+            .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[MODEL]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setType("type3575610")
+            .setOptimizationObjective("optimizationObjective-1014459828")
+            .setLastTuneTime(Timestamp.newBuilder().build())
+            .setTuningOperation("tuningOperation-1269747150")
+            .setFilteringOption(RecommendationsFilteringOption.forNumber(0))
+            .addAllServingConfigLists(new ArrayList<Model.ServingConfigList>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[MODEL]");
+
+    Model actualResponse = client.getModel(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getModelExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[MODEL]");
+      client.getModel(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getModelTest2() throws Exception {
+    Model expectedResponse =
+        Model.newBuilder()
+            .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[MODEL]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setType("type3575610")
+            .setOptimizationObjective("optimizationObjective-1014459828")
+            .setLastTuneTime(Timestamp.newBuilder().build())
+            .setTuningOperation("tuningOperation-1269747150")
+            .setFilteringOption(RecommendationsFilteringOption.forNumber(0))
+            .addAllServingConfigLists(new ArrayList<Model.ServingConfigList>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-7594/locations/location-7594/catalogs/catalog-7594/models/model-7594";
+
+    Model actualResponse = client.getModel(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getModelExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-7594/locations/location-7594/catalogs/catalog-7594/models/model-7594";
+      client.getModel(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void pauseModelTest() throws Exception {
     Model expectedResponse =
         Model.newBuilder()

@@ -87,6 +87,7 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "dataset", request.getDataset());
                             serializer.putQueryParam(fields, "deviceType", request.getDeviceType());
+                            serializer.putQueryParam(fields, "entity", request.getEntity());
                             serializer.putQueryParam(
                                 fields, "languageCodes", request.getLanguageCodesList());
                             serializer.putQueryParam(

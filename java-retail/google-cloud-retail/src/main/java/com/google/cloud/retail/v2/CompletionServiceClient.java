@@ -31,7 +31,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: Auto-completion service for retail.
+ * Service Description: Autocomplete service for retail.
  *
  * <p>This feature is only available for users who have Retail Search enabled. Enable Retail Search
  * on Cloud Console before using this feature.
@@ -55,6 +55,7 @@ import javax.annotation.Generated;
  *           .setDeviceType("deviceType781190832")
  *           .setDataset("dataset1443214456")
  *           .setMaxSuggestions(618824852)
+ *           .setEntity("entity-1298275357")
  *           .build();
  *   CompleteQueryResponse response = completionServiceClient.completeQuery(request);
  * }
@@ -234,6 +235,7 @@ public class CompletionServiceClient implements BackgroundResource {
    *           .setDeviceType("deviceType781190832")
    *           .setDataset("dataset1443214456")
    *           .setMaxSuggestions(618824852)
+   *           .setEntity("entity-1298275357")
    *           .build();
    *   CompleteQueryResponse response = completionServiceClient.completeQuery(request);
    * }
@@ -271,6 +273,7 @@ public class CompletionServiceClient implements BackgroundResource {
    *           .setDeviceType("deviceType781190832")
    *           .setDataset("dataset1443214456")
    *           .setMaxSuggestions(618824852)
+   *           .setEntity("entity-1298275357")
    *           .build();
    *   ApiFuture<CompleteQueryResponse> future =
    *       completionServiceClient.completeQueryCallable().futureCall(request);

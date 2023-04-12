@@ -62,7 +62,7 @@ public final class UserEventProto {
           + "/retail/v2beta/common.proto\032(google/clou"
           + "d/retail/v2beta/product.proto\032\037google/pr"
           + "otobuf/timestamp.proto\032\036google/protobuf/"
-          + "wrappers.proto\"\237\006\n\tUserEvent\022\027\n\nevent_ty"
+          + "wrappers.proto\"\257\006\n\tUserEvent\022\027\n\nevent_ty"
           + "pe\030\001 \001(\tB\003\340A\002\022\027\n\nvisitor_id\030\002 \001(\tB\003\340A\002\022\022"
           + "\n\nsession_id\030\025 \001(\t\022.\n\nevent_time\030\003 \001(\0132\032"
           + ".google.protobuf.Timestamp\022\026\n\016experiment"
@@ -80,23 +80,23 @@ public final class UserEventProto {
           + "\030\013 \003(\t\0227\n\tuser_info\030\014 \001(\0132$.google.cloud"
           + ".retail.v2beta.UserInfo\022\013\n\003uri\030\r \001(\t\022\024\n\014"
           + "referrer_uri\030\016 \001(\t\022\024\n\014page_view_id\030\017 \001(\t"
-          + "\032^\n\017AttributesEntry\022\013\n\003key\030\001 \001(\t\022:\n\005valu"
-          + "e\030\002 \001(\0132+.google.cloud.retail.v2beta.Cus"
-          + "tomAttribute:\0028\001\"y\n\rProductDetail\0229\n\007pro"
-          + "duct\030\001 \001(\0132#.google.cloud.retail.v2beta."
-          + "ProductB\003\340A\002\022-\n\010quantity\030\002 \001(\0132\033.google."
-          + "protobuf.Int32Value\"p\n\020CompletionDetail\022"
-          + "$\n\034completion_attribution_token\030\001 \001(\t\022\033\n"
-          + "\023selected_suggestion\030\002 \001(\t\022\031\n\021selected_p"
-          + "osition\030\003 \001(\005\"n\n\023PurchaseTransaction\022\n\n\002"
-          + "id\030\001 \001(\t\022\024\n\007revenue\030\002 \001(\002B\003\340A\002\022\013\n\003tax\030\003 "
-          + "\001(\002\022\014\n\004cost\030\004 \001(\002\022\032\n\rcurrency_code\030\005 \001(\t"
-          + "B\003\340A\002B\315\001\n\036com.google.cloud.retail.v2beta"
-          + "B\016UserEventProtoP\001Z6cloud.google.com/go/"
-          + "retail/apiv2beta/retailpb;retailpb\242\002\006RET"
-          + "AIL\252\002\032Google.Cloud.Retail.V2Beta\312\002\032Googl"
-          + "e\\Cloud\\Retail\\V2beta\352\002\035Google::Cloud::R"
-          + "etail::V2betab\006proto3"
+          + "\022\016\n\006entity\030\027 \001(\t\032^\n\017AttributesEntry\022\013\n\003k"
+          + "ey\030\001 \001(\t\022:\n\005value\030\002 \001(\0132+.google.cloud.r"
+          + "etail.v2beta.CustomAttribute:\0028\001\"y\n\rProd"
+          + "uctDetail\0229\n\007product\030\001 \001(\0132#.google.clou"
+          + "d.retail.v2beta.ProductB\003\340A\002\022-\n\010quantity"
+          + "\030\002 \001(\0132\033.google.protobuf.Int32Value\"p\n\020C"
+          + "ompletionDetail\022$\n\034completion_attributio"
+          + "n_token\030\001 \001(\t\022\033\n\023selected_suggestion\030\002 \001"
+          + "(\t\022\031\n\021selected_position\030\003 \001(\005\"n\n\023Purchas"
+          + "eTransaction\022\n\n\002id\030\001 \001(\t\022\024\n\007revenue\030\002 \001("
+          + "\002B\003\340A\002\022\013\n\003tax\030\003 \001(\002\022\014\n\004cost\030\004 \001(\002\022\032\n\rcur"
+          + "rency_code\030\005 \001(\tB\003\340A\002B\315\001\n\036com.google.clo"
+          + "ud.retail.v2betaB\016UserEventProtoP\001Z6clou"
+          + "d.google.com/go/retail/apiv2beta/retailp"
+          + "b;retailpb\242\002\006RETAIL\252\002\032Google.Cloud.Retai"
+          + "l.V2Beta\312\002\032Google\\Cloud\\Retail\\V2beta\352\002\035"
+          + "Google::Cloud::Retail::V2betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -134,6 +134,7 @@ public final class UserEventProto {
               "Uri",
               "ReferrerUri",
               "PageViewId",
+              "Entity",
             });
     internal_static_google_cloud_retail_v2beta_UserEvent_AttributesEntry_descriptor =
         internal_static_google_cloud_retail_v2beta_UserEvent_descriptor.getNestedTypes().get(0);

@@ -131,7 +131,7 @@ public interface ServingConfigOrBuilder
    * click-through and conversion rates.
    *  Allowed values are:
    * * `no-price-reranking`
-   * * `low-price-raranking`
+   * * `low-price-reranking`
    * * `medium-price-reranking`
    * * `high-price-reranking`
    * If not specified, we choose default based on model type. Default value:
@@ -157,7 +157,7 @@ public interface ServingConfigOrBuilder
    * click-through and conversion rates.
    *  Allowed values are:
    * * `no-price-reranking`
-   * * `low-price-raranking`
+   * * `low-price-reranking`
    * * `medium-price-reranking`
    * * `high-price-reranking`
    * If not specified, we choose default based on model type. Default value:
@@ -990,8 +990,8 @@ public interface ServingConfigOrBuilder
    *
    *
    * <pre>
-   * What kind of diversity to use - data driven or rule based. If unset,
-   * the server behavior defaults to
+   * What kind of diversity to use - data driven or rule based. If unset, the
+   * server behavior defaults to
    * [RULE_BASED_DIVERSITY][google.cloud.retail.v2.ServingConfig.DiversityType.RULE_BASED_DIVERSITY].
    * </pre>
    *
@@ -1004,8 +1004,8 @@ public interface ServingConfigOrBuilder
    *
    *
    * <pre>
-   * What kind of diversity to use - data driven or rule based. If unset,
-   * the server behavior defaults to
+   * What kind of diversity to use - data driven or rule based. If unset, the
+   * server behavior defaults to
    * [RULE_BASED_DIVERSITY][google.cloud.retail.v2.ServingConfig.DiversityType.RULE_BASED_DIVERSITY].
    * </pre>
    *

@@ -53,6 +53,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     uri_ = "";
     referrerUri_ = "";
     pageViewId_ = "";
+    entity_ = "";
   }
 
   @java.lang.Override
@@ -1544,6 +1545,65 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int ENTITY_FIELD_NUMBER = 23;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object entity_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The entity for customers that may run multiple different entities, domains,
+   * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+   * `google.com`, `youtube.com`, etc.
+   * It is recommended to set this field to get better per-entity search,
+   * completion and prediction results.
+   * </pre>
+   *
+   * <code>string entity = 23;</code>
+   *
+   * @return The entity.
+   */
+  @java.lang.Override
+  public java.lang.String getEntity() {
+    java.lang.Object ref = entity_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      entity_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The entity for customers that may run multiple different entities, domains,
+   * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+   * `google.com`, `youtube.com`, etc.
+   * It is recommended to set this field to get better per-entity search,
+   * completion and prediction results.
+   * </pre>
+   *
+   * <code>string entity = 23;</code>
+   *
+   * @return The bytes for entity.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEntityBytes() {
+    java.lang.Object ref = entity_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      entity_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1616,6 +1676,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     }
     if (completionDetail_ != null) {
       output.writeMessage(22, getCompletionDetail());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entity_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 23, entity_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1704,6 +1767,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     if (completionDetail_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getCompletionDetail());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(entity_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, entity_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1751,6 +1817,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     if (!getUri().equals(other.getUri())) return false;
     if (!getReferrerUri().equals(other.getReferrerUri())) return false;
     if (!getPageViewId().equals(other.getPageViewId())) return false;
+    if (!getEntity().equals(other.getEntity())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1818,6 +1885,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getReferrerUri().hashCode();
     hash = (37 * hash) + PAGE_VIEW_ID_FIELD_NUMBER;
     hash = (53 * hash) + getPageViewId().hashCode();
+    hash = (37 * hash) + ENTITY_FIELD_NUMBER;
+    hash = (53 * hash) + getEntity().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2021,6 +2090,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       uri_ = "";
       referrerUri_ = "";
       pageViewId_ = "";
+      entity_ = "";
       return this;
     }
 
@@ -2134,6 +2204,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
         result.pageViewId_ = pageViewId_;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.entity_ = entity_;
       }
     }
 
@@ -2301,6 +2374,11 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00080000;
         onChanged();
       }
+      if (!other.getEntity().isEmpty()) {
+        entity_ = other.entity_;
+        bitField0_ |= 0x00100000;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2466,6 +2544,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000080;
                 break;
               } // case 178
+            case 186:
+              {
+                entity_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 186
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6237,6 +6321,132 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       pageViewId_ = value;
       bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object entity_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The entity for customers that may run multiple different entities, domains,
+     * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+     * `google.com`, `youtube.com`, etc.
+     * It is recommended to set this field to get better per-entity search,
+     * completion and prediction results.
+     * </pre>
+     *
+     * <code>string entity = 23;</code>
+     *
+     * @return The entity.
+     */
+    public java.lang.String getEntity() {
+      java.lang.Object ref = entity_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        entity_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The entity for customers that may run multiple different entities, domains,
+     * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+     * `google.com`, `youtube.com`, etc.
+     * It is recommended to set this field to get better per-entity search,
+     * completion and prediction results.
+     * </pre>
+     *
+     * <code>string entity = 23;</code>
+     *
+     * @return The bytes for entity.
+     */
+    public com.google.protobuf.ByteString getEntityBytes() {
+      java.lang.Object ref = entity_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        entity_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The entity for customers that may run multiple different entities, domains,
+     * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+     * `google.com`, `youtube.com`, etc.
+     * It is recommended to set this field to get better per-entity search,
+     * completion and prediction results.
+     * </pre>
+     *
+     * <code>string entity = 23;</code>
+     *
+     * @param value The entity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEntity(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      entity_ = value;
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The entity for customers that may run multiple different entities, domains,
+     * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+     * `google.com`, `youtube.com`, etc.
+     * It is recommended to set this field to get better per-entity search,
+     * completion and prediction results.
+     * </pre>
+     *
+     * <code>string entity = 23;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEntity() {
+      entity_ = getDefaultInstance().getEntity();
+      bitField0_ = (bitField0_ & ~0x00100000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The entity for customers that may run multiple different entities, domains,
+     * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+     * `google.com`, `youtube.com`, etc.
+     * It is recommended to set this field to get better per-entity search,
+     * completion and prediction results.
+     * </pre>
+     *
+     * <code>string entity = 23;</code>
+     *
+     * @param value The bytes for entity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEntityBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      entity_ = value;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }

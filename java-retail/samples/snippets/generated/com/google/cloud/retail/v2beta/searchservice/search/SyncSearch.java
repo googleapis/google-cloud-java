@@ -61,6 +61,7 @@ public class SyncSearch {
               .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())
               .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
+              .setEntity("entity-1298275357")
               .build();
       for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
         // doThingsWith(element);

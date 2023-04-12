@@ -103,6 +103,7 @@ public class CompletionServiceClientTest {
             .setDataset("dataset1443214456")
             .setMaxSuggestions(618824852)
             .setEnableAttributeSuggestions(true)
+            .setEntity("entity-1298275357")
             .build();
 
     CompleteQueryResponse actualResponse = client.completeQuery(request);
@@ -121,6 +122,7 @@ public class CompletionServiceClientTest {
     Assert.assertEquals(request.getMaxSuggestions(), actualRequest.getMaxSuggestions());
     Assert.assertEquals(
         request.getEnableAttributeSuggestions(), actualRequest.getEnableAttributeSuggestions());
+    Assert.assertEquals(request.getEntity(), actualRequest.getEntity());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -143,6 +145,7 @@ public class CompletionServiceClientTest {
               .setDataset("dataset1443214456")
               .setMaxSuggestions(618824852)
               .setEnableAttributeSuggestions(true)
+              .setEntity("entity-1298275357")
               .build();
       client.completeQuery(request);
       Assert.fail("No exception raised");

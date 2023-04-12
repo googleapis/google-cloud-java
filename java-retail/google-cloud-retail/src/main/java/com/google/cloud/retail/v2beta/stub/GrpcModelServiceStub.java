@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2beta.CreateModelMetadata;
 import com.google.cloud.retail.v2beta.CreateModelRequest;
 import com.google.cloud.retail.v2beta.DeleteModelRequest;
+import com.google.cloud.retail.v2beta.GetModelRequest;
 import com.google.cloud.retail.v2beta.ListModelsRequest;
 import com.google.cloud.retail.v2beta.ListModelsResponse;
 import com.google.cloud.retail.v2beta.Model;
@@ -63,6 +64,14 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.cloud.retail.v2beta.ModelService/CreateModel")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<GetModelRequest, Model> getModelMethodDescriptor =
+      MethodDescriptor.<GetModelRequest, Model>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.retail.v2beta.ModelService/GetModel")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetModelRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Model.getDefaultInstance()))
           .build();
 
   private static final MethodDescriptor<PauseModelRequest, Model> pauseModelMethodDescriptor =
@@ -117,6 +126,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
   private final UnaryCallable<CreateModelRequest, Operation> createModelCallable;
   private final OperationCallable<CreateModelRequest, Model, CreateModelMetadata>
       createModelOperationCallable;
+  private final UnaryCallable<GetModelRequest, Model> getModelCallable;
   private final UnaryCallable<PauseModelRequest, Model> pauseModelCallable;
   private final UnaryCallable<ResumeModelRequest, Model> resumeModelCallable;
   private final UnaryCallable<DeleteModelRequest, Empty> deleteModelCallable;
@@ -176,6 +186,16 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                 request -> {
                   ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                   params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<GetModelRequest, Model> getModelTransportSettings =
+        GrpcCallSettings.<GetModelRequest, Model>newBuilder()
+            .setMethodDescriptor(getModelMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
                   return params.build();
                 })
             .build();
@@ -249,6 +269,9 @@ public class GrpcModelServiceStub extends ModelServiceStub {
             settings.createModelOperationSettings(),
             clientContext,
             operationsStub);
+    this.getModelCallable =
+        callableFactory.createUnaryCallable(
+            getModelTransportSettings, settings.getModelSettings(), clientContext);
     this.pauseModelCallable =
         callableFactory.createUnaryCallable(
             pauseModelTransportSettings, settings.pauseModelSettings(), clientContext);
@@ -294,6 +317,11 @@ public class GrpcModelServiceStub extends ModelServiceStub {
   public OperationCallable<CreateModelRequest, Model, CreateModelMetadata>
       createModelOperationCallable() {
     return createModelOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetModelRequest, Model> getModelCallable() {
+    return getModelCallable;
   }
 
   @Override

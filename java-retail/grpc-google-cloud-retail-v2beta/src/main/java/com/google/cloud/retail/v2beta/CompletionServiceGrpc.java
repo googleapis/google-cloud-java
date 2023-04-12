@@ -21,7 +21,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Auto-completion service for retail.
+ * Autocomplete service for retail.
  * This feature is only available for users who have Retail Search enabled.
  * Enable Retail Search on Cloud Console before using this feature.
  * </pre>
@@ -178,7 +178,7 @@ public final class CompletionServiceGrpc {
    *
    *
    * <pre>
-   * Auto-completion service for retail.
+   * Autocomplete service for retail.
    * This feature is only available for users who have Retail Search enabled.
    * Enable Retail Search on Cloud Console before using this feature.
    * </pre>
@@ -226,7 +226,7 @@ public final class CompletionServiceGrpc {
    * Base class for the server implementation of the service CompletionService.
    *
    * <pre>
-   * Auto-completion service for retail.
+   * Autocomplete service for retail.
    * This feature is only available for users who have Retail Search enabled.
    * Enable Retail Search on Cloud Console before using this feature.
    * </pre>
@@ -244,7 +244,7 @@ public final class CompletionServiceGrpc {
    * A stub to allow clients to do asynchronous rpc calls to service CompletionService.
    *
    * <pre>
-   * Auto-completion service for retail.
+   * Autocomplete service for retail.
    * This feature is only available for users who have Retail Search enabled.
    * Enable Retail Search on Cloud Console before using this feature.
    * </pre>
@@ -306,7 +306,7 @@ public final class CompletionServiceGrpc {
    * A stub to allow clients to do synchronous rpc calls to service CompletionService.
    *
    * <pre>
-   * Auto-completion service for retail.
+   * Autocomplete service for retail.
    * This feature is only available for users who have Retail Search enabled.
    * Enable Retail Search on Cloud Console before using this feature.
    * </pre>
@@ -362,7 +362,7 @@ public final class CompletionServiceGrpc {
    * A stub to allow clients to do ListenableFuture-style rpc calls to service CompletionService.
    *
    * <pre>
-   * Auto-completion service for retail.
+   * Autocomplete service for retail.
    * This feature is only available for users who have Retail Search enabled.
    * Enable Retail Search on Cloud Console before using this feature.
    * </pre>

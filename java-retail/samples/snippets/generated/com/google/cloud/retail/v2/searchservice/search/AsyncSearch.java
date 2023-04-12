@@ -62,6 +62,7 @@ public class AsyncSearch {
               .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())
               .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
+              .setEntity("entity-1298275357")
               .build();
       ApiFuture<SearchResponse.SearchResult> future =
           searchServiceClient.searchPagedCallable().futureCall(request);

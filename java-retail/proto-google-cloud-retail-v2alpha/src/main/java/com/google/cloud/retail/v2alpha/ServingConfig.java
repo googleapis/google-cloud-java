@@ -89,7 +89,6 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * What type of diversity - data or rule based.
-   * If none is specified, default to rule based.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.retail.v2alpha.ServingConfig.DiversityType}
@@ -436,7 +435,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * click-through and conversion rates.
    *  Allowed values are:
    * * `no-price-reranking`
-   * * `low-price-raranking`
+   * * `low-price-reranking`
    * * `medium-price-reranking`
    * * `high-price-reranking`
    * If not specified, we choose default based on model type. Default value:
@@ -474,7 +473,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    * click-through and conversion rates.
    *  Allowed values are:
    * * `no-price-reranking`
-   * * `low-price-raranking`
+   * * `low-price-reranking`
    * * `medium-price-reranking`
    * * `high-price-reranking`
    * If not specified, we choose default based on model type. Default value:
@@ -1515,7 +1514,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * What kind of diversity to use - data driven or rule based.
+   * What kind of diversity to use - data driven or rule based. If unset, the
+   * server behavior defaults to
+   * [RULE_BASED_DIVERSITY][google.cloud.retail.v2alpha.ServingConfig.DiversityType.RULE_BASED_DIVERSITY].
    * </pre>
    *
    * <code>.google.cloud.retail.v2alpha.ServingConfig.DiversityType diversity_type = 20;</code>
@@ -1530,7 +1531,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * What kind of diversity to use - data driven or rule based.
+   * What kind of diversity to use - data driven or rule based. If unset, the
+   * server behavior defaults to
+   * [RULE_BASED_DIVERSITY][google.cloud.retail.v2alpha.ServingConfig.DiversityType.RULE_BASED_DIVERSITY].
    * </pre>
    *
    * <code>.google.cloud.retail.v2alpha.ServingConfig.DiversityType diversity_type = 20;</code>
@@ -3213,7 +3216,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * click-through and conversion rates.
      *  Allowed values are:
      * * `no-price-reranking`
-     * * `low-price-raranking`
+     * * `low-price-reranking`
      * * `medium-price-reranking`
      * * `high-price-reranking`
      * If not specified, we choose default based on model type. Default value:
@@ -3250,7 +3253,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * click-through and conversion rates.
      *  Allowed values are:
      * * `no-price-reranking`
-     * * `low-price-raranking`
+     * * `low-price-reranking`
      * * `medium-price-reranking`
      * * `high-price-reranking`
      * If not specified, we choose default based on model type. Default value:
@@ -3287,7 +3290,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * click-through and conversion rates.
      *  Allowed values are:
      * * `no-price-reranking`
-     * * `low-price-raranking`
+     * * `low-price-reranking`
      * * `medium-price-reranking`
      * * `high-price-reranking`
      * If not specified, we choose default based on model type. Default value:
@@ -3323,7 +3326,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * click-through and conversion rates.
      *  Allowed values are:
      * * `no-price-reranking`
-     * * `low-price-raranking`
+     * * `low-price-reranking`
      * * `medium-price-reranking`
      * * `high-price-reranking`
      * If not specified, we choose default based on model type. Default value:
@@ -3355,7 +3358,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      * click-through and conversion rates.
      *  Allowed values are:
      * * `no-price-reranking`
-     * * `low-price-raranking`
+     * * `low-price-reranking`
      * * `medium-price-reranking`
      * * `high-price-reranking`
      * If not specified, we choose default based on model type. Default value:
@@ -5979,7 +5982,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * What kind of diversity to use - data driven or rule based.
+     * What kind of diversity to use - data driven or rule based. If unset, the
+     * server behavior defaults to
+     * [RULE_BASED_DIVERSITY][google.cloud.retail.v2alpha.ServingConfig.DiversityType.RULE_BASED_DIVERSITY].
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.ServingConfig.DiversityType diversity_type = 20;</code>
@@ -5994,7 +5999,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * What kind of diversity to use - data driven or rule based.
+     * What kind of diversity to use - data driven or rule based. If unset, the
+     * server behavior defaults to
+     * [RULE_BASED_DIVERSITY][google.cloud.retail.v2alpha.ServingConfig.DiversityType.RULE_BASED_DIVERSITY].
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.ServingConfig.DiversityType diversity_type = 20;</code>
@@ -6012,7 +6019,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * What kind of diversity to use - data driven or rule based.
+     * What kind of diversity to use - data driven or rule based. If unset, the
+     * server behavior defaults to
+     * [RULE_BASED_DIVERSITY][google.cloud.retail.v2alpha.ServingConfig.DiversityType.RULE_BASED_DIVERSITY].
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.ServingConfig.DiversityType diversity_type = 20;</code>
@@ -6031,7 +6040,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * What kind of diversity to use - data driven or rule based.
+     * What kind of diversity to use - data driven or rule based. If unset, the
+     * server behavior defaults to
+     * [RULE_BASED_DIVERSITY][google.cloud.retail.v2alpha.ServingConfig.DiversityType.RULE_BASED_DIVERSITY].
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.ServingConfig.DiversityType diversity_type = 20;</code>
@@ -6053,7 +6064,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * What kind of diversity to use - data driven or rule based.
+     * What kind of diversity to use - data driven or rule based. If unset, the
+     * server behavior defaults to
+     * [RULE_BASED_DIVERSITY][google.cloud.retail.v2alpha.ServingConfig.DiversityType.RULE_BASED_DIVERSITY].
      * </pre>
      *
      * <code>.google.cloud.retail.v2alpha.ServingConfig.DiversityType diversity_type = 20;</code>

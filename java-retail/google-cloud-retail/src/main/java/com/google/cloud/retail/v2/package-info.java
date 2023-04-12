@@ -40,7 +40,7 @@
  *
  * <p>======================= CompletionServiceClient =======================
  *
- * <p>Service Description: Auto-completion service for retail.
+ * <p>Service Description: Autocomplete service for retail.
  *
  * <p>This feature is only available for users who have Retail Search enabled. Enable Retail Search
  * on Cloud Console before using this feature.
@@ -63,6 +63,7 @@
  *           .setDeviceType("deviceType781190832")
  *           .setDataset("dataset1443214456")
  *           .setMaxSuggestions(618824852)
+ *           .setEntity("entity-1298275357")
  *           .build();
  *   CompleteQueryResponse response = completionServiceClient.completeQuery(request);
  * }
@@ -85,6 +86,36 @@
  *   Control control = Control.newBuilder().build();
  *   String controlId = "controlId-395080872";
  *   Control response = controlServiceClient.createControl(parent, control, controlId);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ModelServiceClient =======================
+ *
+ * <p>Service Description: Service for performing CRUD operations on models. Recommendation models
+ * contain all the metadata necessary to generate a set of models for the `Predict()` API. A model
+ * is queried indirectly via a ServingConfig, which associates a model with a given Placement (e.g.
+ * Frequently Bought Together on Home Page).
+ *
+ * <p>This service allows you to do the following:
+ *
+ * <ul>
+ *   <li>Initiate training of a model.
+ *   <li>Pause training of an existing model.
+ *   <li>List all the available models along with their metadata.
+ *   <li>Control their tuning schedule.
+ * </ul>
+ *
+ * <p>Sample for ModelServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+ *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[MODEL]");
+ *   Model response = modelServiceClient.getModel(name);
  * }
  * }</pre>
  *
@@ -176,6 +207,7 @@
  *           .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
  *           .putAllLabels(new HashMap<String, String>())
  *           .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
+ *           .setEntity("entity-1298275357")
  *           .build();
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
  *     // doThingsWith(element);

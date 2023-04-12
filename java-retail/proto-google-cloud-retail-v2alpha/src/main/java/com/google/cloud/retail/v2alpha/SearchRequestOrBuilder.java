@@ -390,7 +390,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Facet specifications for faceted search. If empty, no facets are returned.
-   * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
+   * A maximum of 200 values are allowed. Otherwise, an INVALID_ARGUMENT error
    * is returned.
    * </pre>
    *
@@ -402,7 +402,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Facet specifications for faceted search. If empty, no facets are returned.
-   * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
+   * A maximum of 200 values are allowed. Otherwise, an INVALID_ARGUMENT error
    * is returned.
    * </pre>
    *
@@ -414,7 +414,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Facet specifications for faceted search. If empty, no facets are returned.
-   * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
+   * A maximum of 200 values are allowed. Otherwise, an INVALID_ARGUMENT error
    * is returned.
    * </pre>
    *
@@ -426,7 +426,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Facet specifications for faceted search. If empty, no facets are returned.
-   * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
+   * A maximum of 200 values are allowed. Otherwise, an INVALID_ARGUMENT error
    * is returned.
    * </pre>
    *
@@ -439,7 +439,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Facet specifications for faceted search. If empty, no facets are returned.
-   * A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error
+   * A maximum of 200 values are allowed. Otherwise, an INVALID_ARGUMENT error
    * is returned.
    * </pre>
    *
@@ -463,7 +463,7 @@ public interface SearchRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.retail.v2alpha.SearchRequest.dynamic_facet_spec is deprecated. See
-   *     google/cloud/retail/v2alpha/search_service.proto;l=609
+   *     google/cloud/retail/v2alpha/search_service.proto;l=622
    * @return Whether the dynamicFacetSpec field is set.
    */
   @java.lang.Deprecated
@@ -483,7 +483,7 @@ public interface SearchRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.retail.v2alpha.SearchRequest.dynamic_facet_spec is deprecated. See
-   *     google/cloud/retail/v2alpha/search_service.proto;l=609
+   *     google/cloud/retail/v2alpha/search_service.proto;l=622
    * @return The dynamicFacetSpec.
    */
   @java.lang.Deprecated
@@ -998,7 +998,7 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * The categories associated with a category page. Required for category
+   * The categories associated with a category page. Must be set for category
    * navigation queries to achieve good search quality. The format should be
    * the same as
    * [UserEvent.page_categories][google.cloud.retail.v2alpha.UserEvent.page_categories];
@@ -1019,7 +1019,7 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * The categories associated with a category page. Required for category
+   * The categories associated with a category page. Must be set for category
    * navigation queries to achieve good search quality. The format should be
    * the same as
    * [UserEvent.page_categories][google.cloud.retail.v2alpha.UserEvent.page_categories];
@@ -1040,7 +1040,7 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * The categories associated with a category page. Required for category
+   * The categories associated with a category page. Must be set for category
    * navigation queries to achieve good search quality. The format should be
    * the same as
    * [UserEvent.page_categories][google.cloud.retail.v2alpha.UserEvent.page_categories];
@@ -1062,7 +1062,7 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * The categories associated with a category page. Required for category
+   * The categories associated with a category page. Must be set for category
    * navigation queries to achieve good search quality. The format should be
    * the same as
    * [UserEvent.page_categories][google.cloud.retail.v2alpha.UserEvent.page_categories];
@@ -1343,4 +1343,39 @@ public interface SearchRequestOrBuilder
    */
   com.google.cloud.retail.v2alpha.SearchRequest.SpellCorrectionSpecOrBuilder
       getSpellCorrectionSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The entity for customers that may run multiple different entities, domains,
+   * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+   * `google.com`, `youtube.com`, etc.
+   * If this is set, it should be exactly matched with
+   * [UserEvent.entity][google.cloud.retail.v2alpha.UserEvent.entity] to get
+   * search results boosted by entity.
+   * </pre>
+   *
+   * <code>string entity = 38;</code>
+   *
+   * @return The entity.
+   */
+  java.lang.String getEntity();
+  /**
+   *
+   *
+   * <pre>
+   * The entity for customers that may run multiple different entities, domains,
+   * sites or regions, for example, `Google US`, `Google Ads`, `Waymo`,
+   * `google.com`, `youtube.com`, etc.
+   * If this is set, it should be exactly matched with
+   * [UserEvent.entity][google.cloud.retail.v2alpha.UserEvent.entity] to get
+   * search results boosted by entity.
+   * </pre>
+   *
+   * <code>string entity = 38;</code>
+   *
+   * @return The bytes for entity.
+   */
+  com.google.protobuf.ByteString getEntityBytes();
 }

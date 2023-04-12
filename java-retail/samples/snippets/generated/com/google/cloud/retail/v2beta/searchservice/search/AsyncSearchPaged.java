@@ -62,6 +62,7 @@ public class AsyncSearchPaged {
               .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())
               .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
+              .setEntity("entity-1298275357")
               .build();
       while (true) {
         SearchResponse response = searchServiceClient.searchCallable().call(request);

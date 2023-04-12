@@ -98,6 +98,7 @@ public class CompletionServiceClientHttpJsonTest {
             .setDataset("dataset1443214456")
             .setMaxSuggestions(618824852)
             .setEnableAttributeSuggestions(true)
+            .setEntity("entity-1298275357")
             .build();
 
     CompleteQueryResponse actualResponse = client.completeQuery(request);
@@ -136,6 +137,7 @@ public class CompletionServiceClientHttpJsonTest {
               .setDataset("dataset1443214456")
               .setMaxSuggestions(618824852)
               .setEnableAttributeSuggestions(true)
+              .setEntity("entity-1298275357")
               .build();
       client.completeQuery(request);
       Assert.fail("No exception raised");

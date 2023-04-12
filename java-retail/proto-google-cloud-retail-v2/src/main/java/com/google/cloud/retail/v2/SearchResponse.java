@@ -47,6 +47,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     redirectUri_ = "";
     appliedControls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     invalidConditionBoostSpecs_ = java.util.Collections.emptyList();
+    experimentInfo_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -7274,6 +7275,82 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     return invalidConditionBoostSpecs_.get(index);
   }
 
+  public static final int EXPERIMENT_INFO_FIELD_NUMBER = 17;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.retail.v2.ExperimentInfo> experimentInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Metadata related to A/B testing [Experiment][] associated with this
+   * response. Only exists when an experiment is triggered.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2.ExperimentInfo experiment_info = 17;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.retail.v2.ExperimentInfo> getExperimentInfoList() {
+    return experimentInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata related to A/B testing [Experiment][] associated with this
+   * response. Only exists when an experiment is triggered.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2.ExperimentInfo experiment_info = 17;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.retail.v2.ExperimentInfoOrBuilder>
+      getExperimentInfoOrBuilderList() {
+    return experimentInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata related to A/B testing [Experiment][] associated with this
+   * response. Only exists when an experiment is triggered.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2.ExperimentInfo experiment_info = 17;</code>
+   */
+  @java.lang.Override
+  public int getExperimentInfoCount() {
+    return experimentInfo_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata related to A/B testing [Experiment][] associated with this
+   * response. Only exists when an experiment is triggered.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2.ExperimentInfo experiment_info = 17;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2.ExperimentInfo getExperimentInfo(int index) {
+    return experimentInfo_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Metadata related to A/B testing [Experiment][] associated with this
+   * response. Only exists when an experiment is triggered.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2.ExperimentInfo experiment_info = 17;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2.ExperimentInfoOrBuilder getExperimentInfoOrBuilder(int index) {
+    return experimentInfo_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -7317,6 +7394,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < invalidConditionBoostSpecs_.size(); i++) {
       output.writeMessage(14, invalidConditionBoostSpecs_.get(i));
+    }
+    for (int i = 0; i < experimentInfo_.size(); i++) {
+      output.writeMessage(17, experimentInfo_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -7364,6 +7444,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               14, invalidConditionBoostSpecs_.get(i));
     }
+    for (int i = 0; i < experimentInfo_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, experimentInfo_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -7394,6 +7477,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     if (!getAppliedControlsList().equals(other.getAppliedControlsList())) return false;
     if (!getInvalidConditionBoostSpecsList().equals(other.getInvalidConditionBoostSpecsList()))
       return false;
+    if (!getExperimentInfoList().equals(other.getExperimentInfoList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -7434,6 +7518,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     if (getInvalidConditionBoostSpecsCount() > 0) {
       hash = (37 * hash) + INVALID_CONDITION_BOOST_SPECS_FIELD_NUMBER;
       hash = (53 * hash) + getInvalidConditionBoostSpecsList().hashCode();
+    }
+    if (getExperimentInfoCount() > 0) {
+      hash = (37 * hash) + EXPERIMENT_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getExperimentInfoList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -7608,6 +7696,13 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         invalidConditionBoostSpecsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000200);
+      if (experimentInfoBuilder_ == null) {
+        experimentInfo_ = java.util.Collections.emptyList();
+      } else {
+        experimentInfo_ = null;
+        experimentInfoBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000400);
       return this;
     }
 
@@ -7676,6 +7771,15 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         result.invalidConditionBoostSpecs_ = invalidConditionBoostSpecs_;
       } else {
         result.invalidConditionBoostSpecs_ = invalidConditionBoostSpecsBuilder_.build();
+      }
+      if (experimentInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)) {
+          experimentInfo_ = java.util.Collections.unmodifiableList(experimentInfo_);
+          bitField0_ = (bitField0_ & ~0x00000400);
+        }
+        result.experimentInfo_ = experimentInfo_;
+      } else {
+        result.experimentInfo_ = experimentInfoBuilder_.build();
       }
     }
 
@@ -7866,6 +7970,33 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (experimentInfoBuilder_ == null) {
+        if (!other.experimentInfo_.isEmpty()) {
+          if (experimentInfo_.isEmpty()) {
+            experimentInfo_ = other.experimentInfo_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+          } else {
+            ensureExperimentInfoIsMutable();
+            experimentInfo_.addAll(other.experimentInfo_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.experimentInfo_.isEmpty()) {
+          if (experimentInfoBuilder_.isEmpty()) {
+            experimentInfoBuilder_.dispose();
+            experimentInfoBuilder_ = null;
+            experimentInfo_ = other.experimentInfo_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+            experimentInfoBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getExperimentInfoFieldBuilder()
+                    : null;
+          } else {
+            experimentInfoBuilder_.addAllMessages(other.experimentInfo_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -7979,6 +8110,19 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 114
+            case 138:
+              {
+                com.google.cloud.retail.v2.ExperimentInfo m =
+                    input.readMessage(
+                        com.google.cloud.retail.v2.ExperimentInfo.parser(), extensionRegistry);
+                if (experimentInfoBuilder_ == null) {
+                  ensureExperimentInfoIsMutable();
+                  experimentInfo_.add(m);
+                } else {
+                  experimentInfoBuilder_.addMessage(m);
+                }
+                break;
+              } // case 138
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10077,6 +10221,379 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         invalidConditionBoostSpecs_ = null;
       }
       return invalidConditionBoostSpecsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.retail.v2.ExperimentInfo> experimentInfo_ =
+        java.util.Collections.emptyList();
+
+    private void ensureExperimentInfoIsMutable() {
+      if (!((bitField0_ & 0x00000400) != 0)) {
+        experimentInfo_ =
+            new java.util.ArrayList<com.google.cloud.retail.v2.ExperimentInfo>(experimentInfo_);
+        bitField0_ |= 0x00000400;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.retail.v2.ExperimentInfo,
+            com.google.cloud.retail.v2.ExperimentInfo.Builder,
+            com.google.cloud.retail.v2.ExperimentInfoOrBuilder>
+        experimentInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata related to A/B testing [Experiment][] associated with this
+     * response. Only exists when an experiment is triggered.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.ExperimentInfo experiment_info = 17;</code>
+     */
+    public java.util.List<com.google.cloud.retail.v2.ExperimentInfo> getExperimentInfoList() {
+      if (experimentInfoBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(experimentInfo_);
+      } else {
+        return experimentInfoBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata related to A/B testing [Experiment][] associated with this
+     * response. Only exists when an experiment is triggered.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.ExperimentInfo experiment_info = 17;</code>
+     */
+    public int getExperimentInfoCount() {
+      if (experimentInfoBuilder_ == null) {
+        return experimentInfo_.size();
+      } else {
+        return experimentInfoBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata related to A/B testing [Experiment][] associated with this
+     * response. Only exists when an experiment is triggered.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.ExperimentInfo experiment_info = 17;</code>
+     */
+    public com.google.cloud.retail.v2.ExperimentInfo getExperimentInfo(int index) {
+      if (experimentInfoBuilder_ == null) {
+        return experimentInfo_.get(index);
+      } else {
+        return experimentInfoBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata related to A/B testing [Experiment][] associated with this
+     * response. Only exists when an experiment is triggered.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.ExperimentInfo experiment_info = 17;</code>
+     */
+    public Builder setExperimentInfo(int index, com.google.cloud.retail.v2.ExperimentInfo value) {
+      if (experimentInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExperimentInfoIsMutable();
+        experimentInfo_.set(index, value);
+        onChanged();
+      } else {
+        experimentInfoBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata related to A/B testing [Experiment][] associated with this
+     * response. Only exists when an experiment is triggered.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.ExperimentInfo experiment_info = 17;</code>
+     */
+    public Builder setExperimentInfo(
+        int index, com.google.cloud.retail.v2.ExperimentInfo.Builder builderForValue) {
+      if (experimentInfoBuilder_ == null) {
+        ensureExperimentInfoIsMutable();
+        experimentInfo_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        experimentInfoBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata related to A/B testing [Experiment][] associated with this
+     * response. Only exists when an experiment is triggered.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.ExperimentInfo experiment_info = 17;</code>
+     */
+    public Builder addExperimentInfo(com.google.cloud.retail.v2.ExperimentInfo value) {
+      if (experimentInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExperimentInfoIsMutable();
+        experimentInfo_.add(value);
+        onChanged();
+      } else {
+        experimentInfoBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata related to A/B testing [Experiment][] associated with this
+     * response. Only exists when an experiment is triggered.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.ExperimentInfo experiment_info = 17;</code>
+     */
+    public Builder addExperimentInfo(int index, com.google.cloud.retail.v2.ExperimentInfo value) {
+      if (experimentInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExperimentInfoIsMutable();
+        experimentInfo_.add(index, value);
+        onChanged();
+      } else {
+        experimentInfoBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata related to A/B testing [Experiment][] associated with this
+     * response. Only exists when an experiment is triggered.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.ExperimentInfo experiment_info = 17;</code>
+     */
+    public Builder addExperimentInfo(
+        com.google.cloud.retail.v2.ExperimentInfo.Builder builderForValue) {
+      if (experimentInfoBuilder_ == null) {
+        ensureExperimentInfoIsMutable();
+        experimentInfo_.add(builderForValue.build());
+        onChanged();
+      } else {
+        experimentInfoBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata related to A/B testing [Experiment][] associated with this
+     * response. Only exists when an experiment is triggered.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.ExperimentInfo experiment_info = 17;</code>
+     */
+    public Builder addExperimentInfo(
+        int index, com.google.cloud.retail.v2.ExperimentInfo.Builder builderForValue) {
+      if (experimentInfoBuilder_ == null) {
+        ensureExperimentInfoIsMutable();
+        experimentInfo_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        experimentInfoBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata related to A/B testing [Experiment][] associated with this
+     * response. Only exists when an experiment is triggered.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.ExperimentInfo experiment_info = 17;</code>
+     */
+    public Builder addAllExperimentInfo(
+        java.lang.Iterable<? extends com.google.cloud.retail.v2.ExperimentInfo> values) {
+      if (experimentInfoBuilder_ == null) {
+        ensureExperimentInfoIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, experimentInfo_);
+        onChanged();
+      } else {
+        experimentInfoBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata related to A/B testing [Experiment][] associated with this
+     * response. Only exists when an experiment is triggered.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.ExperimentInfo experiment_info = 17;</code>
+     */
+    public Builder clearExperimentInfo() {
+      if (experimentInfoBuilder_ == null) {
+        experimentInfo_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000400);
+        onChanged();
+      } else {
+        experimentInfoBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata related to A/B testing [Experiment][] associated with this
+     * response. Only exists when an experiment is triggered.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.ExperimentInfo experiment_info = 17;</code>
+     */
+    public Builder removeExperimentInfo(int index) {
+      if (experimentInfoBuilder_ == null) {
+        ensureExperimentInfoIsMutable();
+        experimentInfo_.remove(index);
+        onChanged();
+      } else {
+        experimentInfoBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata related to A/B testing [Experiment][] associated with this
+     * response. Only exists when an experiment is triggered.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.ExperimentInfo experiment_info = 17;</code>
+     */
+    public com.google.cloud.retail.v2.ExperimentInfo.Builder getExperimentInfoBuilder(int index) {
+      return getExperimentInfoFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata related to A/B testing [Experiment][] associated with this
+     * response. Only exists when an experiment is triggered.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.ExperimentInfo experiment_info = 17;</code>
+     */
+    public com.google.cloud.retail.v2.ExperimentInfoOrBuilder getExperimentInfoOrBuilder(
+        int index) {
+      if (experimentInfoBuilder_ == null) {
+        return experimentInfo_.get(index);
+      } else {
+        return experimentInfoBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata related to A/B testing [Experiment][] associated with this
+     * response. Only exists when an experiment is triggered.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.ExperimentInfo experiment_info = 17;</code>
+     */
+    public java.util.List<? extends com.google.cloud.retail.v2.ExperimentInfoOrBuilder>
+        getExperimentInfoOrBuilderList() {
+      if (experimentInfoBuilder_ != null) {
+        return experimentInfoBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(experimentInfo_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata related to A/B testing [Experiment][] associated with this
+     * response. Only exists when an experiment is triggered.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.ExperimentInfo experiment_info = 17;</code>
+     */
+    public com.google.cloud.retail.v2.ExperimentInfo.Builder addExperimentInfoBuilder() {
+      return getExperimentInfoFieldBuilder()
+          .addBuilder(com.google.cloud.retail.v2.ExperimentInfo.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata related to A/B testing [Experiment][] associated with this
+     * response. Only exists when an experiment is triggered.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.ExperimentInfo experiment_info = 17;</code>
+     */
+    public com.google.cloud.retail.v2.ExperimentInfo.Builder addExperimentInfoBuilder(int index) {
+      return getExperimentInfoFieldBuilder()
+          .addBuilder(index, com.google.cloud.retail.v2.ExperimentInfo.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Metadata related to A/B testing [Experiment][] associated with this
+     * response. Only exists when an experiment is triggered.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.retail.v2.ExperimentInfo experiment_info = 17;</code>
+     */
+    public java.util.List<com.google.cloud.retail.v2.ExperimentInfo.Builder>
+        getExperimentInfoBuilderList() {
+      return getExperimentInfoFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.retail.v2.ExperimentInfo,
+            com.google.cloud.retail.v2.ExperimentInfo.Builder,
+            com.google.cloud.retail.v2.ExperimentInfoOrBuilder>
+        getExperimentInfoFieldBuilder() {
+      if (experimentInfoBuilder_ == null) {
+        experimentInfoBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.retail.v2.ExperimentInfo,
+                com.google.cloud.retail.v2.ExperimentInfo.Builder,
+                com.google.cloud.retail.v2.ExperimentInfoOrBuilder>(
+                experimentInfo_,
+                ((bitField0_ & 0x00000400) != 0),
+                getParentForChildren(),
+                isClean());
+        experimentInfo_ = null;
+      }
+      return experimentInfoBuilder_;
     }
 
     @java.lang.Override

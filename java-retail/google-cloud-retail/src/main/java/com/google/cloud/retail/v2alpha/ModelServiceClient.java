@@ -66,7 +66,7 @@ import javax.annotation.Generated;
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
  *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[MODEL]");
- *   Model response = modelServiceClient.pauseModel(name);
+ *   Model response = modelServiceClient.getModel(name);
  * }
  * }</pre>
  *
@@ -368,6 +368,118 @@ public class ModelServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateModelRequest, Operation> createModelCallable() {
     return stub.createModelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[MODEL]");
+   *   Model response = modelServiceClient.getModel(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the [Model][google.cloud.retail.v2alpha.Model] to
+   *     get. Format:
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog}/models/{model_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Model getModel(ModelName name) {
+    GetModelRequest request =
+        GetModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getModel(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   String name = ModelName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[MODEL]").toString();
+   *   Model response = modelServiceClient.getModel(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the [Model][google.cloud.retail.v2alpha.Model] to
+   *     get. Format:
+   *     `projects/{project_number}/locations/{location_id}/catalogs/{catalog}/models/{model_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Model getModel(String name) {
+    GetModelRequest request = GetModelRequest.newBuilder().setName(name).build();
+    return getModel(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   GetModelRequest request =
+   *       GetModelRequest.newBuilder()
+   *           .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[MODEL]").toString())
+   *           .build();
+   *   Model response = modelServiceClient.getModel(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Model getModel(GetModelRequest request) {
+    return getModelCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a model.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
+   *   GetModelRequest request =
+   *       GetModelRequest.newBuilder()
+   *           .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[MODEL]").toString())
+   *           .build();
+   *   ApiFuture<Model> future = modelServiceClient.getModelCallable().futureCall(request);
+   *   // Do something.
+   *   Model response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetModelRequest, Model> getModelCallable() {
+    return stub.getModelCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

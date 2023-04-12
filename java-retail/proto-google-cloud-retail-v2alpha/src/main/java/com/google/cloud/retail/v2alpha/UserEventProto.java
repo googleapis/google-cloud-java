@@ -62,7 +62,7 @@ public final class UserEventProto {
           + "ud/retail/v2alpha/common.proto\032)google/c"
           + "loud/retail/v2alpha/product.proto\032\037googl"
           + "e/protobuf/timestamp.proto\032\036google/proto"
-          + "buf/wrappers.proto\"\245\006\n\tUserEvent\022\027\n\neven"
+          + "buf/wrappers.proto\"\265\006\n\tUserEvent\022\027\n\neven"
           + "t_type\030\001 \001(\tB\003\340A\002\022\027\n\nvisitor_id\030\002 \001(\tB\003\340"
           + "A\002\022\022\n\nsession_id\030\025 \001(\t\022.\n\nevent_time\030\003 \001"
           + "(\0132\032.google.protobuf.Timestamp\022\026\n\016experi"
@@ -80,23 +80,24 @@ public final class UserEventProto {
           + "tegories\030\013 \003(\t\0228\n\tuser_info\030\014 \001(\0132%.goog"
           + "le.cloud.retail.v2alpha.UserInfo\022\013\n\003uri\030"
           + "\r \001(\t\022\024\n\014referrer_uri\030\016 \001(\t\022\024\n\014page_view"
-          + "_id\030\017 \001(\t\032_\n\017AttributesEntry\022\013\n\003key\030\001 \001("
-          + "\t\022;\n\005value\030\002 \001(\0132,.google.cloud.retail.v"
-          + "2alpha.CustomAttribute:\0028\001\"z\n\rProductDet"
-          + "ail\022:\n\007product\030\001 \001(\0132$.google.cloud.reta"
-          + "il.v2alpha.ProductB\003\340A\002\022-\n\010quantity\030\002 \001("
-          + "\0132\033.google.protobuf.Int32Value\"p\n\020Comple"
-          + "tionDetail\022$\n\034completion_attribution_tok"
-          + "en\030\001 \001(\t\022\033\n\023selected_suggestion\030\002 \001(\t\022\031\n"
-          + "\021selected_position\030\003 \001(\005\"n\n\023PurchaseTran"
-          + "saction\022\n\n\002id\030\001 \001(\t\022\024\n\007revenue\030\002 \001(\002B\003\340A"
-          + "\002\022\013\n\003tax\030\003 \001(\002\022\014\n\004cost\030\004 \001(\002\022\032\n\rcurrency"
-          + "_code\030\005 \001(\tB\003\340A\002B\322\001\n\037com.google.cloud.re"
-          + "tail.v2alphaB\016UserEventProtoP\001Z7cloud.go"
-          + "ogle.com/go/retail/apiv2alpha/retailpb;r"
-          + "etailpb\242\002\006RETAIL\252\002\033Google.Cloud.Retail.V"
-          + "2Alpha\312\002\033Google\\Cloud\\Retail\\V2alpha\352\002\036G"
-          + "oogle::Cloud::Retail::V2alphab\006proto3"
+          + "_id\030\017 \001(\t\022\016\n\006entity\030\027 \001(\t\032_\n\017AttributesE"
+          + "ntry\022\013\n\003key\030\001 \001(\t\022;\n\005value\030\002 \001(\0132,.googl"
+          + "e.cloud.retail.v2alpha.CustomAttribute:\002"
+          + "8\001\"z\n\rProductDetail\022:\n\007product\030\001 \001(\0132$.g"
+          + "oogle.cloud.retail.v2alpha.ProductB\003\340A\002\022"
+          + "-\n\010quantity\030\002 \001(\0132\033.google.protobuf.Int3"
+          + "2Value\"p\n\020CompletionDetail\022$\n\034completion"
+          + "_attribution_token\030\001 \001(\t\022\033\n\023selected_sug"
+          + "gestion\030\002 \001(\t\022\031\n\021selected_position\030\003 \001(\005"
+          + "\"n\n\023PurchaseTransaction\022\n\n\002id\030\001 \001(\t\022\024\n\007r"
+          + "evenue\030\002 \001(\002B\003\340A\002\022\013\n\003tax\030\003 \001(\002\022\014\n\004cost\030\004"
+          + " \001(\002\022\032\n\rcurrency_code\030\005 \001(\tB\003\340A\002B\322\001\n\037com"
+          + ".google.cloud.retail.v2alphaB\016UserEventP"
+          + "rotoP\001Z7cloud.google.com/go/retail/apiv2"
+          + "alpha/retailpb;retailpb\242\002\006RETAIL\252\002\033Googl"
+          + "e.Cloud.Retail.V2Alpha\312\002\033Google\\Cloud\\Re"
+          + "tail\\V2alpha\352\002\036Google::Cloud::Retail::V2"
+          + "alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -134,6 +135,7 @@ public final class UserEventProto {
               "Uri",
               "ReferrerUri",
               "PageViewId",
+              "Entity",
             });
     internal_static_google_cloud_retail_v2alpha_UserEvent_AttributesEntry_descriptor =
         internal_static_google_cloud_retail_v2alpha_UserEvent_descriptor.getNestedTypes().get(0);

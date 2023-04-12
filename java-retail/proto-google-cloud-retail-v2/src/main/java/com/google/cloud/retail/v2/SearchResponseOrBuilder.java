@@ -435,4 +435,61 @@ public interface SearchResponseOrBuilder
    */
   com.google.cloud.retail.v2.SearchRequest.BoostSpec.ConditionBoostSpecOrBuilder
       getInvalidConditionBoostSpecsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata related to A/B testing [Experiment][] associated with this
+   * response. Only exists when an experiment is triggered.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2.ExperimentInfo experiment_info = 17;</code>
+   */
+  java.util.List<com.google.cloud.retail.v2.ExperimentInfo> getExperimentInfoList();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata related to A/B testing [Experiment][] associated with this
+   * response. Only exists when an experiment is triggered.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2.ExperimentInfo experiment_info = 17;</code>
+   */
+  com.google.cloud.retail.v2.ExperimentInfo getExperimentInfo(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Metadata related to A/B testing [Experiment][] associated with this
+   * response. Only exists when an experiment is triggered.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2.ExperimentInfo experiment_info = 17;</code>
+   */
+  int getExperimentInfoCount();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata related to A/B testing [Experiment][] associated with this
+   * response. Only exists when an experiment is triggered.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2.ExperimentInfo experiment_info = 17;</code>
+   */
+  java.util.List<? extends com.google.cloud.retail.v2.ExperimentInfoOrBuilder>
+      getExperimentInfoOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Metadata related to A/B testing [Experiment][] associated with this
+   * response. Only exists when an experiment is triggered.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.retail.v2.ExperimentInfo experiment_info = 17;</code>
+   */
+  com.google.cloud.retail.v2.ExperimentInfoOrBuilder getExperimentInfoOrBuilder(int index);
 }

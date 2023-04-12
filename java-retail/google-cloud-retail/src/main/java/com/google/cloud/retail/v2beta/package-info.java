@@ -40,7 +40,7 @@
  *
  * <p>======================= CompletionServiceClient =======================
  *
- * <p>Service Description: Auto-completion service for retail.
+ * <p>Service Description: Autocomplete service for retail.
  *
  * <p>This feature is only available for users who have Retail Search enabled. Enable Retail Search
  * on Cloud Console before using this feature.
@@ -63,6 +63,7 @@
  *           .setDeviceType("deviceType781190832")
  *           .setDataset("dataset1443214456")
  *           .setMaxSuggestions(618824852)
+ *           .setEntity("entity-1298275357")
  *           .build();
  *   CompleteQueryResponse response = completionServiceClient.completeQuery(request);
  * }
@@ -114,7 +115,7 @@
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
  *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[MODEL]");
- *   Model response = modelServiceClient.pauseModel(name);
+ *   Model response = modelServiceClient.getModel(name);
  * }
  * }</pre>
  *
@@ -206,6 +207,7 @@
  *           .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
  *           .putAllLabels(new HashMap<String, String>())
  *           .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
+ *           .setEntity("entity-1298275357")
  *           .build();
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
  *     // doThingsWith(element);

@@ -53,7 +53,7 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of pauseModel to 30 seconds:
+ * <p>For example, to set the total timeout of getModel to 30 seconds:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -63,10 +63,10 @@ import javax.annotation.Generated;
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * ModelServiceSettings.Builder modelServiceSettingsBuilder = ModelServiceSettings.newBuilder();
  * modelServiceSettingsBuilder
- *     .pauseModelSettings()
+ *     .getModelSettings()
  *     .setRetrySettings(
  *         modelServiceSettingsBuilder
- *             .pauseModelSettings()
+ *             .getModelSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -87,6 +87,11 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
   public OperationCallSettings<CreateModelRequest, Model, CreateModelMetadata>
       createModelOperationSettings() {
     return ((ModelServiceStubSettings) getStubSettings()).createModelOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getModel. */
+  public UnaryCallSettings<GetModelRequest, Model> getModelSettings() {
+    return ((ModelServiceStubSettings) getStubSettings()).getModelSettings();
   }
 
   /** Returns the object with the settings used for calls to pauseModel. */
@@ -250,6 +255,11 @@ public class ModelServiceSettings extends ClientSettings<ModelServiceSettings> {
     public OperationCallSettings.Builder<CreateModelRequest, Model, CreateModelMetadata>
         createModelOperationSettings() {
       return getStubSettingsBuilder().createModelOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getModel. */
+    public UnaryCallSettings.Builder<GetModelRequest, Model> getModelSettings() {
+      return getStubSettingsBuilder().getModelSettings();
     }
 
     /** Returns the builder for the settings used for calls to pauseModel. */

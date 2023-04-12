@@ -22,7 +22,7 @@ package com.google.cloud.retail.v2;
  *
  *
  * <pre>
- * Response of the auto-complete query.
+ * Response of the autocomplete query.
  * </pre>
  *
  * Protobuf type {@code google.cloud.retail.v2.CompleteQueryResponse}
@@ -2391,7 +2391,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Response of the auto-complete query.
+   * Response of the autocomplete query.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2.CompleteQueryResponse}

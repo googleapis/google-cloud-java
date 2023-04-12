@@ -41,6 +41,7 @@ public class AsyncDeleteProduct {
               .setName(
                   ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]")
                       .toString())
+              .setForce(true)
               .build();
       ApiFuture<Empty> future = productServiceClient.deleteProductCallable().futureCall(request);
       // Do something.

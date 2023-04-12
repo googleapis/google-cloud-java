@@ -196,7 +196,7 @@ public interface BigQuerySourceOrBuilder
    * * `user_event_ga4`:
    *   The schema is available here:
    *   https://support.google.com/analytics/answer/7029846.
-   * Supported values for auto-completion imports:
+   * Supported values for autocomplete imports:
    * * `suggestions` (default): One JSON completion suggestion per line.
    * * `denylist`:  One JSON deny suggestion per line.
    * * `allowlist`:  One JSON allow suggestion per line.
@@ -227,7 +227,7 @@ public interface BigQuerySourceOrBuilder
    * * `user_event_ga4`:
    *   The schema is available here:
    *   https://support.google.com/analytics/answer/7029846.
-   * Supported values for auto-completion imports:
+   * Supported values for autocomplete imports:
    * * `suggestions` (default): One JSON completion suggestion per line.
    * * `denylist`:  One JSON deny suggestion per line.
    * * `allowlist`:  One JSON allow suggestion per line.

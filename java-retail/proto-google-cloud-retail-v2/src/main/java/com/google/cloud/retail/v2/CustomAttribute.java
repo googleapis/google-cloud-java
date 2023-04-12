@@ -242,7 +242,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
    * <code>optional bool searchable = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2.CustomAttribute.searchable is deprecated. See
-   *     google/cloud/retail/v2/common.proto;l=409
+   *     google/cloud/retail/v2/common.proto;l=423
    * @return Whether the searchable field is set.
    */
   @java.lang.Override
@@ -270,7 +270,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
    * <code>optional bool searchable = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2.CustomAttribute.searchable is deprecated. See
-   *     google/cloud/retail/v2/common.proto;l=409
+   *     google/cloud/retail/v2/common.proto;l=423
    * @return The searchable.
    */
   @java.lang.Override
@@ -305,7 +305,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
    * <code>optional bool indexable = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2.CustomAttribute.indexable is deprecated. See
-   *     google/cloud/retail/v2/common.proto;l=428
+   *     google/cloud/retail/v2/common.proto;l=442
    * @return Whether the indexable field is set.
    */
   @java.lang.Override
@@ -337,7 +337,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
    * <code>optional bool indexable = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2.CustomAttribute.indexable is deprecated. See
-   *     google/cloud/retail/v2/common.proto;l=428
+   *     google/cloud/retail/v2/common.proto;l=442
    * @return The indexable.
    */
   @java.lang.Override
@@ -1222,7 +1222,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * <code>optional bool searchable = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.retail.v2.CustomAttribute.searchable is deprecated. See
-     *     google/cloud/retail/v2/common.proto;l=409
+     *     google/cloud/retail/v2/common.proto;l=423
      * @return Whether the searchable field is set.
      */
     @java.lang.Override
@@ -1250,7 +1250,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * <code>optional bool searchable = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.retail.v2.CustomAttribute.searchable is deprecated. See
-     *     google/cloud/retail/v2/common.proto;l=409
+     *     google/cloud/retail/v2/common.proto;l=423
      * @return The searchable.
      */
     @java.lang.Override
@@ -1278,7 +1278,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * <code>optional bool searchable = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.retail.v2.CustomAttribute.searchable is deprecated. See
-     *     google/cloud/retail/v2/common.proto;l=409
+     *     google/cloud/retail/v2/common.proto;l=423
      * @param value The searchable to set.
      * @return This builder for chaining.
      */
@@ -1310,7 +1310,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * <code>optional bool searchable = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.retail.v2.CustomAttribute.searchable is deprecated. See
-     *     google/cloud/retail/v2/common.proto;l=409
+     *     google/cloud/retail/v2/common.proto;l=423
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1346,7 +1346,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * <code>optional bool indexable = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.retail.v2.CustomAttribute.indexable is deprecated. See
-     *     google/cloud/retail/v2/common.proto;l=428
+     *     google/cloud/retail/v2/common.proto;l=442
      * @return Whether the indexable field is set.
      */
     @java.lang.Override
@@ -1378,7 +1378,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * <code>optional bool indexable = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.retail.v2.CustomAttribute.indexable is deprecated. See
-     *     google/cloud/retail/v2/common.proto;l=428
+     *     google/cloud/retail/v2/common.proto;l=442
      * @return The indexable.
      */
     @java.lang.Override
@@ -1410,7 +1410,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * <code>optional bool indexable = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.retail.v2.CustomAttribute.indexable is deprecated. See
-     *     google/cloud/retail/v2/common.proto;l=428
+     *     google/cloud/retail/v2/common.proto;l=442
      * @param value The indexable to set.
      * @return This builder for chaining.
      */
@@ -1446,7 +1446,7 @@ public final class CustomAttribute extends com.google.protobuf.GeneratedMessageV
      * <code>optional bool indexable = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.retail.v2.CustomAttribute.indexable is deprecated. See
-     *     google/cloud/retail/v2/common.proto;l=428
+     *     google/cloud/retail/v2/common.proto;l=442
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
