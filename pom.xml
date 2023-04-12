@@ -54,6 +54,7 @@
     <module>java-cloudbuild</module>
     <module>java-cloudcommerceconsumerprocurement</module>
     <module>java-compute</module>
+    <module>java-confidentialcomputing</module>
     <module>java-contact-center-insights</module>
     <module>java-containeranalysis</module>
     <module>java-container</module>

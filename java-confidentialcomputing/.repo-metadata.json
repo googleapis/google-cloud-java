@@ -1,0 +1,16 @@
+{
+  "api_shortname": "confidentialcomputing",
+  "name_pretty": "Confidential Computing API",
+  "product_documentation": "https://cloud.google.com/confidential-computing/",
+  "api_description": "Protect data in-use with Confidential VMs, Confidential GKE, Confidential Dataproc, and Confidential Space.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-confidentialcomputing/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-confidentialcomputing",
+  "repo_short": "java-confidentialcomputing",
+  "distribution_name": "com.google.cloud:google-cloud-confidentialcomputing",
+  "api_id": "confidentialcomputing.googleapis.com",
+  "library_type": "GAPIC_AUTO",
+  "requires_billing": true
+}
