@@ -62,4 +62,5 @@
     <module>proto-google-cloud-confidentialcomputing-v1alpha1</module>
     <module>google-cloud-confidentialcomputing-bom</module>
   </modules>
-</project>
+
+  </project>
