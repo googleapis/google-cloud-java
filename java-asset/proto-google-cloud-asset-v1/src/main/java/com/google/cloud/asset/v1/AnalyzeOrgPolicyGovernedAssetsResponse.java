@@ -140,7 +140,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The project that this resource belongs to, in the form of
+     * The project that this resource belongs to, in the format of
      * projects/{PROJECT_NUMBER}. This field is available when the resource
      * belongs to a project.
      * </pre>
@@ -154,7 +154,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The project that this resource belongs to, in the form of
+     * The project that this resource belongs to, in the format of
      * projects/{PROJECT_NUMBER}. This field is available when the resource
      * belongs to a project.
      * </pre>
@@ -169,9 +169,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The folder(s) that this resource belongs to, in the form of
+     * The folder(s) that this resource belongs to, in the format of
      * folders/{FOLDER_NUMBER}. This field is available when the resource
-     * belongs(directly or cascadingly) to one or more folders.
+     * belongs (directly or cascadingly) to one or more folders.
      * </pre>
      *
      * <code>repeated string folders = 6;</code>
@@ -183,9 +183,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The folder(s) that this resource belongs to, in the form of
+     * The folder(s) that this resource belongs to, in the format of
      * folders/{FOLDER_NUMBER}. This field is available when the resource
-     * belongs(directly or cascadingly) to one or more folders.
+     * belongs (directly or cascadingly) to one or more folders.
      * </pre>
      *
      * <code>repeated string folders = 6;</code>
@@ -197,9 +197,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The folder(s) that this resource belongs to, in the form of
+     * The folder(s) that this resource belongs to, in the format of
      * folders/{FOLDER_NUMBER}. This field is available when the resource
-     * belongs(directly or cascadingly) to one or more folders.
+     * belongs (directly or cascadingly) to one or more folders.
      * </pre>
      *
      * <code>repeated string folders = 6;</code>
@@ -212,9 +212,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The folder(s) that this resource belongs to, in the form of
+     * The folder(s) that this resource belongs to, in the format of
      * folders/{FOLDER_NUMBER}. This field is available when the resource
-     * belongs(directly or cascadingly) to one or more folders.
+     * belongs (directly or cascadingly) to one or more folders.
      * </pre>
      *
      * <code>repeated string folders = 6;</code>
@@ -228,9 +228,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The organization that this resource belongs to, in the form of
+     * The organization that this resource belongs to, in the format of
      * organizations/{ORGANIZATION_NUMBER}. This field is available when the
-     * resource belongs(directly or cascadingly) to an organization.
+     * resource belongs (directly or cascadingly) to an organization.
      * </pre>
      *
      * <code>string organization = 7;</code>
@@ -242,9 +242,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The organization that this resource belongs to, in the form of
+     * The organization that this resource belongs to, in the format of
      * organizations/{ORGANIZATION_NUMBER}. This field is available when the
-     * resource belongs(directly or cascadingly) to an organization.
+     * resource belongs (directly or cascadingly) to an organization.
      * </pre>
      *
      * <code>string organization = 7;</code>
@@ -430,7 +430,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The project that this resource belongs to, in the form of
+     * The project that this resource belongs to, in the format of
      * projects/{PROJECT_NUMBER}. This field is available when the resource
      * belongs to a project.
      * </pre>
@@ -455,7 +455,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The project that this resource belongs to, in the form of
+     * The project that this resource belongs to, in the format of
      * projects/{PROJECT_NUMBER}. This field is available when the resource
      * belongs to a project.
      * </pre>
@@ -485,9 +485,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The folder(s) that this resource belongs to, in the form of
+     * The folder(s) that this resource belongs to, in the format of
      * folders/{FOLDER_NUMBER}. This field is available when the resource
-     * belongs(directly or cascadingly) to one or more folders.
+     * belongs (directly or cascadingly) to one or more folders.
      * </pre>
      *
      * <code>repeated string folders = 6;</code>
@@ -501,9 +501,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The folder(s) that this resource belongs to, in the form of
+     * The folder(s) that this resource belongs to, in the format of
      * folders/{FOLDER_NUMBER}. This field is available when the resource
-     * belongs(directly or cascadingly) to one or more folders.
+     * belongs (directly or cascadingly) to one or more folders.
      * </pre>
      *
      * <code>repeated string folders = 6;</code>
@@ -517,9 +517,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The folder(s) that this resource belongs to, in the form of
+     * The folder(s) that this resource belongs to, in the format of
      * folders/{FOLDER_NUMBER}. This field is available when the resource
-     * belongs(directly or cascadingly) to one or more folders.
+     * belongs (directly or cascadingly) to one or more folders.
      * </pre>
      *
      * <code>repeated string folders = 6;</code>
@@ -534,9 +534,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The folder(s) that this resource belongs to, in the form of
+     * The folder(s) that this resource belongs to, in the format of
      * folders/{FOLDER_NUMBER}. This field is available when the resource
-     * belongs(directly or cascadingly) to one or more folders.
+     * belongs (directly or cascadingly) to one or more folders.
      * </pre>
      *
      * <code>repeated string folders = 6;</code>
@@ -556,9 +556,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The organization that this resource belongs to, in the form of
+     * The organization that this resource belongs to, in the format of
      * organizations/{ORGANIZATION_NUMBER}. This field is available when the
-     * resource belongs(directly or cascadingly) to an organization.
+     * resource belongs (directly or cascadingly) to an organization.
      * </pre>
      *
      * <code>string organization = 7;</code>
@@ -581,9 +581,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The organization that this resource belongs to, in the form of
+     * The organization that this resource belongs to, in the format of
      * organizations/{ORGANIZATION_NUMBER}. This field is available when the
-     * resource belongs(directly or cascadingly) to an organization.
+     * resource belongs (directly or cascadingly) to an organization.
      * </pre>
      *
      * <code>string organization = 7;</code>
@@ -1338,7 +1338,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The project that this resource belongs to, in the form of
+       * The project that this resource belongs to, in the format of
        * projects/{PROJECT_NUMBER}. This field is available when the resource
        * belongs to a project.
        * </pre>
@@ -1362,7 +1362,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The project that this resource belongs to, in the form of
+       * The project that this resource belongs to, in the format of
        * projects/{PROJECT_NUMBER}. This field is available when the resource
        * belongs to a project.
        * </pre>
@@ -1386,7 +1386,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The project that this resource belongs to, in the form of
+       * The project that this resource belongs to, in the format of
        * projects/{PROJECT_NUMBER}. This field is available when the resource
        * belongs to a project.
        * </pre>
@@ -1409,7 +1409,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The project that this resource belongs to, in the form of
+       * The project that this resource belongs to, in the format of
        * projects/{PROJECT_NUMBER}. This field is available when the resource
        * belongs to a project.
        * </pre>
@@ -1428,7 +1428,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The project that this resource belongs to, in the form of
+       * The project that this resource belongs to, in the format of
        * projects/{PROJECT_NUMBER}. This field is available when the resource
        * belongs to a project.
        * </pre>
@@ -1462,9 +1462,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The folder(s) that this resource belongs to, in the form of
+       * The folder(s) that this resource belongs to, in the format of
        * folders/{FOLDER_NUMBER}. This field is available when the resource
-       * belongs(directly or cascadingly) to one or more folders.
+       * belongs (directly or cascadingly) to one or more folders.
        * </pre>
        *
        * <code>repeated string folders = 6;</code>
@@ -1478,9 +1478,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The folder(s) that this resource belongs to, in the form of
+       * The folder(s) that this resource belongs to, in the format of
        * folders/{FOLDER_NUMBER}. This field is available when the resource
-       * belongs(directly or cascadingly) to one or more folders.
+       * belongs (directly or cascadingly) to one or more folders.
        * </pre>
        *
        * <code>repeated string folders = 6;</code>
@@ -1494,9 +1494,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The folder(s) that this resource belongs to, in the form of
+       * The folder(s) that this resource belongs to, in the format of
        * folders/{FOLDER_NUMBER}. This field is available when the resource
-       * belongs(directly or cascadingly) to one or more folders.
+       * belongs (directly or cascadingly) to one or more folders.
        * </pre>
        *
        * <code>repeated string folders = 6;</code>
@@ -1511,9 +1511,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The folder(s) that this resource belongs to, in the form of
+       * The folder(s) that this resource belongs to, in the format of
        * folders/{FOLDER_NUMBER}. This field is available when the resource
-       * belongs(directly or cascadingly) to one or more folders.
+       * belongs (directly or cascadingly) to one or more folders.
        * </pre>
        *
        * <code>repeated string folders = 6;</code>
@@ -1528,9 +1528,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The folder(s) that this resource belongs to, in the form of
+       * The folder(s) that this resource belongs to, in the format of
        * folders/{FOLDER_NUMBER}. This field is available when the resource
-       * belongs(directly or cascadingly) to one or more folders.
+       * belongs (directly or cascadingly) to one or more folders.
        * </pre>
        *
        * <code>repeated string folders = 6;</code>
@@ -1552,9 +1552,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The folder(s) that this resource belongs to, in the form of
+       * The folder(s) that this resource belongs to, in the format of
        * folders/{FOLDER_NUMBER}. This field is available when the resource
-       * belongs(directly or cascadingly) to one or more folders.
+       * belongs (directly or cascadingly) to one or more folders.
        * </pre>
        *
        * <code>repeated string folders = 6;</code>
@@ -1575,9 +1575,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The folder(s) that this resource belongs to, in the form of
+       * The folder(s) that this resource belongs to, in the format of
        * folders/{FOLDER_NUMBER}. This field is available when the resource
-       * belongs(directly or cascadingly) to one or more folders.
+       * belongs (directly or cascadingly) to one or more folders.
        * </pre>
        *
        * <code>repeated string folders = 6;</code>
@@ -1595,9 +1595,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The folder(s) that this resource belongs to, in the form of
+       * The folder(s) that this resource belongs to, in the format of
        * folders/{FOLDER_NUMBER}. This field is available when the resource
-       * belongs(directly or cascadingly) to one or more folders.
+       * belongs (directly or cascadingly) to one or more folders.
        * </pre>
        *
        * <code>repeated string folders = 6;</code>
@@ -1614,9 +1614,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The folder(s) that this resource belongs to, in the form of
+       * The folder(s) that this resource belongs to, in the format of
        * folders/{FOLDER_NUMBER}. This field is available when the resource
-       * belongs(directly or cascadingly) to one or more folders.
+       * belongs (directly or cascadingly) to one or more folders.
        * </pre>
        *
        * <code>repeated string folders = 6;</code>
@@ -1640,9 +1640,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The organization that this resource belongs to, in the form of
+       * The organization that this resource belongs to, in the format of
        * organizations/{ORGANIZATION_NUMBER}. This field is available when the
-       * resource belongs(directly or cascadingly) to an organization.
+       * resource belongs (directly or cascadingly) to an organization.
        * </pre>
        *
        * <code>string organization = 7;</code>
@@ -1664,9 +1664,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The organization that this resource belongs to, in the form of
+       * The organization that this resource belongs to, in the format of
        * organizations/{ORGANIZATION_NUMBER}. This field is available when the
-       * resource belongs(directly or cascadingly) to an organization.
+       * resource belongs (directly or cascadingly) to an organization.
        * </pre>
        *
        * <code>string organization = 7;</code>
@@ -1688,9 +1688,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The organization that this resource belongs to, in the form of
+       * The organization that this resource belongs to, in the format of
        * organizations/{ORGANIZATION_NUMBER}. This field is available when the
-       * resource belongs(directly or cascadingly) to an organization.
+       * resource belongs (directly or cascadingly) to an organization.
        * </pre>
        *
        * <code>string organization = 7;</code>
@@ -1711,9 +1711,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The organization that this resource belongs to, in the form of
+       * The organization that this resource belongs to, in the format of
        * organizations/{ORGANIZATION_NUMBER}. This field is available when the
-       * resource belongs(directly or cascadingly) to an organization.
+       * resource belongs (directly or cascadingly) to an organization.
        * </pre>
        *
        * <code>string organization = 7;</code>
@@ -1730,9 +1730,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The organization that this resource belongs to, in the form of
+       * The organization that this resource belongs to, in the format of
        * organizations/{ORGANIZATION_NUMBER}. This field is available when the
-       * resource belongs(directly or cascadingly) to an organization.
+       * resource belongs (directly or cascadingly) to an organization.
        * </pre>
        *
        * <code>string organization = 7;</code>
@@ -1899,7 +1899,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The project that this IAM policy belongs to, in the form of
+     * The project that this IAM policy belongs to, in the format of
      * projects/{PROJECT_NUMBER}. This field is available when the IAM policy
      * belongs to a project.
      * </pre>
@@ -1913,7 +1913,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The project that this IAM policy belongs to, in the form of
+     * The project that this IAM policy belongs to, in the format of
      * projects/{PROJECT_NUMBER}. This field is available when the IAM policy
      * belongs to a project.
      * </pre>
@@ -1928,9 +1928,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The folder(s) that this IAM policy belongs to, in the form of
+     * The folder(s) that this IAM policy belongs to, in the format of
      * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
-     * belongs(directly or cascadingly) to one or more folders.
+     * belongs (directly or cascadingly) to one or more folders.
      * </pre>
      *
      * <code>repeated string folders = 6;</code>
@@ -1942,9 +1942,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The folder(s) that this IAM policy belongs to, in the form of
+     * The folder(s) that this IAM policy belongs to, in the format of
      * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
-     * belongs(directly or cascadingly) to one or more folders.
+     * belongs (directly or cascadingly) to one or more folders.
      * </pre>
      *
      * <code>repeated string folders = 6;</code>
@@ -1956,9 +1956,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The folder(s) that this IAM policy belongs to, in the form of
+     * The folder(s) that this IAM policy belongs to, in the format of
      * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
-     * belongs(directly or cascadingly) to one or more folders.
+     * belongs (directly or cascadingly) to one or more folders.
      * </pre>
      *
      * <code>repeated string folders = 6;</code>
@@ -1971,9 +1971,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The folder(s) that this IAM policy belongs to, in the form of
+     * The folder(s) that this IAM policy belongs to, in the format of
      * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
-     * belongs(directly or cascadingly) to one or more folders.
+     * belongs (directly or cascadingly) to one or more folders.
      * </pre>
      *
      * <code>repeated string folders = 6;</code>
@@ -1987,9 +1987,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The organization that this IAM policy belongs to, in the form of
+     * The organization that this IAM policy belongs to, in the format of
      * organizations/{ORGANIZATION_NUMBER}. This field is available when the
-     * IAM policy belongs(directly or cascadingly) to an organization.
+     * IAM policy belongs (directly or cascadingly) to an organization.
      * </pre>
      *
      * <code>string organization = 7;</code>
@@ -2001,9 +2001,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The organization that this IAM policy belongs to, in the form of
+     * The organization that this IAM policy belongs to, in the format of
      * organizations/{ORGANIZATION_NUMBER}. This field is available when the
-     * IAM policy belongs(directly or cascadingly) to an organization.
+     * IAM policy belongs (directly or cascadingly) to an organization.
      * </pre>
      *
      * <code>string organization = 7;</code>
@@ -2183,7 +2183,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The project that this IAM policy belongs to, in the form of
+     * The project that this IAM policy belongs to, in the format of
      * projects/{PROJECT_NUMBER}. This field is available when the IAM policy
      * belongs to a project.
      * </pre>
@@ -2208,7 +2208,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The project that this IAM policy belongs to, in the form of
+     * The project that this IAM policy belongs to, in the format of
      * projects/{PROJECT_NUMBER}. This field is available when the IAM policy
      * belongs to a project.
      * </pre>
@@ -2238,9 +2238,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The folder(s) that this IAM policy belongs to, in the form of
+     * The folder(s) that this IAM policy belongs to, in the format of
      * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
-     * belongs(directly or cascadingly) to one or more folders.
+     * belongs (directly or cascadingly) to one or more folders.
      * </pre>
      *
      * <code>repeated string folders = 6;</code>
@@ -2254,9 +2254,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The folder(s) that this IAM policy belongs to, in the form of
+     * The folder(s) that this IAM policy belongs to, in the format of
      * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
-     * belongs(directly or cascadingly) to one or more folders.
+     * belongs (directly or cascadingly) to one or more folders.
      * </pre>
      *
      * <code>repeated string folders = 6;</code>
@@ -2270,9 +2270,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The folder(s) that this IAM policy belongs to, in the form of
+     * The folder(s) that this IAM policy belongs to, in the format of
      * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
-     * belongs(directly or cascadingly) to one or more folders.
+     * belongs (directly or cascadingly) to one or more folders.
      * </pre>
      *
      * <code>repeated string folders = 6;</code>
@@ -2287,9 +2287,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The folder(s) that this IAM policy belongs to, in the form of
+     * The folder(s) that this IAM policy belongs to, in the format of
      * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
-     * belongs(directly or cascadingly) to one or more folders.
+     * belongs (directly or cascadingly) to one or more folders.
      * </pre>
      *
      * <code>repeated string folders = 6;</code>
@@ -2309,9 +2309,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The organization that this IAM policy belongs to, in the form of
+     * The organization that this IAM policy belongs to, in the format of
      * organizations/{ORGANIZATION_NUMBER}. This field is available when the
-     * IAM policy belongs(directly or cascadingly) to an organization.
+     * IAM policy belongs (directly or cascadingly) to an organization.
      * </pre>
      *
      * <code>string organization = 7;</code>
@@ -2334,9 +2334,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The organization that this IAM policy belongs to, in the form of
+     * The organization that this IAM policy belongs to, in the format of
      * organizations/{ORGANIZATION_NUMBER}. This field is available when the
-     * IAM policy belongs(directly or cascadingly) to an organization.
+     * IAM policy belongs (directly or cascadingly) to an organization.
      * </pre>
      *
      * <code>string organization = 7;</code>
@@ -3173,7 +3173,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The project that this IAM policy belongs to, in the form of
+       * The project that this IAM policy belongs to, in the format of
        * projects/{PROJECT_NUMBER}. This field is available when the IAM policy
        * belongs to a project.
        * </pre>
@@ -3197,7 +3197,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The project that this IAM policy belongs to, in the form of
+       * The project that this IAM policy belongs to, in the format of
        * projects/{PROJECT_NUMBER}. This field is available when the IAM policy
        * belongs to a project.
        * </pre>
@@ -3221,7 +3221,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The project that this IAM policy belongs to, in the form of
+       * The project that this IAM policy belongs to, in the format of
        * projects/{PROJECT_NUMBER}. This field is available when the IAM policy
        * belongs to a project.
        * </pre>
@@ -3244,7 +3244,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The project that this IAM policy belongs to, in the form of
+       * The project that this IAM policy belongs to, in the format of
        * projects/{PROJECT_NUMBER}. This field is available when the IAM policy
        * belongs to a project.
        * </pre>
@@ -3263,7 +3263,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The project that this IAM policy belongs to, in the form of
+       * The project that this IAM policy belongs to, in the format of
        * projects/{PROJECT_NUMBER}. This field is available when the IAM policy
        * belongs to a project.
        * </pre>
@@ -3297,9 +3297,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The folder(s) that this IAM policy belongs to, in the form of
+       * The folder(s) that this IAM policy belongs to, in the format of
        * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
-       * belongs(directly or cascadingly) to one or more folders.
+       * belongs (directly or cascadingly) to one or more folders.
        * </pre>
        *
        * <code>repeated string folders = 6;</code>
@@ -3313,9 +3313,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The folder(s) that this IAM policy belongs to, in the form of
+       * The folder(s) that this IAM policy belongs to, in the format of
        * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
-       * belongs(directly or cascadingly) to one or more folders.
+       * belongs (directly or cascadingly) to one or more folders.
        * </pre>
        *
        * <code>repeated string folders = 6;</code>
@@ -3329,9 +3329,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The folder(s) that this IAM policy belongs to, in the form of
+       * The folder(s) that this IAM policy belongs to, in the format of
        * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
-       * belongs(directly or cascadingly) to one or more folders.
+       * belongs (directly or cascadingly) to one or more folders.
        * </pre>
        *
        * <code>repeated string folders = 6;</code>
@@ -3346,9 +3346,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The folder(s) that this IAM policy belongs to, in the form of
+       * The folder(s) that this IAM policy belongs to, in the format of
        * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
-       * belongs(directly or cascadingly) to one or more folders.
+       * belongs (directly or cascadingly) to one or more folders.
        * </pre>
        *
        * <code>repeated string folders = 6;</code>
@@ -3363,9 +3363,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The folder(s) that this IAM policy belongs to, in the form of
+       * The folder(s) that this IAM policy belongs to, in the format of
        * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
-       * belongs(directly or cascadingly) to one or more folders.
+       * belongs (directly or cascadingly) to one or more folders.
        * </pre>
        *
        * <code>repeated string folders = 6;</code>
@@ -3387,9 +3387,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The folder(s) that this IAM policy belongs to, in the form of
+       * The folder(s) that this IAM policy belongs to, in the format of
        * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
-       * belongs(directly or cascadingly) to one or more folders.
+       * belongs (directly or cascadingly) to one or more folders.
        * </pre>
        *
        * <code>repeated string folders = 6;</code>
@@ -3410,9 +3410,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The folder(s) that this IAM policy belongs to, in the form of
+       * The folder(s) that this IAM policy belongs to, in the format of
        * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
-       * belongs(directly or cascadingly) to one or more folders.
+       * belongs (directly or cascadingly) to one or more folders.
        * </pre>
        *
        * <code>repeated string folders = 6;</code>
@@ -3430,9 +3430,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The folder(s) that this IAM policy belongs to, in the form of
+       * The folder(s) that this IAM policy belongs to, in the format of
        * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
-       * belongs(directly or cascadingly) to one or more folders.
+       * belongs (directly or cascadingly) to one or more folders.
        * </pre>
        *
        * <code>repeated string folders = 6;</code>
@@ -3449,9 +3449,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The folder(s) that this IAM policy belongs to, in the form of
+       * The folder(s) that this IAM policy belongs to, in the format of
        * folders/{FOLDER_NUMBER}. This field is available when the IAM policy
-       * belongs(directly or cascadingly) to one or more folders.
+       * belongs (directly or cascadingly) to one or more folders.
        * </pre>
        *
        * <code>repeated string folders = 6;</code>
@@ -3475,9 +3475,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The organization that this IAM policy belongs to, in the form of
+       * The organization that this IAM policy belongs to, in the format of
        * organizations/{ORGANIZATION_NUMBER}. This field is available when the
-       * IAM policy belongs(directly or cascadingly) to an organization.
+       * IAM policy belongs (directly or cascadingly) to an organization.
        * </pre>
        *
        * <code>string organization = 7;</code>
@@ -3499,9 +3499,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The organization that this IAM policy belongs to, in the form of
+       * The organization that this IAM policy belongs to, in the format of
        * organizations/{ORGANIZATION_NUMBER}. This field is available when the
-       * IAM policy belongs(directly or cascadingly) to an organization.
+       * IAM policy belongs (directly or cascadingly) to an organization.
        * </pre>
        *
        * <code>string organization = 7;</code>
@@ -3523,9 +3523,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The organization that this IAM policy belongs to, in the form of
+       * The organization that this IAM policy belongs to, in the format of
        * organizations/{ORGANIZATION_NUMBER}. This field is available when the
-       * IAM policy belongs(directly or cascadingly) to an organization.
+       * IAM policy belongs (directly or cascadingly) to an organization.
        * </pre>
        *
        * <code>string organization = 7;</code>
@@ -3546,9 +3546,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The organization that this IAM policy belongs to, in the form of
+       * The organization that this IAM policy belongs to, in the format of
        * organizations/{ORGANIZATION_NUMBER}. This field is available when the
-       * IAM policy belongs(directly or cascadingly) to an organization.
+       * IAM policy belongs (directly or cascadingly) to an organization.
        * </pre>
        *
        * <code>string organization = 7;</code>
@@ -3565,9 +3565,9 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The organization that this IAM policy belongs to, in the form of
+       * The organization that this IAM policy belongs to, in the format of
        * organizations/{ORGANIZATION_NUMBER}. This field is available when the
-       * IAM policy belongs(directly or cascadingly) to an organization.
+       * IAM policy belongs (directly or cascadingly) to an organization.
        * </pre>
        *
        * <code>string organization = 7;</code>

@@ -23,7 +23,7 @@ package com.google.cloud.asset.v1;
  *
  * <pre>
  * A result of Resource Search, containing information of a cloud resource.
- * Next ID: 31
+ * Next ID: 32
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1.ResourceSearchResult}
@@ -2526,7 +2526,7 @@ public final class ResourceSearchResult extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * A result of Resource Search, containing information of a cloud resource.
-   * Next ID: 31
+   * Next ID: 32
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1.ResourceSearchResult}
