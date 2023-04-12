@@ -80,13 +80,13 @@
   ],
   "regexManagers": [
     {
-      "fileMatch": ["^pom\\.xml$"],
+      "fileMatch": ["^.*\/pom\\.xml$"],
       "matchStrings": ["\\<grpc\\.version>(?<currentValue>.*?)\\<\\/grpc\\.version\\>"],
       "depNameTemplate": "io.grpc:protoc-gen-grpc-java",
       "datasourceTemplate": "maven"
     },
     {
-      "fileMatch": ["^pom\\.xml$"],
+      "fileMatch": ["^.*\/pom\\.xml$"],
       "matchStrings": ["\\<protobuf\\.version>(?<currentValue>.*?)\\<\\/protobuf\\.version\\>"],
       "depNameTemplate": "com.google.protobuf:protoc",
       "datasourceTemplate": "maven"
