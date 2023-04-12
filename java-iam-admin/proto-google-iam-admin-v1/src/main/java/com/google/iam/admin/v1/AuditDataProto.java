@@ -49,11 +49,11 @@ public final class AuditDataProto {
           + "mission_delta\030\001 \001(\0132..google.iam.admin.v"
           + "1.AuditData.PermissionDelta\032I\n\017Permissio"
           + "nDelta\022\031\n\021added_permissions\030\001 \003(\t\022\033\n\023rem"
-          + "oved_permissions\030\002 \003(\tB\235\001\n\027com.google.ia"
-          + "m.admin.v1B\016AuditDataProtoP\001Z8google.gol"
-          + "ang.org/genproto/googleapis/iam/admin/v1"
-          + ";admin\252\002\031Google.Cloud.Iam.Admin.V1\312\002\031Goo"
-          + "gle\\Cloud\\Iam\\Admin\\V1b\006proto3"
+          + "oved_permissions\030\002 \003(\tB\230\001\n\027com.google.ia"
+          + "m.admin.v1B\016AuditDataProtoP\001Z3cloud.goog"
+          + "le.com/go/iam/admin/apiv1/adminpb;adminp"
+          + "b\252\002\031Google.Cloud.Iam.Admin.V1\312\002\031Google\\C"
+          + "loud\\Iam\\Admin\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

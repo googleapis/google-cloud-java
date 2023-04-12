@@ -512,11 +512,11 @@ public final class Iam {
           + "oogle.iam.admin.v1.LintPolicyResponse\"%\202"
           + "\323\344\223\002\037\"\032/v1/iamPolicies:lintPolicy:\001*\032F\312A"
           + "\022iam.googleapis.com\322A.https://www.google"
-          + "apis.com/auth/cloud-platformB\220\001\n\027com.goo"
-          + "gle.iam.admin.v1P\001Z8google.golang.org/ge"
-          + "nproto/googleapis/iam/admin/v1;admin\370\001\001\252"
-          + "\002\031Google.Cloud.Iam.Admin.V1\312\002\031Google\\Clo"
-          + "ud\\Iam\\Admin\\V1b\006proto3"
+          + "apis.com/auth/cloud-platformB\213\001\n\027com.goo"
+          + "gle.iam.admin.v1P\001Z3cloud.google.com/go/"
+          + "iam/admin/apiv1/adminpb;adminpb\370\001\001\252\002\031Goo"
+          + "gle.Cloud.Iam.Admin.V1\312\002\031Google\\Cloud\\Ia"
+          + "m\\Admin\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
