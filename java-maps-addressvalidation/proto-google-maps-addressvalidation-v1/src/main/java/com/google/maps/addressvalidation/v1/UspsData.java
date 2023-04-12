@@ -22,7 +22,10 @@ package com.google.maps.addressvalidation.v1;
  *
  *
  * <pre>
- * The USPS data for the address.
+ * The USPS data for the address. `uspsData` is not guaranteed to be fully
+ * populated for every US or PR address sent to the Address Validation API. It's
+ * recommended to integrate the backup address fields in the response if you
+ * utilize uspsData as the primary part of the response.
  * </pre>
  *
  * Protobuf type {@code google.maps.addressvalidation.v1.UspsData}
@@ -1922,7 +1925,10 @@ public final class UspsData extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The USPS data for the address.
+   * The USPS data for the address. `uspsData` is not guaranteed to be fully
+   * populated for every US or PR address sent to the Address Validation API. It's
+   * recommended to integrate the backup address fields in the response if you
+   * utilize uspsData as the primary part of the response.
    * </pre>
    *
    * Protobuf type {@code google.maps.addressvalidation.v1.UspsData}

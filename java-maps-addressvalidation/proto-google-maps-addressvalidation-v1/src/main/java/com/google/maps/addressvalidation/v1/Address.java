@@ -22,7 +22,9 @@ package com.google.maps.addressvalidation.v1;
  *
  *
  * <pre>
- * Details of the address parsed from the input.
+ * Details of the post-processed address. Post-processing includes
+ * correcting misspelled parts of the address, replacing incorrect parts, and
+ * inferring missing parts.
  * </pre>
  *
  * Protobuf type {@code google.maps.addressvalidation.v1.Address}
@@ -79,8 +81,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The corrected address, formatted as a single-line address following the
-   * address formatting rules of the region where the address is located.
+   * The post-processed address, formatted as a single-line address following
+   * the address formatting rules of the region where the address is located.
    * </pre>
    *
    * <code>string formatted_address = 2;</code>
@@ -103,8 +105,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The corrected address, formatted as a single-line address following the
-   * address formatting rules of the region where the address is located.
+   * The post-processed address, formatted as a single-line address following
+   * the address formatting rules of the region where the address is located.
    * </pre>
    *
    * <code>string formatted_address = 2;</code>
@@ -182,9 +184,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Unordered list. The individual address components of the formatted and corrected address,
-   * along with validation information. This provides information on the
-   * validation status of the individual components.
+   * Unordered list. The individual address components of the formatted and
+   * corrected address, along with validation information. This provides
+   * information on the validation status of the individual components.
    * Address components are not ordered in a particular way. Do not make any
    * assumptions on the ordering of the address components in the list.
    * </pre>
@@ -202,9 +204,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Unordered list. The individual address components of the formatted and corrected address,
-   * along with validation information. This provides information on the
-   * validation status of the individual components.
+   * Unordered list. The individual address components of the formatted and
+   * corrected address, along with validation information. This provides
+   * information on the validation status of the individual components.
    * Address components are not ordered in a particular way. Do not make any
    * assumptions on the ordering of the address components in the list.
    * </pre>
@@ -222,9 +224,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Unordered list. The individual address components of the formatted and corrected address,
-   * along with validation information. This provides information on the
-   * validation status of the individual components.
+   * Unordered list. The individual address components of the formatted and
+   * corrected address, along with validation information. This provides
+   * information on the validation status of the individual components.
    * Address components are not ordered in a particular way. Do not make any
    * assumptions on the ordering of the address components in the list.
    * </pre>
@@ -241,9 +243,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Unordered list. The individual address components of the formatted and corrected address,
-   * along with validation information. This provides information on the
-   * validation status of the individual components.
+   * Unordered list. The individual address components of the formatted and
+   * corrected address, along with validation information. This provides
+   * information on the validation status of the individual components.
    * Address components are not ordered in a particular way. Do not make any
    * assumptions on the ordering of the address components in the list.
    * </pre>
@@ -260,9 +262,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Unordered list. The individual address components of the formatted and corrected address,
-   * along with validation information. This provides information on the
-   * validation status of the individual components.
+   * Unordered list. The individual address components of the formatted and
+   * corrected address, along with validation information. This provides
+   * information on the validation status of the individual components.
    * Address components are not ordered in a particular way. Do not make any
    * assumptions on the ordering of the address components in the list.
    * </pre>
@@ -786,7 +788,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Details of the address parsed from the input.
+   * Details of the post-processed address. Post-processing includes
+   * correcting misspelled parts of the address, replacing incorrect parts, and
+   * inferring missing parts.
    * </pre>
    *
    * Protobuf type {@code google.maps.addressvalidation.v1.Address}
@@ -1120,8 +1124,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The corrected address, formatted as a single-line address following the
-     * address formatting rules of the region where the address is located.
+     * The post-processed address, formatted as a single-line address following
+     * the address formatting rules of the region where the address is located.
      * </pre>
      *
      * <code>string formatted_address = 2;</code>
@@ -1143,8 +1147,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The corrected address, formatted as a single-line address following the
-     * address formatting rules of the region where the address is located.
+     * The post-processed address, formatted as a single-line address following
+     * the address formatting rules of the region where the address is located.
      * </pre>
      *
      * <code>string formatted_address = 2;</code>
@@ -1166,8 +1170,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The corrected address, formatted as a single-line address following the
-     * address formatting rules of the region where the address is located.
+     * The post-processed address, formatted as a single-line address following
+     * the address formatting rules of the region where the address is located.
      * </pre>
      *
      * <code>string formatted_address = 2;</code>
@@ -1188,8 +1192,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The corrected address, formatted as a single-line address following the
-     * address formatting rules of the region where the address is located.
+     * The post-processed address, formatted as a single-line address following
+     * the address formatting rules of the region where the address is located.
      * </pre>
      *
      * <code>string formatted_address = 2;</code>
@@ -1206,8 +1210,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The corrected address, formatted as a single-line address following the
-     * address formatting rules of the region where the address is located.
+     * The post-processed address, formatted as a single-line address following
+     * the address formatting rules of the region where the address is located.
      * </pre>
      *
      * <code>string formatted_address = 2;</code>
@@ -1431,9 +1435,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unordered list. The individual address components of the formatted and corrected address,
-     * along with validation information. This provides information on the
-     * validation status of the individual components.
+     * Unordered list. The individual address components of the formatted and
+     * corrected address, along with validation information. This provides
+     * information on the validation status of the individual components.
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1454,9 +1458,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unordered list. The individual address components of the formatted and corrected address,
-     * along with validation information. This provides information on the
-     * validation status of the individual components.
+     * Unordered list. The individual address components of the formatted and
+     * corrected address, along with validation information. This provides
+     * information on the validation status of the individual components.
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1476,9 +1480,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unordered list. The individual address components of the formatted and corrected address,
-     * along with validation information. This provides information on the
-     * validation status of the individual components.
+     * Unordered list. The individual address components of the formatted and
+     * corrected address, along with validation information. This provides
+     * information on the validation status of the individual components.
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1498,9 +1502,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unordered list. The individual address components of the formatted and corrected address,
-     * along with validation information. This provides information on the
-     * validation status of the individual components.
+     * Unordered list. The individual address components of the formatted and
+     * corrected address, along with validation information. This provides
+     * information on the validation status of the individual components.
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1527,9 +1531,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unordered list. The individual address components of the formatted and corrected address,
-     * along with validation information. This provides information on the
-     * validation status of the individual components.
+     * Unordered list. The individual address components of the formatted and
+     * corrected address, along with validation information. This provides
+     * information on the validation status of the individual components.
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1553,9 +1557,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unordered list. The individual address components of the formatted and corrected address,
-     * along with validation information. This provides information on the
-     * validation status of the individual components.
+     * Unordered list. The individual address components of the formatted and
+     * corrected address, along with validation information. This provides
+     * information on the validation status of the individual components.
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1582,9 +1586,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unordered list. The individual address components of the formatted and corrected address,
-     * along with validation information. This provides information on the
-     * validation status of the individual components.
+     * Unordered list. The individual address components of the formatted and
+     * corrected address, along with validation information. This provides
+     * information on the validation status of the individual components.
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1611,9 +1615,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unordered list. The individual address components of the formatted and corrected address,
-     * along with validation information. This provides information on the
-     * validation status of the individual components.
+     * Unordered list. The individual address components of the formatted and
+     * corrected address, along with validation information. This provides
+     * information on the validation status of the individual components.
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1637,9 +1641,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unordered list. The individual address components of the formatted and corrected address,
-     * along with validation information. This provides information on the
-     * validation status of the individual components.
+     * Unordered list. The individual address components of the formatted and
+     * corrected address, along with validation information. This provides
+     * information on the validation status of the individual components.
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1663,9 +1667,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unordered list. The individual address components of the formatted and corrected address,
-     * along with validation information. This provides information on the
-     * validation status of the individual components.
+     * Unordered list. The individual address components of the formatted and
+     * corrected address, along with validation information. This provides
+     * information on the validation status of the individual components.
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1690,9 +1694,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unordered list. The individual address components of the formatted and corrected address,
-     * along with validation information. This provides information on the
-     * validation status of the individual components.
+     * Unordered list. The individual address components of the formatted and
+     * corrected address, along with validation information. This provides
+     * information on the validation status of the individual components.
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1715,9 +1719,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unordered list. The individual address components of the formatted and corrected address,
-     * along with validation information. This provides information on the
-     * validation status of the individual components.
+     * Unordered list. The individual address components of the formatted and
+     * corrected address, along with validation information. This provides
+     * information on the validation status of the individual components.
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1740,9 +1744,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unordered list. The individual address components of the formatted and corrected address,
-     * along with validation information. This provides information on the
-     * validation status of the individual components.
+     * Unordered list. The individual address components of the formatted and
+     * corrected address, along with validation information. This provides
+     * information on the validation status of the individual components.
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1759,9 +1763,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unordered list. The individual address components of the formatted and corrected address,
-     * along with validation information. This provides information on the
-     * validation status of the individual components.
+     * Unordered list. The individual address components of the formatted and
+     * corrected address, along with validation information. This provides
+     * information on the validation status of the individual components.
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1782,9 +1786,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unordered list. The individual address components of the formatted and corrected address,
-     * along with validation information. This provides information on the
-     * validation status of the individual components.
+     * Unordered list. The individual address components of the formatted and
+     * corrected address, along with validation information. This provides
+     * information on the validation status of the individual components.
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1805,9 +1809,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unordered list. The individual address components of the formatted and corrected address,
-     * along with validation information. This provides information on the
-     * validation status of the individual components.
+     * Unordered list. The individual address components of the formatted and
+     * corrected address, along with validation information. This provides
+     * information on the validation status of the individual components.
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1825,9 +1829,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unordered list. The individual address components of the formatted and corrected address,
-     * along with validation information. This provides information on the
-     * validation status of the individual components.
+     * Unordered list. The individual address components of the formatted and
+     * corrected address, along with validation information. This provides
+     * information on the validation status of the individual components.
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>
@@ -1846,9 +1850,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unordered list. The individual address components of the formatted and corrected address,
-     * along with validation information. This provides information on the
-     * validation status of the individual components.
+     * Unordered list. The individual address components of the formatted and
+     * corrected address, along with validation information. This provides
+     * information on the validation status of the individual components.
      * Address components are not ordered in a particular way. Do not make any
      * assumptions on the ordering of the address components in the list.
      * </pre>

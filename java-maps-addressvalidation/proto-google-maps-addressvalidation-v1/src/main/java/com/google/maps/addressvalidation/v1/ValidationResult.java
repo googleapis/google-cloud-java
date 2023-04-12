@@ -221,7 +221,8 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Other information relevant to deliverability.
+   * Other information relevant to deliverability. `metadata` is not guaranteed
+   * to be fully populated for every address sent to the Address Validation API.
    * </pre>
    *
    * <code>.google.maps.addressvalidation.v1.AddressMetadata metadata = 4;</code>
@@ -236,7 +237,8 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Other information relevant to deliverability.
+   * Other information relevant to deliverability. `metadata` is not guaranteed
+   * to be fully populated for every address sent to the Address Validation API.
    * </pre>
    *
    * <code>.google.maps.addressvalidation.v1.AddressMetadata metadata = 4;</code>
@@ -253,7 +255,8 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Other information relevant to deliverability.
+   * Other information relevant to deliverability. `metadata` is not guaranteed
+   * to be fully populated for every address sent to the Address Validation API.
    * </pre>
    *
    * <code>.google.maps.addressvalidation.v1.AddressMetadata metadata = 4;</code>
@@ -1354,7 +1357,8 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Other information relevant to deliverability.
+     * Other information relevant to deliverability. `metadata` is not guaranteed
+     * to be fully populated for every address sent to the Address Validation API.
      * </pre>
      *
      * <code>.google.maps.addressvalidation.v1.AddressMetadata metadata = 4;</code>
@@ -1368,7 +1372,8 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Other information relevant to deliverability.
+     * Other information relevant to deliverability. `metadata` is not guaranteed
+     * to be fully populated for every address sent to the Address Validation API.
      * </pre>
      *
      * <code>.google.maps.addressvalidation.v1.AddressMetadata metadata = 4;</code>
@@ -1388,7 +1393,8 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Other information relevant to deliverability.
+     * Other information relevant to deliverability. `metadata` is not guaranteed
+     * to be fully populated for every address sent to the Address Validation API.
      * </pre>
      *
      * <code>.google.maps.addressvalidation.v1.AddressMetadata metadata = 4;</code>
@@ -1410,7 +1416,8 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Other information relevant to deliverability.
+     * Other information relevant to deliverability. `metadata` is not guaranteed
+     * to be fully populated for every address sent to the Address Validation API.
      * </pre>
      *
      * <code>.google.maps.addressvalidation.v1.AddressMetadata metadata = 4;</code>
@@ -1430,7 +1437,8 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Other information relevant to deliverability.
+     * Other information relevant to deliverability. `metadata` is not guaranteed
+     * to be fully populated for every address sent to the Address Validation API.
      * </pre>
      *
      * <code>.google.maps.addressvalidation.v1.AddressMetadata metadata = 4;</code>
@@ -1456,7 +1464,8 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Other information relevant to deliverability.
+     * Other information relevant to deliverability. `metadata` is not guaranteed
+     * to be fully populated for every address sent to the Address Validation API.
      * </pre>
      *
      * <code>.google.maps.addressvalidation.v1.AddressMetadata metadata = 4;</code>
@@ -1475,7 +1484,8 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Other information relevant to deliverability.
+     * Other information relevant to deliverability. `metadata` is not guaranteed
+     * to be fully populated for every address sent to the Address Validation API.
      * </pre>
      *
      * <code>.google.maps.addressvalidation.v1.AddressMetadata metadata = 4;</code>
@@ -1489,7 +1499,8 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Other information relevant to deliverability.
+     * Other information relevant to deliverability. `metadata` is not guaranteed
+     * to be fully populated for every address sent to the Address Validation API.
      * </pre>
      *
      * <code>.google.maps.addressvalidation.v1.AddressMetadata metadata = 4;</code>
@@ -1507,7 +1518,8 @@ public final class ValidationResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Other information relevant to deliverability.
+     * Other information relevant to deliverability. `metadata` is not guaranteed
+     * to be fully populated for every address sent to the Address Validation API.
      * </pre>
      *
      * <code>.google.maps.addressvalidation.v1.AddressMetadata metadata = 4;</code>

@@ -70,14 +70,14 @@ public final class UspsDataProto {
           + "e\030\026 \001(\t\022\026\n\016pmb_designator\030\027 \001(\t\022\022\n\npmb_n"
           + "umber\030\030 \001(\t\022\033\n\023address_record_type\030\031 \001(\t"
           + "\022\027\n\017default_address\030\032 \001(\010\022\025\n\rerror_messa"
-          + "ge\030\033 \001(\t\022\026\n\016cass_processed\030\034 \001(\010B\203\002\n$com"
+          + "ge\030\033 \001(\t\022\026\n\016cass_processed\030\034 \001(\010B\212\002\n$com"
           + ".google.maps.addressvalidation.v1B\rUspsD"
-          + "ataProtoP\001ZQgoogle.golang.org/genproto/g"
-          + "oogleapis/maps/addressvalidation/v1;addr"
-          + "essvalidation\370\001\001\242\002\007GMPAVV1\252\002 Google.Maps"
-          + ".AddressValidation.V1\312\002 Google\\Maps\\Addr"
-          + "essValidation\\V1\352\002#Google::Maps::Address"
-          + "Validation::V1b\006proto3"
+          + "ataProtoP\001ZXcloud.google.com/go/maps/add"
+          + "ressvalidation/apiv1/addressvalidationpb"
+          + ";addressvalidationpb\370\001\001\242\002\007GMPAVV1\252\002 Goog"
+          + "le.Maps.AddressValidation.V1\312\002 Google\\Ma"
+          + "ps\\AddressValidation\\V1\352\002#Google::Maps::"
+          + "AddressValidation::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -45,14 +45,14 @@ public final class MetadataProto {
           + ".v1\"\177\n\017AddressMetadata\022\025\n\010business\030\002 \001(\010"
           + "H\000\210\001\001\022\023\n\006po_box\030\003 \001(\010H\001\210\001\001\022\030\n\013residentia"
           + "l\030\006 \001(\010H\002\210\001\001B\013\n\t_businessB\t\n\007_po_boxB\016\n\014"
-          + "_residentialB\203\002\n$com.google.maps.address"
-          + "validation.v1B\rMetadataProtoP\001ZQgoogle.g"
-          + "olang.org/genproto/googleapis/maps/addre"
-          + "ssvalidation/v1;addressvalidation\370\001\001\242\002\007G"
-          + "MPAVV1\252\002 Google.Maps.AddressValidation.V"
-          + "1\312\002 Google\\Maps\\AddressValidation\\V1\352\002#G"
-          + "oogle::Maps::AddressValidation::V1b\006prot"
-          + "o3"
+          + "_residentialB\212\002\n$com.google.maps.address"
+          + "validation.v1B\rMetadataProtoP\001ZXcloud.go"
+          + "ogle.com/go/maps/addressvalidation/apiv1"
+          + "/addressvalidationpb;addressvalidationpb"
+          + "\370\001\001\242\002\007GMPAVV1\252\002 Google.Maps.AddressValid"
+          + "ation.V1\312\002 Google\\Maps\\AddressValidation"
+          + "\\V1\352\002#Google::Maps::AddressValidation::V"
+          + "1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

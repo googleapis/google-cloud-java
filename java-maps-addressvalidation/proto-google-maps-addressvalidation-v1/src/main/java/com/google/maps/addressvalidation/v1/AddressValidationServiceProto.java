@@ -118,14 +118,14 @@ public final class AddressValidationServiceProto {
           + "ddressvalidation.v1.ProvideValidationFee"
           + "dbackResponse\"(\202\323\344\223\002\"\"\035/v1:provideValida"
           + "tionFeedback:\001*\032#\312A addressvalidation.go"
-          + "ogleapis.comB\223\002\n$com.google.maps.address"
+          + "ogleapis.comB\232\002\n$com.google.maps.address"
           + "validation.v1B\035AddressValidationServiceP"
-          + "rotoP\001ZQgoogle.golang.org/genproto/googl"
-          + "eapis/maps/addressvalidation/v1;addressv"
-          + "alidation\370\001\001\242\002\007GMPAVV1\252\002 Google.Maps.Add"
-          + "ressValidation.V1\312\002 Google\\Maps\\AddressV"
-          + "alidation\\V1\352\002#Google::Maps::AddressVali"
-          + "dation::V1b\006proto3"
+          + "rotoP\001ZXcloud.google.com/go/maps/address"
+          + "validation/apiv1/addressvalidationpb;add"
+          + "ressvalidationpb\370\001\001\242\002\007GMPAVV1\252\002 Google.M"
+          + "aps.AddressValidation.V1\312\002 Google\\Maps\\A"
+          + "ddressValidation\\V1\352\002#Google::Maps::Addr"
+          + "essValidation::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
