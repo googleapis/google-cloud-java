@@ -127,40 +127,60 @@ $ gh auth login
 ## Run client generation script
 
 You will run new-client.py script with the following parameters.
-Collect them from the ticket before running the command.
+These parameters will be available in the Cloud Drop link (a YAML file) included in the buganizer request.
+The example in this README will AlloyDB's [Cloud Drop](https://github.com/googleapis/googleapis/blob/master/google/cloud/alloydb/v1/alloydb_v1.yaml) file as an example.
 
 ### API short name
 
 For convenience of the subsequent commands, define a variable for API short name.
-Get the value from the DevRel Services page (Example: `apikeys`):
+The corresponding value in the Cloud Drop page is `api_short_name`.
+
+Example: `alloydb`
 
 ### Proto path
 
-The script takes "proto path" parameter. This is path from google3's root to the
+The script takes "proto path" parameter. This is path from google3's root (`google3/third_party/googleapis/stable/`) to the
 directory that contains versions (e.g., "v1" or "v2"). For example, if we
 have 
 
-> Link to protos: http://google3/google/api/apikeys/v2/apikeys.proto
+> Link to protos: http://google3/third_party/googleapis/stable/google/cloud/alloydb/v1/service.proto.
 
-then the "proto path" value we supply to the command is "google/api/apikeys".
+then the "proto path" value we supply to the command is `google/cloud/alloydb`.
+We will publish a single module for a service that includes all versions in this path. Once the module has been published once, any future additional versions will automatically be generated via OwlBot.
 
 ### Name pretty
 
-Pick name from the display name in the DevRel Services site.
-For example, "API Keys API" in
-https://devrel.corp.google.com/admin/products/479.
+The corresponding value in the Cloud Drop page is `title`.
+
+Example: `AlloyDB API`
 
 ### Product Docs
 
-Find product document URL in the DevRel Services site.
-For example, "https://cloud.google.com/api-keys/" in
-https://devrel.corp.google.com/admin/products/479.
+The corresponding value in the Cloud Drop page is `documentation_uri`.
 The value must starts with "https://".
+
+Example: `https://cloud.google.com/alloydb/docs`
 
 ### API description
 
-Find the short description of the API. Usually the first sentence in the product
-document above.
+The corresponding value in the Cloud Drop page is `documentation.summary` or `documentation.overview`.
+If both of those fields are missing, take the description from the product page above.
+
+Example:
+``` 
+    AlloyDB for PostgreSQL is an open source-compatible database service that
+    provides a powerful option for migrating, modernizing, or building
+    commercial-grade applications. It offers full compatibility with standard
+    PostgreSQL, and is more than 4x faster for transactional workloads and up
+    to 100x faster for analytical queries than standard PostgreSQL in our
+    performance tests. AlloyDB for PostgreSQL offers a 99.99 percent
+    availability SLA inclusive of maintenance. <br><br> AlloyDB is optimized
+    for the most demanding use cases, allowing you to build new applications
+    that require high transaction throughput, large database sizes, or
+    multiple read resources; scale existing PostgreSQL workloads with no
+    application changes; and modernize legacy proprietary databases.
+ ```
+
 
 ### Example arguments
 
@@ -168,11 +188,21 @@ Run `new-client.py` with the arguments above:
 
 ```
 $ python3.9 generation/new_client/new-client.py generate \
-  --api_shortname=apikeys \
-  --proto-path=google/api/apikeys \
-  --name-pretty="API Keys API" \
-  --product-docs="https://cloud.google.com/api-keys/" \
-  --api-description="API Keys lets you create and manage your API keys for your projects."
+  --api_shortname=alloydb \
+  --proto-path=google/cloud/alloydb \
+  --name-pretty="AlloyDB API" \
+  --product-docs="https://cloud.google.com/alloydb/docs" \
+  --api-description="AlloyDB for PostgreSQL is an open source-compatible database service that
+    provides a powerful option for migrating, modernizing, or building
+    commercial-grade applications. It offers full compatibility with standard
+    PostgreSQL, and is more than 4x faster for transactional workloads and up
+    to 100x faster for analytical queries than standard PostgreSQL in our
+    performance tests. AlloyDB for PostgreSQL offers a 99.99 percent
+    availability SLA inclusive of maintenance. <br><br> AlloyDB is optimized
+    for the most demanding use cases, allowing you to build new applications
+    that require high transaction throughput, large database sizes, or
+    multiple read resources; scale existing PostgreSQL workloads with no
+    application changes; and modernize legacy proprietary databases."
 ```
 
 The command creates changes for
@@ -182,10 +212,10 @@ create a pull request in the monorepo:
 ```
 ...
 Please create a pull request:
-  $ git checkout -b new_module_java-discoveryengine
+  $ git checkout -b new_module_java-alloydb
   $ git add .
-  $ git commit -m 'feat: [apikeys] new module for apikeys'
-  $ gh pr create --title 'feat: [apikeys] new module for apikeys'
+  $ git commit -m 'feat: [alloydb] new module for alloydb'
+  $ gh pr create --title 'feat: [alloydb] new module for alloydb'
 ```
 
 Create a pull request from the change.
