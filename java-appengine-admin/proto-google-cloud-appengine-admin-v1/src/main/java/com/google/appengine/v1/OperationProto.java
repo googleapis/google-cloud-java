@@ -55,12 +55,12 @@ public final class OperationProto {
           + "etadata\030\010 \001(\0132,.google.appengine.v1.Crea"
           + "teVersionMetadataV1H\000B\021\n\017method_metadata"
           + "\"1\n\027CreateVersionMetadataV1\022\026\n\016cloud_bui"
-          + "ld_id\030\001 \001(\tB\300\001\n\027com.google.appengine.v1B"
-          + "\016OperationProtoP\001Z<google.golang.org/gen"
-          + "proto/googleapis/appengine/v1;appengine\252"
-          + "\002\031Google.Cloud.AppEngine.V1\312\002\031Google\\Clo"
-          + "ud\\AppEngine\\V1\352\002\034Google::Cloud::AppEngi"
-          + "ne::V1b\006proto3"
+          + "ld_id\030\001 \001(\tB\277\001\n\027com.google.appengine.v1B"
+          + "\016OperationProtoP\001Z;cloud.google.com/go/a"
+          + "ppengine/apiv1/appenginepb;appenginepb\252\002"
+          + "\031Google.Cloud.AppEngine.V1\312\002\031Google\\Clou"
+          + "d\\AppEngine\\V1\352\002\034Google::Cloud::AppEngin"
+          + "e::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -81,12 +81,12 @@ public final class ApplicationProto {
           + "SPECIFIED\020\000\022\023\n\017CLOUD_DATASTORE\020\001\022\023\n\017CLOU"
           + "D_FIRESTORE\020\002\022!\n\035CLOUD_DATASTORE_COMPATI"
           + "BILITY\020\003\"@\n\017UrlDispatchRule\022\016\n\006domain\030\001 "
-          + "\001(\t\022\014\n\004path\030\002 \001(\t\022\017\n\007service\030\003 \001(\tB\302\001\n\027c"
+          + "\001(\t\022\014\n\004path\030\002 \001(\t\022\017\n\007service\030\003 \001(\tB\301\001\n\027c"
           + "om.google.appengine.v1B\020ApplicationProto"
-          + "P\001Z<google.golang.org/genproto/googleapi"
-          + "s/appengine/v1;appengine\252\002\031Google.Cloud."
-          + "AppEngine.V1\312\002\031Google\\Cloud\\AppEngine\\V1"
-          + "\352\002\034Google::Cloud::AppEngine::V1b\006proto3"
+          + "P\001Z;cloud.google.com/go/appengine/apiv1/"
+          + "appenginepb;appenginepb\252\002\031Google.Cloud.A"
+          + "ppEngine.V1\312\002\031Google\\Cloud\\AppEngine\\V1\352"
+          + "\002\034Google::Cloud::AppEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

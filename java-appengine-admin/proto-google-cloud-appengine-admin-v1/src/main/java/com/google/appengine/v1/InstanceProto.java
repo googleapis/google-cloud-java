@@ -69,12 +69,11 @@ public final class InstanceProto {
           + "YNAMIC\020\002:m\352Aj\n!appengine.googleapis.com/"
           + "Instance\022Eapps/{app}/services/{service}/"
           + "versions/{version}/instances/{instance}B"
-          + "\277\001\n\027com.google.appengine.v1B\rInstancePro"
-          + "toP\001Z<google.golang.org/genproto/googlea"
-          + "pis/appengine/v1;appengine\252\002\031Google.Clou"
-          + "d.AppEngine.V1\312\002\031Google\\Cloud\\AppEngine\\"
-          + "V1\352\002\034Google::Cloud::AppEngine::V1b\006proto"
-          + "3"
+          + "\276\001\n\027com.google.appengine.v1B\rInstancePro"
+          + "toP\001Z;cloud.google.com/go/appengine/apiv"
+          + "1/appenginepb;appenginepb\252\002\031Google.Cloud"
+          + ".AppEngine.V1\312\002\031Google\\Cloud\\AppEngine\\V"
+          + "1\352\002\034Google::Cloud::AppEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

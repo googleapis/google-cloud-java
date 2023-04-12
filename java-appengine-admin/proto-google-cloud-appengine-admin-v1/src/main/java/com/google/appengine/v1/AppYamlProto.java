@@ -150,12 +150,12 @@ public final class AppYamlProto {
           + "ADMIN\020\002\022\022\n\016LOGIN_REQUIRED\020\003*y\n\rSecurityL"
           + "evel\022\026\n\022SECURE_UNSPECIFIED\020\000\022\022\n\016SECURE_D"
           + "EFAULT\020\000\022\020\n\014SECURE_NEVER\020\001\022\023\n\017SECURE_OPT"
-          + "IONAL\020\002\022\021\n\rSECURE_ALWAYS\020\003\032\002\020\001B\276\001\n\027com.g"
-          + "oogle.appengine.v1B\014AppYamlProtoP\001Z<goog"
-          + "le.golang.org/genproto/googleapis/appeng"
-          + "ine/v1;appengine\252\002\031Google.Cloud.AppEngin"
-          + "e.V1\312\002\031Google\\Cloud\\AppEngine\\V1\352\002\034Googl"
-          + "e::Cloud::AppEngine::V1b\006proto3"
+          + "IONAL\020\002\022\021\n\rSECURE_ALWAYS\020\003\032\002\020\001B\275\001\n\027com.g"
+          + "oogle.appengine.v1B\014AppYamlProtoP\001Z;clou"
+          + "d.google.com/go/appengine/apiv1/appengin"
+          + "epb;appenginepb\252\002\031Google.Cloud.AppEngine"
+          + ".V1\312\002\031Google\\Cloud\\AppEngine\\V1\352\002\034Google"
+          + "::Cloud::AppEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

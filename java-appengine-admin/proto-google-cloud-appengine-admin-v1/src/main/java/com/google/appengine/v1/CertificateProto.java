@@ -69,12 +69,12 @@ public final class CertificateProto {
           + "NG\020\002\022\037\n\033FAILED_RETRYING_NOT_VISIBLE\020\004\022\024\n"
           + "\020FAILED_PERMANENT\020\006\022!\n\035FAILED_RETRYING_C"
           + "AA_FORBIDDEN\020\007\022 \n\034FAILED_RETRYING_CAA_CH"
-          + "ECKING\020\010B\302\001\n\027com.google.appengine.v1B\020Ce"
-          + "rtificateProtoP\001Z<google.golang.org/genp"
-          + "roto/googleapis/appengine/v1;appengine\252\002"
-          + "\031Google.Cloud.AppEngine.V1\312\002\031Google\\Clou"
-          + "d\\AppEngine\\V1\352\002\034Google::Cloud::AppEngin"
-          + "e::V1b\006proto3"
+          + "ECKING\020\010B\301\001\n\027com.google.appengine.v1B\020Ce"
+          + "rtificateProtoP\001Z;cloud.google.com/go/ap"
+          + "pengine/apiv1/appenginepb;appenginepb\252\002\031"
+          + "Google.Cloud.AppEngine.V1\312\002\031Google\\Cloud"
+          + "\\AppEngine\\V1\352\002\034Google::Cloud::AppEngine"
+          + "::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

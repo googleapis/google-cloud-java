@@ -42,12 +42,12 @@ public final class DomainProto {
     java.lang.String[] descriptorData = {
       "\n google/appengine/v1/domain.proto\022\023goog"
           + "le.appengine.v1\",\n\020AuthorizedDomain\022\014\n\004n"
-          + "ame\030\001 \001(\t\022\n\n\002id\030\002 \001(\tB\275\001\n\027com.google.app"
-          + "engine.v1B\013DomainProtoP\001Z<google.golang."
-          + "org/genproto/googleapis/appengine/v1;app"
-          + "engine\252\002\031Google.Cloud.AppEngine.V1\312\002\031Goo"
-          + "gle\\Cloud\\AppEngine\\V1\352\002\034Google::Cloud::"
-          + "AppEngine::V1b\006proto3"
+          + "ame\030\001 \001(\t\022\n\n\002id\030\002 \001(\tB\274\001\n\027com.google.app"
+          + "engine.v1B\013DomainProtoP\001Z;cloud.google.c"
+          + "om/go/appengine/apiv1/appenginepb;appeng"
+          + "inepb\252\002\031Google.Cloud.AppEngine.V1\312\002\031Goog"
+          + "le\\Cloud\\AppEngine\\V1\352\002\034Google::Cloud::A"
+          + "ppEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

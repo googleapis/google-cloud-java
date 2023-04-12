@@ -36,12 +36,12 @@ public final class DeployedFilesProto {
   static {
     java.lang.String[] descriptorData = {
       "\n(google/appengine/v1/deployed_files.pro"
-          + "to\022\023google.appengine.v1B\304\001\n\027com.google.a"
-          + "ppengine.v1B\022DeployedFilesProtoP\001Z<googl"
-          + "e.golang.org/genproto/googleapis/appengi"
-          + "ne/v1;appengine\252\002\031Google.Cloud.AppEngine"
-          + ".V1\312\002\031Google\\Cloud\\AppEngine\\V1\352\002\034Google"
-          + "::Cloud::AppEngine::V1b\006proto3"
+          + "to\022\023google.appengine.v1B\303\001\n\027com.google.a"
+          + "ppengine.v1B\022DeployedFilesProtoP\001Z;cloud"
+          + ".google.com/go/appengine/apiv1/appengine"
+          + "pb;appenginepb\252\002\031Google.Cloud.AppEngine."
+          + "V1\312\002\031Google\\Cloud\\AppEngine\\V1\352\002\034Google:"
+          + ":Cloud::AppEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

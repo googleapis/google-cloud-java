@@ -24,7 +24,7 @@ package com.google.appengine.v1;
  * <pre>
  * A domain that a user has been authorized to administer. To authorize use
  * of a domain, verify ownership via
- * [Webmaster Central](https://www.google.com/webmasters/verification/home).
+ * [Search Console](https://search.google.com/search-console/welcome).
  * </pre>
  *
  * Protobuf type {@code google.appengine.v1.AuthorizedDomain}
@@ -351,7 +351,7 @@ public final class AuthorizedDomain extends com.google.protobuf.GeneratedMessage
    * <pre>
    * A domain that a user has been authorized to administer. To authorize use
    * of a domain, verify ownership via
-   * [Webmaster Central](https://www.google.com/webmasters/verification/home).
+   * [Search Console](https://search.google.com/search-console/welcome).
    * </pre>
    *
    * Protobuf type {@code google.appengine.v1.AuthorizedDomain}

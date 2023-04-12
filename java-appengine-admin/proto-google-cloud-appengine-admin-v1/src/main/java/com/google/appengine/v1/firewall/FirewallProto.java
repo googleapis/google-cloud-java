@@ -46,12 +46,12 @@ public final class FirewallProto {
           + "pengine.v1.FirewallRule.Action\022\024\n\014source"
           + "_range\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\"5\n\006Act"
           + "ion\022\026\n\022UNSPECIFIED_ACTION\020\000\022\t\n\005ALLOW\020\001\022\010"
-          + "\n\004DENY\020\002B\310\001\n com.google.appengine.v1.fir"
-          + "ewallB\rFirewallProtoP\001Z<google.golang.or"
-          + "g/genproto/googleapis/appengine/v1;appen"
-          + "gine\252\002\031Google.Cloud.AppEngine.V1\312\002\031Googl"
-          + "e\\Cloud\\AppEngine\\V1\352\002\034Google::Cloud::Ap"
-          + "pEngine::V1b\006proto3"
+          + "\n\004DENY\020\002B\307\001\n com.google.appengine.v1.fir"
+          + "ewallB\rFirewallProtoP\001Z;cloud.google.com"
+          + "/go/appengine/apiv1/appenginepb;appengin"
+          + "epb\252\002\031Google.Cloud.AppEngine.V1\312\002\031Google"
+          + "\\Cloud\\AppEngine\\V1\352\002\034Google::Cloud::App"
+          + "Engine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

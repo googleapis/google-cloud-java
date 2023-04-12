@@ -504,12 +504,12 @@ public final class AppengineProto {
           + "ttps://www.googleapis.com/auth/appengine"
           + ".admin,https://www.googleapis.com/auth/c"
           + "loud-platform,https://www.googleapis.com"
-          + "/auth/cloud-platform.read-onlyB\300\001\n\027com.g"
-          + "oogle.appengine.v1B\016AppengineProtoP\001Z<go"
-          + "ogle.golang.org/genproto/googleapis/appe"
-          + "ngine/v1;appengine\252\002\031Google.Cloud.AppEng"
-          + "ine.V1\312\002\031Google\\Cloud\\AppEngine\\V1\352\002\034Goo"
-          + "gle::Cloud::AppEngine::V1b\006proto3"
+          + "/auth/cloud-platform.read-onlyB\277\001\n\027com.g"
+          + "oogle.appengine.v1B\016AppengineProtoP\001Z;cl"
+          + "oud.google.com/go/appengine/apiv1/appeng"
+          + "inepb;appenginepb\252\002\031Google.Cloud.AppEngi"
+          + "ne.V1\312\002\031Google\\Cloud\\AppEngine\\V1\352\002\034Goog"
+          + "le::Cloud::AppEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

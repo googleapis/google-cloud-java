@@ -45,12 +45,12 @@ public final class LocationProto {
           + "vior.proto\"\205\001\n\020LocationMetadata\022&\n\036stand"
           + "ard_environment_available\030\002 \001(\010\022&\n\036flexi"
           + "ble_environment_available\030\004 \001(\010\022!\n\024searc"
-          + "h_api_available\030\006 \001(\010B\003\340A\003B\277\001\n\027com.googl"
-          + "e.appengine.v1B\rLocationProtoP\001Z<google."
-          + "golang.org/genproto/googleapis/appengine"
-          + "/v1;appengine\252\002\031Google.Cloud.AppEngine.V"
-          + "1\312\002\031Google\\Cloud\\AppEngine\\V1\352\002\034Google::"
-          + "Cloud::AppEngine::V1b\006proto3"
+          + "h_api_available\030\006 \001(\010B\003\340A\003B\276\001\n\027com.googl"
+          + "e.appengine.v1B\rLocationProtoP\001Z;cloud.g"
+          + "oogle.com/go/appengine/apiv1/appenginepb"
+          + ";appenginepb\252\002\031Google.Cloud.AppEngine.V1"
+          + "\312\002\031Google\\Cloud\\AppEngine\\V1\352\002\034Google::C"
+          + "loud::AppEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

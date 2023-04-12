@@ -49,12 +49,12 @@ public final class NetworkSettingsProto {
           + "IED\020\000\022\037\n\033INGRESS_TRAFFIC_ALLOWED_ALL\020\001\022)"
           + "\n%INGRESS_TRAFFIC_ALLOWED_INTERNAL_ONLY\020"
           + "\002\022+\n\'INGRESS_TRAFFIC_ALLOWED_INTERNAL_AN"
-          + "D_LB\020\003B\306\001\n\027com.google.appengine.v1B\024Netw"
-          + "orkSettingsProtoP\001Z<google.golang.org/ge"
-          + "nproto/googleapis/appengine/v1;appengine"
-          + "\252\002\031Google.Cloud.AppEngine.V1\312\002\031Google\\Cl"
-          + "oud\\AppEngine\\V1\352\002\034Google::Cloud::AppEng"
-          + "ine::V1b\006proto3"
+          + "D_LB\020\003B\305\001\n\027com.google.appengine.v1B\024Netw"
+          + "orkSettingsProtoP\001Z;cloud.google.com/go/"
+          + "appengine/apiv1/appenginepb;appenginepb\252"
+          + "\002\031Google.Cloud.AppEngine.V1\312\002\031Google\\Clo"
+          + "ud\\AppEngine\\V1\352\002\034Google::Cloud::AppEngi"
+          + "ne::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

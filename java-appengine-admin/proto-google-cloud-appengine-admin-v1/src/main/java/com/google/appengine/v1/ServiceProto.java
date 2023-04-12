@@ -67,12 +67,12 @@ public final class ServiceProto {
           + "rafficSplit.AllocationsEntry\0322\n\020Allocati"
           + "onsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\001:\0028\001"
           + "\":\n\007ShardBy\022\017\n\013UNSPECIFIED\020\000\022\n\n\006COOKIE\020\001"
-          + "\022\006\n\002IP\020\002\022\n\n\006RANDOM\020\003B\276\001\n\027com.google.appe"
-          + "ngine.v1B\014ServiceProtoP\001Z<google.golang."
-          + "org/genproto/googleapis/appengine/v1;app"
-          + "engine\252\002\031Google.Cloud.AppEngine.V1\312\002\031Goo"
-          + "gle\\Cloud\\AppEngine\\V1\352\002\034Google::Cloud::"
-          + "AppEngine::V1b\006proto3"
+          + "\022\006\n\002IP\020\002\022\n\n\006RANDOM\020\003B\275\001\n\027com.google.appe"
+          + "ngine.v1B\014ServiceProtoP\001Z;cloud.google.c"
+          + "om/go/appengine/apiv1/appenginepb;appeng"
+          + "inepb\252\002\031Google.Cloud.AppEngine.V1\312\002\031Goog"
+          + "le\\Cloud\\AppEngine\\V1\352\002\034Google::Cloud::A"
+          + "ppEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

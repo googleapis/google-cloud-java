@@ -229,12 +229,12 @@ public final class VersionProto {
           + "\n INBOUND_SERVICE_CHANNEL_PRESENCE\020\007\022\032\n\026"
           + "INBOUND_SERVICE_WARMUP\020\t*I\n\rServingStatu"
           + "s\022\036\n\032SERVING_STATUS_UNSPECIFIED\020\000\022\013\n\007SER"
-          + "VING\020\001\022\013\n\007STOPPED\020\002B\276\001\n\027com.google.appen"
-          + "gine.v1B\014VersionProtoP\001Z<google.golang.o"
-          + "rg/genproto/googleapis/appengine/v1;appe"
-          + "ngine\252\002\031Google.Cloud.AppEngine.V1\312\002\031Goog"
-          + "le\\Cloud\\AppEngine\\V1\352\002\034Google::Cloud::A"
-          + "ppEngine::V1b\006proto3"
+          + "VING\020\001\022\013\n\007STOPPED\020\002B\275\001\n\027com.google.appen"
+          + "gine.v1B\014VersionProtoP\001Z;cloud.google.co"
+          + "m/go/appengine/apiv1/appenginepb;appengi"
+          + "nepb\252\002\031Google.Cloud.AppEngine.V1\312\002\031Googl"
+          + "e\\Cloud\\AppEngine\\V1\352\002\034Google::Cloud::Ap"
+          + "pEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

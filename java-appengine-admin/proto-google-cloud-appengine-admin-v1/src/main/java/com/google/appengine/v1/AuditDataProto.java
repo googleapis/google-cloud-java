@@ -58,12 +58,12 @@ public final class AuditDataProto {
           + ":\n\007request\030\001 \001(\0132).google.appengine.v1.U"
           + "pdateServiceRequest\"Q\n\023CreateVersionMeth"
           + "od\022:\n\007request\030\001 \001(\0132).google.appengine.v"
-          + "1.CreateVersionRequestB\300\001\n\027com.google.ap"
-          + "pengine.v1B\016AuditDataProtoP\001Z<google.gol"
-          + "ang.org/genproto/googleapis/appengine/v1"
-          + ";appengine\252\002\031Google.Cloud.AppEngine.V1\312\002"
-          + "\031Google\\Cloud\\AppEngine\\V1\352\002\034Google::Clo"
-          + "ud::AppEngine::V1b\006proto3"
+          + "1.CreateVersionRequestB\277\001\n\027com.google.ap"
+          + "pengine.v1B\016AuditDataProtoP\001Z;cloud.goog"
+          + "le.com/go/appengine/apiv1/appenginepb;ap"
+          + "penginepb\252\002\031Google.Cloud.AppEngine.V1\312\002\031"
+          + "Google\\Cloud\\AppEngine\\V1\352\002\034Google::Clou"
+          + "d::AppEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

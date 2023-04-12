@@ -64,12 +64,12 @@ public final class DomainMappingProto {
           + "\t\022<\n\004type\030\003 \001(\0162..google.appengine.v1.Re"
           + "sourceRecord.RecordType\"E\n\nRecordType\022\033\n"
           + "\027RECORD_TYPE_UNSPECIFIED\020\000\022\005\n\001A\020\001\022\010\n\004AAA"
-          + "A\020\002\022\t\n\005CNAME\020\003B\304\001\n\027com.google.appengine."
-          + "v1B\022DomainMappingProtoP\001Z<google.golang."
-          + "org/genproto/googleapis/appengine/v1;app"
-          + "engine\252\002\031Google.Cloud.AppEngine.V1\312\002\031Goo"
-          + "gle\\Cloud\\AppEngine\\V1\352\002\034Google::Cloud::"
-          + "AppEngine::V1b\006proto3"
+          + "A\020\002\022\t\n\005CNAME\020\003B\303\001\n\027com.google.appengine."
+          + "v1B\022DomainMappingProtoP\001Z;cloud.google.c"
+          + "om/go/appengine/apiv1/appenginepb;appeng"
+          + "inepb\252\002\031Google.Cloud.AppEngine.V1\312\002\031Goog"
+          + "le\\Cloud\\AppEngine\\V1\352\002\034Google::Cloud::A"
+          + "ppEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -76,12 +76,12 @@ public final class DeployProto {
           + "Options\022\025\n\rapp_yaml_path\030\001 \001(\t\0226\n\023cloud_"
           + "build_timeout\030\002 \001(\0132\031.google.protobuf.Du"
           + "ration\"2\n\007ZipInfo\022\022\n\nsource_url\030\003 \001(\t\022\023\n"
-          + "\013files_count\030\004 \001(\005B\275\001\n\027com.google.appeng"
-          + "ine.v1B\013DeployProtoP\001Z<google.golang.org"
-          + "/genproto/googleapis/appengine/v1;appeng"
-          + "ine\252\002\031Google.Cloud.AppEngine.V1\312\002\031Google"
-          + "\\Cloud\\AppEngine\\V1\352\002\034Google::Cloud::App"
-          + "Engine::V1b\006proto3"
+          + "\013files_count\030\004 \001(\005B\274\001\n\027com.google.appeng"
+          + "ine.v1B\013DeployProtoP\001Z;cloud.google.com/"
+          + "go/appengine/apiv1/appenginepb;appengine"
+          + "pb\252\002\031Google.Cloud.AppEngine.V1\312\002\031Google\\"
+          + "Cloud\\AppEngine\\V1\352\002\034Google::Cloud::AppE"
+          + "ngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
