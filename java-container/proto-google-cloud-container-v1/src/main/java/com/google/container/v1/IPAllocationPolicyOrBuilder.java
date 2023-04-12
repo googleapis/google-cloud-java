@@ -92,7 +92,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1355
+   *     google/container/v1/cluster_service.proto;l=1377
    * @return The clusterIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -107,7 +107,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1355
+   *     google/container/v1/cluster_service.proto;l=1377
    * @return The bytes for clusterIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -123,7 +123,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1358
+   *     google/container/v1/cluster_service.proto;l=1380
    * @return The nodeIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -138,7 +138,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1358
+   *     google/container/v1/cluster_service.proto;l=1380
    * @return The bytes for nodeIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -154,7 +154,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1361
+   *     google/container/v1/cluster_service.proto;l=1383
    * @return The servicesIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -169,7 +169,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=1361
+   *     google/container/v1/cluster_service.proto;l=1383
    * @return The bytes for servicesIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -493,6 +493,72 @@ public interface IPAllocationPolicyOrBuilder
    *
    *
    * <pre>
+   * [PRIVATE FIELD]
+   * Pod CIDR size overprovisioning config for the cluster.
+   * Pod CIDR size per node depends on max_pods_per_node. By default, the value
+   * of max_pods_per_node is doubled and then rounded off to next power of 2 to
+   * get the size of pod CIDR block per node.
+   * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+   * This config can disable the doubling of IPs (we still round off to next
+   * power of 2)
+   * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
+   * overprovisioning is disabled.
+   * </pre>
+   *
+   * <code>.google.container.v1.PodCIDROverprovisionConfig pod_cidr_overprovision_config = 21;
+   * </code>
+   *
+   * @return Whether the podCidrOverprovisionConfig field is set.
+   */
+  boolean hasPodCidrOverprovisionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * [PRIVATE FIELD]
+   * Pod CIDR size overprovisioning config for the cluster.
+   * Pod CIDR size per node depends on max_pods_per_node. By default, the value
+   * of max_pods_per_node is doubled and then rounded off to next power of 2 to
+   * get the size of pod CIDR block per node.
+   * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+   * This config can disable the doubling of IPs (we still round off to next
+   * power of 2)
+   * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
+   * overprovisioning is disabled.
+   * </pre>
+   *
+   * <code>.google.container.v1.PodCIDROverprovisionConfig pod_cidr_overprovision_config = 21;
+   * </code>
+   *
+   * @return The podCidrOverprovisionConfig.
+   */
+  com.google.container.v1.PodCIDROverprovisionConfig getPodCidrOverprovisionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * [PRIVATE FIELD]
+   * Pod CIDR size overprovisioning config for the cluster.
+   * Pod CIDR size per node depends on max_pods_per_node. By default, the value
+   * of max_pods_per_node is doubled and then rounded off to next power of 2 to
+   * get the size of pod CIDR block per node.
+   * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+   * This config can disable the doubling of IPs (we still round off to next
+   * power of 2)
+   * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
+   * overprovisioning is disabled.
+   * </pre>
+   *
+   * <code>.google.container.v1.PodCIDROverprovisionConfig pod_cidr_overprovision_config = 21;
+   * </code>
+   */
+  com.google.container.v1.PodCIDROverprovisionConfigOrBuilder
+      getPodCidrOverprovisionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. [Output only] The subnet's IPv6 CIDR block used by nodes and
    * pods.
    * </pre>
@@ -540,4 +606,55 @@ public interface IPAllocationPolicyOrBuilder
    * @return The bytes for servicesIpv6CidrBlock.
    */
   com.google.protobuf.ByteString getServicesIpv6CidrBlockBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] The additional pod ranges that are added to the
+   * cluster. These pod ranges can be used by new node pools to allocate pod IPs
+   * automatically. Once the range is removed it will not show up in
+   * IPAllocationPolicy.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.AdditionalPodRangesConfig additional_pod_ranges_config = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the additionalPodRangesConfig field is set.
+   */
+  boolean hasAdditionalPodRangesConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] The additional pod ranges that are added to the
+   * cluster. These pod ranges can be used by new node pools to allocate pod IPs
+   * automatically. Once the range is removed it will not show up in
+   * IPAllocationPolicy.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.AdditionalPodRangesConfig additional_pod_ranges_config = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The additionalPodRangesConfig.
+   */
+  com.google.container.v1.AdditionalPodRangesConfig getAdditionalPodRangesConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] The additional pod ranges that are added to the
+   * cluster. These pod ranges can be used by new node pools to allocate pod IPs
+   * automatically. Once the range is removed it will not show up in
+   * IPAllocationPolicy.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.AdditionalPodRangesConfig additional_pod_ranges_config = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.container.v1.AdditionalPodRangesConfigOrBuilder
+      getAdditionalPodRangesConfigOrBuilder();
 }

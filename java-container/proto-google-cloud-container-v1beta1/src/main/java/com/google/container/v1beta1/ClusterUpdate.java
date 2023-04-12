@@ -2611,6 +2611,127 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.container.v1beta1.StackType.UNRECOGNIZED : result;
   }
 
+  public static final int ADDITIONAL_POD_RANGES_CONFIG_FIELD_NUMBER = 120;
+  private com.google.container.v1beta1.AdditionalPodRangesConfig additionalPodRangesConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The additional pod ranges to be added to the cluster. These pod ranges
+   * can be used by node pools to allocate pod IPs.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.AdditionalPodRangesConfig additional_pod_ranges_config = 120;
+   * </code>
+   *
+   * @return Whether the additionalPodRangesConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdditionalPodRangesConfig() {
+    return additionalPodRangesConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The additional pod ranges to be added to the cluster. These pod ranges
+   * can be used by node pools to allocate pod IPs.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.AdditionalPodRangesConfig additional_pod_ranges_config = 120;
+   * </code>
+   *
+   * @return The additionalPodRangesConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.AdditionalPodRangesConfig getAdditionalPodRangesConfig() {
+    return additionalPodRangesConfig_ == null
+        ? com.google.container.v1beta1.AdditionalPodRangesConfig.getDefaultInstance()
+        : additionalPodRangesConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The additional pod ranges to be added to the cluster. These pod ranges
+   * can be used by node pools to allocate pod IPs.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.AdditionalPodRangesConfig additional_pod_ranges_config = 120;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.AdditionalPodRangesConfigOrBuilder
+      getAdditionalPodRangesConfigOrBuilder() {
+    return additionalPodRangesConfig_ == null
+        ? com.google.container.v1beta1.AdditionalPodRangesConfig.getDefaultInstance()
+        : additionalPodRangesConfig_;
+  }
+
+  public static final int REMOVED_ADDITIONAL_POD_RANGES_CONFIG_FIELD_NUMBER = 121;
+  private com.google.container.v1beta1.AdditionalPodRangesConfig removedAdditionalPodRangesConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The additional pod ranges that are to be removed from the cluster.
+   * The pod ranges specified here must have been specified earlier in the
+   * 'additional_pod_ranges_config' argument.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.AdditionalPodRangesConfig removed_additional_pod_ranges_config = 121;
+   * </code>
+   *
+   * @return Whether the removedAdditionalPodRangesConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasRemovedAdditionalPodRangesConfig() {
+    return removedAdditionalPodRangesConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The additional pod ranges that are to be removed from the cluster.
+   * The pod ranges specified here must have been specified earlier in the
+   * 'additional_pod_ranges_config' argument.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.AdditionalPodRangesConfig removed_additional_pod_ranges_config = 121;
+   * </code>
+   *
+   * @return The removedAdditionalPodRangesConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.AdditionalPodRangesConfig
+      getRemovedAdditionalPodRangesConfig() {
+    return removedAdditionalPodRangesConfig_ == null
+        ? com.google.container.v1beta1.AdditionalPodRangesConfig.getDefaultInstance()
+        : removedAdditionalPodRangesConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The additional pod ranges that are to be removed from the cluster.
+   * The pod ranges specified here must have been specified earlier in the
+   * 'additional_pod_ranges_config' argument.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.AdditionalPodRangesConfig removed_additional_pod_ranges_config = 121;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.AdditionalPodRangesConfigOrBuilder
+      getRemovedAdditionalPodRangesConfigOrBuilder() {
+    return removedAdditionalPodRangesConfig_ == null
+        ? com.google.container.v1beta1.AdditionalPodRangesConfig.getDefaultInstance()
+        : removedAdditionalPodRangesConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2771,6 +2892,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (desiredStackType_
         != com.google.container.v1beta1.StackType.STACK_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(119, desiredStackType_);
+    }
+    if (additionalPodRangesConfig_ != null) {
+      output.writeMessage(120, getAdditionalPodRangesConfig());
+    }
+    if (removedAdditionalPodRangesConfig_ != null) {
+      output.writeMessage(121, getRemovedAdditionalPodRangesConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2993,6 +3120,16 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         != com.google.container.v1beta1.StackType.STACK_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(119, desiredStackType_);
     }
+    if (additionalPodRangesConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              120, getAdditionalPodRangesConfig());
+    }
+    if (removedAdditionalPodRangesConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              121, getRemovedAdditionalPodRangesConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3195,6 +3332,17 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         return false;
     }
     if (desiredStackType_ != other.desiredStackType_) return false;
+    if (hasAdditionalPodRangesConfig() != other.hasAdditionalPodRangesConfig()) return false;
+    if (hasAdditionalPodRangesConfig()) {
+      if (!getAdditionalPodRangesConfig().equals(other.getAdditionalPodRangesConfig()))
+        return false;
+    }
+    if (hasRemovedAdditionalPodRangesConfig() != other.hasRemovedAdditionalPodRangesConfig())
+      return false;
+    if (hasRemovedAdditionalPodRangesConfig()) {
+      if (!getRemovedAdditionalPodRangesConfig()
+          .equals(other.getRemovedAdditionalPodRangesConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3375,6 +3523,14 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + DESIRED_STACK_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + desiredStackType_;
+    if (hasAdditionalPodRangesConfig()) {
+      hash = (37 * hash) + ADDITIONAL_POD_RANGES_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getAdditionalPodRangesConfig().hashCode();
+    }
+    if (hasRemovedAdditionalPodRangesConfig()) {
+      hash = (37 * hash) + REMOVED_ADDITIONAL_POD_RANGES_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getRemovedAdditionalPodRangesConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3552,6 +3708,8 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         getDesiredProtectConfigFieldBuilder();
         getDesiredGatewayApiConfigFieldBuilder();
         getDesiredNodePoolLoggingConfigFieldBuilder();
+        getAdditionalPodRangesConfigFieldBuilder();
+        getRemovedAdditionalPodRangesConfigFieldBuilder();
       }
     }
 
@@ -3748,6 +3906,16 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredNodePoolLoggingConfigBuilder_ = null;
       }
       desiredStackType_ = 0;
+      additionalPodRangesConfig_ = null;
+      if (additionalPodRangesConfigBuilder_ != null) {
+        additionalPodRangesConfigBuilder_.dispose();
+        additionalPodRangesConfigBuilder_ = null;
+      }
+      removedAdditionalPodRangesConfig_ = null;
+      if (removedAdditionalPodRangesConfigBuilder_ != null) {
+        removedAdditionalPodRangesConfigBuilder_.dispose();
+        removedAdditionalPodRangesConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -4040,6 +4208,18 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField1_ & 0x00004000) != 0)) {
         result.desiredStackType_ = desiredStackType_;
       }
+      if (((from_bitField1_ & 0x00008000) != 0)) {
+        result.additionalPodRangesConfig_ =
+            additionalPodRangesConfigBuilder_ == null
+                ? additionalPodRangesConfig_
+                : additionalPodRangesConfigBuilder_.build();
+      }
+      if (((from_bitField1_ & 0x00010000) != 0)) {
+        result.removedAdditionalPodRangesConfig_ =
+            removedAdditionalPodRangesConfigBuilder_ == null
+                ? removedAdditionalPodRangesConfig_
+                : removedAdditionalPodRangesConfigBuilder_.build();
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -4250,6 +4430,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.desiredStackType_ != 0) {
         setDesiredStackTypeValue(other.getDesiredStackTypeValue());
+      }
+      if (other.hasAdditionalPodRangesConfig()) {
+        mergeAdditionalPodRangesConfig(other.getAdditionalPodRangesConfig());
+      }
+      if (other.hasRemovedAdditionalPodRangesConfig()) {
+        mergeRemovedAdditionalPodRangesConfig(other.getRemovedAdditionalPodRangesConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -4601,6 +4787,21 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x00004000;
                 break;
               } // case 952
+            case 962:
+              {
+                input.readMessage(
+                    getAdditionalPodRangesConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00008000;
+                break;
+              } // case 962
+            case 970:
+              {
+                input.readMessage(
+                    getRemovedAdditionalPodRangesConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField1_ |= 0x00010000;
+                break;
+              } // case 970
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -12970,6 +13171,440 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       desiredStackType_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.container.v1beta1.AdditionalPodRangesConfig additionalPodRangesConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.AdditionalPodRangesConfig,
+            com.google.container.v1beta1.AdditionalPodRangesConfig.Builder,
+            com.google.container.v1beta1.AdditionalPodRangesConfigOrBuilder>
+        additionalPodRangesConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The additional pod ranges to be added to the cluster. These pod ranges
+     * can be used by node pools to allocate pod IPs.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AdditionalPodRangesConfig additional_pod_ranges_config = 120;
+     * </code>
+     *
+     * @return Whether the additionalPodRangesConfig field is set.
+     */
+    public boolean hasAdditionalPodRangesConfig() {
+      return ((bitField1_ & 0x00008000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The additional pod ranges to be added to the cluster. These pod ranges
+     * can be used by node pools to allocate pod IPs.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AdditionalPodRangesConfig additional_pod_ranges_config = 120;
+     * </code>
+     *
+     * @return The additionalPodRangesConfig.
+     */
+    public com.google.container.v1beta1.AdditionalPodRangesConfig getAdditionalPodRangesConfig() {
+      if (additionalPodRangesConfigBuilder_ == null) {
+        return additionalPodRangesConfig_ == null
+            ? com.google.container.v1beta1.AdditionalPodRangesConfig.getDefaultInstance()
+            : additionalPodRangesConfig_;
+      } else {
+        return additionalPodRangesConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The additional pod ranges to be added to the cluster. These pod ranges
+     * can be used by node pools to allocate pod IPs.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AdditionalPodRangesConfig additional_pod_ranges_config = 120;
+     * </code>
+     */
+    public Builder setAdditionalPodRangesConfig(
+        com.google.container.v1beta1.AdditionalPodRangesConfig value) {
+      if (additionalPodRangesConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        additionalPodRangesConfig_ = value;
+      } else {
+        additionalPodRangesConfigBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The additional pod ranges to be added to the cluster. These pod ranges
+     * can be used by node pools to allocate pod IPs.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AdditionalPodRangesConfig additional_pod_ranges_config = 120;
+     * </code>
+     */
+    public Builder setAdditionalPodRangesConfig(
+        com.google.container.v1beta1.AdditionalPodRangesConfig.Builder builderForValue) {
+      if (additionalPodRangesConfigBuilder_ == null) {
+        additionalPodRangesConfig_ = builderForValue.build();
+      } else {
+        additionalPodRangesConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The additional pod ranges to be added to the cluster. These pod ranges
+     * can be used by node pools to allocate pod IPs.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AdditionalPodRangesConfig additional_pod_ranges_config = 120;
+     * </code>
+     */
+    public Builder mergeAdditionalPodRangesConfig(
+        com.google.container.v1beta1.AdditionalPodRangesConfig value) {
+      if (additionalPodRangesConfigBuilder_ == null) {
+        if (((bitField1_ & 0x00008000) != 0)
+            && additionalPodRangesConfig_ != null
+            && additionalPodRangesConfig_
+                != com.google.container.v1beta1.AdditionalPodRangesConfig.getDefaultInstance()) {
+          getAdditionalPodRangesConfigBuilder().mergeFrom(value);
+        } else {
+          additionalPodRangesConfig_ = value;
+        }
+      } else {
+        additionalPodRangesConfigBuilder_.mergeFrom(value);
+      }
+      bitField1_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The additional pod ranges to be added to the cluster. These pod ranges
+     * can be used by node pools to allocate pod IPs.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AdditionalPodRangesConfig additional_pod_ranges_config = 120;
+     * </code>
+     */
+    public Builder clearAdditionalPodRangesConfig() {
+      bitField1_ = (bitField1_ & ~0x00008000);
+      additionalPodRangesConfig_ = null;
+      if (additionalPodRangesConfigBuilder_ != null) {
+        additionalPodRangesConfigBuilder_.dispose();
+        additionalPodRangesConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The additional pod ranges to be added to the cluster. These pod ranges
+     * can be used by node pools to allocate pod IPs.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AdditionalPodRangesConfig additional_pod_ranges_config = 120;
+     * </code>
+     */
+    public com.google.container.v1beta1.AdditionalPodRangesConfig.Builder
+        getAdditionalPodRangesConfigBuilder() {
+      bitField1_ |= 0x00008000;
+      onChanged();
+      return getAdditionalPodRangesConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The additional pod ranges to be added to the cluster. These pod ranges
+     * can be used by node pools to allocate pod IPs.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AdditionalPodRangesConfig additional_pod_ranges_config = 120;
+     * </code>
+     */
+    public com.google.container.v1beta1.AdditionalPodRangesConfigOrBuilder
+        getAdditionalPodRangesConfigOrBuilder() {
+      if (additionalPodRangesConfigBuilder_ != null) {
+        return additionalPodRangesConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return additionalPodRangesConfig_ == null
+            ? com.google.container.v1beta1.AdditionalPodRangesConfig.getDefaultInstance()
+            : additionalPodRangesConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The additional pod ranges to be added to the cluster. These pod ranges
+     * can be used by node pools to allocate pod IPs.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.AdditionalPodRangesConfig additional_pod_ranges_config = 120;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.AdditionalPodRangesConfig,
+            com.google.container.v1beta1.AdditionalPodRangesConfig.Builder,
+            com.google.container.v1beta1.AdditionalPodRangesConfigOrBuilder>
+        getAdditionalPodRangesConfigFieldBuilder() {
+      if (additionalPodRangesConfigBuilder_ == null) {
+        additionalPodRangesConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.AdditionalPodRangesConfig,
+                com.google.container.v1beta1.AdditionalPodRangesConfig.Builder,
+                com.google.container.v1beta1.AdditionalPodRangesConfigOrBuilder>(
+                getAdditionalPodRangesConfig(), getParentForChildren(), isClean());
+        additionalPodRangesConfig_ = null;
+      }
+      return additionalPodRangesConfigBuilder_;
+    }
+
+    private com.google.container.v1beta1.AdditionalPodRangesConfig
+        removedAdditionalPodRangesConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.AdditionalPodRangesConfig,
+            com.google.container.v1beta1.AdditionalPodRangesConfig.Builder,
+            com.google.container.v1beta1.AdditionalPodRangesConfigOrBuilder>
+        removedAdditionalPodRangesConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The additional pod ranges that are to be removed from the cluster.
+     * The pod ranges specified here must have been specified earlier in the
+     * 'additional_pod_ranges_config' argument.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AdditionalPodRangesConfig removed_additional_pod_ranges_config = 121;
+     * </code>
+     *
+     * @return Whether the removedAdditionalPodRangesConfig field is set.
+     */
+    public boolean hasRemovedAdditionalPodRangesConfig() {
+      return ((bitField1_ & 0x00010000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The additional pod ranges that are to be removed from the cluster.
+     * The pod ranges specified here must have been specified earlier in the
+     * 'additional_pod_ranges_config' argument.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AdditionalPodRangesConfig removed_additional_pod_ranges_config = 121;
+     * </code>
+     *
+     * @return The removedAdditionalPodRangesConfig.
+     */
+    public com.google.container.v1beta1.AdditionalPodRangesConfig
+        getRemovedAdditionalPodRangesConfig() {
+      if (removedAdditionalPodRangesConfigBuilder_ == null) {
+        return removedAdditionalPodRangesConfig_ == null
+            ? com.google.container.v1beta1.AdditionalPodRangesConfig.getDefaultInstance()
+            : removedAdditionalPodRangesConfig_;
+      } else {
+        return removedAdditionalPodRangesConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The additional pod ranges that are to be removed from the cluster.
+     * The pod ranges specified here must have been specified earlier in the
+     * 'additional_pod_ranges_config' argument.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AdditionalPodRangesConfig removed_additional_pod_ranges_config = 121;
+     * </code>
+     */
+    public Builder setRemovedAdditionalPodRangesConfig(
+        com.google.container.v1beta1.AdditionalPodRangesConfig value) {
+      if (removedAdditionalPodRangesConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        removedAdditionalPodRangesConfig_ = value;
+      } else {
+        removedAdditionalPodRangesConfigBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The additional pod ranges that are to be removed from the cluster.
+     * The pod ranges specified here must have been specified earlier in the
+     * 'additional_pod_ranges_config' argument.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AdditionalPodRangesConfig removed_additional_pod_ranges_config = 121;
+     * </code>
+     */
+    public Builder setRemovedAdditionalPodRangesConfig(
+        com.google.container.v1beta1.AdditionalPodRangesConfig.Builder builderForValue) {
+      if (removedAdditionalPodRangesConfigBuilder_ == null) {
+        removedAdditionalPodRangesConfig_ = builderForValue.build();
+      } else {
+        removedAdditionalPodRangesConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The additional pod ranges that are to be removed from the cluster.
+     * The pod ranges specified here must have been specified earlier in the
+     * 'additional_pod_ranges_config' argument.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AdditionalPodRangesConfig removed_additional_pod_ranges_config = 121;
+     * </code>
+     */
+    public Builder mergeRemovedAdditionalPodRangesConfig(
+        com.google.container.v1beta1.AdditionalPodRangesConfig value) {
+      if (removedAdditionalPodRangesConfigBuilder_ == null) {
+        if (((bitField1_ & 0x00010000) != 0)
+            && removedAdditionalPodRangesConfig_ != null
+            && removedAdditionalPodRangesConfig_
+                != com.google.container.v1beta1.AdditionalPodRangesConfig.getDefaultInstance()) {
+          getRemovedAdditionalPodRangesConfigBuilder().mergeFrom(value);
+        } else {
+          removedAdditionalPodRangesConfig_ = value;
+        }
+      } else {
+        removedAdditionalPodRangesConfigBuilder_.mergeFrom(value);
+      }
+      bitField1_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The additional pod ranges that are to be removed from the cluster.
+     * The pod ranges specified here must have been specified earlier in the
+     * 'additional_pod_ranges_config' argument.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AdditionalPodRangesConfig removed_additional_pod_ranges_config = 121;
+     * </code>
+     */
+    public Builder clearRemovedAdditionalPodRangesConfig() {
+      bitField1_ = (bitField1_ & ~0x00010000);
+      removedAdditionalPodRangesConfig_ = null;
+      if (removedAdditionalPodRangesConfigBuilder_ != null) {
+        removedAdditionalPodRangesConfigBuilder_.dispose();
+        removedAdditionalPodRangesConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The additional pod ranges that are to be removed from the cluster.
+     * The pod ranges specified here must have been specified earlier in the
+     * 'additional_pod_ranges_config' argument.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AdditionalPodRangesConfig removed_additional_pod_ranges_config = 121;
+     * </code>
+     */
+    public com.google.container.v1beta1.AdditionalPodRangesConfig.Builder
+        getRemovedAdditionalPodRangesConfigBuilder() {
+      bitField1_ |= 0x00010000;
+      onChanged();
+      return getRemovedAdditionalPodRangesConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The additional pod ranges that are to be removed from the cluster.
+     * The pod ranges specified here must have been specified earlier in the
+     * 'additional_pod_ranges_config' argument.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AdditionalPodRangesConfig removed_additional_pod_ranges_config = 121;
+     * </code>
+     */
+    public com.google.container.v1beta1.AdditionalPodRangesConfigOrBuilder
+        getRemovedAdditionalPodRangesConfigOrBuilder() {
+      if (removedAdditionalPodRangesConfigBuilder_ != null) {
+        return removedAdditionalPodRangesConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return removedAdditionalPodRangesConfig_ == null
+            ? com.google.container.v1beta1.AdditionalPodRangesConfig.getDefaultInstance()
+            : removedAdditionalPodRangesConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The additional pod ranges that are to be removed from the cluster.
+     * The pod ranges specified here must have been specified earlier in the
+     * 'additional_pod_ranges_config' argument.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AdditionalPodRangesConfig removed_additional_pod_ranges_config = 121;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.AdditionalPodRangesConfig,
+            com.google.container.v1beta1.AdditionalPodRangesConfig.Builder,
+            com.google.container.v1beta1.AdditionalPodRangesConfigOrBuilder>
+        getRemovedAdditionalPodRangesConfigFieldBuilder() {
+      if (removedAdditionalPodRangesConfigBuilder_ == null) {
+        removedAdditionalPodRangesConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.AdditionalPodRangesConfig,
+                com.google.container.v1beta1.AdditionalPodRangesConfig.Builder,
+                com.google.container.v1beta1.AdditionalPodRangesConfigOrBuilder>(
+                getRemovedAdditionalPodRangesConfig(), getParentForChildren(), isClean());
+        removedAdditionalPodRangesConfig_ = null;
+      }
+      return removedAdditionalPodRangesConfigBuilder_;
     }
 
     @java.lang.Override

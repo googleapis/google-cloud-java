@@ -1471,4 +1471,91 @@ public interface ClusterUpdateOrBuilder
    * @return The desiredStackType.
    */
   com.google.container.v1.StackType getDesiredStackType();
+
+  /**
+   *
+   *
+   * <pre>
+   * The additional pod ranges to be added to the cluster. These pod ranges
+   * can be used by node pools to allocate pod IPs.
+   * </pre>
+   *
+   * <code>.google.container.v1.AdditionalPodRangesConfig additional_pod_ranges_config = 120;</code>
+   *
+   * @return Whether the additionalPodRangesConfig field is set.
+   */
+  boolean hasAdditionalPodRangesConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The additional pod ranges to be added to the cluster. These pod ranges
+   * can be used by node pools to allocate pod IPs.
+   * </pre>
+   *
+   * <code>.google.container.v1.AdditionalPodRangesConfig additional_pod_ranges_config = 120;</code>
+   *
+   * @return The additionalPodRangesConfig.
+   */
+  com.google.container.v1.AdditionalPodRangesConfig getAdditionalPodRangesConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The additional pod ranges to be added to the cluster. These pod ranges
+   * can be used by node pools to allocate pod IPs.
+   * </pre>
+   *
+   * <code>.google.container.v1.AdditionalPodRangesConfig additional_pod_ranges_config = 120;</code>
+   */
+  com.google.container.v1.AdditionalPodRangesConfigOrBuilder
+      getAdditionalPodRangesConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The additional pod ranges that are to be removed from the cluster.
+   * The pod ranges specified here must have been specified earlier in the
+   * 'additional_pod_ranges_config' argument.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.AdditionalPodRangesConfig removed_additional_pod_ranges_config = 121;
+   * </code>
+   *
+   * @return Whether the removedAdditionalPodRangesConfig field is set.
+   */
+  boolean hasRemovedAdditionalPodRangesConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The additional pod ranges that are to be removed from the cluster.
+   * The pod ranges specified here must have been specified earlier in the
+   * 'additional_pod_ranges_config' argument.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.AdditionalPodRangesConfig removed_additional_pod_ranges_config = 121;
+   * </code>
+   *
+   * @return The removedAdditionalPodRangesConfig.
+   */
+  com.google.container.v1.AdditionalPodRangesConfig getRemovedAdditionalPodRangesConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The additional pod ranges that are to be removed from the cluster.
+   * The pod ranges specified here must have been specified earlier in the
+   * 'additional_pod_ranges_config' argument.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.AdditionalPodRangesConfig removed_additional_pod_ranges_config = 121;
+   * </code>
+   */
+  com.google.container.v1.AdditionalPodRangesConfigOrBuilder
+      getRemovedAdditionalPodRangesConfigOrBuilder();
 }

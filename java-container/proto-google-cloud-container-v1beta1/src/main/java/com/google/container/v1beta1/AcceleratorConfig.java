@@ -207,7 +207,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    * <code>int64 max_time_shared_clients_per_gpu = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AcceleratorConfig.max_time_shared_clients_per_gpu is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4085
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4141
    * @return The maxTimeSharedClientsPerGpu.
    */
   @java.lang.Override
@@ -1012,7 +1012,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * <code>int64 max_time_shared_clients_per_gpu = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AcceleratorConfig.max_time_shared_clients_per_gpu is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4085
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4141
      * @return The maxTimeSharedClientsPerGpu.
      */
     @java.lang.Override
@@ -1030,7 +1030,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * <code>int64 max_time_shared_clients_per_gpu = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AcceleratorConfig.max_time_shared_clients_per_gpu is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4085
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4141
      * @param value The maxTimeSharedClientsPerGpu to set.
      * @return This builder for chaining.
      */
@@ -1052,7 +1052,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * <code>int64 max_time_shared_clients_per_gpu = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AcceleratorConfig.max_time_shared_clients_per_gpu is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4085
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=4141
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

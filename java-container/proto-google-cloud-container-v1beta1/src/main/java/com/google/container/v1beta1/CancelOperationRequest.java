@@ -87,7 +87,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
    * </code>
    *
    * @deprecated google.container.v1beta1.CancelOperationRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2997
+   *     google/container/v1beta1/cluster_service.proto;l=3053
    * @return The projectId.
    */
   @java.lang.Override
@@ -116,7 +116,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
    * </code>
    *
    * @deprecated google.container.v1beta1.CancelOperationRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2997
+   *     google/container/v1beta1/cluster_service.proto;l=3053
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -150,7 +150,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.CancelOperationRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3004
+   *     google/container/v1beta1/cluster_service.proto;l=3060
    * @return The zone.
    */
   @java.lang.Override
@@ -179,7 +179,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.CancelOperationRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3004
+   *     google/container/v1beta1/cluster_service.proto;l=3060
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -212,7 +212,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
    * </code>
    *
    * @deprecated google.container.v1beta1.CancelOperationRequest.operation_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3008
+   *     google/container/v1beta1/cluster_service.proto;l=3064
    * @return The operationId.
    */
   @java.lang.Override
@@ -240,7 +240,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
    * </code>
    *
    * @deprecated google.container.v1beta1.CancelOperationRequest.operation_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3008
+   *     google/container/v1beta1/cluster_service.proto;l=3064
    * @return The bytes for operationId.
    */
   @java.lang.Override
@@ -738,7 +738,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.CancelOperationRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2997
+     *     google/container/v1beta1/cluster_service.proto;l=3053
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -766,7 +766,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.CancelOperationRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2997
+     *     google/container/v1beta1/cluster_service.proto;l=3053
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -794,7 +794,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.CancelOperationRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2997
+     *     google/container/v1beta1/cluster_service.proto;l=3053
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -821,7 +821,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.CancelOperationRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2997
+     *     google/container/v1beta1/cluster_service.proto;l=3053
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -844,7 +844,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.CancelOperationRequest.project_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2997
+     *     google/container/v1beta1/cluster_service.proto;l=3053
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -874,7 +874,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.CancelOperationRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3004
+     *     google/container/v1beta1/cluster_service.proto;l=3060
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -902,7 +902,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.CancelOperationRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3004
+     *     google/container/v1beta1/cluster_service.proto;l=3060
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -930,7 +930,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.CancelOperationRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3004
+     *     google/container/v1beta1/cluster_service.proto;l=3060
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -957,7 +957,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.CancelOperationRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3004
+     *     google/container/v1beta1/cluster_service.proto;l=3060
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -980,7 +980,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
      * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
      *
      * @deprecated google.container.v1beta1.CancelOperationRequest.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3004
+     *     google/container/v1beta1/cluster_service.proto;l=3060
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -1009,7 +1009,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.CancelOperationRequest.operation_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3008
+     *     google/container/v1beta1/cluster_service.proto;l=3064
      * @return The operationId.
      */
     @java.lang.Deprecated
@@ -1036,7 +1036,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.CancelOperationRequest.operation_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3008
+     *     google/container/v1beta1/cluster_service.proto;l=3064
      * @return The bytes for operationId.
      */
     @java.lang.Deprecated
@@ -1063,7 +1063,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.CancelOperationRequest.operation_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3008
+     *     google/container/v1beta1/cluster_service.proto;l=3064
      * @param value The operationId to set.
      * @return This builder for chaining.
      */
@@ -1089,7 +1089,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.CancelOperationRequest.operation_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3008
+     *     google/container/v1beta1/cluster_service.proto;l=3064
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1111,7 +1111,7 @@ public final class CancelOperationRequest extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @deprecated google.container.v1beta1.CancelOperationRequest.operation_id is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3008
+     *     google/container/v1beta1/cluster_service.proto;l=3064
      * @param value The bytes for operationId to set.
      * @return This builder for chaining.
      */

@@ -503,7 +503,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1412
+   *     google/container/v1beta1/cluster_service.proto;l=1434
    * @return The clusterIpv4Cidr.
    */
   @java.lang.Override
@@ -529,7 +529,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1412
+   *     google/container/v1beta1/cluster_service.proto;l=1434
    * @return The bytes for clusterIpv4Cidr.
    */
   @java.lang.Override
@@ -560,7 +560,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1415
+   *     google/container/v1beta1/cluster_service.proto;l=1437
    * @return The nodeIpv4Cidr.
    */
   @java.lang.Override
@@ -586,7 +586,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1415
+   *     google/container/v1beta1/cluster_service.proto;l=1437
    * @return The bytes for nodeIpv4Cidr.
    */
   @java.lang.Override
@@ -617,7 +617,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1418
+   *     google/container/v1beta1/cluster_service.proto;l=1440
    * @return The servicesIpv4Cidr.
    */
   @java.lang.Override
@@ -643,7 +643,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1418
+   *     google/container/v1beta1/cluster_service.proto;l=1440
    * @return The bytes for servicesIpv4Cidr.
    */
   @java.lang.Override
@@ -1189,6 +1189,87 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
         : result;
   }
 
+  public static final int POD_CIDR_OVERPROVISION_CONFIG_FIELD_NUMBER = 21;
+  private com.google.container.v1beta1.PodCIDROverprovisionConfig podCidrOverprovisionConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * [PRIVATE FIELD]
+   * Pod CIDR size overprovisioning config for the cluster.
+   * Pod CIDR size per node depends on max_pods_per_node. By default, the value
+   * of max_pods_per_node is doubled and then rounded off to next power of 2 to
+   * get the size of pod CIDR block per node.
+   * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+   * This config can disable the doubling of IPs (we still round off to next
+   * power of 2)
+   * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
+   * overprovisioning is disabled.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.PodCIDROverprovisionConfig pod_cidr_overprovision_config = 21;
+   * </code>
+   *
+   * @return Whether the podCidrOverprovisionConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasPodCidrOverprovisionConfig() {
+    return podCidrOverprovisionConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [PRIVATE FIELD]
+   * Pod CIDR size overprovisioning config for the cluster.
+   * Pod CIDR size per node depends on max_pods_per_node. By default, the value
+   * of max_pods_per_node is doubled and then rounded off to next power of 2 to
+   * get the size of pod CIDR block per node.
+   * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+   * This config can disable the doubling of IPs (we still round off to next
+   * power of 2)
+   * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
+   * overprovisioning is disabled.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.PodCIDROverprovisionConfig pod_cidr_overprovision_config = 21;
+   * </code>
+   *
+   * @return The podCidrOverprovisionConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.PodCIDROverprovisionConfig getPodCidrOverprovisionConfig() {
+    return podCidrOverprovisionConfig_ == null
+        ? com.google.container.v1beta1.PodCIDROverprovisionConfig.getDefaultInstance()
+        : podCidrOverprovisionConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [PRIVATE FIELD]
+   * Pod CIDR size overprovisioning config for the cluster.
+   * Pod CIDR size per node depends on max_pods_per_node. By default, the value
+   * of max_pods_per_node is doubled and then rounded off to next power of 2 to
+   * get the size of pod CIDR block per node.
+   * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+   * This config can disable the doubling of IPs (we still round off to next
+   * power of 2)
+   * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
+   * overprovisioning is disabled.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.PodCIDROverprovisionConfig pod_cidr_overprovision_config = 21;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.PodCIDROverprovisionConfigOrBuilder
+      getPodCidrOverprovisionConfigOrBuilder() {
+    return podCidrOverprovisionConfig_ == null
+        ? com.google.container.v1beta1.PodCIDROverprovisionConfig.getDefaultInstance()
+        : podCidrOverprovisionConfig_;
+  }
+
   public static final int SUBNET_IPV6_CIDR_BLOCK_FIELD_NUMBER = 22;
 
   @SuppressWarnings("serial")
@@ -1293,6 +1374,72 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int ADDITIONAL_POD_RANGES_CONFIG_FIELD_NUMBER = 24;
+  private com.google.container.v1beta1.AdditionalPodRangesConfig additionalPodRangesConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] The additional pod ranges that are added to the
+   * cluster. These pod ranges can be used by new node pools to allocate pod IPs
+   * automatically. Once the range is removed it will not show up in
+   * IPAllocationPolicy.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.AdditionalPodRangesConfig additional_pod_ranges_config = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the additionalPodRangesConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdditionalPodRangesConfig() {
+    return additionalPodRangesConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] The additional pod ranges that are added to the
+   * cluster. These pod ranges can be used by new node pools to allocate pod IPs
+   * automatically. Once the range is removed it will not show up in
+   * IPAllocationPolicy.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.AdditionalPodRangesConfig additional_pod_ranges_config = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The additionalPodRangesConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.AdditionalPodRangesConfig getAdditionalPodRangesConfig() {
+    return additionalPodRangesConfig_ == null
+        ? com.google.container.v1beta1.AdditionalPodRangesConfig.getDefaultInstance()
+        : additionalPodRangesConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] The additional pod ranges that are added to the
+   * cluster. These pod ranges can be used by new node pools to allocate pod IPs
+   * automatically. Once the range is removed it will not show up in
+   * IPAllocationPolicy.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.AdditionalPodRangesConfig additional_pod_ranges_config = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.AdditionalPodRangesConfigOrBuilder
+      getAdditionalPodRangesConfigOrBuilder() {
+    return additionalPodRangesConfig_ == null
+        ? com.google.container.v1beta1.AdditionalPodRangesConfig.getDefaultInstance()
+        : additionalPodRangesConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1360,11 +1507,17 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
             .getNumber()) {
       output.writeEnum(17, ipv6AccessType_);
     }
+    if (podCidrOverprovisionConfig_ != null) {
+      output.writeMessage(21, getPodCidrOverprovisionConfig());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetIpv6CidrBlock_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 22, subnetIpv6CidrBlock_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(servicesIpv6CidrBlock_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 23, servicesIpv6CidrBlock_);
+    }
+    if (additionalPodRangesConfig_ != null) {
+      output.writeMessage(24, getAdditionalPodRangesConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1430,11 +1583,21 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(17, ipv6AccessType_);
     }
+    if (podCidrOverprovisionConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              21, getPodCidrOverprovisionConfig());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetIpv6CidrBlock_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, subnetIpv6CidrBlock_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(servicesIpv6CidrBlock_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, servicesIpv6CidrBlock_);
+    }
+    if (additionalPodRangesConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              24, getAdditionalPodRangesConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1469,8 +1632,18 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     if (getUseRoutes() != other.getUseRoutes()) return false;
     if (stackType_ != other.stackType_) return false;
     if (ipv6AccessType_ != other.ipv6AccessType_) return false;
+    if (hasPodCidrOverprovisionConfig() != other.hasPodCidrOverprovisionConfig()) return false;
+    if (hasPodCidrOverprovisionConfig()) {
+      if (!getPodCidrOverprovisionConfig().equals(other.getPodCidrOverprovisionConfig()))
+        return false;
+    }
     if (!getSubnetIpv6CidrBlock().equals(other.getSubnetIpv6CidrBlock())) return false;
     if (!getServicesIpv6CidrBlock().equals(other.getServicesIpv6CidrBlock())) return false;
+    if (hasAdditionalPodRangesConfig() != other.hasAdditionalPodRangesConfig()) return false;
+    if (hasAdditionalPodRangesConfig()) {
+      if (!getAdditionalPodRangesConfig().equals(other.getAdditionalPodRangesConfig()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1514,10 +1687,18 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + stackType_;
     hash = (37 * hash) + IPV6_ACCESS_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + ipv6AccessType_;
+    if (hasPodCidrOverprovisionConfig()) {
+      hash = (37 * hash) + POD_CIDR_OVERPROVISION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getPodCidrOverprovisionConfig().hashCode();
+    }
     hash = (37 * hash) + SUBNET_IPV6_CIDR_BLOCK_FIELD_NUMBER;
     hash = (53 * hash) + getSubnetIpv6CidrBlock().hashCode();
     hash = (37 * hash) + SERVICES_IPV6_CIDR_BLOCK_FIELD_NUMBER;
     hash = (53 * hash) + getServicesIpv6CidrBlock().hashCode();
+    if (hasAdditionalPodRangesConfig()) {
+      hash = (37 * hash) + ADDITIONAL_POD_RANGES_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getAdditionalPodRangesConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1673,8 +1854,18 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       useRoutes_ = false;
       stackType_ = 0;
       ipv6AccessType_ = 0;
+      podCidrOverprovisionConfig_ = null;
+      if (podCidrOverprovisionConfigBuilder_ != null) {
+        podCidrOverprovisionConfigBuilder_.dispose();
+        podCidrOverprovisionConfigBuilder_ = null;
+      }
       subnetIpv6CidrBlock_ = "";
       servicesIpv6CidrBlock_ = "";
+      additionalPodRangesConfig_ = null;
+      if (additionalPodRangesConfigBuilder_ != null) {
+        additionalPodRangesConfigBuilder_.dispose();
+        additionalPodRangesConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -1760,10 +1951,22 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
         result.ipv6AccessType_ = ipv6AccessType_;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.subnetIpv6CidrBlock_ = subnetIpv6CidrBlock_;
+        result.podCidrOverprovisionConfig_ =
+            podCidrOverprovisionConfigBuilder_ == null
+                ? podCidrOverprovisionConfig_
+                : podCidrOverprovisionConfigBuilder_.build();
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.subnetIpv6CidrBlock_ = subnetIpv6CidrBlock_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.servicesIpv6CidrBlock_ = servicesIpv6CidrBlock_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.additionalPodRangesConfig_ =
+            additionalPodRangesConfigBuilder_ == null
+                ? additionalPodRangesConfig_
+                : additionalPodRangesConfigBuilder_.build();
       }
     }
 
@@ -1881,15 +2084,21 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       if (other.ipv6AccessType_ != 0) {
         setIpv6AccessTypeValue(other.getIpv6AccessTypeValue());
       }
+      if (other.hasPodCidrOverprovisionConfig()) {
+        mergePodCidrOverprovisionConfig(other.getPodCidrOverprovisionConfig());
+      }
       if (!other.getSubnetIpv6CidrBlock().isEmpty()) {
         subnetIpv6CidrBlock_ = other.subnetIpv6CidrBlock_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (!other.getServicesIpv6CidrBlock().isEmpty()) {
         servicesIpv6CidrBlock_ = other.servicesIpv6CidrBlock_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
+      }
+      if (other.hasAdditionalPodRangesConfig()) {
+        mergeAdditionalPodRangesConfig(other.getAdditionalPodRangesConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2013,18 +2222,32 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00008000;
                 break;
               } // case 136
+            case 170:
+              {
+                input.readMessage(
+                    getPodCidrOverprovisionConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 170
             case 178:
               {
                 subnetIpv6CidrBlock_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 178
             case 186:
               {
                 servicesIpv6CidrBlock_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 186
+            case 194:
+              {
+                input.readMessage(
+                    getAdditionalPodRangesConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 194
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2289,7 +2512,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1412
+     *     google/container/v1beta1/cluster_service.proto;l=1434
      * @return The clusterIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2314,7 +2537,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1412
+     *     google/container/v1beta1/cluster_service.proto;l=1434
      * @return The bytes for clusterIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2339,7 +2562,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1412
+     *     google/container/v1beta1/cluster_service.proto;l=1434
      * @param value The clusterIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2363,7 +2586,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1412
+     *     google/container/v1beta1/cluster_service.proto;l=1434
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2383,7 +2606,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1412
+     *     google/container/v1beta1/cluster_service.proto;l=1434
      * @param value The bytes for clusterIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2410,7 +2633,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1415
+     *     google/container/v1beta1/cluster_service.proto;l=1437
      * @return The nodeIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2435,7 +2658,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1415
+     *     google/container/v1beta1/cluster_service.proto;l=1437
      * @return The bytes for nodeIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2460,7 +2683,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1415
+     *     google/container/v1beta1/cluster_service.proto;l=1437
      * @param value The nodeIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2484,7 +2707,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1415
+     *     google/container/v1beta1/cluster_service.proto;l=1437
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2504,7 +2727,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1415
+     *     google/container/v1beta1/cluster_service.proto;l=1437
      * @param value The bytes for nodeIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2531,7 +2754,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1418
+     *     google/container/v1beta1/cluster_service.proto;l=1440
      * @return The servicesIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2556,7 +2779,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1418
+     *     google/container/v1beta1/cluster_service.proto;l=1440
      * @return The bytes for servicesIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2581,7 +2804,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1418
+     *     google/container/v1beta1/cluster_service.proto;l=1440
      * @param value The servicesIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2605,7 +2828,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1418
+     *     google/container/v1beta1/cluster_service.proto;l=1440
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2625,7 +2848,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1418
+     *     google/container/v1beta1/cluster_service.proto;l=1440
      * @param value The bytes for servicesIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -3862,6 +4085,294 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private com.google.container.v1beta1.PodCIDROverprovisionConfig podCidrOverprovisionConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.PodCIDROverprovisionConfig,
+            com.google.container.v1beta1.PodCIDROverprovisionConfig.Builder,
+            com.google.container.v1beta1.PodCIDROverprovisionConfigOrBuilder>
+        podCidrOverprovisionConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * [PRIVATE FIELD]
+     * Pod CIDR size overprovisioning config for the cluster.
+     * Pod CIDR size per node depends on max_pods_per_node. By default, the value
+     * of max_pods_per_node is doubled and then rounded off to next power of 2 to
+     * get the size of pod CIDR block per node.
+     * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+     * This config can disable the doubling of IPs (we still round off to next
+     * power of 2)
+     * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
+     * overprovisioning is disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.PodCIDROverprovisionConfig pod_cidr_overprovision_config = 21;
+     * </code>
+     *
+     * @return Whether the podCidrOverprovisionConfig field is set.
+     */
+    public boolean hasPodCidrOverprovisionConfig() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [PRIVATE FIELD]
+     * Pod CIDR size overprovisioning config for the cluster.
+     * Pod CIDR size per node depends on max_pods_per_node. By default, the value
+     * of max_pods_per_node is doubled and then rounded off to next power of 2 to
+     * get the size of pod CIDR block per node.
+     * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+     * This config can disable the doubling of IPs (we still round off to next
+     * power of 2)
+     * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
+     * overprovisioning is disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.PodCIDROverprovisionConfig pod_cidr_overprovision_config = 21;
+     * </code>
+     *
+     * @return The podCidrOverprovisionConfig.
+     */
+    public com.google.container.v1beta1.PodCIDROverprovisionConfig getPodCidrOverprovisionConfig() {
+      if (podCidrOverprovisionConfigBuilder_ == null) {
+        return podCidrOverprovisionConfig_ == null
+            ? com.google.container.v1beta1.PodCIDROverprovisionConfig.getDefaultInstance()
+            : podCidrOverprovisionConfig_;
+      } else {
+        return podCidrOverprovisionConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [PRIVATE FIELD]
+     * Pod CIDR size overprovisioning config for the cluster.
+     * Pod CIDR size per node depends on max_pods_per_node. By default, the value
+     * of max_pods_per_node is doubled and then rounded off to next power of 2 to
+     * get the size of pod CIDR block per node.
+     * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+     * This config can disable the doubling of IPs (we still round off to next
+     * power of 2)
+     * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
+     * overprovisioning is disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.PodCIDROverprovisionConfig pod_cidr_overprovision_config = 21;
+     * </code>
+     */
+    public Builder setPodCidrOverprovisionConfig(
+        com.google.container.v1beta1.PodCIDROverprovisionConfig value) {
+      if (podCidrOverprovisionConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        podCidrOverprovisionConfig_ = value;
+      } else {
+        podCidrOverprovisionConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [PRIVATE FIELD]
+     * Pod CIDR size overprovisioning config for the cluster.
+     * Pod CIDR size per node depends on max_pods_per_node. By default, the value
+     * of max_pods_per_node is doubled and then rounded off to next power of 2 to
+     * get the size of pod CIDR block per node.
+     * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+     * This config can disable the doubling of IPs (we still round off to next
+     * power of 2)
+     * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
+     * overprovisioning is disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.PodCIDROverprovisionConfig pod_cidr_overprovision_config = 21;
+     * </code>
+     */
+    public Builder setPodCidrOverprovisionConfig(
+        com.google.container.v1beta1.PodCIDROverprovisionConfig.Builder builderForValue) {
+      if (podCidrOverprovisionConfigBuilder_ == null) {
+        podCidrOverprovisionConfig_ = builderForValue.build();
+      } else {
+        podCidrOverprovisionConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [PRIVATE FIELD]
+     * Pod CIDR size overprovisioning config for the cluster.
+     * Pod CIDR size per node depends on max_pods_per_node. By default, the value
+     * of max_pods_per_node is doubled and then rounded off to next power of 2 to
+     * get the size of pod CIDR block per node.
+     * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+     * This config can disable the doubling of IPs (we still round off to next
+     * power of 2)
+     * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
+     * overprovisioning is disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.PodCIDROverprovisionConfig pod_cidr_overprovision_config = 21;
+     * </code>
+     */
+    public Builder mergePodCidrOverprovisionConfig(
+        com.google.container.v1beta1.PodCIDROverprovisionConfig value) {
+      if (podCidrOverprovisionConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0)
+            && podCidrOverprovisionConfig_ != null
+            && podCidrOverprovisionConfig_
+                != com.google.container.v1beta1.PodCIDROverprovisionConfig.getDefaultInstance()) {
+          getPodCidrOverprovisionConfigBuilder().mergeFrom(value);
+        } else {
+          podCidrOverprovisionConfig_ = value;
+        }
+      } else {
+        podCidrOverprovisionConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [PRIVATE FIELD]
+     * Pod CIDR size overprovisioning config for the cluster.
+     * Pod CIDR size per node depends on max_pods_per_node. By default, the value
+     * of max_pods_per_node is doubled and then rounded off to next power of 2 to
+     * get the size of pod CIDR block per node.
+     * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+     * This config can disable the doubling of IPs (we still round off to next
+     * power of 2)
+     * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
+     * overprovisioning is disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.PodCIDROverprovisionConfig pod_cidr_overprovision_config = 21;
+     * </code>
+     */
+    public Builder clearPodCidrOverprovisionConfig() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      podCidrOverprovisionConfig_ = null;
+      if (podCidrOverprovisionConfigBuilder_ != null) {
+        podCidrOverprovisionConfigBuilder_.dispose();
+        podCidrOverprovisionConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [PRIVATE FIELD]
+     * Pod CIDR size overprovisioning config for the cluster.
+     * Pod CIDR size per node depends on max_pods_per_node. By default, the value
+     * of max_pods_per_node is doubled and then rounded off to next power of 2 to
+     * get the size of pod CIDR block per node.
+     * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+     * This config can disable the doubling of IPs (we still round off to next
+     * power of 2)
+     * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
+     * overprovisioning is disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.PodCIDROverprovisionConfig pod_cidr_overprovision_config = 21;
+     * </code>
+     */
+    public com.google.container.v1beta1.PodCIDROverprovisionConfig.Builder
+        getPodCidrOverprovisionConfigBuilder() {
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return getPodCidrOverprovisionConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [PRIVATE FIELD]
+     * Pod CIDR size overprovisioning config for the cluster.
+     * Pod CIDR size per node depends on max_pods_per_node. By default, the value
+     * of max_pods_per_node is doubled and then rounded off to next power of 2 to
+     * get the size of pod CIDR block per node.
+     * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+     * This config can disable the doubling of IPs (we still round off to next
+     * power of 2)
+     * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
+     * overprovisioning is disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.PodCIDROverprovisionConfig pod_cidr_overprovision_config = 21;
+     * </code>
+     */
+    public com.google.container.v1beta1.PodCIDROverprovisionConfigOrBuilder
+        getPodCidrOverprovisionConfigOrBuilder() {
+      if (podCidrOverprovisionConfigBuilder_ != null) {
+        return podCidrOverprovisionConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return podCidrOverprovisionConfig_ == null
+            ? com.google.container.v1beta1.PodCIDROverprovisionConfig.getDefaultInstance()
+            : podCidrOverprovisionConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [PRIVATE FIELD]
+     * Pod CIDR size overprovisioning config for the cluster.
+     * Pod CIDR size per node depends on max_pods_per_node. By default, the value
+     * of max_pods_per_node is doubled and then rounded off to next power of 2 to
+     * get the size of pod CIDR block per node.
+     * Example: max_pods_per_node of 30 would result in 64 IPs (/26).
+     * This config can disable the doubling of IPs (we still round off to next
+     * power of 2)
+     * Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
+     * overprovisioning is disabled.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.PodCIDROverprovisionConfig pod_cidr_overprovision_config = 21;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.PodCIDROverprovisionConfig,
+            com.google.container.v1beta1.PodCIDROverprovisionConfig.Builder,
+            com.google.container.v1beta1.PodCIDROverprovisionConfigOrBuilder>
+        getPodCidrOverprovisionConfigFieldBuilder() {
+      if (podCidrOverprovisionConfigBuilder_ == null) {
+        podCidrOverprovisionConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.PodCIDROverprovisionConfig,
+                com.google.container.v1beta1.PodCIDROverprovisionConfig.Builder,
+                com.google.container.v1beta1.PodCIDROverprovisionConfigOrBuilder>(
+                getPodCidrOverprovisionConfig(), getParentForChildren(), isClean());
+        podCidrOverprovisionConfig_ = null;
+      }
+      return podCidrOverprovisionConfigBuilder_;
+    }
+
     private java.lang.Object subnetIpv6CidrBlock_ = "";
     /**
      *
@@ -3927,7 +4438,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       subnetIpv6CidrBlock_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -3945,7 +4456,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearSubnetIpv6CidrBlock() {
       subnetIpv6CidrBlock_ = getDefaultInstance().getSubnetIpv6CidrBlock();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -3968,7 +4479,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       }
       checkByteStringIsUtf8(value);
       subnetIpv6CidrBlock_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4038,7 +4549,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
         throw new NullPointerException();
       }
       servicesIpv6CidrBlock_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -4056,7 +4567,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearServicesIpv6CidrBlock() {
       servicesIpv6CidrBlock_ = getDefaultInstance().getServicesIpv6CidrBlock();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -4079,9 +4590,243 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       }
       checkByteStringIsUtf8(value);
       servicesIpv6CidrBlock_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
+    }
+
+    private com.google.container.v1beta1.AdditionalPodRangesConfig additionalPodRangesConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.AdditionalPodRangesConfig,
+            com.google.container.v1beta1.AdditionalPodRangesConfig.Builder,
+            com.google.container.v1beta1.AdditionalPodRangesConfigOrBuilder>
+        additionalPodRangesConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] The additional pod ranges that are added to the
+     * cluster. These pod ranges can be used by new node pools to allocate pod IPs
+     * automatically. Once the range is removed it will not show up in
+     * IPAllocationPolicy.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AdditionalPodRangesConfig additional_pod_ranges_config = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the additionalPodRangesConfig field is set.
+     */
+    public boolean hasAdditionalPodRangesConfig() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] The additional pod ranges that are added to the
+     * cluster. These pod ranges can be used by new node pools to allocate pod IPs
+     * automatically. Once the range is removed it will not show up in
+     * IPAllocationPolicy.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AdditionalPodRangesConfig additional_pod_ranges_config = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The additionalPodRangesConfig.
+     */
+    public com.google.container.v1beta1.AdditionalPodRangesConfig getAdditionalPodRangesConfig() {
+      if (additionalPodRangesConfigBuilder_ == null) {
+        return additionalPodRangesConfig_ == null
+            ? com.google.container.v1beta1.AdditionalPodRangesConfig.getDefaultInstance()
+            : additionalPodRangesConfig_;
+      } else {
+        return additionalPodRangesConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] The additional pod ranges that are added to the
+     * cluster. These pod ranges can be used by new node pools to allocate pod IPs
+     * automatically. Once the range is removed it will not show up in
+     * IPAllocationPolicy.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AdditionalPodRangesConfig additional_pod_ranges_config = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAdditionalPodRangesConfig(
+        com.google.container.v1beta1.AdditionalPodRangesConfig value) {
+      if (additionalPodRangesConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        additionalPodRangesConfig_ = value;
+      } else {
+        additionalPodRangesConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] The additional pod ranges that are added to the
+     * cluster. These pod ranges can be used by new node pools to allocate pod IPs
+     * automatically. Once the range is removed it will not show up in
+     * IPAllocationPolicy.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AdditionalPodRangesConfig additional_pod_ranges_config = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAdditionalPodRangesConfig(
+        com.google.container.v1beta1.AdditionalPodRangesConfig.Builder builderForValue) {
+      if (additionalPodRangesConfigBuilder_ == null) {
+        additionalPodRangesConfig_ = builderForValue.build();
+      } else {
+        additionalPodRangesConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] The additional pod ranges that are added to the
+     * cluster. These pod ranges can be used by new node pools to allocate pod IPs
+     * automatically. Once the range is removed it will not show up in
+     * IPAllocationPolicy.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AdditionalPodRangesConfig additional_pod_ranges_config = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeAdditionalPodRangesConfig(
+        com.google.container.v1beta1.AdditionalPodRangesConfig value) {
+      if (additionalPodRangesConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00080000) != 0)
+            && additionalPodRangesConfig_ != null
+            && additionalPodRangesConfig_
+                != com.google.container.v1beta1.AdditionalPodRangesConfig.getDefaultInstance()) {
+          getAdditionalPodRangesConfigBuilder().mergeFrom(value);
+        } else {
+          additionalPodRangesConfig_ = value;
+        }
+      } else {
+        additionalPodRangesConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] The additional pod ranges that are added to the
+     * cluster. These pod ranges can be used by new node pools to allocate pod IPs
+     * automatically. Once the range is removed it will not show up in
+     * IPAllocationPolicy.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AdditionalPodRangesConfig additional_pod_ranges_config = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearAdditionalPodRangesConfig() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      additionalPodRangesConfig_ = null;
+      if (additionalPodRangesConfigBuilder_ != null) {
+        additionalPodRangesConfigBuilder_.dispose();
+        additionalPodRangesConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] The additional pod ranges that are added to the
+     * cluster. These pod ranges can be used by new node pools to allocate pod IPs
+     * automatically. Once the range is removed it will not show up in
+     * IPAllocationPolicy.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AdditionalPodRangesConfig additional_pod_ranges_config = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.container.v1beta1.AdditionalPodRangesConfig.Builder
+        getAdditionalPodRangesConfigBuilder() {
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return getAdditionalPodRangesConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] The additional pod ranges that are added to the
+     * cluster. These pod ranges can be used by new node pools to allocate pod IPs
+     * automatically. Once the range is removed it will not show up in
+     * IPAllocationPolicy.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AdditionalPodRangesConfig additional_pod_ranges_config = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.container.v1beta1.AdditionalPodRangesConfigOrBuilder
+        getAdditionalPodRangesConfigOrBuilder() {
+      if (additionalPodRangesConfigBuilder_ != null) {
+        return additionalPodRangesConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return additionalPodRangesConfig_ == null
+            ? com.google.container.v1beta1.AdditionalPodRangesConfig.getDefaultInstance()
+            : additionalPodRangesConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output only] The additional pod ranges that are added to the
+     * cluster. These pod ranges can be used by new node pools to allocate pod IPs
+     * automatically. Once the range is removed it will not show up in
+     * IPAllocationPolicy.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AdditionalPodRangesConfig additional_pod_ranges_config = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.AdditionalPodRangesConfig,
+            com.google.container.v1beta1.AdditionalPodRangesConfig.Builder,
+            com.google.container.v1beta1.AdditionalPodRangesConfigOrBuilder>
+        getAdditionalPodRangesConfigFieldBuilder() {
+      if (additionalPodRangesConfigBuilder_ == null) {
+        additionalPodRangesConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.AdditionalPodRangesConfig,
+                com.google.container.v1beta1.AdditionalPodRangesConfig.Builder,
+                com.google.container.v1beta1.AdditionalPodRangesConfigOrBuilder>(
+                getAdditionalPodRangesConfig(), getParentForChildren(), isClean());
+        additionalPodRangesConfig_ = null;
+      }
+      return additionalPodRangesConfigBuilder_;
     }
 
     @java.lang.Override
