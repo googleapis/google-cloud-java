@@ -27,6 +27,7 @@ import com.google.cloud.contentwarehouse.v1.Document;
 import com.google.cloud.contentwarehouse.v1.FetchAclRequest;
 import com.google.cloud.contentwarehouse.v1.FetchAclResponse;
 import com.google.cloud.contentwarehouse.v1.GetDocumentRequest;
+import com.google.cloud.contentwarehouse.v1.LockDocumentRequest;
 import com.google.cloud.contentwarehouse.v1.SearchDocumentsRequest;
 import com.google.cloud.contentwarehouse.v1.SearchDocumentsResponse;
 import com.google.cloud.contentwarehouse.v1.SetAclRequest;
@@ -68,6 +69,10 @@ public abstract class DocumentServiceStub implements BackgroundResource {
 
   public UnaryCallable<SearchDocumentsRequest, SearchDocumentsResponse> searchDocumentsCallable() {
     throw new UnsupportedOperationException("Not implemented: searchDocumentsCallable()");
+  }
+
+  public UnaryCallable<LockDocumentRequest, Document> lockDocumentCallable() {
+    throw new UnsupportedOperationException("Not implemented: lockDocumentCallable()");
   }
 
   public UnaryCallable<FetchAclRequest, FetchAclResponse> fetchAclCallable() {

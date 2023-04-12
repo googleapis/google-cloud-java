@@ -124,6 +124,9 @@ public interface PropertyDefinitionOrBuilder
    *
    * <pre>
    * Whether the property is user supplied metadata.
+   * This out-of-the box placeholder setting can be used to tag derived
+   * properties. Its value and interpretation logic should be implemented by API
+   * user.
    * </pre>
    *
    * <code>bool is_metadata = 5;</code>
@@ -146,6 +149,36 @@ public interface PropertyDefinitionOrBuilder
    * @return The isRequired.
    */
   boolean getIsRequired();
+
+  /**
+   *
+   *
+   * <pre>
+   * The retrieval importance of the property during search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contentwarehouse.v1.PropertyDefinition.RetrievalImportance retrieval_importance = 18;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for retrievalImportance.
+   */
+  int getRetrievalImportanceValue();
+  /**
+   *
+   *
+   * <pre>
+   * The retrieval importance of the property during search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contentwarehouse.v1.PropertyDefinition.RetrievalImportance retrieval_importance = 18;
+   * </code>
+   *
+   * @return The retrievalImportance.
+   */
+  com.google.cloud.contentwarehouse.v1.PropertyDefinition.RetrievalImportance
+      getRetrievalImportance();
 
   /**
    *
@@ -438,6 +471,71 @@ public interface PropertyDefinitionOrBuilder
    */
   com.google.cloud.contentwarehouse.v1.TimestampTypeOptionsOrBuilder
       getTimestampTypeOptionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The mapping information between this property to another schema source.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource schema_sources = 19;
+   * </code>
+   */
+  java.util.List<com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource>
+      getSchemaSourcesList();
+  /**
+   *
+   *
+   * <pre>
+   * The mapping information between this property to another schema source.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource schema_sources = 19;
+   * </code>
+   */
+  com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource getSchemaSources(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The mapping information between this property to another schema source.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource schema_sources = 19;
+   * </code>
+   */
+  int getSchemaSourcesCount();
+  /**
+   *
+   *
+   * <pre>
+   * The mapping information between this property to another schema source.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource schema_sources = 19;
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSourceOrBuilder>
+      getSchemaSourcesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * The mapping information between this property to another schema source.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource schema_sources = 19;
+   * </code>
+   */
+  com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSourceOrBuilder
+      getSchemaSourcesOrBuilder(int index);
 
   public com.google.cloud.contentwarehouse.v1.PropertyDefinition.ValueTypeOptionsCase
       getValueTypeOptionsCase();

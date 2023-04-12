@@ -71,9 +71,25 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.contentwarehouse.v1.Rule.Builder.class);
   }
 
-  /** Protobuf enum {@code google.cloud.contentwarehouse.v1.Rule.TriggerType} */
+  /**
+   *
+   *
+   * <pre>
+   * The trigger types for actions.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.contentwarehouse.v1.Rule.TriggerType}
+   */
   public enum TriggerType implements com.google.protobuf.ProtocolMessageEnum {
-    /** <code>UNKNOWN = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Trigger for unknown action.
+     * </pre>
+     *
+     * <code>UNKNOWN = 0;</code>
+     */
     UNKNOWN(0),
     /**
      *
@@ -98,7 +114,15 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     UNRECOGNIZED(-1),
     ;
 
-    /** <code>UNKNOWN = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Trigger for unknown action.
+     * </pre>
+     *
+     * <code>UNKNOWN = 0;</code>
+     */
     public static final int UNKNOWN_VALUE = 0;
     /**
      *

@@ -84,11 +84,14 @@ public final class SynonymSetServiceRequestProto {
           + "ogle.cloud.contentwarehouse.v1.SynonymSe"
           + "tB\003\340A\002\"[\n\027DeleteSynonymSetRequest\022@\n\004nam"
           + "e\030\001 \001(\tB2\340A\002\372A,\n*contentwarehouse.google"
-          + "apis.com/SynonymSetB\231\001\n$com.google.cloud"
+          + "apis.com/SynonymSetB\205\002\n$com.google.cloud"
           + ".contentwarehouse.v1B\035SynonymSetServiceR"
           + "equestProtoP\001ZPcloud.google.com/go/conte"
           + "ntwarehouse/apiv1/contentwarehousepb;con"
-          + "tentwarehousepbb\006proto3"
+          + "tentwarehousepb\252\002 Google.Cloud.ContentWa"
+          + "rehouse.V1\312\002 Google\\Cloud\\ContentWarehou"
+          + "se\\V1\352\002#Google::Cloud::ContentWarehouse:"
+          + ":V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

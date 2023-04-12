@@ -37,6 +37,7 @@ import com.google.cloud.contentwarehouse.v1.Document;
 import com.google.cloud.contentwarehouse.v1.FetchAclRequest;
 import com.google.cloud.contentwarehouse.v1.FetchAclResponse;
 import com.google.cloud.contentwarehouse.v1.GetDocumentRequest;
+import com.google.cloud.contentwarehouse.v1.LockDocumentRequest;
 import com.google.cloud.contentwarehouse.v1.SearchDocumentsRequest;
 import com.google.cloud.contentwarehouse.v1.SearchDocumentsResponse;
 import com.google.cloud.contentwarehouse.v1.SetAclRequest;
@@ -255,6 +256,43 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<LockDocumentRequest, Document>
+      lockDocumentMethodDescriptor =
+          ApiMethodDescriptor.<LockDocumentRequest, Document>newBuilder()
+              .setFullMethodName("google.cloud.contentwarehouse.v1.DocumentService/LockDocument")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<LockDocumentRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/documents/*}:lock",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<LockDocumentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<LockDocumentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Document>newBuilder()
+                      .setDefaultInstance(Document.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<FetchAclRequest, FetchAclResponse>
       fetchAclMethodDescriptor =
           ApiMethodDescriptor.<FetchAclRequest, FetchAclResponse>newBuilder()
@@ -338,6 +376,7 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
       searchDocumentsCallable;
   private final UnaryCallable<SearchDocumentsRequest, SearchDocumentsPagedResponse>
       searchDocumentsPagedCallable;
+  private final UnaryCallable<LockDocumentRequest, Document> lockDocumentCallable;
   private final UnaryCallable<FetchAclRequest, FetchAclResponse> fetchAclCallable;
   private final UnaryCallable<SetAclRequest, SetAclResponse> setAclCallable;
 
@@ -411,6 +450,11 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                 .setMethodDescriptor(searchDocumentsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<LockDocumentRequest, Document> lockDocumentTransportSettings =
+        HttpJsonCallSettings.<LockDocumentRequest, Document>newBuilder()
+            .setMethodDescriptor(lockDocumentMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
     HttpJsonCallSettings<FetchAclRequest, FetchAclResponse> fetchAclTransportSettings =
         HttpJsonCallSettings.<FetchAclRequest, FetchAclResponse>newBuilder()
             .setMethodDescriptor(fetchAclMethodDescriptor)
@@ -440,6 +484,9 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
     this.searchDocumentsPagedCallable =
         callableFactory.createPagedCallable(
             searchDocumentsTransportSettings, settings.searchDocumentsSettings(), clientContext);
+    this.lockDocumentCallable =
+        callableFactory.createUnaryCallable(
+            lockDocumentTransportSettings, settings.lockDocumentSettings(), clientContext);
     this.fetchAclCallable =
         callableFactory.createUnaryCallable(
             fetchAclTransportSettings, settings.fetchAclSettings(), clientContext);
@@ -459,6 +506,7 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
     methodDescriptors.add(updateDocumentMethodDescriptor);
     methodDescriptors.add(deleteDocumentMethodDescriptor);
     methodDescriptors.add(searchDocumentsMethodDescriptor);
+    methodDescriptors.add(lockDocumentMethodDescriptor);
     methodDescriptors.add(fetchAclMethodDescriptor);
     methodDescriptors.add(setAclMethodDescriptor);
     return methodDescriptors;
@@ -493,6 +541,11 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
   public UnaryCallable<SearchDocumentsRequest, SearchDocumentsPagedResponse>
       searchDocumentsPagedCallable() {
     return searchDocumentsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<LockDocumentRequest, Document> lockDocumentCallable() {
+    return lockDocumentCallable;
   }
 
   @Override

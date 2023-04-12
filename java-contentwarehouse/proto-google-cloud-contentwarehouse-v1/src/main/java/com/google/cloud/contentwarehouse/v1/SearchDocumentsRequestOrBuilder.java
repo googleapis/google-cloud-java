@@ -133,7 +133,9 @@ public interface SearchDocumentsRequestOrBuilder
    * <pre>
    * An integer that specifies the current offset (that is, starting result
    * location, amongst the documents deemed by the API as relevant) in search
-   * results. This field is only considered if [page_token][google.cloud.contentwarehouse.v1.SearchDocumentsRequest.page_token] is unset.
+   * results. This field is only considered if
+   * [page_token][google.cloud.contentwarehouse.v1.SearchDocumentsRequest.page_token]
+   * is unset.
    * The maximum allowed value is 5000. Otherwise an error is thrown.
    * For example, 0 means to  return results starting from the first matching
    * document, and 10 means to return from the 11th document. This can be used
@@ -167,8 +169,9 @@ public interface SearchDocumentsRequestOrBuilder
    *
    * <pre>
    * The token specifying the current offset within search results.
-   * See [SearchDocumentsResponse.next_page_token][google.cloud.contentwarehouse.v1.SearchDocumentsResponse.next_page_token] for an explanation of how
-   * to obtain the next set of query results.
+   * See
+   * [SearchDocumentsResponse.next_page_token][google.cloud.contentwarehouse.v1.SearchDocumentsResponse.next_page_token]
+   * for an explanation of how to obtain the next set of query results.
    * </pre>
    *
    * <code>string page_token = 7;</code>
@@ -181,8 +184,9 @@ public interface SearchDocumentsRequestOrBuilder
    *
    * <pre>
    * The token specifying the current offset within search results.
-   * See [SearchDocumentsResponse.next_page_token][google.cloud.contentwarehouse.v1.SearchDocumentsResponse.next_page_token] for an explanation of how
-   * to obtain the next set of query results.
+   * See
+   * [SearchDocumentsResponse.next_page_token][google.cloud.contentwarehouse.v1.SearchDocumentsResponse.next_page_token]
+   * for an explanation of how to obtain the next set of query results.
    * </pre>
    *
    * <code>string page_token = 7;</code>
@@ -205,6 +209,9 @@ public interface SearchDocumentsRequestOrBuilder
    * * `"upload_date"`: By upload date ascending.
    * * `"update_date desc"`: By last updated date descending.
    * * `"update_date"`: By last updated date ascending.
+   * * `"retrieval_importance desc"`: By retrieval importance of properties
+   *   descending. This feature is still under development, please do not use
+   *   unless otherwise instructed to do so.
    * </pre>
    *
    * <code>string order_by = 8;</code>
@@ -226,6 +233,9 @@ public interface SearchDocumentsRequestOrBuilder
    * * `"upload_date"`: By upload date ascending.
    * * `"update_date desc"`: By last updated date descending.
    * * `"update_date"`: By last updated date ascending.
+   * * `"retrieval_importance desc"`: By retrieval importance of properties
+   *   descending. This feature is still under development, please do not use
+   *   unless otherwise instructed to do so.
    * </pre>
    *
    * <code>string order_by = 8;</code>
@@ -401,8 +411,9 @@ public interface SearchDocumentsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Controls if the search document request requires the return of a total size
-   * of matched documents. See [SearchDocumentsResponse.total_size][google.cloud.contentwarehouse.v1.SearchDocumentsResponse.total_size].
+   * Controls if the search document request requires the return of a total size
+   * of matched documents. See
+   * [SearchDocumentsResponse.total_size][google.cloud.contentwarehouse.v1.SearchDocumentsResponse.total_size].
    * Enabling this flag may adversely impact performance. Hint: If this is
    * used with pagination, set this flag on the initial query but set this
    * to false on subsequent page calls (keep the total count locally).
@@ -414,6 +425,39 @@ public interface SearchDocumentsRequestOrBuilder
    * @return The requireTotalSize.
    */
   boolean getRequireTotalSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * Controls if the search document request requires the return of a total size
+   * of matched documents. See
+   * [SearchDocumentsResponse.total_size][google.cloud.contentwarehouse.v1.SearchDocumentsResponse.total_size].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contentwarehouse.v1.SearchDocumentsRequest.TotalResultSize total_result_size = 12;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for totalResultSize.
+   */
+  int getTotalResultSizeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Controls if the search document request requires the return of a total size
+   * of matched documents. See
+   * [SearchDocumentsResponse.total_size][google.cloud.contentwarehouse.v1.SearchDocumentsResponse.total_size].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contentwarehouse.v1.SearchDocumentsRequest.TotalResultSize total_result_size = 12;
+   * </code>
+   *
+   * @return The totalResultSize.
+   */
+  com.google.cloud.contentwarehouse.v1.SearchDocumentsRequest.TotalResultSize getTotalResultSize();
 
   /**
    *

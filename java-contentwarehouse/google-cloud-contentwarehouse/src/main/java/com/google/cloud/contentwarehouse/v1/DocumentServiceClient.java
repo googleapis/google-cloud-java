@@ -900,6 +900,129 @@ public class DocumentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lock the document so the document cannot be updated by other users.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   DocumentName name =
+   *       DocumentName.ofProjectLocationDocumentName("[PROJECT]", "[LOCATION]", "[DOCUMENT]");
+   *   Document response = documentServiceClient.lockDocument(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the document to lock. Format:
+   *     projects/{project_number}/locations/{location}/documents/{document}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Document lockDocument(DocumentName name) {
+    LockDocumentRequest request =
+        LockDocumentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return lockDocument(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lock the document so the document cannot be updated by other users.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   String name =
+   *       DocumentName.ofProjectLocationDocumentName("[PROJECT]", "[LOCATION]", "[DOCUMENT]")
+   *           .toString();
+   *   Document response = documentServiceClient.lockDocument(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the document to lock. Format:
+   *     projects/{project_number}/locations/{location}/documents/{document}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Document lockDocument(String name) {
+    LockDocumentRequest request = LockDocumentRequest.newBuilder().setName(name).build();
+    return lockDocument(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lock the document so the document cannot be updated by other users.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   LockDocumentRequest request =
+   *       LockDocumentRequest.newBuilder()
+   *           .setName(
+   *               DocumentName.ofProjectLocationDocumentName(
+   *                       "[PROJECT]", "[LOCATION]", "[DOCUMENT]")
+   *                   .toString())
+   *           .setCollectionId("collectionId1636075609")
+   *           .setLockingUser(UserInfo.newBuilder().build())
+   *           .build();
+   *   Document response = documentServiceClient.lockDocument(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Document lockDocument(LockDocumentRequest request) {
+    return lockDocumentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lock the document so the document cannot be updated by other users.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   LockDocumentRequest request =
+   *       LockDocumentRequest.newBuilder()
+   *           .setName(
+   *               DocumentName.ofProjectLocationDocumentName(
+   *                       "[PROJECT]", "[LOCATION]", "[DOCUMENT]")
+   *                   .toString())
+   *           .setCollectionId("collectionId1636075609")
+   *           .setLockingUser(UserInfo.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Document> future = documentServiceClient.lockDocumentCallable().futureCall(request);
+   *   // Do something.
+   *   Document response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<LockDocumentRequest, Document> lockDocumentCallable() {
+    return stub.lockDocumentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Gets the access control policy for a resource. Returns NOT_FOUND error if the resource does not
    * exist. Returns an empty policy if the resource exists but does not have a policy set.
    *
@@ -919,8 +1042,9 @@ public class DocumentServiceClient implements BackgroundResource {
    *
    * @param resource Required. REQUIRED: The resource for which the policy is being requested.
    *     Format for document:
-   *     projects/{project_number}/locations/{location}/documents/{document_id}. Format for project:
-   *     projects/{project_number}.
+   *     projects/{project_number}/locations/{location}/documents/{document_id}. Format for
+   *     collection: projects/{project_number}/locations/{location}/collections/{collection_id}.
+   *     Format for project: projects/{project_number}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FetchAclResponse fetchAcl(String resource) {
@@ -1011,10 +1135,21 @@ public class DocumentServiceClient implements BackgroundResource {
    *
    * @param resource Required. REQUIRED: The resource for which the policy is being requested.
    *     Format for document:
-   *     projects/{project_number}/locations/{location}/documents/{document_id}. Format for project:
-   *     projects/{project_number}.
+   *     projects/{project_number}/locations/{location}/documents/{document_id}. Format for
+   *     collection: projects/{project_number}/locations/{location}/collections/{collection_id}.
+   *     Format for project: projects/{project_number}.
    * @param policy Required. REQUIRED: The complete policy to be applied to the `resource`. The size
-   *     of the policy is limited to a few 10s of KB.
+   *     of the policy is limited to a few 10s of KB. This refers to an Identity and Access (IAM)
+   *     policy, which specifies access controls for the Document.
+   *     <p>You can set ACL with condition for projects only.
+   *     <p>Supported operators are: `=`, `!=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` where the left
+   *     of the operator is `DocumentSchemaId` or property name and the right of the operator is a
+   *     number or a quoted string. You must escape backslash (\\\\) and quote (\\") characters.
+   *     <p>Boolean expressions (AND/OR) are supported up to 3 levels of nesting (for example, "((A
+   *     AND B AND C) OR D) AND E"), a maximum of 10 comparisons are allowed in the expression. The
+   *     expression must be &lt; 6000 bytes in length.
+   *     <p>Sample condition: `"DocumentSchemaId = \\"some schema id\\" OR
+   *     SchemaId.floatPropertyName &gt;= 10"`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SetAclResponse setAcl(String resource, Policy policy) {

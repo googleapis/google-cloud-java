@@ -135,7 +135,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Name of the schema given by the user. Must be unique per customer.
+   * Required. Name of the schema given by the user. Must be unique per project.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -158,7 +158,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Name of the schema given by the user. Must be unique per customer.
+   * Required. Name of the schema given by the user. Must be unique per project.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1099,7 +1099,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the schema given by the user. Must be unique per customer.
+     * Required. Name of the schema given by the user. Must be unique per project.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1121,7 +1121,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the schema given by the user. Must be unique per customer.
+     * Required. Name of the schema given by the user. Must be unique per project.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1143,7 +1143,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the schema given by the user. Must be unique per customer.
+     * Required. Name of the schema given by the user. Must be unique per project.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1164,7 +1164,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the schema given by the user. Must be unique per customer.
+     * Required. Name of the schema given by the user. Must be unique per project.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1181,7 +1181,7 @@ public final class DocumentSchema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the schema given by the user. Must be unique per customer.
+     * Required. Name of the schema given by the user. Must be unique per project.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>

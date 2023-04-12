@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to contentwarehouse API
+ * A client to Document AI Warehouse API
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *

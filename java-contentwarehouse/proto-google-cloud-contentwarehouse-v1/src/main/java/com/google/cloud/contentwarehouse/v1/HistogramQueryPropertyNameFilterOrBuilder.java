@@ -28,9 +28,9 @@ public interface HistogramQueryPropertyNameFilterOrBuilder
    *
    * <pre>
    * This filter specifies the exact document schema(s)
-   * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name] to run histogram query against.
-   * It is optional. It will perform histogram for property names for all the
-   * document schemas if it is not set.
+   * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
+   * to run histogram query against. It is optional. It will perform histogram
+   * for property names for all the document schemas if it is not set.
    * At most 10 document schema names are allowed.
    * Format:
    * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
@@ -46,9 +46,9 @@ public interface HistogramQueryPropertyNameFilterOrBuilder
    *
    * <pre>
    * This filter specifies the exact document schema(s)
-   * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name] to run histogram query against.
-   * It is optional. It will perform histogram for property names for all the
-   * document schemas if it is not set.
+   * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
+   * to run histogram query against. It is optional. It will perform histogram
+   * for property names for all the document schemas if it is not set.
    * At most 10 document schema names are allowed.
    * Format:
    * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
@@ -64,9 +64,9 @@ public interface HistogramQueryPropertyNameFilterOrBuilder
    *
    * <pre>
    * This filter specifies the exact document schema(s)
-   * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name] to run histogram query against.
-   * It is optional. It will perform histogram for property names for all the
-   * document schemas if it is not set.
+   * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
+   * to run histogram query against. It is optional. It will perform histogram
+   * for property names for all the document schemas if it is not set.
    * At most 10 document schema names are allowed.
    * Format:
    * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
@@ -83,9 +83,9 @@ public interface HistogramQueryPropertyNameFilterOrBuilder
    *
    * <pre>
    * This filter specifies the exact document schema(s)
-   * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name] to run histogram query against.
-   * It is optional. It will perform histogram for property names for all the
-   * document schemas if it is not set.
+   * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
+   * to run histogram query against. It is optional. It will perform histogram
+   * for property names for all the document schemas if it is not set.
    * At most 10 document schema names are allowed.
    * Format:
    * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.

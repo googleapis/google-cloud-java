@@ -37,7 +37,9 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
     super(builder);
   }
 
-  private CreateDocumentResponse() {}
+  private CreateDocumentResponse() {
+    longRunningOperations_ = java.util.Collections.emptyList();
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -225,6 +227,77 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
         : metadata_;
   }
 
+  public static final int LONG_RUNNING_OPERATIONS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.longrunning.Operation> longRunningOperations_;
+  /**
+   *
+   *
+   * <pre>
+   * post-processing LROs
+   * </pre>
+   *
+   * <code>repeated .google.longrunning.Operation long_running_operations = 4;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.longrunning.Operation> getLongRunningOperationsList() {
+    return longRunningOperations_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * post-processing LROs
+   * </pre>
+   *
+   * <code>repeated .google.longrunning.Operation long_running_operations = 4;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.longrunning.OperationOrBuilder>
+      getLongRunningOperationsOrBuilderList() {
+    return longRunningOperations_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * post-processing LROs
+   * </pre>
+   *
+   * <code>repeated .google.longrunning.Operation long_running_operations = 4;</code>
+   */
+  @java.lang.Override
+  public int getLongRunningOperationsCount() {
+    return longRunningOperations_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * post-processing LROs
+   * </pre>
+   *
+   * <code>repeated .google.longrunning.Operation long_running_operations = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.longrunning.Operation getLongRunningOperations(int index) {
+    return longRunningOperations_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * post-processing LROs
+   * </pre>
+   *
+   * <code>repeated .google.longrunning.Operation long_running_operations = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.longrunning.OperationOrBuilder getLongRunningOperationsOrBuilder(int index) {
+    return longRunningOperations_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -248,6 +321,9 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
     if (metadata_ != null) {
       output.writeMessage(3, getMetadata());
     }
+    for (int i = 0; i < longRunningOperations_.size(); i++) {
+      output.writeMessage(4, longRunningOperations_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -265,6 +341,11 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
     }
     if (metadata_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getMetadata());
+    }
+    for (int i = 0; i < longRunningOperations_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, longRunningOperations_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -294,6 +375,7 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
     if (hasMetadata()) {
       if (!getMetadata().equals(other.getMetadata())) return false;
     }
+    if (!getLongRunningOperationsList().equals(other.getLongRunningOperationsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -316,6 +398,10 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
     if (hasMetadata()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMetadata().hashCode();
+    }
+    if (getLongRunningOperationsCount() > 0) {
+      hash = (37 * hash) + LONG_RUNNING_OPERATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getLongRunningOperationsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -472,6 +558,13 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
         metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
+      if (longRunningOperationsBuilder_ == null) {
+        longRunningOperations_ = java.util.Collections.emptyList();
+      } else {
+        longRunningOperations_ = null;
+        longRunningOperationsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -499,11 +592,25 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
     public com.google.cloud.contentwarehouse.v1.CreateDocumentResponse buildPartial() {
       com.google.cloud.contentwarehouse.v1.CreateDocumentResponse result =
           new com.google.cloud.contentwarehouse.v1.CreateDocumentResponse(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.contentwarehouse.v1.CreateDocumentResponse result) {
+      if (longRunningOperationsBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          longRunningOperations_ = java.util.Collections.unmodifiableList(longRunningOperations_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.longRunningOperations_ = longRunningOperations_;
+      } else {
+        result.longRunningOperations_ = longRunningOperationsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.contentwarehouse.v1.CreateDocumentResponse result) {
@@ -575,6 +682,33 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
       if (other.hasMetadata()) {
         mergeMetadata(other.getMetadata());
       }
+      if (longRunningOperationsBuilder_ == null) {
+        if (!other.longRunningOperations_.isEmpty()) {
+          if (longRunningOperations_.isEmpty()) {
+            longRunningOperations_ = other.longRunningOperations_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureLongRunningOperationsIsMutable();
+            longRunningOperations_.addAll(other.longRunningOperations_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.longRunningOperations_.isEmpty()) {
+          if (longRunningOperationsBuilder_.isEmpty()) {
+            longRunningOperationsBuilder_.dispose();
+            longRunningOperationsBuilder_ = null;
+            longRunningOperations_ = other.longRunningOperations_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            longRunningOperationsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getLongRunningOperationsFieldBuilder()
+                    : null;
+          } else {
+            longRunningOperationsBuilder_.addAllMessages(other.longRunningOperations_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -620,6 +754,18 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                com.google.longrunning.Operation m =
+                    input.readMessage(com.google.longrunning.Operation.parser(), extensionRegistry);
+                if (longRunningOperationsBuilder_ == null) {
+                  ensureLongRunningOperationsIsMutable();
+                  longRunningOperations_.add(m);
+                } else {
+                  longRunningOperationsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1222,6 +1368,360 @@ public final class CreateDocumentResponse extends com.google.protobuf.GeneratedM
         metadata_ = null;
       }
       return metadataBuilder_;
+    }
+
+    private java.util.List<com.google.longrunning.Operation> longRunningOperations_ =
+        java.util.Collections.emptyList();
+
+    private void ensureLongRunningOperationsIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        longRunningOperations_ =
+            new java.util.ArrayList<com.google.longrunning.Operation>(longRunningOperations_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.longrunning.Operation,
+            com.google.longrunning.Operation.Builder,
+            com.google.longrunning.OperationOrBuilder>
+        longRunningOperationsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * post-processing LROs
+     * </pre>
+     *
+     * <code>repeated .google.longrunning.Operation long_running_operations = 4;</code>
+     */
+    public java.util.List<com.google.longrunning.Operation> getLongRunningOperationsList() {
+      if (longRunningOperationsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(longRunningOperations_);
+      } else {
+        return longRunningOperationsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * post-processing LROs
+     * </pre>
+     *
+     * <code>repeated .google.longrunning.Operation long_running_operations = 4;</code>
+     */
+    public int getLongRunningOperationsCount() {
+      if (longRunningOperationsBuilder_ == null) {
+        return longRunningOperations_.size();
+      } else {
+        return longRunningOperationsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * post-processing LROs
+     * </pre>
+     *
+     * <code>repeated .google.longrunning.Operation long_running_operations = 4;</code>
+     */
+    public com.google.longrunning.Operation getLongRunningOperations(int index) {
+      if (longRunningOperationsBuilder_ == null) {
+        return longRunningOperations_.get(index);
+      } else {
+        return longRunningOperationsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * post-processing LROs
+     * </pre>
+     *
+     * <code>repeated .google.longrunning.Operation long_running_operations = 4;</code>
+     */
+    public Builder setLongRunningOperations(int index, com.google.longrunning.Operation value) {
+      if (longRunningOperationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLongRunningOperationsIsMutable();
+        longRunningOperations_.set(index, value);
+        onChanged();
+      } else {
+        longRunningOperationsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * post-processing LROs
+     * </pre>
+     *
+     * <code>repeated .google.longrunning.Operation long_running_operations = 4;</code>
+     */
+    public Builder setLongRunningOperations(
+        int index, com.google.longrunning.Operation.Builder builderForValue) {
+      if (longRunningOperationsBuilder_ == null) {
+        ensureLongRunningOperationsIsMutable();
+        longRunningOperations_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        longRunningOperationsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * post-processing LROs
+     * </pre>
+     *
+     * <code>repeated .google.longrunning.Operation long_running_operations = 4;</code>
+     */
+    public Builder addLongRunningOperations(com.google.longrunning.Operation value) {
+      if (longRunningOperationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLongRunningOperationsIsMutable();
+        longRunningOperations_.add(value);
+        onChanged();
+      } else {
+        longRunningOperationsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * post-processing LROs
+     * </pre>
+     *
+     * <code>repeated .google.longrunning.Operation long_running_operations = 4;</code>
+     */
+    public Builder addLongRunningOperations(int index, com.google.longrunning.Operation value) {
+      if (longRunningOperationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLongRunningOperationsIsMutable();
+        longRunningOperations_.add(index, value);
+        onChanged();
+      } else {
+        longRunningOperationsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * post-processing LROs
+     * </pre>
+     *
+     * <code>repeated .google.longrunning.Operation long_running_operations = 4;</code>
+     */
+    public Builder addLongRunningOperations(
+        com.google.longrunning.Operation.Builder builderForValue) {
+      if (longRunningOperationsBuilder_ == null) {
+        ensureLongRunningOperationsIsMutable();
+        longRunningOperations_.add(builderForValue.build());
+        onChanged();
+      } else {
+        longRunningOperationsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * post-processing LROs
+     * </pre>
+     *
+     * <code>repeated .google.longrunning.Operation long_running_operations = 4;</code>
+     */
+    public Builder addLongRunningOperations(
+        int index, com.google.longrunning.Operation.Builder builderForValue) {
+      if (longRunningOperationsBuilder_ == null) {
+        ensureLongRunningOperationsIsMutable();
+        longRunningOperations_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        longRunningOperationsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * post-processing LROs
+     * </pre>
+     *
+     * <code>repeated .google.longrunning.Operation long_running_operations = 4;</code>
+     */
+    public Builder addAllLongRunningOperations(
+        java.lang.Iterable<? extends com.google.longrunning.Operation> values) {
+      if (longRunningOperationsBuilder_ == null) {
+        ensureLongRunningOperationsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, longRunningOperations_);
+        onChanged();
+      } else {
+        longRunningOperationsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * post-processing LROs
+     * </pre>
+     *
+     * <code>repeated .google.longrunning.Operation long_running_operations = 4;</code>
+     */
+    public Builder clearLongRunningOperations() {
+      if (longRunningOperationsBuilder_ == null) {
+        longRunningOperations_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        longRunningOperationsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * post-processing LROs
+     * </pre>
+     *
+     * <code>repeated .google.longrunning.Operation long_running_operations = 4;</code>
+     */
+    public Builder removeLongRunningOperations(int index) {
+      if (longRunningOperationsBuilder_ == null) {
+        ensureLongRunningOperationsIsMutable();
+        longRunningOperations_.remove(index);
+        onChanged();
+      } else {
+        longRunningOperationsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * post-processing LROs
+     * </pre>
+     *
+     * <code>repeated .google.longrunning.Operation long_running_operations = 4;</code>
+     */
+    public com.google.longrunning.Operation.Builder getLongRunningOperationsBuilder(int index) {
+      return getLongRunningOperationsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * post-processing LROs
+     * </pre>
+     *
+     * <code>repeated .google.longrunning.Operation long_running_operations = 4;</code>
+     */
+    public com.google.longrunning.OperationOrBuilder getLongRunningOperationsOrBuilder(int index) {
+      if (longRunningOperationsBuilder_ == null) {
+        return longRunningOperations_.get(index);
+      } else {
+        return longRunningOperationsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * post-processing LROs
+     * </pre>
+     *
+     * <code>repeated .google.longrunning.Operation long_running_operations = 4;</code>
+     */
+    public java.util.List<? extends com.google.longrunning.OperationOrBuilder>
+        getLongRunningOperationsOrBuilderList() {
+      if (longRunningOperationsBuilder_ != null) {
+        return longRunningOperationsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(longRunningOperations_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * post-processing LROs
+     * </pre>
+     *
+     * <code>repeated .google.longrunning.Operation long_running_operations = 4;</code>
+     */
+    public com.google.longrunning.Operation.Builder addLongRunningOperationsBuilder() {
+      return getLongRunningOperationsFieldBuilder()
+          .addBuilder(com.google.longrunning.Operation.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * post-processing LROs
+     * </pre>
+     *
+     * <code>repeated .google.longrunning.Operation long_running_operations = 4;</code>
+     */
+    public com.google.longrunning.Operation.Builder addLongRunningOperationsBuilder(int index) {
+      return getLongRunningOperationsFieldBuilder()
+          .addBuilder(index, com.google.longrunning.Operation.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * post-processing LROs
+     * </pre>
+     *
+     * <code>repeated .google.longrunning.Operation long_running_operations = 4;</code>
+     */
+    public java.util.List<com.google.longrunning.Operation.Builder>
+        getLongRunningOperationsBuilderList() {
+      return getLongRunningOperationsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.longrunning.Operation,
+            com.google.longrunning.Operation.Builder,
+            com.google.longrunning.OperationOrBuilder>
+        getLongRunningOperationsFieldBuilder() {
+      if (longRunningOperationsBuilder_ == null) {
+        longRunningOperationsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.longrunning.Operation,
+                com.google.longrunning.Operation.Builder,
+                com.google.longrunning.OperationOrBuilder>(
+                longRunningOperations_,
+                ((bitField0_ & 0x00000008) != 0),
+                getParentForChildren(),
+                isClean());
+        longRunningOperations_ = null;
+      }
+      return longRunningOperationsBuilder_;
     }
 
     @java.lang.Override

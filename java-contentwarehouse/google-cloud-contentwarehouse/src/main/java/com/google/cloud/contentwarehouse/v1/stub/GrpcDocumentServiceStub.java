@@ -31,6 +31,7 @@ import com.google.cloud.contentwarehouse.v1.Document;
 import com.google.cloud.contentwarehouse.v1.FetchAclRequest;
 import com.google.cloud.contentwarehouse.v1.FetchAclResponse;
 import com.google.cloud.contentwarehouse.v1.GetDocumentRequest;
+import com.google.cloud.contentwarehouse.v1.LockDocumentRequest;
 import com.google.cloud.contentwarehouse.v1.SearchDocumentsRequest;
 import com.google.cloud.contentwarehouse.v1.SearchDocumentsResponse;
 import com.google.cloud.contentwarehouse.v1.SetAclRequest;
@@ -105,6 +106,15 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   ProtoUtils.marshaller(SearchDocumentsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<LockDocumentRequest, Document>
+      lockDocumentMethodDescriptor =
+          MethodDescriptor.<LockDocumentRequest, Document>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.contentwarehouse.v1.DocumentService/LockDocument")
+              .setRequestMarshaller(ProtoUtils.marshaller(LockDocumentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Document.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<FetchAclRequest, FetchAclResponse>
       fetchAclMethodDescriptor =
           MethodDescriptor.<FetchAclRequest, FetchAclResponse>newBuilder()
@@ -130,6 +140,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
       searchDocumentsCallable;
   private final UnaryCallable<SearchDocumentsRequest, SearchDocumentsPagedResponse>
       searchDocumentsPagedCallable;
+  private final UnaryCallable<LockDocumentRequest, Document> lockDocumentCallable;
   private final UnaryCallable<FetchAclRequest, FetchAclResponse> fetchAclCallable;
   private final UnaryCallable<SetAclRequest, SetAclResponse> setAclCallable;
 
@@ -230,6 +241,16 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<LockDocumentRequest, Document> lockDocumentTransportSettings =
+        GrpcCallSettings.<LockDocumentRequest, Document>newBuilder()
+            .setMethodDescriptor(lockDocumentMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<FetchAclRequest, FetchAclResponse> fetchAclTransportSettings =
         GrpcCallSettings.<FetchAclRequest, FetchAclResponse>newBuilder()
             .setMethodDescriptor(fetchAclMethodDescriptor)
@@ -269,6 +290,9 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
     this.searchDocumentsPagedCallable =
         callableFactory.createPagedCallable(
             searchDocumentsTransportSettings, settings.searchDocumentsSettings(), clientContext);
+    this.lockDocumentCallable =
+        callableFactory.createUnaryCallable(
+            lockDocumentTransportSettings, settings.lockDocumentSettings(), clientContext);
     this.fetchAclCallable =
         callableFactory.createUnaryCallable(
             fetchAclTransportSettings, settings.fetchAclSettings(), clientContext);
@@ -313,6 +337,11 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
   public UnaryCallable<SearchDocumentsRequest, SearchDocumentsPagedResponse>
       searchDocumentsPagedCallable() {
     return searchDocumentsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<LockDocumentRequest, Document> lockDocumentCallable() {
+    return lockDocumentCallable;
   }
 
   @Override

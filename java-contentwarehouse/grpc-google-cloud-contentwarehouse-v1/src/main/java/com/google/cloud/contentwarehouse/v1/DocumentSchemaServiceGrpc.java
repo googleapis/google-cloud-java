@@ -359,9 +359,10 @@ public final class DocumentSchemaServiceGrpc {
      * Updates a Document Schema. Returns INVALID_ARGUMENT if the name of the
      * Document Schema is non-empty and does not equal the existing name.
      * Supports only appending new properties, adding new ENUM possible values,
-     * and updating the [EnumTypeOptions.validation_check_disabled][google.cloud.contentwarehouse.v1.EnumTypeOptions.validation_check_disabled] flag for
-     * ENUM possible values. Updating existing properties will result into
-     * INVALID_ARGUMENT.
+     * and updating the
+     * [EnumTypeOptions.validation_check_disabled][google.cloud.contentwarehouse.v1.EnumTypeOptions.validation_check_disabled]
+     * flag for ENUM possible values. Updating existing properties will result
+     * into INVALID_ARGUMENT.
      * </pre>
      */
     default void updateDocumentSchema(
@@ -480,9 +481,10 @@ public final class DocumentSchemaServiceGrpc {
      * Updates a Document Schema. Returns INVALID_ARGUMENT if the name of the
      * Document Schema is non-empty and does not equal the existing name.
      * Supports only appending new properties, adding new ENUM possible values,
-     * and updating the [EnumTypeOptions.validation_check_disabled][google.cloud.contentwarehouse.v1.EnumTypeOptions.validation_check_disabled] flag for
-     * ENUM possible values. Updating existing properties will result into
-     * INVALID_ARGUMENT.
+     * and updating the
+     * [EnumTypeOptions.validation_check_disabled][google.cloud.contentwarehouse.v1.EnumTypeOptions.validation_check_disabled]
+     * flag for ENUM possible values. Updating existing properties will result
+     * into INVALID_ARGUMENT.
      * </pre>
      */
     public void updateDocumentSchema(
@@ -590,9 +592,10 @@ public final class DocumentSchemaServiceGrpc {
      * Updates a Document Schema. Returns INVALID_ARGUMENT if the name of the
      * Document Schema is non-empty and does not equal the existing name.
      * Supports only appending new properties, adding new ENUM possible values,
-     * and updating the [EnumTypeOptions.validation_check_disabled][google.cloud.contentwarehouse.v1.EnumTypeOptions.validation_check_disabled] flag for
-     * ENUM possible values. Updating existing properties will result into
-     * INVALID_ARGUMENT.
+     * and updating the
+     * [EnumTypeOptions.validation_check_disabled][google.cloud.contentwarehouse.v1.EnumTypeOptions.validation_check_disabled]
+     * flag for ENUM possible values. Updating existing properties will result
+     * into INVALID_ARGUMENT.
      * </pre>
      */
     public com.google.cloud.contentwarehouse.v1.DocumentSchema updateDocumentSchema(
@@ -687,9 +690,10 @@ public final class DocumentSchemaServiceGrpc {
      * Updates a Document Schema. Returns INVALID_ARGUMENT if the name of the
      * Document Schema is non-empty and does not equal the existing name.
      * Supports only appending new properties, adding new ENUM possible values,
-     * and updating the [EnumTypeOptions.validation_check_disabled][google.cloud.contentwarehouse.v1.EnumTypeOptions.validation_check_disabled] flag for
-     * ENUM possible values. Updating existing properties will result into
-     * INVALID_ARGUMENT.
+     * and updating the
+     * [EnumTypeOptions.validation_check_disabled][google.cloud.contentwarehouse.v1.EnumTypeOptions.validation_check_disabled]
+     * flag for ENUM possible values. Updating existing properties will result
+     * into INVALID_ARGUMENT.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

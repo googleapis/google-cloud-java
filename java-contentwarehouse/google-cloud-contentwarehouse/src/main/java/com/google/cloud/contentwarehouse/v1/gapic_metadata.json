@@ -67,6 +67,9 @@
             "GetDocument": {
               "methods": ["getDocument", "getDocument", "getDocument", "getDocumentCallable"]
             },
+            "LockDocument": {
+              "methods": ["lockDocument", "lockDocument", "lockDocument", "lockDocumentCallable"]
+            },
             "SearchDocuments": {
               "methods": ["searchDocuments", "searchDocuments", "searchDocuments", "searchDocumentsPagedCallable", "searchDocumentsCallable"]
             },

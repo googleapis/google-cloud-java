@@ -139,11 +139,14 @@ public final class DocumentLinkServiceProto {
           + "s/*/locations/*/documents/*/documentLink"
           + "s/*}:delete:\001*\332A\004name\032S\312A\037contentwarehou"
           + "se.googleapis.com\322A.https://www.googleap"
-          + "is.com/auth/cloud-platformB\224\001\n$com.googl"
+          + "is.com/auth/cloud-platformB\200\002\n$com.googl"
           + "e.cloud.contentwarehouse.v1B\030DocumentLin"
           + "kServiceProtoP\001ZPcloud.google.com/go/con"
           + "tentwarehouse/apiv1/contentwarehousepb;c"
-          + "ontentwarehousepbb\006proto3"
+          + "ontentwarehousepb\252\002 Google.Cloud.Content"
+          + "Warehouse.V1\312\002 Google\\Cloud\\ContentWareh"
+          + "ouse\\V1\352\002#Google::Cloud::ContentWarehous"
+          + "e::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

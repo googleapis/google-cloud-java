@@ -266,6 +266,52 @@ public final class DocumentServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.contentwarehouse.v1.LockDocumentRequest,
+          com.google.cloud.contentwarehouse.v1.Document>
+      getLockDocumentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "LockDocument",
+      requestType = com.google.cloud.contentwarehouse.v1.LockDocumentRequest.class,
+      responseType = com.google.cloud.contentwarehouse.v1.Document.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.contentwarehouse.v1.LockDocumentRequest,
+          com.google.cloud.contentwarehouse.v1.Document>
+      getLockDocumentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.contentwarehouse.v1.LockDocumentRequest,
+            com.google.cloud.contentwarehouse.v1.Document>
+        getLockDocumentMethod;
+    if ((getLockDocumentMethod = DocumentServiceGrpc.getLockDocumentMethod) == null) {
+      synchronized (DocumentServiceGrpc.class) {
+        if ((getLockDocumentMethod = DocumentServiceGrpc.getLockDocumentMethod) == null) {
+          DocumentServiceGrpc.getLockDocumentMethod =
+              getLockDocumentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.contentwarehouse.v1.LockDocumentRequest,
+                          com.google.cloud.contentwarehouse.v1.Document>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "LockDocument"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.contentwarehouse.v1.LockDocumentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.contentwarehouse.v1.Document.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DocumentServiceMethodDescriptorSupplier("LockDocument"))
+                      .build();
+        }
+      }
+    }
+    return getLockDocumentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.contentwarehouse.v1.FetchAclRequest,
           com.google.cloud.contentwarehouse.v1.FetchAclResponse>
       getFetchAclMethod;
@@ -471,7 +517,8 @@ public final class DocumentServiceGrpc {
      *
      *
      * <pre>
-     * Searches for documents using provided [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest].
+     * Searches for documents using provided
+     * [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest].
      * This call only returns documents that the caller has permission to search
      * against.
      * </pre>
@@ -482,6 +529,21 @@ public final class DocumentServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSearchDocumentsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lock the document so the document cannot be updated by other users.
+     * </pre>
+     */
+    default void lockDocument(
+        com.google.cloud.contentwarehouse.v1.LockDocumentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.contentwarehouse.v1.Document>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getLockDocumentMethod(), responseObserver);
     }
 
     /**
@@ -622,7 +684,8 @@ public final class DocumentServiceGrpc {
      *
      *
      * <pre>
-     * Searches for documents using provided [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest].
+     * Searches for documents using provided
+     * [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest].
      * This call only returns documents that the caller has permission to search
      * against.
      * </pre>
@@ -633,6 +696,23 @@ public final class DocumentServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSearchDocumentsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lock the document so the document cannot be updated by other users.
+     * </pre>
+     */
+    public void lockDocument(
+        com.google.cloud.contentwarehouse.v1.LockDocumentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.contentwarehouse.v1.Document>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getLockDocumentMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -747,7 +827,8 @@ public final class DocumentServiceGrpc {
      *
      *
      * <pre>
-     * Searches for documents using provided [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest].
+     * Searches for documents using provided
+     * [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest].
      * This call only returns documents that the caller has permission to search
      * against.
      * </pre>
@@ -756,6 +837,19 @@ public final class DocumentServiceGrpc {
         com.google.cloud.contentwarehouse.v1.SearchDocumentsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSearchDocumentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lock the document so the document cannot be updated by other users.
+     * </pre>
+     */
+    public com.google.cloud.contentwarehouse.v1.Document lockDocument(
+        com.google.cloud.contentwarehouse.v1.LockDocumentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLockDocumentMethod(), getCallOptions(), request);
     }
 
     /**
@@ -867,7 +961,8 @@ public final class DocumentServiceGrpc {
      *
      *
      * <pre>
-     * Searches for documents using provided [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest].
+     * Searches for documents using provided
+     * [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest].
      * This call only returns documents that the caller has permission to search
      * against.
      * </pre>
@@ -877,6 +972,20 @@ public final class DocumentServiceGrpc {
         searchDocuments(com.google.cloud.contentwarehouse.v1.SearchDocumentsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSearchDocumentsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lock the document so the document cannot be updated by other users.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.contentwarehouse.v1.Document>
+        lockDocument(com.google.cloud.contentwarehouse.v1.LockDocumentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getLockDocumentMethod(), getCallOptions()), request);
     }
 
     /**
@@ -916,8 +1025,9 @@ public final class DocumentServiceGrpc {
   private static final int METHODID_UPDATE_DOCUMENT = 2;
   private static final int METHODID_DELETE_DOCUMENT = 3;
   private static final int METHODID_SEARCH_DOCUMENTS = 4;
-  private static final int METHODID_FETCH_ACL = 5;
-  private static final int METHODID_SET_ACL = 6;
+  private static final int METHODID_LOCK_DOCUMENT = 5;
+  private static final int METHODID_FETCH_ACL = 6;
+  private static final int METHODID_SET_ACL = 7;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -966,6 +1076,12 @@ public final class DocumentServiceGrpc {
               (com.google.cloud.contentwarehouse.v1.SearchDocumentsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.contentwarehouse.v1.SearchDocumentsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LOCK_DOCUMENT:
+          serviceImpl.lockDocument(
+              (com.google.cloud.contentwarehouse.v1.LockDocumentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.contentwarehouse.v1.Document>)
                   responseObserver);
           break;
         case METHODID_FETCH_ACL:
@@ -1031,6 +1147,13 @@ public final class DocumentServiceGrpc {
                     com.google.cloud.contentwarehouse.v1.SearchDocumentsRequest,
                     com.google.cloud.contentwarehouse.v1.SearchDocumentsResponse>(
                     service, METHODID_SEARCH_DOCUMENTS)))
+        .addMethod(
+            getLockDocumentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.contentwarehouse.v1.LockDocumentRequest,
+                    com.google.cloud.contentwarehouse.v1.Document>(
+                    service, METHODID_LOCK_DOCUMENT)))
         .addMethod(
             getFetchAclMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1101,6 +1224,7 @@ public final class DocumentServiceGrpc {
                       .addMethod(getUpdateDocumentMethod())
                       .addMethod(getDeleteDocumentMethod())
                       .addMethod(getSearchDocumentsMethod())
+                      .addMethod(getLockDocumentMethod())
                       .addMethod(getFetchAclMethod())
                       .addMethod(getSetAclMethod())
                       .build();

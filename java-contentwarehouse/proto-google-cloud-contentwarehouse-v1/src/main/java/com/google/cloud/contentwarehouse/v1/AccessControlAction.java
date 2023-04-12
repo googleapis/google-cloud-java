@@ -78,7 +78,15 @@ public final class AccessControlAction extends com.google.protobuf.GeneratedMess
    * Protobuf enum {@code google.cloud.contentwarehouse.v1.AccessControlAction.OperationType}
    */
   public enum OperationType implements com.google.protobuf.ProtocolMessageEnum {
-    /** <code>UNKNOWN = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The unknown operation type.
+     * </pre>
+     *
+     * <code>UNKNOWN = 0;</code>
+     */
     UNKNOWN(0),
     /**
      *
@@ -113,7 +121,15 @@ public final class AccessControlAction extends com.google.protobuf.GeneratedMess
     UNRECOGNIZED(-1),
     ;
 
-    /** <code>UNKNOWN = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The unknown operation type.
+     * </pre>
+     *
+     * <code>UNKNOWN = 0;</code>
+     */
     public static final int UNKNOWN_VALUE = 0;
     /**
      *

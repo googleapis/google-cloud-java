@@ -104,6 +104,11 @@ public class DocumentServiceSettings extends ClientSettings<DocumentServiceSetti
     return ((DocumentServiceStubSettings) getStubSettings()).searchDocumentsSettings();
   }
 
+  /** Returns the object with the settings used for calls to lockDocument. */
+  public UnaryCallSettings<LockDocumentRequest, Document> lockDocumentSettings() {
+    return ((DocumentServiceStubSettings) getStubSettings()).lockDocumentSettings();
+  }
+
   /** Returns the object with the settings used for calls to fetchAcl. */
   public UnaryCallSettings<FetchAclRequest, FetchAclResponse> fetchAclSettings() {
     return ((DocumentServiceStubSettings) getStubSettings()).fetchAclSettings();
@@ -256,6 +261,11 @@ public class DocumentServiceSettings extends ClientSettings<DocumentServiceSetti
             SearchDocumentsRequest, SearchDocumentsResponse, SearchDocumentsPagedResponse>
         searchDocumentsSettings() {
       return getStubSettingsBuilder().searchDocumentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to lockDocument. */
+    public UnaryCallSettings.Builder<LockDocumentRequest, Document> lockDocumentSettings() {
+      return getStubSettingsBuilder().lockDocumentSettings();
     }
 
     /** Returns the builder for the settings used for calls to fetchAcl. */

@@ -76,6 +76,37 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The query string that matches against the full text of the document and
    * the searchable properties.
+   * The query partially supports [Google AIP style
+   * syntax](https://google.aip.dev/160). Specifically, the query supports
+   * literals, logical operators, negation operators, comparison operators, and
+   * functions.
+   * Literals: A bare literal value (examples: "42", "Hugo") is a value to be
+   * matched against. It searches over the full text of the document and the
+   * searchable properties.
+   * Logical operators: "AND", "and", "OR", and "or" are binary logical
+   * operators (example: "engineer OR developer").
+   * Negation operators: "NOT" and "!" are negation operators (example: "NOT
+   * software").
+   * Comparison operators: support the binary comparison operators =, !=, &lt;, &gt;,
+   * &lt;= and &gt;= for string, numeric, enum, boolean. Also support like operator
+   * `~~` for string. It provides semantic search functionality by parsing,
+   * stemming and doing synonyms expansion against the input query.
+   * To specify a property in the query, the left hand side expression in the
+   * comparison must be the property ID including the parent. The right hand
+   * side must be literals. For example:
+   * "&#92;"projects/123/locations/us&#92;".property_a &lt; 1" matches results whose
+   * "property_a" is less than 1 in project 123 and us location.
+   * The literals and comparison expression can be connected in a single query
+   * (example: "software engineer &#92;"projects/123/locations/us&#92;".salary &gt; 100").
+   * Functions: supported functions are `LOWER([property_name])` to perform a
+   * case insensitive match and `EMPTY([property_name])` to filter on the
+   * existence of a key.
+   * Support nested expressions connected using parenthesis and logical
+   * operators. The default logical operators is `AND` if there is no operators
+   * between expressions.
+   * The query can be used with other filters e.g. `time_filters` and
+   * `folder_name_filter`. They are connected with `AND` operator under the
+   * hood.
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -101,6 +132,37 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The query string that matches against the full text of the document and
    * the searchable properties.
+   * The query partially supports [Google AIP style
+   * syntax](https://google.aip.dev/160). Specifically, the query supports
+   * literals, logical operators, negation operators, comparison operators, and
+   * functions.
+   * Literals: A bare literal value (examples: "42", "Hugo") is a value to be
+   * matched against. It searches over the full text of the document and the
+   * searchable properties.
+   * Logical operators: "AND", "and", "OR", and "or" are binary logical
+   * operators (example: "engineer OR developer").
+   * Negation operators: "NOT" and "!" are negation operators (example: "NOT
+   * software").
+   * Comparison operators: support the binary comparison operators =, !=, &lt;, &gt;,
+   * &lt;= and &gt;= for string, numeric, enum, boolean. Also support like operator
+   * `~~` for string. It provides semantic search functionality by parsing,
+   * stemming and doing synonyms expansion against the input query.
+   * To specify a property in the query, the left hand side expression in the
+   * comparison must be the property ID including the parent. The right hand
+   * side must be literals. For example:
+   * "&#92;"projects/123/locations/us&#92;".property_a &lt; 1" matches results whose
+   * "property_a" is less than 1 in project 123 and us location.
+   * The literals and comparison expression can be connected in a single query
+   * (example: "software engineer &#92;"projects/123/locations/us&#92;".salary &gt; 100").
+   * Functions: supported functions are `LOWER([property_name])` to perform a
+   * case insensitive match and `EMPTY([property_name])` to filter on the
+   * existence of a key.
+   * Support nested expressions connected using parenthesis and logical
+   * operators. The default logical operators is `AND` if there is no operators
+   * between expressions.
+   * The query can be used with other filters e.g. `time_filters` and
+   * `folder_name_filter`. They are connected with `AND` operator under the
+   * hood.
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -130,9 +192,10 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    * Experimental, do not use.
    * If the query is a natural language question. False by default. If true,
    * then the question-answering feature will be used instead of search, and
-   * `result_count` in [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest] must be set. In addition, all
-   * other input fields related to search (pagination, histograms, etc.) will be
-   * ignored.
+   * `result_count` in
+   * [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest]
+   * must be set. In addition, all other input fields related to search
+   * (pagination, histograms, etc.) will be ignored.
    * </pre>
    *
    * <code>bool is_nl_query = 12;</code>
@@ -173,7 +236,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    * <code>string custom_property_filter = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.contentwarehouse.v1.DocumentQuery.custom_property_filter is
-   *     deprecated. See google/cloud/contentwarehouse/v1/filters.proto;l=59
+   *     deprecated. See google/cloud/contentwarehouse/v1/filters.proto;l=104
    * @return The customPropertyFilter.
    */
   @java.lang.Override
@@ -214,7 +277,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    * <code>string custom_property_filter = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.contentwarehouse.v1.DocumentQuery.custom_property_filter is
-   *     deprecated. See google/cloud/contentwarehouse/v1/filters.proto;l=59
+   *     deprecated. See google/cloud/contentwarehouse/v1/filters.proto;l=104
    * @return The bytes for customPropertyFilter.
    */
   @java.lang.Override
@@ -317,7 +380,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This filter specifies the exact document schema
-   * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name] of the documents to search against.
+   * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
+   * of the documents to search against.
    * If a value isn't specified, documents within the search results are
    * associated with any schema. If multiple values are specified, documents
    * within the search results may be associated with any of the specified
@@ -337,7 +401,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This filter specifies the exact document schema
-   * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name] of the documents to search against.
+   * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
+   * of the documents to search against.
    * If a value isn't specified, documents within the search results are
    * associated with any schema. If multiple values are specified, documents
    * within the search results may be associated with any of the specified
@@ -357,7 +422,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This filter specifies the exact document schema
-   * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name] of the documents to search against.
+   * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
+   * of the documents to search against.
    * If a value isn't specified, documents within the search results are
    * associated with any schema. If multiple values are specified, documents
    * within the search results may be associated with any of the specified
@@ -378,7 +444,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This filter specifies the exact document schema
-   * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name] of the documents to search against.
+   * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
+   * of the documents to search against.
    * If a value isn't specified, documents within the search results are
    * associated with any schema. If multiple values are specified, documents
    * within the search results may be associated with any of the specified
@@ -404,8 +471,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This filter specifies a structured syntax to match against the
-   * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable] marked as `true`. The relationship
-   * between the PropertyFilters is OR.
+   * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]
+   * marked as `true`. The relationship between the PropertyFilters is OR.
    * </pre>
    *
    * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
@@ -420,8 +487,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This filter specifies a structured syntax to match against the
-   * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable] marked as `true`. The relationship
-   * between the PropertyFilters is OR.
+   * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]
+   * marked as `true`. The relationship between the PropertyFilters is OR.
    * </pre>
    *
    * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
@@ -436,8 +503,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This filter specifies a structured syntax to match against the
-   * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable] marked as `true`. The relationship
-   * between the PropertyFilters is OR.
+   * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]
+   * marked as `true`. The relationship between the PropertyFilters is OR.
    * </pre>
    *
    * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
@@ -451,8 +518,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This filter specifies a structured syntax to match against the
-   * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable] marked as `true`. The relationship
-   * between the PropertyFilters is OR.
+   * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]
+   * marked as `true`. The relationship between the PropertyFilters is OR.
    * </pre>
    *
    * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
@@ -466,8 +533,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This filter specifies a structured syntax to match against the
-   * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable] marked as `true`. The relationship
-   * between the PropertyFilters is OR.
+   * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]
+   * marked as `true`. The relationship between the PropertyFilters is OR.
    * </pre>
    *
    * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
@@ -761,6 +828,72 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     return documentCreatorFilter_.getByteString(index);
   }
 
+  public static final int CUSTOM_WEIGHTS_METADATA_FIELD_NUMBER = 13;
+  private com.google.cloud.contentwarehouse.v1.CustomWeightsMetadata customWeightsMetadata_;
+  /**
+   *
+   *
+   * <pre>
+   * To support the custom weighting across document schemas, customers need to
+   * provide the properties to be used to boost the ranking in the search
+   * request. For a search query with CustomWeightsMetadata specified, only the
+   * RetrievalImportance for the properties in the CustomWeightsMetadata will
+   * be honored.
+   * </pre>
+   *
+   * <code>.google.cloud.contentwarehouse.v1.CustomWeightsMetadata custom_weights_metadata = 13;
+   * </code>
+   *
+   * @return Whether the customWeightsMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomWeightsMetadata() {
+    return customWeightsMetadata_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * To support the custom weighting across document schemas, customers need to
+   * provide the properties to be used to boost the ranking in the search
+   * request. For a search query with CustomWeightsMetadata specified, only the
+   * RetrievalImportance for the properties in the CustomWeightsMetadata will
+   * be honored.
+   * </pre>
+   *
+   * <code>.google.cloud.contentwarehouse.v1.CustomWeightsMetadata custom_weights_metadata = 13;
+   * </code>
+   *
+   * @return The customWeightsMetadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.contentwarehouse.v1.CustomWeightsMetadata getCustomWeightsMetadata() {
+    return customWeightsMetadata_ == null
+        ? com.google.cloud.contentwarehouse.v1.CustomWeightsMetadata.getDefaultInstance()
+        : customWeightsMetadata_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * To support the custom weighting across document schemas, customers need to
+   * provide the properties to be used to boost the ranking in the search
+   * request. For a search query with CustomWeightsMetadata specified, only the
+   * RetrievalImportance for the properties in the CustomWeightsMetadata will
+   * be honored.
+   * </pre>
+   *
+   * <code>.google.cloud.contentwarehouse.v1.CustomWeightsMetadata custom_weights_metadata = 13;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.contentwarehouse.v1.CustomWeightsMetadataOrBuilder
+      getCustomWeightsMetadataOrBuilder() {
+    return customWeightsMetadata_ == null
+        ? com.google.cloud.contentwarehouse.v1.CustomWeightsMetadata.getDefaultInstance()
+        : customWeightsMetadata_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -805,6 +938,9 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     }
     if (isNlQuery_ != false) {
       output.writeBool(12, isNlQuery_);
+    }
+    if (customWeightsMetadata_ != null) {
+      output.writeMessage(13, getCustomWeightsMetadata());
     }
     getUnknownFields().writeTo(output);
   }
@@ -860,6 +996,10 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     if (isNlQuery_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, isNlQuery_);
     }
+    if (customWeightsMetadata_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(13, getCustomWeightsMetadata());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -889,6 +1029,10 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     if (!getFolderNameFilter().equals(other.getFolderNameFilter())) return false;
     if (!getQueryContextList().equals(other.getQueryContextList())) return false;
     if (!getDocumentCreatorFilterList().equals(other.getDocumentCreatorFilterList())) return false;
+    if (hasCustomWeightsMetadata() != other.hasCustomWeightsMetadata()) return false;
+    if (hasCustomWeightsMetadata()) {
+      if (!getCustomWeightsMetadata().equals(other.getCustomWeightsMetadata())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -931,6 +1075,10 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     if (getDocumentCreatorFilterCount() > 0) {
       hash = (37 * hash) + DOCUMENT_CREATOR_FILTER_FIELD_NUMBER;
       hash = (53 * hash) + getDocumentCreatorFilterList().hashCode();
+    }
+    if (hasCustomWeightsMetadata()) {
+      hash = (37 * hash) + CUSTOM_WEIGHTS_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomWeightsMetadata().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1092,6 +1240,11 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000100);
       documentCreatorFilter_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000200);
+      customWeightsMetadata_ = null;
+      if (customWeightsMetadataBuilder_ != null) {
+        customWeightsMetadataBuilder_.dispose();
+        customWeightsMetadataBuilder_ = null;
+      }
       return this;
     }
 
@@ -1181,6 +1334,12 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.folderNameFilter_ = folderNameFilter_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.customWeightsMetadata_ =
+            customWeightsMetadataBuilder_ == null
+                ? customWeightsMetadata_
+                : customWeightsMetadataBuilder_.build();
       }
     }
 
@@ -1335,6 +1494,9 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
+      if (other.hasCustomWeightsMetadata()) {
+        mergeCustomWeightsMetadata(other.getCustomWeightsMetadata());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1440,6 +1602,13 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 96
+            case 106:
+              {
+                input.readMessage(
+                    getCustomWeightsMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1466,6 +1635,37 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The query string that matches against the full text of the document and
      * the searchable properties.
+     * The query partially supports [Google AIP style
+     * syntax](https://google.aip.dev/160). Specifically, the query supports
+     * literals, logical operators, negation operators, comparison operators, and
+     * functions.
+     * Literals: A bare literal value (examples: "42", "Hugo") is a value to be
+     * matched against. It searches over the full text of the document and the
+     * searchable properties.
+     * Logical operators: "AND", "and", "OR", and "or" are binary logical
+     * operators (example: "engineer OR developer").
+     * Negation operators: "NOT" and "!" are negation operators (example: "NOT
+     * software").
+     * Comparison operators: support the binary comparison operators =, !=, &lt;, &gt;,
+     * &lt;= and &gt;= for string, numeric, enum, boolean. Also support like operator
+     * `~~` for string. It provides semantic search functionality by parsing,
+     * stemming and doing synonyms expansion against the input query.
+     * To specify a property in the query, the left hand side expression in the
+     * comparison must be the property ID including the parent. The right hand
+     * side must be literals. For example:
+     * "&#92;"projects/123/locations/us&#92;".property_a &lt; 1" matches results whose
+     * "property_a" is less than 1 in project 123 and us location.
+     * The literals and comparison expression can be connected in a single query
+     * (example: "software engineer &#92;"projects/123/locations/us&#92;".salary &gt; 100").
+     * Functions: supported functions are `LOWER([property_name])` to perform a
+     * case insensitive match and `EMPTY([property_name])` to filter on the
+     * existence of a key.
+     * Support nested expressions connected using parenthesis and logical
+     * operators. The default logical operators is `AND` if there is no operators
+     * between expressions.
+     * The query can be used with other filters e.g. `time_filters` and
+     * `folder_name_filter`. They are connected with `AND` operator under the
+     * hood.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -1490,6 +1690,37 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The query string that matches against the full text of the document and
      * the searchable properties.
+     * The query partially supports [Google AIP style
+     * syntax](https://google.aip.dev/160). Specifically, the query supports
+     * literals, logical operators, negation operators, comparison operators, and
+     * functions.
+     * Literals: A bare literal value (examples: "42", "Hugo") is a value to be
+     * matched against. It searches over the full text of the document and the
+     * searchable properties.
+     * Logical operators: "AND", "and", "OR", and "or" are binary logical
+     * operators (example: "engineer OR developer").
+     * Negation operators: "NOT" and "!" are negation operators (example: "NOT
+     * software").
+     * Comparison operators: support the binary comparison operators =, !=, &lt;, &gt;,
+     * &lt;= and &gt;= for string, numeric, enum, boolean. Also support like operator
+     * `~~` for string. It provides semantic search functionality by parsing,
+     * stemming and doing synonyms expansion against the input query.
+     * To specify a property in the query, the left hand side expression in the
+     * comparison must be the property ID including the parent. The right hand
+     * side must be literals. For example:
+     * "&#92;"projects/123/locations/us&#92;".property_a &lt; 1" matches results whose
+     * "property_a" is less than 1 in project 123 and us location.
+     * The literals and comparison expression can be connected in a single query
+     * (example: "software engineer &#92;"projects/123/locations/us&#92;".salary &gt; 100").
+     * Functions: supported functions are `LOWER([property_name])` to perform a
+     * case insensitive match and `EMPTY([property_name])` to filter on the
+     * existence of a key.
+     * Support nested expressions connected using parenthesis and logical
+     * operators. The default logical operators is `AND` if there is no operators
+     * between expressions.
+     * The query can be used with other filters e.g. `time_filters` and
+     * `folder_name_filter`. They are connected with `AND` operator under the
+     * hood.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -1514,6 +1745,37 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The query string that matches against the full text of the document and
      * the searchable properties.
+     * The query partially supports [Google AIP style
+     * syntax](https://google.aip.dev/160). Specifically, the query supports
+     * literals, logical operators, negation operators, comparison operators, and
+     * functions.
+     * Literals: A bare literal value (examples: "42", "Hugo") is a value to be
+     * matched against. It searches over the full text of the document and the
+     * searchable properties.
+     * Logical operators: "AND", "and", "OR", and "or" are binary logical
+     * operators (example: "engineer OR developer").
+     * Negation operators: "NOT" and "!" are negation operators (example: "NOT
+     * software").
+     * Comparison operators: support the binary comparison operators =, !=, &lt;, &gt;,
+     * &lt;= and &gt;= for string, numeric, enum, boolean. Also support like operator
+     * `~~` for string. It provides semantic search functionality by parsing,
+     * stemming and doing synonyms expansion against the input query.
+     * To specify a property in the query, the left hand side expression in the
+     * comparison must be the property ID including the parent. The right hand
+     * side must be literals. For example:
+     * "&#92;"projects/123/locations/us&#92;".property_a &lt; 1" matches results whose
+     * "property_a" is less than 1 in project 123 and us location.
+     * The literals and comparison expression can be connected in a single query
+     * (example: "software engineer &#92;"projects/123/locations/us&#92;".salary &gt; 100").
+     * Functions: supported functions are `LOWER([property_name])` to perform a
+     * case insensitive match and `EMPTY([property_name])` to filter on the
+     * existence of a key.
+     * Support nested expressions connected using parenthesis and logical
+     * operators. The default logical operators is `AND` if there is no operators
+     * between expressions.
+     * The query can be used with other filters e.g. `time_filters` and
+     * `folder_name_filter`. They are connected with `AND` operator under the
+     * hood.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -1537,6 +1799,37 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The query string that matches against the full text of the document and
      * the searchable properties.
+     * The query partially supports [Google AIP style
+     * syntax](https://google.aip.dev/160). Specifically, the query supports
+     * literals, logical operators, negation operators, comparison operators, and
+     * functions.
+     * Literals: A bare literal value (examples: "42", "Hugo") is a value to be
+     * matched against. It searches over the full text of the document and the
+     * searchable properties.
+     * Logical operators: "AND", "and", "OR", and "or" are binary logical
+     * operators (example: "engineer OR developer").
+     * Negation operators: "NOT" and "!" are negation operators (example: "NOT
+     * software").
+     * Comparison operators: support the binary comparison operators =, !=, &lt;, &gt;,
+     * &lt;= and &gt;= for string, numeric, enum, boolean. Also support like operator
+     * `~~` for string. It provides semantic search functionality by parsing,
+     * stemming and doing synonyms expansion against the input query.
+     * To specify a property in the query, the left hand side expression in the
+     * comparison must be the property ID including the parent. The right hand
+     * side must be literals. For example:
+     * "&#92;"projects/123/locations/us&#92;".property_a &lt; 1" matches results whose
+     * "property_a" is less than 1 in project 123 and us location.
+     * The literals and comparison expression can be connected in a single query
+     * (example: "software engineer &#92;"projects/123/locations/us&#92;".salary &gt; 100").
+     * Functions: supported functions are `LOWER([property_name])` to perform a
+     * case insensitive match and `EMPTY([property_name])` to filter on the
+     * existence of a key.
+     * Support nested expressions connected using parenthesis and logical
+     * operators. The default logical operators is `AND` if there is no operators
+     * between expressions.
+     * The query can be used with other filters e.g. `time_filters` and
+     * `folder_name_filter`. They are connected with `AND` operator under the
+     * hood.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -1556,6 +1849,37 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The query string that matches against the full text of the document and
      * the searchable properties.
+     * The query partially supports [Google AIP style
+     * syntax](https://google.aip.dev/160). Specifically, the query supports
+     * literals, logical operators, negation operators, comparison operators, and
+     * functions.
+     * Literals: A bare literal value (examples: "42", "Hugo") is a value to be
+     * matched against. It searches over the full text of the document and the
+     * searchable properties.
+     * Logical operators: "AND", "and", "OR", and "or" are binary logical
+     * operators (example: "engineer OR developer").
+     * Negation operators: "NOT" and "!" are negation operators (example: "NOT
+     * software").
+     * Comparison operators: support the binary comparison operators =, !=, &lt;, &gt;,
+     * &lt;= and &gt;= for string, numeric, enum, boolean. Also support like operator
+     * `~~` for string. It provides semantic search functionality by parsing,
+     * stemming and doing synonyms expansion against the input query.
+     * To specify a property in the query, the left hand side expression in the
+     * comparison must be the property ID including the parent. The right hand
+     * side must be literals. For example:
+     * "&#92;"projects/123/locations/us&#92;".property_a &lt; 1" matches results whose
+     * "property_a" is less than 1 in project 123 and us location.
+     * The literals and comparison expression can be connected in a single query
+     * (example: "software engineer &#92;"projects/123/locations/us&#92;".salary &gt; 100").
+     * Functions: supported functions are `LOWER([property_name])` to perform a
+     * case insensitive match and `EMPTY([property_name])` to filter on the
+     * existence of a key.
+     * Support nested expressions connected using parenthesis and logical
+     * operators. The default logical operators is `AND` if there is no operators
+     * between expressions.
+     * The query can be used with other filters e.g. `time_filters` and
+     * `folder_name_filter`. They are connected with `AND` operator under the
+     * hood.
      * The maximum number of allowed characters is 255.
      * </pre>
      *
@@ -1583,9 +1907,10 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * Experimental, do not use.
      * If the query is a natural language question. False by default. If true,
      * then the question-answering feature will be used instead of search, and
-     * `result_count` in [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest] must be set. In addition, all
-     * other input fields related to search (pagination, histograms, etc.) will be
-     * ignored.
+     * `result_count` in
+     * [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest]
+     * must be set. In addition, all other input fields related to search
+     * (pagination, histograms, etc.) will be ignored.
      * </pre>
      *
      * <code>bool is_nl_query = 12;</code>
@@ -1603,9 +1928,10 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * Experimental, do not use.
      * If the query is a natural language question. False by default. If true,
      * then the question-answering feature will be used instead of search, and
-     * `result_count` in [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest] must be set. In addition, all
-     * other input fields related to search (pagination, histograms, etc.) will be
-     * ignored.
+     * `result_count` in
+     * [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest]
+     * must be set. In addition, all other input fields related to search
+     * (pagination, histograms, etc.) will be ignored.
      * </pre>
      *
      * <code>bool is_nl_query = 12;</code>
@@ -1627,9 +1953,10 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * Experimental, do not use.
      * If the query is a natural language question. False by default. If true,
      * then the question-answering feature will be used instead of search, and
-     * `result_count` in [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest] must be set. In addition, all
-     * other input fields related to search (pagination, histograms, etc.) will be
-     * ignored.
+     * `result_count` in
+     * [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest]
+     * must be set. In addition, all other input fields related to search
+     * (pagination, histograms, etc.) will be ignored.
      * </pre>
      *
      * <code>bool is_nl_query = 12;</code>
@@ -1669,7 +1996,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * <code>string custom_property_filter = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.contentwarehouse.v1.DocumentQuery.custom_property_filter is
-     *     deprecated. See google/cloud/contentwarehouse/v1/filters.proto;l=59
+     *     deprecated. See google/cloud/contentwarehouse/v1/filters.proto;l=104
      * @return The customPropertyFilter.
      */
     @java.lang.Deprecated
@@ -1709,7 +2036,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * <code>string custom_property_filter = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.contentwarehouse.v1.DocumentQuery.custom_property_filter is
-     *     deprecated. See google/cloud/contentwarehouse/v1/filters.proto;l=59
+     *     deprecated. See google/cloud/contentwarehouse/v1/filters.proto;l=104
      * @return The bytes for customPropertyFilter.
      */
     @java.lang.Deprecated
@@ -1749,7 +2076,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * <code>string custom_property_filter = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.contentwarehouse.v1.DocumentQuery.custom_property_filter is
-     *     deprecated. See google/cloud/contentwarehouse/v1/filters.proto;l=59
+     *     deprecated. See google/cloud/contentwarehouse/v1/filters.proto;l=104
      * @param value The customPropertyFilter to set.
      * @return This builder for chaining.
      */
@@ -1788,7 +2115,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * <code>string custom_property_filter = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.contentwarehouse.v1.DocumentQuery.custom_property_filter is
-     *     deprecated. See google/cloud/contentwarehouse/v1/filters.proto;l=59
+     *     deprecated. See google/cloud/contentwarehouse/v1/filters.proto;l=104
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1823,7 +2150,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * <code>string custom_property_filter = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.contentwarehouse.v1.DocumentQuery.custom_property_filter is
-     *     deprecated. See google/cloud/contentwarehouse/v1/filters.proto;l=59
+     *     deprecated. See google/cloud/contentwarehouse/v1/filters.proto;l=104
      * @param value The bytes for customPropertyFilter to set.
      * @return This builder for chaining.
      */
@@ -2227,7 +2554,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies the exact document schema
-     * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name] of the documents to search against.
+     * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
+     * of the documents to search against.
      * If a value isn't specified, documents within the search results are
      * associated with any schema. If multiple values are specified, documents
      * within the search results may be associated with any of the specified
@@ -2247,7 +2575,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies the exact document schema
-     * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name] of the documents to search against.
+     * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
+     * of the documents to search against.
      * If a value isn't specified, documents within the search results are
      * associated with any schema. If multiple values are specified, documents
      * within the search results may be associated with any of the specified
@@ -2267,7 +2596,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies the exact document schema
-     * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name] of the documents to search against.
+     * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
+     * of the documents to search against.
      * If a value isn't specified, documents within the search results are
      * associated with any schema. If multiple values are specified, documents
      * within the search results may be associated with any of the specified
@@ -2288,7 +2618,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies the exact document schema
-     * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name] of the documents to search against.
+     * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
+     * of the documents to search against.
      * If a value isn't specified, documents within the search results are
      * associated with any schema. If multiple values are specified, documents
      * within the search results may be associated with any of the specified
@@ -2309,7 +2640,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies the exact document schema
-     * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name] of the documents to search against.
+     * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
+     * of the documents to search against.
      * If a value isn't specified, documents within the search results are
      * associated with any schema. If multiple values are specified, documents
      * within the search results may be associated with any of the specified
@@ -2337,7 +2669,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies the exact document schema
-     * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name] of the documents to search against.
+     * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
+     * of the documents to search against.
      * If a value isn't specified, documents within the search results are
      * associated with any schema. If multiple values are specified, documents
      * within the search results may be associated with any of the specified
@@ -2364,7 +2697,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies the exact document schema
-     * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name] of the documents to search against.
+     * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
+     * of the documents to search against.
      * If a value isn't specified, documents within the search results are
      * associated with any schema. If multiple values are specified, documents
      * within the search results may be associated with any of the specified
@@ -2388,7 +2722,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies the exact document schema
-     * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name] of the documents to search against.
+     * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
+     * of the documents to search against.
      * If a value isn't specified, documents within the search results are
      * associated with any schema. If multiple values are specified, documents
      * within the search results may be associated with any of the specified
@@ -2411,7 +2746,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies the exact document schema
-     * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name] of the documents to search against.
+     * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
+     * of the documents to search against.
      * If a value isn't specified, documents within the search results are
      * associated with any schema. If multiple values are specified, documents
      * within the search results may be associated with any of the specified
@@ -2458,8 +2794,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies a structured syntax to match against the
-     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable] marked as `true`. The relationship
-     * between the PropertyFilters is OR.
+     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]
+     * marked as `true`. The relationship between the PropertyFilters is OR.
      * </pre>
      *
      * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
@@ -2477,8 +2813,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies a structured syntax to match against the
-     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable] marked as `true`. The relationship
-     * between the PropertyFilters is OR.
+     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]
+     * marked as `true`. The relationship between the PropertyFilters is OR.
      * </pre>
      *
      * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
@@ -2495,8 +2831,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies a structured syntax to match against the
-     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable] marked as `true`. The relationship
-     * between the PropertyFilters is OR.
+     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]
+     * marked as `true`. The relationship between the PropertyFilters is OR.
      * </pre>
      *
      * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
@@ -2513,8 +2849,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies a structured syntax to match against the
-     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable] marked as `true`. The relationship
-     * between the PropertyFilters is OR.
+     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]
+     * marked as `true`. The relationship between the PropertyFilters is OR.
      * </pre>
      *
      * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
@@ -2538,8 +2874,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies a structured syntax to match against the
-     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable] marked as `true`. The relationship
-     * between the PropertyFilters is OR.
+     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]
+     * marked as `true`. The relationship between the PropertyFilters is OR.
      * </pre>
      *
      * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
@@ -2560,8 +2896,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies a structured syntax to match against the
-     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable] marked as `true`. The relationship
-     * between the PropertyFilters is OR.
+     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]
+     * marked as `true`. The relationship between the PropertyFilters is OR.
      * </pre>
      *
      * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
@@ -2584,8 +2920,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies a structured syntax to match against the
-     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable] marked as `true`. The relationship
-     * between the PropertyFilters is OR.
+     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]
+     * marked as `true`. The relationship between the PropertyFilters is OR.
      * </pre>
      *
      * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
@@ -2609,8 +2945,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies a structured syntax to match against the
-     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable] marked as `true`. The relationship
-     * between the PropertyFilters is OR.
+     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]
+     * marked as `true`. The relationship between the PropertyFilters is OR.
      * </pre>
      *
      * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
@@ -2631,8 +2967,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies a structured syntax to match against the
-     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable] marked as `true`. The relationship
-     * between the PropertyFilters is OR.
+     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]
+     * marked as `true`. The relationship between the PropertyFilters is OR.
      * </pre>
      *
      * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
@@ -2653,8 +2989,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies a structured syntax to match against the
-     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable] marked as `true`. The relationship
-     * between the PropertyFilters is OR.
+     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]
+     * marked as `true`. The relationship between the PropertyFilters is OR.
      * </pre>
      *
      * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
@@ -2675,8 +3011,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies a structured syntax to match against the
-     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable] marked as `true`. The relationship
-     * between the PropertyFilters is OR.
+     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]
+     * marked as `true`. The relationship between the PropertyFilters is OR.
      * </pre>
      *
      * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
@@ -2696,8 +3032,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies a structured syntax to match against the
-     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable] marked as `true`. The relationship
-     * between the PropertyFilters is OR.
+     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]
+     * marked as `true`. The relationship between the PropertyFilters is OR.
      * </pre>
      *
      * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
@@ -2717,8 +3053,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies a structured syntax to match against the
-     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable] marked as `true`. The relationship
-     * between the PropertyFilters is OR.
+     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]
+     * marked as `true`. The relationship between the PropertyFilters is OR.
      * </pre>
      *
      * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
@@ -2732,8 +3068,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies a structured syntax to match against the
-     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable] marked as `true`. The relationship
-     * between the PropertyFilters is OR.
+     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]
+     * marked as `true`. The relationship between the PropertyFilters is OR.
      * </pre>
      *
      * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
@@ -2751,8 +3087,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies a structured syntax to match against the
-     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable] marked as `true`. The relationship
-     * between the PropertyFilters is OR.
+     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]
+     * marked as `true`. The relationship between the PropertyFilters is OR.
      * </pre>
      *
      * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
@@ -2770,8 +3106,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies a structured syntax to match against the
-     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable] marked as `true`. The relationship
-     * between the PropertyFilters is OR.
+     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]
+     * marked as `true`. The relationship between the PropertyFilters is OR.
      * </pre>
      *
      * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
@@ -2785,8 +3121,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies a structured syntax to match against the
-     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable] marked as `true`. The relationship
-     * between the PropertyFilters is OR.
+     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]
+     * marked as `true`. The relationship between the PropertyFilters is OR.
      * </pre>
      *
      * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
@@ -2802,8 +3138,8 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This filter specifies a structured syntax to match against the
-     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable] marked as `true`. The relationship
-     * between the PropertyFilters is OR.
+     * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]
+     * marked as `true`. The relationship between the PropertyFilters is OR.
      * </pre>
      *
      * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
@@ -3596,6 +3932,241 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       documentCreatorFilter_.add(value);
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.contentwarehouse.v1.CustomWeightsMetadata customWeightsMetadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.contentwarehouse.v1.CustomWeightsMetadata,
+            com.google.cloud.contentwarehouse.v1.CustomWeightsMetadata.Builder,
+            com.google.cloud.contentwarehouse.v1.CustomWeightsMetadataOrBuilder>
+        customWeightsMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * To support the custom weighting across document schemas, customers need to
+     * provide the properties to be used to boost the ranking in the search
+     * request. For a search query with CustomWeightsMetadata specified, only the
+     * RetrievalImportance for the properties in the CustomWeightsMetadata will
+     * be honored.
+     * </pre>
+     *
+     * <code>.google.cloud.contentwarehouse.v1.CustomWeightsMetadata custom_weights_metadata = 13;
+     * </code>
+     *
+     * @return Whether the customWeightsMetadata field is set.
+     */
+    public boolean hasCustomWeightsMetadata() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * To support the custom weighting across document schemas, customers need to
+     * provide the properties to be used to boost the ranking in the search
+     * request. For a search query with CustomWeightsMetadata specified, only the
+     * RetrievalImportance for the properties in the CustomWeightsMetadata will
+     * be honored.
+     * </pre>
+     *
+     * <code>.google.cloud.contentwarehouse.v1.CustomWeightsMetadata custom_weights_metadata = 13;
+     * </code>
+     *
+     * @return The customWeightsMetadata.
+     */
+    public com.google.cloud.contentwarehouse.v1.CustomWeightsMetadata getCustomWeightsMetadata() {
+      if (customWeightsMetadataBuilder_ == null) {
+        return customWeightsMetadata_ == null
+            ? com.google.cloud.contentwarehouse.v1.CustomWeightsMetadata.getDefaultInstance()
+            : customWeightsMetadata_;
+      } else {
+        return customWeightsMetadataBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * To support the custom weighting across document schemas, customers need to
+     * provide the properties to be used to boost the ranking in the search
+     * request. For a search query with CustomWeightsMetadata specified, only the
+     * RetrievalImportance for the properties in the CustomWeightsMetadata will
+     * be honored.
+     * </pre>
+     *
+     * <code>.google.cloud.contentwarehouse.v1.CustomWeightsMetadata custom_weights_metadata = 13;
+     * </code>
+     */
+    public Builder setCustomWeightsMetadata(
+        com.google.cloud.contentwarehouse.v1.CustomWeightsMetadata value) {
+      if (customWeightsMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        customWeightsMetadata_ = value;
+      } else {
+        customWeightsMetadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * To support the custom weighting across document schemas, customers need to
+     * provide the properties to be used to boost the ranking in the search
+     * request. For a search query with CustomWeightsMetadata specified, only the
+     * RetrievalImportance for the properties in the CustomWeightsMetadata will
+     * be honored.
+     * </pre>
+     *
+     * <code>.google.cloud.contentwarehouse.v1.CustomWeightsMetadata custom_weights_metadata = 13;
+     * </code>
+     */
+    public Builder setCustomWeightsMetadata(
+        com.google.cloud.contentwarehouse.v1.CustomWeightsMetadata.Builder builderForValue) {
+      if (customWeightsMetadataBuilder_ == null) {
+        customWeightsMetadata_ = builderForValue.build();
+      } else {
+        customWeightsMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * To support the custom weighting across document schemas, customers need to
+     * provide the properties to be used to boost the ranking in the search
+     * request. For a search query with CustomWeightsMetadata specified, only the
+     * RetrievalImportance for the properties in the CustomWeightsMetadata will
+     * be honored.
+     * </pre>
+     *
+     * <code>.google.cloud.contentwarehouse.v1.CustomWeightsMetadata custom_weights_metadata = 13;
+     * </code>
+     */
+    public Builder mergeCustomWeightsMetadata(
+        com.google.cloud.contentwarehouse.v1.CustomWeightsMetadata value) {
+      if (customWeightsMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && customWeightsMetadata_ != null
+            && customWeightsMetadata_
+                != com.google.cloud.contentwarehouse.v1.CustomWeightsMetadata
+                    .getDefaultInstance()) {
+          getCustomWeightsMetadataBuilder().mergeFrom(value);
+        } else {
+          customWeightsMetadata_ = value;
+        }
+      } else {
+        customWeightsMetadataBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * To support the custom weighting across document schemas, customers need to
+     * provide the properties to be used to boost the ranking in the search
+     * request. For a search query with CustomWeightsMetadata specified, only the
+     * RetrievalImportance for the properties in the CustomWeightsMetadata will
+     * be honored.
+     * </pre>
+     *
+     * <code>.google.cloud.contentwarehouse.v1.CustomWeightsMetadata custom_weights_metadata = 13;
+     * </code>
+     */
+    public Builder clearCustomWeightsMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      customWeightsMetadata_ = null;
+      if (customWeightsMetadataBuilder_ != null) {
+        customWeightsMetadataBuilder_.dispose();
+        customWeightsMetadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * To support the custom weighting across document schemas, customers need to
+     * provide the properties to be used to boost the ranking in the search
+     * request. For a search query with CustomWeightsMetadata specified, only the
+     * RetrievalImportance for the properties in the CustomWeightsMetadata will
+     * be honored.
+     * </pre>
+     *
+     * <code>.google.cloud.contentwarehouse.v1.CustomWeightsMetadata custom_weights_metadata = 13;
+     * </code>
+     */
+    public com.google.cloud.contentwarehouse.v1.CustomWeightsMetadata.Builder
+        getCustomWeightsMetadataBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return getCustomWeightsMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * To support the custom weighting across document schemas, customers need to
+     * provide the properties to be used to boost the ranking in the search
+     * request. For a search query with CustomWeightsMetadata specified, only the
+     * RetrievalImportance for the properties in the CustomWeightsMetadata will
+     * be honored.
+     * </pre>
+     *
+     * <code>.google.cloud.contentwarehouse.v1.CustomWeightsMetadata custom_weights_metadata = 13;
+     * </code>
+     */
+    public com.google.cloud.contentwarehouse.v1.CustomWeightsMetadataOrBuilder
+        getCustomWeightsMetadataOrBuilder() {
+      if (customWeightsMetadataBuilder_ != null) {
+        return customWeightsMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return customWeightsMetadata_ == null
+            ? com.google.cloud.contentwarehouse.v1.CustomWeightsMetadata.getDefaultInstance()
+            : customWeightsMetadata_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * To support the custom weighting across document schemas, customers need to
+     * provide the properties to be used to boost the ranking in the search
+     * request. For a search query with CustomWeightsMetadata specified, only the
+     * RetrievalImportance for the properties in the CustomWeightsMetadata will
+     * be honored.
+     * </pre>
+     *
+     * <code>.google.cloud.contentwarehouse.v1.CustomWeightsMetadata custom_weights_metadata = 13;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.contentwarehouse.v1.CustomWeightsMetadata,
+            com.google.cloud.contentwarehouse.v1.CustomWeightsMetadata.Builder,
+            com.google.cloud.contentwarehouse.v1.CustomWeightsMetadataOrBuilder>
+        getCustomWeightsMetadataFieldBuilder() {
+      if (customWeightsMetadataBuilder_ == null) {
+        customWeightsMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.contentwarehouse.v1.CustomWeightsMetadata,
+                com.google.cloud.contentwarehouse.v1.CustomWeightsMetadata.Builder,
+                com.google.cloud.contentwarehouse.v1.CustomWeightsMetadataOrBuilder>(
+                getCustomWeightsMetadata(), getParentForChildren(), isClean());
+        customWeightsMetadata_ = null;
+      }
+      return customWeightsMetadataBuilder_;
     }
 
     @java.lang.Override

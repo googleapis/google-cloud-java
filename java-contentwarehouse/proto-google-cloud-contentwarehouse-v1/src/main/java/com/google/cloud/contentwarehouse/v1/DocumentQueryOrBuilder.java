@@ -29,6 +29,37 @@ public interface DocumentQueryOrBuilder
    * <pre>
    * The query string that matches against the full text of the document and
    * the searchable properties.
+   * The query partially supports [Google AIP style
+   * syntax](https://google.aip.dev/160). Specifically, the query supports
+   * literals, logical operators, negation operators, comparison operators, and
+   * functions.
+   * Literals: A bare literal value (examples: "42", "Hugo") is a value to be
+   * matched against. It searches over the full text of the document and the
+   * searchable properties.
+   * Logical operators: "AND", "and", "OR", and "or" are binary logical
+   * operators (example: "engineer OR developer").
+   * Negation operators: "NOT" and "!" are negation operators (example: "NOT
+   * software").
+   * Comparison operators: support the binary comparison operators =, !=, &lt;, &gt;,
+   * &lt;= and &gt;= for string, numeric, enum, boolean. Also support like operator
+   * `~~` for string. It provides semantic search functionality by parsing,
+   * stemming and doing synonyms expansion against the input query.
+   * To specify a property in the query, the left hand side expression in the
+   * comparison must be the property ID including the parent. The right hand
+   * side must be literals. For example:
+   * "&#92;"projects/123/locations/us&#92;".property_a &lt; 1" matches results whose
+   * "property_a" is less than 1 in project 123 and us location.
+   * The literals and comparison expression can be connected in a single query
+   * (example: "software engineer &#92;"projects/123/locations/us&#92;".salary &gt; 100").
+   * Functions: supported functions are `LOWER([property_name])` to perform a
+   * case insensitive match and `EMPTY([property_name])` to filter on the
+   * existence of a key.
+   * Support nested expressions connected using parenthesis and logical
+   * operators. The default logical operators is `AND` if there is no operators
+   * between expressions.
+   * The query can be used with other filters e.g. `time_filters` and
+   * `folder_name_filter`. They are connected with `AND` operator under the
+   * hood.
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -43,6 +74,37 @@ public interface DocumentQueryOrBuilder
    * <pre>
    * The query string that matches against the full text of the document and
    * the searchable properties.
+   * The query partially supports [Google AIP style
+   * syntax](https://google.aip.dev/160). Specifically, the query supports
+   * literals, logical operators, negation operators, comparison operators, and
+   * functions.
+   * Literals: A bare literal value (examples: "42", "Hugo") is a value to be
+   * matched against. It searches over the full text of the document and the
+   * searchable properties.
+   * Logical operators: "AND", "and", "OR", and "or" are binary logical
+   * operators (example: "engineer OR developer").
+   * Negation operators: "NOT" and "!" are negation operators (example: "NOT
+   * software").
+   * Comparison operators: support the binary comparison operators =, !=, &lt;, &gt;,
+   * &lt;= and &gt;= for string, numeric, enum, boolean. Also support like operator
+   * `~~` for string. It provides semantic search functionality by parsing,
+   * stemming and doing synonyms expansion against the input query.
+   * To specify a property in the query, the left hand side expression in the
+   * comparison must be the property ID including the parent. The right hand
+   * side must be literals. For example:
+   * "&#92;"projects/123/locations/us&#92;".property_a &lt; 1" matches results whose
+   * "property_a" is less than 1 in project 123 and us location.
+   * The literals and comparison expression can be connected in a single query
+   * (example: "software engineer &#92;"projects/123/locations/us&#92;".salary &gt; 100").
+   * Functions: supported functions are `LOWER([property_name])` to perform a
+   * case insensitive match and `EMPTY([property_name])` to filter on the
+   * existence of a key.
+   * Support nested expressions connected using parenthesis and logical
+   * operators. The default logical operators is `AND` if there is no operators
+   * between expressions.
+   * The query can be used with other filters e.g. `time_filters` and
+   * `folder_name_filter`. They are connected with `AND` operator under the
+   * hood.
    * The maximum number of allowed characters is 255.
    * </pre>
    *
@@ -59,9 +121,10 @@ public interface DocumentQueryOrBuilder
    * Experimental, do not use.
    * If the query is a natural language question. False by default. If true,
    * then the question-answering feature will be used instead of search, and
-   * `result_count` in [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest] must be set. In addition, all
-   * other input fields related to search (pagination, histograms, etc.) will be
-   * ignored.
+   * `result_count` in
+   * [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest]
+   * must be set. In addition, all other input fields related to search
+   * (pagination, histograms, etc.) will be ignored.
    * </pre>
    *
    * <code>bool is_nl_query = 12;</code>
@@ -95,7 +158,7 @@ public interface DocumentQueryOrBuilder
    * <code>string custom_property_filter = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.contentwarehouse.v1.DocumentQuery.custom_property_filter is
-   *     deprecated. See google/cloud/contentwarehouse/v1/filters.proto;l=59
+   *     deprecated. See google/cloud/contentwarehouse/v1/filters.proto;l=104
    * @return The customPropertyFilter.
    */
   @java.lang.Deprecated
@@ -125,7 +188,7 @@ public interface DocumentQueryOrBuilder
    * <code>string custom_property_filter = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.contentwarehouse.v1.DocumentQuery.custom_property_filter is
-   *     deprecated. See google/cloud/contentwarehouse/v1/filters.proto;l=59
+   *     deprecated. See google/cloud/contentwarehouse/v1/filters.proto;l=104
    * @return The bytes for customPropertyFilter.
    */
   @java.lang.Deprecated
@@ -193,7 +256,8 @@ public interface DocumentQueryOrBuilder
    *
    * <pre>
    * This filter specifies the exact document schema
-   * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name] of the documents to search against.
+   * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
+   * of the documents to search against.
    * If a value isn't specified, documents within the search results are
    * associated with any schema. If multiple values are specified, documents
    * within the search results may be associated with any of the specified
@@ -211,7 +275,8 @@ public interface DocumentQueryOrBuilder
    *
    * <pre>
    * This filter specifies the exact document schema
-   * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name] of the documents to search against.
+   * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
+   * of the documents to search against.
    * If a value isn't specified, documents within the search results are
    * associated with any schema. If multiple values are specified, documents
    * within the search results may be associated with any of the specified
@@ -229,7 +294,8 @@ public interface DocumentQueryOrBuilder
    *
    * <pre>
    * This filter specifies the exact document schema
-   * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name] of the documents to search against.
+   * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
+   * of the documents to search against.
    * If a value isn't specified, documents within the search results are
    * associated with any schema. If multiple values are specified, documents
    * within the search results may be associated with any of the specified
@@ -248,7 +314,8 @@ public interface DocumentQueryOrBuilder
    *
    * <pre>
    * This filter specifies the exact document schema
-   * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name] of the documents to search against.
+   * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name]
+   * of the documents to search against.
    * If a value isn't specified, documents within the search results are
    * associated with any schema. If multiple values are specified, documents
    * within the search results may be associated with any of the specified
@@ -268,8 +335,8 @@ public interface DocumentQueryOrBuilder
    *
    * <pre>
    * This filter specifies a structured syntax to match against the
-   * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable] marked as `true`. The relationship
-   * between the PropertyFilters is OR.
+   * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]
+   * marked as `true`. The relationship between the PropertyFilters is OR.
    * </pre>
    *
    * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
@@ -280,8 +347,8 @@ public interface DocumentQueryOrBuilder
    *
    * <pre>
    * This filter specifies a structured syntax to match against the
-   * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable] marked as `true`. The relationship
-   * between the PropertyFilters is OR.
+   * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]
+   * marked as `true`. The relationship between the PropertyFilters is OR.
    * </pre>
    *
    * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
@@ -292,8 +359,8 @@ public interface DocumentQueryOrBuilder
    *
    * <pre>
    * This filter specifies a structured syntax to match against the
-   * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable] marked as `true`. The relationship
-   * between the PropertyFilters is OR.
+   * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]
+   * marked as `true`. The relationship between the PropertyFilters is OR.
    * </pre>
    *
    * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
@@ -304,8 +371,8 @@ public interface DocumentQueryOrBuilder
    *
    * <pre>
    * This filter specifies a structured syntax to match against the
-   * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable] marked as `true`. The relationship
-   * between the PropertyFilters is OR.
+   * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]
+   * marked as `true`. The relationship between the PropertyFilters is OR.
    * </pre>
    *
    * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
@@ -317,8 +384,8 @@ public interface DocumentQueryOrBuilder
    *
    * <pre>
    * This filter specifies a structured syntax to match against the
-   * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable] marked as `true`. The relationship
-   * between the PropertyFilters is OR.
+   * [PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]
+   * marked as `true`. The relationship between the PropertyFilters is OR.
    * </pre>
    *
    * <code>repeated .google.cloud.contentwarehouse.v1.PropertyFilter property_filter = 7;</code>
@@ -543,4 +610,55 @@ public interface DocumentQueryOrBuilder
    * @return The bytes of the documentCreatorFilter at the given index.
    */
   com.google.protobuf.ByteString getDocumentCreatorFilterBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * To support the custom weighting across document schemas, customers need to
+   * provide the properties to be used to boost the ranking in the search
+   * request. For a search query with CustomWeightsMetadata specified, only the
+   * RetrievalImportance for the properties in the CustomWeightsMetadata will
+   * be honored.
+   * </pre>
+   *
+   * <code>.google.cloud.contentwarehouse.v1.CustomWeightsMetadata custom_weights_metadata = 13;
+   * </code>
+   *
+   * @return Whether the customWeightsMetadata field is set.
+   */
+  boolean hasCustomWeightsMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * To support the custom weighting across document schemas, customers need to
+   * provide the properties to be used to boost the ranking in the search
+   * request. For a search query with CustomWeightsMetadata specified, only the
+   * RetrievalImportance for the properties in the CustomWeightsMetadata will
+   * be honored.
+   * </pre>
+   *
+   * <code>.google.cloud.contentwarehouse.v1.CustomWeightsMetadata custom_weights_metadata = 13;
+   * </code>
+   *
+   * @return The customWeightsMetadata.
+   */
+  com.google.cloud.contentwarehouse.v1.CustomWeightsMetadata getCustomWeightsMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * To support the custom weighting across document schemas, customers need to
+   * provide the properties to be used to boost the ranking in the search
+   * request. For a search query with CustomWeightsMetadata specified, only the
+   * RetrievalImportance for the properties in the CustomWeightsMetadata will
+   * be honored.
+   * </pre>
+   *
+   * <code>.google.cloud.contentwarehouse.v1.CustomWeightsMetadata custom_weights_metadata = 13;
+   * </code>
+   */
+  com.google.cloud.contentwarehouse.v1.CustomWeightsMetadataOrBuilder
+      getCustomWeightsMetadataOrBuilder();
 }

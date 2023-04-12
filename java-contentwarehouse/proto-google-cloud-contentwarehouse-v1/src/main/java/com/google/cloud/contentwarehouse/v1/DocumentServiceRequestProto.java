@@ -56,6 +56,10 @@ public final class DocumentServiceRequestProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_contentwarehouse_v1_SearchDocumentsRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_contentwarehouse_v1_LockDocumentRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_contentwarehouse_v1_LockDocumentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_contentwarehouse_v1_FetchAclRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_contentwarehouse_v1_FetchAclRequest_fieldAccessorTable;
@@ -118,7 +122,7 @@ public final class DocumentServiceRequestProto {
           + "name\030\001 \001(\tB0\340A\002\372A*\n(contentwarehouse.goo"
           + "gleapis.com/Document\022K\n\020request_metadata"
           + "\030\002 \001(\01321.google.cloud.contentwarehouse.v"
-          + "1.RequestMetadata\"\271\003\n\026SearchDocumentsReq"
+          + "1.RequestMetadata\"\371\004\n\026SearchDocumentsReq"
           + "uest\022@\n\006parent\030\001 \001(\tB0\340A\002\372A*\n(contentwar"
           + "ehouse.googleapis.com/Location\022K\n\020reques"
           + "t_metadata\030\003 \001(\01321.google.cloud.contentw"
@@ -128,20 +132,32 @@ public final class DocumentServiceRequestProto {
           + "page_size\030\006 \001(\005\022\022\n\npage_token\030\007 \001(\t\022\020\n\010o"
           + "rder_by\030\010 \001(\t\022K\n\021histogram_queries\030\t \003(\013"
           + "20.google.cloud.contentwarehouse.v1.Hist"
-          + "ogramQuery\022\032\n\022require_total_size\030\n \001(\010\022\025"
-          + "\n\rqa_size_limit\030\013 \001(\005\"\214\001\n\017FetchAclReques"
-          + "t\022\025\n\010resource\030\001 \001(\tB\003\340A\002\022K\n\020request_meta"
-          + "data\030\002 \001(\01321.google.cloud.contentwarehou"
-          + "se.v1.RequestMetadata\022\025\n\rproject_owner\030\003"
-          + " \001(\010\"\266\001\n\rSetAclRequest\022\025\n\010resource\030\001 \001(\t"
-          + "B\003\340A\002\022*\n\006policy\030\002 \001(\0132\025.google.iam.v1.Po"
-          + "licyB\003\340A\002\022K\n\020request_metadata\030\003 \001(\01321.go"
-          + "ogle.cloud.contentwarehouse.v1.RequestMe"
-          + "tadata\022\025\n\rproject_owner\030\004 \001(\010B\227\001\n$com.go"
-          + "ogle.cloud.contentwarehouse.v1B\033Document"
-          + "ServiceRequestProtoP\001ZPcloud.google.com/"
-          + "go/contentwarehouse/apiv1/contentwarehou"
-          + "sepb;contentwarehousepbb\006proto3"
+          + "ogramQuery\022\032\n\022require_total_size\030\n \001(\010\022c"
+          + "\n\021total_result_size\030\014 \001(\0162H.google.cloud"
+          + ".contentwarehouse.v1.SearchDocumentsRequ"
+          + "est.TotalResultSize\022\025\n\rqa_size_limit\030\013 \001"
+          + "(\005\"Y\n\017TotalResultSize\022!\n\035TOTAL_RESULT_SI"
+          + "ZE_UNSPECIFIED\020\000\022\022\n\016ESTIMATED_SIZE\020\001\022\017\n\013"
+          + "ACTUAL_SIZE\020\002\"\256\001\n\023LockDocumentRequest\022>\n"
+          + "\004name\030\001 \001(\tB0\340A\002\372A*\n(contentwarehouse.go"
+          + "ogleapis.com/Document\022\025\n\rcollection_id\030\002"
+          + " \001(\t\022@\n\014locking_user\030\003 \001(\0132*.google.clou"
+          + "d.contentwarehouse.v1.UserInfo\"\214\001\n\017Fetch"
+          + "AclRequest\022\025\n\010resource\030\001 \001(\tB\003\340A\002\022K\n\020req"
+          + "uest_metadata\030\002 \001(\01321.google.cloud.conte"
+          + "ntwarehouse.v1.RequestMetadata\022\025\n\rprojec"
+          + "t_owner\030\003 \001(\010\"\266\001\n\rSetAclRequest\022\025\n\010resou"
+          + "rce\030\001 \001(\tB\003\340A\002\022*\n\006policy\030\002 \001(\0132\025.google."
+          + "iam.v1.PolicyB\003\340A\002\022K\n\020request_metadata\030\003"
+          + " \001(\01321.google.cloud.contentwarehouse.v1."
+          + "RequestMetadata\022\025\n\rproject_owner\030\004 \001(\010B\203"
+          + "\002\n$com.google.cloud.contentwarehouse.v1B"
+          + "\033DocumentServiceRequestProtoP\001ZPcloud.go"
+          + "ogle.com/go/contentwarehouse/apiv1/conte"
+          + "ntwarehousepb;contentwarehousepb\252\002 Googl"
+          + "e.Cloud.ContentWarehouse.V1\312\002 Google\\Clo"
+          + "ud\\ContentWarehouse\\V1\352\002#Google::Cloud::"
+          + "ContentWarehouse::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -226,10 +242,19 @@ public final class DocumentServiceRequestProto {
               "OrderBy",
               "HistogramQueries",
               "RequireTotalSize",
+              "TotalResultSize",
               "QaSizeLimit",
             });
-    internal_static_google_cloud_contentwarehouse_v1_FetchAclRequest_descriptor =
+    internal_static_google_cloud_contentwarehouse_v1_LockDocumentRequest_descriptor =
         getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_contentwarehouse_v1_LockDocumentRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_contentwarehouse_v1_LockDocumentRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "CollectionId", "LockingUser",
+            });
+    internal_static_google_cloud_contentwarehouse_v1_FetchAclRequest_descriptor =
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_contentwarehouse_v1_FetchAclRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contentwarehouse_v1_FetchAclRequest_descriptor,
@@ -237,7 +262,7 @@ public final class DocumentServiceRequestProto {
               "Resource", "RequestMetadata", "ProjectOwner",
             });
     internal_static_google_cloud_contentwarehouse_v1_SetAclRequest_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_contentwarehouse_v1_SetAclRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contentwarehouse_v1_SetAclRequest_descriptor,

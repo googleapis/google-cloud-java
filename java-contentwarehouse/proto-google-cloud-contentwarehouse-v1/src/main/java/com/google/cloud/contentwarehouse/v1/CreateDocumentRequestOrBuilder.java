@@ -137,8 +137,10 @@ public interface CreateDocumentRequestOrBuilder
    *
    *
    * <pre>
-   * Default document policy during creation. Conditions defined in the policy
-   * will be ignored.
+   * Default document policy during creation.
+   * This refers to an Identity and Access (IAM) policy, which specifies access
+   * controls for the Document.
+   * Conditions defined in the policy will be ignored.
    * </pre>
    *
    * <code>.google.iam.v1.Policy policy = 4;</code>
@@ -150,8 +152,10 @@ public interface CreateDocumentRequestOrBuilder
    *
    *
    * <pre>
-   * Default document policy during creation. Conditions defined in the policy
-   * will be ignored.
+   * Default document policy during creation.
+   * This refers to an Identity and Access (IAM) policy, which specifies access
+   * controls for the Document.
+   * Conditions defined in the policy will be ignored.
    * </pre>
    *
    * <code>.google.iam.v1.Policy policy = 4;</code>
@@ -163,8 +167,10 @@ public interface CreateDocumentRequestOrBuilder
    *
    *
    * <pre>
-   * Default document policy during creation. Conditions defined in the policy
-   * will be ignored.
+   * Default document policy during creation.
+   * This refers to an Identity and Access (IAM) policy, which specifies access
+   * controls for the Document.
+   * Conditions defined in the policy will be ignored.
    * </pre>
    *
    * <code>.google.iam.v1.Policy policy = 4;</code>
@@ -175,7 +181,10 @@ public interface CreateDocumentRequestOrBuilder
    *
    *
    * <pre>
-   * Request Option for processing Cloud AI Document in CW Document.
+   * Request Option for processing Cloud AI Document in Document Warehouse.
+   * This field offers limited support for mapping entities from Cloud AI
+   * Document to Warehouse Document. Please consult with product team before
+   * using this field and other available options.
    * </pre>
    *
    * <code>.google.cloud.contentwarehouse.v1.CloudAIDocumentOption cloud_ai_document_option = 5;
@@ -188,7 +197,10 @@ public interface CreateDocumentRequestOrBuilder
    *
    *
    * <pre>
-   * Request Option for processing Cloud AI Document in CW Document.
+   * Request Option for processing Cloud AI Document in Document Warehouse.
+   * This field offers limited support for mapping entities from Cloud AI
+   * Document to Warehouse Document. Please consult with product team before
+   * using this field and other available options.
    * </pre>
    *
    * <code>.google.cloud.contentwarehouse.v1.CloudAIDocumentOption cloud_ai_document_option = 5;
@@ -201,7 +213,10 @@ public interface CreateDocumentRequestOrBuilder
    *
    *
    * <pre>
-   * Request Option for processing Cloud AI Document in CW Document.
+   * Request Option for processing Cloud AI Document in Document Warehouse.
+   * This field offers limited support for mapping entities from Cloud AI
+   * Document to Warehouse Document. Please consult with product team before
+   * using this field and other available options.
    * </pre>
    *
    * <code>.google.cloud.contentwarehouse.v1.CloudAIDocumentOption cloud_ai_document_option = 5;
@@ -218,7 +233,7 @@ public interface CreateDocumentRequestOrBuilder
    * it means all fields are masked.
    * For the `FieldMask` definition,
    * see
-   * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+   * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask create_mask = 6;</code>
@@ -234,7 +249,7 @@ public interface CreateDocumentRequestOrBuilder
    * it means all fields are masked.
    * For the `FieldMask` definition,
    * see
-   * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+   * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask create_mask = 6;</code>
@@ -250,7 +265,7 @@ public interface CreateDocumentRequestOrBuilder
    * it means all fields are masked.
    * For the `FieldMask` definition,
    * see
-   * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+   * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask create_mask = 6;</code>

@@ -143,7 +143,10 @@ public interface UpdateDocumentRequestOrBuilder
    *
    *
    * <pre>
-   * Request Option for processing Cloud AI Document in CW Document.
+   * Request Option for processing Cloud AI Document in Document Warehouse.
+   * This field offers limited support for mapping entities from Cloud AI
+   * Document to Warehouse Document. Please consult with product team before
+   * using this field and other available options.
    * </pre>
    *
    * <code>.google.cloud.contentwarehouse.v1.CloudAIDocumentOption cloud_ai_document_option = 5;
@@ -156,7 +159,10 @@ public interface UpdateDocumentRequestOrBuilder
    *
    *
    * <pre>
-   * Request Option for processing Cloud AI Document in CW Document.
+   * Request Option for processing Cloud AI Document in Document Warehouse.
+   * This field offers limited support for mapping entities from Cloud AI
+   * Document to Warehouse Document. Please consult with product team before
+   * using this field and other available options.
    * </pre>
    *
    * <code>.google.cloud.contentwarehouse.v1.CloudAIDocumentOption cloud_ai_document_option = 5;
@@ -169,7 +175,10 @@ public interface UpdateDocumentRequestOrBuilder
    *
    *
    * <pre>
-   * Request Option for processing Cloud AI Document in CW Document.
+   * Request Option for processing Cloud AI Document in Document Warehouse.
+   * This field offers limited support for mapping entities from Cloud AI
+   * Document to Warehouse Document. Please consult with product team before
+   * using this field and other available options.
    * </pre>
    *
    * <code>.google.cloud.contentwarehouse.v1.CloudAIDocumentOption cloud_ai_document_option = 5;

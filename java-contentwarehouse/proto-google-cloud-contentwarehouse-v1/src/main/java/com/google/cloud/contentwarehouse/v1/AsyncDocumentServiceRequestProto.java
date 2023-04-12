@@ -49,11 +49,14 @@ public final class AsyncDocumentServiceRequestProto {
           + "cloud.contentwarehouse.v1\032\037google/api/fi"
           + "eld_behavior.proto\032\031google/api/resource."
           + "proto\"\030\n\026CreateDocumentMetadata\"\030\n\026Updat"
-          + "eDocumentMetadataB\234\001\n$com.google.cloud.c"
+          + "eDocumentMetadataB\210\002\n$com.google.cloud.c"
           + "ontentwarehouse.v1B AsyncDocumentService"
           + "RequestProtoP\001ZPcloud.google.com/go/cont"
           + "entwarehouse/apiv1/contentwarehousepb;co"
-          + "ntentwarehousepbb\006proto3"
+          + "ntentwarehousepb\252\002 Google.Cloud.ContentW"
+          + "arehouse.V1\312\002 Google\\Cloud\\ContentWareho"
+          + "use\\V1\352\002#Google::Cloud::ContentWarehouse"
+          + "::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

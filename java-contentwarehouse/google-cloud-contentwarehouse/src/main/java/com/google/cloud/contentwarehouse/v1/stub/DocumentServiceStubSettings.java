@@ -50,6 +50,7 @@ import com.google.cloud.contentwarehouse.v1.Document;
 import com.google.cloud.contentwarehouse.v1.FetchAclRequest;
 import com.google.cloud.contentwarehouse.v1.FetchAclResponse;
 import com.google.cloud.contentwarehouse.v1.GetDocumentRequest;
+import com.google.cloud.contentwarehouse.v1.LockDocumentRequest;
 import com.google.cloud.contentwarehouse.v1.SearchDocumentsRequest;
 import com.google.cloud.contentwarehouse.v1.SearchDocumentsResponse;
 import com.google.cloud.contentwarehouse.v1.SetAclRequest;
@@ -119,6 +120,7 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
   private final PagedCallSettings<
           SearchDocumentsRequest, SearchDocumentsResponse, SearchDocumentsPagedResponse>
       searchDocumentsSettings;
+  private final UnaryCallSettings<LockDocumentRequest, Document> lockDocumentSettings;
   private final UnaryCallSettings<FetchAclRequest, FetchAclResponse> fetchAclSettings;
   private final UnaryCallSettings<SetAclRequest, SetAclResponse> setAclSettings;
 
@@ -212,6 +214,11 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
           SearchDocumentsRequest, SearchDocumentsResponse, SearchDocumentsPagedResponse>
       searchDocumentsSettings() {
     return searchDocumentsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to lockDocument. */
+  public UnaryCallSettings<LockDocumentRequest, Document> lockDocumentSettings() {
+    return lockDocumentSettings;
   }
 
   /** Returns the object with the settings used for calls to fetchAcl. */
@@ -335,6 +342,7 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
     updateDocumentSettings = settingsBuilder.updateDocumentSettings().build();
     deleteDocumentSettings = settingsBuilder.deleteDocumentSettings().build();
     searchDocumentsSettings = settingsBuilder.searchDocumentsSettings().build();
+    lockDocumentSettings = settingsBuilder.lockDocumentSettings().build();
     fetchAclSettings = settingsBuilder.fetchAclSettings().build();
     setAclSettings = settingsBuilder.setAclSettings().build();
   }
@@ -351,6 +359,7 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
     private final PagedCallSettings.Builder<
             SearchDocumentsRequest, SearchDocumentsResponse, SearchDocumentsPagedResponse>
         searchDocumentsSettings;
+    private final UnaryCallSettings.Builder<LockDocumentRequest, Document> lockDocumentSettings;
     private final UnaryCallSettings.Builder<FetchAclRequest, FetchAclResponse> fetchAclSettings;
     private final UnaryCallSettings.Builder<SetAclRequest, SetAclResponse> setAclSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -366,6 +375,7 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -401,6 +411,8 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -416,6 +428,7 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
       updateDocumentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteDocumentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       searchDocumentsSettings = PagedCallSettings.newBuilder(SEARCH_DOCUMENTS_PAGE_STR_FACT);
+      lockDocumentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       fetchAclSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setAclSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -426,6 +439,7 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
               updateDocumentSettings,
               deleteDocumentSettings,
               searchDocumentsSettings,
+              lockDocumentSettings,
               fetchAclSettings,
               setAclSettings);
       initDefaults(this);
@@ -439,6 +453,7 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
       updateDocumentSettings = settings.updateDocumentSettings.toBuilder();
       deleteDocumentSettings = settings.deleteDocumentSettings.toBuilder();
       searchDocumentsSettings = settings.searchDocumentsSettings.toBuilder();
+      lockDocumentSettings = settings.lockDocumentSettings.toBuilder();
       fetchAclSettings = settings.fetchAclSettings.toBuilder();
       setAclSettings = settings.setAclSettings.toBuilder();
 
@@ -449,6 +464,7 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
               updateDocumentSettings,
               deleteDocumentSettings,
               searchDocumentsSettings,
+              lockDocumentSettings,
               fetchAclSettings,
               setAclSettings);
     }
@@ -506,6 +522,11 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
 
       builder
+          .lockDocumentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .fetchAclSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -560,6 +581,11 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
             SearchDocumentsRequest, SearchDocumentsResponse, SearchDocumentsPagedResponse>
         searchDocumentsSettings() {
       return searchDocumentsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to lockDocument. */
+    public UnaryCallSettings.Builder<LockDocumentRequest, Document> lockDocumentSettings() {
+      return lockDocumentSettings;
     }
 
     /** Returns the builder for the settings used for calls to fetchAcl. */

@@ -72,11 +72,13 @@ public final class HistogramProto {
           + "(\t\022X\n\thistogram\030\002 \003(\0132E.google.cloud.con"
           + "tentwarehouse.v1.HistogramQueryResult.Hi"
           + "stogramEntry\0320\n\016HistogramEntry\022\013\n\003key\030\001 "
-          + "\001(\t\022\r\n\005value\030\002 \001(\003:\0028\001B\212\001\n$com.google.cl"
+          + "\001(\t\022\r\n\005value\030\002 \001(\003:\0028\001B\366\001\n$com.google.cl"
           + "oud.contentwarehouse.v1B\016HistogramProtoP"
           + "\001ZPcloud.google.com/go/contentwarehouse/"
           + "apiv1/contentwarehousepb;contentwarehous"
-          + "epbb\006proto3"
+          + "epb\252\002 Google.Cloud.ContentWarehouse.V1\312\002"
+          + " Google\\Cloud\\ContentWarehouse\\V1\352\002#Goog"
+          + "le::Cloud::ContentWarehouse::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -76,8 +76,8 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The name of the document, for which all source links are returned.
-   * Format:
+   * Required. The name of the document, for which all source links are
+   * returned. Format:
    * projects/{project_number}/locations/{location}/documents/{source_document_id}.
    * </pre>
    *
@@ -103,8 +103,8 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The name of the document, for which all source links are returned.
-   * Format:
+   * Required. The name of the document, for which all source links are
+   * returned. Format:
    * projects/{project_number}/locations/{location}/documents/{source_document_id}.
    * </pre>
    *
@@ -688,8 +688,8 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The name of the document, for which all source links are returned.
-     * Format:
+     * Required. The name of the document, for which all source links are
+     * returned. Format:
      * projects/{project_number}/locations/{location}/documents/{source_document_id}.
      * </pre>
      *
@@ -714,8 +714,8 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The name of the document, for which all source links are returned.
-     * Format:
+     * Required. The name of the document, for which all source links are
+     * returned. Format:
      * projects/{project_number}/locations/{location}/documents/{source_document_id}.
      * </pre>
      *
@@ -740,8 +740,8 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The name of the document, for which all source links are returned.
-     * Format:
+     * Required. The name of the document, for which all source links are
+     * returned. Format:
      * projects/{project_number}/locations/{location}/documents/{source_document_id}.
      * </pre>
      *
@@ -765,8 +765,8 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The name of the document, for which all source links are returned.
-     * Format:
+     * Required. The name of the document, for which all source links are
+     * returned. Format:
      * projects/{project_number}/locations/{location}/documents/{source_document_id}.
      * </pre>
      *
@@ -786,8 +786,8 @@ public final class ListLinkedSourcesRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The name of the document, for which all source links are returned.
-     * Format:
+     * Required. The name of the document, for which all source links are
+     * returned. Format:
      * projects/{project_number}/locations/{location}/documents/{source_document_id}.
      * </pre>
      *

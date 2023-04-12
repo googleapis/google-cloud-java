@@ -53,10 +53,13 @@ public final class SynonymSetProto {
           + "m\022\r\n\005words\030\001 \003(\t:n\352Ak\n*contentwarehouse."
           + "googleapis.com/SynonymSet\022=projects/{pro"
           + "ject}/locations/{location}/synonymSets/{"
-          + "context}B\213\001\n$com.google.cloud.contentwar"
+          + "context}B\367\001\n$com.google.cloud.contentwar"
           + "ehouse.v1B\017SynonymSetProtoP\001ZPcloud.goog"
           + "le.com/go/contentwarehouse/apiv1/content"
-          + "warehousepb;contentwarehousepbb\006proto3"
+          + "warehousepb;contentwarehousepb\252\002 Google."
+          + "Cloud.ContentWarehouse.V1\312\002 Google\\Cloud"
+          + "\\ContentWarehouse\\V1\352\002#Google::Cloud::Co"
+          + "ntentWarehouse::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

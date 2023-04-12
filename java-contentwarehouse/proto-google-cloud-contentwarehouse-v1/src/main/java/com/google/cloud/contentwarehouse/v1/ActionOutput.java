@@ -79,7 +79,15 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
    * Protobuf enum {@code google.cloud.contentwarehouse.v1.ActionOutput.State}
    */
   public enum State implements com.google.protobuf.ProtocolMessageEnum {
-    /** <code>UNKNOWN = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The unknown state.
+     * </pre>
+     *
+     * <code>UNKNOWN = 0;</code>
+     */
     UNKNOWN(0),
     /**
      *
@@ -124,7 +132,15 @@ public final class ActionOutput extends com.google.protobuf.GeneratedMessageV3
     UNRECOGNIZED(-1),
     ;
 
-    /** <code>UNKNOWN = 0;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The unknown state.
+     * </pre>
+     *
+     * <code>UNKNOWN = 0;</code>
+     */
     public static final int UNKNOWN_VALUE = 0;
     /**
      *

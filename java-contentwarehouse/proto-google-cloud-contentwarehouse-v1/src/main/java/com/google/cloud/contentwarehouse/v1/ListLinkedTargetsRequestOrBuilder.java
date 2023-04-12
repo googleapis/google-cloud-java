@@ -27,8 +27,8 @@ public interface ListLinkedTargetsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the document, for which all target links are returned.
-   * Format:
+   * Required. The name of the document, for which all target links are
+   * returned. Format:
    * projects/{project_number}/locations/{location}/documents/{target_document_id}.
    * </pre>
    *
@@ -43,8 +43,8 @@ public interface ListLinkedTargetsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the document, for which all target links are returned.
-   * Format:
+   * Required. The name of the document, for which all target links are
+   * returned. Format:
    * projects/{project_number}/locations/{location}/documents/{target_document_id}.
    * </pre>
    *

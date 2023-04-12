@@ -69,11 +69,14 @@ public final class SynonymSetServiceProto {
           + "\202\323\344\223\0021\022//v1/{parent=projects/*/locations"
           + "/*}/synonymSets\332A\006parent\032S\312A\037contentware"
           + "house.googleapis.com\322A.https://www.googl"
-          + "eapis.com/auth/cloud-platformB\222\001\n$com.go"
+          + "eapis.com/auth/cloud-platformB\376\001\n$com.go"
           + "ogle.cloud.contentwarehouse.v1B\026SynonymS"
           + "etServiceProtoP\001ZPcloud.google.com/go/co"
           + "ntentwarehouse/apiv1/contentwarehousepb;"
-          + "contentwarehousepbb\006proto3"
+          + "contentwarehousepb\252\002 Google.Cloud.Conten"
+          + "tWarehouse.V1\312\002 Google\\Cloud\\ContentWare"
+          + "house\\V1\352\002#Google::Cloud::ContentWarehou"
+          + "se::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

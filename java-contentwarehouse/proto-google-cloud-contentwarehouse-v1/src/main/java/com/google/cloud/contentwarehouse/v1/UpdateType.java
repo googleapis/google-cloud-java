@@ -42,7 +42,8 @@ public enum UpdateType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Fully replace all the fields. Any field masks will be ignored.
+   * Fully replace all the fields (including previously linked raw document).
+   * Any field masks will be ignored.
    * </pre>
    *
    * <code>UPDATE_TYPE_REPLACE = 1;</code>
@@ -88,6 +89,18 @@ public enum UpdateType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UPDATE_TYPE_DELETE_PROPERTIES_BY_NAMES = 5;</code>
    */
   UPDATE_TYPE_DELETE_PROPERTIES_BY_NAMES(5),
+  /**
+   *
+   *
+   * <pre>
+   * For each of the property, replaces the property if the it exists, otherwise
+   * inserts a new property. And for the rest of the fields, merge them based on
+   * update mask and merge fields options.
+   * </pre>
+   *
+   * <code>UPDATE_TYPE_MERGE_AND_REPLACE_OR_INSERT_PROPERTIES_BY_NAMES = 6;</code>
+   */
+  UPDATE_TYPE_MERGE_AND_REPLACE_OR_INSERT_PROPERTIES_BY_NAMES(6),
   UNRECOGNIZED(-1),
   ;
 
@@ -105,7 +118,8 @@ public enum UpdateType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Fully replace all the fields. Any field masks will be ignored.
+   * Fully replace all the fields (including previously linked raw document).
+   * Any field masks will be ignored.
    * </pre>
    *
    * <code>UPDATE_TYPE_REPLACE = 1;</code>
@@ -151,6 +165,18 @@ public enum UpdateType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UPDATE_TYPE_DELETE_PROPERTIES_BY_NAMES = 5;</code>
    */
   public static final int UPDATE_TYPE_DELETE_PROPERTIES_BY_NAMES_VALUE = 5;
+  /**
+   *
+   *
+   * <pre>
+   * For each of the property, replaces the property if the it exists, otherwise
+   * inserts a new property. And for the rest of the fields, merge them based on
+   * update mask and merge fields options.
+   * </pre>
+   *
+   * <code>UPDATE_TYPE_MERGE_AND_REPLACE_OR_INSERT_PROPERTIES_BY_NAMES = 6;</code>
+   */
+  public static final int UPDATE_TYPE_MERGE_AND_REPLACE_OR_INSERT_PROPERTIES_BY_NAMES_VALUE = 6;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -188,6 +214,8 @@ public enum UpdateType implements com.google.protobuf.ProtocolMessageEnum {
         return UPDATE_TYPE_REPLACE_PROPERTIES_BY_NAMES;
       case 5:
         return UPDATE_TYPE_DELETE_PROPERTIES_BY_NAMES;
+      case 6:
+        return UPDATE_TYPE_MERGE_AND_REPLACE_OR_INSERT_PROPERTIES_BY_NAMES;
       default:
         return null;
     }

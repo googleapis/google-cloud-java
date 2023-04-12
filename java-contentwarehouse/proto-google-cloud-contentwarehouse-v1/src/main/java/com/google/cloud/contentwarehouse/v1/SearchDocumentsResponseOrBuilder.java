@@ -27,7 +27,8 @@ public interface SearchDocumentsResponseOrBuilder
    *
    *
    * <pre>
-   * The document entities that match the specified [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest].
+   * The document entities that match the specified
+   * [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest].
    * </pre>
    *
    * <code>
@@ -40,7 +41,8 @@ public interface SearchDocumentsResponseOrBuilder
    *
    *
    * <pre>
-   * The document entities that match the specified [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest].
+   * The document entities that match the specified
+   * [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest].
    * </pre>
    *
    * <code>
@@ -53,7 +55,8 @@ public interface SearchDocumentsResponseOrBuilder
    *
    *
    * <pre>
-   * The document entities that match the specified [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest].
+   * The document entities that match the specified
+   * [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest].
    * </pre>
    *
    * <code>
@@ -65,7 +68,8 @@ public interface SearchDocumentsResponseOrBuilder
    *
    *
    * <pre>
-   * The document entities that match the specified [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest].
+   * The document entities that match the specified
+   * [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest].
    * </pre>
    *
    * <code>
@@ -81,7 +85,8 @@ public interface SearchDocumentsResponseOrBuilder
    *
    *
    * <pre>
-   * The document entities that match the specified [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest].
+   * The document entities that match the specified
+   * [SearchDocumentsRequest][google.cloud.contentwarehouse.v1.SearchDocumentsRequest].
    * </pre>
    *
    * <code>
@@ -123,11 +128,13 @@ public interface SearchDocumentsResponseOrBuilder
    *
    * <pre>
    * The total number of matched documents which is available only if the client
-   * set [SearchDocumentsRequest.require_total_size][google.cloud.contentwarehouse.v1.SearchDocumentsRequest.require_total_size] to `true`. Otherwise, the
-   * value will be `-1`. `total_size` will max at &amp;quot;100,000&amp;quot;. If this
-   * is returned, then it can be assumed that the count is equal to or greater
-   * than 100,000. Typically a UI would handle this condition by displaying
-   * &amp;quot;of many&amp;quot;, for example: &amp;quot;Displaying 10 of many&amp;quot;.
+   * set
+   * [SearchDocumentsRequest.require_total_size][google.cloud.contentwarehouse.v1.SearchDocumentsRequest.require_total_size]
+   * to `true` or set
+   * [SearchDocumentsRequest.total_result_size][google.cloud.contentwarehouse.v1.SearchDocumentsRequest.total_result_size]
+   * to `ESTIMATED_SIZE` or `ACTUAL_SIZE`. Otherwise, the value will be `-1`.
+   * Typically a UI would handle this condition by displaying &amp;quot;of
+   * many&amp;quot;, for example: &amp;quot;Displaying 10 of many&amp;quot;.
    * </pre>
    *
    * <code>int32 total_size = 3;</code>

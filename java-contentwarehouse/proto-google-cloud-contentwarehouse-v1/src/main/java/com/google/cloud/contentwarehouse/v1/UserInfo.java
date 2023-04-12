@@ -18,7 +18,15 @@
 
 package com.google.cloud.contentwarehouse.v1;
 
-/** Protobuf type {@code google.cloud.contentwarehouse.v1.UserInfo} */
+/**
+ *
+ *
+ * <pre>
+ * The user information.
+ * </pre>
+ *
+ * Protobuf type {@code google.cloud.contentwarehouse.v1.UserInfo}
+ */
 public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.UserInfo)
@@ -361,7 +369,15 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.cloud.contentwarehouse.v1.UserInfo} */
+  /**
+   *
+   *
+   * <pre>
+   * The user information.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.contentwarehouse.v1.UserInfo}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.contentwarehouse.v1.UserInfo)

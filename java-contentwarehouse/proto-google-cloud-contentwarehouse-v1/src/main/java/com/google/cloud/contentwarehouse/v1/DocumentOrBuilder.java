@@ -83,11 +83,10 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Required. Display name of the document given by the user. This name will be displayed
-   * in the UI.
-   * Customer can populate this field with the name of the document. This
-   * differs from the 'title' field as 'title' is optional and stores the top
-   * heading in the document.
+   * Required. Display name of the document given by the user. This name will be
+   * displayed in the UI. Customer can populate this field with the name of the
+   * document. This differs from the 'title' field as 'title' is optional and
+   * stores the top heading in the document.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -99,11 +98,10 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
-   * Required. Display name of the document given by the user. This name will be displayed
-   * in the UI.
-   * Customer can populate this field with the name of the document. This
-   * differs from the 'title' field as 'title' is optional and stores the top
-   * heading in the document.
+   * Required. Display name of the document given by the user. This name will be
+   * displayed in the UI. Customer can populate this field with the name of the
+   * document. This differs from the 'title' field as 'title' is optional and
+   * stores the top heading in the document.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -117,8 +115,7 @@ public interface DocumentOrBuilder
    *
    * <pre>
    * Title that describes the document.
-   * This is usually present in the top section of the document, and is a
-   * mandatory field for the question-answering feature.
+   * This can be the top heading or text that describes the document.
    * </pre>
    *
    * <code>string title = 18;</code>
@@ -131,8 +128,7 @@ public interface DocumentOrBuilder
    *
    * <pre>
    * Title that describes the document.
-   * This is usually present in the top section of the document, and is a
-   * mandatory field for the question-answering feature.
+   * This can be the top heading or text that describes the document.
    * </pre>
    *
    * <code>string title = 18;</code>
@@ -274,10 +270,13 @@ public interface DocumentOrBuilder
    * A path linked to structured content file.
    * </pre>
    *
-   * <code>string structured_content_uri = 16;</code>
+   * <code>string structured_content_uri = 16 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.contentwarehouse.v1.Document.structured_content_uri is deprecated. See
+   *     google/cloud/contentwarehouse/v1/document.proto;l=79
    * @return The structuredContentUri.
    */
+  @java.lang.Deprecated
   java.lang.String getStructuredContentUri();
   /**
    *
@@ -286,10 +285,13 @@ public interface DocumentOrBuilder
    * A path linked to structured content file.
    * </pre>
    *
-   * <code>string structured_content_uri = 16;</code>
+   * <code>string structured_content_uri = 16 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.contentwarehouse.v1.Document.structured_content_uri is deprecated. See
+   *     google/cloud/contentwarehouse/v1/document.proto;l=79
    * @return The bytes for structuredContentUri.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getStructuredContentUriBytes();
 
   /**
@@ -520,11 +522,39 @@ public interface DocumentOrBuilder
    * If true, makes the document visible to asynchronous policies and rules.
    * </pre>
    *
-   * <code>bool async_enabled = 12;</code>
+   * <code>bool async_enabled = 12 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.contentwarehouse.v1.Document.async_enabled is deprecated. See
+   *     google/cloud/contentwarehouse/v1/document.proto;l=108
    * @return The asyncEnabled.
    */
+  @java.lang.Deprecated
   boolean getAsyncEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the category (image, audio, video etc.) of the original content.
+   * </pre>
+   *
+   * <code>.google.cloud.contentwarehouse.v1.ContentCategory content_category = 20;</code>
+   *
+   * @return The enum numeric value on the wire for contentCategory.
+   */
+  int getContentCategoryValue();
+  /**
+   *
+   *
+   * <pre>
+   * Indicates the category (image, audio, video etc.) of the original content.
+   * </pre>
+   *
+   * <code>.google.cloud.contentwarehouse.v1.ContentCategory content_category = 20;</code>
+   *
+   * @return The contentCategory.
+   */
+  com.google.cloud.contentwarehouse.v1.ContentCategory getContentCategory();
 
   /**
    *
@@ -533,11 +563,27 @@ public interface DocumentOrBuilder
    * If true, text extraction will not be performed.
    * </pre>
    *
-   * <code>bool text_extraction_disabled = 19;</code>
+   * <code>bool text_extraction_disabled = 19 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.contentwarehouse.v1.Document.text_extraction_disabled is deprecated.
+   *     See google/cloud/contentwarehouse/v1/document.proto;l=114
    * @return The textExtractionDisabled.
    */
+  @java.lang.Deprecated
   boolean getTextExtractionDisabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, text extraction will be performed.
+   * </pre>
+   *
+   * <code>bool text_extraction_enabled = 21;</code>
+   *
+   * @return The textExtractionEnabled.
+   */
+  boolean getTextExtractionEnabled();
 
   /**
    *

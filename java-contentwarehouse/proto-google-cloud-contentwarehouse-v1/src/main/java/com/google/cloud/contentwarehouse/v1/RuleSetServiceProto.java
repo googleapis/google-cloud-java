@@ -67,11 +67,14 @@ public final class RuleSetServiceProto {
           + "\323\344\223\002.\022,/v1/{parent=projects/*/locations/"
           + "*}/ruleSets\332A\006parent\032S\312A\037contentwarehous"
           + "e.googleapis.com\322A.https://www.googleapi"
-          + "s.com/auth/cloud-platformB\217\001\n$com.google"
+          + "s.com/auth/cloud-platformB\373\001\n$com.google"
           + ".cloud.contentwarehouse.v1B\023RuleSetServi"
           + "ceProtoP\001ZPcloud.google.com/go/contentwa"
           + "rehouse/apiv1/contentwarehousepb;content"
-          + "warehousepbb\006proto3"
+          + "warehousepb\252\002 Google.Cloud.ContentWareho"
+          + "use.V1\312\002 Google\\Cloud\\ContentWarehouse\\V"
+          + "1\352\002#Google::Cloud::ContentWarehouse::V1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

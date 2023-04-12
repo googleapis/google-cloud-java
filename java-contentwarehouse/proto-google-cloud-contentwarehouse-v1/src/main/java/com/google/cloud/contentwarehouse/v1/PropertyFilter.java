@@ -68,7 +68,8 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Document schema name [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name].
+   * The Document schema name
+   * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name].
    * Format:
    * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
    * </pre>
@@ -93,7 +94,8 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Document schema name [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name].
+   * The Document schema name
+   * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name].
    * Format:
    * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
    * </pre>
@@ -145,10 +147,11 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
    * comparisons or functions are allowed in the expression. The expression must
    * be &lt; 6000 bytes in length.
    * Only properties that are marked filterable are allowed
-   * ([PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]). Property names do not need to be
-   * prefixed by the document schema id (as is the case with histograms),
-   * however property names will need to be prefixed by its parent hierarchy, if
-   * any.  For example: top_property_name.sub_property_name.
+   * ([PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]).
+   * Property names do not need to be prefixed by the document schema id (as is
+   * the case with histograms), however property names will need to be prefixed
+   * by its parent hierarchy, if any.  For example:
+   * top_property_name.sub_property_name.
    * Sample Query:
    * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
    * driving_years &gt; 10`
@@ -199,10 +202,11 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
    * comparisons or functions are allowed in the expression. The expression must
    * be &lt; 6000 bytes in length.
    * Only properties that are marked filterable are allowed
-   * ([PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]). Property names do not need to be
-   * prefixed by the document schema id (as is the case with histograms),
-   * however property names will need to be prefixed by its parent hierarchy, if
-   * any.  For example: top_property_name.sub_property_name.
+   * ([PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]).
+   * Property names do not need to be prefixed by the document schema id (as is
+   * the case with histograms), however property names will need to be prefixed
+   * by its parent hierarchy, if any.  For example:
+   * top_property_name.sub_property_name.
    * Sample Query:
    * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
    * driving_years &gt; 10`
@@ -591,7 +595,8 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Document schema name [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name].
+     * The Document schema name
+     * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name].
      * Format:
      * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
      * </pre>
@@ -615,7 +620,8 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Document schema name [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name].
+     * The Document schema name
+     * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name].
      * Format:
      * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
      * </pre>
@@ -639,7 +645,8 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Document schema name [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name].
+     * The Document schema name
+     * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name].
      * Format:
      * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
      * </pre>
@@ -662,7 +669,8 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Document schema name [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name].
+     * The Document schema name
+     * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name].
      * Format:
      * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
      * </pre>
@@ -681,7 +689,8 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Document schema name [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name].
+     * The Document schema name
+     * [Document.document_schema_name][google.cloud.contentwarehouse.v1.Document.document_schema_name].
      * Format:
      * projects/{project_number}/locations/{location}/documentSchemas/{document_schema_id}.
      * </pre>
@@ -729,10 +738,11 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * comparisons or functions are allowed in the expression. The expression must
      * be &lt; 6000 bytes in length.
      * Only properties that are marked filterable are allowed
-     * ([PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]). Property names do not need to be
-     * prefixed by the document schema id (as is the case with histograms),
-     * however property names will need to be prefixed by its parent hierarchy, if
-     * any.  For example: top_property_name.sub_property_name.
+     * ([PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]).
+     * Property names do not need to be prefixed by the document schema id (as is
+     * the case with histograms), however property names will need to be prefixed
+     * by its parent hierarchy, if any.  For example:
+     * top_property_name.sub_property_name.
      * Sample Query:
      * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
      * driving_years &gt; 10`
@@ -782,10 +792,11 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * comparisons or functions are allowed in the expression. The expression must
      * be &lt; 6000 bytes in length.
      * Only properties that are marked filterable are allowed
-     * ([PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]). Property names do not need to be
-     * prefixed by the document schema id (as is the case with histograms),
-     * however property names will need to be prefixed by its parent hierarchy, if
-     * any.  For example: top_property_name.sub_property_name.
+     * ([PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]).
+     * Property names do not need to be prefixed by the document schema id (as is
+     * the case with histograms), however property names will need to be prefixed
+     * by its parent hierarchy, if any.  For example:
+     * top_property_name.sub_property_name.
      * Sample Query:
      * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
      * driving_years &gt; 10`
@@ -835,10 +846,11 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * comparisons or functions are allowed in the expression. The expression must
      * be &lt; 6000 bytes in length.
      * Only properties that are marked filterable are allowed
-     * ([PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]). Property names do not need to be
-     * prefixed by the document schema id (as is the case with histograms),
-     * however property names will need to be prefixed by its parent hierarchy, if
-     * any.  For example: top_property_name.sub_property_name.
+     * ([PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]).
+     * Property names do not need to be prefixed by the document schema id (as is
+     * the case with histograms), however property names will need to be prefixed
+     * by its parent hierarchy, if any.  For example:
+     * top_property_name.sub_property_name.
      * Sample Query:
      * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
      * driving_years &gt; 10`
@@ -887,10 +899,11 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * comparisons or functions are allowed in the expression. The expression must
      * be &lt; 6000 bytes in length.
      * Only properties that are marked filterable are allowed
-     * ([PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]). Property names do not need to be
-     * prefixed by the document schema id (as is the case with histograms),
-     * however property names will need to be prefixed by its parent hierarchy, if
-     * any.  For example: top_property_name.sub_property_name.
+     * ([PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]).
+     * Property names do not need to be prefixed by the document schema id (as is
+     * the case with histograms), however property names will need to be prefixed
+     * by its parent hierarchy, if any.  For example:
+     * top_property_name.sub_property_name.
      * Sample Query:
      * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
      * driving_years &gt; 10`
@@ -935,10 +948,11 @@ public final class PropertyFilter extends com.google.protobuf.GeneratedMessageV3
      * comparisons or functions are allowed in the expression. The expression must
      * be &lt; 6000 bytes in length.
      * Only properties that are marked filterable are allowed
-     * ([PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]). Property names do not need to be
-     * prefixed by the document schema id (as is the case with histograms),
-     * however property names will need to be prefixed by its parent hierarchy, if
-     * any.  For example: top_property_name.sub_property_name.
+     * ([PropertyDefinition.is_filterable][google.cloud.contentwarehouse.v1.PropertyDefinition.is_filterable]).
+     * Property names do not need to be prefixed by the document schema id (as is
+     * the case with histograms), however property names will need to be prefixed
+     * by its parent hierarchy, if any.  For example:
+     * top_property_name.sub_property_name.
      * Sample Query:
      * `(LOWER(driving_license)="class &#92;"a&#92;"" OR EMPTY(driving_license)) AND
      * driving_years &gt; 10`

@@ -187,11 +187,13 @@ public final class RuleEngineProto {
           + "tate\022\026\n\016output_message\030\003 \001(\t\"g\n\005State\022\013\n"
           + "\007UNKNOWN\020\000\022\024\n\020ACTION_SUCCEEDED\020\001\022\021\n\rACTI"
           + "ON_FAILED\020\002\022\024\n\020ACTION_TIMED_OUT\020\003\022\022\n\016ACT"
-          + "ION_PENDING\020\004B\213\001\n$com.google.cloud.conte"
+          + "ION_PENDING\020\004B\367\001\n$com.google.cloud.conte"
           + "ntwarehouse.v1B\017RuleEngineProtoP\001ZPcloud"
           + ".google.com/go/contentwarehouse/apiv1/co"
-          + "ntentwarehousepb;contentwarehousepbb\006pro"
-          + "to3"
+          + "ntentwarehousepb;contentwarehousepb\252\002 Go"
+          + "ogle.Cloud.ContentWarehouse.V1\312\002 Google\\"
+          + "Cloud\\ContentWarehouse\\V1\352\002#Google::Clou"
+          + "d::ContentWarehouse::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

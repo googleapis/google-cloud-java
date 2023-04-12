@@ -40,6 +40,8 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
   private PropertyDefinition() {
     name_ = "";
     displayName_ = "";
+    retrievalImportance_ = 0;
+    schemaSources_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -66,6 +68,1122 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
         .ensureFieldAccessorsInitialized(
             com.google.cloud.contentwarehouse.v1.PropertyDefinition.class,
             com.google.cloud.contentwarehouse.v1.PropertyDefinition.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Stores the retrieval importance.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.contentwarehouse.v1.PropertyDefinition.RetrievalImportance}
+   */
+  public enum RetrievalImportance implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * No importance specified. Default medium importance.
+     * </pre>
+     *
+     * <code>RETRIEVAL_IMPORTANCE_UNSPECIFIED = 0;</code>
+     */
+    RETRIEVAL_IMPORTANCE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Highest importance.
+     * </pre>
+     *
+     * <code>HIGHEST = 1;</code>
+     */
+    HIGHEST(1),
+    /**
+     *
+     *
+     * <pre>
+     * Higher importance.
+     * </pre>
+     *
+     * <code>HIGHER = 2;</code>
+     */
+    HIGHER(2),
+    /**
+     *
+     *
+     * <pre>
+     * High importance.
+     * </pre>
+     *
+     * <code>HIGH = 3;</code>
+     */
+    HIGH(3),
+    /**
+     *
+     *
+     * <pre>
+     * Medium importance.
+     * </pre>
+     *
+     * <code>MEDIUM = 4;</code>
+     */
+    MEDIUM(4),
+    /**
+     *
+     *
+     * <pre>
+     * Low importance (negative).
+     * </pre>
+     *
+     * <code>LOW = 5;</code>
+     */
+    LOW(5),
+    /**
+     *
+     *
+     * <pre>
+     * Lowest importance (negative).
+     * </pre>
+     *
+     * <code>LOWEST = 6;</code>
+     */
+    LOWEST(6),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * No importance specified. Default medium importance.
+     * </pre>
+     *
+     * <code>RETRIEVAL_IMPORTANCE_UNSPECIFIED = 0;</code>
+     */
+    public static final int RETRIEVAL_IMPORTANCE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Highest importance.
+     * </pre>
+     *
+     * <code>HIGHEST = 1;</code>
+     */
+    public static final int HIGHEST_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Higher importance.
+     * </pre>
+     *
+     * <code>HIGHER = 2;</code>
+     */
+    public static final int HIGHER_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * High importance.
+     * </pre>
+     *
+     * <code>HIGH = 3;</code>
+     */
+    public static final int HIGH_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Medium importance.
+     * </pre>
+     *
+     * <code>MEDIUM = 4;</code>
+     */
+    public static final int MEDIUM_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Low importance (negative).
+     * </pre>
+     *
+     * <code>LOW = 5;</code>
+     */
+    public static final int LOW_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * Lowest importance (negative).
+     * </pre>
+     *
+     * <code>LOWEST = 6;</code>
+     */
+    public static final int LOWEST_VALUE = 6;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RetrievalImportance valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static RetrievalImportance forNumber(int value) {
+      switch (value) {
+        case 0:
+          return RETRIEVAL_IMPORTANCE_UNSPECIFIED;
+        case 1:
+          return HIGHEST;
+        case 2:
+          return HIGHER;
+        case 3:
+          return HIGH;
+        case 4:
+          return MEDIUM;
+        case 5:
+          return LOW;
+        case 6:
+          return LOWEST;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<RetrievalImportance>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<RetrievalImportance>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<RetrievalImportance>() {
+              public RetrievalImportance findValueByNumber(int number) {
+                return RetrievalImportance.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.contentwarehouse.v1.PropertyDefinition.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final RetrievalImportance[] VALUES = values();
+
+    public static RetrievalImportance valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private RetrievalImportance(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.contentwarehouse.v1.PropertyDefinition.RetrievalImportance)
+  }
+
+  public interface SchemaSourceOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The schema name in the source.
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     *
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     *
+     *
+     * <pre>
+     * The schema name in the source.
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString getNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The Doc AI processor type name.
+     * </pre>
+     *
+     * <code>string processor_type = 2;</code>
+     *
+     * @return The processorType.
+     */
+    java.lang.String getProcessorType();
+    /**
+     *
+     *
+     * <pre>
+     * The Doc AI processor type name.
+     * </pre>
+     *
+     * <code>string processor_type = 2;</code>
+     *
+     * @return The bytes for processorType.
+     */
+    com.google.protobuf.ByteString getProcessorTypeBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The schema source information.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource}
+   */
+  public static final class SchemaSource extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource)
+      SchemaSourceOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use SchemaSource.newBuilder() to construct.
+    private SchemaSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SchemaSource() {
+      name_ = "";
+      processorType_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SchemaSource();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.contentwarehouse.v1.DocumentSchemaProto
+          .internal_static_google_cloud_contentwarehouse_v1_PropertyDefinition_SchemaSource_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.contentwarehouse.v1.DocumentSchemaProto
+          .internal_static_google_cloud_contentwarehouse_v1_PropertyDefinition_SchemaSource_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource.class,
+              com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource.Builder.class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The schema name in the source.
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     *
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The schema name in the source.
+     * </pre>
+     *
+     * <code>string name = 1;</code>
+     *
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PROCESSOR_TYPE_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object processorType_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The Doc AI processor type name.
+     * </pre>
+     *
+     * <code>string processor_type = 2;</code>
+     *
+     * @return The processorType.
+     */
+    @java.lang.Override
+    public java.lang.String getProcessorType() {
+      java.lang.Object ref = processorType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        processorType_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Doc AI processor type name.
+     * </pre>
+     *
+     * <code>string processor_type = 2;</code>
+     *
+     * @return The bytes for processorType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getProcessorTypeBytes() {
+      java.lang.Object ref = processorType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        processorType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(processorType_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, processorType_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(processorType_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, processorType_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource other =
+          (com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource) obj;
+
+      if (!getName().equals(other.getName())) return false;
+      if (!getProcessorType().equals(other.getProcessorType())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + PROCESSOR_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getProcessorType().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The schema source information.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource)
+        com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSourceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.contentwarehouse.v1.DocumentSchemaProto
+            .internal_static_google_cloud_contentwarehouse_v1_PropertyDefinition_SchemaSource_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.contentwarehouse.v1.DocumentSchemaProto
+            .internal_static_google_cloud_contentwarehouse_v1_PropertyDefinition_SchemaSource_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource.class,
+                com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        name_ = "";
+        processorType_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.contentwarehouse.v1.DocumentSchemaProto
+            .internal_static_google_cloud_contentwarehouse_v1_PropertyDefinition_SchemaSource_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource
+          getDefaultInstanceForType() {
+        return com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource build() {
+        com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource buildPartial() {
+        com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource result =
+            new com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.processorType_ = processorType_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource) {
+          return mergeFrom(
+              (com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource other) {
+        if (other
+            == com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource
+                .getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getProcessorType().isEmpty()) {
+          processorType_ = other.processorType_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  name_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  processorType_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object name_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The schema name in the source.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The schema name in the source.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The schema name in the source.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The schema name in the source.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The schema name in the source.
+       * </pre>
+       *
+       * <code>string name = 1;</code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object processorType_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The Doc AI processor type name.
+       * </pre>
+       *
+       * <code>string processor_type = 2;</code>
+       *
+       * @return The processorType.
+       */
+      public java.lang.String getProcessorType() {
+        java.lang.Object ref = processorType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          processorType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The Doc AI processor type name.
+       * </pre>
+       *
+       * <code>string processor_type = 2;</code>
+       *
+       * @return The bytes for processorType.
+       */
+      public com.google.protobuf.ByteString getProcessorTypeBytes() {
+        java.lang.Object ref = processorType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          processorType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The Doc AI processor type name.
+       * </pre>
+       *
+       * <code>string processor_type = 2;</code>
+       *
+       * @param value The processorType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProcessorType(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        processorType_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The Doc AI processor type name.
+       * </pre>
+       *
+       * <code>string processor_type = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearProcessorType() {
+        processorType_ = getDefaultInstance().getProcessorType();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The Doc AI processor type name.
+       * </pre>
+       *
+       * <code>string processor_type = 2;</code>
+       *
+       * @param value The bytes for processorType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProcessorTypeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        processorType_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource)
+    private static final com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource();
+    }
+
+    public static com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SchemaSource> PARSER =
+        new com.google.protobuf.AbstractParser<SchemaSource>() {
+          @java.lang.Override
+          public SchemaSource parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SchemaSource> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SchemaSource> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   private int valueTypeOptionsCase_ = 0;
@@ -303,6 +1421,9 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Whether the property is user supplied metadata.
+   * This out-of-the box placeholder setting can be used to tag derived
+   * properties. Its value and interpretation logic should be implemented by API
+   * user.
    * </pre>
    *
    * <code>bool is_metadata = 5;</code>
@@ -332,6 +1453,49 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public boolean getIsRequired() {
     return isRequired_;
+  }
+
+  public static final int RETRIEVAL_IMPORTANCE_FIELD_NUMBER = 18;
+  private int retrievalImportance_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * The retrieval importance of the property during search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contentwarehouse.v1.PropertyDefinition.RetrievalImportance retrieval_importance = 18;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for retrievalImportance.
+   */
+  @java.lang.Override
+  public int getRetrievalImportanceValue() {
+    return retrievalImportance_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The retrieval importance of the property during search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contentwarehouse.v1.PropertyDefinition.RetrievalImportance retrieval_importance = 18;
+   * </code>
+   *
+   * @return The retrievalImportance.
+   */
+  @java.lang.Override
+  public com.google.cloud.contentwarehouse.v1.PropertyDefinition.RetrievalImportance
+      getRetrievalImportance() {
+    com.google.cloud.contentwarehouse.v1.PropertyDefinition.RetrievalImportance result =
+        com.google.cloud.contentwarehouse.v1.PropertyDefinition.RetrievalImportance.forNumber(
+            retrievalImportance_);
+    return result == null
+        ? com.google.cloud.contentwarehouse.v1.PropertyDefinition.RetrievalImportance.UNRECOGNIZED
+        : result;
   }
 
   public static final int INTEGER_TYPE_OPTIONS_FIELD_NUMBER = 7;
@@ -758,6 +1922,92 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     return com.google.cloud.contentwarehouse.v1.TimestampTypeOptions.getDefaultInstance();
   }
 
+  public static final int SCHEMA_SOURCES_FIELD_NUMBER = 19;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource>
+      schemaSources_;
+  /**
+   *
+   *
+   * <pre>
+   * The mapping information between this property to another schema source.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource schema_sources = 19;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource>
+      getSchemaSourcesList() {
+    return schemaSources_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The mapping information between this property to another schema source.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource schema_sources = 19;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSourceOrBuilder>
+      getSchemaSourcesOrBuilderList() {
+    return schemaSources_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The mapping information between this property to another schema source.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource schema_sources = 19;
+   * </code>
+   */
+  @java.lang.Override
+  public int getSchemaSourcesCount() {
+    return schemaSources_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The mapping information between this property to another schema source.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource schema_sources = 19;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource getSchemaSources(
+      int index) {
+    return schemaSources_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The mapping information between this property to another schema source.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource schema_sources = 19;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSourceOrBuilder
+      getSchemaSourcesOrBuilder(int index) {
+    return schemaSources_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -824,6 +2074,15 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     if (valueTypeOptionsCase_ == 16) {
       output.writeMessage(
           16, (com.google.cloud.contentwarehouse.v1.TimestampTypeOptions) valueTypeOptions_);
+    }
+    if (retrievalImportance_
+        != com.google.cloud.contentwarehouse.v1.PropertyDefinition.RetrievalImportance
+            .RETRIEVAL_IMPORTANCE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(18, retrievalImportance_);
+    }
+    for (int i = 0; i < schemaSources_.size(); i++) {
+      output.writeMessage(19, schemaSources_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -895,6 +2154,15 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               16, (com.google.cloud.contentwarehouse.v1.TimestampTypeOptions) valueTypeOptions_);
     }
+    if (retrievalImportance_
+        != com.google.cloud.contentwarehouse.v1.PropertyDefinition.RetrievalImportance
+            .RETRIEVAL_IMPORTANCE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(18, retrievalImportance_);
+    }
+    for (int i = 0; i < schemaSources_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, schemaSources_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -918,6 +2186,8 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     if (getIsSearchable() != other.getIsSearchable()) return false;
     if (getIsMetadata() != other.getIsMetadata()) return false;
     if (getIsRequired() != other.getIsRequired()) return false;
+    if (retrievalImportance_ != other.retrievalImportance_) return false;
+    if (!getSchemaSourcesList().equals(other.getSchemaSourcesList())) return false;
     if (!getValueTypeOptionsCase().equals(other.getValueTypeOptionsCase())) return false;
     switch (valueTypeOptionsCase_) {
       case 7:
@@ -972,6 +2242,12 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsMetadata());
     hash = (37 * hash) + IS_REQUIRED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsRequired());
+    hash = (37 * hash) + RETRIEVAL_IMPORTANCE_FIELD_NUMBER;
+    hash = (53 * hash) + retrievalImportance_;
+    if (getSchemaSourcesCount() > 0) {
+      hash = (37 * hash) + SCHEMA_SOURCES_FIELD_NUMBER;
+      hash = (53 * hash) + getSchemaSourcesList().hashCode();
+    }
     switch (valueTypeOptionsCase_) {
       case 7:
         hash = (37 * hash) + INTEGER_TYPE_OPTIONS_FIELD_NUMBER;
@@ -1155,6 +2431,7 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       isSearchable_ = false;
       isMetadata_ = false;
       isRequired_ = false;
+      retrievalImportance_ = 0;
       if (integerTypeOptionsBuilder_ != null) {
         integerTypeOptionsBuilder_.clear();
       }
@@ -1179,6 +2456,13 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       if (timestampTypeOptionsBuilder_ != null) {
         timestampTypeOptionsBuilder_.clear();
       }
+      if (schemaSourcesBuilder_ == null) {
+        schemaSources_ = java.util.Collections.emptyList();
+      } else {
+        schemaSources_ = null;
+        schemaSourcesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00010000);
       valueTypeOptionsCase_ = 0;
       valueTypeOptions_ = null;
       return this;
@@ -1208,12 +2492,26 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.contentwarehouse.v1.PropertyDefinition buildPartial() {
       com.google.cloud.contentwarehouse.v1.PropertyDefinition result =
           new com.google.cloud.contentwarehouse.v1.PropertyDefinition(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.contentwarehouse.v1.PropertyDefinition result) {
+      if (schemaSourcesBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0)) {
+          schemaSources_ = java.util.Collections.unmodifiableList(schemaSources_);
+          bitField0_ = (bitField0_ & ~0x00010000);
+        }
+        result.schemaSources_ = schemaSources_;
+      } else {
+        result.schemaSources_ = schemaSourcesBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.contentwarehouse.v1.PropertyDefinition result) {
@@ -1238,6 +2536,9 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.isRequired_ = isRequired_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.retrievalImportance_ = retrievalImportance_;
       }
     }
 
@@ -1341,6 +2642,36 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       }
       if (other.getIsRequired() != false) {
         setIsRequired(other.getIsRequired());
+      }
+      if (other.retrievalImportance_ != 0) {
+        setRetrievalImportanceValue(other.getRetrievalImportanceValue());
+      }
+      if (schemaSourcesBuilder_ == null) {
+        if (!other.schemaSources_.isEmpty()) {
+          if (schemaSources_.isEmpty()) {
+            schemaSources_ = other.schemaSources_;
+            bitField0_ = (bitField0_ & ~0x00010000);
+          } else {
+            ensureSchemaSourcesIsMutable();
+            schemaSources_.addAll(other.schemaSources_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.schemaSources_.isEmpty()) {
+          if (schemaSourcesBuilder_.isEmpty()) {
+            schemaSourcesBuilder_.dispose();
+            schemaSourcesBuilder_ = null;
+            schemaSources_ = other.schemaSources_;
+            bitField0_ = (bitField0_ & ~0x00010000);
+            schemaSourcesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getSchemaSourcesFieldBuilder()
+                    : null;
+          } else {
+            schemaSourcesBuilder_.addAllMessages(other.schemaSources_);
+          }
+        }
       }
       switch (other.getValueTypeOptionsCase()) {
         case INTEGER_TYPE_OPTIONS:
@@ -1509,6 +2840,27 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
                 valueTypeOptionsCase_ = 16;
                 break;
               } // case 130
+            case 144:
+              {
+                retrievalImportance_ = input.readEnum();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 144
+            case 154:
+              {
+                com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource m =
+                    input.readMessage(
+                        com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource
+                            .parser(),
+                        extensionRegistry);
+                if (schemaSourcesBuilder_ == null) {
+                  ensureSchemaSourcesIsMutable();
+                  schemaSources_.add(m);
+                } else {
+                  schemaSourcesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 154
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1937,6 +3289,9 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Whether the property is user supplied metadata.
+     * This out-of-the box placeholder setting can be used to tag derived
+     * properties. Its value and interpretation logic should be implemented by API
+     * user.
      * </pre>
      *
      * <code>bool is_metadata = 5;</code>
@@ -1952,6 +3307,9 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Whether the property is user supplied metadata.
+     * This out-of-the box placeholder setting can be used to tag derived
+     * properties. Its value and interpretation logic should be implemented by API
+     * user.
      * </pre>
      *
      * <code>bool is_metadata = 5;</code>
@@ -1971,6 +3329,9 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Whether the property is user supplied metadata.
+     * This out-of-the box placeholder setting can be used to tag derived
+     * properties. Its value and interpretation logic should be implemented by API
+     * user.
      * </pre>
      *
      * <code>bool is_metadata = 5;</code>
@@ -2039,6 +3400,111 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
     public Builder clearIsRequired() {
       bitField0_ = (bitField0_ & ~0x00000040);
       isRequired_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int retrievalImportance_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The retrieval importance of the property during search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contentwarehouse.v1.PropertyDefinition.RetrievalImportance retrieval_importance = 18;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for retrievalImportance.
+     */
+    @java.lang.Override
+    public int getRetrievalImportanceValue() {
+      return retrievalImportance_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The retrieval importance of the property during search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contentwarehouse.v1.PropertyDefinition.RetrievalImportance retrieval_importance = 18;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for retrievalImportance to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRetrievalImportanceValue(int value) {
+      retrievalImportance_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The retrieval importance of the property during search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contentwarehouse.v1.PropertyDefinition.RetrievalImportance retrieval_importance = 18;
+     * </code>
+     *
+     * @return The retrievalImportance.
+     */
+    @java.lang.Override
+    public com.google.cloud.contentwarehouse.v1.PropertyDefinition.RetrievalImportance
+        getRetrievalImportance() {
+      com.google.cloud.contentwarehouse.v1.PropertyDefinition.RetrievalImportance result =
+          com.google.cloud.contentwarehouse.v1.PropertyDefinition.RetrievalImportance.forNumber(
+              retrievalImportance_);
+      return result == null
+          ? com.google.cloud.contentwarehouse.v1.PropertyDefinition.RetrievalImportance.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The retrieval importance of the property during search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contentwarehouse.v1.PropertyDefinition.RetrievalImportance retrieval_importance = 18;
+     * </code>
+     *
+     * @param value The retrievalImportance to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRetrievalImportance(
+        com.google.cloud.contentwarehouse.v1.PropertyDefinition.RetrievalImportance value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000080;
+      retrievalImportance_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The retrieval importance of the property during search.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contentwarehouse.v1.PropertyDefinition.RetrievalImportance retrieval_importance = 18;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRetrievalImportance() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      retrievalImportance_ = 0;
       onChanged();
       return this;
     }
@@ -3801,6 +5267,421 @@ public final class PropertyDefinition extends com.google.protobuf.GeneratedMessa
       valueTypeOptionsCase_ = 16;
       onChanged();
       return timestampTypeOptionsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource>
+        schemaSources_ = java.util.Collections.emptyList();
+
+    private void ensureSchemaSourcesIsMutable() {
+      if (!((bitField0_ & 0x00010000) != 0)) {
+        schemaSources_ =
+            new java.util.ArrayList<
+                com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource>(
+                schemaSources_);
+        bitField0_ |= 0x00010000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource,
+            com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource.Builder,
+            com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSourceOrBuilder>
+        schemaSourcesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The mapping information between this property to another schema source.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource schema_sources = 19;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource>
+        getSchemaSourcesList() {
+      if (schemaSourcesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(schemaSources_);
+      } else {
+        return schemaSourcesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The mapping information between this property to another schema source.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource schema_sources = 19;
+     * </code>
+     */
+    public int getSchemaSourcesCount() {
+      if (schemaSourcesBuilder_ == null) {
+        return schemaSources_.size();
+      } else {
+        return schemaSourcesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The mapping information between this property to another schema source.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource schema_sources = 19;
+     * </code>
+     */
+    public com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource getSchemaSources(
+        int index) {
+      if (schemaSourcesBuilder_ == null) {
+        return schemaSources_.get(index);
+      } else {
+        return schemaSourcesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The mapping information between this property to another schema source.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource schema_sources = 19;
+     * </code>
+     */
+    public Builder setSchemaSources(
+        int index, com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource value) {
+      if (schemaSourcesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSchemaSourcesIsMutable();
+        schemaSources_.set(index, value);
+        onChanged();
+      } else {
+        schemaSourcesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The mapping information between this property to another schema source.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource schema_sources = 19;
+     * </code>
+     */
+    public Builder setSchemaSources(
+        int index,
+        com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource.Builder
+            builderForValue) {
+      if (schemaSourcesBuilder_ == null) {
+        ensureSchemaSourcesIsMutable();
+        schemaSources_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        schemaSourcesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The mapping information between this property to another schema source.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource schema_sources = 19;
+     * </code>
+     */
+    public Builder addSchemaSources(
+        com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource value) {
+      if (schemaSourcesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSchemaSourcesIsMutable();
+        schemaSources_.add(value);
+        onChanged();
+      } else {
+        schemaSourcesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The mapping information between this property to another schema source.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource schema_sources = 19;
+     * </code>
+     */
+    public Builder addSchemaSources(
+        int index, com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource value) {
+      if (schemaSourcesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSchemaSourcesIsMutable();
+        schemaSources_.add(index, value);
+        onChanged();
+      } else {
+        schemaSourcesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The mapping information between this property to another schema source.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource schema_sources = 19;
+     * </code>
+     */
+    public Builder addSchemaSources(
+        com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource.Builder
+            builderForValue) {
+      if (schemaSourcesBuilder_ == null) {
+        ensureSchemaSourcesIsMutable();
+        schemaSources_.add(builderForValue.build());
+        onChanged();
+      } else {
+        schemaSourcesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The mapping information between this property to another schema source.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource schema_sources = 19;
+     * </code>
+     */
+    public Builder addSchemaSources(
+        int index,
+        com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource.Builder
+            builderForValue) {
+      if (schemaSourcesBuilder_ == null) {
+        ensureSchemaSourcesIsMutable();
+        schemaSources_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        schemaSourcesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The mapping information between this property to another schema source.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource schema_sources = 19;
+     * </code>
+     */
+    public Builder addAllSchemaSources(
+        java.lang.Iterable<
+                ? extends com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource>
+            values) {
+      if (schemaSourcesBuilder_ == null) {
+        ensureSchemaSourcesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, schemaSources_);
+        onChanged();
+      } else {
+        schemaSourcesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The mapping information between this property to another schema source.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource schema_sources = 19;
+     * </code>
+     */
+    public Builder clearSchemaSources() {
+      if (schemaSourcesBuilder_ == null) {
+        schemaSources_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00010000);
+        onChanged();
+      } else {
+        schemaSourcesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The mapping information between this property to another schema source.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource schema_sources = 19;
+     * </code>
+     */
+    public Builder removeSchemaSources(int index) {
+      if (schemaSourcesBuilder_ == null) {
+        ensureSchemaSourcesIsMutable();
+        schemaSources_.remove(index);
+        onChanged();
+      } else {
+        schemaSourcesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The mapping information between this property to another schema source.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource schema_sources = 19;
+     * </code>
+     */
+    public com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource.Builder
+        getSchemaSourcesBuilder(int index) {
+      return getSchemaSourcesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The mapping information between this property to another schema source.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource schema_sources = 19;
+     * </code>
+     */
+    public com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSourceOrBuilder
+        getSchemaSourcesOrBuilder(int index) {
+      if (schemaSourcesBuilder_ == null) {
+        return schemaSources_.get(index);
+      } else {
+        return schemaSourcesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The mapping information between this property to another schema source.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource schema_sources = 19;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSourceOrBuilder>
+        getSchemaSourcesOrBuilderList() {
+      if (schemaSourcesBuilder_ != null) {
+        return schemaSourcesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(schemaSources_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The mapping information between this property to another schema source.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource schema_sources = 19;
+     * </code>
+     */
+    public com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource.Builder
+        addSchemaSourcesBuilder() {
+      return getSchemaSourcesFieldBuilder()
+          .addBuilder(
+              com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The mapping information between this property to another schema source.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource schema_sources = 19;
+     * </code>
+     */
+    public com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource.Builder
+        addSchemaSourcesBuilder(int index) {
+      return getSchemaSourcesFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The mapping information between this property to another schema source.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource schema_sources = 19;
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource.Builder>
+        getSchemaSourcesBuilderList() {
+      return getSchemaSourcesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource,
+            com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource.Builder,
+            com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSourceOrBuilder>
+        getSchemaSourcesFieldBuilder() {
+      if (schemaSourcesBuilder_ == null) {
+        schemaSourcesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource,
+                com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSource.Builder,
+                com.google.cloud.contentwarehouse.v1.PropertyDefinition.SchemaSourceOrBuilder>(
+                schemaSources_,
+                ((bitField0_ & 0x00010000) != 0),
+                getParentForChildren(),
+                isClean());
+        schemaSources_ = null;
+      }
+      return schemaSourcesBuilder_;
     }
 
     @java.lang.Override

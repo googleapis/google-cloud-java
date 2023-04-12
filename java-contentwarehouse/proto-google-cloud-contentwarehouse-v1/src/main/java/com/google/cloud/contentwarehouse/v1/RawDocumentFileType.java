@@ -88,6 +88,16 @@ public enum RawDocumentFileType implements com.google.protobuf.ProtocolMessageEn
    * <code>RAW_DOCUMENT_FILE_TYPE_TEXT = 5;</code>
    */
   RAW_DOCUMENT_FILE_TYPE_TEXT(5),
+  /**
+   *
+   *
+   * <pre>
+   * TIFF or TIF image file format
+   * </pre>
+   *
+   * <code>RAW_DOCUMENT_FILE_TYPE_TIFF = 6;</code>
+   */
+  RAW_DOCUMENT_FILE_TYPE_TIFF(6),
   UNRECOGNIZED(-1),
   ;
 
@@ -151,6 +161,16 @@ public enum RawDocumentFileType implements com.google.protobuf.ProtocolMessageEn
    * <code>RAW_DOCUMENT_FILE_TYPE_TEXT = 5;</code>
    */
   public static final int RAW_DOCUMENT_FILE_TYPE_TEXT_VALUE = 5;
+  /**
+   *
+   *
+   * <pre>
+   * TIFF or TIF image file format
+   * </pre>
+   *
+   * <code>RAW_DOCUMENT_FILE_TYPE_TIFF = 6;</code>
+   */
+  public static final int RAW_DOCUMENT_FILE_TYPE_TIFF_VALUE = 6;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -188,6 +208,8 @@ public enum RawDocumentFileType implements com.google.protobuf.ProtocolMessageEn
         return RAW_DOCUMENT_FILE_TYPE_PPTX;
       case 5:
         return RAW_DOCUMENT_FILE_TYPE_TEXT;
+      case 6:
+        return RAW_DOCUMENT_FILE_TYPE_TIFF;
       default:
         return null;
     }

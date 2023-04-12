@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.common.collect.Lists;
 import com.google.iam.v1.Policy;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
 import com.google.protobuf.Timestamp;
@@ -89,6 +90,7 @@ public class DocumentServiceClientTest {
             .setDocument(Document.newBuilder().build())
             .setRuleEngineOutput(RuleEngineOutput.newBuilder().build())
             .setMetadata(ResponseMetadata.newBuilder().build())
+            .addAllLongRunningOperations(new ArrayList<Operation>())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -132,6 +134,7 @@ public class DocumentServiceClientTest {
             .setDocument(Document.newBuilder().build())
             .setRuleEngineOutput(RuleEngineOutput.newBuilder().build())
             .setMetadata(ResponseMetadata.newBuilder().build())
+            .addAllLongRunningOperations(new ArrayList<Operation>())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -187,7 +190,9 @@ public class DocumentServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setRawDocumentFileType(RawDocumentFileType.forNumber(0))
             .setAsyncEnabled(true)
+            .setContentCategory(ContentCategory.forNumber(0))
             .setTextExtractionDisabled(true)
+            .setTextExtractionEnabled(true)
             .setCreator("creator1028554796")
             .setUpdater("updater-234430263")
             .build();
@@ -244,7 +249,9 @@ public class DocumentServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setRawDocumentFileType(RawDocumentFileType.forNumber(0))
             .setAsyncEnabled(true)
+            .setContentCategory(ContentCategory.forNumber(0))
             .setTextExtractionDisabled(true)
+            .setTextExtractionEnabled(true)
             .setCreator("creator1028554796")
             .setUpdater("updater-234430263")
             .build();
@@ -524,6 +531,122 @@ public class DocumentServiceClientTest {
     try {
       String parent = "parent-995424086";
       client.searchDocuments(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void lockDocumentTest() throws Exception {
+    Document expectedResponse =
+        Document.newBuilder()
+            .setName(
+                DocumentName.ofProjectLocationDocumentName("[PROJECT]", "[LOCATION]", "[DOCUMENT]")
+                    .toString())
+            .setReferenceId("referenceId-16211514")
+            .setDisplayName("displayName1714148973")
+            .setTitle("title110371416")
+            .setDisplayUri("displayUri-914528950")
+            .setDocumentSchemaName(
+                DocumentSchemaName.of("[PROJECT]", "[LOCATION]", "[DOCUMENT_SCHEMA]").toString())
+            .setStructuredContentUri("structuredContentUri-1039251868")
+            .addAllProperties(new ArrayList<Property>())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setRawDocumentFileType(RawDocumentFileType.forNumber(0))
+            .setAsyncEnabled(true)
+            .setContentCategory(ContentCategory.forNumber(0))
+            .setTextExtractionDisabled(true)
+            .setTextExtractionEnabled(true)
+            .setCreator("creator1028554796")
+            .setUpdater("updater-234430263")
+            .build();
+    mockDocumentService.addResponse(expectedResponse);
+
+    DocumentName name =
+        DocumentName.ofProjectLocationDocumentName("[PROJECT]", "[LOCATION]", "[DOCUMENT]");
+
+    Document actualResponse = client.lockDocument(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDocumentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    LockDocumentRequest actualRequest = ((LockDocumentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void lockDocumentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocumentService.addException(exception);
+
+    try {
+      DocumentName name =
+          DocumentName.ofProjectLocationDocumentName("[PROJECT]", "[LOCATION]", "[DOCUMENT]");
+      client.lockDocument(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void lockDocumentTest2() throws Exception {
+    Document expectedResponse =
+        Document.newBuilder()
+            .setName(
+                DocumentName.ofProjectLocationDocumentName("[PROJECT]", "[LOCATION]", "[DOCUMENT]")
+                    .toString())
+            .setReferenceId("referenceId-16211514")
+            .setDisplayName("displayName1714148973")
+            .setTitle("title110371416")
+            .setDisplayUri("displayUri-914528950")
+            .setDocumentSchemaName(
+                DocumentSchemaName.of("[PROJECT]", "[LOCATION]", "[DOCUMENT_SCHEMA]").toString())
+            .setStructuredContentUri("structuredContentUri-1039251868")
+            .addAllProperties(new ArrayList<Property>())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setRawDocumentFileType(RawDocumentFileType.forNumber(0))
+            .setAsyncEnabled(true)
+            .setContentCategory(ContentCategory.forNumber(0))
+            .setTextExtractionDisabled(true)
+            .setTextExtractionEnabled(true)
+            .setCreator("creator1028554796")
+            .setUpdater("updater-234430263")
+            .build();
+    mockDocumentService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Document actualResponse = client.lockDocument(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDocumentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    LockDocumentRequest actualRequest = ((LockDocumentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void lockDocumentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocumentService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.lockDocument(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

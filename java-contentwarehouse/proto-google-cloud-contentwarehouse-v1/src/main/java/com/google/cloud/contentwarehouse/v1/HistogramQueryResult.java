@@ -22,7 +22,9 @@ package com.google.cloud.contentwarehouse.v1;
  *
  *
  * <pre>
- * Histogram result that matches [HistogramQuery][google.cloud.contentwarehouse.v1.HistogramQuery] specified in searches.
+ * Histogram result that matches
+ * [HistogramQuery][google.cloud.contentwarehouse.v1.HistogramQuery] specified
+ * in searches.
  * </pre>
  *
  * Protobuf type {@code google.cloud.contentwarehouse.v1.HistogramQueryResult}
@@ -421,7 +423,9 @@ public final class HistogramQueryResult extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Histogram result that matches [HistogramQuery][google.cloud.contentwarehouse.v1.HistogramQuery] specified in searches.
+   * Histogram result that matches
+   * [HistogramQuery][google.cloud.contentwarehouse.v1.HistogramQuery] specified
+   * in searches.
    * </pre>
    *
    * Protobuf type {@code google.cloud.contentwarehouse.v1.HistogramQueryResult}

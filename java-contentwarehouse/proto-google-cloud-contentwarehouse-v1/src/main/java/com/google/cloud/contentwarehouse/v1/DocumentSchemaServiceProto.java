@@ -117,11 +117,14 @@ public final class DocumentSchemaServiceProto {
           + "/{parent=projects/*/locations/*}/documen"
           + "tSchemas\332A\006parent\032S\312A\037contentwarehouse.g"
           + "oogleapis.com\322A.https://www.googleapis.c"
-          + "om/auth/cloud-platformB\226\001\n$com.google.cl"
+          + "om/auth/cloud-platformB\202\002\n$com.google.cl"
           + "oud.contentwarehouse.v1B\032DocumentSchemaS"
           + "erviceProtoP\001ZPcloud.google.com/go/conte"
           + "ntwarehouse/apiv1/contentwarehousepb;con"
-          + "tentwarehousepbb\006proto3"
+          + "tentwarehousepb\252\002 Google.Cloud.ContentWa"
+          + "rehouse.V1\312\002 Google\\Cloud\\ContentWarehou"
+          + "se\\V1\352\002#Google::Cloud::ContentWarehouse:"
+          + ":V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
