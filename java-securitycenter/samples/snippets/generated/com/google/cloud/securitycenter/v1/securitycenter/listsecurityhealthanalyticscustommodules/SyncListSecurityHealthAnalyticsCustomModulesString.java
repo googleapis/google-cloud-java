@@ -16,34 +16,31 @@
 
 package com.google.cloud.securitycenter.v1.samples;
 
-// [START securitycenter_v1_generated_SecurityCenterSettings_CreateSource_sync]
-import com.google.cloud.securitycenter.v1.SecurityCenterSettings;
-import java.time.Duration;
+// [START securitycenter_v1_generated_SecurityCenter_ListSecurityHealthAnalyticsCustomModules_String_sync]
+import com.google.cloud.securitycenter.v1.SecurityCenterClient;
+import com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule;
+import com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsSettingsName;
 
-public class SyncCreateSource {
+public class SyncListSecurityHealthAnalyticsCustomModulesString {
 
   public static void main(String[] args) throws Exception {
-    syncCreateSource();
+    syncListSecurityHealthAnalyticsCustomModulesString();
   }
 
-  public static void syncCreateSource() throws Exception {
+  public static void syncListSecurityHealthAnalyticsCustomModulesString() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    SecurityCenterSettings.Builder securityCenterSettingsBuilder =
-        SecurityCenterSettings.newBuilder();
-    securityCenterSettingsBuilder
-        .createSourceSettings()
-        .setRetrySettings(
-            securityCenterSettingsBuilder
-                .createSourceSettings()
-                .getRetrySettings()
-                .toBuilder()
-                .setTotalTimeout(Duration.ofSeconds(30))
-                .build());
-    SecurityCenterSettings securityCenterSettings = securityCenterSettingsBuilder.build();
+    try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+      String parent =
+          SecurityHealthAnalyticsSettingsName.ofOrganizationName("[ORGANIZATION]").toString();
+      for (SecurityHealthAnalyticsCustomModule element :
+          securityCenterClient.listSecurityHealthAnalyticsCustomModules(parent).iterateAll()) {
+        // doThingsWith(element);
+      }
+    }
   }
 }
-// [END securitycenter_v1_generated_SecurityCenterSettings_CreateSource_sync]
+// [END securitycenter_v1_generated_SecurityCenter_ListSecurityHealthAnalyticsCustomModules_String_sync]

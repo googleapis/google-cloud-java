@@ -87,6 +87,28 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   }
 
   @Override
+  public void createSecurityHealthAnalyticsCustomModule(
+      CreateSecurityHealthAnalyticsCustomModuleRequest request,
+      StreamObserver<SecurityHealthAnalyticsCustomModule> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SecurityHealthAnalyticsCustomModule) {
+      requests.add(request);
+      responseObserver.onNext(((SecurityHealthAnalyticsCustomModule) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateSecurityHealthAnalyticsCustomModule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SecurityHealthAnalyticsCustomModule.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void createSource(CreateSourceRequest request, StreamObserver<Source> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Source) {
@@ -213,6 +235,28 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   }
 
   @Override
+  public void deleteSecurityHealthAnalyticsCustomModule(
+      DeleteSecurityHealthAnalyticsCustomModuleRequest request,
+      StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteSecurityHealthAnalyticsCustomModule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getBigQueryExport(
       GetBigQueryExportRequest request, StreamObserver<BigQueryExport> responseObserver) {
     Object response = responses.poll();
@@ -318,6 +362,50 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   }
 
   @Override
+  public void getEffectiveSecurityHealthAnalyticsCustomModule(
+      GetEffectiveSecurityHealthAnalyticsCustomModuleRequest request,
+      StreamObserver<EffectiveSecurityHealthAnalyticsCustomModule> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof EffectiveSecurityHealthAnalyticsCustomModule) {
+      requests.add(request);
+      responseObserver.onNext(((EffectiveSecurityHealthAnalyticsCustomModule) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetEffectiveSecurityHealthAnalyticsCustomModule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  EffectiveSecurityHealthAnalyticsCustomModule.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getSecurityHealthAnalyticsCustomModule(
+      GetSecurityHealthAnalyticsCustomModuleRequest request,
+      StreamObserver<SecurityHealthAnalyticsCustomModule> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SecurityHealthAnalyticsCustomModule) {
+      requests.add(request);
+      responseObserver.onNext(((SecurityHealthAnalyticsCustomModule) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetSecurityHealthAnalyticsCustomModule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SecurityHealthAnalyticsCustomModule.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getSource(GetSourceRequest request, StreamObserver<Source> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Source) {
@@ -401,6 +489,29 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   }
 
   @Override
+  public void listDescendantSecurityHealthAnalyticsCustomModules(
+      ListDescendantSecurityHealthAnalyticsCustomModulesRequest request,
+      StreamObserver<ListDescendantSecurityHealthAnalyticsCustomModulesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListDescendantSecurityHealthAnalyticsCustomModulesResponse) {
+      requests.add(request);
+      responseObserver.onNext(
+          ((ListDescendantSecurityHealthAnalyticsCustomModulesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDescendantSecurityHealthAnalyticsCustomModules, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListDescendantSecurityHealthAnalyticsCustomModulesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listFindings(
       ListFindingsRequest request, StreamObserver<ListFindingsResponse> responseObserver) {
     Object response = responses.poll();
@@ -460,6 +571,51 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
                   "Unrecognized response type %s for method ListNotificationConfigs, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListNotificationConfigsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listEffectiveSecurityHealthAnalyticsCustomModules(
+      ListEffectiveSecurityHealthAnalyticsCustomModulesRequest request,
+      StreamObserver<ListEffectiveSecurityHealthAnalyticsCustomModulesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListEffectiveSecurityHealthAnalyticsCustomModulesResponse) {
+      requests.add(request);
+      responseObserver.onNext(
+          ((ListEffectiveSecurityHealthAnalyticsCustomModulesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListEffectiveSecurityHealthAnalyticsCustomModules, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListEffectiveSecurityHealthAnalyticsCustomModulesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listSecurityHealthAnalyticsCustomModules(
+      ListSecurityHealthAnalyticsCustomModulesRequest request,
+      StreamObserver<ListSecurityHealthAnalyticsCustomModulesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListSecurityHealthAnalyticsCustomModulesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListSecurityHealthAnalyticsCustomModulesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListSecurityHealthAnalyticsCustomModules, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListSecurityHealthAnalyticsCustomModulesResponse.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -692,6 +848,28 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
                   "Unrecognized response type %s for method UpdateOrganizationSettings, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   OrganizationSettings.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateSecurityHealthAnalyticsCustomModule(
+      UpdateSecurityHealthAnalyticsCustomModuleRequest request,
+      StreamObserver<SecurityHealthAnalyticsCustomModule> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SecurityHealthAnalyticsCustomModule) {
+      requests.add(request);
+      responseObserver.onNext(((SecurityHealthAnalyticsCustomModule) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateSecurityHealthAnalyticsCustomModule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SecurityHealthAnalyticsCustomModule.class.getName(),
                   Exception.class.getName())));
     }
   }

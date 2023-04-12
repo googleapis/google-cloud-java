@@ -27,7 +27,7 @@ public interface IndicatorOrBuilder
    *
    *
    * <pre>
-   * List of ip addresses associated to the Finding.
+   * The list of IP addresses that are associated with the finding.
    * </pre>
    *
    * <code>repeated string ip_addresses = 1;</code>
@@ -39,7 +39,7 @@ public interface IndicatorOrBuilder
    *
    *
    * <pre>
-   * List of ip addresses associated to the Finding.
+   * The list of IP addresses that are associated with the finding.
    * </pre>
    *
    * <code>repeated string ip_addresses = 1;</code>
@@ -51,7 +51,7 @@ public interface IndicatorOrBuilder
    *
    *
    * <pre>
-   * List of ip addresses associated to the Finding.
+   * The list of IP addresses that are associated with the finding.
    * </pre>
    *
    * <code>repeated string ip_addresses = 1;</code>
@@ -64,7 +64,7 @@ public interface IndicatorOrBuilder
    *
    *
    * <pre>
-   * List of ip addresses associated to the Finding.
+   * The list of IP addresses that are associated with the finding.
    * </pre>
    *
    * <code>repeated string ip_addresses = 1;</code>

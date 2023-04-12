@@ -580,7 +580,7 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Represents vulnerability-specific fields like CVE and CVS scores.
+   * Represents vulnerability-specific fields like CVE and CVSS scores.
    * CVE stands for Common Vulnerabilities and Exposures
    * (https://cve.mitre.org/about/)
    * </pre>
@@ -594,7 +594,7 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Represents vulnerability-specific fields like CVE and CVS scores.
+   * Represents vulnerability-specific fields like CVE and CVSS scores.
    * CVE stands for Common Vulnerabilities and Exposures
    * (https://cve.mitre.org/about/)
    * </pre>
@@ -608,7 +608,7 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Represents vulnerability-specific fields like CVE and CVS scores.
+   * Represents vulnerability-specific fields like CVE and CVSS scores.
    * CVE stands for Common Vulnerabilities and Exposures
    * (https://cve.mitre.org/about/)
    * </pre>
@@ -662,8 +662,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -675,8 +675,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -692,8 +692,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -706,8 +706,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -723,8 +723,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -948,9 +948,9 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Map containing the points of contact for the given finding. The key
-   * represents the type of contact, while the value contains a list of all the
-   * contacts that pertain. Please refer to:
+   * Output only. Map containing the points of contact for the given finding.
+   * The key represents the type of contact, while the value contains a list of
+   * all the contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
    *     {
    *       "security": {
@@ -975,9 +975,9 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Map containing the points of contact for the given finding. The key
-   * represents the type of contact, while the value contains a list of all the
-   * contacts that pertain. Please refer to:
+   * Output only. Map containing the points of contact for the given finding.
+   * The key represents the type of contact, while the value contains a list of
+   * all the contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
    *     {
    *       "security": {
@@ -1005,9 +1005,9 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Map containing the points of contact for the given finding. The key
-   * represents the type of contact, while the value contains a list of all the
-   * contacts that pertain. Please refer to:
+   * Output only. Map containing the points of contact for the given finding.
+   * The key represents the type of contact, while the value contains a list of
+   * all the contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
    *     {
    *       "security": {
@@ -1033,9 +1033,9 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Map containing the points of contact for the given finding. The key
-   * represents the type of contact, while the value contains a list of all the
-   * contacts that pertain. Please refer to:
+   * Output only. Map containing the points of contact for the given finding.
+   * The key represents the type of contact, while the value contains a list of
+   * all the contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
    *     {
    *       "security": {
@@ -1064,9 +1064,9 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Output only. Map containing the points of contact for the given finding. The key
-   * represents the type of contact, while the value contains a list of all the
-   * contacts that pertain. Please refer to:
+   * Output only. Map containing the points of contact for the given finding.
+   * The key represents the type of contact, while the value contains a list of
+   * all the contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
    *     {
    *       "security": {
@@ -1308,6 +1308,35 @@ public interface FindingOrBuilder
    * @return The bytes for nextSteps.
    */
   com.google.protobuf.ByteString getNextStepsBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Unique identifier of the module which generated the finding.
+   * Example:
+   * folders/598186756061/securityHealthAnalyticsSettings/customModules/56799441161885
+   * </pre>
+   *
+   * <code>string module_name = 41;</code>
+   *
+   * @return The moduleName.
+   */
+  java.lang.String getModuleName();
+  /**
+   *
+   *
+   * <pre>
+   * Unique identifier of the module which generated the finding.
+   * Example:
+   * folders/598186756061/securityHealthAnalyticsSettings/customModules/56799441161885
+   * </pre>
+   *
+   * <code>string module_name = 41;</code>
+   *
+   * @return The bytes for moduleName.
+   */
+  com.google.protobuf.ByteString getModuleNameBytes();
 
   /**
    *

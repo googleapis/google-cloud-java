@@ -20,9 +20,12 @@ import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAsset
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListBigQueryExportsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListMuteConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSecurityHealthAnalyticsCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSourcesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -61,16 +64,21 @@ import com.google.cloud.securitycenter.v1.CreateBigQueryExportRequest;
 import com.google.cloud.securitycenter.v1.CreateFindingRequest;
 import com.google.cloud.securitycenter.v1.CreateMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest;
+import com.google.cloud.securitycenter.v1.CreateSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.CreateSourceRequest;
 import com.google.cloud.securitycenter.v1.DeleteBigQueryExportRequest;
 import com.google.cloud.securitycenter.v1.DeleteMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest;
+import com.google.cloud.securitycenter.v1.DeleteSecurityHealthAnalyticsCustomModuleRequest;
+import com.google.cloud.securitycenter.v1.EffectiveSecurityHealthAnalyticsCustomModule;
 import com.google.cloud.securitycenter.v1.ExternalSystem;
 import com.google.cloud.securitycenter.v1.Finding;
 import com.google.cloud.securitycenter.v1.GetBigQueryExportRequest;
+import com.google.cloud.securitycenter.v1.GetEffectiveSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.GetMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.GetNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest;
+import com.google.cloud.securitycenter.v1.GetSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.GetSourceRequest;
 import com.google.cloud.securitycenter.v1.GroupAssetsRequest;
 import com.google.cloud.securitycenter.v1.GroupAssetsResponse;
@@ -81,12 +89,18 @@ import com.google.cloud.securitycenter.v1.ListAssetsRequest;
 import com.google.cloud.securitycenter.v1.ListAssetsResponse;
 import com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest;
 import com.google.cloud.securitycenter.v1.ListBigQueryExportsResponse;
+import com.google.cloud.securitycenter.v1.ListDescendantSecurityHealthAnalyticsCustomModulesRequest;
+import com.google.cloud.securitycenter.v1.ListDescendantSecurityHealthAnalyticsCustomModulesResponse;
+import com.google.cloud.securitycenter.v1.ListEffectiveSecurityHealthAnalyticsCustomModulesRequest;
+import com.google.cloud.securitycenter.v1.ListEffectiveSecurityHealthAnalyticsCustomModulesResponse;
 import com.google.cloud.securitycenter.v1.ListFindingsRequest;
 import com.google.cloud.securitycenter.v1.ListFindingsResponse;
 import com.google.cloud.securitycenter.v1.ListMuteConfigsRequest;
 import com.google.cloud.securitycenter.v1.ListMuteConfigsResponse;
 import com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest;
 import com.google.cloud.securitycenter.v1.ListNotificationConfigsResponse;
+import com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesRequest;
+import com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesResponse;
 import com.google.cloud.securitycenter.v1.ListSourcesRequest;
 import com.google.cloud.securitycenter.v1.ListSourcesResponse;
 import com.google.cloud.securitycenter.v1.MuteConfig;
@@ -94,6 +108,7 @@ import com.google.cloud.securitycenter.v1.NotificationConfig;
 import com.google.cloud.securitycenter.v1.OrganizationSettings;
 import com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest;
 import com.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse;
+import com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule;
 import com.google.cloud.securitycenter.v1.SecurityMarks;
 import com.google.cloud.securitycenter.v1.SetFindingStateRequest;
 import com.google.cloud.securitycenter.v1.SetMuteRequest;
@@ -104,6 +119,7 @@ import com.google.cloud.securitycenter.v1.UpdateFindingRequest;
 import com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.UpdateNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.UpdateOrganizationSettingsRequest;
+import com.google.cloud.securitycenter.v1.UpdateSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.UpdateSecurityMarksRequest;
 import com.google.cloud.securitycenter.v1.UpdateSourceRequest;
 import com.google.common.collect.ImmutableList;
@@ -138,7 +154,8 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of createSource to 30 seconds:
+ * <p>For example, to set the total timeout of createSecurityHealthAnalyticsCustomModule to 30
+ * seconds:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -149,10 +166,10 @@ import org.threeten.bp.Duration;
  * SecurityCenterStubSettings.Builder securityCenterSettingsBuilder =
  *     SecurityCenterStubSettings.newBuilder();
  * securityCenterSettingsBuilder
- *     .createSourceSettings()
+ *     .createSecurityHealthAnalyticsCustomModuleSettings()
  *     .setRetrySettings(
  *         securityCenterSettingsBuilder
- *             .createSourceSettings()
+ *             .createSecurityHealthAnalyticsCustomModuleSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -169,6 +186,9 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
   private final UnaryCallSettings<BulkMuteFindingsRequest, Operation> bulkMuteFindingsSettings;
   private final OperationCallSettings<BulkMuteFindingsRequest, BulkMuteFindingsResponse, Empty>
       bulkMuteFindingsOperationSettings;
+  private final UnaryCallSettings<
+          CreateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      createSecurityHealthAnalyticsCustomModuleSettings;
   private final UnaryCallSettings<CreateSourceRequest, Source> createSourceSettings;
   private final UnaryCallSettings<CreateFindingRequest, Finding> createFindingSettings;
   private final UnaryCallSettings<CreateMuteConfigRequest, MuteConfig> createMuteConfigSettings;
@@ -177,6 +197,8 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
   private final UnaryCallSettings<DeleteMuteConfigRequest, Empty> deleteMuteConfigSettings;
   private final UnaryCallSettings<DeleteNotificationConfigRequest, Empty>
       deleteNotificationConfigSettings;
+  private final UnaryCallSettings<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>
+      deleteSecurityHealthAnalyticsCustomModuleSettings;
   private final UnaryCallSettings<GetBigQueryExportRequest, BigQueryExport>
       getBigQueryExportSettings;
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
@@ -185,6 +207,13 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       getNotificationConfigSettings;
   private final UnaryCallSettings<GetOrganizationSettingsRequest, OrganizationSettings>
       getOrganizationSettingsSettings;
+  private final UnaryCallSettings<
+          GetEffectiveSecurityHealthAnalyticsCustomModuleRequest,
+          EffectiveSecurityHealthAnalyticsCustomModule>
+      getEffectiveSecurityHealthAnalyticsCustomModuleSettings;
+  private final UnaryCallSettings<
+          GetSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      getSecurityHealthAnalyticsCustomModuleSettings;
   private final UnaryCallSettings<GetSourceRequest, Source> getSourceSettings;
   private final PagedCallSettings<GroupAssetsRequest, GroupAssetsResponse, GroupAssetsPagedResponse>
       groupAssetsSettings;
@@ -193,6 +222,11 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       groupFindingsSettings;
   private final PagedCallSettings<ListAssetsRequest, ListAssetsResponse, ListAssetsPagedResponse>
       listAssetsSettings;
+  private final PagedCallSettings<
+          ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+          ListDescendantSecurityHealthAnalyticsCustomModulesResponse,
+          ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse>
+      listDescendantSecurityHealthAnalyticsCustomModulesSettings;
   private final PagedCallSettings<
           ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>
       listFindingsSettings;
@@ -204,6 +238,16 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           ListNotificationConfigsResponse,
           ListNotificationConfigsPagedResponse>
       listNotificationConfigsSettings;
+  private final PagedCallSettings<
+          ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesResponse,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse>
+      listEffectiveSecurityHealthAnalyticsCustomModulesSettings;
+  private final PagedCallSettings<
+          ListSecurityHealthAnalyticsCustomModulesRequest,
+          ListSecurityHealthAnalyticsCustomModulesResponse,
+          ListSecurityHealthAnalyticsCustomModulesPagedResponse>
+      listSecurityHealthAnalyticsCustomModulesSettings;
   private final PagedCallSettings<ListSourcesRequest, ListSourcesResponse, ListSourcesPagedResponse>
       listSourcesSettings;
   private final UnaryCallSettings<RunAssetDiscoveryRequest, Operation> runAssetDiscoverySettings;
@@ -222,6 +266,9 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       updateNotificationConfigSettings;
   private final UnaryCallSettings<UpdateOrganizationSettingsRequest, OrganizationSettings>
       updateOrganizationSettingsSettings;
+  private final UnaryCallSettings<
+          UpdateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      updateSecurityHealthAnalyticsCustomModuleSettings;
   private final UnaryCallSettings<UpdateSourceRequest, Source> updateSourceSettings;
   private final UnaryCallSettings<UpdateSecurityMarksRequest, SecurityMarks>
       updateSecurityMarksSettings;
@@ -342,6 +389,57 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
               return payload.getListAssetsResultsList() == null
                   ? ImmutableList.<ListAssetsResponse.ListAssetsResult>of()
                   : payload.getListAssetsResultsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+          ListDescendantSecurityHealthAnalyticsCustomModulesResponse,
+          SecurityHealthAnalyticsCustomModule>
+      LIST_DESCENDANT_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+              ListDescendantSecurityHealthAnalyticsCustomModulesResponse,
+              SecurityHealthAnalyticsCustomModule>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDescendantSecurityHealthAnalyticsCustomModulesRequest injectToken(
+                ListDescendantSecurityHealthAnalyticsCustomModulesRequest payload, String token) {
+              return ListDescendantSecurityHealthAnalyticsCustomModulesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListDescendantSecurityHealthAnalyticsCustomModulesRequest injectPageSize(
+                ListDescendantSecurityHealthAnalyticsCustomModulesRequest payload, int pageSize) {
+              return ListDescendantSecurityHealthAnalyticsCustomModulesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(
+                ListDescendantSecurityHealthAnalyticsCustomModulesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(
+                ListDescendantSecurityHealthAnalyticsCustomModulesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<SecurityHealthAnalyticsCustomModule> extractResources(
+                ListDescendantSecurityHealthAnalyticsCustomModulesResponse payload) {
+              return payload.getSecurityHealthAnalyticsCustomModulesList() == null
+                  ? ImmutableList.<SecurityHealthAnalyticsCustomModule>of()
+                  : payload.getSecurityHealthAnalyticsCustomModulesList();
             }
           };
 
@@ -467,6 +565,108 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
               return payload.getNotificationConfigsList() == null
                   ? ImmutableList.<NotificationConfig>of()
                   : payload.getNotificationConfigsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesResponse,
+          EffectiveSecurityHealthAnalyticsCustomModule>
+      LIST_EFFECTIVE_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+              ListEffectiveSecurityHealthAnalyticsCustomModulesResponse,
+              EffectiveSecurityHealthAnalyticsCustomModule>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListEffectiveSecurityHealthAnalyticsCustomModulesRequest injectToken(
+                ListEffectiveSecurityHealthAnalyticsCustomModulesRequest payload, String token) {
+              return ListEffectiveSecurityHealthAnalyticsCustomModulesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListEffectiveSecurityHealthAnalyticsCustomModulesRequest injectPageSize(
+                ListEffectiveSecurityHealthAnalyticsCustomModulesRequest payload, int pageSize) {
+              return ListEffectiveSecurityHealthAnalyticsCustomModulesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(
+                ListEffectiveSecurityHealthAnalyticsCustomModulesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(
+                ListEffectiveSecurityHealthAnalyticsCustomModulesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<EffectiveSecurityHealthAnalyticsCustomModule> extractResources(
+                ListEffectiveSecurityHealthAnalyticsCustomModulesResponse payload) {
+              return payload.getEffectiveSecurityHealthAnalyticsCustomModulesList() == null
+                  ? ImmutableList.<EffectiveSecurityHealthAnalyticsCustomModule>of()
+                  : payload.getEffectiveSecurityHealthAnalyticsCustomModulesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListSecurityHealthAnalyticsCustomModulesRequest,
+          ListSecurityHealthAnalyticsCustomModulesResponse,
+          SecurityHealthAnalyticsCustomModule>
+      LIST_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListSecurityHealthAnalyticsCustomModulesRequest,
+              ListSecurityHealthAnalyticsCustomModulesResponse,
+              SecurityHealthAnalyticsCustomModule>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSecurityHealthAnalyticsCustomModulesRequest injectToken(
+                ListSecurityHealthAnalyticsCustomModulesRequest payload, String token) {
+              return ListSecurityHealthAnalyticsCustomModulesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListSecurityHealthAnalyticsCustomModulesRequest injectPageSize(
+                ListSecurityHealthAnalyticsCustomModulesRequest payload, int pageSize) {
+              return ListSecurityHealthAnalyticsCustomModulesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(
+                ListSecurityHealthAnalyticsCustomModulesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(
+                ListSecurityHealthAnalyticsCustomModulesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<SecurityHealthAnalyticsCustomModule> extractResources(
+                ListSecurityHealthAnalyticsCustomModulesResponse payload) {
+              return payload.getSecurityHealthAnalyticsCustomModulesList() == null
+                  ? ImmutableList.<SecurityHealthAnalyticsCustomModule>of()
+                  : payload.getSecurityHealthAnalyticsCustomModulesList();
             }
           };
 
@@ -600,6 +800,41 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           };
 
   private static final PagedListResponseFactory<
+          ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+          ListDescendantSecurityHealthAnalyticsCustomModulesResponse,
+          ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse>
+      LIST_DESCENDANT_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+              ListDescendantSecurityHealthAnalyticsCustomModulesResponse,
+              ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse>() {
+            @Override
+            public ApiFuture<ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse>
+                getFuturePagedResponse(
+                    UnaryCallable<
+                            ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+                            ListDescendantSecurityHealthAnalyticsCustomModulesResponse>
+                        callable,
+                    ListDescendantSecurityHealthAnalyticsCustomModulesRequest request,
+                    ApiCallContext context,
+                    ApiFuture<ListDescendantSecurityHealthAnalyticsCustomModulesResponse>
+                        futureResponse) {
+              PageContext<
+                      ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+                      ListDescendantSecurityHealthAnalyticsCustomModulesResponse,
+                      SecurityHealthAnalyticsCustomModule>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_DESCENDANT_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULES_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>
       LIST_FINDINGS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -665,6 +900,75 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           };
 
   private static final PagedListResponseFactory<
+          ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesResponse,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse>
+      LIST_EFFECTIVE_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+              ListEffectiveSecurityHealthAnalyticsCustomModulesResponse,
+              ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse>() {
+            @Override
+            public ApiFuture<ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse>
+                getFuturePagedResponse(
+                    UnaryCallable<
+                            ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+                            ListEffectiveSecurityHealthAnalyticsCustomModulesResponse>
+                        callable,
+                    ListEffectiveSecurityHealthAnalyticsCustomModulesRequest request,
+                    ApiCallContext context,
+                    ApiFuture<ListEffectiveSecurityHealthAnalyticsCustomModulesResponse>
+                        futureResponse) {
+              PageContext<
+                      ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+                      ListEffectiveSecurityHealthAnalyticsCustomModulesResponse,
+                      EffectiveSecurityHealthAnalyticsCustomModule>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_EFFECTIVE_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULES_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListSecurityHealthAnalyticsCustomModulesRequest,
+          ListSecurityHealthAnalyticsCustomModulesResponse,
+          ListSecurityHealthAnalyticsCustomModulesPagedResponse>
+      LIST_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSecurityHealthAnalyticsCustomModulesRequest,
+              ListSecurityHealthAnalyticsCustomModulesResponse,
+              ListSecurityHealthAnalyticsCustomModulesPagedResponse>() {
+            @Override
+            public ApiFuture<ListSecurityHealthAnalyticsCustomModulesPagedResponse>
+                getFuturePagedResponse(
+                    UnaryCallable<
+                            ListSecurityHealthAnalyticsCustomModulesRequest,
+                            ListSecurityHealthAnalyticsCustomModulesResponse>
+                        callable,
+                    ListSecurityHealthAnalyticsCustomModulesRequest request,
+                    ApiCallContext context,
+                    ApiFuture<ListSecurityHealthAnalyticsCustomModulesResponse> futureResponse) {
+              PageContext<
+                      ListSecurityHealthAnalyticsCustomModulesRequest,
+                      ListSecurityHealthAnalyticsCustomModulesResponse,
+                      SecurityHealthAnalyticsCustomModule>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULES_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListSecurityHealthAnalyticsCustomModulesPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListSourcesRequest, ListSourcesResponse, ListSourcesPagedResponse>
       LIST_SOURCES_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -713,6 +1017,16 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     return bulkMuteFindingsOperationSettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to
+   * createSecurityHealthAnalyticsCustomModule.
+   */
+  public UnaryCallSettings<
+          CreateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      createSecurityHealthAnalyticsCustomModuleSettings() {
+    return createSecurityHealthAnalyticsCustomModuleSettings;
+  }
+
   /** Returns the object with the settings used for calls to createSource. */
   public UnaryCallSettings<CreateSourceRequest, Source> createSourceSettings() {
     return createSourceSettings;
@@ -745,6 +1059,15 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     return deleteNotificationConfigSettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to
+   * deleteSecurityHealthAnalyticsCustomModule.
+   */
+  public UnaryCallSettings<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>
+      deleteSecurityHealthAnalyticsCustomModuleSettings() {
+    return deleteSecurityHealthAnalyticsCustomModuleSettings;
+  }
+
   /** Returns the object with the settings used for calls to getBigQueryExport. */
   public UnaryCallSettings<GetBigQueryExportRequest, BigQueryExport> getBigQueryExportSettings() {
     return getBigQueryExportSettings;
@@ -772,6 +1095,26 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     return getOrganizationSettingsSettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to
+   * getEffectiveSecurityHealthAnalyticsCustomModule.
+   */
+  public UnaryCallSettings<
+          GetEffectiveSecurityHealthAnalyticsCustomModuleRequest,
+          EffectiveSecurityHealthAnalyticsCustomModule>
+      getEffectiveSecurityHealthAnalyticsCustomModuleSettings() {
+    return getEffectiveSecurityHealthAnalyticsCustomModuleSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to getSecurityHealthAnalyticsCustomModule.
+   */
+  public UnaryCallSettings<
+          GetSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      getSecurityHealthAnalyticsCustomModuleSettings() {
+    return getSecurityHealthAnalyticsCustomModuleSettings;
+  }
+
   /** Returns the object with the settings used for calls to getSource. */
   public UnaryCallSettings<GetSourceRequest, Source> getSourceSettings() {
     return getSourceSettings;
@@ -795,6 +1138,18 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     return listAssetsSettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to
+   * listDescendantSecurityHealthAnalyticsCustomModules.
+   */
+  public PagedCallSettings<
+          ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+          ListDescendantSecurityHealthAnalyticsCustomModulesResponse,
+          ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse>
+      listDescendantSecurityHealthAnalyticsCustomModulesSettings() {
+    return listDescendantSecurityHealthAnalyticsCustomModulesSettings;
+  }
+
   /** Returns the object with the settings used for calls to listFindings. */
   public PagedCallSettings<ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>
       listFindingsSettings() {
@@ -815,6 +1170,30 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           ListNotificationConfigsPagedResponse>
       listNotificationConfigsSettings() {
     return listNotificationConfigsSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * listEffectiveSecurityHealthAnalyticsCustomModules.
+   */
+  public PagedCallSettings<
+          ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesResponse,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse>
+      listEffectiveSecurityHealthAnalyticsCustomModulesSettings() {
+    return listEffectiveSecurityHealthAnalyticsCustomModulesSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * listSecurityHealthAnalyticsCustomModules.
+   */
+  public PagedCallSettings<
+          ListSecurityHealthAnalyticsCustomModulesRequest,
+          ListSecurityHealthAnalyticsCustomModulesResponse,
+          ListSecurityHealthAnalyticsCustomModulesPagedResponse>
+      listSecurityHealthAnalyticsCustomModulesSettings() {
+    return listSecurityHealthAnalyticsCustomModulesSettings;
   }
 
   /** Returns the object with the settings used for calls to listSources. */
@@ -881,6 +1260,16 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
   public UnaryCallSettings<UpdateOrganizationSettingsRequest, OrganizationSettings>
       updateOrganizationSettingsSettings() {
     return updateOrganizationSettingsSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * updateSecurityHealthAnalyticsCustomModule.
+   */
+  public UnaryCallSettings<
+          UpdateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      updateSecurityHealthAnalyticsCustomModuleSettings() {
+    return updateSecurityHealthAnalyticsCustomModuleSettings;
   }
 
   /** Returns the object with the settings used for calls to updateSource. */
@@ -1026,24 +1415,38 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
     bulkMuteFindingsSettings = settingsBuilder.bulkMuteFindingsSettings().build();
     bulkMuteFindingsOperationSettings = settingsBuilder.bulkMuteFindingsOperationSettings().build();
+    createSecurityHealthAnalyticsCustomModuleSettings =
+        settingsBuilder.createSecurityHealthAnalyticsCustomModuleSettings().build();
     createSourceSettings = settingsBuilder.createSourceSettings().build();
     createFindingSettings = settingsBuilder.createFindingSettings().build();
     createMuteConfigSettings = settingsBuilder.createMuteConfigSettings().build();
     createNotificationConfigSettings = settingsBuilder.createNotificationConfigSettings().build();
     deleteMuteConfigSettings = settingsBuilder.deleteMuteConfigSettings().build();
     deleteNotificationConfigSettings = settingsBuilder.deleteNotificationConfigSettings().build();
+    deleteSecurityHealthAnalyticsCustomModuleSettings =
+        settingsBuilder.deleteSecurityHealthAnalyticsCustomModuleSettings().build();
     getBigQueryExportSettings = settingsBuilder.getBigQueryExportSettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     getMuteConfigSettings = settingsBuilder.getMuteConfigSettings().build();
     getNotificationConfigSettings = settingsBuilder.getNotificationConfigSettings().build();
     getOrganizationSettingsSettings = settingsBuilder.getOrganizationSettingsSettings().build();
+    getEffectiveSecurityHealthAnalyticsCustomModuleSettings =
+        settingsBuilder.getEffectiveSecurityHealthAnalyticsCustomModuleSettings().build();
+    getSecurityHealthAnalyticsCustomModuleSettings =
+        settingsBuilder.getSecurityHealthAnalyticsCustomModuleSettings().build();
     getSourceSettings = settingsBuilder.getSourceSettings().build();
     groupAssetsSettings = settingsBuilder.groupAssetsSettings().build();
     groupFindingsSettings = settingsBuilder.groupFindingsSettings().build();
     listAssetsSettings = settingsBuilder.listAssetsSettings().build();
+    listDescendantSecurityHealthAnalyticsCustomModulesSettings =
+        settingsBuilder.listDescendantSecurityHealthAnalyticsCustomModulesSettings().build();
     listFindingsSettings = settingsBuilder.listFindingsSettings().build();
     listMuteConfigsSettings = settingsBuilder.listMuteConfigsSettings().build();
     listNotificationConfigsSettings = settingsBuilder.listNotificationConfigsSettings().build();
+    listEffectiveSecurityHealthAnalyticsCustomModulesSettings =
+        settingsBuilder.listEffectiveSecurityHealthAnalyticsCustomModulesSettings().build();
+    listSecurityHealthAnalyticsCustomModulesSettings =
+        settingsBuilder.listSecurityHealthAnalyticsCustomModulesSettings().build();
     listSourcesSettings = settingsBuilder.listSourcesSettings().build();
     runAssetDiscoverySettings = settingsBuilder.runAssetDiscoverySettings().build();
     runAssetDiscoveryOperationSettings =
@@ -1058,6 +1461,8 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     updateNotificationConfigSettings = settingsBuilder.updateNotificationConfigSettings().build();
     updateOrganizationSettingsSettings =
         settingsBuilder.updateOrganizationSettingsSettings().build();
+    updateSecurityHealthAnalyticsCustomModuleSettings =
+        settingsBuilder.updateSecurityHealthAnalyticsCustomModuleSettings().build();
     updateSourceSettings = settingsBuilder.updateSourceSettings().build();
     updateSecurityMarksSettings = settingsBuilder.updateSecurityMarksSettings().build();
     createBigQueryExportSettings = settingsBuilder.createBigQueryExportSettings().build();
@@ -1074,6 +1479,9 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     private final OperationCallSettings.Builder<
             BulkMuteFindingsRequest, BulkMuteFindingsResponse, Empty>
         bulkMuteFindingsOperationSettings;
+    private final UnaryCallSettings.Builder<
+            CreateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+        createSecurityHealthAnalyticsCustomModuleSettings;
     private final UnaryCallSettings.Builder<CreateSourceRequest, Source> createSourceSettings;
     private final UnaryCallSettings.Builder<CreateFindingRequest, Finding> createFindingSettings;
     private final UnaryCallSettings.Builder<CreateMuteConfigRequest, MuteConfig>
@@ -1084,6 +1492,8 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
         deleteMuteConfigSettings;
     private final UnaryCallSettings.Builder<DeleteNotificationConfigRequest, Empty>
         deleteNotificationConfigSettings;
+    private final UnaryCallSettings.Builder<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>
+        deleteSecurityHealthAnalyticsCustomModuleSettings;
     private final UnaryCallSettings.Builder<GetBigQueryExportRequest, BigQueryExport>
         getBigQueryExportSettings;
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
@@ -1092,6 +1502,13 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
         getNotificationConfigSettings;
     private final UnaryCallSettings.Builder<GetOrganizationSettingsRequest, OrganizationSettings>
         getOrganizationSettingsSettings;
+    private final UnaryCallSettings.Builder<
+            GetEffectiveSecurityHealthAnalyticsCustomModuleRequest,
+            EffectiveSecurityHealthAnalyticsCustomModule>
+        getEffectiveSecurityHealthAnalyticsCustomModuleSettings;
+    private final UnaryCallSettings.Builder<
+            GetSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+        getSecurityHealthAnalyticsCustomModuleSettings;
     private final UnaryCallSettings.Builder<GetSourceRequest, Source> getSourceSettings;
     private final PagedCallSettings.Builder<
             GroupAssetsRequest, GroupAssetsResponse, GroupAssetsPagedResponse>
@@ -1103,6 +1520,11 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
             ListAssetsRequest, ListAssetsResponse, ListAssetsPagedResponse>
         listAssetsSettings;
     private final PagedCallSettings.Builder<
+            ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+            ListDescendantSecurityHealthAnalyticsCustomModulesResponse,
+            ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse>
+        listDescendantSecurityHealthAnalyticsCustomModulesSettings;
+    private final PagedCallSettings.Builder<
             ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>
         listFindingsSettings;
     private final PagedCallSettings.Builder<
@@ -1113,6 +1535,16 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
             ListNotificationConfigsResponse,
             ListNotificationConfigsPagedResponse>
         listNotificationConfigsSettings;
+    private final PagedCallSettings.Builder<
+            ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+            ListEffectiveSecurityHealthAnalyticsCustomModulesResponse,
+            ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse>
+        listEffectiveSecurityHealthAnalyticsCustomModulesSettings;
+    private final PagedCallSettings.Builder<
+            ListSecurityHealthAnalyticsCustomModulesRequest,
+            ListSecurityHealthAnalyticsCustomModulesResponse,
+            ListSecurityHealthAnalyticsCustomModulesPagedResponse>
+        listSecurityHealthAnalyticsCustomModulesSettings;
     private final PagedCallSettings.Builder<
             ListSourcesRequest, ListSourcesResponse, ListSourcesPagedResponse>
         listSourcesSettings;
@@ -1136,6 +1568,9 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
         updateNotificationConfigSettings;
     private final UnaryCallSettings.Builder<UpdateOrganizationSettingsRequest, OrganizationSettings>
         updateOrganizationSettingsSettings;
+    private final UnaryCallSettings.Builder<
+            UpdateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+        updateSecurityHealthAnalyticsCustomModuleSettings;
     private final UnaryCallSettings.Builder<UpdateSourceRequest, Source> updateSourceSettings;
     private final UnaryCallSettings.Builder<UpdateSecurityMarksRequest, SecurityMarks>
         updateSecurityMarksSettings;
@@ -1231,25 +1666,41 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
       bulkMuteFindingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       bulkMuteFindingsOperationSettings = OperationCallSettings.newBuilder();
+      createSecurityHealthAnalyticsCustomModuleSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
       createSourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createFindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createMuteConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createNotificationConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteMuteConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteNotificationConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteSecurityHealthAnalyticsCustomModuleSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
       getBigQueryExportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getMuteConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getNotificationConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getOrganizationSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getEffectiveSecurityHealthAnalyticsCustomModuleSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getSecurityHealthAnalyticsCustomModuleSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
       getSourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       groupAssetsSettings = PagedCallSettings.newBuilder(GROUP_ASSETS_PAGE_STR_FACT);
       groupFindingsSettings = PagedCallSettings.newBuilder(GROUP_FINDINGS_PAGE_STR_FACT);
       listAssetsSettings = PagedCallSettings.newBuilder(LIST_ASSETS_PAGE_STR_FACT);
+      listDescendantSecurityHealthAnalyticsCustomModulesSettings =
+          PagedCallSettings.newBuilder(
+              LIST_DESCENDANT_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULES_PAGE_STR_FACT);
       listFindingsSettings = PagedCallSettings.newBuilder(LIST_FINDINGS_PAGE_STR_FACT);
       listMuteConfigsSettings = PagedCallSettings.newBuilder(LIST_MUTE_CONFIGS_PAGE_STR_FACT);
       listNotificationConfigsSettings =
           PagedCallSettings.newBuilder(LIST_NOTIFICATION_CONFIGS_PAGE_STR_FACT);
+      listEffectiveSecurityHealthAnalyticsCustomModulesSettings =
+          PagedCallSettings.newBuilder(
+              LIST_EFFECTIVE_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULES_PAGE_STR_FACT);
+      listSecurityHealthAnalyticsCustomModulesSettings =
+          PagedCallSettings.newBuilder(LIST_SECURITY_HEALTH_ANALYTICS_CUSTOM_MODULES_PAGE_STR_FACT);
       listSourcesSettings = PagedCallSettings.newBuilder(LIST_SOURCES_PAGE_STR_FACT);
       runAssetDiscoverySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       runAssetDiscoveryOperationSettings = OperationCallSettings.newBuilder();
@@ -1262,6 +1713,8 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       updateMuteConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateNotificationConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateOrganizationSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateSecurityHealthAnalyticsCustomModuleSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSecurityMarksSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createBigQueryExportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1273,24 +1726,31 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               bulkMuteFindingsSettings,
+              createSecurityHealthAnalyticsCustomModuleSettings,
               createSourceSettings,
               createFindingSettings,
               createMuteConfigSettings,
               createNotificationConfigSettings,
               deleteMuteConfigSettings,
               deleteNotificationConfigSettings,
+              deleteSecurityHealthAnalyticsCustomModuleSettings,
               getBigQueryExportSettings,
               getIamPolicySettings,
               getMuteConfigSettings,
               getNotificationConfigSettings,
               getOrganizationSettingsSettings,
+              getEffectiveSecurityHealthAnalyticsCustomModuleSettings,
+              getSecurityHealthAnalyticsCustomModuleSettings,
               getSourceSettings,
               groupAssetsSettings,
               groupFindingsSettings,
               listAssetsSettings,
+              listDescendantSecurityHealthAnalyticsCustomModulesSettings,
               listFindingsSettings,
               listMuteConfigsSettings,
               listNotificationConfigsSettings,
+              listEffectiveSecurityHealthAnalyticsCustomModulesSettings,
+              listSecurityHealthAnalyticsCustomModulesSettings,
               listSourcesSettings,
               runAssetDiscoverySettings,
               setFindingStateSettings,
@@ -1302,6 +1762,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
               updateMuteConfigSettings,
               updateNotificationConfigSettings,
               updateOrganizationSettingsSettings,
+              updateSecurityHealthAnalyticsCustomModuleSettings,
               updateSourceSettings,
               updateSecurityMarksSettings,
               createBigQueryExportSettings,
@@ -1316,24 +1777,38 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
       bulkMuteFindingsSettings = settings.bulkMuteFindingsSettings.toBuilder();
       bulkMuteFindingsOperationSettings = settings.bulkMuteFindingsOperationSettings.toBuilder();
+      createSecurityHealthAnalyticsCustomModuleSettings =
+          settings.createSecurityHealthAnalyticsCustomModuleSettings.toBuilder();
       createSourceSettings = settings.createSourceSettings.toBuilder();
       createFindingSettings = settings.createFindingSettings.toBuilder();
       createMuteConfigSettings = settings.createMuteConfigSettings.toBuilder();
       createNotificationConfigSettings = settings.createNotificationConfigSettings.toBuilder();
       deleteMuteConfigSettings = settings.deleteMuteConfigSettings.toBuilder();
       deleteNotificationConfigSettings = settings.deleteNotificationConfigSettings.toBuilder();
+      deleteSecurityHealthAnalyticsCustomModuleSettings =
+          settings.deleteSecurityHealthAnalyticsCustomModuleSettings.toBuilder();
       getBigQueryExportSettings = settings.getBigQueryExportSettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       getMuteConfigSettings = settings.getMuteConfigSettings.toBuilder();
       getNotificationConfigSettings = settings.getNotificationConfigSettings.toBuilder();
       getOrganizationSettingsSettings = settings.getOrganizationSettingsSettings.toBuilder();
+      getEffectiveSecurityHealthAnalyticsCustomModuleSettings =
+          settings.getEffectiveSecurityHealthAnalyticsCustomModuleSettings.toBuilder();
+      getSecurityHealthAnalyticsCustomModuleSettings =
+          settings.getSecurityHealthAnalyticsCustomModuleSettings.toBuilder();
       getSourceSettings = settings.getSourceSettings.toBuilder();
       groupAssetsSettings = settings.groupAssetsSettings.toBuilder();
       groupFindingsSettings = settings.groupFindingsSettings.toBuilder();
       listAssetsSettings = settings.listAssetsSettings.toBuilder();
+      listDescendantSecurityHealthAnalyticsCustomModulesSettings =
+          settings.listDescendantSecurityHealthAnalyticsCustomModulesSettings.toBuilder();
       listFindingsSettings = settings.listFindingsSettings.toBuilder();
       listMuteConfigsSettings = settings.listMuteConfigsSettings.toBuilder();
       listNotificationConfigsSettings = settings.listNotificationConfigsSettings.toBuilder();
+      listEffectiveSecurityHealthAnalyticsCustomModulesSettings =
+          settings.listEffectiveSecurityHealthAnalyticsCustomModulesSettings.toBuilder();
+      listSecurityHealthAnalyticsCustomModulesSettings =
+          settings.listSecurityHealthAnalyticsCustomModulesSettings.toBuilder();
       listSourcesSettings = settings.listSourcesSettings.toBuilder();
       runAssetDiscoverySettings = settings.runAssetDiscoverySettings.toBuilder();
       runAssetDiscoveryOperationSettings = settings.runAssetDiscoveryOperationSettings.toBuilder();
@@ -1346,6 +1821,8 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       updateMuteConfigSettings = settings.updateMuteConfigSettings.toBuilder();
       updateNotificationConfigSettings = settings.updateNotificationConfigSettings.toBuilder();
       updateOrganizationSettingsSettings = settings.updateOrganizationSettingsSettings.toBuilder();
+      updateSecurityHealthAnalyticsCustomModuleSettings =
+          settings.updateSecurityHealthAnalyticsCustomModuleSettings.toBuilder();
       updateSourceSettings = settings.updateSourceSettings.toBuilder();
       updateSecurityMarksSettings = settings.updateSecurityMarksSettings.toBuilder();
       createBigQueryExportSettings = settings.createBigQueryExportSettings.toBuilder();
@@ -1356,24 +1833,31 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               bulkMuteFindingsSettings,
+              createSecurityHealthAnalyticsCustomModuleSettings,
               createSourceSettings,
               createFindingSettings,
               createMuteConfigSettings,
               createNotificationConfigSettings,
               deleteMuteConfigSettings,
               deleteNotificationConfigSettings,
+              deleteSecurityHealthAnalyticsCustomModuleSettings,
               getBigQueryExportSettings,
               getIamPolicySettings,
               getMuteConfigSettings,
               getNotificationConfigSettings,
               getOrganizationSettingsSettings,
+              getEffectiveSecurityHealthAnalyticsCustomModuleSettings,
+              getSecurityHealthAnalyticsCustomModuleSettings,
               getSourceSettings,
               groupAssetsSettings,
               groupFindingsSettings,
               listAssetsSettings,
+              listDescendantSecurityHealthAnalyticsCustomModulesSettings,
               listFindingsSettings,
               listMuteConfigsSettings,
               listNotificationConfigsSettings,
+              listEffectiveSecurityHealthAnalyticsCustomModulesSettings,
+              listSecurityHealthAnalyticsCustomModulesSettings,
               listSourcesSettings,
               runAssetDiscoverySettings,
               setFindingStateSettings,
@@ -1385,6 +1869,7 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
               updateMuteConfigSettings,
               updateNotificationConfigSettings,
               updateOrganizationSettingsSettings,
+              updateSecurityHealthAnalyticsCustomModuleSettings,
               updateSourceSettings,
               updateSecurityMarksSettings,
               createBigQueryExportSettings,
@@ -1426,6 +1911,11 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .createSecurityHealthAnalyticsCustomModuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
           .createSourceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
@@ -1456,6 +1946,11 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       builder
+          .deleteSecurityHealthAnalyticsCustomModuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
           .getBigQueryExportSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -1481,6 +1976,16 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
       builder
+          .getEffectiveSecurityHealthAnalyticsCustomModuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .getSecurityHealthAnalyticsCustomModuleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
           .getSourceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
@@ -1501,6 +2006,11 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
 
       builder
+          .listDescendantSecurityHealthAnalyticsCustomModulesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
           .listFindingsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
@@ -1512,6 +2022,16 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
       builder
           .listNotificationConfigsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listEffectiveSecurityHealthAnalyticsCustomModulesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listSecurityHealthAnalyticsCustomModulesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
@@ -1567,6 +2087,11 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
       builder
           .updateOrganizationSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateSecurityHealthAnalyticsCustomModuleSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -1681,6 +2206,16 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       return bulkMuteFindingsOperationSettings;
     }
 
+    /**
+     * Returns the builder for the settings used for calls to
+     * createSecurityHealthAnalyticsCustomModule.
+     */
+    public UnaryCallSettings.Builder<
+            CreateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+        createSecurityHealthAnalyticsCustomModuleSettings() {
+      return createSecurityHealthAnalyticsCustomModuleSettings;
+    }
+
     /** Returns the builder for the settings used for calls to createSource. */
     public UnaryCallSettings.Builder<CreateSourceRequest, Source> createSourceSettings() {
       return createSourceSettings;
@@ -1714,6 +2249,15 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       return deleteNotificationConfigSettings;
     }
 
+    /**
+     * Returns the builder for the settings used for calls to
+     * deleteSecurityHealthAnalyticsCustomModule.
+     */
+    public UnaryCallSettings.Builder<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>
+        deleteSecurityHealthAnalyticsCustomModuleSettings() {
+      return deleteSecurityHealthAnalyticsCustomModuleSettings;
+    }
+
     /** Returns the builder for the settings used for calls to getBigQueryExport. */
     public UnaryCallSettings.Builder<GetBigQueryExportRequest, BigQueryExport>
         getBigQueryExportSettings() {
@@ -1742,6 +2286,27 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       return getOrganizationSettingsSettings;
     }
 
+    /**
+     * Returns the builder for the settings used for calls to
+     * getEffectiveSecurityHealthAnalyticsCustomModule.
+     */
+    public UnaryCallSettings.Builder<
+            GetEffectiveSecurityHealthAnalyticsCustomModuleRequest,
+            EffectiveSecurityHealthAnalyticsCustomModule>
+        getEffectiveSecurityHealthAnalyticsCustomModuleSettings() {
+      return getEffectiveSecurityHealthAnalyticsCustomModuleSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * getSecurityHealthAnalyticsCustomModule.
+     */
+    public UnaryCallSettings.Builder<
+            GetSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+        getSecurityHealthAnalyticsCustomModuleSettings() {
+      return getSecurityHealthAnalyticsCustomModuleSettings;
+    }
+
     /** Returns the builder for the settings used for calls to getSource. */
     public UnaryCallSettings.Builder<GetSourceRequest, Source> getSourceSettings() {
       return getSourceSettings;
@@ -1767,6 +2332,18 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
       return listAssetsSettings;
     }
 
+    /**
+     * Returns the builder for the settings used for calls to
+     * listDescendantSecurityHealthAnalyticsCustomModules.
+     */
+    public PagedCallSettings.Builder<
+            ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+            ListDescendantSecurityHealthAnalyticsCustomModulesResponse,
+            ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse>
+        listDescendantSecurityHealthAnalyticsCustomModulesSettings() {
+      return listDescendantSecurityHealthAnalyticsCustomModulesSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listFindings. */
     public PagedCallSettings.Builder<
             ListFindingsRequest, ListFindingsResponse, ListFindingsPagedResponse>
@@ -1788,6 +2365,30 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
             ListNotificationConfigsPagedResponse>
         listNotificationConfigsSettings() {
       return listNotificationConfigsSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * listEffectiveSecurityHealthAnalyticsCustomModules.
+     */
+    public PagedCallSettings.Builder<
+            ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+            ListEffectiveSecurityHealthAnalyticsCustomModulesResponse,
+            ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse>
+        listEffectiveSecurityHealthAnalyticsCustomModulesSettings() {
+      return listEffectiveSecurityHealthAnalyticsCustomModulesSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * listSecurityHealthAnalyticsCustomModules.
+     */
+    public PagedCallSettings.Builder<
+            ListSecurityHealthAnalyticsCustomModulesRequest,
+            ListSecurityHealthAnalyticsCustomModulesResponse,
+            ListSecurityHealthAnalyticsCustomModulesPagedResponse>
+        listSecurityHealthAnalyticsCustomModulesSettings() {
+      return listSecurityHealthAnalyticsCustomModulesSettings;
     }
 
     /** Returns the builder for the settings used for calls to listSources. */
@@ -1859,6 +2460,16 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
     public UnaryCallSettings.Builder<UpdateOrganizationSettingsRequest, OrganizationSettings>
         updateOrganizationSettingsSettings() {
       return updateOrganizationSettingsSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * updateSecurityHealthAnalyticsCustomModule.
+     */
+    public UnaryCallSettings.Builder<
+            UpdateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+        updateSecurityHealthAnalyticsCustomModuleSettings() {
+      return updateSecurityHealthAnalyticsCustomModuleSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateSource. */

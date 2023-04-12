@@ -61,6 +61,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     description_ = "";
     iamBindings_ = java.util.Collections.emptyList();
     nextSteps_ = "";
+    moduleName_ = "";
     containers_ = java.util.Collections.emptyList();
     files_ = java.util.Collections.emptyList();
   }
@@ -1805,7 +1806,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents vulnerability-specific fields like CVE and CVS scores.
+   * Represents vulnerability-specific fields like CVE and CVSS scores.
    * CVE stands for Common Vulnerabilities and Exposures
    * (https://cve.mitre.org/about/)
    * </pre>
@@ -1822,7 +1823,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents vulnerability-specific fields like CVE and CVS scores.
+   * Represents vulnerability-specific fields like CVE and CVSS scores.
    * CVE stands for Common Vulnerabilities and Exposures
    * (https://cve.mitre.org/about/)
    * </pre>
@@ -1841,7 +1842,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents vulnerability-specific fields like CVE and CVS scores.
+   * Represents vulnerability-specific fields like CVE and CVSS scores.
    * CVE stands for Common Vulnerabilities and Exposures
    * (https://cve.mitre.org/about/)
    * </pre>
@@ -1950,8 +1951,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -1976,8 +1977,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -1993,8 +1994,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -2018,8 +2019,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-   * information and external system finding fields.
+   * Output only. Third party SIEM/SOAR fields within SCC, contains external
+   * system information and external system finding fields.
    * </pre>
    *
    * <code>
@@ -2383,9 +2384,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Map containing the points of contact for the given finding. The key
-   * represents the type of contact, while the value contains a list of all the
-   * contacts that pertain. Please refer to:
+   * Output only. Map containing the points of contact for the given finding.
+   * The key represents the type of contact, while the value contains a list of
+   * all the contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
    *     {
    *       "security": {
@@ -2423,9 +2424,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Map containing the points of contact for the given finding. The key
-   * represents the type of contact, while the value contains a list of all the
-   * contacts that pertain. Please refer to:
+   * Output only. Map containing the points of contact for the given finding.
+   * The key represents the type of contact, while the value contains a list of
+   * all the contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
    *     {
    *       "security": {
@@ -2454,9 +2455,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Map containing the points of contact for the given finding. The key
-   * represents the type of contact, while the value contains a list of all the
-   * contacts that pertain. Please refer to:
+   * Output only. Map containing the points of contact for the given finding.
+   * The key represents the type of contact, while the value contains a list of
+   * all the contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
    *     {
    *       "security": {
@@ -2492,9 +2493,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Map containing the points of contact for the given finding. The key
-   * represents the type of contact, while the value contains a list of all the
-   * contacts that pertain. Please refer to:
+   * Output only. Map containing the points of contact for the given finding.
+   * The key represents the type of contact, while the value contains a list of
+   * all the contacts that pertain. Please refer to:
    * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
    *     {
    *       "security": {
@@ -2874,6 +2875,61 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       nextSteps_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MODULE_NAME_FIELD_NUMBER = 41;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object moduleName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Unique identifier of the module which generated the finding.
+   * Example:
+   * folders/598186756061/securityHealthAnalyticsSettings/customModules/56799441161885
+   * </pre>
+   *
+   * <code>string module_name = 41;</code>
+   *
+   * @return The moduleName.
+   */
+  @java.lang.Override
+  public java.lang.String getModuleName() {
+    java.lang.Object ref = moduleName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      moduleName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Unique identifier of the module which generated the finding.
+   * Example:
+   * folders/598186756061/securityHealthAnalyticsSettings/customModules/56799441161885
+   * </pre>
+   *
+   * <code>string module_name = 41;</code>
+   *
+   * @return The bytes for moduleName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getModuleNameBytes() {
+    java.lang.Object ref = moduleName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      moduleName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -3281,6 +3337,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextSteps_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 40, nextSteps_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(moduleName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 41, moduleName_);
+    }
     for (int i = 0; i < containers_.size(); i++) {
       output.writeMessage(42, containers_.get(i));
     }
@@ -3423,6 +3482,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextSteps_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(40, nextSteps_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(moduleName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(41, moduleName_);
+    }
     for (int i = 0; i < containers_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(42, containers_.get(i));
     }
@@ -3511,6 +3573,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getIamBindingsList().equals(other.getIamBindingsList())) return false;
     if (!getNextSteps().equals(other.getNextSteps())) return false;
+    if (!getModuleName().equals(other.getModuleName())) return false;
     if (!getContainersList().equals(other.getContainersList())) return false;
     if (hasKubernetes() != other.hasKubernetes()) return false;
     if (hasKubernetes()) {
@@ -3628,6 +3691,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + NEXT_STEPS_FIELD_NUMBER;
     hash = (53 * hash) + getNextSteps().hashCode();
+    hash = (37 * hash) + MODULE_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getModuleName().hashCode();
     if (getContainersCount() > 0) {
       hash = (37 * hash) + CONTAINERS_FIELD_NUMBER;
       hash = (53 * hash) + getContainersList().hashCode();
@@ -3911,13 +3976,14 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x10000000);
       nextSteps_ = "";
+      moduleName_ = "";
       if (containersBuilder_ == null) {
         containers_ = java.util.Collections.emptyList();
       } else {
         containers_ = null;
         containersBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField0_ = (bitField0_ & ~0x80000000);
       kubernetes_ = null;
       if (kubernetesBuilder_ != null) {
         kubernetesBuilder_.dispose();
@@ -3934,7 +4000,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         files_ = null;
         filesBuilder_.clear();
       }
-      bitField1_ = (bitField1_ & ~0x00000002);
+      bitField1_ = (bitField1_ & ~0x00000004);
       kernelRootkit_ = null;
       if (kernelRootkitBuilder_ != null) {
         kernelRootkitBuilder_.dispose();
@@ -4016,18 +4082,18 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         result.iamBindings_ = iamBindingsBuilder_.build();
       }
       if (containersBuilder_ == null) {
-        if (((bitField0_ & 0x40000000) != 0)) {
+        if (((bitField0_ & 0x80000000) != 0)) {
           containers_ = java.util.Collections.unmodifiableList(containers_);
-          bitField0_ = (bitField0_ & ~0x40000000);
+          bitField0_ = (bitField0_ & ~0x80000000);
         }
         result.containers_ = containers_;
       } else {
         result.containers_ = containersBuilder_.build();
       }
       if (filesBuilder_ == null) {
-        if (((bitField1_ & 0x00000002) != 0)) {
+        if (((bitField1_ & 0x00000004) != 0)) {
           files_ = java.util.Collections.unmodifiableList(files_);
-          bitField1_ = (bitField1_ & ~0x00000002);
+          bitField1_ = (bitField1_ & ~0x00000004);
         }
         result.files_ = files_;
       } else {
@@ -4123,17 +4189,20 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x20000000) != 0)) {
         result.nextSteps_ = nextSteps_;
       }
-      if (((from_bitField0_ & 0x80000000) != 0)) {
-        result.kubernetes_ = kubernetesBuilder_ == null ? kubernetes_ : kubernetesBuilder_.build();
+      if (((from_bitField0_ & 0x40000000) != 0)) {
+        result.moduleName_ = moduleName_;
       }
     }
 
     private void buildPartial1(com.google.cloud.securitycenter.v1.Finding result) {
       int from_bitField1_ = bitField1_;
       if (((from_bitField1_ & 0x00000001) != 0)) {
+        result.kubernetes_ = kubernetesBuilder_ == null ? kubernetes_ : kubernetesBuilder_.build();
+      }
+      if (((from_bitField1_ & 0x00000002) != 0)) {
         result.database_ = databaseBuilder_ == null ? database_ : databaseBuilder_.build();
       }
-      if (((from_bitField1_ & 0x00000004) != 0)) {
+      if (((from_bitField1_ & 0x00000008) != 0)) {
         result.kernelRootkit_ =
             kernelRootkitBuilder_ == null ? kernelRootkit_ : kernelRootkitBuilder_.build();
       }
@@ -4387,11 +4456,16 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x20000000;
         onChanged();
       }
+      if (!other.getModuleName().isEmpty()) {
+        moduleName_ = other.moduleName_;
+        bitField0_ |= 0x40000000;
+        onChanged();
+      }
       if (containersBuilder_ == null) {
         if (!other.containers_.isEmpty()) {
           if (containers_.isEmpty()) {
             containers_ = other.containers_;
-            bitField0_ = (bitField0_ & ~0x40000000);
+            bitField0_ = (bitField0_ & ~0x80000000);
           } else {
             ensureContainersIsMutable();
             containers_.addAll(other.containers_);
@@ -4404,7 +4478,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
             containersBuilder_.dispose();
             containersBuilder_ = null;
             containers_ = other.containers_;
-            bitField0_ = (bitField0_ & ~0x40000000);
+            bitField0_ = (bitField0_ & ~0x80000000);
             containersBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getContainersFieldBuilder()
@@ -4424,7 +4498,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         if (!other.files_.isEmpty()) {
           if (files_.isEmpty()) {
             files_ = other.files_;
-            bitField1_ = (bitField1_ & ~0x00000002);
+            bitField1_ = (bitField1_ & ~0x00000004);
           } else {
             ensureFilesIsMutable();
             files_.addAll(other.files_);
@@ -4437,7 +4511,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
             filesBuilder_.dispose();
             filesBuilder_ = null;
             files_ = other.files_;
-            bitField1_ = (bitField1_ & ~0x00000002);
+            bitField1_ = (bitField1_ & ~0x00000004);
             filesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getFilesFieldBuilder()
@@ -4707,6 +4781,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x20000000;
                 break;
               } // case 322
+            case 330:
+              {
+                moduleName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x40000000;
+                break;
+              } // case 330
             case 338:
               {
                 com.google.cloud.securitycenter.v1.Container m =
@@ -4723,13 +4803,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
             case 346:
               {
                 input.readMessage(getKubernetesFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x80000000;
+                bitField1_ |= 0x00000001;
                 break;
               } // case 346
             case 354:
               {
                 input.readMessage(getDatabaseFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000001;
+                bitField1_ |= 0x00000002;
                 break;
               } // case 354
             case 370:
@@ -4748,7 +4828,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
             case 402:
               {
                 input.readMessage(getKernelRootkitFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000004;
+                bitField1_ |= 0x00000008;
                 break;
               } // case 402
             default:
@@ -6952,7 +7032,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents vulnerability-specific fields like CVE and CVS scores.
+     * Represents vulnerability-specific fields like CVE and CVSS scores.
      * CVE stands for Common Vulnerabilities and Exposures
      * (https://cve.mitre.org/about/)
      * </pre>
@@ -6968,7 +7048,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents vulnerability-specific fields like CVE and CVS scores.
+     * Represents vulnerability-specific fields like CVE and CVSS scores.
      * CVE stands for Common Vulnerabilities and Exposures
      * (https://cve.mitre.org/about/)
      * </pre>
@@ -6990,7 +7070,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents vulnerability-specific fields like CVE and CVS scores.
+     * Represents vulnerability-specific fields like CVE and CVSS scores.
      * CVE stands for Common Vulnerabilities and Exposures
      * (https://cve.mitre.org/about/)
      * </pre>
@@ -7014,7 +7094,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents vulnerability-specific fields like CVE and CVS scores.
+     * Represents vulnerability-specific fields like CVE and CVSS scores.
      * CVE stands for Common Vulnerabilities and Exposures
      * (https://cve.mitre.org/about/)
      * </pre>
@@ -7036,7 +7116,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents vulnerability-specific fields like CVE and CVS scores.
+     * Represents vulnerability-specific fields like CVE and CVSS scores.
      * CVE stands for Common Vulnerabilities and Exposures
      * (https://cve.mitre.org/about/)
      * </pre>
@@ -7064,7 +7144,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents vulnerability-specific fields like CVE and CVS scores.
+     * Represents vulnerability-specific fields like CVE and CVSS scores.
      * CVE stands for Common Vulnerabilities and Exposures
      * (https://cve.mitre.org/about/)
      * </pre>
@@ -7085,7 +7165,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents vulnerability-specific fields like CVE and CVS scores.
+     * Represents vulnerability-specific fields like CVE and CVSS scores.
      * CVE stands for Common Vulnerabilities and Exposures
      * (https://cve.mitre.org/about/)
      * </pre>
@@ -7101,7 +7181,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents vulnerability-specific fields like CVE and CVS scores.
+     * Represents vulnerability-specific fields like CVE and CVSS scores.
      * CVE stands for Common Vulnerabilities and Exposures
      * (https://cve.mitre.org/about/)
      * </pre>
@@ -7121,7 +7201,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents vulnerability-specific fields like CVE and CVS scores.
+     * Represents vulnerability-specific fields like CVE and CVSS scores.
      * CVE stands for Common Vulnerabilities and Exposures
      * (https://cve.mitre.org/about/)
      * </pre>
@@ -7383,8 +7463,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-     * information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external
+     * system information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -7409,8 +7489,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-     * information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external
+     * system information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -7426,8 +7506,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-     * information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external
+     * system information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -7451,8 +7531,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-     * information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external
+     * system information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -7482,8 +7562,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-     * information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external
+     * system information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -7508,8 +7588,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-     * information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external
+     * system information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -7532,8 +7612,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Third party SIEM/SOAR fields within SCC, contains external system
-     * information and external system finding fields.
+     * Output only. Third party SIEM/SOAR fields within SCC, contains external
+     * system information and external system finding fields.
      * </pre>
      *
      * <code>
@@ -8792,9 +8872,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map containing the points of contact for the given finding. The key
-     * represents the type of contact, while the value contains a list of all the
-     * contacts that pertain. Please refer to:
+     * Output only. Map containing the points of contact for the given finding.
+     * The key represents the type of contact, while the value contains a list of
+     * all the contacts that pertain. Please refer to:
      * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
      *     {
      *       "security": {
@@ -8832,9 +8912,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map containing the points of contact for the given finding. The key
-     * represents the type of contact, while the value contains a list of all the
-     * contacts that pertain. Please refer to:
+     * Output only. Map containing the points of contact for the given finding.
+     * The key represents the type of contact, while the value contains a list of
+     * all the contacts that pertain. Please refer to:
      * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
      *     {
      *       "security": {
@@ -8863,9 +8943,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map containing the points of contact for the given finding. The key
-     * represents the type of contact, while the value contains a list of all the
-     * contacts that pertain. Please refer to:
+     * Output only. Map containing the points of contact for the given finding.
+     * The key represents the type of contact, while the value contains a list of
+     * all the contacts that pertain. Please refer to:
      * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
      *     {
      *       "security": {
@@ -8901,9 +8981,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map containing the points of contact for the given finding. The key
-     * represents the type of contact, while the value contains a list of all the
-     * contacts that pertain. Please refer to:
+     * Output only. Map containing the points of contact for the given finding.
+     * The key represents the type of contact, while the value contains a list of
+     * all the contacts that pertain. Please refer to:
      * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
      *     {
      *       "security": {
@@ -8946,9 +9026,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map containing the points of contact for the given finding. The key
-     * represents the type of contact, while the value contains a list of all the
-     * contacts that pertain. Please refer to:
+     * Output only. Map containing the points of contact for the given finding.
+     * The key represents the type of contact, while the value contains a list of
+     * all the contacts that pertain. Please refer to:
      * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
      *     {
      *       "security": {
@@ -8986,9 +9066,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map containing the points of contact for the given finding. The key
-     * represents the type of contact, while the value contains a list of all the
-     * contacts that pertain. Please refer to:
+     * Output only. Map containing the points of contact for the given finding.
+     * The key represents the type of contact, while the value contains a list of
+     * all the contacts that pertain. Please refer to:
      * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
      *     {
      *       "security": {
@@ -9024,9 +9104,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Map containing the points of contact for the given finding. The key
-     * represents the type of contact, while the value contains a list of all the
-     * contacts that pertain. Please refer to:
+     * Output only. Map containing the points of contact for the given finding.
+     * The key represents the type of contact, while the value contains a list of
+     * all the contacts that pertain. Please refer to:
      * https://cloud.google.com/resource-manager/docs/managing-notification-contacts#notification-categories
      *     {
      *       "security": {
@@ -10283,14 +10363,130 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object moduleName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Unique identifier of the module which generated the finding.
+     * Example:
+     * folders/598186756061/securityHealthAnalyticsSettings/customModules/56799441161885
+     * </pre>
+     *
+     * <code>string module_name = 41;</code>
+     *
+     * @return The moduleName.
+     */
+    public java.lang.String getModuleName() {
+      java.lang.Object ref = moduleName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        moduleName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unique identifier of the module which generated the finding.
+     * Example:
+     * folders/598186756061/securityHealthAnalyticsSettings/customModules/56799441161885
+     * </pre>
+     *
+     * <code>string module_name = 41;</code>
+     *
+     * @return The bytes for moduleName.
+     */
+    public com.google.protobuf.ByteString getModuleNameBytes() {
+      java.lang.Object ref = moduleName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        moduleName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unique identifier of the module which generated the finding.
+     * Example:
+     * folders/598186756061/securityHealthAnalyticsSettings/customModules/56799441161885
+     * </pre>
+     *
+     * <code>string module_name = 41;</code>
+     *
+     * @param value The moduleName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModuleName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      moduleName_ = value;
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unique identifier of the module which generated the finding.
+     * Example:
+     * folders/598186756061/securityHealthAnalyticsSettings/customModules/56799441161885
+     * </pre>
+     *
+     * <code>string module_name = 41;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearModuleName() {
+      moduleName_ = getDefaultInstance().getModuleName();
+      bitField0_ = (bitField0_ & ~0x40000000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unique identifier of the module which generated the finding.
+     * Example:
+     * folders/598186756061/securityHealthAnalyticsSettings/customModules/56799441161885
+     * </pre>
+     *
+     * <code>string module_name = 41;</code>
+     *
+     * @param value The bytes for moduleName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModuleNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      moduleName_ = value;
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.cloud.securitycenter.v1.Container> containers_ =
         java.util.Collections.emptyList();
 
     private void ensureContainersIsMutable() {
-      if (!((bitField0_ & 0x40000000) != 0)) {
+      if (!((bitField0_ & 0x80000000) != 0)) {
         containers_ =
             new java.util.ArrayList<com.google.cloud.securitycenter.v1.Container>(containers_);
-        bitField0_ |= 0x40000000;
+        bitField0_ |= 0x80000000;
       }
     }
 
@@ -10517,7 +10713,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     public Builder clearContainers() {
       if (containersBuilder_ == null) {
         containers_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x40000000);
+        bitField0_ = (bitField0_ & ~0x80000000);
         onChanged();
       } else {
         containersBuilder_.clear();
@@ -10646,7 +10842,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.securitycenter.v1.Container,
                 com.google.cloud.securitycenter.v1.Container.Builder,
                 com.google.cloud.securitycenter.v1.ContainerOrBuilder>(
-                containers_, ((bitField0_ & 0x40000000) != 0), getParentForChildren(), isClean());
+                containers_, ((bitField0_ & 0x80000000) != 0), getParentForChildren(), isClean());
         containers_ = null;
       }
       return containersBuilder_;
@@ -10670,7 +10866,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the kubernetes field is set.
      */
     public boolean hasKubernetes() {
-      return ((bitField0_ & 0x80000000) != 0);
+      return ((bitField1_ & 0x00000001) != 0);
     }
     /**
      *
@@ -10710,7 +10906,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       } else {
         kubernetesBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -10730,7 +10926,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       } else {
         kubernetesBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -10745,7 +10941,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeKubernetes(com.google.cloud.securitycenter.v1.Kubernetes value) {
       if (kubernetesBuilder_ == null) {
-        if (((bitField0_ & 0x80000000) != 0)
+        if (((bitField1_ & 0x00000001) != 0)
             && kubernetes_ != null
             && kubernetes_ != com.google.cloud.securitycenter.v1.Kubernetes.getDefaultInstance()) {
           getKubernetesBuilder().mergeFrom(value);
@@ -10755,7 +10951,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       } else {
         kubernetesBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -10769,7 +10965,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.securitycenter.v1.Kubernetes kubernetes = 43;</code>
      */
     public Builder clearKubernetes() {
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField1_ = (bitField1_ & ~0x00000001);
       kubernetes_ = null;
       if (kubernetesBuilder_ != null) {
         kubernetesBuilder_.dispose();
@@ -10788,7 +10984,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.securitycenter.v1.Kubernetes kubernetes = 43;</code>
      */
     public com.google.cloud.securitycenter.v1.Kubernetes.Builder getKubernetesBuilder() {
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return getKubernetesFieldBuilder().getBuilder();
     }
@@ -10854,7 +11050,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the database field is set.
      */
     public boolean hasDatabase() {
-      return ((bitField1_ & 0x00000001) != 0);
+      return ((bitField1_ & 0x00000002) != 0);
     }
     /**
      *
@@ -10894,7 +11090,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       } else {
         databaseBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -10914,7 +11110,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       } else {
         databaseBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -10929,7 +11125,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDatabase(com.google.cloud.securitycenter.v1.Database value) {
       if (databaseBuilder_ == null) {
-        if (((bitField1_ & 0x00000001) != 0)
+        if (((bitField1_ & 0x00000002) != 0)
             && database_ != null
             && database_ != com.google.cloud.securitycenter.v1.Database.getDefaultInstance()) {
           getDatabaseBuilder().mergeFrom(value);
@@ -10939,7 +11135,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       } else {
         databaseBuilder_.mergeFrom(value);
       }
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -10953,7 +11149,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.securitycenter.v1.Database database = 44;</code>
      */
     public Builder clearDatabase() {
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x00000002);
       database_ = null;
       if (databaseBuilder_ != null) {
         databaseBuilder_.dispose();
@@ -10972,7 +11168,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.securitycenter.v1.Database database = 44;</code>
      */
     public com.google.cloud.securitycenter.v1.Database.Builder getDatabaseBuilder() {
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000002;
       onChanged();
       return getDatabaseFieldBuilder().getBuilder();
     }
@@ -11024,9 +11220,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureFilesIsMutable() {
-      if (!((bitField1_ & 0x00000002) != 0)) {
+      if (!((bitField1_ & 0x00000004) != 0)) {
         files_ = new java.util.ArrayList<com.google.cloud.securitycenter.v1.File>(files_);
-        bitField1_ |= 0x00000002;
+        bitField1_ |= 0x00000004;
       }
     }
 
@@ -11241,7 +11437,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     public Builder clearFiles() {
       if (filesBuilder_ == null) {
         files_ = java.util.Collections.emptyList();
-        bitField1_ = (bitField1_ & ~0x00000002);
+        bitField1_ = (bitField1_ & ~0x00000004);
         onChanged();
       } else {
         filesBuilder_.clear();
@@ -11362,7 +11558,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.securitycenter.v1.File,
                 com.google.cloud.securitycenter.v1.File.Builder,
                 com.google.cloud.securitycenter.v1.FileOrBuilder>(
-                files_, ((bitField1_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                files_, ((bitField1_ & 0x00000004) != 0), getParentForChildren(), isClean());
         files_ = null;
       }
       return filesBuilder_;
@@ -11386,7 +11582,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the kernelRootkit field is set.
      */
     public boolean hasKernelRootkit() {
-      return ((bitField1_ & 0x00000004) != 0);
+      return ((bitField1_ & 0x00000008) != 0);
     }
     /**
      *
@@ -11426,7 +11622,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       } else {
         kernelRootkitBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -11446,7 +11642,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       } else {
         kernelRootkitBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -11461,7 +11657,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeKernelRootkit(com.google.cloud.securitycenter.v1.KernelRootkit value) {
       if (kernelRootkitBuilder_ == null) {
-        if (((bitField1_ & 0x00000004) != 0)
+        if (((bitField1_ & 0x00000008) != 0)
             && kernelRootkit_ != null
             && kernelRootkit_
                 != com.google.cloud.securitycenter.v1.KernelRootkit.getDefaultInstance()) {
@@ -11472,7 +11668,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       } else {
         kernelRootkitBuilder_.mergeFrom(value);
       }
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -11486,7 +11682,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
      */
     public Builder clearKernelRootkit() {
-      bitField1_ = (bitField1_ & ~0x00000004);
+      bitField1_ = (bitField1_ & ~0x00000008);
       kernelRootkit_ = null;
       if (kernelRootkitBuilder_ != null) {
         kernelRootkitBuilder_.dispose();
@@ -11505,7 +11701,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
      */
     public com.google.cloud.securitycenter.v1.KernelRootkit.Builder getKernelRootkitBuilder() {
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000008;
       onChanged();
       return getKernelRootkitFieldBuilder().getBuilder();
     }

@@ -22,10 +22,11 @@ package com.google.cloud.securitycenter.v1;
  *
  *
  * <pre>
- * Represents what's commonly known as an Indicator of compromise (IoC) in
+ * Represents what's commonly known as an _indicator of compromise_ (IoC) in
  * computer forensics. This is an artifact observed on a network or in an
  * operating system that, with high confidence, indicates a computer intrusion.
- * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+ * For more information, see [Indicator of
+ * compromise](https://en.wikipedia.org/wiki/Indicator_of_compromise).
  * </pre>
  *
  * Protobuf type {@code google.cloud.securitycenter.v1.Indicator}
@@ -4362,7 +4363,7 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of ip addresses associated to the Finding.
+   * The list of IP addresses that are associated with the finding.
    * </pre>
    *
    * <code>repeated string ip_addresses = 1;</code>
@@ -4376,7 +4377,7 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of ip addresses associated to the Finding.
+   * The list of IP addresses that are associated with the finding.
    * </pre>
    *
    * <code>repeated string ip_addresses = 1;</code>
@@ -4390,7 +4391,7 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of ip addresses associated to the Finding.
+   * The list of IP addresses that are associated with the finding.
    * </pre>
    *
    * <code>repeated string ip_addresses = 1;</code>
@@ -4405,7 +4406,7 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of ip addresses associated to the Finding.
+   * The list of IP addresses that are associated with the finding.
    * </pre>
    *
    * <code>repeated string ip_addresses = 1;</code>
@@ -4840,10 +4841,11 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents what's commonly known as an Indicator of compromise (IoC) in
+   * Represents what's commonly known as an _indicator of compromise_ (IoC) in
    * computer forensics. This is an artifact observed on a network or in an
    * operating system that, with high confidence, indicates a computer intrusion.
-   * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+   * For more information, see [Indicator of
+   * compromise](https://en.wikipedia.org/wiki/Indicator_of_compromise).
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1.Indicator}
@@ -5152,7 +5154,7 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of ip addresses associated to the Finding.
+     * The list of IP addresses that are associated with the finding.
      * </pre>
      *
      * <code>repeated string ip_addresses = 1;</code>
@@ -5166,7 +5168,7 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of ip addresses associated to the Finding.
+     * The list of IP addresses that are associated with the finding.
      * </pre>
      *
      * <code>repeated string ip_addresses = 1;</code>
@@ -5180,7 +5182,7 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of ip addresses associated to the Finding.
+     * The list of IP addresses that are associated with the finding.
      * </pre>
      *
      * <code>repeated string ip_addresses = 1;</code>
@@ -5195,7 +5197,7 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of ip addresses associated to the Finding.
+     * The list of IP addresses that are associated with the finding.
      * </pre>
      *
      * <code>repeated string ip_addresses = 1;</code>
@@ -5210,7 +5212,7 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of ip addresses associated to the Finding.
+     * The list of IP addresses that are associated with the finding.
      * </pre>
      *
      * <code>repeated string ip_addresses = 1;</code>
@@ -5232,7 +5234,7 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of ip addresses associated to the Finding.
+     * The list of IP addresses that are associated with the finding.
      * </pre>
      *
      * <code>repeated string ip_addresses = 1;</code>
@@ -5253,7 +5255,7 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of ip addresses associated to the Finding.
+     * The list of IP addresses that are associated with the finding.
      * </pre>
      *
      * <code>repeated string ip_addresses = 1;</code>
@@ -5271,7 +5273,7 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of ip addresses associated to the Finding.
+     * The list of IP addresses that are associated with the finding.
      * </pre>
      *
      * <code>repeated string ip_addresses = 1;</code>
@@ -5288,7 +5290,7 @@ public final class Indicator extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of ip addresses associated to the Finding.
+     * The list of IP addresses that are associated with the finding.
      * </pre>
      *
      * <code>repeated string ip_addresses = 1;</code>

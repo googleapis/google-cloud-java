@@ -20,9 +20,12 @@ import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAsset
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListBigQueryExportsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListMuteConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSecurityHealthAnalyticsCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSourcesPagedResponse;
 
 import com.google.api.HttpRule;
@@ -48,16 +51,21 @@ import com.google.cloud.securitycenter.v1.CreateBigQueryExportRequest;
 import com.google.cloud.securitycenter.v1.CreateFindingRequest;
 import com.google.cloud.securitycenter.v1.CreateMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest;
+import com.google.cloud.securitycenter.v1.CreateSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.CreateSourceRequest;
 import com.google.cloud.securitycenter.v1.DeleteBigQueryExportRequest;
 import com.google.cloud.securitycenter.v1.DeleteMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest;
+import com.google.cloud.securitycenter.v1.DeleteSecurityHealthAnalyticsCustomModuleRequest;
+import com.google.cloud.securitycenter.v1.EffectiveSecurityHealthAnalyticsCustomModule;
 import com.google.cloud.securitycenter.v1.ExternalSystem;
 import com.google.cloud.securitycenter.v1.Finding;
 import com.google.cloud.securitycenter.v1.GetBigQueryExportRequest;
+import com.google.cloud.securitycenter.v1.GetEffectiveSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.GetMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.GetNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest;
+import com.google.cloud.securitycenter.v1.GetSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.GetSourceRequest;
 import com.google.cloud.securitycenter.v1.GroupAssetsRequest;
 import com.google.cloud.securitycenter.v1.GroupAssetsResponse;
@@ -67,12 +75,18 @@ import com.google.cloud.securitycenter.v1.ListAssetsRequest;
 import com.google.cloud.securitycenter.v1.ListAssetsResponse;
 import com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest;
 import com.google.cloud.securitycenter.v1.ListBigQueryExportsResponse;
+import com.google.cloud.securitycenter.v1.ListDescendantSecurityHealthAnalyticsCustomModulesRequest;
+import com.google.cloud.securitycenter.v1.ListDescendantSecurityHealthAnalyticsCustomModulesResponse;
+import com.google.cloud.securitycenter.v1.ListEffectiveSecurityHealthAnalyticsCustomModulesRequest;
+import com.google.cloud.securitycenter.v1.ListEffectiveSecurityHealthAnalyticsCustomModulesResponse;
 import com.google.cloud.securitycenter.v1.ListFindingsRequest;
 import com.google.cloud.securitycenter.v1.ListFindingsResponse;
 import com.google.cloud.securitycenter.v1.ListMuteConfigsRequest;
 import com.google.cloud.securitycenter.v1.ListMuteConfigsResponse;
 import com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest;
 import com.google.cloud.securitycenter.v1.ListNotificationConfigsResponse;
+import com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesRequest;
+import com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesResponse;
 import com.google.cloud.securitycenter.v1.ListSourcesRequest;
 import com.google.cloud.securitycenter.v1.ListSourcesResponse;
 import com.google.cloud.securitycenter.v1.MuteConfig;
@@ -80,6 +94,7 @@ import com.google.cloud.securitycenter.v1.NotificationConfig;
 import com.google.cloud.securitycenter.v1.OrganizationSettings;
 import com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest;
 import com.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse;
+import com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule;
 import com.google.cloud.securitycenter.v1.SecurityMarks;
 import com.google.cloud.securitycenter.v1.SetFindingStateRequest;
 import com.google.cloud.securitycenter.v1.SetMuteRequest;
@@ -90,6 +105,7 @@ import com.google.cloud.securitycenter.v1.UpdateFindingRequest;
 import com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.UpdateNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.UpdateOrganizationSettingsRequest;
+import com.google.cloud.securitycenter.v1.UpdateSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.UpdateSecurityMarksRequest;
 import com.google.cloud.securitycenter.v1.UpdateSourceRequest;
 import com.google.common.collect.ImmutableMap;
@@ -166,6 +182,55 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
               .setOperationSnapshotFactory(
                   (BulkMuteFindingsRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<
+          CreateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      createSecurityHealthAnalyticsCustomModuleMethodDescriptor =
+          ApiMethodDescriptor
+              .<CreateSecurityHealthAnalyticsCustomModuleRequest,
+                  SecurityHealthAnalyticsCustomModule>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/CreateSecurityHealthAnalyticsCustomModule")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<CreateSecurityHealthAnalyticsCustomModuleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=organizations/*/securityHealthAnalyticsSettings}/customModules",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateSecurityHealthAnalyticsCustomModuleRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{parent=folders/*/securityHealthAnalyticsSettings}/customModules",
+                          "/v1/{parent=projects/*/securityHealthAnalyticsSettings}/customModules")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateSecurityHealthAnalyticsCustomModuleRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "securityHealthAnalyticsCustomModule",
+                                      request.getSecurityHealthAnalyticsCustomModule(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SecurityHealthAnalyticsCustomModule>newBuilder()
+                      .setDefaultInstance(SecurityHealthAnalyticsCustomModule.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
               .build();
 
   private static final ApiMethodDescriptor<CreateSourceRequest, Source>
@@ -403,6 +468,45 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>
+      deleteSecurityHealthAnalyticsCustomModuleMethodDescriptor =
+          ApiMethodDescriptor.<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/DeleteSecurityHealthAnalyticsCustomModule")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<DeleteSecurityHealthAnalyticsCustomModuleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=organizations/*/securityHealthAnalyticsSettings/customModules/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteSecurityHealthAnalyticsCustomModuleRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{name=folders/*/securityHealthAnalyticsSettings/customModules/*}",
+                          "/v1/{name=projects/*/securityHealthAnalyticsSettings/customModules/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteSecurityHealthAnalyticsCustomModuleRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<GetBigQueryExportRequest, BigQueryExport>
       getBigQueryExportMethodDescriptor =
           ApiMethodDescriptor.<GetBigQueryExportRequest, BigQueryExport>newBuilder()
@@ -587,6 +691,96 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          GetEffectiveSecurityHealthAnalyticsCustomModuleRequest,
+          EffectiveSecurityHealthAnalyticsCustomModule>
+      getEffectiveSecurityHealthAnalyticsCustomModuleMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetEffectiveSecurityHealthAnalyticsCustomModuleRequest,
+                  EffectiveSecurityHealthAnalyticsCustomModule>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/GetEffectiveSecurityHealthAnalyticsCustomModule")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<GetEffectiveSecurityHealthAnalyticsCustomModuleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=organizations/*/securityHealthAnalyticsSettings/effectiveCustomModules/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<
+                                    GetEffectiveSecurityHealthAnalyticsCustomModuleRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{name=folders/*/securityHealthAnalyticsSettings/effectiveCustomModules/*}",
+                          "/v1/{name=projects/*/securityHealthAnalyticsSettings/effectiveCustomModules/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<
+                                    GetEffectiveSecurityHealthAnalyticsCustomModuleRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser
+                      .<EffectiveSecurityHealthAnalyticsCustomModule>newBuilder()
+                      .setDefaultInstance(
+                          EffectiveSecurityHealthAnalyticsCustomModule.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          GetSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      getSecurityHealthAnalyticsCustomModuleMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/GetSecurityHealthAnalyticsCustomModule")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<GetSecurityHealthAnalyticsCustomModuleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=organizations/*/securityHealthAnalyticsSettings/customModules/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSecurityHealthAnalyticsCustomModuleRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{name=folders/*/securityHealthAnalyticsSettings/customModules/*}",
+                          "/v1/{name=projects/*/securityHealthAnalyticsSettings/customModules/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSecurityHealthAnalyticsCustomModuleRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SecurityHealthAnalyticsCustomModule>newBuilder()
+                      .setDefaultInstance(SecurityHealthAnalyticsCustomModule.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<GetSourceRequest, Source> getSourceMethodDescriptor =
       ApiMethodDescriptor.<GetSourceRequest, Source>newBuilder()
           .setFullMethodName("google.cloud.securitycenter.v1.SecurityCenter/GetSource")
@@ -744,6 +938,57 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+          ListDescendantSecurityHealthAnalyticsCustomModulesResponse>
+      listDescendantSecurityHealthAnalyticsCustomModulesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+                  ListDescendantSecurityHealthAnalyticsCustomModulesResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/ListDescendantSecurityHealthAnalyticsCustomModules")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<ListDescendantSecurityHealthAnalyticsCustomModulesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=organizations/*/securityHealthAnalyticsSettings}/customModules:listDescendant",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<
+                                    ListDescendantSecurityHealthAnalyticsCustomModulesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{parent=folders/*/securityHealthAnalyticsSettings}/customModules:listDescendant",
+                          "/v1/{parent=projects/*/securityHealthAnalyticsSettings}/customModules:listDescendant")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<
+                                    ListDescendantSecurityHealthAnalyticsCustomModulesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser
+                      .<ListDescendantSecurityHealthAnalyticsCustomModulesResponse>newBuilder()
+                      .setDefaultInstance(
+                          ListDescendantSecurityHealthAnalyticsCustomModulesResponse
+                              .getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListFindingsRequest, ListFindingsResponse>
       listFindingsMethodDescriptor =
           ApiMethodDescriptor.<ListFindingsRequest, ListFindingsResponse>newBuilder()
@@ -866,6 +1111,105 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<ListNotificationConfigsResponse>newBuilder()
                       .setDefaultInstance(ListNotificationConfigsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesResponse>
+      listEffectiveSecurityHealthAnalyticsCustomModulesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+                  ListEffectiveSecurityHealthAnalyticsCustomModulesResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/ListEffectiveSecurityHealthAnalyticsCustomModules")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<ListEffectiveSecurityHealthAnalyticsCustomModulesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=organizations/*/securityHealthAnalyticsSettings}/effectiveCustomModules",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<
+                                    ListEffectiveSecurityHealthAnalyticsCustomModulesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{parent=folders/*/securityHealthAnalyticsSettings}/effectiveCustomModules",
+                          "/v1/{parent=projects/*/securityHealthAnalyticsSettings}/effectiveCustomModules")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<
+                                    ListEffectiveSecurityHealthAnalyticsCustomModulesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser
+                      .<ListEffectiveSecurityHealthAnalyticsCustomModulesResponse>newBuilder()
+                      .setDefaultInstance(
+                          ListEffectiveSecurityHealthAnalyticsCustomModulesResponse
+                              .getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListSecurityHealthAnalyticsCustomModulesRequest,
+          ListSecurityHealthAnalyticsCustomModulesResponse>
+      listSecurityHealthAnalyticsCustomModulesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListSecurityHealthAnalyticsCustomModulesRequest,
+                  ListSecurityHealthAnalyticsCustomModulesResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/ListSecurityHealthAnalyticsCustomModules")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<ListSecurityHealthAnalyticsCustomModulesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=organizations/*/securityHealthAnalyticsSettings}/customModules",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSecurityHealthAnalyticsCustomModulesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{parent=folders/*/securityHealthAnalyticsSettings}/customModules",
+                          "/v1/{parent=projects/*/securityHealthAnalyticsSettings}/customModules")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSecurityHealthAnalyticsCustomModulesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser
+                      .<ListSecurityHealthAnalyticsCustomModulesResponse>newBuilder()
+                      .setDefaultInstance(
+                          ListSecurityHealthAnalyticsCustomModulesResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -1321,6 +1665,59 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          UpdateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      updateSecurityHealthAnalyticsCustomModuleMethodDescriptor =
+          ApiMethodDescriptor
+              .<UpdateSecurityHealthAnalyticsCustomModuleRequest,
+                  SecurityHealthAnalyticsCustomModule>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/UpdateSecurityHealthAnalyticsCustomModule")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<UpdateSecurityHealthAnalyticsCustomModuleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{securityHealthAnalyticsCustomModule.name=organizations/*/securityHealthAnalyticsSettings/customModules/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSecurityHealthAnalyticsCustomModuleRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "securityHealthAnalyticsCustomModule.name",
+                                request.getSecurityHealthAnalyticsCustomModule().getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{securityHealthAnalyticsCustomModule.name=folders/*/securityHealthAnalyticsSettings/customModules/*}",
+                          "/v1/{securityHealthAnalyticsCustomModule.name=projects/*/securityHealthAnalyticsSettings/customModules/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSecurityHealthAnalyticsCustomModuleRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "securityHealthAnalyticsCustomModule",
+                                      request.getSecurityHealthAnalyticsCustomModule(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SecurityHealthAnalyticsCustomModule>newBuilder()
+                      .setDefaultInstance(SecurityHealthAnalyticsCustomModule.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<UpdateSourceRequest, Source>
       updateSourceMethodDescriptor =
           ApiMethodDescriptor.<UpdateSourceRequest, Source>newBuilder()
@@ -1576,6 +1973,9 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
   private final UnaryCallable<BulkMuteFindingsRequest, Operation> bulkMuteFindingsCallable;
   private final OperationCallable<BulkMuteFindingsRequest, BulkMuteFindingsResponse, Empty>
       bulkMuteFindingsOperationCallable;
+  private final UnaryCallable<
+          CreateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      createSecurityHealthAnalyticsCustomModuleCallable;
   private final UnaryCallable<CreateSourceRequest, Source> createSourceCallable;
   private final UnaryCallable<CreateFindingRequest, Finding> createFindingCallable;
   private final UnaryCallable<CreateMuteConfigRequest, MuteConfig> createMuteConfigCallable;
@@ -1584,6 +1984,8 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
   private final UnaryCallable<DeleteMuteConfigRequest, Empty> deleteMuteConfigCallable;
   private final UnaryCallable<DeleteNotificationConfigRequest, Empty>
       deleteNotificationConfigCallable;
+  private final UnaryCallable<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>
+      deleteSecurityHealthAnalyticsCustomModuleCallable;
   private final UnaryCallable<GetBigQueryExportRequest, BigQueryExport> getBigQueryExportCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<GetMuteConfigRequest, MuteConfig> getMuteConfigCallable;
@@ -1591,6 +1993,13 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
       getNotificationConfigCallable;
   private final UnaryCallable<GetOrganizationSettingsRequest, OrganizationSettings>
       getOrganizationSettingsCallable;
+  private final UnaryCallable<
+          GetEffectiveSecurityHealthAnalyticsCustomModuleRequest,
+          EffectiveSecurityHealthAnalyticsCustomModule>
+      getEffectiveSecurityHealthAnalyticsCustomModuleCallable;
+  private final UnaryCallable<
+          GetSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      getSecurityHealthAnalyticsCustomModuleCallable;
   private final UnaryCallable<GetSourceRequest, Source> getSourceCallable;
   private final UnaryCallable<GroupAssetsRequest, GroupAssetsResponse> groupAssetsCallable;
   private final UnaryCallable<GroupAssetsRequest, GroupAssetsPagedResponse>
@@ -1600,6 +2009,14 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
       groupFindingsPagedCallable;
   private final UnaryCallable<ListAssetsRequest, ListAssetsResponse> listAssetsCallable;
   private final UnaryCallable<ListAssetsRequest, ListAssetsPagedResponse> listAssetsPagedCallable;
+  private final UnaryCallable<
+          ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+          ListDescendantSecurityHealthAnalyticsCustomModulesResponse>
+      listDescendantSecurityHealthAnalyticsCustomModulesCallable;
+  private final UnaryCallable<
+          ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+          ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse>
+      listDescendantSecurityHealthAnalyticsCustomModulesPagedCallable;
   private final UnaryCallable<ListFindingsRequest, ListFindingsResponse> listFindingsCallable;
   private final UnaryCallable<ListFindingsRequest, ListFindingsPagedResponse>
       listFindingsPagedCallable;
@@ -1611,6 +2028,22 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
       listNotificationConfigsCallable;
   private final UnaryCallable<ListNotificationConfigsRequest, ListNotificationConfigsPagedResponse>
       listNotificationConfigsPagedCallable;
+  private final UnaryCallable<
+          ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesResponse>
+      listEffectiveSecurityHealthAnalyticsCustomModulesCallable;
+  private final UnaryCallable<
+          ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse>
+      listEffectiveSecurityHealthAnalyticsCustomModulesPagedCallable;
+  private final UnaryCallable<
+          ListSecurityHealthAnalyticsCustomModulesRequest,
+          ListSecurityHealthAnalyticsCustomModulesResponse>
+      listSecurityHealthAnalyticsCustomModulesCallable;
+  private final UnaryCallable<
+          ListSecurityHealthAnalyticsCustomModulesRequest,
+          ListSecurityHealthAnalyticsCustomModulesPagedResponse>
+      listSecurityHealthAnalyticsCustomModulesPagedCallable;
   private final UnaryCallable<ListSourcesRequest, ListSourcesResponse> listSourcesCallable;
   private final UnaryCallable<ListSourcesRequest, ListSourcesPagedResponse>
       listSourcesPagedCallable;
@@ -1630,6 +2063,9 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
       updateNotificationConfigCallable;
   private final UnaryCallable<UpdateOrganizationSettingsRequest, OrganizationSettings>
       updateOrganizationSettingsCallable;
+  private final UnaryCallable<
+          UpdateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      updateSecurityHealthAnalyticsCustomModuleCallable;
   private final UnaryCallable<UpdateSourceRequest, Source> updateSourceCallable;
   private final UnaryCallable<UpdateSecurityMarksRequest, SecurityMarks>
       updateSecurityMarksCallable;
@@ -1714,6 +2150,16 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
             .setMethodDescriptor(bulkMuteFindingsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<
+            CreateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+        createSecurityHealthAnalyticsCustomModuleTransportSettings =
+            HttpJsonCallSettings
+                .<CreateSecurityHealthAnalyticsCustomModuleRequest,
+                    SecurityHealthAnalyticsCustomModule>
+                    newBuilder()
+                .setMethodDescriptor(createSecurityHealthAnalyticsCustomModuleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<CreateSourceRequest, Source> createSourceTransportSettings =
         HttpJsonCallSettings.<CreateSourceRequest, Source>newBuilder()
             .setMethodDescriptor(createSourceMethodDescriptor)
@@ -1746,6 +2192,13 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                 .setMethodDescriptor(deleteNotificationConfigMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>
+        deleteSecurityHealthAnalyticsCustomModuleTransportSettings =
+            HttpJsonCallSettings
+                .<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteSecurityHealthAnalyticsCustomModuleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<GetBigQueryExportRequest, BigQueryExport>
         getBigQueryExportTransportSettings =
             HttpJsonCallSettings.<GetBigQueryExportRequest, BigQueryExport>newBuilder()
@@ -1774,6 +2227,28 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                 .setMethodDescriptor(getOrganizationSettingsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<
+            GetEffectiveSecurityHealthAnalyticsCustomModuleRequest,
+            EffectiveSecurityHealthAnalyticsCustomModule>
+        getEffectiveSecurityHealthAnalyticsCustomModuleTransportSettings =
+            HttpJsonCallSettings
+                .<GetEffectiveSecurityHealthAnalyticsCustomModuleRequest,
+                    EffectiveSecurityHealthAnalyticsCustomModule>
+                    newBuilder()
+                .setMethodDescriptor(
+                    getEffectiveSecurityHealthAnalyticsCustomModuleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<
+            GetSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+        getSecurityHealthAnalyticsCustomModuleTransportSettings =
+            HttpJsonCallSettings
+                .<GetSecurityHealthAnalyticsCustomModuleRequest,
+                    SecurityHealthAnalyticsCustomModule>
+                    newBuilder()
+                .setMethodDescriptor(getSecurityHealthAnalyticsCustomModuleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<GetSourceRequest, Source> getSourceTransportSettings =
         HttpJsonCallSettings.<GetSourceRequest, Source>newBuilder()
             .setMethodDescriptor(getSourceMethodDescriptor)
@@ -1795,6 +2270,18 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
             .setMethodDescriptor(listAssetsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<
+            ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+            ListDescendantSecurityHealthAnalyticsCustomModulesResponse>
+        listDescendantSecurityHealthAnalyticsCustomModulesTransportSettings =
+            HttpJsonCallSettings
+                .<ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+                    ListDescendantSecurityHealthAnalyticsCustomModulesResponse>
+                    newBuilder()
+                .setMethodDescriptor(
+                    listDescendantSecurityHealthAnalyticsCustomModulesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<ListFindingsRequest, ListFindingsResponse> listFindingsTransportSettings =
         HttpJsonCallSettings.<ListFindingsRequest, ListFindingsResponse>newBuilder()
             .setMethodDescriptor(listFindingsMethodDescriptor)
@@ -1811,6 +2298,29 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
             HttpJsonCallSettings
                 .<ListNotificationConfigsRequest, ListNotificationConfigsResponse>newBuilder()
                 .setMethodDescriptor(listNotificationConfigsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<
+            ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+            ListEffectiveSecurityHealthAnalyticsCustomModulesResponse>
+        listEffectiveSecurityHealthAnalyticsCustomModulesTransportSettings =
+            HttpJsonCallSettings
+                .<ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+                    ListEffectiveSecurityHealthAnalyticsCustomModulesResponse>
+                    newBuilder()
+                .setMethodDescriptor(
+                    listEffectiveSecurityHealthAnalyticsCustomModulesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<
+            ListSecurityHealthAnalyticsCustomModulesRequest,
+            ListSecurityHealthAnalyticsCustomModulesResponse>
+        listSecurityHealthAnalyticsCustomModulesTransportSettings =
+            HttpJsonCallSettings
+                .<ListSecurityHealthAnalyticsCustomModulesRequest,
+                    ListSecurityHealthAnalyticsCustomModulesResponse>
+                    newBuilder()
+                .setMethodDescriptor(listSecurityHealthAnalyticsCustomModulesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
     HttpJsonCallSettings<ListSourcesRequest, ListSourcesResponse> listSourcesTransportSettings =
@@ -1873,6 +2383,16 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
                 .setMethodDescriptor(updateOrganizationSettingsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<
+            UpdateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+        updateSecurityHealthAnalyticsCustomModuleTransportSettings =
+            HttpJsonCallSettings
+                .<UpdateSecurityHealthAnalyticsCustomModuleRequest,
+                    SecurityHealthAnalyticsCustomModule>
+                    newBuilder()
+                .setMethodDescriptor(updateSecurityHealthAnalyticsCustomModuleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<UpdateSourceRequest, Source> updateSourceTransportSettings =
         HttpJsonCallSettings.<UpdateSourceRequest, Source>newBuilder()
             .setMethodDescriptor(updateSourceMethodDescriptor)
@@ -1918,6 +2438,11 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
             settings.bulkMuteFindingsOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.createSecurityHealthAnalyticsCustomModuleCallable =
+        callableFactory.createUnaryCallable(
+            createSecurityHealthAnalyticsCustomModuleTransportSettings,
+            settings.createSecurityHealthAnalyticsCustomModuleSettings(),
+            clientContext);
     this.createSourceCallable =
         callableFactory.createUnaryCallable(
             createSourceTransportSettings, settings.createSourceSettings(), clientContext);
@@ -1940,6 +2465,11 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
             deleteNotificationConfigTransportSettings,
             settings.deleteNotificationConfigSettings(),
             clientContext);
+    this.deleteSecurityHealthAnalyticsCustomModuleCallable =
+        callableFactory.createUnaryCallable(
+            deleteSecurityHealthAnalyticsCustomModuleTransportSettings,
+            settings.deleteSecurityHealthAnalyticsCustomModuleSettings(),
+            clientContext);
     this.getBigQueryExportCallable =
         callableFactory.createUnaryCallable(
             getBigQueryExportTransportSettings,
@@ -1960,6 +2490,16 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
         callableFactory.createUnaryCallable(
             getOrganizationSettingsTransportSettings,
             settings.getOrganizationSettingsSettings(),
+            clientContext);
+    this.getEffectiveSecurityHealthAnalyticsCustomModuleCallable =
+        callableFactory.createUnaryCallable(
+            getEffectiveSecurityHealthAnalyticsCustomModuleTransportSettings,
+            settings.getEffectiveSecurityHealthAnalyticsCustomModuleSettings(),
+            clientContext);
+    this.getSecurityHealthAnalyticsCustomModuleCallable =
+        callableFactory.createUnaryCallable(
+            getSecurityHealthAnalyticsCustomModuleTransportSettings,
+            settings.getSecurityHealthAnalyticsCustomModuleSettings(),
             clientContext);
     this.getSourceCallable =
         callableFactory.createUnaryCallable(
@@ -1982,6 +2522,16 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
     this.listAssetsPagedCallable =
         callableFactory.createPagedCallable(
             listAssetsTransportSettings, settings.listAssetsSettings(), clientContext);
+    this.listDescendantSecurityHealthAnalyticsCustomModulesCallable =
+        callableFactory.createUnaryCallable(
+            listDescendantSecurityHealthAnalyticsCustomModulesTransportSettings,
+            settings.listDescendantSecurityHealthAnalyticsCustomModulesSettings(),
+            clientContext);
+    this.listDescendantSecurityHealthAnalyticsCustomModulesPagedCallable =
+        callableFactory.createPagedCallable(
+            listDescendantSecurityHealthAnalyticsCustomModulesTransportSettings,
+            settings.listDescendantSecurityHealthAnalyticsCustomModulesSettings(),
+            clientContext);
     this.listFindingsCallable =
         callableFactory.createUnaryCallable(
             listFindingsTransportSettings, settings.listFindingsSettings(), clientContext);
@@ -2003,6 +2553,26 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
         callableFactory.createPagedCallable(
             listNotificationConfigsTransportSettings,
             settings.listNotificationConfigsSettings(),
+            clientContext);
+    this.listEffectiveSecurityHealthAnalyticsCustomModulesCallable =
+        callableFactory.createUnaryCallable(
+            listEffectiveSecurityHealthAnalyticsCustomModulesTransportSettings,
+            settings.listEffectiveSecurityHealthAnalyticsCustomModulesSettings(),
+            clientContext);
+    this.listEffectiveSecurityHealthAnalyticsCustomModulesPagedCallable =
+        callableFactory.createPagedCallable(
+            listEffectiveSecurityHealthAnalyticsCustomModulesTransportSettings,
+            settings.listEffectiveSecurityHealthAnalyticsCustomModulesSettings(),
+            clientContext);
+    this.listSecurityHealthAnalyticsCustomModulesCallable =
+        callableFactory.createUnaryCallable(
+            listSecurityHealthAnalyticsCustomModulesTransportSettings,
+            settings.listSecurityHealthAnalyticsCustomModulesSettings(),
+            clientContext);
+    this.listSecurityHealthAnalyticsCustomModulesPagedCallable =
+        callableFactory.createPagedCallable(
+            listSecurityHealthAnalyticsCustomModulesTransportSettings,
+            settings.listSecurityHealthAnalyticsCustomModulesSettings(),
             clientContext);
     this.listSourcesCallable =
         callableFactory.createUnaryCallable(
@@ -2056,6 +2626,11 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
             updateOrganizationSettingsTransportSettings,
             settings.updateOrganizationSettingsSettings(),
             clientContext);
+    this.updateSecurityHealthAnalyticsCustomModuleCallable =
+        callableFactory.createUnaryCallable(
+            updateSecurityHealthAnalyticsCustomModuleTransportSettings,
+            settings.updateSecurityHealthAnalyticsCustomModuleSettings(),
+            clientContext);
     this.updateSourceCallable =
         callableFactory.createUnaryCallable(
             updateSourceTransportSettings, settings.updateSourceSettings(), clientContext);
@@ -2098,24 +2673,31 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(bulkMuteFindingsMethodDescriptor);
+    methodDescriptors.add(createSecurityHealthAnalyticsCustomModuleMethodDescriptor);
     methodDescriptors.add(createSourceMethodDescriptor);
     methodDescriptors.add(createFindingMethodDescriptor);
     methodDescriptors.add(createMuteConfigMethodDescriptor);
     methodDescriptors.add(createNotificationConfigMethodDescriptor);
     methodDescriptors.add(deleteMuteConfigMethodDescriptor);
     methodDescriptors.add(deleteNotificationConfigMethodDescriptor);
+    methodDescriptors.add(deleteSecurityHealthAnalyticsCustomModuleMethodDescriptor);
     methodDescriptors.add(getBigQueryExportMethodDescriptor);
     methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(getMuteConfigMethodDescriptor);
     methodDescriptors.add(getNotificationConfigMethodDescriptor);
     methodDescriptors.add(getOrganizationSettingsMethodDescriptor);
+    methodDescriptors.add(getEffectiveSecurityHealthAnalyticsCustomModuleMethodDescriptor);
+    methodDescriptors.add(getSecurityHealthAnalyticsCustomModuleMethodDescriptor);
     methodDescriptors.add(getSourceMethodDescriptor);
     methodDescriptors.add(groupAssetsMethodDescriptor);
     methodDescriptors.add(groupFindingsMethodDescriptor);
     methodDescriptors.add(listAssetsMethodDescriptor);
+    methodDescriptors.add(listDescendantSecurityHealthAnalyticsCustomModulesMethodDescriptor);
     methodDescriptors.add(listFindingsMethodDescriptor);
     methodDescriptors.add(listMuteConfigsMethodDescriptor);
     methodDescriptors.add(listNotificationConfigsMethodDescriptor);
+    methodDescriptors.add(listEffectiveSecurityHealthAnalyticsCustomModulesMethodDescriptor);
+    methodDescriptors.add(listSecurityHealthAnalyticsCustomModulesMethodDescriptor);
     methodDescriptors.add(listSourcesMethodDescriptor);
     methodDescriptors.add(runAssetDiscoveryMethodDescriptor);
     methodDescriptors.add(setFindingStateMethodDescriptor);
@@ -2127,6 +2709,7 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
     methodDescriptors.add(updateMuteConfigMethodDescriptor);
     methodDescriptors.add(updateNotificationConfigMethodDescriptor);
     methodDescriptors.add(updateOrganizationSettingsMethodDescriptor);
+    methodDescriptors.add(updateSecurityHealthAnalyticsCustomModuleMethodDescriptor);
     methodDescriptors.add(updateSourceMethodDescriptor);
     methodDescriptors.add(updateSecurityMarksMethodDescriptor);
     methodDescriptors.add(createBigQueryExportMethodDescriptor);
@@ -2149,6 +2732,13 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
   public OperationCallable<BulkMuteFindingsRequest, BulkMuteFindingsResponse, Empty>
       bulkMuteFindingsOperationCallable() {
     return bulkMuteFindingsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          CreateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      createSecurityHealthAnalyticsCustomModuleCallable() {
+    return createSecurityHealthAnalyticsCustomModuleCallable;
   }
 
   @Override
@@ -2183,6 +2773,12 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
   }
 
   @Override
+  public UnaryCallable<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>
+      deleteSecurityHealthAnalyticsCustomModuleCallable() {
+    return deleteSecurityHealthAnalyticsCustomModuleCallable;
+  }
+
+  @Override
   public UnaryCallable<GetBigQueryExportRequest, BigQueryExport> getBigQueryExportCallable() {
     return getBigQueryExportCallable;
   }
@@ -2207,6 +2803,21 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
   public UnaryCallable<GetOrganizationSettingsRequest, OrganizationSettings>
       getOrganizationSettingsCallable() {
     return getOrganizationSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          GetEffectiveSecurityHealthAnalyticsCustomModuleRequest,
+          EffectiveSecurityHealthAnalyticsCustomModule>
+      getEffectiveSecurityHealthAnalyticsCustomModuleCallable() {
+    return getEffectiveSecurityHealthAnalyticsCustomModuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          GetSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      getSecurityHealthAnalyticsCustomModuleCallable() {
+    return getSecurityHealthAnalyticsCustomModuleCallable;
   }
 
   @Override
@@ -2246,6 +2857,22 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
   }
 
   @Override
+  public UnaryCallable<
+          ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+          ListDescendantSecurityHealthAnalyticsCustomModulesResponse>
+      listDescendantSecurityHealthAnalyticsCustomModulesCallable() {
+    return listDescendantSecurityHealthAnalyticsCustomModulesCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+          ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse>
+      listDescendantSecurityHealthAnalyticsCustomModulesPagedCallable() {
+    return listDescendantSecurityHealthAnalyticsCustomModulesPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<ListFindingsRequest, ListFindingsResponse> listFindingsCallable() {
     return listFindingsCallable;
   }
@@ -2276,6 +2903,38 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
   public UnaryCallable<ListNotificationConfigsRequest, ListNotificationConfigsPagedResponse>
       listNotificationConfigsPagedCallable() {
     return listNotificationConfigsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesResponse>
+      listEffectiveSecurityHealthAnalyticsCustomModulesCallable() {
+    return listEffectiveSecurityHealthAnalyticsCustomModulesCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse>
+      listEffectiveSecurityHealthAnalyticsCustomModulesPagedCallable() {
+    return listEffectiveSecurityHealthAnalyticsCustomModulesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListSecurityHealthAnalyticsCustomModulesRequest,
+          ListSecurityHealthAnalyticsCustomModulesResponse>
+      listSecurityHealthAnalyticsCustomModulesCallable() {
+    return listSecurityHealthAnalyticsCustomModulesCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListSecurityHealthAnalyticsCustomModulesRequest,
+          ListSecurityHealthAnalyticsCustomModulesPagedResponse>
+      listSecurityHealthAnalyticsCustomModulesPagedCallable() {
+    return listSecurityHealthAnalyticsCustomModulesPagedCallable;
   }
 
   @Override
@@ -2345,6 +3004,13 @@ public class HttpJsonSecurityCenterStub extends SecurityCenterStub {
   public UnaryCallable<UpdateOrganizationSettingsRequest, OrganizationSettings>
       updateOrganizationSettingsCallable() {
     return updateOrganizationSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          UpdateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      updateSecurityHealthAnalyticsCustomModuleCallable() {
+    return updateSecurityHealthAnalyticsCustomModuleCallable;
   }
 
   @Override

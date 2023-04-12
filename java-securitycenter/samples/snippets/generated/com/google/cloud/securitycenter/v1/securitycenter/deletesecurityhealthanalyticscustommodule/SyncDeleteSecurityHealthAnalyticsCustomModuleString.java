@@ -14,36 +14,32 @@
  * limitations under the License.
  */
 
-package com.google.cloud.securitycenter.v1.stub.samples;
+package com.google.cloud.securitycenter.v1.samples;
 
-// [START securitycenter_v1_generated_SecurityCenterStubSettings_CreateSource_sync]
-import com.google.cloud.securitycenter.v1.stub.SecurityCenterStubSettings;
-import java.time.Duration;
+// [START securitycenter_v1_generated_SecurityCenter_DeleteSecurityHealthAnalyticsCustomModule_String_sync]
+import com.google.cloud.securitycenter.v1.SecurityCenterClient;
+import com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModuleName;
+import com.google.protobuf.Empty;
 
-public class SyncCreateSource {
+public class SyncDeleteSecurityHealthAnalyticsCustomModuleString {
 
   public static void main(String[] args) throws Exception {
-    syncCreateSource();
+    syncDeleteSecurityHealthAnalyticsCustomModuleString();
   }
 
-  public static void syncCreateSource() throws Exception {
+  public static void syncDeleteSecurityHealthAnalyticsCustomModuleString() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    SecurityCenterStubSettings.Builder securityCenterSettingsBuilder =
-        SecurityCenterStubSettings.newBuilder();
-    securityCenterSettingsBuilder
-        .createSourceSettings()
-        .setRetrySettings(
-            securityCenterSettingsBuilder
-                .createSourceSettings()
-                .getRetrySettings()
-                .toBuilder()
-                .setTotalTimeout(Duration.ofSeconds(30))
-                .build());
-    SecurityCenterStubSettings securityCenterSettings = securityCenterSettingsBuilder.build();
+    try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+      String name =
+          SecurityHealthAnalyticsCustomModuleName.ofOrganizationCustomModuleName(
+                  "[ORGANIZATION]", "[CUSTOM_MODULE]")
+              .toString();
+      securityCenterClient.deleteSecurityHealthAnalyticsCustomModule(name);
+    }
   }
 }
-// [END securitycenter_v1_generated_SecurityCenterStubSettings_CreateSource_sync]
+// [END securitycenter_v1_generated_SecurityCenter_DeleteSecurityHealthAnalyticsCustomModule_String_sync]

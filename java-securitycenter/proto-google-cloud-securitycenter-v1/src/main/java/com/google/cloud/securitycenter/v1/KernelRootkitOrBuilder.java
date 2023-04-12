@@ -52,7 +52,7 @@ public interface KernelRootkitOrBuilder
    *
    *
    * <pre>
-   * True if unexpected modifications of kernel code memory are present.
+   * True when unexpected modifications of kernel code memory are present.
    * </pre>
    *
    * <code>bool unexpected_code_modification = 2;</code>
@@ -65,7 +65,7 @@ public interface KernelRootkitOrBuilder
    *
    *
    * <pre>
-   * True if unexpected modifications of kernel read-only data memory are
+   * True when unexpected modifications of kernel read-only data memory are
    * present.
    * </pre>
    *
@@ -79,7 +79,7 @@ public interface KernelRootkitOrBuilder
    *
    *
    * <pre>
-   * True if `ftrace` points are present with callbacks pointing to regions
+   * True when `ftrace` points are present with callbacks pointing to regions
    * that are not in the expected kernel or module code range.
    * </pre>
    *
@@ -93,7 +93,7 @@ public interface KernelRootkitOrBuilder
    *
    *
    * <pre>
-   * True if `kprobe` points are present with callbacks pointing to regions
+   * True when `kprobe` points are present with callbacks pointing to regions
    * that are not in the expected kernel or module code range.
    * </pre>
    *
@@ -107,7 +107,7 @@ public interface KernelRootkitOrBuilder
    *
    *
    * <pre>
-   * True if kernel code pages that are not in the expected kernel or module
+   * True when kernel code pages that are not in the expected kernel or module
    * code regions are present.
    * </pre>
    *
@@ -121,7 +121,7 @@ public interface KernelRootkitOrBuilder
    *
    *
    * <pre>
-   * True if system call handlers that are are not in the expected kernel or
+   * True when system call handlers that are are not in the expected kernel or
    * module code regions are present.
    * </pre>
    *
@@ -135,7 +135,7 @@ public interface KernelRootkitOrBuilder
    *
    *
    * <pre>
-   * True if interrupt handlers that are are not in the expected kernel or
+   * True when interrupt handlers that are are not in the expected kernel or
    * module code regions are present.
    * </pre>
    *
@@ -149,7 +149,7 @@ public interface KernelRootkitOrBuilder
    *
    *
    * <pre>
-   * True if unexpected processes in the scheduler run queue are present. Such
+   * True when unexpected processes in the scheduler run queue are present. Such
    * processes are in the run queue, but not in the process task list.
    * </pre>
    *

@@ -114,11 +114,11 @@ public interface MuteConfigOrBuilder
    *
    *
    * <pre>
-   * Required. An expression that defines the filter to apply across create/update events
-   * of findings. While creating a filter string, be mindful of the
-   * scope in which the mute configuration is being created. E.g., If a filter
-   * contains project = X but is created under the project = Y scope, it might
-   * not match any findings.
+   * Required. An expression that defines the filter to apply across
+   * create/update events of findings. While creating a filter string, be
+   * mindful of the scope in which the mute configuration is being created.
+   * E.g., If a filter contains project = X but is created under the project = Y
+   * scope, it might not match any findings.
    * The following field and operator combinations are supported:
    * * severity: `=`, `:`
    * * category: `=`, `:`
@@ -143,11 +143,11 @@ public interface MuteConfigOrBuilder
    *
    *
    * <pre>
-   * Required. An expression that defines the filter to apply across create/update events
-   * of findings. While creating a filter string, be mindful of the
-   * scope in which the mute configuration is being created. E.g., If a filter
-   * contains project = X but is created under the project = Y scope, it might
-   * not match any findings.
+   * Required. An expression that defines the filter to apply across
+   * create/update events of findings. While creating a filter string, be
+   * mindful of the scope in which the mute configuration is being created.
+   * E.g., If a filter contains project = X but is created under the project = Y
+   * scope, it might not match any findings.
    * The following field and operator combinations are supported:
    * * severity: `=`, `:`
    * * category: `=`, `:`

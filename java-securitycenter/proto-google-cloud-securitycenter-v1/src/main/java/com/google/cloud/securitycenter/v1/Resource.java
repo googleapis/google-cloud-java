@@ -441,9 +441,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Contains a Folder message for each folder in the assets ancestry.
-   * The first folder is the deepest nested folder, and the last folder is the
-   * folder directly under the Organization.
+   * Output only. Contains a Folder message for each folder in the assets
+   * ancestry. The first folder is the deepest nested folder, and the last
+   * folder is the folder directly under the Organization.
    * </pre>
    *
    * <code>
@@ -458,9 +458,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Contains a Folder message for each folder in the assets ancestry.
-   * The first folder is the deepest nested folder, and the last folder is the
-   * folder directly under the Organization.
+   * Output only. Contains a Folder message for each folder in the assets
+   * ancestry. The first folder is the deepest nested folder, and the last
+   * folder is the folder directly under the Organization.
    * </pre>
    *
    * <code>
@@ -476,9 +476,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Contains a Folder message for each folder in the assets ancestry.
-   * The first folder is the deepest nested folder, and the last folder is the
-   * folder directly under the Organization.
+   * Output only. Contains a Folder message for each folder in the assets
+   * ancestry. The first folder is the deepest nested folder, and the last
+   * folder is the folder directly under the Organization.
    * </pre>
    *
    * <code>
@@ -493,9 +493,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Contains a Folder message for each folder in the assets ancestry.
-   * The first folder is the deepest nested folder, and the last folder is the
-   * folder directly under the Organization.
+   * Output only. Contains a Folder message for each folder in the assets
+   * ancestry. The first folder is the deepest nested folder, and the last
+   * folder is the folder directly under the Organization.
    * </pre>
    *
    * <code>
@@ -510,9 +510,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Contains a Folder message for each folder in the assets ancestry.
-   * The first folder is the deepest nested folder, and the last folder is the
-   * folder directly under the Organization.
+   * Output only. Contains a Folder message for each folder in the assets
+   * ancestry. The first folder is the deepest nested folder, and the last
+   * folder is the folder directly under the Organization.
    * </pre>
    *
    * <code>
@@ -1847,9 +1847,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains a Folder message for each folder in the assets ancestry.
-     * The first folder is the deepest nested folder, and the last folder is the
-     * folder directly under the Organization.
+     * Output only. Contains a Folder message for each folder in the assets
+     * ancestry. The first folder is the deepest nested folder, and the last
+     * folder is the folder directly under the Organization.
      * </pre>
      *
      * <code>
@@ -1867,9 +1867,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains a Folder message for each folder in the assets ancestry.
-     * The first folder is the deepest nested folder, and the last folder is the
-     * folder directly under the Organization.
+     * Output only. Contains a Folder message for each folder in the assets
+     * ancestry. The first folder is the deepest nested folder, and the last
+     * folder is the folder directly under the Organization.
      * </pre>
      *
      * <code>
@@ -1887,9 +1887,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains a Folder message for each folder in the assets ancestry.
-     * The first folder is the deepest nested folder, and the last folder is the
-     * folder directly under the Organization.
+     * Output only. Contains a Folder message for each folder in the assets
+     * ancestry. The first folder is the deepest nested folder, and the last
+     * folder is the folder directly under the Organization.
      * </pre>
      *
      * <code>
@@ -1907,9 +1907,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains a Folder message for each folder in the assets ancestry.
-     * The first folder is the deepest nested folder, and the last folder is the
-     * folder directly under the Organization.
+     * Output only. Contains a Folder message for each folder in the assets
+     * ancestry. The first folder is the deepest nested folder, and the last
+     * folder is the folder directly under the Organization.
      * </pre>
      *
      * <code>
@@ -1933,9 +1933,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains a Folder message for each folder in the assets ancestry.
-     * The first folder is the deepest nested folder, and the last folder is the
-     * folder directly under the Organization.
+     * Output only. Contains a Folder message for each folder in the assets
+     * ancestry. The first folder is the deepest nested folder, and the last
+     * folder is the folder directly under the Organization.
      * </pre>
      *
      * <code>
@@ -1957,9 +1957,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains a Folder message for each folder in the assets ancestry.
-     * The first folder is the deepest nested folder, and the last folder is the
-     * folder directly under the Organization.
+     * Output only. Contains a Folder message for each folder in the assets
+     * ancestry. The first folder is the deepest nested folder, and the last
+     * folder is the folder directly under the Organization.
      * </pre>
      *
      * <code>
@@ -1983,9 +1983,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains a Folder message for each folder in the assets ancestry.
-     * The first folder is the deepest nested folder, and the last folder is the
-     * folder directly under the Organization.
+     * Output only. Contains a Folder message for each folder in the assets
+     * ancestry. The first folder is the deepest nested folder, and the last
+     * folder is the folder directly under the Organization.
      * </pre>
      *
      * <code>
@@ -2009,9 +2009,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains a Folder message for each folder in the assets ancestry.
-     * The first folder is the deepest nested folder, and the last folder is the
-     * folder directly under the Organization.
+     * Output only. Contains a Folder message for each folder in the assets
+     * ancestry. The first folder is the deepest nested folder, and the last
+     * folder is the folder directly under the Organization.
      * </pre>
      *
      * <code>
@@ -2032,9 +2032,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains a Folder message for each folder in the assets ancestry.
-     * The first folder is the deepest nested folder, and the last folder is the
-     * folder directly under the Organization.
+     * Output only. Contains a Folder message for each folder in the assets
+     * ancestry. The first folder is the deepest nested folder, and the last
+     * folder is the folder directly under the Organization.
      * </pre>
      *
      * <code>
@@ -2056,9 +2056,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains a Folder message for each folder in the assets ancestry.
-     * The first folder is the deepest nested folder, and the last folder is the
-     * folder directly under the Organization.
+     * Output only. Contains a Folder message for each folder in the assets
+     * ancestry. The first folder is the deepest nested folder, and the last
+     * folder is the folder directly under the Organization.
      * </pre>
      *
      * <code>
@@ -2080,9 +2080,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains a Folder message for each folder in the assets ancestry.
-     * The first folder is the deepest nested folder, and the last folder is the
-     * folder directly under the Organization.
+     * Output only. Contains a Folder message for each folder in the assets
+     * ancestry. The first folder is the deepest nested folder, and the last
+     * folder is the folder directly under the Organization.
      * </pre>
      *
      * <code>
@@ -2103,9 +2103,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains a Folder message for each folder in the assets ancestry.
-     * The first folder is the deepest nested folder, and the last folder is the
-     * folder directly under the Organization.
+     * Output only. Contains a Folder message for each folder in the assets
+     * ancestry. The first folder is the deepest nested folder, and the last
+     * folder is the folder directly under the Organization.
      * </pre>
      *
      * <code>
@@ -2126,9 +2126,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains a Folder message for each folder in the assets ancestry.
-     * The first folder is the deepest nested folder, and the last folder is the
-     * folder directly under the Organization.
+     * Output only. Contains a Folder message for each folder in the assets
+     * ancestry. The first folder is the deepest nested folder, and the last
+     * folder is the folder directly under the Organization.
      * </pre>
      *
      * <code>
@@ -2142,9 +2142,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains a Folder message for each folder in the assets ancestry.
-     * The first folder is the deepest nested folder, and the last folder is the
-     * folder directly under the Organization.
+     * Output only. Contains a Folder message for each folder in the assets
+     * ancestry. The first folder is the deepest nested folder, and the last
+     * folder is the folder directly under the Organization.
      * </pre>
      *
      * <code>
@@ -2162,9 +2162,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains a Folder message for each folder in the assets ancestry.
-     * The first folder is the deepest nested folder, and the last folder is the
-     * folder directly under the Organization.
+     * Output only. Contains a Folder message for each folder in the assets
+     * ancestry. The first folder is the deepest nested folder, and the last
+     * folder is the folder directly under the Organization.
      * </pre>
      *
      * <code>
@@ -2183,9 +2183,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains a Folder message for each folder in the assets ancestry.
-     * The first folder is the deepest nested folder, and the last folder is the
-     * folder directly under the Organization.
+     * Output only. Contains a Folder message for each folder in the assets
+     * ancestry. The first folder is the deepest nested folder, and the last
+     * folder is the folder directly under the Organization.
      * </pre>
      *
      * <code>
@@ -2200,9 +2200,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains a Folder message for each folder in the assets ancestry.
-     * The first folder is the deepest nested folder, and the last folder is the
-     * folder directly under the Organization.
+     * Output only. Contains a Folder message for each folder in the assets
+     * ancestry. The first folder is the deepest nested folder, and the last
+     * folder is the folder directly under the Organization.
      * </pre>
      *
      * <code>
@@ -2217,9 +2217,9 @@ public final class Resource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Contains a Folder message for each folder in the assets ancestry.
-     * The first folder is the deepest nested folder, and the last folder is the
-     * folder directly under the Organization.
+     * Output only. Contains a Folder message for each folder in the assets
+     * ancestry. The first folder is the deepest nested folder, and the last
+     * folder is the folder directly under the Organization.
      * </pre>
      *
      * <code>

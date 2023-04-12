@@ -20,9 +20,12 @@ import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupAsset
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.GroupFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListAssetsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListBigQueryExportsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListFindingsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListMuteConfigsPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListNotificationConfigsPagedResponse;
+import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSecurityHealthAnalyticsCustomModulesPagedResponse;
 import static com.google.cloud.securitycenter.v1.SecurityCenterClient.ListSourcesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -39,16 +42,21 @@ import com.google.cloud.securitycenter.v1.CreateBigQueryExportRequest;
 import com.google.cloud.securitycenter.v1.CreateFindingRequest;
 import com.google.cloud.securitycenter.v1.CreateMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest;
+import com.google.cloud.securitycenter.v1.CreateSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.CreateSourceRequest;
 import com.google.cloud.securitycenter.v1.DeleteBigQueryExportRequest;
 import com.google.cloud.securitycenter.v1.DeleteMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest;
+import com.google.cloud.securitycenter.v1.DeleteSecurityHealthAnalyticsCustomModuleRequest;
+import com.google.cloud.securitycenter.v1.EffectiveSecurityHealthAnalyticsCustomModule;
 import com.google.cloud.securitycenter.v1.ExternalSystem;
 import com.google.cloud.securitycenter.v1.Finding;
 import com.google.cloud.securitycenter.v1.GetBigQueryExportRequest;
+import com.google.cloud.securitycenter.v1.GetEffectiveSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.GetMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.GetNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest;
+import com.google.cloud.securitycenter.v1.GetSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.GetSourceRequest;
 import com.google.cloud.securitycenter.v1.GroupAssetsRequest;
 import com.google.cloud.securitycenter.v1.GroupAssetsResponse;
@@ -58,12 +66,18 @@ import com.google.cloud.securitycenter.v1.ListAssetsRequest;
 import com.google.cloud.securitycenter.v1.ListAssetsResponse;
 import com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest;
 import com.google.cloud.securitycenter.v1.ListBigQueryExportsResponse;
+import com.google.cloud.securitycenter.v1.ListDescendantSecurityHealthAnalyticsCustomModulesRequest;
+import com.google.cloud.securitycenter.v1.ListDescendantSecurityHealthAnalyticsCustomModulesResponse;
+import com.google.cloud.securitycenter.v1.ListEffectiveSecurityHealthAnalyticsCustomModulesRequest;
+import com.google.cloud.securitycenter.v1.ListEffectiveSecurityHealthAnalyticsCustomModulesResponse;
 import com.google.cloud.securitycenter.v1.ListFindingsRequest;
 import com.google.cloud.securitycenter.v1.ListFindingsResponse;
 import com.google.cloud.securitycenter.v1.ListMuteConfigsRequest;
 import com.google.cloud.securitycenter.v1.ListMuteConfigsResponse;
 import com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest;
 import com.google.cloud.securitycenter.v1.ListNotificationConfigsResponse;
+import com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesRequest;
+import com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesResponse;
 import com.google.cloud.securitycenter.v1.ListSourcesRequest;
 import com.google.cloud.securitycenter.v1.ListSourcesResponse;
 import com.google.cloud.securitycenter.v1.MuteConfig;
@@ -71,6 +85,7 @@ import com.google.cloud.securitycenter.v1.NotificationConfig;
 import com.google.cloud.securitycenter.v1.OrganizationSettings;
 import com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest;
 import com.google.cloud.securitycenter.v1.RunAssetDiscoveryResponse;
+import com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule;
 import com.google.cloud.securitycenter.v1.SecurityMarks;
 import com.google.cloud.securitycenter.v1.SetFindingStateRequest;
 import com.google.cloud.securitycenter.v1.SetMuteRequest;
@@ -81,6 +96,7 @@ import com.google.cloud.securitycenter.v1.UpdateFindingRequest;
 import com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest;
 import com.google.cloud.securitycenter.v1.UpdateNotificationConfigRequest;
 import com.google.cloud.securitycenter.v1.UpdateOrganizationSettingsRequest;
+import com.google.cloud.securitycenter.v1.UpdateSecurityHealthAnalyticsCustomModuleRequest;
 import com.google.cloud.securitycenter.v1.UpdateSecurityMarksRequest;
 import com.google.cloud.securitycenter.v1.UpdateSourceRequest;
 import com.google.common.collect.ImmutableMap;
@@ -114,6 +130,23 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BulkMuteFindingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          CreateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      createSecurityHealthAnalyticsCustomModuleMethodDescriptor =
+          MethodDescriptor
+              .<CreateSecurityHealthAnalyticsCustomModuleRequest,
+                  SecurityHealthAnalyticsCustomModule>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/CreateSecurityHealthAnalyticsCustomModule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      CreateSecurityHealthAnalyticsCustomModuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SecurityHealthAnalyticsCustomModule.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<CreateSourceRequest, Source> createSourceMethodDescriptor =
@@ -176,6 +209,18 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>
+      deleteSecurityHealthAnalyticsCustomModuleMethodDescriptor =
+          MethodDescriptor.<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/DeleteSecurityHealthAnalyticsCustomModule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      DeleteSecurityHealthAnalyticsCustomModuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<GetBigQueryExportRequest, BigQueryExport>
       getBigQueryExportMethodDescriptor =
           MethodDescriptor.<GetBigQueryExportRequest, BigQueryExport>newBuilder()
@@ -227,6 +272,41 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(OrganizationSettings.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          GetEffectiveSecurityHealthAnalyticsCustomModuleRequest,
+          EffectiveSecurityHealthAnalyticsCustomModule>
+      getEffectiveSecurityHealthAnalyticsCustomModuleMethodDescriptor =
+          MethodDescriptor
+              .<GetEffectiveSecurityHealthAnalyticsCustomModuleRequest,
+                  EffectiveSecurityHealthAnalyticsCustomModule>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/GetEffectiveSecurityHealthAnalyticsCustomModule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      GetEffectiveSecurityHealthAnalyticsCustomModuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      EffectiveSecurityHealthAnalyticsCustomModule.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          GetSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      getSecurityHealthAnalyticsCustomModuleMethodDescriptor =
+          MethodDescriptor
+              .<GetSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/GetSecurityHealthAnalyticsCustomModule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      GetSecurityHealthAnalyticsCustomModuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SecurityHealthAnalyticsCustomModule.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<GetSourceRequest, Source> getSourceMethodDescriptor =
       MethodDescriptor.<GetSourceRequest, Source>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -265,6 +345,27 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setResponseMarshaller(ProtoUtils.marshaller(ListAssetsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+          ListDescendantSecurityHealthAnalyticsCustomModulesResponse>
+      listDescendantSecurityHealthAnalyticsCustomModulesMethodDescriptor =
+          MethodDescriptor
+              .<ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+                  ListDescendantSecurityHealthAnalyticsCustomModulesResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/ListDescendantSecurityHealthAnalyticsCustomModules")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ListDescendantSecurityHealthAnalyticsCustomModulesRequest
+                          .getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ListDescendantSecurityHealthAnalyticsCustomModulesResponse
+                          .getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListFindingsRequest, ListFindingsResponse>
       listFindingsMethodDescriptor =
           MethodDescriptor.<ListFindingsRequest, ListFindingsResponse>newBuilder()
@@ -298,6 +399,46 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(ListNotificationConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNotificationConfigsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesResponse>
+      listEffectiveSecurityHealthAnalyticsCustomModulesMethodDescriptor =
+          MethodDescriptor
+              .<ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+                  ListEffectiveSecurityHealthAnalyticsCustomModulesResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/ListEffectiveSecurityHealthAnalyticsCustomModules")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ListEffectiveSecurityHealthAnalyticsCustomModulesRequest
+                          .getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ListEffectiveSecurityHealthAnalyticsCustomModulesResponse
+                          .getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListSecurityHealthAnalyticsCustomModulesRequest,
+          ListSecurityHealthAnalyticsCustomModulesResponse>
+      listSecurityHealthAnalyticsCustomModulesMethodDescriptor =
+          MethodDescriptor
+              .<ListSecurityHealthAnalyticsCustomModulesRequest,
+                  ListSecurityHealthAnalyticsCustomModulesResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/ListSecurityHealthAnalyticsCustomModules")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ListSecurityHealthAnalyticsCustomModulesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ListSecurityHealthAnalyticsCustomModulesResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<ListSourcesRequest, ListSourcesResponse>
@@ -411,6 +552,23 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(OrganizationSettings.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          UpdateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      updateSecurityHealthAnalyticsCustomModuleMethodDescriptor =
+          MethodDescriptor
+              .<UpdateSecurityHealthAnalyticsCustomModuleRequest,
+                  SecurityHealthAnalyticsCustomModule>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securitycenter.v1.SecurityCenter/UpdateSecurityHealthAnalyticsCustomModule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      UpdateSecurityHealthAnalyticsCustomModuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SecurityHealthAnalyticsCustomModule.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<UpdateSourceRequest, Source> updateSourceMethodDescriptor =
       MethodDescriptor.<UpdateSourceRequest, Source>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -478,6 +636,9 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   private final UnaryCallable<BulkMuteFindingsRequest, Operation> bulkMuteFindingsCallable;
   private final OperationCallable<BulkMuteFindingsRequest, BulkMuteFindingsResponse, Empty>
       bulkMuteFindingsOperationCallable;
+  private final UnaryCallable<
+          CreateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      createSecurityHealthAnalyticsCustomModuleCallable;
   private final UnaryCallable<CreateSourceRequest, Source> createSourceCallable;
   private final UnaryCallable<CreateFindingRequest, Finding> createFindingCallable;
   private final UnaryCallable<CreateMuteConfigRequest, MuteConfig> createMuteConfigCallable;
@@ -486,6 +647,8 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   private final UnaryCallable<DeleteMuteConfigRequest, Empty> deleteMuteConfigCallable;
   private final UnaryCallable<DeleteNotificationConfigRequest, Empty>
       deleteNotificationConfigCallable;
+  private final UnaryCallable<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>
+      deleteSecurityHealthAnalyticsCustomModuleCallable;
   private final UnaryCallable<GetBigQueryExportRequest, BigQueryExport> getBigQueryExportCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<GetMuteConfigRequest, MuteConfig> getMuteConfigCallable;
@@ -493,6 +656,13 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
       getNotificationConfigCallable;
   private final UnaryCallable<GetOrganizationSettingsRequest, OrganizationSettings>
       getOrganizationSettingsCallable;
+  private final UnaryCallable<
+          GetEffectiveSecurityHealthAnalyticsCustomModuleRequest,
+          EffectiveSecurityHealthAnalyticsCustomModule>
+      getEffectiveSecurityHealthAnalyticsCustomModuleCallable;
+  private final UnaryCallable<
+          GetSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      getSecurityHealthAnalyticsCustomModuleCallable;
   private final UnaryCallable<GetSourceRequest, Source> getSourceCallable;
   private final UnaryCallable<GroupAssetsRequest, GroupAssetsResponse> groupAssetsCallable;
   private final UnaryCallable<GroupAssetsRequest, GroupAssetsPagedResponse>
@@ -502,6 +672,14 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
       groupFindingsPagedCallable;
   private final UnaryCallable<ListAssetsRequest, ListAssetsResponse> listAssetsCallable;
   private final UnaryCallable<ListAssetsRequest, ListAssetsPagedResponse> listAssetsPagedCallable;
+  private final UnaryCallable<
+          ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+          ListDescendantSecurityHealthAnalyticsCustomModulesResponse>
+      listDescendantSecurityHealthAnalyticsCustomModulesCallable;
+  private final UnaryCallable<
+          ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+          ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse>
+      listDescendantSecurityHealthAnalyticsCustomModulesPagedCallable;
   private final UnaryCallable<ListFindingsRequest, ListFindingsResponse> listFindingsCallable;
   private final UnaryCallable<ListFindingsRequest, ListFindingsPagedResponse>
       listFindingsPagedCallable;
@@ -513,6 +691,22 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
       listNotificationConfigsCallable;
   private final UnaryCallable<ListNotificationConfigsRequest, ListNotificationConfigsPagedResponse>
       listNotificationConfigsPagedCallable;
+  private final UnaryCallable<
+          ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesResponse>
+      listEffectiveSecurityHealthAnalyticsCustomModulesCallable;
+  private final UnaryCallable<
+          ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse>
+      listEffectiveSecurityHealthAnalyticsCustomModulesPagedCallable;
+  private final UnaryCallable<
+          ListSecurityHealthAnalyticsCustomModulesRequest,
+          ListSecurityHealthAnalyticsCustomModulesResponse>
+      listSecurityHealthAnalyticsCustomModulesCallable;
+  private final UnaryCallable<
+          ListSecurityHealthAnalyticsCustomModulesRequest,
+          ListSecurityHealthAnalyticsCustomModulesPagedResponse>
+      listSecurityHealthAnalyticsCustomModulesPagedCallable;
   private final UnaryCallable<ListSourcesRequest, ListSourcesResponse> listSourcesCallable;
   private final UnaryCallable<ListSourcesRequest, ListSourcesPagedResponse>
       listSourcesPagedCallable;
@@ -532,6 +726,9 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
       updateNotificationConfigCallable;
   private final UnaryCallable<UpdateOrganizationSettingsRequest, OrganizationSettings>
       updateOrganizationSettingsCallable;
+  private final UnaryCallable<
+          UpdateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      updateSecurityHealthAnalyticsCustomModuleCallable;
   private final UnaryCallable<UpdateSourceRequest, Source> updateSourceCallable;
   private final UnaryCallable<UpdateSecurityMarksRequest, SecurityMarks>
       updateSecurityMarksCallable;
@@ -599,6 +796,21 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<
+            CreateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+        createSecurityHealthAnalyticsCustomModuleTransportSettings =
+            GrpcCallSettings
+                .<CreateSecurityHealthAnalyticsCustomModuleRequest,
+                    SecurityHealthAnalyticsCustomModule>
+                    newBuilder()
+                .setMethodDescriptor(createSecurityHealthAnalyticsCustomModuleMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<CreateSourceRequest, Source> createSourceTransportSettings =
         GrpcCallSettings.<CreateSourceRequest, Source>newBuilder()
             .setMethodDescriptor(createSourceMethodDescriptor)
@@ -661,6 +873,17 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>
+        deleteSecurityHealthAnalyticsCustomModuleTransportSettings =
+            GrpcCallSettings.<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteSecurityHealthAnalyticsCustomModuleMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<GetBigQueryExportRequest, BigQueryExport> getBigQueryExportTransportSettings =
         GrpcCallSettings.<GetBigQueryExportRequest, BigQueryExport>newBuilder()
             .setMethodDescriptor(getBigQueryExportMethodDescriptor)
@@ -713,6 +936,38 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<
+            GetEffectiveSecurityHealthAnalyticsCustomModuleRequest,
+            EffectiveSecurityHealthAnalyticsCustomModule>
+        getEffectiveSecurityHealthAnalyticsCustomModuleTransportSettings =
+            GrpcCallSettings
+                .<GetEffectiveSecurityHealthAnalyticsCustomModuleRequest,
+                    EffectiveSecurityHealthAnalyticsCustomModule>
+                    newBuilder()
+                .setMethodDescriptor(
+                    getEffectiveSecurityHealthAnalyticsCustomModuleMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            GetSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+        getSecurityHealthAnalyticsCustomModuleTransportSettings =
+            GrpcCallSettings
+                .<GetSecurityHealthAnalyticsCustomModuleRequest,
+                    SecurityHealthAnalyticsCustomModule>
+                    newBuilder()
+                .setMethodDescriptor(getSecurityHealthAnalyticsCustomModuleMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<GetSourceRequest, Source> getSourceTransportSettings =
         GrpcCallSettings.<GetSourceRequest, Source>newBuilder()
             .setMethodDescriptor(getSourceMethodDescriptor)
@@ -753,6 +1008,23 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<
+            ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+            ListDescendantSecurityHealthAnalyticsCustomModulesResponse>
+        listDescendantSecurityHealthAnalyticsCustomModulesTransportSettings =
+            GrpcCallSettings
+                .<ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+                    ListDescendantSecurityHealthAnalyticsCustomModulesResponse>
+                    newBuilder()
+                .setMethodDescriptor(
+                    listDescendantSecurityHealthAnalyticsCustomModulesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<ListFindingsRequest, ListFindingsResponse> listFindingsTransportSettings =
         GrpcCallSettings.<ListFindingsRequest, ListFindingsResponse>newBuilder()
             .setMethodDescriptor(listFindingsMethodDescriptor)
@@ -779,6 +1051,39 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
             GrpcCallSettings
                 .<ListNotificationConfigsRequest, ListNotificationConfigsResponse>newBuilder()
                 .setMethodDescriptor(listNotificationConfigsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+            ListEffectiveSecurityHealthAnalyticsCustomModulesResponse>
+        listEffectiveSecurityHealthAnalyticsCustomModulesTransportSettings =
+            GrpcCallSettings
+                .<ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+                    ListEffectiveSecurityHealthAnalyticsCustomModulesResponse>
+                    newBuilder()
+                .setMethodDescriptor(
+                    listEffectiveSecurityHealthAnalyticsCustomModulesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            ListSecurityHealthAnalyticsCustomModulesRequest,
+            ListSecurityHealthAnalyticsCustomModulesResponse>
+        listSecurityHealthAnalyticsCustomModulesTransportSettings =
+            GrpcCallSettings
+                .<ListSecurityHealthAnalyticsCustomModulesRequest,
+                    ListSecurityHealthAnalyticsCustomModulesResponse>
+                    newBuilder()
+                .setMethodDescriptor(listSecurityHealthAnalyticsCustomModulesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
                       ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
@@ -906,6 +1211,24 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<
+            UpdateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+        updateSecurityHealthAnalyticsCustomModuleTransportSettings =
+            GrpcCallSettings
+                .<UpdateSecurityHealthAnalyticsCustomModuleRequest,
+                    SecurityHealthAnalyticsCustomModule>
+                    newBuilder()
+                .setMethodDescriptor(updateSecurityHealthAnalyticsCustomModuleMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "security_health_analytics_custom_module.name",
+                          String.valueOf(
+                              request.getSecurityHealthAnalyticsCustomModule().getName()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<UpdateSourceRequest, Source> updateSourceTransportSettings =
         GrpcCallSettings.<UpdateSourceRequest, Source>newBuilder()
             .setMethodDescriptor(updateSourceMethodDescriptor)
@@ -984,6 +1307,11 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
             settings.bulkMuteFindingsOperationSettings(),
             clientContext,
             operationsStub);
+    this.createSecurityHealthAnalyticsCustomModuleCallable =
+        callableFactory.createUnaryCallable(
+            createSecurityHealthAnalyticsCustomModuleTransportSettings,
+            settings.createSecurityHealthAnalyticsCustomModuleSettings(),
+            clientContext);
     this.createSourceCallable =
         callableFactory.createUnaryCallable(
             createSourceTransportSettings, settings.createSourceSettings(), clientContext);
@@ -1006,6 +1334,11 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
             deleteNotificationConfigTransportSettings,
             settings.deleteNotificationConfigSettings(),
             clientContext);
+    this.deleteSecurityHealthAnalyticsCustomModuleCallable =
+        callableFactory.createUnaryCallable(
+            deleteSecurityHealthAnalyticsCustomModuleTransportSettings,
+            settings.deleteSecurityHealthAnalyticsCustomModuleSettings(),
+            clientContext);
     this.getBigQueryExportCallable =
         callableFactory.createUnaryCallable(
             getBigQueryExportTransportSettings,
@@ -1026,6 +1359,16 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
         callableFactory.createUnaryCallable(
             getOrganizationSettingsTransportSettings,
             settings.getOrganizationSettingsSettings(),
+            clientContext);
+    this.getEffectiveSecurityHealthAnalyticsCustomModuleCallable =
+        callableFactory.createUnaryCallable(
+            getEffectiveSecurityHealthAnalyticsCustomModuleTransportSettings,
+            settings.getEffectiveSecurityHealthAnalyticsCustomModuleSettings(),
+            clientContext);
+    this.getSecurityHealthAnalyticsCustomModuleCallable =
+        callableFactory.createUnaryCallable(
+            getSecurityHealthAnalyticsCustomModuleTransportSettings,
+            settings.getSecurityHealthAnalyticsCustomModuleSettings(),
             clientContext);
     this.getSourceCallable =
         callableFactory.createUnaryCallable(
@@ -1048,6 +1391,16 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
     this.listAssetsPagedCallable =
         callableFactory.createPagedCallable(
             listAssetsTransportSettings, settings.listAssetsSettings(), clientContext);
+    this.listDescendantSecurityHealthAnalyticsCustomModulesCallable =
+        callableFactory.createUnaryCallable(
+            listDescendantSecurityHealthAnalyticsCustomModulesTransportSettings,
+            settings.listDescendantSecurityHealthAnalyticsCustomModulesSettings(),
+            clientContext);
+    this.listDescendantSecurityHealthAnalyticsCustomModulesPagedCallable =
+        callableFactory.createPagedCallable(
+            listDescendantSecurityHealthAnalyticsCustomModulesTransportSettings,
+            settings.listDescendantSecurityHealthAnalyticsCustomModulesSettings(),
+            clientContext);
     this.listFindingsCallable =
         callableFactory.createUnaryCallable(
             listFindingsTransportSettings, settings.listFindingsSettings(), clientContext);
@@ -1069,6 +1422,26 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
         callableFactory.createPagedCallable(
             listNotificationConfigsTransportSettings,
             settings.listNotificationConfigsSettings(),
+            clientContext);
+    this.listEffectiveSecurityHealthAnalyticsCustomModulesCallable =
+        callableFactory.createUnaryCallable(
+            listEffectiveSecurityHealthAnalyticsCustomModulesTransportSettings,
+            settings.listEffectiveSecurityHealthAnalyticsCustomModulesSettings(),
+            clientContext);
+    this.listEffectiveSecurityHealthAnalyticsCustomModulesPagedCallable =
+        callableFactory.createPagedCallable(
+            listEffectiveSecurityHealthAnalyticsCustomModulesTransportSettings,
+            settings.listEffectiveSecurityHealthAnalyticsCustomModulesSettings(),
+            clientContext);
+    this.listSecurityHealthAnalyticsCustomModulesCallable =
+        callableFactory.createUnaryCallable(
+            listSecurityHealthAnalyticsCustomModulesTransportSettings,
+            settings.listSecurityHealthAnalyticsCustomModulesSettings(),
+            clientContext);
+    this.listSecurityHealthAnalyticsCustomModulesPagedCallable =
+        callableFactory.createPagedCallable(
+            listSecurityHealthAnalyticsCustomModulesTransportSettings,
+            settings.listSecurityHealthAnalyticsCustomModulesSettings(),
             clientContext);
     this.listSourcesCallable =
         callableFactory.createUnaryCallable(
@@ -1121,6 +1494,11 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
         callableFactory.createUnaryCallable(
             updateOrganizationSettingsTransportSettings,
             settings.updateOrganizationSettingsSettings(),
+            clientContext);
+    this.updateSecurityHealthAnalyticsCustomModuleCallable =
+        callableFactory.createUnaryCallable(
+            updateSecurityHealthAnalyticsCustomModuleTransportSettings,
+            settings.updateSecurityHealthAnalyticsCustomModuleSettings(),
             clientContext);
     this.updateSourceCallable =
         callableFactory.createUnaryCallable(
@@ -1176,6 +1554,13 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   }
 
   @Override
+  public UnaryCallable<
+          CreateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      createSecurityHealthAnalyticsCustomModuleCallable() {
+    return createSecurityHealthAnalyticsCustomModuleCallable;
+  }
+
+  @Override
   public UnaryCallable<CreateSourceRequest, Source> createSourceCallable() {
     return createSourceCallable;
   }
@@ -1207,6 +1592,12 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   }
 
   @Override
+  public UnaryCallable<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>
+      deleteSecurityHealthAnalyticsCustomModuleCallable() {
+    return deleteSecurityHealthAnalyticsCustomModuleCallable;
+  }
+
+  @Override
   public UnaryCallable<GetBigQueryExportRequest, BigQueryExport> getBigQueryExportCallable() {
     return getBigQueryExportCallable;
   }
@@ -1231,6 +1622,21 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   public UnaryCallable<GetOrganizationSettingsRequest, OrganizationSettings>
       getOrganizationSettingsCallable() {
     return getOrganizationSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          GetEffectiveSecurityHealthAnalyticsCustomModuleRequest,
+          EffectiveSecurityHealthAnalyticsCustomModule>
+      getEffectiveSecurityHealthAnalyticsCustomModuleCallable() {
+    return getEffectiveSecurityHealthAnalyticsCustomModuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          GetSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      getSecurityHealthAnalyticsCustomModuleCallable() {
+    return getSecurityHealthAnalyticsCustomModuleCallable;
   }
 
   @Override
@@ -1270,6 +1676,22 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   }
 
   @Override
+  public UnaryCallable<
+          ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+          ListDescendantSecurityHealthAnalyticsCustomModulesResponse>
+      listDescendantSecurityHealthAnalyticsCustomModulesCallable() {
+    return listDescendantSecurityHealthAnalyticsCustomModulesCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
+          ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse>
+      listDescendantSecurityHealthAnalyticsCustomModulesPagedCallable() {
+    return listDescendantSecurityHealthAnalyticsCustomModulesPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<ListFindingsRequest, ListFindingsResponse> listFindingsCallable() {
     return listFindingsCallable;
   }
@@ -1300,6 +1722,38 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   public UnaryCallable<ListNotificationConfigsRequest, ListNotificationConfigsPagedResponse>
       listNotificationConfigsPagedCallable() {
     return listNotificationConfigsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesResponse>
+      listEffectiveSecurityHealthAnalyticsCustomModulesCallable() {
+    return listEffectiveSecurityHealthAnalyticsCustomModulesCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
+          ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse>
+      listEffectiveSecurityHealthAnalyticsCustomModulesPagedCallable() {
+    return listEffectiveSecurityHealthAnalyticsCustomModulesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListSecurityHealthAnalyticsCustomModulesRequest,
+          ListSecurityHealthAnalyticsCustomModulesResponse>
+      listSecurityHealthAnalyticsCustomModulesCallable() {
+    return listSecurityHealthAnalyticsCustomModulesCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListSecurityHealthAnalyticsCustomModulesRequest,
+          ListSecurityHealthAnalyticsCustomModulesPagedResponse>
+      listSecurityHealthAnalyticsCustomModulesPagedCallable() {
+    return listSecurityHealthAnalyticsCustomModulesPagedCallable;
   }
 
   @Override
@@ -1369,6 +1823,13 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
   public UnaryCallable<UpdateOrganizationSettingsRequest, OrganizationSettings>
       updateOrganizationSettingsCallable() {
     return updateOrganizationSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          UpdateSecurityHealthAnalyticsCustomModuleRequest, SecurityHealthAnalyticsCustomModule>
+      updateSecurityHealthAnalyticsCustomModuleCallable() {
+    return updateSecurityHealthAnalyticsCustomModuleCallable;
   }
 
   @Override
