@@ -20128,11 +20128,11 @@ public final class Compute {
           + "googleapis.com/auth/compute.readonly,htt"
           + "ps://www.googleapis.com/auth/compute,htt"
           + "ps://www.googleapis.com/auth/cloud-platf"
-          + "ormB\260\001\n\033com.google.cloud.compute.v1P\001Z>g"
-          + "oogle.golang.org/genproto/googleapis/clo"
-          + "ud/compute/v1;compute\252\002\027Google.Cloud.Com"
-          + "pute.V1\312\002\027Google\\Cloud\\Compute\\V1\352\002\032Goog"
-          + "le::Cloud::Compute::V1b\006proto3"
+          + "ormB\235\001\n\033com.google.cloud.compute.v1P\001Z+c"
+          + "loud.google.com/go/compute/apiv1/compute"
+          + "pb\252\002\027Google.Cloud.Compute.V1\312\002\027Google\\Cl"
+          + "oud\\Compute\\V1\352\002\032Google::Cloud::Compute:"
+          + ":V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
