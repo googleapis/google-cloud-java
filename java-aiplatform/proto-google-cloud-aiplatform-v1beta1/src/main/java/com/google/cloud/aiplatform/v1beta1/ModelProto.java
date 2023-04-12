@@ -142,17 +142,18 @@ public final class ModelProto {
           + "gle.cloud.aiplatform.v1beta1.PortB\003\340A\005\022\032"
           + "\n\rpredict_route\030\006 \001(\tB\003\340A\005\022\031\n\014health_rou"
           + "te\030\007 \001(\tB\003\340A\005\"\036\n\004Port\022\026\n\016container_port\030"
-          + "\003 \001(\005\"\300\001\n\017ModelSourceInfo\022U\n\013source_type"
+          + "\003 \001(\005\"\340\001\n\017ModelSourceInfo\022U\n\013source_type"
           + "\030\001 \001(\0162@.google.cloud.aiplatform.v1beta1"
-          + ".ModelSourceInfo.ModelSourceType\"V\n\017Mode"
-          + "lSourceType\022!\n\035MODEL_SOURCE_TYPE_UNSPECI"
-          + "FIED\020\000\022\n\n\006AUTOML\020\001\022\n\n\006CUSTOM\020\002\022\010\n\004BQML\020\003"
-          + "B\341\001\n#com.google.cloud.aiplatform.v1beta1"
-          + "B\nModelProtoP\001ZCcloud.google.com/go/aipl"
-          + "atform/apiv1beta1/aiplatformpb;aiplatfor"
-          + "mpb\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002\037"
-          + "Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Google"
-          + "::Cloud::AIPlatform::V1beta1b\006proto3"
+          + ".ModelSourceInfo.ModelSourceType\022\014\n\004copy"
+          + "\030\002 \001(\010\"h\n\017ModelSourceType\022!\n\035MODEL_SOURC"
+          + "E_TYPE_UNSPECIFIED\020\000\022\n\n\006AUTOML\020\001\022\n\n\006CUST"
+          + "OM\020\002\022\010\n\004BQML\020\003\022\020\n\014MODEL_GARDEN\020\004B\341\001\n#com"
+          + ".google.cloud.aiplatform.v1beta1B\nModelP"
+          + "rotoP\001ZCcloud.google.com/go/aiplatform/a"
+          + "piv1beta1/aiplatformpb;aiplatformpb\252\002\037Go"
+          + "ogle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\C"
+          + "loud\\AIPlatform\\V1beta1\352\002\"Google::Cloud:"
+          + ":AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -256,7 +257,7 @@ public final class ModelProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ModelSourceInfo_descriptor,
             new java.lang.String[] {
-              "SourceType",
+              "SourceType", "Copy",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

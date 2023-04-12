@@ -23,7 +23,6 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  * <pre>
  * Represents a hardware accelerator type.
- * NEXT ID: 11.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.aiplatform.v1beta1.AcceleratorType}

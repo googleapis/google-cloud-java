@@ -183,24 +183,29 @@ public final class ModelMonitoringProto {
           + "planationConfig.ExplanationBaseline.Pred"
           + "ictionFormat\"N\n\020PredictionFormat\022!\n\035PRED"
           + "ICTION_FORMAT_UNSPECIFIED\020\000\022\t\n\005JSONL\020\002\022\014"
-          + "\n\010BIGQUERY\020\003B\r\n\013destination\"\322\001\n\032ModelMon"
+          + "\n\010BIGQUERY\020\003B\r\n\013destination\"\245\002\n\032ModelMon"
           + "itoringAlertConfig\022j\n\022email_alert_config"
           + "\030\001 \001(\0132L.google.cloud.aiplatform.v1beta1"
           + ".ModelMonitoringAlertConfig.EmailAlertCo"
-          + "nfigH\000\022\026\n\016enable_logging\030\002 \001(\010\032\'\n\020EmailA"
-          + "lertConfig\022\023\n\013user_emails\030\001 \003(\tB\007\n\005alert"
-          + "\"/\n\017ThresholdConfig\022\017\n\005value\030\001 \001(\001H\000B\013\n\t"
-          + "threshold\"\241\001\n\020SamplingStrategy\022b\n\024random"
-          + "_sample_config\030\001 \001(\0132D.google.cloud.aipl"
-          + "atform.v1beta1.SamplingStrategy.RandomSa"
-          + "mpleConfig\032)\n\022RandomSampleConfig\022\023\n\013samp"
-          + "le_rate\030\001 \001(\001B\353\001\n#com.google.cloud.aipla"
-          + "tform.v1beta1B\024ModelMonitoringProtoP\001ZCc"
-          + "loud.google.com/go/aiplatform/apiv1beta1"
-          + "/aiplatformpb;aiplatformpb\252\002\037Google.Clou"
-          + "d.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPl"
-          + "atform\\V1beta1\352\002\"Google::Cloud::AIPlatfo"
-          + "rm::V1beta1b\006proto3"
+          + "nfigH\000\022\026\n\016enable_logging\030\002 \001(\010\022Q\n\025notifi"
+          + "cation_channels\030\003 \003(\tB2\372A/\n-monitoring.g"
+          + "oogleapis.com/NotificationChannel\032\'\n\020Ema"
+          + "ilAlertConfig\022\023\n\013user_emails\030\001 \003(\tB\007\n\005al"
+          + "ert\"/\n\017ThresholdConfig\022\017\n\005value\030\001 \001(\001H\000B"
+          + "\013\n\tthreshold\"\241\001\n\020SamplingStrategy\022b\n\024ran"
+          + "dom_sample_config\030\001 \001(\0132D.google.cloud.a"
+          + "iplatform.v1beta1.SamplingStrategy.Rando"
+          + "mSampleConfig\032)\n\022RandomSampleConfig\022\023\n\013s"
+          + "ample_rate\030\001 \001(\001B\335\002\n#com.google.cloud.ai"
+          + "platform.v1beta1B\024ModelMonitoringProtoP\001"
+          + "ZCcloud.google.com/go/aiplatform/apiv1be"
+          + "ta1/aiplatformpb;aiplatformpb\252\002\037Google.C"
+          + "loud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\A"
+          + "IPlatform\\V1beta1\352\002\"Google::Cloud::AIPla"
+          + "tform::V1beta1\352Ao\n-monitoring.googleapis"
+          + ".com/NotificationChannel\022>projects/{proj"
+          + "ect}/notificationChannels/{notification_"
+          + "channel}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -333,7 +338,7 @@ public final class ModelMonitoringProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringAlertConfig_descriptor,
             new java.lang.String[] {
-              "EmailAlertConfig", "EnableLogging", "Alert",
+              "EmailAlertConfig", "EnableLogging", "NotificationChannels", "Alert",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringAlertConfig_EmailAlertConfig_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringAlertConfig_descriptor
@@ -373,6 +378,7 @@ public final class ModelMonitoringProto {
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);

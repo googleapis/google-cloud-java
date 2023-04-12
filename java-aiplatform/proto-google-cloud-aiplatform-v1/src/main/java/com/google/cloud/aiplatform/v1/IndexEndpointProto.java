@@ -66,7 +66,7 @@ public final class IndexEndpointProto {
           + "pi/resource.proto\0322google/cloud/aiplatfo"
           + "rm/v1/machine_resources.proto\0323google/cl"
           + "oud/aiplatform/v1/service_networking.pro"
-          + "to\032\037google/protobuf/timestamp.proto\"\256\005\n\r"
+          + "to\032\037google/protobuf/timestamp.proto\"\376\005\n\r"
           + "IndexEndpoint\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\031\n\014disp"
           + "lay_name\030\002 \001(\tB\003\340A\002\022\023\n\013description\030\003 \001(\t"
           + "\022H\n\020deployed_indexes\030\004 \003(\0132).google.clou"
@@ -79,7 +79,9 @@ public final class IndexEndpointProto {
           + " \001(\tB\003\340A\001\022-\n\036enable_private_service_conn"
           + "ect\030\n \001(\010B\005\030\001\340A\001\022d\n\036private_service_conn"
           + "ect_config\030\014 \001(\01327.google.cloud.aiplatfo"
-          + "rm.v1.PrivateServiceConnectConfigB\003\340A\001\032-"
+          + "rm.v1.PrivateServiceConnectConfigB\003\340A\001\022$"
+          + "\n\027public_endpoint_enabled\030\r \001(\010B\003\340A\001\022(\n\033"
+          + "public_endpoint_domain_name\030\016 \001(\tB\003\340A\003\032-"
           + "\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001("
           + "\t:\0028\001:u\352Ar\n\'aiplatform.googleapis.com/In"
           + "dexEndpoint\022Gprojects/{project}/location"
@@ -141,6 +143,8 @@ public final class IndexEndpointProto {
               "Network",
               "EnablePrivateServiceConnect",
               "PrivateServiceConnectConfig",
+              "PublicEndpointEnabled",
+              "PublicEndpointDomainName",
             });
     internal_static_google_cloud_aiplatform_v1_IndexEndpoint_LabelsEntry_descriptor =
         internal_static_google_cloud_aiplatform_v1_IndexEndpoint_descriptor.getNestedTypes().get(0);

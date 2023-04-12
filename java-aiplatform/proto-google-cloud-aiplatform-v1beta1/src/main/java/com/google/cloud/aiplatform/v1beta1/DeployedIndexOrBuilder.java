@@ -492,7 +492,7 @@ public interface DeployedIndexOrBuilder
    * If set, we will deploy the index within the provided ip ranges. Otherwise,
    * the index might be deployed to any ip ranges under the provided VPC
    * network.
-   * The value sohuld be the name of the address
+   * The value should be the name of the address
    * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
    * Example: 'vertex-ai-ip-range'.
    * </pre>
@@ -511,7 +511,7 @@ public interface DeployedIndexOrBuilder
    * If set, we will deploy the index within the provided ip ranges. Otherwise,
    * the index might be deployed to any ip ranges under the provided VPC
    * network.
-   * The value sohuld be the name of the address
+   * The value should be the name of the address
    * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
    * Example: 'vertex-ai-ip-range'.
    * </pre>
@@ -530,7 +530,7 @@ public interface DeployedIndexOrBuilder
    * If set, we will deploy the index within the provided ip ranges. Otherwise,
    * the index might be deployed to any ip ranges under the provided VPC
    * network.
-   * The value sohuld be the name of the address
+   * The value should be the name of the address
    * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
    * Example: 'vertex-ai-ip-range'.
    * </pre>
@@ -550,7 +550,7 @@ public interface DeployedIndexOrBuilder
    * If set, we will deploy the index within the provided ip ranges. Otherwise,
    * the index might be deployed to any ip ranges under the provided VPC
    * network.
-   * The value sohuld be the name of the address
+   * The value should be the name of the address
    * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
    * Example: 'vertex-ai-ip-range'.
    * </pre>

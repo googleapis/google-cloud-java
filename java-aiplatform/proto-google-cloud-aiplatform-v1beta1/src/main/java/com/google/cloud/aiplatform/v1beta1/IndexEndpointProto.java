@@ -67,7 +67,7 @@ public final class IndexEndpointProto {
           + "d/aiplatform/v1beta1/machine_resources.p"
           + "roto\0328google/cloud/aiplatform/v1beta1/se"
           + "rvice_networking.proto\032\037google/protobuf/"
-          + "timestamp.proto\"\275\005\n\rIndexEndpoint\022\021\n\004nam"
+          + "timestamp.proto\"\215\006\n\rIndexEndpoint\022\021\n\004nam"
           + "e\030\001 \001(\tB\003\340A\003\022\031\n\014display_name\030\002 \001(\tB\003\340A\002\022"
           + "\023\n\013description\030\003 \001(\t\022M\n\020deployed_indexes"
           + "\030\004 \003(\0132..google.cloud.aiplatform.v1beta1"
@@ -80,7 +80,9 @@ public final class IndexEndpointProto {
           + "-\n\036enable_private_service_connect\030\n \001(\010B"
           + "\005\030\001\340A\001\022i\n\036private_service_connect_config"
           + "\030\014 \001(\0132<.google.cloud.aiplatform.v1beta1"
-          + ".PrivateServiceConnectConfigB\003\340A\001\032-\n\013Lab"
+          + ".PrivateServiceConnectConfigB\003\340A\001\022$\n\027pub"
+          + "lic_endpoint_enabled\030\r \001(\010B\003\340A\001\022(\n\033publi"
+          + "c_endpoint_domain_name\030\016 \001(\tB\003\340A\003\032-\n\013Lab"
           + "elsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001"
           + ":u\352Ar\n\'aiplatform.googleapis.com/IndexEn"
           + "dpoint\022Gprojects/{project}/locations/{lo"
@@ -144,6 +146,8 @@ public final class IndexEndpointProto {
               "Network",
               "EnablePrivateServiceConnect",
               "PrivateServiceConnectConfig",
+              "PublicEndpointEnabled",
+              "PublicEndpointDomainName",
             });
     internal_static_google_cloud_aiplatform_v1beta1_IndexEndpoint_LabelsEntry_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_IndexEndpoint_descriptor
