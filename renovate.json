@@ -15,11 +15,10 @@
     "google-cloud-jar-parent/pom.xml",
     "java-shared-dependencies/first-party-dependencies/pom.xml",
     "java-shared-dependencies/third-party-dependencies/pom.xml",
-    ".kokoro/nightly/graalvm-native.cfg",
-    ".kokoro/nightly/graalvm-native-*.cfg",
-    ".kokoro/nightly/graalvm-sub-jobs/native-*/common.cfg",
-    ".kokoro/presubmit/graalvm-native-*.cfg",
-    "owl-bot-postprocessor/synthtool/gcp/templates/java-library/.kokoro/presubmit/graalvm-native-*.cfg"
+    ".kokoro/nightly/graalvm-native*.cfg",
+    ".kokoro/nightly/graalvm-sub-jobs/native*/common.cfg",
+    ".kokoro/presubmit/graalvm-native*.cfg",
+    "owl-bot-postprocessor/synthtool/gcp/templates/java-library/.kokoro/presubmit/graalvm-native*.cfg"
   ],
   "regexManagers": [
     {
@@ -30,9 +29,8 @@
       ],
       "matchStrings": ["value: \"gcr.io/cloud-devrel-kokoro-resources/graalvm:(?<currentValue>.*?)\"",
         "value: \"gcr.io/cloud-devrel-kokoro-resources/graalvm17:(?<currentValue>.*?)\""],
-      "depNameTemplate": "jdk",
-      "datasourceTemplate": "docker",
-      "packageNameTemplate": "ghcr.io/graalvm/jdk"
+      "depNameTemplate": "ghcr.io/graalvm/graalvm-ce",
+      "datasourceTemplate": "docker"
     }
   ]
 }
