@@ -92,6 +92,8 @@ import com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest;
 import com.google.cloud.contactcenterinsights.v1.UpdateViewRequest;
+import com.google.cloud.contactcenterinsights.v1.UploadConversationMetadata;
+import com.google.cloud.contactcenterinsights.v1.UploadConversationRequest;
 import com.google.cloud.contactcenterinsights.v1.View;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
@@ -120,6 +122,17 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateConversationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Conversation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UploadConversationRequest, Operation>
+      uploadConversationMethodDescriptor =
+          MethodDescriptor.<UploadConversationRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.contactcenterinsights.v1.ContactCenterInsights/UploadConversation")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UploadConversationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<UpdateConversationRequest, Conversation>
@@ -504,6 +517,10 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
           .build();
 
   private final UnaryCallable<CreateConversationRequest, Conversation> createConversationCallable;
+  private final UnaryCallable<UploadConversationRequest, Operation> uploadConversationCallable;
+  private final OperationCallable<
+          UploadConversationRequest, Conversation, UploadConversationMetadata>
+      uploadConversationOperationCallable;
   private final UnaryCallable<UpdateConversationRequest, Conversation> updateConversationCallable;
   private final UnaryCallable<GetConversationRequest, Conversation> getConversationCallable;
   private final UnaryCallable<ListConversationsRequest, ListConversationsResponse>
@@ -625,6 +642,16 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
     GrpcCallSettings<CreateConversationRequest, Conversation> createConversationTransportSettings =
         GrpcCallSettings.<CreateConversationRequest, Conversation>newBuilder()
             .setMethodDescriptor(createConversationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<UploadConversationRequest, Operation> uploadConversationTransportSettings =
+        GrpcCallSettings.<UploadConversationRequest, Operation>newBuilder()
+            .setMethodDescriptor(uploadConversationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
@@ -1010,6 +1037,17 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
             createConversationTransportSettings,
             settings.createConversationSettings(),
             clientContext);
+    this.uploadConversationCallable =
+        callableFactory.createUnaryCallable(
+            uploadConversationTransportSettings,
+            settings.uploadConversationSettings(),
+            clientContext);
+    this.uploadConversationOperationCallable =
+        callableFactory.createOperationCallable(
+            uploadConversationTransportSettings,
+            settings.uploadConversationOperationSettings(),
+            clientContext,
+            operationsStub);
     this.updateConversationCallable =
         callableFactory.createUnaryCallable(
             updateConversationTransportSettings,
@@ -1218,6 +1256,17 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
   @Override
   public UnaryCallable<CreateConversationRequest, Conversation> createConversationCallable() {
     return createConversationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UploadConversationRequest, Operation> uploadConversationCallable() {
+    return uploadConversationCallable;
+  }
+
+  @Override
+  public OperationCallable<UploadConversationRequest, Conversation, UploadConversationMetadata>
+      uploadConversationOperationCallable() {
+    return uploadConversationOperationCallable;
   }
 
   @Override

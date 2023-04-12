@@ -359,6 +359,108 @@ public class ContactCenterInsightsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Create a longrunning conversation upload operation. This method differs from CreateConversation
+   * by allowing audio transcription and optional DLP redaction.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   UploadConversationRequest request =
+   *       UploadConversationRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setConversation(Conversation.newBuilder().build())
+   *           .setConversationId("conversationId-1676095234")
+   *           .setRedactionConfig(RedactionConfig.newBuilder().build())
+   *           .build();
+   *   Conversation response = contactCenterInsightsClient.uploadConversationAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Conversation, UploadConversationMetadata> uploadConversationAsync(
+      UploadConversationRequest request) {
+    return uploadConversationOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a longrunning conversation upload operation. This method differs from CreateConversation
+   * by allowing audio transcription and optional DLP redaction.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   UploadConversationRequest request =
+   *       UploadConversationRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setConversation(Conversation.newBuilder().build())
+   *           .setConversationId("conversationId-1676095234")
+   *           .setRedactionConfig(RedactionConfig.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Conversation, UploadConversationMetadata> future =
+   *       contactCenterInsightsClient.uploadConversationOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Conversation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UploadConversationRequest, Conversation, UploadConversationMetadata>
+      uploadConversationOperationCallable() {
+    return stub.uploadConversationOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a longrunning conversation upload operation. This method differs from CreateConversation
+   * by allowing audio transcription and optional DLP redaction.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContactCenterInsightsClient contactCenterInsightsClient =
+   *     ContactCenterInsightsClient.create()) {
+   *   UploadConversationRequest request =
+   *       UploadConversationRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setConversation(Conversation.newBuilder().build())
+   *           .setConversationId("conversationId-1676095234")
+   *           .setRedactionConfig(RedactionConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       contactCenterInsightsClient.uploadConversationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UploadConversationRequest, Operation> uploadConversationCallable() {
+    return stub.uploadConversationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Updates a conversation.
    *
    * <p>Sample code:
