@@ -1,0 +1,63 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.bigquery.biglake.v1",
+  "libraryPackage": "com.google.cloud.bigquery.biglake.v1",
+  "services": {
+    "MetastoreService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "MetastoreServiceClient",
+          "rpcs": {
+            "CreateCatalog": {
+              "methods": ["createCatalog", "createCatalog", "createCatalog", "createCatalogCallable"]
+            },
+            "CreateDatabase": {
+              "methods": ["createDatabase", "createDatabase", "createDatabase", "createDatabaseCallable"]
+            },
+            "CreateTable": {
+              "methods": ["createTable", "createTable", "createTable", "createTableCallable"]
+            },
+            "DeleteCatalog": {
+              "methods": ["deleteCatalog", "deleteCatalog", "deleteCatalog", "deleteCatalogCallable"]
+            },
+            "DeleteDatabase": {
+              "methods": ["deleteDatabase", "deleteDatabase", "deleteDatabase", "deleteDatabaseCallable"]
+            },
+            "DeleteTable": {
+              "methods": ["deleteTable", "deleteTable", "deleteTable", "deleteTableCallable"]
+            },
+            "GetCatalog": {
+              "methods": ["getCatalog", "getCatalog", "getCatalog", "getCatalogCallable"]
+            },
+            "GetDatabase": {
+              "methods": ["getDatabase", "getDatabase", "getDatabase", "getDatabaseCallable"]
+            },
+            "GetTable": {
+              "methods": ["getTable", "getTable", "getTable", "getTableCallable"]
+            },
+            "ListCatalogs": {
+              "methods": ["listCatalogs", "listCatalogs", "listCatalogs", "listCatalogsPagedCallable", "listCatalogsCallable"]
+            },
+            "ListDatabases": {
+              "methods": ["listDatabases", "listDatabases", "listDatabases", "listDatabasesPagedCallable", "listDatabasesCallable"]
+            },
+            "ListTables": {
+              "methods": ["listTables", "listTables", "listTables", "listTablesPagedCallable", "listTablesCallable"]
+            },
+            "RenameTable": {
+              "methods": ["renameTable", "renameTable", "renameTable", "renameTable", "renameTable", "renameTableCallable"]
+            },
+            "UpdateDatabase": {
+              "methods": ["updateDatabase", "updateDatabase", "updateDatabaseCallable"]
+            },
+            "UpdateTable": {
+              "methods": ["updateTable", "updateTable", "updateTableCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
