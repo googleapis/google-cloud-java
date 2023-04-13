@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,16 +17,18 @@
 package com.example.bigtable.deletes;
 
 // [START bigtable_delete_column_family]
-import com.google.cloud.bigtable.data.v2.BigtableDataClient;
-import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
+import com.google.cloud.bigtable.admin.v2.models.ModifyColumnFamiliesRequest;
 import java.io.IOException;
 
 public class DeleteColumnFamilyExample {
-  public void deleteColumnFamily(String projectId, String instanceId, String tableId)
-      throws IOException {
-    try (BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId)) {
-      dataClient.mutateRow(
-          RowMutation.create(tableId, "phone#5c10102#20190501").deleteFamily("stats_summary"));
+  public void deleteColumnFamily(
+      String projectId, String instanceId, String tableId, String columnFamily) throws IOException {
+    try (BigtableTableAdminClient tableAdminClient =
+        BigtableTableAdminClient.create(projectId, instanceId)) {
+      ModifyColumnFamiliesRequest modifyColumnFamiliesRequest =
+          ModifyColumnFamiliesRequest.of(tableId).dropFamily(columnFamily);
+      tableAdminClient.modifyFamilies(modifyColumnFamiliesRequest);
     }
   }
 }

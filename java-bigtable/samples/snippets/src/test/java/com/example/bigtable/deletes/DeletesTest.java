@@ -63,8 +63,8 @@ public class DeletesTest extends MobileTimeSeriesBaseTest {
 
     Truth.assertThat(cells).isNotEmpty();
 
-    DeleteColumnCellsExample deleteColumnCellsExample = new DeleteColumnCellsExample();
-    deleteColumnCellsExample.deleteColumnCells(projectId, instanceId, TABLE_ID);
+    DeleteFromColumnExample deleteFromColumnExample = new DeleteFromColumnExample();
+    deleteFromColumnExample.deleteFromColumnCells(projectId, instanceId, TABLE_ID);
     row = bigtableDataClient.readRow(TABLE_ID, rowKey);
     List<RowCell> cellsAfterDelete = row.getCells(COLUMN_FAMILY_NAME_PLAN, qualifier);
 
@@ -78,8 +78,8 @@ public class DeletesTest extends MobileTimeSeriesBaseTest {
 
     Truth.assertThat(row).isNotNull();
 
-    DeleteRowExample deleteRowExample = new DeleteRowExample();
-    deleteRowExample.deleteRow(projectId, instanceId, TABLE_ID);
+    DeleteFromRowExample deleteFromRowExample = new DeleteFromRowExample();
+    deleteFromRowExample.deleteFromRow(projectId, instanceId, TABLE_ID);
     row = bigtableDataClient.readRow(TABLE_ID, rowKey);
 
     Truth.assertThat(row).isNull();
@@ -143,15 +143,16 @@ public class DeletesTest extends MobileTimeSeriesBaseTest {
   }
 
   @Test
-  public void test6_testDeleteColumnFamily() throws IOException {
+  public void test6_testDeleteFromColumnFamily() throws IOException {
     String rowKey = "phone#5c10102#20190501";
     Row row = bigtableDataClient.readRow(TABLE_ID, rowKey);
     List<RowCell> cells = row.getCells(COLUMN_FAMILY_NAME_STATS);
 
     Truth.assertThat(cells).isNotEmpty();
 
-    DeleteColumnFamilyExample deleteColumnFamilyExample = new DeleteColumnFamilyExample();
-    deleteColumnFamilyExample.deleteColumnFamily(projectId, instanceId, TABLE_ID);
+    DeleteFromColumnFamilyExample deleteFromColumnFamilyExample =
+        new DeleteFromColumnFamilyExample();
+    deleteFromColumnFamilyExample.deleteFromColumnFamily(projectId, instanceId, TABLE_ID);
     row = bigtableDataClient.readRow(TABLE_ID, rowKey);
     List<RowCell> cellsAfterDelete = row.getCells(COLUMN_FAMILY_NAME_STATS);
 
@@ -159,7 +160,21 @@ public class DeletesTest extends MobileTimeSeriesBaseTest {
   }
 
   @Test
-  public void test7_testDeleteTable() throws IOException {
+  public void test7_testDeleteColumnFamily() throws IOException {
+    try (BigtableTableAdminClient tableAdminClient =
+        BigtableTableAdminClient.create(projectId, instanceId)) {
+      Truth.assertThat(tableAdminClient.getTable(TABLE_ID).getColumnFamilies().size()).isEqualTo(2);
+
+      DeleteColumnFamilyExample deleteColumnFamilyExample = new DeleteColumnFamilyExample();
+      deleteColumnFamilyExample.deleteColumnFamily(
+          projectId, instanceId, TABLE_ID, COLUMN_FAMILY_NAME_STATS);
+
+      Truth.assertThat(tableAdminClient.getTable(TABLE_ID).getColumnFamilies().size()).isEqualTo(1);
+    }
+  }
+
+  @Test
+  public void test8_testDeleteTable() throws IOException {
     try (BigtableTableAdminClient tableAdminClient =
         BigtableTableAdminClient.create(projectId, instanceId)) {
       Truth.assertThat(tableAdminClient.exists(TABLE_ID)).isTrue();

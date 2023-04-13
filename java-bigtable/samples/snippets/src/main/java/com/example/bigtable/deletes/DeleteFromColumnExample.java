@@ -22,8 +22,8 @@ import com.google.cloud.bigtable.data.v2.models.Mutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import java.io.IOException;
 
-public class DeleteColumnCellsExample {
-  public void deleteColumnCells(String projectId, String instanceId, String tableId)
+public class DeleteFromColumnExample {
+  public void deleteFromColumnCells(String projectId, String instanceId, String tableId)
       throws IOException {
     try (BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId)) {
       Mutation mutation = Mutation.create().deleteCells("cell_plan", "data_plan_01gb");
