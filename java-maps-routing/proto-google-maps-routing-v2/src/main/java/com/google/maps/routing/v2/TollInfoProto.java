@@ -43,12 +43,12 @@ public final class TollInfoProto {
       "\n&google/maps/routing/v2/toll_info.proto"
           + "\022\026google.maps.routing.v2\032\027google/type/mo"
           + "ney.proto\"7\n\010TollInfo\022+\n\017estimated_price"
-          + "\030\001 \003(\0132\022.google.type.MoneyB\305\001\n\032com.googl"
-          + "e.maps.routing.v2B\rTollInfoProtoP\001Z=goog"
-          + "le.golang.org/genproto/googleapis/maps/r"
-          + "outing/v2;routing\370\001\001\242\002\005GMRV2\252\002\026Google.Ma"
-          + "ps.Routing.V2\312\002\026Google\\Maps\\Routing\\V2\352\002"
-          + "\031Google::Maps::Routing::V2b\006proto3"
+          + "\030\001 \003(\0132\022.google.type.MoneyB\302\001\n\032com.googl"
+          + "e.maps.routing.v2B\rTollInfoProtoP\001Z:clou"
+          + "d.google.com/go/maps/routing/apiv2/routi"
+          + "ngpb;routingpb\370\001\001\242\002\005GMRV2\252\002\026Google.Maps."
+          + "Routing.V2\312\002\026Google\\Maps\\Routing\\V2\352\002\031Go"
+          + "ogle::Maps::Routing::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

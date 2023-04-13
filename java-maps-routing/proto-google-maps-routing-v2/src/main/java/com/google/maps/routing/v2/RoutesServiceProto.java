@@ -154,12 +154,12 @@ public final class RoutesServiceProto {
           + "t\032*.google.maps.routing.v2.RouteMatrixEl"
           + "ement\"0\202\323\344\223\002*\"%/distanceMatrix/v2:comput"
           + "eRouteMatrix:\001*0\001\032\030\312A\025routes.googleapis."
-          + "comB\312\001\n\032com.google.maps.routing.v2B\022Rout"
-          + "esServiceProtoP\001Z=google.golang.org/genp"
-          + "roto/googleapis/maps/routing/v2;routing\370"
-          + "\001\001\242\002\005GMRV2\252\002\026Google.Maps.Routing.V2\312\002\026Go"
-          + "ogle\\Maps\\Routing\\V2\352\002\031Google::Maps::Rou"
-          + "ting::V2b\006proto3"
+          + "comB\307\001\n\032com.google.maps.routing.v2B\022Rout"
+          + "esServiceProtoP\001Z:cloud.google.com/go/ma"
+          + "ps/routing/apiv2/routingpb;routingpb\370\001\001\242"
+          + "\002\005GMRV2\252\002\026Google.Maps.Routing.V2\312\002\026Googl"
+          + "e\\Maps\\Routing\\V2\352\002\031Google::Maps::Routin"
+          + "g::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

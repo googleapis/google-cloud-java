@@ -113,12 +113,12 @@ public final class MessagesProto {
           + "ps://www.googleapis.com/auth/compute,htt"
           + "ps://www.googleapis.com/auth/compute.rea"
           + "donly,https://www.googleapis.com/auth/us"
-          + "erinfo.emailB\322\001\n\033com.google.dataflow.v1b"
-          + "eta3B\rMessagesProtoP\001Z?google.golang.org"
-          + "/genproto/googleapis/dataflow/v1beta3;da"
-          + "taflow\252\002\035Google.Cloud.Dataflow.V1Beta3\312\002"
-          + "\035Google\\Cloud\\Dataflow\\V1beta3\352\002 Google:"
-          + ":Cloud::Dataflow::V1beta3b\006proto3"
+          + "erinfo.emailB\320\001\n\033com.google.dataflow.v1b"
+          + "eta3B\rMessagesProtoP\001Z=cloud.google.com/"
+          + "go/dataflow/apiv1beta3/dataflowpb;datafl"
+          + "owpb\252\002\035Google.Cloud.Dataflow.V1Beta3\312\002\035G"
+          + "oogle\\Cloud\\Dataflow\\V1beta3\352\002 Google::C"
+          + "loud::Dataflow::V1beta3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

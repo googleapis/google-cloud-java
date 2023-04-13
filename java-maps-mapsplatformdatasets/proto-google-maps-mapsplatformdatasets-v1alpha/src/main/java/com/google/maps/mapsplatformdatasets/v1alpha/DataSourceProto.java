@@ -55,14 +55,14 @@ public final class DataSourceProto {
           + "t*\230\001\n\nFileFormat\022\033\n\027FILE_FORMAT_UNSPECIF"
           + "IED\020\000\022\027\n\023FILE_FORMAT_GEOJSON\020\001\022\023\n\017FILE_F"
           + "ORMAT_KML\020\002\022\023\n\017FILE_FORMAT_CSV\020\003\022\025\n\021FILE"
-          + "_FORMAT_PROTO\020\004\022\023\n\017FILE_FORMAT_KMZ\020\005B\365\001\n"
+          + "_FORMAT_PROTO\020\004\022\023\n\017FILE_FORMAT_KMZ\020\005B\377\001\n"
           + ",com.google.maps.mapsplatformdatasets.v1"
-          + "alphaB\017DataSourceProtoP\001Z\\google.golang."
-          + "org/genproto/googleapis/maps/mapsplatfor"
-          + "mdatasets/v1alpha;mapsplatformdatasets\252\002"
-          + "(Google.Maps.MapsPlatformDatasets.V1Alph"
-          + "a\312\002(Google\\Maps\\MapsPlatformDatasets\\V1a"
-          + "lphab\006proto3"
+          + "alphaB\017DataSourceProtoP\001Zfcloud.google.c"
+          + "om/go/maps/mapsplatformdatasets/apiv1alp"
+          + "ha/mapsplatformdatasetspb;mapsplatformda"
+          + "tasetspb\252\002(Google.Maps.MapsPlatformDatas"
+          + "ets.V1Alpha\312\002(Google\\Maps\\MapsPlatformDa"
+          + "tasets\\V1alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -45,13 +45,13 @@ public final class TextProto {
           + "Text\022\017\n\007content\030\001 \001(\t\022;\n\006format\030\002 \001(\0162+."
           + "google.monitoring.dashboard.v1.Text.Form"
           + "at\"7\n\006Format\022\026\n\022FORMAT_UNSPECIFIED\020\000\022\014\n\010"
-          + "MARKDOWN\020\001\022\007\n\003RAW\020\002B\363\001\n\"com.google.monit"
-          + "oring.dashboard.v1B\tTextProtoP\001ZGgoogle."
-          + "golang.org/genproto/googleapis/monitorin"
-          + "g/dashboard/v1;dashboard\252\002$Google.Cloud."
-          + "Monitoring.Dashboard.V1\312\002$Google\\Cloud\\M"
-          + "onitoring\\Dashboard\\V1\352\002(Google::Cloud::"
-          + "Monitoring::Dashboard::V1b\006proto3"
+          + "MARKDOWN\020\001\022\007\n\003RAW\020\002B\362\001\n\"com.google.monit"
+          + "oring.dashboard.v1B\tTextProtoP\001ZFcloud.g"
+          + "oogle.com/go/monitoring/dashboard/apiv1/"
+          + "dashboardpb;dashboardpb\252\002$Google.Cloud.M"
+          + "onitoring.Dashboard.V1\312\002$Google\\Cloud\\Mo"
+          + "nitoring\\Dashboard\\V1\352\002(Google::Cloud::M"
+          + "onitoring::Dashboard::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

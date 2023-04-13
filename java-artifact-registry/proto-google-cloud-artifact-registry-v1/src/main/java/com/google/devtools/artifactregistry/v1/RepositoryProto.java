@@ -120,13 +120,13 @@ public final class RepositoryProto {
           + "ask\030\002 \001(\0132\032.google.protobuf.FieldMask\"[\n"
           + "\027DeleteRepositoryRequest\022@\n\004name\030\001 \001(\tB2"
           + "\340A\002\372A,\n*artifactregistry.googleapis.com/"
-          + "RepositoryB\375\001\n\'com.google.devtools.artif"
-          + "actregistry.v1B\017RepositoryProtoP\001ZSgoogl"
-          + "e.golang.org/genproto/googleapis/devtool"
-          + "s/artifactregistry/v1;artifactregistry\252\002"
-          + " Google.Cloud.ArtifactRegistry.V1\312\002 Goog"
-          + "le\\Cloud\\ArtifactRegistry\\V1\352\002#Google::C"
-          + "loud::ArtifactRegistry::V1b\006proto3"
+          + "RepositoryB\372\001\n\'com.google.devtools.artif"
+          + "actregistry.v1B\017RepositoryProtoP\001ZPcloud"
+          + ".google.com/go/artifactregistry/apiv1/ar"
+          + "tifactregistrypb;artifactregistrypb\252\002 Go"
+          + "ogle.Cloud.ArtifactRegistry.V1\312\002 Google\\"
+          + "Cloud\\ArtifactRegistry\\V1\352\002#Google::Clou"
+          + "d::ArtifactRegistry::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

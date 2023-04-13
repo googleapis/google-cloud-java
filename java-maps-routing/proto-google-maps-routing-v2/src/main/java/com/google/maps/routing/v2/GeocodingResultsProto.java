@@ -56,13 +56,13 @@ public final class GeocodingResultsProto {
           + "rpc.Status\0220\n#intermediate_waypoint_requ"
           + "est_index\030\002 \001(\005H\000\210\001\001\022\014\n\004type\030\003 \003(\t\022\025\n\rpa"
           + "rtial_match\030\004 \001(\010\022\020\n\010place_id\030\005 \001(\tB&\n$_"
-          + "intermediate_waypoint_request_indexB\315\001\n\032"
+          + "intermediate_waypoint_request_indexB\312\001\n\032"
           + "com.google.maps.routing.v2B\025GeocodingRes"
-          + "ultsProtoP\001Z=google.golang.org/genproto/"
-          + "googleapis/maps/routing/v2;routing\370\001\001\242\002\005"
-          + "GMRV2\252\002\026Google.Maps.Routing.V2\312\002\026Google\\"
-          + "Maps\\Routing\\V2\352\002\031Google::Maps::Routing:"
-          + ":V2b\006proto3"
+          + "ultsProtoP\001Z:cloud.google.com/go/maps/ro"
+          + "uting/apiv2/routingpb;routingpb\370\001\001\242\002\005GMR"
+          + "V2\252\002\026Google.Maps.Routing.V2\312\002\026Google\\Map"
+          + "s\\Routing\\V2\352\002\031Google::Maps::Routing::V2"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

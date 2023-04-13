@@ -259,14 +259,14 @@ public final class ServiceProto {
           + "ask\032\214\001\312A\037artifactregistry.googleapis.com"
           + "\322Aghttps://www.googleapis.com/auth/cloud"
           + "-platform,https://www.googleapis.com/aut"
-          + "h/cloud-platform.read-onlyB\372\001\n\'com.googl"
+          + "h/cloud-platform.read-onlyB\367\001\n\'com.googl"
           + "e.devtools.artifactregistry.v1B\014ServiceP"
-          + "rotoP\001ZSgoogle.golang.org/genproto/googl"
-          + "eapis/devtools/artifactregistry/v1;artif"
-          + "actregistry\252\002 Google.Cloud.ArtifactRegis"
-          + "try.V1\312\002 Google\\Cloud\\ArtifactRegistry\\V"
-          + "1\352\002#Google::Cloud::ArtifactRegistry::V1b"
-          + "\006proto3"
+          + "rotoP\001ZPcloud.google.com/go/artifactregi"
+          + "stry/apiv1/artifactregistrypb;artifactre"
+          + "gistrypb\252\002 Google.Cloud.ArtifactRegistry"
+          + ".V1\312\002 Google\\Cloud\\ArtifactRegistry\\V1\352\002"
+          + "#Google::Cloud::ArtifactRegistry::V1b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

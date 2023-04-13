@@ -104,13 +104,13 @@ public final class MetricsProto {
           + "\n\nTargetAxis\022\033\n\027TARGET_AXIS_UNSPECIFIED\020"
           + "\000\022\006\n\002Y1\020\001\022\006\n\002Y2\020\002*Q\n\016SparkChartType\022 \n\034S"
           + "PARK_CHART_TYPE_UNSPECIFIED\020\000\022\016\n\nSPARK_L"
-          + "INE\020\001\022\r\n\tSPARK_BAR\020\002B\366\001\n\"com.google.moni"
-          + "toring.dashboard.v1B\014MetricsProtoP\001ZGgoo"
-          + "gle.golang.org/genproto/googleapis/monit"
-          + "oring/dashboard/v1;dashboard\252\002$Google.Cl"
-          + "oud.Monitoring.Dashboard.V1\312\002$Google\\Clo"
-          + "ud\\Monitoring\\Dashboard\\V1\352\002(Google::Clo"
-          + "ud::Monitoring::Dashboard::V1b\006proto3"
+          + "INE\020\001\022\r\n\tSPARK_BAR\020\002B\365\001\n\"com.google.moni"
+          + "toring.dashboard.v1B\014MetricsProtoP\001ZFclo"
+          + "ud.google.com/go/monitoring/dashboard/ap"
+          + "iv1/dashboardpb;dashboardpb\252\002$Google.Clo"
+          + "ud.Monitoring.Dashboard.V1\312\002$Google\\Clou"
+          + "d\\Monitoring\\Dashboard\\V1\352\002(Google::Clou"
+          + "d::Monitoring::Dashboard::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

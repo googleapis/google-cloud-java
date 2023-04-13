@@ -47,12 +47,12 @@ public final class WaypointProto {
           + "ocationH\000\022\022\n\010place_id\030\002 \001(\tH\000\022\021\n\007address"
           + "\030\007 \001(\tH\000\022\013\n\003via\030\003 \001(\010\022\030\n\020vehicle_stopove"
           + "r\030\004 \001(\010\022\024\n\014side_of_road\030\005 \001(\010B\017\n\rlocatio"
-          + "n_typeB\305\001\n\032com.google.maps.routing.v2B\rW"
-          + "aypointProtoP\001Z=google.golang.org/genpro"
-          + "to/googleapis/maps/routing/v2;routing\370\001\001"
-          + "\242\002\005GMRV2\252\002\026Google.Maps.Routing.V2\312\002\026Goog"
-          + "le\\Maps\\Routing\\V2\352\002\031Google::Maps::Routi"
-          + "ng::V2b\006proto3"
+          + "n_typeB\302\001\n\032com.google.maps.routing.v2B\rW"
+          + "aypointProtoP\001Z:cloud.google.com/go/maps"
+          + "/routing/apiv2/routingpb;routingpb\370\001\001\242\002\005"
+          + "GMRV2\252\002\026Google.Maps.Routing.V2\312\002\026Google\\"
+          + "Maps\\Routing\\V2\352\002\031Google::Maps::Routing:"
+          + ":V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

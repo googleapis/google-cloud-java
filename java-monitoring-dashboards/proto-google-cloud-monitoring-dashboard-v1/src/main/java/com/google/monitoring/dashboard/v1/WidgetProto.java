@@ -65,14 +65,13 @@ public final class WidgetProto {
           + "sible_group\030\t \001(\01320.google.monitoring.da"
           + "shboard.v1.CollapsibleGroupH\000\022?\n\nlogs_pa"
           + "nel\030\n \001(\0132).google.monitoring.dashboard."
-          + "v1.LogsPanelH\000B\t\n\007contentB\365\001\n\"com.google"
+          + "v1.LogsPanelH\000B\t\n\007contentB\364\001\n\"com.google"
           + ".monitoring.dashboard.v1B\013WidgetProtoP\001Z"
-          + "Ggoogle.golang.org/genproto/googleapis/m"
-          + "onitoring/dashboard/v1;dashboard\252\002$Googl"
-          + "e.Cloud.Monitoring.Dashboard.V1\312\002$Google"
-          + "\\Cloud\\Monitoring\\Dashboard\\V1\352\002(Google:"
-          + ":Cloud::Monitoring::Dashboard::V1b\006proto"
-          + "3"
+          + "Fcloud.google.com/go/monitoring/dashboar"
+          + "d/apiv1/dashboardpb;dashboardpb\252\002$Google"
+          + ".Cloud.Monitoring.Dashboard.V1\312\002$Google\\"
+          + "Cloud\\Monitoring\\Dashboard\\V1\352\002(Google::"
+          + "Cloud::Monitoring::Dashboard::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

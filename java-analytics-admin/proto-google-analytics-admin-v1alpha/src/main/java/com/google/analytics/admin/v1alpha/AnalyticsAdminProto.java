@@ -1719,10 +1719,10 @@ public final class AnalyticsAdminProto {
           + "users,https://www.googleapis.com/auth/an"
           + "alytics.manage.users.readonly,https://ww"
           + "w.googleapis.com/auth/analytics.readonly"
-          + "B\200\001\n\"com.google.analytics.admin.v1alphaB"
-          + "\023AnalyticsAdminProtoP\001ZCgoogle.golang.or"
-          + "g/genproto/googleapis/analytics/admin/v1"
-          + "alpha;adminb\006proto3"
+          + "B{\n\"com.google.analytics.admin.v1alphaB\023"
+          + "AnalyticsAdminProtoP\001Z>cloud.google.com/"
+          + "go/analytics/admin/apiv1alpha/adminpb;ad"
+          + "minpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

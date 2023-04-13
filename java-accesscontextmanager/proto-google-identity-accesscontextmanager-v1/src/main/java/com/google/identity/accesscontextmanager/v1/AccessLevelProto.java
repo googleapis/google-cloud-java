@@ -102,15 +102,15 @@ public final class AccessLevelProto {
           + " \001(\010\"\217\001\n\014OsConstraint\022B\n\007os_type\030\001 \001(\01621"
           + ".google.identity.accesscontextmanager.ty"
           + "pe.OsType\022\027\n\017minimum_version\030\002 \001(\t\022\"\n\032re"
-          + "quire_verified_chrome_os\030\003 \001(\010B\246\002\n+com.g"
+          + "quire_verified_chrome_os\030\003 \001(\010B\247\002\n+com.g"
           + "oogle.identity.accesscontextmanager.v1B\020"
-          + "AccessLevelProtoP\001Z[google.golang.org/ge"
-          + "nproto/googleapis/identity/accesscontext"
-          + "manager/v1;accesscontextmanager\242\002\004GACM\252\002"
-          + "\'Google.Identity.AccessContextManager.V1"
-          + "\312\002\'Google\\Identity\\AccessContextManager\\"
-          + "V1\352\002*Google::Identity::AccessContextMana"
-          + "ger::V1b\006proto3"
+          + "AccessLevelProtoP\001Z\\cloud.google.com/go/"
+          + "accesscontextmanager/apiv1/accesscontext"
+          + "managerpb;accesscontextmanagerpb\242\002\004GACM\252"
+          + "\002\'Google.Identity.AccessContextManager.V"
+          + "1\312\002\'Google\\Identity\\AccessContextManager"
+          + "\\V1\352\002*Google::Identity::AccessContextMan"
+          + "ager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

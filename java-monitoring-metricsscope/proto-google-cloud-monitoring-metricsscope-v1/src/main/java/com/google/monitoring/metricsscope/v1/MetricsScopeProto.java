@@ -61,14 +61,14 @@ public final class MetricsScopeProto {
           + "\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\003:"
           + "r\352Ao\n*monitoring.googleapis.com/Monitore"
           + "dProject\022Alocations/global/metricsScopes"
-          + "/{metrics_scope}/projects/{project}B\215\002\n%"
+          + "/{metrics_scope}/projects/{project}B\217\002\n%"
           + "com.google.monitoring.metricsscope.v1B\021M"
-          + "etricsScopeProtoP\001ZMgoogle.golang.org/ge"
-          + "nproto/googleapis/monitoring/metricsscop"
-          + "e/v1;metricsscope\252\002\'Google.Cloud.Monitor"
-          + "ing.MetricsScope.V1\312\002\'Google\\Cloud\\Monit"
-          + "oring\\MetricsScope\\V1\352\002+Google::Cloud::M"
-          + "onitoring::MetricsScope::V1b\006proto3"
+          + "etricsScopeProtoP\001ZOcloud.google.com/go/"
+          + "monitoring/metricsscope/apiv1/metricssco"
+          + "pepb;metricsscopepb\252\002\'Google.Cloud.Monit"
+          + "oring.MetricsScope.V1\312\002\'Google\\Cloud\\Mon"
+          + "itoring\\MetricsScope\\V1\352\002+Google::Cloud:"
+          + ":Monitoring::MetricsScope::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

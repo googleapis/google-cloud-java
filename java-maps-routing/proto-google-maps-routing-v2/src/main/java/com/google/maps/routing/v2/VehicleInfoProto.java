@@ -45,12 +45,12 @@ public final class VehicleInfoProto {
           + "/routing/v2/vehicle_emission_type.proto\""
           + "Q\n\013VehicleInfo\022B\n\remission_type\030\002 \001(\0162+."
           + "google.maps.routing.v2.VehicleEmissionTy"
-          + "peB\310\001\n\032com.google.maps.routing.v2B\020Vehic"
-          + "leInfoProtoP\001Z=google.golang.org/genprot"
-          + "o/googleapis/maps/routing/v2;routing\370\001\001\242"
-          + "\002\005GMRV2\252\002\026Google.Maps.Routing.V2\312\002\026Googl"
-          + "e\\Maps\\Routing\\V2\352\002\031Google::Maps::Routin"
-          + "g::V2b\006proto3"
+          + "peB\305\001\n\032com.google.maps.routing.v2B\020Vehic"
+          + "leInfoProtoP\001Z:cloud.google.com/go/maps/"
+          + "routing/apiv2/routingpb;routingpb\370\001\001\242\002\005G"
+          + "MRV2\252\002\026Google.Maps.Routing.V2\312\002\026Google\\M"
+          + "aps\\Routing\\V2\352\002\031Google::Maps::Routing::"
+          + "V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

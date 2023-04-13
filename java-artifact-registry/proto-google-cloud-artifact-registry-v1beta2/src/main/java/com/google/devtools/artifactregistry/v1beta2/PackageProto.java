@@ -69,14 +69,14 @@ public final class PackageProto {
           + "google.devtools.artifactregistry.v1beta2"
           + ".Package\022\027\n\017next_page_token\030\002 \001(\t\"!\n\021Get"
           + "PackageRequest\022\014\n\004name\030\001 \001(\t\"$\n\024DeletePa"
-          + "ckageRequest\022\014\n\004name\030\001 \001(\tB\223\002\n,com.googl"
+          + "ckageRequest\022\014\n\004name\030\001 \001(\tB\220\002\n,com.googl"
           + "e.devtools.artifactregistry.v1beta2B\014Pac"
-          + "kageProtoP\001ZXgoogle.golang.org/genproto/"
-          + "googleapis/devtools/artifactregistry/v1b"
-          + "eta2;artifactregistry\252\002%Google.Cloud.Art"
-          + "ifactRegistry.V1Beta2\312\002%Google\\Cloud\\Art"
-          + "ifactRegistry\\V1beta2\352\002(Google::Cloud::A"
-          + "rtifactRegistry::V1beta2b\006proto3"
+          + "kageProtoP\001ZUcloud.google.com/go/artifac"
+          + "tregistry/apiv1beta2/artifactregistrypb;"
+          + "artifactregistrypb\252\002%Google.Cloud.Artifa"
+          + "ctRegistry.V1Beta2\312\002%Google\\Cloud\\Artifa"
+          + "ctRegistry\\V1beta2\352\002(Google::Cloud::Arti"
+          + "factRegistry::V1beta2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

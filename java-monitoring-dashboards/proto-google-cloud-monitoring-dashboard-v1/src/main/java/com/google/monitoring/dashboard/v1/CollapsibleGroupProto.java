@@ -43,13 +43,13 @@ public final class CollapsibleGroupProto {
       "\n6google/monitoring/dashboard/v1/collaps"
           + "ible_group.proto\022\036google.monitoring.dash"
           + "board.v1\"%\n\020CollapsibleGroup\022\021\n\tcollapse"
-          + "d\030\001 \001(\010B\377\001\n\"com.google.monitoring.dashbo"
-          + "ard.v1B\025CollapsibleGroupProtoP\001ZGgoogle."
-          + "golang.org/genproto/googleapis/monitorin"
-          + "g/dashboard/v1;dashboard\252\002$Google.Cloud."
-          + "Monitoring.Dashboard.V1\312\002$Google\\Cloud\\M"
-          + "onitoring\\Dashboard\\V1\352\002(Google::Cloud::"
-          + "Monitoring::Dashboard::V1b\006proto3"
+          + "d\030\001 \001(\010B\376\001\n\"com.google.monitoring.dashbo"
+          + "ard.v1B\025CollapsibleGroupProtoP\001ZFcloud.g"
+          + "oogle.com/go/monitoring/dashboard/apiv1/"
+          + "dashboardpb;dashboardpb\252\002$Google.Cloud.M"
+          + "onitoring.Dashboard.V1\312\002$Google\\Cloud\\Mo"
+          + "nitoring\\Dashboard\\V1\352\002(Google::Cloud::M"
+          + "onitoring::Dashboard::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

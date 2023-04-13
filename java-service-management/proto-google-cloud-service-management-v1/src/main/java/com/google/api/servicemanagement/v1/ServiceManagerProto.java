@@ -253,14 +253,14 @@ public final class ServiceManagerProto {
           + "auth/cloud-platform.read-only,https://ww"
           + "w.googleapis.com/auth/service.management"
           + ",https://www.googleapis.com/auth/service"
-          + ".management.readonlyB\204\002\n#com.google.api."
+          + ".management.readonlyB\207\002\n#com.google.api."
           + "servicemanagement.v1B\023ServiceManagerProt"
-          + "oP\001ZPgoogle.golang.org/genproto/googleap"
-          + "is/api/servicemanagement/v1;servicemanag"
-          + "ement\242\002\004GASM\252\002!Google.Cloud.ServiceManag"
-          + "ement.V1\312\002!Google\\Cloud\\ServiceManagemen"
-          + "t\\V1\352\002$Google::Cloud::ServiceManagement:"
-          + ":V1b\006proto3"
+          + "oP\001ZScloud.google.com/go/servicemanageme"
+          + "nt/apiv1/servicemanagementpb;servicemana"
+          + "gementpb\242\002\004GASM\252\002!Google.Cloud.ServiceMa"
+          + "nagement.V1\312\002!Google\\Cloud\\ServiceManage"
+          + "ment\\V1\352\002$Google::Cloud::ServiceManageme"
+          + "nt::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

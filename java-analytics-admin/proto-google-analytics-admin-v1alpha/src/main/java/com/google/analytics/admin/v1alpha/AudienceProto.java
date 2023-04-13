@@ -213,11 +213,10 @@ public final class AudienceProto {
           + "SPECIFIED\020\000\022+\n\'AUDIENCE_FILTER_SCOPE_WIT"
           + "HIN_SAME_EVENT\020\001\022-\n)AUDIENCE_FILTER_SCOP"
           + "E_WITHIN_SAME_SESSION\020\002\022-\n)AUDIENCE_FILT"
-          + "ER_SCOPE_ACROSS_ALL_SESSIONS\020\003Bz\n\"com.go"
+          + "ER_SCOPE_ACROSS_ALL_SESSIONS\020\003Bu\n\"com.go"
           + "ogle.analytics.admin.v1alphaB\rAudiencePr"
-          + "otoP\001ZCgoogle.golang.org/genproto/google"
-          + "apis/analytics/admin/v1alpha;adminb\006prot"
-          + "o3"
+          + "otoP\001Z>cloud.google.com/go/analytics/adm"
+          + "in/apiv1alpha/adminpb;adminpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

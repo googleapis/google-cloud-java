@@ -108,14 +108,14 @@ public final class MapsPlatformDatasetsProto {
           + "datasets.googleapis.com/Dataset\022\r\n\005force"
           + "\030\002 \001(\010\"`\n\033DeleteDatasetVersionRequest\022A\n"
           + "\004name\030\001 \001(\tB3\340A\002\372A-\n+mapsplatformdataset"
-          + "s.googleapis.com/DatasetB\377\001\n,com.google."
+          + "s.googleapis.com/DatasetB\211\002\n,com.google."
           + "maps.mapsplatformdatasets.v1alphaB\031MapsP"
-          + "latformDatasetsProtoP\001Z\\google.golang.or"
-          + "g/genproto/googleapis/maps/mapsplatformd"
-          + "atasets/v1alpha;mapsplatformdatasets\252\002(G"
-          + "oogle.Maps.MapsPlatformDatasets.V1Alpha\312"
-          + "\002(Google\\Maps\\MapsPlatformDatasets\\V1alp"
-          + "hab\006proto3"
+          + "latformDatasetsProtoP\001Zfcloud.google.com"
+          + "/go/maps/mapsplatformdatasets/apiv1alpha"
+          + "/mapsplatformdatasetspb;mapsplatformdata"
+          + "setspb\252\002(Google.Maps.MapsPlatformDataset"
+          + "s.V1Alpha\312\002(Google\\Maps\\MapsPlatformData"
+          + "sets\\V1alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

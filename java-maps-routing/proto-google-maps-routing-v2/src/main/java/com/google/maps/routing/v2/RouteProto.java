@@ -114,12 +114,12 @@ public final class RouteProto {
           + "oogle.maps.routing.v2.NavigationInstruct"
           + "ion\022K\n\017travel_advisory\030\007 \001(\01322.google.ma"
           + "ps.routing.v2.RouteLegStepTravelAdvisory"
-          + "B\302\001\n\032com.google.maps.routing.v2B\nRoutePr"
-          + "otoP\001Z=google.golang.org/genproto/google"
-          + "apis/maps/routing/v2;routing\370\001\001\242\002\005GMRV2\252"
-          + "\002\026Google.Maps.Routing.V2\312\002\026Google\\Maps\\R"
-          + "outing\\V2\352\002\031Google::Maps::Routing::V2b\006p"
-          + "roto3"
+          + "B\277\001\n\032com.google.maps.routing.v2B\nRoutePr"
+          + "otoP\001Z:cloud.google.com/go/maps/routing/"
+          + "apiv2/routingpb;routingpb\370\001\001\242\002\005GMRV2\252\002\026G"
+          + "oogle.Maps.Routing.V2\312\002\026Google\\Maps\\Rout"
+          + "ing\\V2\352\002\031Google::Maps::Routing::V2b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

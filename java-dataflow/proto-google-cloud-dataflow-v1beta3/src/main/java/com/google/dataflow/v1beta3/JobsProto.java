@@ -363,12 +363,12 @@ public final class JobsProto {
           + "://www.googleapis.com/auth/compute,https"
           + "://www.googleapis.com/auth/compute.reado"
           + "nly,https://www.googleapis.com/auth/user"
-          + "info.emailB\316\001\n\033com.google.dataflow.v1bet"
-          + "a3B\tJobsProtoP\001Z?google.golang.org/genpr"
-          + "oto/googleapis/dataflow/v1beta3;dataflow"
-          + "\252\002\035Google.Cloud.Dataflow.V1Beta3\312\002\035Googl"
-          + "e\\Cloud\\Dataflow\\V1beta3\352\002 Google::Cloud"
-          + "::Dataflow::V1beta3b\006proto3"
+          + "info.emailB\314\001\n\033com.google.dataflow.v1bet"
+          + "a3B\tJobsProtoP\001Z=cloud.google.com/go/dat"
+          + "aflow/apiv1beta3/dataflowpb;dataflowpb\252\002"
+          + "\035Google.Cloud.Dataflow.V1Beta3\312\002\035Google\\"
+          + "Cloud\\Dataflow\\V1beta3\352\002 Google::Cloud::"
+          + "Dataflow::V1beta3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

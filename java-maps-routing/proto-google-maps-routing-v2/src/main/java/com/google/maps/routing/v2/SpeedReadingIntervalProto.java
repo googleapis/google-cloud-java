@@ -49,13 +49,13 @@ public final class SpeedReadingIntervalProto {
           + "val.SpeedH\000\"E\n\005Speed\022\025\n\021SPEED_UNSPECIFIE"
           + "D\020\000\022\n\n\006NORMAL\020\001\022\010\n\004SLOW\020\002\022\017\n\013TRAFFIC_JAM"
           + "\020\003B\014\n\nspeed_typeB\035\n\033_start_polyline_poin"
-          + "t_indexB\033\n\031_end_polyline_point_indexB\321\001\n"
+          + "t_indexB\033\n\031_end_polyline_point_indexB\316\001\n"
           + "\032com.google.maps.routing.v2B\031SpeedReadin"
-          + "gIntervalProtoP\001Z=google.golang.org/genp"
-          + "roto/googleapis/maps/routing/v2;routing\370"
-          + "\001\001\242\002\005GMRV2\252\002\026Google.Maps.Routing.V2\312\002\026Go"
-          + "ogle\\Maps\\Routing\\V2\352\002\031Google::Maps::Rou"
-          + "ting::V2b\006proto3"
+          + "gIntervalProtoP\001Z:cloud.google.com/go/ma"
+          + "ps/routing/apiv2/routingpb;routingpb\370\001\001\242"
+          + "\002\005GMRV2\252\002\026Google.Maps.Routing.V2\312\002\026Googl"
+          + "e\\Maps\\Routing\\V2\352\002\031Google::Maps::Routin"
+          + "g::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

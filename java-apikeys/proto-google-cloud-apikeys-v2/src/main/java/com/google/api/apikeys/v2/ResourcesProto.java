@@ -109,12 +109,12 @@ public final class ResourcesProto {
           + "t\030\001 \001(\t\022\024\n\014package_name\030\002 \001(\t\"0\n\022IosKeyR"
           + "estrictions\022\032\n\022allowed_bundle_ids\030\001 \003(\t\""
           + "2\n\tApiTarget\022\017\n\007service\030\001 \001(\t\022\024\n\007methods"
-          + "\030\002 \003(\tB\003\340A\001B\274\001\n\031com.google.api.apikeys.v"
-          + "2B\016ResourcesProtoP\001Z<google.golang.org/g"
-          + "enproto/googleapis/api/apikeys/v2;apikey"
-          + "s\252\002\027Google.Cloud.ApiKeys.V2\312\002\027Google\\Clo"
-          + "ud\\ApiKeys\\V2\352\002\032Google::Cloud::ApiKeys::"
-          + "V2b\006proto3"
+          + "\030\002 \003(\tB\003\340A\001B\265\001\n\031com.google.api.apikeys.v"
+          + "2B\016ResourcesProtoP\001Z5cloud.google.com/go"
+          + "/apikeys/apiv2/apikeyspb;apikeyspb\252\002\027Goo"
+          + "gle.Cloud.ApiKeys.V2\312\002\027Google\\Cloud\\ApiK"
+          + "eys\\V2\352\002\032Google::Cloud::ApiKeys::V2b\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

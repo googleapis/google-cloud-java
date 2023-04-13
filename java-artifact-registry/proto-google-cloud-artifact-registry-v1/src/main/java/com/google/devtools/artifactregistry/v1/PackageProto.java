@@ -77,14 +77,14 @@ public final class PackageProto {
           + "t\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'artifactregistr"
           + "y.googleapis.com/Package\"U\n\024DeletePackag"
           + "eRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'artifact"
-          + "registry.googleapis.com/PackageB\372\001\n\'com."
+          + "registry.googleapis.com/PackageB\367\001\n\'com."
           + "google.devtools.artifactregistry.v1B\014Pac"
-          + "kageProtoP\001ZSgoogle.golang.org/genproto/"
-          + "googleapis/devtools/artifactregistry/v1;"
-          + "artifactregistry\252\002 Google.Cloud.Artifact"
-          + "Registry.V1\312\002 Google\\Cloud\\ArtifactRegis"
-          + "try\\V1\352\002#Google::Cloud::ArtifactRegistry"
-          + "::V1b\006proto3"
+          + "kageProtoP\001ZPcloud.google.com/go/artifac"
+          + "tregistry/apiv1/artifactregistrypb;artif"
+          + "actregistrypb\252\002 Google.Cloud.ArtifactReg"
+          + "istry.V1\312\002 Google\\Cloud\\ArtifactRegistry"
+          + "\\V1\352\002#Google::Cloud::ArtifactRegistry::V"
+          + "1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

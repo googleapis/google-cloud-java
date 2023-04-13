@@ -176,14 +176,14 @@ public final class ArtifactProto {
           + "ifactregistry.v1.PythonPackage\022\027\n\017next_p"
           + "age_token\030\002 \001(\t\"^\n\027GetPythonPackageReque"
           + "st\022C\n\004name\030\001 \001(\tB5\340A\002\372A/\n-artifactregist"
-          + "ry.googleapis.com/PythonPackageB\373\001\n\'com."
+          + "ry.googleapis.com/PythonPackageB\370\001\n\'com."
           + "google.devtools.artifactregistry.v1B\rArt"
-          + "ifactProtoP\001ZSgoogle.golang.org/genproto"
-          + "/googleapis/devtools/artifactregistry/v1"
-          + ";artifactregistry\252\002 Google.Cloud.Artifac"
-          + "tRegistry.V1\312\002 Google\\Cloud\\ArtifactRegi"
-          + "stry\\V1\352\002#Google::Cloud::ArtifactRegistr"
-          + "y::V1b\006proto3"
+          + "ifactProtoP\001ZPcloud.google.com/go/artifa"
+          + "ctregistry/apiv1/artifactregistrypb;arti"
+          + "factregistrypb\252\002 Google.Cloud.ArtifactRe"
+          + "gistry.V1\312\002 Google\\Cloud\\ArtifactRegistr"
+          + "y\\V1\352\002#Google::Cloud::ArtifactRegistry::"
+          + "V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

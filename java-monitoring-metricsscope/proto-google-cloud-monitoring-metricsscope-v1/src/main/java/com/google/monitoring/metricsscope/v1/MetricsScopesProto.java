@@ -120,14 +120,14 @@ public final class MetricsScopesProto {
           + "w.googleapis.com/auth/monitoring,https:/"
           + "/www.googleapis.com/auth/monitoring.read"
           + ",https://www.googleapis.com/auth/monitor"
-          + "ing.writeB\216\002\n%com.google.monitoring.metr"
-          + "icsscope.v1B\022MetricsScopesProtoP\001ZMgoogl"
-          + "e.golang.org/genproto/googleapis/monitor"
-          + "ing/metricsscope/v1;metricsscope\252\002\'Googl"
-          + "e.Cloud.Monitoring.MetricsScope.V1\312\002\'Goo"
-          + "gle\\Cloud\\Monitoring\\MetricsScope\\V1\352\002+G"
-          + "oogle::Cloud::Monitoring::MetricsScope::"
-          + "V1b\006proto3"
+          + "ing.writeB\220\002\n%com.google.monitoring.metr"
+          + "icsscope.v1B\022MetricsScopesProtoP\001ZOcloud"
+          + ".google.com/go/monitoring/metricsscope/a"
+          + "piv1/metricsscopepb;metricsscopepb\252\002\'Goo"
+          + "gle.Cloud.Monitoring.MetricsScope.V1\312\002\'G"
+          + "oogle\\Cloud\\Monitoring\\MetricsScope\\V1\352\002"
+          + "+Google::Cloud::Monitoring::MetricsScope"
+          + "::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

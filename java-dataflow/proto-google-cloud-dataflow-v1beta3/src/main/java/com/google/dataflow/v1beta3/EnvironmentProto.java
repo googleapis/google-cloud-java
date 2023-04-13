@@ -170,12 +170,12 @@ public final class EnvironmentProto {
           + "FIED\020\000\022\024\n\020WORKER_IP_PUBLIC\020\001\022\025\n\021WORKER_I"
           + "P_PRIVATE\020\002*L\n\013ShuffleMode\022\034\n\030SHUFFLE_MO"
           + "DE_UNSPECIFIED\020\000\022\014\n\010VM_BASED\020\001\022\021\n\rSERVIC"
-          + "E_BASED\020\002B\325\001\n\033com.google.dataflow.v1beta"
-          + "3B\020EnvironmentProtoP\001Z?google.golang.org"
-          + "/genproto/googleapis/dataflow/v1beta3;da"
-          + "taflow\252\002\035Google.Cloud.Dataflow.V1Beta3\312\002"
-          + "\035Google\\Cloud\\Dataflow\\V1beta3\352\002 Google:"
-          + ":Cloud::Dataflow::V1beta3b\006proto3"
+          + "E_BASED\020\002B\323\001\n\033com.google.dataflow.v1beta"
+          + "3B\020EnvironmentProtoP\001Z=cloud.google.com/"
+          + "go/dataflow/apiv1beta3/dataflowpb;datafl"
+          + "owpb\252\002\035Google.Cloud.Dataflow.V1Beta3\312\002\035G"
+          + "oogle\\Cloud\\Dataflow\\V1beta3\352\002 Google::C"
+          + "loud::Dataflow::V1beta3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

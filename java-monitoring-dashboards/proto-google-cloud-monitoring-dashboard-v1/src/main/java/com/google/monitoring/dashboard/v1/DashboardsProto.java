@@ -65,14 +65,14 @@ public final class DashboardsProto {
           + "oard.LabelsEntry\032-\n\013LabelsEntry\022\013\n\003key\030\001"
           + " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:S\352AP\n#monitoring"
           + ".googleapis.com/Dashboard\022)projects/{pro"
-          + "ject}/dashboards/{dashboard}B\010\n\006layoutB\371"
+          + "ject}/dashboards/{dashboard}B\010\n\006layoutB\370"
           + "\001\n\"com.google.monitoring.dashboard.v1B\017D"
-          + "ashboardsProtoP\001ZGgoogle.golang.org/genp"
-          + "roto/googleapis/monitoring/dashboard/v1;"
-          + "dashboard\252\002$Google.Cloud.Monitoring.Dash"
-          + "board.V1\312\002$Google\\Cloud\\Monitoring\\Dashb"
-          + "oard\\V1\352\002(Google::Cloud::Monitoring::Das"
-          + "hboard::V1b\006proto3"
+          + "ashboardsProtoP\001ZFcloud.google.com/go/mo"
+          + "nitoring/dashboard/apiv1/dashboardpb;das"
+          + "hboardpb\252\002$Google.Cloud.Monitoring.Dashb"
+          + "oard.V1\312\002$Google\\Cloud\\Monitoring\\Dashbo"
+          + "ard\\V1\352\002(Google::Cloud::Monitoring::Dash"
+          + "board::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

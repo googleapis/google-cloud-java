@@ -16192,14 +16192,14 @@ public final class TransferProto {
           + ".google.protobuf.Empty\"1\202\323\344\223\002$*\"/v1/{nam"
           + "e=projects/*/agentPools/*}\332A\004name\032R\312A\036st"
           + "oragetransfer.googleapis.com\322A.https://w"
-          + "ww.googleapis.com/auth/cloud-platformB\352\001"
+          + "ww.googleapis.com/auth/cloud-platformB\357\001"
           + "\n#com.google.storagetransfer.v1.protoB\rT"
-          + "ransferProtoZHgoogle.golang.org/genproto"
-          + "/googleapis/storagetransfer/v1;storagetr"
-          + "ansfer\370\001\001\252\002\037Google.Cloud.StorageTransfer"
-          + ".V1\312\002\037Google\\Cloud\\StorageTransfer\\V1\352\002\""
-          + "Google::Cloud::StorageTransfer::V1b\006prot"
-          + "o3"
+          + "ransferProtoZMcloud.google.com/go/storag"
+          + "etransfer/apiv1/storagetransferpb;storag"
+          + "etransferpb\370\001\001\252\002\037Google.Cloud.StorageTra"
+          + "nsfer.V1\312\002\037Google\\Cloud\\StorageTransfer\\"
+          + "V1\352\002\"Google::Cloud::StorageTransfer::V1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

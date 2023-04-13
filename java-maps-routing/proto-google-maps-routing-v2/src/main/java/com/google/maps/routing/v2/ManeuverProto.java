@@ -45,12 +45,12 @@ public final class ManeuverProto {
           + "T\020\n\022\016\n\nRAMP_RIGHT\020\013\022\t\n\005MERGE\020\014\022\r\n\tFORK_L"
           + "EFT\020\r\022\016\n\nFORK_RIGHT\020\016\022\t\n\005FERRY\020\017\022\017\n\013FERR"
           + "Y_TRAIN\020\020\022\023\n\017ROUNDABOUT_LEFT\020\021\022\024\n\020ROUNDA"
-          + "BOUT_RIGHT\020\022B\305\001\n\032com.google.maps.routing"
-          + ".v2B\rManeuverProtoP\001Z=google.golang.org/"
-          + "genproto/googleapis/maps/routing/v2;rout"
-          + "ing\370\001\001\242\002\005GMRV2\252\002\026Google.Maps.Routing.V2\312"
-          + "\002\026Google\\Maps\\Routing\\V2\352\002\031Google::Maps:"
-          + ":Routing::V2b\006proto3"
+          + "BOUT_RIGHT\020\022B\302\001\n\032com.google.maps.routing"
+          + ".v2B\rManeuverProtoP\001Z:cloud.google.com/g"
+          + "o/maps/routing/apiv2/routingpb;routingpb"
+          + "\370\001\001\242\002\005GMRV2\252\002\026Google.Maps.Routing.V2\312\002\026G"
+          + "oogle\\Maps\\Routing\\V2\352\002\031Google::Maps::Ro"
+          + "uting::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

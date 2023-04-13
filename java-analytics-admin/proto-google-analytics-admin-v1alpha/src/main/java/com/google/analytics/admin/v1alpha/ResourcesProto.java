@@ -547,11 +547,11 @@ public final class ResourcesProto {
           + "IRED\020\005\022\014\n\010OBSOLETE\020\006*\202\001\n\014PropertyType\022\035\n"
           + "\031PROPERTY_TYPE_UNSPECIFIED\020\000\022\032\n\026PROPERTY"
           + "_TYPE_ORDINARY\020\001\022\035\n\031PROPERTY_TYPE_SUBPRO"
-          + "PERTY\020\002\022\030\n\024PROPERTY_TYPE_ROLLUP\020\003B{\n\"com"
+          + "PERTY\020\002\022\030\n\024PROPERTY_TYPE_ROLLUP\020\003Bv\n\"com"
           + ".google.analytics.admin.v1alphaB\016Resourc"
-          + "esProtoP\001ZCgoogle.golang.org/genproto/go"
-          + "ogleapis/analytics/admin/v1alpha;adminb\006"
-          + "proto3"
+          + "esProtoP\001Z>cloud.google.com/go/analytics"
+          + "/admin/apiv1alpha/adminpb;adminpbb\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

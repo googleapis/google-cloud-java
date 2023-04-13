@@ -69,13 +69,13 @@ public final class SettingsProto {
           + "N\n\020project_settings\030\002 \001(\01324.google.devto"
           + "ols.artifactregistry.v1.ProjectSettings\022"
           + "/\n\013update_mask\030\003 \001(\0132\032.google.protobuf.F"
-          + "ieldMaskB\373\001\n\'com.google.devtools.artifac"
-          + "tregistry.v1B\rSettingsProtoP\001ZSgoogle.go"
-          + "lang.org/genproto/googleapis/devtools/ar"
-          + "tifactregistry/v1;artifactregistry\252\002 Goo"
-          + "gle.Cloud.ArtifactRegistry.V1\312\002 Google\\C"
-          + "loud\\ArtifactRegistry\\V1\352\002#Google::Cloud"
-          + "::ArtifactRegistry::V1b\006proto3"
+          + "ieldMaskB\370\001\n\'com.google.devtools.artifac"
+          + "tregistry.v1B\rSettingsProtoP\001ZPcloud.goo"
+          + "gle.com/go/artifactregistry/apiv1/artifa"
+          + "ctregistrypb;artifactregistrypb\252\002 Google"
+          + ".Cloud.ArtifactRegistry.V1\312\002 Google\\Clou"
+          + "d\\ArtifactRegistry\\V1\352\002#Google::Cloud::A"
+          + "rtifactRegistry::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

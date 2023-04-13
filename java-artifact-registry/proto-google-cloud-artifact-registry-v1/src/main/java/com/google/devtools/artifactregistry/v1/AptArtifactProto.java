@@ -90,14 +90,13 @@ public final class AptArtifactProto {
           + "tregistry.v1.AptArtifact\022P\n\006errors\030\002 \003(\013"
           + "2@.google.devtools.artifactregistry.v1.I"
           + "mportAptArtifactsErrorInfo\"\034\n\032ImportAptA"
-          + "rtifactsMetadataB\376\001\n\'com.google.devtools"
+          + "rtifactsMetadataB\373\001\n\'com.google.devtools"
           + ".artifactregistry.v1B\020AptArtifactProtoP\001"
-          + "ZSgoogle.golang.org/genproto/googleapis/"
-          + "devtools/artifactregistry/v1;artifactreg"
-          + "istry\252\002 Google.Cloud.ArtifactRegistry.V1"
-          + "\312\002 Google\\Cloud\\ArtifactRegistry\\V1\352\002#Go"
-          + "ogle::Cloud::ArtifactRegistry::V1b\006proto"
-          + "3"
+          + "ZPcloud.google.com/go/artifactregistry/a"
+          + "piv1/artifactregistrypb;artifactregistry"
+          + "pb\252\002 Google.Cloud.ArtifactRegistry.V1\312\002 "
+          + "Google\\Cloud\\ArtifactRegistry\\V1\352\002#Googl"
+          + "e::Cloud::ArtifactRegistry::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

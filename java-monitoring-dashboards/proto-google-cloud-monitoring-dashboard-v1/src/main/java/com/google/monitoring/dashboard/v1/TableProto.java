@@ -72,13 +72,13 @@ public final class TableProto {
           + "ettings\022\023\n\006column\030\001 \001(\tB\003\340A\002\022\024\n\007visible\030"
           + "\002 \001(\010B\003\340A\002\"P\n\023MetricVisualization\022$\n MET"
           + "RIC_VISUALIZATION_UNSPECIFIED\020\000\022\n\n\006NUMBE"
-          + "R\020\001\022\007\n\003BAR\020\002B\364\001\n\"com.google.monitoring.d"
-          + "ashboard.v1B\nTableProtoP\001ZGgoogle.golang"
-          + ".org/genproto/googleapis/monitoring/dash"
-          + "board/v1;dashboard\252\002$Google.Cloud.Monito"
-          + "ring.Dashboard.V1\312\002$Google\\Cloud\\Monitor"
-          + "ing\\Dashboard\\V1\352\002(Google::Cloud::Monito"
-          + "ring::Dashboard::V1b\006proto3"
+          + "R\020\001\022\007\n\003BAR\020\002B\363\001\n\"com.google.monitoring.d"
+          + "ashboard.v1B\nTableProtoP\001ZFcloud.google."
+          + "com/go/monitoring/dashboard/apiv1/dashbo"
+          + "ardpb;dashboardpb\252\002$Google.Cloud.Monitor"
+          + "ing.Dashboard.V1\312\002$Google\\Cloud\\Monitori"
+          + "ng\\Dashboard\\V1\352\002(Google::Cloud::Monitor"
+          + "ing::Dashboard::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

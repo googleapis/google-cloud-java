@@ -148,12 +148,12 @@ public final class StreamingProto {
           + "w.v1beta3.KeyRangeDataDiskAssignment\"V\n "
           + "StreamingApplianceSnapshotConfig\022\023\n\013snap"
           + "shot_id\030\001 \001(\t\022\035\n\025import_state_endpoint\030\002"
-          + " \001(\tB\323\001\n\033com.google.dataflow.v1beta3B\016St"
-          + "reamingProtoP\001Z?google.golang.org/genpro"
-          + "to/googleapis/dataflow/v1beta3;dataflow\252"
-          + "\002\035Google.Cloud.Dataflow.V1Beta3\312\002\035Google"
-          + "\\Cloud\\Dataflow\\V1beta3\352\002 Google::Cloud:"
-          + ":Dataflow::V1beta3b\006proto3"
+          + " \001(\tB\321\001\n\033com.google.dataflow.v1beta3B\016St"
+          + "reamingProtoP\001Z=cloud.google.com/go/data"
+          + "flow/apiv1beta3/dataflowpb;dataflowpb\252\002\035"
+          + "Google.Cloud.Dataflow.V1Beta3\312\002\035Google\\C"
+          + "loud\\Dataflow\\V1beta3\352\002 Google::Cloud::D"
+          + "ataflow::V1beta3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

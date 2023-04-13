@@ -272,10 +272,10 @@ public final class TablesProto {
           + "ogleapis.com/auth/spreadsheets,https://w"
           + "ww.googleapis.com/auth/spreadsheets.read"
           + "only,https://www.googleapis.com/auth/tab"
-          + "lesBy\n\"com.google.area120.tables.v1alpha"
-          + "1B\013TablesProtoP\001ZDgoogle.golang.org/genp"
-          + "roto/googleapis/area120/tables/v1alpha1;"
-          + "tablesb\006proto3"
+          + "lesBu\n\"com.google.area120.tables.v1alpha"
+          + "1B\013TablesProtoP\001Z@cloud.google.com/go/ar"
+          + "ea120/tables/apiv1alpha1/tablespb;tables"
+          + "pbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

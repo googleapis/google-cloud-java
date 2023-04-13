@@ -91,12 +91,12 @@ public final class TollPassesProto {
           + "EZPASSVA\020=\022\022\n\016US_WA_BREEZEBY\020\021\022\024\n\020US_WA_"
           + "GOOD_TO_GO\020\001\022\022\n\016US_WV_EZPASSWV\020>\022!\n\035US_W"
           + "V_MEMORIAL_BRIDGE_TICKETS\020?\022#\n\037US_WV_NEW"
-          + "ELL_TOLL_BRIDGE_TICKET\020@B\307\001\n\032com.google."
-          + "maps.routing.v2B\017TollPassesProtoP\001Z=goog"
-          + "le.golang.org/genproto/googleapis/maps/r"
-          + "outing/v2;routing\370\001\001\242\002\005GMRV2\252\002\026Google.Ma"
-          + "ps.Routing.V2\312\002\026Google\\Maps\\Routing\\V2\352\002"
-          + "\031Google::Maps::Routing::V2b\006proto3"
+          + "ELL_TOLL_BRIDGE_TICKET\020@B\304\001\n\032com.google."
+          + "maps.routing.v2B\017TollPassesProtoP\001Z:clou"
+          + "d.google.com/go/maps/routing/apiv2/routi"
+          + "ngpb;routingpb\370\001\001\242\002\005GMRV2\252\002\026Google.Maps."
+          + "Routing.V2\312\002\026Google\\Maps\\Routing\\V2\352\002\031Go"
+          + "ogle::Maps::Routing::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

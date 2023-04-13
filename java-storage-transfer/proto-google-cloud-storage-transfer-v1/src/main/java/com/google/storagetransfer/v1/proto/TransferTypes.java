@@ -48098,13 +48098,13 @@ public final class TransferTypes {
           + "mary\022\031\n\021transfer_job_name\030\t \001(\t\"o\n\006Statu"
           + "s\022\026\n\022STATUS_UNSPECIFIED\020\000\022\017\n\013IN_PROGRESS"
           + "\020\001\022\n\n\006PAUSED\020\002\022\013\n\007SUCCESS\020\003\022\n\n\006FAILED\020\004\022"
-          + "\013\n\007ABORTED\020\005\022\n\n\006QUEUED\020\006B\352\001\n#com.google."
+          + "\013\n\007ABORTED\020\005\022\n\n\006QUEUED\020\006B\357\001\n#com.google."
           + "storagetransfer.v1.protoB\rTransferTypesZ"
-          + "Hgoogle.golang.org/genproto/googleapis/s"
-          + "toragetransfer/v1;storagetransfer\370\001\001\252\002\037G"
-          + "oogle.Cloud.StorageTransfer.V1\312\002\037Google\\"
-          + "Cloud\\StorageTransfer\\V1\352\002\"Google::Cloud"
-          + "::StorageTransfer::V1b\006proto3"
+          + "Mcloud.google.com/go/storagetransfer/api"
+          + "v1/storagetransferpb;storagetransferpb\370\001"
+          + "\001\252\002\037Google.Cloud.StorageTransfer.V1\312\002\037Go"
+          + "ogle\\Cloud\\StorageTransfer\\V1\352\002\"Google::"
+          + "Cloud::StorageTransfer::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
