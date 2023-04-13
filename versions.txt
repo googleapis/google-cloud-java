@@ -630,3 +630,6 @@ proto-google-cloud-confidentialcomputing-v1:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-confidentialcomputing-v1alpha1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-confidentialcomputing-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-confidentialcomputing-v1alpha1:0.0.0:0.0.1-SNAPSHOT
+google-maps-routing:0.0.0:0.0.1-SNAPSHOT
+proto-google-maps-routing-v2:0.0.0:0.0.1-SNAPSHOT
+grpc-google-maps-routing-v2:0.0.0:0.0.1-SNAPSHOT
