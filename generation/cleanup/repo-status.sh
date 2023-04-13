@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Given a repositories.txt containing repositories under googleapis org, this script captures 5 things about each repository
+# 1. owlbot status (0=inactive, 1=active)
+# 2. release-please status (0=inactive, 1=active)
+# 3. renovate bot status (0=inactive, 1=active)
+# 4. open issues count
+# 5. open pull requests count
+
 set +e
 
 for repository in $(cat repositories.txt); do
