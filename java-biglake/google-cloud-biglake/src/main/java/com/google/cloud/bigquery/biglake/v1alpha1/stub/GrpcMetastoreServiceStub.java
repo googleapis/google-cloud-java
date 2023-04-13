@@ -51,6 +51,7 @@ import com.google.cloud.bigquery.biglake.v1alpha1.ListLocksResponse;
 import com.google.cloud.bigquery.biglake.v1alpha1.ListTablesRequest;
 import com.google.cloud.bigquery.biglake.v1alpha1.ListTablesResponse;
 import com.google.cloud.bigquery.biglake.v1alpha1.Lock;
+import com.google.cloud.bigquery.biglake.v1alpha1.RenameTableRequest;
 import com.google.cloud.bigquery.biglake.v1alpha1.Table;
 import com.google.cloud.bigquery.biglake.v1alpha1.UpdateDatabaseRequest;
 import com.google.cloud.bigquery.biglake.v1alpha1.UpdateTableRequest;
@@ -190,6 +191,14 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Table.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<RenameTableRequest, Table> renameTableMethodDescriptor =
+      MethodDescriptor.<RenameTableRequest, Table>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.bigquery.biglake.v1alpha1.MetastoreService/RenameTable")
+          .setRequestMarshaller(ProtoUtils.marshaller(RenameTableRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Table.getDefaultInstance()))
+          .build();
+
   private static final MethodDescriptor<GetTableRequest, Table> getTableMethodDescriptor =
       MethodDescriptor.<GetTableRequest, Table>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -258,6 +267,7 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
   private final UnaryCallable<CreateTableRequest, Table> createTableCallable;
   private final UnaryCallable<DeleteTableRequest, Table> deleteTableCallable;
   private final UnaryCallable<UpdateTableRequest, Table> updateTableCallable;
+  private final UnaryCallable<RenameTableRequest, Table> renameTableCallable;
   private final UnaryCallable<GetTableRequest, Table> getTableCallable;
   private final UnaryCallable<ListTablesRequest, ListTablesResponse> listTablesCallable;
   private final UnaryCallable<ListTablesRequest, ListTablesPagedResponse> listTablesPagedCallable;
@@ -431,6 +441,16 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<RenameTableRequest, Table> renameTableTransportSettings =
+        GrpcCallSettings.<RenameTableRequest, Table>newBuilder()
+            .setMethodDescriptor(renameTableMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<GetTableRequest, Table> getTableTransportSettings =
         GrpcCallSettings.<GetTableRequest, Table>newBuilder()
             .setMethodDescriptor(getTableMethodDescriptor)
@@ -534,6 +554,9 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
     this.updateTableCallable =
         callableFactory.createUnaryCallable(
             updateTableTransportSettings, settings.updateTableSettings(), clientContext);
+    this.renameTableCallable =
+        callableFactory.createUnaryCallable(
+            renameTableTransportSettings, settings.renameTableSettings(), clientContext);
     this.getTableCallable =
         callableFactory.createUnaryCallable(
             getTableTransportSettings, settings.getTableSettings(), clientContext);
@@ -636,6 +659,11 @@ public class GrpcMetastoreServiceStub extends MetastoreServiceStub {
   @Override
   public UnaryCallable<UpdateTableRequest, Table> updateTableCallable() {
     return updateTableCallable;
+  }
+
+  @Override
+  public UnaryCallable<RenameTableRequest, Table> renameTableCallable() {
+    return renameTableCallable;
   }
 
   @Override

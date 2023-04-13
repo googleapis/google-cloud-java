@@ -142,6 +142,11 @@ public class MetastoreServiceSettings extends ClientSettings<MetastoreServiceSet
     return ((MetastoreServiceStubSettings) getStubSettings()).updateTableSettings();
   }
 
+  /** Returns the object with the settings used for calls to renameTable. */
+  public UnaryCallSettings<RenameTableRequest, Table> renameTableSettings() {
+    return ((MetastoreServiceStubSettings) getStubSettings()).renameTableSettings();
+  }
+
   /** Returns the object with the settings used for calls to getTable. */
   public UnaryCallSettings<GetTableRequest, Table> getTableSettings() {
     return ((MetastoreServiceStubSettings) getStubSettings()).getTableSettings();
@@ -351,6 +356,11 @@ public class MetastoreServiceSettings extends ClientSettings<MetastoreServiceSet
     /** Returns the builder for the settings used for calls to updateTable. */
     public UnaryCallSettings.Builder<UpdateTableRequest, Table> updateTableSettings() {
       return getStubSettingsBuilder().updateTableSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to renameTable. */
+    public UnaryCallSettings.Builder<RenameTableRequest, Table> renameTableSettings() {
+      return getStubSettingsBuilder().renameTableSettings();
     }
 
     /** Returns the builder for the settings used for calls to getTable. */

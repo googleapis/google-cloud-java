@@ -47,6 +47,7 @@ import com.google.cloud.bigquery.biglake.v1alpha1.ListLocksResponse;
 import com.google.cloud.bigquery.biglake.v1alpha1.ListTablesRequest;
 import com.google.cloud.bigquery.biglake.v1alpha1.ListTablesResponse;
 import com.google.cloud.bigquery.biglake.v1alpha1.Lock;
+import com.google.cloud.bigquery.biglake.v1alpha1.RenameTableRequest;
 import com.google.cloud.bigquery.biglake.v1alpha1.Table;
 import com.google.cloud.bigquery.biglake.v1alpha1.UpdateDatabaseRequest;
 import com.google.cloud.bigquery.biglake.v1alpha1.UpdateTableRequest;
@@ -118,6 +119,10 @@ public abstract class MetastoreServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdateTableRequest, Table> updateTableCallable() {
     throw new UnsupportedOperationException("Not implemented: updateTableCallable()");
+  }
+
+  public UnaryCallable<RenameTableRequest, Table> renameTableCallable() {
+    throw new UnsupportedOperationException("Not implemented: renameTableCallable()");
   }
 
   public UnaryCallable<GetTableRequest, Table> getTableCallable() {

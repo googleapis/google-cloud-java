@@ -40,6 +40,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   private Table() {
     name_ = "";
     type_ = 0;
+    etag_ = "";
   }
 
   @java.lang.Override
@@ -597,6 +598,63 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int ETAG_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The checksum of a table object computed by the server based on the value of
+   * other fields. It may be sent on update requests to ensure the client has an
+   * up-to-date value before proceeding. It is only checked for update table
+   * operations.
+   * </pre>
+   *
+   * <code>string etag = 8;</code>
+   *
+   * @return The etag.
+   */
+  @java.lang.Override
+  public java.lang.String getEtag() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      etag_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The checksum of a table object computed by the server based on the value of
+   * other fields. It may be sent on update requests to ensure the client has an
+   * up-to-date value before proceeding. It is only checked for update table
+   * operations.
+   * </pre>
+   *
+   * <code>string etag = 8;</code>
+   *
+   * @return The bytes for etag.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEtagBytes() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      etag_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -634,6 +692,9 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           7, (com.google.cloud.bigquery.biglake.v1alpha1.HiveTableOptions) options_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, etag_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -666,6 +727,9 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               7, (com.google.cloud.bigquery.biglake.v1alpha1.HiveTableOptions) options_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, etag_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -701,6 +765,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       if (!getExpireTime().equals(other.getExpireTime())) return false;
     }
     if (type_ != other.type_) return false;
+    if (!getEtag().equals(other.getEtag())) return false;
     if (!getOptionsCase().equals(other.getOptionsCase())) return false;
     switch (optionsCase_) {
       case 7:
@@ -740,6 +805,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + type_;
+    hash = (37 * hash) + ETAG_FIELD_NUMBER;
+    hash = (53 * hash) + getEtag().hashCode();
     switch (optionsCase_) {
       case 7:
         hash = (37 * hash) + HIVE_OPTIONS_FIELD_NUMBER;
@@ -912,6 +979,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         expireTimeBuilder_ = null;
       }
       type_ = 0;
+      etag_ = "";
       optionsCase_ = 0;
       options_ = null;
       return this;
@@ -968,6 +1036,9 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.type_ = type_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.etag_ = etag_;
       }
     }
 
@@ -1044,6 +1115,11 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.type_ != 0) {
         setTypeValue(other.getTypeValue());
+      }
+      if (!other.getEtag().isEmpty()) {
+        etag_ = other.etag_;
+        bitField0_ |= 0x00000080;
+        onChanged();
       }
       switch (other.getOptionsCase()) {
         case HIVE_OPTIONS:
@@ -1124,6 +1200,12 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
                 optionsCase_ = 7;
                 break;
               } // case 58
+            case 66:
+              {
+                etag_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2409,6 +2491,127 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public Builder clearType() {
       bitField0_ = (bitField0_ & ~0x00000040);
       type_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object etag_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The checksum of a table object computed by the server based on the value of
+     * other fields. It may be sent on update requests to ensure the client has an
+     * up-to-date value before proceeding. It is only checked for update table
+     * operations.
+     * </pre>
+     *
+     * <code>string etag = 8;</code>
+     *
+     * @return The etag.
+     */
+    public java.lang.String getEtag() {
+      java.lang.Object ref = etag_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        etag_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The checksum of a table object computed by the server based on the value of
+     * other fields. It may be sent on update requests to ensure the client has an
+     * up-to-date value before proceeding. It is only checked for update table
+     * operations.
+     * </pre>
+     *
+     * <code>string etag = 8;</code>
+     *
+     * @return The bytes for etag.
+     */
+    public com.google.protobuf.ByteString getEtagBytes() {
+      java.lang.Object ref = etag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        etag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The checksum of a table object computed by the server based on the value of
+     * other fields. It may be sent on update requests to ensure the client has an
+     * up-to-date value before proceeding. It is only checked for update table
+     * operations.
+     * </pre>
+     *
+     * <code>string etag = 8;</code>
+     *
+     * @param value The etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtag(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      etag_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The checksum of a table object computed by the server based on the value of
+     * other fields. It may be sent on update requests to ensure the client has an
+     * up-to-date value before proceeding. It is only checked for update table
+     * operations.
+     * </pre>
+     *
+     * <code>string etag = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEtag() {
+      etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The checksum of a table object computed by the server based on the value of
+     * other fields. It may be sent on update requests to ensure the client has an
+     * up-to-date value before proceeding. It is only checked for update table
+     * operations.
+     * </pre>
+     *
+     * <code>string etag = 8;</code>
+     *
+     * @param value The bytes for etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtagBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      etag_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

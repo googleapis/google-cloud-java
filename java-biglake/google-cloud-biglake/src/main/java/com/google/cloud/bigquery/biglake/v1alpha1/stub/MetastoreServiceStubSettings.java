@@ -69,6 +69,7 @@ import com.google.cloud.bigquery.biglake.v1alpha1.ListLocksResponse;
 import com.google.cloud.bigquery.biglake.v1alpha1.ListTablesRequest;
 import com.google.cloud.bigquery.biglake.v1alpha1.ListTablesResponse;
 import com.google.cloud.bigquery.biglake.v1alpha1.Lock;
+import com.google.cloud.bigquery.biglake.v1alpha1.RenameTableRequest;
 import com.google.cloud.bigquery.biglake.v1alpha1.Table;
 import com.google.cloud.bigquery.biglake.v1alpha1.UpdateDatabaseRequest;
 import com.google.cloud.bigquery.biglake.v1alpha1.UpdateTableRequest;
@@ -145,6 +146,7 @@ public class MetastoreServiceStubSettings extends StubSettings<MetastoreServiceS
   private final UnaryCallSettings<CreateTableRequest, Table> createTableSettings;
   private final UnaryCallSettings<DeleteTableRequest, Table> deleteTableSettings;
   private final UnaryCallSettings<UpdateTableRequest, Table> updateTableSettings;
+  private final UnaryCallSettings<RenameTableRequest, Table> renameTableSettings;
   private final UnaryCallSettings<GetTableRequest, Table> getTableSettings;
   private final PagedCallSettings<ListTablesRequest, ListTablesResponse, ListTablesPagedResponse>
       listTablesSettings;
@@ -428,6 +430,11 @@ public class MetastoreServiceStubSettings extends StubSettings<MetastoreServiceS
     return updateTableSettings;
   }
 
+  /** Returns the object with the settings used for calls to renameTable. */
+  public UnaryCallSettings<RenameTableRequest, Table> renameTableSettings() {
+    return renameTableSettings;
+  }
+
   /** Returns the object with the settings used for calls to getTable. */
   public UnaryCallSettings<GetTableRequest, Table> getTableSettings() {
     return getTableSettings;
@@ -578,6 +585,7 @@ public class MetastoreServiceStubSettings extends StubSettings<MetastoreServiceS
     createTableSettings = settingsBuilder.createTableSettings().build();
     deleteTableSettings = settingsBuilder.deleteTableSettings().build();
     updateTableSettings = settingsBuilder.updateTableSettings().build();
+    renameTableSettings = settingsBuilder.renameTableSettings().build();
     getTableSettings = settingsBuilder.getTableSettings().build();
     listTablesSettings = settingsBuilder.listTablesSettings().build();
     createLockSettings = settingsBuilder.createLockSettings().build();
@@ -605,6 +613,7 @@ public class MetastoreServiceStubSettings extends StubSettings<MetastoreServiceS
     private final UnaryCallSettings.Builder<CreateTableRequest, Table> createTableSettings;
     private final UnaryCallSettings.Builder<DeleteTableRequest, Table> deleteTableSettings;
     private final UnaryCallSettings.Builder<UpdateTableRequest, Table> updateTableSettings;
+    private final UnaryCallSettings.Builder<RenameTableRequest, Table> renameTableSettings;
     private final UnaryCallSettings.Builder<GetTableRequest, Table> getTableSettings;
     private final PagedCallSettings.Builder<
             ListTablesRequest, ListTablesResponse, ListTablesPagedResponse>
@@ -667,6 +676,7 @@ public class MetastoreServiceStubSettings extends StubSettings<MetastoreServiceS
       createTableSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteTableSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateTableSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      renameTableSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getTableSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listTablesSettings = PagedCallSettings.newBuilder(LIST_TABLES_PAGE_STR_FACT);
       createLockSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -688,6 +698,7 @@ public class MetastoreServiceStubSettings extends StubSettings<MetastoreServiceS
               createTableSettings,
               deleteTableSettings,
               updateTableSettings,
+              renameTableSettings,
               getTableSettings,
               listTablesSettings,
               createLockSettings,
@@ -712,6 +723,7 @@ public class MetastoreServiceStubSettings extends StubSettings<MetastoreServiceS
       createTableSettings = settings.createTableSettings.toBuilder();
       deleteTableSettings = settings.deleteTableSettings.toBuilder();
       updateTableSettings = settings.updateTableSettings.toBuilder();
+      renameTableSettings = settings.renameTableSettings.toBuilder();
       getTableSettings = settings.getTableSettings.toBuilder();
       listTablesSettings = settings.listTablesSettings.toBuilder();
       createLockSettings = settings.createLockSettings.toBuilder();
@@ -733,6 +745,7 @@ public class MetastoreServiceStubSettings extends StubSettings<MetastoreServiceS
               createTableSettings,
               deleteTableSettings,
               updateTableSettings,
+              renameTableSettings,
               getTableSettings,
               listTablesSettings,
               createLockSettings,
@@ -825,6 +838,11 @@ public class MetastoreServiceStubSettings extends StubSettings<MetastoreServiceS
 
       builder
           .updateTableSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .renameTableSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -938,6 +956,11 @@ public class MetastoreServiceStubSettings extends StubSettings<MetastoreServiceS
     /** Returns the builder for the settings used for calls to updateTable. */
     public UnaryCallSettings.Builder<UpdateTableRequest, Table> updateTableSettings() {
       return updateTableSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to renameTable. */
+    public UnaryCallSettings.Builder<RenameTableRequest, Table> renameTableSettings() {
+      return renameTableSettings;
     }
 
     /** Returns the builder for the settings used for calls to getTable. */

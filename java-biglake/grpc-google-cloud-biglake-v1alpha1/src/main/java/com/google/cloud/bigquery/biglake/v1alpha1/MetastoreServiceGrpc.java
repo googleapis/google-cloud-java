@@ -608,6 +608,53 @@ public final class MetastoreServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.biglake.v1alpha1.RenameTableRequest,
+          com.google.cloud.bigquery.biglake.v1alpha1.Table>
+      getRenameTableMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RenameTable",
+      requestType = com.google.cloud.bigquery.biglake.v1alpha1.RenameTableRequest.class,
+      responseType = com.google.cloud.bigquery.biglake.v1alpha1.Table.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.biglake.v1alpha1.RenameTableRequest,
+          com.google.cloud.bigquery.biglake.v1alpha1.Table>
+      getRenameTableMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.bigquery.biglake.v1alpha1.RenameTableRequest,
+            com.google.cloud.bigquery.biglake.v1alpha1.Table>
+        getRenameTableMethod;
+    if ((getRenameTableMethod = MetastoreServiceGrpc.getRenameTableMethod) == null) {
+      synchronized (MetastoreServiceGrpc.class) {
+        if ((getRenameTableMethod = MetastoreServiceGrpc.getRenameTableMethod) == null) {
+          MetastoreServiceGrpc.getRenameTableMethod =
+              getRenameTableMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.bigquery.biglake.v1alpha1.RenameTableRequest,
+                          com.google.cloud.bigquery.biglake.v1alpha1.Table>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RenameTable"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.biglake.v1alpha1.RenameTableRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.biglake.v1alpha1.Table
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MetastoreServiceMethodDescriptorSupplier("RenameTable"))
+                      .build();
+        }
+      }
+    }
+    return getRenameTableMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.bigquery.biglake.v1alpha1.GetTableRequest,
           com.google.cloud.bigquery.biglake.v1alpha1.Table>
       getGetTableMethod;
@@ -1123,6 +1170,21 @@ public final class MetastoreServiceGrpc {
      *
      *
      * <pre>
+     * Renames an existing table specified by the table ID.
+     * </pre>
+     */
+    default void renameTable(
+        com.google.cloud.bigquery.biglake.v1alpha1.RenameTableRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.bigquery.biglake.v1alpha1.Table>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRenameTableMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the table specified by the resource name.
      * </pre>
      */
@@ -1458,6 +1520,23 @@ public final class MetastoreServiceGrpc {
      *
      *
      * <pre>
+     * Renames an existing table specified by the table ID.
+     * </pre>
+     */
+    public void renameTable(
+        com.google.cloud.bigquery.biglake.v1alpha1.RenameTableRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.bigquery.biglake.v1alpha1.Table>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRenameTableMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the table specified by the resource name.
      * </pre>
      */
@@ -1724,6 +1803,19 @@ public final class MetastoreServiceGrpc {
         com.google.cloud.bigquery.biglake.v1alpha1.UpdateTableRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateTableMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Renames an existing table specified by the table ID.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.biglake.v1alpha1.Table renameTable(
+        com.google.cloud.bigquery.biglake.v1alpha1.RenameTableRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRenameTableMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2003,6 +2095,20 @@ public final class MetastoreServiceGrpc {
      *
      *
      * <pre>
+     * Renames an existing table specified by the table ID.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.bigquery.biglake.v1alpha1.Table>
+        renameTable(com.google.cloud.bigquery.biglake.v1alpha1.RenameTableRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRenameTableMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the table specified by the resource name.
      * </pre>
      */
@@ -2095,12 +2201,13 @@ public final class MetastoreServiceGrpc {
   private static final int METHODID_CREATE_TABLE = 9;
   private static final int METHODID_DELETE_TABLE = 10;
   private static final int METHODID_UPDATE_TABLE = 11;
-  private static final int METHODID_GET_TABLE = 12;
-  private static final int METHODID_LIST_TABLES = 13;
-  private static final int METHODID_CREATE_LOCK = 14;
-  private static final int METHODID_DELETE_LOCK = 15;
-  private static final int METHODID_CHECK_LOCK = 16;
-  private static final int METHODID_LIST_LOCKS = 17;
+  private static final int METHODID_RENAME_TABLE = 12;
+  private static final int METHODID_GET_TABLE = 13;
+  private static final int METHODID_LIST_TABLES = 14;
+  private static final int METHODID_CREATE_LOCK = 15;
+  private static final int METHODID_DELETE_LOCK = 16;
+  private static final int METHODID_CHECK_LOCK = 17;
+  private static final int METHODID_LIST_LOCKS = 18;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2190,6 +2297,12 @@ public final class MetastoreServiceGrpc {
         case METHODID_UPDATE_TABLE:
           serviceImpl.updateTable(
               (com.google.cloud.bigquery.biglake.v1alpha1.UpdateTableRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.bigquery.biglake.v1alpha1.Table>)
+                  responseObserver);
+          break;
+        case METHODID_RENAME_TABLE:
+          serviceImpl.renameTable(
+              (com.google.cloud.bigquery.biglake.v1alpha1.RenameTableRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.bigquery.biglake.v1alpha1.Table>)
                   responseObserver);
           break;
@@ -2333,6 +2446,13 @@ public final class MetastoreServiceGrpc {
                     com.google.cloud.bigquery.biglake.v1alpha1.Table>(
                     service, METHODID_UPDATE_TABLE)))
         .addMethod(
+            getRenameTableMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.biglake.v1alpha1.RenameTableRequest,
+                    com.google.cloud.bigquery.biglake.v1alpha1.Table>(
+                    service, METHODID_RENAME_TABLE)))
+        .addMethod(
             getGetTableMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -2434,6 +2554,7 @@ public final class MetastoreServiceGrpc {
                       .addMethod(getCreateTableMethod())
                       .addMethod(getDeleteTableMethod())
                       .addMethod(getUpdateTableMethod())
+                      .addMethod(getRenameTableMethod())
                       .addMethod(getGetTableMethod())
                       .addMethod(getListTablesMethod())
                       .addMethod(getCreateLockMethod())

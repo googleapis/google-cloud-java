@@ -307,6 +307,26 @@ public class MockMetastoreServiceImpl extends MetastoreServiceImplBase {
   }
 
   @Override
+  public void renameTable(RenameTableRequest request, StreamObserver<Table> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Table) {
+      requests.add(request);
+      responseObserver.onNext(((Table) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RenameTable, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Table.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getTable(GetTableRequest request, StreamObserver<Table> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Table) {

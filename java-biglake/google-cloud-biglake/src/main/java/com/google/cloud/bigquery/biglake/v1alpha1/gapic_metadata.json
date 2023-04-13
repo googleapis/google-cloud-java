@@ -58,6 +58,9 @@
             "ListTables": {
               "methods": ["listTables", "listTables", "listTables", "listTablesPagedCallable", "listTablesCallable"]
             },
+            "RenameTable": {
+              "methods": ["renameTable", "renameTable", "renameTable", "renameTable", "renameTable", "renameTableCallable"]
+            },
             "UpdateDatabase": {
               "methods": ["updateDatabase", "updateDatabase", "updateDatabaseCallable"]
             },

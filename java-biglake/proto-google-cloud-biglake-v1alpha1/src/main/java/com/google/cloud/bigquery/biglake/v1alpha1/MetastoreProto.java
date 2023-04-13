@@ -100,6 +100,10 @@ public final class MetastoreProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_bigquery_biglake_v1alpha1_UpdateTableRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_biglake_v1alpha1_RenameTableRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_biglake_v1alpha1_RenameTableRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_bigquery_biglake_v1alpha1_GetTableRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_bigquery_biglake_v1alpha1_GetTableRequest_fieldAccessorTable;
@@ -196,7 +200,7 @@ public final class MetastoreProto {
           + "VE\020\001:u\352Ar\n\037biglake.googleapis.com/Databa"
           + "se\022Oprojects/{project}/locations/{locati"
           + "on}/catalogs/{catalog}/databases/{databa"
-          + "se}B\t\n\007options\"\336\004\n\005Table\022P\n\014hive_options"
+          + "se}B\t\n\007options\"\354\004\n\005Table\022P\n\014hive_options"
           + "\030\007 \001(\01328.google.cloud.bigquery.biglake.v"
           + "1alpha1.HiveTableOptionsH\000\0222\n\004name\030\001 \001(\t"
           + "B$\340A\003\372A\036\n\034biglake.googleapis.com/Table\0224"
@@ -207,208 +211,221 @@ public final class MetastoreProto {
           + "\0224\n\013expire_time\030\005 \001(\0132\032.google.protobuf."
           + "TimestampB\003\340A\003\022@\n\004type\030\006 \001(\01622.google.cl"
           + "oud.bigquery.biglake.v1alpha1.Table.Type"
-          + "\"&\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\010\n\004HIVE\020\001"
-          + ":\201\001\352A~\n\034biglake.googleapis.com/Table\022^pr"
-          + "ojects/{project}/locations/{location}/ca"
-          + "talogs/{catalog}/databases/{database}/ta"
-          + "bles/{table}B\t\n\007options\"\201\004\n\004Lock\022\022\n\010tabl"
-          + "e_id\030\005 \001(\tH\000\0221\n\004name\030\001 \001(\tB#\340A\003\372A\035\n\033bigl"
-          + "ake.googleapis.com/Lock\0224\n\013create_time\030\002"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022?\n"
-          + "\004type\030\003 \001(\01621.google.cloud.bigquery.bigl"
-          + "ake.v1alpha1.Lock.Type\022F\n\005state\030\004 \001(\01622."
-          + "google.cloud.bigquery.biglake.v1alpha1.L"
-          + "ock.StateB\003\340A\003\"+\n\004Type\022\024\n\020TYPE_UNSPECIFI"
-          + "ED\020\000\022\r\n\tEXCLUSIVE\020\001\"9\n\005State\022\025\n\021STATE_UN"
-          + "SPECIFIED\020\000\022\013\n\007WAITING\020\001\022\014\n\010ACQUIRED\020\002:~"
-          + "\352A{\n\033biglake.googleapis.com/Lock\022\\projec"
-          + "ts/{project}/locations/{location}/catalo"
-          + "gs/{catalog}/databases/{database}/locks/"
-          + "{lock}B\013\n\tresources\"\261\001\n\024CreateCatalogReq"
-          + "uest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations."
-          + "googleapis.com/Location\022E\n\007catalog\030\002 \001(\013"
-          + "2/.google.cloud.bigquery.biglake.v1alpha"
-          + "1.CatalogB\003\340A\002\022\027\n\ncatalog_id\030\003 \001(\tB\003\340A\002\""
-          + "L\n\024DeleteCatalogRequest\0224\n\004name\030\001 \001(\tB&\340"
-          + "A\002\372A \n\036biglake.googleapis.com/Catalog\"I\n"
-          + "\021GetCatalogRequest\0224\n\004name\030\001 \001(\tB&\340A\002\372A "
-          + "\n\036biglake.googleapis.com/Catalog\"w\n\023List"
-          + "CatalogsRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n"
-          + "!locations.googleapis.com/Location\022\021\n\tpa"
-          + "ge_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"r\n\024Lis"
-          + "tCatalogsResponse\022A\n\010catalogs\030\001 \003(\0132/.go"
+          + "\022\014\n\004etag\030\010 \001(\t\"&\n\004Type\022\024\n\020TYPE_UNSPECIFI"
+          + "ED\020\000\022\010\n\004HIVE\020\001:\201\001\352A~\n\034biglake.googleapis"
+          + ".com/Table\022^projects/{project}/locations"
+          + "/{location}/catalogs/{catalog}/databases"
+          + "/{database}/tables/{table}B\t\n\007options\"\201\004"
+          + "\n\004Lock\022\022\n\010table_id\030\005 \001(\tH\000\0221\n\004name\030\001 \001(\t"
+          + "B#\340A\003\372A\035\n\033biglake.googleapis.com/Lock\0224\n"
+          + "\013create_time\030\002 \001(\0132\032.google.protobuf.Tim"
+          + "estampB\003\340A\003\022?\n\004type\030\003 \001(\01621.google.cloud"
+          + ".bigquery.biglake.v1alpha1.Lock.Type\022F\n\005"
+          + "state\030\004 \001(\01622.google.cloud.bigquery.bigl"
+          + "ake.v1alpha1.Lock.StateB\003\340A\003\"+\n\004Type\022\024\n\020"
+          + "TYPE_UNSPECIFIED\020\000\022\r\n\tEXCLUSIVE\020\001\"9\n\005Sta"
+          + "te\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007WAITING\020\001\022\014"
+          + "\n\010ACQUIRED\020\002:~\352A{\n\033biglake.googleapis.co"
+          + "m/Lock\022\\projects/{project}/locations/{lo"
+          + "cation}/catalogs/{catalog}/databases/{da"
+          + "tabase}/locks/{lock}B\013\n\tresources\"\261\001\n\024Cr"
+          + "eateCatalogRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372"
+          + "A#\n!locations.googleapis.com/Location\022E\n"
+          + "\007catalog\030\002 \001(\0132/.google.cloud.bigquery.b"
+          + "iglake.v1alpha1.CatalogB\003\340A\002\022\027\n\ncatalog_"
+          + "id\030\003 \001(\tB\003\340A\002\"L\n\024DeleteCatalogRequest\0224\n"
+          + "\004name\030\001 \001(\tB&\340A\002\372A \n\036biglake.googleapis."
+          + "com/Catalog\"I\n\021GetCatalogRequest\0224\n\004name"
+          + "\030\001 \001(\tB&\340A\002\372A \n\036biglake.googleapis.com/C"
+          + "atalog\"w\n\023ListCatalogsRequest\0229\n\006parent\030"
+          + "\001 \001(\tB)\340A\002\372A#\n!locations.googleapis.com/"
+          + "Location\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_toke"
+          + "n\030\003 \001(\t\"r\n\024ListCatalogsResponse\022A\n\010catal"
+          + "ogs\030\001 \003(\0132/.google.cloud.bigquery.biglak"
+          + "e.v1alpha1.Catalog\022\027\n\017next_page_token\030\002 "
+          + "\001(\t\"\262\001\n\025CreateDatabaseRequest\0226\n\006parent\030"
+          + "\001 \001(\tB&\340A\002\372A \n\036biglake.googleapis.com/Ca"
+          + "talog\022G\n\010database\030\002 \001(\01320.google.cloud.b"
+          + "igquery.biglake.v1alpha1.DatabaseB\003\340A\002\022\030"
+          + "\n\013database_id\030\003 \001(\tB\003\340A\002\"N\n\025DeleteDataba"
+          + "seRequest\0225\n\004name\030\001 \001(\tB\'\340A\002\372A!\n\037biglake"
+          + ".googleapis.com/Database\"\221\001\n\025UpdateDatab"
+          + "aseRequest\022G\n\010database\030\001 \001(\01320.google.cl"
+          + "oud.bigquery.biglake.v1alpha1.DatabaseB\003"
+          + "\340A\002\022/\n\013update_mask\030\002 \001(\0132\032.google.protob"
+          + "uf.FieldMask\"K\n\022GetDatabaseRequest\0225\n\004na"
+          + "me\030\001 \001(\tB\'\340A\002\372A!\n\037biglake.googleapis.com"
+          + "/Database\"u\n\024ListDatabasesRequest\0226\n\006par"
+          + "ent\030\001 \001(\tB&\340A\002\372A \n\036biglake.googleapis.co"
+          + "m/Catalog\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_tok"
+          + "en\030\003 \001(\t\"u\n\025ListDatabasesResponse\022C\n\tdat"
+          + "abases\030\001 \003(\01320.google.cloud.bigquery.big"
+          + "lake.v1alpha1.Database\022\027\n\017next_page_toke"
+          + "n\030\002 \001(\t\"\247\001\n\022CreateTableRequest\0227\n\006parent"
+          + "\030\001 \001(\tB\'\340A\002\372A!\n\037biglake.googleapis.com/D"
+          + "atabase\022A\n\005table\030\002 \001(\0132-.google.cloud.bi"
+          + "gquery.biglake.v1alpha1.TableB\003\340A\002\022\025\n\010ta"
+          + "ble_id\030\003 \001(\tB\003\340A\002\"H\n\022DeleteTableRequest\022"
+          + "2\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034biglake.googleapi"
+          + "s.com/Table\"\210\001\n\022UpdateTableRequest\022A\n\005ta"
+          + "ble\030\001 \001(\0132-.google.cloud.bigquery.biglak"
+          + "e.v1alpha1.TableB\003\340A\002\022/\n\013update_mask\030\002 \001"
+          + "(\0132\032.google.protobuf.FieldMask\"\200\001\n\022Renam"
+          + "eTableRequest\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034big"
+          + "lake.googleapis.com/Table\0226\n\010new_name\030\002 "
+          + "\001(\tB$\340A\002\372A\036\n\034biglake.googleapis.com/Tabl"
+          + "e\"E\n\017GetTableRequest\0222\n\004name\030\001 \001(\tB$\340A\002\372"
+          + "A\036\n\034biglake.googleapis.com/Table\"\264\001\n\021Lis"
+          + "tTablesRequest\0227\n\006parent\030\001 \001(\tB\'\340A\002\372A!\n\037"
+          + "biglake.googleapis.com/Database\022\021\n\tpage_"
+          + "size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022?\n\004view\030\004"
+          + " \001(\01621.google.cloud.bigquery.biglake.v1a"
+          + "lpha1.TableView\"l\n\022ListTablesResponse\022=\n"
+          + "\006tables\030\001 \003(\0132-.google.cloud.bigquery.bi"
+          + "glake.v1alpha1.Table\022\027\n\017next_page_token\030"
+          + "\002 \001(\t\"\215\001\n\021CreateLockRequest\0227\n\006parent\030\001 "
+          + "\001(\tB\'\340A\002\372A!\n\037biglake.googleapis.com/Data"
+          + "base\022?\n\004lock\030\002 \001(\0132,.google.cloud.bigque"
+          + "ry.biglake.v1alpha1.LockB\003\340A\002\"F\n\021DeleteL"
+          + "ockRequest\0221\n\004name\030\001 \001(\tB#\340A\002\372A\035\n\033biglak"
+          + "e.googleapis.com/Lock\"E\n\020CheckLockReques"
+          + "t\0221\n\004name\030\001 \001(\tB#\340A\002\372A\035\n\033biglake.googlea"
+          + "pis.com/Lock\"r\n\020ListLocksRequest\0227\n\006pare"
+          + "nt\030\001 \001(\tB\'\340A\002\372A!\n\037biglake.googleapis.com"
+          + "/Database\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_tok"
+          + "en\030\003 \001(\t\"i\n\021ListLocksResponse\022;\n\005locks\030\001"
+          + " \003(\0132,.google.cloud.bigquery.biglake.v1a"
+          + "lpha1.Lock\022\027\n\017next_page_token\030\002 \001(\t\"\277\001\n\023"
+          + "HiveDatabaseOptions\022\024\n\014location_uri\030\001 \001("
+          + "\t\022_\n\nparameters\030\002 \003(\0132K.google.cloud.big"
+          + "query.biglake.v1alpha1.HiveDatabaseOptio"
+          + "ns.ParametersEntry\0321\n\017ParametersEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\370\003\n\020HiveTa"
+          + "bleOptions\022\\\n\nparameters\030\001 \003(\0132H.google."
+          + "cloud.bigquery.biglake.v1alpha1.HiveTabl"
+          + "eOptions.ParametersEntry\022\022\n\ntable_type\030\002"
+          + " \001(\t\022f\n\022storage_descriptor\030\003 \001(\0132J.googl"
+          + "e.cloud.bigquery.biglake.v1alpha1.HiveTa"
+          + "bleOptions.StorageDescriptor\032&\n\tSerDeInf"
+          + "o\022\031\n\021serialization_lib\030\001 \001(\t\032\256\001\n\021Storage"
+          + "Descriptor\022\024\n\014location_uri\030\001 \001(\t\022\024\n\014inpu"
+          + "t_format\030\002 \001(\t\022\025\n\routput_format\030\003 \001(\t\022V\n"
+          + "\nserde_info\030\004 \001(\0132B.google.cloud.bigquer"
+          + "y.biglake.v1alpha1.HiveTableOptions.SerD"
+          + "eInfo\0321\n\017ParametersEntry\022\013\n\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001*<\n\tTableView\022\032\n\026TABLE_V"
+          + "IEW_UNSPECIFIED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL\020\0022\253"
+          + "!\n\020MetastoreService\022\337\001\n\rCreateCatalog\022<."
+          + "google.cloud.bigquery.biglake.v1alpha1.C"
+          + "reateCatalogRequest\032/.google.cloud.bigqu"
+          + "ery.biglake.v1alpha1.Catalog\"_\202\323\344\223\002=\"2/v"
+          + "1alpha1/{parent=projects/*/locations/*}/"
+          + "catalogs:\007catalog\332A\031parent,catalog,catal"
+          + "og_id\022\301\001\n\rDeleteCatalog\022<.google.cloud.b"
+          + "igquery.biglake.v1alpha1.DeleteCatalogRe"
+          + "quest\032/.google.cloud.bigquery.biglake.v1"
+          + "alpha1.Catalog\"A\202\323\344\223\0024*2/v1alpha1/{name="
+          + "projects/*/locations/*/catalogs/*}\332A\004nam"
+          + "e\022\273\001\n\nGetCatalog\0229.google.cloud.bigquery"
+          + ".biglake.v1alpha1.GetCatalogRequest\032/.go"
           + "ogle.cloud.bigquery.biglake.v1alpha1.Cat"
-          + "alog\022\027\n\017next_page_token\030\002 \001(\t\"\262\001\n\025Create"
-          + "DatabaseRequest\0226\n\006parent\030\001 \001(\tB&\340A\002\372A \n"
-          + "\036biglake.googleapis.com/Catalog\022G\n\010datab"
-          + "ase\030\002 \001(\01320.google.cloud.bigquery.biglak"
-          + "e.v1alpha1.DatabaseB\003\340A\002\022\030\n\013database_id\030"
-          + "\003 \001(\tB\003\340A\002\"N\n\025DeleteDatabaseRequest\0225\n\004n"
-          + "ame\030\001 \001(\tB\'\340A\002\372A!\n\037biglake.googleapis.co"
-          + "m/Database\"\221\001\n\025UpdateDatabaseRequest\022G\n\010"
-          + "database\030\001 \001(\01320.google.cloud.bigquery.b"
-          + "iglake.v1alpha1.DatabaseB\003\340A\002\022/\n\013update_"
-          + "mask\030\002 \001(\0132\032.google.protobuf.FieldMask\"K"
-          + "\n\022GetDatabaseRequest\0225\n\004name\030\001 \001(\tB\'\340A\002\372"
-          + "A!\n\037biglake.googleapis.com/Database\"u\n\024L"
-          + "istDatabasesRequest\0226\n\006parent\030\001 \001(\tB&\340A\002"
-          + "\372A \n\036biglake.googleapis.com/Catalog\022\021\n\tp"
-          + "age_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"u\n\025Li"
-          + "stDatabasesResponse\022C\n\tdatabases\030\001 \003(\01320"
-          + ".google.cloud.bigquery.biglake.v1alpha1."
-          + "Database\022\027\n\017next_page_token\030\002 \001(\t\"\247\001\n\022Cr"
-          + "eateTableRequest\0227\n\006parent\030\001 \001(\tB\'\340A\002\372A!"
-          + "\n\037biglake.googleapis.com/Database\022A\n\005tab"
-          + "le\030\002 \001(\0132-.google.cloud.bigquery.biglake"
-          + ".v1alpha1.TableB\003\340A\002\022\025\n\010table_id\030\003 \001(\tB\003"
-          + "\340A\002\"H\n\022DeleteTableRequest\0222\n\004name\030\001 \001(\tB"
-          + "$\340A\002\372A\036\n\034biglake.googleapis.com/Table\"\210\001"
-          + "\n\022UpdateTableRequest\022A\n\005table\030\001 \001(\0132-.go"
-          + "ogle.cloud.bigquery.biglake.v1alpha1.Tab"
-          + "leB\003\340A\002\022/\n\013update_mask\030\002 \001(\0132\032.google.pr"
-          + "otobuf.FieldMask\"E\n\017GetTableRequest\0222\n\004n"
-          + "ame\030\001 \001(\tB$\340A\002\372A\036\n\034biglake.googleapis.co"
-          + "m/Table\"s\n\021ListTablesRequest\0227\n\006parent\030\001"
-          + " \001(\tB\'\340A\002\372A!\n\037biglake.googleapis.com/Dat"
-          + "abase\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003"
-          + " \001(\t\"l\n\022ListTablesResponse\022=\n\006tables\030\001 \003"
-          + "(\0132-.google.cloud.bigquery.biglake.v1alp"
-          + "ha1.Table\022\027\n\017next_page_token\030\002 \001(\t\"\215\001\n\021C"
-          + "reateLockRequest\0227\n\006parent\030\001 \001(\tB\'\340A\002\372A!"
-          + "\n\037biglake.googleapis.com/Database\022?\n\004loc"
-          + "k\030\002 \001(\0132,.google.cloud.bigquery.biglake."
-          + "v1alpha1.LockB\003\340A\002\"F\n\021DeleteLockRequest\022"
-          + "1\n\004name\030\001 \001(\tB#\340A\002\372A\035\n\033biglake.googleapi"
-          + "s.com/Lock\"E\n\020CheckLockRequest\0221\n\004name\030\001"
-          + " \001(\tB#\340A\002\372A\035\n\033biglake.googleapis.com/Loc"
-          + "k\"r\n\020ListLocksRequest\0227\n\006parent\030\001 \001(\tB\'\340"
-          + "A\002\372A!\n\037biglake.googleapis.com/Database\022\021"
-          + "\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"i\n"
-          + "\021ListLocksResponse\022;\n\005locks\030\001 \003(\0132,.goog"
-          + "le.cloud.bigquery.biglake.v1alpha1.Lock\022"
-          + "\027\n\017next_page_token\030\002 \001(\t\"\277\001\n\023HiveDatabas"
-          + "eOptions\022\024\n\014location_uri\030\001 \001(\t\022_\n\nparame"
-          + "ters\030\002 \003(\0132K.google.cloud.bigquery.bigla"
-          + "ke.v1alpha1.HiveDatabaseOptions.Paramete"
-          + "rsEntry\0321\n\017ParametersEntry\022\013\n\003key\030\001 \001(\t\022"
-          + "\r\n\005value\030\002 \001(\t:\0028\001\"\370\003\n\020HiveTableOptions\022"
-          + "\\\n\nparameters\030\001 \003(\0132H.google.cloud.bigqu"
-          + "ery.biglake.v1alpha1.HiveTableOptions.Pa"
-          + "rametersEntry\022\022\n\ntable_type\030\002 \001(\t\022f\n\022sto"
-          + "rage_descriptor\030\003 \001(\0132J.google.cloud.big"
-          + "query.biglake.v1alpha1.HiveTableOptions."
-          + "StorageDescriptor\032&\n\tSerDeInfo\022\031\n\021serial"
-          + "ization_lib\030\001 \001(\t\032\256\001\n\021StorageDescriptor\022"
-          + "\024\n\014location_uri\030\001 \001(\t\022\024\n\014input_format\030\002 "
-          + "\001(\t\022\025\n\routput_format\030\003 \001(\t\022V\n\nserde_info"
-          + "\030\004 \001(\0132B.google.cloud.bigquery.biglake.v"
-          + "1alpha1.HiveTableOptions.SerDeInfo\0321\n\017Pa"
-          + "rametersEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001("
-          + "\t:\0028\0012\305\037\n\020MetastoreService\022\337\001\n\rCreateCat"
-          + "alog\022<.google.cloud.bigquery.biglake.v1a"
-          + "lpha1.CreateCatalogRequest\032/.google.clou"
-          + "d.bigquery.biglake.v1alpha1.Catalog\"_\202\323\344"
-          + "\223\002=\"2/v1alpha1/{parent=projects/*/locati"
-          + "ons/*}/catalogs:\007catalog\332A\031parent,catalo"
-          + "g,catalog_id\022\301\001\n\rDeleteCatalog\022<.google."
-          + "cloud.bigquery.biglake.v1alpha1.DeleteCa"
-          + "talogRequest\032/.google.cloud.bigquery.big"
-          + "lake.v1alpha1.Catalog\"A\202\323\344\223\0024*2/v1alpha1"
-          + "/{name=projects/*/locations/*/catalogs/*"
-          + "}\332A\004name\022\273\001\n\nGetCatalog\0229.google.cloud.b"
-          + "igquery.biglake.v1alpha1.GetCatalogReque"
-          + "st\032/.google.cloud.bigquery.biglake.v1alp"
-          + "ha1.Catalog\"A\202\323\344\223\0024\0222/v1alpha1/{name=pro"
-          + "jects/*/locations/*/catalogs/*}\332A\004name\022\316"
-          + "\001\n\014ListCatalogs\022;.google.cloud.bigquery."
-          + "biglake.v1alpha1.ListCatalogsRequest\032<.g"
-          + "oogle.cloud.bigquery.biglake.v1alpha1.Li"
-          + "stCatalogsResponse\"C\202\323\344\223\0024\0222/v1alpha1/{p"
-          + "arent=projects/*/locations/*}/catalogs\332A"
-          + "\006parent\022\361\001\n\016CreateDatabase\022=.google.clou"
-          + "d.bigquery.biglake.v1alpha1.CreateDataba"
-          + "seRequest\0320.google.cloud.bigquery.biglak"
-          + "e.v1alpha1.Database\"n\202\323\344\223\002J\">/v1alpha1/{"
-          + "parent=projects/*/locations/*/catalogs/*"
-          + "}/databases:\010database\332A\033parent,database,"
-          + "database_id\022\320\001\n\016DeleteDatabase\022=.google."
-          + "cloud.bigquery.biglake.v1alpha1.DeleteDa"
-          + "tabaseRequest\0320.google.cloud.bigquery.bi"
-          + "glake.v1alpha1.Database\"M\202\323\344\223\002@*>/v1alph"
-          + "a1/{name=projects/*/locations/*/catalogs"
-          + "/*/databases/*}\332A\004name\022\363\001\n\016UpdateDatabas"
-          + "e\022=.google.cloud.bigquery.biglake.v1alph"
-          + "a1.UpdateDatabaseRequest\0320.google.cloud."
-          + "bigquery.biglake.v1alpha1.Database\"p\202\323\344\223"
-          + "\002S2G/v1alpha1/{database.name=projects/*/"
-          + "locations/*/catalogs/*/databases/*}:\010dat"
-          + "abase\332A\024database,update_mask\022\312\001\n\013GetData"
-          + "base\022:.google.cloud.bigquery.biglake.v1a"
-          + "lpha1.GetDatabaseRequest\0320.google.cloud."
-          + "bigquery.biglake.v1alpha1.Database\"M\202\323\344\223"
-          + "\002@\022>/v1alpha1/{name=projects/*/locations"
-          + "/*/catalogs/*/databases/*}\332A\004name\022\335\001\n\rLi"
-          + "stDatabases\022<.google.cloud.bigquery.bigl"
-          + "ake.v1alpha1.ListDatabasesRequest\032=.goog"
-          + "le.cloud.bigquery.biglake.v1alpha1.ListD"
-          + "atabasesResponse\"O\202\323\344\223\002@\022>/v1alpha1/{par"
-          + "ent=projects/*/locations/*/catalogs/*}/d"
-          + "atabases\332A\006parent\022\350\001\n\013CreateTable\022:.goog"
-          + "le.cloud.bigquery.biglake.v1alpha1.Creat"
-          + "eTableRequest\032-.google.cloud.bigquery.bi"
-          + "glake.v1alpha1.Table\"n\202\323\344\223\002P\"G/v1alpha1/"
-          + "{parent=projects/*/locations/*/catalogs/"
-          + "*/databases/*}/tables:\005table\332A\025parent,ta"
-          + "ble,table_id\022\320\001\n\013DeleteTable\022:.google.cl"
-          + "oud.bigquery.biglake.v1alpha1.DeleteTabl"
-          + "eRequest\032-.google.cloud.bigquery.biglake"
-          + ".v1alpha1.Table\"V\202\323\344\223\002I*G/v1alpha1/{name"
+          + "alog\"A\202\323\344\223\0024\0222/v1alpha1/{name=projects/*"
+          + "/locations/*/catalogs/*}\332A\004name\022\316\001\n\014List"
+          + "Catalogs\022;.google.cloud.bigquery.biglake"
+          + ".v1alpha1.ListCatalogsRequest\032<.google.c"
+          + "loud.bigquery.biglake.v1alpha1.ListCatal"
+          + "ogsResponse\"C\202\323\344\223\0024\0222/v1alpha1/{parent=p"
+          + "rojects/*/locations/*}/catalogs\332A\006parent"
+          + "\022\361\001\n\016CreateDatabase\022=.google.cloud.bigqu"
+          + "ery.biglake.v1alpha1.CreateDatabaseReque"
+          + "st\0320.google.cloud.bigquery.biglake.v1alp"
+          + "ha1.Database\"n\202\323\344\223\002J\">/v1alpha1/{parent="
+          + "projects/*/locations/*/catalogs/*}/datab"
+          + "ases:\010database\332A\033parent,database,databas"
+          + "e_id\022\320\001\n\016DeleteDatabase\022=.google.cloud.b"
+          + "igquery.biglake.v1alpha1.DeleteDatabaseR"
+          + "equest\0320.google.cloud.bigquery.biglake.v"
+          + "1alpha1.Database\"M\202\323\344\223\002@*>/v1alpha1/{nam"
+          + "e=projects/*/locations/*/catalogs/*/data"
+          + "bases/*}\332A\004name\022\363\001\n\016UpdateDatabase\022=.goo"
+          + "gle.cloud.bigquery.biglake.v1alpha1.Upda"
+          + "teDatabaseRequest\0320.google.cloud.bigquer"
+          + "y.biglake.v1alpha1.Database\"p\202\323\344\223\002S2G/v1"
+          + "alpha1/{database.name=projects/*/locatio"
+          + "ns/*/catalogs/*/databases/*}:\010database\332A"
+          + "\024database,update_mask\022\312\001\n\013GetDatabase\022:."
+          + "google.cloud.bigquery.biglake.v1alpha1.G"
+          + "etDatabaseRequest\0320.google.cloud.bigquer"
+          + "y.biglake.v1alpha1.Database\"M\202\323\344\223\002@\022>/v1"
+          + "alpha1/{name=projects/*/locations/*/cata"
+          + "logs/*/databases/*}\332A\004name\022\335\001\n\rListDatab"
+          + "ases\022<.google.cloud.bigquery.biglake.v1a"
+          + "lpha1.ListDatabasesRequest\032=.google.clou"
+          + "d.bigquery.biglake.v1alpha1.ListDatabase"
+          + "sResponse\"O\202\323\344\223\002@\022>/v1alpha1/{parent=pro"
+          + "jects/*/locations/*/catalogs/*}/database"
+          + "s\332A\006parent\022\350\001\n\013CreateTable\022:.google.clou"
+          + "d.bigquery.biglake.v1alpha1.CreateTableR"
+          + "equest\032-.google.cloud.bigquery.biglake.v"
+          + "1alpha1.Table\"n\202\323\344\223\002P\"G/v1alpha1/{parent"
           + "=projects/*/locations/*/catalogs/*/datab"
-          + "ases/*/tables/*}\332A\004name\022\352\001\n\013UpdateTable\022"
-          + ":.google.cloud.bigquery.biglake.v1alpha1"
-          + ".UpdateTableRequest\032-.google.cloud.bigqu"
-          + "ery.biglake.v1alpha1.Table\"p\202\323\344\223\002V2M/v1a"
-          + "lpha1/{table.name=projects/*/locations/*"
-          + "/catalogs/*/databases/*/tables/*}:\005table"
-          + "\332A\021table,update_mask\022\312\001\n\010GetTable\0227.goog"
-          + "le.cloud.bigquery.biglake.v1alpha1.GetTa"
-          + "bleRequest\032-.google.cloud.bigquery.bigla"
-          + "ke.v1alpha1.Table\"V\202\323\344\223\002I\022G/v1alpha1/{na"
-          + "me=projects/*/locations/*/catalogs/*/dat"
-          + "abases/*/tables/*}\332A\004name\022\335\001\n\nListTables"
-          + "\0229.google.cloud.bigquery.biglake.v1alpha"
-          + "1.ListTablesRequest\032:.google.cloud.bigqu"
-          + "ery.biglake.v1alpha1.ListTablesResponse\""
-          + "X\202\323\344\223\002I\022G/v1alpha1/{parent=projects/*/lo"
-          + "cations/*/catalogs/*/databases/*}/tables"
-          + "\332A\006parent\022\331\001\n\nCreateLock\0229.google.cloud."
-          + "bigquery.biglake.v1alpha1.CreateLockRequ"
-          + "est\032,.google.cloud.bigquery.biglake.v1al"
-          + "pha1.Lock\"b\202\323\344\223\002N\"F/v1alpha1/{parent=pro"
-          + "jects/*/locations/*/catalogs/*/databases"
-          + "/*}/locks:\004lock\332A\013parent,lock\022\266\001\n\nDelete"
-          + "Lock\0229.google.cloud.bigquery.biglake.v1a"
-          + "lpha1.DeleteLockRequest\032\026.google.protobu"
-          + "f.Empty\"U\202\323\344\223\002H*F/v1alpha1/{name=project"
-          + "s/*/locations/*/catalogs/*/databases/*/l"
-          + "ocks/*}\332A\004name\022\323\001\n\tCheckLock\0228.google.cl"
-          + "oud.bigquery.biglake.v1alpha1.CheckLockR"
-          + "equest\032,.google.cloud.bigquery.biglake.v"
-          + "1alpha1.Lock\"^\202\323\344\223\002Q\"L/v1alpha1/{name=pr"
-          + "ojects/*/locations/*/catalogs/*/database"
-          + "s/*/locks/*}:check:\001*\332A\004name\022\331\001\n\tListLoc"
-          + "ks\0228.google.cloud.bigquery.biglake.v1alp"
-          + "ha1.ListLocksRequest\0329.google.cloud.bigq"
-          + "uery.biglake.v1alpha1.ListLocksResponse\""
-          + "W\202\323\344\223\002H\022F/v1alpha1/{parent=projects/*/lo"
-          + "cations/*/catalogs/*/databases/*}/locks\332"
-          + "A\006parent\032s\312A\026biglake.googleapis.com\322AWht"
-          + "tps://www.googleapis.com/auth/bigquery,h"
-          + "ttps://www.googleapis.com/auth/cloud-pla"
-          + "tformB\204\001\n*com.google.cloud.bigquery.bigl"
-          + "ake.v1alpha1B\016MetastoreProtoP\001ZDcloud.go"
-          + "ogle.com/go/bigquery/biglake/apiv1alpha1"
-          + "/biglakepb;biglakepbb\006proto3"
+          + "ases/*}/tables:\005table\332A\025parent,table,tab"
+          + "le_id\022\320\001\n\013DeleteTable\022:.google.cloud.big"
+          + "query.biglake.v1alpha1.DeleteTableReques"
+          + "t\032-.google.cloud.bigquery.biglake.v1alph"
+          + "a1.Table\"V\202\323\344\223\002I*G/v1alpha1/{name=projec"
+          + "ts/*/locations/*/catalogs/*/databases/*/"
+          + "tables/*}\332A\004name\022\352\001\n\013UpdateTable\022:.googl"
+          + "e.cloud.bigquery.biglake.v1alpha1.Update"
+          + "TableRequest\032-.google.cloud.bigquery.big"
+          + "lake.v1alpha1.Table\"p\202\323\344\223\002V2M/v1alpha1/{"
+          + "table.name=projects/*/locations/*/catalo"
+          + "gs/*/databases/*/tables/*}:\005table\332A\021tabl"
+          + "e,update_mask\022\343\001\n\013RenameTable\022:.google.c"
+          + "loud.bigquery.biglake.v1alpha1.RenameTab"
+          + "leRequest\032-.google.cloud.bigquery.biglak"
+          + "e.v1alpha1.Table\"i\202\323\344\223\002S\"N/v1alpha1/{nam"
+          + "e=projects/*/locations/*/catalogs/*/data"
+          + "bases/*/tables/*}:rename:\001*\332A\rname,new_n"
+          + "ame\022\312\001\n\010GetTable\0227.google.cloud.bigquery"
+          + ".biglake.v1alpha1.GetTableRequest\032-.goog"
+          + "le.cloud.bigquery.biglake.v1alpha1.Table"
+          + "\"V\202\323\344\223\002I\022G/v1alpha1/{name=projects/*/loc"
+          + "ations/*/catalogs/*/databases/*/tables/*"
+          + "}\332A\004name\022\335\001\n\nListTables\0229.google.cloud.b"
+          + "igquery.biglake.v1alpha1.ListTablesReque"
+          + "st\032:.google.cloud.bigquery.biglake.v1alp"
+          + "ha1.ListTablesResponse\"X\202\323\344\223\002I\022G/v1alpha"
+          + "1/{parent=projects/*/locations/*/catalog"
+          + "s/*/databases/*}/tables\332A\006parent\022\331\001\n\nCre"
+          + "ateLock\0229.google.cloud.bigquery.biglake."
+          + "v1alpha1.CreateLockRequest\032,.google.clou"
+          + "d.bigquery.biglake.v1alpha1.Lock\"b\202\323\344\223\002N"
+          + "\"F/v1alpha1/{parent=projects/*/locations"
+          + "/*/catalogs/*/databases/*}/locks:\004lock\332A"
+          + "\013parent,lock\022\266\001\n\nDeleteLock\0229.google.clo"
+          + "ud.bigquery.biglake.v1alpha1.DeleteLockR"
+          + "equest\032\026.google.protobuf.Empty\"U\202\323\344\223\002H*F"
+          + "/v1alpha1/{name=projects/*/locations/*/c"
+          + "atalogs/*/databases/*/locks/*}\332A\004name\022\323\001"
+          + "\n\tCheckLock\0228.google.cloud.bigquery.bigl"
+          + "ake.v1alpha1.CheckLockRequest\032,.google.c"
+          + "loud.bigquery.biglake.v1alpha1.Lock\"^\202\323\344"
+          + "\223\002Q\"L/v1alpha1/{name=projects/*/location"
+          + "s/*/catalogs/*/databases/*/locks/*}:chec"
+          + "k:\001*\332A\004name\022\331\001\n\tListLocks\0228.google.cloud"
+          + ".bigquery.biglake.v1alpha1.ListLocksRequ"
+          + "est\0329.google.cloud.bigquery.biglake.v1al"
+          + "pha1.ListLocksResponse\"W\202\323\344\223\002H\022F/v1alpha"
+          + "1/{parent=projects/*/locations/*/catalog"
+          + "s/*/databases/*}/locks\332A\006parent\032s\312A\026bigl"
+          + "ake.googleapis.com\322AWhttps://www.googlea"
+          + "pis.com/auth/bigquery,https://www.google"
+          + "apis.com/auth/cloud-platformB\204\001\n*com.goo"
+          + "gle.cloud.bigquery.biglake.v1alpha1B\016Met"
+          + "astoreProtoP\001ZDcloud.google.com/go/bigqu"
+          + "ery/biglake/apiv1alpha1/biglakepb;biglak"
+          + "epbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -458,6 +475,7 @@ public final class MetastoreProto {
               "DeleteTime",
               "ExpireTime",
               "Type",
+              "Etag",
               "Options",
             });
     internal_static_google_cloud_bigquery_biglake_v1alpha1_Lock_descriptor =
@@ -580,8 +598,16 @@ public final class MetastoreProto {
             new java.lang.String[] {
               "Table", "UpdateMask",
             });
-    internal_static_google_cloud_bigquery_biglake_v1alpha1_GetTableRequest_descriptor =
+    internal_static_google_cloud_bigquery_biglake_v1alpha1_RenameTableRequest_descriptor =
         getDescriptor().getMessageTypes().get(18);
+    internal_static_google_cloud_bigquery_biglake_v1alpha1_RenameTableRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_biglake_v1alpha1_RenameTableRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "NewName",
+            });
+    internal_static_google_cloud_bigquery_biglake_v1alpha1_GetTableRequest_descriptor =
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_bigquery_biglake_v1alpha1_GetTableRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_biglake_v1alpha1_GetTableRequest_descriptor,
@@ -589,15 +615,15 @@ public final class MetastoreProto {
               "Name",
             });
     internal_static_google_cloud_bigquery_biglake_v1alpha1_ListTablesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_bigquery_biglake_v1alpha1_ListTablesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_biglake_v1alpha1_ListTablesRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "PageSize", "PageToken",
+              "Parent", "PageSize", "PageToken", "View",
             });
     internal_static_google_cloud_bigquery_biglake_v1alpha1_ListTablesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_bigquery_biglake_v1alpha1_ListTablesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_biglake_v1alpha1_ListTablesResponse_descriptor,
@@ -605,7 +631,7 @@ public final class MetastoreProto {
               "Tables", "NextPageToken",
             });
     internal_static_google_cloud_bigquery_biglake_v1alpha1_CreateLockRequest_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_bigquery_biglake_v1alpha1_CreateLockRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_biglake_v1alpha1_CreateLockRequest_descriptor,
@@ -613,7 +639,7 @@ public final class MetastoreProto {
               "Parent", "Lock",
             });
     internal_static_google_cloud_bigquery_biglake_v1alpha1_DeleteLockRequest_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_bigquery_biglake_v1alpha1_DeleteLockRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_biglake_v1alpha1_DeleteLockRequest_descriptor,
@@ -621,7 +647,7 @@ public final class MetastoreProto {
               "Name",
             });
     internal_static_google_cloud_bigquery_biglake_v1alpha1_CheckLockRequest_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_bigquery_biglake_v1alpha1_CheckLockRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_biglake_v1alpha1_CheckLockRequest_descriptor,
@@ -629,7 +655,7 @@ public final class MetastoreProto {
               "Name",
             });
     internal_static_google_cloud_bigquery_biglake_v1alpha1_ListLocksRequest_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_bigquery_biglake_v1alpha1_ListLocksRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_biglake_v1alpha1_ListLocksRequest_descriptor,
@@ -637,7 +663,7 @@ public final class MetastoreProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_bigquery_biglake_v1alpha1_ListLocksResponse_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_bigquery_biglake_v1alpha1_ListLocksResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_biglake_v1alpha1_ListLocksResponse_descriptor,
@@ -645,7 +671,7 @@ public final class MetastoreProto {
               "Locks", "NextPageToken",
             });
     internal_static_google_cloud_bigquery_biglake_v1alpha1_HiveDatabaseOptions_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_bigquery_biglake_v1alpha1_HiveDatabaseOptions_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_biglake_v1alpha1_HiveDatabaseOptions_descriptor,
@@ -663,7 +689,7 @@ public final class MetastoreProto {
               "Key", "Value",
             });
     internal_static_google_cloud_bigquery_biglake_v1alpha1_HiveTableOptions_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_bigquery_biglake_v1alpha1_HiveTableOptions_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_biglake_v1alpha1_HiveTableOptions_descriptor,

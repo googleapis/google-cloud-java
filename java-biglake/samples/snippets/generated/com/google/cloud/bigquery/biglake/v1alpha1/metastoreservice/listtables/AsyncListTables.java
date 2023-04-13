@@ -22,6 +22,7 @@ import com.google.cloud.bigquery.biglake.v1alpha1.DatabaseName;
 import com.google.cloud.bigquery.biglake.v1alpha1.ListTablesRequest;
 import com.google.cloud.bigquery.biglake.v1alpha1.MetastoreServiceClient;
 import com.google.cloud.bigquery.biglake.v1alpha1.Table;
+import com.google.cloud.bigquery.biglake.v1alpha1.TableView;
 
 public class AsyncListTables {
 
@@ -42,6 +43,7 @@ public class AsyncListTables {
                   DatabaseName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[DATABASE]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setView(TableView.forNumber(0))
               .build();
       ApiFuture<Table> future =
           metastoreServiceClient.listTablesPagedCallable().futureCall(request);
