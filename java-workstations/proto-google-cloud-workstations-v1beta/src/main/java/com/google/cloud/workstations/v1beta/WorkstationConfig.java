@@ -214,10 +214,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Email address of the service account that will be used on VM instances
-       * used to support this config. This service account must have permission
-       * to pull the specified container image. If not set, VMs will run without
-       * a service account, in which case the image must be publicly accessible.
+       * Email address of the service account used on VM instances
+       * used to support this configuration. If not set, VMs run with a
+       * Google-managed service account. This service account must have
+       * permission to pull the specified container image; otherwise, the image
+       * must be publicly accessible.
        * </pre>
        *
        * <code>string service_account = 2;</code>
@@ -229,10 +230,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Email address of the service account that will be used on VM instances
-       * used to support this config. This service account must have permission
-       * to pull the specified container image. If not set, VMs will run without
-       * a service account, in which case the image must be publicly accessible.
+       * Email address of the service account used on VM instances
+       * used to support this configuration. If not set, VMs run with a
+       * Google-managed service account. This service account must have
+       * permission to pull the specified container image; otherwise, the image
+       * must be publicly accessible.
        * </pre>
        *
        * <code>string service_account = 2;</code>
@@ -1996,10 +1998,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Email address of the service account that will be used on VM instances
-       * used to support this config. This service account must have permission
-       * to pull the specified container image. If not set, VMs will run without
-       * a service account, in which case the image must be publicly accessible.
+       * Email address of the service account used on VM instances
+       * used to support this configuration. If not set, VMs run with a
+       * Google-managed service account. This service account must have
+       * permission to pull the specified container image; otherwise, the image
+       * must be publicly accessible.
        * </pre>
        *
        * <code>string service_account = 2;</code>
@@ -2022,10 +2025,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Email address of the service account that will be used on VM instances
-       * used to support this config. This service account must have permission
-       * to pull the specified container image. If not set, VMs will run without
-       * a service account, in which case the image must be publicly accessible.
+       * Email address of the service account used on VM instances
+       * used to support this configuration. If not set, VMs run with a
+       * Google-managed service account. This service account must have
+       * permission to pull the specified container image; otherwise, the image
+       * must be publicly accessible.
        * </pre>
        *
        * <code>string service_account = 2;</code>
@@ -2985,10 +2989,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Email address of the service account that will be used on VM instances
-         * used to support this config. This service account must have permission
-         * to pull the specified container image. If not set, VMs will run without
-         * a service account, in which case the image must be publicly accessible.
+         * Email address of the service account used on VM instances
+         * used to support this configuration. If not set, VMs run with a
+         * Google-managed service account. This service account must have
+         * permission to pull the specified container image; otherwise, the image
+         * must be publicly accessible.
          * </pre>
          *
          * <code>string service_account = 2;</code>
@@ -3010,10 +3015,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Email address of the service account that will be used on VM instances
-         * used to support this config. This service account must have permission
-         * to pull the specified container image. If not set, VMs will run without
-         * a service account, in which case the image must be publicly accessible.
+         * Email address of the service account used on VM instances
+         * used to support this configuration. If not set, VMs run with a
+         * Google-managed service account. This service account must have
+         * permission to pull the specified container image; otherwise, the image
+         * must be publicly accessible.
          * </pre>
          *
          * <code>string service_account = 2;</code>
@@ -3035,10 +3041,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Email address of the service account that will be used on VM instances
-         * used to support this config. This service account must have permission
-         * to pull the specified container image. If not set, VMs will run without
-         * a service account, in which case the image must be publicly accessible.
+         * Email address of the service account used on VM instances
+         * used to support this configuration. If not set, VMs run with a
+         * Google-managed service account. This service account must have
+         * permission to pull the specified container image; otherwise, the image
+         * must be publicly accessible.
          * </pre>
          *
          * <code>string service_account = 2;</code>
@@ -3059,10 +3066,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Email address of the service account that will be used on VM instances
-         * used to support this config. This service account must have permission
-         * to pull the specified container image. If not set, VMs will run without
-         * a service account, in which case the image must be publicly accessible.
+         * Email address of the service account used on VM instances
+         * used to support this configuration. If not set, VMs run with a
+         * Google-managed service account. This service account must have
+         * permission to pull the specified container image; otherwise, the image
+         * must be publicly accessible.
          * </pre>
          *
          * <code>string service_account = 2;</code>
@@ -3079,10 +3087,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Email address of the service account that will be used on VM instances
-         * used to support this config. This service account must have permission
-         * to pull the specified container image. If not set, VMs will run without
-         * a service account, in which case the image must be publicly accessible.
+         * Email address of the service account used on VM instances
+         * used to support this configuration. If not set, VMs run with a
+         * Google-managed service account. This service account must have
+         * permission to pull the specified container image; otherwise, the image
+         * must be publicly accessible.
          * </pre>
          *
          * <code>string service_account = 2;</code>
