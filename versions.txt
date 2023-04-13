@@ -630,3 +630,5 @@ proto-google-cloud-confidentialcomputing-v1:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-confidentialcomputing-v1alpha1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-confidentialcomputing-v1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-confidentialcomputing-v1alpha1:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-workstations-v1:0.2.0:0.3.0-SNAPSHOT
+grpc-google-cloud-workstations-v1:0.2.0:0.3.0-SNAPSHOT
