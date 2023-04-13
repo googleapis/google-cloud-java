@@ -197,6 +197,8 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     ATTACK_COMPLEXITY_LOW(1),
     /** <code>ATTACK_COMPLEXITY_HIGH = 2;</code> */
     ATTACK_COMPLEXITY_HIGH(2),
+    /** <code>ATTACK_COMPLEXITY_MEDIUM = 3;</code> */
+    ATTACK_COMPLEXITY_MEDIUM(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -206,6 +208,8 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     public static final int ATTACK_COMPLEXITY_LOW_VALUE = 1;
     /** <code>ATTACK_COMPLEXITY_HIGH = 2;</code> */
     public static final int ATTACK_COMPLEXITY_HIGH_VALUE = 2;
+    /** <code>ATTACK_COMPLEXITY_MEDIUM = 3;</code> */
+    public static final int ATTACK_COMPLEXITY_MEDIUM_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -237,6 +241,8 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
           return ATTACK_COMPLEXITY_LOW;
         case 2:
           return ATTACK_COMPLEXITY_HIGH;
+        case 3:
+          return ATTACK_COMPLEXITY_MEDIUM;
         default:
           return null;
       }
@@ -723,6 +729,10 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     IMPACT_LOW(2),
     /** <code>IMPACT_NONE = 3;</code> */
     IMPACT_NONE(3),
+    /** <code>IMPACT_PARTIAL = 4;</code> */
+    IMPACT_PARTIAL(4),
+    /** <code>IMPACT_COMPLETE = 5;</code> */
+    IMPACT_COMPLETE(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -734,6 +744,10 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
     public static final int IMPACT_LOW_VALUE = 2;
     /** <code>IMPACT_NONE = 3;</code> */
     public static final int IMPACT_NONE_VALUE = 3;
+    /** <code>IMPACT_PARTIAL = 4;</code> */
+    public static final int IMPACT_PARTIAL_VALUE = 4;
+    /** <code>IMPACT_COMPLETE = 5;</code> */
+    public static final int IMPACT_COMPLETE_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -767,6 +781,10 @@ public final class CVSS extends com.google.protobuf.GeneratedMessageV3
           return IMPACT_LOW;
         case 3:
           return IMPACT_NONE;
+        case 4:
+          return IMPACT_PARTIAL;
+        case 5:
+          return IMPACT_COMPLETE;
         default:
           return null;
       }
