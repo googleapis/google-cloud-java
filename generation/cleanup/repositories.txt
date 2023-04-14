@@ -1,3 +1,5 @@
+api-common-java
+gax-java
 java-accessapproval
 java-accesscontextmanager
 java-advisorynotifications
