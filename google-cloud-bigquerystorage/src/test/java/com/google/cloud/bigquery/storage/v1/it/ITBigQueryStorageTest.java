@@ -21,7 +21,9 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
+import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.cloud.RetryOption;
 import com.google.cloud.ServiceOptions;
@@ -39,6 +41,7 @@ import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
 import com.google.cloud.bigquery.TimePartitioning;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
+import com.google.cloud.bigquery.storage.v1.BigQueryReadSettings;
 import com.google.cloud.bigquery.storage.v1.CreateReadSessionRequest;
 import com.google.cloud.bigquery.storage.v1.DataFormat;
 import com.google.cloud.bigquery.storage.v1.ReadRowsRequest;
@@ -804,6 +807,56 @@ public class ITBigQueryStorageTest {
         Schema.Type.STRING,
         structSchema.getField("str_field").schema().getType());
     assertEquals(rowAssertMessage, new Utf8("abc"), structRecord.get("str_field"));
+  }
+
+  @Test
+  public void testSimpleReadWithBackgroundExecutorProvider() throws IOException {
+    BigQueryReadSettings bigQueryReadSettings =
+        BigQueryReadSettings.newBuilder()
+            .setBackgroundExecutorProvider(
+                InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(14).build())
+            .build();
+    // Overriding the default client
+    client = BigQueryReadClient.create(bigQueryReadSettings);
+    assertTrue(
+        client.getStub().getStubSettings().getBackgroundExecutorProvider()
+            instanceof InstantiatingExecutorProvider);
+    assertEquals(
+        14,
+        ((InstantiatingExecutorProvider)
+                client.getStub().getStubSettings().getBackgroundExecutorProvider())
+            .getExecutorThreadCount());
+    String table =
+        BigQueryResource.FormatTableResource(
+            /* projectId = */ "bigquery-public-data",
+            /* datasetId = */ "samples",
+            /* tableId = */ "shakespeare");
+
+    ReadSession session =
+        client.createReadSession(
+            /* parent = */ parentProjectId,
+            /* readSession = */ ReadSession.newBuilder()
+                .setTable(table)
+                .setDataFormat(DataFormat.AVRO)
+                .build(),
+            /* maxStreamCount = */ 1);
+    assertEquals(
+        String.format(
+            "Did not receive expected number of streams for table '%s' CreateReadSession response:%n%s",
+            table, session.toString()),
+        1,
+        session.getStreamsCount());
+
+    ReadRowsRequest readRowsRequest =
+        ReadRowsRequest.newBuilder().setReadStream(session.getStreams(0).getName()).build();
+
+    long rowCount = 0;
+    ServerStream<ReadRowsResponse> stream = client.readRowsCallable().call(readRowsRequest);
+    for (ReadRowsResponse response : stream) {
+      rowCount += response.getRowCount();
+    }
+
+    assertEquals(164_656, rowCount);
   }
 
   /**
