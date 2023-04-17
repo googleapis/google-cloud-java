@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.20.4](https://github.com/googleapis/java-bigtable/compare/v2.20.3...v2.20.4) (2023-04-17)
+
+
+### Documentation
+
+* Make delete examples consistent with other languages ([#1710](https://github.com/googleapis/java-bigtable/issues/1710)) ([2d80188](https://github.com/googleapis/java-bigtable/commit/2d80188c65f454e037b758426b8747b5992db0de))
+
+
+### Dependencies
+
+* Update actions/setup-go action to v4 ([#1700](https://github.com/googleapis/java-bigtable/issues/1700)) ([1fd13ba](https://github.com/googleapis/java-bigtable/commit/1fd13ba9fdfa0322ee419f405c92ebe3979d85c7))
+* Update dependency com.google.cloud:google-cloud-monitoring-bom to v3.16.0 ([#1712](https://github.com/googleapis/java-bigtable/issues/1712)) ([f3bb088](https://github.com/googleapis/java-bigtable/commit/f3bb088cd670805e5c6975e7154ee7e1e320acc6))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.21 ([#1704](https://github.com/googleapis/java-bigtable/issues/1704)) ([d60c946](https://github.com/googleapis/java-bigtable/commit/d60c94630f60d01241eecf9e3061ed197435b55e))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.21 ([#1705](https://github.com/googleapis/java-bigtable/issues/1705)) ([8f3d69d](https://github.com/googleapis/java-bigtable/commit/8f3d69d2498a7c0b5f760a40054e17d07502764d))
+* Update shared dependencies ([#1703](https://github.com/googleapis/java-bigtable/issues/1703)) ([076b411](https://github.com/googleapis/java-bigtable/commit/076b411b3c834c4ed1b98551f08befab78743c8f))
+* Upgrade maven-enforcer-plugin to 3.3.0, remove duplicate entry in pom ([#1702](https://github.com/googleapis/java-bigtable/issues/1702)) ([392fc69](https://github.com/googleapis/java-bigtable/commit/392fc697b9b75d172ba5bfd98ead45a6074c47f7))
+
 ## [2.20.3](https://github.com/googleapis/java-bigtable/compare/v2.20.2...v2.20.3) (2023-04-03)
 
 
