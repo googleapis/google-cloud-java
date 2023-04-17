@@ -16,8 +16,8 @@ Java idiomatic client for [Cloud Logging Logback Appender][product-docs].
 
 
 If you are using Maven, add this to your pom.xml file:
-<!-- {x-version-update-start:google-cloud-logging-logback:released} -->
 
+<!-- {x-version-update-start:google-cloud-logging-logback:released} -->
 
 ```xml
 <dependency>
@@ -307,7 +307,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [developer-console]: https://console.developers.google.com/
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
 [cloud-cli]: https://cloud.google.com/cli
-[troubleshooting]: https://github.com/googleapis/google-cloud-common/blob/main/troubleshooting/readme.md#troubleshooting
+[troubleshooting]: https://github.com/googleapis/google-cloud-java/blob/main/TROUBLESHOOTING.md
 [contributing]: https://github.com/googleapis/java-logging-logback/blob/main/CONTRIBUTING.md
 [code-of-conduct]: https://github.com/googleapis/java-logging-logback/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [license]: https://github.com/googleapis/java-logging-logback/blob/main/LICENSE
