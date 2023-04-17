@@ -119,7 +119,7 @@ jobs:
         cache: maven
     - name: Install Maven modules to local Maven repository
       run: |
-        mvn install -B -ntp  -T C1 -DskipTests -Dclirr.skip -Dcheckstyle.skip
+        mvn install -B -ntp  -T 1C -DskipTests -Dclirr.skip -Dcheckstyle.skip
     - name: Validate gapic-generator-java-bom
       uses: googleapis/java-cloud-bom/tests/validate-bom@main
       with:
