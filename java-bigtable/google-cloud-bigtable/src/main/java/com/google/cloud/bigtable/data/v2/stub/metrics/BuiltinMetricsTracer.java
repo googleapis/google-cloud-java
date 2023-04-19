@@ -71,6 +71,8 @@ class BuiltinMetricsTracer extends BigtableTracer {
   private String zone = "global";
   private String cluster = "unspecified";
 
+  private AtomicLong totalClientBlockingTime = new AtomicLong(0);
+
   @VisibleForTesting
   BuiltinMetricsTracer(
       OperationType operationType, SpanName spanName, StatsRecorderWrapper recorder) {
@@ -219,7 +221,12 @@ class BuiltinMetricsTracer extends BigtableTracer {
 
   @Override
   public void batchRequestThrottled(long throttledTimeMs) {
-    recorder.putBatchRequestThrottled(throttledTimeMs);
+    totalClientBlockingTime.addAndGet(throttledTimeMs);
+  }
+
+  @Override
+  public void grpcChannelQueuedLatencies(long queuedTimeMs) {
+    totalClientBlockingTime.addAndGet(queuedTimeMs);
   }
 
   @Override
@@ -265,6 +272,8 @@ class BuiltinMetricsTracer extends BigtableTracer {
         serverLatencyTimerIsRunning = false;
       }
     }
+
+    recorder.putClientBlockingLatencies(totalClientBlockingTime.get());
 
     // Patch the status until it's fixed in gax. When an attempt failed,
     // it'll throw a ServerStreamingAttemptException. Unwrap the exception

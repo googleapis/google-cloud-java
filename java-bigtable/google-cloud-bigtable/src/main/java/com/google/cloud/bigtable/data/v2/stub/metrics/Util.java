@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
 import com.google.api.core.InternalApi;
+import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcResponseMetadata;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiException;
@@ -32,6 +33,7 @@ import com.google.bigtable.v2.TableName;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.InvalidProtocolBufferException;
+import io.grpc.CallOptions;
 import io.grpc.Metadata;
 import io.grpc.Status;
 import io.grpc.StatusException;
@@ -196,5 +198,24 @@ public class Util {
     }
     // Record gfe metrics
     tracer.recordGfeMetadata(latency, throwable);
+  }
+
+  /**
+   * This method bridges gRPC stream tracing to bigtable tracing by adding a {@link
+   * io.grpc.ClientStreamTracer} to the callContext.
+   */
+  static GrpcCallContext injectBigtableStreamTracer(
+      ApiCallContext context, GrpcResponseMetadata responseMetadata, BigtableTracer tracer) {
+    if (context instanceof GrpcCallContext) {
+      GrpcCallContext callContext = (GrpcCallContext) context;
+      CallOptions callOptions = callContext.getCallOptions();
+      return responseMetadata.addHandlers(
+          callContext.withCallOptions(
+              callOptions.withStreamTracerFactory(new BigtableGrpcStreamTracer.Factory(tracer))));
+    } else {
+      // context should always be an instance of GrpcCallContext. If not throw an exception
+      // so we can see what class context is.
+      throw new RuntimeException("Unexpected context class: " + context.getClass().getName());
+    }
   }
 }

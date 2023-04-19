@@ -91,7 +91,7 @@ public class StatsRecorderWrapperTest {
     recorderWrapper.putGfeLatencies(serverLatency);
     recorderWrapper.putGfeMissingHeaders(connectivityErrorCount);
     recorderWrapper.putFirstResponseLatencies(firstResponseLatency);
-    recorderWrapper.putBatchRequestThrottled(throttlingLatency);
+    recorderWrapper.putClientBlockingLatencies(throttlingLatency);
 
     recorderWrapper.recordOperation("OK", TABLE_ID, ZONE, CLUSTER);
     recorderWrapper.recordAttempt("OK", TABLE_ID, ZONE, CLUSTER);
@@ -290,7 +290,7 @@ public class StatsRecorderWrapperTest {
     recorderWrapper.putGfeLatencies(serverLatency);
     recorderWrapper.putGfeMissingHeaders(connectivityErrorCount);
     recorderWrapper.putFirstResponseLatencies(firstResponseLatency);
-    recorderWrapper.putBatchRequestThrottled(throttlingLatency);
+    recorderWrapper.putClientBlockingLatencies(throttlingLatency);
 
     recorderWrapper.recordOperation("UNAVAILABLE", TABLE_ID, ZONE, CLUSTER);
     recorderWrapper.recordAttempt("UNAVAILABLE", TABLE_ID, ZONE, CLUSTER);

@@ -82,4 +82,8 @@ public class BigtableTracer extends BaseApiTracer {
   public void setLocations(String zone, String cluster) {
     // noop
   }
+
+  public void grpcChannelQueuedLatencies(long queuedTimeMs) {
+    // noop
+  }
 }

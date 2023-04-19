@@ -218,4 +218,11 @@ class CompositeTracer extends BigtableTracer {
       tracer.afterResponse(applicationLatency);
     }
   }
+
+  @Override
+  public void grpcChannelQueuedLatencies(long queuedTimeMs) {
+    for (BigtableTracer tracer : bigtableTracers) {
+      tracer.grpcChannelQueuedLatencies(queuedTimeMs);
+    }
+  }
 }

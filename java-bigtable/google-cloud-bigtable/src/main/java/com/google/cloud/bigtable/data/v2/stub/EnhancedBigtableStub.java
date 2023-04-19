@@ -87,6 +87,7 @@ import com.google.cloud.bigtable.data.v2.stub.changestream.ChangeStreamRecordMer
 import com.google.cloud.bigtable.data.v2.stub.changestream.GenerateInitialChangeStreamPartitionsUserCallable;
 import com.google.cloud.bigtable.data.v2.stub.changestream.ReadChangeStreamResumptionStrategy;
 import com.google.cloud.bigtable.data.v2.stub.changestream.ReadChangeStreamUserCallable;
+import com.google.cloud.bigtable.data.v2.stub.metrics.BigtableTracerBatchedUnaryCallable;
 import com.google.cloud.bigtable.data.v2.stub.metrics.BigtableTracerStreamingCallable;
 import com.google.cloud.bigtable.data.v2.stub.metrics.BigtableTracerUnaryCallable;
 import com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsTracerFactory;
@@ -509,7 +510,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
         new TracedBatcherUnaryCallable<>(readRowsUserCallable.all());
 
     UnaryCallable<Query, List<RowT>> withBigtableTracer =
-        new BigtableTracerUnaryCallable<>(tracedBatcher);
+        new BigtableTracerBatchedUnaryCallable<>(tracedBatcher);
 
     UnaryCallable<Query, List<RowT>> traced =
         new TracedUnaryCallable<>(withBigtableTracer, clientContext.getTracerFactory(), span);
@@ -641,7 +642,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
         new TracedBatcherUnaryCallable<>(userFacing);
 
     UnaryCallable<BulkMutation, Void> withBigtableTracer =
-        new BigtableTracerUnaryCallable<>(tracedBatcherUnaryCallable);
+        new BigtableTracerBatchedUnaryCallable<>(tracedBatcherUnaryCallable);
     UnaryCallable<BulkMutation, Void> traced =
         new TracedUnaryCallable<>(withBigtableTracer, clientContext.getTracerFactory(), spanName);
 

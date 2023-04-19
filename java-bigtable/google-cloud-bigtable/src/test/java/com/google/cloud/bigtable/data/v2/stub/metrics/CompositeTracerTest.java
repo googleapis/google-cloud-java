@@ -251,4 +251,11 @@ public class CompositeTracerTest {
         .comparingElementsUsing(MethodComparator.METHOD_CORRESPONDENCE)
         .containsAtLeastElementsIn(baseMethods);
   }
+
+  @Test
+  public void testRequestBlockedOnChannel() {
+    compositeTracer.grpcChannelQueuedLatencies(5L);
+    verify(child3, times(1)).grpcChannelQueuedLatencies(5L);
+    verify(child4, times(1)).grpcChannelQueuedLatencies(5L);
+  }
 }
