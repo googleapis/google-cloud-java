@@ -121,4 +121,26 @@ public class MockTagBindingsImpl extends TagBindingsImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void listEffectiveTags(
+      ListEffectiveTagsRequest request,
+      StreamObserver<ListEffectiveTagsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListEffectiveTagsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListEffectiveTagsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListEffectiveTags, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListEffectiveTagsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

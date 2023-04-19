@@ -45,6 +45,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
@@ -194,6 +195,8 @@ public class TagKeysClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setPurpose(Purpose.forNumber(0))
+            .putAllPurposeData(new HashMap<String, String>())
             .build();
     mockTagKeys.addResponse(expectedResponse);
 
@@ -239,6 +242,8 @@ public class TagKeysClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setPurpose(Purpose.forNumber(0))
+            .putAllPurposeData(new HashMap<String, String>())
             .build();
     mockTagKeys.addResponse(expectedResponse);
 
@@ -273,6 +278,100 @@ public class TagKeysClientTest {
   }
 
   @Test
+  public void getNamespacedTagKeyTest() throws Exception {
+    TagKey expectedResponse =
+        TagKey.newBuilder()
+            .setName(TagKeyName.of("[TAG_KEY]").toString())
+            .setParent("parent-995424086")
+            .setShortName("shortName-2028219097")
+            .setNamespacedName("namespacedName-1877415788")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .setPurpose(Purpose.forNumber(0))
+            .putAllPurposeData(new HashMap<String, String>())
+            .build();
+    mockTagKeys.addResponse(expectedResponse);
+
+    TagKeyName name = TagKeyName.of("[TAG_KEY]");
+
+    TagKey actualResponse = client.getNamespacedTagKey(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTagKeys.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetNamespacedTagKeyRequest actualRequest = ((GetNamespacedTagKeyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getNamespacedTagKeyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTagKeys.addException(exception);
+
+    try {
+      TagKeyName name = TagKeyName.of("[TAG_KEY]");
+      client.getNamespacedTagKey(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getNamespacedTagKeyTest2() throws Exception {
+    TagKey expectedResponse =
+        TagKey.newBuilder()
+            .setName(TagKeyName.of("[TAG_KEY]").toString())
+            .setParent("parent-995424086")
+            .setShortName("shortName-2028219097")
+            .setNamespacedName("namespacedName-1877415788")
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .setPurpose(Purpose.forNumber(0))
+            .putAllPurposeData(new HashMap<String, String>())
+            .build();
+    mockTagKeys.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    TagKey actualResponse = client.getNamespacedTagKey(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTagKeys.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetNamespacedTagKeyRequest actualRequest = ((GetNamespacedTagKeyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getNamespacedTagKeyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTagKeys.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getNamespacedTagKey(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void createTagKeyTest() throws Exception {
     TagKey expectedResponse =
         TagKey.newBuilder()
@@ -284,6 +383,8 @@ public class TagKeysClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setPurpose(Purpose.forNumber(0))
+            .putAllPurposeData(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -337,6 +438,8 @@ public class TagKeysClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setPurpose(Purpose.forNumber(0))
+            .putAllPurposeData(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -393,6 +496,8 @@ public class TagKeysClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setPurpose(Purpose.forNumber(0))
+            .putAllPurposeData(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -446,6 +551,8 @@ public class TagKeysClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setPurpose(Purpose.forNumber(0))
+            .putAllPurposeData(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
