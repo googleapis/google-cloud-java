@@ -28,7 +28,7 @@ public interface ListBuildsRequestOrBuilder
    *
    * <pre>
    * The parent of the collection of `Builds`.
-   * Format: `projects/{project}/locations/location`
+   * Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>string parent = 9 [(.google.api.resource_reference) = { ... }</code>
@@ -41,7 +41,7 @@ public interface ListBuildsRequestOrBuilder
    *
    * <pre>
    * The parent of the collection of `Builds`.
-   * Format: `projects/{project}/locations/location`
+   * Format: `projects/{project}/locations/{location}`
    * </pre>
    *
    * <code>string parent = 9 [(.google.api.resource_reference) = { ... }</code>

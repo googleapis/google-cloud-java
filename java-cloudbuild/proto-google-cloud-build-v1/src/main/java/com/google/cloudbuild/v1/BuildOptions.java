@@ -91,7 +91,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Not a verifiable build. (default)
+     * Not a verifiable build (the default).
      * </pre>
      *
      * <code>NOT_VERIFIED = 0;</code>
@@ -101,7 +101,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Verified build.
+     * Build must be verified.
      * </pre>
      *
      * <code>VERIFIED = 1;</code>
@@ -114,7 +114,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Not a verifiable build. (default)
+     * Not a verifiable build (the default).
      * </pre>
      *
      * <code>NOT_VERIFIED = 0;</code>
@@ -124,7 +124,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Verified build.
+     * Build must be verified.
      * </pre>
      *
      * <code>VERIFIED = 1;</code>
@@ -742,7 +742,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Logging and Cloud Storage logging are enabled.
+     * Build logs are stored in Cloud Logging and Cloud Storage.
      * </pre>
      *
      * <code>LEGACY = 1;</code>
@@ -752,7 +752,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Only Cloud Storage logging is enabled.
+     * Build logs are stored in Cloud Storage.
      * </pre>
      *
      * <code>GCS_ONLY = 2;</code>
@@ -773,9 +773,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Only Cloud Logging is enabled. Note that logs for both the Cloud Console
-     * UI and Cloud SDK are based on Cloud Storage logs, so neither will provide
-     * logs if this option is chosen.
+     * Build logs are stored in Cloud Logging. Selecting this option will not
+     * allow [logs
+     * streaming](https://cloud.google.com/sdk/gcloud/reference/builds/log).
      * </pre>
      *
      * <code>CLOUD_LOGGING_ONLY = 5;</code>
@@ -809,7 +809,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Logging and Cloud Storage logging are enabled.
+     * Build logs are stored in Cloud Logging and Cloud Storage.
      * </pre>
      *
      * <code>LEGACY = 1;</code>
@@ -819,7 +819,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Only Cloud Storage logging is enabled.
+     * Build logs are stored in Cloud Storage.
      * </pre>
      *
      * <code>GCS_ONLY = 2;</code>
@@ -839,9 +839,9 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Only Cloud Logging is enabled. Note that logs for both the Cloud Console
-     * UI and Cloud SDK are based on Cloud Storage logs, so neither will provide
-     * logs if this option is chosen.
+     * Build logs are stored in Cloud Logging. Selecting this option will not
+     * allow [logs
+     * streaming](https://cloud.google.com/sdk/gcloud/reference/builds/log).
      * </pre>
      *
      * <code>CLOUD_LOGGING_ONLY = 5;</code>
@@ -1950,7 +1950,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * "disk free"; some of the space will be used by the operating system and
    * build utilities. Also note that this is the minimum disk size that will be
    * allocated for the build -- the build may run with a larger disk than
-   * requested. At present, the maximum disk size is 1000GB; builds that request
+   * requested. At present, the maximum disk size is 2000GB; builds that request
    * more than the maximum are rejected with an error.
    * </pre>
    *
@@ -2084,7 +2084,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1892
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1969
    * @return The workerPool.
    */
   @java.lang.Override
@@ -2110,7 +2110,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1892
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1969
    * @return The bytes for workerPool.
    */
   @java.lang.Override
@@ -2490,7 +2490,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Option to specify how default logs buckets are setup.
+   * Optional. Option to specify how default logs buckets are setup.
    * </pre>
    *
    * <code>
@@ -2507,7 +2507,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Option to specify how default logs buckets are setup.
+   * Optional. Option to specify how default logs buckets are setup.
    * </pre>
    *
    * <code>
@@ -3734,7 +3734,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * "disk free"; some of the space will be used by the operating system and
      * build utilities. Also note that this is the minimum disk size that will be
      * allocated for the build -- the build may run with a larger disk than
-     * requested. At present, the maximum disk size is 1000GB; builds that request
+     * requested. At present, the maximum disk size is 2000GB; builds that request
      * more than the maximum are rejected with an error.
      * </pre>
      *
@@ -3754,7 +3754,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * "disk free"; some of the space will be used by the operating system and
      * build utilities. Also note that this is the minimum disk size that will be
      * allocated for the build -- the build may run with a larger disk than
-     * requested. At present, the maximum disk size is 1000GB; builds that request
+     * requested. At present, the maximum disk size is 2000GB; builds that request
      * more than the maximum are rejected with an error.
      * </pre>
      *
@@ -3778,7 +3778,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * "disk free"; some of the space will be used by the operating system and
      * build utilities. Also note that this is the minimum disk size that will be
      * allocated for the build -- the build may run with a larger disk than
-     * requested. At present, the maximum disk size is 1000GB; builds that request
+     * requested. At present, the maximum disk size is 2000GB; builds that request
      * more than the maximum are rejected with an error.
      * </pre>
      *
@@ -4087,7 +4087,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1892
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1969
      * @return The workerPool.
      */
     @java.lang.Deprecated
@@ -4112,7 +4112,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1892
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1969
      * @return The bytes for workerPool.
      */
     @java.lang.Deprecated
@@ -4137,7 +4137,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1892
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1969
      * @param value The workerPool to set.
      * @return This builder for chaining.
      */
@@ -4161,7 +4161,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1892
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1969
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4181,7 +4181,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1892
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=1969
      * @param value The bytes for workerPool to set.
      * @return This builder for chaining.
      */
@@ -5380,7 +5380,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Option to specify how default logs buckets are setup.
+     * Optional. Option to specify how default logs buckets are setup.
      * </pre>
      *
      * <code>
@@ -5397,7 +5397,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Option to specify how default logs buckets are setup.
+     * Optional. Option to specify how default logs buckets are setup.
      * </pre>
      *
      * <code>
@@ -5417,7 +5417,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Option to specify how default logs buckets are setup.
+     * Optional. Option to specify how default logs buckets are setup.
      * </pre>
      *
      * <code>
@@ -5440,7 +5440,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Option to specify how default logs buckets are setup.
+     * Optional. Option to specify how default logs buckets are setup.
      * </pre>
      *
      * <code>
@@ -5464,7 +5464,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Option to specify how default logs buckets are setup.
+     * Optional. Option to specify how default logs buckets are setup.
      * </pre>
      *
      * <code>

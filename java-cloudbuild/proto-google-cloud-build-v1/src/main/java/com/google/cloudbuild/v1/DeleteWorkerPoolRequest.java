@@ -78,7 +78,7 @@ public final class DeleteWorkerPoolRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. The name of the `WorkerPool` to delete.
    * Format:
-   * `projects/{project}/locations/{workerPool}/workerPools/{workerPool}`.
+   * `projects/{project}/locations/{location}/workerPools/{workerPool}`.
    * </pre>
    *
    * <code>
@@ -105,7 +105,7 @@ public final class DeleteWorkerPoolRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. The name of the `WorkerPool` to delete.
    * Format:
-   * `projects/{project}/locations/{workerPool}/workerPools/{workerPool}`.
+   * `projects/{project}/locations/{location}/workerPools/{workerPool}`.
    * </pre>
    *
    * <code>
@@ -635,7 +635,7 @@ public final class DeleteWorkerPoolRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The name of the `WorkerPool` to delete.
      * Format:
-     * `projects/{project}/locations/{workerPool}/workerPools/{workerPool}`.
+     * `projects/{project}/locations/{location}/workerPools/{workerPool}`.
      * </pre>
      *
      * <code>
@@ -661,7 +661,7 @@ public final class DeleteWorkerPoolRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The name of the `WorkerPool` to delete.
      * Format:
-     * `projects/{project}/locations/{workerPool}/workerPools/{workerPool}`.
+     * `projects/{project}/locations/{location}/workerPools/{workerPool}`.
      * </pre>
      *
      * <code>
@@ -687,7 +687,7 @@ public final class DeleteWorkerPoolRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The name of the `WorkerPool` to delete.
      * Format:
-     * `projects/{project}/locations/{workerPool}/workerPools/{workerPool}`.
+     * `projects/{project}/locations/{location}/workerPools/{workerPool}`.
      * </pre>
      *
      * <code>
@@ -712,7 +712,7 @@ public final class DeleteWorkerPoolRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The name of the `WorkerPool` to delete.
      * Format:
-     * `projects/{project}/locations/{workerPool}/workerPools/{workerPool}`.
+     * `projects/{project}/locations/{location}/workerPools/{workerPool}`.
      * </pre>
      *
      * <code>
@@ -733,7 +733,7 @@ public final class DeleteWorkerPoolRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The name of the `WorkerPool` to delete.
      * Format:
-     * `projects/{project}/locations/{workerPool}/workerPools/{workerPool}`.
+     * `projects/{project}/locations/{location}/workerPools/{workerPool}`.
      * </pre>
      *
      * <code>

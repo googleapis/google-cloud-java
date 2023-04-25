@@ -133,7 +133,8 @@ public interface ResultsOrBuilder
    *
    *
    * <pre>
-   * Path to the artifact manifest. Only populated when artifacts are uploaded.
+   * Path to the artifact manifest for non-container artifacts uploaded to Cloud
+   * Storage. Only populated when artifacts are uploaded to Cloud Storage.
    * </pre>
    *
    * <code>string artifact_manifest = 4;</code>
@@ -145,7 +146,8 @@ public interface ResultsOrBuilder
    *
    *
    * <pre>
-   * Path to the artifact manifest. Only populated when artifacts are uploaded.
+   * Path to the artifact manifest for non-container artifacts uploaded to Cloud
+   * Storage. Only populated when artifacts are uploaded to Cloud Storage.
    * </pre>
    *
    * <code>string artifact_manifest = 4;</code>
@@ -158,7 +160,8 @@ public interface ResultsOrBuilder
    *
    *
    * <pre>
-   * Number of artifacts uploaded. Only populated when artifacts are uploaded.
+   * Number of non-container artifacts uploaded to Cloud Storage. Only populated
+   * when artifacts are uploaded to Cloud Storage.
    * </pre>
    *
    * <code>int64 num_artifacts = 5;</code>
@@ -221,7 +224,7 @@ public interface ResultsOrBuilder
    *
    *
    * <pre>
-   * Time to push all non-container artifacts.
+   * Time to push all non-container artifacts to Cloud Storage.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
@@ -233,7 +236,7 @@ public interface ResultsOrBuilder
    *
    *
    * <pre>
-   * Time to push all non-container artifacts.
+   * Time to push all non-container artifacts to Cloud Storage.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
@@ -245,7 +248,7 @@ public interface ResultsOrBuilder
    *
    *
    * <pre>
-   * Time to push all non-container artifacts.
+   * Time to push all non-container artifacts to Cloud Storage.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.TimeSpan artifact_timing = 7;</code>
@@ -355,4 +358,56 @@ public interface ResultsOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;</code>
    */
   com.google.cloudbuild.v1.UploadedMavenArtifactOrBuilder getMavenArtifactsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Npm packages uploaded to Artifact Registry at the end of the build.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
+   */
+  java.util.List<com.google.cloudbuild.v1.UploadedNpmPackage> getNpmPackagesList();
+  /**
+   *
+   *
+   * <pre>
+   * Npm packages uploaded to Artifact Registry at the end of the build.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
+   */
+  com.google.cloudbuild.v1.UploadedNpmPackage getNpmPackages(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Npm packages uploaded to Artifact Registry at the end of the build.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
+   */
+  int getNpmPackagesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Npm packages uploaded to Artifact Registry at the end of the build.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
+   */
+  java.util.List<? extends com.google.cloudbuild.v1.UploadedNpmPackageOrBuilder>
+      getNpmPackagesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Npm packages uploaded to Artifact Registry at the end of the build.
+   * </pre>
+   *
+   * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
+   */
+  com.google.cloudbuild.v1.UploadedNpmPackageOrBuilder getNpmPackagesOrBuilder(int index);
 }

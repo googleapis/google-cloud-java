@@ -411,7 +411,7 @@ public interface BuildOrBuilder
    * granularity. If this amount of time elapses, work on the build will cease
    * and the build status will be `TIMEOUT`.
    * `timeout` starts ticking from `startTime`.
-   * Default time is ten minutes.
+   * Default time is 60 minutes.
    * </pre>
    *
    * <code>.google.protobuf.Duration timeout = 12;</code>
@@ -427,7 +427,7 @@ public interface BuildOrBuilder
    * granularity. If this amount of time elapses, work on the build will cease
    * and the build status will be `TIMEOUT`.
    * `timeout` starts ticking from `startTime`.
-   * Default time is ten minutes.
+   * Default time is 60 minutes.
    * </pre>
    *
    * <code>.google.protobuf.Duration timeout = 12;</code>
@@ -443,7 +443,7 @@ public interface BuildOrBuilder
    * granularity. If this amount of time elapses, work on the build will cease
    * and the build status will be `TIMEOUT`.
    * `timeout` starts ticking from `startTime`.
-   * Default time is ten minutes.
+   * Default time is 60 minutes.
    * </pre>
    *
    * <code>.google.protobuf.Duration timeout = 12;</code>
@@ -953,7 +953,8 @@ public interface BuildOrBuilder
    * Output only. Stores timing information for phases of the build. Valid keys
    * are:
    * * BUILD: time to execute all build steps.
-   * * PUSH: time to push all specified images.
+   * * PUSH: time to push all artifacts including docker images and non docker
+   * artifacts.
    * * FETCHSOURCE: time to fetch source.
    * * SETUPBUILD: time to set up build.
    * If the build does not specify source or images,
@@ -972,7 +973,8 @@ public interface BuildOrBuilder
    * Output only. Stores timing information for phases of the build. Valid keys
    * are:
    * * BUILD: time to execute all build steps.
-   * * PUSH: time to push all specified images.
+   * * PUSH: time to push all artifacts including docker images and non docker
+   * artifacts.
    * * FETCHSOURCE: time to fetch source.
    * * SETUPBUILD: time to set up build.
    * If the build does not specify source or images,
@@ -994,7 +996,8 @@ public interface BuildOrBuilder
    * Output only. Stores timing information for phases of the build. Valid keys
    * are:
    * * BUILD: time to execute all build steps.
-   * * PUSH: time to push all specified images.
+   * * PUSH: time to push all artifacts including docker images and non docker
+   * artifacts.
    * * FETCHSOURCE: time to fetch source.
    * * SETUPBUILD: time to set up build.
    * If the build does not specify source or images,
@@ -1013,7 +1016,8 @@ public interface BuildOrBuilder
    * Output only. Stores timing information for phases of the build. Valid keys
    * are:
    * * BUILD: time to execute all build steps.
-   * * PUSH: time to push all specified images.
+   * * PUSH: time to push all artifacts including docker images and non docker
+   * artifacts.
    * * FETCHSOURCE: time to fetch source.
    * * SETUPBUILD: time to set up build.
    * If the build does not specify source or images,
@@ -1036,7 +1040,8 @@ public interface BuildOrBuilder
    * Output only. Stores timing information for phases of the build. Valid keys
    * are:
    * * BUILD: time to execute all build steps.
-   * * PUSH: time to push all specified images.
+   * * PUSH: time to push all artifacts including docker images and non docker
+   * artifacts.
    * * FETCHSOURCE: time to fetch source.
    * * SETUPBUILD: time to set up build.
    * If the build does not specify source or images,

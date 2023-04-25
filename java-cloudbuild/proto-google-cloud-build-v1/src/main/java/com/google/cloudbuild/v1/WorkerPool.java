@@ -807,7 +807,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Private Pool using a v1 configuration.
+   * Legacy Private Pool configuration.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.PrivatePoolV1Config private_pool_v1_config = 12;</code>
@@ -822,7 +822,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Private Pool using a v1 configuration.
+   * Legacy Private Pool configuration.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.PrivatePoolV1Config private_pool_v1_config = 12;</code>
@@ -840,7 +840,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Private Pool using a v1 configuration.
+   * Legacy Private Pool configuration.
    * </pre>
    *
    * <code>.google.devtools.cloudbuild.v1.PrivatePoolV1Config private_pool_v1_config = 12;</code>
@@ -2824,7 +2824,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Private Pool using a v1 configuration.
+     * Legacy Private Pool configuration.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.PrivatePoolV1Config private_pool_v1_config = 12;</code>
@@ -2839,7 +2839,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Private Pool using a v1 configuration.
+     * Legacy Private Pool configuration.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.PrivatePoolV1Config private_pool_v1_config = 12;</code>
@@ -2864,7 +2864,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Private Pool using a v1 configuration.
+     * Legacy Private Pool configuration.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.PrivatePoolV1Config private_pool_v1_config = 12;</code>
@@ -2886,7 +2886,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Private Pool using a v1 configuration.
+     * Legacy Private Pool configuration.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.PrivatePoolV1Config private_pool_v1_config = 12;</code>
@@ -2906,7 +2906,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Private Pool using a v1 configuration.
+     * Legacy Private Pool configuration.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.PrivatePoolV1Config private_pool_v1_config = 12;</code>
@@ -2938,7 +2938,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Private Pool using a v1 configuration.
+     * Legacy Private Pool configuration.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.PrivatePoolV1Config private_pool_v1_config = 12;</code>
@@ -2963,7 +2963,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Private Pool using a v1 configuration.
+     * Legacy Private Pool configuration.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.PrivatePoolV1Config private_pool_v1_config = 12;</code>
@@ -2975,7 +2975,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Private Pool using a v1 configuration.
+     * Legacy Private Pool configuration.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.PrivatePoolV1Config private_pool_v1_config = 12;</code>
@@ -2995,7 +2995,7 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Private Pool using a v1 configuration.
+     * Legacy Private Pool configuration.
      * </pre>
      *
      * <code>.google.devtools.cloudbuild.v1.PrivatePoolV1Config private_pool_v1_config = 12;</code>

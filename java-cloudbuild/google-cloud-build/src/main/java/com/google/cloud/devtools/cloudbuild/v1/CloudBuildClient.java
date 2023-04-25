@@ -2120,7 +2120,7 @@ public class CloudBuildClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the `WorkerPool` to delete. Format:
-   *     `projects/{project}/locations/{workerPool}/workerPools/{workerPool}`.
+   *     `projects/{project}/locations/{location}/workerPools/{workerPool}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteWorkerPoolOperationMetadata> deleteWorkerPoolAsync(
@@ -2149,7 +2149,7 @@ public class CloudBuildClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name of the `WorkerPool` to delete. Format:
-   *     `projects/{project}/locations/{workerPool}/workerPools/{workerPool}`.
+   *     `projects/{project}/locations/{location}/workerPools/{workerPool}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteWorkerPoolOperationMetadata> deleteWorkerPoolAsync(
