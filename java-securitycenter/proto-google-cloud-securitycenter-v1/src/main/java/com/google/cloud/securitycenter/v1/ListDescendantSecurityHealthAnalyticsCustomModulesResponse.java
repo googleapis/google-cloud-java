@@ -22,7 +22,7 @@ package com.google.cloud.securitycenter.v1;
  *
  *
  * <pre>
- * Response message for listing descendant security health analytics custom
+ * Response message for listing descendant Security Health Analytics custom
  * modules.
  * </pre>
  *
@@ -416,7 +416,7 @@ public final class ListDescendantSecurityHealthAnalyticsCustomModulesResponse
    *
    *
    * <pre>
-   * Response message for listing descendant security health analytics custom
+   * Response message for listing descendant Security Health Analytics custom
    * modules.
    * </pre>
    *

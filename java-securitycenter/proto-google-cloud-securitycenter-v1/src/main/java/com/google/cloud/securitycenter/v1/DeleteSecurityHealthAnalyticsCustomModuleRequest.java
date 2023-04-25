@@ -22,7 +22,7 @@ package com.google.cloud.securitycenter.v1;
  *
  *
  * <pre>
- * Request message for deleting security health analytics custom modules.
+ * Request message for deleting Security Health Analytics custom modules.
  * </pre>
  *
  * Protobuf type {@code
@@ -308,7 +308,7 @@ public final class DeleteSecurityHealthAnalyticsCustomModuleRequest
    *
    *
    * <pre>
-   * Request message for deleting security health analytics custom modules.
+   * Request message for deleting Security Health Analytics custom modules.
    * </pre>
    *
    * Protobuf type {@code

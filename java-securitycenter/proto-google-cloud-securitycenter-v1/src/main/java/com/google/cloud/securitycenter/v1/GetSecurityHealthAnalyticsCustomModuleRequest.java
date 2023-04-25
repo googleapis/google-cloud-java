@@ -22,7 +22,7 @@ package com.google.cloud.securitycenter.v1;
  *
  *
  * <pre>
- * Request message for getting security health analytics custom modules.
+ * Request message for getting Security Health Analytics custom modules.
  * </pre>
  *
  * Protobuf type {@code
@@ -306,7 +306,7 @@ public final class GetSecurityHealthAnalyticsCustomModuleRequest
    *
    *
    * <pre>
-   * Request message for getting security health analytics custom modules.
+   * Request message for getting Security Health Analytics custom modules.
    * </pre>
    *
    * Protobuf type {@code

@@ -27,10 +27,12 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * The relative resource name of this finding. See:
-   * https://cloud.google.com/apis/design/resource_names#relative_resource_name
-   * Example:
-   * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}"
+   * The [relative resource
+   * name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
+   * of the finding. Example:
+   * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}",
+   * "folders/{folder_id}/sources/{source_id}/findings/{finding_id}",
+   * "projects/{project_id}/sources/{source_id}/findings/{finding_id}".
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -42,10 +44,12 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * The relative resource name of this finding. See:
-   * https://cloud.google.com/apis/design/resource_names#relative_resource_name
-   * Example:
-   * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}"
+   * The [relative resource
+   * name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
+   * of the finding. Example:
+   * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}",
+   * "folders/{folder_id}/sources/{source_id}/findings/{finding_id}",
+   * "projects/{project_id}/sources/{source_id}/findings/{finding_id}".
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -533,11 +537,11 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Represents what's commonly known as an Indicator of compromise (IoC) in
+   * Represents what's commonly known as an *indicator of compromise* (IoC) in
    * computer forensics. This is an artifact observed on a network or in an
    * operating system that, with high confidence, indicates a computer
-   * intrusion.
-   * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+   * intrusion. For more information, see [Indicator of
+   * compromise](https://en.wikipedia.org/wiki/Indicator_of_compromise).
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
@@ -549,11 +553,11 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Represents what's commonly known as an Indicator of compromise (IoC) in
+   * Represents what's commonly known as an *indicator of compromise* (IoC) in
    * computer forensics. This is an artifact observed on a network or in an
    * operating system that, with high confidence, indicates a computer
-   * intrusion.
-   * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+   * intrusion. For more information, see [Indicator of
+   * compromise](https://en.wikipedia.org/wiki/Indicator_of_compromise).
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
@@ -565,11 +569,11 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Represents what's commonly known as an Indicator of compromise (IoC) in
+   * Represents what's commonly known as an *indicator of compromise* (IoC) in
    * computer forensics. This is an artifact observed on a network or in an
    * operating system that, with high confidence, indicates a computer
-   * intrusion.
-   * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+   * intrusion. For more information, see [Indicator of
+   * compromise](https://en.wikipedia.org/wiki/Indicator_of_compromise).
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
@@ -775,8 +779,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Access details associated to the Finding, such as more information on the
-   * caller, which method was accessed, from where, etc.
+   * Access details associated with the finding, such as more information on the
+   * caller, which method was accessed, and from where.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Access access = 26;</code>
@@ -788,8 +792,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Access details associated to the Finding, such as more information on the
-   * caller, which method was accessed, from where, etc.
+   * Access details associated with the finding, such as more information on the
+   * caller, which method was accessed, and from where.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Access access = 26;</code>
@@ -801,8 +805,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Access details associated to the Finding, such as more information on the
-   * caller, which method was accessed, from where, etc.
+   * Access details associated with the finding, such as more information on the
+   * caller, which method was accessed, and from where.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Access access = 26;</code>
@@ -865,10 +869,9 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * First known as mute_annotation. Records additional information about the
-   * mute operation e.g. mute config that muted the finding, user who muted the
-   * finding, etc. Unlike other attributes of a finding, a finding provider
-   * shouldn't set the value of mute.
+   * Records additional information about the mute operation, for example, the
+   * [mute configuration](/security-command-center/docs/how-to-mute-findings)
+   * that muted the finding and the user who muted the finding.
    * </pre>
    *
    * <code>string mute_initiator = 28;</code>
@@ -880,10 +883,9 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * First known as mute_annotation. Records additional information about the
-   * mute operation e.g. mute config that muted the finding, user who muted the
-   * finding, etc. Unlike other attributes of a finding, a finding provider
-   * shouldn't set the value of mute.
+   * Records additional information about the mute operation, for example, the
+   * [mute configuration](/security-command-center/docs/how-to-mute-findings)
+   * that muted the finding and the user who muted the finding.
    * </pre>
    *
    * <code>string mute_initiator = 28;</code>
@@ -1176,7 +1178,7 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Contains more detail about the finding.
+   * Contains more details about the finding.
    * </pre>
    *
    * <code>string description = 37;</code>
@@ -1188,7 +1190,7 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Contains more detail about the finding.
+   * Contains more details about the finding.
    * </pre>
    *
    * <code>string description = 37;</code>
@@ -1201,7 +1203,7 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Represents exfiltration associated with the Finding.
+   * Represents exfiltrations associated with the finding.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Exfiltration exfiltration = 38;</code>
@@ -1213,7 +1215,7 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Represents exfiltration associated with the Finding.
+   * Represents exfiltrations associated with the finding.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Exfiltration exfiltration = 38;</code>
@@ -1225,7 +1227,7 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Represents exfiltration associated with the Finding.
+   * Represents exfiltrations associated with the finding.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Exfiltration exfiltration = 38;</code>
@@ -1236,7 +1238,7 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Represents IAM bindings associated with the Finding.
+   * Represents IAM bindings associated with the finding.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
@@ -1246,7 +1248,7 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Represents IAM bindings associated with the Finding.
+   * Represents IAM bindings associated with the finding.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
@@ -1256,7 +1258,7 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Represents IAM bindings associated with the Finding.
+   * Represents IAM bindings associated with the finding.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
@@ -1266,7 +1268,7 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Represents IAM bindings associated with the Finding.
+   * Represents IAM bindings associated with the finding.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
@@ -1277,7 +1279,7 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Represents IAM bindings associated with the Finding.
+   * Represents IAM bindings associated with the finding.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
@@ -1288,7 +1290,7 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Next steps associate to the finding.
+   * Steps to address the finding.
    * </pre>
    *
    * <code>string next_steps = 40;</code>
@@ -1300,7 +1302,7 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Next steps associate to the finding.
+   * Steps to address the finding.
    * </pre>
    *
    * <code>string next_steps = 40;</code>
@@ -1342,8 +1344,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Containers associated with the finding. containers provides information
-   * for both Kubernetes and non-Kubernetes containers.
+   * Containers associated with the finding. This field provides information for
+   * both Kubernetes and non-Kubernetes containers.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
@@ -1353,8 +1355,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Containers associated with the finding. containers provides information
-   * for both Kubernetes and non-Kubernetes containers.
+   * Containers associated with the finding. This field provides information for
+   * both Kubernetes and non-Kubernetes containers.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
@@ -1364,8 +1366,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Containers associated with the finding. containers provides information
-   * for both Kubernetes and non-Kubernetes containers.
+   * Containers associated with the finding. This field provides information for
+   * both Kubernetes and non-Kubernetes containers.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
@@ -1375,8 +1377,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Containers associated with the finding. containers provides information
-   * for both Kubernetes and non-Kubernetes containers.
+   * Containers associated with the finding. This field provides information for
+   * both Kubernetes and non-Kubernetes containers.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
@@ -1387,8 +1389,8 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Containers associated with the finding. containers provides information
-   * for both Kubernetes and non-Kubernetes containers.
+   * Containers associated with the finding. This field provides information for
+   * both Kubernetes and non-Kubernetes containers.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
@@ -1521,7 +1523,80 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Kernel Rootkit signature.
+   * Cloud Data Loss Prevention (Cloud DLP) inspection results that are
+   * associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.CloudDlpInspection cloud_dlp_inspection = 48;</code>
+   *
+   * @return Whether the cloudDlpInspection field is set.
+   */
+  boolean hasCloudDlpInspection();
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Data Loss Prevention (Cloud DLP) inspection results that are
+   * associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.CloudDlpInspection cloud_dlp_inspection = 48;</code>
+   *
+   * @return The cloudDlpInspection.
+   */
+  com.google.cloud.securitycenter.v1.CloudDlpInspection getCloudDlpInspection();
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Data Loss Prevention (Cloud DLP) inspection results that are
+   * associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.CloudDlpInspection cloud_dlp_inspection = 48;</code>
+   */
+  com.google.cloud.securitycenter.v1.CloudDlpInspectionOrBuilder getCloudDlpInspectionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Cloud DLP data profile that is associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.CloudDlpDataProfile cloud_dlp_data_profile = 49;</code>
+   *
+   * @return Whether the cloudDlpDataProfile field is set.
+   */
+  boolean hasCloudDlpDataProfile();
+  /**
+   *
+   *
+   * <pre>
+   * Cloud DLP data profile that is associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.CloudDlpDataProfile cloud_dlp_data_profile = 49;</code>
+   *
+   * @return The cloudDlpDataProfile.
+   */
+  com.google.cloud.securitycenter.v1.CloudDlpDataProfile getCloudDlpDataProfile();
+  /**
+   *
+   *
+   * <pre>
+   * Cloud DLP data profile that is associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.CloudDlpDataProfile cloud_dlp_data_profile = 49;</code>
+   */
+  com.google.cloud.securitycenter.v1.CloudDlpDataProfileOrBuilder getCloudDlpDataProfileOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Signature of the kernel rootkit.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
@@ -1533,7 +1608,7 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Kernel Rootkit signature.
+   * Signature of the kernel rootkit.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
@@ -1545,7 +1620,7 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * Kernel Rootkit signature.
+   * Signature of the kernel rootkit.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>

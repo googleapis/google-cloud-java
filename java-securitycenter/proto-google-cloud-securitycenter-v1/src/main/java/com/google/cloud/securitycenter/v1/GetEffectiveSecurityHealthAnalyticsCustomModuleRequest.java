@@ -22,7 +22,7 @@ package com.google.cloud.securitycenter.v1;
  *
  *
  * <pre>
- * Request message for getting effective security health analytics custom
+ * Request message for getting effective Security Health Analytics custom
  * modules.
  * </pre>
  *
@@ -325,7 +325,7 @@ public final class GetEffectiveSecurityHealthAnalyticsCustomModuleRequest
    *
    *
    * <pre>
-   * Request message for getting effective security health analytics custom
+   * Request message for getting effective Security Health Analytics custom
    * modules.
    * </pre>
    *

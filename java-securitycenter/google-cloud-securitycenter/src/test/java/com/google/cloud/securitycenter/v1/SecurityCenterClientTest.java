@@ -440,6 +440,8 @@ public class SecurityCenterClientTest {
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
+            .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
+            .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -518,6 +520,8 @@ public class SecurityCenterClientTest {
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
+            .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
+            .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -3581,6 +3585,8 @@ public class SecurityCenterClientTest {
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
+            .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
+            .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -3661,6 +3667,8 @@ public class SecurityCenterClientTest {
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
+            .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
+            .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -3739,6 +3747,8 @@ public class SecurityCenterClientTest {
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
+            .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
+            .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -3816,6 +3826,8 @@ public class SecurityCenterClientTest {
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
+            .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
+            .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
@@ -4103,6 +4115,8 @@ public class SecurityCenterClientTest {
             .setKubernetes(Kubernetes.newBuilder().build())
             .setDatabase(Database.newBuilder().build())
             .addAllFiles(new ArrayList<File>())
+            .setCloudDlpInspection(CloudDlpInspection.newBuilder().build())
+            .setCloudDlpDataProfile(CloudDlpDataProfile.newBuilder().build())
             .setKernelRootkit(KernelRootkit.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);

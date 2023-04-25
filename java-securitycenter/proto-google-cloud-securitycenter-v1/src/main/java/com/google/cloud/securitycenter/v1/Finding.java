@@ -296,7 +296,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * exploitable, and results in the direct ability to execute arbitrary code,
      * exfiltrate data, and otherwise gain additional access and privileges to
      * cloud resources and workloads. Examples include publicly accessible
-     * unprotected user data, public SSH access with weak or no passwords, etc.
+     * unprotected user data and public SSH access with weak or no
+     * passwords.
      * Threat:
      * Indicates a threat that is able to access, modify, or delete data or
      * execute unauthorized code within existing resources.
@@ -386,7 +387,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * exploitable, and results in the direct ability to execute arbitrary code,
      * exfiltrate data, and otherwise gain additional access and privileges to
      * cloud resources and workloads. Examples include publicly accessible
-     * unprotected user data, public SSH access with weak or no passwords, etc.
+     * unprotected user data and public SSH access with weak or no
+     * passwords.
      * Threat:
      * Indicates a threat that is able to access, modify, or delete data or
      * execute unauthorized code within existing resources.
@@ -955,10 +957,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The relative resource name of this finding. See:
-   * https://cloud.google.com/apis/design/resource_names#relative_resource_name
-   * Example:
-   * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}"
+   * The [relative resource
+   * name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
+   * of the finding. Example:
+   * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}",
+   * "folders/{folder_id}/sources/{source_id}/findings/{finding_id}",
+   * "projects/{project_id}/sources/{source_id}/findings/{finding_id}".
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -981,10 +985,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The relative resource name of this finding. See:
-   * https://cloud.google.com/apis/design/resource_names#relative_resource_name
-   * Example:
-   * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}"
+   * The [relative resource
+   * name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
+   * of the finding. Example:
+   * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}",
+   * "folders/{folder_id}/sources/{source_id}/findings/{finding_id}",
+   * "projects/{project_id}/sources/{source_id}/findings/{finding_id}".
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -1744,11 +1750,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents what's commonly known as an Indicator of compromise (IoC) in
+   * Represents what's commonly known as an *indicator of compromise* (IoC) in
    * computer forensics. This is an artifact observed on a network or in an
    * operating system that, with high confidence, indicates a computer
-   * intrusion.
-   * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+   * intrusion. For more information, see [Indicator of
+   * compromise](https://en.wikipedia.org/wiki/Indicator_of_compromise).
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
@@ -1763,11 +1769,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents what's commonly known as an Indicator of compromise (IoC) in
+   * Represents what's commonly known as an *indicator of compromise* (IoC) in
    * computer forensics. This is an artifact observed on a network or in an
    * operating system that, with high confidence, indicates a computer
-   * intrusion.
-   * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+   * intrusion. For more information, see [Indicator of
+   * compromise](https://en.wikipedia.org/wiki/Indicator_of_compromise).
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
@@ -1784,11 +1790,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents what's commonly known as an Indicator of compromise (IoC) in
+   * Represents what's commonly known as an *indicator of compromise* (IoC) in
    * computer forensics. This is an artifact observed on a network or in an
    * operating system that, with high confidence, indicates a computer
-   * intrusion.
-   * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+   * intrusion. For more information, see [Indicator of
+   * compromise](https://en.wikipedia.org/wiki/Indicator_of_compromise).
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
@@ -2100,8 +2106,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Access details associated to the Finding, such as more information on the
-   * caller, which method was accessed, from where, etc.
+   * Access details associated with the finding, such as more information on the
+   * caller, which method was accessed, and from where.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Access access = 26;</code>
@@ -2116,8 +2122,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Access details associated to the Finding, such as more information on the
-   * caller, which method was accessed, from where, etc.
+   * Access details associated with the finding, such as more information on the
+   * caller, which method was accessed, and from where.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Access access = 26;</code>
@@ -2134,8 +2140,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Access details associated to the Finding, such as more information on the
-   * caller, which method was accessed, from where, etc.
+   * Access details associated with the finding, such as more information on the
+   * caller, which method was accessed, and from where.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Access access = 26;</code>
@@ -2226,10 +2232,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * First known as mute_annotation. Records additional information about the
-   * mute operation e.g. mute config that muted the finding, user who muted the
-   * finding, etc. Unlike other attributes of a finding, a finding provider
-   * shouldn't set the value of mute.
+   * Records additional information about the mute operation, for example, the
+   * [mute configuration](/security-command-center/docs/how-to-mute-findings)
+   * that muted the finding and the user who muted the finding.
    * </pre>
    *
    * <code>string mute_initiator = 28;</code>
@@ -2252,10 +2257,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * First known as mute_annotation. Records additional information about the
-   * mute operation e.g. mute config that muted the finding, user who muted the
-   * finding, etc. Unlike other attributes of a finding, a finding provider
-   * shouldn't set the value of mute.
+   * Records additional information about the mute operation, for example, the
+   * [mute configuration](/security-command-center/docs/how-to-mute-findings)
+   * that muted the finding and the user who muted the finding.
    * </pre>
    *
    * <code>string mute_initiator = 28;</code>
@@ -2666,7 +2670,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Contains more detail about the finding.
+   * Contains more details about the finding.
    * </pre>
    *
    * <code>string description = 37;</code>
@@ -2689,7 +2693,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Contains more detail about the finding.
+   * Contains more details about the finding.
    * </pre>
    *
    * <code>string description = 37;</code>
@@ -2715,7 +2719,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents exfiltration associated with the Finding.
+   * Represents exfiltrations associated with the finding.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Exfiltration exfiltration = 38;</code>
@@ -2730,7 +2734,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents exfiltration associated with the Finding.
+   * Represents exfiltrations associated with the finding.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Exfiltration exfiltration = 38;</code>
@@ -2747,7 +2751,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents exfiltration associated with the Finding.
+   * Represents exfiltrations associated with the finding.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Exfiltration exfiltration = 38;</code>
@@ -2767,7 +2771,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents IAM bindings associated with the Finding.
+   * Represents IAM bindings associated with the finding.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
@@ -2780,7 +2784,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents IAM bindings associated with the Finding.
+   * Represents IAM bindings associated with the finding.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
@@ -2794,7 +2798,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents IAM bindings associated with the Finding.
+   * Represents IAM bindings associated with the finding.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
@@ -2807,7 +2811,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents IAM bindings associated with the Finding.
+   * Represents IAM bindings associated with the finding.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
@@ -2820,7 +2824,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents IAM bindings associated with the Finding.
+   * Represents IAM bindings associated with the finding.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
@@ -2838,7 +2842,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Next steps associate to the finding.
+   * Steps to address the finding.
    * </pre>
    *
    * <code>string next_steps = 40;</code>
@@ -2861,7 +2865,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Next steps associate to the finding.
+   * Steps to address the finding.
    * </pre>
    *
    * <code>string next_steps = 40;</code>
@@ -2944,8 +2948,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Containers associated with the finding. containers provides information
-   * for both Kubernetes and non-Kubernetes containers.
+   * Containers associated with the finding. This field provides information for
+   * both Kubernetes and non-Kubernetes containers.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
@@ -2958,8 +2962,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Containers associated with the finding. containers provides information
-   * for both Kubernetes and non-Kubernetes containers.
+   * Containers associated with the finding. This field provides information for
+   * both Kubernetes and non-Kubernetes containers.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
@@ -2973,8 +2977,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Containers associated with the finding. containers provides information
-   * for both Kubernetes and non-Kubernetes containers.
+   * Containers associated with the finding. This field provides information for
+   * both Kubernetes and non-Kubernetes containers.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
@@ -2987,8 +2991,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Containers associated with the finding. containers provides information
-   * for both Kubernetes and non-Kubernetes containers.
+   * Containers associated with the finding. This field provides information for
+   * both Kubernetes and non-Kubernetes containers.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
@@ -3001,8 +3005,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Containers associated with the finding. containers provides information
-   * for both Kubernetes and non-Kubernetes containers.
+   * Containers associated with the finding. This field provides information for
+   * both Kubernetes and non-Kubernetes containers.
    * </pre>
    *
    * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
@@ -3183,13 +3187,118 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     return files_.get(index);
   }
 
+  public static final int CLOUD_DLP_INSPECTION_FIELD_NUMBER = 48;
+  private com.google.cloud.securitycenter.v1.CloudDlpInspection cloudDlpInspection_;
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Data Loss Prevention (Cloud DLP) inspection results that are
+   * associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.CloudDlpInspection cloud_dlp_inspection = 48;</code>
+   *
+   * @return Whether the cloudDlpInspection field is set.
+   */
+  @java.lang.Override
+  public boolean hasCloudDlpInspection() {
+    return cloudDlpInspection_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Data Loss Prevention (Cloud DLP) inspection results that are
+   * associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.CloudDlpInspection cloud_dlp_inspection = 48;</code>
+   *
+   * @return The cloudDlpInspection.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.CloudDlpInspection getCloudDlpInspection() {
+    return cloudDlpInspection_ == null
+        ? com.google.cloud.securitycenter.v1.CloudDlpInspection.getDefaultInstance()
+        : cloudDlpInspection_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Cloud Data Loss Prevention (Cloud DLP) inspection results that are
+   * associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.CloudDlpInspection cloud_dlp_inspection = 48;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.CloudDlpInspectionOrBuilder
+      getCloudDlpInspectionOrBuilder() {
+    return cloudDlpInspection_ == null
+        ? com.google.cloud.securitycenter.v1.CloudDlpInspection.getDefaultInstance()
+        : cloudDlpInspection_;
+  }
+
+  public static final int CLOUD_DLP_DATA_PROFILE_FIELD_NUMBER = 49;
+  private com.google.cloud.securitycenter.v1.CloudDlpDataProfile cloudDlpDataProfile_;
+  /**
+   *
+   *
+   * <pre>
+   * Cloud DLP data profile that is associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.CloudDlpDataProfile cloud_dlp_data_profile = 49;</code>
+   *
+   * @return Whether the cloudDlpDataProfile field is set.
+   */
+  @java.lang.Override
+  public boolean hasCloudDlpDataProfile() {
+    return cloudDlpDataProfile_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Cloud DLP data profile that is associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.CloudDlpDataProfile cloud_dlp_data_profile = 49;</code>
+   *
+   * @return The cloudDlpDataProfile.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.CloudDlpDataProfile getCloudDlpDataProfile() {
+    return cloudDlpDataProfile_ == null
+        ? com.google.cloud.securitycenter.v1.CloudDlpDataProfile.getDefaultInstance()
+        : cloudDlpDataProfile_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Cloud DLP data profile that is associated with the finding.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.CloudDlpDataProfile cloud_dlp_data_profile = 49;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.CloudDlpDataProfileOrBuilder
+      getCloudDlpDataProfileOrBuilder() {
+    return cloudDlpDataProfile_ == null
+        ? com.google.cloud.securitycenter.v1.CloudDlpDataProfile.getDefaultInstance()
+        : cloudDlpDataProfile_;
+  }
+
   public static final int KERNEL_ROOTKIT_FIELD_NUMBER = 50;
   private com.google.cloud.securitycenter.v1.KernelRootkit kernelRootkit_;
   /**
    *
    *
    * <pre>
-   * Kernel Rootkit signature.
+   * Signature of the kernel rootkit.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
@@ -3204,7 +3313,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Kernel Rootkit signature.
+   * Signature of the kernel rootkit.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
@@ -3221,7 +3330,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Kernel Rootkit signature.
+   * Signature of the kernel rootkit.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
@@ -3351,6 +3460,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < files_.size(); i++) {
       output.writeMessage(46, files_.get(i));
+    }
+    if (cloudDlpInspection_ != null) {
+      output.writeMessage(48, getCloudDlpInspection());
+    }
+    if (cloudDlpDataProfile_ != null) {
+      output.writeMessage(49, getCloudDlpDataProfile());
     }
     if (kernelRootkit_ != null) {
       output.writeMessage(50, getKernelRootkit());
@@ -3497,6 +3612,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < files_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(46, files_.get(i));
     }
+    if (cloudDlpInspection_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(48, getCloudDlpInspection());
+    }
+    if (cloudDlpDataProfile_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(49, getCloudDlpDataProfile());
+    }
     if (kernelRootkit_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(50, getKernelRootkit());
     }
@@ -3584,6 +3706,14 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       if (!getDatabase().equals(other.getDatabase())) return false;
     }
     if (!getFilesList().equals(other.getFilesList())) return false;
+    if (hasCloudDlpInspection() != other.hasCloudDlpInspection()) return false;
+    if (hasCloudDlpInspection()) {
+      if (!getCloudDlpInspection().equals(other.getCloudDlpInspection())) return false;
+    }
+    if (hasCloudDlpDataProfile() != other.hasCloudDlpDataProfile()) return false;
+    if (hasCloudDlpDataProfile()) {
+      if (!getCloudDlpDataProfile().equals(other.getCloudDlpDataProfile())) return false;
+    }
     if (hasKernelRootkit() != other.hasKernelRootkit()) return false;
     if (hasKernelRootkit()) {
       if (!getKernelRootkit().equals(other.getKernelRootkit())) return false;
@@ -3708,6 +3838,14 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
     if (getFilesCount() > 0) {
       hash = (37 * hash) + FILES_FIELD_NUMBER;
       hash = (53 * hash) + getFilesList().hashCode();
+    }
+    if (hasCloudDlpInspection()) {
+      hash = (37 * hash) + CLOUD_DLP_INSPECTION_FIELD_NUMBER;
+      hash = (53 * hash) + getCloudDlpInspection().hashCode();
+    }
+    if (hasCloudDlpDataProfile()) {
+      hash = (37 * hash) + CLOUD_DLP_DATA_PROFILE_FIELD_NUMBER;
+      hash = (53 * hash) + getCloudDlpDataProfile().hashCode();
     }
     if (hasKernelRootkit()) {
       hash = (37 * hash) + KERNEL_ROOTKIT_FIELD_NUMBER;
@@ -4001,6 +4139,16 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         filesBuilder_.clear();
       }
       bitField1_ = (bitField1_ & ~0x00000004);
+      cloudDlpInspection_ = null;
+      if (cloudDlpInspectionBuilder_ != null) {
+        cloudDlpInspectionBuilder_.dispose();
+        cloudDlpInspectionBuilder_ = null;
+      }
+      cloudDlpDataProfile_ = null;
+      if (cloudDlpDataProfileBuilder_ != null) {
+        cloudDlpDataProfileBuilder_.dispose();
+        cloudDlpDataProfileBuilder_ = null;
+      }
       kernelRootkit_ = null;
       if (kernelRootkitBuilder_ != null) {
         kernelRootkitBuilder_.dispose();
@@ -4203,6 +4351,18 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
         result.database_ = databaseBuilder_ == null ? database_ : databaseBuilder_.build();
       }
       if (((from_bitField1_ & 0x00000008) != 0)) {
+        result.cloudDlpInspection_ =
+            cloudDlpInspectionBuilder_ == null
+                ? cloudDlpInspection_
+                : cloudDlpInspectionBuilder_.build();
+      }
+      if (((from_bitField1_ & 0x00000010) != 0)) {
+        result.cloudDlpDataProfile_ =
+            cloudDlpDataProfileBuilder_ == null
+                ? cloudDlpDataProfile_
+                : cloudDlpDataProfileBuilder_.build();
+      }
+      if (((from_bitField1_ & 0x00000020) != 0)) {
         result.kernelRootkit_ =
             kernelRootkitBuilder_ == null ? kernelRootkit_ : kernelRootkitBuilder_.build();
       }
@@ -4521,6 +4681,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.hasCloudDlpInspection()) {
+        mergeCloudDlpInspection(other.getCloudDlpInspection());
+      }
+      if (other.hasCloudDlpDataProfile()) {
+        mergeCloudDlpDataProfile(other.getCloudDlpDataProfile());
+      }
       if (other.hasKernelRootkit()) {
         mergeKernelRootkit(other.getKernelRootkit());
       }
@@ -4825,10 +4991,24 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 370
+            case 386:
+              {
+                input.readMessage(
+                    getCloudDlpInspectionFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000008;
+                break;
+              } // case 386
+            case 394:
+              {
+                input.readMessage(
+                    getCloudDlpDataProfileFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000010;
+                break;
+              } // case 394
             case 402:
               {
                 input.readMessage(getKernelRootkitFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000008;
+                bitField1_ |= 0x00000020;
                 break;
               } // case 402
             default:
@@ -4856,10 +5036,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The relative resource name of this finding. See:
-     * https://cloud.google.com/apis/design/resource_names#relative_resource_name
-     * Example:
-     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}"
+     * The [relative resource
+     * name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
+     * of the finding. Example:
+     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}",
+     * "folders/{folder_id}/sources/{source_id}/findings/{finding_id}",
+     * "projects/{project_id}/sources/{source_id}/findings/{finding_id}".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -4881,10 +5063,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The relative resource name of this finding. See:
-     * https://cloud.google.com/apis/design/resource_names#relative_resource_name
-     * Example:
-     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}"
+     * The [relative resource
+     * name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
+     * of the finding. Example:
+     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}",
+     * "folders/{folder_id}/sources/{source_id}/findings/{finding_id}",
+     * "projects/{project_id}/sources/{source_id}/findings/{finding_id}".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -4906,10 +5090,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The relative resource name of this finding. See:
-     * https://cloud.google.com/apis/design/resource_names#relative_resource_name
-     * Example:
-     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}"
+     * The [relative resource
+     * name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
+     * of the finding. Example:
+     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}",
+     * "folders/{folder_id}/sources/{source_id}/findings/{finding_id}",
+     * "projects/{project_id}/sources/{source_id}/findings/{finding_id}".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -4930,10 +5116,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The relative resource name of this finding. See:
-     * https://cloud.google.com/apis/design/resource_names#relative_resource_name
-     * Example:
-     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}"
+     * The [relative resource
+     * name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
+     * of the finding. Example:
+     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}",
+     * "folders/{folder_id}/sources/{source_id}/findings/{finding_id}",
+     * "projects/{project_id}/sources/{source_id}/findings/{finding_id}".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -4950,10 +5138,12 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The relative resource name of this finding. See:
-     * https://cloud.google.com/apis/design/resource_names#relative_resource_name
-     * Example:
-     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}"
+     * The [relative resource
+     * name](https://cloud.google.com/apis/design/resource_names#relative_resource_name)
+     * of the finding. Example:
+     * "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}",
+     * "folders/{folder_id}/sources/{source_id}/findings/{finding_id}",
+     * "projects/{project_id}/sources/{source_id}/findings/{finding_id}".
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -6812,11 +7002,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents what's commonly known as an Indicator of compromise (IoC) in
+     * Represents what's commonly known as an *indicator of compromise* (IoC) in
      * computer forensics. This is an artifact observed on a network or in an
      * operating system that, with high confidence, indicates a computer
-     * intrusion.
-     * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+     * intrusion. For more information, see [Indicator of
+     * compromise](https://en.wikipedia.org/wiki/Indicator_of_compromise).
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
@@ -6830,11 +7020,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents what's commonly known as an Indicator of compromise (IoC) in
+     * Represents what's commonly known as an *indicator of compromise* (IoC) in
      * computer forensics. This is an artifact observed on a network or in an
      * operating system that, with high confidence, indicates a computer
-     * intrusion.
-     * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+     * intrusion. For more information, see [Indicator of
+     * compromise](https://en.wikipedia.org/wiki/Indicator_of_compromise).
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
@@ -6854,11 +7044,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents what's commonly known as an Indicator of compromise (IoC) in
+     * Represents what's commonly known as an *indicator of compromise* (IoC) in
      * computer forensics. This is an artifact observed on a network or in an
      * operating system that, with high confidence, indicates a computer
-     * intrusion.
-     * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+     * intrusion. For more information, see [Indicator of
+     * compromise](https://en.wikipedia.org/wiki/Indicator_of_compromise).
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
@@ -6880,11 +7070,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents what's commonly known as an Indicator of compromise (IoC) in
+     * Represents what's commonly known as an *indicator of compromise* (IoC) in
      * computer forensics. This is an artifact observed on a network or in an
      * operating system that, with high confidence, indicates a computer
-     * intrusion.
-     * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+     * intrusion. For more information, see [Indicator of
+     * compromise](https://en.wikipedia.org/wiki/Indicator_of_compromise).
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
@@ -6904,11 +7094,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents what's commonly known as an Indicator of compromise (IoC) in
+     * Represents what's commonly known as an *indicator of compromise* (IoC) in
      * computer forensics. This is an artifact observed on a network or in an
      * operating system that, with high confidence, indicates a computer
-     * intrusion.
-     * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+     * intrusion. For more information, see [Indicator of
+     * compromise](https://en.wikipedia.org/wiki/Indicator_of_compromise).
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
@@ -6933,11 +7123,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents what's commonly known as an Indicator of compromise (IoC) in
+     * Represents what's commonly known as an *indicator of compromise* (IoC) in
      * computer forensics. This is an artifact observed on a network or in an
      * operating system that, with high confidence, indicates a computer
-     * intrusion.
-     * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+     * intrusion. For more information, see [Indicator of
+     * compromise](https://en.wikipedia.org/wiki/Indicator_of_compromise).
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
@@ -6956,11 +7146,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents what's commonly known as an Indicator of compromise (IoC) in
+     * Represents what's commonly known as an *indicator of compromise* (IoC) in
      * computer forensics. This is an artifact observed on a network or in an
      * operating system that, with high confidence, indicates a computer
-     * intrusion.
-     * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+     * intrusion. For more information, see [Indicator of
+     * compromise](https://en.wikipedia.org/wiki/Indicator_of_compromise).
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
@@ -6974,11 +7164,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents what's commonly known as an Indicator of compromise (IoC) in
+     * Represents what's commonly known as an *indicator of compromise* (IoC) in
      * computer forensics. This is an artifact observed on a network or in an
      * operating system that, with high confidence, indicates a computer
-     * intrusion.
-     * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+     * intrusion. For more information, see [Indicator of
+     * compromise](https://en.wikipedia.org/wiki/Indicator_of_compromise).
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
@@ -6996,11 +7186,11 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents what's commonly known as an Indicator of compromise (IoC) in
+     * Represents what's commonly known as an *indicator of compromise* (IoC) in
      * computer forensics. This is an artifact observed on a network or in an
      * operating system that, with high confidence, indicates a computer
-     * intrusion.
-     * Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+     * intrusion. For more information, see [Indicator of
+     * compromise](https://en.wikipedia.org/wiki/Indicator_of_compromise).
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Indicator indicator = 18;</code>
@@ -7831,8 +8021,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Access details associated to the Finding, such as more information on the
-     * caller, which method was accessed, from where, etc.
+     * Access details associated with the finding, such as more information on the
+     * caller, which method was accessed, and from where.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Access access = 26;</code>
@@ -7846,8 +8036,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Access details associated to the Finding, such as more information on the
-     * caller, which method was accessed, from where, etc.
+     * Access details associated with the finding, such as more information on the
+     * caller, which method was accessed, and from where.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Access access = 26;</code>
@@ -7867,8 +8057,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Access details associated to the Finding, such as more information on the
-     * caller, which method was accessed, from where, etc.
+     * Access details associated with the finding, such as more information on the
+     * caller, which method was accessed, and from where.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Access access = 26;</code>
@@ -7890,8 +8080,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Access details associated to the Finding, such as more information on the
-     * caller, which method was accessed, from where, etc.
+     * Access details associated with the finding, such as more information on the
+     * caller, which method was accessed, and from where.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Access access = 26;</code>
@@ -7910,8 +8100,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Access details associated to the Finding, such as more information on the
-     * caller, which method was accessed, from where, etc.
+     * Access details associated with the finding, such as more information on the
+     * caller, which method was accessed, and from where.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Access access = 26;</code>
@@ -7936,8 +8126,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Access details associated to the Finding, such as more information on the
-     * caller, which method was accessed, from where, etc.
+     * Access details associated with the finding, such as more information on the
+     * caller, which method was accessed, and from where.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Access access = 26;</code>
@@ -7956,8 +8146,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Access details associated to the Finding, such as more information on the
-     * caller, which method was accessed, from where, etc.
+     * Access details associated with the finding, such as more information on the
+     * caller, which method was accessed, and from where.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Access access = 26;</code>
@@ -7971,8 +8161,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Access details associated to the Finding, such as more information on the
-     * caller, which method was accessed, from where, etc.
+     * Access details associated with the finding, such as more information on the
+     * caller, which method was accessed, and from where.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Access access = 26;</code>
@@ -7990,8 +8180,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Access details associated to the Finding, such as more information on the
-     * caller, which method was accessed, from where, etc.
+     * Access details associated with the finding, such as more information on the
+     * caller, which method was accessed, and from where.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Access access = 26;</code>
@@ -8370,10 +8560,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * First known as mute_annotation. Records additional information about the
-     * mute operation e.g. mute config that muted the finding, user who muted the
-     * finding, etc. Unlike other attributes of a finding, a finding provider
-     * shouldn't set the value of mute.
+     * Records additional information about the mute operation, for example, the
+     * [mute configuration](/security-command-center/docs/how-to-mute-findings)
+     * that muted the finding and the user who muted the finding.
      * </pre>
      *
      * <code>string mute_initiator = 28;</code>
@@ -8395,10 +8584,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * First known as mute_annotation. Records additional information about the
-     * mute operation e.g. mute config that muted the finding, user who muted the
-     * finding, etc. Unlike other attributes of a finding, a finding provider
-     * shouldn't set the value of mute.
+     * Records additional information about the mute operation, for example, the
+     * [mute configuration](/security-command-center/docs/how-to-mute-findings)
+     * that muted the finding and the user who muted the finding.
      * </pre>
      *
      * <code>string mute_initiator = 28;</code>
@@ -8420,10 +8608,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * First known as mute_annotation. Records additional information about the
-     * mute operation e.g. mute config that muted the finding, user who muted the
-     * finding, etc. Unlike other attributes of a finding, a finding provider
-     * shouldn't set the value of mute.
+     * Records additional information about the mute operation, for example, the
+     * [mute configuration](/security-command-center/docs/how-to-mute-findings)
+     * that muted the finding and the user who muted the finding.
      * </pre>
      *
      * <code>string mute_initiator = 28;</code>
@@ -8444,10 +8631,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * First known as mute_annotation. Records additional information about the
-     * mute operation e.g. mute config that muted the finding, user who muted the
-     * finding, etc. Unlike other attributes of a finding, a finding provider
-     * shouldn't set the value of mute.
+     * Records additional information about the mute operation, for example, the
+     * [mute configuration](/security-command-center/docs/how-to-mute-findings)
+     * that muted the finding and the user who muted the finding.
      * </pre>
      *
      * <code>string mute_initiator = 28;</code>
@@ -8464,10 +8650,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * First known as mute_annotation. Records additional information about the
-     * mute operation e.g. mute config that muted the finding, user who muted the
-     * finding, etc. Unlike other attributes of a finding, a finding provider
-     * shouldn't set the value of mute.
+     * Records additional information about the mute operation, for example, the
+     * [mute configuration](/security-command-center/docs/how-to-mute-findings)
+     * that muted the finding and the user who muted the finding.
      * </pre>
      *
      * <code>string mute_initiator = 28;</code>
@@ -9619,7 +9804,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Contains more detail about the finding.
+     * Contains more details about the finding.
      * </pre>
      *
      * <code>string description = 37;</code>
@@ -9641,7 +9826,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Contains more detail about the finding.
+     * Contains more details about the finding.
      * </pre>
      *
      * <code>string description = 37;</code>
@@ -9663,7 +9848,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Contains more detail about the finding.
+     * Contains more details about the finding.
      * </pre>
      *
      * <code>string description = 37;</code>
@@ -9684,7 +9869,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Contains more detail about the finding.
+     * Contains more details about the finding.
      * </pre>
      *
      * <code>string description = 37;</code>
@@ -9701,7 +9886,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Contains more detail about the finding.
+     * Contains more details about the finding.
      * </pre>
      *
      * <code>string description = 37;</code>
@@ -9730,7 +9915,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents exfiltration associated with the Finding.
+     * Represents exfiltrations associated with the finding.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Exfiltration exfiltration = 38;</code>
@@ -9744,7 +9929,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents exfiltration associated with the Finding.
+     * Represents exfiltrations associated with the finding.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Exfiltration exfiltration = 38;</code>
@@ -9764,7 +9949,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents exfiltration associated with the Finding.
+     * Represents exfiltrations associated with the finding.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Exfiltration exfiltration = 38;</code>
@@ -9786,7 +9971,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents exfiltration associated with the Finding.
+     * Represents exfiltrations associated with the finding.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Exfiltration exfiltration = 38;</code>
@@ -9806,7 +9991,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents exfiltration associated with the Finding.
+     * Represents exfiltrations associated with the finding.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Exfiltration exfiltration = 38;</code>
@@ -9832,7 +10017,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents exfiltration associated with the Finding.
+     * Represents exfiltrations associated with the finding.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Exfiltration exfiltration = 38;</code>
@@ -9851,7 +10036,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents exfiltration associated with the Finding.
+     * Represents exfiltrations associated with the finding.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Exfiltration exfiltration = 38;</code>
@@ -9865,7 +10050,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents exfiltration associated with the Finding.
+     * Represents exfiltrations associated with the finding.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Exfiltration exfiltration = 38;</code>
@@ -9883,7 +10068,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents exfiltration associated with the Finding.
+     * Represents exfiltrations associated with the finding.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Exfiltration exfiltration = 38;</code>
@@ -9926,7 +10111,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents IAM bindings associated with the Finding.
+     * Represents IAM bindings associated with the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
@@ -9942,7 +10127,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents IAM bindings associated with the Finding.
+     * Represents IAM bindings associated with the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
@@ -9958,7 +10143,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents IAM bindings associated with the Finding.
+     * Represents IAM bindings associated with the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
@@ -9974,7 +10159,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents IAM bindings associated with the Finding.
+     * Represents IAM bindings associated with the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
@@ -9996,7 +10181,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents IAM bindings associated with the Finding.
+     * Represents IAM bindings associated with the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
@@ -10016,7 +10201,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents IAM bindings associated with the Finding.
+     * Represents IAM bindings associated with the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
@@ -10038,7 +10223,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents IAM bindings associated with the Finding.
+     * Represents IAM bindings associated with the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
@@ -10060,7 +10245,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents IAM bindings associated with the Finding.
+     * Represents IAM bindings associated with the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
@@ -10080,7 +10265,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents IAM bindings associated with the Finding.
+     * Represents IAM bindings associated with the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
@@ -10100,7 +10285,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents IAM bindings associated with the Finding.
+     * Represents IAM bindings associated with the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
@@ -10120,7 +10305,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents IAM bindings associated with the Finding.
+     * Represents IAM bindings associated with the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
@@ -10139,7 +10324,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents IAM bindings associated with the Finding.
+     * Represents IAM bindings associated with the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
@@ -10158,7 +10343,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents IAM bindings associated with the Finding.
+     * Represents IAM bindings associated with the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
@@ -10170,7 +10355,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents IAM bindings associated with the Finding.
+     * Represents IAM bindings associated with the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
@@ -10187,7 +10372,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents IAM bindings associated with the Finding.
+     * Represents IAM bindings associated with the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
@@ -10204,7 +10389,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents IAM bindings associated with the Finding.
+     * Represents IAM bindings associated with the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
@@ -10217,7 +10402,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents IAM bindings associated with the Finding.
+     * Represents IAM bindings associated with the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
@@ -10230,7 +10415,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents IAM bindings associated with the Finding.
+     * Represents IAM bindings associated with the finding.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.IamBinding iam_bindings = 39;</code>
@@ -10262,7 +10447,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Next steps associate to the finding.
+     * Steps to address the finding.
      * </pre>
      *
      * <code>string next_steps = 40;</code>
@@ -10284,7 +10469,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Next steps associate to the finding.
+     * Steps to address the finding.
      * </pre>
      *
      * <code>string next_steps = 40;</code>
@@ -10306,7 +10491,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Next steps associate to the finding.
+     * Steps to address the finding.
      * </pre>
      *
      * <code>string next_steps = 40;</code>
@@ -10327,7 +10512,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Next steps associate to the finding.
+     * Steps to address the finding.
      * </pre>
      *
      * <code>string next_steps = 40;</code>
@@ -10344,7 +10529,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Next steps associate to the finding.
+     * Steps to address the finding.
      * </pre>
      *
      * <code>string next_steps = 40;</code>
@@ -10500,8 +10685,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Containers associated with the finding. containers provides information
-     * for both Kubernetes and non-Kubernetes containers.
+     * Containers associated with the finding. This field provides information for
+     * both Kubernetes and non-Kubernetes containers.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
@@ -10517,8 +10702,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Containers associated with the finding. containers provides information
-     * for both Kubernetes and non-Kubernetes containers.
+     * Containers associated with the finding. This field provides information for
+     * both Kubernetes and non-Kubernetes containers.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
@@ -10534,8 +10719,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Containers associated with the finding. containers provides information
-     * for both Kubernetes and non-Kubernetes containers.
+     * Containers associated with the finding. This field provides information for
+     * both Kubernetes and non-Kubernetes containers.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
@@ -10551,8 +10736,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Containers associated with the finding. containers provides information
-     * for both Kubernetes and non-Kubernetes containers.
+     * Containers associated with the finding. This field provides information for
+     * both Kubernetes and non-Kubernetes containers.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
@@ -10574,8 +10759,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Containers associated with the finding. containers provides information
-     * for both Kubernetes and non-Kubernetes containers.
+     * Containers associated with the finding. This field provides information for
+     * both Kubernetes and non-Kubernetes containers.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
@@ -10595,8 +10780,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Containers associated with the finding. containers provides information
-     * for both Kubernetes and non-Kubernetes containers.
+     * Containers associated with the finding. This field provides information for
+     * both Kubernetes and non-Kubernetes containers.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
@@ -10618,8 +10803,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Containers associated with the finding. containers provides information
-     * for both Kubernetes and non-Kubernetes containers.
+     * Containers associated with the finding. This field provides information for
+     * both Kubernetes and non-Kubernetes containers.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
@@ -10641,8 +10826,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Containers associated with the finding. containers provides information
-     * for both Kubernetes and non-Kubernetes containers.
+     * Containers associated with the finding. This field provides information for
+     * both Kubernetes and non-Kubernetes containers.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
@@ -10662,8 +10847,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Containers associated with the finding. containers provides information
-     * for both Kubernetes and non-Kubernetes containers.
+     * Containers associated with the finding. This field provides information for
+     * both Kubernetes and non-Kubernetes containers.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
@@ -10683,8 +10868,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Containers associated with the finding. containers provides information
-     * for both Kubernetes and non-Kubernetes containers.
+     * Containers associated with the finding. This field provides information for
+     * both Kubernetes and non-Kubernetes containers.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
@@ -10704,8 +10889,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Containers associated with the finding. containers provides information
-     * for both Kubernetes and non-Kubernetes containers.
+     * Containers associated with the finding. This field provides information for
+     * both Kubernetes and non-Kubernetes containers.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
@@ -10724,8 +10909,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Containers associated with the finding. containers provides information
-     * for both Kubernetes and non-Kubernetes containers.
+     * Containers associated with the finding. This field provides information for
+     * both Kubernetes and non-Kubernetes containers.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
@@ -10744,8 +10929,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Containers associated with the finding. containers provides information
-     * for both Kubernetes and non-Kubernetes containers.
+     * Containers associated with the finding. This field provides information for
+     * both Kubernetes and non-Kubernetes containers.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
@@ -10757,8 +10942,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Containers associated with the finding. containers provides information
-     * for both Kubernetes and non-Kubernetes containers.
+     * Containers associated with the finding. This field provides information for
+     * both Kubernetes and non-Kubernetes containers.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
@@ -10774,8 +10959,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Containers associated with the finding. containers provides information
-     * for both Kubernetes and non-Kubernetes containers.
+     * Containers associated with the finding. This field provides information for
+     * both Kubernetes and non-Kubernetes containers.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
@@ -10792,8 +10977,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Containers associated with the finding. containers provides information
-     * for both Kubernetes and non-Kubernetes containers.
+     * Containers associated with the finding. This field provides information for
+     * both Kubernetes and non-Kubernetes containers.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
@@ -10806,8 +10991,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Containers associated with the finding. containers provides information
-     * for both Kubernetes and non-Kubernetes containers.
+     * Containers associated with the finding. This field provides information for
+     * both Kubernetes and non-Kubernetes containers.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
@@ -10820,8 +11005,8 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Containers associated with the finding. containers provides information
-     * for both Kubernetes and non-Kubernetes containers.
+     * Containers associated with the finding. This field provides information for
+     * both Kubernetes and non-Kubernetes containers.
      * </pre>
      *
      * <code>repeated .google.cloud.securitycenter.v1.Container containers = 42;</code>
@@ -11564,6 +11749,393 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       return filesBuilder_;
     }
 
+    private com.google.cloud.securitycenter.v1.CloudDlpInspection cloudDlpInspection_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.CloudDlpInspection,
+            com.google.cloud.securitycenter.v1.CloudDlpInspection.Builder,
+            com.google.cloud.securitycenter.v1.CloudDlpInspectionOrBuilder>
+        cloudDlpInspectionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Data Loss Prevention (Cloud DLP) inspection results that are
+     * associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.CloudDlpInspection cloud_dlp_inspection = 48;</code>
+     *
+     * @return Whether the cloudDlpInspection field is set.
+     */
+    public boolean hasCloudDlpInspection() {
+      return ((bitField1_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Data Loss Prevention (Cloud DLP) inspection results that are
+     * associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.CloudDlpInspection cloud_dlp_inspection = 48;</code>
+     *
+     * @return The cloudDlpInspection.
+     */
+    public com.google.cloud.securitycenter.v1.CloudDlpInspection getCloudDlpInspection() {
+      if (cloudDlpInspectionBuilder_ == null) {
+        return cloudDlpInspection_ == null
+            ? com.google.cloud.securitycenter.v1.CloudDlpInspection.getDefaultInstance()
+            : cloudDlpInspection_;
+      } else {
+        return cloudDlpInspectionBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Data Loss Prevention (Cloud DLP) inspection results that are
+     * associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.CloudDlpInspection cloud_dlp_inspection = 48;</code>
+     */
+    public Builder setCloudDlpInspection(
+        com.google.cloud.securitycenter.v1.CloudDlpInspection value) {
+      if (cloudDlpInspectionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cloudDlpInspection_ = value;
+      } else {
+        cloudDlpInspectionBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Data Loss Prevention (Cloud DLP) inspection results that are
+     * associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.CloudDlpInspection cloud_dlp_inspection = 48;</code>
+     */
+    public Builder setCloudDlpInspection(
+        com.google.cloud.securitycenter.v1.CloudDlpInspection.Builder builderForValue) {
+      if (cloudDlpInspectionBuilder_ == null) {
+        cloudDlpInspection_ = builderForValue.build();
+      } else {
+        cloudDlpInspectionBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Data Loss Prevention (Cloud DLP) inspection results that are
+     * associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.CloudDlpInspection cloud_dlp_inspection = 48;</code>
+     */
+    public Builder mergeCloudDlpInspection(
+        com.google.cloud.securitycenter.v1.CloudDlpInspection value) {
+      if (cloudDlpInspectionBuilder_ == null) {
+        if (((bitField1_ & 0x00000008) != 0)
+            && cloudDlpInspection_ != null
+            && cloudDlpInspection_
+                != com.google.cloud.securitycenter.v1.CloudDlpInspection.getDefaultInstance()) {
+          getCloudDlpInspectionBuilder().mergeFrom(value);
+        } else {
+          cloudDlpInspection_ = value;
+        }
+      } else {
+        cloudDlpInspectionBuilder_.mergeFrom(value);
+      }
+      bitField1_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Data Loss Prevention (Cloud DLP) inspection results that are
+     * associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.CloudDlpInspection cloud_dlp_inspection = 48;</code>
+     */
+    public Builder clearCloudDlpInspection() {
+      bitField1_ = (bitField1_ & ~0x00000008);
+      cloudDlpInspection_ = null;
+      if (cloudDlpInspectionBuilder_ != null) {
+        cloudDlpInspectionBuilder_.dispose();
+        cloudDlpInspectionBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Data Loss Prevention (Cloud DLP) inspection results that are
+     * associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.CloudDlpInspection cloud_dlp_inspection = 48;</code>
+     */
+    public com.google.cloud.securitycenter.v1.CloudDlpInspection.Builder
+        getCloudDlpInspectionBuilder() {
+      bitField1_ |= 0x00000008;
+      onChanged();
+      return getCloudDlpInspectionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Data Loss Prevention (Cloud DLP) inspection results that are
+     * associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.CloudDlpInspection cloud_dlp_inspection = 48;</code>
+     */
+    public com.google.cloud.securitycenter.v1.CloudDlpInspectionOrBuilder
+        getCloudDlpInspectionOrBuilder() {
+      if (cloudDlpInspectionBuilder_ != null) {
+        return cloudDlpInspectionBuilder_.getMessageOrBuilder();
+      } else {
+        return cloudDlpInspection_ == null
+            ? com.google.cloud.securitycenter.v1.CloudDlpInspection.getDefaultInstance()
+            : cloudDlpInspection_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud Data Loss Prevention (Cloud DLP) inspection results that are
+     * associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.CloudDlpInspection cloud_dlp_inspection = 48;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.CloudDlpInspection,
+            com.google.cloud.securitycenter.v1.CloudDlpInspection.Builder,
+            com.google.cloud.securitycenter.v1.CloudDlpInspectionOrBuilder>
+        getCloudDlpInspectionFieldBuilder() {
+      if (cloudDlpInspectionBuilder_ == null) {
+        cloudDlpInspectionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.CloudDlpInspection,
+                com.google.cloud.securitycenter.v1.CloudDlpInspection.Builder,
+                com.google.cloud.securitycenter.v1.CloudDlpInspectionOrBuilder>(
+                getCloudDlpInspection(), getParentForChildren(), isClean());
+        cloudDlpInspection_ = null;
+      }
+      return cloudDlpInspectionBuilder_;
+    }
+
+    private com.google.cloud.securitycenter.v1.CloudDlpDataProfile cloudDlpDataProfile_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.CloudDlpDataProfile,
+            com.google.cloud.securitycenter.v1.CloudDlpDataProfile.Builder,
+            com.google.cloud.securitycenter.v1.CloudDlpDataProfileOrBuilder>
+        cloudDlpDataProfileBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Cloud DLP data profile that is associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.CloudDlpDataProfile cloud_dlp_data_profile = 49;</code>
+     *
+     * @return Whether the cloudDlpDataProfile field is set.
+     */
+    public boolean hasCloudDlpDataProfile() {
+      return ((bitField1_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud DLP data profile that is associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.CloudDlpDataProfile cloud_dlp_data_profile = 49;</code>
+     *
+     * @return The cloudDlpDataProfile.
+     */
+    public com.google.cloud.securitycenter.v1.CloudDlpDataProfile getCloudDlpDataProfile() {
+      if (cloudDlpDataProfileBuilder_ == null) {
+        return cloudDlpDataProfile_ == null
+            ? com.google.cloud.securitycenter.v1.CloudDlpDataProfile.getDefaultInstance()
+            : cloudDlpDataProfile_;
+      } else {
+        return cloudDlpDataProfileBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud DLP data profile that is associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.CloudDlpDataProfile cloud_dlp_data_profile = 49;</code>
+     */
+    public Builder setCloudDlpDataProfile(
+        com.google.cloud.securitycenter.v1.CloudDlpDataProfile value) {
+      if (cloudDlpDataProfileBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cloudDlpDataProfile_ = value;
+      } else {
+        cloudDlpDataProfileBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud DLP data profile that is associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.CloudDlpDataProfile cloud_dlp_data_profile = 49;</code>
+     */
+    public Builder setCloudDlpDataProfile(
+        com.google.cloud.securitycenter.v1.CloudDlpDataProfile.Builder builderForValue) {
+      if (cloudDlpDataProfileBuilder_ == null) {
+        cloudDlpDataProfile_ = builderForValue.build();
+      } else {
+        cloudDlpDataProfileBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud DLP data profile that is associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.CloudDlpDataProfile cloud_dlp_data_profile = 49;</code>
+     */
+    public Builder mergeCloudDlpDataProfile(
+        com.google.cloud.securitycenter.v1.CloudDlpDataProfile value) {
+      if (cloudDlpDataProfileBuilder_ == null) {
+        if (((bitField1_ & 0x00000010) != 0)
+            && cloudDlpDataProfile_ != null
+            && cloudDlpDataProfile_
+                != com.google.cloud.securitycenter.v1.CloudDlpDataProfile.getDefaultInstance()) {
+          getCloudDlpDataProfileBuilder().mergeFrom(value);
+        } else {
+          cloudDlpDataProfile_ = value;
+        }
+      } else {
+        cloudDlpDataProfileBuilder_.mergeFrom(value);
+      }
+      bitField1_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud DLP data profile that is associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.CloudDlpDataProfile cloud_dlp_data_profile = 49;</code>
+     */
+    public Builder clearCloudDlpDataProfile() {
+      bitField1_ = (bitField1_ & ~0x00000010);
+      cloudDlpDataProfile_ = null;
+      if (cloudDlpDataProfileBuilder_ != null) {
+        cloudDlpDataProfileBuilder_.dispose();
+        cloudDlpDataProfileBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud DLP data profile that is associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.CloudDlpDataProfile cloud_dlp_data_profile = 49;</code>
+     */
+    public com.google.cloud.securitycenter.v1.CloudDlpDataProfile.Builder
+        getCloudDlpDataProfileBuilder() {
+      bitField1_ |= 0x00000010;
+      onChanged();
+      return getCloudDlpDataProfileFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud DLP data profile that is associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.CloudDlpDataProfile cloud_dlp_data_profile = 49;</code>
+     */
+    public com.google.cloud.securitycenter.v1.CloudDlpDataProfileOrBuilder
+        getCloudDlpDataProfileOrBuilder() {
+      if (cloudDlpDataProfileBuilder_ != null) {
+        return cloudDlpDataProfileBuilder_.getMessageOrBuilder();
+      } else {
+        return cloudDlpDataProfile_ == null
+            ? com.google.cloud.securitycenter.v1.CloudDlpDataProfile.getDefaultInstance()
+            : cloudDlpDataProfile_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Cloud DLP data profile that is associated with the finding.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.CloudDlpDataProfile cloud_dlp_data_profile = 49;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.securitycenter.v1.CloudDlpDataProfile,
+            com.google.cloud.securitycenter.v1.CloudDlpDataProfile.Builder,
+            com.google.cloud.securitycenter.v1.CloudDlpDataProfileOrBuilder>
+        getCloudDlpDataProfileFieldBuilder() {
+      if (cloudDlpDataProfileBuilder_ == null) {
+        cloudDlpDataProfileBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v1.CloudDlpDataProfile,
+                com.google.cloud.securitycenter.v1.CloudDlpDataProfile.Builder,
+                com.google.cloud.securitycenter.v1.CloudDlpDataProfileOrBuilder>(
+                getCloudDlpDataProfile(), getParentForChildren(), isClean());
+        cloudDlpDataProfile_ = null;
+      }
+      return cloudDlpDataProfileBuilder_;
+    }
+
     private com.google.cloud.securitycenter.v1.KernelRootkit kernelRootkit_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.securitycenter.v1.KernelRootkit,
@@ -11574,7 +12146,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kernel Rootkit signature.
+     * Signature of the kernel rootkit.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
@@ -11582,13 +12154,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the kernelRootkit field is set.
      */
     public boolean hasKernelRootkit() {
-      return ((bitField1_ & 0x00000008) != 0);
+      return ((bitField1_ & 0x00000020) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Kernel Rootkit signature.
+     * Signature of the kernel rootkit.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
@@ -11608,7 +12180,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kernel Rootkit signature.
+     * Signature of the kernel rootkit.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
@@ -11622,7 +12194,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       } else {
         kernelRootkitBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -11630,7 +12202,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kernel Rootkit signature.
+     * Signature of the kernel rootkit.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
@@ -11642,7 +12214,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       } else {
         kernelRootkitBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -11650,14 +12222,14 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kernel Rootkit signature.
+     * Signature of the kernel rootkit.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
      */
     public Builder mergeKernelRootkit(com.google.cloud.securitycenter.v1.KernelRootkit value) {
       if (kernelRootkitBuilder_ == null) {
-        if (((bitField1_ & 0x00000008) != 0)
+        if (((bitField1_ & 0x00000020) != 0)
             && kernelRootkit_ != null
             && kernelRootkit_
                 != com.google.cloud.securitycenter.v1.KernelRootkit.getDefaultInstance()) {
@@ -11668,7 +12240,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
       } else {
         kernelRootkitBuilder_.mergeFrom(value);
       }
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -11676,13 +12248,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kernel Rootkit signature.
+     * Signature of the kernel rootkit.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
      */
     public Builder clearKernelRootkit() {
-      bitField1_ = (bitField1_ & ~0x00000008);
+      bitField1_ = (bitField1_ & ~0x00000020);
       kernelRootkit_ = null;
       if (kernelRootkitBuilder_ != null) {
         kernelRootkitBuilder_.dispose();
@@ -11695,13 +12267,13 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kernel Rootkit signature.
+     * Signature of the kernel rootkit.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
      */
     public com.google.cloud.securitycenter.v1.KernelRootkit.Builder getKernelRootkitBuilder() {
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000020;
       onChanged();
       return getKernelRootkitFieldBuilder().getBuilder();
     }
@@ -11709,7 +12281,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kernel Rootkit signature.
+     * Signature of the kernel rootkit.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
@@ -11727,7 +12299,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Kernel Rootkit signature.
+     * Signature of the kernel rootkit.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.KernelRootkit kernel_rootkit = 50;</code>
