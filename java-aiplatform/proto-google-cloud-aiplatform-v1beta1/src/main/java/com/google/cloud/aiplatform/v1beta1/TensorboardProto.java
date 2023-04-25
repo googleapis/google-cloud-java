@@ -49,7 +49,7 @@ public final class TensorboardProto {
           + "eta1\032\037google/api/field_behavior.proto\032\031g"
           + "oogle/api/resource.proto\0325google/cloud/a"
           + "iplatform/v1beta1/encryption_spec.proto\032"
-          + "\037google/protobuf/timestamp.proto\"\274\004\n\013Ten"
+          + "\037google/protobuf/timestamp.proto\"\320\004\n\013Ten"
           + "sorboard\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\031\n\014display_n"
           + "ame\030\002 \001(\tB\003\340A\002\022\023\n\013description\030\003 \001(\t\022H\n\017e"
           + "ncryption_spec\030\013 \001(\0132/.google.cloud.aipl"
@@ -60,17 +60,17 @@ public final class TensorboardProto {
           + "e\030\007 \001(\0132\032.google.protobuf.TimestampB\003\340A\003"
           + "\022H\n\006labels\030\010 \003(\01328.google.cloud.aiplatfo"
           + "rm.v1beta1.Tensorboard.LabelsEntry\022\014\n\004et"
-          + "ag\030\t \001(\t\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
-          + "value\030\002 \001(\t:\0028\001:n\352Ak\n%aiplatform.googlea"
-          + "pis.com/Tensorboard\022Bprojects/{project}/"
-          + "locations/{location}/tensorboards/{tenso"
-          + "rboard}B\347\001\n#com.google.cloud.aiplatform."
-          + "v1beta1B\020TensorboardProtoP\001ZCcloud.googl"
-          + "e.com/go/aiplatform/apiv1beta1/aiplatfor"
-          + "mpb;aiplatformpb\252\002\037Google.Cloud.AIPlatfo"
-          + "rm.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1b"
-          + "eta1\352\002\"Google::Cloud::AIPlatform::V1beta"
-          + "1b\006proto3"
+          + "ag\030\t \001(\t\022\022\n\nis_default\030\014 \001(\010\032-\n\013LabelsEn"
+          + "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:n\352Ak"
+          + "\n%aiplatform.googleapis.com/Tensorboard\022"
+          + "Bprojects/{project}/locations/{location}"
+          + "/tensorboards/{tensorboard}B\347\001\n#com.goog"
+          + "le.cloud.aiplatform.v1beta1B\020Tensorboard"
+          + "ProtoP\001ZCcloud.google.com/go/aiplatform/"
+          + "apiv1beta1/aiplatformpb;aiplatformpb\252\002\037G"
+          + "oogle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\"
+          + "Cloud\\AIPlatform\\V1beta1\352\002\"Google::Cloud"
+          + "::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -97,6 +97,7 @@ public final class TensorboardProto {
               "UpdateTime",
               "Labels",
               "Etag",
+              "IsDefault",
             });
     internal_static_google_cloud_aiplatform_v1beta1_Tensorboard_LabelsEntry_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_Tensorboard_descriptor

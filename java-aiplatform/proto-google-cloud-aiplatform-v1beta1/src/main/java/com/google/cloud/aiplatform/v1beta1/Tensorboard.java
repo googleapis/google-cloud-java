@@ -653,6 +653,28 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int IS_DEFAULT_FIELD_NUMBER = 12;
+  private boolean isDefault_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Used to indicate if the TensorBoard instance is the default one.
+   * Each project &amp; region can have at most one default TensorBoard instance.
+   * Creation of a default TensorBoard instance and updating an existing
+   * TensorBoard instance to be default will mark all other TensorBoard
+   * instances (if any) as non default.
+   * </pre>
+   *
+   * <code>bool is_default = 12;</code>
+   *
+   * @return The isDefault.
+   */
+  @java.lang.Override
+  public boolean getIsDefault() {
+    return isDefault_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -695,6 +717,9 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
     }
     if (encryptionSpec_ != null) {
       output.writeMessage(11, getEncryptionSpec());
+    }
+    if (isDefault_ != false) {
+      output.writeBool(12, isDefault_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -742,6 +767,9 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
     if (encryptionSpec_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getEncryptionSpec());
     }
+    if (isDefault_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, isDefault_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -777,6 +805,7 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getEtag().equals(other.getEtag())) return false;
+    if (getIsDefault() != other.getIsDefault()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -816,6 +845,8 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
+    hash = (37 * hash) + IS_DEFAULT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsDefault());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -999,6 +1030,7 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableLabels().clear();
       etag_ = "";
+      isDefault_ = false;
       return this;
     }
 
@@ -1066,6 +1098,9 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.isDefault_ = isDefault_;
       }
     }
 
@@ -1153,6 +1188,9 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
         etag_ = other.etag_;
         bitField0_ |= 0x00000200;
         onChanged();
+      }
+      if (other.getIsDefault() != false) {
+        setIsDefault(other.getIsDefault());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1246,6 +1284,12 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 90
+            case 96:
+              {
+                isDefault_ = input.readBool();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 96
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2694,6 +2738,71 @@ public final class Tensorboard extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       etag_ = value;
       bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private boolean isDefault_;
+    /**
+     *
+     *
+     * <pre>
+     * Used to indicate if the TensorBoard instance is the default one.
+     * Each project &amp; region can have at most one default TensorBoard instance.
+     * Creation of a default TensorBoard instance and updating an existing
+     * TensorBoard instance to be default will mark all other TensorBoard
+     * instances (if any) as non default.
+     * </pre>
+     *
+     * <code>bool is_default = 12;</code>
+     *
+     * @return The isDefault.
+     */
+    @java.lang.Override
+    public boolean getIsDefault() {
+      return isDefault_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Used to indicate if the TensorBoard instance is the default one.
+     * Each project &amp; region can have at most one default TensorBoard instance.
+     * Creation of a default TensorBoard instance and updating an existing
+     * TensorBoard instance to be default will mark all other TensorBoard
+     * instances (if any) as non default.
+     * </pre>
+     *
+     * <code>bool is_default = 12;</code>
+     *
+     * @param value The isDefault to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsDefault(boolean value) {
+
+      isDefault_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Used to indicate if the TensorBoard instance is the default one.
+     * Each project &amp; region can have at most one default TensorBoard instance.
+     * Creation of a default TensorBoard instance and updating an existing
+     * TensorBoard instance to be default will mark all other TensorBoard
+     * instances (if any) as non default.
+     * </pre>
+     *
+     * <code>bool is_default = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIsDefault() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      isDefault_ = false;
       onChanged();
       return this;
     }

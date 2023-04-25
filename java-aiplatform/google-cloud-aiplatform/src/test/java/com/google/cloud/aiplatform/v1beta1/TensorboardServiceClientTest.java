@@ -126,6 +126,7 @@ public class TensorboardServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setIsDefault(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -184,6 +185,7 @@ public class TensorboardServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setIsDefault(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -242,6 +244,7 @@ public class TensorboardServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setIsDefault(true)
             .build();
     mockTensorboardService.addResponse(expectedResponse);
 
@@ -289,6 +292,7 @@ public class TensorboardServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setIsDefault(true)
             .build();
     mockTensorboardService.addResponse(expectedResponse);
 
@@ -416,6 +420,7 @@ public class TensorboardServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setEtag("etag3123477")
+            .setIsDefault(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
