@@ -103,9 +103,10 @@ public final class TargetProto {
           + "(\t*s\n\nHttpMethod\022\033\n\027HTTP_METHOD_UNSPECIF"
           + "IED\020\000\022\010\n\004POST\020\001\022\007\n\003GET\020\002\022\010\n\004HEAD\020\003\022\007\n\003PU"
           + "T\020\004\022\n\n\006DELETE\020\005\022\t\n\005PATCH\020\006\022\013\n\007OPTIONS\020\007B"
-          + "e\n\036com.google.cloud.tasks.v2beta3B\013Targe"
-          + "tProtoP\001Z4cloud.google.com/go/tasks/apiv"
-          + "2beta3/taskspb;taskspbb\006proto3"
+          + "t\n\036com.google.cloud.tasks.v2beta3B\013Targe"
+          + "tProtoP\001ZCcloud.google.com/go/cloudtasks"
+          + "/apiv2beta3/cloudtaskspb;cloudtaskspbb\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

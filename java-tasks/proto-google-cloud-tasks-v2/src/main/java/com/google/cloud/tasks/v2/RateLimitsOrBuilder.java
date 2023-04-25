@@ -67,9 +67,9 @@ public interface RateLimitsOrBuilder
    * `queue.yaml/xml`, `max_burst_size` is equal to
    * [bucket_size](https://cloud.google.com/appengine/docs/standard/python/config/queueref#bucket_size).
    * Since `max_burst_size` is output only, if
-   * [UpdateQueue][google.cloud.tasks.v2.CloudTasks.UpdateQueue] is called on a queue
-   * created by `queue.yaml/xml`, `max_burst_size` will be reset based
-   * on the value of
+   * [UpdateQueue][google.cloud.tasks.v2.CloudTasks.UpdateQueue] is called on a
+   * queue created by `queue.yaml/xml`, `max_burst_size` will be reset based on
+   * the value of
    * [max_dispatches_per_second][google.cloud.tasks.v2.RateLimits.max_dispatches_per_second],
    * regardless of whether
    * [max_dispatches_per_second][google.cloud.tasks.v2.RateLimits.max_dispatches_per_second]

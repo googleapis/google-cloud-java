@@ -78,10 +78,10 @@ public final class TargetProto {
           + "\n\007version\030\002 \001(\t\022\020\n\010instance\030\003 \001(\t\022\014\n\004hos"
           + "t\030\004 \001(\t*[\n\nHttpMethod\022\033\n\027HTTP_METHOD_UNS"
           + "PECIFIED\020\000\022\010\n\004POST\020\001\022\007\n\003GET\020\002\022\010\n\004HEAD\020\003\022"
-          + "\007\n\003PUT\020\004\022\n\n\006DELETE\020\005Be\n\036com.google.cloud"
-          + ".tasks.v2beta2B\013TargetProtoP\001Z4cloud.goo"
-          + "gle.com/go/tasks/apiv2beta2/taskspb;task"
-          + "spbb\006proto3"
+          + "\007\n\003PUT\020\004\022\n\n\006DELETE\020\005Bt\n\036com.google.cloud"
+          + ".tasks.v2beta2B\013TargetProtoP\001ZCcloud.goo"
+          + "gle.com/go/cloudtasks/apiv2beta2/cloudta"
+          + "skspb;cloudtaskspbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

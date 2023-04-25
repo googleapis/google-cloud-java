@@ -30,7 +30,8 @@ public interface RateLimitsOrBuilder
    * The maximum rate at which tasks are dispatched from this queue.
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
-   * * For [App Engine queues][google.cloud.tasks.v2beta3.AppEngineHttpQueue], the maximum allowed value
+   * * For [App Engine queues][google.cloud.tasks.v2beta3.AppEngineHttpQueue],
+   * the maximum allowed value
    *   is 500.
    * This field has the same meaning as
    * [rate in
@@ -69,10 +70,11 @@ public interface RateLimitsOrBuilder
    * `queue.yaml/xml`, `max_burst_size` is equal to
    * [bucket_size](https://cloud.google.com/appengine/docs/standard/python/config/queueref#bucket_size).
    * If
-   * [UpdateQueue][google.cloud.tasks.v2beta3.CloudTasks.UpdateQueue] is called on a queue without
-   * explicitly setting a value for `max_burst_size`,
+   * [UpdateQueue][google.cloud.tasks.v2beta3.CloudTasks.UpdateQueue] is called
+   * on a queue without explicitly setting a value for `max_burst_size`,
    * `max_burst_size` value will get updated if
-   * [UpdateQueue][google.cloud.tasks.v2beta3.CloudTasks.UpdateQueue] is updating
+   * [UpdateQueue][google.cloud.tasks.v2beta3.CloudTasks.UpdateQueue] is
+   * updating
    * [max_dispatches_per_second][google.cloud.tasks.v2beta3.RateLimits.max_dispatches_per_second].
    * </pre>
    *

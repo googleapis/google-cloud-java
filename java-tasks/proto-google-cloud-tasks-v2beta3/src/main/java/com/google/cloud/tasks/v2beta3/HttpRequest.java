@@ -28,17 +28,20 @@ package com.google.cloud.tasks.v2beta3;
  * response code ([`200` - `299`]), the task will be removed from the queue. If
  * any other HTTP response code is returned or no response is received, the
  * task will be retried according to the following:
- * * User-specified throttling: [retry configuration][google.cloud.tasks.v2beta3.Queue.retry_config],
- *   [rate limits][google.cloud.tasks.v2beta3.Queue.rate_limits], and the [queue's state][google.cloud.tasks.v2beta3.Queue.state].
+ * * User-specified throttling: [retry
+ * configuration][google.cloud.tasks.v2beta3.Queue.retry_config],
+ *   [rate limits][google.cloud.tasks.v2beta3.Queue.rate_limits], and the
+ *   [queue's state][google.cloud.tasks.v2beta3.Queue.state].
  * * System throttling: To prevent the worker from overloading, Cloud Tasks may
  *   temporarily reduce the queue's effective rate. User-specified settings
  *   will not be changed.
  *  System throttling happens because:
  *   * Cloud Tasks backs off on all errors. Normally the backoff specified in
- *     [rate limits][google.cloud.tasks.v2beta3.Queue.rate_limits] will be used. But if the worker returns
- *     `429` (Too Many Requests), `503` (Service Unavailable), or the rate of
- *     errors is high, Cloud Tasks will use a higher backoff rate. The retry
- *     specified in the `Retry-After` HTTP response header is considered.
+ *     [rate limits][google.cloud.tasks.v2beta3.Queue.rate_limits] will be used.
+ *     But if the worker returns `429` (Too Many Requests), `503` (Service
+ *     Unavailable), or the rate of errors is high, Cloud Tasks will use a
+ *     higher backoff rate. The retry specified in the `Retry-After` HTTP
+ *     response header is considered.
  *   * To prevent traffic spikes and to smooth sudden increases in traffic,
  *     dispatches ramp up slowly when the queue is newly created or idle and
  *     if large numbers of tasks suddenly become available to dispatch (due to
@@ -436,8 +439,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * HTTP request body.
    * A request body is allowed only if the
-   * [HTTP method][google.cloud.tasks.v2beta3.HttpRequest.http_method] is POST, PUT, or PATCH. It is an
-   * error to set body on a task with an incompatible [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
+   * [HTTP method][google.cloud.tasks.v2beta3.HttpRequest.http_method] is POST,
+   * PUT, or PATCH. It is an error to set body on a task with an incompatible
+   * [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
    * </pre>
    *
    * <code>bytes body = 4;</code>
@@ -829,17 +833,20 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
    * response code ([`200` - `299`]), the task will be removed from the queue. If
    * any other HTTP response code is returned or no response is received, the
    * task will be retried according to the following:
-   * * User-specified throttling: [retry configuration][google.cloud.tasks.v2beta3.Queue.retry_config],
-   *   [rate limits][google.cloud.tasks.v2beta3.Queue.rate_limits], and the [queue's state][google.cloud.tasks.v2beta3.Queue.state].
+   * * User-specified throttling: [retry
+   * configuration][google.cloud.tasks.v2beta3.Queue.retry_config],
+   *   [rate limits][google.cloud.tasks.v2beta3.Queue.rate_limits], and the
+   *   [queue's state][google.cloud.tasks.v2beta3.Queue.state].
    * * System throttling: To prevent the worker from overloading, Cloud Tasks may
    *   temporarily reduce the queue's effective rate. User-specified settings
    *   will not be changed.
    *  System throttling happens because:
    *   * Cloud Tasks backs off on all errors. Normally the backoff specified in
-   *     [rate limits][google.cloud.tasks.v2beta3.Queue.rate_limits] will be used. But if the worker returns
-   *     `429` (Too Many Requests), `503` (Service Unavailable), or the rate of
-   *     errors is high, Cloud Tasks will use a higher backoff rate. The retry
-   *     specified in the `Retry-After` HTTP response header is considered.
+   *     [rate limits][google.cloud.tasks.v2beta3.Queue.rate_limits] will be used.
+   *     But if the worker returns `429` (Too Many Requests), `503` (Service
+   *     Unavailable), or the rate of errors is high, Cloud Tasks will use a
+   *     higher backoff rate. The retry specified in the `Retry-After` HTTP
+   *     response header is considered.
    *   * To prevent traffic spikes and to smooth sudden increases in traffic,
    *     dispatches ramp up slowly when the queue is newly created or idle and
    *     if large numbers of tasks suddenly become available to dispatch (due to
@@ -1685,8 +1692,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * HTTP request body.
      * A request body is allowed only if the
-     * [HTTP method][google.cloud.tasks.v2beta3.HttpRequest.http_method] is POST, PUT, or PATCH. It is an
-     * error to set body on a task with an incompatible [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
+     * [HTTP method][google.cloud.tasks.v2beta3.HttpRequest.http_method] is POST,
+     * PUT, or PATCH. It is an error to set body on a task with an incompatible
+     * [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
      * </pre>
      *
      * <code>bytes body = 4;</code>
@@ -1703,8 +1711,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * HTTP request body.
      * A request body is allowed only if the
-     * [HTTP method][google.cloud.tasks.v2beta3.HttpRequest.http_method] is POST, PUT, or PATCH. It is an
-     * error to set body on a task with an incompatible [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
+     * [HTTP method][google.cloud.tasks.v2beta3.HttpRequest.http_method] is POST,
+     * PUT, or PATCH. It is an error to set body on a task with an incompatible
+     * [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
      * </pre>
      *
      * <code>bytes body = 4;</code>
@@ -1727,8 +1736,9 @@ public final class HttpRequest extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * HTTP request body.
      * A request body is allowed only if the
-     * [HTTP method][google.cloud.tasks.v2beta3.HttpRequest.http_method] is POST, PUT, or PATCH. It is an
-     * error to set body on a task with an incompatible [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
+     * [HTTP method][google.cloud.tasks.v2beta3.HttpRequest.http_method] is POST,
+     * PUT, or PATCH. It is an error to set body on a task with an incompatible
+     * [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
      * </pre>
      *
      * <code>bytes body = 4;</code>

@@ -80,9 +80,9 @@ public final class QueueProto {
           + "\022.\n\013max_backoff\030\004 \001(\0132\031.google.protobuf."
           + "Duration\022\025\n\rmax_doublings\030\005 \001(\005\"2\n\030Stack"
           + "driverLoggingConfig\022\026\n\016sampling_ratio\030\001 "
-          + "\001(\001BZ\n\031com.google.cloud.tasks.v2B\nQueueP"
-          + "rotoP\001Z/cloud.google.com/go/tasks/apiv2/"
-          + "taskspb;taskspbb\006proto3"
+          + "\001(\001Bi\n\031com.google.cloud.tasks.v2B\nQueueP"
+          + "rotoP\001Z>cloud.google.com/go/cloudtasks/a"
+          + "piv2/cloudtaskspb;cloudtaskspbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

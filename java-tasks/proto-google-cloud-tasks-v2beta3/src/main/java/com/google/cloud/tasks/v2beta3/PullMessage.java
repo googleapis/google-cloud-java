@@ -24,8 +24,9 @@ package com.google.cloud.tasks.v2beta3;
  * <pre>
  * Pull Message.
  * This proto can only be used for tasks in a queue which has
- * [PULL][google.cloud.tasks.v2beta3.Queue.type] type. It currently exists for backwards compatibility with
- * the App Engine Task Queue SDK. This message type maybe returned with methods
+ * [PULL][google.cloud.tasks.v2beta3.Queue.type] type. It currently exists for
+ * backwards compatibility with the App Engine Task Queue SDK. This message type
+ * maybe returned with methods
  * [list][google.cloud.tasks.v2beta3.CloudTask.ListTasks] and
  * [get][google.cloud.tasks.v2beta3.CloudTask.ListTasks], when the response view
  * is [FULL][google.cloud.tasks.v2beta3.Task.View.Full].
@@ -329,8 +330,9 @@ public final class PullMessage extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Pull Message.
    * This proto can only be used for tasks in a queue which has
-   * [PULL][google.cloud.tasks.v2beta3.Queue.type] type. It currently exists for backwards compatibility with
-   * the App Engine Task Queue SDK. This message type maybe returned with methods
+   * [PULL][google.cloud.tasks.v2beta3.Queue.type] type. It currently exists for
+   * backwards compatibility with the App Engine Task Queue SDK. This message type
+   * maybe returned with methods
    * [list][google.cloud.tasks.v2beta3.CloudTask.ListTasks] and
    * [get][google.cloud.tasks.v2beta3.CloudTask.ListTasks], when the response view
    * is [FULL][google.cloud.tasks.v2beta3.Task.View.Full].

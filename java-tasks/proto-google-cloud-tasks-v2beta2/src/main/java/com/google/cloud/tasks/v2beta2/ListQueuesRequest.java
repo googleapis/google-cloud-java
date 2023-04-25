@@ -22,7 +22,8 @@ package com.google.cloud.tasks.v2beta2;
  *
  *
  * <pre>
- * Request message for [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues].
+ * Request message for
+ * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2beta2.ListQueuesRequest}
@@ -134,11 +135,10 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * `filter` can be used to specify a subset of queues. Any [Queue][google.cloud.tasks.v2beta2.Queue]
-   * field can be used as a filter and several operators as supported.
-   * For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The filter syntax is the same as
-   * described in
-   * [Stackdriver's Advanced Logs
+   * `filter` can be used to specify a subset of queues. Any
+   * [Queue][google.cloud.tasks.v2beta2.Queue] field can be used as a filter and
+   * several operators as supported. For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The
+   * filter syntax is the same as described in [Stackdriver's Advanced Logs
    * Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
    * Sample filter "app_engine_http_target: *".
    * Note that using filters might cause fewer queues than the
@@ -165,11 +165,10 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * `filter` can be used to specify a subset of queues. Any [Queue][google.cloud.tasks.v2beta2.Queue]
-   * field can be used as a filter and several operators as supported.
-   * For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The filter syntax is the same as
-   * described in
-   * [Stackdriver's Advanced Logs
+   * `filter` can be used to specify a subset of queues. Any
+   * [Queue][google.cloud.tasks.v2beta2.Queue] field can be used as a filter and
+   * several operators as supported. For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The
+   * filter syntax is the same as described in [Stackdriver's Advanced Logs
    * Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
    * Sample filter "app_engine_http_target: *".
    * Note that using filters might cause fewer queues than the
@@ -203,8 +202,8 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
    * The maximum page size is 9800. If unspecified, the page size will
    * be the maximum. Fewer queues than requested might be returned,
    * even if more queues exist; use the
-   * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token] in the
-   * response to determine if more queues exist.
+   * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token]
+   * in the response to determine if more queues exist.
    * </pre>
    *
    * <code>int32 page_size = 3;</code>
@@ -227,10 +226,12 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
    * A token identifying the page of results to return.
    * To request the first page results, page_token must be empty. To
    * request the next page of results, page_token must be the value of
-   * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token] returned
-   * from the previous call to [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues]
-   * method. It is an error to switch the value of the
-   * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while iterating through pages.
+   * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token]
+   * returned from the previous call to
+   * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues] method. It
+   * is an error to switch the value of the
+   * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while
+   * iterating through pages.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -256,10 +257,12 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
    * A token identifying the page of results to return.
    * To request the first page results, page_token must be empty. To
    * request the next page of results, page_token must be the value of
-   * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token] returned
-   * from the previous call to [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues]
-   * method. It is an error to switch the value of the
-   * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while iterating through pages.
+   * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token]
+   * returned from the previous call to
+   * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues] method. It
+   * is an error to switch the value of the
+   * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while
+   * iterating through pages.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -285,8 +288,8 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. Read mask is used for a more granular control over what the API returns.
-   * If the mask is not present all fields will be returned except
+   * Optional. Read mask is used for a more granular control over what the API
+   * returns. If the mask is not present all fields will be returned except
    * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
    * specified in the mask.
    * </pre>
@@ -304,8 +307,8 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. Read mask is used for a more granular control over what the API returns.
-   * If the mask is not present all fields will be returned except
+   * Optional. Read mask is used for a more granular control over what the API
+   * returns. If the mask is not present all fields will be returned except
    * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
    * specified in the mask.
    * </pre>
@@ -323,8 +326,8 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Optional. Read mask is used for a more granular control over what the API returns.
-   * If the mask is not present all fields will be returned except
+   * Optional. Read mask is used for a more granular control over what the API
+   * returns. If the mask is not present all fields will be returned except
    * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
    * specified in the mask.
    * </pre>
@@ -541,7 +544,8 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Request message for [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues].
+   * Request message for
+   * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2beta2.ListQueuesRequest}
@@ -906,11 +910,10 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * `filter` can be used to specify a subset of queues. Any [Queue][google.cloud.tasks.v2beta2.Queue]
-     * field can be used as a filter and several operators as supported.
-     * For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The filter syntax is the same as
-     * described in
-     * [Stackdriver's Advanced Logs
+     * `filter` can be used to specify a subset of queues. Any
+     * [Queue][google.cloud.tasks.v2beta2.Queue] field can be used as a filter and
+     * several operators as supported. For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The
+     * filter syntax is the same as described in [Stackdriver's Advanced Logs
      * Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
      * Sample filter "app_engine_http_target: *".
      * Note that using filters might cause fewer queues than the
@@ -936,11 +939,10 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * `filter` can be used to specify a subset of queues. Any [Queue][google.cloud.tasks.v2beta2.Queue]
-     * field can be used as a filter and several operators as supported.
-     * For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The filter syntax is the same as
-     * described in
-     * [Stackdriver's Advanced Logs
+     * `filter` can be used to specify a subset of queues. Any
+     * [Queue][google.cloud.tasks.v2beta2.Queue] field can be used as a filter and
+     * several operators as supported. For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The
+     * filter syntax is the same as described in [Stackdriver's Advanced Logs
      * Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
      * Sample filter "app_engine_http_target: *".
      * Note that using filters might cause fewer queues than the
@@ -966,11 +968,10 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * `filter` can be used to specify a subset of queues. Any [Queue][google.cloud.tasks.v2beta2.Queue]
-     * field can be used as a filter and several operators as supported.
-     * For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The filter syntax is the same as
-     * described in
-     * [Stackdriver's Advanced Logs
+     * `filter` can be used to specify a subset of queues. Any
+     * [Queue][google.cloud.tasks.v2beta2.Queue] field can be used as a filter and
+     * several operators as supported. For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The
+     * filter syntax is the same as described in [Stackdriver's Advanced Logs
      * Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
      * Sample filter "app_engine_http_target: *".
      * Note that using filters might cause fewer queues than the
@@ -995,11 +996,10 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * `filter` can be used to specify a subset of queues. Any [Queue][google.cloud.tasks.v2beta2.Queue]
-     * field can be used as a filter and several operators as supported.
-     * For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The filter syntax is the same as
-     * described in
-     * [Stackdriver's Advanced Logs
+     * `filter` can be used to specify a subset of queues. Any
+     * [Queue][google.cloud.tasks.v2beta2.Queue] field can be used as a filter and
+     * several operators as supported. For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The
+     * filter syntax is the same as described in [Stackdriver's Advanced Logs
      * Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
      * Sample filter "app_engine_http_target: *".
      * Note that using filters might cause fewer queues than the
@@ -1020,11 +1020,10 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * `filter` can be used to specify a subset of queues. Any [Queue][google.cloud.tasks.v2beta2.Queue]
-     * field can be used as a filter and several operators as supported.
-     * For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The filter syntax is the same as
-     * described in
-     * [Stackdriver's Advanced Logs
+     * `filter` can be used to specify a subset of queues. Any
+     * [Queue][google.cloud.tasks.v2beta2.Queue] field can be used as a filter and
+     * several operators as supported. For example: `&lt;=, &lt;, &gt;=, &gt;, !=, =, :`. The
+     * filter syntax is the same as described in [Stackdriver's Advanced Logs
      * Filters](https://cloud.google.com/logging/docs/view/advanced_filters).
      * Sample filter "app_engine_http_target: *".
      * Note that using filters might cause fewer queues than the
@@ -1056,8 +1055,8 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      * The maximum page size is 9800. If unspecified, the page size will
      * be the maximum. Fewer queues than requested might be returned,
      * even if more queues exist; use the
-     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token] in the
-     * response to determine if more queues exist.
+     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token]
+     * in the response to determine if more queues exist.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
@@ -1076,8 +1075,8 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      * The maximum page size is 9800. If unspecified, the page size will
      * be the maximum. Fewer queues than requested might be returned,
      * even if more queues exist; use the
-     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token] in the
-     * response to determine if more queues exist.
+     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token]
+     * in the response to determine if more queues exist.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
@@ -1100,8 +1099,8 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      * The maximum page size is 9800. If unspecified, the page size will
      * be the maximum. Fewer queues than requested might be returned,
      * even if more queues exist; use the
-     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token] in the
-     * response to determine if more queues exist.
+     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token]
+     * in the response to determine if more queues exist.
      * </pre>
      *
      * <code>int32 page_size = 3;</code>
@@ -1123,10 +1122,12 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      * A token identifying the page of results to return.
      * To request the first page results, page_token must be empty. To
      * request the next page of results, page_token must be the value of
-     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token] returned
-     * from the previous call to [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues]
-     * method. It is an error to switch the value of the
-     * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while iterating through pages.
+     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token]
+     * returned from the previous call to
+     * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues] method. It
+     * is an error to switch the value of the
+     * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while
+     * iterating through pages.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1151,10 +1152,12 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      * A token identifying the page of results to return.
      * To request the first page results, page_token must be empty. To
      * request the next page of results, page_token must be the value of
-     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token] returned
-     * from the previous call to [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues]
-     * method. It is an error to switch the value of the
-     * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while iterating through pages.
+     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token]
+     * returned from the previous call to
+     * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues] method. It
+     * is an error to switch the value of the
+     * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while
+     * iterating through pages.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1179,10 +1182,12 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      * A token identifying the page of results to return.
      * To request the first page results, page_token must be empty. To
      * request the next page of results, page_token must be the value of
-     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token] returned
-     * from the previous call to [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues]
-     * method. It is an error to switch the value of the
-     * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while iterating through pages.
+     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token]
+     * returned from the previous call to
+     * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues] method. It
+     * is an error to switch the value of the
+     * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while
+     * iterating through pages.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1206,10 +1211,12 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      * A token identifying the page of results to return.
      * To request the first page results, page_token must be empty. To
      * request the next page of results, page_token must be the value of
-     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token] returned
-     * from the previous call to [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues]
-     * method. It is an error to switch the value of the
-     * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while iterating through pages.
+     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token]
+     * returned from the previous call to
+     * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues] method. It
+     * is an error to switch the value of the
+     * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while
+     * iterating through pages.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1229,10 +1236,12 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      * A token identifying the page of results to return.
      * To request the first page results, page_token must be empty. To
      * request the next page of results, page_token must be the value of
-     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token] returned
-     * from the previous call to [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues]
-     * method. It is an error to switch the value of the
-     * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while iterating through pages.
+     * [next_page_token][google.cloud.tasks.v2beta2.ListQueuesResponse.next_page_token]
+     * returned from the previous call to
+     * [ListQueues][google.cloud.tasks.v2beta2.CloudTasks.ListQueues] method. It
+     * is an error to switch the value of the
+     * [filter][google.cloud.tasks.v2beta2.ListQueuesRequest.filter] while
+     * iterating through pages.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -1261,8 +1270,8 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Read mask is used for a more granular control over what the API returns.
-     * If the mask is not present all fields will be returned except
+     * Optional. Read mask is used for a more granular control over what the API
+     * returns. If the mask is not present all fields will be returned except
      * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
      * specified in the mask.
      * </pre>
@@ -1279,8 +1288,8 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Read mask is used for a more granular control over what the API returns.
-     * If the mask is not present all fields will be returned except
+     * Optional. Read mask is used for a more granular control over what the API
+     * returns. If the mask is not present all fields will be returned except
      * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
      * specified in the mask.
      * </pre>
@@ -1301,8 +1310,8 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Read mask is used for a more granular control over what the API returns.
-     * If the mask is not present all fields will be returned except
+     * Optional. Read mask is used for a more granular control over what the API
+     * returns. If the mask is not present all fields will be returned except
      * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
      * specified in the mask.
      * </pre>
@@ -1327,8 +1336,8 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Read mask is used for a more granular control over what the API returns.
-     * If the mask is not present all fields will be returned except
+     * Optional. Read mask is used for a more granular control over what the API
+     * returns. If the mask is not present all fields will be returned except
      * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
      * specified in the mask.
      * </pre>
@@ -1350,8 +1359,8 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Read mask is used for a more granular control over what the API returns.
-     * If the mask is not present all fields will be returned except
+     * Optional. Read mask is used for a more granular control over what the API
+     * returns. If the mask is not present all fields will be returned except
      * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
      * specified in the mask.
      * </pre>
@@ -1379,8 +1388,8 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Read mask is used for a more granular control over what the API returns.
-     * If the mask is not present all fields will be returned except
+     * Optional. Read mask is used for a more granular control over what the API
+     * returns. If the mask is not present all fields will be returned except
      * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
      * specified in the mask.
      * </pre>
@@ -1402,8 +1411,8 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Read mask is used for a more granular control over what the API returns.
-     * If the mask is not present all fields will be returned except
+     * Optional. Read mask is used for a more granular control over what the API
+     * returns. If the mask is not present all fields will be returned except
      * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
      * specified in the mask.
      * </pre>
@@ -1420,8 +1429,8 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Read mask is used for a more granular control over what the API returns.
-     * If the mask is not present all fields will be returned except
+     * Optional. Read mask is used for a more granular control over what the API
+     * returns. If the mask is not present all fields will be returned except
      * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
      * specified in the mask.
      * </pre>
@@ -1440,8 +1449,8 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Optional. Read mask is used for a more granular control over what the API returns.
-     * If the mask is not present all fields will be returned except
+     * Optional. Read mask is used for a more granular control over what the API
+     * returns. If the mask is not present all fields will be returned except
      * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
      * specified in the mask.
      * </pre>

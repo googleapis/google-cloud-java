@@ -221,10 +221,11 @@ public final class CloudTasksProto {
           + "\344\223\002@\";/v2beta3/{name=projects/*/location"
           + "s/*/queues/*/tasks/*}:run:\001*\332A\004name\032M\312A\031"
           + "cloudtasks.googleapis.com\322A.https://www."
-          + "googleapis.com/auth/cloud-platformBq\n\036co"
-          + "m.google.cloud.tasks.v2beta3B\017CloudTasks"
-          + "ProtoP\001Z4cloud.google.com/go/tasks/apiv2"
-          + "beta3/taskspb;taskspb\242\002\005TASKSb\006proto3"
+          + "googleapis.com/auth/cloud-platformB\200\001\n\036c"
+          + "om.google.cloud.tasks.v2beta3B\017CloudTask"
+          + "sProtoP\001ZCcloud.google.com/go/cloudtasks"
+          + "/apiv2beta3/cloudtaskspb;cloudtaskspb\242\002\005"
+          + "TASKSb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

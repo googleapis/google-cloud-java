@@ -135,8 +135,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
    * Required. The task's current schedule time, available in the
    * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
    * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
-   * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction is
-   * to ensure that your worker currently holds the lease.
+   * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response.
+   * This restriction is to ensure that your worker currently holds the lease.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -155,8 +155,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
    * Required. The task's current schedule time, available in the
    * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
    * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
-   * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction is
-   * to ensure that your worker currently holds the lease.
+   * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response.
+   * This restriction is to ensure that your worker currently holds the lease.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -177,8 +177,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
    * Required. The task's current schedule time, available in the
    * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
    * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
-   * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction is
-   * to ensure that your worker currently holds the lease.
+   * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response.
+   * This restriction is to ensure that your worker currently holds the lease.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -256,16 +256,17 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] will be
-   * returned.
-   * By default response_view is [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all
-   * information is retrieved by default because some data, such as
-   * payloads, might be desirable to return only when needed because
-   * of its large size or because of the sensitivity of data that it
-   * contains.
-   * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL] requires
-   * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
-   * permission on the [Task][google.cloud.tasks.v2beta2.Task] resource.
+   * The response_view specifies which subset of the
+   * [Task][google.cloud.tasks.v2beta2.Task] will be returned.
+   * By default response_view is
+   * [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all information is
+   * retrieved by default because some data, such as payloads, might be
+   * desirable to return only when needed because of its large size or because
+   * of the sensitivity of data that it contains.
+   * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL]
+   * requires `cloudtasks.tasks.fullView` [Google
+   * IAM](https://cloud.google.com/iam/) permission on the
+   * [Task][google.cloud.tasks.v2beta2.Task] resource.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
@@ -280,16 +281,17 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] will be
-   * returned.
-   * By default response_view is [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all
-   * information is retrieved by default because some data, such as
-   * payloads, might be desirable to return only when needed because
-   * of its large size or because of the sensitivity of data that it
-   * contains.
-   * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL] requires
-   * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
-   * permission on the [Task][google.cloud.tasks.v2beta2.Task] resource.
+   * The response_view specifies which subset of the
+   * [Task][google.cloud.tasks.v2beta2.Task] will be returned.
+   * By default response_view is
+   * [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all information is
+   * retrieved by default because some data, such as payloads, might be
+   * desirable to return only when needed because of its large size or because
+   * of the sensitivity of data that it contains.
+   * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL]
+   * requires `cloudtasks.tasks.fullView` [Google
+   * IAM](https://cloud.google.com/iam/) permission on the
+   * [Task][google.cloud.tasks.v2beta2.Task] resource.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
@@ -866,8 +868,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * Required. The task's current schedule time, available in the
      * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
      * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
-     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction is
-     * to ensure that your worker currently holds the lease.
+     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response.
+     * This restriction is to ensure that your worker currently holds the lease.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -885,8 +887,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * Required. The task's current schedule time, available in the
      * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
      * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
-     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction is
-     * to ensure that your worker currently holds the lease.
+     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response.
+     * This restriction is to ensure that your worker currently holds the lease.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -910,8 +912,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * Required. The task's current schedule time, available in the
      * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
      * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
-     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction is
-     * to ensure that your worker currently holds the lease.
+     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response.
+     * This restriction is to ensure that your worker currently holds the lease.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -937,8 +939,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * Required. The task's current schedule time, available in the
      * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
      * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
-     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction is
-     * to ensure that your worker currently holds the lease.
+     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response.
+     * This restriction is to ensure that your worker currently holds the lease.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -961,8 +963,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * Required. The task's current schedule time, available in the
      * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
      * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
-     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction is
-     * to ensure that your worker currently holds the lease.
+     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response.
+     * This restriction is to ensure that your worker currently holds the lease.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -991,8 +993,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * Required. The task's current schedule time, available in the
      * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
      * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
-     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction is
-     * to ensure that your worker currently holds the lease.
+     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response.
+     * This restriction is to ensure that your worker currently holds the lease.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1015,8 +1017,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * Required. The task's current schedule time, available in the
      * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
      * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
-     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction is
-     * to ensure that your worker currently holds the lease.
+     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response.
+     * This restriction is to ensure that your worker currently holds the lease.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1034,8 +1036,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * Required. The task's current schedule time, available in the
      * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
      * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
-     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction is
-     * to ensure that your worker currently holds the lease.
+     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response.
+     * This restriction is to ensure that your worker currently holds the lease.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1057,8 +1059,8 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      * Required. The task's current schedule time, available in the
      * [schedule_time][google.cloud.tasks.v2beta2.Task.schedule_time] returned by
      * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] response or
-     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response. This restriction is
-     * to ensure that your worker currently holds the lease.
+     * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease] response.
+     * This restriction is to ensure that your worker currently holds the lease.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp schedule_time = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -1296,16 +1298,17 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] will be
-     * returned.
-     * By default response_view is [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all
-     * information is retrieved by default because some data, such as
-     * payloads, might be desirable to return only when needed because
-     * of its large size or because of the sensitivity of data that it
-     * contains.
-     * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL] requires
-     * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
-     * permission on the [Task][google.cloud.tasks.v2beta2.Task] resource.
+     * The response_view specifies which subset of the
+     * [Task][google.cloud.tasks.v2beta2.Task] will be returned.
+     * By default response_view is
+     * [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all information is
+     * retrieved by default because some data, such as payloads, might be
+     * desirable to return only when needed because of its large size or because
+     * of the sensitivity of data that it contains.
+     * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL]
+     * requires `cloudtasks.tasks.fullView` [Google
+     * IAM](https://cloud.google.com/iam/) permission on the
+     * [Task][google.cloud.tasks.v2beta2.Task] resource.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
@@ -1320,16 +1323,17 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] will be
-     * returned.
-     * By default response_view is [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all
-     * information is retrieved by default because some data, such as
-     * payloads, might be desirable to return only when needed because
-     * of its large size or because of the sensitivity of data that it
-     * contains.
-     * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL] requires
-     * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
-     * permission on the [Task][google.cloud.tasks.v2beta2.Task] resource.
+     * The response_view specifies which subset of the
+     * [Task][google.cloud.tasks.v2beta2.Task] will be returned.
+     * By default response_view is
+     * [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all information is
+     * retrieved by default because some data, such as payloads, might be
+     * desirable to return only when needed because of its large size or because
+     * of the sensitivity of data that it contains.
+     * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL]
+     * requires `cloudtasks.tasks.fullView` [Google
+     * IAM](https://cloud.google.com/iam/) permission on the
+     * [Task][google.cloud.tasks.v2beta2.Task] resource.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
@@ -1347,16 +1351,17 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] will be
-     * returned.
-     * By default response_view is [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all
-     * information is retrieved by default because some data, such as
-     * payloads, might be desirable to return only when needed because
-     * of its large size or because of the sensitivity of data that it
-     * contains.
-     * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL] requires
-     * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
-     * permission on the [Task][google.cloud.tasks.v2beta2.Task] resource.
+     * The response_view specifies which subset of the
+     * [Task][google.cloud.tasks.v2beta2.Task] will be returned.
+     * By default response_view is
+     * [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all information is
+     * retrieved by default because some data, such as payloads, might be
+     * desirable to return only when needed because of its large size or because
+     * of the sensitivity of data that it contains.
+     * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL]
+     * requires `cloudtasks.tasks.fullView` [Google
+     * IAM](https://cloud.google.com/iam/) permission on the
+     * [Task][google.cloud.tasks.v2beta2.Task] resource.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
@@ -1373,16 +1378,17 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] will be
-     * returned.
-     * By default response_view is [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all
-     * information is retrieved by default because some data, such as
-     * payloads, might be desirable to return only when needed because
-     * of its large size or because of the sensitivity of data that it
-     * contains.
-     * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL] requires
-     * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
-     * permission on the [Task][google.cloud.tasks.v2beta2.Task] resource.
+     * The response_view specifies which subset of the
+     * [Task][google.cloud.tasks.v2beta2.Task] will be returned.
+     * By default response_view is
+     * [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all information is
+     * retrieved by default because some data, such as payloads, might be
+     * desirable to return only when needed because of its large size or because
+     * of the sensitivity of data that it contains.
+     * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL]
+     * requires `cloudtasks.tasks.fullView` [Google
+     * IAM](https://cloud.google.com/iam/) permission on the
+     * [Task][google.cloud.tasks.v2beta2.Task] resource.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
@@ -1403,16 +1409,17 @@ public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] will be
-     * returned.
-     * By default response_view is [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all
-     * information is retrieved by default because some data, such as
-     * payloads, might be desirable to return only when needed because
-     * of its large size or because of the sensitivity of data that it
-     * contains.
-     * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL] requires
-     * `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/)
-     * permission on the [Task][google.cloud.tasks.v2beta2.Task] resource.
+     * The response_view specifies which subset of the
+     * [Task][google.cloud.tasks.v2beta2.Task] will be returned.
+     * By default response_view is
+     * [BASIC][google.cloud.tasks.v2beta2.Task.View.BASIC]; not all information is
+     * retrieved by default because some data, such as payloads, might be
+     * desirable to return only when needed because of its large size or because
+     * of the sensitivity of data that it contains.
+     * Authorization for [FULL][google.cloud.tasks.v2beta2.Task.View.FULL]
+     * requires `cloudtasks.tasks.fullView` [Google
+     * IAM](https://cloud.google.com/iam/) permission on the
+     * [Task][google.cloud.tasks.v2beta2.Task] resource.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>

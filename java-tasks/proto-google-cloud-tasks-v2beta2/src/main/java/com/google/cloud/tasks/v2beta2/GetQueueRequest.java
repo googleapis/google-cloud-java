@@ -22,7 +22,8 @@ package com.google.cloud.tasks.v2beta2;
  *
  *
  * <pre>
- * Request message for [GetQueue][google.cloud.tasks.v2beta2.CloudTasks.GetQueue].
+ * Request message for
+ * [GetQueue][google.cloud.tasks.v2beta2.CloudTasks.GetQueue].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2beta2.GetQueueRequest}
@@ -130,8 +131,8 @@ public final class GetQueueRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Read mask is used for a more granular control over what the API returns.
-   * If the mask is not present all fields will be returned except
+   * Optional. Read mask is used for a more granular control over what the API
+   * returns. If the mask is not present all fields will be returned except
    * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
    * specified in the mask.
    * </pre>
@@ -149,8 +150,8 @@ public final class GetQueueRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Read mask is used for a more granular control over what the API returns.
-   * If the mask is not present all fields will be returned except
+   * Optional. Read mask is used for a more granular control over what the API
+   * returns. If the mask is not present all fields will be returned except
    * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
    * specified in the mask.
    * </pre>
@@ -168,8 +169,8 @@ public final class GetQueueRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Read mask is used for a more granular control over what the API returns.
-   * If the mask is not present all fields will be returned except
+   * Optional. Read mask is used for a more granular control over what the API
+   * returns. If the mask is not present all fields will be returned except
    * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
    * specified in the mask.
    * </pre>
@@ -359,7 +360,8 @@ public final class GetQueueRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Request message for [GetQueue][google.cloud.tasks.v2beta2.CloudTasks.GetQueue].
+   * Request message for
+   * [GetQueue][google.cloud.tasks.v2beta2.CloudTasks.GetQueue].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2beta2.GetQueueRequest}
@@ -685,8 +687,8 @@ public final class GetQueueRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Read mask is used for a more granular control over what the API returns.
-     * If the mask is not present all fields will be returned except
+     * Optional. Read mask is used for a more granular control over what the API
+     * returns. If the mask is not present all fields will be returned except
      * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
      * specified in the mask.
      * </pre>
@@ -703,8 +705,8 @@ public final class GetQueueRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Read mask is used for a more granular control over what the API returns.
-     * If the mask is not present all fields will be returned except
+     * Optional. Read mask is used for a more granular control over what the API
+     * returns. If the mask is not present all fields will be returned except
      * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
      * specified in the mask.
      * </pre>
@@ -725,8 +727,8 @@ public final class GetQueueRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Read mask is used for a more granular control over what the API returns.
-     * If the mask is not present all fields will be returned except
+     * Optional. Read mask is used for a more granular control over what the API
+     * returns. If the mask is not present all fields will be returned except
      * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
      * specified in the mask.
      * </pre>
@@ -751,8 +753,8 @@ public final class GetQueueRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Read mask is used for a more granular control over what the API returns.
-     * If the mask is not present all fields will be returned except
+     * Optional. Read mask is used for a more granular control over what the API
+     * returns. If the mask is not present all fields will be returned except
      * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
      * specified in the mask.
      * </pre>
@@ -774,8 +776,8 @@ public final class GetQueueRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Read mask is used for a more granular control over what the API returns.
-     * If the mask is not present all fields will be returned except
+     * Optional. Read mask is used for a more granular control over what the API
+     * returns. If the mask is not present all fields will be returned except
      * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
      * specified in the mask.
      * </pre>
@@ -803,8 +805,8 @@ public final class GetQueueRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Read mask is used for a more granular control over what the API returns.
-     * If the mask is not present all fields will be returned except
+     * Optional. Read mask is used for a more granular control over what the API
+     * returns. If the mask is not present all fields will be returned except
      * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
      * specified in the mask.
      * </pre>
@@ -826,8 +828,8 @@ public final class GetQueueRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Read mask is used for a more granular control over what the API returns.
-     * If the mask is not present all fields will be returned except
+     * Optional. Read mask is used for a more granular control over what the API
+     * returns. If the mask is not present all fields will be returned except
      * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
      * specified in the mask.
      * </pre>
@@ -844,8 +846,8 @@ public final class GetQueueRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Read mask is used for a more granular control over what the API returns.
-     * If the mask is not present all fields will be returned except
+     * Optional. Read mask is used for a more granular control over what the API
+     * returns. If the mask is not present all fields will be returned except
      * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
      * specified in the mask.
      * </pre>
@@ -864,8 +866,8 @@ public final class GetQueueRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Read mask is used for a more granular control over what the API returns.
-     * If the mask is not present all fields will be returned except
+     * Optional. Read mask is used for a more granular control over what the API
+     * returns. If the mask is not present all fields will be returned except
      * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
      * specified in the mask.
      * </pre>
