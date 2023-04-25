@@ -184,12 +184,11 @@ public final class TraceProto {
           + "id\030\002 \001(\01320.google.devtools.cloudtrace.v2"
           + ".TruncatableString\"@\n\021TruncatableString\022"
           + "\r\n\005value\030\001 \001(\t\022\034\n\024truncated_byte_count\030\002"
-          + " \001(\005B\305\001\n!com.google.devtools.cloudtrace."
-          + "v2B\nTraceProtoP\001ZGgoogle.golang.org/genp"
-          + "roto/googleapis/devtools/cloudtrace/v2;c"
-          + "loudtrace\252\002\025Google.Cloud.Trace.V2\312\002\025Goog"
-          + "le\\Cloud\\Trace\\V2\352\002\030Google::Cloud::Trace"
-          + "::V2b\006proto3"
+          + " \001(\005B\255\001\n!com.google.devtools.cloudtrace."
+          + "v2B\nTraceProtoP\001Z/cloud.google.com/go/tr"
+          + "ace/apiv2/tracepb;tracepb\252\002\025Google.Cloud"
+          + ".Trace.V2\312\002\025Google\\Cloud\\Trace\\V2\352\002\030Goog"
+          + "le::Cloud::Trace::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
