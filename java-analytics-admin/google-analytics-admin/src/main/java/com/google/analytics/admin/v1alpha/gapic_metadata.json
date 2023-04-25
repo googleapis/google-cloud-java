@@ -61,6 +61,9 @@
             "CreateAudience": {
               "methods": ["createAudience", "createAudience", "createAudience", "createAudienceCallable"]
             },
+            "CreateChannelGroup": {
+              "methods": ["createChannelGroup", "createChannelGroup", "createChannelGroup", "createChannelGroupCallable"]
+            },
             "CreateConnectedSiteTag": {
               "methods": ["createConnectedSiteTag", "createConnectedSiteTagCallable"]
             },
@@ -109,6 +112,9 @@
             "DeleteAccount": {
               "methods": ["deleteAccount", "deleteAccount", "deleteAccount", "deleteAccountCallable"]
             },
+            "DeleteChannelGroup": {
+              "methods": ["deleteChannelGroup", "deleteChannelGroup", "deleteChannelGroup", "deleteChannelGroupCallable"]
+            },
             "DeleteConnectedSiteTag": {
               "methods": ["deleteConnectedSiteTag", "deleteConnectedSiteTagCallable"]
             },
@@ -148,6 +154,9 @@
             "FetchAutomatedGa4ConfigurationOptOut": {
               "methods": ["fetchAutomatedGa4ConfigurationOptOut", "fetchAutomatedGa4ConfigurationOptOutCallable"]
             },
+            "FetchConnectedGa4Property": {
+              "methods": ["fetchConnectedGa4Property", "fetchConnectedGa4PropertyCallable"]
+            },
             "GetAccessBinding": {
               "methods": ["getAccessBinding", "getAccessBinding", "getAccessBinding", "getAccessBindingCallable"]
             },
@@ -162,6 +171,9 @@
             },
             "GetBigQueryLink": {
               "methods": ["getBigQueryLink", "getBigQueryLink", "getBigQueryLink", "getBigQueryLinkCallable"]
+            },
+            "GetChannelGroup": {
+              "methods": ["getChannelGroup", "getChannelGroup", "getChannelGroup", "getChannelGroupCallable"]
             },
             "GetConversionEvent": {
               "methods": ["getConversionEvent", "getConversionEvent", "getConversionEvent", "getConversionEventCallable"]
@@ -225,6 +237,9 @@
             },
             "ListBigQueryLinks": {
               "methods": ["listBigQueryLinks", "listBigQueryLinks", "listBigQueryLinks", "listBigQueryLinksPagedCallable", "listBigQueryLinksCallable"]
+            },
+            "ListChannelGroups": {
+              "methods": ["listChannelGroups", "listChannelGroups", "listChannelGroups", "listChannelGroupsPagedCallable", "listChannelGroupsCallable"]
             },
             "ListConnectedSiteTags": {
               "methods": ["listConnectedSiteTags", "listConnectedSiteTagsCallable"]
@@ -291,6 +306,9 @@
             },
             "UpdateAudience": {
               "methods": ["updateAudience", "updateAudience", "updateAudienceCallable"]
+            },
+            "UpdateChannelGroup": {
+              "methods": ["updateChannelGroup", "updateChannelGroup", "updateChannelGroupCallable"]
             },
             "UpdateCustomDimension": {
               "methods": ["updateCustomDimension", "updateCustomDimension", "updateCustomDimensionCallable"]

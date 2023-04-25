@@ -22,6 +22,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListBigQueryLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListChannelGroupsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
@@ -66,9 +67,11 @@ import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksRequest;
 import com.google.analytics.admin.v1alpha.BatchUpdateUserLinksResponse;
 import com.google.analytics.admin.v1alpha.BigQueryLink;
 import com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest;
+import com.google.analytics.admin.v1alpha.ChannelGroup;
 import com.google.analytics.admin.v1alpha.ConversionEvent;
 import com.google.analytics.admin.v1alpha.CreateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.CreateAudienceRequest;
+import com.google.analytics.admin.v1alpha.CreateChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest;
 import com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse;
 import com.google.analytics.admin.v1alpha.CreateConversionEventRequest;
@@ -91,6 +94,7 @@ import com.google.analytics.admin.v1alpha.DataSharingSettings;
 import com.google.analytics.admin.v1alpha.DataStream;
 import com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.DeleteAccountRequest;
+import com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest;
 import com.google.analytics.admin.v1alpha.DeleteConversionEventRequest;
 import com.google.analytics.admin.v1alpha.DeleteDataStreamRequest;
@@ -109,12 +113,15 @@ import com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings;
 import com.google.analytics.admin.v1alpha.ExpandedDataSet;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest;
 import com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse;
+import com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest;
+import com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse;
 import com.google.analytics.admin.v1alpha.FirebaseLink;
 import com.google.analytics.admin.v1alpha.GetAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.GetAccountRequest;
 import com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetAudienceRequest;
 import com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest;
+import com.google.analytics.admin.v1alpha.GetChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.GetConversionEventRequest;
 import com.google.analytics.admin.v1alpha.GetCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.GetCustomMetricRequest;
@@ -144,6 +151,8 @@ import com.google.analytics.admin.v1alpha.ListAudiencesRequest;
 import com.google.analytics.admin.v1alpha.ListAudiencesResponse;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest;
 import com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse;
+import com.google.analytics.admin.v1alpha.ListChannelGroupsRequest;
+import com.google.analytics.admin.v1alpha.ListChannelGroupsResponse;
 import com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest;
 import com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse;
 import com.google.analytics.admin.v1alpha.ListConversionEventsRequest;
@@ -187,6 +196,7 @@ import com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest;
 import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateAudienceRequest;
+import com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
@@ -790,6 +800,32 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteExpandedDataSetCallable()");
   }
 
+  public UnaryCallable<GetChannelGroupRequest, ChannelGroup> getChannelGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: getChannelGroupCallable()");
+  }
+
+  public UnaryCallable<ListChannelGroupsRequest, ListChannelGroupsPagedResponse>
+      listChannelGroupsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listChannelGroupsPagedCallable()");
+  }
+
+  public UnaryCallable<ListChannelGroupsRequest, ListChannelGroupsResponse>
+      listChannelGroupsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listChannelGroupsCallable()");
+  }
+
+  public UnaryCallable<CreateChannelGroupRequest, ChannelGroup> createChannelGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: createChannelGroupCallable()");
+  }
+
+  public UnaryCallable<UpdateChannelGroupRequest, ChannelGroup> updateChannelGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateChannelGroupCallable()");
+  }
+
+  public UnaryCallable<DeleteChannelGroupRequest, Empty> deleteChannelGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteChannelGroupCallable()");
+  }
+
   public UnaryCallable<
           SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
       setAutomatedGa4ConfigurationOptOutCallable() {
@@ -842,6 +878,11 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
   public UnaryCallable<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
       listConnectedSiteTagsCallable() {
     throw new UnsupportedOperationException("Not implemented: listConnectedSiteTagsCallable()");
+  }
+
+  public UnaryCallable<FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>
+      fetchConnectedGa4PropertyCallable() {
+    throw new UnsupportedOperationException("Not implemented: fetchConnectedGa4PropertyCallable()");
   }
 
   @Override

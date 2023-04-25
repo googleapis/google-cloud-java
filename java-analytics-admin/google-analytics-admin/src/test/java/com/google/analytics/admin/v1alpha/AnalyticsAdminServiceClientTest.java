@@ -22,6 +22,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListBigQueryLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListChannelGroupsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
@@ -7392,6 +7393,381 @@ public class AnalyticsAdminServiceClientTest {
   }
 
   @Test
+  public void getChannelGroupTest() throws Exception {
+    ChannelGroup expectedResponse =
+        ChannelGroup.newBuilder()
+            .setName(ChannelGroupName.of("[PROPERTY]", "[CHANNEL_GROUP]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .addAllGroupingRule(new ArrayList<GroupingRule>())
+            .setSystemDefined(true)
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    ChannelGroupName name = ChannelGroupName.of("[PROPERTY]", "[CHANNEL_GROUP]");
+
+    ChannelGroup actualResponse = client.getChannelGroup(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetChannelGroupRequest actualRequest = ((GetChannelGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getChannelGroupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      ChannelGroupName name = ChannelGroupName.of("[PROPERTY]", "[CHANNEL_GROUP]");
+      client.getChannelGroup(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getChannelGroupTest2() throws Exception {
+    ChannelGroup expectedResponse =
+        ChannelGroup.newBuilder()
+            .setName(ChannelGroupName.of("[PROPERTY]", "[CHANNEL_GROUP]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .addAllGroupingRule(new ArrayList<GroupingRule>())
+            .setSystemDefined(true)
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ChannelGroup actualResponse = client.getChannelGroup(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetChannelGroupRequest actualRequest = ((GetChannelGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getChannelGroupExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getChannelGroup(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listChannelGroupsTest() throws Exception {
+    ChannelGroup responsesElement = ChannelGroup.newBuilder().build();
+    ListChannelGroupsResponse expectedResponse =
+        ListChannelGroupsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllChannelGroups(Arrays.asList(responsesElement))
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+
+    ListChannelGroupsPagedResponse pagedListResponse = client.listChannelGroups(parent);
+
+    List<ChannelGroup> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getChannelGroupsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListChannelGroupsRequest actualRequest = ((ListChannelGroupsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listChannelGroupsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      client.listChannelGroups(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listChannelGroupsTest2() throws Exception {
+    ChannelGroup responsesElement = ChannelGroup.newBuilder().build();
+    ListChannelGroupsResponse expectedResponse =
+        ListChannelGroupsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllChannelGroups(Arrays.asList(responsesElement))
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListChannelGroupsPagedResponse pagedListResponse = client.listChannelGroups(parent);
+
+    List<ChannelGroup> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getChannelGroupsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListChannelGroupsRequest actualRequest = ((ListChannelGroupsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listChannelGroupsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listChannelGroups(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createChannelGroupTest() throws Exception {
+    ChannelGroup expectedResponse =
+        ChannelGroup.newBuilder()
+            .setName(ChannelGroupName.of("[PROPERTY]", "[CHANNEL_GROUP]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .addAllGroupingRule(new ArrayList<GroupingRule>())
+            .setSystemDefined(true)
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+    ChannelGroup channelGroup = ChannelGroup.newBuilder().build();
+
+    ChannelGroup actualResponse = client.createChannelGroup(parent, channelGroup);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateChannelGroupRequest actualRequest = ((CreateChannelGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(channelGroup, actualRequest.getChannelGroup());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createChannelGroupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      ChannelGroup channelGroup = ChannelGroup.newBuilder().build();
+      client.createChannelGroup(parent, channelGroup);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createChannelGroupTest2() throws Exception {
+    ChannelGroup expectedResponse =
+        ChannelGroup.newBuilder()
+            .setName(ChannelGroupName.of("[PROPERTY]", "[CHANNEL_GROUP]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .addAllGroupingRule(new ArrayList<GroupingRule>())
+            .setSystemDefined(true)
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    ChannelGroup channelGroup = ChannelGroup.newBuilder().build();
+
+    ChannelGroup actualResponse = client.createChannelGroup(parent, channelGroup);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateChannelGroupRequest actualRequest = ((CreateChannelGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(channelGroup, actualRequest.getChannelGroup());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createChannelGroupExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      ChannelGroup channelGroup = ChannelGroup.newBuilder().build();
+      client.createChannelGroup(parent, channelGroup);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateChannelGroupTest() throws Exception {
+    ChannelGroup expectedResponse =
+        ChannelGroup.newBuilder()
+            .setName(ChannelGroupName.of("[PROPERTY]", "[CHANNEL_GROUP]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .addAllGroupingRule(new ArrayList<GroupingRule>())
+            .setSystemDefined(true)
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    ChannelGroup channelGroup = ChannelGroup.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ChannelGroup actualResponse = client.updateChannelGroup(channelGroup, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateChannelGroupRequest actualRequest = ((UpdateChannelGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(channelGroup, actualRequest.getChannelGroup());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateChannelGroupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      ChannelGroup channelGroup = ChannelGroup.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateChannelGroup(channelGroup, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteChannelGroupTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    ChannelGroupName name = ChannelGroupName.of("[PROPERTY]", "[CHANNEL_GROUP]");
+
+    client.deleteChannelGroup(name);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteChannelGroupRequest actualRequest = ((DeleteChannelGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteChannelGroupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      ChannelGroupName name = ChannelGroupName.of("[PROPERTY]", "[CHANNEL_GROUP]");
+      client.deleteChannelGroup(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteChannelGroupTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteChannelGroup(name);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteChannelGroupRequest actualRequest = ((DeleteChannelGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteChannelGroupExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteChannelGroup(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void setAutomatedGa4ConfigurationOptOutTest() throws Exception {
     SetAutomatedGa4ConfigurationOptOutResponse expectedResponse =
         SetAutomatedGa4ConfigurationOptOutResponse.newBuilder().build();
@@ -7943,6 +8319,51 @@ public class AnalyticsAdminServiceClientTest {
       ListConnectedSiteTagsRequest request =
           ListConnectedSiteTagsRequest.newBuilder().setProperty("property-993141291").build();
       client.listConnectedSiteTags(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchConnectedGa4PropertyTest() throws Exception {
+    FetchConnectedGa4PropertyResponse expectedResponse =
+        FetchConnectedGa4PropertyResponse.newBuilder()
+            .setProperty(PropertyName.of("[PROPERTY]").toString())
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    FetchConnectedGa4PropertyRequest request =
+        FetchConnectedGa4PropertyRequest.newBuilder()
+            .setProperty(PropertyName.of("[PROPERTY]").toString())
+            .build();
+
+    FetchConnectedGa4PropertyResponse actualResponse = client.fetchConnectedGa4Property(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchConnectedGa4PropertyRequest actualRequest =
+        ((FetchConnectedGa4PropertyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getProperty(), actualRequest.getProperty());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchConnectedGa4PropertyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      FetchConnectedGa4PropertyRequest request =
+          FetchConnectedGa4PropertyRequest.newBuilder()
+              .setProperty(PropertyName.of("[PROPERTY]").toString())
+              .build();
+      client.fetchConnectedGa4Property(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

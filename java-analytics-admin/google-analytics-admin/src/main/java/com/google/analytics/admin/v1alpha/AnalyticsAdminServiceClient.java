@@ -11378,7 +11378,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the Audience to get. Example format:
+   * @param name Required. The name of the ExpandedDataSet to get. Example format:
    *     properties/1234/expandedDataSets/5678
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -11409,7 +11409,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the Audience to get. Example format:
+   * @param name Required. The name of the ExpandedDataSet to get. Example format:
    *     properties/1234/expandedDataSets/5678
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -11996,6 +11996,639 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteExpandedDataSetRequest, Empty> deleteExpandedDataSetCallable() {
     return stub.deleteExpandedDataSetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single ChannelGroup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ChannelGroupName name = ChannelGroupName.of("[PROPERTY]", "[CHANNEL_GROUP]");
+   *   ChannelGroup response = analyticsAdminServiceClient.getChannelGroup(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The ChannelGroup to get. Example format:
+   *     properties/1234/channelGroups/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ChannelGroup getChannelGroup(ChannelGroupName name) {
+    GetChannelGroupRequest request =
+        GetChannelGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getChannelGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single ChannelGroup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = ChannelGroupName.of("[PROPERTY]", "[CHANNEL_GROUP]").toString();
+   *   ChannelGroup response = analyticsAdminServiceClient.getChannelGroup(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The ChannelGroup to get. Example format:
+   *     properties/1234/channelGroups/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ChannelGroup getChannelGroup(String name) {
+    GetChannelGroupRequest request = GetChannelGroupRequest.newBuilder().setName(name).build();
+    return getChannelGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single ChannelGroup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetChannelGroupRequest request =
+   *       GetChannelGroupRequest.newBuilder()
+   *           .setName(ChannelGroupName.of("[PROPERTY]", "[CHANNEL_GROUP]").toString())
+   *           .build();
+   *   ChannelGroup response = analyticsAdminServiceClient.getChannelGroup(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ChannelGroup getChannelGroup(GetChannelGroupRequest request) {
+    return getChannelGroupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single ChannelGroup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetChannelGroupRequest request =
+   *       GetChannelGroupRequest.newBuilder()
+   *           .setName(ChannelGroupName.of("[PROPERTY]", "[CHANNEL_GROUP]").toString())
+   *           .build();
+   *   ApiFuture<ChannelGroup> future =
+   *       analyticsAdminServiceClient.getChannelGroupCallable().futureCall(request);
+   *   // Do something.
+   *   ChannelGroup response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetChannelGroupRequest, ChannelGroup> getChannelGroupCallable() {
+    return stub.getChannelGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ChannelGroups on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (ChannelGroup element :
+   *       analyticsAdminServiceClient.listChannelGroups(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The property for which to list ChannelGroups. Example format:
+   *     properties/1234
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListChannelGroupsPagedResponse listChannelGroups(PropertyName parent) {
+    ListChannelGroupsRequest request =
+        ListChannelGroupsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listChannelGroups(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ChannelGroups on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   for (ChannelGroup element :
+   *       analyticsAdminServiceClient.listChannelGroups(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The property for which to list ChannelGroups. Example format:
+   *     properties/1234
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListChannelGroupsPagedResponse listChannelGroups(String parent) {
+    ListChannelGroupsRequest request =
+        ListChannelGroupsRequest.newBuilder().setParent(parent).build();
+    return listChannelGroups(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ChannelGroups on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListChannelGroupsRequest request =
+   *       ListChannelGroupsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (ChannelGroup element :
+   *       analyticsAdminServiceClient.listChannelGroups(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListChannelGroupsPagedResponse listChannelGroups(ListChannelGroupsRequest request) {
+    return listChannelGroupsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ChannelGroups on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListChannelGroupsRequest request =
+   *       ListChannelGroupsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<ChannelGroup> future =
+   *       analyticsAdminServiceClient.listChannelGroupsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ChannelGroup element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListChannelGroupsRequest, ListChannelGroupsPagedResponse>
+      listChannelGroupsPagedCallable() {
+    return stub.listChannelGroupsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists ChannelGroups on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListChannelGroupsRequest request =
+   *       ListChannelGroupsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListChannelGroupsResponse response =
+   *         analyticsAdminServiceClient.listChannelGroupsCallable().call(request);
+   *     for (ChannelGroup element : response.getChannelGroupsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListChannelGroupsRequest, ListChannelGroupsResponse>
+      listChannelGroupsCallable() {
+    return stub.listChannelGroupsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a ChannelGroup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   ChannelGroup channelGroup = ChannelGroup.newBuilder().build();
+   *   ChannelGroup response = analyticsAdminServiceClient.createChannelGroup(parent, channelGroup);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The property for which to create a ChannelGroup. Example format:
+   *     properties/1234
+   * @param channelGroup Required. The ChannelGroup to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ChannelGroup createChannelGroup(PropertyName parent, ChannelGroup channelGroup) {
+    CreateChannelGroupRequest request =
+        CreateChannelGroupRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setChannelGroup(channelGroup)
+            .build();
+    return createChannelGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a ChannelGroup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   ChannelGroup channelGroup = ChannelGroup.newBuilder().build();
+   *   ChannelGroup response = analyticsAdminServiceClient.createChannelGroup(parent, channelGroup);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The property for which to create a ChannelGroup. Example format:
+   *     properties/1234
+   * @param channelGroup Required. The ChannelGroup to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ChannelGroup createChannelGroup(String parent, ChannelGroup channelGroup) {
+    CreateChannelGroupRequest request =
+        CreateChannelGroupRequest.newBuilder()
+            .setParent(parent)
+            .setChannelGroup(channelGroup)
+            .build();
+    return createChannelGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a ChannelGroup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateChannelGroupRequest request =
+   *       CreateChannelGroupRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setChannelGroup(ChannelGroup.newBuilder().build())
+   *           .build();
+   *   ChannelGroup response = analyticsAdminServiceClient.createChannelGroup(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ChannelGroup createChannelGroup(CreateChannelGroupRequest request) {
+    return createChannelGroupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a ChannelGroup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateChannelGroupRequest request =
+   *       CreateChannelGroupRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setChannelGroup(ChannelGroup.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ChannelGroup> future =
+   *       analyticsAdminServiceClient.createChannelGroupCallable().futureCall(request);
+   *   // Do something.
+   *   ChannelGroup response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateChannelGroupRequest, ChannelGroup> createChannelGroupCallable() {
+    return stub.createChannelGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a ChannelGroup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ChannelGroup channelGroup = ChannelGroup.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   ChannelGroup response =
+   *       analyticsAdminServiceClient.updateChannelGroup(channelGroup, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param channelGroup Required. The ChannelGroup to update. The resource's `name` field is used
+   *     to identify the ChannelGroup to be updated.
+   * @param updateMask Required. The list of fields to be updated. Field names must be in snake case
+   *     (e.g., "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     entity, use one path with the string "&#42;" to match all fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ChannelGroup updateChannelGroup(ChannelGroup channelGroup, FieldMask updateMask) {
+    UpdateChannelGroupRequest request =
+        UpdateChannelGroupRequest.newBuilder()
+            .setChannelGroup(channelGroup)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateChannelGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a ChannelGroup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateChannelGroupRequest request =
+   *       UpdateChannelGroupRequest.newBuilder()
+   *           .setChannelGroup(ChannelGroup.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ChannelGroup response = analyticsAdminServiceClient.updateChannelGroup(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ChannelGroup updateChannelGroup(UpdateChannelGroupRequest request) {
+    return updateChannelGroupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a ChannelGroup.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateChannelGroupRequest request =
+   *       UpdateChannelGroupRequest.newBuilder()
+   *           .setChannelGroup(ChannelGroup.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ChannelGroup> future =
+   *       analyticsAdminServiceClient.updateChannelGroupCallable().futureCall(request);
+   *   // Do something.
+   *   ChannelGroup response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateChannelGroupRequest, ChannelGroup> updateChannelGroupCallable() {
+    return stub.updateChannelGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a ChannelGroup on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ChannelGroupName name = ChannelGroupName.of("[PROPERTY]", "[CHANNEL_GROUP]");
+   *   analyticsAdminServiceClient.deleteChannelGroup(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The ChannelGroup to delete. Example format:
+   *     properties/1234/channelGroups/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteChannelGroup(ChannelGroupName name) {
+    DeleteChannelGroupRequest request =
+        DeleteChannelGroupRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteChannelGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a ChannelGroup on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = ChannelGroupName.of("[PROPERTY]", "[CHANNEL_GROUP]").toString();
+   *   analyticsAdminServiceClient.deleteChannelGroup(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The ChannelGroup to delete. Example format:
+   *     properties/1234/channelGroups/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteChannelGroup(String name) {
+    DeleteChannelGroupRequest request =
+        DeleteChannelGroupRequest.newBuilder().setName(name).build();
+    deleteChannelGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a ChannelGroup on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteChannelGroupRequest request =
+   *       DeleteChannelGroupRequest.newBuilder()
+   *           .setName(ChannelGroupName.of("[PROPERTY]", "[CHANNEL_GROUP]").toString())
+   *           .build();
+   *   analyticsAdminServiceClient.deleteChannelGroup(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteChannelGroup(DeleteChannelGroupRequest request) {
+    deleteChannelGroupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a ChannelGroup on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteChannelGroupRequest request =
+   *       DeleteChannelGroupRequest.newBuilder()
+   *           .setName(ChannelGroupName.of("[PROPERTY]", "[CHANNEL_GROUP]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.deleteChannelGroupCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteChannelGroupRequest, Empty> deleteChannelGroupCallable() {
+    return stub.deleteChannelGroupCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -12848,6 +13481,69 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   public final UnaryCallable<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
       listConnectedSiteTagsCallable() {
     return stub.listConnectedSiteTagsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Given a specified UA property, looks up the GA4 property connected to it. Note: this cannot be
+   * used with GA4 properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   FetchConnectedGa4PropertyRequest request =
+   *       FetchConnectedGa4PropertyRequest.newBuilder()
+   *           .setProperty(PropertyName.of("[PROPERTY]").toString())
+   *           .build();
+   *   FetchConnectedGa4PropertyResponse response =
+   *       analyticsAdminServiceClient.fetchConnectedGa4Property(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchConnectedGa4PropertyResponse fetchConnectedGa4Property(
+      FetchConnectedGa4PropertyRequest request) {
+    return fetchConnectedGa4PropertyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Given a specified UA property, looks up the GA4 property connected to it. Note: this cannot be
+   * used with GA4 properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   FetchConnectedGa4PropertyRequest request =
+   *       FetchConnectedGa4PropertyRequest.newBuilder()
+   *           .setProperty(PropertyName.of("[PROPERTY]").toString())
+   *           .build();
+   *   ApiFuture<FetchConnectedGa4PropertyResponse> future =
+   *       analyticsAdminServiceClient.fetchConnectedGa4PropertyCallable().futureCall(request);
+   *   // Do something.
+   *   FetchConnectedGa4PropertyResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>
+      fetchConnectedGa4PropertyCallable() {
+    return stub.fetchConnectedGa4PropertyCallable();
   }
 
   @Override
@@ -14466,6 +15162,86 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     protected ListExpandedDataSetsFixedSizeCollection createCollection(
         List<ListExpandedDataSetsPage> pages, int collectionSize) {
       return new ListExpandedDataSetsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListChannelGroupsPagedResponse
+      extends AbstractPagedListResponse<
+          ListChannelGroupsRequest,
+          ListChannelGroupsResponse,
+          ChannelGroup,
+          ListChannelGroupsPage,
+          ListChannelGroupsFixedSizeCollection> {
+
+    public static ApiFuture<ListChannelGroupsPagedResponse> createAsync(
+        PageContext<ListChannelGroupsRequest, ListChannelGroupsResponse, ChannelGroup> context,
+        ApiFuture<ListChannelGroupsResponse> futureResponse) {
+      ApiFuture<ListChannelGroupsPage> futurePage =
+          ListChannelGroupsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListChannelGroupsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListChannelGroupsPagedResponse(ListChannelGroupsPage page) {
+      super(page, ListChannelGroupsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListChannelGroupsPage
+      extends AbstractPage<
+          ListChannelGroupsRequest,
+          ListChannelGroupsResponse,
+          ChannelGroup,
+          ListChannelGroupsPage> {
+
+    private ListChannelGroupsPage(
+        PageContext<ListChannelGroupsRequest, ListChannelGroupsResponse, ChannelGroup> context,
+        ListChannelGroupsResponse response) {
+      super(context, response);
+    }
+
+    private static ListChannelGroupsPage createEmptyPage() {
+      return new ListChannelGroupsPage(null, null);
+    }
+
+    @Override
+    protected ListChannelGroupsPage createPage(
+        PageContext<ListChannelGroupsRequest, ListChannelGroupsResponse, ChannelGroup> context,
+        ListChannelGroupsResponse response) {
+      return new ListChannelGroupsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListChannelGroupsPage> createPageAsync(
+        PageContext<ListChannelGroupsRequest, ListChannelGroupsResponse, ChannelGroup> context,
+        ApiFuture<ListChannelGroupsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListChannelGroupsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListChannelGroupsRequest,
+          ListChannelGroupsResponse,
+          ChannelGroup,
+          ListChannelGroupsPage,
+          ListChannelGroupsFixedSizeCollection> {
+
+    private ListChannelGroupsFixedSizeCollection(
+        List<ListChannelGroupsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListChannelGroupsFixedSizeCollection createEmptyCollection() {
+      return new ListChannelGroupsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListChannelGroupsFixedSizeCollection createCollection(
+        List<ListChannelGroupsPage> pages, int collectionSize) {
+      return new ListChannelGroupsFixedSizeCollection(pages, collectionSize);
     }
   }
 

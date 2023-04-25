@@ -675,6 +675,41 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     * A snapshot of a ChannelGroup resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.ChannelGroup channel_group = 22;</code>
+     *
+     * @return Whether the channelGroup field is set.
+     */
+    boolean hasChannelGroup();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a ChannelGroup resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.ChannelGroup channel_group = 22;</code>
+     *
+     * @return The channelGroup.
+     */
+    com.google.analytics.admin.v1alpha.ChannelGroup getChannelGroup();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a ChannelGroup resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.ChannelGroup channel_group = 22;</code>
+     */
+    com.google.analytics.admin.v1alpha.ChannelGroupOrBuilder getChannelGroupOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * A snapshot of a BigQuery link resource in change history.
      * </pre>
      *
@@ -823,6 +858,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       DATA_STREAM(18),
       ATTRIBUTION_SETTINGS(20),
       EXPANDED_DATA_SET(21),
+      CHANNEL_GROUP(22),
       BIGQUERY_LINK(23),
       ENHANCED_MEASUREMENT_SETTINGS(24),
       RESOURCE_NOT_SET(0);
@@ -875,6 +911,8 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             return ATTRIBUTION_SETTINGS;
           case 21:
             return EXPANDED_DATA_SET;
+          case 22:
+            return CHANNEL_GROUP;
           case 23:
             return BIGQUERY_LINK;
           case 24:
@@ -1756,6 +1794,57 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       return com.google.analytics.admin.v1alpha.ExpandedDataSet.getDefaultInstance();
     }
 
+    public static final int CHANNEL_GROUP_FIELD_NUMBER = 22;
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a ChannelGroup resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.ChannelGroup channel_group = 22;</code>
+     *
+     * @return Whether the channelGroup field is set.
+     */
+    @java.lang.Override
+    public boolean hasChannelGroup() {
+      return resourceCase_ == 22;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a ChannelGroup resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.ChannelGroup channel_group = 22;</code>
+     *
+     * @return The channelGroup.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.ChannelGroup getChannelGroup() {
+      if (resourceCase_ == 22) {
+        return (com.google.analytics.admin.v1alpha.ChannelGroup) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.ChannelGroup.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a ChannelGroup resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.ChannelGroup channel_group = 22;</code>
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.ChannelGroupOrBuilder getChannelGroupOrBuilder() {
+      if (resourceCase_ == 22) {
+        return (com.google.analytics.admin.v1alpha.ChannelGroup) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.ChannelGroup.getDefaultInstance();
+    }
+
     public static final int BIGQUERY_LINK_FIELD_NUMBER = 23;
     /**
      *
@@ -1934,6 +2023,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       if (resourceCase_ == 21) {
         output.writeMessage(21, (com.google.analytics.admin.v1alpha.ExpandedDataSet) resource_);
       }
+      if (resourceCase_ == 22) {
+        output.writeMessage(22, (com.google.analytics.admin.v1alpha.ChannelGroup) resource_);
+      }
       if (resourceCase_ == 23) {
         output.writeMessage(23, (com.google.analytics.admin.v1alpha.BigQueryLink) resource_);
       }
@@ -2032,6 +2124,11 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 21, (com.google.analytics.admin.v1alpha.ExpandedDataSet) resource_);
       }
+      if (resourceCase_ == 22) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                22, (com.google.analytics.admin.v1alpha.ChannelGroup) resource_);
+      }
       if (resourceCase_ == 23) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -2112,6 +2209,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           break;
         case 21:
           if (!getExpandedDataSet().equals(other.getExpandedDataSet())) return false;
+          break;
+        case 22:
+          if (!getChannelGroup().equals(other.getChannelGroup())) return false;
           break;
         case 23:
           if (!getBigqueryLink().equals(other.getBigqueryLink())) return false;
@@ -2198,6 +2298,10 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         case 21:
           hash = (37 * hash) + EXPANDED_DATA_SET_FIELD_NUMBER;
           hash = (53 * hash) + getExpandedDataSet().hashCode();
+          break;
+        case 22:
+          hash = (37 * hash) + CHANNEL_GROUP_FIELD_NUMBER;
+          hash = (53 * hash) + getChannelGroup().hashCode();
           break;
         case 23:
           hash = (37 * hash) + BIGQUERY_LINK_FIELD_NUMBER;
@@ -2410,6 +2514,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         if (expandedDataSetBuilder_ != null) {
           expandedDataSetBuilder_.clear();
         }
+        if (channelGroupBuilder_ != null) {
+          channelGroupBuilder_.clear();
+        }
         if (bigqueryLinkBuilder_ != null) {
           bigqueryLinkBuilder_.clear();
         }
@@ -2513,6 +2620,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         if (resourceCase_ == 21 && expandedDataSetBuilder_ != null) {
           result.resource_ = expandedDataSetBuilder_.build();
+        }
+        if (resourceCase_ == 22 && channelGroupBuilder_ != null) {
+          result.resource_ = channelGroupBuilder_.build();
         }
         if (resourceCase_ == 23 && bigqueryLinkBuilder_ != null) {
           result.resource_ = bigqueryLinkBuilder_.build();
@@ -2655,6 +2765,11 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           case EXPANDED_DATA_SET:
             {
               mergeExpandedDataSet(other.getExpandedDataSet());
+              break;
+            }
+          case CHANNEL_GROUP:
+            {
+              mergeChannelGroup(other.getChannelGroup());
               break;
             }
           case BIGQUERY_LINK:
@@ -2806,6 +2921,12 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
                   resourceCase_ = 21;
                   break;
                 } // case 170
+              case 178:
+                {
+                  input.readMessage(getChannelGroupFieldBuilder().getBuilder(), extensionRegistry);
+                  resourceCase_ = 22;
+                  break;
+                } // case 178
               case 186:
                 {
                   input.readMessage(getBigqueryLinkFieldBuilder().getBuilder(), extensionRegistry);
@@ -6363,6 +6484,216 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 21;
         onChanged();
         return expandedDataSetBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.ChannelGroup,
+              com.google.analytics.admin.v1alpha.ChannelGroup.Builder,
+              com.google.analytics.admin.v1alpha.ChannelGroupOrBuilder>
+          channelGroupBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a ChannelGroup resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.ChannelGroup channel_group = 22;</code>
+       *
+       * @return Whether the channelGroup field is set.
+       */
+      @java.lang.Override
+      public boolean hasChannelGroup() {
+        return resourceCase_ == 22;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a ChannelGroup resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.ChannelGroup channel_group = 22;</code>
+       *
+       * @return The channelGroup.
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.ChannelGroup getChannelGroup() {
+        if (channelGroupBuilder_ == null) {
+          if (resourceCase_ == 22) {
+            return (com.google.analytics.admin.v1alpha.ChannelGroup) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.ChannelGroup.getDefaultInstance();
+        } else {
+          if (resourceCase_ == 22) {
+            return channelGroupBuilder_.getMessage();
+          }
+          return com.google.analytics.admin.v1alpha.ChannelGroup.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a ChannelGroup resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.ChannelGroup channel_group = 22;</code>
+       */
+      public Builder setChannelGroup(com.google.analytics.admin.v1alpha.ChannelGroup value) {
+        if (channelGroupBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          channelGroupBuilder_.setMessage(value);
+        }
+        resourceCase_ = 22;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a ChannelGroup resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.ChannelGroup channel_group = 22;</code>
+       */
+      public Builder setChannelGroup(
+          com.google.analytics.admin.v1alpha.ChannelGroup.Builder builderForValue) {
+        if (channelGroupBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          channelGroupBuilder_.setMessage(builderForValue.build());
+        }
+        resourceCase_ = 22;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a ChannelGroup resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.ChannelGroup channel_group = 22;</code>
+       */
+      public Builder mergeChannelGroup(com.google.analytics.admin.v1alpha.ChannelGroup value) {
+        if (channelGroupBuilder_ == null) {
+          if (resourceCase_ == 22
+              && resource_
+                  != com.google.analytics.admin.v1alpha.ChannelGroup.getDefaultInstance()) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.ChannelGroup.newBuilder(
+                        (com.google.analytics.admin.v1alpha.ChannelGroup) resource_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          if (resourceCase_ == 22) {
+            channelGroupBuilder_.mergeFrom(value);
+          } else {
+            channelGroupBuilder_.setMessage(value);
+          }
+        }
+        resourceCase_ = 22;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a ChannelGroup resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.ChannelGroup channel_group = 22;</code>
+       */
+      public Builder clearChannelGroup() {
+        if (channelGroupBuilder_ == null) {
+          if (resourceCase_ == 22) {
+            resourceCase_ = 0;
+            resource_ = null;
+            onChanged();
+          }
+        } else {
+          if (resourceCase_ == 22) {
+            resourceCase_ = 0;
+            resource_ = null;
+          }
+          channelGroupBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a ChannelGroup resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.ChannelGroup channel_group = 22;</code>
+       */
+      public com.google.analytics.admin.v1alpha.ChannelGroup.Builder getChannelGroupBuilder() {
+        return getChannelGroupFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a ChannelGroup resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.ChannelGroup channel_group = 22;</code>
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.ChannelGroupOrBuilder getChannelGroupOrBuilder() {
+        if ((resourceCase_ == 22) && (channelGroupBuilder_ != null)) {
+          return channelGroupBuilder_.getMessageOrBuilder();
+        } else {
+          if (resourceCase_ == 22) {
+            return (com.google.analytics.admin.v1alpha.ChannelGroup) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.ChannelGroup.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a ChannelGroup resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.ChannelGroup channel_group = 22;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.ChannelGroup,
+              com.google.analytics.admin.v1alpha.ChannelGroup.Builder,
+              com.google.analytics.admin.v1alpha.ChannelGroupOrBuilder>
+          getChannelGroupFieldBuilder() {
+        if (channelGroupBuilder_ == null) {
+          if (!(resourceCase_ == 22)) {
+            resource_ = com.google.analytics.admin.v1alpha.ChannelGroup.getDefaultInstance();
+          }
+          channelGroupBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.analytics.admin.v1alpha.ChannelGroup,
+                  com.google.analytics.admin.v1alpha.ChannelGroup.Builder,
+                  com.google.analytics.admin.v1alpha.ChannelGroupOrBuilder>(
+                  (com.google.analytics.admin.v1alpha.ChannelGroup) resource_,
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        resourceCase_ = 22;
+        onChanged();
+        return channelGroupBuilder_;
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<

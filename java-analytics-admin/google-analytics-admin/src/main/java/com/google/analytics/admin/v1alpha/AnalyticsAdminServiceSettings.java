@@ -22,6 +22,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAudiencesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListBigQueryLinksPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListChannelGroupsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListConversionEventsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomDimensionsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListCustomMetricsPagedResponse;
@@ -738,6 +739,33 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).deleteExpandedDataSetSettings();
   }
 
+  /** Returns the object with the settings used for calls to getChannelGroup. */
+  public UnaryCallSettings<GetChannelGroupRequest, ChannelGroup> getChannelGroupSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).getChannelGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listChannelGroups. */
+  public PagedCallSettings<
+          ListChannelGroupsRequest, ListChannelGroupsResponse, ListChannelGroupsPagedResponse>
+      listChannelGroupsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).listChannelGroupsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createChannelGroup. */
+  public UnaryCallSettings<CreateChannelGroupRequest, ChannelGroup> createChannelGroupSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).createChannelGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateChannelGroup. */
+  public UnaryCallSettings<UpdateChannelGroupRequest, ChannelGroup> updateChannelGroupSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).updateChannelGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteChannelGroup. */
+  public UnaryCallSettings<DeleteChannelGroupRequest, Empty> deleteChannelGroupSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings()).deleteChannelGroupSettings();
+  }
+
   /** Returns the object with the settings used for calls to setAutomatedGa4ConfigurationOptOut. */
   public UnaryCallSettings<
           SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
@@ -797,6 +825,13 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
   public UnaryCallSettings<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
       listConnectedSiteTagsSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).listConnectedSiteTagsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to fetchConnectedGa4Property. */
+  public UnaryCallSettings<FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>
+      fetchConnectedGa4PropertySettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .fetchConnectedGa4PropertySettings();
   }
 
   public static final AnalyticsAdminServiceSettings create(AnalyticsAdminServiceStubSettings stub)
@@ -1564,6 +1599,37 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
       return getStubSettingsBuilder().deleteExpandedDataSetSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getChannelGroup. */
+    public UnaryCallSettings.Builder<GetChannelGroupRequest, ChannelGroup>
+        getChannelGroupSettings() {
+      return getStubSettingsBuilder().getChannelGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listChannelGroups. */
+    public PagedCallSettings.Builder<
+            ListChannelGroupsRequest, ListChannelGroupsResponse, ListChannelGroupsPagedResponse>
+        listChannelGroupsSettings() {
+      return getStubSettingsBuilder().listChannelGroupsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createChannelGroup. */
+    public UnaryCallSettings.Builder<CreateChannelGroupRequest, ChannelGroup>
+        createChannelGroupSettings() {
+      return getStubSettingsBuilder().createChannelGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateChannelGroup. */
+    public UnaryCallSettings.Builder<UpdateChannelGroupRequest, ChannelGroup>
+        updateChannelGroupSettings() {
+      return getStubSettingsBuilder().updateChannelGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteChannelGroup. */
+    public UnaryCallSettings.Builder<DeleteChannelGroupRequest, Empty>
+        deleteChannelGroupSettings() {
+      return getStubSettingsBuilder().deleteChannelGroupSettings();
+    }
+
     /**
      * Returns the builder for the settings used for calls to setAutomatedGa4ConfigurationOptOut.
      */
@@ -1626,6 +1692,13 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     public UnaryCallSettings.Builder<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
         listConnectedSiteTagsSettings() {
       return getStubSettingsBuilder().listConnectedSiteTagsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to fetchConnectedGa4Property. */
+    public UnaryCallSettings.Builder<
+            FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>
+        fetchConnectedGa4PropertySettings() {
+      return getStubSettingsBuilder().fetchConnectedGa4PropertySettings();
     }
 
     @Override
