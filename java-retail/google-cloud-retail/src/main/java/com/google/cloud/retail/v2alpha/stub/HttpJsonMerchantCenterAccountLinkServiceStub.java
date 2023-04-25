@@ -115,15 +115,12 @@ public class HttpJsonMerchantCenterAccountLinkServiceStub
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<CreateMerchantCenterAccountLinkRequest>newBuilder()
                       .setPath(
-                          "/v2alpha/{merchantCenterAccountLink.name=projects/*/locations/*/catalogs/*/merchantCenterAccountLinks/*}",
+                          "/v2alpha/{parent=projects/*/locations/*/catalogs/*}/merchantCenterAccountLinks",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<CreateMerchantCenterAccountLinkRequest> serializer =
                                 ProtoRestSerializer.create();
-                            serializer.putPathParam(
-                                fields,
-                                "merchantCenterAccountLink.name",
-                                request.getMerchantCenterAccountLink().getName());
+                            serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
                       .setQueryParamsExtractor(
@@ -131,7 +128,6 @@ public class HttpJsonMerchantCenterAccountLinkServiceStub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreateMerchantCenterAccountLinkRequest> serializer =
                                 ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "parent", request.getParent());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })

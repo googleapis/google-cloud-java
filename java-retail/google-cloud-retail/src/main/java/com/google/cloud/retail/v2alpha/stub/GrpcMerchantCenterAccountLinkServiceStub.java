@@ -169,9 +169,7 @@ public class GrpcMerchantCenterAccountLinkServiceStub extends MerchantCenterAcco
                 .setParamsExtractor(
                     request -> {
                       ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                      params.put(
-                          "merchant_center_account_link.name",
-                          String.valueOf(request.getMerchantCenterAccountLink().getName()));
+                      params.put("parent", String.valueOf(request.getParent()));
                       return params.build();
                     })
                 .build();
