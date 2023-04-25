@@ -259,15 +259,15 @@ public final class RecaptchaEnterpriseProto {
           + "a1/{name=projects/*/assessments/*}:annot"
           + "ate:\001*\332A\017name,annotation\032V\312A\"recaptchaen"
           + "terprise.googleapis.com\322A.https://www.go"
-          + "ogleapis.com/auth/cloud-platformB\257\002\n&com"
+          + "ogleapis.com/auth/cloud-platformB\262\002\n&com"
           + ".google.recaptchaenterprise.v1beta1B\030Rec"
-          + "aptchaEnterpriseProtoP\001Z^cloud.google.co"
-          + "m/go/recaptchaenterprise/apiv1beta1/reca"
-          + "ptchaenterprisepb;recaptchaenterprisepb\242"
-          + "\002\004GCRE\252\002(Google.Cloud.RecaptchaEnterpris"
-          + "e.V1Beta1\312\002(Google\\Cloud\\RecaptchaEnterp"
-          + "rise\\V1beta1\352\002+Google::Cloud::RecaptchaE"
-          + "nterprise::V1beta1b\006proto3"
+          + "aptchaEnterpriseProtoP\001Zacloud.google.co"
+          + "m/go/recaptchaenterprise/v2/apiv1beta1/r"
+          + "ecaptchaenterprisepb;recaptchaenterprise"
+          + "pb\242\002\004GCRE\252\002(Google.Cloud.RecaptchaEnterp"
+          + "rise.V1Beta1\312\002(Google\\Cloud\\RecaptchaEnt"
+          + "erprise\\V1beta1\352\002+Google::Cloud::Recaptc"
+          + "haEnterprise::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
