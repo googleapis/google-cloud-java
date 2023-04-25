@@ -56,7 +56,7 @@ public interface CreateQueuedResourceRequestOrBuilder
    *
    *
    * <pre>
-   * The unqualified resource name. Should follow the ^[A-Za-z0-9_.~+%-]+$
+   * The unqualified resource name. Should follow the `^[A-Za-z0-9_.~+%-]+$`
    * regex format.
    * </pre>
    *
@@ -69,7 +69,7 @@ public interface CreateQueuedResourceRequestOrBuilder
    *
    *
    * <pre>
-   * The unqualified resource name. Should follow the ^[A-Za-z0-9_.~+%-]+$
+   * The unqualified resource name. Should follow the `^[A-Za-z0-9_.~+%-]+$`
    * regex format.
    * </pre>
    *
