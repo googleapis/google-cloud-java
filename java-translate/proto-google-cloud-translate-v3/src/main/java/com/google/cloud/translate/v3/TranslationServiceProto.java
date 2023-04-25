@@ -513,13 +513,13 @@ public final class TranslationServiceProto {
           + "DeleteGlossaryMetadata\032~\312A\030translate.goo"
           + "gleapis.com\322A`https://www.googleapis.com"
           + "/auth/cloud-platform,https://www.googlea"
-          + "pis.com/auth/cloud-translationB\327\001\n\035com.g"
+          + "pis.com/auth/cloud-translationB\321\001\n\035com.g"
           + "oogle.cloud.translate.v3B\027TranslationSer"
-          + "viceProtoP\001ZAcloud.google.com/go/transla"
-          + "tion/apiv3/translationpb;translationpb\370\001"
-          + "\001\252\002\031Google.Cloud.Translate.V3\312\002\031Google\\C"
-          + "loud\\Translate\\V3\352\002\034Google::Cloud::Trans"
-          + "late::V3b\006proto3"
+          + "viceProtoP\001Z;cloud.google.com/go/transla"
+          + "te/apiv3/translatepb;translatepb\370\001\001\252\002\031Go"
+          + "ogle.Cloud.Translate.V3\312\002\031Google\\Cloud\\T"
+          + "ranslate\\V3\352\002\034Google::Cloud::Translate::"
+          + "V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
