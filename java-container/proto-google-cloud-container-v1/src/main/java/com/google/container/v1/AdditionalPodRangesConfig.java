@@ -38,7 +38,9 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
     super(builder);
   }
 
-  private AdditionalPodRangesConfig() {}
+  private AdditionalPodRangesConfig() {
+    podRangeNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -66,6 +68,69 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
             com.google.container.v1.AdditionalPodRangesConfig.Builder.class);
   }
 
+  public static final int POD_RANGE_NAMES_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringList podRangeNames_;
+  /**
+   *
+   *
+   * <pre>
+   * Name for pod secondary ipv4 range which has the actual range defined ahead.
+   * </pre>
+   *
+   * <code>repeated string pod_range_names = 1;</code>
+   *
+   * @return A list containing the podRangeNames.
+   */
+  public com.google.protobuf.ProtocolStringList getPodRangeNamesList() {
+    return podRangeNames_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Name for pod secondary ipv4 range which has the actual range defined ahead.
+   * </pre>
+   *
+   * <code>repeated string pod_range_names = 1;</code>
+   *
+   * @return The count of podRangeNames.
+   */
+  public int getPodRangeNamesCount() {
+    return podRangeNames_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Name for pod secondary ipv4 range which has the actual range defined ahead.
+   * </pre>
+   *
+   * <code>repeated string pod_range_names = 1;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The podRangeNames at the given index.
+   */
+  public java.lang.String getPodRangeNames(int index) {
+    return podRangeNames_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Name for pod secondary ipv4 range which has the actual range defined ahead.
+   * </pre>
+   *
+   * <code>repeated string pod_range_names = 1;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the podRangeNames at the given index.
+   */
+  public com.google.protobuf.ByteString getPodRangeNamesBytes(int index) {
+    return podRangeNames_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -80,6 +145,9 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    for (int i = 0; i < podRangeNames_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, podRangeNames_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -89,6 +157,14 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
+    {
+      int dataSize = 0;
+      for (int i = 0; i < podRangeNames_.size(); i++) {
+        dataSize += computeStringSizeNoTag(podRangeNames_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getPodRangeNamesList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -105,6 +181,7 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
     com.google.container.v1.AdditionalPodRangesConfig other =
         (com.google.container.v1.AdditionalPodRangesConfig) obj;
 
+    if (!getPodRangeNamesList().equals(other.getPodRangeNamesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -116,6 +193,10 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (getPodRangeNamesCount() > 0) {
+      hash = (37 * hash) + POD_RANGE_NAMES_FIELD_NUMBER;
+      hash = (53 * hash) + getPodRangeNamesList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -255,6 +336,9 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
+      podRangeNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -282,8 +366,25 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
     public com.google.container.v1.AdditionalPodRangesConfig buildPartial() {
       com.google.container.v1.AdditionalPodRangesConfig result =
           new com.google.container.v1.AdditionalPodRangesConfig(this);
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.container.v1.AdditionalPodRangesConfig result) {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        podRangeNames_ = podRangeNames_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.podRangeNames_ = podRangeNames_;
+    }
+
+    private void buildPartial0(com.google.container.v1.AdditionalPodRangesConfig result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override
@@ -332,6 +433,16 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
     public Builder mergeFrom(com.google.container.v1.AdditionalPodRangesConfig other) {
       if (other == com.google.container.v1.AdditionalPodRangesConfig.getDefaultInstance())
         return this;
+      if (!other.podRangeNames_.isEmpty()) {
+        if (podRangeNames_.isEmpty()) {
+          podRangeNames_ = other.podRangeNames_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensurePodRangeNamesIsMutable();
+          podRangeNames_.addAll(other.podRangeNames_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -358,6 +469,13 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
             case 0:
               done = true;
               break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensurePodRangeNamesIsMutable();
+                podRangeNames_.add(s);
+                break;
+              } // case 10
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -372,6 +490,176 @@ public final class AdditionalPodRangesConfig extends com.google.protobuf.Generat
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+
+    private int bitField0_;
+
+    private com.google.protobuf.LazyStringList podRangeNames_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensurePodRangeNamesIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        podRangeNames_ = new com.google.protobuf.LazyStringArrayList(podRangeNames_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name for pod secondary ipv4 range which has the actual range defined ahead.
+     * </pre>
+     *
+     * <code>repeated string pod_range_names = 1;</code>
+     *
+     * @return A list containing the podRangeNames.
+     */
+    public com.google.protobuf.ProtocolStringList getPodRangeNamesList() {
+      return podRangeNames_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name for pod secondary ipv4 range which has the actual range defined ahead.
+     * </pre>
+     *
+     * <code>repeated string pod_range_names = 1;</code>
+     *
+     * @return The count of podRangeNames.
+     */
+    public int getPodRangeNamesCount() {
+      return podRangeNames_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name for pod secondary ipv4 range which has the actual range defined ahead.
+     * </pre>
+     *
+     * <code>repeated string pod_range_names = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The podRangeNames at the given index.
+     */
+    public java.lang.String getPodRangeNames(int index) {
+      return podRangeNames_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name for pod secondary ipv4 range which has the actual range defined ahead.
+     * </pre>
+     *
+     * <code>repeated string pod_range_names = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the podRangeNames at the given index.
+     */
+    public com.google.protobuf.ByteString getPodRangeNamesBytes(int index) {
+      return podRangeNames_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name for pod secondary ipv4 range which has the actual range defined ahead.
+     * </pre>
+     *
+     * <code>repeated string pod_range_names = 1;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The podRangeNames to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPodRangeNames(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePodRangeNamesIsMutable();
+      podRangeNames_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name for pod secondary ipv4 range which has the actual range defined ahead.
+     * </pre>
+     *
+     * <code>repeated string pod_range_names = 1;</code>
+     *
+     * @param value The podRangeNames to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPodRangeNames(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePodRangeNamesIsMutable();
+      podRangeNames_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name for pod secondary ipv4 range which has the actual range defined ahead.
+     * </pre>
+     *
+     * <code>repeated string pod_range_names = 1;</code>
+     *
+     * @param values The podRangeNames to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllPodRangeNames(java.lang.Iterable<java.lang.String> values) {
+      ensurePodRangeNamesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, podRangeNames_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name for pod secondary ipv4 range which has the actual range defined ahead.
+     * </pre>
+     *
+     * <code>repeated string pod_range_names = 1;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPodRangeNames() {
+      podRangeNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name for pod secondary ipv4 range which has the actual range defined ahead.
+     * </pre>
+     *
+     * <code>repeated string pod_range_names = 1;</code>
+     *
+     * @param value The bytes of the podRangeNames to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPodRangeNamesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensurePodRangeNamesIsMutable();
+      podRangeNames_.add(value);
+      onChanged();
       return this;
     }
 
