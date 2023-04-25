@@ -32,6 +32,7 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
+import com.google.protobuf.Struct;
 import com.google.rpc.Status;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -91,7 +92,9 @@ public class DocumentServiceClientHttpJsonTest {
                     .toString())
             .setId("id3355")
             .setSchemaId("schemaId-697673060")
+            .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
+            .setDerivedStructData(Struct.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -145,7 +148,9 @@ public class DocumentServiceClientHttpJsonTest {
                     .toString())
             .setId("id3355")
             .setSchemaId("schemaId-697673060")
+            .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
+            .setDerivedStructData(Struct.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -303,7 +308,9 @@ public class DocumentServiceClientHttpJsonTest {
                     .toString())
             .setId("id3355")
             .setSchemaId("schemaId-697673060")
+            .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
+            .setDerivedStructData(Struct.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -361,7 +368,9 @@ public class DocumentServiceClientHttpJsonTest {
                     .toString())
             .setId("id3355")
             .setSchemaId("schemaId-697673060")
+            .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
+            .setDerivedStructData(Struct.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -417,7 +426,9 @@ public class DocumentServiceClientHttpJsonTest {
                     .toString())
             .setId("id3355")
             .setSchemaId("schemaId-697673060")
+            .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
+            .setDerivedStructData(Struct.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -431,7 +442,9 @@ public class DocumentServiceClientHttpJsonTest {
                             .toString())
                     .setId("id3355")
                     .setSchemaId("schemaId-697673060")
+                    .setContent(Document.Content.newBuilder().build())
                     .setParentDocumentId("parentDocumentId1990105056")
+                    .setDerivedStructData(Struct.newBuilder().build())
                     .build())
             .setAllowMissing(true)
             .build();
@@ -476,7 +489,9 @@ public class DocumentServiceClientHttpJsonTest {
                               .toString())
                       .setId("id3355")
                       .setSchemaId("schemaId-697673060")
+                      .setContent(Document.Content.newBuilder().build())
                       .setParentDocumentId("parentDocumentId1990105056")
+                      .setDerivedStructData(Struct.newBuilder().build())
                       .build())
               .setAllowMissing(true)
               .build();

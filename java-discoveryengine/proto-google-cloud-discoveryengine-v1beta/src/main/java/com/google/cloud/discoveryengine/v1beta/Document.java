@@ -71,6 +71,1265 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.discoveryengine.v1beta.Document.Builder.class);
   }
 
+  public interface ContentOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.Document.Content)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The content represented as a stream of bytes. The maximum length is
+     * 1,000,000 bytes (1 MB / ~0.95 MiB).
+     * Note: As with all `bytes` fields, this field is represented as pure
+     * binary in Protocol Buffers and base64-encoded string in JSON. For
+     * example, `abc123!?$*&amp;()'-=&#64;~` should be represented as
+     * `YWJjMTIzIT8kKiYoKSctPUB+` in JSON. See
+     * https://developers.google.com/protocol-buffers/docs/proto3#json.
+     * </pre>
+     *
+     * <code>bytes raw_bytes = 2;</code>
+     *
+     * @return Whether the rawBytes field is set.
+     */
+    boolean hasRawBytes();
+    /**
+     *
+     *
+     * <pre>
+     * The content represented as a stream of bytes. The maximum length is
+     * 1,000,000 bytes (1 MB / ~0.95 MiB).
+     * Note: As with all `bytes` fields, this field is represented as pure
+     * binary in Protocol Buffers and base64-encoded string in JSON. For
+     * example, `abc123!?$*&amp;()'-=&#64;~` should be represented as
+     * `YWJjMTIzIT8kKiYoKSctPUB+` in JSON. See
+     * https://developers.google.com/protocol-buffers/docs/proto3#json.
+     * </pre>
+     *
+     * <code>bytes raw_bytes = 2;</code>
+     *
+     * @return The rawBytes.
+     */
+    com.google.protobuf.ByteString getRawBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The URI of the content. Only Cloud Storage URIs (e.g.
+     * `gs://bucket-name/path/to/file`) are supported. The maximum file size
+     * is 100 MB.
+     * </pre>
+     *
+     * <code>string uri = 3;</code>
+     *
+     * @return Whether the uri field is set.
+     */
+    boolean hasUri();
+    /**
+     *
+     *
+     * <pre>
+     * The URI of the content. Only Cloud Storage URIs (e.g.
+     * `gs://bucket-name/path/to/file`) are supported. The maximum file size
+     * is 100 MB.
+     * </pre>
+     *
+     * <code>string uri = 3;</code>
+     *
+     * @return The uri.
+     */
+    java.lang.String getUri();
+    /**
+     *
+     *
+     * <pre>
+     * The URI of the content. Only Cloud Storage URIs (e.g.
+     * `gs://bucket-name/path/to/file`) are supported. The maximum file size
+     * is 100 MB.
+     * </pre>
+     *
+     * <code>string uri = 3;</code>
+     *
+     * @return The bytes for uri.
+     */
+    com.google.protobuf.ByteString getUriBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The MIME type of the content. Supported types:
+     * * `application/pdf` (PDF)
+     * * `text/html` (HTML)
+     * See https://www.iana.org/assignments/media-types/media-types.xhtml.
+     * </pre>
+     *
+     * <code>string mime_type = 1;</code>
+     *
+     * @return The mimeType.
+     */
+    java.lang.String getMimeType();
+    /**
+     *
+     *
+     * <pre>
+     * The MIME type of the content. Supported types:
+     * * `application/pdf` (PDF)
+     * * `text/html` (HTML)
+     * See https://www.iana.org/assignments/media-types/media-types.xhtml.
+     * </pre>
+     *
+     * <code>string mime_type = 1;</code>
+     *
+     * @return The bytes for mimeType.
+     */
+    com.google.protobuf.ByteString getMimeTypeBytes();
+
+    public com.google.cloud.discoveryengine.v1beta.Document.Content.ContentCase getContentCase();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Unstructured data linked to this document.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.discoveryengine.v1beta.Document.Content}
+   */
+  public static final class Content extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.Document.Content)
+      ContentOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use Content.newBuilder() to construct.
+    private Content(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Content() {
+      mimeType_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Content();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1beta.DocumentProto
+          .internal_static_google_cloud_discoveryengine_v1beta_Document_Content_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1beta.DocumentProto
+          .internal_static_google_cloud_discoveryengine_v1beta_Document_Content_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1beta.Document.Content.class,
+              com.google.cloud.discoveryengine.v1beta.Document.Content.Builder.class);
+    }
+
+    private int contentCase_ = 0;
+    private java.lang.Object content_;
+
+    public enum ContentCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      RAW_BYTES(2),
+      URI(3),
+      CONTENT_NOT_SET(0);
+      private final int value;
+
+      private ContentCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ContentCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ContentCase forNumber(int value) {
+        switch (value) {
+          case 2:
+            return RAW_BYTES;
+          case 3:
+            return URI;
+          case 0:
+            return CONTENT_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ContentCase getContentCase() {
+      return ContentCase.forNumber(contentCase_);
+    }
+
+    public static final int RAW_BYTES_FIELD_NUMBER = 2;
+    /**
+     *
+     *
+     * <pre>
+     * The content represented as a stream of bytes. The maximum length is
+     * 1,000,000 bytes (1 MB / ~0.95 MiB).
+     * Note: As with all `bytes` fields, this field is represented as pure
+     * binary in Protocol Buffers and base64-encoded string in JSON. For
+     * example, `abc123!?$*&amp;()'-=&#64;~` should be represented as
+     * `YWJjMTIzIT8kKiYoKSctPUB+` in JSON. See
+     * https://developers.google.com/protocol-buffers/docs/proto3#json.
+     * </pre>
+     *
+     * <code>bytes raw_bytes = 2;</code>
+     *
+     * @return Whether the rawBytes field is set.
+     */
+    @java.lang.Override
+    public boolean hasRawBytes() {
+      return contentCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The content represented as a stream of bytes. The maximum length is
+     * 1,000,000 bytes (1 MB / ~0.95 MiB).
+     * Note: As with all `bytes` fields, this field is represented as pure
+     * binary in Protocol Buffers and base64-encoded string in JSON. For
+     * example, `abc123!?$*&amp;()'-=&#64;~` should be represented as
+     * `YWJjMTIzIT8kKiYoKSctPUB+` in JSON. See
+     * https://developers.google.com/protocol-buffers/docs/proto3#json.
+     * </pre>
+     *
+     * <code>bytes raw_bytes = 2;</code>
+     *
+     * @return The rawBytes.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getRawBytes() {
+      if (contentCase_ == 2) {
+        return (com.google.protobuf.ByteString) content_;
+      }
+      return com.google.protobuf.ByteString.EMPTY;
+    }
+
+    public static final int URI_FIELD_NUMBER = 3;
+    /**
+     *
+     *
+     * <pre>
+     * The URI of the content. Only Cloud Storage URIs (e.g.
+     * `gs://bucket-name/path/to/file`) are supported. The maximum file size
+     * is 100 MB.
+     * </pre>
+     *
+     * <code>string uri = 3;</code>
+     *
+     * @return Whether the uri field is set.
+     */
+    public boolean hasUri() {
+      return contentCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URI of the content. Only Cloud Storage URIs (e.g.
+     * `gs://bucket-name/path/to/file`) are supported. The maximum file size
+     * is 100 MB.
+     * </pre>
+     *
+     * <code>string uri = 3;</code>
+     *
+     * @return The uri.
+     */
+    public java.lang.String getUri() {
+      java.lang.Object ref = "";
+      if (contentCase_ == 3) {
+        ref = content_;
+      }
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (contentCase_ == 3) {
+          content_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The URI of the content. Only Cloud Storage URIs (e.g.
+     * `gs://bucket-name/path/to/file`) are supported. The maximum file size
+     * is 100 MB.
+     * </pre>
+     *
+     * <code>string uri = 3;</code>
+     *
+     * @return The bytes for uri.
+     */
+    public com.google.protobuf.ByteString getUriBytes() {
+      java.lang.Object ref = "";
+      if (contentCase_ == 3) {
+        ref = content_;
+      }
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (contentCase_ == 3) {
+          content_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MIME_TYPE_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object mimeType_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The MIME type of the content. Supported types:
+     * * `application/pdf` (PDF)
+     * * `text/html` (HTML)
+     * See https://www.iana.org/assignments/media-types/media-types.xhtml.
+     * </pre>
+     *
+     * <code>string mime_type = 1;</code>
+     *
+     * @return The mimeType.
+     */
+    @java.lang.Override
+    public java.lang.String getMimeType() {
+      java.lang.Object ref = mimeType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mimeType_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The MIME type of the content. Supported types:
+     * * `application/pdf` (PDF)
+     * * `text/html` (HTML)
+     * See https://www.iana.org/assignments/media-types/media-types.xhtml.
+     * </pre>
+     *
+     * <code>string mime_type = 1;</code>
+     *
+     * @return The bytes for mimeType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getMimeTypeBytes() {
+      java.lang.Object ref = mimeType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        mimeType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, mimeType_);
+      }
+      if (contentCase_ == 2) {
+        output.writeBytes(2, (com.google.protobuf.ByteString) content_);
+      }
+      if (contentCase_ == 3) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, content_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, mimeType_);
+      }
+      if (contentCase_ == 2) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBytesSize(
+                2, (com.google.protobuf.ByteString) content_);
+      }
+      if (contentCase_ == 3) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, content_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.discoveryengine.v1beta.Document.Content)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1beta.Document.Content other =
+          (com.google.cloud.discoveryengine.v1beta.Document.Content) obj;
+
+      if (!getMimeType().equals(other.getMimeType())) return false;
+      if (!getContentCase().equals(other.getContentCase())) return false;
+      switch (contentCase_) {
+        case 2:
+          if (!getRawBytes().equals(other.getRawBytes())) return false;
+          break;
+        case 3:
+          if (!getUri().equals(other.getUri())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MIME_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getMimeType().hashCode();
+      switch (contentCase_) {
+        case 2:
+          hash = (37 * hash) + RAW_BYTES_FIELD_NUMBER;
+          hash = (53 * hash) + getRawBytes().hashCode();
+          break;
+        case 3:
+          hash = (37 * hash) + URI_FIELD_NUMBER;
+          hash = (53 * hash) + getUri().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.Content parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.Content parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.Content parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.Content parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.Content parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.Content parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.Content parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.Content parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.Content parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.Content parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.Content parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.Content parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1beta.Document.Content prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Unstructured data linked to this document.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.discoveryengine.v1beta.Document.Content}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.Document.Content)
+        com.google.cloud.discoveryengine.v1beta.Document.ContentOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.DocumentProto
+            .internal_static_google_cloud_discoveryengine_v1beta_Document_Content_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.DocumentProto
+            .internal_static_google_cloud_discoveryengine_v1beta_Document_Content_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.Document.Content.class,
+                com.google.cloud.discoveryengine.v1beta.Document.Content.Builder.class);
+      }
+
+      // Construct using com.google.cloud.discoveryengine.v1beta.Document.Content.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        mimeType_ = "";
+        contentCase_ = 0;
+        content_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1beta.DocumentProto
+            .internal_static_google_cloud_discoveryengine_v1beta_Document_Content_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.Document.Content getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1beta.Document.Content.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.Document.Content build() {
+        com.google.cloud.discoveryengine.v1beta.Document.Content result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.Document.Content buildPartial() {
+        com.google.cloud.discoveryengine.v1beta.Document.Content result =
+            new com.google.cloud.discoveryengine.v1beta.Document.Content(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.discoveryengine.v1beta.Document.Content result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.mimeType_ = mimeType_;
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.discoveryengine.v1beta.Document.Content result) {
+        result.contentCase_ = contentCase_;
+        result.content_ = this.content_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.discoveryengine.v1beta.Document.Content) {
+          return mergeFrom((com.google.cloud.discoveryengine.v1beta.Document.Content) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.discoveryengine.v1beta.Document.Content other) {
+        if (other == com.google.cloud.discoveryengine.v1beta.Document.Content.getDefaultInstance())
+          return this;
+        if (!other.getMimeType().isEmpty()) {
+          mimeType_ = other.mimeType_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        switch (other.getContentCase()) {
+          case RAW_BYTES:
+            {
+              setRawBytes(other.getRawBytes());
+              break;
+            }
+          case URI:
+            {
+              contentCase_ = 3;
+              content_ = other.content_;
+              onChanged();
+              break;
+            }
+          case CONTENT_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  mimeType_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  content_ = input.readBytes();
+                  contentCase_ = 2;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  contentCase_ = 3;
+                  content_ = s;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int contentCase_ = 0;
+      private java.lang.Object content_;
+
+      public ContentCase getContentCase() {
+        return ContentCase.forNumber(contentCase_);
+      }
+
+      public Builder clearContent() {
+        contentCase_ = 0;
+        content_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The content represented as a stream of bytes. The maximum length is
+       * 1,000,000 bytes (1 MB / ~0.95 MiB).
+       * Note: As with all `bytes` fields, this field is represented as pure
+       * binary in Protocol Buffers and base64-encoded string in JSON. For
+       * example, `abc123!?$*&amp;()'-=&#64;~` should be represented as
+       * `YWJjMTIzIT8kKiYoKSctPUB+` in JSON. See
+       * https://developers.google.com/protocol-buffers/docs/proto3#json.
+       * </pre>
+       *
+       * <code>bytes raw_bytes = 2;</code>
+       *
+       * @return Whether the rawBytes field is set.
+       */
+      public boolean hasRawBytes() {
+        return contentCase_ == 2;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The content represented as a stream of bytes. The maximum length is
+       * 1,000,000 bytes (1 MB / ~0.95 MiB).
+       * Note: As with all `bytes` fields, this field is represented as pure
+       * binary in Protocol Buffers and base64-encoded string in JSON. For
+       * example, `abc123!?$*&amp;()'-=&#64;~` should be represented as
+       * `YWJjMTIzIT8kKiYoKSctPUB+` in JSON. See
+       * https://developers.google.com/protocol-buffers/docs/proto3#json.
+       * </pre>
+       *
+       * <code>bytes raw_bytes = 2;</code>
+       *
+       * @return The rawBytes.
+       */
+      public com.google.protobuf.ByteString getRawBytes() {
+        if (contentCase_ == 2) {
+          return (com.google.protobuf.ByteString) content_;
+        }
+        return com.google.protobuf.ByteString.EMPTY;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The content represented as a stream of bytes. The maximum length is
+       * 1,000,000 bytes (1 MB / ~0.95 MiB).
+       * Note: As with all `bytes` fields, this field is represented as pure
+       * binary in Protocol Buffers and base64-encoded string in JSON. For
+       * example, `abc123!?$*&amp;()'-=&#64;~` should be represented as
+       * `YWJjMTIzIT8kKiYoKSctPUB+` in JSON. See
+       * https://developers.google.com/protocol-buffers/docs/proto3#json.
+       * </pre>
+       *
+       * <code>bytes raw_bytes = 2;</code>
+       *
+       * @param value The rawBytes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRawBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        contentCase_ = 2;
+        content_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The content represented as a stream of bytes. The maximum length is
+       * 1,000,000 bytes (1 MB / ~0.95 MiB).
+       * Note: As with all `bytes` fields, this field is represented as pure
+       * binary in Protocol Buffers and base64-encoded string in JSON. For
+       * example, `abc123!?$*&amp;()'-=&#64;~` should be represented as
+       * `YWJjMTIzIT8kKiYoKSctPUB+` in JSON. See
+       * https://developers.google.com/protocol-buffers/docs/proto3#json.
+       * </pre>
+       *
+       * <code>bytes raw_bytes = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRawBytes() {
+        if (contentCase_ == 2) {
+          contentCase_ = 0;
+          content_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The URI of the content. Only Cloud Storage URIs (e.g.
+       * `gs://bucket-name/path/to/file`) are supported. The maximum file size
+       * is 100 MB.
+       * </pre>
+       *
+       * <code>string uri = 3;</code>
+       *
+       * @return Whether the uri field is set.
+       */
+      @java.lang.Override
+      public boolean hasUri() {
+        return contentCase_ == 3;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The URI of the content. Only Cloud Storage URIs (e.g.
+       * `gs://bucket-name/path/to/file`) are supported. The maximum file size
+       * is 100 MB.
+       * </pre>
+       *
+       * <code>string uri = 3;</code>
+       *
+       * @return The uri.
+       */
+      @java.lang.Override
+      public java.lang.String getUri() {
+        java.lang.Object ref = "";
+        if (contentCase_ == 3) {
+          ref = content_;
+        }
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (contentCase_ == 3) {
+            content_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The URI of the content. Only Cloud Storage URIs (e.g.
+       * `gs://bucket-name/path/to/file`) are supported. The maximum file size
+       * is 100 MB.
+       * </pre>
+       *
+       * <code>string uri = 3;</code>
+       *
+       * @return The bytes for uri.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getUriBytes() {
+        java.lang.Object ref = "";
+        if (contentCase_ == 3) {
+          ref = content_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          if (contentCase_ == 3) {
+            content_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The URI of the content. Only Cloud Storage URIs (e.g.
+       * `gs://bucket-name/path/to/file`) are supported. The maximum file size
+       * is 100 MB.
+       * </pre>
+       *
+       * <code>string uri = 3;</code>
+       *
+       * @param value The uri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUri(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        contentCase_ = 3;
+        content_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The URI of the content. Only Cloud Storage URIs (e.g.
+       * `gs://bucket-name/path/to/file`) are supported. The maximum file size
+       * is 100 MB.
+       * </pre>
+       *
+       * <code>string uri = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUri() {
+        if (contentCase_ == 3) {
+          contentCase_ = 0;
+          content_ = null;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The URI of the content. Only Cloud Storage URIs (e.g.
+       * `gs://bucket-name/path/to/file`) are supported. The maximum file size
+       * is 100 MB.
+       * </pre>
+       *
+       * <code>string uri = 3;</code>
+       *
+       * @param value The bytes for uri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUriBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        contentCase_ = 3;
+        content_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object mimeType_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The MIME type of the content. Supported types:
+       * * `application/pdf` (PDF)
+       * * `text/html` (HTML)
+       * See https://www.iana.org/assignments/media-types/media-types.xhtml.
+       * </pre>
+       *
+       * <code>string mime_type = 1;</code>
+       *
+       * @return The mimeType.
+       */
+      public java.lang.String getMimeType() {
+        java.lang.Object ref = mimeType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          mimeType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The MIME type of the content. Supported types:
+       * * `application/pdf` (PDF)
+       * * `text/html` (HTML)
+       * See https://www.iana.org/assignments/media-types/media-types.xhtml.
+       * </pre>
+       *
+       * <code>string mime_type = 1;</code>
+       *
+       * @return The bytes for mimeType.
+       */
+      public com.google.protobuf.ByteString getMimeTypeBytes() {
+        java.lang.Object ref = mimeType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          mimeType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The MIME type of the content. Supported types:
+       * * `application/pdf` (PDF)
+       * * `text/html` (HTML)
+       * See https://www.iana.org/assignments/media-types/media-types.xhtml.
+       * </pre>
+       *
+       * <code>string mime_type = 1;</code>
+       *
+       * @param value The mimeType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMimeType(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        mimeType_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The MIME type of the content. Supported types:
+       * * `application/pdf` (PDF)
+       * * `text/html` (HTML)
+       * See https://www.iana.org/assignments/media-types/media-types.xhtml.
+       * </pre>
+       *
+       * <code>string mime_type = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMimeType() {
+        mimeType_ = getDefaultInstance().getMimeType();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The MIME type of the content. Supported types:
+       * * `application/pdf` (PDF)
+       * * `text/html` (HTML)
+       * See https://www.iana.org/assignments/media-types/media-types.xhtml.
+       * </pre>
+       *
+       * <code>string mime_type = 1;</code>
+       *
+       * @param value The bytes for mimeType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMimeTypeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        mimeType_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.Document.Content)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.Document.Content)
+    private static final com.google.cloud.discoveryengine.v1beta.Document.Content DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.discoveryengine.v1beta.Document.Content();
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.Document.Content getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Content> PARSER =
+        new com.google.protobuf.AbstractParser<Content>() {
+          @java.lang.Override
+          public Content parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Content> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Content> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.Document.Content getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int dataCase_ = 0;
   private java.lang.Object data_;
 
@@ -124,7 +1383,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The structured JSON data for the document. It should conform to the
-   * registered [schema][] or an INVALID_ARGUMENT error is thrown.
+   * registered
+   * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+   * `INVALID_ARGUMENT` error is thrown.
    * </pre>
    *
    * <code>.google.protobuf.Struct struct_data = 4;</code>
@@ -140,7 +1401,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The structured JSON data for the document. It should conform to the
-   * registered [schema][] or an INVALID_ARGUMENT error is thrown.
+   * registered
+   * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+   * `INVALID_ARGUMENT` error is thrown.
    * </pre>
    *
    * <code>.google.protobuf.Struct struct_data = 4;</code>
@@ -159,7 +1422,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The structured JSON data for the document. It should conform to the
-   * registered [schema][] or an INVALID_ARGUMENT error is thrown.
+   * registered
+   * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+   * `INVALID_ARGUMENT` error is thrown.
    * </pre>
    *
    * <code>.google.protobuf.Struct struct_data = 4;</code>
@@ -178,7 +1443,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The JSON string representation of the document. It should conform to the
-   * registered [schema][] or an INVALID_ARGUMENT error is thrown.
+   * registered
+   * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+   * `INVALID_ARGUMENT` error is thrown.
    * </pre>
    *
    * <code>string json_data = 5;</code>
@@ -193,7 +1460,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The JSON string representation of the document. It should conform to the
-   * registered [schema][] or an INVALID_ARGUMENT error is thrown.
+   * registered
+   * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+   * `INVALID_ARGUMENT` error is thrown.
    * </pre>
    *
    * <code>string json_data = 5;</code>
@@ -221,7 +1490,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The JSON string representation of the document. It should conform to the
-   * registered [schema][] or an INVALID_ARGUMENT error is thrown.
+   * registered
+   * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+   * `INVALID_ARGUMENT` error is thrown.
    * </pre>
    *
    * <code>string json_data = 5;</code>
@@ -410,6 +1681,62 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int CONTENT_FIELD_NUMBER = 10;
+  private com.google.cloud.discoveryengine.v1beta.Document.Content content_;
+  /**
+   *
+   *
+   * <pre>
+   * The unstructured data linked to this document. Content must be set if this
+   * document is under a
+   * `CONTENT_REQUIRED` data store.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.Document.Content content = 10;</code>
+   *
+   * @return Whether the content field is set.
+   */
+  @java.lang.Override
+  public boolean hasContent() {
+    return content_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The unstructured data linked to this document. Content must be set if this
+   * document is under a
+   * `CONTENT_REQUIRED` data store.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.Document.Content content = 10;</code>
+   *
+   * @return The content.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.Document.Content getContent() {
+    return content_ == null
+        ? com.google.cloud.discoveryengine.v1beta.Document.Content.getDefaultInstance()
+        : content_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The unstructured data linked to this document. Content must be set if this
+   * document is under a
+   * `CONTENT_REQUIRED` data store.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.Document.Content content = 10;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.Document.ContentOrBuilder getContentOrBuilder() {
+    return content_ == null
+        ? com.google.cloud.discoveryengine.v1beta.Document.Content.getDefaultInstance()
+        : content_;
+  }
+
   public static final int PARENT_DOCUMENT_ID_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
@@ -467,6 +1794,65 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int DERIVED_STRUCT_DATA_FIELD_NUMBER = 6;
+  private com.google.protobuf.Struct derivedStructData_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field is OUTPUT_ONLY.
+   * It contains derived data that are not in the original input document.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Struct derived_struct_data = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the derivedStructData field is set.
+   */
+  @java.lang.Override
+  public boolean hasDerivedStructData() {
+    return derivedStructData_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field is OUTPUT_ONLY.
+   * It contains derived data that are not in the original input document.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Struct derived_struct_data = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The derivedStructData.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Struct getDerivedStructData() {
+    return derivedStructData_ == null
+        ? com.google.protobuf.Struct.getDefaultInstance()
+        : derivedStructData_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field is OUTPUT_ONLY.
+   * It contains derived data that are not in the original input document.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Struct derived_struct_data = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getDerivedStructDataOrBuilder() {
+    return derivedStructData_ == null
+        ? com.google.protobuf.Struct.getDefaultInstance()
+        : derivedStructData_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -496,8 +1882,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (dataCase_ == 5) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, data_);
     }
+    if (derivedStructData_ != null) {
+      output.writeMessage(6, getDerivedStructData());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parentDocumentId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, parentDocumentId_);
+    }
+    if (content_ != null) {
+      output.writeMessage(10, getContent());
     }
     getUnknownFields().writeTo(output);
   }
@@ -525,8 +1917,14 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (dataCase_ == 5) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, data_);
     }
+    if (derivedStructData_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getDerivedStructData());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parentDocumentId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, parentDocumentId_);
+    }
+    if (content_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getContent());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -547,7 +1945,15 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (!getName().equals(other.getName())) return false;
     if (!getId().equals(other.getId())) return false;
     if (!getSchemaId().equals(other.getSchemaId())) return false;
+    if (hasContent() != other.hasContent()) return false;
+    if (hasContent()) {
+      if (!getContent().equals(other.getContent())) return false;
+    }
     if (!getParentDocumentId().equals(other.getParentDocumentId())) return false;
+    if (hasDerivedStructData() != other.hasDerivedStructData()) return false;
+    if (hasDerivedStructData()) {
+      if (!getDerivedStructData().equals(other.getDerivedStructData())) return false;
+    }
     if (!getDataCase().equals(other.getDataCase())) return false;
     switch (dataCase_) {
       case 4:
@@ -576,8 +1982,16 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getId().hashCode();
     hash = (37 * hash) + SCHEMA_ID_FIELD_NUMBER;
     hash = (53 * hash) + getSchemaId().hashCode();
+    if (hasContent()) {
+      hash = (37 * hash) + CONTENT_FIELD_NUMBER;
+      hash = (53 * hash) + getContent().hashCode();
+    }
     hash = (37 * hash) + PARENT_DOCUMENT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getParentDocumentId().hashCode();
+    if (hasDerivedStructData()) {
+      hash = (37 * hash) + DERIVED_STRUCT_DATA_FIELD_NUMBER;
+      hash = (53 * hash) + getDerivedStructData().hashCode();
+    }
     switch (dataCase_) {
       case 4:
         hash = (37 * hash) + STRUCT_DATA_FIELD_NUMBER;
@@ -736,7 +2150,17 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       name_ = "";
       id_ = "";
       schemaId_ = "";
+      content_ = null;
+      if (contentBuilder_ != null) {
+        contentBuilder_.dispose();
+        contentBuilder_ = null;
+      }
       parentDocumentId_ = "";
+      derivedStructData_ = null;
+      if (derivedStructDataBuilder_ != null) {
+        derivedStructDataBuilder_.dispose();
+        derivedStructDataBuilder_ = null;
+      }
       dataCase_ = 0;
       data_ = null;
       return this;
@@ -786,7 +2210,16 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         result.schemaId_ = schemaId_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.content_ = contentBuilder_ == null ? content_ : contentBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.parentDocumentId_ = parentDocumentId_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.derivedStructData_ =
+            derivedStructDataBuilder_ == null
+                ? derivedStructData_
+                : derivedStructDataBuilder_.build();
       }
     }
 
@@ -859,10 +2292,16 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (other.hasContent()) {
+        mergeContent(other.getContent());
+      }
       if (!other.getParentDocumentId().isEmpty()) {
         parentDocumentId_ = other.parentDocumentId_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
+      }
+      if (other.hasDerivedStructData()) {
+        mergeDerivedStructData(other.getDerivedStructData());
       }
       switch (other.getDataCase()) {
         case STRUCT_DATA:
@@ -939,12 +2378,25 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 data_ = s;
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    getDerivedStructDataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 50
             case 58:
               {
                 parentDocumentId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 82:
+              {
+                input.readMessage(getContentFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -988,7 +2440,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The structured JSON data for the document. It should conform to the
-     * registered [schema][] or an INVALID_ARGUMENT error is thrown.
+     * registered
+     * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+     * `INVALID_ARGUMENT` error is thrown.
      * </pre>
      *
      * <code>.google.protobuf.Struct struct_data = 4;</code>
@@ -1004,7 +2458,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The structured JSON data for the document. It should conform to the
-     * registered [schema][] or an INVALID_ARGUMENT error is thrown.
+     * registered
+     * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+     * `INVALID_ARGUMENT` error is thrown.
      * </pre>
      *
      * <code>.google.protobuf.Struct struct_data = 4;</code>
@@ -1030,7 +2486,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The structured JSON data for the document. It should conform to the
-     * registered [schema][] or an INVALID_ARGUMENT error is thrown.
+     * registered
+     * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+     * `INVALID_ARGUMENT` error is thrown.
      * </pre>
      *
      * <code>.google.protobuf.Struct struct_data = 4;</code>
@@ -1053,7 +2511,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The structured JSON data for the document. It should conform to the
-     * registered [schema][] or an INVALID_ARGUMENT error is thrown.
+     * registered
+     * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+     * `INVALID_ARGUMENT` error is thrown.
      * </pre>
      *
      * <code>.google.protobuf.Struct struct_data = 4;</code>
@@ -1073,7 +2533,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The structured JSON data for the document. It should conform to the
-     * registered [schema][] or an INVALID_ARGUMENT error is thrown.
+     * registered
+     * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+     * `INVALID_ARGUMENT` error is thrown.
      * </pre>
      *
      * <code>.google.protobuf.Struct struct_data = 4;</code>
@@ -1104,7 +2566,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The structured JSON data for the document. It should conform to the
-     * registered [schema][] or an INVALID_ARGUMENT error is thrown.
+     * registered
+     * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+     * `INVALID_ARGUMENT` error is thrown.
      * </pre>
      *
      * <code>.google.protobuf.Struct struct_data = 4;</code>
@@ -1130,7 +2594,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The structured JSON data for the document. It should conform to the
-     * registered [schema][] or an INVALID_ARGUMENT error is thrown.
+     * registered
+     * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+     * `INVALID_ARGUMENT` error is thrown.
      * </pre>
      *
      * <code>.google.protobuf.Struct struct_data = 4;</code>
@@ -1143,7 +2609,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The structured JSON data for the document. It should conform to the
-     * registered [schema][] or an INVALID_ARGUMENT error is thrown.
+     * registered
+     * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+     * `INVALID_ARGUMENT` error is thrown.
      * </pre>
      *
      * <code>.google.protobuf.Struct struct_data = 4;</code>
@@ -1164,7 +2632,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The structured JSON data for the document. It should conform to the
-     * registered [schema][] or an INVALID_ARGUMENT error is thrown.
+     * registered
+     * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+     * `INVALID_ARGUMENT` error is thrown.
      * </pre>
      *
      * <code>.google.protobuf.Struct struct_data = 4;</code>
@@ -1196,7 +2666,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The JSON string representation of the document. It should conform to the
-     * registered [schema][] or an INVALID_ARGUMENT error is thrown.
+     * registered
+     * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+     * `INVALID_ARGUMENT` error is thrown.
      * </pre>
      *
      * <code>string json_data = 5;</code>
@@ -1212,7 +2684,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The JSON string representation of the document. It should conform to the
-     * registered [schema][] or an INVALID_ARGUMENT error is thrown.
+     * registered
+     * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+     * `INVALID_ARGUMENT` error is thrown.
      * </pre>
      *
      * <code>string json_data = 5;</code>
@@ -1241,7 +2715,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The JSON string representation of the document. It should conform to the
-     * registered [schema][] or an INVALID_ARGUMENT error is thrown.
+     * registered
+     * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+     * `INVALID_ARGUMENT` error is thrown.
      * </pre>
      *
      * <code>string json_data = 5;</code>
@@ -1270,7 +2746,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The JSON string representation of the document. It should conform to the
-     * registered [schema][] or an INVALID_ARGUMENT error is thrown.
+     * registered
+     * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+     * `INVALID_ARGUMENT` error is thrown.
      * </pre>
      *
      * <code>string json_data = 5;</code>
@@ -1292,7 +2770,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The JSON string representation of the document. It should conform to the
-     * registered [schema][] or an INVALID_ARGUMENT error is thrown.
+     * registered
+     * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+     * `INVALID_ARGUMENT` error is thrown.
      * </pre>
      *
      * <code>string json_data = 5;</code>
@@ -1312,7 +2792,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The JSON string representation of the document. It should conform to the
-     * registered [schema][] or an INVALID_ARGUMENT error is thrown.
+     * registered
+     * [Schema.schema][google.cloud.discoveryengine.v1beta.Schema.schema] or an
+     * `INVALID_ARGUMENT` error is thrown.
      * </pre>
      *
      * <code>string json_data = 5;</code>
@@ -1679,6 +3161,209 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.discoveryengine.v1beta.Document.Content content_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.Document.Content,
+            com.google.cloud.discoveryengine.v1beta.Document.Content.Builder,
+            com.google.cloud.discoveryengine.v1beta.Document.ContentOrBuilder>
+        contentBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The unstructured data linked to this document. Content must be set if this
+     * document is under a
+     * `CONTENT_REQUIRED` data store.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.Document.Content content = 10;</code>
+     *
+     * @return Whether the content field is set.
+     */
+    public boolean hasContent() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unstructured data linked to this document. Content must be set if this
+     * document is under a
+     * `CONTENT_REQUIRED` data store.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.Document.Content content = 10;</code>
+     *
+     * @return The content.
+     */
+    public com.google.cloud.discoveryengine.v1beta.Document.Content getContent() {
+      if (contentBuilder_ == null) {
+        return content_ == null
+            ? com.google.cloud.discoveryengine.v1beta.Document.Content.getDefaultInstance()
+            : content_;
+      } else {
+        return contentBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unstructured data linked to this document. Content must be set if this
+     * document is under a
+     * `CONTENT_REQUIRED` data store.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.Document.Content content = 10;</code>
+     */
+    public Builder setContent(com.google.cloud.discoveryengine.v1beta.Document.Content value) {
+      if (contentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        content_ = value;
+      } else {
+        contentBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unstructured data linked to this document. Content must be set if this
+     * document is under a
+     * `CONTENT_REQUIRED` data store.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.Document.Content content = 10;</code>
+     */
+    public Builder setContent(
+        com.google.cloud.discoveryengine.v1beta.Document.Content.Builder builderForValue) {
+      if (contentBuilder_ == null) {
+        content_ = builderForValue.build();
+      } else {
+        contentBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unstructured data linked to this document. Content must be set if this
+     * document is under a
+     * `CONTENT_REQUIRED` data store.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.Document.Content content = 10;</code>
+     */
+    public Builder mergeContent(com.google.cloud.discoveryengine.v1beta.Document.Content value) {
+      if (contentBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && content_ != null
+            && content_
+                != com.google.cloud.discoveryengine.v1beta.Document.Content.getDefaultInstance()) {
+          getContentBuilder().mergeFrom(value);
+        } else {
+          content_ = value;
+        }
+      } else {
+        contentBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unstructured data linked to this document. Content must be set if this
+     * document is under a
+     * `CONTENT_REQUIRED` data store.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.Document.Content content = 10;</code>
+     */
+    public Builder clearContent() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      content_ = null;
+      if (contentBuilder_ != null) {
+        contentBuilder_.dispose();
+        contentBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unstructured data linked to this document. Content must be set if this
+     * document is under a
+     * `CONTENT_REQUIRED` data store.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.Document.Content content = 10;</code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.Document.Content.Builder getContentBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getContentFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unstructured data linked to this document. Content must be set if this
+     * document is under a
+     * `CONTENT_REQUIRED` data store.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.Document.Content content = 10;</code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.Document.ContentOrBuilder getContentOrBuilder() {
+      if (contentBuilder_ != null) {
+        return contentBuilder_.getMessageOrBuilder();
+      } else {
+        return content_ == null
+            ? com.google.cloud.discoveryengine.v1beta.Document.Content.getDefaultInstance()
+            : content_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The unstructured data linked to this document. Content must be set if this
+     * document is under a
+     * `CONTENT_REQUIRED` data store.
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.Document.Content content = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.Document.Content,
+            com.google.cloud.discoveryengine.v1beta.Document.Content.Builder,
+            com.google.cloud.discoveryengine.v1beta.Document.ContentOrBuilder>
+        getContentFieldBuilder() {
+      if (contentBuilder_ == null) {
+        contentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.Document.Content,
+                com.google.cloud.discoveryengine.v1beta.Document.Content.Builder,
+                com.google.cloud.discoveryengine.v1beta.Document.ContentOrBuilder>(
+                getContent(), getParentForChildren(), isClean());
+        content_ = null;
+      }
+      return contentBuilder_;
+    }
+
     private java.lang.Object parentDocumentId_ = "";
     /**
      *
@@ -1750,7 +3435,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       parentDocumentId_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1770,7 +3455,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearParentDocumentId() {
       parentDocumentId_ = getDefaultInstance().getParentDocumentId();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1795,9 +3480,219 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       parentDocumentId_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Struct derivedStructData_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        derivedStructDataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field is OUTPUT_ONLY.
+     * It contains derived data that are not in the original input document.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct derived_struct_data = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the derivedStructData field is set.
+     */
+    public boolean hasDerivedStructData() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field is OUTPUT_ONLY.
+     * It contains derived data that are not in the original input document.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct derived_struct_data = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The derivedStructData.
+     */
+    public com.google.protobuf.Struct getDerivedStructData() {
+      if (derivedStructDataBuilder_ == null) {
+        return derivedStructData_ == null
+            ? com.google.protobuf.Struct.getDefaultInstance()
+            : derivedStructData_;
+      } else {
+        return derivedStructDataBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field is OUTPUT_ONLY.
+     * It contains derived data that are not in the original input document.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct derived_struct_data = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDerivedStructData(com.google.protobuf.Struct value) {
+      if (derivedStructDataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        derivedStructData_ = value;
+      } else {
+        derivedStructDataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field is OUTPUT_ONLY.
+     * It contains derived data that are not in the original input document.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct derived_struct_data = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDerivedStructData(com.google.protobuf.Struct.Builder builderForValue) {
+      if (derivedStructDataBuilder_ == null) {
+        derivedStructData_ = builderForValue.build();
+      } else {
+        derivedStructDataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field is OUTPUT_ONLY.
+     * It contains derived data that are not in the original input document.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct derived_struct_data = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeDerivedStructData(com.google.protobuf.Struct value) {
+      if (derivedStructDataBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && derivedStructData_ != null
+            && derivedStructData_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getDerivedStructDataBuilder().mergeFrom(value);
+        } else {
+          derivedStructData_ = value;
+        }
+      } else {
+        derivedStructDataBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field is OUTPUT_ONLY.
+     * It contains derived data that are not in the original input document.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct derived_struct_data = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDerivedStructData() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      derivedStructData_ = null;
+      if (derivedStructDataBuilder_ != null) {
+        derivedStructDataBuilder_.dispose();
+        derivedStructDataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field is OUTPUT_ONLY.
+     * It contains derived data that are not in the original input document.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct derived_struct_data = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Struct.Builder getDerivedStructDataBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getDerivedStructDataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field is OUTPUT_ONLY.
+     * It contains derived data that are not in the original input document.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct derived_struct_data = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.StructOrBuilder getDerivedStructDataOrBuilder() {
+      if (derivedStructDataBuilder_ != null) {
+        return derivedStructDataBuilder_.getMessageOrBuilder();
+      } else {
+        return derivedStructData_ == null
+            ? com.google.protobuf.Struct.getDefaultInstance()
+            : derivedStructData_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field is OUTPUT_ONLY.
+     * It contains derived data that are not in the original input document.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct derived_struct_data = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        getDerivedStructDataFieldBuilder() {
+      if (derivedStructDataBuilder_ == null) {
+        derivedStructDataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>(
+                getDerivedStructData(), getParentForChildren(), isClean());
+        derivedStructData_ = null;
+      }
+      return derivedStructDataBuilder_;
     }
 
     @java.lang.Override

@@ -34,7 +34,7 @@ public interface UserInfoOrBuilder
    * the event history of those users together, which results in degraded
    * model quality.
    * The field must be a UTF-8 encoded string with a length limit of 128
-   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
    * <code>string user_id = 1;</code>
@@ -53,7 +53,7 @@ public interface UserInfoOrBuilder
    * the event history of those users together, which results in degraded
    * model quality.
    * The field must be a UTF-8 encoded string with a length limit of 128
-   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
    * <code>string user_id = 1;</code>
@@ -69,7 +69,7 @@ public interface UserInfoOrBuilder
    * User agent as included in the HTTP header. Required for getting
    * [SearchResponse.sponsored_results][].
    * The field must be a UTF-8 encoded string with a length limit of 1,000
-   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * This should not be set when using the client side event reporting with
    * GTM or JavaScript tag in
    * [UserEventService.CollectUserEvent][google.cloud.discoveryengine.v1beta.UserEventService.CollectUserEvent]
@@ -88,7 +88,7 @@ public interface UserInfoOrBuilder
    * User agent as included in the HTTP header. Required for getting
    * [SearchResponse.sponsored_results][].
    * The field must be a UTF-8 encoded string with a length limit of 1,000
-   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * This should not be set when using the client side event reporting with
    * GTM or JavaScript tag in
    * [UserEventService.CollectUserEvent][google.cloud.discoveryengine.v1beta.UserEventService.CollectUserEvent]

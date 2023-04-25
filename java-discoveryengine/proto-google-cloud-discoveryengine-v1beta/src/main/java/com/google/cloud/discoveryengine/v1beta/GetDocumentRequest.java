@@ -82,9 +82,9 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document}`.
    * If the caller does not have permission to access the
    * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
-   * whether or not it exists, a PERMISSION_DENIED error is returned.
+   * whether or not it exists, a `PERMISSION_DENIED` error is returned.
    * If the requested [Document][google.cloud.discoveryengine.v1beta.Document]
-   * does not exist, a NOT_FOUND error is returned.
+   * does not exist, a `NOT_FOUND` error is returned.
    * </pre>
    *
    * <code>
@@ -114,9 +114,9 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
    * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document}`.
    * If the caller does not have permission to access the
    * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
-   * whether or not it exists, a PERMISSION_DENIED error is returned.
+   * whether or not it exists, a `PERMISSION_DENIED` error is returned.
    * If the requested [Document][google.cloud.discoveryengine.v1beta.Document]
-   * does not exist, a NOT_FOUND error is returned.
+   * does not exist, a `NOT_FOUND` error is returned.
    * </pre>
    *
    * <code>
@@ -493,9 +493,9 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document}`.
      * If the caller does not have permission to access the
      * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
-     * whether or not it exists, a PERMISSION_DENIED error is returned.
+     * whether or not it exists, a `PERMISSION_DENIED` error is returned.
      * If the requested [Document][google.cloud.discoveryengine.v1beta.Document]
-     * does not exist, a NOT_FOUND error is returned.
+     * does not exist, a `NOT_FOUND` error is returned.
      * </pre>
      *
      * <code>
@@ -524,9 +524,9 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document}`.
      * If the caller does not have permission to access the
      * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
-     * whether or not it exists, a PERMISSION_DENIED error is returned.
+     * whether or not it exists, a `PERMISSION_DENIED` error is returned.
      * If the requested [Document][google.cloud.discoveryengine.v1beta.Document]
-     * does not exist, a NOT_FOUND error is returned.
+     * does not exist, a `NOT_FOUND` error is returned.
      * </pre>
      *
      * <code>
@@ -555,9 +555,9 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document}`.
      * If the caller does not have permission to access the
      * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
-     * whether or not it exists, a PERMISSION_DENIED error is returned.
+     * whether or not it exists, a `PERMISSION_DENIED` error is returned.
      * If the requested [Document][google.cloud.discoveryengine.v1beta.Document]
-     * does not exist, a NOT_FOUND error is returned.
+     * does not exist, a `NOT_FOUND` error is returned.
      * </pre>
      *
      * <code>
@@ -585,9 +585,9 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document}`.
      * If the caller does not have permission to access the
      * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
-     * whether or not it exists, a PERMISSION_DENIED error is returned.
+     * whether or not it exists, a `PERMISSION_DENIED` error is returned.
      * If the requested [Document][google.cloud.discoveryengine.v1beta.Document]
-     * does not exist, a NOT_FOUND error is returned.
+     * does not exist, a `NOT_FOUND` error is returned.
      * </pre>
      *
      * <code>
@@ -611,9 +611,9 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
      * `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document}`.
      * If the caller does not have permission to access the
      * [Document][google.cloud.discoveryengine.v1beta.Document], regardless of
-     * whether or not it exists, a PERMISSION_DENIED error is returned.
+     * whether or not it exists, a `PERMISSION_DENIED` error is returned.
      * If the requested [Document][google.cloud.discoveryengine.v1beta.Document]
-     * does not exist, a NOT_FOUND error is returned.
+     * does not exist, a `NOT_FOUND` error is returned.
      * </pre>
      *
      * <code>

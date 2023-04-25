@@ -31,6 +31,7 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
+import com.google.protobuf.Struct;
 import com.google.rpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -95,7 +96,9 @@ public class DocumentServiceClientTest {
                     .toString())
             .setId("id3355")
             .setSchemaId("schemaId-697673060")
+            .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
+            .setDerivedStructData(Struct.newBuilder().build())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -143,7 +146,9 @@ public class DocumentServiceClientTest {
                     .toString())
             .setId("id3355")
             .setSchemaId("schemaId-697673060")
+            .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
+            .setDerivedStructData(Struct.newBuilder().build())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -279,7 +284,9 @@ public class DocumentServiceClientTest {
                     .toString())
             .setId("id3355")
             .setSchemaId("schemaId-697673060")
+            .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
+            .setDerivedStructData(Struct.newBuilder().build())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -333,7 +340,9 @@ public class DocumentServiceClientTest {
                     .toString())
             .setId("id3355")
             .setSchemaId("schemaId-697673060")
+            .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
+            .setDerivedStructData(Struct.newBuilder().build())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -383,7 +392,9 @@ public class DocumentServiceClientTest {
                     .toString())
             .setId("id3355")
             .setSchemaId("schemaId-697673060")
+            .setContent(Document.Content.newBuilder().build())
             .setParentDocumentId("parentDocumentId1990105056")
+            .setDerivedStructData(Struct.newBuilder().build())
             .build();
     mockDocumentService.addResponse(expectedResponse);
 

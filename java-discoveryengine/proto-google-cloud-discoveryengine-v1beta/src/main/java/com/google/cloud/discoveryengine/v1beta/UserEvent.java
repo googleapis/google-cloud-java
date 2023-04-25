@@ -498,7 +498,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * * [PredictResponse.attribution_token][] for events that are the result of
    * [PredictionService.Predict][].
    * * [SearchResponse.attribution_token][google.cloud.discoveryengine.v1beta.SearchResponse.attribution_token] for events that are the result of
-   * [SearchService.Search][].
+   * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search].
    * * [CompleteQueryResponse.attribution_token][] for events that are the
    * result of [SearchService.CompleteQuery][].
    * This token enables us to accurately attribute page view or conversion
@@ -537,7 +537,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * * [PredictResponse.attribution_token][] for events that are the result of
    * [PredictionService.Predict][].
    * * [SearchResponse.attribution_token][google.cloud.discoveryengine.v1beta.SearchResponse.attribution_token] for events that are the result of
-   * [SearchService.Search][].
+   * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search].
    * * [CompleteQueryResponse.attribution_token][] for events that are the
    * result of [SearchService.CompleteQuery][].
    * This token enables us to accurately attribute page view or conversion
@@ -1172,8 +1172,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * provided with prediction requests. This lets the Discovery Engine API use
    * those custom attributes when training models and serving predictions, which
    * helps improve recommendation quality.
-   * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
-   * error is returned:
+   * This field needs to pass all below criteria, otherwise an
+   * `INVALID_ARGUMENT` error is returned:
    * * The key must be a UTF-8 encoded string with a length limit of 5,000
    *   characters.
    * * For text attributes, at most 400 values are allowed. Empty values are not
@@ -1181,7 +1181,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *   256 characters.
    * * For number attributes, at most 400 values are allowed.
    * For product recommendations, an example of extra user information is
-   * traffic_channel, which is how a user arrives at the site. Users can arrive
+   * ` traffic_channel`, which is how a user arrives at the site. Users can
+   * arrive
    * at the site by coming to the site directly, coming through Google
    * search, or in other ways.
    * </pre>
@@ -1216,8 +1217,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * provided with prediction requests. This lets the Discovery Engine API use
    * those custom attributes when training models and serving predictions, which
    * helps improve recommendation quality.
-   * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
-   * error is returned:
+   * This field needs to pass all below criteria, otherwise an
+   * `INVALID_ARGUMENT` error is returned:
    * * The key must be a UTF-8 encoded string with a length limit of 5,000
    *   characters.
    * * For text attributes, at most 400 values are allowed. Empty values are not
@@ -1225,7 +1226,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *   256 characters.
    * * For number attributes, at most 400 values are allowed.
    * For product recommendations, an example of extra user information is
-   * traffic_channel, which is how a user arrives at the site. Users can arrive
+   * ` traffic_channel`, which is how a user arrives at the site. Users can
+   * arrive
    * at the site by coming to the site directly, coming through Google
    * search, or in other ways.
    * </pre>
@@ -1251,8 +1253,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * provided with prediction requests. This lets the Discovery Engine API use
    * those custom attributes when training models and serving predictions, which
    * helps improve recommendation quality.
-   * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
-   * error is returned:
+   * This field needs to pass all below criteria, otherwise an
+   * `INVALID_ARGUMENT` error is returned:
    * * The key must be a UTF-8 encoded string with a length limit of 5,000
    *   characters.
    * * For text attributes, at most 400 values are allowed. Empty values are not
@@ -1260,7 +1262,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *   256 characters.
    * * For number attributes, at most 400 values are allowed.
    * For product recommendations, an example of extra user information is
-   * traffic_channel, which is how a user arrives at the site. Users can arrive
+   * ` traffic_channel`, which is how a user arrives at the site. Users can
+   * arrive
    * at the site by coming to the site directly, coming through Google
    * search, or in other ways.
    * </pre>
@@ -1294,8 +1297,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * provided with prediction requests. This lets the Discovery Engine API use
    * those custom attributes when training models and serving predictions, which
    * helps improve recommendation quality.
-   * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
-   * error is returned:
+   * This field needs to pass all below criteria, otherwise an
+   * `INVALID_ARGUMENT` error is returned:
    * * The key must be a UTF-8 encoded string with a length limit of 5,000
    *   characters.
    * * For text attributes, at most 400 values are allowed. Empty values are not
@@ -1303,7 +1306,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *   256 characters.
    * * For number attributes, at most 400 values are allowed.
    * For product recommendations, an example of extra user information is
-   * traffic_channel, which is how a user arrives at the site. Users can arrive
+   * ` traffic_channel`, which is how a user arrives at the site. Users can
+   * arrive
    * at the site by coming to the site directly, coming through Google
    * search, or in other ways.
    * </pre>
@@ -3437,7 +3441,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * [PredictResponse.attribution_token][] for events that are the result of
      * [PredictionService.Predict][].
      * * [SearchResponse.attribution_token][google.cloud.discoveryengine.v1beta.SearchResponse.attribution_token] for events that are the result of
-     * [SearchService.Search][].
+     * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search].
      * * [CompleteQueryResponse.attribution_token][] for events that are the
      * result of [SearchService.CompleteQuery][].
      * This token enables us to accurately attribute page view or conversion
@@ -3475,7 +3479,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * [PredictResponse.attribution_token][] for events that are the result of
      * [PredictionService.Predict][].
      * * [SearchResponse.attribution_token][google.cloud.discoveryengine.v1beta.SearchResponse.attribution_token] for events that are the result of
-     * [SearchService.Search][].
+     * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search].
      * * [CompleteQueryResponse.attribution_token][] for events that are the
      * result of [SearchService.CompleteQuery][].
      * This token enables us to accurately attribute page view or conversion
@@ -3513,7 +3517,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * [PredictResponse.attribution_token][] for events that are the result of
      * [PredictionService.Predict][].
      * * [SearchResponse.attribution_token][google.cloud.discoveryengine.v1beta.SearchResponse.attribution_token] for events that are the result of
-     * [SearchService.Search][].
+     * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search].
      * * [CompleteQueryResponse.attribution_token][] for events that are the
      * result of [SearchService.CompleteQuery][].
      * This token enables us to accurately attribute page view or conversion
@@ -3550,7 +3554,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * [PredictResponse.attribution_token][] for events that are the result of
      * [PredictionService.Predict][].
      * * [SearchResponse.attribution_token][google.cloud.discoveryengine.v1beta.SearchResponse.attribution_token] for events that are the result of
-     * [SearchService.Search][].
+     * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search].
      * * [CompleteQueryResponse.attribution_token][] for events that are the
      * result of [SearchService.CompleteQuery][].
      * This token enables us to accurately attribute page view or conversion
@@ -3583,7 +3587,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * [PredictResponse.attribution_token][] for events that are the result of
      * [PredictionService.Predict][].
      * * [SearchResponse.attribution_token][google.cloud.discoveryengine.v1beta.SearchResponse.attribution_token] for events that are the result of
-     * [SearchService.Search][].
+     * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search].
      * * [CompleteQueryResponse.attribution_token][] for events that are the
      * result of [SearchService.CompleteQuery][].
      * This token enables us to accurately attribute page view or conversion
@@ -5544,8 +5548,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * provided with prediction requests. This lets the Discovery Engine API use
      * those custom attributes when training models and serving predictions, which
      * helps improve recommendation quality.
-     * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
-     * error is returned:
+     * This field needs to pass all below criteria, otherwise an
+     * `INVALID_ARGUMENT` error is returned:
      * * The key must be a UTF-8 encoded string with a length limit of 5,000
      *   characters.
      * * For text attributes, at most 400 values are allowed. Empty values are not
@@ -5553,7 +5557,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *   256 characters.
      * * For number attributes, at most 400 values are allowed.
      * For product recommendations, an example of extra user information is
-     * traffic_channel, which is how a user arrives at the site. Users can arrive
+     * ` traffic_channel`, which is how a user arrives at the site. Users can
+     * arrive
      * at the site by coming to the site directly, coming through Google
      * search, or in other ways.
      * </pre>
@@ -5589,8 +5594,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * provided with prediction requests. This lets the Discovery Engine API use
      * those custom attributes when training models and serving predictions, which
      * helps improve recommendation quality.
-     * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
-     * error is returned:
+     * This field needs to pass all below criteria, otherwise an
+     * `INVALID_ARGUMENT` error is returned:
      * * The key must be a UTF-8 encoded string with a length limit of 5,000
      *   characters.
      * * For text attributes, at most 400 values are allowed. Empty values are not
@@ -5598,7 +5603,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *   256 characters.
      * * For number attributes, at most 400 values are allowed.
      * For product recommendations, an example of extra user information is
-     * traffic_channel, which is how a user arrives at the site. Users can arrive
+     * ` traffic_channel`, which is how a user arrives at the site. Users can
+     * arrive
      * at the site by coming to the site directly, coming through Google
      * search, or in other ways.
      * </pre>
@@ -5625,8 +5631,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * provided with prediction requests. This lets the Discovery Engine API use
      * those custom attributes when training models and serving predictions, which
      * helps improve recommendation quality.
-     * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
-     * error is returned:
+     * This field needs to pass all below criteria, otherwise an
+     * `INVALID_ARGUMENT` error is returned:
      * * The key must be a UTF-8 encoded string with a length limit of 5,000
      *   characters.
      * * For text attributes, at most 400 values are allowed. Empty values are not
@@ -5634,7 +5640,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *   256 characters.
      * * For number attributes, at most 400 values are allowed.
      * For product recommendations, an example of extra user information is
-     * traffic_channel, which is how a user arrives at the site. Users can arrive
+     * ` traffic_channel`, which is how a user arrives at the site. Users can
+     * arrive
      * at the site by coming to the site directly, coming through Google
      * search, or in other ways.
      * </pre>
@@ -5669,8 +5676,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * provided with prediction requests. This lets the Discovery Engine API use
      * those custom attributes when training models and serving predictions, which
      * helps improve recommendation quality.
-     * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
-     * error is returned:
+     * This field needs to pass all below criteria, otherwise an
+     * `INVALID_ARGUMENT` error is returned:
      * * The key must be a UTF-8 encoded string with a length limit of 5,000
      *   characters.
      * * For text attributes, at most 400 values are allowed. Empty values are not
@@ -5678,7 +5685,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *   256 characters.
      * * For number attributes, at most 400 values are allowed.
      * For product recommendations, an example of extra user information is
-     * traffic_channel, which is how a user arrives at the site. Users can arrive
+     * ` traffic_channel`, which is how a user arrives at the site. Users can
+     * arrive
      * at the site by coming to the site directly, coming through Google
      * search, or in other ways.
      * </pre>
@@ -5719,8 +5727,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * provided with prediction requests. This lets the Discovery Engine API use
      * those custom attributes when training models and serving predictions, which
      * helps improve recommendation quality.
-     * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
-     * error is returned:
+     * This field needs to pass all below criteria, otherwise an
+     * `INVALID_ARGUMENT` error is returned:
      * * The key must be a UTF-8 encoded string with a length limit of 5,000
      *   characters.
      * * For text attributes, at most 400 values are allowed. Empty values are not
@@ -5728,7 +5736,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *   256 characters.
      * * For number attributes, at most 400 values are allowed.
      * For product recommendations, an example of extra user information is
-     * traffic_channel, which is how a user arrives at the site. Users can arrive
+     * ` traffic_channel`, which is how a user arrives at the site. Users can
+     * arrive
      * at the site by coming to the site directly, coming through Google
      * search, or in other ways.
      * </pre>
@@ -5764,8 +5773,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * provided with prediction requests. This lets the Discovery Engine API use
      * those custom attributes when training models and serving predictions, which
      * helps improve recommendation quality.
-     * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
-     * error is returned:
+     * This field needs to pass all below criteria, otherwise an
+     * `INVALID_ARGUMENT` error is returned:
      * * The key must be a UTF-8 encoded string with a length limit of 5,000
      *   characters.
      * * For text attributes, at most 400 values are allowed. Empty values are not
@@ -5773,7 +5782,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *   256 characters.
      * * For number attributes, at most 400 values are allowed.
      * For product recommendations, an example of extra user information is
-     * traffic_channel, which is how a user arrives at the site. Users can arrive
+     * ` traffic_channel`, which is how a user arrives at the site. Users can
+     * arrive
      * at the site by coming to the site directly, coming through Google
      * search, or in other ways.
      * </pre>
@@ -5807,8 +5817,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * provided with prediction requests. This lets the Discovery Engine API use
      * those custom attributes when training models and serving predictions, which
      * helps improve recommendation quality.
-     * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
-     * error is returned:
+     * This field needs to pass all below criteria, otherwise an
+     * `INVALID_ARGUMENT` error is returned:
      * * The key must be a UTF-8 encoded string with a length limit of 5,000
      *   characters.
      * * For text attributes, at most 400 values are allowed. Empty values are not
@@ -5816,7 +5826,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *   256 characters.
      * * For number attributes, at most 400 values are allowed.
      * For product recommendations, an example of extra user information is
-     * traffic_channel, which is how a user arrives at the site. Users can arrive
+     * ` traffic_channel`, which is how a user arrives at the site. Users can
+     * arrive
      * at the site by coming to the site directly, coming through Google
      * search, or in other ways.
      * </pre>

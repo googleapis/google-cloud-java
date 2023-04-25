@@ -235,9 +235,9 @@ public class DocumentServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document}`.
    *     <p>If the caller does not have permission to access the
    *     [Document][google.cloud.discoveryengine.v1beta.Document], regardless of whether or not it
-   *     exists, a PERMISSION_DENIED error is returned.
+   *     exists, a `PERMISSION_DENIED` error is returned.
    *     <p>If the requested [Document][google.cloud.discoveryengine.v1beta.Document] does not
-   *     exist, a NOT_FOUND error is returned.
+   *     exist, a `NOT_FOUND` error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Document getDocument(DocumentName name) {
@@ -272,9 +272,9 @@ public class DocumentServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document}`.
    *     <p>If the caller does not have permission to access the
    *     [Document][google.cloud.discoveryengine.v1beta.Document], regardless of whether or not it
-   *     exists, a PERMISSION_DENIED error is returned.
+   *     exists, a `PERMISSION_DENIED` error is returned.
    *     <p>If the requested [Document][google.cloud.discoveryengine.v1beta.Document] does not
-   *     exist, a NOT_FOUND error is returned.
+   *     exist, a `NOT_FOUND` error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Document getDocument(String name) {
@@ -369,7 +369,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
    *     Use `default_branch` as the branch ID, to list documents under the default branch.
    *     <p>If the caller does not have permission to list [Documents][]s under this branch,
-   *     regardless of whether or not this branch exists, a PERMISSION_DENIED error is returned.
+   *     regardless of whether or not this branch exists, a `PERMISSION_DENIED` error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDocumentsPagedResponse listDocuments(BranchName parent) {
@@ -407,7 +407,7 @@ public class DocumentServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
    *     Use `default_branch` as the branch ID, to list documents under the default branch.
    *     <p>If the caller does not have permission to list [Documents][]s under this branch,
-   *     regardless of whether or not this branch exists, a PERMISSION_DENIED error is returned.
+   *     regardless of whether or not this branch exists, a `PERMISSION_DENIED` error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDocumentsPagedResponse listDocuments(String parent) {
@@ -559,13 +559,13 @@ public class DocumentServiceClient implements BackgroundResource {
    *     component of the [Document.name][google.cloud.discoveryengine.v1beta.Document.name].
    *     <p>If the caller does not have permission to create the
    *     [Document][google.cloud.discoveryengine.v1beta.Document], regardless of whether or not it
-   *     exists, a PERMISSION_DENIED error is returned.
+   *     exists, a `PERMISSION_DENIED` error is returned.
    *     <p>This field must be unique among all
    *     [Document][google.cloud.discoveryengine.v1beta.Document]s with the same
    *     [parent][google.cloud.discoveryengine.v1beta.CreateDocumentRequest.parent]. Otherwise, an
-   *     ALREADY_EXISTS error is returned.
+   *     `ALREADY_EXISTS` error is returned.
    *     <p>This field must conform to [RFC-1034](https://tools.ietf.org/html/rfc1034) standard with
-   *     a length limit of 63 characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   *     a length limit of 63 characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Document createDocument(BranchName parent, Document document, String documentId) {
@@ -610,13 +610,13 @@ public class DocumentServiceClient implements BackgroundResource {
    *     component of the [Document.name][google.cloud.discoveryengine.v1beta.Document.name].
    *     <p>If the caller does not have permission to create the
    *     [Document][google.cloud.discoveryengine.v1beta.Document], regardless of whether or not it
-   *     exists, a PERMISSION_DENIED error is returned.
+   *     exists, a `PERMISSION_DENIED` error is returned.
    *     <p>This field must be unique among all
    *     [Document][google.cloud.discoveryengine.v1beta.Document]s with the same
    *     [parent][google.cloud.discoveryengine.v1beta.CreateDocumentRequest.parent]. Otherwise, an
-   *     ALREADY_EXISTS error is returned.
+   *     `ALREADY_EXISTS` error is returned.
    *     <p>This field must conform to [RFC-1034](https://tools.ietf.org/html/rfc1034) standard with
-   *     a length limit of 63 characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   *     a length limit of 63 characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Document createDocument(String parent, Document document, String documentId) {
@@ -778,9 +778,9 @@ public class DocumentServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document}`.
    *     <p>If the caller does not have permission to delete the
    *     [Document][google.cloud.discoveryengine.v1beta.Document], regardless of whether or not it
-   *     exists, a PERMISSION_DENIED error is returned.
+   *     exists, a `PERMISSION_DENIED` error is returned.
    *     <p>If the [Document][google.cloud.discoveryengine.v1beta.Document] to delete does not
-   *     exist, a NOT_FOUND error is returned.
+   *     exist, a `NOT_FOUND` error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteDocument(DocumentName name) {
@@ -815,9 +815,9 @@ public class DocumentServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document}`.
    *     <p>If the caller does not have permission to delete the
    *     [Document][google.cloud.discoveryengine.v1beta.Document], regardless of whether or not it
-   *     exists, a PERMISSION_DENIED error is returned.
+   *     exists, a `PERMISSION_DENIED` error is returned.
    *     <p>If the [Document][google.cloud.discoveryengine.v1beta.Document] to delete does not
-   *     exist, a NOT_FOUND error is returned.
+   *     exist, a `NOT_FOUND` error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteDocument(String name) {

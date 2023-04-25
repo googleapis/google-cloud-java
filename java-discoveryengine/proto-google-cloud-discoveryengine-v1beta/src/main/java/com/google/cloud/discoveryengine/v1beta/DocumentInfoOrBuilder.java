@@ -65,7 +65,7 @@ public interface DocumentInfoOrBuilder
    *
    * <pre>
    * Required. The Document resource full name, of the form:
-   * projects/{project&#92;_id}/locations/{location}/collections/{collection&#92;_id}/dataStores/{data&#92;_store&#92;_id}/branches/{branch&#92;_id}/documents/{document&#92;_id}
+   * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
    * </pre>
    *
    * <code>
@@ -80,7 +80,7 @@ public interface DocumentInfoOrBuilder
    *
    * <pre>
    * Required. The Document resource full name, of the form:
-   * projects/{project&#92;_id}/locations/{location}/collections/{collection&#92;_id}/dataStores/{data&#92;_store&#92;_id}/branches/{branch&#92;_id}/documents/{document&#92;_id}
+   * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
    * </pre>
    *
    * <code>
@@ -95,7 +95,7 @@ public interface DocumentInfoOrBuilder
    *
    * <pre>
    * Required. The Document resource full name, of the form:
-   * projects/{project&#92;_id}/locations/{location}/collections/{collection&#92;_id}/dataStores/{data&#92;_store&#92;_id}/branches/{branch&#92;_id}/documents/{document&#92;_id}
+   * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
    * </pre>
    *
    * <code>
