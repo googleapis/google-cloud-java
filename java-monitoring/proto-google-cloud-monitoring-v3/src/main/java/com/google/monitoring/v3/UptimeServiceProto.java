@@ -133,13 +133,13 @@ public final class UptimeServiceProto {
           + "ng.googleapis.com\322A\211\001https://www.googlea"
           + "pis.com/auth/cloud-platform,https://www."
           + "googleapis.com/auth/monitoring,https://w"
-          + "ww.googleapis.com/auth/monitoring.readB\312"
+          + "ww.googleapis.com/auth/monitoring.readB\315"
           + "\001\n\030com.google.monitoring.v3B\022UptimeServi"
-          + "ceProtoP\001Z>google.golang.org/genproto/go"
-          + "ogleapis/monitoring/v3;monitoring\252\002\032Goog"
-          + "le.Cloud.Monitoring.V3\312\002\032Google\\Cloud\\Mo"
-          + "nitoring\\V3\352\002\035Google::Cloud::Monitoring:"
-          + ":V3b\006proto3"
+          + "ceProtoP\001ZAcloud.google.com/go/monitorin"
+          + "g/apiv3/v2/monitoringpb;monitoringpb\252\002\032G"
+          + "oogle.Cloud.Monitoring.V3\312\002\032Google\\Cloud"
+          + "\\Monitoring\\V3\352\002\035Google::Cloud::Monitori"
+          + "ng::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

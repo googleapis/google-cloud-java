@@ -56,12 +56,12 @@ public final class SnoozeProto {
           + "B*\372A\'\n%monitoring.googleapis.com/AlertPo"
           + "licy:J\352AG\n monitoring.googleapis.com/Sno"
           + "oze\022#projects/{project}/snoozes/{snooze}"
-          + "B\303\001\n\030com.google.monitoring.v3B\013SnoozePro"
-          + "toP\001Z>google.golang.org/genproto/googlea"
-          + "pis/monitoring/v3;monitoring\252\002\032Google.Cl"
-          + "oud.Monitoring.V3\312\002\032Google\\Cloud\\Monitor"
-          + "ing\\V3\352\002\035Google::Cloud::Monitoring::V3b\006"
-          + "proto3"
+          + "B\306\001\n\030com.google.monitoring.v3B\013SnoozePro"
+          + "toP\001ZAcloud.google.com/go/monitoring/api"
+          + "v3/v2/monitoringpb;monitoringpb\252\002\032Google"
+          + ".Cloud.Monitoring.V3\312\002\032Google\\Cloud\\Moni"
+          + "toring\\V3\352\002\035Google::Cloud::Monitoring::V"
+          + "3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -140,12 +140,12 @@ public final class UptimeProto {
           + "\n\006EUROPE\020\002\022\021\n\rSOUTH_AMERICA\020\003\022\020\n\014ASIA_PA"
           + "CIFIC\020\004*[\n\021GroupResourceType\022\035\n\031RESOURCE"
           + "_TYPE_UNSPECIFIED\020\000\022\014\n\010INSTANCE\020\001\022\031\n\025AWS"
-          + "_ELB_LOAD_BALANCER\020\002B\303\001\n\030com.google.moni"
-          + "toring.v3B\013UptimeProtoP\001Z>google.golang."
-          + "org/genproto/googleapis/monitoring/v3;mo"
-          + "nitoring\252\002\032Google.Cloud.Monitoring.V3\312\002\032"
-          + "Google\\Cloud\\Monitoring\\V3\352\002\035Google::Clo"
-          + "ud::Monitoring::V3b\006proto3"
+          + "_ELB_LOAD_BALANCER\020\002B\306\001\n\030com.google.moni"
+          + "toring.v3B\013UptimeProtoP\001ZAcloud.google.c"
+          + "om/go/monitoring/apiv3/v2/monitoringpb;m"
+          + "onitoringpb\252\002\032Google.Cloud.Monitoring.V3"
+          + "\312\002\032Google\\Cloud\\Monitoring\\V3\352\002\035Google::"
+          + "Cloud::Monitoring::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
