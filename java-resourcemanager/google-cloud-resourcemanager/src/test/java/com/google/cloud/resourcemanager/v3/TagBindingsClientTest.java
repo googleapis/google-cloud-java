@@ -16,6 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3;
 
+import static com.google.cloud.resourcemanager.v3.TagBindingsClient.ListEffectiveTagsPagedResponse;
 import static com.google.cloud.resourcemanager.v3.TagBindingsClient.ListTagBindingsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -179,6 +180,7 @@ public class TagBindingsClientTest {
             .setName(TagBindingName.of("[TAG_BINDING]").toString())
             .setParent("parent-995424086")
             .setTagValue("tagValue-772697609")
+            .setTagValueNamespacedName("tagValueNamespacedName1718815339")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -301,6 +303,50 @@ public class TagBindingsClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listEffectiveTagsTest() throws Exception {
+    EffectiveTag responsesElement = EffectiveTag.newBuilder().build();
+    ListEffectiveTagsResponse expectedResponse =
+        ListEffectiveTagsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEffectiveTags(Arrays.asList(responsesElement))
+            .build();
+    mockTagBindings.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListEffectiveTagsPagedResponse pagedListResponse = client.listEffectiveTags(parent);
+
+    List<EffectiveTag> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEffectiveTagsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockTagBindings.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListEffectiveTagsRequest actualRequest = ((ListEffectiveTagsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listEffectiveTagsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTagBindings.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listEffectiveTags(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

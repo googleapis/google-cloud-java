@@ -27,7 +27,8 @@ public interface DeleteTagValueRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name for TagValue to be deleted in the format tagValues/456.
+   * Required. Resource name for TagValue to be deleted in the format
+   * tagValues/456.
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface DeleteTagValueRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Resource name for TagValue to be deleted in the format tagValues/456.
+   * Required. Resource name for TagValue to be deleted in the format
+   * tagValues/456.
    * </pre>
    *
    * <code>
@@ -56,8 +58,8 @@ public interface DeleteTagValueRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Set as true to perform the validations necessary for deletion, but not
-   * actually perform the action.
+   * Optional. Set as true to perform the validations necessary for deletion,
+   * but not actually perform the action.
    * </pre>
    *
    * <code>bool validate_only = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -70,8 +72,8 @@ public interface DeleteTagValueRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The etag known to the client for the expected state of the TagValue. This
-   * is to be used for optimistic concurrency.
+   * Optional. The etag known to the client for the expected state of the
+   * TagValue. This is to be used for optimistic concurrency.
    * </pre>
    *
    * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -83,8 +85,8 @@ public interface DeleteTagValueRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The etag known to the client for the expected state of the TagValue. This
-   * is to be used for optimistic concurrency.
+   * Optional. The etag known to the client for the expected state of the
+   * TagValue. This is to be used for optimistic concurrency.
    * </pre>
    *
    * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

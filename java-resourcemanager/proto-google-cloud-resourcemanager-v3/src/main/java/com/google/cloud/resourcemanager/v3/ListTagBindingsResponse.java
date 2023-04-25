@@ -76,8 +76,7 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * A possibly paginated list of TagBindings for the specified TagValue or
-   * resource.
+   * A possibly paginated list of TagBindings for the specified resource.
    * </pre>
    *
    * <code>repeated .google.cloud.resourcemanager.v3.TagBinding tag_bindings = 1;</code>
@@ -90,8 +89,7 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * A possibly paginated list of TagBindings for the specified TagValue or
-   * resource.
+   * A possibly paginated list of TagBindings for the specified resource.
    * </pre>
    *
    * <code>repeated .google.cloud.resourcemanager.v3.TagBinding tag_bindings = 1;</code>
@@ -105,8 +103,7 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * A possibly paginated list of TagBindings for the specified TagValue or
-   * resource.
+   * A possibly paginated list of TagBindings for the specified resource.
    * </pre>
    *
    * <code>repeated .google.cloud.resourcemanager.v3.TagBinding tag_bindings = 1;</code>
@@ -119,8 +116,7 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * A possibly paginated list of TagBindings for the specified TagValue or
-   * resource.
+   * A possibly paginated list of TagBindings for the specified resource.
    * </pre>
    *
    * <code>repeated .google.cloud.resourcemanager.v3.TagBinding tag_bindings = 1;</code>
@@ -133,8 +129,7 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * A possibly paginated list of TagBindings for the specified TagValue or
-   * resource.
+   * A possibly paginated list of TagBindings for the specified resource.
    * </pre>
    *
    * <code>repeated .google.cloud.resourcemanager.v3.TagBinding tag_bindings = 1;</code>
@@ -646,8 +641,7 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A possibly paginated list of TagBindings for the specified TagValue or
-     * resource.
+     * A possibly paginated list of TagBindings for the specified resource.
      * </pre>
      *
      * <code>repeated .google.cloud.resourcemanager.v3.TagBinding tag_bindings = 1;</code>
@@ -663,8 +657,7 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A possibly paginated list of TagBindings for the specified TagValue or
-     * resource.
+     * A possibly paginated list of TagBindings for the specified resource.
      * </pre>
      *
      * <code>repeated .google.cloud.resourcemanager.v3.TagBinding tag_bindings = 1;</code>
@@ -680,8 +673,7 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A possibly paginated list of TagBindings for the specified TagValue or
-     * resource.
+     * A possibly paginated list of TagBindings for the specified resource.
      * </pre>
      *
      * <code>repeated .google.cloud.resourcemanager.v3.TagBinding tag_bindings = 1;</code>
@@ -697,8 +689,7 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A possibly paginated list of TagBindings for the specified TagValue or
-     * resource.
+     * A possibly paginated list of TagBindings for the specified resource.
      * </pre>
      *
      * <code>repeated .google.cloud.resourcemanager.v3.TagBinding tag_bindings = 1;</code>
@@ -720,8 +711,7 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A possibly paginated list of TagBindings for the specified TagValue or
-     * resource.
+     * A possibly paginated list of TagBindings for the specified resource.
      * </pre>
      *
      * <code>repeated .google.cloud.resourcemanager.v3.TagBinding tag_bindings = 1;</code>
@@ -741,8 +731,7 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A possibly paginated list of TagBindings for the specified TagValue or
-     * resource.
+     * A possibly paginated list of TagBindings for the specified resource.
      * </pre>
      *
      * <code>repeated .google.cloud.resourcemanager.v3.TagBinding tag_bindings = 1;</code>
@@ -764,8 +753,7 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A possibly paginated list of TagBindings for the specified TagValue or
-     * resource.
+     * A possibly paginated list of TagBindings for the specified resource.
      * </pre>
      *
      * <code>repeated .google.cloud.resourcemanager.v3.TagBinding tag_bindings = 1;</code>
@@ -787,8 +775,7 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A possibly paginated list of TagBindings for the specified TagValue or
-     * resource.
+     * A possibly paginated list of TagBindings for the specified resource.
      * </pre>
      *
      * <code>repeated .google.cloud.resourcemanager.v3.TagBinding tag_bindings = 1;</code>
@@ -808,8 +795,7 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A possibly paginated list of TagBindings for the specified TagValue or
-     * resource.
+     * A possibly paginated list of TagBindings for the specified resource.
      * </pre>
      *
      * <code>repeated .google.cloud.resourcemanager.v3.TagBinding tag_bindings = 1;</code>
@@ -829,8 +815,7 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A possibly paginated list of TagBindings for the specified TagValue or
-     * resource.
+     * A possibly paginated list of TagBindings for the specified resource.
      * </pre>
      *
      * <code>repeated .google.cloud.resourcemanager.v3.TagBinding tag_bindings = 1;</code>
@@ -850,8 +835,7 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A possibly paginated list of TagBindings for the specified TagValue or
-     * resource.
+     * A possibly paginated list of TagBindings for the specified resource.
      * </pre>
      *
      * <code>repeated .google.cloud.resourcemanager.v3.TagBinding tag_bindings = 1;</code>
@@ -870,8 +854,7 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A possibly paginated list of TagBindings for the specified TagValue or
-     * resource.
+     * A possibly paginated list of TagBindings for the specified resource.
      * </pre>
      *
      * <code>repeated .google.cloud.resourcemanager.v3.TagBinding tag_bindings = 1;</code>
@@ -890,8 +873,7 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A possibly paginated list of TagBindings for the specified TagValue or
-     * resource.
+     * A possibly paginated list of TagBindings for the specified resource.
      * </pre>
      *
      * <code>repeated .google.cloud.resourcemanager.v3.TagBinding tag_bindings = 1;</code>
@@ -903,8 +885,7 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A possibly paginated list of TagBindings for the specified TagValue or
-     * resource.
+     * A possibly paginated list of TagBindings for the specified resource.
      * </pre>
      *
      * <code>repeated .google.cloud.resourcemanager.v3.TagBinding tag_bindings = 1;</code>
@@ -921,8 +902,7 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A possibly paginated list of TagBindings for the specified TagValue or
-     * resource.
+     * A possibly paginated list of TagBindings for the specified resource.
      * </pre>
      *
      * <code>repeated .google.cloud.resourcemanager.v3.TagBinding tag_bindings = 1;</code>
@@ -939,8 +919,7 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A possibly paginated list of TagBindings for the specified TagValue or
-     * resource.
+     * A possibly paginated list of TagBindings for the specified resource.
      * </pre>
      *
      * <code>repeated .google.cloud.resourcemanager.v3.TagBinding tag_bindings = 1;</code>
@@ -953,8 +932,7 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A possibly paginated list of TagBindings for the specified TagValue or
-     * resource.
+     * A possibly paginated list of TagBindings for the specified resource.
      * </pre>
      *
      * <code>repeated .google.cloud.resourcemanager.v3.TagBinding tag_bindings = 1;</code>
@@ -967,8 +945,7 @@ public final class ListTagBindingsResponse extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A possibly paginated list of TagBindings for the specified TagValue or
-     * resource.
+     * A possibly paginated list of TagBindings for the specified resource.
      * </pre>
      *
      * <code>repeated .google.cloud.resourcemanager.v3.TagBinding tag_bindings = 1;</code>

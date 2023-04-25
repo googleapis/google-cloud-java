@@ -42,7 +42,7 @@ import javax.annotation.Generated;
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Allow users to create and manage TagBindings between TagValues and different
- * cloud resources throughout the GCP resource hierarchy.
+ * Google Cloud resources throughout the GCP resource hierarchy.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -206,7 +206,7 @@ public class TagBindingsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the TagBindings for the given cloud resource, as specified with `parent`.
+   * Lists the TagBindings for the given Google Cloud resource, as specified with `parent`.
    *
    * <p>NOTE: The `parent` field is expected to be a full resource name:
    * https://cloud.google.com/apis/design/resource_names#full_resource_name
@@ -241,7 +241,7 @@ public class TagBindingsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the TagBindings for the given cloud resource, as specified with `parent`.
+   * Lists the TagBindings for the given Google Cloud resource, as specified with `parent`.
    *
    * <p>NOTE: The `parent` field is expected to be a full resource name:
    * https://cloud.google.com/apis/design/resource_names#full_resource_name
@@ -273,7 +273,7 @@ public class TagBindingsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the TagBindings for the given cloud resource, as specified with `parent`.
+   * Lists the TagBindings for the given Google Cloud resource, as specified with `parent`.
    *
    * <p>NOTE: The `parent` field is expected to be a full resource name:
    * https://cloud.google.com/apis/design/resource_names#full_resource_name
@@ -308,7 +308,7 @@ public class TagBindingsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the TagBindings for the given cloud resource, as specified with `parent`.
+   * Lists the TagBindings for the given Google Cloud resource, as specified with `parent`.
    *
    * <p>NOTE: The `parent` field is expected to be a full resource name:
    * https://cloud.google.com/apis/design/resource_names#full_resource_name
@@ -344,7 +344,7 @@ public class TagBindingsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists the TagBindings for the given cloud resource, as specified with `parent`.
+   * Lists the TagBindings for the given Google Cloud resource, as specified with `parent`.
    *
    * <p>NOTE: The `parent` field is expected to be a full resource name:
    * https://cloud.google.com/apis/design/resource_names#full_resource_name
@@ -387,8 +387,7 @@ public class TagBindingsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a TagBinding between a TagValue and a cloud resource (currently project, folder, or
-   * organization).
+   * Creates a TagBinding between a TagValue and a Google Cloud resource.
    *
    * <p>Sample code:
    *
@@ -416,8 +415,7 @@ public class TagBindingsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a TagBinding between a TagValue and a cloud resource (currently project, folder, or
-   * organization).
+   * Creates a TagBinding between a TagValue and a Google Cloud resource.
    *
    * <p>Sample code:
    *
@@ -447,8 +445,7 @@ public class TagBindingsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a TagBinding between a TagValue and a cloud resource (currently project, folder, or
-   * organization).
+   * Creates a TagBinding between a TagValue and a Google Cloud resource.
    *
    * <p>Sample code:
    *
@@ -478,8 +475,7 @@ public class TagBindingsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a TagBinding between a TagValue and a cloud resource (currently project, folder, or
-   * organization).
+   * Creates a TagBinding between a TagValue and a Google Cloud resource.
    *
    * <p>Sample code:
    *
@@ -650,6 +646,141 @@ public class TagBindingsClient implements BackgroundResource {
     return stub.deleteTagBindingCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Return a list of effective tags for the given Google Cloud resource, as specified in `parent`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
+   *   String parent = "parent-995424086";
+   *   for (EffectiveTag element : tagBindingsClient.listEffectiveTags(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The full resource name of a resource for which you want to list the
+   *     effective tags. E.g. "//cloudresourcemanager.googleapis.com/projects/123"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEffectiveTagsPagedResponse listEffectiveTags(String parent) {
+    ListEffectiveTagsRequest request =
+        ListEffectiveTagsRequest.newBuilder().setParent(parent).build();
+    return listEffectiveTags(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Return a list of effective tags for the given Google Cloud resource, as specified in `parent`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
+   *   ListEffectiveTagsRequest request =
+   *       ListEffectiveTagsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (EffectiveTag element : tagBindingsClient.listEffectiveTags(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListEffectiveTagsPagedResponse listEffectiveTags(ListEffectiveTagsRequest request) {
+    return listEffectiveTagsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Return a list of effective tags for the given Google Cloud resource, as specified in `parent`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
+   *   ListEffectiveTagsRequest request =
+   *       ListEffectiveTagsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<EffectiveTag> future =
+   *       tagBindingsClient.listEffectiveTagsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (EffectiveTag element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListEffectiveTagsRequest, ListEffectiveTagsPagedResponse>
+      listEffectiveTagsPagedCallable() {
+    return stub.listEffectiveTagsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Return a list of effective tags for the given Google Cloud resource, as specified in `parent`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TagBindingsClient tagBindingsClient = TagBindingsClient.create()) {
+   *   ListEffectiveTagsRequest request =
+   *       ListEffectiveTagsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListEffectiveTagsResponse response =
+   *         tagBindingsClient.listEffectiveTagsCallable().call(request);
+   *     for (EffectiveTag element : response.getEffectiveTagsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListEffectiveTagsRequest, ListEffectiveTagsResponse>
+      listEffectiveTagsCallable() {
+    return stub.listEffectiveTagsCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -754,6 +885,86 @@ public class TagBindingsClient implements BackgroundResource {
     protected ListTagBindingsFixedSizeCollection createCollection(
         List<ListTagBindingsPage> pages, int collectionSize) {
       return new ListTagBindingsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListEffectiveTagsPagedResponse
+      extends AbstractPagedListResponse<
+          ListEffectiveTagsRequest,
+          ListEffectiveTagsResponse,
+          EffectiveTag,
+          ListEffectiveTagsPage,
+          ListEffectiveTagsFixedSizeCollection> {
+
+    public static ApiFuture<ListEffectiveTagsPagedResponse> createAsync(
+        PageContext<ListEffectiveTagsRequest, ListEffectiveTagsResponse, EffectiveTag> context,
+        ApiFuture<ListEffectiveTagsResponse> futureResponse) {
+      ApiFuture<ListEffectiveTagsPage> futurePage =
+          ListEffectiveTagsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListEffectiveTagsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListEffectiveTagsPagedResponse(ListEffectiveTagsPage page) {
+      super(page, ListEffectiveTagsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListEffectiveTagsPage
+      extends AbstractPage<
+          ListEffectiveTagsRequest,
+          ListEffectiveTagsResponse,
+          EffectiveTag,
+          ListEffectiveTagsPage> {
+
+    private ListEffectiveTagsPage(
+        PageContext<ListEffectiveTagsRequest, ListEffectiveTagsResponse, EffectiveTag> context,
+        ListEffectiveTagsResponse response) {
+      super(context, response);
+    }
+
+    private static ListEffectiveTagsPage createEmptyPage() {
+      return new ListEffectiveTagsPage(null, null);
+    }
+
+    @Override
+    protected ListEffectiveTagsPage createPage(
+        PageContext<ListEffectiveTagsRequest, ListEffectiveTagsResponse, EffectiveTag> context,
+        ListEffectiveTagsResponse response) {
+      return new ListEffectiveTagsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListEffectiveTagsPage> createPageAsync(
+        PageContext<ListEffectiveTagsRequest, ListEffectiveTagsResponse, EffectiveTag> context,
+        ApiFuture<ListEffectiveTagsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListEffectiveTagsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListEffectiveTagsRequest,
+          ListEffectiveTagsResponse,
+          EffectiveTag,
+          ListEffectiveTagsPage,
+          ListEffectiveTagsFixedSizeCollection> {
+
+    private ListEffectiveTagsFixedSizeCollection(
+        List<ListEffectiveTagsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListEffectiveTagsFixedSizeCollection createEmptyCollection() {
+      return new ListEffectiveTagsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListEffectiveTagsFixedSizeCollection createCollection(
+        List<ListEffectiveTagsPage> pages, int collectionSize) {
+      return new ListEffectiveTagsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

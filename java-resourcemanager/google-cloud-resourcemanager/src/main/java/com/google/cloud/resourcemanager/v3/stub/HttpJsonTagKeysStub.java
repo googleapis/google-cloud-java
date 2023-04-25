@@ -38,6 +38,7 @@ import com.google.cloud.resourcemanager.v3.CreateTagKeyMetadata;
 import com.google.cloud.resourcemanager.v3.CreateTagKeyRequest;
 import com.google.cloud.resourcemanager.v3.DeleteTagKeyMetadata;
 import com.google.cloud.resourcemanager.v3.DeleteTagKeyRequest;
+import com.google.cloud.resourcemanager.v3.GetNamespacedTagKeyRequest;
 import com.google.cloud.resourcemanager.v3.GetTagKeyRequest;
 import com.google.cloud.resourcemanager.v3.ListTagKeysRequest;
 import com.google.cloud.resourcemanager.v3.ListTagKeysResponse;
@@ -145,6 +146,40 @@ public class HttpJsonTagKeysStub extends TagKeysStub {
                   .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
+
+  private static final ApiMethodDescriptor<GetNamespacedTagKeyRequest, TagKey>
+      getNamespacedTagKeyMethodDescriptor =
+          ApiMethodDescriptor.<GetNamespacedTagKeyRequest, TagKey>newBuilder()
+              .setFullMethodName("google.cloud.resourcemanager.v3.TagKeys/GetNamespacedTagKey")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetNamespacedTagKeyRequest>newBuilder()
+                      .setPath(
+                          "/v3/tagKeys/namespaced",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetNamespacedTagKeyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetNamespacedTagKeyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "name", request.getName());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TagKey>newBuilder()
+                      .setDefaultInstance(TagKey.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<CreateTagKeyRequest, Operation>
       createTagKeyMethodDescriptor =
@@ -386,6 +421,7 @@ public class HttpJsonTagKeysStub extends TagKeysStub {
   private final UnaryCallable<ListTagKeysRequest, ListTagKeysPagedResponse>
       listTagKeysPagedCallable;
   private final UnaryCallable<GetTagKeyRequest, TagKey> getTagKeyCallable;
+  private final UnaryCallable<GetNamespacedTagKeyRequest, TagKey> getNamespacedTagKeyCallable;
   private final UnaryCallable<CreateTagKeyRequest, Operation> createTagKeyCallable;
   private final OperationCallable<CreateTagKeyRequest, TagKey, CreateTagKeyMetadata>
       createTagKeyOperationCallable;
@@ -460,6 +496,11 @@ public class HttpJsonTagKeysStub extends TagKeysStub {
             .setMethodDescriptor(getTagKeyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<GetNamespacedTagKeyRequest, TagKey> getNamespacedTagKeyTransportSettings =
+        HttpJsonCallSettings.<GetNamespacedTagKeyRequest, TagKey>newBuilder()
+            .setMethodDescriptor(getNamespacedTagKeyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
     HttpJsonCallSettings<CreateTagKeyRequest, Operation> createTagKeyTransportSettings =
         HttpJsonCallSettings.<CreateTagKeyRequest, Operation>newBuilder()
             .setMethodDescriptor(createTagKeyMethodDescriptor)
@@ -501,6 +542,11 @@ public class HttpJsonTagKeysStub extends TagKeysStub {
     this.getTagKeyCallable =
         callableFactory.createUnaryCallable(
             getTagKeyTransportSettings, settings.getTagKeySettings(), clientContext);
+    this.getNamespacedTagKeyCallable =
+        callableFactory.createUnaryCallable(
+            getNamespacedTagKeyTransportSettings,
+            settings.getNamespacedTagKeySettings(),
+            clientContext);
     this.createTagKeyCallable =
         callableFactory.createUnaryCallable(
             createTagKeyTransportSettings, settings.createTagKeySettings(), clientContext);
@@ -549,6 +595,7 @@ public class HttpJsonTagKeysStub extends TagKeysStub {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(listTagKeysMethodDescriptor);
     methodDescriptors.add(getTagKeyMethodDescriptor);
+    methodDescriptors.add(getNamespacedTagKeyMethodDescriptor);
     methodDescriptors.add(createTagKeyMethodDescriptor);
     methodDescriptors.add(updateTagKeyMethodDescriptor);
     methodDescriptors.add(deleteTagKeyMethodDescriptor);
@@ -575,6 +622,11 @@ public class HttpJsonTagKeysStub extends TagKeysStub {
   @Override
   public UnaryCallable<GetTagKeyRequest, TagKey> getTagKeyCallable() {
     return getTagKeyCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetNamespacedTagKeyRequest, TagKey> getNamespacedTagKeyCallable() {
+    return getNamespacedTagKeyCallable;
   }
 
   @Override

@@ -93,6 +93,11 @@ public class TagKeysSettings extends ClientSettings<TagKeysSettings> {
     return ((TagKeysStubSettings) getStubSettings()).getTagKeySettings();
   }
 
+  /** Returns the object with the settings used for calls to getNamespacedTagKey. */
+  public UnaryCallSettings<GetNamespacedTagKeyRequest, TagKey> getNamespacedTagKeySettings() {
+    return ((TagKeysStubSettings) getStubSettings()).getNamespacedTagKeySettings();
+  }
+
   /** Returns the object with the settings used for calls to createTagKey. */
   public UnaryCallSettings<CreateTagKeyRequest, Operation> createTagKeySettings() {
     return ((TagKeysStubSettings) getStubSettings()).createTagKeySettings();
@@ -266,6 +271,12 @@ public class TagKeysSettings extends ClientSettings<TagKeysSettings> {
     /** Returns the builder for the settings used for calls to getTagKey. */
     public UnaryCallSettings.Builder<GetTagKeyRequest, TagKey> getTagKeySettings() {
       return getStubSettingsBuilder().getTagKeySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getNamespacedTagKey. */
+    public UnaryCallSettings.Builder<GetNamespacedTagKeyRequest, TagKey>
+        getNamespacedTagKeySettings() {
+      return getStubSettingsBuilder().getNamespacedTagKeySettings();
     }
 
     /** Returns the builder for the settings used for calls to createTagKey. */

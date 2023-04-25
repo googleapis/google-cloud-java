@@ -51,6 +51,7 @@ import com.google.cloud.resourcemanager.v3.CreateTagValueMetadata;
 import com.google.cloud.resourcemanager.v3.CreateTagValueRequest;
 import com.google.cloud.resourcemanager.v3.DeleteTagValueMetadata;
 import com.google.cloud.resourcemanager.v3.DeleteTagValueRequest;
+import com.google.cloud.resourcemanager.v3.GetNamespacedTagValueRequest;
 import com.google.cloud.resourcemanager.v3.GetTagValueRequest;
 import com.google.cloud.resourcemanager.v3.ListTagValuesRequest;
 import com.google.cloud.resourcemanager.v3.ListTagValuesResponse;
@@ -122,6 +123,8 @@ public class TagValuesStubSettings extends StubSettings<TagValuesStubSettings> {
           ListTagValuesRequest, ListTagValuesResponse, ListTagValuesPagedResponse>
       listTagValuesSettings;
   private final UnaryCallSettings<GetTagValueRequest, TagValue> getTagValueSettings;
+  private final UnaryCallSettings<GetNamespacedTagValueRequest, TagValue>
+      getNamespacedTagValueSettings;
   private final UnaryCallSettings<CreateTagValueRequest, Operation> createTagValueSettings;
   private final OperationCallSettings<CreateTagValueRequest, TagValue, CreateTagValueMetadata>
       createTagValueOperationSettings;
@@ -198,6 +201,11 @@ public class TagValuesStubSettings extends StubSettings<TagValuesStubSettings> {
   /** Returns the object with the settings used for calls to getTagValue. */
   public UnaryCallSettings<GetTagValueRequest, TagValue> getTagValueSettings() {
     return getTagValueSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getNamespacedTagValue. */
+  public UnaryCallSettings<GetNamespacedTagValueRequest, TagValue> getNamespacedTagValueSettings() {
+    return getNamespacedTagValueSettings;
   }
 
   /** Returns the object with the settings used for calls to createTagValue. */
@@ -355,6 +363,7 @@ public class TagValuesStubSettings extends StubSettings<TagValuesStubSettings> {
 
     listTagValuesSettings = settingsBuilder.listTagValuesSettings().build();
     getTagValueSettings = settingsBuilder.getTagValueSettings().build();
+    getNamespacedTagValueSettings = settingsBuilder.getNamespacedTagValueSettings().build();
     createTagValueSettings = settingsBuilder.createTagValueSettings().build();
     createTagValueOperationSettings = settingsBuilder.createTagValueOperationSettings().build();
     updateTagValueSettings = settingsBuilder.updateTagValueSettings().build();
@@ -373,6 +382,8 @@ public class TagValuesStubSettings extends StubSettings<TagValuesStubSettings> {
             ListTagValuesRequest, ListTagValuesResponse, ListTagValuesPagedResponse>
         listTagValuesSettings;
     private final UnaryCallSettings.Builder<GetTagValueRequest, TagValue> getTagValueSettings;
+    private final UnaryCallSettings.Builder<GetNamespacedTagValueRequest, TagValue>
+        getNamespacedTagValueSettings;
     private final UnaryCallSettings.Builder<CreateTagValueRequest, Operation>
         createTagValueSettings;
     private final OperationCallSettings.Builder<
@@ -401,9 +412,9 @@ public class TagValuesStubSettings extends StubSettings<TagValuesStubSettings> {
       definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -423,6 +434,8 @@ public class TagValuesStubSettings extends StubSettings<TagValuesStubSettings> {
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeout(Duration.ofMillis(60000L))
@@ -431,8 +444,6 @@ public class TagValuesStubSettings extends StubSettings<TagValuesStubSettings> {
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -445,6 +456,7 @@ public class TagValuesStubSettings extends StubSettings<TagValuesStubSettings> {
 
       listTagValuesSettings = PagedCallSettings.newBuilder(LIST_TAG_VALUES_PAGE_STR_FACT);
       getTagValueSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getNamespacedTagValueSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createTagValueSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createTagValueOperationSettings = OperationCallSettings.newBuilder();
       updateTagValueSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -459,6 +471,7 @@ public class TagValuesStubSettings extends StubSettings<TagValuesStubSettings> {
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listTagValuesSettings,
               getTagValueSettings,
+              getNamespacedTagValueSettings,
               createTagValueSettings,
               updateTagValueSettings,
               deleteTagValueSettings,
@@ -473,6 +486,7 @@ public class TagValuesStubSettings extends StubSettings<TagValuesStubSettings> {
 
       listTagValuesSettings = settings.listTagValuesSettings.toBuilder();
       getTagValueSettings = settings.getTagValueSettings.toBuilder();
+      getNamespacedTagValueSettings = settings.getNamespacedTagValueSettings.toBuilder();
       createTagValueSettings = settings.createTagValueSettings.toBuilder();
       createTagValueOperationSettings = settings.createTagValueOperationSettings.toBuilder();
       updateTagValueSettings = settings.updateTagValueSettings.toBuilder();
@@ -487,6 +501,7 @@ public class TagValuesStubSettings extends StubSettings<TagValuesStubSettings> {
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listTagValuesSettings,
               getTagValueSettings,
+              getNamespacedTagValueSettings,
               createTagValueSettings,
               updateTagValueSettings,
               deleteTagValueSettings,
@@ -531,6 +546,11 @@ public class TagValuesStubSettings extends StubSettings<TagValuesStubSettings> {
           .getTagValueSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getNamespacedTagValueSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .createTagValueSettings()
@@ -662,6 +682,12 @@ public class TagValuesStubSettings extends StubSettings<TagValuesStubSettings> {
     /** Returns the builder for the settings used for calls to getTagValue. */
     public UnaryCallSettings.Builder<GetTagValueRequest, TagValue> getTagValueSettings() {
       return getTagValueSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getNamespacedTagValue. */
+    public UnaryCallSettings.Builder<GetNamespacedTagValueRequest, TagValue>
+        getNamespacedTagValueSettings() {
+      return getNamespacedTagValueSettings;
     }
 
     /** Returns the builder for the settings used for calls to createTagValue. */

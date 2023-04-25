@@ -16,6 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.stub;
 
+import static com.google.cloud.resourcemanager.v3.TagBindingsClient.ListEffectiveTagsPagedResponse;
 import static com.google.cloud.resourcemanager.v3.TagBindingsClient.ListTagBindingsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -51,6 +52,9 @@ import com.google.cloud.resourcemanager.v3.CreateTagBindingMetadata;
 import com.google.cloud.resourcemanager.v3.CreateTagBindingRequest;
 import com.google.cloud.resourcemanager.v3.DeleteTagBindingMetadata;
 import com.google.cloud.resourcemanager.v3.DeleteTagBindingRequest;
+import com.google.cloud.resourcemanager.v3.EffectiveTag;
+import com.google.cloud.resourcemanager.v3.ListEffectiveTagsRequest;
+import com.google.cloud.resourcemanager.v3.ListEffectiveTagsResponse;
 import com.google.cloud.resourcemanager.v3.ListTagBindingsRequest;
 import com.google.cloud.resourcemanager.v3.ListTagBindingsResponse;
 import com.google.cloud.resourcemanager.v3.TagBinding;
@@ -121,6 +125,9 @@ public class TagBindingsStubSettings extends StubSettings<TagBindingsStubSetting
   private final UnaryCallSettings<DeleteTagBindingRequest, Operation> deleteTagBindingSettings;
   private final OperationCallSettings<DeleteTagBindingRequest, Empty, DeleteTagBindingMetadata>
       deleteTagBindingOperationSettings;
+  private final PagedCallSettings<
+          ListEffectiveTagsRequest, ListEffectiveTagsResponse, ListEffectiveTagsPagedResponse>
+      listEffectiveTagsSettings;
 
   private static final PagedListDescriptor<
           ListTagBindingsRequest, ListTagBindingsResponse, TagBinding>
@@ -161,6 +168,46 @@ public class TagBindingsStubSettings extends StubSettings<TagBindingsStubSetting
             }
           };
 
+  private static final PagedListDescriptor<
+          ListEffectiveTagsRequest, ListEffectiveTagsResponse, EffectiveTag>
+      LIST_EFFECTIVE_TAGS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListEffectiveTagsRequest, ListEffectiveTagsResponse, EffectiveTag>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListEffectiveTagsRequest injectToken(
+                ListEffectiveTagsRequest payload, String token) {
+              return ListEffectiveTagsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListEffectiveTagsRequest injectPageSize(
+                ListEffectiveTagsRequest payload, int pageSize) {
+              return ListEffectiveTagsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListEffectiveTagsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListEffectiveTagsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<EffectiveTag> extractResources(ListEffectiveTagsResponse payload) {
+              return payload.getEffectiveTagsList() == null
+                  ? ImmutableList.<EffectiveTag>of()
+                  : payload.getEffectiveTagsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListTagBindingsRequest, ListTagBindingsResponse, ListTagBindingsPagedResponse>
       LIST_TAG_BINDINGS_PAGE_STR_FACT =
@@ -175,6 +222,27 @@ public class TagBindingsStubSettings extends StubSettings<TagBindingsStubSetting
               PageContext<ListTagBindingsRequest, ListTagBindingsResponse, TagBinding> pageContext =
                   PageContext.create(callable, LIST_TAG_BINDINGS_PAGE_STR_DESC, request, context);
               return ListTagBindingsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListEffectiveTagsRequest, ListEffectiveTagsResponse, ListEffectiveTagsPagedResponse>
+      LIST_EFFECTIVE_TAGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListEffectiveTagsRequest,
+              ListEffectiveTagsResponse,
+              ListEffectiveTagsPagedResponse>() {
+            @Override
+            public ApiFuture<ListEffectiveTagsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListEffectiveTagsRequest, ListEffectiveTagsResponse> callable,
+                ListEffectiveTagsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListEffectiveTagsResponse> futureResponse) {
+              PageContext<ListEffectiveTagsRequest, ListEffectiveTagsResponse, EffectiveTag>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_EFFECTIVE_TAGS_PAGE_STR_DESC, request, context);
+              return ListEffectiveTagsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -205,6 +273,13 @@ public class TagBindingsStubSettings extends StubSettings<TagBindingsStubSetting
   public OperationCallSettings<DeleteTagBindingRequest, Empty, DeleteTagBindingMetadata>
       deleteTagBindingOperationSettings() {
     return deleteTagBindingOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listEffectiveTags. */
+  public PagedCallSettings<
+          ListEffectiveTagsRequest, ListEffectiveTagsResponse, ListEffectiveTagsPagedResponse>
+      listEffectiveTagsSettings() {
+    return listEffectiveTagsSettings;
   }
 
   public TagBindingsStub createStub() throws IOException {
@@ -318,6 +393,7 @@ public class TagBindingsStubSettings extends StubSettings<TagBindingsStubSetting
     createTagBindingOperationSettings = settingsBuilder.createTagBindingOperationSettings().build();
     deleteTagBindingSettings = settingsBuilder.deleteTagBindingSettings().build();
     deleteTagBindingOperationSettings = settingsBuilder.deleteTagBindingOperationSettings().build();
+    listEffectiveTagsSettings = settingsBuilder.listEffectiveTagsSettings().build();
   }
 
   /** Builder for TagBindingsStubSettings. */
@@ -336,6 +412,9 @@ public class TagBindingsStubSettings extends StubSettings<TagBindingsStubSetting
     private final OperationCallSettings.Builder<
             DeleteTagBindingRequest, Empty, DeleteTagBindingMetadata>
         deleteTagBindingOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListEffectiveTagsRequest, ListEffectiveTagsResponse, ListEffectiveTagsPagedResponse>
+        listEffectiveTagsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -347,6 +426,7 @@ public class TagBindingsStubSettings extends StubSettings<TagBindingsStubSetting
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -374,6 +454,8 @@ public class TagBindingsStubSettings extends StubSettings<TagBindingsStubSetting
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -389,10 +471,14 @@ public class TagBindingsStubSettings extends StubSettings<TagBindingsStubSetting
       createTagBindingOperationSettings = OperationCallSettings.newBuilder();
       deleteTagBindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteTagBindingOperationSettings = OperationCallSettings.newBuilder();
+      listEffectiveTagsSettings = PagedCallSettings.newBuilder(LIST_EFFECTIVE_TAGS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listTagBindingsSettings, createTagBindingSettings, deleteTagBindingSettings);
+              listTagBindingsSettings,
+              createTagBindingSettings,
+              deleteTagBindingSettings,
+              listEffectiveTagsSettings);
       initDefaults(this);
     }
 
@@ -404,10 +490,14 @@ public class TagBindingsStubSettings extends StubSettings<TagBindingsStubSetting
       createTagBindingOperationSettings = settings.createTagBindingOperationSettings.toBuilder();
       deleteTagBindingSettings = settings.deleteTagBindingSettings.toBuilder();
       deleteTagBindingOperationSettings = settings.deleteTagBindingOperationSettings.toBuilder();
+      listEffectiveTagsSettings = settings.listEffectiveTagsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listTagBindingsSettings, createTagBindingSettings, deleteTagBindingSettings);
+              listTagBindingsSettings,
+              createTagBindingSettings,
+              deleteTagBindingSettings,
+              listEffectiveTagsSettings);
     }
 
     private static Builder createDefault() {
@@ -451,6 +541,11 @@ public class TagBindingsStubSettings extends StubSettings<TagBindingsStubSetting
           .deleteTagBindingSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listEffectiveTagsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .createTagBindingOperationSettings()
@@ -552,6 +647,13 @@ public class TagBindingsStubSettings extends StubSettings<TagBindingsStubSetting
     public OperationCallSettings.Builder<DeleteTagBindingRequest, Empty, DeleteTagBindingMetadata>
         deleteTagBindingOperationSettings() {
       return deleteTagBindingOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listEffectiveTags. */
+    public PagedCallSettings.Builder<
+            ListEffectiveTagsRequest, ListEffectiveTagsResponse, ListEffectiveTagsPagedResponse>
+        listEffectiveTagsSettings() {
+      return listEffectiveTagsSettings;
     }
 
     @Override

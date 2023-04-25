@@ -667,9 +667,11 @@ public final class ProjectsGrpc {
      * move workflow.
      * Upon success, the `Operation.response` field will be populated with the
      * moved project.
-     * The caller must have `resourcemanager.projects.update` permission on the
-     * project and have `resourcemanager.projects.move` permission on the
-     * project's current and proposed new parent.
+     * The caller must have `resourcemanager.projects.move` permission on the
+     * project, on the project's current and proposed new parent.
+     * If project has no current parent, or it currently does not have an
+     * associated organization resource, you will also need the
+     * `resourcemanager.projects.setIamPolicy` permission in the project.
      * </pre>
      */
     default void moveProject(
@@ -689,7 +691,8 @@ public final class ProjectsGrpc {
      * [ACTIVE][google.cloud.resourcemanager.v3.Project.State.ACTIVE].
      * This method changes the Project's lifecycle state from
      * [ACTIVE][google.cloud.resourcemanager.v3.Project.State.ACTIVE]
-     * to [DELETE_REQUESTED][google.cloud.resourcemanager.v3.Project.State.DELETE_REQUESTED].
+     * to
+     * [DELETE_REQUESTED][google.cloud.resourcemanager.v3.Project.State.DELETE_REQUESTED].
      * The deletion starts at an unspecified time,
      * at which point the Project is no longer accessible.
      * Until the deletion completes, you can check the lifecycle state
@@ -743,7 +746,8 @@ public final class ProjectsGrpc {
      *
      *
      * <pre>
-     * Returns the IAM access control policy for the specified project.
+     * Returns the IAM access control policy for the specified project, in the
+     * format `projects/{ProjectIdOrNumber}` e.g. projects/123.
      * Permission is denied if the policy or the resource do not exist.
      * </pre>
      */
@@ -758,7 +762,8 @@ public final class ProjectsGrpc {
      *
      *
      * <pre>
-     * Sets the IAM access control policy for the specified project.
+     * Sets the IAM access control policy for the specified project, in the
+     * format `projects/{ProjectIdOrNumber}` e.g. projects/123.
      * CAUTION: This method will replace the existing policy, and cannot be used
      * to append additional IAM settings.
      * Note: Removing service accounts from policies or changing their roles can
@@ -781,16 +786,14 @@ public final class ProjectsGrpc {
      * + Invitations to grant the owner role cannot be sent using
      * `setIamPolicy()`;
      * they must be sent only using the Cloud Platform Console.
-     * + Membership changes that leave the project without any owners that have
-     * accepted the Terms of Service (ToS) will be rejected.
      * + If the project is not part of an organization, there must be at least
      * one owner who has accepted the Terms of Service (ToS) agreement in the
      * policy. Calling `setIamPolicy()` to remove the last ToS-accepted owner
      * from the policy will fail. This restriction also applies to legacy
      * projects that no longer have owners who have accepted the ToS. Edits to
      * IAM policies will be rejected until the lack of a ToS-accepting owner is
-     * rectified.
-     * + Calling this method requires enabling the App Engine Admin API.
+     * rectified. If the project is part of an organization, you can remove all
+     * owners, potentially making the organization inaccessible.
      * </pre>
      */
     default void setIamPolicy(
@@ -804,7 +807,8 @@ public final class ProjectsGrpc {
      *
      *
      * <pre>
-     * Returns permissions that a caller has on the specified project.
+     * Returns permissions that a caller has on the specified project, in the
+     * format `projects/{ProjectIdOrNumber}` e.g. projects/123..
      * </pre>
      */
     default void testIamPermissions(
@@ -961,9 +965,11 @@ public final class ProjectsGrpc {
      * move workflow.
      * Upon success, the `Operation.response` field will be populated with the
      * moved project.
-     * The caller must have `resourcemanager.projects.update` permission on the
-     * project and have `resourcemanager.projects.move` permission on the
-     * project's current and proposed new parent.
+     * The caller must have `resourcemanager.projects.move` permission on the
+     * project, on the project's current and proposed new parent.
+     * If project has no current parent, or it currently does not have an
+     * associated organization resource, you will also need the
+     * `resourcemanager.projects.setIamPolicy` permission in the project.
      * </pre>
      */
     public void moveProject(
@@ -985,7 +991,8 @@ public final class ProjectsGrpc {
      * [ACTIVE][google.cloud.resourcemanager.v3.Project.State.ACTIVE].
      * This method changes the Project's lifecycle state from
      * [ACTIVE][google.cloud.resourcemanager.v3.Project.State.ACTIVE]
-     * to [DELETE_REQUESTED][google.cloud.resourcemanager.v3.Project.State.DELETE_REQUESTED].
+     * to
+     * [DELETE_REQUESTED][google.cloud.resourcemanager.v3.Project.State.DELETE_REQUESTED].
      * The deletion starts at an unspecified time,
      * at which point the Project is no longer accessible.
      * Until the deletion completes, you can check the lifecycle state
@@ -1043,7 +1050,8 @@ public final class ProjectsGrpc {
      *
      *
      * <pre>
-     * Returns the IAM access control policy for the specified project.
+     * Returns the IAM access control policy for the specified project, in the
+     * format `projects/{ProjectIdOrNumber}` e.g. projects/123.
      * Permission is denied if the policy or the resource do not exist.
      * </pre>
      */
@@ -1060,7 +1068,8 @@ public final class ProjectsGrpc {
      *
      *
      * <pre>
-     * Sets the IAM access control policy for the specified project.
+     * Sets the IAM access control policy for the specified project, in the
+     * format `projects/{ProjectIdOrNumber}` e.g. projects/123.
      * CAUTION: This method will replace the existing policy, and cannot be used
      * to append additional IAM settings.
      * Note: Removing service accounts from policies or changing their roles can
@@ -1083,16 +1092,14 @@ public final class ProjectsGrpc {
      * + Invitations to grant the owner role cannot be sent using
      * `setIamPolicy()`;
      * they must be sent only using the Cloud Platform Console.
-     * + Membership changes that leave the project without any owners that have
-     * accepted the Terms of Service (ToS) will be rejected.
      * + If the project is not part of an organization, there must be at least
      * one owner who has accepted the Terms of Service (ToS) agreement in the
      * policy. Calling `setIamPolicy()` to remove the last ToS-accepted owner
      * from the policy will fail. This restriction also applies to legacy
      * projects that no longer have owners who have accepted the ToS. Edits to
      * IAM policies will be rejected until the lack of a ToS-accepting owner is
-     * rectified.
-     * + Calling this method requires enabling the App Engine Admin API.
+     * rectified. If the project is part of an organization, you can remove all
+     * owners, potentially making the organization inaccessible.
      * </pre>
      */
     public void setIamPolicy(
@@ -1108,7 +1115,8 @@ public final class ProjectsGrpc {
      *
      *
      * <pre>
-     * Returns permissions that a caller has on the specified project.
+     * Returns permissions that a caller has on the specified project, in the
+     * format `projects/{ProjectIdOrNumber}` e.g. projects/123..
      * </pre>
      */
     public void testIamPermissions(
@@ -1238,9 +1246,11 @@ public final class ProjectsGrpc {
      * move workflow.
      * Upon success, the `Operation.response` field will be populated with the
      * moved project.
-     * The caller must have `resourcemanager.projects.update` permission on the
-     * project and have `resourcemanager.projects.move` permission on the
-     * project's current and proposed new parent.
+     * The caller must have `resourcemanager.projects.move` permission on the
+     * project, on the project's current and proposed new parent.
+     * If project has no current parent, or it currently does not have an
+     * associated organization resource, you will also need the
+     * `resourcemanager.projects.setIamPolicy` permission in the project.
      * </pre>
      */
     public com.google.longrunning.Operation moveProject(
@@ -1259,7 +1269,8 @@ public final class ProjectsGrpc {
      * [ACTIVE][google.cloud.resourcemanager.v3.Project.State.ACTIVE].
      * This method changes the Project's lifecycle state from
      * [ACTIVE][google.cloud.resourcemanager.v3.Project.State.ACTIVE]
-     * to [DELETE_REQUESTED][google.cloud.resourcemanager.v3.Project.State.DELETE_REQUESTED].
+     * to
+     * [DELETE_REQUESTED][google.cloud.resourcemanager.v3.Project.State.DELETE_REQUESTED].
      * The deletion starts at an unspecified time,
      * at which point the Project is no longer accessible.
      * Until the deletion completes, you can check the lifecycle state
@@ -1311,7 +1322,8 @@ public final class ProjectsGrpc {
      *
      *
      * <pre>
-     * Returns the IAM access control policy for the specified project.
+     * Returns the IAM access control policy for the specified project, in the
+     * format `projects/{ProjectIdOrNumber}` e.g. projects/123.
      * Permission is denied if the policy or the resource do not exist.
      * </pre>
      */
@@ -1324,7 +1336,8 @@ public final class ProjectsGrpc {
      *
      *
      * <pre>
-     * Sets the IAM access control policy for the specified project.
+     * Sets the IAM access control policy for the specified project, in the
+     * format `projects/{ProjectIdOrNumber}` e.g. projects/123.
      * CAUTION: This method will replace the existing policy, and cannot be used
      * to append additional IAM settings.
      * Note: Removing service accounts from policies or changing their roles can
@@ -1347,16 +1360,14 @@ public final class ProjectsGrpc {
      * + Invitations to grant the owner role cannot be sent using
      * `setIamPolicy()`;
      * they must be sent only using the Cloud Platform Console.
-     * + Membership changes that leave the project without any owners that have
-     * accepted the Terms of Service (ToS) will be rejected.
      * + If the project is not part of an organization, there must be at least
      * one owner who has accepted the Terms of Service (ToS) agreement in the
      * policy. Calling `setIamPolicy()` to remove the last ToS-accepted owner
      * from the policy will fail. This restriction also applies to legacy
      * projects that no longer have owners who have accepted the ToS. Edits to
      * IAM policies will be rejected until the lack of a ToS-accepting owner is
-     * rectified.
-     * + Calling this method requires enabling the App Engine Admin API.
+     * rectified. If the project is part of an organization, you can remove all
+     * owners, potentially making the organization inaccessible.
      * </pre>
      */
     public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
@@ -1368,7 +1379,8 @@ public final class ProjectsGrpc {
      *
      *
      * <pre>
-     * Returns permissions that a caller has on the specified project.
+     * Returns permissions that a caller has on the specified project, in the
+     * format `projects/{ProjectIdOrNumber}` e.g. projects/123..
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
@@ -1497,9 +1509,11 @@ public final class ProjectsGrpc {
      * move workflow.
      * Upon success, the `Operation.response` field will be populated with the
      * moved project.
-     * The caller must have `resourcemanager.projects.update` permission on the
-     * project and have `resourcemanager.projects.move` permission on the
-     * project's current and proposed new parent.
+     * The caller must have `resourcemanager.projects.move` permission on the
+     * project, on the project's current and proposed new parent.
+     * If project has no current parent, or it currently does not have an
+     * associated organization resource, you will also need the
+     * `resourcemanager.projects.setIamPolicy` permission in the project.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1518,7 +1532,8 @@ public final class ProjectsGrpc {
      * [ACTIVE][google.cloud.resourcemanager.v3.Project.State.ACTIVE].
      * This method changes the Project's lifecycle state from
      * [ACTIVE][google.cloud.resourcemanager.v3.Project.State.ACTIVE]
-     * to [DELETE_REQUESTED][google.cloud.resourcemanager.v3.Project.State.DELETE_REQUESTED].
+     * to
+     * [DELETE_REQUESTED][google.cloud.resourcemanager.v3.Project.State.DELETE_REQUESTED].
      * The deletion starts at an unspecified time,
      * at which point the Project is no longer accessible.
      * Until the deletion completes, you can check the lifecycle state
@@ -1570,7 +1585,8 @@ public final class ProjectsGrpc {
      *
      *
      * <pre>
-     * Returns the IAM access control policy for the specified project.
+     * Returns the IAM access control policy for the specified project, in the
+     * format `projects/{ProjectIdOrNumber}` e.g. projects/123.
      * Permission is denied if the policy or the resource do not exist.
      * </pre>
      */
@@ -1584,7 +1600,8 @@ public final class ProjectsGrpc {
      *
      *
      * <pre>
-     * Sets the IAM access control policy for the specified project.
+     * Sets the IAM access control policy for the specified project, in the
+     * format `projects/{ProjectIdOrNumber}` e.g. projects/123.
      * CAUTION: This method will replace the existing policy, and cannot be used
      * to append additional IAM settings.
      * Note: Removing service accounts from policies or changing their roles can
@@ -1607,16 +1624,14 @@ public final class ProjectsGrpc {
      * + Invitations to grant the owner role cannot be sent using
      * `setIamPolicy()`;
      * they must be sent only using the Cloud Platform Console.
-     * + Membership changes that leave the project without any owners that have
-     * accepted the Terms of Service (ToS) will be rejected.
      * + If the project is not part of an organization, there must be at least
      * one owner who has accepted the Terms of Service (ToS) agreement in the
      * policy. Calling `setIamPolicy()` to remove the last ToS-accepted owner
      * from the policy will fail. This restriction also applies to legacy
      * projects that no longer have owners who have accepted the ToS. Edits to
      * IAM policies will be rejected until the lack of a ToS-accepting owner is
-     * rectified.
-     * + Calling this method requires enabling the App Engine Admin API.
+     * rectified. If the project is part of an organization, you can remove all
+     * owners, potentially making the organization inaccessible.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
@@ -1629,7 +1644,8 @@ public final class ProjectsGrpc {
      *
      *
      * <pre>
-     * Returns permissions that a caller has on the specified project.
+     * Returns permissions that a caller has on the specified project, in the
+     * format `projects/{ProjectIdOrNumber}` e.g. projects/123..
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

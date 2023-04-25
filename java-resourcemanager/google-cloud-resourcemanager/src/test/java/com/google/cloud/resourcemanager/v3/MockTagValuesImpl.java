@@ -106,6 +106,27 @@ public class MockTagValuesImpl extends TagValuesImplBase {
   }
 
   @Override
+  public void getNamespacedTagValue(
+      GetNamespacedTagValueRequest request, StreamObserver<TagValue> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof TagValue) {
+      requests.add(request);
+      responseObserver.onNext(((TagValue) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetNamespacedTagValue, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  TagValue.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void createTagValue(
       CreateTagValueRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();

@@ -16,6 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3.stub;
 
+import static com.google.cloud.resourcemanager.v3.TagBindingsClient.ListEffectiveTagsPagedResponse;
 import static com.google.cloud.resourcemanager.v3.TagBindingsClient.ListTagBindingsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -25,6 +26,8 @@ import com.google.cloud.resourcemanager.v3.CreateTagBindingMetadata;
 import com.google.cloud.resourcemanager.v3.CreateTagBindingRequest;
 import com.google.cloud.resourcemanager.v3.DeleteTagBindingMetadata;
 import com.google.cloud.resourcemanager.v3.DeleteTagBindingRequest;
+import com.google.cloud.resourcemanager.v3.ListEffectiveTagsRequest;
+import com.google.cloud.resourcemanager.v3.ListEffectiveTagsResponse;
 import com.google.cloud.resourcemanager.v3.ListTagBindingsRequest;
 import com.google.cloud.resourcemanager.v3.ListTagBindingsResponse;
 import com.google.cloud.resourcemanager.v3.TagBinding;
@@ -75,6 +78,16 @@ public abstract class TagBindingsStub implements BackgroundResource {
 
   public UnaryCallable<DeleteTagBindingRequest, Operation> deleteTagBindingCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteTagBindingCallable()");
+  }
+
+  public UnaryCallable<ListEffectiveTagsRequest, ListEffectiveTagsPagedResponse>
+      listEffectiveTagsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listEffectiveTagsPagedCallable()");
+  }
+
+  public UnaryCallable<ListEffectiveTagsRequest, ListEffectiveTagsResponse>
+      listEffectiveTagsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listEffectiveTagsCallable()");
   }
 
   @Override

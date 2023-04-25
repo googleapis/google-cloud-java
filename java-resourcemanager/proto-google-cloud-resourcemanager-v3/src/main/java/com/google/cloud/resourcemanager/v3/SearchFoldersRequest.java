@@ -74,8 +74,9 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The maximum number of folders to return in the response.
-   * If unspecified, server picks an appropriate default.
+   * Optional. The maximum number of folders to return in the response. The
+   * server can return fewer folders than requested. If unspecified, server
+   * picks an appropriate default.
    * </pre>
    *
    * <code>int32 page_size = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -95,8 +96,8 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. A pagination token returned from a previous call to `SearchFolders`
-   * that indicates from where search should continue.
+   * Optional. A pagination token returned from a previous call to
+   * `SearchFolders` that indicates from where search should continue.
    * </pre>
    *
    * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -119,8 +120,8 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. A pagination token returned from a previous call to `SearchFolders`
-   * that indicates from where search should continue.
+   * Optional. A pagination token returned from a previous call to
+   * `SearchFolders` that indicates from where search should continue.
    * </pre>
    *
    * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -635,8 +636,9 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The maximum number of folders to return in the response.
-     * If unspecified, server picks an appropriate default.
+     * Optional. The maximum number of folders to return in the response. The
+     * server can return fewer folders than requested. If unspecified, server
+     * picks an appropriate default.
      * </pre>
      *
      * <code>int32 page_size = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -651,8 +653,9 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The maximum number of folders to return in the response.
-     * If unspecified, server picks an appropriate default.
+     * Optional. The maximum number of folders to return in the response. The
+     * server can return fewer folders than requested. If unspecified, server
+     * picks an appropriate default.
      * </pre>
      *
      * <code>int32 page_size = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -671,8 +674,9 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The maximum number of folders to return in the response.
-     * If unspecified, server picks an appropriate default.
+     * Optional. The maximum number of folders to return in the response. The
+     * server can return fewer folders than requested. If unspecified, server
+     * picks an appropriate default.
      * </pre>
      *
      * <code>int32 page_size = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -691,8 +695,8 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. A pagination token returned from a previous call to `SearchFolders`
-     * that indicates from where search should continue.
+     * Optional. A pagination token returned from a previous call to
+     * `SearchFolders` that indicates from where search should continue.
      * </pre>
      *
      * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -714,8 +718,8 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. A pagination token returned from a previous call to `SearchFolders`
-     * that indicates from where search should continue.
+     * Optional. A pagination token returned from a previous call to
+     * `SearchFolders` that indicates from where search should continue.
      * </pre>
      *
      * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -737,8 +741,8 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. A pagination token returned from a previous call to `SearchFolders`
-     * that indicates from where search should continue.
+     * Optional. A pagination token returned from a previous call to
+     * `SearchFolders` that indicates from where search should continue.
      * </pre>
      *
      * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -759,8 +763,8 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. A pagination token returned from a previous call to `SearchFolders`
-     * that indicates from where search should continue.
+     * Optional. A pagination token returned from a previous call to
+     * `SearchFolders` that indicates from where search should continue.
      * </pre>
      *
      * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -777,8 +781,8 @@ public final class SearchFoldersRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. A pagination token returned from a previous call to `SearchFolders`
-     * that indicates from where search should continue.
+     * Optional. A pagination token returned from a previous call to
+     * `SearchFolders` that indicates from where search should continue.
      * </pre>
      *
      * <code>string page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

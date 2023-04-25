@@ -16,6 +16,7 @@
 
 package com.google.cloud.resourcemanager.v3;
 
+import static com.google.cloud.resourcemanager.v3.TagBindingsClient.ListEffectiveTagsPagedResponse;
 import static com.google.cloud.resourcemanager.v3.TagBindingsClient.ListTagBindingsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -187,6 +188,7 @@ public class TagBindingsClientHttpJsonTest {
             .setName(TagBindingName.of("[TAG_BINDING]").toString())
             .setParent("parent-995424086")
             .setTagValue("tagValue-772697609")
+            .setTagValueNamespacedName("tagValueNamespacedName1718815339")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -318,6 +320,56 @@ public class TagBindingsClientHttpJsonTest {
       client.deleteTagBindingAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listEffectiveTagsTest() throws Exception {
+    EffectiveTag responsesElement = EffectiveTag.newBuilder().build();
+    ListEffectiveTagsResponse expectedResponse =
+        ListEffectiveTagsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllEffectiveTags(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListEffectiveTagsPagedResponse pagedListResponse = client.listEffectiveTags(parent);
+
+    List<EffectiveTag> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getEffectiveTagsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listEffectiveTagsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listEffectiveTags(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

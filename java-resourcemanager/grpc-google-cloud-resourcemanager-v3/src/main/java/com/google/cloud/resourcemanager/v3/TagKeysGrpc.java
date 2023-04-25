@@ -127,6 +127,53 @@ public final class TagKeysGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.resourcemanager.v3.GetNamespacedTagKeyRequest,
+          com.google.cloud.resourcemanager.v3.TagKey>
+      getGetNamespacedTagKeyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetNamespacedTagKey",
+      requestType = com.google.cloud.resourcemanager.v3.GetNamespacedTagKeyRequest.class,
+      responseType = com.google.cloud.resourcemanager.v3.TagKey.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.resourcemanager.v3.GetNamespacedTagKeyRequest,
+          com.google.cloud.resourcemanager.v3.TagKey>
+      getGetNamespacedTagKeyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.resourcemanager.v3.GetNamespacedTagKeyRequest,
+            com.google.cloud.resourcemanager.v3.TagKey>
+        getGetNamespacedTagKeyMethod;
+    if ((getGetNamespacedTagKeyMethod = TagKeysGrpc.getGetNamespacedTagKeyMethod) == null) {
+      synchronized (TagKeysGrpc.class) {
+        if ((getGetNamespacedTagKeyMethod = TagKeysGrpc.getGetNamespacedTagKeyMethod) == null) {
+          TagKeysGrpc.getGetNamespacedTagKeyMethod =
+              getGetNamespacedTagKeyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.resourcemanager.v3.GetNamespacedTagKeyRequest,
+                          com.google.cloud.resourcemanager.v3.TagKey>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetNamespacedTagKey"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.resourcemanager.v3.GetNamespacedTagKeyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.resourcemanager.v3.TagKey.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new TagKeysMethodDescriptorSupplier("GetNamespacedTagKey"))
+                      .build();
+        }
+      }
+    }
+    return getGetNamespacedTagKeyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.resourcemanager.v3.CreateTagKeyRequest, com.google.longrunning.Operation>
       getCreateTagKeyMethod;
 
@@ -456,10 +503,26 @@ public final class TagKeysGrpc {
      *
      *
      * <pre>
+     * Retrieves a TagKey by its namespaced name.
+     * This method will return `PERMISSION_DENIED` if the key does not exist
+     * or the user does not have permission to view it.
+     * </pre>
+     */
+    default void getNamespacedTagKey(
+        com.google.cloud.resourcemanager.v3.GetNamespacedTagKeyRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.resourcemanager.v3.TagKey> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetNamespacedTagKeyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new TagKey. If another request with the same parameters is
      * sent while the original request is in process, the second request
-     * will receive an error. A maximum of 300 TagKeys can exist under a parent at
-     * any given time.
+     * will receive an error. A maximum of 1000 TagKeys can exist under a parent
+     * at any given time.
      * </pre>
      */
     default void createTagKey(
@@ -622,10 +685,28 @@ public final class TagKeysGrpc {
      *
      *
      * <pre>
+     * Retrieves a TagKey by its namespaced name.
+     * This method will return `PERMISSION_DENIED` if the key does not exist
+     * or the user does not have permission to view it.
+     * </pre>
+     */
+    public void getNamespacedTagKey(
+        com.google.cloud.resourcemanager.v3.GetNamespacedTagKeyRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.resourcemanager.v3.TagKey> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetNamespacedTagKeyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new TagKey. If another request with the same parameters is
      * sent while the original request is in process, the second request
-     * will receive an error. A maximum of 300 TagKeys can exist under a parent at
-     * any given time.
+     * will receive an error. A maximum of 1000 TagKeys can exist under a parent
+     * at any given time.
      * </pre>
      */
     public void createTagKey(
@@ -781,10 +862,25 @@ public final class TagKeysGrpc {
      *
      *
      * <pre>
+     * Retrieves a TagKey by its namespaced name.
+     * This method will return `PERMISSION_DENIED` if the key does not exist
+     * or the user does not have permission to view it.
+     * </pre>
+     */
+    public com.google.cloud.resourcemanager.v3.TagKey getNamespacedTagKey(
+        com.google.cloud.resourcemanager.v3.GetNamespacedTagKeyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetNamespacedTagKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new TagKey. If another request with the same parameters is
      * sent while the original request is in process, the second request
-     * will receive an error. A maximum of 300 TagKeys can exist under a parent at
-     * any given time.
+     * will receive an error. A maximum of 1000 TagKeys can exist under a parent
+     * at any given time.
      * </pre>
      */
     public com.google.longrunning.Operation createTagKey(
@@ -921,10 +1017,27 @@ public final class TagKeysGrpc {
      *
      *
      * <pre>
+     * Retrieves a TagKey by its namespaced name.
+     * This method will return `PERMISSION_DENIED` if the key does not exist
+     * or the user does not have permission to view it.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.resourcemanager.v3.TagKey>
+        getNamespacedTagKey(
+            com.google.cloud.resourcemanager.v3.GetNamespacedTagKeyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetNamespacedTagKeyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new TagKey. If another request with the same parameters is
      * sent while the original request is in process, the second request
-     * will receive an error. A maximum of 300 TagKeys can exist under a parent at
-     * any given time.
+     * will receive an error. A maximum of 1000 TagKeys can exist under a parent
+     * at any given time.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1015,12 +1128,13 @@ public final class TagKeysGrpc {
 
   private static final int METHODID_LIST_TAG_KEYS = 0;
   private static final int METHODID_GET_TAG_KEY = 1;
-  private static final int METHODID_CREATE_TAG_KEY = 2;
-  private static final int METHODID_UPDATE_TAG_KEY = 3;
-  private static final int METHODID_DELETE_TAG_KEY = 4;
-  private static final int METHODID_GET_IAM_POLICY = 5;
-  private static final int METHODID_SET_IAM_POLICY = 6;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 7;
+  private static final int METHODID_GET_NAMESPACED_TAG_KEY = 2;
+  private static final int METHODID_CREATE_TAG_KEY = 3;
+  private static final int METHODID_UPDATE_TAG_KEY = 4;
+  private static final int METHODID_DELETE_TAG_KEY = 5;
+  private static final int METHODID_GET_IAM_POLICY = 6;
+  private static final int METHODID_SET_IAM_POLICY = 7;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 8;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1048,6 +1162,12 @@ public final class TagKeysGrpc {
         case METHODID_GET_TAG_KEY:
           serviceImpl.getTagKey(
               (com.google.cloud.resourcemanager.v3.GetTagKeyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.resourcemanager.v3.TagKey>)
+                  responseObserver);
+          break;
+        case METHODID_GET_NAMESPACED_TAG_KEY:
+          serviceImpl.getNamespacedTagKey(
+              (com.google.cloud.resourcemanager.v3.GetNamespacedTagKeyRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.resourcemanager.v3.TagKey>)
                   responseObserver);
           break;
@@ -1113,6 +1233,13 @@ public final class TagKeysGrpc {
                 new MethodHandlers<
                     com.google.cloud.resourcemanager.v3.GetTagKeyRequest,
                     com.google.cloud.resourcemanager.v3.TagKey>(service, METHODID_GET_TAG_KEY)))
+        .addMethod(
+            getGetNamespacedTagKeyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.resourcemanager.v3.GetNamespacedTagKeyRequest,
+                    com.google.cloud.resourcemanager.v3.TagKey>(
+                    service, METHODID_GET_NAMESPACED_TAG_KEY)))
         .addMethod(
             getCreateTagKeyMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1199,6 +1326,7 @@ public final class TagKeysGrpc {
                       .setSchemaDescriptor(new TagKeysFileDescriptorSupplier())
                       .addMethod(getListTagKeysMethod())
                       .addMethod(getGetTagKeyMethod())
+                      .addMethod(getGetNamespacedTagKeyMethod())
                       .addMethod(getCreateTagKeyMethod())
                       .addMethod(getUpdateTagKeyMethod())
                       .addMethod(getDeleteTagKeyMethod())

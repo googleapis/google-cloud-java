@@ -58,9 +58,9 @@ public interface ListTagKeysRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The maximum number of TagKeys to return in the response. The server allows
-   * a maximum of 300 TagKeys to return. If unspecified, the server will use 100
-   * as the default.
+   * Optional. The maximum number of TagKeys to return in the response. The
+   * server allows a maximum of 300 TagKeys to return. If unspecified, the
+   * server will use 100 as the default.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

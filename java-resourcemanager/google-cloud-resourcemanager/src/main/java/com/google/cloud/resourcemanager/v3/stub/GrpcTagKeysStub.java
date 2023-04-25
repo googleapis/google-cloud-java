@@ -29,6 +29,7 @@ import com.google.cloud.resourcemanager.v3.CreateTagKeyMetadata;
 import com.google.cloud.resourcemanager.v3.CreateTagKeyRequest;
 import com.google.cloud.resourcemanager.v3.DeleteTagKeyMetadata;
 import com.google.cloud.resourcemanager.v3.DeleteTagKeyRequest;
+import com.google.cloud.resourcemanager.v3.GetNamespacedTagKeyRequest;
 import com.google.cloud.resourcemanager.v3.GetTagKeyRequest;
 import com.google.cloud.resourcemanager.v3.ListTagKeysRequest;
 import com.google.cloud.resourcemanager.v3.ListTagKeysResponse;
@@ -74,6 +75,16 @@ public class GrpcTagKeysStub extends TagKeysStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetTagKeyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(TagKey.getDefaultInstance()))
           .build();
+
+  private static final MethodDescriptor<GetNamespacedTagKeyRequest, TagKey>
+      getNamespacedTagKeyMethodDescriptor =
+          MethodDescriptor.<GetNamespacedTagKeyRequest, TagKey>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.resourcemanager.v3.TagKeys/GetNamespacedTagKey")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetNamespacedTagKeyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(TagKey.getDefaultInstance()))
+              .build();
 
   private static final MethodDescriptor<CreateTagKeyRequest, Operation>
       createTagKeyMethodDescriptor =
@@ -133,6 +144,7 @@ public class GrpcTagKeysStub extends TagKeysStub {
   private final UnaryCallable<ListTagKeysRequest, ListTagKeysPagedResponse>
       listTagKeysPagedCallable;
   private final UnaryCallable<GetTagKeyRequest, TagKey> getTagKeyCallable;
+  private final UnaryCallable<GetNamespacedTagKeyRequest, TagKey> getNamespacedTagKeyCallable;
   private final UnaryCallable<CreateTagKeyRequest, Operation> createTagKeyCallable;
   private final OperationCallable<CreateTagKeyRequest, TagKey, CreateTagKeyMetadata>
       createTagKeyOperationCallable;
@@ -200,6 +212,10 @@ public class GrpcTagKeysStub extends TagKeysStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<GetNamespacedTagKeyRequest, TagKey> getNamespacedTagKeyTransportSettings =
+        GrpcCallSettings.<GetNamespacedTagKeyRequest, TagKey>newBuilder()
+            .setMethodDescriptor(getNamespacedTagKeyMethodDescriptor)
+            .build();
     GrpcCallSettings<CreateTagKeyRequest, Operation> createTagKeyTransportSettings =
         GrpcCallSettings.<CreateTagKeyRequest, Operation>newBuilder()
             .setMethodDescriptor(createTagKeyMethodDescriptor)
@@ -265,6 +281,11 @@ public class GrpcTagKeysStub extends TagKeysStub {
     this.getTagKeyCallable =
         callableFactory.createUnaryCallable(
             getTagKeyTransportSettings, settings.getTagKeySettings(), clientContext);
+    this.getNamespacedTagKeyCallable =
+        callableFactory.createUnaryCallable(
+            getNamespacedTagKeyTransportSettings,
+            settings.getNamespacedTagKeySettings(),
+            clientContext);
     this.createTagKeyCallable =
         callableFactory.createUnaryCallable(
             createTagKeyTransportSettings, settings.createTagKeySettings(), clientContext);
@@ -325,6 +346,11 @@ public class GrpcTagKeysStub extends TagKeysStub {
   @Override
   public UnaryCallable<GetTagKeyRequest, TagKey> getTagKeyCallable() {
     return getTagKeyCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetNamespacedTagKeyRequest, TagKey> getNamespacedTagKeyCallable() {
+    return getNamespacedTagKeyCallable;
   }
 
   @Override

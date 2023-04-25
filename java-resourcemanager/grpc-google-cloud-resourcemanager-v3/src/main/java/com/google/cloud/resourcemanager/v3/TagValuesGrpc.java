@@ -127,6 +127,54 @@ public final class TagValuesGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.resourcemanager.v3.GetNamespacedTagValueRequest,
+          com.google.cloud.resourcemanager.v3.TagValue>
+      getGetNamespacedTagValueMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetNamespacedTagValue",
+      requestType = com.google.cloud.resourcemanager.v3.GetNamespacedTagValueRequest.class,
+      responseType = com.google.cloud.resourcemanager.v3.TagValue.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.resourcemanager.v3.GetNamespacedTagValueRequest,
+          com.google.cloud.resourcemanager.v3.TagValue>
+      getGetNamespacedTagValueMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.resourcemanager.v3.GetNamespacedTagValueRequest,
+            com.google.cloud.resourcemanager.v3.TagValue>
+        getGetNamespacedTagValueMethod;
+    if ((getGetNamespacedTagValueMethod = TagValuesGrpc.getGetNamespacedTagValueMethod) == null) {
+      synchronized (TagValuesGrpc.class) {
+        if ((getGetNamespacedTagValueMethod = TagValuesGrpc.getGetNamespacedTagValueMethod)
+            == null) {
+          TagValuesGrpc.getGetNamespacedTagValueMethod =
+              getGetNamespacedTagValueMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.resourcemanager.v3.GetNamespacedTagValueRequest,
+                          com.google.cloud.resourcemanager.v3.TagValue>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetNamespacedTagValue"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.resourcemanager.v3.GetNamespacedTagValueRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.resourcemanager.v3.TagValue.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new TagValuesMethodDescriptorSupplier("GetNamespacedTagValue"))
+                      .build();
+        }
+      }
+    }
+    return getGetNamespacedTagValueMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.resourcemanager.v3.CreateTagValueRequest,
           com.google.longrunning.Operation>
       getCreateTagValueMethod;
@@ -448,9 +496,8 @@ public final class TagValuesGrpc {
      *
      *
      * <pre>
-     * Retrieves TagValue. If the TagValue or namespaced name does not exist, or
-     * if the user does not have permission to view it, this method will return
-     * `PERMISSION_DENIED`.
+     * Retrieves a TagValue. This method will return `PERMISSION_DENIED` if the
+     * value does not exist or the user does not have permission to view it.
      * </pre>
      */
     default void getTagValue(
@@ -465,9 +512,26 @@ public final class TagValuesGrpc {
      *
      *
      * <pre>
+     * Retrieves a TagValue by its namespaced name.
+     * This method will return `PERMISSION_DENIED` if the value does not exist
+     * or the user does not have permission to view it.
+     * </pre>
+     */
+    default void getNamespacedTagValue(
+        com.google.cloud.resourcemanager.v3.GetNamespacedTagValueRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.resourcemanager.v3.TagValue>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetNamespacedTagValueMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a TagValue as a child of the specified TagKey. If a another
      * request with the same parameters is sent while the original request is in
-     * process the second request will receive an error. A maximum of 300
+     * process the second request will receive an error. A maximum of 1000
      * TagValues can exist under a TagKey at any given time.
      * </pre>
      */
@@ -616,9 +680,8 @@ public final class TagValuesGrpc {
      *
      *
      * <pre>
-     * Retrieves TagValue. If the TagValue or namespaced name does not exist, or
-     * if the user does not have permission to view it, this method will return
-     * `PERMISSION_DENIED`.
+     * Retrieves a TagValue. This method will return `PERMISSION_DENIED` if the
+     * value does not exist or the user does not have permission to view it.
      * </pre>
      */
     public void getTagValue(
@@ -635,9 +698,28 @@ public final class TagValuesGrpc {
      *
      *
      * <pre>
+     * Retrieves a TagValue by its namespaced name.
+     * This method will return `PERMISSION_DENIED` if the value does not exist
+     * or the user does not have permission to view it.
+     * </pre>
+     */
+    public void getNamespacedTagValue(
+        com.google.cloud.resourcemanager.v3.GetNamespacedTagValueRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.resourcemanager.v3.TagValue>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetNamespacedTagValueMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a TagValue as a child of the specified TagKey. If a another
      * request with the same parameters is sent while the original request is in
-     * process the second request will receive an error. A maximum of 300
+     * process the second request will receive an error. A maximum of 1000
      * TagValues can exist under a TagKey at any given time.
      * </pre>
      */
@@ -781,9 +863,8 @@ public final class TagValuesGrpc {
      *
      *
      * <pre>
-     * Retrieves TagValue. If the TagValue or namespaced name does not exist, or
-     * if the user does not have permission to view it, this method will return
-     * `PERMISSION_DENIED`.
+     * Retrieves a TagValue. This method will return `PERMISSION_DENIED` if the
+     * value does not exist or the user does not have permission to view it.
      * </pre>
      */
     public com.google.cloud.resourcemanager.v3.TagValue getTagValue(
@@ -796,9 +877,24 @@ public final class TagValuesGrpc {
      *
      *
      * <pre>
+     * Retrieves a TagValue by its namespaced name.
+     * This method will return `PERMISSION_DENIED` if the value does not exist
+     * or the user does not have permission to view it.
+     * </pre>
+     */
+    public com.google.cloud.resourcemanager.v3.TagValue getNamespacedTagValue(
+        com.google.cloud.resourcemanager.v3.GetNamespacedTagValueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetNamespacedTagValueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a TagValue as a child of the specified TagKey. If a another
      * request with the same parameters is sent while the original request is in
-     * process the second request will receive an error. A maximum of 300
+     * process the second request will receive an error. A maximum of 1000
      * TagValues can exist under a TagKey at any given time.
      * </pre>
      */
@@ -921,9 +1017,8 @@ public final class TagValuesGrpc {
      *
      *
      * <pre>
-     * Retrieves TagValue. If the TagValue or namespaced name does not exist, or
-     * if the user does not have permission to view it, this method will return
-     * `PERMISSION_DENIED`.
+     * Retrieves a TagValue. This method will return `PERMISSION_DENIED` if the
+     * value does not exist or the user does not have permission to view it.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -937,9 +1032,26 @@ public final class TagValuesGrpc {
      *
      *
      * <pre>
+     * Retrieves a TagValue by its namespaced name.
+     * This method will return `PERMISSION_DENIED` if the value does not exist
+     * or the user does not have permission to view it.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.resourcemanager.v3.TagValue>
+        getNamespacedTagValue(
+            com.google.cloud.resourcemanager.v3.GetNamespacedTagValueRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetNamespacedTagValueMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a TagValue as a child of the specified TagKey. If a another
      * request with the same parameters is sent while the original request is in
-     * process the second request will receive an error. A maximum of 300
+     * process the second request will receive an error. A maximum of 1000
      * TagValues can exist under a TagKey at any given time.
      * </pre>
      */
@@ -1031,12 +1143,13 @@ public final class TagValuesGrpc {
 
   private static final int METHODID_LIST_TAG_VALUES = 0;
   private static final int METHODID_GET_TAG_VALUE = 1;
-  private static final int METHODID_CREATE_TAG_VALUE = 2;
-  private static final int METHODID_UPDATE_TAG_VALUE = 3;
-  private static final int METHODID_DELETE_TAG_VALUE = 4;
-  private static final int METHODID_GET_IAM_POLICY = 5;
-  private static final int METHODID_SET_IAM_POLICY = 6;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 7;
+  private static final int METHODID_GET_NAMESPACED_TAG_VALUE = 2;
+  private static final int METHODID_CREATE_TAG_VALUE = 3;
+  private static final int METHODID_UPDATE_TAG_VALUE = 4;
+  private static final int METHODID_DELETE_TAG_VALUE = 5;
+  private static final int METHODID_GET_IAM_POLICY = 6;
+  private static final int METHODID_SET_IAM_POLICY = 7;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 8;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1065,6 +1178,12 @@ public final class TagValuesGrpc {
         case METHODID_GET_TAG_VALUE:
           serviceImpl.getTagValue(
               (com.google.cloud.resourcemanager.v3.GetTagValueRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.resourcemanager.v3.TagValue>)
+                  responseObserver);
+          break;
+        case METHODID_GET_NAMESPACED_TAG_VALUE:
+          serviceImpl.getNamespacedTagValue(
+              (com.google.cloud.resourcemanager.v3.GetNamespacedTagValueRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.resourcemanager.v3.TagValue>)
                   responseObserver);
           break;
@@ -1130,6 +1249,13 @@ public final class TagValuesGrpc {
                 new MethodHandlers<
                     com.google.cloud.resourcemanager.v3.GetTagValueRequest,
                     com.google.cloud.resourcemanager.v3.TagValue>(service, METHODID_GET_TAG_VALUE)))
+        .addMethod(
+            getGetNamespacedTagValueMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.resourcemanager.v3.GetNamespacedTagValueRequest,
+                    com.google.cloud.resourcemanager.v3.TagValue>(
+                    service, METHODID_GET_NAMESPACED_TAG_VALUE)))
         .addMethod(
             getCreateTagValueMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1218,6 +1344,7 @@ public final class TagValuesGrpc {
                       .setSchemaDescriptor(new TagValuesFileDescriptorSupplier())
                       .addMethod(getListTagValuesMethod())
                       .addMethod(getGetTagValueMethod())
+                      .addMethod(getGetNamespacedTagValueMethod())
                       .addMethod(getCreateTagValueMethod())
                       .addMethod(getUpdateTagValueMethod())
                       .addMethod(getDeleteTagValueMethod())

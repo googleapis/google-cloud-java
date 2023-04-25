@@ -27,8 +27,8 @@ public interface CreateTagKeyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The TagKey to be created. Only fields `short_name`, `description`,
-   * and `parent` are considered during the creation request.
+   * Required. The TagKey to be created. Only fields `short_name`,
+   * `description`, and `parent` are considered during the creation request.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface CreateTagKeyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The TagKey to be created. Only fields `short_name`, `description`,
-   * and `parent` are considered during the creation request.
+   * Required. The TagKey to be created. Only fields `short_name`,
+   * `description`, and `parent` are considered during the creation request.
    * </pre>
    *
    * <code>
@@ -57,8 +57,8 @@ public interface CreateTagKeyRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The TagKey to be created. Only fields `short_name`, `description`,
-   * and `parent` are considered during the creation request.
+   * Required. The TagKey to be created. Only fields `short_name`,
+   * `description`, and `parent` are considered during the creation request.
    * </pre>
    *
    * <code>
@@ -71,8 +71,8 @@ public interface CreateTagKeyRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Set to true to perform validations necessary for creating the resource, but
-   * not actually perform the action.
+   * Optional. Set to true to perform validations necessary for creating the
+   * resource, but not actually perform the action.
    * </pre>
    *
    * <code>bool validate_only = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

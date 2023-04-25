@@ -342,10 +342,12 @@ public class FoldersClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the organization or folder whose folders are being
-   *     listed. Must be of the form `folders/{folder_id}` or `organizations/{org_id}`. Access to
-   *     this method is controlled by checking the `resourcemanager.folders.list` permission on the
-   *     `parent`.
+   * @param parent Required. The name of the parent resource whose folders are being listed. Only
+   *     children of this parent resource are listed; descendants are not listed.
+   *     <p>If the parent is a folder, use the value `folders/{folder_id}`. If the parent is an
+   *     organization, use the value `organizations/{org_id}`.
+   *     <p>Access to this method is controlled by checking the `resourcemanager.folders.list`
+   *     permission on the `parent`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFoldersPagedResponse listFolders(ResourceName parent) {
@@ -379,10 +381,12 @@ public class FoldersClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the organization or folder whose folders are being
-   *     listed. Must be of the form `folders/{folder_id}` or `organizations/{org_id}`. Access to
-   *     this method is controlled by checking the `resourcemanager.folders.list` permission on the
-   *     `parent`.
+   * @param parent Required. The name of the parent resource whose folders are being listed. Only
+   *     children of this parent resource are listed; descendants are not listed.
+   *     <p>If the parent is a folder, use the value `folders/{folder_id}`. If the parent is an
+   *     organization, use the value `organizations/{org_id}`.
+   *     <p>Access to this method is controlled by checking the `resourcemanager.folders.list`
+   *     permission on the `parent`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFoldersPagedResponse listFolders(String parent) {

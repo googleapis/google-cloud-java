@@ -44,6 +44,7 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
     namespacedName_ = "";
     description_ = "";
     etag_ = "";
+    purpose_ = 0;
   }
 
   @java.lang.Override
@@ -60,6 +61,17 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.resourcemanager.v3.TagKeysProto
         .internal_static_google_cloud_resourcemanager_v3_TagKey_descriptor;
+  }
+
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 12:
+        return internalGetPurposeData();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
   }
 
   @java.lang.Override
@@ -188,8 +200,8 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. The user friendly name for a TagKey. The short name should be
-   * unique for TagKeys within the same tag namespace.
+   * Required. Immutable. The user friendly name for a TagKey. The short name
+   * should be unique for TagKeys within the same tag namespace.
    * The short name must be 1-63 characters, beginning and ending with
    * an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_),
    * dots (.), and alphanumerics between.
@@ -217,8 +229,8 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. The user friendly name for a TagKey. The short name should be
-   * unique for TagKeys within the same tag namespace.
+   * Required. Immutable. The user friendly name for a TagKey. The short name
+   * should be unique for TagKeys within the same tag namespace.
    * The short name must be 1-63 characters, beginning and ending with
    * an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_),
    * dots (.), and alphanumerics between.
@@ -306,7 +318,8 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. User-assigned description of the TagKey. Must not exceed 256 characters.
+   * Optional. User-assigned description of the TagKey. Must not exceed 256
+   * characters.
    * Read-write.
    * </pre>
    *
@@ -330,7 +343,8 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. User-assigned description of the TagKey. Must not exceed 256 characters.
+   * Optional. User-assigned description of the TagKey. Must not exceed 256
+   * characters.
    * Read-write.
    * </pre>
    *
@@ -457,8 +471,9 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Entity tag which users can pass to prevent race conditions. This field is
-   * always set in server responses. See UpdateTagKeyRequest for details.
+   * Optional. Entity tag which users can pass to prevent race conditions. This
+   * field is always set in server responses. See UpdateTagKeyRequest for
+   * details.
    * </pre>
    *
    * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -481,8 +496,9 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Entity tag which users can pass to prevent race conditions. This field is
-   * always set in server responses. See UpdateTagKeyRequest for details.
+   * Optional. Entity tag which users can pass to prevent race conditions. This
+   * field is always set in server responses. See UpdateTagKeyRequest for
+   * details.
    * </pre>
    *
    * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -500,6 +516,170 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int PURPOSE_FIELD_NUMBER = 11;
+  private int purpose_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A purpose denotes that this Tag is intended for use in policies
+   * of a specific policy engine, and will involve that policy engine in
+   * management operations involving this Tag. A purpose does not grant a
+   * policy engine exclusive rights to the Tag, and it may be referenced by
+   * other policy engines.
+   * A purpose cannot be changed once set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.resourcemanager.v3.Purpose purpose = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for purpose.
+   */
+  @java.lang.Override
+  public int getPurposeValue() {
+    return purpose_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A purpose denotes that this Tag is intended for use in policies
+   * of a specific policy engine, and will involve that policy engine in
+   * management operations involving this Tag. A purpose does not grant a
+   * policy engine exclusive rights to the Tag, and it may be referenced by
+   * other policy engines.
+   * A purpose cannot be changed once set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.resourcemanager.v3.Purpose purpose = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The purpose.
+   */
+  @java.lang.Override
+  public com.google.cloud.resourcemanager.v3.Purpose getPurpose() {
+    com.google.cloud.resourcemanager.v3.Purpose result =
+        com.google.cloud.resourcemanager.v3.Purpose.forNumber(purpose_);
+    return result == null ? com.google.cloud.resourcemanager.v3.Purpose.UNRECOGNIZED : result;
+  }
+
+  public static final int PURPOSE_DATA_FIELD_NUMBER = 12;
+
+  private static final class PurposeDataDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.resourcemanager.v3.TagKeysProto
+                .internal_static_google_cloud_resourcemanager_v3_TagKey_PurposeDataEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> purposeData_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetPurposeData() {
+    if (purposeData_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(PurposeDataDefaultEntryHolder.defaultEntry);
+    }
+    return purposeData_;
+  }
+
+  public int getPurposeDataCount() {
+    return internalGetPurposeData().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Purpose data corresponds to the policy system that the tag is
+   * intended for. See documentation for `Purpose` for formatting of this field.
+   * Purpose data cannot be changed once set.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; purpose_data = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsPurposeData(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetPurposeData().getMap().containsKey(key);
+  }
+  /** Use {@link #getPurposeDataMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getPurposeData() {
+    return getPurposeDataMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Purpose data corresponds to the policy system that the tag is
+   * intended for. See documentation for `Purpose` for formatting of this field.
+   * Purpose data cannot be changed once set.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; purpose_data = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getPurposeDataMap() {
+    return internalGetPurposeData().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Purpose data corresponds to the policy system that the tag is
+   * intended for. See documentation for `Purpose` for formatting of this field.
+   * Purpose data cannot be changed once set.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; purpose_data = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getPurposeDataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetPurposeData().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Purpose data corresponds to the policy system that the tag is
+   * intended for. See documentation for `Purpose` for formatting of this field.
+   * Purpose data cannot be changed once set.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; purpose_data = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getPurposeDataOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetPurposeData().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -540,6 +720,11 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, etag_);
     }
+    if (purpose_ != com.google.cloud.resourcemanager.v3.Purpose.PURPOSE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(11, purpose_);
+    }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetPurposeData(), PurposeDataDefaultEntryHolder.defaultEntry, 12);
     getUnknownFields().writeTo(output);
   }
 
@@ -573,6 +758,19 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, etag_);
     }
+    if (purpose_ != com.google.cloud.resourcemanager.v3.Purpose.PURPOSE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(11, purpose_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetPurposeData().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> purposeData__ =
+          PurposeDataDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, purposeData__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -603,6 +801,8 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (!getEtag().equals(other.getEtag())) return false;
+    if (purpose_ != other.purpose_) return false;
+    if (!internalGetPurposeData().equals(other.internalGetPurposeData())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -634,6 +834,12 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
+    hash = (37 * hash) + PURPOSE_FIELD_NUMBER;
+    hash = (53 * hash) + purpose_;
+    if (!internalGetPurposeData().getMap().isEmpty()) {
+      hash = (37 * hash) + PURPOSE_DATA_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetPurposeData().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -752,6 +958,26 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_cloud_resourcemanager_v3_TagKey_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 12:
+          return internalGetPurposeData();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 12:
+          return internalGetMutablePurposeData();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -789,6 +1015,8 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_ = null;
       }
       etag_ = "";
+      purpose_ = 0;
+      internalGetMutablePurposeData().clear();
       return this;
     }
 
@@ -848,6 +1076,13 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.purpose_ = purpose_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.purposeData_ = internalGetPurposeData();
+        result.purposeData_.makeImmutable();
       }
     }
 
@@ -932,6 +1167,11 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000080;
         onChanged();
       }
+      if (other.purpose_ != 0) {
+        setPurposeValue(other.getPurposeValue());
+      }
+      internalGetMutablePurposeData().mergeFrom(other.internalGetPurposeData());
+      bitField0_ |= 0x00000200;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1006,6 +1246,24 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000080;
                 break;
               } // case 66
+            case 88:
+              {
+                purpose_ = input.readEnum();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 88
+            case 98:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> purposeData__ =
+                    input.readMessage(
+                        PurposeDataDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutablePurposeData()
+                    .getMutableMap()
+                    .put(purposeData__.getKey(), purposeData__.getValue());
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1257,8 +1515,8 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The user friendly name for a TagKey. The short name should be
-     * unique for TagKeys within the same tag namespace.
+     * Required. Immutable. The user friendly name for a TagKey. The short name
+     * should be unique for TagKeys within the same tag namespace.
      * The short name must be 1-63 characters, beginning and ending with
      * an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_),
      * dots (.), and alphanumerics between.
@@ -1285,8 +1543,8 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The user friendly name for a TagKey. The short name should be
-     * unique for TagKeys within the same tag namespace.
+     * Required. Immutable. The user friendly name for a TagKey. The short name
+     * should be unique for TagKeys within the same tag namespace.
      * The short name must be 1-63 characters, beginning and ending with
      * an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_),
      * dots (.), and alphanumerics between.
@@ -1313,8 +1571,8 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The user friendly name for a TagKey. The short name should be
-     * unique for TagKeys within the same tag namespace.
+     * Required. Immutable. The user friendly name for a TagKey. The short name
+     * should be unique for TagKeys within the same tag namespace.
      * The short name must be 1-63 characters, beginning and ending with
      * an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_),
      * dots (.), and alphanumerics between.
@@ -1340,8 +1598,8 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The user friendly name for a TagKey. The short name should be
-     * unique for TagKeys within the same tag namespace.
+     * Required. Immutable. The user friendly name for a TagKey. The short name
+     * should be unique for TagKeys within the same tag namespace.
      * The short name must be 1-63 characters, beginning and ending with
      * an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_),
      * dots (.), and alphanumerics between.
@@ -1363,8 +1621,8 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The user friendly name for a TagKey. The short name should be
-     * unique for TagKeys within the same tag namespace.
+     * Required. Immutable. The user friendly name for a TagKey. The short name
+     * should be unique for TagKeys within the same tag namespace.
      * The short name must be 1-63 characters, beginning and ending with
      * an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_),
      * dots (.), and alphanumerics between.
@@ -1509,7 +1767,8 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User-assigned description of the TagKey. Must not exceed 256 characters.
+     * Optional. User-assigned description of the TagKey. Must not exceed 256
+     * characters.
      * Read-write.
      * </pre>
      *
@@ -1532,7 +1791,8 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User-assigned description of the TagKey. Must not exceed 256 characters.
+     * Optional. User-assigned description of the TagKey. Must not exceed 256
+     * characters.
      * Read-write.
      * </pre>
      *
@@ -1555,7 +1815,8 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User-assigned description of the TagKey. Must not exceed 256 characters.
+     * Optional. User-assigned description of the TagKey. Must not exceed 256
+     * characters.
      * Read-write.
      * </pre>
      *
@@ -1577,7 +1838,8 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User-assigned description of the TagKey. Must not exceed 256 characters.
+     * Optional. User-assigned description of the TagKey. Must not exceed 256
+     * characters.
      * Read-write.
      * </pre>
      *
@@ -1595,7 +1857,8 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. User-assigned description of the TagKey. Must not exceed 256 characters.
+     * Optional. User-assigned description of the TagKey. Must not exceed 256
+     * characters.
      * Read-write.
      * </pre>
      *
@@ -2022,8 +2285,9 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Entity tag which users can pass to prevent race conditions. This field is
-     * always set in server responses. See UpdateTagKeyRequest for details.
+     * Optional. Entity tag which users can pass to prevent race conditions. This
+     * field is always set in server responses. See UpdateTagKeyRequest for
+     * details.
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2045,8 +2309,9 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Entity tag which users can pass to prevent race conditions. This field is
-     * always set in server responses. See UpdateTagKeyRequest for details.
+     * Optional. Entity tag which users can pass to prevent race conditions. This
+     * field is always set in server responses. See UpdateTagKeyRequest for
+     * details.
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2068,8 +2333,9 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Entity tag which users can pass to prevent race conditions. This field is
-     * always set in server responses. See UpdateTagKeyRequest for details.
+     * Optional. Entity tag which users can pass to prevent race conditions. This
+     * field is always set in server responses. See UpdateTagKeyRequest for
+     * details.
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2090,8 +2356,9 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Entity tag which users can pass to prevent race conditions. This field is
-     * always set in server responses. See UpdateTagKeyRequest for details.
+     * Optional. Entity tag which users can pass to prevent race conditions. This
+     * field is always set in server responses. See UpdateTagKeyRequest for
+     * details.
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2108,8 +2375,9 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Entity tag which users can pass to prevent race conditions. This field is
-     * always set in server responses. See UpdateTagKeyRequest for details.
+     * Optional. Entity tag which users can pass to prevent race conditions. This
+     * field is always set in server responses. See UpdateTagKeyRequest for
+     * details.
      * </pre>
      *
      * <code>string etag = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2125,6 +2393,318 @@ public final class TagKey extends com.google.protobuf.GeneratedMessageV3
       etag_ = value;
       bitField0_ |= 0x00000080;
       onChanged();
+      return this;
+    }
+
+    private int purpose_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A purpose denotes that this Tag is intended for use in policies
+     * of a specific policy engine, and will involve that policy engine in
+     * management operations involving this Tag. A purpose does not grant a
+     * policy engine exclusive rights to the Tag, and it may be referenced by
+     * other policy engines.
+     * A purpose cannot be changed once set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.resourcemanager.v3.Purpose purpose = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for purpose.
+     */
+    @java.lang.Override
+    public int getPurposeValue() {
+      return purpose_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A purpose denotes that this Tag is intended for use in policies
+     * of a specific policy engine, and will involve that policy engine in
+     * management operations involving this Tag. A purpose does not grant a
+     * policy engine exclusive rights to the Tag, and it may be referenced by
+     * other policy engines.
+     * A purpose cannot be changed once set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.resourcemanager.v3.Purpose purpose = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for purpose to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPurposeValue(int value) {
+      purpose_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A purpose denotes that this Tag is intended for use in policies
+     * of a specific policy engine, and will involve that policy engine in
+     * management operations involving this Tag. A purpose does not grant a
+     * policy engine exclusive rights to the Tag, and it may be referenced by
+     * other policy engines.
+     * A purpose cannot be changed once set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.resourcemanager.v3.Purpose purpose = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The purpose.
+     */
+    @java.lang.Override
+    public com.google.cloud.resourcemanager.v3.Purpose getPurpose() {
+      com.google.cloud.resourcemanager.v3.Purpose result =
+          com.google.cloud.resourcemanager.v3.Purpose.forNumber(purpose_);
+      return result == null ? com.google.cloud.resourcemanager.v3.Purpose.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A purpose denotes that this Tag is intended for use in policies
+     * of a specific policy engine, and will involve that policy engine in
+     * management operations involving this Tag. A purpose does not grant a
+     * policy engine exclusive rights to the Tag, and it may be referenced by
+     * other policy engines.
+     * A purpose cannot be changed once set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.resourcemanager.v3.Purpose purpose = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The purpose to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPurpose(com.google.cloud.resourcemanager.v3.Purpose value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000100;
+      purpose_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A purpose denotes that this Tag is intended for use in policies
+     * of a specific policy engine, and will involve that policy engine in
+     * management operations involving this Tag. A purpose does not grant a
+     * policy engine exclusive rights to the Tag, and it may be referenced by
+     * other policy engines.
+     * A purpose cannot be changed once set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.resourcemanager.v3.Purpose purpose = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPurpose() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      purpose_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> purposeData_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetPurposeData() {
+      if (purposeData_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            PurposeDataDefaultEntryHolder.defaultEntry);
+      }
+      return purposeData_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutablePurposeData() {
+      if (purposeData_ == null) {
+        purposeData_ =
+            com.google.protobuf.MapField.newMapField(PurposeDataDefaultEntryHolder.defaultEntry);
+      }
+      if (!purposeData_.isMutable()) {
+        purposeData_ = purposeData_.copy();
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return purposeData_;
+    }
+
+    public int getPurposeDataCount() {
+      return internalGetPurposeData().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Purpose data corresponds to the policy system that the tag is
+     * intended for. See documentation for `Purpose` for formatting of this field.
+     * Purpose data cannot be changed once set.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; purpose_data = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsPurposeData(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetPurposeData().getMap().containsKey(key);
+    }
+    /** Use {@link #getPurposeDataMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getPurposeData() {
+      return getPurposeDataMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Purpose data corresponds to the policy system that the tag is
+     * intended for. See documentation for `Purpose` for formatting of this field.
+     * Purpose data cannot be changed once set.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; purpose_data = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getPurposeDataMap() {
+      return internalGetPurposeData().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Purpose data corresponds to the policy system that the tag is
+     * intended for. See documentation for `Purpose` for formatting of this field.
+     * Purpose data cannot be changed once set.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; purpose_data = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getPurposeDataOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetPurposeData().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Purpose data corresponds to the policy system that the tag is
+     * intended for. See documentation for `Purpose` for formatting of this field.
+     * Purpose data cannot be changed once set.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; purpose_data = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getPurposeDataOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetPurposeData().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearPurposeData() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      internalGetMutablePurposeData().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Purpose data corresponds to the policy system that the tag is
+     * intended for. See documentation for `Purpose` for formatting of this field.
+     * Purpose data cannot be changed once set.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; purpose_data = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removePurposeData(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutablePurposeData().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutablePurposeData() {
+      bitField0_ |= 0x00000200;
+      return internalGetMutablePurposeData().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Purpose data corresponds to the policy system that the tag is
+     * intended for. See documentation for `Purpose` for formatting of this field.
+     * Purpose data cannot be changed once set.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; purpose_data = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putPurposeData(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutablePurposeData().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000200;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Purpose data corresponds to the policy system that the tag is
+     * intended for. See documentation for `Purpose` for formatting of this field.
+     * Purpose data cannot be changed once set.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; purpose_data = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllPurposeData(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutablePurposeData().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000200;
       return this;
     }
 

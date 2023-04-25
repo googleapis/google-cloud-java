@@ -76,9 +76,9 @@ public final class GetOrganizationRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The resource name of the Organization to fetch. This is the organization's
-   * relative path in the API, formatted as "organizations/[organizationId]".
-   * For example, "organizations/1234".
+   * Required. The resource name of the Organization to fetch. This is the
+   * organization's relative path in the API, formatted as
+   * "organizations/[organizationId]". For example, "organizations/1234".
    * </pre>
    *
    * <code>
@@ -103,9 +103,9 @@ public final class GetOrganizationRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The resource name of the Organization to fetch. This is the organization's
-   * relative path in the API, formatted as "organizations/[organizationId]".
-   * For example, "organizations/1234".
+   * Required. The resource name of the Organization to fetch. This is the
+   * organization's relative path in the API, formatted as
+   * "organizations/[organizationId]". For example, "organizations/1234".
    * </pre>
    *
    * <code>
@@ -476,9 +476,9 @@ public final class GetOrganizationRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The resource name of the Organization to fetch. This is the organization's
-     * relative path in the API, formatted as "organizations/[organizationId]".
-     * For example, "organizations/1234".
+     * Required. The resource name of the Organization to fetch. This is the
+     * organization's relative path in the API, formatted as
+     * "organizations/[organizationId]". For example, "organizations/1234".
      * </pre>
      *
      * <code>
@@ -502,9 +502,9 @@ public final class GetOrganizationRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The resource name of the Organization to fetch. This is the organization's
-     * relative path in the API, formatted as "organizations/[organizationId]".
-     * For example, "organizations/1234".
+     * Required. The resource name of the Organization to fetch. This is the
+     * organization's relative path in the API, formatted as
+     * "organizations/[organizationId]". For example, "organizations/1234".
      * </pre>
      *
      * <code>
@@ -528,9 +528,9 @@ public final class GetOrganizationRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The resource name of the Organization to fetch. This is the organization's
-     * relative path in the API, formatted as "organizations/[organizationId]".
-     * For example, "organizations/1234".
+     * Required. The resource name of the Organization to fetch. This is the
+     * organization's relative path in the API, formatted as
+     * "organizations/[organizationId]". For example, "organizations/1234".
      * </pre>
      *
      * <code>
@@ -553,9 +553,9 @@ public final class GetOrganizationRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The resource name of the Organization to fetch. This is the organization's
-     * relative path in the API, formatted as "organizations/[organizationId]".
-     * For example, "organizations/1234".
+     * Required. The resource name of the Organization to fetch. This is the
+     * organization's relative path in the API, formatted as
+     * "organizations/[organizationId]". For example, "organizations/1234".
      * </pre>
      *
      * <code>
@@ -574,9 +574,9 @@ public final class GetOrganizationRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The resource name of the Organization to fetch. This is the organization's
-     * relative path in the API, formatted as "organizations/[organizationId]".
-     * For example, "organizations/1234".
+     * Required. The resource name of the Organization to fetch. This is the
+     * organization's relative path in the API, formatted as
+     * "organizations/[organizationId]". For example, "organizations/1234".
      * </pre>
      *
      * <code>

@@ -25,6 +25,7 @@ import com.google.cloud.resourcemanager.v3.CreateTagKeyMetadata;
 import com.google.cloud.resourcemanager.v3.CreateTagKeyRequest;
 import com.google.cloud.resourcemanager.v3.DeleteTagKeyMetadata;
 import com.google.cloud.resourcemanager.v3.DeleteTagKeyRequest;
+import com.google.cloud.resourcemanager.v3.GetNamespacedTagKeyRequest;
 import com.google.cloud.resourcemanager.v3.GetTagKeyRequest;
 import com.google.cloud.resourcemanager.v3.ListTagKeysRequest;
 import com.google.cloud.resourcemanager.v3.ListTagKeysResponse;
@@ -67,6 +68,10 @@ public abstract class TagKeysStub implements BackgroundResource {
 
   public UnaryCallable<GetTagKeyRequest, TagKey> getTagKeyCallable() {
     throw new UnsupportedOperationException("Not implemented: getTagKeyCallable()");
+  }
+
+  public UnaryCallable<GetNamespacedTagKeyRequest, TagKey> getNamespacedTagKeyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getNamespacedTagKeyCallable()");
   }
 
   public OperationCallable<CreateTagKeyRequest, TagKey, CreateTagKeyMetadata>

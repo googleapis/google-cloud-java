@@ -76,9 +76,9 @@ public final class DeleteTagKeyRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The resource name of a TagKey to be deleted in the format `tagKeys/123`.
-   * The TagKey cannot be a parent of any existing TagValues or it will not be
-   * deleted successfully.
+   * Required. The resource name of a TagKey to be deleted in the format
+   * `tagKeys/123`. The TagKey cannot be a parent of any existing TagValues or
+   * it will not be deleted successfully.
    * </pre>
    *
    * <code>
@@ -103,9 +103,9 @@ public final class DeleteTagKeyRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The resource name of a TagKey to be deleted in the format `tagKeys/123`.
-   * The TagKey cannot be a parent of any existing TagValues or it will not be
-   * deleted successfully.
+   * Required. The resource name of a TagKey to be deleted in the format
+   * `tagKeys/123`. The TagKey cannot be a parent of any existing TagValues or
+   * it will not be deleted successfully.
    * </pre>
    *
    * <code>
@@ -133,8 +133,8 @@ public final class DeleteTagKeyRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. Set as true to perform validations necessary for deletion, but not actually
-   * perform the action.
+   * Optional. Set as true to perform validations necessary for deletion, but
+   * not actually perform the action.
    * </pre>
    *
    * <code>bool validate_only = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -154,8 +154,8 @@ public final class DeleteTagKeyRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. The etag known to the client for the expected state of the TagKey. This is
-   * to be used for optimistic concurrency.
+   * Optional. The etag known to the client for the expected state of the
+   * TagKey. This is to be used for optimistic concurrency.
    * </pre>
    *
    * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -178,8 +178,8 @@ public final class DeleteTagKeyRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. The etag known to the client for the expected state of the TagKey. This is
-   * to be used for optimistic concurrency.
+   * Optional. The etag known to the client for the expected state of the
+   * TagKey. This is to be used for optimistic concurrency.
    * </pre>
    *
    * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -593,9 +593,9 @@ public final class DeleteTagKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name of a TagKey to be deleted in the format `tagKeys/123`.
-     * The TagKey cannot be a parent of any existing TagValues or it will not be
-     * deleted successfully.
+     * Required. The resource name of a TagKey to be deleted in the format
+     * `tagKeys/123`. The TagKey cannot be a parent of any existing TagValues or
+     * it will not be deleted successfully.
      * </pre>
      *
      * <code>
@@ -619,9 +619,9 @@ public final class DeleteTagKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name of a TagKey to be deleted in the format `tagKeys/123`.
-     * The TagKey cannot be a parent of any existing TagValues or it will not be
-     * deleted successfully.
+     * Required. The resource name of a TagKey to be deleted in the format
+     * `tagKeys/123`. The TagKey cannot be a parent of any existing TagValues or
+     * it will not be deleted successfully.
      * </pre>
      *
      * <code>
@@ -645,9 +645,9 @@ public final class DeleteTagKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name of a TagKey to be deleted in the format `tagKeys/123`.
-     * The TagKey cannot be a parent of any existing TagValues or it will not be
-     * deleted successfully.
+     * Required. The resource name of a TagKey to be deleted in the format
+     * `tagKeys/123`. The TagKey cannot be a parent of any existing TagValues or
+     * it will not be deleted successfully.
      * </pre>
      *
      * <code>
@@ -670,9 +670,9 @@ public final class DeleteTagKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name of a TagKey to be deleted in the format `tagKeys/123`.
-     * The TagKey cannot be a parent of any existing TagValues or it will not be
-     * deleted successfully.
+     * Required. The resource name of a TagKey to be deleted in the format
+     * `tagKeys/123`. The TagKey cannot be a parent of any existing TagValues or
+     * it will not be deleted successfully.
      * </pre>
      *
      * <code>
@@ -691,9 +691,9 @@ public final class DeleteTagKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name of a TagKey to be deleted in the format `tagKeys/123`.
-     * The TagKey cannot be a parent of any existing TagValues or it will not be
-     * deleted successfully.
+     * Required. The resource name of a TagKey to be deleted in the format
+     * `tagKeys/123`. The TagKey cannot be a parent of any existing TagValues or
+     * it will not be deleted successfully.
      * </pre>
      *
      * <code>
@@ -719,8 +719,8 @@ public final class DeleteTagKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Set as true to perform validations necessary for deletion, but not actually
-     * perform the action.
+     * Optional. Set as true to perform validations necessary for deletion, but
+     * not actually perform the action.
      * </pre>
      *
      * <code>bool validate_only = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -735,8 +735,8 @@ public final class DeleteTagKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Set as true to perform validations necessary for deletion, but not actually
-     * perform the action.
+     * Optional. Set as true to perform validations necessary for deletion, but
+     * not actually perform the action.
      * </pre>
      *
      * <code>bool validate_only = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -755,8 +755,8 @@ public final class DeleteTagKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Set as true to perform validations necessary for deletion, but not actually
-     * perform the action.
+     * Optional. Set as true to perform validations necessary for deletion, but
+     * not actually perform the action.
      * </pre>
      *
      * <code>bool validate_only = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -775,8 +775,8 @@ public final class DeleteTagKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The etag known to the client for the expected state of the TagKey. This is
-     * to be used for optimistic concurrency.
+     * Optional. The etag known to the client for the expected state of the
+     * TagKey. This is to be used for optimistic concurrency.
      * </pre>
      *
      * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -798,8 +798,8 @@ public final class DeleteTagKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The etag known to the client for the expected state of the TagKey. This is
-     * to be used for optimistic concurrency.
+     * Optional. The etag known to the client for the expected state of the
+     * TagKey. This is to be used for optimistic concurrency.
      * </pre>
      *
      * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -821,8 +821,8 @@ public final class DeleteTagKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The etag known to the client for the expected state of the TagKey. This is
-     * to be used for optimistic concurrency.
+     * Optional. The etag known to the client for the expected state of the
+     * TagKey. This is to be used for optimistic concurrency.
      * </pre>
      *
      * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -843,8 +843,8 @@ public final class DeleteTagKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The etag known to the client for the expected state of the TagKey. This is
-     * to be used for optimistic concurrency.
+     * Optional. The etag known to the client for the expected state of the
+     * TagKey. This is to be used for optimistic concurrency.
      * </pre>
      *
      * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -861,8 +861,8 @@ public final class DeleteTagKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The etag known to the client for the expected state of the TagKey. This is
-     * to be used for optimistic concurrency.
+     * Optional. The etag known to the client for the expected state of the
+     * TagKey. This is to be used for optimistic concurrency.
      * </pre>
      *
      * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

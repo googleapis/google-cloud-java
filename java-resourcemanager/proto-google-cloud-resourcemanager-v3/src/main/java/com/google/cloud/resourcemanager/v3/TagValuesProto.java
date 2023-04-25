@@ -44,6 +44,10 @@ public final class TagValuesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_resourcemanager_v3_GetTagValueRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_resourcemanager_v3_GetNamespacedTagValueRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_resourcemanager_v3_GetNamespacedTagValueRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_resourcemanager_v3_CreateTagValueRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_resourcemanager_v3_CreateTagValueRequest_fieldAccessorTable;
@@ -101,64 +105,71 @@ public final class TagValuesProto {
           + "v3.TagValue\022\027\n\017next_page_token\030\002 \001(\t\"X\n\022"
           + "GetTagValueRequest\022B\n\004name\030\001 \001(\tB4\340A\002\372A."
           + "\n,cloudresourcemanager.googleapis.com/Ta"
-          + "gValue\"v\n\025CreateTagValueRequest\022A\n\ttag_v"
-          + "alue\030\001 \001(\0132).google.cloud.resourcemanage"
-          + "r.v3.TagValueB\003\340A\002\022\032\n\rvalidate_only\030\002 \001("
-          + "\010B\003\340A\001\"\030\n\026CreateTagValueMetadata\"\254\001\n\025Upd"
-          + "ateTagValueRequest\022A\n\ttag_value\030\001 \001(\0132)."
-          + "google.cloud.resourcemanager.v3.TagValue"
-          + "B\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.google.prot"
-          + "obuf.FieldMaskB\003\340A\001\022\032\n\rvalidate_only\030\003 \001"
-          + "(\010B\003\340A\001\"\030\n\026UpdateTagValueMetadata\"\212\001\n\025De"
-          + "leteTagValueRequest\022B\n\004name\030\001 \001(\tB4\340A\002\372A"
-          + ".\n,cloudresourcemanager.googleapis.com/T"
-          + "agValue\022\032\n\rvalidate_only\030\002 \001(\010B\003\340A\001\022\021\n\004e"
-          + "tag\030\003 \001(\tB\003\340A\001\"\030\n\026DeleteTagValueMetadata"
-          + "2\377\013\n\tTagValues\022\236\001\n\rListTagValues\0225.googl"
-          + "e.cloud.resourcemanager.v3.ListTagValues"
-          + "Request\0326.google.cloud.resourcemanager.v"
-          + "3.ListTagValuesResponse\"\036\202\323\344\223\002\017\022\r/v3/tag"
-          + "Values\332A\006parent\022\224\001\n\013GetTagValue\0223.google"
-          + ".cloud.resourcemanager.v3.GetTagValueReq"
-          + "uest\032).google.cloud.resourcemanager.v3.T"
-          + "agValue\"%\202\323\344\223\002\030\022\026/v3/{name=tagValues/*}\332"
-          + "A\004name\022\272\001\n\016CreateTagValue\0226.google.cloud"
-          + ".resourcemanager.v3.CreateTagValueReques"
-          + "t\032\035.google.longrunning.Operation\"Q\202\323\344\223\002\032"
-          + "\"\r/v3/tagValues:\ttag_value\332A\ttag_value\312A"
-          + "\"\n\010TagValue\022\026CreateTagValueMetadata\022\331\001\n\016"
-          + "UpdateTagValue\0226.google.cloud.resourcema"
-          + "nager.v3.UpdateTagValueRequest\032\035.google."
-          + "longrunning.Operation\"p\202\323\344\223\002-2 /v3/{tag_"
-          + "value.name=tagValues/*}:\ttag_value\332A\025tag"
-          + "_value,update_mask\312A\"\n\010TagValue\022\026UpdateT"
-          + "agValueMetadata\022\263\001\n\016DeleteTagValue\0226.goo"
-          + "gle.cloud.resourcemanager.v3.DeleteTagVa"
-          + "lueRequest\032\035.google.longrunning.Operatio"
-          + "n\"J\202\323\344\223\002\030*\026/v3/{name=tagValues/*}\332A\004name"
-          + "\312A\"\n\010TagValue\022\026DeleteTagValueMetadata\022\210\001"
-          + "\n\014GetIamPolicy\022\".google.iam.v1.GetIamPol"
-          + "icyRequest\032\025.google.iam.v1.Policy\"=\202\323\344\223\002"
-          + ",\"\'/v3/{resource=tagValues/*}:getIamPoli"
-          + "cy:\001*\332A\010resource\022\217\001\n\014SetIamPolicy\022\".goog"
-          + "le.iam.v1.SetIamPolicyRequest\032\025.google.i"
-          + "am.v1.Policy\"D\202\323\344\223\002,\"\'/v3/{resource=tagV"
-          + "alues/*}:setIamPolicy:\001*\332A\017resource,poli"
-          + "cy\022\272\001\n\022TestIamPermissions\022(.google.iam.v"
-          + "1.TestIamPermissionsRequest\032).google.iam"
-          + ".v1.TestIamPermissionsResponse\"O\202\323\344\223\0022\"-"
-          + "/v3/{resource=tagValues/*}:testIamPermis"
-          + "sions:\001*\332A\024resource,permissions\032\220\001\312A#clo"
-          + "udresourcemanager.googleapis.com\322Aghttps"
+          + "gValue\"b\n\034GetNamespacedTagValueRequest\022B"
+          + "\n\004name\030\001 \001(\tB4\340A\002\372A.\n,cloudresourcemanag"
+          + "er.googleapis.com/TagValue\"v\n\025CreateTagV"
+          + "alueRequest\022A\n\ttag_value\030\001 \001(\0132).google."
+          + "cloud.resourcemanager.v3.TagValueB\003\340A\002\022\032"
+          + "\n\rvalidate_only\030\002 \001(\010B\003\340A\001\"\030\n\026CreateTagV"
+          + "alueMetadata\"\254\001\n\025UpdateTagValueRequest\022A"
+          + "\n\ttag_value\030\001 \001(\0132).google.cloud.resourc"
+          + "emanager.v3.TagValueB\003\340A\002\0224\n\013update_mask"
+          + "\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022"
+          + "\032\n\rvalidate_only\030\003 \001(\010B\003\340A\001\"\030\n\026UpdateTag"
+          + "ValueMetadata\"\212\001\n\025DeleteTagValueRequest\022"
+          + "B\n\004name\030\001 \001(\tB4\340A\002\372A.\n,cloudresourcemana"
+          + "ger.googleapis.com/TagValue\022\032\n\rvalidate_"
+          + "only\030\002 \001(\010B\003\340A\001\022\021\n\004etag\030\003 \001(\tB\003\340A\001\"\030\n\026De"
+          + "leteTagValueMetadata2\254\r\n\tTagValues\022\236\001\n\rL"
+          + "istTagValues\0225.google.cloud.resourcemana"
+          + "ger.v3.ListTagValuesRequest\0326.google.clo"
+          + "ud.resourcemanager.v3.ListTagValuesRespo"
+          + "nse\"\036\202\323\344\223\002\017\022\r/v3/tagValues\332A\006parent\022\224\001\n\013"
+          + "GetTagValue\0223.google.cloud.resourcemanag"
+          + "er.v3.GetTagValueRequest\032).google.cloud."
+          + "resourcemanager.v3.TagValue\"%\202\323\344\223\002\030\022\026/v3"
+          + "/{name=tagValues/*}\332A\004name\022\252\001\n\025GetNamesp"
+          + "acedTagValue\022=.google.cloud.resourcemana"
+          + "ger.v3.GetNamespacedTagValueRequest\032).go"
+          + "ogle.cloud.resourcemanager.v3.TagValue\"\'"
+          + "\202\323\344\223\002\032\022\030/v3/tagValues/namespaced\332A\004name\022"
+          + "\272\001\n\016CreateTagValue\0226.google.cloud.resour"
+          + "cemanager.v3.CreateTagValueRequest\032\035.goo"
+          + "gle.longrunning.Operation\"Q\202\323\344\223\002\032\"\r/v3/t"
+          + "agValues:\ttag_value\332A\ttag_value\312A\"\n\010TagV"
+          + "alue\022\026CreateTagValueMetadata\022\331\001\n\016UpdateT"
+          + "agValue\0226.google.cloud.resourcemanager.v"
+          + "3.UpdateTagValueRequest\032\035.google.longrun"
+          + "ning.Operation\"p\202\323\344\223\002-2 /v3/{tag_value.n"
+          + "ame=tagValues/*}:\ttag_value\332A\025tag_value,"
+          + "update_mask\312A\"\n\010TagValue\022\026UpdateTagValue"
+          + "Metadata\022\263\001\n\016DeleteTagValue\0226.google.clo"
+          + "ud.resourcemanager.v3.DeleteTagValueRequ"
+          + "est\032\035.google.longrunning.Operation\"J\202\323\344\223"
+          + "\002\030*\026/v3/{name=tagValues/*}\332A\004name\312A\"\n\010Ta"
+          + "gValue\022\026DeleteTagValueMetadata\022\210\001\n\014GetIa"
+          + "mPolicy\022\".google.iam.v1.GetIamPolicyRequ"
+          + "est\032\025.google.iam.v1.Policy\"=\202\323\344\223\002,\"\'/v3/"
+          + "{resource=tagValues/*}:getIamPolicy:\001*\332A"
+          + "\010resource\022\217\001\n\014SetIamPolicy\022\".google.iam."
+          + "v1.SetIamPolicyRequest\032\025.google.iam.v1.P"
+          + "olicy\"D\202\323\344\223\002,\"\'/v3/{resource=tagValues/*"
+          + "}:setIamPolicy:\001*\332A\017resource,policy\022\272\001\n\022"
+          + "TestIamPermissions\022(.google.iam.v1.TestI"
+          + "amPermissionsRequest\032).google.iam.v1.Tes"
+          + "tIamPermissionsResponse\"O\202\323\344\223\0022\"-/v3/{re"
+          + "source=tagValues/*}:testIamPermissions:\001"
+          + "*\332A\024resource,permissions\032\220\001\312A#cloudresou"
+          + "rcemanager.googleapis.com\322Aghttps://www."
+          + "googleapis.com/auth/cloud-platform,https"
           + "://www.googleapis.com/auth/cloud-platfor"
-          + "m,https://www.googleapis.com/auth/cloud-"
-          + "platform.read-onlyB\357\001\n#com.google.cloud."
-          + "resourcemanager.v3B\016TagValuesProtoP\001ZMcl"
-          + "oud.google.com/go/resourcemanager/apiv3/"
-          + "resourcemanagerpb;resourcemanagerpb\252\002\037Go"
-          + "ogle.Cloud.ResourceManager.V3\312\002\037Google\\C"
-          + "loud\\ResourceManager\\V3\352\002\"Google::Cloud:"
-          + ":ResourceManager::V3b\006proto3"
+          + "m.read-onlyB\357\001\n#com.google.cloud.resourc"
+          + "emanager.v3B\016TagValuesProtoP\001ZMcloud.goo"
+          + "gle.com/go/resourcemanager/apiv3/resourc"
+          + "emanagerpb;resourcemanagerpb\252\002\037Google.Cl"
+          + "oud.ResourceManager.V3\312\002\037Google\\Cloud\\Re"
+          + "sourceManager\\V3\352\002\"Google::Cloud::Resour"
+          + "ceManager::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -213,8 +224,16 @@ public final class TagValuesProto {
             new java.lang.String[] {
               "Name",
             });
-    internal_static_google_cloud_resourcemanager_v3_CreateTagValueRequest_descriptor =
+    internal_static_google_cloud_resourcemanager_v3_GetNamespacedTagValueRequest_descriptor =
         getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_resourcemanager_v3_GetNamespacedTagValueRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_resourcemanager_v3_GetNamespacedTagValueRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_resourcemanager_v3_CreateTagValueRequest_descriptor =
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_resourcemanager_v3_CreateTagValueRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_resourcemanager_v3_CreateTagValueRequest_descriptor,
@@ -222,13 +241,13 @@ public final class TagValuesProto {
               "TagValue", "ValidateOnly",
             });
     internal_static_google_cloud_resourcemanager_v3_CreateTagValueMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_resourcemanager_v3_CreateTagValueMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_resourcemanager_v3_CreateTagValueMetadata_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_resourcemanager_v3_UpdateTagValueRequest_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_resourcemanager_v3_UpdateTagValueRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_resourcemanager_v3_UpdateTagValueRequest_descriptor,
@@ -236,13 +255,13 @@ public final class TagValuesProto {
               "TagValue", "UpdateMask", "ValidateOnly",
             });
     internal_static_google_cloud_resourcemanager_v3_UpdateTagValueMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_resourcemanager_v3_UpdateTagValueMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_resourcemanager_v3_UpdateTagValueMetadata_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_resourcemanager_v3_DeleteTagValueRequest_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_resourcemanager_v3_DeleteTagValueRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_resourcemanager_v3_DeleteTagValueRequest_descriptor,
@@ -250,7 +269,7 @@ public final class TagValuesProto {
               "Name", "ValidateOnly", "Etag",
             });
     internal_static_google_cloud_resourcemanager_v3_DeleteTagValueMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_resourcemanager_v3_DeleteTagValueMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_resourcemanager_v3_DeleteTagValueMetadata_descriptor,
