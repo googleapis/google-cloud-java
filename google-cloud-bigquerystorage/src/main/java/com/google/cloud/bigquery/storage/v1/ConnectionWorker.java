@@ -75,7 +75,7 @@ class ConnectionWorker implements AutoCloseable {
    * We will constantly checking how much time we have been waiting for the next request callback
    * if we wait too much time we will start shutting down the connections and clean up the queues.
    */
-  static Duration MAXIMUM_REQUEST_CALLBACK_WAIT_TIME = Duration.ofMinutes(15);
+  static Duration MAXIMUM_REQUEST_CALLBACK_WAIT_TIME = Duration.ofMinutes(5);
 
   private Lock lock;
   private Condition hasMessageInWaitingQueue;
@@ -321,7 +321,7 @@ class ConnectionWorker implements AutoCloseable {
   }
 
   private void resetConnection() {
-    log.info("Reconnecting for stream:" + streamName + " id: " + writerId);
+    log.info("Start connecting stream: " + streamName + " id: " + writerId);
     if (this.streamConnection != null) {
       // It's safe to directly close the previous connection as the in flight messages
       // will be picked up by the next connection.
@@ -344,7 +344,7 @@ class ConnectionWorker implements AutoCloseable {
                 doneCallback(finalStatus);
               }
             });
-    log.info("Reconnect done for stream:" + streamName + " id: " + writerId);
+    log.info("Finish connecting stream: " + streamName + " id: " + writerId);
   }
 
   /** Schedules the writing of rows at given offset. */
