@@ -136,12 +136,12 @@ public final class LoggingMetricsProto {
           + "y,https://www.googleapis.com/auth/loggin"
           + "g.admin,https://www.googleapis.com/auth/"
           + "logging.read,https://www.googleapis.com/"
-          + "auth/logging.writeB\274\001\n\025com.google.loggin"
-          + "g.v2B\023LoggingMetricsProtoP\001Z8google.gola"
-          + "ng.org/genproto/googleapis/logging/v2;lo"
-          + "gging\370\001\001\252\002\027Google.Cloud.Logging.V2\312\002\027Goo"
-          + "gle\\Cloud\\Logging\\V2\352\002\032Google::Cloud::Lo"
-          + "gging::V2b\006proto3"
+          + "auth/logging.writeB\271\001\n\025com.google.loggin"
+          + "g.v2B\023LoggingMetricsProtoP\001Z5cloud.googl"
+          + "e.com/go/logging/apiv2/loggingpb;logging"
+          + "pb\370\001\001\252\002\027Google.Cloud.Logging.V2\312\002\027Google"
+          + "\\Cloud\\Logging\\V2\352\002\032Google::Cloud::Loggi"
+          + "ng::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

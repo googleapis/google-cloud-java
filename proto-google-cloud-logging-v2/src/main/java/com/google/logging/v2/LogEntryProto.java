@@ -96,11 +96,11 @@ public final class LogEntryProto {
           + "\004file\030\001 \001(\tB\003\340A\001\022\021\n\004line\030\002 \001(\003B\003\340A\001\022\025\n\010f"
           + "unction\030\003 \001(\tB\003\340A\001\"<\n\010LogSplit\022\013\n\003uid\030\001 "
           + "\001(\t\022\r\n\005index\030\002 \001(\005\022\024\n\014total_splits\030\003 \001(\005"
-          + "B\266\001\n\025com.google.logging.v2B\rLogEntryProt"
-          + "oP\001Z8google.golang.org/genproto/googleap"
-          + "is/logging/v2;logging\370\001\001\252\002\027Google.Cloud."
-          + "Logging.V2\312\002\027Google\\Cloud\\Logging\\V2\352\002\032G"
-          + "oogle::Cloud::Logging::V2b\006proto3"
+          + "B\263\001\n\025com.google.logging.v2B\rLogEntryProt"
+          + "oP\001Z5cloud.google.com/go/logging/apiv2/l"
+          + "oggingpb;loggingpb\370\001\001\252\002\027Google.Cloud.Log"
+          + "ging.V2\312\002\027Google\\Cloud\\Logging\\V2\352\002\032Goog"
+          + "le::Cloud::Logging::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
