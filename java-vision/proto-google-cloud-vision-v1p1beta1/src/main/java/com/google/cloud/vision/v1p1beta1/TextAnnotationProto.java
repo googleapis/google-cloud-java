@@ -120,10 +120,10 @@ public final class TextAnnotationProto {
           + "extAnnotation.TextProperty\022A\n\014bounding_b"
           + "ox\030\002 \001(\0132+.google.cloud.vision.v1p1beta1"
           + ".BoundingPoly\022\014\n\004text\030\003 \001(\t\022\022\n\nconfidenc"
-          + "e\030\004 \001(\002Bx\n!com.google.cloud.vision.v1p1b"
-          + "eta1B\023TextAnnotationProtoP\001Z9cloud.googl"
-          + "e.com/go/vision/apiv1p1beta1/visionpb;vi"
-          + "sionpb\370\001\001b\006proto3"
+          + "e\030\004 \001(\002B{\n!com.google.cloud.vision.v1p1b"
+          + "eta1B\023TextAnnotationProtoP\001Z<cloud.googl"
+          + "e.com/go/vision/v2/apiv1p1beta1/visionpb"
+          + ";visionpb\370\001\001b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

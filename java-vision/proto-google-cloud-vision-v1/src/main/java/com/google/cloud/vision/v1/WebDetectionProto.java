@@ -79,10 +79,10 @@ public final class WebDetectionProto {
           + "tial_matching_images\030\005 \003(\0132-.google.clou"
           + "d.vision.v1.WebDetection.WebImage\0320\n\010Web"
           + "Label\022\r\n\005label\030\001 \001(\t\022\025\n\rlanguage_code\030\002 "
-          + "\001(\tBo\n\032com.google.cloud.vision.v1B\021WebDe"
-          + "tectionProtoP\001Z2cloud.google.com/go/visi"
-          + "on/apiv1/visionpb;visionpb\370\001\001\242\002\004GCVNb\006pr"
-          + "oto3"
+          + "\001(\tBr\n\032com.google.cloud.vision.v1B\021WebDe"
+          + "tectionProtoP\001Z5cloud.google.com/go/visi"
+          + "on/v2/apiv1/visionpb;visionpb\370\001\001\242\002\004GCVNb"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

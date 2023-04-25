@@ -116,10 +116,10 @@ public final class TextAnnotationProto {
           + "le.cloud.vision.v1.TextAnnotation.TextPr"
           + "operty\022:\n\014bounding_box\030\002 \001(\0132$.google.cl"
           + "oud.vision.v1.BoundingPoly\022\014\n\004text\030\003 \001(\t"
-          + "\022\022\n\nconfidence\030\004 \001(\002Bq\n\032com.google.cloud"
-          + ".vision.v1B\023TextAnnotationProtoP\001Z2cloud"
-          + ".google.com/go/vision/apiv1/visionpb;vis"
-          + "ionpb\370\001\001\242\002\004GCVNb\006proto3"
+          + "\022\022\n\nconfidence\030\004 \001(\002Bt\n\032com.google.cloud"
+          + ".vision.v1B\023TextAnnotationProtoP\001Z5cloud"
+          + ".google.com/go/vision/v2/apiv1/visionpb;"
+          + "visionpb\370\001\001\242\002\004GCVNb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

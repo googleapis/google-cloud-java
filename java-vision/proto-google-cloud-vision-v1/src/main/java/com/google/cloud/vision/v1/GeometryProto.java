@@ -60,9 +60,9 @@ public final class GeometryProto {
           + "rtex\022E\n\023normalized_vertices\030\002 \003(\0132(.goog"
           + "le.cloud.vision.v1.NormalizedVertex\"+\n\010P"
           + "osition\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002"
-          + "Bk\n\032com.google.cloud.vision.v1B\rGeometry"
-          + "ProtoP\001Z2cloud.google.com/go/vision/apiv"
-          + "1/visionpb;visionpb\370\001\001\242\002\004GCVNb\006proto3"
+          + "Bn\n\032com.google.cloud.vision.v1B\rGeometry"
+          + "ProtoP\001Z5cloud.google.com/go/vision/v2/a"
+          + "piv1/visionpb;visionpb\370\001\001\242\002\004GCVNb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
