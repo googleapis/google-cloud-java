@@ -336,10 +336,10 @@ public final class WorkflowTemplatesProto {
           + "lates/*}Z5*3/v1/{name=projects/*/regions"
           + "/*/workflowTemplates/*}\332A\004name\032K\312A\027datap"
           + "roc.googleapis.com\322A.https://www.googlea"
-          + "pis.com/auth/cloud-platformBr\n\034com.googl"
+          + "pis.com/auth/cloud-platformBu\n\034com.googl"
           + "e.cloud.dataproc.v1B\026WorkflowTemplatesPr"
-          + "otoP\001Z8cloud.google.com/go/dataproc/apiv"
-          + "1/dataprocpb;dataprocpbb\006proto3"
+          + "otoP\001Z;cloud.google.com/go/dataproc/v2/a"
+          + "piv1/dataprocpb;dataprocpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

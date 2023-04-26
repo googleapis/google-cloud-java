@@ -530,9 +530,9 @@ public final class ClustersProto {
           + "le.cloud.dataproc.v1.ClusterOperationMet"
           + "adata\032K\312A\027dataproc.googleapis.com\322A.http"
           + "s://www.googleapis.com/auth/cloud-platfo"
-          + "rmBi\n\034com.google.cloud.dataproc.v1B\rClus"
-          + "tersProtoP\001Z8cloud.google.com/go/datapro"
-          + "c/apiv1/dataprocpb;dataprocpbb\006proto3"
+          + "rmBl\n\034com.google.cloud.dataproc.v1B\rClus"
+          + "tersProtoP\001Z;cloud.google.com/go/datapro"
+          + "c/v2/apiv1/dataprocpb;dataprocpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
