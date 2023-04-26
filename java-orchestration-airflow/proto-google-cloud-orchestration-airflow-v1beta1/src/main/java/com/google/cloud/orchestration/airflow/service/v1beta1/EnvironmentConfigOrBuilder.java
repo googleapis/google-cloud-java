@@ -393,6 +393,39 @@ public interface EnvironmentConfigOrBuilder
    *
    *
    * <pre>
+   * Output only. The 'bring your own identity' variant of the URI of the Apache
+   * Airflow Web UI hosted within this environment, to be accessed with external
+   * identities using workforce identity federation (see [Access environments
+   * with workforce identity
+   * federation](/composer/docs/composer-2/access-environments-with-workforce-identity-federation)).
+   * </pre>
+   *
+   * <code>string airflow_byoid_uri = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The airflowByoidUri.
+   */
+  java.lang.String getAirflowByoidUri();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The 'bring your own identity' variant of the URI of the Apache
+   * Airflow Web UI hosted within this environment, to be accessed with external
+   * identities using workforce identity federation (see [Access environments
+   * with workforce identity
+   * federation](/composer/docs/composer-2/access-environments-with-workforce-identity-federation)).
+   * </pre>
+   *
+   * <code>string airflow_byoid_uri = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for airflowByoidUri.
+   */
+  com.google.protobuf.ByteString getAirflowByoidUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The encryption options for the Cloud Composer environment and its
    * dependencies. Cannot be updated.
    * </pre>
