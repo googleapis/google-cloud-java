@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.14.4](https://github.com/googleapis/java-datastore/compare/v2.14.3...v2.14.4) (2023-04-26)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.8.0 ([#1052](https://github.com/googleapis/java-datastore/issues/1052)) ([412be61](https://github.com/googleapis/java-datastore/commit/412be617db28a97d38883bd6e26ddbc7d1c434fa))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.9.3 ([#1056](https://github.com/googleapis/java-datastore/issues/1056)) ([2a871e2](https://github.com/googleapis/java-datastore/commit/2a871e25436a8812bc2f691c6462675b88976afc))
+
+
+### Documentation
+
+* Remove `@BetaApi` annotations for count aggregations ([#1051](https://github.com/googleapis/java-datastore/issues/1051)) ([b8bdaa2](https://github.com/googleapis/java-datastore/commit/b8bdaa23f165f6bcb5a891ef2437ffdd7ce8aa4c))
+
 ## [2.14.3](https://github.com/googleapis/java-datastore/compare/v2.14.2...v2.14.3) (2023-04-13)
 
 
