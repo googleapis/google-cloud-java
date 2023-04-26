@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.36.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.35.0...v2.36.0) (2023-04-26)
+
+
+### Features
+
+* Adding ExecutorProvider support while creating BigQueryReadClient ([#2072](https://github.com/googleapis/java-bigquerystorage/issues/2072)) ([9221e18](https://github.com/googleapis/java-bigquerystorage/commit/9221e1896f7af6c2dd23e92f6ea13d86c3368600))
+
+
+### Bug Fixes
+
+* Reduce timeout of waiting in queue from 15 minutes to 5 minutes and rephrase the log a bit  ([#2084](https://github.com/googleapis/java-bigquerystorage/issues/2084)) ([fe25f38](https://github.com/googleapis/java-bigquerystorage/commit/fe25f38215ffaacd2cbe4af74c0de9ea7c053d91))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.24.5 ([#2081](https://github.com/googleapis/java-bigquerystorage/issues/2081)) ([362568d](https://github.com/googleapis/java-bigquerystorage/commit/362568d4d8e1cf5e1e2a1bbfe3513d440f9fb99f))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.8.0 ([#2087](https://github.com/googleapis/java-bigquerystorage/issues/2087)) ([1f79a96](https://github.com/googleapis/java-bigquerystorage/commit/1f79a9691ebb5f22077534fb7d266df830cb7ec2))
+
 ## [2.35.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.34.2...v2.35.0) (2023-04-13)
 
 
