@@ -40,6 +40,7 @@ public class SyncDeleteMembership {
           DeleteMembershipRequest.newBuilder()
               .setName(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
               .setRequestId("requestId693933066")
+              .setForce(true)
               .build();
       gkeHubMembershipServiceClient.deleteMembershipAsync(request).get();
     }

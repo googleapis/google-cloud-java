@@ -60,6 +60,10 @@ public final class MembershipProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gkehub_v1_KubernetesMetadata_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkehub_v1_MonitoringConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkehub_v1_MonitoringConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_gkehub_v1_MembershipState_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gkehub_v1_MembershipState_fieldAccessorTable;
@@ -79,8 +83,8 @@ public final class MembershipProto {
       "\n\'google/cloud/gkehub/v1/membership.prot"
           + "o\022\026google.cloud.gkehub.v1\032\037google/api/fi"
           + "eld_behavior.proto\032\031google/api/resource."
-          + "proto\032\037google/protobuf/timestamp.proto\"\356"
-          + "\005\n\nMembership\022C\n\010endpoint\030\004 \001(\0132*.google"
+          + "proto\032\037google/protobuf/timestamp.proto\"\270"
+          + "\006\n\nMembership\022C\n\010endpoint\030\004 \001(\0132*.google"
           + ".cloud.gkehub.v1.MembershipEndpointB\003\340A\001"
           + "H\000\022\021\n\004name\030\001 \001(\tB\003\340A\003\022C\n\006labels\030\002 \003(\0132.."
           + "google.cloud.gkehub.v1.Membership.Labels"
@@ -94,48 +98,55 @@ public final class MembershipProto {
           + "B\003\340A\001\022=\n\024last_connection_time\030\n \001(\0132\032.go"
           + "ogle.protobuf.TimestampB\003\340A\003\022\026\n\tunique_i"
           + "d\030\013 \001(\tB\003\340A\003\0229\n\tauthority\030\014 \001(\0132!.google"
-          + ".cloud.gkehub.v1.AuthorityB\003\340A\001\032-\n\013Label"
-          + "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:g"
-          + "\352Ad\n gkehub.googleapis.com/Membership\022@p"
-          + "rojects/{project}/locations/{location}/m"
-          + "emberships/{membership}B\006\n\004type\"\356\001\n\022Memb"
-          + "ershipEndpoint\022<\n\013gke_cluster\030\001 \001(\0132\".go"
-          + "ogle.cloud.gkehub.v1.GkeClusterB\003\340A\001\022L\n\023"
-          + "kubernetes_metadata\030\002 \001(\0132*.google.cloud"
-          + ".gkehub.v1.KubernetesMetadataB\003\340A\003\022L\n\023ku"
-          + "bernetes_resource\030\003 \001(\0132*.google.cloud.g"
-          + "kehub.v1.KubernetesResourceB\003\340A\001\"\230\002\n\022Kub"
-          + "ernetesResource\022#\n\026membership_cr_manifes"
-          + "t\030\001 \001(\tB\003\340A\004\022K\n\024membership_resources\030\002 \003"
-          + "(\0132(.google.cloud.gkehub.v1.ResourceMani"
-          + "festB\003\340A\003\022H\n\021connect_resources\030\003 \003(\0132(.g"
-          + "oogle.cloud.gkehub.v1.ResourceManifestB\003"
-          + "\340A\003\022F\n\020resource_options\030\004 \001(\0132\'.google.c"
-          + "loud.gkehub.v1.ResourceOptionsB\003\340A\001\"c\n\017R"
-          + "esourceOptions\022\034\n\017connect_version\030\001 \001(\tB"
-          + "\003\340A\001\022\030\n\013v1beta1_crd\030\002 \001(\010B\003\340A\001\022\030\n\013k8s_ve"
-          + "rsion\030\003 \001(\tB\003\340A\001\"<\n\020ResourceManifest\022\020\n\010"
-          + "manifest\030\001 \001(\t\022\026\n\016cluster_scoped\030\002 \001(\010\"("
-          + "\n\nGkeCluster\022\032\n\rresource_link\030\001 \001(\tB\003\340A\005"
-          + "\"\337\001\n\022KubernetesMetadata\022*\n\035kubernetes_ap"
-          + "i_server_version\030\001 \001(\tB\003\340A\003\022\035\n\020node_prov"
-          + "ider_id\030\002 \001(\tB\003\340A\003\022\027\n\nnode_count\030\003 \001(\005B\003"
-          + "\340A\003\022\027\n\nvcpu_count\030\004 \001(\005B\003\340A\003\022\026\n\tmemory_m"
-          + "b\030\005 \001(\005B\003\340A\003\0224\n\013update_time\030d \001(\0132\032.goog"
-          + "le.protobuf.TimestampB\003\340A\003\"\273\001\n\017Membershi"
-          + "pState\022?\n\004code\030\001 \001(\0162,.google.cloud.gkeh"
-          + "ub.v1.MembershipState.CodeB\003\340A\003\"g\n\004Code\022"
-          + "\024\n\020CODE_UNSPECIFIED\020\000\022\014\n\010CREATING\020\001\022\t\n\005R"
-          + "EADY\020\002\022\014\n\010DELETING\020\003\022\014\n\010UPDATING\020\004\022\024\n\020SE"
-          + "RVICE_UPDATING\020\005\"}\n\tAuthority\022\023\n\006issuer\030"
-          + "\001 \001(\tB\003\340A\001\022#\n\026workload_identity_pool\030\002 \001"
-          + "(\tB\003\340A\003\022\036\n\021identity_provider\030\003 \001(\tB\003\340A\003\022"
-          + "\026\n\toidc_jwks\030\004 \001(\014B\003\340A\001B\261\001\n\032com.google.c"
-          + "loud.gkehub.v1B\017MembershipProtoP\001Z2cloud"
-          + ".google.com/go/gkehub/apiv1/gkehubpb;gke"
-          + "hubpb\252\002\026Google.Cloud.GkeHub.V1\312\002\026Google\\"
-          + "Cloud\\GkeHub\\V1\352\002\031Google::Cloud::GkeHub:"
-          + ":V1b\006proto3"
+          + ".cloud.gkehub.v1.AuthorityB\003\340A\001\022H\n\021monit"
+          + "oring_config\030\016 \001(\0132(.google.cloud.gkehub"
+          + ".v1.MonitoringConfigB\003\340A\001\032-\n\013LabelsEntry"
+          + "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:g\352Ad\n g"
+          + "kehub.googleapis.com/Membership\022@project"
+          + "s/{project}/locations/{location}/members"
+          + "hips/{membership}B\006\n\004type\"\213\002\n\022Membership"
+          + "Endpoint\022<\n\013gke_cluster\030\001 \001(\0132\".google.c"
+          + "loud.gkehub.v1.GkeClusterB\003\340A\001\022L\n\023kubern"
+          + "etes_metadata\030\002 \001(\0132*.google.cloud.gkehu"
+          + "b.v1.KubernetesMetadataB\003\340A\003\022L\n\023kubernet"
+          + "es_resource\030\003 \001(\0132*.google.cloud.gkehub."
+          + "v1.KubernetesResourceB\003\340A\001\022\033\n\016google_man"
+          + "aged\030\010 \001(\010B\003\340A\003\"\230\002\n\022KubernetesResource\022#"
+          + "\n\026membership_cr_manifest\030\001 \001(\tB\003\340A\004\022K\n\024m"
+          + "embership_resources\030\002 \003(\0132(.google.cloud"
+          + ".gkehub.v1.ResourceManifestB\003\340A\003\022H\n\021conn"
+          + "ect_resources\030\003 \003(\0132(.google.cloud.gkehu"
+          + "b.v1.ResourceManifestB\003\340A\003\022F\n\020resource_o"
+          + "ptions\030\004 \001(\0132\'.google.cloud.gkehub.v1.Re"
+          + "sourceOptionsB\003\340A\001\"c\n\017ResourceOptions\022\034\n"
+          + "\017connect_version\030\001 \001(\tB\003\340A\001\022\030\n\013v1beta1_c"
+          + "rd\030\002 \001(\010B\003\340A\001\022\030\n\013k8s_version\030\003 \001(\tB\003\340A\001\""
+          + "<\n\020ResourceManifest\022\020\n\010manifest\030\001 \001(\t\022\026\n"
+          + "\016cluster_scoped\030\002 \001(\010\"F\n\nGkeCluster\022\032\n\rr"
+          + "esource_link\030\001 \001(\tB\003\340A\005\022\034\n\017cluster_missi"
+          + "ng\030\002 \001(\010B\003\340A\003\"\337\001\n\022KubernetesMetadata\022*\n\035"
+          + "kubernetes_api_server_version\030\001 \001(\tB\003\340A\003"
+          + "\022\035\n\020node_provider_id\030\002 \001(\tB\003\340A\003\022\027\n\nnode_"
+          + "count\030\003 \001(\005B\003\340A\003\022\027\n\nvcpu_count\030\004 \001(\005B\003\340A"
+          + "\003\022\026\n\tmemory_mb\030\005 \001(\005B\003\340A\003\0224\n\013update_time"
+          + "\030d \001(\0132\032.google.protobuf.TimestampB\003\340A\003\""
+          + "\226\001\n\020MonitoringConfig\022\027\n\nproject_id\030\001 \001(\t"
+          + "B\003\340A\005\022\025\n\010location\030\002 \001(\tB\003\340A\005\022\024\n\007cluster\030"
+          + "\003 \001(\tB\003\340A\005\022!\n\031kubernetes_metrics_prefix\030"
+          + "\004 \001(\t\022\031\n\014cluster_hash\030\005 \001(\tB\003\340A\005\"\273\001\n\017Mem"
+          + "bershipState\022?\n\004code\030\001 \001(\0162,.google.clou"
+          + "d.gkehub.v1.MembershipState.CodeB\003\340A\003\"g\n"
+          + "\004Code\022\024\n\020CODE_UNSPECIFIED\020\000\022\014\n\010CREATING\020"
+          + "\001\022\t\n\005READY\020\002\022\014\n\010DELETING\020\003\022\014\n\010UPDATING\020\004"
+          + "\022\024\n\020SERVICE_UPDATING\020\005\"}\n\tAuthority\022\023\n\006i"
+          + "ssuer\030\001 \001(\tB\003\340A\001\022#\n\026workload_identity_po"
+          + "ol\030\002 \001(\tB\003\340A\003\022\036\n\021identity_provider\030\003 \001(\t"
+          + "B\003\340A\003\022\026\n\toidc_jwks\030\004 \001(\014B\003\340A\001B\261\001\n\032com.go"
+          + "ogle.cloud.gkehub.v1B\017MembershipProtoP\001Z"
+          + "2cloud.google.com/go/gkehub/apiv1/gkehub"
+          + "pb;gkehubpb\252\002\026Google.Cloud.GkeHub.V1\312\002\026G"
+          + "oogle\\Cloud\\GkeHub\\V1\352\002\031Google::Cloud::G"
+          + "keHub::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -163,6 +174,7 @@ public final class MembershipProto {
               "LastConnectionTime",
               "UniqueId",
               "Authority",
+              "MonitoringConfig",
               "Type",
             });
     internal_static_google_cloud_gkehub_v1_Membership_LabelsEntry_descriptor =
@@ -179,7 +191,7 @@ public final class MembershipProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1_MembershipEndpoint_descriptor,
             new java.lang.String[] {
-              "GkeCluster", "KubernetesMetadata", "KubernetesResource",
+              "GkeCluster", "KubernetesMetadata", "KubernetesResource", "GoogleManaged",
             });
     internal_static_google_cloud_gkehub_v1_KubernetesResource_descriptor =
         getDescriptor().getMessageTypes().get(2);
@@ -211,7 +223,7 @@ public final class MembershipProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1_GkeCluster_descriptor,
             new java.lang.String[] {
-              "ResourceLink",
+              "ResourceLink", "ClusterMissing",
             });
     internal_static_google_cloud_gkehub_v1_KubernetesMetadata_descriptor =
         getDescriptor().getMessageTypes().get(6);
@@ -226,8 +238,16 @@ public final class MembershipProto {
               "MemoryMb",
               "UpdateTime",
             });
-    internal_static_google_cloud_gkehub_v1_MembershipState_descriptor =
+    internal_static_google_cloud_gkehub_v1_MonitoringConfig_descriptor =
         getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_gkehub_v1_MonitoringConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkehub_v1_MonitoringConfig_descriptor,
+            new java.lang.String[] {
+              "ProjectId", "Location", "Cluster", "KubernetesMetricsPrefix", "ClusterHash",
+            });
+    internal_static_google_cloud_gkehub_v1_MembershipState_descriptor =
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_gkehub_v1_MembershipState_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1_MembershipState_descriptor,
@@ -235,7 +255,7 @@ public final class MembershipProto {
               "Code",
             });
     internal_static_google_cloud_gkehub_v1_Authority_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_gkehub_v1_Authority_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1_Authority_descriptor,

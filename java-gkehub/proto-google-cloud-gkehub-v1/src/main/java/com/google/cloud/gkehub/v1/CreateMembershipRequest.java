@@ -77,8 +77,8 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The parent (project and location) where the Memberships will be created.
-   * Specified in the format `projects/&#42;&#47;locations/&#42;`.
+   * Required. The parent (project and location) where the Memberships will be
+   * created. Specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -103,8 +103,8 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The parent (project and location) where the Memberships will be created.
-   * Specified in the format `projects/&#42;&#47;locations/&#42;`.
+   * Required. The parent (project and location) where the Memberships will be
+   * created. Specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -134,8 +134,8 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. Client chosen ID for the membership. `membership_id` must be a valid RFC
-   * 1123 compliant DNS label:
+   * Required. Client chosen ID for the membership. `membership_id` must be a
+   * valid RFC 1123 compliant DNS label:
    *   1. At most 63 characters in length
    *   2. It must consist of lower case alphanumeric characters or `-`
    *   3. It must start and end with an alphanumeric character
@@ -163,8 +163,8 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. Client chosen ID for the membership. `membership_id` must be a valid RFC
-   * 1123 compliant DNS label:
+   * Required. Client chosen ID for the membership. `membership_id` must be a
+   * valid RFC 1123 compliant DNS label:
    *   1. At most 63 characters in length
    *   2. It must consist of lower case alphanumeric characters or `-`
    *   3. It must start and end with an alphanumeric character
@@ -742,8 +742,8 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The parent (project and location) where the Memberships will be created.
-     * Specified in the format `projects/&#42;&#47;locations/&#42;`.
+     * Required. The parent (project and location) where the Memberships will be
+     * created. Specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -767,8 +767,8 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The parent (project and location) where the Memberships will be created.
-     * Specified in the format `projects/&#42;&#47;locations/&#42;`.
+     * Required. The parent (project and location) where the Memberships will be
+     * created. Specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -792,8 +792,8 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The parent (project and location) where the Memberships will be created.
-     * Specified in the format `projects/&#42;&#47;locations/&#42;`.
+     * Required. The parent (project and location) where the Memberships will be
+     * created. Specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -816,8 +816,8 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The parent (project and location) where the Memberships will be created.
-     * Specified in the format `projects/&#42;&#47;locations/&#42;`.
+     * Required. The parent (project and location) where the Memberships will be
+     * created. Specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -836,8 +836,8 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The parent (project and location) where the Memberships will be created.
-     * Specified in the format `projects/&#42;&#47;locations/&#42;`.
+     * Required. The parent (project and location) where the Memberships will be
+     * created. Specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -863,8 +863,8 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Client chosen ID for the membership. `membership_id` must be a valid RFC
-     * 1123 compliant DNS label:
+     * Required. Client chosen ID for the membership. `membership_id` must be a
+     * valid RFC 1123 compliant DNS label:
      *   1. At most 63 characters in length
      *   2. It must consist of lower case alphanumeric characters or `-`
      *   3. It must start and end with an alphanumeric character
@@ -891,8 +891,8 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Client chosen ID for the membership. `membership_id` must be a valid RFC
-     * 1123 compliant DNS label:
+     * Required. Client chosen ID for the membership. `membership_id` must be a
+     * valid RFC 1123 compliant DNS label:
      *   1. At most 63 characters in length
      *   2. It must consist of lower case alphanumeric characters or `-`
      *   3. It must start and end with an alphanumeric character
@@ -919,8 +919,8 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Client chosen ID for the membership. `membership_id` must be a valid RFC
-     * 1123 compliant DNS label:
+     * Required. Client chosen ID for the membership. `membership_id` must be a
+     * valid RFC 1123 compliant DNS label:
      *   1. At most 63 characters in length
      *   2. It must consist of lower case alphanumeric characters or `-`
      *   3. It must start and end with an alphanumeric character
@@ -946,8 +946,8 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Client chosen ID for the membership. `membership_id` must be a valid RFC
-     * 1123 compliant DNS label:
+     * Required. Client chosen ID for the membership. `membership_id` must be a
+     * valid RFC 1123 compliant DNS label:
      *   1. At most 63 characters in length
      *   2. It must consist of lower case alphanumeric characters or `-`
      *   3. It must start and end with an alphanumeric character
@@ -969,8 +969,8 @@ public final class CreateMembershipRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. Client chosen ID for the membership. `membership_id` must be a valid RFC
-     * 1123 compliant DNS label:
+     * Required. Client chosen ID for the membership. `membership_id` must be a
+     * valid RFC 1123 compliant DNS label:
      *   1. At most 63 characters in length
      *   2. It must consist of lower case alphanumeric characters or `-`
      *   3. It must start and end with an alphanumeric character

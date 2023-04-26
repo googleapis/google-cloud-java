@@ -27,8 +27,8 @@ public interface GenerateConnectManifestRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The Membership resource name the Agent will associate with, in the format
-   * `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
+   * Required. The Membership resource name the Agent will associate with, in
+   * the format `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface GenerateConnectManifestRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The Membership resource name the Agent will associate with, in the format
-   * `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
+   * Required. The Membership resource name the Agent will associate with, in
+   * the format `projects/&#42;&#47;locations/&#42;&#47;memberships/&#42;`.
    * </pre>
    *
    * <code>
@@ -58,7 +58,8 @@ public interface GenerateConnectManifestRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Namespace for GKE Connect agent resources. Defaults to `gke-connect`.
+   * Optional. Namespace for GKE Connect agent resources. Defaults to
+   * `gke-connect`.
    * The Connect Agent is authorized automatically when run in the default
    * namespace. Otherwise, explicit authorization must be granted with an
    * additional IAM binding.
@@ -73,7 +74,8 @@ public interface GenerateConnectManifestRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Namespace for GKE Connect agent resources. Defaults to `gke-connect`.
+   * Optional. Namespace for GKE Connect agent resources. Defaults to
+   * `gke-connect`.
    * The Connect Agent is authorized automatically when run in the default
    * namespace. Otherwise, explicit authorization must be granted with an
    * additional IAM binding.
@@ -89,9 +91,9 @@ public interface GenerateConnectManifestRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. URI of a proxy if connectivity from the agent to gkeconnect.googleapis.com
-   * requires the use of a proxy. Format must be in the form
-   * `http(s)://{proxy_address}`, depending on the HTTP/HTTPS protocol
+   * Optional. URI of a proxy if connectivity from the agent to
+   * gkeconnect.googleapis.com requires the use of a proxy. Format must be in
+   * the form `http(s)://{proxy_address}`, depending on the HTTP/HTTPS protocol
    * supported by the proxy. This will direct the connect agent's outbound
    * traffic through a HTTP(S) proxy.
    * </pre>
@@ -106,7 +108,8 @@ public interface GenerateConnectManifestRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The Connect agent version to use. Defaults to the most current version.
+   * Optional. The Connect agent version to use. Defaults to the most current
+   * version.
    * </pre>
    *
    * <code>string version = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -118,7 +121,8 @@ public interface GenerateConnectManifestRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The Connect agent version to use. Defaults to the most current version.
+   * Optional. The Connect agent version to use. Defaults to the most current
+   * version.
    * </pre>
    *
    * <code>string version = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

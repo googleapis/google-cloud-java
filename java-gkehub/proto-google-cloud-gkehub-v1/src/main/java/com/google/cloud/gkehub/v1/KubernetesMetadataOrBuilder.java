@@ -27,7 +27,8 @@ public interface KubernetesMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Kubernetes API server version string as reported by `/version`.
+   * Output only. Kubernetes API server version string as reported by
+   * `/version`.
    * </pre>
    *
    * <code>string kubernetes_api_server_version = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -40,7 +41,8 @@ public interface KubernetesMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Kubernetes API server version string as reported by `/version`.
+   * Output only. Kubernetes API server version string as reported by
+   * `/version`.
    * </pre>
    *
    * <code>string kubernetes_api_server_version = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -54,9 +56,9 @@ public interface KubernetesMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Node providerID as reported by the first node in the list of nodes on
-   * the Kubernetes endpoint. On Kubernetes platforms that support zero-node
-   * clusters (like GKE-on-GCP), the node_count will be zero and the
+   * Output only. Node providerID as reported by the first node in the list of
+   * nodes on the Kubernetes endpoint. On Kubernetes platforms that support
+   * zero-node clusters (like GKE-on-GCP), the node_count will be zero and the
    * node_provider_id will be empty.
    * </pre>
    *
@@ -69,9 +71,9 @@ public interface KubernetesMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Node providerID as reported by the first node in the list of nodes on
-   * the Kubernetes endpoint. On Kubernetes platforms that support zero-node
-   * clusters (like GKE-on-GCP), the node_count will be zero and the
+   * Output only. Node providerID as reported by the first node in the list of
+   * nodes on the Kubernetes endpoint. On Kubernetes platforms that support
+   * zero-node clusters (like GKE-on-GCP), the node_count will be zero and the
    * node_provider_id will be empty.
    * </pre>
    *
@@ -111,8 +113,8 @@ public interface KubernetesMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The total memory capacity as reported by the sum of all Kubernetes nodes
-   * resources, defined in MB.
+   * Output only. The total memory capacity as reported by the sum of all
+   * Kubernetes nodes resources, defined in MB.
    * </pre>
    *
    * <code>int32 memory_mb = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -125,9 +127,9 @@ public interface KubernetesMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which these details were last updated. This update_time is
-   * different from the Membership-level update_time since EndpointDetails are
-   * updated internally for API consumers.
+   * Output only. The time at which these details were last updated. This
+   * update_time is different from the Membership-level update_time since
+   * EndpointDetails are updated internally for API consumers.
    * </pre>
    *
    * <code>
@@ -141,9 +143,9 @@ public interface KubernetesMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which these details were last updated. This update_time is
-   * different from the Membership-level update_time since EndpointDetails are
-   * updated internally for API consumers.
+   * Output only. The time at which these details were last updated. This
+   * update_time is different from the Membership-level update_time since
+   * EndpointDetails are updated internally for API consumers.
    * </pre>
    *
    * <code>
@@ -157,9 +159,9 @@ public interface KubernetesMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which these details were last updated. This update_time is
-   * different from the Membership-level update_time since EndpointDetails are
-   * updated internally for API consumers.
+   * Output only. The time at which these details were last updated. This
+   * update_time is different from the Membership-level update_time since
+   * EndpointDetails are updated internally for API consumers.
    * </pre>
    *
    * <code>

@@ -58,8 +58,8 @@ public interface UpdateMembershipRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Mask of fields to update. At least one field path must be specified in this
-   * mask.
+   * Required. Mask of fields to update. At least one field path must be
+   * specified in this mask.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -72,8 +72,8 @@ public interface UpdateMembershipRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Mask of fields to update. At least one field path must be specified in this
-   * mask.
+   * Required. Mask of fields to update. At least one field path must be
+   * specified in this mask.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -86,8 +86,8 @@ public interface UpdateMembershipRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Mask of fields to update. At least one field path must be specified in this
-   * mask.
+   * Required. Mask of fields to update. At least one field path must be
+   * specified in this mask.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];

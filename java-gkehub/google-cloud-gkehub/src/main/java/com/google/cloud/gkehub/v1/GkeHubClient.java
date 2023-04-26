@@ -51,7 +51,9 @@ import javax.annotation.Generated;
  *   <li>[Feature][google.cloud.gkehub.v1.Feature]
  * </ul>
  *
- * <p>GKE Hub is currently only available in the global region.
+ * <p>GKE Hub is currently available in the global region and all regions in
+ * https://cloud.google.com/compute/docs/regions-zones. Feature is only available in global region
+ * while membership is global region and all the regions.
  *
  * <p>&#42;&#42;Membership management may be non-trivial:&#42;&#42; it is recommended to use one of
  * the Google-provided client libraries or tools where possible when working with Membership
@@ -234,7 +236,8 @@ public class GkeHubClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent (project and location) where the Memberships will be listed.
-   *     Specified in the format `projects/&#42;/locations/&#42;`.
+   *     Specified in the format `projects/&#42;/locations/&#42;`. `projects/&#42;/locations/-` list
+   *     memberships in all the regions.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMembershipsPagedResponse listMemberships(LocationName parent) {
@@ -266,7 +269,8 @@ public class GkeHubClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent (project and location) where the Memberships will be listed.
-   *     Specified in the format `projects/&#42;/locations/&#42;`.
+   *     Specified in the format `projects/&#42;/locations/&#42;`. `projects/&#42;/locations/-` list
+   *     memberships in all the regions.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMembershipsPagedResponse listMemberships(String parent) {
@@ -1226,6 +1230,7 @@ public class GkeHubClient implements BackgroundResource {
    *       DeleteMembershipRequest.newBuilder()
    *           .setName(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
    *           .setRequestId("requestId693933066")
+   *           .setForce(true)
    *           .build();
    *   gkeHubClient.deleteMembershipAsync(request).get();
    * }
@@ -1260,6 +1265,7 @@ public class GkeHubClient implements BackgroundResource {
    *       DeleteMembershipRequest.newBuilder()
    *           .setName(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
    *           .setRequestId("requestId693933066")
+   *           .setForce(true)
    *           .build();
    *   OperationFuture<Empty, OperationMetadata> future =
    *       gkeHubClient.deleteMembershipOperationCallable().futureCall(request);
@@ -1294,6 +1300,7 @@ public class GkeHubClient implements BackgroundResource {
    *       DeleteMembershipRequest.newBuilder()
    *           .setName(MembershipName.of("[PROJECT]", "[LOCATION]", "[MEMBERSHIP]").toString())
    *           .setRequestId("requestId693933066")
+   *           .setForce(true)
    *           .build();
    *   ApiFuture<Operation> future = gkeHubClient.deleteMembershipCallable().futureCall(request);
    *   // Do something.

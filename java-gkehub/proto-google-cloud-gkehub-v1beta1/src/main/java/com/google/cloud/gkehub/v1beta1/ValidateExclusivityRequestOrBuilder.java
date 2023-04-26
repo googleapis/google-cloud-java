@@ -27,8 +27,8 @@ public interface ValidateExclusivityRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent (project and location) where the Memberships will be created.
-   * Specified in the format `projects/&#42;&#47;locations/&#42;`.
+   * Required. The parent (project and location) where the Memberships will be
+   * created. Specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface ValidateExclusivityRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent (project and location) where the Memberships will be created.
-   * Specified in the format `projects/&#42;&#47;locations/&#42;`.
+   * Required. The parent (project and location) where the Memberships will be
+   * created. Specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -58,8 +58,8 @@ public interface ValidateExclusivityRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The YAML of the membership CR in the cluster. Empty if the membership
-   * CR does not exist.
+   * Optional. The YAML of the membership CR in the cluster. Empty if the
+   * membership CR does not exist.
    * </pre>
    *
    * <code>string cr_manifest = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -71,8 +71,8 @@ public interface ValidateExclusivityRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The YAML of the membership CR in the cluster. Empty if the membership
-   * CR does not exist.
+   * Optional. The YAML of the membership CR in the cluster. Empty if the
+   * membership CR does not exist.
    * </pre>
    *
    * <code>string cr_manifest = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -85,8 +85,9 @@ public interface ValidateExclusivityRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The intended membership name under the `parent`. This method only does
-   * validation in anticipation of a CreateMembership call with the same name.
+   * Required. The intended membership name under the `parent`. This method only
+   * does validation in anticipation of a CreateMembership call with the same
+   * name.
    * </pre>
    *
    * <code>string intended_membership = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -98,8 +99,9 @@ public interface ValidateExclusivityRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The intended membership name under the `parent`. This method only does
-   * validation in anticipation of a CreateMembership call with the same name.
+   * Required. The intended membership name under the `parent`. This method only
+   * does validation in anticipation of a CreateMembership call with the same
+   * name.
    * </pre>
    *
    * <code>string intended_membership = 3 [(.google.api.field_behavior) = REQUIRED];</code>

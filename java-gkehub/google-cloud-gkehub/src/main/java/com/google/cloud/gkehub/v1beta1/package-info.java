@@ -25,7 +25,8 @@
  * clusters to Google Cloud, represented with the
  * [Membership][google.cloud.gkehub.v1beta1.Membership] resource.
  *
- * <p>GKE Hub is currently only available in the global region.
+ * <p>GKE Hub is currently available in the global region and all regions in
+ * https://cloud.google.com/compute/docs/regions-zones.
  *
  * <p>&#42;&#42;Membership management may be non-trivial:&#42;&#42; it is recommended to use one of
  * the Google-provided client libraries or tools where possible when working with Membership
