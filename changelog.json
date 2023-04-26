@@ -5,6 +5,291 @@
       "changes": [
         {
           "type": "docs",
+          "sha": "6bec5191f4b4af615f1c94f4d047c3e46b62068c",
+          "message": "[container] Operation.Type is now documented in detail",
+          "issues": [
+            "9351"
+          ]
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-container",
+      "id": "5640bc1e-ea8b-40db-877b-eb73f9fa9fd4",
+      "createTime": "2023-04-26T17:10:14.314Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "3aeb0df96fdb98c17dab2cc807a960583ef92c37",
+          "message": "[cloudbuild] Add PeeredNetworkIpRange to NetworkConfigs message",
+          "issues": [
+            "9358"
+          ]
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-build",
+      "id": "ba5f453e-b284-47e9-892f-3fce3572fce7",
+      "createTime": "2023-04-26T17:10:14.312Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "73e9031d446216da337edd19873d6cdaf793b7d3",
+          "message": "add unstructured document support (PDF/HTML)",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "73e9031d446216da337edd19873d6cdaf793b7d3",
+          "message": "keep the API doc up-to-date with recent changes",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "73e9031d446216da337edd19873d6cdaf793b7d3",
+          "message": "[discoveryengine] add search, autocomplete and schema services",
+          "issues": [
+            "9374"
+          ]
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-discoveryengine",
+      "id": "97985ad3-6ea7-4476-a9df-0ec5f00a0f4d",
+      "createTime": "2023-04-26T17:10:14.310Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "5c470613686222a6fd11aeaca4b433396a32c122",
+          "message": "[networkmanagement] Update comments in Connectivity Test protos",
+          "issues": [
+            "9362"
+          ]
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-network-management",
+      "id": "48d01e3c-51c8-455a-b526-65ecd6bfb4e3",
+      "createTime": "2023-04-26T17:10:14.308Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "472532484ae5127ec40da1f95495db159374ddff",
+          "message": "[retail] fix the HTTP format for merchant center link service",
+          "issues": [
+            "9360"
+          ],
+          "breakingChangeNote": "[retail] fix the HTTP format for merchant center link service ([#9360](https://github.com/googleapis/google-cloud-java/issues/9360))"
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-retail",
+      "id": "94250cd3-15cf-4b35-82fa-81413f0cbed3",
+      "createTime": "2023-04-26T17:10:14.306Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "b47972a741efd27b55ef99835eb77a624670b35d",
+          "message": "[cloudresourcemanager] add TagHolds, GetNamespacedTagKey, and GetNamespacedTagValue APIs. Adds support for project parented tags",
+          "issues": [
+            "9369"
+          ]
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-resourcemanager",
+      "id": "fc53b3c0-13f2-4374-b2ec-b43d794aedee",
+      "createTime": "2023-04-26T17:10:14.304Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "9e1a89d916134d9d3ed41b17138f7b3918d110e8",
+          "message": "[securitycenter] add cloud_dlp_inspection and cloud_dlp_data_profile fields to finding's list of attributes",
+          "issues": [
+            "9371"
+          ]
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-securitycenter",
+      "id": "c320417c-cec4-4ffb-b6ea-4bc9eb5286ea",
+      "createTime": "2023-04-26T17:10:14.302Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "f3c56a90254731d8edb3785ae2af27be4f4eb56a",
+          "message": "[analyticsadmin] add `FetchConnectedGa4Property` method to the Admin API v1alpha",
+          "issues": [
+            "9378"
+          ]
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.analytics:google-analytics-admin",
+      "id": "0bbcc05c-b406-40d7-809f-a0f9d59c4def",
+      "createTime": "2023-04-26T17:10:14.300Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "fd4b0987edbfe089d692caddd648928e254b4207",
+          "message": "[tpu] make reservation_name parameter generally visible in QueuedResource message",
+          "issues": [
+            "9353"
+          ]
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-tpu",
+      "id": "7599ac63-1ffc-48aa-9101-6a3f4afb3d92",
+      "createTime": "2023-04-26T17:10:14.296Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "d6c0174c4888d057fed99df5b75c5c35bdd812f2",
+          "message": "[maps-addressvalidation] Update description of the postal address",
+          "issues": [
+            "9354"
+          ]
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.maps:google-maps-addressvalidation",
+      "id": "790c6e0b-7937-496e-8eb2-919c2b69050e",
+      "createTime": "2023-04-26T17:10:14.294Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "3074871c8b1a4ef1d081940041a566bb187c928a",
+          "message": "[aiplatform] add is_default to Tensorboard in aiplatform v1 tensorboard.proto and v1beta1 tensorboard.proto",
+          "issues": [
+            "9355"
+          ]
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-aiplatform",
+      "id": "ea384d91-4087-42c4-a8bd-9f4bbdab36d2",
+      "createTime": "2023-04-26T17:10:14.292Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "80e0262b3e57bf4db785f3d58d00e1fde2e0e1b3",
+          "message": "[gkehub] add `monitoring_config` field",
+          "issues": [
+            "9370"
+          ]
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-gkehub",
+      "id": "490976f5-c213-4bb4-aa76-a61a2e350241",
+      "createTime": "2023-04-26T17:10:14.290Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "083a96b6f7e687a57e3f30e72f9f10692e6e3c45",
+          "message": "[orchestration-airflow] add airflow_byoid_uri field to Cloud Composer API",
+          "issues": [
+            "9383"
+          ]
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-orchestration-airflow",
+      "id": "3e382f58-2ebb-4d9a-b341-49eec2deb806",
+      "createTime": "2023-04-26T17:10:14.288Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "b76174e3d2da090a80010ceeb507d751ad7618e1",
+          "message": "[dataproc] update go_package to v2 in google.cloud.dataproc.v1",
+          "issues": [
+            "9361"
+          ]
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataproc",
+      "id": "150da3fe-5d2e-48c8-a68a-f0fbddd69e70",
+      "createTime": "2023-04-26T17:10:14.286Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "149aef940ad2a555c733301e78f86190bb64b01a",
+          "message": "[storageinsights] new module for storageinsights",
+          "issues": [
+            "9367"
+          ]
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-storageinsights",
+      "id": "6455f953-e5b3-4c80-8f42-be3197ccbb21",
+      "createTime": "2023-04-26T17:10:14.284Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "8174107daa84abed6e138daa4b25748e020d3302",
+          "message": "[metastore] added ScalingConfig (v1)",
+          "issues": [
+            "9350"
+          ]
+        }
+      ],
+      "version": "1.10.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataproc-metastore",
+      "id": "86d0a2ad-47aa-47fe-a69f-b077faf094b7",
+      "createTime": "2023-04-26T17:10:14.281Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
           "sha": "c89fbe3d59429c01de3e3130aad293cdaf6b5a5d",
           "message": "README.md to have Libraries BOM usage guide",
           "issues": [
@@ -6162,5 +6447,5 @@
       "createTime": "2023-02-03T16:27:23.198Z"
     }
   ],
-  "updateTime": "2023-04-13T17:37:33.273Z"
+  "updateTime": "2023-04-26T17:10:14.314Z"
 }
