@@ -1,5 +1,45 @@
 # Changelog
 
+## [1.10.0](https://github.com/googleapis/google-cloud-java/compare/v1.9.0...v1.10.0) (2023-04-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* [retail] fix the HTTP format for merchant center link service ([#9360](https://github.com/googleapis/google-cloud-java/issues/9360))
+
+### Features
+
+* [aiplatform] add is_default to Tensorboard in aiplatform v1 tensorboard.proto and v1beta1 tensorboard.proto ([#9355](https://github.com/googleapis/google-cloud-java/issues/9355)) ([3074871](https://github.com/googleapis/google-cloud-java/commit/3074871c8b1a4ef1d081940041a566bb187c928a))
+* [analyticsadmin] add `FetchConnectedGa4Property` method to the Admin API v1alpha ([#9378](https://github.com/googleapis/google-cloud-java/issues/9378)) ([f3c56a9](https://github.com/googleapis/google-cloud-java/commit/f3c56a90254731d8edb3785ae2af27be4f4eb56a))
+* [cloudbuild] Add PeeredNetworkIpRange to NetworkConfigs message ([#9358](https://github.com/googleapis/google-cloud-java/issues/9358)) ([3aeb0df](https://github.com/googleapis/google-cloud-java/commit/3aeb0df96fdb98c17dab2cc807a960583ef92c37))
+* [cloudresourcemanager] add TagHolds, GetNamespacedTagKey, and GetNamespacedTagValue APIs. Adds support for project parented tags ([#9369](https://github.com/googleapis/google-cloud-java/issues/9369)) ([b47972a](https://github.com/googleapis/google-cloud-java/commit/b47972a741efd27b55ef99835eb77a624670b35d))
+* [dataproc] update go_package to v2 in google.cloud.dataproc.v1 ([#9361](https://github.com/googleapis/google-cloud-java/issues/9361)) ([b76174e](https://github.com/googleapis/google-cloud-java/commit/b76174e3d2da090a80010ceeb507d751ad7618e1))
+* [discoveryengine] add search, autocomplete and schema services ([#9374](https://github.com/googleapis/google-cloud-java/issues/9374)) ([73e9031](https://github.com/googleapis/google-cloud-java/commit/73e9031d446216da337edd19873d6cdaf793b7d3))
+* [gkehub] add `monitoring_config` field ([#9370](https://github.com/googleapis/google-cloud-java/issues/9370)) ([80e0262](https://github.com/googleapis/google-cloud-java/commit/80e0262b3e57bf4db785f3d58d00e1fde2e0e1b3))
+* [metastore] added ScalingConfig (v1) ([#9350](https://github.com/googleapis/google-cloud-java/issues/9350)) ([8174107](https://github.com/googleapis/google-cloud-java/commit/8174107daa84abed6e138daa4b25748e020d3302))
+* [orchestration-airflow] add airflow_byoid_uri field to Cloud Composer API ([#9383](https://github.com/googleapis/google-cloud-java/issues/9383)) ([083a96b](https://github.com/googleapis/google-cloud-java/commit/083a96b6f7e687a57e3f30e72f9f10692e6e3c45))
+* [securitycenter] add cloud_dlp_inspection and cloud_dlp_data_profile fields to finding's list of attributes ([#9371](https://github.com/googleapis/google-cloud-java/issues/9371)) ([9e1a89d](https://github.com/googleapis/google-cloud-java/commit/9e1a89d916134d9d3ed41b17138f7b3918d110e8))
+* [storageinsights] new module for storageinsights ([#9367](https://github.com/googleapis/google-cloud-java/issues/9367)) ([149aef9](https://github.com/googleapis/google-cloud-java/commit/149aef940ad2a555c733301e78f86190bb64b01a))
+* [tpu] make reservation_name parameter generally visible in QueuedResource message ([#9353](https://github.com/googleapis/google-cloud-java/issues/9353)) ([fd4b098](https://github.com/googleapis/google-cloud-java/commit/fd4b0987edbfe089d692caddd648928e254b4207))
+* add unstructured document support (PDF/HTML) ([73e9031](https://github.com/googleapis/google-cloud-java/commit/73e9031d446216da337edd19873d6cdaf793b7d3))
+
+
+### Bug Fixes
+
+* [retail] fix the HTTP format for merchant center link service ([#9360](https://github.com/googleapis/google-cloud-java/issues/9360)) ([4725324](https://github.com/googleapis/google-cloud-java/commit/472532484ae5127ec40da1f95495db159374ddff))
+* **deps:** update dependency com.google.apis:google-api-services-dns to v1-rev20230330-2.0.0 ([#9322](https://github.com/googleapis/google-cloud-java/issues/9322)) ([c02ff98](https://github.com/googleapis/google-cloud-java/commit/c02ff98d7664f36b433ce7c265da004d29ecec9a))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.123.10 ([#9311](https://github.com/googleapis/google-cloud-java/issues/9311)) ([047de7d](https://github.com/googleapis/google-cloud-java/commit/047de7de577f75ec8900ce0894216bfe9213e059))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.8.0 ([#9381](https://github.com/googleapis/google-cloud-java/issues/9381)) ([465bb96](https://github.com/googleapis/google-cloud-java/commit/465bb96eed2e9edea3b737f3cbc6e4e0cbf2c140))
+* **deps:** update dependency com.google.cloud:google-cloud-storage to v2.22.0 ([#9309](https://github.com/googleapis/google-cloud-java/issues/9309)) ([e928167](https://github.com/googleapis/google-cloud-java/commit/e9281675d0021d051028bba52c2a7cf93bedd1a8))
+
+
+### Documentation
+
+* [container] Operation.Type is now documented in detail ([#9351](https://github.com/googleapis/google-cloud-java/issues/9351)) ([6bec519](https://github.com/googleapis/google-cloud-java/commit/6bec5191f4b4af615f1c94f4d047c3e46b62068c))
+* [maps-addressvalidation] Update description of the postal address ([#9354](https://github.com/googleapis/google-cloud-java/issues/9354)) ([d6c0174](https://github.com/googleapis/google-cloud-java/commit/d6c0174c4888d057fed99df5b75c5c35bdd812f2))
+* [networkmanagement] Update comments in Connectivity Test protos ([#9362](https://github.com/googleapis/google-cloud-java/issues/9362)) ([5c47061](https://github.com/googleapis/google-cloud-java/commit/5c470613686222a6fd11aeaca4b433396a32c122))
+* keep the API doc up-to-date with recent changes ([73e9031](https://github.com/googleapis/google-cloud-java/commit/73e9031d446216da337edd19873d6cdaf793b7d3))
+
 ## [1.9.0](https://github.com/googleapis/google-cloud-java/compare/v1.8.0...v1.9.0) (2023-04-13)
 
 
