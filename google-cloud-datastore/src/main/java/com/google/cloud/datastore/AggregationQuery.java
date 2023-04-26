@@ -19,7 +19,6 @@ import static com.google.cloud.datastore.AggregationQuery.Mode.GQL;
 import static com.google.cloud.datastore.AggregationQuery.Mode.STRUCTURED;
 import static com.google.common.base.Preconditions.checkArgument;
 
-import com.google.api.core.BetaApi;
 import com.google.cloud.datastore.aggregation.Aggregation;
 import com.google.cloud.datastore.aggregation.AggregationBuilder;
 import java.util.HashSet;
@@ -67,7 +66,6 @@ import java.util.Set;
  * @see <a href="https://cloud.google.com/appengine/docs/java/datastore/queries">Datastore
  *     queries</a>
  */
-@BetaApi
 public class AggregationQuery extends Query<AggregationResults> {
 
   private Set<Aggregation> aggregations;

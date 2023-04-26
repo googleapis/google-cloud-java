@@ -16,7 +16,6 @@
 
 package com.google.cloud.datastore;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.BaseService;
 import com.google.cloud.ExceptionHandler;
@@ -198,13 +197,11 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   }
 
   @Override
-  @BetaApi
   public AggregationResults runAggregation(AggregationQuery query) {
     return aggregationQueryExecutor.execute(query);
   }
 
   @Override
-  @BetaApi
   public AggregationResults runAggregation(AggregationQuery query, ReadOption... options) {
     return aggregationQueryExecutor.execute(query, options);
   }

@@ -15,7 +15,6 @@
  */
 package com.google.cloud.datastore;
 
-import com.google.api.core.BetaApi;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import java.util.Map;
@@ -23,7 +22,6 @@ import java.util.Map.Entry;
 import java.util.Objects;
 
 /** Represents a result of an {@link AggregationQuery} query submission. */
-@BetaApi
 public class AggregationResult {
 
   private final Map<String, LongValue> properties;

@@ -16,14 +16,12 @@
 
 package com.google.cloud.datastore.aggregation;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.datastore.v1.AggregationQuery;
 
 /**
  * Represents a Google Cloud Datastore Aggregation which is used with an {@link AggregationQuery}.
  */
-@BetaApi
 public abstract class Aggregation {
 
   private final String alias;
