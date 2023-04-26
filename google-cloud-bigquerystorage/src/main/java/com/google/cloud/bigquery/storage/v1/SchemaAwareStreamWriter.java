@@ -44,7 +44,6 @@ import javax.annotation.Nullable;
  */
 public class SchemaAwareStreamWriter<T> implements AutoCloseable {
   private static final Logger LOG = Logger.getLogger(SchemaAwareStreamWriter.class.getName());
-  private static final long UPDATE_SCHEMA_RETRY_INTERVAL_MILLIS = 30100L;
   private final BigQueryWriteClient client;
   private final String streamName;
   private final StreamWriter.Builder streamWriterBuilder;
@@ -126,9 +125,6 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
       return this.toProtoConverter.convertToProtoMessage(
           this.descriptor, this.tableSchema, item, ignoreUnknownFields);
     } catch (Exceptions.DataHasUnknownFieldException ex) {
-      // Backend cache for GetWriteStream schema staleness can be 30 seconds, wait a bit before
-      // trying to get the table schema to increase the chance of succeed. This is to avoid
-      // client's invalid datfa caused storm of GetWriteStream.
       LOG.warning(
           "Saw unknown field "
               + ex.getFieldName()
@@ -141,21 +137,8 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
               .build();
       WriteStream writeStream = client.getWriteStream(writeStreamRequest);
       refreshWriter(writeStream.getTableSchema());
-      try {
-        return this.toProtoConverter.convertToProtoMessage(
-            this.descriptor, this.tableSchema, item, ignoreUnknownFields);
-      } catch (Exceptions.DataHasUnknownFieldException exex) {
-        LOG.warning(
-            "First attempt failed, waiting for 30 seconds to retry, stream: " + this.streamName);
-        Thread.sleep(UPDATE_SCHEMA_RETRY_INTERVAL_MILLIS);
-        writeStream = client.getWriteStream(writeStreamRequest);
-        // TODO(yiru): We should let TableSchema return a timestamp so that we can simply
-        //     compare the timestamp to see if the table schema is the same. If it is the
-        //     same, we don't need to go refresh the writer again.
-        refreshWriter(writeStream.getTableSchema());
-        return this.toProtoConverter.convertToProtoMessage(
-            this.descriptor, this.tableSchema, item, ignoreUnknownFields);
-      }
+      return this.toProtoConverter.convertToProtoMessage(
+          this.descriptor, this.tableSchema, item, ignoreUnknownFields);
     }
   }
   /**

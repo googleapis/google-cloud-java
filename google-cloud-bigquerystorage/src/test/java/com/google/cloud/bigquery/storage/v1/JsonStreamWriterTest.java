@@ -799,9 +799,7 @@ public class JsonStreamWriterTest {
                     .setType(TableFieldSchema.Type.STRING)
                     .setMode(Mode.NULLABLE))
             .build();
-    // GetWriteStream is called twice and got the updated schema
-    testBigQueryWrite.addResponse(
-        WriteStream.newBuilder().setName(TEST_STREAM).setTableSchema(tableSchema).build());
+    // GetWriteStream is called once and got the updated schema
     testBigQueryWrite.addResponse(
         WriteStream.newBuilder().setName(TEST_STREAM).setTableSchema(updatedSchema).build());
     testBigQueryWrite.addResponse(
