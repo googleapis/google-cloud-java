@@ -190,8 +190,8 @@ public interface FederationOrBuilder
    *
    *
    * <pre>
-   * Immutable. The Apache Hive metastore version of the federation. All backend metastore
-   * versions must be compatible with the federation version.
+   * Immutable. The Apache Hive metastore version of the federation. All backend
+   * metastore versions must be compatible with the federation version.
    * </pre>
    *
    * <code>string version = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -203,8 +203,8 @@ public interface FederationOrBuilder
    *
    *
    * <pre>
-   * Immutable. The Apache Hive metastore version of the federation. All backend metastore
-   * versions must be compatible with the federation version.
+   * Immutable. The Apache Hive metastore version of the federation. All backend
+   * metastore versions must be compatible with the federation version.
    * </pre>
    *
    * <code>string version = 5 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -361,8 +361,8 @@ public interface FederationOrBuilder
    *
    *
    * <pre>
-   * Output only. Additional information about the current state of the metastore federation,
-   * if available.
+   * Output only. Additional information about the current state of the
+   * metastore federation, if available.
    * </pre>
    *
    * <code>string state_message = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -374,8 +374,8 @@ public interface FederationOrBuilder
    *
    *
    * <pre>
-   * Output only. Additional information about the current state of the metastore federation,
-   * if available.
+   * Output only. Additional information about the current state of the
+   * metastore federation, if available.
    * </pre>
    *
    * <code>string state_message = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -388,7 +388,8 @@ public interface FederationOrBuilder
    *
    *
    * <pre>
-   * Output only. The globally unique resource identifier of the metastore federation.
+   * Output only. The globally unique resource identifier of the metastore
+   * federation.
    * </pre>
    *
    * <code>string uid = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -400,7 +401,8 @@ public interface FederationOrBuilder
    *
    *
    * <pre>
-   * Output only. The globally unique resource identifier of the metastore federation.
+   * Output only. The globally unique resource identifier of the metastore
+   * federation.
    * </pre>
    *
    * <code>string uid = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

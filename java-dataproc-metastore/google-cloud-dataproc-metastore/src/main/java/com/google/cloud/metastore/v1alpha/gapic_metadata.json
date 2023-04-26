@@ -34,6 +34,12 @@
             "GetBackup": {
               "methods": ["getBackup", "getBackup", "getBackup", "getBackupCallable"]
             },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "GetMetadataImport": {
               "methods": ["getMetadataImport", "getMetadataImport", "getMetadataImport", "getMetadataImportCallable"]
             },
@@ -42,6 +48,9 @@
             },
             "ListBackups": {
               "methods": ["listBackups", "listBackups", "listBackups", "listBackupsPagedCallable", "listBackupsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "ListMetadataImports": {
               "methods": ["listMetadataImports", "listMetadataImports", "listMetadataImports", "listMetadataImportsPagedCallable", "listMetadataImportsCallable"]
@@ -60,6 +69,12 @@
             },
             "RestoreService": {
               "methods": ["restoreServiceAsync", "restoreServiceAsync", "restoreServiceAsync", "restoreServiceAsync", "restoreServiceAsync", "restoreServiceOperationCallable", "restoreServiceCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
             "UpdateMetadataImport": {
               "methods": ["updateMetadataImportAsync", "updateMetadataImportAsync", "updateMetadataImportOperationCallable", "updateMetadataImportCallable"]
@@ -85,8 +100,23 @@
             "GetFederation": {
               "methods": ["getFederation", "getFederation", "getFederation", "getFederationCallable"]
             },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
             "ListFederations": {
               "methods": ["listFederations", "listFederations", "listFederations", "listFederationsPagedCallable", "listFederationsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
             "UpdateFederation": {
               "methods": ["updateFederationAsync", "updateFederationAsync", "updateFederationOperationCallable", "updateFederationCallable"]

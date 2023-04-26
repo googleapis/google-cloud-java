@@ -22,7 +22,8 @@ package com.google.cloud.metastore.v1;
  *
  *
  * <pre>
- * Response message for [DataprocMetastore.ListMetadataImports][google.cloud.metastore.v1.DataprocMetastore.ListMetadataImports].
+ * Response message for
+ * [DataprocMetastore.ListMetadataImports][google.cloud.metastore.v1.DataprocMetastore.ListMetadataImports].
  * </pre>
  *
  * Protobuf type {@code google.cloud.metastore.v1.ListMetadataImportsResponse}
@@ -448,7 +449,8 @@ public final class ListMetadataImportsResponse extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Response message for [DataprocMetastore.ListMetadataImports][google.cloud.metastore.v1.DataprocMetastore.ListMetadataImports].
+   * Response message for
+   * [DataprocMetastore.ListMetadataImports][google.cloud.metastore.v1.DataprocMetastore.ListMetadataImports].
    * </pre>
    *
    * Protobuf type {@code google.cloud.metastore.v1.ListMetadataImportsResponse}

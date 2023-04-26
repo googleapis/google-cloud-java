@@ -76,8 +76,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The subnetwork of the customer project from which an IP address is
-     * reserved and used as the Dataproc Metastore service's
+     * Immutable. The subnetwork of the customer project from which an IP
+     * address is reserved and used as the Dataproc Metastore service's
      * endpoint. It is accessible to hosts in the subnet and to all
      * hosts in a subnet in the same region and same network. There must
      * be at least one IP address available in the subnet's primary range. The
@@ -96,8 +96,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The subnetwork of the customer project from which an IP address is
-     * reserved and used as the Dataproc Metastore service's
+     * Immutable. The subnetwork of the customer project from which an IP
+     * address is reserved and used as the Dataproc Metastore service's
      * endpoint. It is accessible to hosts in the subnet and to all
      * hosts in a subnet in the same region and same network. There must
      * be at least one IP address available in the subnet's primary range. The
@@ -116,8 +116,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The subnetwork of the customer project from which an IP address is
-     * reserved and used as the Dataproc Metastore service's
+     * Immutable. The subnetwork of the customer project from which an IP
+     * address is reserved and used as the Dataproc Metastore service's
      * endpoint. It is accessible to hosts in the subnet and to all
      * hosts in a subnet in the same region and same network. There must
      * be at least one IP address available in the subnet's primary range. The
@@ -137,7 +137,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The URI of the endpoint used to access the metastore service.
+     * Output only. The URI of the endpoint used to access the metastore
+     * service.
      * </pre>
      *
      * <code>string endpoint_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -149,7 +150,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The URI of the endpoint used to access the metastore service.
+     * Output only. The URI of the endpoint used to access the metastore
+     * service.
      * </pre>
      *
      * <code>string endpoint_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -259,8 +261,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The subnetwork of the customer project from which an IP address is
-     * reserved and used as the Dataproc Metastore service's
+     * Immutable. The subnetwork of the customer project from which an IP
+     * address is reserved and used as the Dataproc Metastore service's
      * endpoint. It is accessible to hosts in the subnet and to all
      * hosts in a subnet in the same region and same network. There must
      * be at least one IP address available in the subnet's primary range. The
@@ -281,8 +283,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The subnetwork of the customer project from which an IP address is
-     * reserved and used as the Dataproc Metastore service's
+     * Immutable. The subnetwork of the customer project from which an IP
+     * address is reserved and used as the Dataproc Metastore service's
      * endpoint. It is accessible to hosts in the subnet and to all
      * hosts in a subnet in the same region and same network. There must
      * be at least one IP address available in the subnet's primary range. The
@@ -316,8 +318,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The subnetwork of the customer project from which an IP address is
-     * reserved and used as the Dataproc Metastore service's
+     * Immutable. The subnetwork of the customer project from which an IP
+     * address is reserved and used as the Dataproc Metastore service's
      * endpoint. It is accessible to hosts in the subnet and to all
      * hosts in a subnet in the same region and same network. There must
      * be at least one IP address available in the subnet's primary range. The
@@ -356,7 +358,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The URI of the endpoint used to access the metastore service.
+     * Output only. The URI of the endpoint used to access the metastore
+     * service.
      * </pre>
      *
      * <code>string endpoint_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -379,7 +382,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The URI of the endpoint used to access the metastore service.
+     * Output only. The URI of the endpoint used to access the metastore
+     * service.
      * </pre>
      *
      * <code>string endpoint_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -814,8 +818,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The subnetwork of the customer project from which an IP address is
-       * reserved and used as the Dataproc Metastore service's
+       * Immutable. The subnetwork of the customer project from which an IP
+       * address is reserved and used as the Dataproc Metastore service's
        * endpoint. It is accessible to hosts in the subnet and to all
        * hosts in a subnet in the same region and same network. There must
        * be at least one IP address available in the subnet's primary range. The
@@ -837,8 +841,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The subnetwork of the customer project from which an IP address is
-       * reserved and used as the Dataproc Metastore service's
+       * Immutable. The subnetwork of the customer project from which an IP
+       * address is reserved and used as the Dataproc Metastore service's
        * endpoint. It is accessible to hosts in the subnet and to all
        * hosts in a subnet in the same region and same network. There must
        * be at least one IP address available in the subnet's primary range. The
@@ -873,8 +877,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The subnetwork of the customer project from which an IP address is
-       * reserved and used as the Dataproc Metastore service's
+       * Immutable. The subnetwork of the customer project from which an IP
+       * address is reserved and used as the Dataproc Metastore service's
        * endpoint. It is accessible to hosts in the subnet and to all
        * hosts in a subnet in the same region and same network. There must
        * be at least one IP address available in the subnet's primary range. The
@@ -909,8 +913,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The subnetwork of the customer project from which an IP address is
-       * reserved and used as the Dataproc Metastore service's
+       * Immutable. The subnetwork of the customer project from which an IP
+       * address is reserved and used as the Dataproc Metastore service's
        * endpoint. It is accessible to hosts in the subnet and to all
        * hosts in a subnet in the same region and same network. There must
        * be at least one IP address available in the subnet's primary range. The
@@ -938,8 +942,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The subnetwork of the customer project from which an IP address is
-       * reserved and used as the Dataproc Metastore service's
+       * Immutable. The subnetwork of the customer project from which an IP
+       * address is reserved and used as the Dataproc Metastore service's
        * endpoint. It is accessible to hosts in the subnet and to all
        * hosts in a subnet in the same region and same network. There must
        * be at least one IP address available in the subnet's primary range. The
@@ -965,8 +969,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Immutable. The subnetwork of the customer project from which an IP address is
-       * reserved and used as the Dataproc Metastore service's
+       * Immutable. The subnetwork of the customer project from which an IP
+       * address is reserved and used as the Dataproc Metastore service's
        * endpoint. It is accessible to hosts in the subnet and to all
        * hosts in a subnet in the same region and same network. There must
        * be at least one IP address available in the subnet's primary range. The
@@ -997,7 +1001,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The URI of the endpoint used to access the metastore service.
+       * Output only. The URI of the endpoint used to access the metastore
+       * service.
        * </pre>
        *
        * <code>string endpoint_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1019,7 +1024,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The URI of the endpoint used to access the metastore service.
+       * Output only. The URI of the endpoint used to access the metastore
+       * service.
        * </pre>
        *
        * <code>string endpoint_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1041,7 +1047,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The URI of the endpoint used to access the metastore service.
+       * Output only. The URI of the endpoint used to access the metastore
+       * service.
        * </pre>
        *
        * <code>string endpoint_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1062,7 +1069,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The URI of the endpoint used to access the metastore service.
+       * Output only. The URI of the endpoint used to access the metastore
+       * service.
        * </pre>
        *
        * <code>string endpoint_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1079,7 +1087,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Output only. The URI of the endpoint used to access the metastore service.
+       * Output only. The URI of the endpoint used to access the metastore
+       * service.
        * </pre>
        *
        * <code>string endpoint_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1170,8 +1179,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The consumer-side network configuration for the Dataproc Metastore
-   * instance.
+   * Immutable. The consumer-side network configuration for the Dataproc
+   * Metastore instance.
    * </pre>
    *
    * <code>
@@ -1186,8 +1195,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The consumer-side network configuration for the Dataproc Metastore
-   * instance.
+   * Immutable. The consumer-side network configuration for the Dataproc
+   * Metastore instance.
    * </pre>
    *
    * <code>
@@ -1203,8 +1212,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The consumer-side network configuration for the Dataproc Metastore
-   * instance.
+   * Immutable. The consumer-side network configuration for the Dataproc
+   * Metastore instance.
    * </pre>
    *
    * <code>
@@ -1219,8 +1228,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The consumer-side network configuration for the Dataproc Metastore
-   * instance.
+   * Immutable. The consumer-side network configuration for the Dataproc
+   * Metastore instance.
    * </pre>
    *
    * <code>
@@ -1235,8 +1244,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The consumer-side network configuration for the Dataproc Metastore
-   * instance.
+   * Immutable. The consumer-side network configuration for the Dataproc
+   * Metastore instance.
    * </pre>
    *
    * <code>
@@ -1660,8 +1669,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The consumer-side network configuration for the Dataproc Metastore
-     * instance.
+     * Immutable. The consumer-side network configuration for the Dataproc
+     * Metastore instance.
      * </pre>
      *
      * <code>
@@ -1679,8 +1688,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The consumer-side network configuration for the Dataproc Metastore
-     * instance.
+     * Immutable. The consumer-side network configuration for the Dataproc
+     * Metastore instance.
      * </pre>
      *
      * <code>
@@ -1698,8 +1707,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The consumer-side network configuration for the Dataproc Metastore
-     * instance.
+     * Immutable. The consumer-side network configuration for the Dataproc
+     * Metastore instance.
      * </pre>
      *
      * <code>
@@ -1717,8 +1726,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The consumer-side network configuration for the Dataproc Metastore
-     * instance.
+     * Immutable. The consumer-side network configuration for the Dataproc
+     * Metastore instance.
      * </pre>
      *
      * <code>
@@ -1743,8 +1752,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The consumer-side network configuration for the Dataproc Metastore
-     * instance.
+     * Immutable. The consumer-side network configuration for the Dataproc
+     * Metastore instance.
      * </pre>
      *
      * <code>
@@ -1766,8 +1775,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The consumer-side network configuration for the Dataproc Metastore
-     * instance.
+     * Immutable. The consumer-side network configuration for the Dataproc
+     * Metastore instance.
      * </pre>
      *
      * <code>
@@ -1791,8 +1800,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The consumer-side network configuration for the Dataproc Metastore
-     * instance.
+     * Immutable. The consumer-side network configuration for the Dataproc
+     * Metastore instance.
      * </pre>
      *
      * <code>
@@ -1817,8 +1826,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The consumer-side network configuration for the Dataproc Metastore
-     * instance.
+     * Immutable. The consumer-side network configuration for the Dataproc
+     * Metastore instance.
      * </pre>
      *
      * <code>
@@ -1840,8 +1849,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The consumer-side network configuration for the Dataproc Metastore
-     * instance.
+     * Immutable. The consumer-side network configuration for the Dataproc
+     * Metastore instance.
      * </pre>
      *
      * <code>
@@ -1863,8 +1872,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The consumer-side network configuration for the Dataproc Metastore
-     * instance.
+     * Immutable. The consumer-side network configuration for the Dataproc
+     * Metastore instance.
      * </pre>
      *
      * <code>
@@ -1886,8 +1895,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The consumer-side network configuration for the Dataproc Metastore
-     * instance.
+     * Immutable. The consumer-side network configuration for the Dataproc
+     * Metastore instance.
      * </pre>
      *
      * <code>
@@ -1908,8 +1917,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The consumer-side network configuration for the Dataproc Metastore
-     * instance.
+     * Immutable. The consumer-side network configuration for the Dataproc
+     * Metastore instance.
      * </pre>
      *
      * <code>
@@ -1930,8 +1939,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The consumer-side network configuration for the Dataproc Metastore
-     * instance.
+     * Immutable. The consumer-side network configuration for the Dataproc
+     * Metastore instance.
      * </pre>
      *
      * <code>
@@ -1946,8 +1955,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The consumer-side network configuration for the Dataproc Metastore
-     * instance.
+     * Immutable. The consumer-side network configuration for the Dataproc
+     * Metastore instance.
      * </pre>
      *
      * <code>
@@ -1966,8 +1975,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The consumer-side network configuration for the Dataproc Metastore
-     * instance.
+     * Immutable. The consumer-side network configuration for the Dataproc
+     * Metastore instance.
      * </pre>
      *
      * <code>
@@ -1986,8 +1995,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The consumer-side network configuration for the Dataproc Metastore
-     * instance.
+     * Immutable. The consumer-side network configuration for the Dataproc
+     * Metastore instance.
      * </pre>
      *
      * <code>
@@ -2002,8 +2011,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The consumer-side network configuration for the Dataproc Metastore
-     * instance.
+     * Immutable. The consumer-side network configuration for the Dataproc
+     * Metastore instance.
      * </pre>
      *
      * <code>
@@ -2020,8 +2029,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The consumer-side network configuration for the Dataproc Metastore
-     * instance.
+     * Immutable. The consumer-side network configuration for the Dataproc
+     * Metastore instance.
      * </pre>
      *
      * <code>

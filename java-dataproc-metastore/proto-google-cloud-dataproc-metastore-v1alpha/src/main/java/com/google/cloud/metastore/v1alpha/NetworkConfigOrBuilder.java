@@ -90,4 +90,18 @@ public interface NetworkConfigOrBuilder
    */
   com.google.cloud.metastore.v1alpha.NetworkConfig.ConsumerOrBuilder getConsumersOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Enables custom routes to be imported and exported for the Dataproc
+   * Metastore service's peered VPC network.
+   * </pre>
+   *
+   * <code>bool custom_routes_enabled = 2;</code>
+   *
+   * @return The customRoutesEnabled.
+   */
+  boolean getCustomRoutesEnabled();
 }

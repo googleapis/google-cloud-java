@@ -172,4 +172,110 @@ public interface HiveMetastoreConfigOrBuilder
    * <code>.google.cloud.metastore.v1.KerberosConfig kerberos_config = 3;</code>
    */
   com.google.cloud.metastore.v1.KerberosConfigOrBuilder getKerberosConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A mapping of Hive metastore version to the auxiliary version
+   * configuration. When specified, a secondary Hive metastore service is
+   * created along with the primary service. All auxiliary versions must be less
+   * than the service's primary version. The key is the auxiliary service name
+   * and it must match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. This
+   * means that the first character must be a lowercase letter, and all the
+   * following characters must be hyphens, lowercase letters, or digits, except
+   * the last character, which cannot be a hyphen.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.metastore.v1.AuxiliaryVersionConfig&gt; auxiliary_versions = 5;
+   * </code>
+   */
+  int getAuxiliaryVersionsCount();
+  /**
+   *
+   *
+   * <pre>
+   * A mapping of Hive metastore version to the auxiliary version
+   * configuration. When specified, a secondary Hive metastore service is
+   * created along with the primary service. All auxiliary versions must be less
+   * than the service's primary version. The key is the auxiliary service name
+   * and it must match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. This
+   * means that the first character must be a lowercase letter, and all the
+   * following characters must be hyphens, lowercase letters, or digits, except
+   * the last character, which cannot be a hyphen.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.metastore.v1.AuxiliaryVersionConfig&gt; auxiliary_versions = 5;
+   * </code>
+   */
+  boolean containsAuxiliaryVersions(java.lang.String key);
+  /** Use {@link #getAuxiliaryVersionsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.metastore.v1.AuxiliaryVersionConfig>
+      getAuxiliaryVersions();
+  /**
+   *
+   *
+   * <pre>
+   * A mapping of Hive metastore version to the auxiliary version
+   * configuration. When specified, a secondary Hive metastore service is
+   * created along with the primary service. All auxiliary versions must be less
+   * than the service's primary version. The key is the auxiliary service name
+   * and it must match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. This
+   * means that the first character must be a lowercase letter, and all the
+   * following characters must be hyphens, lowercase letters, or digits, except
+   * the last character, which cannot be a hyphen.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.metastore.v1.AuxiliaryVersionConfig&gt; auxiliary_versions = 5;
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.metastore.v1.AuxiliaryVersionConfig>
+      getAuxiliaryVersionsMap();
+  /**
+   *
+   *
+   * <pre>
+   * A mapping of Hive metastore version to the auxiliary version
+   * configuration. When specified, a secondary Hive metastore service is
+   * created along with the primary service. All auxiliary versions must be less
+   * than the service's primary version. The key is the auxiliary service name
+   * and it must match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. This
+   * means that the first character must be a lowercase letter, and all the
+   * following characters must be hyphens, lowercase letters, or digits, except
+   * the last character, which cannot be a hyphen.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.metastore.v1.AuxiliaryVersionConfig&gt; auxiliary_versions = 5;
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.metastore.v1.AuxiliaryVersionConfig getAuxiliaryVersionsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.metastore.v1.AuxiliaryVersionConfig defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * A mapping of Hive metastore version to the auxiliary version
+   * configuration. When specified, a secondary Hive metastore service is
+   * created along with the primary service. All auxiliary versions must be less
+   * than the service's primary version. The key is the auxiliary service name
+   * and it must match the regular expression [a-z]([-a-z0-9]*[a-z0-9])?. This
+   * means that the first character must be a lowercase letter, and all the
+   * following characters must be hyphens, lowercase letters, or digits, except
+   * the last character, which cannot be a hyphen.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.metastore.v1.AuxiliaryVersionConfig&gt; auxiliary_versions = 5;
+   * </code>
+   */
+  com.google.cloud.metastore.v1.AuxiliaryVersionConfig getAuxiliaryVersionsOrThrow(
+      java.lang.String key);
 }

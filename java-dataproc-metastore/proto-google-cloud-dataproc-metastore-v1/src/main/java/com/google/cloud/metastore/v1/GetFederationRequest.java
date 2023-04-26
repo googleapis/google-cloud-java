@@ -75,8 +75,8 @@ public final class GetFederationRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The relative resource name of the metastore federation to retrieve,
-   * in the following form:
+   * Required. The relative resource name of the metastore federation to
+   * retrieve, in the following form:
    * `projects/{project_number}/locations/{location_id}/federations/{federation_id}`.
    * </pre>
    *
@@ -102,8 +102,8 @@ public final class GetFederationRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The relative resource name of the metastore federation to retrieve,
-   * in the following form:
+   * Required. The relative resource name of the metastore federation to
+   * retrieve, in the following form:
    * `projects/{project_number}/locations/{location_id}/federations/{federation_id}`.
    * </pre>
    *
@@ -473,8 +473,8 @@ public final class GetFederationRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The relative resource name of the metastore federation to retrieve,
-     * in the following form:
+     * Required. The relative resource name of the metastore federation to
+     * retrieve, in the following form:
      * `projects/{project_number}/locations/{location_id}/federations/{federation_id}`.
      * </pre>
      *
@@ -499,8 +499,8 @@ public final class GetFederationRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The relative resource name of the metastore federation to retrieve,
-     * in the following form:
+     * Required. The relative resource name of the metastore federation to
+     * retrieve, in the following form:
      * `projects/{project_number}/locations/{location_id}/federations/{federation_id}`.
      * </pre>
      *
@@ -525,8 +525,8 @@ public final class GetFederationRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The relative resource name of the metastore federation to retrieve,
-     * in the following form:
+     * Required. The relative resource name of the metastore federation to
+     * retrieve, in the following form:
      * `projects/{project_number}/locations/{location_id}/federations/{federation_id}`.
      * </pre>
      *
@@ -550,8 +550,8 @@ public final class GetFederationRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The relative resource name of the metastore federation to retrieve,
-     * in the following form:
+     * Required. The relative resource name of the metastore federation to
+     * retrieve, in the following form:
      * `projects/{project_number}/locations/{location_id}/federations/{federation_id}`.
      * </pre>
      *
@@ -571,8 +571,8 @@ public final class GetFederationRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The relative resource name of the metastore federation to retrieve,
-     * in the following form:
+     * Required. The relative resource name of the metastore federation to
+     * retrieve, in the following form:
      * `projects/{project_number}/locations/{location_id}/federations/{federation_id}`.
      * </pre>
      *

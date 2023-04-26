@@ -22,7 +22,8 @@ package com.google.cloud.metastore.v1;
  *
  *
  * <pre>
- * Response message for [DataprocMetastore.ListBackups][google.cloud.metastore.v1.DataprocMetastore.ListBackups].
+ * Response message for
+ * [DataprocMetastore.ListBackups][google.cloud.metastore.v1.DataprocMetastore.ListBackups].
  * </pre>
  *
  * Protobuf type {@code google.cloud.metastore.v1.ListBackupsResponse}
@@ -446,7 +447,8 @@ public final class ListBackupsResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Response message for [DataprocMetastore.ListBackups][google.cloud.metastore.v1.DataprocMetastore.ListBackups].
+   * Response message for
+   * [DataprocMetastore.ListBackups][google.cloud.metastore.v1.DataprocMetastore.ListBackups].
    * </pre>
    *
    * Protobuf type {@code google.cloud.metastore.v1.ListBackupsResponse}
