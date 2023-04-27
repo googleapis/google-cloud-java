@@ -154,7 +154,7 @@ public class AggregationQueryRequestProtoPreparerTest {
   }
 
   @Test
-  public void shouldPrepareAggregationQueryWithoutNamespace() {
+  public void shouldPrepareAggregationQueryWithNamespaceFromDatastoreOptions() {
     AggregationQuery structuredQueryWithoutNamespace =
         Query.newAggregationQueryBuilder()
             .addAggregation(count().as("total"))
@@ -169,8 +169,9 @@ public class AggregationQueryRequestProtoPreparerTest {
         protoPreparer.prepare(QueryAndReadOptions.create(gqlQueryWithoutNamespace));
 
     assertThat(runAggregationQueryFromStructuredQuery.getPartitionId().getNamespaceId())
-        .isEqualTo("");
-    assertThat(runAggregationQueryFromGqlQuery.getPartitionId().getNamespaceId()).isEqualTo("");
+        .isEqualTo(NAMESPACE);
+    assertThat(runAggregationQueryFromGqlQuery.getPartitionId().getNamespaceId())
+        .isEqualTo(NAMESPACE);
   }
 
   private RunAggregationQueryRequest prepareQuery(AggregationQuery query, ReadOption readOption) {
