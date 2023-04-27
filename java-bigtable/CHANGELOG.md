@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.21.0](https://github.com/googleapis/java-bigtable/compare/v2.20.4...v2.21.0) (2023-04-27)
+
+
+### Features
+
+* Track the latency a request is queued on the grpc channel ([#1604](https://github.com/googleapis/java-bigtable/issues/1604)) ([bf3e7dd](https://github.com/googleapis/java-bigtable/commit/bf3e7dd58170bd058cedba8eea69b8c412ae68d3))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-monitoring-bom to v3.17.0 ([#1722](https://github.com/googleapis/java-bigtable/issues/1722)) ([c6f7767](https://github.com/googleapis/java-bigtable/commit/c6f776730bd1d78489be69d09744782e8b46c9b0))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.8.0 ([#1720](https://github.com/googleapis/java-bigtable/issues/1720)) ([aa230b5](https://github.com/googleapis/java-bigtable/commit/aa230b5be4e282ccaa506d360ce95fdbe58ed4bb))
+
 ## [2.20.4](https://github.com/googleapis/java-bigtable/compare/v2.20.3...v2.20.4) (2023-04-17)
 
 
