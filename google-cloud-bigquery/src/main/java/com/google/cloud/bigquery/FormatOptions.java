@@ -43,6 +43,7 @@ public class FormatOptions implements Serializable {
   static final String GOOGLE_SHEETS = "GOOGLE_SHEETS";
   static final String PARQUET = "PARQUET";
   static final String ORC = "ORC";
+  static final String ICEBERG = "ICEBERG";
 
   private static final long serialVersionUID = -443376052020423691L;
 
@@ -115,6 +116,11 @@ public class FormatOptions implements Serializable {
     return new FormatOptions(ORC);
   }
 
+  /** Default options for the Apache Iceberg table format. */
+  public static FormatOptions iceberg() {
+    return new FormatOptions(ICEBERG);
+  }
+
   /** Default options for the provided format. */
   public static FormatOptions of(String format) {
     checkArgument(!isNullOrEmpty(format), "Provided format is null or empty");
@@ -130,6 +136,8 @@ public class FormatOptions implements Serializable {
       return bigtable();
     } else if (format.equals(PARQUET)) {
       return parquet();
+    } else if (format.equals(ICEBERG)) {
+      return iceberg();
     }
     return new FormatOptions(format);
   }
