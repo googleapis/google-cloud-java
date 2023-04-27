@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.25.0](https://github.com/googleapis/java-bigquery/compare/v2.24.5...v2.25.0) (2023-04-27)
+
+
+### Features
+
+* Add ICEBERG format options ([#2662](https://github.com/googleapis/java-bigquery/issues/2662)) ([55048ca](https://github.com/googleapis/java-bigquery/commit/55048caf6b308dca3a0961595a4a735c44d99bbb))
+
+
+### Dependencies
+
+* Update dependency com.google.api.grpc:proto-google-cloud-bigqueryconnection-v1 to v2.18.0 ([#2648](https://github.com/googleapis/java-bigquery/issues/2648)) ([29bd415](https://github.com/googleapis/java-bigquery/commit/29bd415c5c3d3f3c433821277fcd831796daa3d2))
+* Update dependency com.google.apis:google-api-services-bigquery to v2-rev20230408-2.0.0 ([#2650](https://github.com/googleapis/java-bigquery/issues/2650)) ([b9c2f60](https://github.com/googleapis/java-bigquery/commit/b9c2f60cb296f488cc4095b54fbcc459dc2f3fa5))
+* Update dependency com.google.cloud:google-cloud-bigquerystorage-bom to v2.36.1 ([fea119b](https://github.com/googleapis/java-bigquery/commit/fea119b79eea54e9f0d221e1e71a2ca77957c657))
+* Update dependency com.google.cloud:google-cloud-datacatalog-bom to v1.22.0 ([#2649](https://github.com/googleapis/java-bigquery/issues/2649)) ([b6326f3](https://github.com/googleapis/java-bigquery/commit/b6326f3aed15d312987109009af66c7aa5a30a1d))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.8.0 ([#2659](https://github.com/googleapis/java-bigquery/issues/2659)) ([691a47a](https://github.com/googleapis/java-bigquery/commit/691a47abb63bd34b5c5c57439124d4713013b94c))
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.9.3 ([#2660](https://github.com/googleapis/java-bigquery/issues/2660)) ([319f98e](https://github.com/googleapis/java-bigquery/commit/319f98eee611a10cf26582e32c9e6f8e24385565))
+
 ## [2.24.5](https://github.com/googleapis/java-bigquery/compare/v2.24.4...v2.24.5) (2023-04-14)
 
 
