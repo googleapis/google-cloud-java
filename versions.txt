@@ -1,9 +1,9 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-datastore:2.14.4:2.14.5-SNAPSHOT
-google-cloud-datastore-bom:2.14.4:2.14.5-SNAPSHOT
-proto-google-cloud-datastore-v1:0.105.4:0.105.5-SNAPSHOT
-datastore-v1-proto-client:2.14.4:2.14.5-SNAPSHOT
-proto-google-cloud-datastore-admin-v1:2.14.4:2.14.5-SNAPSHOT
-grpc-google-cloud-datastore-admin-v1:2.14.4:2.14.5-SNAPSHOT
+google-cloud-datastore:2.14.5:2.14.5
+google-cloud-datastore-bom:2.14.5:2.14.5
+proto-google-cloud-datastore-v1:0.105.5:0.105.5
+datastore-v1-proto-client:2.14.5:2.14.5
+proto-google-cloud-datastore-admin-v1:2.14.5:2.14.5
+grpc-google-cloud-datastore-admin-v1:2.14.5:2.14.5

@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.14.5](https://github.com/googleapis/java-datastore/compare/v2.14.4...v2.14.5) (2023-04-27)
+
+
+### Bug Fixes
+
+* Using namespace from DatastoreOptions if aggregation query is not configured with one. ([#1055](https://github.com/googleapis/java-datastore/issues/1055)) ([ac21ef6](https://github.com/googleapis/java-datastore/commit/ac21ef6cff5308fb17990a768100d1b2ee4c3654)), closes [#1054](https://github.com/googleapis/java-datastore/issues/1054)
+
 ## [2.14.4](https://github.com/googleapis/java-datastore/compare/v2.14.3...v2.14.4) (2023-04-26)
 
 
