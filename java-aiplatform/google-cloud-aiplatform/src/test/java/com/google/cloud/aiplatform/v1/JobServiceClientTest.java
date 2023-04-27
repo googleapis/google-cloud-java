@@ -2694,7 +2694,9 @@ public class JobServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
                     .toString())
             .setDisplayName("displayName1714148973")
-            .setEndpoint(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+            .setEndpoint(
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                    .toString())
             .setState(JobState.forNumber(0))
             .setLatestMonitoringPipelineMetadata(
                 ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata.newBuilder().build())
@@ -2767,7 +2769,9 @@ public class JobServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
                     .toString())
             .setDisplayName("displayName1714148973")
-            .setEndpoint(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+            .setEndpoint(
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                    .toString())
             .setState(JobState.forNumber(0))
             .setLatestMonitoringPipelineMetadata(
                 ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata.newBuilder().build())
@@ -2952,7 +2956,9 @@ public class JobServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
                     .toString())
             .setDisplayName("displayName1714148973")
-            .setEndpoint(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+            .setEndpoint(
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                    .toString())
             .setState(JobState.forNumber(0))
             .setLatestMonitoringPipelineMetadata(
                 ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata.newBuilder().build())
@@ -3022,7 +3028,9 @@ public class JobServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
                     .toString())
             .setDisplayName("displayName1714148973")
-            .setEndpoint(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+            .setEndpoint(
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                    .toString())
             .setState(JobState.forNumber(0))
             .setLatestMonitoringPipelineMetadata(
                 ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata.newBuilder().build())
@@ -3186,7 +3194,9 @@ public class JobServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[MODEL_DEPLOYMENT_MONITORING_JOB]")
                     .toString())
             .setDisplayName("displayName1714148973")
-            .setEndpoint(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+            .setEndpoint(
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                    .toString())
             .setState(JobState.forNumber(0))
             .setLatestMonitoringPipelineMetadata(
                 ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata.newBuilder().build())
@@ -3615,7 +3625,7 @@ public class JobServiceClientTest {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(
-                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                     .toString())
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
@@ -3646,7 +3656,8 @@ public class JobServiceClientTest {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
               .setResource(
-                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                  EndpointName.ofProjectLocationEndpointName(
+                          "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                       .toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
@@ -3672,7 +3683,7 @@ public class JobServiceClientTest {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(
-                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                     .toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
@@ -3701,7 +3712,8 @@ public class JobServiceClientTest {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
               .setResource(
-                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                  EndpointName.ofProjectLocationEndpointName(
+                          "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                       .toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
@@ -3721,7 +3733,7 @@ public class JobServiceClientTest {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(
-                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                     .toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
@@ -3750,7 +3762,8 @@ public class JobServiceClientTest {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
               .setResource(
-                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                  EndpointName.ofProjectLocationEndpointName(
+                          "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                       .toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
