@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.36.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.36.0...v2.36.1) (2023-04-27)
+
+
+### Bug Fixes
+
+* Remove teh 30 minutes wait trying to refresh schema. Customers s… ([#2088](https://github.com/googleapis/java-bigquerystorage/issues/2088)) ([3ec294f](https://github.com/googleapis/java-bigquerystorage/commit/3ec294f4b7db34bb44d862224189d8fc42821b7d))
+
 ## [2.36.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.35.0...v2.36.0) (2023-04-26)
 
 
