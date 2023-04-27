@@ -111,7 +111,9 @@ public class EndpointServiceClientTest {
   public void createEndpointTest() throws Exception {
     Endpoint expectedResponse =
         Endpoint.newBuilder()
-            .setName(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+            .setName(
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                    .toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .addAllDeployedModels(new ArrayList<DeployedModel>())
@@ -177,7 +179,9 @@ public class EndpointServiceClientTest {
   public void createEndpointTest2() throws Exception {
     Endpoint expectedResponse =
         Endpoint.newBuilder()
-            .setName(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+            .setName(
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                    .toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .addAllDeployedModels(new ArrayList<DeployedModel>())
@@ -243,7 +247,9 @@ public class EndpointServiceClientTest {
   public void createEndpointTest3() throws Exception {
     Endpoint expectedResponse =
         Endpoint.newBuilder()
-            .setName(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+            .setName(
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                    .toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .addAllDeployedModels(new ArrayList<DeployedModel>())
@@ -312,7 +318,9 @@ public class EndpointServiceClientTest {
   public void createEndpointTest4() throws Exception {
     Endpoint expectedResponse =
         Endpoint.newBuilder()
-            .setName(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+            .setName(
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                    .toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .addAllDeployedModels(new ArrayList<DeployedModel>())
@@ -381,7 +389,9 @@ public class EndpointServiceClientTest {
   public void getEndpointTest() throws Exception {
     Endpoint expectedResponse =
         Endpoint.newBuilder()
-            .setName(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+            .setName(
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                    .toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .addAllDeployedModels(new ArrayList<DeployedModel>())
@@ -402,7 +412,8 @@ public class EndpointServiceClientTest {
             .build();
     mockEndpointService.addResponse(expectedResponse);
 
-    EndpointName name = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+    EndpointName name =
+        EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
 
     Endpoint actualResponse = client.getEndpoint(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -424,7 +435,8 @@ public class EndpointServiceClientTest {
     mockEndpointService.addException(exception);
 
     try {
-      EndpointName name = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+      EndpointName name =
+          EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
       client.getEndpoint(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -436,7 +448,9 @@ public class EndpointServiceClientTest {
   public void getEndpointTest2() throws Exception {
     Endpoint expectedResponse =
         Endpoint.newBuilder()
-            .setName(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+            .setName(
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                    .toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .addAllDeployedModels(new ArrayList<DeployedModel>())
@@ -579,7 +593,9 @@ public class EndpointServiceClientTest {
   public void updateEndpointTest() throws Exception {
     Endpoint expectedResponse =
         Endpoint.newBuilder()
-            .setName(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+            .setName(
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                    .toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .addAllDeployedModels(new ArrayList<DeployedModel>())
@@ -644,7 +660,8 @@ public class EndpointServiceClientTest {
             .build();
     mockEndpointService.addResponse(resultOperation);
 
-    EndpointName name = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+    EndpointName name =
+        EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
 
     client.deleteEndpointAsync(name).get();
 
@@ -665,7 +682,8 @@ public class EndpointServiceClientTest {
     mockEndpointService.addException(exception);
 
     try {
-      EndpointName name = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+      EndpointName name =
+          EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
       client.deleteEndpointAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
@@ -731,7 +749,8 @@ public class EndpointServiceClientTest {
             .build();
     mockEndpointService.addResponse(resultOperation);
 
-    EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+    EndpointName endpoint =
+        EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
     DeployedModel deployedModel = DeployedModel.newBuilder().build();
     Map<String, Integer> trafficSplit = new HashMap<>();
 
@@ -758,7 +777,8 @@ public class EndpointServiceClientTest {
     mockEndpointService.addException(exception);
 
     try {
-      EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+      EndpointName endpoint =
+          EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
       DeployedModel deployedModel = DeployedModel.newBuilder().build();
       Map<String, Integer> trafficSplit = new HashMap<>();
       client.deployModelAsync(endpoint, deployedModel, trafficSplit).get();
@@ -834,7 +854,8 @@ public class EndpointServiceClientTest {
             .build();
     mockEndpointService.addResponse(resultOperation);
 
-    EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+    EndpointName endpoint =
+        EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
     String deployedModelId = "deployedModelId-1817547906";
     Map<String, Integer> trafficSplit = new HashMap<>();
 
@@ -861,7 +882,8 @@ public class EndpointServiceClientTest {
     mockEndpointService.addException(exception);
 
     try {
-      EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+      EndpointName endpoint =
+          EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
       String deployedModelId = "deployedModelId-1817547906";
       Map<String, Integer> trafficSplit = new HashMap<>();
       client.undeployModelAsync(endpoint, deployedModelId, trafficSplit).get();
@@ -915,6 +937,114 @@ public class EndpointServiceClientTest {
       String deployedModelId = "deployedModelId-1817547906";
       Map<String, Integer> trafficSplit = new HashMap<>();
       client.undeployModelAsync(endpoint, deployedModelId, trafficSplit).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void mutateDeployedModelTest() throws Exception {
+    MutateDeployedModelResponse expectedResponse =
+        MutateDeployedModelResponse.newBuilder()
+            .setDeployedModel(DeployedModel.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("mutateDeployedModelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEndpointService.addResponse(resultOperation);
+
+    EndpointName endpoint =
+        EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+    DeployedModel deployedModel = DeployedModel.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    MutateDeployedModelResponse actualResponse =
+        client.mutateDeployedModelAsync(endpoint, deployedModel, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEndpointService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    MutateDeployedModelRequest actualRequest = ((MutateDeployedModelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(endpoint.toString(), actualRequest.getEndpoint());
+    Assert.assertEquals(deployedModel, actualRequest.getDeployedModel());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void mutateDeployedModelExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEndpointService.addException(exception);
+
+    try {
+      EndpointName endpoint =
+          EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+      DeployedModel deployedModel = DeployedModel.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.mutateDeployedModelAsync(endpoint, deployedModel, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void mutateDeployedModelTest2() throws Exception {
+    MutateDeployedModelResponse expectedResponse =
+        MutateDeployedModelResponse.newBuilder()
+            .setDeployedModel(DeployedModel.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("mutateDeployedModelTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEndpointService.addResponse(resultOperation);
+
+    String endpoint = "endpoint1741102485";
+    DeployedModel deployedModel = DeployedModel.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    MutateDeployedModelResponse actualResponse =
+        client.mutateDeployedModelAsync(endpoint, deployedModel, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEndpointService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    MutateDeployedModelRequest actualRequest = ((MutateDeployedModelRequest) actualRequests.get(0));
+
+    Assert.assertEquals(endpoint, actualRequest.getEndpoint());
+    Assert.assertEquals(deployedModel, actualRequest.getDeployedModel());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void mutateDeployedModelExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEndpointService.addException(exception);
+
+    try {
+      String endpoint = "endpoint1741102485";
+      DeployedModel deployedModel = DeployedModel.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.mutateDeployedModelAsync(endpoint, deployedModel, updateMask).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -1038,7 +1168,7 @@ public class EndpointServiceClientTest {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(
-                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                     .toString())
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
@@ -1069,7 +1199,8 @@ public class EndpointServiceClientTest {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
               .setResource(
-                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                  EndpointName.ofProjectLocationEndpointName(
+                          "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                       .toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
@@ -1095,7 +1226,7 @@ public class EndpointServiceClientTest {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(
-                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                     .toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
@@ -1124,7 +1255,8 @@ public class EndpointServiceClientTest {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
               .setResource(
-                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                  EndpointName.ofProjectLocationEndpointName(
+                          "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                       .toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
@@ -1144,7 +1276,7 @@ public class EndpointServiceClientTest {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(
-                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                     .toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
@@ -1173,7 +1305,8 @@ public class EndpointServiceClientTest {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
               .setResource(
-                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                  EndpointName.ofProjectLocationEndpointName(
+                          "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                       .toString())
               .addAllPermissions(new ArrayList<String>())
               .build();
