@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.data.v2;
 
 import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.Batcher;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.CredentialsProvider;
@@ -278,6 +279,15 @@ public final class BigtableDataSettings {
     return stubSettings.bulkMutateRowsSettings().getTargetRpcLatencyMs();
   }
 
+  /**
+   * Gets if flow control is enabled for {@link BigtableDataClient#newBulkMutationBatcher(String)}
+   * based on the load of the Bigtable server.
+   */
+  @InternalApi("Intended for use by the Bigtable dataflow connectors only")
+  public boolean isBulkMutationFlowControlEnabled() {
+    return stubSettings.bulkMutateRowsSettings().isServerInitiatedFlowControlEnabled();
+  }
+
   /** Returns the underlying RPC settings. */
   public EnhancedBigtableStubSettings getStubSettings() {
     return stubSettings;
@@ -503,6 +513,28 @@ public final class BigtableDataSettings {
     @Nullable
     public Long getTargetRpcLatencyMsForBatchMutation() {
       return stubSettings.bulkMutateRowsSettings().getTargetRpcLatencyMs();
+    }
+
+    /**
+     * Configure flow control for {@link BigtableDataClient#newBulkMutationBatcher(String)} based on
+     * the current load on the Bigtable cluster.
+     *
+     * <p>This is different from the {@link FlowController} that's always enabled on batch reads and
+     * batch writes, which limits the number of outstanding requests to the Bigtable server.
+     */
+    @InternalApi("Intended for use by the Bigtable dataflow connectors only")
+    public Builder setBulkMutationFlowControl(boolean isEnableFlowControl) {
+      stubSettings.bulkMutateRowsSettings().setServerInitiatedFlowControl(isEnableFlowControl);
+      return this;
+    }
+
+    /**
+     * Gets if flow control is enabled for {@link BigtableDataClient#newBulkMutationBatcher(String)}
+     * based on the load of the Bigtable server.
+     */
+    @InternalApi("Intended for use by the Bigtable dataflow connectors only")
+    public boolean isBulkMutationFlowControlEnabled() {
+      return stubSettings.bulkMutateRowsSettings().isServerInitiatedFlowControlEnabled();
     }
 
     /**

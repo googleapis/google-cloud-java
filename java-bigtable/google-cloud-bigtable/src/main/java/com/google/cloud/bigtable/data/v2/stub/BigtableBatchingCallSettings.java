@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.data.v2.stub;
 
 import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.BatchingCallSettings;
 import com.google.api.gax.batching.BatchingDescriptor;
 import com.google.api.gax.batching.BatchingSettings;
@@ -66,6 +67,8 @@ public final class BigtableBatchingCallSettings extends UnaryCallSettings<BulkMu
   private final Long targetRpcLatencyMs;
   private final DynamicFlowControlSettings dynamicFlowControlSettings;
 
+  private final boolean isServerInitiatedFlowControlEnabled;
+
   private BigtableBatchingCallSettings(Builder builder) {
     super(builder);
     batchingCallSettings =
@@ -77,6 +80,7 @@ public final class BigtableBatchingCallSettings extends UnaryCallSettings<BulkMu
     this.isLatencyBasedThrottlingEnabled = builder.isLatencyBasedThrottlingEnabled;
     this.targetRpcLatencyMs = builder.targetRpcLatencyMs;
     this.dynamicFlowControlSettings = builder.dynamicFlowControlSettings;
+    this.isServerInitiatedFlowControlEnabled = builder.isServerInitiatedFlowControlEnabled;
   }
 
   /** Returns batching settings which contains multiple batch threshold levels. */
@@ -109,6 +113,12 @@ public final class BigtableBatchingCallSettings extends UnaryCallSettings<BulkMu
     return dynamicFlowControlSettings;
   }
 
+  /** Gets if flow control is enabled. */
+  @InternalApi("Intended for use by the Bigtable dataflow connectors only")
+  public boolean isServerInitiatedFlowControlEnabled() {
+    return isServerInitiatedFlowControlEnabled;
+  }
+
   static Builder newBuilder(
       BatchingDescriptor<RowMutationEntry, Void, BulkMutation, Void> batchingDescriptor) {
     return new Builder(batchingDescriptor);
@@ -130,6 +140,7 @@ public final class BigtableBatchingCallSettings extends UnaryCallSettings<BulkMu
         .add("isLatencyBasedThrottlingEnabled", isLatencyBasedThrottlingEnabled)
         .add("targetRpcLatency", targetRpcLatencyMs)
         .add("dynamicFlowControlSettings", dynamicFlowControlSettings)
+        .add("isServerInitiatedFlowControlEnabled", isServerInitiatedFlowControlEnabled)
         .toString();
   }
 
@@ -145,6 +156,8 @@ public final class BigtableBatchingCallSettings extends UnaryCallSettings<BulkMu
     private Long targetRpcLatencyMs;
     private DynamicFlowControlSettings dynamicFlowControlSettings;
 
+    private boolean isServerInitiatedFlowControlEnabled;
+
     private Builder(
         @Nonnull
             BatchingDescriptor<RowMutationEntry, Void, BulkMutation, Void> batchingDescriptor) {
@@ -159,6 +172,7 @@ public final class BigtableBatchingCallSettings extends UnaryCallSettings<BulkMu
       this.isLatencyBasedThrottlingEnabled = settings.isLatencyBasedThrottlingEnabled();
       this.targetRpcLatencyMs = settings.getTargetRpcLatencyMs();
       this.dynamicFlowControlSettings = settings.getDynamicFlowControlSettings();
+      this.isServerInitiatedFlowControlEnabled = settings.isServerInitiatedFlowControlEnabled();
     }
 
     /** Sets the batching settings with various thresholds. */
@@ -261,6 +275,19 @@ public final class BigtableBatchingCallSettings extends UnaryCallSettings<BulkMu
      */
     DynamicFlowControlSettings getDynamicFlowControlSettings() {
       return this.dynamicFlowControlSettings;
+    }
+
+    /** Configure flow control based on the current load of the Bigtable server. */
+    @InternalApi("Intended for use by the Bigtable dataflow connectors only")
+    public Builder setServerInitiatedFlowControl(boolean isEnable) {
+      this.isServerInitiatedFlowControlEnabled = isEnable;
+      return this;
+    }
+
+    /** Gets if flow control is enabled based on the load of the Bigtable server. */
+    @InternalApi("Intended for use by the Bigtable dataflow connectors only")
+    public boolean isServerInitiatedFlowControlEnabled() {
+      return this.isServerInitiatedFlowControlEnabled;
     }
 
     /** Builds the {@link BigtableBatchingCallSettings} object with provided configuration. */

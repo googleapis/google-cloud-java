@@ -36,6 +36,7 @@ public class BigtableDataSettingsTest {
             // disable channel priming so we won't need authentication
             // for sending the prime request since we're only testing the settings.
             .setRefreshingChannel(false)
+            .setBulkMutationFlowControl(true)
             .build();
     EnhancedBigtableStubSettings stubSettings = settings.getStubSettings();
     assertThat(settings.toString())
