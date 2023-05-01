@@ -74,4 +74,45 @@ public interface MutateRowsResponseOrBuilder
    * <code>repeated .google.bigtable.v2.MutateRowsResponse.Entry entries = 1;</code>
    */
   com.google.bigtable.v2.MutateRowsResponse.EntryOrBuilder getEntriesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Information about how client should limit the rate (QPS). Primirily used by
+   * supported official Cloud Bigtable clients. If unset, the rate limit info is
+   * not provided by the server.
+   * </pre>
+   *
+   * <code>optional .google.bigtable.v2.RateLimitInfo rate_limit_info = 3;</code>
+   *
+   * @return Whether the rateLimitInfo field is set.
+   */
+  boolean hasRateLimitInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Information about how client should limit the rate (QPS). Primirily used by
+   * supported official Cloud Bigtable clients. If unset, the rate limit info is
+   * not provided by the server.
+   * </pre>
+   *
+   * <code>optional .google.bigtable.v2.RateLimitInfo rate_limit_info = 3;</code>
+   *
+   * @return The rateLimitInfo.
+   */
+  com.google.bigtable.v2.RateLimitInfo getRateLimitInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Information about how client should limit the rate (QPS). Primirily used by
+   * supported official Cloud Bigtable clients. If unset, the rate limit info is
+   * not provided by the server.
+   * </pre>
+   *
+   * <code>optional .google.bigtable.v2.RateLimitInfo rate_limit_info = 3;</code>
+   */
+  com.google.bigtable.v2.RateLimitInfoOrBuilder getRateLimitInfoOrBuilder();
 }

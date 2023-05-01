@@ -947,6 +947,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  private int bitField0_;
   public static final int ENTRIES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -1018,6 +1019,62 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
     return entries_.get(index);
   }
 
+  public static final int RATE_LIMIT_INFO_FIELD_NUMBER = 3;
+  private com.google.bigtable.v2.RateLimitInfo rateLimitInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Information about how client should limit the rate (QPS). Primirily used by
+   * supported official Cloud Bigtable clients. If unset, the rate limit info is
+   * not provided by the server.
+   * </pre>
+   *
+   * <code>optional .google.bigtable.v2.RateLimitInfo rate_limit_info = 3;</code>
+   *
+   * @return Whether the rateLimitInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasRateLimitInfo() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Information about how client should limit the rate (QPS). Primirily used by
+   * supported official Cloud Bigtable clients. If unset, the rate limit info is
+   * not provided by the server.
+   * </pre>
+   *
+   * <code>optional .google.bigtable.v2.RateLimitInfo rate_limit_info = 3;</code>
+   *
+   * @return The rateLimitInfo.
+   */
+  @java.lang.Override
+  public com.google.bigtable.v2.RateLimitInfo getRateLimitInfo() {
+    return rateLimitInfo_ == null
+        ? com.google.bigtable.v2.RateLimitInfo.getDefaultInstance()
+        : rateLimitInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Information about how client should limit the rate (QPS). Primirily used by
+   * supported official Cloud Bigtable clients. If unset, the rate limit info is
+   * not provided by the server.
+   * </pre>
+   *
+   * <code>optional .google.bigtable.v2.RateLimitInfo rate_limit_info = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.v2.RateLimitInfoOrBuilder getRateLimitInfoOrBuilder() {
+    return rateLimitInfo_ == null
+        ? com.google.bigtable.v2.RateLimitInfo.getDefaultInstance()
+        : rateLimitInfo_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1035,6 +1092,9 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < entries_.size(); i++) {
       output.writeMessage(1, entries_.get(i));
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(3, getRateLimitInfo());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1046,6 +1106,9 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
     size = 0;
     for (int i = 0; i < entries_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, entries_.get(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getRateLimitInfo());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1064,6 +1127,10 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
         (com.google.bigtable.v2.MutateRowsResponse) obj;
 
     if (!getEntriesList().equals(other.getEntriesList())) return false;
+    if (hasRateLimitInfo() != other.hasRateLimitInfo()) return false;
+    if (hasRateLimitInfo()) {
+      if (!getRateLimitInfo().equals(other.getRateLimitInfo())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1078,6 +1145,10 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
     if (getEntriesCount() > 0) {
       hash = (37 * hash) + ENTRIES_FIELD_NUMBER;
       hash = (53 * hash) + getEntriesList().hashCode();
+    }
+    if (hasRateLimitInfo()) {
+      hash = (37 * hash) + RATE_LIMIT_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getRateLimitInfo().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1208,10 +1279,20 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.bigtable.v2.MutateRowsResponse.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getEntriesFieldBuilder();
+        getRateLimitInfoFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1225,6 +1306,11 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
         entriesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      rateLimitInfo_ = null;
+      if (rateLimitInfoBuilder_ != null) {
+        rateLimitInfoBuilder_.dispose();
+        rateLimitInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -1274,6 +1360,13 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
 
     private void buildPartial0(com.google.bigtable.v2.MutateRowsResponse result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.rateLimitInfo_ =
+            rateLimitInfoBuilder_ == null ? rateLimitInfo_ : rateLimitInfoBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1348,6 +1441,9 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
           }
         }
       }
+      if (other.hasRateLimitInfo()) {
+        mergeRateLimitInfo(other.getRateLimitInfo());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1388,6 +1484,12 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
                 }
                 break;
               } // case 10
+            case 26:
+              {
+                input.readMessage(getRateLimitInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1756,6 +1858,207 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
         entries_ = null;
       }
       return entriesBuilder_;
+    }
+
+    private com.google.bigtable.v2.RateLimitInfo rateLimitInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.v2.RateLimitInfo,
+            com.google.bigtable.v2.RateLimitInfo.Builder,
+            com.google.bigtable.v2.RateLimitInfoOrBuilder>
+        rateLimitInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Information about how client should limit the rate (QPS). Primirily used by
+     * supported official Cloud Bigtable clients. If unset, the rate limit info is
+     * not provided by the server.
+     * </pre>
+     *
+     * <code>optional .google.bigtable.v2.RateLimitInfo rate_limit_info = 3;</code>
+     *
+     * @return Whether the rateLimitInfo field is set.
+     */
+    public boolean hasRateLimitInfo() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about how client should limit the rate (QPS). Primirily used by
+     * supported official Cloud Bigtable clients. If unset, the rate limit info is
+     * not provided by the server.
+     * </pre>
+     *
+     * <code>optional .google.bigtable.v2.RateLimitInfo rate_limit_info = 3;</code>
+     *
+     * @return The rateLimitInfo.
+     */
+    public com.google.bigtable.v2.RateLimitInfo getRateLimitInfo() {
+      if (rateLimitInfoBuilder_ == null) {
+        return rateLimitInfo_ == null
+            ? com.google.bigtable.v2.RateLimitInfo.getDefaultInstance()
+            : rateLimitInfo_;
+      } else {
+        return rateLimitInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about how client should limit the rate (QPS). Primirily used by
+     * supported official Cloud Bigtable clients. If unset, the rate limit info is
+     * not provided by the server.
+     * </pre>
+     *
+     * <code>optional .google.bigtable.v2.RateLimitInfo rate_limit_info = 3;</code>
+     */
+    public Builder setRateLimitInfo(com.google.bigtable.v2.RateLimitInfo value) {
+      if (rateLimitInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        rateLimitInfo_ = value;
+      } else {
+        rateLimitInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about how client should limit the rate (QPS). Primirily used by
+     * supported official Cloud Bigtable clients. If unset, the rate limit info is
+     * not provided by the server.
+     * </pre>
+     *
+     * <code>optional .google.bigtable.v2.RateLimitInfo rate_limit_info = 3;</code>
+     */
+    public Builder setRateLimitInfo(com.google.bigtable.v2.RateLimitInfo.Builder builderForValue) {
+      if (rateLimitInfoBuilder_ == null) {
+        rateLimitInfo_ = builderForValue.build();
+      } else {
+        rateLimitInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about how client should limit the rate (QPS). Primirily used by
+     * supported official Cloud Bigtable clients. If unset, the rate limit info is
+     * not provided by the server.
+     * </pre>
+     *
+     * <code>optional .google.bigtable.v2.RateLimitInfo rate_limit_info = 3;</code>
+     */
+    public Builder mergeRateLimitInfo(com.google.bigtable.v2.RateLimitInfo value) {
+      if (rateLimitInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && rateLimitInfo_ != null
+            && rateLimitInfo_ != com.google.bigtable.v2.RateLimitInfo.getDefaultInstance()) {
+          getRateLimitInfoBuilder().mergeFrom(value);
+        } else {
+          rateLimitInfo_ = value;
+        }
+      } else {
+        rateLimitInfoBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about how client should limit the rate (QPS). Primirily used by
+     * supported official Cloud Bigtable clients. If unset, the rate limit info is
+     * not provided by the server.
+     * </pre>
+     *
+     * <code>optional .google.bigtable.v2.RateLimitInfo rate_limit_info = 3;</code>
+     */
+    public Builder clearRateLimitInfo() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      rateLimitInfo_ = null;
+      if (rateLimitInfoBuilder_ != null) {
+        rateLimitInfoBuilder_.dispose();
+        rateLimitInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about how client should limit the rate (QPS). Primirily used by
+     * supported official Cloud Bigtable clients. If unset, the rate limit info is
+     * not provided by the server.
+     * </pre>
+     *
+     * <code>optional .google.bigtable.v2.RateLimitInfo rate_limit_info = 3;</code>
+     */
+    public com.google.bigtable.v2.RateLimitInfo.Builder getRateLimitInfoBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getRateLimitInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about how client should limit the rate (QPS). Primirily used by
+     * supported official Cloud Bigtable clients. If unset, the rate limit info is
+     * not provided by the server.
+     * </pre>
+     *
+     * <code>optional .google.bigtable.v2.RateLimitInfo rate_limit_info = 3;</code>
+     */
+    public com.google.bigtable.v2.RateLimitInfoOrBuilder getRateLimitInfoOrBuilder() {
+      if (rateLimitInfoBuilder_ != null) {
+        return rateLimitInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return rateLimitInfo_ == null
+            ? com.google.bigtable.v2.RateLimitInfo.getDefaultInstance()
+            : rateLimitInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information about how client should limit the rate (QPS). Primirily used by
+     * supported official Cloud Bigtable clients. If unset, the rate limit info is
+     * not provided by the server.
+     * </pre>
+     *
+     * <code>optional .google.bigtable.v2.RateLimitInfo rate_limit_info = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.v2.RateLimitInfo,
+            com.google.bigtable.v2.RateLimitInfo.Builder,
+            com.google.bigtable.v2.RateLimitInfoOrBuilder>
+        getRateLimitInfoFieldBuilder() {
+      if (rateLimitInfoBuilder_ == null) {
+        rateLimitInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.v2.RateLimitInfo,
+                com.google.bigtable.v2.RateLimitInfo.Builder,
+                com.google.bigtable.v2.RateLimitInfoOrBuilder>(
+                getRateLimitInfo(), getParentForChildren(), isClean());
+        rateLimitInfo_ = null;
+      }
+      return rateLimitInfoBuilder_;
     }
 
     @java.lang.Override

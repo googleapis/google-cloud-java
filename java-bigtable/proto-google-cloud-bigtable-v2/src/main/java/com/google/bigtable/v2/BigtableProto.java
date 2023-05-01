@@ -72,6 +72,10 @@ public final class BigtableProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_bigtable_v2_MutateRowsResponse_Entry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_v2_RateLimitInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_bigtable_v2_RateLimitInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_bigtable_v2_CheckAndMutateRowRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_bigtable_v2_CheckAndMutateRowRequest_fieldAccessorTable;
@@ -186,168 +190,172 @@ public final class BigtableProto {
           + "\022A\n\007entries\030\002 \003(\0132+.google.bigtable.v2.M"
           + "utateRowsRequest.EntryB\003\340A\002\032N\n\005Entry\022\017\n\007"
           + "row_key\030\001 \001(\014\0224\n\tmutations\030\002 \003(\0132\034.googl"
-          + "e.bigtable.v2.MutationB\003\340A\002\"\217\001\n\022MutateRo"
+          + "e.bigtable.v2.MutationB\003\340A\002\"\344\001\n\022MutateRo"
           + "wsResponse\022=\n\007entries\030\001 \003(\0132,.google.big"
-          + "table.v2.MutateRowsResponse.Entry\032:\n\005Ent"
-          + "ry\022\r\n\005index\030\001 \001(\003\022\"\n\006status\030\002 \001(\0132\022.goog"
-          + "le.rpc.Status\"\256\002\n\030CheckAndMutateRowReque"
-          + "st\022>\n\ntable_name\030\001 \001(\tB*\340A\002\372A$\n\"bigtable"
-          + "admin.googleapis.com/Table\022\026\n\016app_profil"
-          + "e_id\030\007 \001(\t\022\024\n\007row_key\030\002 \001(\014B\003\340A\002\0227\n\020pred"
-          + "icate_filter\030\006 \001(\0132\035.google.bigtable.v2."
-          + "RowFilter\0224\n\016true_mutations\030\004 \003(\0132\034.goog"
-          + "le.bigtable.v2.Mutation\0225\n\017false_mutatio"
-          + "ns\030\005 \003(\0132\034.google.bigtable.v2.Mutation\"6"
-          + "\n\031CheckAndMutateRowResponse\022\031\n\021predicate"
-          + "_matched\030\001 \001(\010\"i\n\022PingAndWarmRequest\022;\n\004"
-          + "name\030\001 \001(\tB-\340A\002\372A\'\n%bigtableadmin.google"
-          + "apis.com/Instance\022\026\n\016app_profile_id\030\002 \001("
-          + "\t\"\025\n\023PingAndWarmResponse\"\306\001\n\031ReadModifyW"
-          + "riteRowRequest\022>\n\ntable_name\030\001 \001(\tB*\340A\002\372"
-          + "A$\n\"bigtableadmin.googleapis.com/Table\022\026"
-          + "\n\016app_profile_id\030\004 \001(\t\022\024\n\007row_key\030\002 \001(\014B"
-          + "\003\340A\002\022;\n\005rules\030\003 \003(\0132\'.google.bigtable.v2"
-          + ".ReadModifyWriteRuleB\003\340A\002\"B\n\032ReadModifyW"
-          + "riteRowResponse\022$\n\003row\030\001 \001(\0132\027.google.bi"
-          + "gtable.v2.Row\"\206\001\n,GenerateInitialChangeS"
-          + "treamPartitionsRequest\022>\n\ntable_name\030\001 \001"
-          + "(\tB*\340A\002\372A$\n\"bigtableadmin.googleapis.com"
-          + "/Table\022\026\n\016app_profile_id\030\002 \001(\t\"g\n-Genera"
-          + "teInitialChangeStreamPartitionsResponse\022"
-          + "6\n\tpartition\030\001 \001(\0132#.google.bigtable.v2."
-          + "StreamPartition\"\233\003\n\027ReadChangeStreamRequ"
+          + "table.v2.MutateRowsResponse.Entry\022?\n\017rat"
+          + "e_limit_info\030\003 \001(\0132!.google.bigtable.v2."
+          + "RateLimitInfoH\000\210\001\001\032:\n\005Entry\022\r\n\005index\030\001 \001"
+          + "(\003\022\"\n\006status\030\002 \001(\0132\022.google.rpc.StatusB\022"
+          + "\n\020_rate_limit_info\"J\n\rRateLimitInfo\022)\n\006p"
+          + "eriod\030\001 \001(\0132\031.google.protobuf.Duration\022\016"
+          + "\n\006factor\030\002 \001(\001\"\256\002\n\030CheckAndMutateRowRequ"
           + "est\022>\n\ntable_name\030\001 \001(\tB*\340A\002\372A$\n\"bigtabl"
           + "eadmin.googleapis.com/Table\022\026\n\016app_profi"
-          + "le_id\030\002 \001(\t\0226\n\tpartition\030\003 \001(\0132#.google."
-          + "bigtable.v2.StreamPartition\0220\n\nstart_tim"
-          + "e\030\004 \001(\0132\032.google.protobuf.TimestampH\000\022K\n"
-          + "\023continuation_tokens\030\006 \001(\0132,.google.bigt"
-          + "able.v2.StreamContinuationTokensH\000\022,\n\010en"
-          + "d_time\030\005 \001(\0132\032.google.protobuf.Timestamp"
-          + "\0225\n\022heartbeat_duration\030\007 \001(\0132\031.google.pr"
-          + "otobuf.DurationB\014\n\nstart_from\"\251\n\n\030ReadCh"
-          + "angeStreamResponse\022N\n\013data_change\030\001 \001(\0132"
-          + "7.google.bigtable.v2.ReadChangeStreamRes"
-          + "ponse.DataChangeH\000\022K\n\theartbeat\030\002 \001(\01326."
-          + "google.bigtable.v2.ReadChangeStreamRespo"
-          + "nse.HeartbeatH\000\022P\n\014close_stream\030\003 \001(\01328."
-          + "google.bigtable.v2.ReadChangeStreamRespo"
-          + "nse.CloseStreamH\000\032\364\001\n\rMutationChunk\022X\n\nc"
-          + "hunk_info\030\001 \001(\0132D.google.bigtable.v2.Rea"
-          + "dChangeStreamResponse.MutationChunk.Chun"
-          + "kInfo\022.\n\010mutation\030\002 \001(\0132\034.google.bigtabl"
-          + "e.v2.Mutation\032Y\n\tChunkInfo\022\032\n\022chunked_va"
-          + "lue_size\030\001 \001(\005\022\034\n\024chunked_value_offset\030\002"
-          + " \001(\005\022\022\n\nlast_chunk\030\003 \001(\010\032\306\003\n\nDataChange\022"
-          + "J\n\004type\030\001 \001(\0162<.google.bigtable.v2.ReadC"
-          + "hangeStreamResponse.DataChange.Type\022\031\n\021s"
-          + "ource_cluster_id\030\002 \001(\t\022\017\n\007row_key\030\003 \001(\014\022"
-          + "4\n\020commit_timestamp\030\004 \001(\0132\032.google.proto"
-          + "buf.Timestamp\022\022\n\ntiebreaker\030\005 \001(\005\022J\n\006chu"
-          + "nks\030\006 \003(\0132:.google.bigtable.v2.ReadChang"
-          + "eStreamResponse.MutationChunk\022\014\n\004done\030\010 "
-          + "\001(\010\022\r\n\005token\030\t \001(\t\022;\n\027estimated_low_wate"
-          + "rmark\030\n \001(\0132\032.google.protobuf.Timestamp\""
-          + "P\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\010\n\004USER\020\001\022"
-          + "\026\n\022GARBAGE_COLLECTION\020\002\022\020\n\014CONTINUATION\020"
-          + "\003\032\221\001\n\tHeartbeat\022G\n\022continuation_token\030\001 "
-          + "\001(\0132+.google.bigtable.v2.StreamContinuat"
-          + "ionToken\022;\n\027estimated_low_watermark\030\002 \001("
-          + "\0132\032.google.protobuf.Timestamp\032\270\001\n\013CloseS"
-          + "tream\022\"\n\006status\030\001 \001(\0132\022.google.rpc.Statu"
-          + "s\022H\n\023continuation_tokens\030\002 \003(\0132+.google."
-          + "bigtable.v2.StreamContinuationToken\022;\n\016n"
-          + "ew_partitions\030\003 \003(\0132#.google.bigtable.v2"
-          + ".StreamPartitionB\017\n\rstream_record2\327\030\n\010Bi"
-          + "gtable\022\233\002\n\010ReadRows\022#.google.bigtable.v2"
-          + ".ReadRowsRequest\032$.google.bigtable.v2.Re"
-          + "adRowsResponse\"\301\001\202\323\344\223\002>\"9/v2/{table_name"
-          + "=projects/*/instances/*/tables/*}:readRo"
-          + "ws:\001*\212\323\344\223\002N\022:\n\ntable_name\022,{table_name=p"
-          + "rojects/*/instances/*/tables/*}\022\020\n\016app_p"
-          + "rofile_id\332A\ntable_name\332A\031table_name,app_"
-          + "profile_id0\001\022\254\002\n\rSampleRowKeys\022(.google."
-          + "bigtable.v2.SampleRowKeysRequest\032).googl"
-          + "e.bigtable.v2.SampleRowKeysResponse\"\303\001\202\323"
-          + "\344\223\002@\022>/v2/{table_name=projects/*/instanc"
-          + "es/*/tables/*}:sampleRowKeys\212\323\344\223\002N\022:\n\nta"
-          + "ble_name\022,{table_name=projects/*/instanc"
-          + "es/*/tables/*}\022\020\n\016app_profile_id\332A\ntable"
-          + "_name\332A\031table_name,app_profile_id0\001\022\301\002\n\t"
-          + "MutateRow\022$.google.bigtable.v2.MutateRow"
-          + "Request\032%.google.bigtable.v2.MutateRowRe"
-          + "sponse\"\346\001\202\323\344\223\002?\":/v2/{table_name=project"
-          + "s/*/instances/*/tables/*}:mutateRow:\001*\212\323"
-          + "\344\223\002N\022:\n\ntable_name\022,{table_name=projects"
-          + "/*/instances/*/tables/*}\022\020\n\016app_profile_"
-          + "id\332A\034table_name,row_key,mutations\332A+tabl"
-          + "e_name,row_key,mutations,app_profile_id\022"
-          + "\263\002\n\nMutateRows\022%.google.bigtable.v2.Muta"
-          + "teRowsRequest\032&.google.bigtable.v2.Mutat"
-          + "eRowsResponse\"\323\001\202\323\344\223\002@\";/v2/{table_name="
-          + "projects/*/instances/*/tables/*}:mutateR"
+          + "le_id\030\007 \001(\t\022\024\n\007row_key\030\002 \001(\014B\003\340A\002\0227\n\020pre"
+          + "dicate_filter\030\006 \001(\0132\035.google.bigtable.v2"
+          + ".RowFilter\0224\n\016true_mutations\030\004 \003(\0132\034.goo"
+          + "gle.bigtable.v2.Mutation\0225\n\017false_mutati"
+          + "ons\030\005 \003(\0132\034.google.bigtable.v2.Mutation\""
+          + "6\n\031CheckAndMutateRowResponse\022\031\n\021predicat"
+          + "e_matched\030\001 \001(\010\"i\n\022PingAndWarmRequest\022;\n"
+          + "\004name\030\001 \001(\tB-\340A\002\372A\'\n%bigtableadmin.googl"
+          + "eapis.com/Instance\022\026\n\016app_profile_id\030\002 \001"
+          + "(\t\"\025\n\023PingAndWarmResponse\"\306\001\n\031ReadModify"
+          + "WriteRowRequest\022>\n\ntable_name\030\001 \001(\tB*\340A\002"
+          + "\372A$\n\"bigtableadmin.googleapis.com/Table\022"
+          + "\026\n\016app_profile_id\030\004 \001(\t\022\024\n\007row_key\030\002 \001(\014"
+          + "B\003\340A\002\022;\n\005rules\030\003 \003(\0132\'.google.bigtable.v"
+          + "2.ReadModifyWriteRuleB\003\340A\002\"B\n\032ReadModify"
+          + "WriteRowResponse\022$\n\003row\030\001 \001(\0132\027.google.b"
+          + "igtable.v2.Row\"\206\001\n,GenerateInitialChange"
+          + "StreamPartitionsRequest\022>\n\ntable_name\030\001 "
+          + "\001(\tB*\340A\002\372A$\n\"bigtableadmin.googleapis.co"
+          + "m/Table\022\026\n\016app_profile_id\030\002 \001(\t\"g\n-Gener"
+          + "ateInitialChangeStreamPartitionsResponse"
+          + "\0226\n\tpartition\030\001 \001(\0132#.google.bigtable.v2"
+          + ".StreamPartition\"\233\003\n\027ReadChangeStreamReq"
+          + "uest\022>\n\ntable_name\030\001 \001(\tB*\340A\002\372A$\n\"bigtab"
+          + "leadmin.googleapis.com/Table\022\026\n\016app_prof"
+          + "ile_id\030\002 \001(\t\0226\n\tpartition\030\003 \001(\0132#.google"
+          + ".bigtable.v2.StreamPartition\0220\n\nstart_ti"
+          + "me\030\004 \001(\0132\032.google.protobuf.TimestampH\000\022K"
+          + "\n\023continuation_tokens\030\006 \001(\0132,.google.big"
+          + "table.v2.StreamContinuationTokensH\000\022,\n\010e"
+          + "nd_time\030\005 \001(\0132\032.google.protobuf.Timestam"
+          + "p\0225\n\022heartbeat_duration\030\007 \001(\0132\031.google.p"
+          + "rotobuf.DurationB\014\n\nstart_from\"\251\n\n\030ReadC"
+          + "hangeStreamResponse\022N\n\013data_change\030\001 \001(\013"
+          + "27.google.bigtable.v2.ReadChangeStreamRe"
+          + "sponse.DataChangeH\000\022K\n\theartbeat\030\002 \001(\01326"
+          + ".google.bigtable.v2.ReadChangeStreamResp"
+          + "onse.HeartbeatH\000\022P\n\014close_stream\030\003 \001(\01328"
+          + ".google.bigtable.v2.ReadChangeStreamResp"
+          + "onse.CloseStreamH\000\032\364\001\n\rMutationChunk\022X\n\n"
+          + "chunk_info\030\001 \001(\0132D.google.bigtable.v2.Re"
+          + "adChangeStreamResponse.MutationChunk.Chu"
+          + "nkInfo\022.\n\010mutation\030\002 \001(\0132\034.google.bigtab"
+          + "le.v2.Mutation\032Y\n\tChunkInfo\022\032\n\022chunked_v"
+          + "alue_size\030\001 \001(\005\022\034\n\024chunked_value_offset\030"
+          + "\002 \001(\005\022\022\n\nlast_chunk\030\003 \001(\010\032\306\003\n\nDataChange"
+          + "\022J\n\004type\030\001 \001(\0162<.google.bigtable.v2.Read"
+          + "ChangeStreamResponse.DataChange.Type\022\031\n\021"
+          + "source_cluster_id\030\002 \001(\t\022\017\n\007row_key\030\003 \001(\014"
+          + "\0224\n\020commit_timestamp\030\004 \001(\0132\032.google.prot"
+          + "obuf.Timestamp\022\022\n\ntiebreaker\030\005 \001(\005\022J\n\006ch"
+          + "unks\030\006 \003(\0132:.google.bigtable.v2.ReadChan"
+          + "geStreamResponse.MutationChunk\022\014\n\004done\030\010"
+          + " \001(\010\022\r\n\005token\030\t \001(\t\022;\n\027estimated_low_wat"
+          + "ermark\030\n \001(\0132\032.google.protobuf.Timestamp"
+          + "\"P\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\010\n\004USER\020\001"
+          + "\022\026\n\022GARBAGE_COLLECTION\020\002\022\020\n\014CONTINUATION"
+          + "\020\003\032\221\001\n\tHeartbeat\022G\n\022continuation_token\030\001"
+          + " \001(\0132+.google.bigtable.v2.StreamContinua"
+          + "tionToken\022;\n\027estimated_low_watermark\030\002 \001"
+          + "(\0132\032.google.protobuf.Timestamp\032\270\001\n\013Close"
+          + "Stream\022\"\n\006status\030\001 \001(\0132\022.google.rpc.Stat"
+          + "us\022H\n\023continuation_tokens\030\002 \003(\0132+.google"
+          + ".bigtable.v2.StreamContinuationToken\022;\n\016"
+          + "new_partitions\030\003 \003(\0132#.google.bigtable.v"
+          + "2.StreamPartitionB\017\n\rstream_record2\327\030\n\010B"
+          + "igtable\022\233\002\n\010ReadRows\022#.google.bigtable.v"
+          + "2.ReadRowsRequest\032$.google.bigtable.v2.R"
+          + "eadRowsResponse\"\301\001\202\323\344\223\002>\"9/v2/{table_nam"
+          + "e=projects/*/instances/*/tables/*}:readR"
           + "ows:\001*\212\323\344\223\002N\022:\n\ntable_name\022,{table_name="
           + "projects/*/instances/*/tables/*}\022\020\n\016app_"
-          + "profile_id\332A\022table_name,entries\332A!table_"
-          + "name,entries,app_profile_id0\001\022\255\003\n\021CheckA"
-          + "ndMutateRow\022,.google.bigtable.v2.CheckAn"
-          + "dMutateRowRequest\032-.google.bigtable.v2.C"
-          + "heckAndMutateRowResponse\"\272\002\202\323\344\223\002G\"B/v2/{"
-          + "table_name=projects/*/instances/*/tables"
-          + "/*}:checkAndMutateRow:\001*\212\323\344\223\002N\022:\n\ntable_"
-          + "name\022,{table_name=projects/*/instances/*"
-          + "/tables/*}\022\020\n\016app_profile_id\332ABtable_nam"
-          + "e,row_key,predicate_filter,true_mutation"
-          + "s,false_mutations\332AQtable_name,row_key,p"
-          + "redicate_filter,true_mutations,false_mut"
-          + "ations,app_profile_id\022\356\001\n\013PingAndWarm\022&."
-          + "google.bigtable.v2.PingAndWarmRequest\032\'."
-          + "google.bigtable.v2.PingAndWarmResponse\"\215"
-          + "\001\202\323\344\223\002+\"&/v2/{name=projects/*/instances/"
-          + "*}:ping:\001*\212\323\344\223\0029\022%\n\004name\022\035{name=projects"
-          + "/*/instances/*}\022\020\n\016app_profile_id\332A\004name"
-          + "\332A\023name,app_profile_id\022\335\002\n\022ReadModifyWri"
-          + "teRow\022-.google.bigtable.v2.ReadModifyWri"
-          + "teRowRequest\032..google.bigtable.v2.ReadMo"
-          + "difyWriteRowResponse\"\347\001\202\323\344\223\002H\"C/v2/{tabl"
-          + "e_name=projects/*/instances/*/tables/*}:"
-          + "readModifyWriteRow:\001*\212\323\344\223\002N\022:\n\ntable_nam"
-          + "e\022,{table_name=projects/*/instances/*/ta"
-          + "bles/*}\022\020\n\016app_profile_id\332A\030table_name,r"
-          + "ow_key,rules\332A\'table_name,row_key,rules,"
-          + "app_profile_id\022\273\002\n%GenerateInitialChange"
-          + "StreamPartitions\022@.google.bigtable.v2.Ge"
-          + "nerateInitialChangeStreamPartitionsReque"
-          + "st\032A.google.bigtable.v2.GenerateInitialC"
-          + "hangeStreamPartitionsResponse\"\212\001\202\323\344\223\002[\"V"
-          + "/v2/{table_name=projects/*/instances/*/t"
-          + "ables/*}:generateInitialChangeStreamPart"
-          + "itions:\001*\332A\ntable_name\332A\031table_name,app_"
-          + "profile_id0\001\022\346\001\n\020ReadChangeStream\022+.goog"
-          + "le.bigtable.v2.ReadChangeStreamRequest\032,"
-          + ".google.bigtable.v2.ReadChangeStreamResp"
-          + "onse\"u\202\323\344\223\002F\"A/v2/{table_name=projects/*"
-          + "/instances/*/tables/*}:readChangeStream:"
-          + "\001*\332A\ntable_name\332A\031table_name,app_profile"
-          + "_id0\001\032\333\002\312A\027bigtable.googleapis.com\322A\275\002ht"
-          + "tps://www.googleapis.com/auth/bigtable.d"
-          + "ata,https://www.googleapis.com/auth/bigt"
-          + "able.data.readonly,https://www.googleapi"
-          + "s.com/auth/cloud-bigtable.data,https://w"
-          + "ww.googleapis.com/auth/cloud-bigtable.da"
-          + "ta.readonly,https://www.googleapis.com/a"
-          + "uth/cloud-platform,https://www.googleapi"
-          + "s.com/auth/cloud-platform.read-onlyB\353\002\n\026"
-          + "com.google.bigtable.v2B\rBigtableProtoP\001Z"
-          + ":google.golang.org/genproto/googleapis/b"
-          + "igtable/v2;bigtable\252\002\030Google.Cloud.Bigta"
-          + "ble.V2\312\002\030Google\\Cloud\\Bigtable\\V2\352\002\033Goog"
-          + "le::Cloud::Bigtable::V2\352AP\n%bigtableadmi"
-          + "n.googleapis.com/Instance\022\'projects/{pro"
-          + "ject}/instances/{instance}\352A\\\n\"bigtablea"
-          + "dmin.googleapis.com/Table\0226projects/{pro"
-          + "ject}/instances/{instance}/tables/{table"
-          + "}b\006proto3"
+          + "profile_id\332A\ntable_name\332A\031table_name,app"
+          + "_profile_id0\001\022\254\002\n\rSampleRowKeys\022(.google"
+          + ".bigtable.v2.SampleRowKeysRequest\032).goog"
+          + "le.bigtable.v2.SampleRowKeysResponse\"\303\001\202"
+          + "\323\344\223\002@\022>/v2/{table_name=projects/*/instan"
+          + "ces/*/tables/*}:sampleRowKeys\212\323\344\223\002N\022:\n\nt"
+          + "able_name\022,{table_name=projects/*/instan"
+          + "ces/*/tables/*}\022\020\n\016app_profile_id\332A\ntabl"
+          + "e_name\332A\031table_name,app_profile_id0\001\022\301\002\n"
+          + "\tMutateRow\022$.google.bigtable.v2.MutateRo"
+          + "wRequest\032%.google.bigtable.v2.MutateRowR"
+          + "esponse\"\346\001\202\323\344\223\002?\":/v2/{table_name=projec"
+          + "ts/*/instances/*/tables/*}:mutateRow:\001*\212"
+          + "\323\344\223\002N\022:\n\ntable_name\022,{table_name=project"
+          + "s/*/instances/*/tables/*}\022\020\n\016app_profile"
+          + "_id\332A\034table_name,row_key,mutations\332A+tab"
+          + "le_name,row_key,mutations,app_profile_id"
+          + "\022\263\002\n\nMutateRows\022%.google.bigtable.v2.Mut"
+          + "ateRowsRequest\032&.google.bigtable.v2.Muta"
+          + "teRowsResponse\"\323\001\202\323\344\223\002@\";/v2/{table_name"
+          + "=projects/*/instances/*/tables/*}:mutate"
+          + "Rows:\001*\212\323\344\223\002N\022:\n\ntable_name\022,{table_name"
+          + "=projects/*/instances/*/tables/*}\022\020\n\016app"
+          + "_profile_id\332A\022table_name,entries\332A!table"
+          + "_name,entries,app_profile_id0\001\022\255\003\n\021Check"
+          + "AndMutateRow\022,.google.bigtable.v2.CheckA"
+          + "ndMutateRowRequest\032-.google.bigtable.v2."
+          + "CheckAndMutateRowResponse\"\272\002\202\323\344\223\002G\"B/v2/"
+          + "{table_name=projects/*/instances/*/table"
+          + "s/*}:checkAndMutateRow:\001*\212\323\344\223\002N\022:\n\ntable"
+          + "_name\022,{table_name=projects/*/instances/"
+          + "*/tables/*}\022\020\n\016app_profile_id\332ABtable_na"
+          + "me,row_key,predicate_filter,true_mutatio"
+          + "ns,false_mutations\332AQtable_name,row_key,"
+          + "predicate_filter,true_mutations,false_mu"
+          + "tations,app_profile_id\022\356\001\n\013PingAndWarm\022&"
+          + ".google.bigtable.v2.PingAndWarmRequest\032\'"
+          + ".google.bigtable.v2.PingAndWarmResponse\""
+          + "\215\001\202\323\344\223\002+\"&/v2/{name=projects/*/instances"
+          + "/*}:ping:\001*\212\323\344\223\0029\022%\n\004name\022\035{name=project"
+          + "s/*/instances/*}\022\020\n\016app_profile_id\332A\004nam"
+          + "e\332A\023name,app_profile_id\022\335\002\n\022ReadModifyWr"
+          + "iteRow\022-.google.bigtable.v2.ReadModifyWr"
+          + "iteRowRequest\032..google.bigtable.v2.ReadM"
+          + "odifyWriteRowResponse\"\347\001\202\323\344\223\002H\"C/v2/{tab"
+          + "le_name=projects/*/instances/*/tables/*}"
+          + ":readModifyWriteRow:\001*\212\323\344\223\002N\022:\n\ntable_na"
+          + "me\022,{table_name=projects/*/instances/*/t"
+          + "ables/*}\022\020\n\016app_profile_id\332A\030table_name,"
+          + "row_key,rules\332A\'table_name,row_key,rules"
+          + ",app_profile_id\022\273\002\n%GenerateInitialChang"
+          + "eStreamPartitions\022@.google.bigtable.v2.G"
+          + "enerateInitialChangeStreamPartitionsRequ"
+          + "est\032A.google.bigtable.v2.GenerateInitial"
+          + "ChangeStreamPartitionsResponse\"\212\001\202\323\344\223\002[\""
+          + "V/v2/{table_name=projects/*/instances/*/"
+          + "tables/*}:generateInitialChangeStreamPar"
+          + "titions:\001*\332A\ntable_name\332A\031table_name,app"
+          + "_profile_id0\001\022\346\001\n\020ReadChangeStream\022+.goo"
+          + "gle.bigtable.v2.ReadChangeStreamRequest\032"
+          + ",.google.bigtable.v2.ReadChangeStreamRes"
+          + "ponse\"u\202\323\344\223\002F\"A/v2/{table_name=projects/"
+          + "*/instances/*/tables/*}:readChangeStream"
+          + ":\001*\332A\ntable_name\332A\031table_name,app_profil"
+          + "e_id0\001\032\333\002\312A\027bigtable.googleapis.com\322A\275\002h"
+          + "ttps://www.googleapis.com/auth/bigtable."
+          + "data,https://www.googleapis.com/auth/big"
+          + "table.data.readonly,https://www.googleap"
+          + "is.com/auth/cloud-bigtable.data,https://"
+          + "www.googleapis.com/auth/cloud-bigtable.d"
+          + "ata.readonly,https://www.googleapis.com/"
+          + "auth/cloud-platform,https://www.googleap"
+          + "is.com/auth/cloud-platform.read-onlyB\353\002\n"
+          + "\026com.google.bigtable.v2B\rBigtableProtoP\001"
+          + "Z:google.golang.org/genproto/googleapis/"
+          + "bigtable/v2;bigtable\252\002\030Google.Cloud.Bigt"
+          + "able.V2\312\002\030Google\\Cloud\\Bigtable\\V2\352\002\033Goo"
+          + "gle::Cloud::Bigtable::V2\352AP\n%bigtableadm"
+          + "in.googleapis.com/Instance\022\'projects/{pr"
+          + "oject}/instances/{instance}\352A\\\n\"bigtable"
+          + "admin.googleapis.com/Table\0226projects/{pr"
+          + "oject}/instances/{instance}/tables/{tabl"
+          + "e}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -450,7 +458,7 @@ public final class BigtableProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_v2_MutateRowsResponse_descriptor,
             new java.lang.String[] {
-              "Entries",
+              "Entries", "RateLimitInfo", "RateLimitInfo",
             });
     internal_static_google_bigtable_v2_MutateRowsResponse_Entry_descriptor =
         internal_static_google_bigtable_v2_MutateRowsResponse_descriptor.getNestedTypes().get(0);
@@ -460,8 +468,16 @@ public final class BigtableProto {
             new java.lang.String[] {
               "Index", "Status",
             });
-    internal_static_google_bigtable_v2_CheckAndMutateRowRequest_descriptor =
+    internal_static_google_bigtable_v2_RateLimitInfo_descriptor =
         getDescriptor().getMessageTypes().get(8);
+    internal_static_google_bigtable_v2_RateLimitInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_bigtable_v2_RateLimitInfo_descriptor,
+            new java.lang.String[] {
+              "Period", "Factor",
+            });
+    internal_static_google_bigtable_v2_CheckAndMutateRowRequest_descriptor =
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_bigtable_v2_CheckAndMutateRowRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_v2_CheckAndMutateRowRequest_descriptor,
@@ -474,7 +490,7 @@ public final class BigtableProto {
               "FalseMutations",
             });
     internal_static_google_bigtable_v2_CheckAndMutateRowResponse_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_bigtable_v2_CheckAndMutateRowResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_v2_CheckAndMutateRowResponse_descriptor,
@@ -482,7 +498,7 @@ public final class BigtableProto {
               "PredicateMatched",
             });
     internal_static_google_bigtable_v2_PingAndWarmRequest_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_bigtable_v2_PingAndWarmRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_v2_PingAndWarmRequest_descriptor,
@@ -490,13 +506,13 @@ public final class BigtableProto {
               "Name", "AppProfileId",
             });
     internal_static_google_bigtable_v2_PingAndWarmResponse_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_bigtable_v2_PingAndWarmResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_v2_PingAndWarmResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_bigtable_v2_ReadModifyWriteRowRequest_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_bigtable_v2_ReadModifyWriteRowRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_v2_ReadModifyWriteRowRequest_descriptor,
@@ -504,7 +520,7 @@ public final class BigtableProto {
               "TableName", "AppProfileId", "RowKey", "Rules",
             });
     internal_static_google_bigtable_v2_ReadModifyWriteRowResponse_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_bigtable_v2_ReadModifyWriteRowResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_v2_ReadModifyWriteRowResponse_descriptor,
@@ -512,7 +528,7 @@ public final class BigtableProto {
               "Row",
             });
     internal_static_google_bigtable_v2_GenerateInitialChangeStreamPartitionsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_bigtable_v2_GenerateInitialChangeStreamPartitionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_v2_GenerateInitialChangeStreamPartitionsRequest_descriptor,
@@ -520,7 +536,7 @@ public final class BigtableProto {
               "TableName", "AppProfileId",
             });
     internal_static_google_bigtable_v2_GenerateInitialChangeStreamPartitionsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_bigtable_v2_GenerateInitialChangeStreamPartitionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_v2_GenerateInitialChangeStreamPartitionsResponse_descriptor,
@@ -528,7 +544,7 @@ public final class BigtableProto {
               "Partition",
             });
     internal_static_google_bigtable_v2_ReadChangeStreamRequest_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_bigtable_v2_ReadChangeStreamRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_v2_ReadChangeStreamRequest_descriptor,
@@ -543,7 +559,7 @@ public final class BigtableProto {
               "StartFrom",
             });
     internal_static_google_bigtable_v2_ReadChangeStreamResponse_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_bigtable_v2_ReadChangeStreamResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_bigtable_v2_ReadChangeStreamResponse_descriptor,

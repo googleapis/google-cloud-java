@@ -300,8 +300,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * This value specifies routing for replication. This API only accepts the
-   * empty value of app_profile_id.
+   * This value specifies routing for replication. If not specified, the
+   * "default" application profile will be used.
    * </pre>
    *
    * <code>string app_profile_id = 5;</code>
@@ -324,8 +324,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * This value specifies routing for replication. This API only accepts the
-   * empty value of app_profile_id.
+   * This value specifies routing for replication. If not specified, the
+   * "default" application profile will be used.
    * </pre>
    *
    * <code>string app_profile_id = 5;</code>
@@ -1104,8 +1104,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * This value specifies routing for replication. This API only accepts the
-     * empty value of app_profile_id.
+     * This value specifies routing for replication. If not specified, the
+     * "default" application profile will be used.
      * </pre>
      *
      * <code>string app_profile_id = 5;</code>
@@ -1127,8 +1127,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * This value specifies routing for replication. This API only accepts the
-     * empty value of app_profile_id.
+     * This value specifies routing for replication. If not specified, the
+     * "default" application profile will be used.
      * </pre>
      *
      * <code>string app_profile_id = 5;</code>
@@ -1150,8 +1150,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * This value specifies routing for replication. This API only accepts the
-     * empty value of app_profile_id.
+     * This value specifies routing for replication. If not specified, the
+     * "default" application profile will be used.
      * </pre>
      *
      * <code>string app_profile_id = 5;</code>
@@ -1172,8 +1172,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * This value specifies routing for replication. This API only accepts the
-     * empty value of app_profile_id.
+     * This value specifies routing for replication. If not specified, the
+     * "default" application profile will be used.
      * </pre>
      *
      * <code>string app_profile_id = 5;</code>
@@ -1190,8 +1190,8 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * This value specifies routing for replication. This API only accepts the
-     * empty value of app_profile_id.
+     * This value specifies routing for replication. If not specified, the
+     * "default" application profile will be used.
      * </pre>
      *
      * <code>string app_profile_id = 5;</code>
