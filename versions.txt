@@ -640,3 +640,6 @@ grpc-google-cloud-biglake-v1:0.4.0:0.5.0-SNAPSHOT
 google-cloud-storageinsights:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-storageinsights-v1:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-storageinsights-v1:0.1.0:0.2.0-SNAPSHOT
+google-cloud-cloudsupport:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-cloudsupport-v2:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-cloudsupport-v2:0.0.0:0.0.1-SNAPSHOT
