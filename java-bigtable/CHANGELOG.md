@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.22.0](https://github.com/googleapis/java-bigtable/compare/v2.21.0...v2.22.0) (2023-05-02)
+
+
+### Features
+
+* Add APIs to enable batch write flow control ([#1730](https://github.com/googleapis/java-bigtable/issues/1730)) ([b518d68](https://github.com/googleapis/java-bigtable/commit/b518d6851429db640e80ab78b3f827bb334f5409))
+* Add rate limiting callable ([#1729](https://github.com/googleapis/java-bigtable/issues/1729)) ([ee0da11](https://github.com/googleapis/java-bigtable/commit/ee0da11664d978e808d1088a419cdbd2270da147))
+* Send feature flag when flow control is enabled ([#1731](https://github.com/googleapis/java-bigtable/issues/1731)) ([ba147c3](https://github.com/googleapis/java-bigtable/commit/ba147c3520be27f4f3e622f3ef69fab716895dbe))
+
+
+### Bug Fixes
+
+* Add feature flag proto to BUILD file ([#1726](https://github.com/googleapis/java-bigtable/issues/1726)) ([7e5c646](https://github.com/googleapis/java-bigtable/commit/7e5c646031de22c42bb3dd81774ccd6762bd91ed))
+
 ## [2.21.0](https://github.com/googleapis/java-bigtable/compare/v2.20.4...v2.21.0) (2023-04-27)
 
 
