@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.FixedTransportChannelProvider;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.auth.oauth2.ServiceAccountJwtAccessCredentials;
 import com.google.bigtable.v2.BigtableGrpc;
+import com.google.bigtable.v2.FeatureFlags;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.MutateRowsResponse;
 import com.google.bigtable.v2.PingAndWarmRequest;
@@ -45,6 +46,7 @@ import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
+import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.DefaultRowAdapter;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
@@ -77,6 +79,7 @@ import java.io.IOException;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 import java.security.NoSuchAlgorithmException;
+import java.util.Base64;
 import java.util.Collection;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
@@ -484,6 +487,45 @@ public class EnhancedBigtableStubTest {
       assertThat(serverCtx).isNotNull();
       assertThat(serverCtx.getDeadline()).isAtLeast(Deadline.after(8, TimeUnit.MINUTES));
     }
+  }
+
+  @Test
+  public void testBulkMutationFlowControlFeatureFlagIsSet() throws Exception {
+    BulkMutation bulkMutation =
+        BulkMutation.create("my-table")
+            .add(RowMutationEntry.create("row-key").setCell("cf", "q", "value"));
+
+    // Test the header is set when the feature is enabled
+    EnhancedBigtableStubSettings.Builder settings = defaultSettings.toBuilder();
+    settings.bulkMutateRowsSettings().setServerInitiatedFlowControl(true);
+    EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings.build());
+    stub.bulkMutateRowsCallable().call(bulkMutation);
+    assertThat(metadataInterceptor.headers).hasSize(1);
+    Metadata metadata = metadataInterceptor.headers.take();
+    String encodedFlags =
+        metadata.get(Metadata.Key.of("bigtable-features", Metadata.ASCII_STRING_MARSHALLER));
+    byte[] decodedFlags = Base64.getDecoder().decode(encodedFlags);
+    FeatureFlags featureFlags = FeatureFlags.parseFrom(decodedFlags);
+    assertThat(featureFlags.getMutateRowsRateLimit()).isTrue();
+  }
+
+  @Test
+  public void testBulkMutationFlowControlFeatureFlagIsNotSet() throws Exception {
+    BulkMutation bulkMutation =
+        BulkMutation.create("my-table")
+            .add(RowMutationEntry.create("row-key").setCell("cf", "q", "value"));
+
+    EnhancedBigtableStubSettings.Builder settings = defaultSettings.toBuilder();
+    settings.bulkMutateRowsSettings().setServerInitiatedFlowControl(false);
+    EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings.build());
+    stub.bulkMutateRowsCallable().call(bulkMutation);
+    assertThat(metadataInterceptor.headers).hasSize(1);
+    Metadata metadata = metadataInterceptor.headers.take();
+    String encodedFlags =
+        metadata.get(Metadata.Key.of("bigtable-features", Metadata.ASCII_STRING_MARSHALLER));
+    byte[] decodedFlags = Base64.getDecoder().decode(encodedFlags);
+    FeatureFlags featureFlags = FeatureFlags.parseFrom(decodedFlags);
+    assertThat(featureFlags.getMutateRowsRateLimit()).isFalse();
   }
 
   private static class MetadataInterceptor implements ServerInterceptor {

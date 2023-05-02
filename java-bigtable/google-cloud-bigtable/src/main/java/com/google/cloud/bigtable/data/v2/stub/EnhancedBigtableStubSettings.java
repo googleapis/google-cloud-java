@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.auth.Credentials;
+import com.google.bigtable.v2.FeatureFlags;
 import com.google.bigtable.v2.PingAndWarmRequest;
 import com.google.cloud.bigtable.Version;
 import com.google.cloud.bigtable.data.v2.models.ChangeStreamRecord;
@@ -50,7 +51,10 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -221,6 +225,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       readChangeStreamSettings;
   private final UnaryCallSettings<PingAndWarmRequest, Void> pingAndWarmSettings;
 
+  private final FeatureFlags featureFlags;
+
   private EnhancedBigtableStubSettings(Builder builder) {
     super(builder);
 
@@ -259,6 +265,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
         builder.generateInitialChangeStreamPartitionsSettings.build();
     readChangeStreamSettings = builder.readChangeStreamSettings.build();
     pingAndWarmSettings = builder.pingAndWarmSettings.build();
+    featureFlags = builder.featureFlags.build();
   }
 
   /** Create a new builder. */
@@ -598,6 +605,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
         readChangeStreamSettings;
     private final UnaryCallSettings.Builder<PingAndWarmRequest, Void> pingAndWarmSettings;
 
+    private FeatureFlags.Builder featureFlags;
+
     /**
      * Initializes a new Builder with sane defaults for all settings.
      *
@@ -620,16 +629,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       setTransportChannelProvider(defaultTransportChannelProvider());
       setStreamWatchdogCheckInterval(baseDefaults.getStreamWatchdogCheckInterval());
       setStreamWatchdogProvider(baseDefaults.getStreamWatchdogProvider());
-
-      // Inject the UserAgent in addition to api-client header
-      Map<String, String> headers =
-          ImmutableMap.<String, String>builder()
-              .putAll(
-                  BigtableStubSettings.defaultApiClientHeaderProviderBuilder().build().getHeaders())
-              // GrpcHeaderInterceptor treats the `user-agent` as a magic string
-              .put("user-agent", "bigtable-java/" + Version.VERSION)
-              .build();
-      setInternalHeaderProvider(FixedHeaderProvider.create(headers));
 
       // Per-method settings using baseSettings for defaults.
       readRowsSettings = ServerStreamingCallSettings.newBuilder();
@@ -729,6 +728,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
               .setMaxRpcTimeout(PRIME_REQUEST_TIMEOUT)
               .setTotalTimeout(PRIME_REQUEST_TIMEOUT)
               .build());
+
+      featureFlags = FeatureFlags.newBuilder();
     }
 
     private Builder(EnhancedBigtableStubSettings settings) {
@@ -753,6 +754,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
           settings.generateInitialChangeStreamPartitionsSettings.toBuilder();
       readChangeStreamSettings = settings.readChangeStreamSettings.toBuilder();
       pingAndWarmSettings = settings.pingAndWarmSettings.toBuilder();
+      featureFlags = settings.featureFlags.toBuilder();
     }
     // <editor-fold desc="Private Helpers">
 
@@ -970,6 +972,34 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
             BigtableChannelPrimer.create(credentials, projectId, instanceId, appProfileId));
         this.setTransportChannelProvider(channelProviderBuilder.build());
       }
+
+      if (this.bulkMutateRowsSettings().isServerInitiatedFlowControlEnabled()) {
+        // only set mutate rows feature flag when this feature is enabled
+        featureFlags.setMutateRowsRateLimit(true);
+      }
+
+      // Serialize the web64 encode the bigtable feature flags
+      ByteArrayOutputStream boas = new ByteArrayOutputStream();
+      try {
+        featureFlags.build().writeTo(boas);
+      } catch (IOException e) {
+        throw new IllegalStateException(
+            "Unexpected IOException while serializing feature flags", e);
+      }
+      byte[] serializedFlags = boas.toByteArray();
+      byte[] encodedFlags = Base64.getUrlEncoder().encode(serializedFlags);
+
+      // Inject the UserAgent in addition to api-client header
+      Map<String, String> headers =
+          ImmutableMap.<String, String>builder()
+              .putAll(
+                  BigtableStubSettings.defaultApiClientHeaderProviderBuilder().build().getHeaders())
+              // GrpcHeaderInterceptor treats the `user-agent` as a magic string
+              .put("user-agent", "bigtable-java/" + Version.VERSION)
+              .put("bigtable-features", new String(encodedFlags, StandardCharsets.UTF_8))
+              .build();
+      setInternalHeaderProvider(FixedHeaderProvider.create(headers));
+
       return new EnhancedBigtableStubSettings(this);
     }
     // </editor-fold>
