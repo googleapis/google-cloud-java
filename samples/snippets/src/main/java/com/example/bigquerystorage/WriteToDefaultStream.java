@@ -21,6 +21,7 @@ package com.example.bigquerystorage;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
+import com.google.api.gax.core.FixedExecutorProvider;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.QueryJobConfiguration;
@@ -39,6 +40,7 @@ import io.grpc.Status;
 import io.grpc.Status.Code;
 import java.io.IOException;
 import java.util.Map;
+import java.util.concurrent.Executors;
 import java.util.concurrent.Phaser;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.concurrent.GuardedBy;
@@ -151,7 +153,10 @@ public class WriteToDefaultStream {
       // For more information about JsonStreamWriter, see:
       // https://googleapis.dev/java/google-cloud-bigquerystorage/latest/com/google/cloud/bigquery/storage/v1/JsonStreamWriter.html
       streamWriter =
-          JsonStreamWriter.newBuilder(parentTable.toString(), BigQueryWriteClient.create()).build();
+          JsonStreamWriter.newBuilder(parentTable.toString(), BigQueryWriteClient.create())
+              .setExecutorProvider(
+                  FixedExecutorProvider.create(Executors.newScheduledThreadPool(100)))
+              .build();
     }
 
     public void append(AppendContext appendContext)

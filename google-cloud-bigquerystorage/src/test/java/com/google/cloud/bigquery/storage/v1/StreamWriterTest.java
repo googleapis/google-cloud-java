@@ -1413,6 +1413,17 @@ public class StreamWriterTest {
         writeSettings.getCredentialsProvider().toString());
     assertTrue(
         writeSettings.getTransportChannelProvider() instanceof InstantiatingGrpcChannelProvider);
+    assertTrue(
+        ((InstantiatingGrpcChannelProvider) writeSettings.getTransportChannelProvider())
+            .getKeepAliveWithoutCalls());
+    assertEquals(
+        ((InstantiatingGrpcChannelProvider) writeSettings.getTransportChannelProvider())
+            .getKeepAliveTimeout(),
+        org.threeten.bp.Duration.ofMinutes(1));
+    assertEquals(
+        ((InstantiatingGrpcChannelProvider) writeSettings.getTransportChannelProvider())
+            .getKeepAliveTime(),
+        org.threeten.bp.Duration.ofMinutes(1));
     assertEquals(
         BigQueryWriteSettings.getDefaultEndpoint(), writeSettings.getEndpoint().toString());
   }
