@@ -45,7 +45,7 @@ jobs:
     - name: Apply versions from versions.txt files
       run: |
         bash generation/apply_current_versions.sh
-    - name: Fail if there's any difference
+    - name: Fail if there's any difference (To fix, run generation/apply_current_versions.sh)
       run: git --no-pager diff --exit-code
 
   owlbot-py:
@@ -56,7 +56,7 @@ jobs:
       - name: Generate owlbot.py files
         run: |
           bash generation/update_owlbot_postprocessor_config.sh
-      - name: Fail if there's any difference
+      - name: Fail if there's any difference (To fix, run generation/update_owlbot_postprocessor_config.sh)
         run: git --no-pager diff --exit-code
 
   owlbot-yaml:
@@ -67,7 +67,7 @@ jobs:
       - name: Check if .Owlbot.yaml files are correctly configured
         run: |
           bash generation/set_owlbot_config.sh
-      - name: Fail if there's any difference
+      - name: Fail if there's any difference (To fix, run generation/set_owlbot_config.sh)
         run: git --no-pager diff --exit-code
 
   gitignore_correctness:
@@ -101,7 +101,7 @@ jobs:
       - name: Apply consolidate_config.sh
         run: |
           bash generation/consolidate_config.sh
-      - name: Fail if there's any difference
+      - name: Fail if there's any difference (To fix, run generation/consolidate_config.sh)
         run: git --no-pager diff --exit-code
 
   generate-readme:
