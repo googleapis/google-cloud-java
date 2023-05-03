@@ -23,9 +23,7 @@ package com.google.datastore.v1;
  *
  * <pre>
  * A Datastore data object.
- * An entity is limited to 1 megabyte when stored. That _roughly_
- * corresponds to a limit of 1 megabyte for the serialized form of this
- * message.
+ * Must not exceed 1 MiB - 4 bytes.
  * </pre>
  *
  * Protobuf type {@code google.datastore.v1.Entity}
@@ -447,9 +445,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A Datastore data object.
-   * An entity is limited to 1 megabyte when stored. That _roughly_
-   * corresponds to a limit of 1 megabyte for the serialized form of this
-   * message.
+   * Must not exceed 1 MiB - 4 bytes.
    * </pre>
    *
    * Protobuf type {@code google.datastore.v1.Entity}
