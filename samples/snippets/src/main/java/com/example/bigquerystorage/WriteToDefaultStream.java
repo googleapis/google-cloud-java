@@ -28,6 +28,7 @@ import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.storage.v1.AppendRowsResponse;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
+import com.google.cloud.bigquery.storage.v1.BigQueryWriteSettings;
 import com.google.cloud.bigquery.storage.v1.Exceptions;
 import com.google.cloud.bigquery.storage.v1.Exceptions.AppendSerializationError;
 import com.google.cloud.bigquery.storage.v1.Exceptions.StorageException;
@@ -156,6 +157,13 @@ public class WriteToDefaultStream {
           JsonStreamWriter.newBuilder(parentTable.toString(), BigQueryWriteClient.create())
               .setExecutorProvider(
                   FixedExecutorProvider.create(Executors.newScheduledThreadPool(100)))
+              .setChannelProvider(
+                  BigQueryWriteSettings.defaultGrpcTransportProviderBuilder()
+                      .setKeepAliveTime(org.threeten.bp.Duration.ofMinutes(1))
+                      .setKeepAliveTimeout(org.threeten.bp.Duration.ofMinutes(1))
+                      .setKeepAliveWithoutCalls(true)
+                      .setChannelsPerCpu(2)
+                      .build())
               .build();
     }
 
