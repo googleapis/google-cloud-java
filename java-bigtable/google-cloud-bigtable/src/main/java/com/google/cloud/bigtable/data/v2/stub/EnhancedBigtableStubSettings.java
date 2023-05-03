@@ -23,6 +23,7 @@ import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.core.GoogleCredentialsProvider;
+import com.google.api.gax.grpc.ChannelPoolSettings;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.FixedHeaderProvider;
@@ -315,7 +316,13 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
     return BigtableStubSettings.defaultGrpcTransportProviderBuilder()
-        .setPoolSize(getDefaultChannelPoolSize())
+        .setChannelPoolSettings(
+            ChannelPoolSettings.builder()
+                .setInitialChannelCount(10)
+                .setMinRpcsPerChannel(1)
+                .setMaxRpcsPerChannel(50)
+                .setPreemptiveRefreshEnabled(true)
+                .build())
         .setMaxInboundMessageSize(MAX_MESSAGE_SIZE)
         .setKeepAliveTime(Duration.ofSeconds(30)) // sends ping in this interval
         .setKeepAliveTimeout(
@@ -323,11 +330,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
         // Attempts direct access to CBT service over gRPC to improve throughput,
         // whether the attempt is allowed is totally controlled by service owner.
         .setAttemptDirectPath(true);
-  }
-
-  static int getDefaultChannelPoolSize() {
-    // TODO: tune channels
-    return 2 * Runtime.getRuntime().availableProcessors();
   }
 
   @SuppressWarnings("WeakerAccess")
@@ -658,9 +660,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       copyRetrySettings(baseDefaults.mutateRowSettings(), mutateRowSettings);
 
       long maxBulkMutateElementPerBatch = 100L;
-      // Enables bulkMutate to support 10 outstanding batches upto per channel or up to 20K entries.
-      long maxBulkMutateOutstandingElementCount =
-          Math.min(20_000L, 10L * maxBulkMutateElementPerBatch * getDefaultChannelPoolSize());
+      long maxBulkMutateOutstandingElementCount = 20_000L;
 
       bulkMutateRowsSettings =
           BigtableBatchingCallSettings.newBuilder(new MutateRowsBatchingDescriptor())
@@ -682,9 +682,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
       long maxBulkReadElementPerBatch = 100L;
       long maxBulkReadRequestSizePerBatch = 400L * 1024L;
-      // Enables bulkRead to support 10 outstanding batches per channel
-      long maxBulkReadOutstandingElementCount =
-          10L * maxBulkReadElementPerBatch * getDefaultChannelPoolSize();
+      long maxBulkReadOutstandingElementCount = 20_000L;
 
       bulkReadRowsSettings =
           BigtableBulkReadRowsCallSettings.newBuilder(new ReadRowsBatchingDescriptor())
