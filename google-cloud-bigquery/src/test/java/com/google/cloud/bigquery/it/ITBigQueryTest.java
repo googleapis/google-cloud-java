@@ -5233,4 +5233,48 @@ public class ITBigQueryTest {
     assertTrue(remoteTable.delete());
     assertTrue(cloneTable.delete());
   }
+
+  @Test
+  public void testHivePartitioningOptionsFieldsFieldExistence() throws InterruptedException {
+    String tableName = "hive_partitioned_external_table";
+
+    // Create data on GCS
+    String sourceDirectory = "bigquery/hive-partitioning-table/example";
+    BlobInfo blobInfo = BlobInfo.newBuilder(BUCKET, sourceDirectory + "/key=foo/data.json").build();
+    assertNotNull(
+        "Failed to upload JSON to GCS",
+        storage.create(blobInfo, "{\"name\":\"bar\"}".getBytes(StandardCharsets.UTF_8)));
+    String sourceUri = "gs://" + BUCKET + "/" + sourceDirectory + "/*";
+    String sourceUriPrefix = "gs://" + BUCKET + "/" + sourceDirectory + "/";
+
+    // Create the external table
+    HivePartitioningOptions hivePartitioningOptions =
+        HivePartitioningOptions.newBuilder()
+            .setMode("AUTO")
+            .setRequirePartitionFilter(true)
+            .setSourceUriPrefix(sourceUriPrefix)
+            .build();
+
+    TableId tableId = TableId.of(DATASET, tableName);
+    ExternalTableDefinition customTable =
+        ExternalTableDefinition.newBuilder(sourceUri, FormatOptions.json())
+            .setAutodetect(true)
+            .setHivePartitioningOptions(hivePartitioningOptions)
+            .build();
+    bigquery.create(TableInfo.of(tableId, customTable));
+
+    // Validate the existence of the field HivePartitioningOptions.fields
+    Table table = bigquery.getTable(tableId);
+    assertThat(table).isNotNull();
+    HivePartitioningOptions options =
+        ((ExternalTableDefinition) table.getDefinition()).getHivePartitioningOptions();
+    List<String> fields = options.getFields();
+    assertThat(fields).isNotNull();
+    assertThat(fields).hasSize(1);
+    assertThat(fields).contains("key");
+
+    // Clean up
+    assertTrue(table.delete());
+    assertTrue(storage.delete(blobInfo.getBlobId()));
+  }
 }

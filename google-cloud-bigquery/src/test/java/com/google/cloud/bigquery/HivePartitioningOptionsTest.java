@@ -18,6 +18,8 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import java.util.Arrays;
+import java.util.List;
 import org.junit.Test;
 
 public class HivePartitioningOptionsTest {
@@ -25,11 +27,13 @@ public class HivePartitioningOptionsTest {
   private static final String MODE = "STRING";
   private static final String SOURCE_URI_PREFIX = "gs://bucket/path_to_table";
   private static final Boolean REQUIRE_PARTITION_FILTER = true;
+  private static final List<String> FIELDS = Arrays.asList("FIELD1", "FIELD2");
   private static final HivePartitioningOptions HIVE_PARTITIONING_OPTIONS =
       HivePartitioningOptions.newBuilder()
           .setMode(MODE)
           .setRequirePartitionFilter(REQUIRE_PARTITION_FILTER)
           .setSourceUriPrefix(SOURCE_URI_PREFIX)
+          .setFields(FIELDS)
           .build();
 
   @Test
