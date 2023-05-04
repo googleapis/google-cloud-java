@@ -76,6 +76,12 @@ public class ConnectionImplTest {
           Field.newBuilder("state_name", StandardSQLTypeName.STRING)
               .setMode(Field.Mode.NULLABLE)
               .build());
+
+  private static final Schema QUERY_SCHEMA_WITH_INTERVAL_FIELD =
+      Schema.of(
+          Field.newBuilder("interval", StandardSQLTypeName.INTERVAL)
+              .setMode(Field.Mode.NULLABLE)
+              .build());
   private static final TableSchema FAST_QUERY_TABLESCHEMA = QUERY_SCHEMA.toPb();
   private static final BigQueryResult BQ_RS_MOCK_RES =
       new BigQueryResultImpl(QUERY_SCHEMA, 2, null, null);
@@ -659,6 +665,32 @@ public class ConnectionImplTest {
     assertEquals(QUERY_SCHEMA, res.getSchema());
     verify(connectionSpy, times(1))
         .getSubsequentQueryResultsWithJob(10000L, 100L, jobId, GET_QUERY_RESULTS_RESPONSE, false);
+  }
+
+  @Test
+  public void testUseReadApi() {
+    ConnectionSettings connectionSettingsSpy = Mockito.spy(ConnectionSettings.class);
+    doReturn(true).when(connectionSettingsSpy).getUseReadAPI();
+    doReturn(2).when(connectionSettingsSpy).getTotalToPageRowCountRatio();
+    doReturn(100).when(connectionSettingsSpy).getMinResultSize();
+
+    connection = (ConnectionImpl) bigquery.createConnection(connectionSettingsSpy);
+
+    // defaults to connectionSettings.getUseReadAPI() when total/page rows are null (job is still
+    // running)
+    assertTrue(connection.useReadAPI(null, null, QUERY_SCHEMA, false));
+
+    assertFalse(connection.useReadAPI(10000L, 10000L, QUERY_SCHEMA, false));
+    assertFalse(connection.useReadAPI(50L, 10L, QUERY_SCHEMA, false));
+    assertTrue(connection.useReadAPI(10000L, 10L, QUERY_SCHEMA, false));
+
+    // interval and query parameters not supported
+    assertFalse(connection.useReadAPI(10000L, 10L, QUERY_SCHEMA_WITH_INTERVAL_FIELD, false));
+    assertFalse(connection.useReadAPI(10000L, 10L, QUERY_SCHEMA, true));
+
+    doReturn(false).when(connectionSettingsSpy).getUseReadAPI();
+    assertFalse(connection.useReadAPI(null, null, QUERY_SCHEMA, false));
+    assertFalse(connection.useReadAPI(10000L, 10L, QUERY_SCHEMA, false));
   }
 
   @Test
