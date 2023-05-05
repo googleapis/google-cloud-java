@@ -1,4 +1,4 @@
-// Copyright 2022 Google LLC
+// Copyright 2023 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -121,7 +121,7 @@ message RowsResult {
   google.rpc.Status status = 1;
 
   // The contents of rows.
-  repeated google.bigtable.v2.Row row = 2;
+  repeated google.bigtable.v2.Row rows = 2;
 }
 
 // Request to test proxy service to mutate a row.
@@ -155,7 +155,7 @@ message MutateRowsResult {
   google.rpc.Status status = 1;
 
   // The results corresponding to the failed rows.
-  repeated google.bigtable.v2.MutateRowsResponse.Entry entry = 2;
+  repeated google.bigtable.v2.MutateRowsResponse.Entry entries = 2;
 }
 
 // Request to test proxy service to check and mutate a row.
@@ -191,7 +191,7 @@ message SampleRowKeysResult {
   google.rpc.Status status = 1;
 
   // The raw responses from the Bigtable server.
-  repeated google.bigtable.v2.SampleRowKeysResponse sample = 2;
+  repeated google.bigtable.v2.SampleRowKeysResponse samples = 2;
 }
 
 // Request to test proxy service to read modify write a row.

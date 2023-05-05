@@ -18,7 +18,7 @@ Build the proxy with the latest/head version of the client
 cd java-bigtable
 mvn clean install -DskipTests
 cd test-proxy
-mvn clean install
+mvn clean install -DskipTests
 ```
 
 Start the proxy on default port 9999

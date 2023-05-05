@@ -341,7 +341,7 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
       MutateRowsResult.Builder resultBuilder = MutateRowsResult.newBuilder();
       for (MutateRowsException.FailedMutation failed : e.getFailedMutations()) {
         resultBuilder
-            .addEntryBuilder()
+            .addEntriesBuilder()
             .setIndex(failed.getIndex())
             .setStatus(
                 com.google.rpc.Status.newBuilder()
@@ -543,7 +543,7 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
     for (com.google.cloud.bigtable.data.v2.models.Row row : rows) {
       rowCounter++;
       RowResult.Builder rowResultBuilder = convertRowResult(row);
-      resultBuilder.addRow(rowResultBuilder.getRow());
+      resultBuilder.addRows(rowResultBuilder.getRow());
 
       if (cancelAfterRows > 0 && rowCounter >= cancelAfterRows) {
         logger.info(
@@ -593,7 +593,7 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
     SampleRowKeysResult.Builder resultBuilder = SampleRowKeysResult.newBuilder();
     for (KeyOffset keyOffset : keyOffsets) {
       resultBuilder
-          .addSampleBuilder()
+          .addSamplesBuilder()
           .setRowKey(keyOffset.getKey())
           .setOffsetBytes(keyOffset.getOffsetBytes());
     }
