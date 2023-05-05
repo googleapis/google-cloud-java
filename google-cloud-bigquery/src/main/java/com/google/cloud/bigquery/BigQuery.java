@@ -376,6 +376,14 @@ public interface BigQuery extends Service<BigQueryOptions> {
       return new TableOption(
           BigQueryRpc.Option.FIELDS, Helper.selector(TableField.REQUIRED_FIELDS, fields));
     }
+
+    /**
+     * Returns an option to specify the schema of the table (only applicable for external tables)
+     * should be autodetected when updating the table from the underlying source.
+     */
+    public static TableOption autodetectSchema(boolean autodetect) {
+      return new TableOption(BigQueryRpc.Option.AUTODETECT_SCHEMA, autodetect);
+    }
   }
 
   /*  Class for specifying IAM options. */

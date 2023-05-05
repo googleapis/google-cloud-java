@@ -279,6 +279,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
           .patch(reference.getProjectId(), reference.getDatasetId(), reference.getTableId(), table)
           .setPrettyPrint(false)
           .setFields(Option.FIELDS.getString(options))
+          .setAutodetectSchema(BigQueryRpc.Option.AUTODETECT_SCHEMA.getBoolean(options))
           .execute();
     } catch (IOException ex) {
       throw translate(ex);

@@ -46,6 +46,7 @@ public interface BigQueryRpc extends ServiceRpc {
     DELETE_CONTENTS("deleteContents"),
     ALL_DATASETS("all"),
     ALL_USERS("allUsers"),
+    AUTODETECT_SCHEMA("autodetectSchema"),
     LABEL_FILTER("filter"),
     MIN_CREATION_TIME("minCreationTime"),
     MAX_CREATION_TIME("maxCreationTime"),

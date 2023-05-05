@@ -1261,6 +1261,24 @@ public class BigQueryImplTest {
   }
 
   @Test
+  public void testUpdateTableWithAutoDetectSchema() {
+    TableInfo updatedTableInfo = TABLE_INFO.toBuilder().setDescription("newDescription").build();
+    TableInfo updatedTableInfoWithProject =
+        TABLE_INFO_WITH_PROJECT.toBuilder().setDescription("newDescription").build();
+    when(bigqueryRpcMock.patch(eq(updatedTableInfoWithProject.toPb()), capturedOptions.capture()))
+        .thenReturn(updatedTableInfoWithProject.toPb());
+    bigquery = options.getService();
+    Table table = bigquery.update(updatedTableInfo, BigQuery.TableOption.autodetectSchema(true));
+    Boolean selector =
+        (Boolean) capturedOptions.getValue().get(BigQueryRpc.Option.AUTODETECT_SCHEMA);
+    assertTrue(selector);
+    assertEquals(
+        new Table(bigquery, new TableInfo.BuilderImpl(updatedTableInfoWithProject)), table);
+    verify(bigqueryRpcMock)
+        .patch(eq(updatedTableInfoWithProject.toPb()), capturedOptions.capture());
+  }
+
+  @Test
   public void testInsertAllWithRowIdShouldRetry() {
     Map<String, Object> row1 = ImmutableMap.<String, Object>of("field", "value1");
     Map<String, Object> row2 = ImmutableMap.<String, Object>of("field", "value2");
