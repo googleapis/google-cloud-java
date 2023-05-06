@@ -212,8 +212,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The service account that will be used by the Log Router to access your
-   * Cloud KMS key.
+   * Output only. The service account that will be used by the Log Router to
+   * access your Cloud KMS key.
    * Before enabling CMEK for Log Router, you must first assign the role
    * `roles/cloudkms.cryptoKeyEncrypterDecrypter` to the service account that
    * the Log Router will use to access your Cloud KMS key. Use
@@ -244,8 +244,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The service account that will be used by the Log Router to access your
-   * Cloud KMS key.
+   * Output only. The service account that will be used by the Log Router to
+   * access your Cloud KMS key.
    * Before enabling CMEK for Log Router, you must first assign the role
    * `roles/cloudkms.cryptoKeyEncrypterDecrypter` to the service account that
    * the Log Router will use to access your Cloud KMS key. Use
@@ -281,8 +281,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The Cloud region that will be used for _Default and _Required log buckets
-   * for newly created projects and folders. For example `europe-west1`.
+   * Optional. The Cloud region that will be used for _Default and _Required log
+   * buckets for newly created projects and folders. For example `europe-west1`.
    * This setting does not affect the location of custom log buckets.
    * </pre>
    *
@@ -306,8 +306,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The Cloud region that will be used for _Default and _Required log buckets
-   * for newly created projects and folders. For example `europe-west1`.
+   * Optional. The Cloud region that will be used for _Default and _Required log
+   * buckets for newly created projects and folders. For example `europe-west1`.
    * This setting does not affect the location of custom log buckets.
    * </pre>
    *
@@ -334,10 +334,10 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. If set to true, the _Default sink in newly created projects and folders
-   * will created in a disabled state. This can be used to automatically disable
-   * log ingestion if there is already an aggregated sink configured in the
-   * hierarchy. The _Default sink can be re-enabled manually if needed.
+   * Optional. If set to true, the _Default sink in newly created projects and
+   * folders will created in a disabled state. This can be used to automatically
+   * disable log ingestion if there is already an aggregated sink configured in
+   * the hierarchy. The _Default sink can be re-enabled manually if needed.
    * </pre>
    *
    * <code>bool disable_default_sink = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1078,8 +1078,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service account that will be used by the Log Router to access your
-     * Cloud KMS key.
+     * Output only. The service account that will be used by the Log Router to
+     * access your Cloud KMS key.
      * Before enabling CMEK for Log Router, you must first assign the role
      * `roles/cloudkms.cryptoKeyEncrypterDecrypter` to the service account that
      * the Log Router will use to access your Cloud KMS key. Use
@@ -1109,8 +1109,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service account that will be used by the Log Router to access your
-     * Cloud KMS key.
+     * Output only. The service account that will be used by the Log Router to
+     * access your Cloud KMS key.
      * Before enabling CMEK for Log Router, you must first assign the role
      * `roles/cloudkms.cryptoKeyEncrypterDecrypter` to the service account that
      * the Log Router will use to access your Cloud KMS key. Use
@@ -1140,8 +1140,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service account that will be used by the Log Router to access your
-     * Cloud KMS key.
+     * Output only. The service account that will be used by the Log Router to
+     * access your Cloud KMS key.
      * Before enabling CMEK for Log Router, you must first assign the role
      * `roles/cloudkms.cryptoKeyEncrypterDecrypter` to the service account that
      * the Log Router will use to access your Cloud KMS key. Use
@@ -1170,8 +1170,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service account that will be used by the Log Router to access your
-     * Cloud KMS key.
+     * Output only. The service account that will be used by the Log Router to
+     * access your Cloud KMS key.
      * Before enabling CMEK for Log Router, you must first assign the role
      * `roles/cloudkms.cryptoKeyEncrypterDecrypter` to the service account that
      * the Log Router will use to access your Cloud KMS key. Use
@@ -1196,8 +1196,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service account that will be used by the Log Router to access your
-     * Cloud KMS key.
+     * Output only. The service account that will be used by the Log Router to
+     * access your Cloud KMS key.
      * Before enabling CMEK for Log Router, you must first assign the role
      * `roles/cloudkms.cryptoKeyEncrypterDecrypter` to the service account that
      * the Log Router will use to access your Cloud KMS key. Use
@@ -1229,8 +1229,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Cloud region that will be used for _Default and _Required log buckets
-     * for newly created projects and folders. For example `europe-west1`.
+     * Optional. The Cloud region that will be used for _Default and _Required log
+     * buckets for newly created projects and folders. For example `europe-west1`.
      * This setting does not affect the location of custom log buckets.
      * </pre>
      *
@@ -1253,8 +1253,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Cloud region that will be used for _Default and _Required log buckets
-     * for newly created projects and folders. For example `europe-west1`.
+     * Optional. The Cloud region that will be used for _Default and _Required log
+     * buckets for newly created projects and folders. For example `europe-west1`.
      * This setting does not affect the location of custom log buckets.
      * </pre>
      *
@@ -1277,8 +1277,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Cloud region that will be used for _Default and _Required log buckets
-     * for newly created projects and folders. For example `europe-west1`.
+     * Optional. The Cloud region that will be used for _Default and _Required log
+     * buckets for newly created projects and folders. For example `europe-west1`.
      * This setting does not affect the location of custom log buckets.
      * </pre>
      *
@@ -1300,8 +1300,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Cloud region that will be used for _Default and _Required log buckets
-     * for newly created projects and folders. For example `europe-west1`.
+     * Optional. The Cloud region that will be used for _Default and _Required log
+     * buckets for newly created projects and folders. For example `europe-west1`.
      * This setting does not affect the location of custom log buckets.
      * </pre>
      *
@@ -1319,8 +1319,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The Cloud region that will be used for _Default and _Required log buckets
-     * for newly created projects and folders. For example `europe-west1`.
+     * Optional. The Cloud region that will be used for _Default and _Required log
+     * buckets for newly created projects and folders. For example `europe-west1`.
      * This setting does not affect the location of custom log buckets.
      * </pre>
      *
@@ -1345,10 +1345,10 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If set to true, the _Default sink in newly created projects and folders
-     * will created in a disabled state. This can be used to automatically disable
-     * log ingestion if there is already an aggregated sink configured in the
-     * hierarchy. The _Default sink can be re-enabled manually if needed.
+     * Optional. If set to true, the _Default sink in newly created projects and
+     * folders will created in a disabled state. This can be used to automatically
+     * disable log ingestion if there is already an aggregated sink configured in
+     * the hierarchy. The _Default sink can be re-enabled manually if needed.
      * </pre>
      *
      * <code>bool disable_default_sink = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1363,10 +1363,10 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If set to true, the _Default sink in newly created projects and folders
-     * will created in a disabled state. This can be used to automatically disable
-     * log ingestion if there is already an aggregated sink configured in the
-     * hierarchy. The _Default sink can be re-enabled manually if needed.
+     * Optional. If set to true, the _Default sink in newly created projects and
+     * folders will created in a disabled state. This can be used to automatically
+     * disable log ingestion if there is already an aggregated sink configured in
+     * the hierarchy. The _Default sink can be re-enabled manually if needed.
      * </pre>
      *
      * <code>bool disable_default_sink = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1385,10 +1385,10 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If set to true, the _Default sink in newly created projects and folders
-     * will created in a disabled state. This can be used to automatically disable
-     * log ingestion if there is already an aggregated sink configured in the
-     * hierarchy. The _Default sink can be re-enabled manually if needed.
+     * Optional. If set to true, the _Default sink in newly created projects and
+     * folders will created in a disabled state. This can be used to automatically
+     * disable log ingestion if there is already an aggregated sink configured in
+     * the hierarchy. The _Default sink can be re-enabled manually if needed.
      * </pre>
      *
      * <code>bool disable_default_sink = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

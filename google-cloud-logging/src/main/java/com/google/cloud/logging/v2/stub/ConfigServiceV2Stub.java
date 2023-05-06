@@ -18,34 +18,43 @@ package com.google.cloud.logging.v2.stub;
 
 import static com.google.cloud.logging.v2.ConfigClient.ListBucketsPagedResponse;
 import static com.google.cloud.logging.v2.ConfigClient.ListExclusionsPagedResponse;
+import static com.google.cloud.logging.v2.ConfigClient.ListLinksPagedResponse;
 import static com.google.cloud.logging.v2.ConfigClient.ListSinksPagedResponse;
 import static com.google.cloud.logging.v2.ConfigClient.ListViewsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.logging.v2.BucketMetadata;
 import com.google.logging.v2.CmekSettings;
 import com.google.logging.v2.CopyLogEntriesMetadata;
 import com.google.logging.v2.CopyLogEntriesRequest;
 import com.google.logging.v2.CopyLogEntriesResponse;
 import com.google.logging.v2.CreateBucketRequest;
 import com.google.logging.v2.CreateExclusionRequest;
+import com.google.logging.v2.CreateLinkRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.CreateViewRequest;
 import com.google.logging.v2.DeleteBucketRequest;
 import com.google.logging.v2.DeleteExclusionRequest;
+import com.google.logging.v2.DeleteLinkRequest;
 import com.google.logging.v2.DeleteSinkRequest;
 import com.google.logging.v2.DeleteViewRequest;
 import com.google.logging.v2.GetBucketRequest;
 import com.google.logging.v2.GetCmekSettingsRequest;
 import com.google.logging.v2.GetExclusionRequest;
+import com.google.logging.v2.GetLinkRequest;
 import com.google.logging.v2.GetSettingsRequest;
 import com.google.logging.v2.GetSinkRequest;
 import com.google.logging.v2.GetViewRequest;
+import com.google.logging.v2.Link;
+import com.google.logging.v2.LinkMetadata;
 import com.google.logging.v2.ListBucketsRequest;
 import com.google.logging.v2.ListBucketsResponse;
 import com.google.logging.v2.ListExclusionsRequest;
 import com.google.logging.v2.ListExclusionsResponse;
+import com.google.logging.v2.ListLinksRequest;
+import com.google.logging.v2.ListLinksResponse;
 import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
 import com.google.logging.v2.ListViewsRequest;
@@ -90,6 +99,26 @@ public abstract class ConfigServiceV2Stub implements BackgroundResource {
 
   public UnaryCallable<GetBucketRequest, LogBucket> getBucketCallable() {
     throw new UnsupportedOperationException("Not implemented: getBucketCallable()");
+  }
+
+  public OperationCallable<CreateBucketRequest, LogBucket, BucketMetadata>
+      createBucketAsyncOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createBucketAsyncOperationCallable()");
+  }
+
+  public UnaryCallable<CreateBucketRequest, Operation> createBucketAsyncCallable() {
+    throw new UnsupportedOperationException("Not implemented: createBucketAsyncCallable()");
+  }
+
+  public OperationCallable<UpdateBucketRequest, LogBucket, BucketMetadata>
+      updateBucketAsyncOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateBucketAsyncOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateBucketRequest, Operation> updateBucketAsyncCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateBucketAsyncCallable()");
   }
 
   public UnaryCallable<CreateBucketRequest, LogBucket> createBucketCallable() {
@@ -154,6 +183,34 @@ public abstract class ConfigServiceV2Stub implements BackgroundResource {
 
   public UnaryCallable<DeleteSinkRequest, Empty> deleteSinkCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteSinkCallable()");
+  }
+
+  public OperationCallable<CreateLinkRequest, Link, LinkMetadata> createLinkOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createLinkOperationCallable()");
+  }
+
+  public UnaryCallable<CreateLinkRequest, Operation> createLinkCallable() {
+    throw new UnsupportedOperationException("Not implemented: createLinkCallable()");
+  }
+
+  public OperationCallable<DeleteLinkRequest, Empty, LinkMetadata> deleteLinkOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteLinkOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteLinkRequest, Operation> deleteLinkCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteLinkCallable()");
+  }
+
+  public UnaryCallable<ListLinksRequest, ListLinksPagedResponse> listLinksPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLinksPagedCallable()");
+  }
+
+  public UnaryCallable<ListLinksRequest, ListLinksResponse> listLinksCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLinksCallable()");
+  }
+
+  public UnaryCallable<GetLinkRequest, Link> getLinkCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLinkCallable()");
   }
 
   public UnaryCallable<ListExclusionsRequest, ListExclusionsPagedResponse>

@@ -167,8 +167,8 @@ public interface LogSinkOrBuilder
    *
    *
    * <pre>
-   * Optional. If set to true, then this sink is disabled and it does not export any log
-   * entries.
+   * Optional. If set to true, then this sink is disabled and it does not export
+   * any log entries.
    * </pre>
    *
    * <code>bool disabled = 19 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -181,7 +181,8 @@ public interface LogSinkOrBuilder
    *
    *
    * <pre>
-   * Optional. Log entries that match any of these exclusion filters will not be exported.
+   * Optional. Log entries that match any of these exclusion filters will not be
+   * exported.
    * If a log entry is matched by both `filter` and one of `exclusion_filters`
    * it will not be exported.
    * </pre>
@@ -195,7 +196,8 @@ public interface LogSinkOrBuilder
    *
    *
    * <pre>
-   * Optional. Log entries that match any of these exclusion filters will not be exported.
+   * Optional. Log entries that match any of these exclusion filters will not be
+   * exported.
    * If a log entry is matched by both `filter` and one of `exclusion_filters`
    * it will not be exported.
    * </pre>
@@ -209,7 +211,8 @@ public interface LogSinkOrBuilder
    *
    *
    * <pre>
-   * Optional. Log entries that match any of these exclusion filters will not be exported.
+   * Optional. Log entries that match any of these exclusion filters will not be
+   * exported.
    * If a log entry is matched by both `filter` and one of `exclusion_filters`
    * it will not be exported.
    * </pre>
@@ -223,7 +226,8 @@ public interface LogSinkOrBuilder
    *
    *
    * <pre>
-   * Optional. Log entries that match any of these exclusion filters will not be exported.
+   * Optional. Log entries that match any of these exclusion filters will not be
+   * exported.
    * If a log entry is matched by both `filter` and one of `exclusion_filters`
    * it will not be exported.
    * </pre>
@@ -238,7 +242,8 @@ public interface LogSinkOrBuilder
    *
    *
    * <pre>
-   * Optional. Log entries that match any of these exclusion filters will not be exported.
+   * Optional. Log entries that match any of these exclusion filters will not be
+   * exported.
    * If a log entry is matched by both `filter` and one of `exclusion_filters`
    * it will not be exported.
    * </pre>
@@ -260,7 +265,7 @@ public interface LogSinkOrBuilder
    * </code>
    *
    * @deprecated google.logging.v2.LogSink.output_version_format is deprecated. See
-   *     google/logging/v2/logging_config.proto;l=880
+   *     google/logging/v2/logging_config.proto;l=1000
    * @return The enum numeric value on the wire for outputVersionFormat.
    */
   @java.lang.Deprecated
@@ -276,7 +281,7 @@ public interface LogSinkOrBuilder
    * </code>
    *
    * @deprecated google.logging.v2.LogSink.output_version_format is deprecated. See
-   *     google/logging/v2/logging_config.proto;l=880
+   *     google/logging/v2/logging_config.proto;l=1000
    * @return The outputVersionFormat.
    */
   @java.lang.Deprecated
@@ -286,9 +291,10 @@ public interface LogSinkOrBuilder
    *
    *
    * <pre>
-   * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under which Cloud
-   * Logging writes the exported log entries to the sink's destination. This
-   * field is set by
+   * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
+   * which Cloud Logging writes the exported log entries to the sink's
+   * destination. This field is either set by specifying
+   * `custom_writer_identity` or set automatically by
    * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
    * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the
    * value of `unique_writer_identity` in those methods.
@@ -299,7 +305,7 @@ public interface LogSinkOrBuilder
    * Consult the destination service's documentation to determine the
    * appropriate IAM roles to assign to the identity.
    * Sinks that have a destination that is a log bucket in the same project as
-   * the sink do not have a writer_identity and no additional permissions are
+   * the sink cannot have a writer_identity and no additional permissions are
    * required.
    * </pre>
    *
@@ -312,9 +318,10 @@ public interface LogSinkOrBuilder
    *
    *
    * <pre>
-   * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under which Cloud
-   * Logging writes the exported log entries to the sink's destination. This
-   * field is set by
+   * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
+   * which Cloud Logging writes the exported log entries to the sink's
+   * destination. This field is either set by specifying
+   * `custom_writer_identity` or set automatically by
    * [sinks.create][google.logging.v2.ConfigServiceV2.CreateSink] and
    * [sinks.update][google.logging.v2.ConfigServiceV2.UpdateSink] based on the
    * value of `unique_writer_identity` in those methods.
@@ -325,7 +332,7 @@ public interface LogSinkOrBuilder
    * Consult the destination service's documentation to determine the
    * appropriate IAM roles to assign to the identity.
    * Sinks that have a destination that is a log bucket in the same project as
-   * the sink do not have a writer_identity and no additional permissions are
+   * the sink cannot have a writer_identity and no additional permissions are
    * required.
    * </pre>
    *
@@ -339,13 +346,13 @@ public interface LogSinkOrBuilder
    *
    *
    * <pre>
-   * Optional. This field applies only to sinks owned by organizations and folders. If the
-   * field is false, the default, only the logs owned by the sink's parent
-   * resource are available for export. If the field is true, then log entries
-   * from all the projects, folders, and billing accounts contained in the
-   * sink's parent resource are also available for export. Whether a particular
-   * log entry from the children is exported depends on the sink's filter
-   * expression.
+   * Optional. This field applies only to sinks owned by organizations and
+   * folders. If the field is false, the default, only the logs owned by the
+   * sink's parent resource are available for export. If the field is true, then
+   * log entries from all the projects, folders, and billing accounts contained
+   * in the sink's parent resource are also available for export. Whether a
+   * particular log entry from the children is exported depends on the sink's
+   * filter expression.
    * For example, if this field is true, then the filter
    * `resource.type=gce_instance` would export all Compute Engine VM instance
    * log entries from all projects in the sink's parent.

@@ -133,7 +133,9 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The id to use for this view.
+   * Required. A client-assigned identifier such as `"my-view"`. Identifiers are
+   * limited to 100 characters and can include only letters, digits,
+   * underscores, hyphens, and periods.
    * </pre>
    *
    * <code>string view_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -156,7 +158,9 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Required. The id to use for this view.
+   * Required. A client-assigned identifier such as `"my-view"`. Identifiers are
+   * limited to 100 characters and can include only letters, digits,
+   * underscores, hyphens, and periods.
    * </pre>
    *
    * <code>string view_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -743,7 +747,9 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The id to use for this view.
+     * Required. A client-assigned identifier such as `"my-view"`. Identifiers are
+     * limited to 100 characters and can include only letters, digits,
+     * underscores, hyphens, and periods.
      * </pre>
      *
      * <code>string view_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -765,7 +771,9 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The id to use for this view.
+     * Required. A client-assigned identifier such as `"my-view"`. Identifiers are
+     * limited to 100 characters and can include only letters, digits,
+     * underscores, hyphens, and periods.
      * </pre>
      *
      * <code>string view_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -787,7 +795,9 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The id to use for this view.
+     * Required. A client-assigned identifier such as `"my-view"`. Identifiers are
+     * limited to 100 characters and can include only letters, digits,
+     * underscores, hyphens, and periods.
      * </pre>
      *
      * <code>string view_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -808,7 +818,9 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The id to use for this view.
+     * Required. A client-assigned identifier such as `"my-view"`. Identifiers are
+     * limited to 100 characters and can include only letters, digits,
+     * underscores, hyphens, and periods.
      * </pre>
      *
      * <code>string view_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -825,7 +837,9 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Required. The id to use for this view.
+     * Required. A client-assigned identifier such as `"my-view"`. Identifiers are
+     * limited to 100 characters and can include only letters, digits,
+     * underscores, hyphens, and periods.
      * </pre>
      *
      * <code>string view_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

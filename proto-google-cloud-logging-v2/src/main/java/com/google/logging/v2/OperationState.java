@@ -243,7 +243,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.logging.v2.LoggingConfigProto.getDescriptor().getEnumTypes().get(1);
+    return com.google.logging.v2.LoggingConfigProto.getDescriptor().getEnumTypes().get(0);
   }
 
   private static final OperationState[] VALUES = values();

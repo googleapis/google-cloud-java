@@ -18,6 +18,7 @@ package com.google.cloud.logging.v2.stub;
 
 import static com.google.cloud.logging.v2.ConfigClient.ListBucketsPagedResponse;
 import static com.google.cloud.logging.v2.ConfigClient.ListExclusionsPagedResponse;
+import static com.google.cloud.logging.v2.ConfigClient.ListLinksPagedResponse;
 import static com.google.cloud.logging.v2.ConfigClient.ListSinksPagedResponse;
 import static com.google.cloud.logging.v2.ConfigClient.ListViewsPagedResponse;
 
@@ -29,28 +30,36 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
+import com.google.logging.v2.BucketMetadata;
 import com.google.logging.v2.CmekSettings;
 import com.google.logging.v2.CopyLogEntriesMetadata;
 import com.google.logging.v2.CopyLogEntriesRequest;
 import com.google.logging.v2.CopyLogEntriesResponse;
 import com.google.logging.v2.CreateBucketRequest;
 import com.google.logging.v2.CreateExclusionRequest;
+import com.google.logging.v2.CreateLinkRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.CreateViewRequest;
 import com.google.logging.v2.DeleteBucketRequest;
 import com.google.logging.v2.DeleteExclusionRequest;
+import com.google.logging.v2.DeleteLinkRequest;
 import com.google.logging.v2.DeleteSinkRequest;
 import com.google.logging.v2.DeleteViewRequest;
 import com.google.logging.v2.GetBucketRequest;
 import com.google.logging.v2.GetCmekSettingsRequest;
 import com.google.logging.v2.GetExclusionRequest;
+import com.google.logging.v2.GetLinkRequest;
 import com.google.logging.v2.GetSettingsRequest;
 import com.google.logging.v2.GetSinkRequest;
 import com.google.logging.v2.GetViewRequest;
+import com.google.logging.v2.Link;
+import com.google.logging.v2.LinkMetadata;
 import com.google.logging.v2.ListBucketsRequest;
 import com.google.logging.v2.ListBucketsResponse;
 import com.google.logging.v2.ListExclusionsRequest;
 import com.google.logging.v2.ListExclusionsResponse;
+import com.google.logging.v2.ListLinksRequest;
+import com.google.logging.v2.ListLinksResponse;
 import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
 import com.google.logging.v2.ListViewsRequest;
@@ -101,6 +110,24 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetBucketRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(LogBucket.getDefaultInstance()))
           .build();
+
+  private static final MethodDescriptor<CreateBucketRequest, Operation>
+      createBucketAsyncMethodDescriptor =
+          MethodDescriptor.<CreateBucketRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.logging.v2.ConfigServiceV2/CreateBucketAsync")
+              .setRequestMarshaller(ProtoUtils.marshaller(CreateBucketRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateBucketRequest, Operation>
+      updateBucketAsyncMethodDescriptor =
+          MethodDescriptor.<UpdateBucketRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.logging.v2.ConfigServiceV2/UpdateBucketAsync")
+              .setRequestMarshaller(ProtoUtils.marshaller(UpdateBucketRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
 
   private static final MethodDescriptor<CreateBucketRequest, LogBucket>
       createBucketMethodDescriptor =
@@ -220,6 +247,39 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<CreateLinkRequest, Operation> createLinkMethodDescriptor =
+      MethodDescriptor.<CreateLinkRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.logging.v2.ConfigServiceV2/CreateLink")
+          .setRequestMarshaller(ProtoUtils.marshaller(CreateLinkRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<DeleteLinkRequest, Operation> deleteLinkMethodDescriptor =
+      MethodDescriptor.<DeleteLinkRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.logging.v2.ConfigServiceV2/DeleteLink")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteLinkRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<ListLinksRequest, ListLinksResponse>
+      listLinksMethodDescriptor =
+          MethodDescriptor.<ListLinksRequest, ListLinksResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.logging.v2.ConfigServiceV2/ListLinks")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListLinksRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ListLinksResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetLinkRequest, Link> getLinkMethodDescriptor =
+      MethodDescriptor.<GetLinkRequest, Link>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.logging.v2.ConfigServiceV2/GetLink")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetLinkRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Link.getDefaultInstance()))
+          .build();
+
   private static final MethodDescriptor<ListExclusionsRequest, ListExclusionsResponse>
       listExclusionsMethodDescriptor =
           MethodDescriptor.<ListExclusionsRequest, ListExclusionsResponse>newBuilder()
@@ -322,6 +382,12 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
   private final UnaryCallable<ListBucketsRequest, ListBucketsPagedResponse>
       listBucketsPagedCallable;
   private final UnaryCallable<GetBucketRequest, LogBucket> getBucketCallable;
+  private final UnaryCallable<CreateBucketRequest, Operation> createBucketAsyncCallable;
+  private final OperationCallable<CreateBucketRequest, LogBucket, BucketMetadata>
+      createBucketAsyncOperationCallable;
+  private final UnaryCallable<UpdateBucketRequest, Operation> updateBucketAsyncCallable;
+  private final OperationCallable<UpdateBucketRequest, LogBucket, BucketMetadata>
+      updateBucketAsyncOperationCallable;
   private final UnaryCallable<CreateBucketRequest, LogBucket> createBucketCallable;
   private final UnaryCallable<UpdateBucketRequest, LogBucket> updateBucketCallable;
   private final UnaryCallable<DeleteBucketRequest, Empty> deleteBucketCallable;
@@ -338,6 +404,15 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
   private final UnaryCallable<CreateSinkRequest, LogSink> createSinkCallable;
   private final UnaryCallable<UpdateSinkRequest, LogSink> updateSinkCallable;
   private final UnaryCallable<DeleteSinkRequest, Empty> deleteSinkCallable;
+  private final UnaryCallable<CreateLinkRequest, Operation> createLinkCallable;
+  private final OperationCallable<CreateLinkRequest, Link, LinkMetadata>
+      createLinkOperationCallable;
+  private final UnaryCallable<DeleteLinkRequest, Operation> deleteLinkCallable;
+  private final OperationCallable<DeleteLinkRequest, Empty, LinkMetadata>
+      deleteLinkOperationCallable;
+  private final UnaryCallable<ListLinksRequest, ListLinksResponse> listLinksCallable;
+  private final UnaryCallable<ListLinksRequest, ListLinksPagedResponse> listLinksPagedCallable;
+  private final UnaryCallable<GetLinkRequest, Link> getLinkCallable;
   private final UnaryCallable<ListExclusionsRequest, ListExclusionsResponse> listExclusionsCallable;
   private final UnaryCallable<ListExclusionsRequest, ListExclusionsPagedResponse>
       listExclusionsPagedCallable;
@@ -411,6 +486,26 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
     GrpcCallSettings<GetBucketRequest, LogBucket> getBucketTransportSettings =
         GrpcCallSettings.<GetBucketRequest, LogBucket>newBuilder()
             .setMethodDescriptor(getBucketMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<CreateBucketRequest, Operation> createBucketAsyncTransportSettings =
+        GrpcCallSettings.<CreateBucketRequest, Operation>newBuilder()
+            .setMethodDescriptor(createBucketAsyncMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateBucketRequest, Operation> updateBucketAsyncTransportSettings =
+        GrpcCallSettings.<UpdateBucketRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateBucketAsyncMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
@@ -558,6 +653,46 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<CreateLinkRequest, Operation> createLinkTransportSettings =
+        GrpcCallSettings.<CreateLinkRequest, Operation>newBuilder()
+            .setMethodDescriptor(createLinkMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteLinkRequest, Operation> deleteLinkTransportSettings =
+        GrpcCallSettings.<DeleteLinkRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteLinkMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<ListLinksRequest, ListLinksResponse> listLinksTransportSettings =
+        GrpcCallSettings.<ListLinksRequest, ListLinksResponse>newBuilder()
+            .setMethodDescriptor(listLinksMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
+                })
+            .build();
+    GrpcCallSettings<GetLinkRequest, Link> getLinkTransportSettings =
+        GrpcCallSettings.<GetLinkRequest, Link>newBuilder()
+            .setMethodDescriptor(getLinkMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<ListExclusionsRequest, ListExclusionsResponse>
         listExclusionsTransportSettings =
             GrpcCallSettings.<ListExclusionsRequest, ListExclusionsResponse>newBuilder()
@@ -663,6 +798,28 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
     this.getBucketCallable =
         callableFactory.createUnaryCallable(
             getBucketTransportSettings, settings.getBucketSettings(), clientContext);
+    this.createBucketAsyncCallable =
+        callableFactory.createUnaryCallable(
+            createBucketAsyncTransportSettings,
+            settings.createBucketAsyncSettings(),
+            clientContext);
+    this.createBucketAsyncOperationCallable =
+        callableFactory.createOperationCallable(
+            createBucketAsyncTransportSettings,
+            settings.createBucketAsyncOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateBucketAsyncCallable =
+        callableFactory.createUnaryCallable(
+            updateBucketAsyncTransportSettings,
+            settings.updateBucketAsyncSettings(),
+            clientContext);
+    this.updateBucketAsyncOperationCallable =
+        callableFactory.createOperationCallable(
+            updateBucketAsyncTransportSettings,
+            settings.updateBucketAsyncOperationSettings(),
+            clientContext,
+            operationsStub);
     this.createBucketCallable =
         callableFactory.createUnaryCallable(
             createBucketTransportSettings, settings.createBucketSettings(), clientContext);
@@ -711,6 +868,33 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
     this.deleteSinkCallable =
         callableFactory.createUnaryCallable(
             deleteSinkTransportSettings, settings.deleteSinkSettings(), clientContext);
+    this.createLinkCallable =
+        callableFactory.createUnaryCallable(
+            createLinkTransportSettings, settings.createLinkSettings(), clientContext);
+    this.createLinkOperationCallable =
+        callableFactory.createOperationCallable(
+            createLinkTransportSettings,
+            settings.createLinkOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteLinkCallable =
+        callableFactory.createUnaryCallable(
+            deleteLinkTransportSettings, settings.deleteLinkSettings(), clientContext);
+    this.deleteLinkOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteLinkTransportSettings,
+            settings.deleteLinkOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listLinksCallable =
+        callableFactory.createUnaryCallable(
+            listLinksTransportSettings, settings.listLinksSettings(), clientContext);
+    this.listLinksPagedCallable =
+        callableFactory.createPagedCallable(
+            listLinksTransportSettings, settings.listLinksSettings(), clientContext);
+    this.getLinkCallable =
+        callableFactory.createUnaryCallable(
+            getLinkTransportSettings, settings.getLinkSettings(), clientContext);
     this.listExclusionsCallable =
         callableFactory.createUnaryCallable(
             listExclusionsTransportSettings, settings.listExclusionsSettings(), clientContext);
@@ -774,6 +958,28 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
   @Override
   public UnaryCallable<GetBucketRequest, LogBucket> getBucketCallable() {
     return getBucketCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateBucketRequest, Operation> createBucketAsyncCallable() {
+    return createBucketAsyncCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateBucketRequest, LogBucket, BucketMetadata>
+      createBucketAsyncOperationCallable() {
+    return createBucketAsyncOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateBucketRequest, Operation> updateBucketAsyncCallable() {
+    return updateBucketAsyncCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateBucketRequest, LogBucket, BucketMetadata>
+      updateBucketAsyncOperationCallable() {
+    return updateBucketAsyncOperationCallable;
   }
 
   @Override
@@ -854,6 +1060,41 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
   @Override
   public UnaryCallable<DeleteSinkRequest, Empty> deleteSinkCallable() {
     return deleteSinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateLinkRequest, Operation> createLinkCallable() {
+    return createLinkCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateLinkRequest, Link, LinkMetadata> createLinkOperationCallable() {
+    return createLinkOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteLinkRequest, Operation> deleteLinkCallable() {
+    return deleteLinkCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteLinkRequest, Empty, LinkMetadata> deleteLinkOperationCallable() {
+    return deleteLinkOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLinksRequest, ListLinksResponse> listLinksCallable() {
+    return listLinksCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLinksRequest, ListLinksPagedResponse> listLinksPagedCallable() {
+    return listLinksPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLinkRequest, Link> getLinkCallable() {
+    return getLinkCallable;
   }
 
   @Override

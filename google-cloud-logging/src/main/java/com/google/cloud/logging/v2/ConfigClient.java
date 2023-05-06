@@ -31,16 +31,19 @@ import com.google.cloud.logging.v2.stub.ConfigServiceV2StubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.logging.v2.BillingAccountLocationName;
 import com.google.logging.v2.BillingAccountName;
+import com.google.logging.v2.BucketMetadata;
 import com.google.logging.v2.CmekSettings;
 import com.google.logging.v2.CopyLogEntriesMetadata;
 import com.google.logging.v2.CopyLogEntriesRequest;
 import com.google.logging.v2.CopyLogEntriesResponse;
 import com.google.logging.v2.CreateBucketRequest;
 import com.google.logging.v2.CreateExclusionRequest;
+import com.google.logging.v2.CreateLinkRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.CreateViewRequest;
 import com.google.logging.v2.DeleteBucketRequest;
 import com.google.logging.v2.DeleteExclusionRequest;
+import com.google.logging.v2.DeleteLinkRequest;
 import com.google.logging.v2.DeleteSinkRequest;
 import com.google.logging.v2.DeleteViewRequest;
 import com.google.logging.v2.FolderLocationName;
@@ -48,19 +51,26 @@ import com.google.logging.v2.FolderName;
 import com.google.logging.v2.GetBucketRequest;
 import com.google.logging.v2.GetCmekSettingsRequest;
 import com.google.logging.v2.GetExclusionRequest;
+import com.google.logging.v2.GetLinkRequest;
 import com.google.logging.v2.GetSettingsRequest;
 import com.google.logging.v2.GetSinkRequest;
 import com.google.logging.v2.GetViewRequest;
+import com.google.logging.v2.Link;
+import com.google.logging.v2.LinkMetadata;
+import com.google.logging.v2.LinkName;
 import com.google.logging.v2.ListBucketsRequest;
 import com.google.logging.v2.ListBucketsResponse;
 import com.google.logging.v2.ListExclusionsRequest;
 import com.google.logging.v2.ListExclusionsResponse;
+import com.google.logging.v2.ListLinksRequest;
+import com.google.logging.v2.ListLinksResponse;
 import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
 import com.google.logging.v2.ListViewsRequest;
 import com.google.logging.v2.ListViewsResponse;
 import com.google.logging.v2.LocationName;
 import com.google.logging.v2.LogBucket;
+import com.google.logging.v2.LogBucketName;
 import com.google.logging.v2.LogExclusion;
 import com.google.logging.v2.LogExclusionName;
 import com.google.logging.v2.LogSink;
@@ -571,6 +581,215 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Creates a log bucket asynchronously that can be used to store log entries.
+   *
+   * <p>After a bucket has been created, the bucket's location cannot be changed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   CreateBucketRequest request =
+   *       CreateBucketRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setBucketId("bucketId-1603305307")
+   *           .setBucket(LogBucket.newBuilder().build())
+   *           .build();
+   *   LogBucket response = configClient.createBucketAsyncAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<LogBucket, BucketMetadata> createBucketAsyncAsync(
+      CreateBucketRequest request) {
+    return createBucketAsyncOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a log bucket asynchronously that can be used to store log entries.
+   *
+   * <p>After a bucket has been created, the bucket's location cannot be changed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   CreateBucketRequest request =
+   *       CreateBucketRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setBucketId("bucketId-1603305307")
+   *           .setBucket(LogBucket.newBuilder().build())
+   *           .build();
+   *   OperationFuture<LogBucket, BucketMetadata> future =
+   *       configClient.createBucketAsyncOperationCallable().futureCall(request);
+   *   // Do something.
+   *   LogBucket response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateBucketRequest, LogBucket, BucketMetadata>
+      createBucketAsyncOperationCallable() {
+    return stub.createBucketAsyncOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a log bucket asynchronously that can be used to store log entries.
+   *
+   * <p>After a bucket has been created, the bucket's location cannot be changed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   CreateBucketRequest request =
+   *       CreateBucketRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setBucketId("bucketId-1603305307")
+   *           .setBucket(LogBucket.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = configClient.createBucketAsyncCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateBucketRequest, Operation> createBucketAsyncCallable() {
+    return stub.createBucketAsyncCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a log bucket asynchronously.
+   *
+   * <p>If the bucket has a `lifecycle_state` of `DELETE_REQUESTED`, then `FAILED_PRECONDITION` will
+   * be returned.
+   *
+   * <p>After a bucket has been created, the bucket's location cannot be changed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   UpdateBucketRequest request =
+   *       UpdateBucketRequest.newBuilder()
+   *           .setName(
+   *               LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]")
+   *                   .toString())
+   *           .setBucket(LogBucket.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   LogBucket response = configClient.updateBucketAsyncAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<LogBucket, BucketMetadata> updateBucketAsyncAsync(
+      UpdateBucketRequest request) {
+    return updateBucketAsyncOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a log bucket asynchronously.
+   *
+   * <p>If the bucket has a `lifecycle_state` of `DELETE_REQUESTED`, then `FAILED_PRECONDITION` will
+   * be returned.
+   *
+   * <p>After a bucket has been created, the bucket's location cannot be changed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   UpdateBucketRequest request =
+   *       UpdateBucketRequest.newBuilder()
+   *           .setName(
+   *               LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]")
+   *                   .toString())
+   *           .setBucket(LogBucket.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<LogBucket, BucketMetadata> future =
+   *       configClient.updateBucketAsyncOperationCallable().futureCall(request);
+   *   // Do something.
+   *   LogBucket response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateBucketRequest, LogBucket, BucketMetadata>
+      updateBucketAsyncOperationCallable() {
+    return stub.updateBucketAsyncOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a log bucket asynchronously.
+   *
+   * <p>If the bucket has a `lifecycle_state` of `DELETE_REQUESTED`, then `FAILED_PRECONDITION` will
+   * be returned.
+   *
+   * <p>After a bucket has been created, the bucket's location cannot be changed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   UpdateBucketRequest request =
+   *       UpdateBucketRequest.newBuilder()
+   *           .setName(
+   *               LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]")
+   *                   .toString())
+   *           .setBucket(LogBucket.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = configClient.updateBucketAsyncCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateBucketRequest, Operation> updateBucketAsyncCallable() {
+    return stub.updateBucketAsyncCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates a log bucket that can be used to store log entries. After a bucket has been created,
    * the bucket's location cannot be changed.
    *
@@ -632,11 +851,7 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a log bucket. This method replaces the following fields in the existing bucket with
-   * values from the new bucket: `retention_period`
-   *
-   * <p>If the retention period is decreased and the bucket is locked, `FAILED_PRECONDITION` will be
-   * returned.
+   * Updates a log bucket.
    *
    * <p>If the bucket has a `lifecycle_state` of `DELETE_REQUESTED`, then `FAILED_PRECONDITION` will
    * be returned.
@@ -673,11 +888,7 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a log bucket. This method replaces the following fields in the existing bucket with
-   * values from the new bucket: `retention_period`
-   *
-   * <p>If the retention period is decreased and the bucket is locked, `FAILED_PRECONDITION` will be
-   * returned.
+   * Updates a log bucket.
    *
    * <p>If the bucket has a `lifecycle_state` of `DELETE_REQUESTED`, then `FAILED_PRECONDITION` will
    * be returned.
@@ -2250,6 +2461,645 @@ public class ConfigClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteSinkRequest, Empty> deleteSinkCallable() {
     return stub.deleteSinkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Asynchronously creates a linked dataset in BigQuery which makes it possible to use BigQuery to
+   * read the logs stored in the log bucket. A log bucket may currently only contain one link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   LogBucketName parent =
+   *       LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]");
+   *   Link link = Link.newBuilder().build();
+   *   String linkId = "linkId-1102667083";
+   *   Link response = configClient.createLinkAsync(parent, link, linkId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The full resource name of the bucket to create a link for.
+   *     <p>"projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
+   *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
+   *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
+   * @param link Required. The new link.
+   * @param linkId Required. The ID to use for the link. The link_id can have up to 100 characters.
+   *     A valid link_id must only have alphanumeric characters and underscores within it.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Link, LinkMetadata> createLinkAsync(
+      LogBucketName parent, Link link, String linkId) {
+    CreateLinkRequest request =
+        CreateLinkRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setLink(link)
+            .setLinkId(linkId)
+            .build();
+    return createLinkAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Asynchronously creates a linked dataset in BigQuery which makes it possible to use BigQuery to
+   * read the logs stored in the log bucket. A log bucket may currently only contain one link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   String parent =
+   *       LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]")
+   *           .toString();
+   *   Link link = Link.newBuilder().build();
+   *   String linkId = "linkId-1102667083";
+   *   Link response = configClient.createLinkAsync(parent, link, linkId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The full resource name of the bucket to create a link for.
+   *     <p>"projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
+   *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
+   *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"
+   * @param link Required. The new link.
+   * @param linkId Required. The ID to use for the link. The link_id can have up to 100 characters.
+   *     A valid link_id must only have alphanumeric characters and underscores within it.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Link, LinkMetadata> createLinkAsync(
+      String parent, Link link, String linkId) {
+    CreateLinkRequest request =
+        CreateLinkRequest.newBuilder().setParent(parent).setLink(link).setLinkId(linkId).build();
+    return createLinkAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Asynchronously creates a linked dataset in BigQuery which makes it possible to use BigQuery to
+   * read the logs stored in the log bucket. A log bucket may currently only contain one link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   CreateLinkRequest request =
+   *       CreateLinkRequest.newBuilder()
+   *           .setParent(
+   *               LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]")
+   *                   .toString())
+   *           .setLink(Link.newBuilder().build())
+   *           .setLinkId("linkId-1102667083")
+   *           .build();
+   *   Link response = configClient.createLinkAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Link, LinkMetadata> createLinkAsync(CreateLinkRequest request) {
+    return createLinkOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Asynchronously creates a linked dataset in BigQuery which makes it possible to use BigQuery to
+   * read the logs stored in the log bucket. A log bucket may currently only contain one link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   CreateLinkRequest request =
+   *       CreateLinkRequest.newBuilder()
+   *           .setParent(
+   *               LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]")
+   *                   .toString())
+   *           .setLink(Link.newBuilder().build())
+   *           .setLinkId("linkId-1102667083")
+   *           .build();
+   *   OperationFuture<Link, LinkMetadata> future =
+   *       configClient.createLinkOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Link response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateLinkRequest, Link, LinkMetadata>
+      createLinkOperationCallable() {
+    return stub.createLinkOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Asynchronously creates a linked dataset in BigQuery which makes it possible to use BigQuery to
+   * read the logs stored in the log bucket. A log bucket may currently only contain one link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   CreateLinkRequest request =
+   *       CreateLinkRequest.newBuilder()
+   *           .setParent(
+   *               LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]")
+   *                   .toString())
+   *           .setLink(Link.newBuilder().build())
+   *           .setLinkId("linkId-1102667083")
+   *           .build();
+   *   ApiFuture<Operation> future = configClient.createLinkCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateLinkRequest, Operation> createLinkCallable() {
+    return stub.createLinkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a link. This will also delete the corresponding BigQuery linked dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   LinkName name =
+   *       LinkName.ofProjectLocationBucketLinkName("[PROJECT]", "[LOCATION]", "[BUCKET]", "[LINK]");
+   *   configClient.deleteLinkAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The full resource name of the link to delete.
+   *     <p>"projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
+   *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
+   *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, LinkMetadata> deleteLinkAsync(LinkName name) {
+    DeleteLinkRequest request =
+        DeleteLinkRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteLinkAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a link. This will also delete the corresponding BigQuery linked dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   String name =
+   *       LinkName.ofProjectLocationBucketLinkName("[PROJECT]", "[LOCATION]", "[BUCKET]", "[LINK]")
+   *           .toString();
+   *   configClient.deleteLinkAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The full resource name of the link to delete.
+   *     <p>"projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
+   *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
+   *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, LinkMetadata> deleteLinkAsync(String name) {
+    DeleteLinkRequest request = DeleteLinkRequest.newBuilder().setName(name).build();
+    return deleteLinkAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a link. This will also delete the corresponding BigQuery linked dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   DeleteLinkRequest request =
+   *       DeleteLinkRequest.newBuilder()
+   *           .setName(
+   *               LinkName.ofProjectLocationBucketLinkName(
+   *                       "[PROJECT]", "[LOCATION]", "[BUCKET]", "[LINK]")
+   *                   .toString())
+   *           .build();
+   *   configClient.deleteLinkAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, LinkMetadata> deleteLinkAsync(DeleteLinkRequest request) {
+    return deleteLinkOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a link. This will also delete the corresponding BigQuery linked dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   DeleteLinkRequest request =
+   *       DeleteLinkRequest.newBuilder()
+   *           .setName(
+   *               LinkName.ofProjectLocationBucketLinkName(
+   *                       "[PROJECT]", "[LOCATION]", "[BUCKET]", "[LINK]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<Empty, LinkMetadata> future =
+   *       configClient.deleteLinkOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteLinkRequest, Empty, LinkMetadata>
+      deleteLinkOperationCallable() {
+    return stub.deleteLinkOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a link. This will also delete the corresponding BigQuery linked dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   DeleteLinkRequest request =
+   *       DeleteLinkRequest.newBuilder()
+   *           .setName(
+   *               LinkName.ofProjectLocationBucketLinkName(
+   *                       "[PROJECT]", "[LOCATION]", "[BUCKET]", "[LINK]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future = configClient.deleteLinkCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteLinkRequest, Operation> deleteLinkCallable() {
+    return stub.deleteLinkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists links.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   LogBucketName parent =
+   *       LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]");
+   *   for (Link element : configClient.listLinks(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource whose links are to be listed:
+   *     <p>"projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/"
+   *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/"
+   *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLinksPagedResponse listLinks(LogBucketName parent) {
+    ListLinksRequest request =
+        ListLinksRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listLinks(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists links.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   String parent =
+   *       LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]")
+   *           .toString();
+   *   for (Link element : configClient.listLinks(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource whose links are to be listed:
+   *     <p>"projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/"
+   *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/"
+   *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLinksPagedResponse listLinks(String parent) {
+    ListLinksRequest request = ListLinksRequest.newBuilder().setParent(parent).build();
+    return listLinks(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists links.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ListLinksRequest request =
+   *       ListLinksRequest.newBuilder()
+   *           .setParent(
+   *               LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]")
+   *                   .toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
+   *   for (Link element : configClient.listLinks(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLinksPagedResponse listLinks(ListLinksRequest request) {
+    return listLinksPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists links.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ListLinksRequest request =
+   *       ListLinksRequest.newBuilder()
+   *           .setParent(
+   *               LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]")
+   *                   .toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
+   *   ApiFuture<Link> future = configClient.listLinksPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Link element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLinksRequest, ListLinksPagedResponse> listLinksPagedCallable() {
+    return stub.listLinksPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists links.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ListLinksRequest request =
+   *       ListLinksRequest.newBuilder()
+   *           .setParent(
+   *               LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]")
+   *                   .toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
+   *   while (true) {
+   *     ListLinksResponse response = configClient.listLinksCallable().call(request);
+   *     for (Link element : response.getLinksList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLinksRequest, ListLinksResponse> listLinksCallable() {
+    return stub.listLinksCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   LinkName name =
+   *       LinkName.ofProjectLocationBucketLinkName("[PROJECT]", "[LOCATION]", "[BUCKET]", "[LINK]");
+   *   Link response = configClient.getLink(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the link:
+   *     <p>"projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
+   *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
+   *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Link getLink(LinkName name) {
+    GetLinkRequest request =
+        GetLinkRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getLink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   String name =
+   *       LinkName.ofProjectLocationBucketLinkName("[PROJECT]", "[LOCATION]", "[BUCKET]", "[LINK]")
+   *           .toString();
+   *   Link response = configClient.getLink(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the link:
+   *     <p>"projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
+   *     "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
+   *     "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]"
+   *     "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Link getLink(String name) {
+    GetLinkRequest request = GetLinkRequest.newBuilder().setName(name).build();
+    return getLink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   GetLinkRequest request =
+   *       GetLinkRequest.newBuilder()
+   *           .setName(
+   *               LinkName.ofProjectLocationBucketLinkName(
+   *                       "[PROJECT]", "[LOCATION]", "[BUCKET]", "[LINK]")
+   *                   .toString())
+   *           .build();
+   *   Link response = configClient.getLink(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Link getLink(GetLinkRequest request) {
+    return getLinkCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   GetLinkRequest request =
+   *       GetLinkRequest.newBuilder()
+   *           .setName(
+   *               LinkName.ofProjectLocationBucketLinkName(
+   *                       "[PROJECT]", "[LOCATION]", "[BUCKET]", "[LINK]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Link> future = configClient.getLinkCallable().futureCall(request);
+   *   // Do something.
+   *   Link response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetLinkRequest, Link> getLinkCallable() {
+    return stub.getLinkCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3943,6 +4793,71 @@ public class ConfigClient implements BackgroundResource {
     protected ListSinksFixedSizeCollection createCollection(
         List<ListSinksPage> pages, int collectionSize) {
       return new ListSinksFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListLinksPagedResponse
+      extends AbstractPagedListResponse<
+          ListLinksRequest, ListLinksResponse, Link, ListLinksPage, ListLinksFixedSizeCollection> {
+
+    public static ApiFuture<ListLinksPagedResponse> createAsync(
+        PageContext<ListLinksRequest, ListLinksResponse, Link> context,
+        ApiFuture<ListLinksResponse> futureResponse) {
+      ApiFuture<ListLinksPage> futurePage =
+          ListLinksPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage, input -> new ListLinksPagedResponse(input), MoreExecutors.directExecutor());
+    }
+
+    private ListLinksPagedResponse(ListLinksPage page) {
+      super(page, ListLinksFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListLinksPage
+      extends AbstractPage<ListLinksRequest, ListLinksResponse, Link, ListLinksPage> {
+
+    private ListLinksPage(
+        PageContext<ListLinksRequest, ListLinksResponse, Link> context,
+        ListLinksResponse response) {
+      super(context, response);
+    }
+
+    private static ListLinksPage createEmptyPage() {
+      return new ListLinksPage(null, null);
+    }
+
+    @Override
+    protected ListLinksPage createPage(
+        PageContext<ListLinksRequest, ListLinksResponse, Link> context,
+        ListLinksResponse response) {
+      return new ListLinksPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListLinksPage> createPageAsync(
+        PageContext<ListLinksRequest, ListLinksResponse, Link> context,
+        ApiFuture<ListLinksResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListLinksFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListLinksRequest, ListLinksResponse, Link, ListLinksPage, ListLinksFixedSizeCollection> {
+
+    private ListLinksFixedSizeCollection(List<ListLinksPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListLinksFixedSizeCollection createEmptyCollection() {
+      return new ListLinksFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListLinksFixedSizeCollection createCollection(
+        List<ListLinksPage> pages, int collectionSize) {
+      return new ListLinksFixedSizeCollection(pages, collectionSize);
     }
   }
 

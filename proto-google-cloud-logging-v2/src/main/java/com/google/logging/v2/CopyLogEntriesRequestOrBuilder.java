@@ -56,8 +56,8 @@ public interface CopyLogEntriesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A filter specifying which log entries to copy. The filter must be no more
-   * than 20k characters. An empty filter matches all log entries.
+   * Optional. A filter specifying which log entries to copy. The filter must be
+   * no more than 20k characters. An empty filter matches all log entries.
    * </pre>
    *
    * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -69,8 +69,8 @@ public interface CopyLogEntriesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A filter specifying which log entries to copy. The filter must be no more
-   * than 20k characters. An empty filter matches all log entries.
+   * Optional. A filter specifying which log entries to copy. The filter must be
+   * no more than 20k characters. An empty filter matches all log entries.
    * </pre>
    *
    * <code>string filter = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

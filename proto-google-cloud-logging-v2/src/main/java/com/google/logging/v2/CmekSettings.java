@@ -47,6 +47,7 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
   private CmekSettings() {
     name_ = "";
     kmsKeyName_ = "";
+    kmsKeyVersionName_ = "";
     serviceAccountId_ = "";
   }
 
@@ -212,6 +213,77 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int KMS_KEY_VERSION_NAME_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKeyVersionName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The CryptoKeyVersion resource name for the configured Cloud KMS key.
+   * KMS key name format:
+   *     "projects/[PROJECT_ID]/locations/[LOCATION]/keyRings/[KEYRING]/cryptoKeys/[KEY]/cryptoKeyVersions/[VERSION]"
+   * For example:
+   *   `"projects/my-project/locations/us-central1/keyRings/my-ring/cryptoKeys/my-key/cryptoKeyVersions/1"`
+   * This is a read-only field used to convey the specific configured
+   * CryptoKeyVersion of `kms_key` that has been configured. It will be
+   * populated in cases where the CMEK settings are bound to a single key
+   * version.
+   * If this field is populated, the `kms_key` is tied to a specific
+   * CryptoKeyVersion.
+   * </pre>
+   *
+   * <code>string kms_key_version_name = 4;</code>
+   *
+   * @return The kmsKeyVersionName.
+   */
+  @java.lang.Override
+  public java.lang.String getKmsKeyVersionName() {
+    java.lang.Object ref = kmsKeyVersionName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      kmsKeyVersionName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The CryptoKeyVersion resource name for the configured Cloud KMS key.
+   * KMS key name format:
+   *     "projects/[PROJECT_ID]/locations/[LOCATION]/keyRings/[KEYRING]/cryptoKeys/[KEY]/cryptoKeyVersions/[VERSION]"
+   * For example:
+   *   `"projects/my-project/locations/us-central1/keyRings/my-ring/cryptoKeys/my-key/cryptoKeyVersions/1"`
+   * This is a read-only field used to convey the specific configured
+   * CryptoKeyVersion of `kms_key` that has been configured. It will be
+   * populated in cases where the CMEK settings are bound to a single key
+   * version.
+   * If this field is populated, the `kms_key` is tied to a specific
+   * CryptoKeyVersion.
+   * </pre>
+   *
+   * <code>string kms_key_version_name = 4;</code>
+   *
+   * @return The bytes for kmsKeyVersionName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getKmsKeyVersionNameBytes() {
+    java.lang.Object ref = kmsKeyVersionName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      kmsKeyVersionName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int SERVICE_ACCOUNT_ID_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
@@ -220,8 +292,8 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The service account that will be used by the Log Router to access your
-   * Cloud KMS key.
+   * Output only. The service account that will be used by the Log Router to
+   * access your Cloud KMS key.
    * Before enabling CMEK for Log Router, you must first assign the
    * cloudkms.cryptoKeyEncrypterDecrypter role to the service account that
    * the Log Router will use to access your Cloud KMS key. Use
@@ -252,8 +324,8 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The service account that will be used by the Log Router to access your
-   * Cloud KMS key.
+   * Output only. The service account that will be used by the Log Router to
+   * access your Cloud KMS key.
    * Before enabling CMEK for Log Router, you must first assign the
    * cloudkms.cryptoKeyEncrypterDecrypter role to the service account that
    * the Log Router will use to access your Cloud KMS key. Use
@@ -304,6 +376,9 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccountId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, serviceAccountId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyVersionName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, kmsKeyVersionName_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -322,6 +397,9 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccountId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, serviceAccountId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKeyVersionName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, kmsKeyVersionName_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -339,6 +417,7 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
 
     if (!getName().equals(other.getName())) return false;
     if (!getKmsKeyName().equals(other.getKmsKeyName())) return false;
+    if (!getKmsKeyVersionName().equals(other.getKmsKeyVersionName())) return false;
     if (!getServiceAccountId().equals(other.getServiceAccountId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -355,6 +434,8 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + KMS_KEY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getKmsKeyName().hashCode();
+    hash = (37 * hash) + KMS_KEY_VERSION_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getKmsKeyVersionName().hashCode();
     hash = (37 * hash) + SERVICE_ACCOUNT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getServiceAccountId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -504,6 +585,7 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       name_ = "";
       kmsKeyName_ = "";
+      kmsKeyVersionName_ = "";
       serviceAccountId_ = "";
       return this;
     }
@@ -547,6 +629,9 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
         result.kmsKeyName_ = kmsKeyName_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.kmsKeyVersionName_ = kmsKeyVersionName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.serviceAccountId_ = serviceAccountId_;
       }
     }
@@ -606,9 +691,14 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (!other.getKmsKeyVersionName().isEmpty()) {
+        kmsKeyVersionName_ = other.kmsKeyVersionName_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       if (!other.getServiceAccountId().isEmpty()) {
         serviceAccountId_ = other.serviceAccountId_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -652,9 +742,15 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
             case 26:
               {
                 serviceAccountId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
+            case 34:
+              {
+                kmsKeyVersionName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -971,13 +1067,169 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object kmsKeyVersionName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The CryptoKeyVersion resource name for the configured Cloud KMS key.
+     * KMS key name format:
+     *     "projects/[PROJECT_ID]/locations/[LOCATION]/keyRings/[KEYRING]/cryptoKeys/[KEY]/cryptoKeyVersions/[VERSION]"
+     * For example:
+     *   `"projects/my-project/locations/us-central1/keyRings/my-ring/cryptoKeys/my-key/cryptoKeyVersions/1"`
+     * This is a read-only field used to convey the specific configured
+     * CryptoKeyVersion of `kms_key` that has been configured. It will be
+     * populated in cases where the CMEK settings are bound to a single key
+     * version.
+     * If this field is populated, the `kms_key` is tied to a specific
+     * CryptoKeyVersion.
+     * </pre>
+     *
+     * <code>string kms_key_version_name = 4;</code>
+     *
+     * @return The kmsKeyVersionName.
+     */
+    public java.lang.String getKmsKeyVersionName() {
+      java.lang.Object ref = kmsKeyVersionName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kmsKeyVersionName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The CryptoKeyVersion resource name for the configured Cloud KMS key.
+     * KMS key name format:
+     *     "projects/[PROJECT_ID]/locations/[LOCATION]/keyRings/[KEYRING]/cryptoKeys/[KEY]/cryptoKeyVersions/[VERSION]"
+     * For example:
+     *   `"projects/my-project/locations/us-central1/keyRings/my-ring/cryptoKeys/my-key/cryptoKeyVersions/1"`
+     * This is a read-only field used to convey the specific configured
+     * CryptoKeyVersion of `kms_key` that has been configured. It will be
+     * populated in cases where the CMEK settings are bound to a single key
+     * version.
+     * If this field is populated, the `kms_key` is tied to a specific
+     * CryptoKeyVersion.
+     * </pre>
+     *
+     * <code>string kms_key_version_name = 4;</code>
+     *
+     * @return The bytes for kmsKeyVersionName.
+     */
+    public com.google.protobuf.ByteString getKmsKeyVersionNameBytes() {
+      java.lang.Object ref = kmsKeyVersionName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kmsKeyVersionName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The CryptoKeyVersion resource name for the configured Cloud KMS key.
+     * KMS key name format:
+     *     "projects/[PROJECT_ID]/locations/[LOCATION]/keyRings/[KEYRING]/cryptoKeys/[KEY]/cryptoKeyVersions/[VERSION]"
+     * For example:
+     *   `"projects/my-project/locations/us-central1/keyRings/my-ring/cryptoKeys/my-key/cryptoKeyVersions/1"`
+     * This is a read-only field used to convey the specific configured
+     * CryptoKeyVersion of `kms_key` that has been configured. It will be
+     * populated in cases where the CMEK settings are bound to a single key
+     * version.
+     * If this field is populated, the `kms_key` is tied to a specific
+     * CryptoKeyVersion.
+     * </pre>
+     *
+     * <code>string kms_key_version_name = 4;</code>
+     *
+     * @param value The kmsKeyVersionName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyVersionName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      kmsKeyVersionName_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The CryptoKeyVersion resource name for the configured Cloud KMS key.
+     * KMS key name format:
+     *     "projects/[PROJECT_ID]/locations/[LOCATION]/keyRings/[KEYRING]/cryptoKeys/[KEY]/cryptoKeyVersions/[VERSION]"
+     * For example:
+     *   `"projects/my-project/locations/us-central1/keyRings/my-ring/cryptoKeys/my-key/cryptoKeyVersions/1"`
+     * This is a read-only field used to convey the specific configured
+     * CryptoKeyVersion of `kms_key` that has been configured. It will be
+     * populated in cases where the CMEK settings are bound to a single key
+     * version.
+     * If this field is populated, the `kms_key` is tied to a specific
+     * CryptoKeyVersion.
+     * </pre>
+     *
+     * <code>string kms_key_version_name = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKmsKeyVersionName() {
+      kmsKeyVersionName_ = getDefaultInstance().getKmsKeyVersionName();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The CryptoKeyVersion resource name for the configured Cloud KMS key.
+     * KMS key name format:
+     *     "projects/[PROJECT_ID]/locations/[LOCATION]/keyRings/[KEYRING]/cryptoKeys/[KEY]/cryptoKeyVersions/[VERSION]"
+     * For example:
+     *   `"projects/my-project/locations/us-central1/keyRings/my-ring/cryptoKeys/my-key/cryptoKeyVersions/1"`
+     * This is a read-only field used to convey the specific configured
+     * CryptoKeyVersion of `kms_key` that has been configured. It will be
+     * populated in cases where the CMEK settings are bound to a single key
+     * version.
+     * If this field is populated, the `kms_key` is tied to a specific
+     * CryptoKeyVersion.
+     * </pre>
+     *
+     * <code>string kms_key_version_name = 4;</code>
+     *
+     * @param value The bytes for kmsKeyVersionName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyVersionNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      kmsKeyVersionName_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object serviceAccountId_ = "";
     /**
      *
      *
      * <pre>
-     * Output only. The service account that will be used by the Log Router to access your
-     * Cloud KMS key.
+     * Output only. The service account that will be used by the Log Router to
+     * access your Cloud KMS key.
      * Before enabling CMEK for Log Router, you must first assign the
      * cloudkms.cryptoKeyEncrypterDecrypter role to the service account that
      * the Log Router will use to access your Cloud KMS key. Use
@@ -1007,8 +1259,8 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service account that will be used by the Log Router to access your
-     * Cloud KMS key.
+     * Output only. The service account that will be used by the Log Router to
+     * access your Cloud KMS key.
      * Before enabling CMEK for Log Router, you must first assign the
      * cloudkms.cryptoKeyEncrypterDecrypter role to the service account that
      * the Log Router will use to access your Cloud KMS key. Use
@@ -1038,8 +1290,8 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service account that will be used by the Log Router to access your
-     * Cloud KMS key.
+     * Output only. The service account that will be used by the Log Router to
+     * access your Cloud KMS key.
      * Before enabling CMEK for Log Router, you must first assign the
      * cloudkms.cryptoKeyEncrypterDecrypter role to the service account that
      * the Log Router will use to access your Cloud KMS key. Use
@@ -1060,7 +1312,7 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       serviceAccountId_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1068,8 +1320,8 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service account that will be used by the Log Router to access your
-     * Cloud KMS key.
+     * Output only. The service account that will be used by the Log Router to
+     * access your Cloud KMS key.
      * Before enabling CMEK for Log Router, you must first assign the
      * cloudkms.cryptoKeyEncrypterDecrypter role to the service account that
      * the Log Router will use to access your Cloud KMS key. Use
@@ -1086,7 +1338,7 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearServiceAccountId() {
       serviceAccountId_ = getDefaultInstance().getServiceAccountId();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1094,8 +1346,8 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The service account that will be used by the Log Router to access your
-     * Cloud KMS key.
+     * Output only. The service account that will be used by the Log Router to
+     * access your Cloud KMS key.
      * Before enabling CMEK for Log Router, you must first assign the
      * cloudkms.cryptoKeyEncrypterDecrypter role to the service account that
      * the Log Router will use to access your Cloud KMS key. Use
@@ -1117,7 +1369,7 @@ public final class CmekSettings extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       serviceAccountId_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

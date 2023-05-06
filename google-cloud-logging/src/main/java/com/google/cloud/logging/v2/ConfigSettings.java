@@ -18,6 +18,7 @@ package com.google.cloud.logging.v2;
 
 import static com.google.cloud.logging.v2.ConfigClient.ListBucketsPagedResponse;
 import static com.google.cloud.logging.v2.ConfigClient.ListExclusionsPagedResponse;
+import static com.google.cloud.logging.v2.ConfigClient.ListLinksPagedResponse;
 import static com.google.cloud.logging.v2.ConfigClient.ListSinksPagedResponse;
 import static com.google.cloud.logging.v2.ConfigClient.ListViewsPagedResponse;
 
@@ -34,28 +35,36 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.logging.v2.stub.ConfigServiceV2StubSettings;
+import com.google.logging.v2.BucketMetadata;
 import com.google.logging.v2.CmekSettings;
 import com.google.logging.v2.CopyLogEntriesMetadata;
 import com.google.logging.v2.CopyLogEntriesRequest;
 import com.google.logging.v2.CopyLogEntriesResponse;
 import com.google.logging.v2.CreateBucketRequest;
 import com.google.logging.v2.CreateExclusionRequest;
+import com.google.logging.v2.CreateLinkRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.CreateViewRequest;
 import com.google.logging.v2.DeleteBucketRequest;
 import com.google.logging.v2.DeleteExclusionRequest;
+import com.google.logging.v2.DeleteLinkRequest;
 import com.google.logging.v2.DeleteSinkRequest;
 import com.google.logging.v2.DeleteViewRequest;
 import com.google.logging.v2.GetBucketRequest;
 import com.google.logging.v2.GetCmekSettingsRequest;
 import com.google.logging.v2.GetExclusionRequest;
+import com.google.logging.v2.GetLinkRequest;
 import com.google.logging.v2.GetSettingsRequest;
 import com.google.logging.v2.GetSinkRequest;
 import com.google.logging.v2.GetViewRequest;
+import com.google.logging.v2.Link;
+import com.google.logging.v2.LinkMetadata;
 import com.google.logging.v2.ListBucketsRequest;
 import com.google.logging.v2.ListBucketsResponse;
 import com.google.logging.v2.ListExclusionsRequest;
 import com.google.logging.v2.ListExclusionsResponse;
+import com.google.logging.v2.ListLinksRequest;
+import com.google.logging.v2.ListLinksResponse;
 import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
 import com.google.logging.v2.ListViewsRequest;
@@ -128,6 +137,28 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
     return ((ConfigServiceV2StubSettings) getStubSettings()).getBucketSettings();
   }
 
+  /** Returns the object with the settings used for calls to createBucketAsync. */
+  public UnaryCallSettings<CreateBucketRequest, Operation> createBucketAsyncSettings() {
+    return ((ConfigServiceV2StubSettings) getStubSettings()).createBucketAsyncSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createBucketAsync. */
+  public OperationCallSettings<CreateBucketRequest, LogBucket, BucketMetadata>
+      createBucketAsyncOperationSettings() {
+    return ((ConfigServiceV2StubSettings) getStubSettings()).createBucketAsyncOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateBucketAsync. */
+  public UnaryCallSettings<UpdateBucketRequest, Operation> updateBucketAsyncSettings() {
+    return ((ConfigServiceV2StubSettings) getStubSettings()).updateBucketAsyncSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateBucketAsync. */
+  public OperationCallSettings<UpdateBucketRequest, LogBucket, BucketMetadata>
+      updateBucketAsyncOperationSettings() {
+    return ((ConfigServiceV2StubSettings) getStubSettings()).updateBucketAsyncOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to createBucket. */
   public UnaryCallSettings<CreateBucketRequest, LogBucket> createBucketSettings() {
     return ((ConfigServiceV2StubSettings) getStubSettings()).createBucketSettings();
@@ -198,6 +229,39 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
   /** Returns the object with the settings used for calls to deleteSink. */
   public UnaryCallSettings<DeleteSinkRequest, Empty> deleteSinkSettings() {
     return ((ConfigServiceV2StubSettings) getStubSettings()).deleteSinkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createLink. */
+  public UnaryCallSettings<CreateLinkRequest, Operation> createLinkSettings() {
+    return ((ConfigServiceV2StubSettings) getStubSettings()).createLinkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createLink. */
+  public OperationCallSettings<CreateLinkRequest, Link, LinkMetadata>
+      createLinkOperationSettings() {
+    return ((ConfigServiceV2StubSettings) getStubSettings()).createLinkOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteLink. */
+  public UnaryCallSettings<DeleteLinkRequest, Operation> deleteLinkSettings() {
+    return ((ConfigServiceV2StubSettings) getStubSettings()).deleteLinkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteLink. */
+  public OperationCallSettings<DeleteLinkRequest, Empty, LinkMetadata>
+      deleteLinkOperationSettings() {
+    return ((ConfigServiceV2StubSettings) getStubSettings()).deleteLinkOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLinks. */
+  public PagedCallSettings<ListLinksRequest, ListLinksResponse, ListLinksPagedResponse>
+      listLinksSettings() {
+    return ((ConfigServiceV2StubSettings) getStubSettings()).listLinksSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLink. */
+  public UnaryCallSettings<GetLinkRequest, Link> getLinkSettings() {
+    return ((ConfigServiceV2StubSettings) getStubSettings()).getLinkSettings();
   }
 
   /** Returns the object with the settings used for calls to listExclusions. */
@@ -367,6 +431,28 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
       return getStubSettingsBuilder().getBucketSettings();
     }
 
+    /** Returns the builder for the settings used for calls to createBucketAsync. */
+    public UnaryCallSettings.Builder<CreateBucketRequest, Operation> createBucketAsyncSettings() {
+      return getStubSettingsBuilder().createBucketAsyncSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createBucketAsync. */
+    public OperationCallSettings.Builder<CreateBucketRequest, LogBucket, BucketMetadata>
+        createBucketAsyncOperationSettings() {
+      return getStubSettingsBuilder().createBucketAsyncOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateBucketAsync. */
+    public UnaryCallSettings.Builder<UpdateBucketRequest, Operation> updateBucketAsyncSettings() {
+      return getStubSettingsBuilder().updateBucketAsyncSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateBucketAsync. */
+    public OperationCallSettings.Builder<UpdateBucketRequest, LogBucket, BucketMetadata>
+        updateBucketAsyncOperationSettings() {
+      return getStubSettingsBuilder().updateBucketAsyncOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to createBucket. */
     public UnaryCallSettings.Builder<CreateBucketRequest, LogBucket> createBucketSettings() {
       return getStubSettingsBuilder().createBucketSettings();
@@ -437,6 +523,39 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
     /** Returns the builder for the settings used for calls to deleteSink. */
     public UnaryCallSettings.Builder<DeleteSinkRequest, Empty> deleteSinkSettings() {
       return getStubSettingsBuilder().deleteSinkSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createLink. */
+    public UnaryCallSettings.Builder<CreateLinkRequest, Operation> createLinkSettings() {
+      return getStubSettingsBuilder().createLinkSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createLink. */
+    public OperationCallSettings.Builder<CreateLinkRequest, Link, LinkMetadata>
+        createLinkOperationSettings() {
+      return getStubSettingsBuilder().createLinkOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteLink. */
+    public UnaryCallSettings.Builder<DeleteLinkRequest, Operation> deleteLinkSettings() {
+      return getStubSettingsBuilder().deleteLinkSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteLink. */
+    public OperationCallSettings.Builder<DeleteLinkRequest, Empty, LinkMetadata>
+        deleteLinkOperationSettings() {
+      return getStubSettingsBuilder().deleteLinkOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLinks. */
+    public PagedCallSettings.Builder<ListLinksRequest, ListLinksResponse, ListLinksPagedResponse>
+        listLinksSettings() {
+      return getStubSettingsBuilder().listLinksSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLink. */
+    public UnaryCallSettings.Builder<GetLinkRequest, Link> getLinkSettings() {
+      return getStubSettingsBuilder().getLinkSettings();
     }
 
     /** Returns the builder for the settings used for calls to listExclusions. */

@@ -39,8 +39,8 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
 
   private ListLogsRequest() {
     parent_ = "";
-    pageToken_ = "";
     resourceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    pageToken_ = "";
   }
 
   @java.lang.Override
@@ -77,7 +77,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The resource name that owns the logs:
+   * Required. The resource name to list logs for:
    * *  `projects/[PROJECT_ID]`
    * *  `organizations/[ORGANIZATION_ID]`
    * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
@@ -106,7 +106,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The resource name that owns the logs:
+   * Required. The resource name to list logs for:
    * *  `projects/[PROJECT_ID]`
    * *  `organizations/[ORGANIZATION_ID]`
    * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
@@ -130,6 +130,117 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int RESOURCE_NAMES_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringList resourceNames_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of resource names to list logs for:
+   *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   * To support legacy queries, it could also be:
+   * *  `projects/[PROJECT_ID]`
+   * *  `organizations/[ORGANIZATION_ID]`
+   * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
+   * *  `folders/[FOLDER_ID]`
+   * The resource name in the `parent` field is added to this list.
+   * </pre>
+   *
+   * <code>
+   * repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the resourceNames.
+   */
+  public com.google.protobuf.ProtocolStringList getResourceNamesList() {
+    return resourceNames_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of resource names to list logs for:
+   *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   * To support legacy queries, it could also be:
+   * *  `projects/[PROJECT_ID]`
+   * *  `organizations/[ORGANIZATION_ID]`
+   * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
+   * *  `folders/[FOLDER_ID]`
+   * The resource name in the `parent` field is added to this list.
+   * </pre>
+   *
+   * <code>
+   * repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of resourceNames.
+   */
+  public int getResourceNamesCount() {
+    return resourceNames_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of resource names to list logs for:
+   *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   * To support legacy queries, it could also be:
+   * *  `projects/[PROJECT_ID]`
+   * *  `organizations/[ORGANIZATION_ID]`
+   * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
+   * *  `folders/[FOLDER_ID]`
+   * The resource name in the `parent` field is added to this list.
+   * </pre>
+   *
+   * <code>
+   * repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The resourceNames at the given index.
+   */
+  public java.lang.String getResourceNames(int index) {
+    return resourceNames_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of resource names to list logs for:
+   *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+   * To support legacy queries, it could also be:
+   * *  `projects/[PROJECT_ID]`
+   * *  `organizations/[ORGANIZATION_ID]`
+   * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
+   * *  `folders/[FOLDER_ID]`
+   * The resource name in the `parent` field is added to this list.
+   * </pre>
+   *
+   * <code>
+   * repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the resourceNames at the given index.
+   */
+  public com.google.protobuf.ByteString getResourceNamesBytes(int index) {
+    return resourceNames_.getByteString(index);
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
@@ -209,113 +320,6 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
     }
   }
 
-  public static final int RESOURCE_NAMES_FIELD_NUMBER = 8;
-
-  @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList resourceNames_;
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The resource name that owns the logs:
-   *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-   *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-   *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-   *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-   * To support legacy queries, it could also be:
-   * *  `projects/[PROJECT_ID]`
-   * *  `organizations/[ORGANIZATION_ID]`
-   * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
-   * *  `folders/[FOLDER_ID]`
-   * </pre>
-   *
-   * <code>
-   * repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-   * </code>
-   *
-   * @return A list containing the resourceNames.
-   */
-  public com.google.protobuf.ProtocolStringList getResourceNamesList() {
-    return resourceNames_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The resource name that owns the logs:
-   *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-   *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-   *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-   *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-   * To support legacy queries, it could also be:
-   * *  `projects/[PROJECT_ID]`
-   * *  `organizations/[ORGANIZATION_ID]`
-   * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
-   * *  `folders/[FOLDER_ID]`
-   * </pre>
-   *
-   * <code>
-   * repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-   * </code>
-   *
-   * @return The count of resourceNames.
-   */
-  public int getResourceNamesCount() {
-    return resourceNames_.size();
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The resource name that owns the logs:
-   *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-   *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-   *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-   *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-   * To support legacy queries, it could also be:
-   * *  `projects/[PROJECT_ID]`
-   * *  `organizations/[ORGANIZATION_ID]`
-   * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
-   * *  `folders/[FOLDER_ID]`
-   * </pre>
-   *
-   * <code>
-   * repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-   * </code>
-   *
-   * @param index The index of the element to return.
-   * @return The resourceNames at the given index.
-   */
-  public java.lang.String getResourceNames(int index) {
-    return resourceNames_.get(index);
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The resource name that owns the logs:
-   *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-   *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-   *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-   *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-   * To support legacy queries, it could also be:
-   * *  `projects/[PROJECT_ID]`
-   * *  `organizations/[ORGANIZATION_ID]`
-   * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
-   * *  `folders/[FOLDER_ID]`
-   * </pre>
-   *
-   * <code>
-   * repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-   * </code>
-   *
-   * @param index The index of the value to return.
-   * @return The bytes of the resourceNames at the given index.
-   */
-  public com.google.protobuf.ByteString getResourceNamesBytes(int index) {
-    return resourceNames_.getByteString(index);
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -384,9 +388,9 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
     com.google.logging.v2.ListLogsRequest other = (com.google.logging.v2.ListLogsRequest) obj;
 
     if (!getParent().equals(other.getParent())) return false;
+    if (!getResourceNamesList().equals(other.getResourceNamesList())) return false;
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
-    if (!getResourceNamesList().equals(other.getResourceNamesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -400,14 +404,14 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PARENT_FIELD_NUMBER;
     hash = (53 * hash) + getParent().hashCode();
-    hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
-    hash = (53 * hash) + getPageSize();
-    hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
-    hash = (53 * hash) + getPageToken().hashCode();
     if (getResourceNamesCount() > 0) {
       hash = (37 * hash) + RESOURCE_NAMES_FIELD_NUMBER;
       hash = (53 * hash) + getResourceNamesList().hashCode();
     }
+    hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
+    hash = (53 * hash) + getPageSize();
+    hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getPageToken().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -547,10 +551,10 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
       super.clear();
       bitField0_ = 0;
       parent_ = "";
+      resourceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
       pageSize_ = 0;
       pageToken_ = "";
-      resourceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -587,9 +591,9 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
     }
 
     private void buildPartialRepeatedFields(com.google.logging.v2.ListLogsRequest result) {
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         resourceNames_ = resourceNames_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.resourceNames_ = resourceNames_;
     }
@@ -599,10 +603,10 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.parent_ = parent_;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.pageSize_ = pageSize_;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.pageToken_ = pageToken_;
       }
     }
@@ -657,22 +661,22 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.resourceNames_.isEmpty()) {
+        if (resourceNames_.isEmpty()) {
+          resourceNames_ = other.resourceNames_;
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ensureResourceNamesIsMutable();
+          resourceNames_.addAll(other.resourceNames_);
+        }
+        onChanged();
+      }
       if (other.getPageSize() != 0) {
         setPageSize(other.getPageSize());
       }
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
-        bitField0_ |= 0x00000004;
-        onChanged();
-      }
-      if (!other.resourceNames_.isEmpty()) {
-        if (resourceNames_.isEmpty()) {
-          resourceNames_ = other.resourceNames_;
-          bitField0_ = (bitField0_ & ~0x00000008);
-        } else {
-          ensureResourceNamesIsMutable();
-          resourceNames_.addAll(other.resourceNames_);
-        }
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -710,13 +714,13 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
             case 16:
               {
                 pageSize_ = input.readInt32();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 16
             case 26:
               {
                 pageToken_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 66:
@@ -750,7 +754,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The resource name that owns the logs:
+     * Required. The resource name to list logs for:
      * *  `projects/[PROJECT_ID]`
      * *  `organizations/[ORGANIZATION_ID]`
      * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
@@ -778,7 +782,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The resource name that owns the logs:
+     * Required. The resource name to list logs for:
      * *  `projects/[PROJECT_ID]`
      * *  `organizations/[ORGANIZATION_ID]`
      * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
@@ -806,7 +810,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The resource name that owns the logs:
+     * Required. The resource name to list logs for:
      * *  `projects/[PROJECT_ID]`
      * *  `organizations/[ORGANIZATION_ID]`
      * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
@@ -833,7 +837,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The resource name that owns the logs:
+     * Required. The resource name to list logs for:
      * *  `projects/[PROJECT_ID]`
      * *  `organizations/[ORGANIZATION_ID]`
      * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
@@ -856,7 +860,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The resource name that owns the logs:
+     * Required. The resource name to list logs for:
      * *  `projects/[PROJECT_ID]`
      * *  `organizations/[ORGANIZATION_ID]`
      * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
@@ -877,6 +881,282 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       parent_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList resourceNames_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureResourceNamesIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        resourceNames_ = new com.google.protobuf.LazyStringArrayList(resourceNames_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of resource names to list logs for:
+     *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     * To support legacy queries, it could also be:
+     * *  `projects/[PROJECT_ID]`
+     * *  `organizations/[ORGANIZATION_ID]`
+     * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
+     * *  `folders/[FOLDER_ID]`
+     * The resource name in the `parent` field is added to this list.
+     * </pre>
+     *
+     * <code>
+     * repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the resourceNames.
+     */
+    public com.google.protobuf.ProtocolStringList getResourceNamesList() {
+      return resourceNames_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of resource names to list logs for:
+     *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     * To support legacy queries, it could also be:
+     * *  `projects/[PROJECT_ID]`
+     * *  `organizations/[ORGANIZATION_ID]`
+     * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
+     * *  `folders/[FOLDER_ID]`
+     * The resource name in the `parent` field is added to this list.
+     * </pre>
+     *
+     * <code>
+     * repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of resourceNames.
+     */
+    public int getResourceNamesCount() {
+      return resourceNames_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of resource names to list logs for:
+     *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     * To support legacy queries, it could also be:
+     * *  `projects/[PROJECT_ID]`
+     * *  `organizations/[ORGANIZATION_ID]`
+     * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
+     * *  `folders/[FOLDER_ID]`
+     * The resource name in the `parent` field is added to this list.
+     * </pre>
+     *
+     * <code>
+     * repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The resourceNames at the given index.
+     */
+    public java.lang.String getResourceNames(int index) {
+      return resourceNames_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of resource names to list logs for:
+     *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     * To support legacy queries, it could also be:
+     * *  `projects/[PROJECT_ID]`
+     * *  `organizations/[ORGANIZATION_ID]`
+     * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
+     * *  `folders/[FOLDER_ID]`
+     * The resource name in the `parent` field is added to this list.
+     * </pre>
+     *
+     * <code>
+     * repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the resourceNames at the given index.
+     */
+    public com.google.protobuf.ByteString getResourceNamesBytes(int index) {
+      return resourceNames_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of resource names to list logs for:
+     *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     * To support legacy queries, it could also be:
+     * *  `projects/[PROJECT_ID]`
+     * *  `organizations/[ORGANIZATION_ID]`
+     * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
+     * *  `folders/[FOLDER_ID]`
+     * The resource name in the `parent` field is added to this list.
+     * </pre>
+     *
+     * <code>
+     * repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The resourceNames to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceNames(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureResourceNamesIsMutable();
+      resourceNames_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of resource names to list logs for:
+     *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     * To support legacy queries, it could also be:
+     * *  `projects/[PROJECT_ID]`
+     * *  `organizations/[ORGANIZATION_ID]`
+     * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
+     * *  `folders/[FOLDER_ID]`
+     * The resource name in the `parent` field is added to this list.
+     * </pre>
+     *
+     * <code>
+     * repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The resourceNames to add.
+     * @return This builder for chaining.
+     */
+    public Builder addResourceNames(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureResourceNamesIsMutable();
+      resourceNames_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of resource names to list logs for:
+     *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     * To support legacy queries, it could also be:
+     * *  `projects/[PROJECT_ID]`
+     * *  `organizations/[ORGANIZATION_ID]`
+     * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
+     * *  `folders/[FOLDER_ID]`
+     * The resource name in the `parent` field is added to this list.
+     * </pre>
+     *
+     * <code>
+     * repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param values The resourceNames to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllResourceNames(java.lang.Iterable<java.lang.String> values) {
+      ensureResourceNamesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resourceNames_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of resource names to list logs for:
+     *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     * To support legacy queries, it could also be:
+     * *  `projects/[PROJECT_ID]`
+     * *  `organizations/[ORGANIZATION_ID]`
+     * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
+     * *  `folders/[FOLDER_ID]`
+     * The resource name in the `parent` field is added to this list.
+     * </pre>
+     *
+     * <code>
+     * repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearResourceNames() {
+      resourceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of resource names to list logs for:
+     *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
+     * To support legacy queries, it could also be:
+     * *  `projects/[PROJECT_ID]`
+     * *  `organizations/[ORGANIZATION_ID]`
+     * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
+     * *  `folders/[FOLDER_ID]`
+     * The resource name in the `parent` field is added to this list.
+     * </pre>
+     *
+     * <code>
+     * repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes of the resourceNames to add.
+     * @return This builder for chaining.
+     */
+    public Builder addResourceNamesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureResourceNamesIsMutable();
+      resourceNames_.add(value);
       onChanged();
       return this;
     }
@@ -916,7 +1196,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
     public Builder setPageSize(int value) {
 
       pageSize_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -934,7 +1214,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      * @return This builder for chaining.
      */
     public Builder clearPageSize() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       pageSize_ = 0;
       onChanged();
       return this;
@@ -1011,7 +1291,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       pageToken_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1031,7 +1311,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearPageToken() {
       pageToken_ = getDefaultInstance().getPageToken();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1056,274 +1336,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       pageToken_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-
-    private com.google.protobuf.LazyStringList resourceNames_ =
-        com.google.protobuf.LazyStringArrayList.EMPTY;
-
-    private void ensureResourceNamesIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
-        resourceNames_ = new com.google.protobuf.LazyStringArrayList(resourceNames_);
-        bitField0_ |= 0x00000008;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The resource name that owns the logs:
-     *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     * To support legacy queries, it could also be:
-     * *  `projects/[PROJECT_ID]`
-     * *  `organizations/[ORGANIZATION_ID]`
-     * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
-     * *  `folders/[FOLDER_ID]`
-     * </pre>
-     *
-     * <code>
-     * repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @return A list containing the resourceNames.
-     */
-    public com.google.protobuf.ProtocolStringList getResourceNamesList() {
-      return resourceNames_.getUnmodifiableView();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The resource name that owns the logs:
-     *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     * To support legacy queries, it could also be:
-     * *  `projects/[PROJECT_ID]`
-     * *  `organizations/[ORGANIZATION_ID]`
-     * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
-     * *  `folders/[FOLDER_ID]`
-     * </pre>
-     *
-     * <code>
-     * repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @return The count of resourceNames.
-     */
-    public int getResourceNamesCount() {
-      return resourceNames_.size();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The resource name that owns the logs:
-     *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     * To support legacy queries, it could also be:
-     * *  `projects/[PROJECT_ID]`
-     * *  `organizations/[ORGANIZATION_ID]`
-     * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
-     * *  `folders/[FOLDER_ID]`
-     * </pre>
-     *
-     * <code>
-     * repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @param index The index of the element to return.
-     * @return The resourceNames at the given index.
-     */
-    public java.lang.String getResourceNames(int index) {
-      return resourceNames_.get(index);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The resource name that owns the logs:
-     *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     * To support legacy queries, it could also be:
-     * *  `projects/[PROJECT_ID]`
-     * *  `organizations/[ORGANIZATION_ID]`
-     * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
-     * *  `folders/[FOLDER_ID]`
-     * </pre>
-     *
-     * <code>
-     * repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @param index The index of the value to return.
-     * @return The bytes of the resourceNames at the given index.
-     */
-    public com.google.protobuf.ByteString getResourceNamesBytes(int index) {
-      return resourceNames_.getByteString(index);
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The resource name that owns the logs:
-     *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     * To support legacy queries, it could also be:
-     * *  `projects/[PROJECT_ID]`
-     * *  `organizations/[ORGANIZATION_ID]`
-     * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
-     * *  `folders/[FOLDER_ID]`
-     * </pre>
-     *
-     * <code>
-     * repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @param index The index to set the value at.
-     * @param value The resourceNames to set.
-     * @return This builder for chaining.
-     */
-    public Builder setResourceNames(int index, java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureResourceNamesIsMutable();
-      resourceNames_.set(index, value);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The resource name that owns the logs:
-     *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     * To support legacy queries, it could also be:
-     * *  `projects/[PROJECT_ID]`
-     * *  `organizations/[ORGANIZATION_ID]`
-     * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
-     * *  `folders/[FOLDER_ID]`
-     * </pre>
-     *
-     * <code>
-     * repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @param value The resourceNames to add.
-     * @return This builder for chaining.
-     */
-    public Builder addResourceNames(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureResourceNamesIsMutable();
-      resourceNames_.add(value);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The resource name that owns the logs:
-     *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     * To support legacy queries, it could also be:
-     * *  `projects/[PROJECT_ID]`
-     * *  `organizations/[ORGANIZATION_ID]`
-     * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
-     * *  `folders/[FOLDER_ID]`
-     * </pre>
-     *
-     * <code>
-     * repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @param values The resourceNames to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllResourceNames(java.lang.Iterable<java.lang.String> values) {
-      ensureResourceNamesIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resourceNames_);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The resource name that owns the logs:
-     *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     * To support legacy queries, it could also be:
-     * *  `projects/[PROJECT_ID]`
-     * *  `organizations/[ORGANIZATION_ID]`
-     * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
-     * *  `folders/[FOLDER_ID]`
-     * </pre>
-     *
-     * <code>
-     * repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearResourceNames() {
-      resourceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The resource name that owns the logs:
-     *  * `projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     *  * `organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     *  * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     *  * `folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]`
-     * To support legacy queries, it could also be:
-     * *  `projects/[PROJECT_ID]`
-     * *  `organizations/[ORGANIZATION_ID]`
-     * *  `billingAccounts/[BILLING_ACCOUNT_ID]`
-     * *  `folders/[FOLDER_ID]`
-     * </pre>
-     *
-     * <code>
-     * repeated string resource_names = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @param value The bytes of the resourceNames to add.
-     * @return This builder for chaining.
-     */
-    public Builder addResourceNamesBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      ensureResourceNamesIsMutable();
-      resourceNames_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

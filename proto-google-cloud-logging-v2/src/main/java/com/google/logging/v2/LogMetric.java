@@ -46,6 +46,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     description_ = "";
     filter_ = "";
+    bucketName_ = "";
     valueExtractor_ = "";
     version_ = 0;
   }
@@ -404,6 +405,67 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int BUCKET_NAME_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object bucketName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of the Log Bucket that owns the Log Metric.
+   * Only Log Buckets in projects are supported. The bucket has to be in the
+   * same project as the metric.
+   * For example:
+   *   `projects/my-project/locations/global/buckets/my-bucket`
+   * If empty, then the Log Metric is considered a non-Bucket Log Metric.
+   * </pre>
+   *
+   * <code>string bucket_name = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bucketName.
+   */
+  @java.lang.Override
+  public java.lang.String getBucketName() {
+    java.lang.Object ref = bucketName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      bucketName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of the Log Bucket that owns the Log Metric.
+   * Only Log Buckets in projects are supported. The bucket has to be in the
+   * same project as the metric.
+   * For example:
+   *   `projects/my-project/locations/global/buckets/my-bucket`
+   * If empty, then the Log Metric is considered a non-Bucket Log Metric.
+   * </pre>
+   *
+   * <code>string bucket_name = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for bucketName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBucketNameBytes() {
+    java.lang.Object ref = bucketName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      bucketName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int DISABLED_FIELD_NUMBER = 12;
   private boolean disabled_ = false;
   /**
@@ -538,7 +600,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * Optional. A `value_extractor` is required when using a distribution
    * logs-based metric to extract the values to record from a log entry.
    * Two functions are supported for value extraction: `EXTRACT(field)` or
-   * `REGEXP_EXTRACT(field, regex)`. The argument are:
+   * `REGEXP_EXTRACT(field, regex)`. The arguments are:
    *   1. field: The name of the log entry field from which the value is to be
    *      extracted.
    *   2. regex: A regular expression using the Google RE2 syntax
@@ -577,7 +639,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * Optional. A `value_extractor` is required when using a distribution
    * logs-based metric to extract the values to record from a log entry.
    * Two functions are supported for value extraction: `EXTRACT(field)` or
-   * `REGEXP_EXTRACT(field, regex)`. The argument are:
+   * `REGEXP_EXTRACT(field, regex)`. The arguments are:
    *   1. field: The name of the log entry field from which the value is to be
    *      extracted.
    *   2. regex: A regular expression using the Google RE2 syntax
@@ -648,7 +710,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * extractor expression in this map. The syntax of the extractor expression
    * is the same as for the `value_extractor` field.
    * The extracted value is converted to the type defined in the label
-   * descriptor. If the either the extraction or the type conversion fails,
+   * descriptor. If either the extraction or the type conversion fails,
    * the label will have a default value. The default value for a string
    * label is an empty string, for an integer label its 0, and for a boolean
    * label its `false`.
@@ -682,7 +744,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * extractor expression in this map. The syntax of the extractor expression
    * is the same as for the `value_extractor` field.
    * The extracted value is converted to the type defined in the label
-   * descriptor. If the either the extraction or the type conversion fails,
+   * descriptor. If either the extraction or the type conversion fails,
    * the label will have a default value. The default value for a string
    * label is an empty string, for an integer label its 0, and for a boolean
    * label its `false`.
@@ -707,7 +769,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * extractor expression in this map. The syntax of the extractor expression
    * is the same as for the `value_extractor` field.
    * The extracted value is converted to the type defined in the label
-   * descriptor. If the either the extraction or the type conversion fails,
+   * descriptor. If either the extraction or the type conversion fails,
    * the label will have a default value. The default value for a string
    * label is an empty string, for an integer label its 0, and for a boolean
    * label its `false`.
@@ -739,7 +801,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * extractor expression in this map. The syntax of the extractor expression
    * is the same as for the `value_extractor` field.
    * The extracted value is converted to the type defined in the label
-   * descriptor. If the either the extraction or the type conversion fails,
+   * descriptor. If either the extraction or the type conversion fails,
    * the label will have a default value. The default value for a string
    * label is an empty string, for an integer label its 0, and for a boolean
    * label its `false`.
@@ -941,7 +1003,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
    *
    * @deprecated google.logging.v2.LogMetric.version is deprecated. See
-   *     google/logging/v2/logging_metrics.proto;l=220
+   *     google/logging/v2/logging_metrics.proto;l=237
    * @return The enum numeric value on the wire for version.
    */
   @java.lang.Override
@@ -960,7 +1022,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
    *
    * @deprecated google.logging.v2.LogMetric.version is deprecated. See
-   *     google/logging/v2/logging_metrics.proto;l=220
+   *     google/logging/v2/logging_metrics.proto;l=237
    * @return The version.
    */
   @java.lang.Override
@@ -1017,6 +1079,9 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
     if (disabled_ != false) {
       output.writeBool(12, disabled_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bucketName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13, bucketName_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1066,6 +1131,9 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
     if (disabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, disabled_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(bucketName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, bucketName_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1084,6 +1152,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
     if (!getName().equals(other.getName())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
     if (!getFilter().equals(other.getFilter())) return false;
+    if (!getBucketName().equals(other.getBucketName())) return false;
     if (getDisabled() != other.getDisabled()) return false;
     if (hasMetricDescriptor() != other.hasMetricDescriptor()) return false;
     if (hasMetricDescriptor()) {
@@ -1121,6 +1190,8 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + FILTER_FIELD_NUMBER;
     hash = (53 * hash) + getFilter().hashCode();
+    hash = (37 * hash) + BUCKET_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getBucketName().hashCode();
     hash = (37 * hash) + DISABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisabled());
     if (hasMetricDescriptor()) {
@@ -1312,6 +1383,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
       name_ = "";
       description_ = "";
       filter_ = "";
+      bucketName_ = "";
       disabled_ = false;
       metricDescriptor_ = null;
       if (metricDescriptorBuilder_ != null) {
@@ -1381,30 +1453,33 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
         result.filter_ = filter_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.disabled_ = disabled_;
+        result.bucketName_ = bucketName_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.disabled_ = disabled_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.metricDescriptor_ =
             metricDescriptorBuilder_ == null ? metricDescriptor_ : metricDescriptorBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.valueExtractor_ = valueExtractor_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.labelExtractors_ = internalGetLabelExtractors();
         result.labelExtractors_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.bucketOptions_ =
             bucketOptionsBuilder_ == null ? bucketOptions_ : bucketOptionsBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.version_ = version_;
       }
     }
@@ -1469,6 +1544,11 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (!other.getBucketName().isEmpty()) {
+        bucketName_ = other.bucketName_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       if (other.getDisabled() != false) {
         setDisabled(other.getDisabled());
       }
@@ -1477,11 +1557,11 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getValueExtractor().isEmpty()) {
         valueExtractor_ = other.valueExtractor_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       internalGetMutableLabelExtractors().mergeFrom(other.internalGetLabelExtractors());
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       if (other.hasBucketOptions()) {
         mergeBucketOptions(other.getBucketOptions());
       }
@@ -1541,20 +1621,20 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
             case 32:
               {
                 version_ = input.readEnum();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(
                     getMetricDescriptorFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
               {
                 valueExtractor_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 58:
@@ -1566,33 +1646,39 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabelExtractors()
                     .getMutableMap()
                     .put(labelExtractors__.getKey(), labelExtractors__.getValue());
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getBucketOptionsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 82
             case 96:
               {
                 disabled_ = input.readBool();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 96
+            case 106:
+              {
+                bucketName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2005,6 +2091,137 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object bucketName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the Log Bucket that owns the Log Metric.
+     * Only Log Buckets in projects are supported. The bucket has to be in the
+     * same project as the metric.
+     * For example:
+     *   `projects/my-project/locations/global/buckets/my-bucket`
+     * If empty, then the Log Metric is considered a non-Bucket Log Metric.
+     * </pre>
+     *
+     * <code>string bucket_name = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bucketName.
+     */
+    public java.lang.String getBucketName() {
+      java.lang.Object ref = bucketName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bucketName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the Log Bucket that owns the Log Metric.
+     * Only Log Buckets in projects are supported. The bucket has to be in the
+     * same project as the metric.
+     * For example:
+     *   `projects/my-project/locations/global/buckets/my-bucket`
+     * If empty, then the Log Metric is considered a non-Bucket Log Metric.
+     * </pre>
+     *
+     * <code>string bucket_name = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for bucketName.
+     */
+    public com.google.protobuf.ByteString getBucketNameBytes() {
+      java.lang.Object ref = bucketName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        bucketName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the Log Bucket that owns the Log Metric.
+     * Only Log Buckets in projects are supported. The bucket has to be in the
+     * same project as the metric.
+     * For example:
+     *   `projects/my-project/locations/global/buckets/my-bucket`
+     * If empty, then the Log Metric is considered a non-Bucket Log Metric.
+     * </pre>
+     *
+     * <code>string bucket_name = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bucketName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBucketName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bucketName_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the Log Bucket that owns the Log Metric.
+     * Only Log Buckets in projects are supported. The bucket has to be in the
+     * same project as the metric.
+     * For example:
+     *   `projects/my-project/locations/global/buckets/my-bucket`
+     * If empty, then the Log Metric is considered a non-Bucket Log Metric.
+     * </pre>
+     *
+     * <code>string bucket_name = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBucketName() {
+      bucketName_ = getDefaultInstance().getBucketName();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the Log Bucket that owns the Log Metric.
+     * Only Log Buckets in projects are supported. The bucket has to be in the
+     * same project as the metric.
+     * For example:
+     *   `projects/my-project/locations/global/buckets/my-bucket`
+     * If empty, then the Log Metric is considered a non-Bucket Log Metric.
+     * </pre>
+     *
+     * <code>string bucket_name = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for bucketName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBucketNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      bucketName_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
     private boolean disabled_;
     /**
      *
@@ -2038,7 +2255,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
     public Builder setDisabled(boolean value) {
 
       disabled_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2055,7 +2272,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDisabled() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       disabled_ = false;
       onChanged();
       return this;
@@ -2097,7 +2314,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the metricDescriptor field is set.
      */
     public boolean hasMetricDescriptor() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2173,7 +2390,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
       } else {
         metricDescriptorBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2210,7 +2427,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
       } else {
         metricDescriptorBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2243,7 +2460,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeMetricDescriptor(com.google.api.MetricDescriptor value) {
       if (metricDescriptorBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && metricDescriptor_ != null
             && metricDescriptor_ != com.google.api.MetricDescriptor.getDefaultInstance()) {
           getMetricDescriptorBuilder().mergeFrom(value);
@@ -2253,7 +2470,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
       } else {
         metricDescriptorBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2285,7 +2502,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearMetricDescriptor() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       metricDescriptor_ = null;
       if (metricDescriptorBuilder_ != null) {
         metricDescriptorBuilder_.dispose();
@@ -2322,7 +2539,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.api.MetricDescriptor.Builder getMetricDescriptorBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getMetricDescriptorFieldBuilder().getBuilder();
     }
@@ -2414,7 +2631,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * Optional. A `value_extractor` is required when using a distribution
      * logs-based metric to extract the values to record from a log entry.
      * Two functions are supported for value extraction: `EXTRACT(field)` or
-     * `REGEXP_EXTRACT(field, regex)`. The argument are:
+     * `REGEXP_EXTRACT(field, regex)`. The arguments are:
      *   1. field: The name of the log entry field from which the value is to be
      *      extracted.
      *   2. regex: A regular expression using the Google RE2 syntax
@@ -2452,7 +2669,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * Optional. A `value_extractor` is required when using a distribution
      * logs-based metric to extract the values to record from a log entry.
      * Two functions are supported for value extraction: `EXTRACT(field)` or
-     * `REGEXP_EXTRACT(field, regex)`. The argument are:
+     * `REGEXP_EXTRACT(field, regex)`. The arguments are:
      *   1. field: The name of the log entry field from which the value is to be
      *      extracted.
      *   2. regex: A regular expression using the Google RE2 syntax
@@ -2490,7 +2707,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * Optional. A `value_extractor` is required when using a distribution
      * logs-based metric to extract the values to record from a log entry.
      * Two functions are supported for value extraction: `EXTRACT(field)` or
-     * `REGEXP_EXTRACT(field, regex)`. The argument are:
+     * `REGEXP_EXTRACT(field, regex)`. The arguments are:
      *   1. field: The name of the log entry field from which the value is to be
      *      extracted.
      *   2. regex: A regular expression using the Google RE2 syntax
@@ -2516,7 +2733,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       valueExtractor_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2527,7 +2744,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * Optional. A `value_extractor` is required when using a distribution
      * logs-based metric to extract the values to record from a log entry.
      * Two functions are supported for value extraction: `EXTRACT(field)` or
-     * `REGEXP_EXTRACT(field, regex)`. The argument are:
+     * `REGEXP_EXTRACT(field, regex)`. The arguments are:
      *   1. field: The name of the log entry field from which the value is to be
      *      extracted.
      *   2. regex: A regular expression using the Google RE2 syntax
@@ -2549,7 +2766,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearValueExtractor() {
       valueExtractor_ = getDefaultInstance().getValueExtractor();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2560,7 +2777,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * Optional. A `value_extractor` is required when using a distribution
      * logs-based metric to extract the values to record from a log entry.
      * Two functions are supported for value extraction: `EXTRACT(field)` or
-     * `REGEXP_EXTRACT(field, regex)`. The argument are:
+     * `REGEXP_EXTRACT(field, regex)`. The arguments are:
      *   1. field: The name of the log entry field from which the value is to be
      *      extracted.
      *   2. regex: A regular expression using the Google RE2 syntax
@@ -2587,7 +2804,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       valueExtractor_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2613,7 +2830,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
       if (!labelExtractors_.isMutable()) {
         labelExtractors_ = labelExtractors_.copy();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return labelExtractors_;
     }
@@ -2631,7 +2848,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * extractor expression in this map. The syntax of the extractor expression
      * is the same as for the `value_extractor` field.
      * The extracted value is converted to the type defined in the label
-     * descriptor. If the either the extraction or the type conversion fails,
+     * descriptor. If either the extraction or the type conversion fails,
      * the label will have a default value. The default value for a string
      * label is an empty string, for an integer label its 0, and for a boolean
      * label its `false`.
@@ -2666,7 +2883,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * extractor expression in this map. The syntax of the extractor expression
      * is the same as for the `value_extractor` field.
      * The extracted value is converted to the type defined in the label
-     * descriptor. If the either the extraction or the type conversion fails,
+     * descriptor. If either the extraction or the type conversion fails,
      * the label will have a default value. The default value for a string
      * label is an empty string, for an integer label its 0, and for a boolean
      * label its `false`.
@@ -2692,7 +2909,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * extractor expression in this map. The syntax of the extractor expression
      * is the same as for the `value_extractor` field.
      * The extracted value is converted to the type defined in the label
-     * descriptor. If the either the extraction or the type conversion fails,
+     * descriptor. If either the extraction or the type conversion fails,
      * the label will have a default value. The default value for a string
      * label is an empty string, for an integer label its 0, and for a boolean
      * label its `false`.
@@ -2725,7 +2942,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * extractor expression in this map. The syntax of the extractor expression
      * is the same as for the `value_extractor` field.
      * The extracted value is converted to the type defined in the label
-     * descriptor. If the either the extraction or the type conversion fails,
+     * descriptor. If either the extraction or the type conversion fails,
      * the label will have a default value. The default value for a string
      * label is an empty string, for an integer label its 0, and for a boolean
      * label its `false`.
@@ -2750,7 +2967,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabelExtractors() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       internalGetMutableLabelExtractors().getMutableMap().clear();
       return this;
     }
@@ -2764,7 +2981,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * extractor expression in this map. The syntax of the extractor expression
      * is the same as for the `value_extractor` field.
      * The extracted value is converted to the type defined in the label
-     * descriptor. If the either the extraction or the type conversion fails,
+     * descriptor. If either the extraction or the type conversion fails,
      * the label will have a default value. The default value for a string
      * label is an empty string, for an integer label its 0, and for a boolean
      * label its `false`.
@@ -2786,7 +3003,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabelExtractors() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       return internalGetMutableLabelExtractors().getMutableMap();
     }
     /**
@@ -2799,7 +3016,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * extractor expression in this map. The syntax of the extractor expression
      * is the same as for the `value_extractor` field.
      * The extracted value is converted to the type defined in the label
-     * descriptor. If the either the extraction or the type conversion fails,
+     * descriptor. If either the extraction or the type conversion fails,
      * the label will have a default value. The default value for a string
      * label is an empty string, for an integer label its 0, and for a boolean
      * label its `false`.
@@ -2819,7 +3036,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableLabelExtractors().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -2832,7 +3049,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * extractor expression in this map. The syntax of the extractor expression
      * is the same as for the `value_extractor` field.
      * The extracted value is converted to the type defined in the label
-     * descriptor. If the either the extraction or the type conversion fails,
+     * descriptor. If either the extraction or the type conversion fails,
      * the label will have a default value. The default value for a string
      * label is an empty string, for an integer label its 0, and for a boolean
      * label its `false`.
@@ -2846,7 +3063,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabelExtractors(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabelExtractors().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       return this;
     }
 
@@ -2872,7 +3089,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the bucketOptions field is set.
      */
     public boolean hasBucketOptions() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2920,7 +3137,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
       } else {
         bucketOptionsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2944,7 +3161,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
       } else {
         bucketOptionsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2963,7 +3180,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeBucketOptions(com.google.api.Distribution.BucketOptions value) {
       if (bucketOptionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && bucketOptions_ != null
             && bucketOptions_ != com.google.api.Distribution.BucketOptions.getDefaultInstance()) {
           getBucketOptionsBuilder().mergeFrom(value);
@@ -2973,7 +3190,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
       } else {
         bucketOptionsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2991,7 +3208,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearBucketOptions() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       bucketOptions_ = null;
       if (bucketOptionsBuilder_ != null) {
         bucketOptionsBuilder_.dispose();
@@ -3014,7 +3231,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.api.Distribution.BucketOptions.Builder getBucketOptionsBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getBucketOptionsFieldBuilder().getBuilder();
     }
@@ -3091,7 +3308,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
@@ -3137,7 +3354,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3159,7 +3376,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3177,7 +3394,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -3187,7 +3404,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3204,7 +3421,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -3226,7 +3443,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -3301,7 +3518,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -3347,7 +3564,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3369,7 +3586,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3387,7 +3604,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -3397,7 +3614,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3414,7 +3631,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -3436,7 +3653,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -3502,7 +3719,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
      *
      * @deprecated google.logging.v2.LogMetric.version is deprecated. See
-     *     google/logging/v2/logging_metrics.proto;l=220
+     *     google/logging/v2/logging_metrics.proto;l=237
      * @return The enum numeric value on the wire for version.
      */
     @java.lang.Override
@@ -3521,14 +3738,14 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
      *
      * @deprecated google.logging.v2.LogMetric.version is deprecated. See
-     *     google/logging/v2/logging_metrics.proto;l=220
+     *     google/logging/v2/logging_metrics.proto;l=237
      * @param value The enum numeric value on the wire for version to set.
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder setVersionValue(int value) {
       version_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3543,7 +3760,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
      *
      * @deprecated google.logging.v2.LogMetric.version is deprecated. See
-     *     google/logging/v2/logging_metrics.proto;l=220
+     *     google/logging/v2/logging_metrics.proto;l=237
      * @return The version.
      */
     @java.lang.Override
@@ -3564,7 +3781,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
      *
      * @deprecated google.logging.v2.LogMetric.version is deprecated. See
-     *     google/logging/v2/logging_metrics.proto;l=220
+     *     google/logging/v2/logging_metrics.proto;l=237
      * @param value The version to set.
      * @return This builder for chaining.
      */
@@ -3573,7 +3790,7 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       version_ = value.getNumber();
       onChanged();
       return this;
@@ -3589,12 +3806,12 @@ public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
      *
      * @deprecated google.logging.v2.LogMetric.version is deprecated. See
-     *     google/logging/v2/logging_metrics.proto;l=220
+     *     google/logging/v2/logging_metrics.proto;l=237
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearVersion() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       version_ = 0;
       onChanged();
       return this;

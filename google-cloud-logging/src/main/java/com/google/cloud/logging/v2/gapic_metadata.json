@@ -43,8 +43,14 @@
             "CreateBucket": {
               "methods": ["createBucket", "createBucketCallable"]
             },
+            "CreateBucketAsync": {
+              "methods": ["createBucketAsyncAsync", "createBucketAsyncOperationCallable", "createBucketAsyncCallable"]
+            },
             "CreateExclusion": {
               "methods": ["createExclusion", "createExclusion", "createExclusion", "createExclusion", "createExclusion", "createExclusion", "createExclusionCallable"]
+            },
+            "CreateLink": {
+              "methods": ["createLinkAsync", "createLinkAsync", "createLinkAsync", "createLinkOperationCallable", "createLinkCallable"]
             },
             "CreateSink": {
               "methods": ["createSink", "createSink", "createSink", "createSink", "createSink", "createSink", "createSinkCallable"]
@@ -57,6 +63,9 @@
             },
             "DeleteExclusion": {
               "methods": ["deleteExclusion", "deleteExclusion", "deleteExclusion", "deleteExclusionCallable"]
+            },
+            "DeleteLink": {
+              "methods": ["deleteLinkAsync", "deleteLinkAsync", "deleteLinkAsync", "deleteLinkOperationCallable", "deleteLinkCallable"]
             },
             "DeleteSink": {
               "methods": ["deleteSink", "deleteSink", "deleteSink", "deleteSinkCallable"]
@@ -73,6 +82,9 @@
             "GetExclusion": {
               "methods": ["getExclusion", "getExclusion", "getExclusion", "getExclusionCallable"]
             },
+            "GetLink": {
+              "methods": ["getLink", "getLink", "getLink", "getLinkCallable"]
+            },
             "GetSettings": {
               "methods": ["getSettings", "getSettings", "getSettings", "getSettingsCallable"]
             },
@@ -88,6 +100,9 @@
             "ListExclusions": {
               "methods": ["listExclusions", "listExclusions", "listExclusions", "listExclusions", "listExclusions", "listExclusions", "listExclusionsPagedCallable", "listExclusionsCallable"]
             },
+            "ListLinks": {
+              "methods": ["listLinks", "listLinks", "listLinks", "listLinksPagedCallable", "listLinksCallable"]
+            },
             "ListSinks": {
               "methods": ["listSinks", "listSinks", "listSinks", "listSinks", "listSinks", "listSinks", "listSinksPagedCallable", "listSinksCallable"]
             },
@@ -99,6 +114,9 @@
             },
             "UpdateBucket": {
               "methods": ["updateBucket", "updateBucketCallable"]
+            },
+            "UpdateBucketAsync": {
+              "methods": ["updateBucketAsyncAsync", "updateBucketAsyncOperationCallable", "updateBucketAsyncCallable"]
             },
             "UpdateCmekSettings": {
               "methods": ["updateCmekSettings", "updateCmekSettingsCallable"]

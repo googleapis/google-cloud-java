@@ -42,6 +42,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     description_ = "";
     lifecycleState_ = 0;
     restrictedFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    indexConfigs_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -191,8 +192,8 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The creation timestamp of the bucket. This is not set for any of the
-   * default buckets.
+   * Output only. The creation timestamp of the bucket. This is not set for any
+   * of the default buckets.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -208,8 +209,8 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The creation timestamp of the bucket. This is not set for any of the
-   * default buckets.
+   * Output only. The creation timestamp of the bucket. This is not set for any
+   * of the default buckets.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -225,8 +226,8 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The creation timestamp of the bucket. This is not set for any of the
-   * default buckets.
+   * Output only. The creation timestamp of the bucket. This is not set for any
+   * of the default buckets.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -366,6 +367,25 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.logging.v2.LifecycleState.UNRECOGNIZED : result;
   }
 
+  public static final int ANALYTICS_ENABLED_FIELD_NUMBER = 14;
+  private boolean analyticsEnabled_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Whether log analytics is enabled for this bucket.
+   * Once enabled, log analytics features cannot be disabled.
+   * </pre>
+   *
+   * <code>bool analytics_enabled = 14;</code>
+   *
+   * @return The analyticsEnabled.
+   */
+  @java.lang.Override
+  public boolean getAnalyticsEnabled() {
+    return analyticsEnabled_;
+  }
+
   public static final int RESTRICTED_FIELDS_FIELD_NUMBER = 15;
 
   @SuppressWarnings("serial")
@@ -443,6 +463,77 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
    */
   public com.google.protobuf.ByteString getRestrictedFieldsBytes(int index) {
     return restrictedFields_.getByteString(index);
+  }
+
+  public static final int INDEX_CONFIGS_FIELD_NUMBER = 17;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.logging.v2.IndexConfig> indexConfigs_;
+  /**
+   *
+   *
+   * <pre>
+   * A list of indexed fields and related configuration data.
+   * </pre>
+   *
+   * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.logging.v2.IndexConfig> getIndexConfigsList() {
+    return indexConfigs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of indexed fields and related configuration data.
+   * </pre>
+   *
+   * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.logging.v2.IndexConfigOrBuilder>
+      getIndexConfigsOrBuilderList() {
+    return indexConfigs_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of indexed fields and related configuration data.
+   * </pre>
+   *
+   * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
+   */
+  @java.lang.Override
+  public int getIndexConfigsCount() {
+    return indexConfigs_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of indexed fields and related configuration data.
+   * </pre>
+   *
+   * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
+   */
+  @java.lang.Override
+  public com.google.logging.v2.IndexConfig getIndexConfigs(int index) {
+    return indexConfigs_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A list of indexed fields and related configuration data.
+   * </pre>
+   *
+   * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
+   */
+  @java.lang.Override
+  public com.google.logging.v2.IndexConfigOrBuilder getIndexConfigsOrBuilder(int index) {
+    return indexConfigs_.get(index);
   }
 
   public static final int CMEK_SETTINGS_FIELD_NUMBER = 19;
@@ -543,8 +634,14 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
         != com.google.logging.v2.LifecycleState.LIFECYCLE_STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(12, lifecycleState_);
     }
+    if (analyticsEnabled_ != false) {
+      output.writeBool(14, analyticsEnabled_);
+    }
     for (int i = 0; i < restrictedFields_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, restrictedFields_.getRaw(i));
+    }
+    for (int i = 0; i < indexConfigs_.size(); i++) {
+      output.writeMessage(17, indexConfigs_.get(i));
     }
     if (cmekSettings_ != null) {
       output.writeMessage(19, getCmekSettings());
@@ -580,6 +677,9 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
         != com.google.logging.v2.LifecycleState.LIFECYCLE_STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, lifecycleState_);
     }
+    if (analyticsEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(14, analyticsEnabled_);
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < restrictedFields_.size(); i++) {
@@ -587,6 +687,9 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       }
       size += dataSize;
       size += 1 * getRestrictedFieldsList().size();
+    }
+    for (int i = 0; i < indexConfigs_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, indexConfigs_.get(i));
     }
     if (cmekSettings_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getCmekSettings());
@@ -619,7 +722,9 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     if (getRetentionDays() != other.getRetentionDays()) return false;
     if (getLocked() != other.getLocked()) return false;
     if (lifecycleState_ != other.lifecycleState_) return false;
+    if (getAnalyticsEnabled() != other.getAnalyticsEnabled()) return false;
     if (!getRestrictedFieldsList().equals(other.getRestrictedFieldsList())) return false;
+    if (!getIndexConfigsList().equals(other.getIndexConfigsList())) return false;
     if (hasCmekSettings() != other.hasCmekSettings()) return false;
     if (hasCmekSettings()) {
       if (!getCmekSettings().equals(other.getCmekSettings())) return false;
@@ -653,9 +758,15 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLocked());
     hash = (37 * hash) + LIFECYCLE_STATE_FIELD_NUMBER;
     hash = (53 * hash) + lifecycleState_;
+    hash = (37 * hash) + ANALYTICS_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAnalyticsEnabled());
     if (getRestrictedFieldsCount() > 0) {
       hash = (37 * hash) + RESTRICTED_FIELDS_FIELD_NUMBER;
       hash = (53 * hash) + getRestrictedFieldsList().hashCode();
+    }
+    if (getIndexConfigsCount() > 0) {
+      hash = (37 * hash) + INDEX_CONFIGS_FIELD_NUMBER;
+      hash = (53 * hash) + getIndexConfigsList().hashCode();
     }
     if (hasCmekSettings()) {
       hash = (37 * hash) + CMEK_SETTINGS_FIELD_NUMBER;
@@ -813,8 +924,16 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       retentionDays_ = 0;
       locked_ = false;
       lifecycleState_ = 0;
+      analyticsEnabled_ = false;
       restrictedFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
+      if (indexConfigsBuilder_ == null) {
+        indexConfigs_ = java.util.Collections.emptyList();
+      } else {
+        indexConfigs_ = null;
+        indexConfigsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000200);
       cmekSettings_ = null;
       if (cmekSettingsBuilder_ != null) {
         cmekSettingsBuilder_.dispose();
@@ -855,11 +974,20 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void buildPartialRepeatedFields(com.google.logging.v2.LogBucket result) {
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         restrictedFields_ = restrictedFields_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
       }
       result.restrictedFields_ = restrictedFields_;
+      if (indexConfigsBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)) {
+          indexConfigs_ = java.util.Collections.unmodifiableList(indexConfigs_);
+          bitField0_ = (bitField0_ & ~0x00000200);
+        }
+        result.indexConfigs_ = indexConfigs_;
+      } else {
+        result.indexConfigs_ = indexConfigsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.logging.v2.LogBucket result) {
@@ -885,7 +1013,10 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.lifecycleState_ = lifecycleState_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.analyticsEnabled_ = analyticsEnabled_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.cmekSettings_ =
             cmekSettingsBuilder_ == null ? cmekSettings_ : cmekSettingsBuilder_.build();
       }
@@ -961,15 +1092,45 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       if (other.lifecycleState_ != 0) {
         setLifecycleStateValue(other.getLifecycleStateValue());
       }
+      if (other.getAnalyticsEnabled() != false) {
+        setAnalyticsEnabled(other.getAnalyticsEnabled());
+      }
       if (!other.restrictedFields_.isEmpty()) {
         if (restrictedFields_.isEmpty()) {
           restrictedFields_ = other.restrictedFields_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           ensureRestrictedFieldsIsMutable();
           restrictedFields_.addAll(other.restrictedFields_);
         }
         onChanged();
+      }
+      if (indexConfigsBuilder_ == null) {
+        if (!other.indexConfigs_.isEmpty()) {
+          if (indexConfigs_.isEmpty()) {
+            indexConfigs_ = other.indexConfigs_;
+            bitField0_ = (bitField0_ & ~0x00000200);
+          } else {
+            ensureIndexConfigsIsMutable();
+            indexConfigs_.addAll(other.indexConfigs_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.indexConfigs_.isEmpty()) {
+          if (indexConfigsBuilder_.isEmpty()) {
+            indexConfigsBuilder_.dispose();
+            indexConfigsBuilder_ = null;
+            indexConfigs_ = other.indexConfigs_;
+            bitField0_ = (bitField0_ & ~0x00000200);
+            indexConfigsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getIndexConfigsFieldBuilder()
+                    : null;
+          } else {
+            indexConfigsBuilder_.addAllMessages(other.indexConfigs_);
+          }
+        }
       }
       if (other.hasCmekSettings()) {
         mergeCmekSettings(other.getCmekSettings());
@@ -1042,6 +1203,12 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case 96
+            case 112:
+              {
+                analyticsEnabled_ = input.readBool();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 112
             case 122:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -1049,10 +1216,23 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
                 restrictedFields_.add(s);
                 break;
               } // case 122
+            case 138:
+              {
+                com.google.logging.v2.IndexConfig m =
+                    input.readMessage(
+                        com.google.logging.v2.IndexConfig.parser(), extensionRegistry);
+                if (indexConfigsBuilder_ == null) {
+                  ensureIndexConfigsIsMutable();
+                  indexConfigs_.add(m);
+                } else {
+                  indexConfigsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 138
             case 154:
               {
                 input.readMessage(getCmekSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 154
             default:
@@ -1331,8 +1511,8 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The creation timestamp of the bucket. This is not set for any of the
-     * default buckets.
+     * Output only. The creation timestamp of the bucket. This is not set for any
+     * of the default buckets.
      * </pre>
      *
      * <code>
@@ -1348,8 +1528,8 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The creation timestamp of the bucket. This is not set for any of the
-     * default buckets.
+     * Output only. The creation timestamp of the bucket. This is not set for any
+     * of the default buckets.
      * </pre>
      *
      * <code>
@@ -1371,8 +1551,8 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The creation timestamp of the bucket. This is not set for any of the
-     * default buckets.
+     * Output only. The creation timestamp of the bucket. This is not set for any
+     * of the default buckets.
      * </pre>
      *
      * <code>
@@ -1396,8 +1576,8 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The creation timestamp of the bucket. This is not set for any of the
-     * default buckets.
+     * Output only. The creation timestamp of the bucket. This is not set for any
+     * of the default buckets.
      * </pre>
      *
      * <code>
@@ -1418,8 +1598,8 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The creation timestamp of the bucket. This is not set for any of the
-     * default buckets.
+     * Output only. The creation timestamp of the bucket. This is not set for any
+     * of the default buckets.
      * </pre>
      *
      * <code>
@@ -1446,8 +1626,8 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The creation timestamp of the bucket. This is not set for any of the
-     * default buckets.
+     * Output only. The creation timestamp of the bucket. This is not set for any
+     * of the default buckets.
      * </pre>
      *
      * <code>
@@ -1468,8 +1648,8 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The creation timestamp of the bucket. This is not set for any of the
-     * default buckets.
+     * Output only. The creation timestamp of the bucket. This is not set for any
+     * of the default buckets.
      * </pre>
      *
      * <code>
@@ -1485,8 +1665,8 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The creation timestamp of the bucket. This is not set for any of the
-     * default buckets.
+     * Output only. The creation timestamp of the bucket. This is not set for any
+     * of the default buckets.
      * </pre>
      *
      * <code>
@@ -1506,8 +1686,8 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The creation timestamp of the bucket. This is not set for any of the
-     * default buckets.
+     * Output only. The creation timestamp of the bucket. This is not set for any
+     * of the default buckets.
      * </pre>
      *
      * <code>
@@ -1953,13 +2133,69 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private boolean analyticsEnabled_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether log analytics is enabled for this bucket.
+     * Once enabled, log analytics features cannot be disabled.
+     * </pre>
+     *
+     * <code>bool analytics_enabled = 14;</code>
+     *
+     * @return The analyticsEnabled.
+     */
+    @java.lang.Override
+    public boolean getAnalyticsEnabled() {
+      return analyticsEnabled_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether log analytics is enabled for this bucket.
+     * Once enabled, log analytics features cannot be disabled.
+     * </pre>
+     *
+     * <code>bool analytics_enabled = 14;</code>
+     *
+     * @param value The analyticsEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAnalyticsEnabled(boolean value) {
+
+      analyticsEnabled_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether log analytics is enabled for this bucket.
+     * Once enabled, log analytics features cannot be disabled.
+     * </pre>
+     *
+     * <code>bool analytics_enabled = 14;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAnalyticsEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      analyticsEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringList restrictedFields_ =
         com.google.protobuf.LazyStringArrayList.EMPTY;
 
     private void ensureRestrictedFieldsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         restrictedFields_ = new com.google.protobuf.LazyStringArrayList(restrictedFields_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
       }
     }
     /**
@@ -2126,7 +2362,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRestrictedFields() {
       restrictedFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2157,6 +2393,354 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.util.List<com.google.logging.v2.IndexConfig> indexConfigs_ =
+        java.util.Collections.emptyList();
+
+    private void ensureIndexConfigsIsMutable() {
+      if (!((bitField0_ & 0x00000200) != 0)) {
+        indexConfigs_ = new java.util.ArrayList<com.google.logging.v2.IndexConfig>(indexConfigs_);
+        bitField0_ |= 0x00000200;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.logging.v2.IndexConfig,
+            com.google.logging.v2.IndexConfig.Builder,
+            com.google.logging.v2.IndexConfigOrBuilder>
+        indexConfigsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of indexed fields and related configuration data.
+     * </pre>
+     *
+     * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
+     */
+    public java.util.List<com.google.logging.v2.IndexConfig> getIndexConfigsList() {
+      if (indexConfigsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(indexConfigs_);
+      } else {
+        return indexConfigsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of indexed fields and related configuration data.
+     * </pre>
+     *
+     * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
+     */
+    public int getIndexConfigsCount() {
+      if (indexConfigsBuilder_ == null) {
+        return indexConfigs_.size();
+      } else {
+        return indexConfigsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of indexed fields and related configuration data.
+     * </pre>
+     *
+     * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
+     */
+    public com.google.logging.v2.IndexConfig getIndexConfigs(int index) {
+      if (indexConfigsBuilder_ == null) {
+        return indexConfigs_.get(index);
+      } else {
+        return indexConfigsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of indexed fields and related configuration data.
+     * </pre>
+     *
+     * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
+     */
+    public Builder setIndexConfigs(int index, com.google.logging.v2.IndexConfig value) {
+      if (indexConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureIndexConfigsIsMutable();
+        indexConfigs_.set(index, value);
+        onChanged();
+      } else {
+        indexConfigsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of indexed fields and related configuration data.
+     * </pre>
+     *
+     * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
+     */
+    public Builder setIndexConfigs(
+        int index, com.google.logging.v2.IndexConfig.Builder builderForValue) {
+      if (indexConfigsBuilder_ == null) {
+        ensureIndexConfigsIsMutable();
+        indexConfigs_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        indexConfigsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of indexed fields and related configuration data.
+     * </pre>
+     *
+     * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
+     */
+    public Builder addIndexConfigs(com.google.logging.v2.IndexConfig value) {
+      if (indexConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureIndexConfigsIsMutable();
+        indexConfigs_.add(value);
+        onChanged();
+      } else {
+        indexConfigsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of indexed fields and related configuration data.
+     * </pre>
+     *
+     * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
+     */
+    public Builder addIndexConfigs(int index, com.google.logging.v2.IndexConfig value) {
+      if (indexConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureIndexConfigsIsMutable();
+        indexConfigs_.add(index, value);
+        onChanged();
+      } else {
+        indexConfigsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of indexed fields and related configuration data.
+     * </pre>
+     *
+     * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
+     */
+    public Builder addIndexConfigs(com.google.logging.v2.IndexConfig.Builder builderForValue) {
+      if (indexConfigsBuilder_ == null) {
+        ensureIndexConfigsIsMutable();
+        indexConfigs_.add(builderForValue.build());
+        onChanged();
+      } else {
+        indexConfigsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of indexed fields and related configuration data.
+     * </pre>
+     *
+     * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
+     */
+    public Builder addIndexConfigs(
+        int index, com.google.logging.v2.IndexConfig.Builder builderForValue) {
+      if (indexConfigsBuilder_ == null) {
+        ensureIndexConfigsIsMutable();
+        indexConfigs_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        indexConfigsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of indexed fields and related configuration data.
+     * </pre>
+     *
+     * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
+     */
+    public Builder addAllIndexConfigs(
+        java.lang.Iterable<? extends com.google.logging.v2.IndexConfig> values) {
+      if (indexConfigsBuilder_ == null) {
+        ensureIndexConfigsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, indexConfigs_);
+        onChanged();
+      } else {
+        indexConfigsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of indexed fields and related configuration data.
+     * </pre>
+     *
+     * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
+     */
+    public Builder clearIndexConfigs() {
+      if (indexConfigsBuilder_ == null) {
+        indexConfigs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000200);
+        onChanged();
+      } else {
+        indexConfigsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of indexed fields and related configuration data.
+     * </pre>
+     *
+     * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
+     */
+    public Builder removeIndexConfigs(int index) {
+      if (indexConfigsBuilder_ == null) {
+        ensureIndexConfigsIsMutable();
+        indexConfigs_.remove(index);
+        onChanged();
+      } else {
+        indexConfigsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of indexed fields and related configuration data.
+     * </pre>
+     *
+     * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
+     */
+    public com.google.logging.v2.IndexConfig.Builder getIndexConfigsBuilder(int index) {
+      return getIndexConfigsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of indexed fields and related configuration data.
+     * </pre>
+     *
+     * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
+     */
+    public com.google.logging.v2.IndexConfigOrBuilder getIndexConfigsOrBuilder(int index) {
+      if (indexConfigsBuilder_ == null) {
+        return indexConfigs_.get(index);
+      } else {
+        return indexConfigsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of indexed fields and related configuration data.
+     * </pre>
+     *
+     * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
+     */
+    public java.util.List<? extends com.google.logging.v2.IndexConfigOrBuilder>
+        getIndexConfigsOrBuilderList() {
+      if (indexConfigsBuilder_ != null) {
+        return indexConfigsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(indexConfigs_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of indexed fields and related configuration data.
+     * </pre>
+     *
+     * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
+     */
+    public com.google.logging.v2.IndexConfig.Builder addIndexConfigsBuilder() {
+      return getIndexConfigsFieldBuilder()
+          .addBuilder(com.google.logging.v2.IndexConfig.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of indexed fields and related configuration data.
+     * </pre>
+     *
+     * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
+     */
+    public com.google.logging.v2.IndexConfig.Builder addIndexConfigsBuilder(int index) {
+      return getIndexConfigsFieldBuilder()
+          .addBuilder(index, com.google.logging.v2.IndexConfig.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A list of indexed fields and related configuration data.
+     * </pre>
+     *
+     * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
+     */
+    public java.util.List<com.google.logging.v2.IndexConfig.Builder> getIndexConfigsBuilderList() {
+      return getIndexConfigsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.logging.v2.IndexConfig,
+            com.google.logging.v2.IndexConfig.Builder,
+            com.google.logging.v2.IndexConfigOrBuilder>
+        getIndexConfigsFieldBuilder() {
+      if (indexConfigsBuilder_ == null) {
+        indexConfigsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.logging.v2.IndexConfig,
+                com.google.logging.v2.IndexConfig.Builder,
+                com.google.logging.v2.IndexConfigOrBuilder>(
+                indexConfigs_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
+        indexConfigs_ = null;
+      }
+      return indexConfigsBuilder_;
+    }
+
     private com.google.logging.v2.CmekSettings cmekSettings_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.logging.v2.CmekSettings,
@@ -2179,7 +2763,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the cmekSettings field is set.
      */
     public boolean hasCmekSettings() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      *
@@ -2227,7 +2811,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       } else {
         cmekSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2250,7 +2834,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       } else {
         cmekSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2269,7 +2853,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCmekSettings(com.google.logging.v2.CmekSettings value) {
       if (cmekSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && cmekSettings_ != null
             && cmekSettings_ != com.google.logging.v2.CmekSettings.getDefaultInstance()) {
           getCmekSettingsBuilder().mergeFrom(value);
@@ -2279,7 +2863,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       } else {
         cmekSettingsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2297,7 +2881,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.logging.v2.CmekSettings cmek_settings = 19;</code>
      */
     public Builder clearCmekSettings() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       cmekSettings_ = null;
       if (cmekSettingsBuilder_ != null) {
         cmekSettingsBuilder_.dispose();
@@ -2320,7 +2904,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.logging.v2.CmekSettings cmek_settings = 19;</code>
      */
     public com.google.logging.v2.CmekSettings.Builder getCmekSettingsBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getCmekSettingsFieldBuilder().getBuilder();
     }

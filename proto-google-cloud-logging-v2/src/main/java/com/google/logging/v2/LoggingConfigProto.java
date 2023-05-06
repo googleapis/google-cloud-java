@@ -28,6 +28,10 @@ public final class LoggingConfigProto {
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_logging_v2_IndexConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_logging_v2_IndexConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_logging_v2_LogBucket_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_logging_v2_LogBucket_fieldAccessorTable;
@@ -39,6 +43,14 @@ public final class LoggingConfigProto {
       internal_static_google_logging_v2_LogSink_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_logging_v2_LogSink_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_logging_v2_BigQueryDataset_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_logging_v2_BigQueryDataset_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_logging_v2_Link_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_logging_v2_Link_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_logging_v2_BigQueryOptions_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -120,6 +132,26 @@ public final class LoggingConfigProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_logging_v2_DeleteSinkRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_logging_v2_CreateLinkRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_logging_v2_CreateLinkRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_logging_v2_DeleteLinkRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_logging_v2_DeleteLinkRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_logging_v2_ListLinksRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_logging_v2_ListLinksRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_logging_v2_ListLinksResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_logging_v2_ListLinksResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_logging_v2_GetLinkRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_logging_v2_GetLinkRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_logging_v2_LogExclusion_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_logging_v2_LogExclusion_fieldAccessorTable;
@@ -183,6 +215,18 @@ public final class LoggingConfigProto {
       internal_static_google_logging_v2_CopyLogEntriesResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_logging_v2_CopyLogEntriesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_logging_v2_BucketMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_logging_v2_BucketMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_logging_v2_LinkMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_logging_v2_LinkMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_logging_v2_LocationMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_logging_v2_LocationMetadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -199,422 +243,541 @@ public final class LoggingConfigProto {
           + "resource.proto\032#google/longrunning/opera"
           + "tions.proto\032\033google/protobuf/empty.proto"
           + "\032 google/protobuf/field_mask.proto\032\037goog"
-          + "le/protobuf/timestamp.proto\"\203\005\n\tLogBucke"
-          + "t\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\023\n\013description\030\003 \001("
-          + "\t\0224\n\013create_time\030\004 \001(\0132\032.google.protobuf"
-          + ".TimestampB\003\340A\003\0224\n\013update_time\030\005 \001(\0132\032.g"
-          + "oogle.protobuf.TimestampB\003\340A\003\022\026\n\016retenti"
-          + "on_days\030\013 \001(\005\022\016\n\006locked\030\t \001(\010\022?\n\017lifecyc"
-          + "le_state\030\014 \001(\0162!.google.logging.v2.Lifec"
-          + "ycleStateB\003\340A\003\022\031\n\021restricted_fields\030\017 \003("
-          + "\t\0226\n\rcmek_settings\030\023 \001(\0132\037.google.loggin"
-          + "g.v2.CmekSettings:\245\002\352A\241\002\n logging.google"
-          + "apis.com/LogBucket\0228projects/{project}/l"
-          + "ocations/{location}/buckets/{bucket}\022Bor"
-          + "ganizations/{organization}/locations/{lo"
-          + "cation}/buckets/{bucket}\0226folders/{folde"
-          + "r}/locations/{location}/buckets/{bucket}"
-          + "\022GbillingAccounts/{billing_account}/loca"
-          + "tions/{location}/buckets/{bucket}\"\202\004\n\007Lo"
-          + "gView\022\014\n\004name\030\001 \001(\t\022\023\n\013description\030\003 \001(\t"
-          + "\0224\n\013create_time\030\004 \001(\0132\032.google.protobuf."
-          + "TimestampB\003\340A\003\0224\n\013update_time\030\005 \001(\0132\032.go"
-          + "ogle.protobuf.TimestampB\003\340A\003\022\016\n\006filter\030\007"
-          + " \001(\t:\327\002\352A\323\002\n\036logging.googleapis.com/LogV"
-          + "iew\022Eprojects/{project}/locations/{locat"
-          + "ion}/buckets/{bucket}/views/{view}\022Oorga"
-          + "nizations/{organization}/locations/{loca"
-          + "tion}/buckets/{bucket}/views/{view}\022Cfol"
-          + "ders/{folder}/locations/{location}/bucke"
-          + "ts/{bucket}/views/{view}\022TbillingAccount"
-          + "s/{billing_account}/locations/{location}"
-          + "/buckets/{bucket}/views/{view}\"\205\006\n\007LogSi"
-          + "nk\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\036\n\013destination\030\003 \001"
-          + "(\tB\t\340A\002\372A\003\n\001*\022\023\n\006filter\030\005 \001(\tB\003\340A\001\022\030\n\013de"
-          + "scription\030\022 \001(\tB\003\340A\001\022\025\n\010disabled\030\023 \001(\010B\003"
-          + "\340A\001\0228\n\nexclusions\030\020 \003(\0132\037.google.logging"
-          + ".v2.LogExclusionB\003\340A\001\022K\n\025output_version_"
-          + "format\030\006 \001(\0162(.google.logging.v2.LogSink"
-          + ".VersionFormatB\002\030\001\022\034\n\017writer_identity\030\010 "
-          + "\001(\tB\003\340A\003\022\035\n\020include_children\030\t \001(\010B\003\340A\001\022"
-          + "C\n\020bigquery_options\030\014 \001(\0132\".google.loggi"
-          + "ng.v2.BigQueryOptionsB\003\340A\001H\000\0224\n\013create_t"
-          + "ime\030\r \001(\0132\032.google.protobuf.TimestampB\003\340"
-          + "A\003\0224\n\013update_time\030\016 \001(\0132\032.google.protobu"
-          + "f.TimestampB\003\340A\003\"?\n\rVersionFormat\022\036\n\032VER"
-          + "SION_FORMAT_UNSPECIFIED\020\000\022\006\n\002V2\020\001\022\006\n\002V1\020"
-          + "\002:\277\001\352A\273\001\n\036logging.googleapis.com/LogSink"
-          + "\022\037projects/{project}/sinks/{sink}\022)organ"
-          + "izations/{organization}/sinks/{sink}\022\035fo"
-          + "lders/{folder}/sinks/{sink}\022.billingAcco"
-          + "unts/{billing_account}/sinks/{sink}B\t\n\007o"
-          + "ptions\"g\n\017BigQueryOptions\022#\n\026use_partiti"
-          + "oned_tables\030\001 \001(\010B\003\340A\001\022/\n\"uses_timestamp"
-          + "_column_partitioning\030\003 \001(\010B\003\340A\003\"\177\n\022ListB"
-          + "ucketsRequest\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\022 l"
-          + "ogging.googleapis.com/LogBucket\022\027\n\npage_"
-          + "token\030\002 \001(\tB\003\340A\001\022\026\n\tpage_size\030\003 \001(\005B\003\340A\001"
-          + "\"]\n\023ListBucketsResponse\022-\n\007buckets\030\001 \003(\013"
-          + "2\034.google.logging.v2.LogBucket\022\027\n\017next_p"
-          + "age_token\030\002 \001(\t\"\232\001\n\023CreateBucketRequest\022"
-          + "8\n\006parent\030\001 \001(\tB(\340A\002\372A\"\022 logging.googlea"
-          + "pis.com/LogBucket\022\026\n\tbucket_id\030\002 \001(\tB\003\340A"
-          + "\002\0221\n\006bucket\030\003 \001(\0132\034.google.logging.v2.Lo"
-          + "gBucketB\003\340A\002\"\266\001\n\023UpdateBucketRequest\0226\n\004"
-          + "name\030\001 \001(\tB(\340A\002\372A\"\n logging.googleapis.c"
-          + "om/LogBucket\0221\n\006bucket\030\002 \001(\0132\034.google.lo"
-          + "gging.v2.LogBucketB\003\340A\002\0224\n\013update_mask\030\004"
-          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\"J\n"
-          + "\020GetBucketRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n"
-          + " logging.googleapis.com/LogBucket\"M\n\023Del"
-          + "eteBucketRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n "
-          + "logging.googleapis.com/LogBucket\"O\n\025Unde"
-          + "leteBucketRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n"
-          + " logging.googleapis.com/LogBucket\"X\n\020Lis"
-          + "tViewsRequest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022\027\n\npa"
-          + "ge_token\030\002 \001(\tB\003\340A\001\022\026\n\tpage_size\030\003 \001(\005B\003"
-          + "\340A\001\"W\n\021ListViewsResponse\022)\n\005views\030\001 \003(\0132"
-          + "\032.google.logging.v2.LogView\022\027\n\017next_page"
-          + "_token\030\002 \001(\t\"m\n\021CreateViewRequest\022\023\n\006par"
-          + "ent\030\001 \001(\tB\003\340A\002\022\024\n\007view_id\030\002 \001(\tB\003\340A\002\022-\n\004"
-          + "view\030\003 \001(\0132\032.google.logging.v2.LogViewB\003"
-          + "\340A\002\"\213\001\n\021UpdateViewRequest\022\021\n\004name\030\001 \001(\tB"
-          + "\003\340A\002\022-\n\004view\030\002 \001(\0132\032.google.logging.v2.L"
-          + "ogViewB\003\340A\002\0224\n\013update_mask\030\004 \001(\0132\032.googl"
-          + "e.protobuf.FieldMaskB\003\340A\001\"F\n\016GetViewRequ"
-          + "est\0224\n\004name\030\001 \001(\tB&\340A\002\372A \n\036logging.googl"
-          + "eapis.com/LogView\"I\n\021DeleteViewRequest\0224"
-          + "\n\004name\030\001 \001(\tB&\340A\002\372A \n\036logging.googleapis"
-          + ".com/LogView\"{\n\020ListSinksRequest\0226\n\006pare"
-          + "nt\030\001 \001(\tB&\340A\002\372A \022\036logging.googleapis.com"
-          + "/LogSink\022\027\n\npage_token\030\002 \001(\tB\003\340A\001\022\026\n\tpag"
-          + "e_size\030\003 \001(\005B\003\340A\001\"W\n\021ListSinksResponse\022)"
-          + "\n\005sinks\030\001 \003(\0132\032.google.logging.v2.LogSin"
-          + "k\022\027\n\017next_page_token\030\002 \001(\t\"K\n\016GetSinkReq"
-          + "uest\0229\n\tsink_name\030\001 \001(\tB&\340A\002\372A \n\036logging"
-          + ".googleapis.com/LogSink\"\237\001\n\021CreateSinkRe"
-          + "quest\0226\n\006parent\030\001 \001(\tB&\340A\002\372A \022\036logging.g"
-          + "oogleapis.com/LogSink\022-\n\004sink\030\002 \001(\0132\032.go"
-          + "ogle.logging.v2.LogSinkB\003\340A\002\022#\n\026unique_w"
-          + "riter_identity\030\003 \001(\010B\003\340A\001\"\330\001\n\021UpdateSink"
-          + "Request\0229\n\tsink_name\030\001 \001(\tB&\340A\002\372A \n\036logg"
-          + "ing.googleapis.com/LogSink\022-\n\004sink\030\002 \001(\013"
-          + "2\032.google.logging.v2.LogSinkB\003\340A\002\022#\n\026uni"
-          + "que_writer_identity\030\003 \001(\010B\003\340A\001\0224\n\013update"
-          + "_mask\030\004 \001(\0132\032.google.protobuf.FieldMaskB"
-          + "\003\340A\001\"N\n\021DeleteSinkRequest\0229\n\tsink_name\030\001"
-          + " \001(\tB&\340A\002\372A \n\036logging.googleapis.com/Log"
-          + "Sink\"\302\003\n\014LogExclusion\022\021\n\004name\030\001 \001(\tB\003\340A\002"
-          + "\022\030\n\013description\030\002 \001(\tB\003\340A\001\022\023\n\006filter\030\003 \001"
-          + "(\tB\003\340A\002\022\025\n\010disabled\030\004 \001(\010B\003\340A\001\0224\n\013create"
-          + "_time\030\005 \001(\0132\032.google.protobuf.TimestampB"
-          + "\003\340A\003\0224\n\013update_time\030\006 \001(\0132\032.google.proto"
-          + "buf.TimestampB\003\340A\003:\354\001\352A\350\001\n#logging.googl"
-          + "eapis.com/LogExclusion\022)projects/{projec"
-          + "t}/exclusions/{exclusion}\0223organizations"
-          + "/{organization}/exclusions/{exclusion}\022\'"
-          + "folders/{folder}/exclusions/{exclusion}\022"
-          + "8billingAccounts/{billing_account}/exclu"
-          + "sions/{exclusion}\"\205\001\n\025ListExclusionsRequ"
-          + "est\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\022#logging.goo"
-          + "gleapis.com/LogExclusion\022\027\n\npage_token\030\002"
-          + " \001(\tB\003\340A\001\022\026\n\tpage_size\030\003 \001(\005B\003\340A\001\"f\n\026Lis"
-          + "tExclusionsResponse\0223\n\nexclusions\030\001 \003(\0132"
-          + "\037.google.logging.v2.LogExclusion\022\027\n\017next"
-          + "_page_token\030\002 \001(\t\"P\n\023GetExclusionRequest"
+          + "le/protobuf/timestamp.proto\"\215\001\n\013IndexCon"
+          + "fig\022\027\n\nfield_path\030\001 \001(\tB\003\340A\002\022/\n\004type\030\002 \001"
+          + "(\0162\034.google.logging.v2.IndexTypeB\003\340A\002\0224\n"
+          + "\013create_time\030\003 \001(\0132\032.google.protobuf.Tim"
+          + "estampB\003\340A\003\"\325\005\n\tLogBucket\022\021\n\004name\030\001 \001(\tB"
+          + "\003\340A\003\022\023\n\013description\030\003 \001(\t\0224\n\013create_time"
+          + "\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022"
+          + "4\n\013update_time\030\005 \001(\0132\032.google.protobuf.T"
+          + "imestampB\003\340A\003\022\026\n\016retention_days\030\013 \001(\005\022\016\n"
+          + "\006locked\030\t \001(\010\022?\n\017lifecycle_state\030\014 \001(\0162!"
+          + ".google.logging.v2.LifecycleStateB\003\340A\003\022\031"
+          + "\n\021analytics_enabled\030\016 \001(\010\022\031\n\021restricted_"
+          + "fields\030\017 \003(\t\0225\n\rindex_configs\030\021 \003(\0132\036.go"
+          + "ogle.logging.v2.IndexConfig\0226\n\rcmek_sett"
+          + "ings\030\023 \001(\0132\037.google.logging.v2.CmekSetti"
+          + "ngs:\245\002\352A\241\002\n logging.googleapis.com/LogBu"
+          + "cket\0228projects/{project}/locations/{loca"
+          + "tion}/buckets/{bucket}\022Borganizations/{o"
+          + "rganization}/locations/{location}/bucket"
+          + "s/{bucket}\0226folders/{folder}/locations/{"
+          + "location}/buckets/{bucket}\022GbillingAccou"
+          + "nts/{billing_account}/locations/{locatio"
+          + "n}/buckets/{bucket}\"\202\004\n\007LogView\022\014\n\004name\030"
+          + "\001 \001(\t\022\023\n\013description\030\003 \001(\t\0224\n\013create_tim"
+          + "e\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003"
+          + "\0224\n\013update_time\030\005 \001(\0132\032.google.protobuf."
+          + "TimestampB\003\340A\003\022\016\n\006filter\030\007 \001(\t:\327\002\352A\323\002\n\036l"
+          + "ogging.googleapis.com/LogView\022Eprojects/"
+          + "{project}/locations/{location}/buckets/{"
+          + "bucket}/views/{view}\022Oorganizations/{org"
+          + "anization}/locations/{location}/buckets/"
+          + "{bucket}/views/{view}\022Cfolders/{folder}/"
+          + "locations/{location}/buckets/{bucket}/vi"
+          + "ews/{view}\022TbillingAccounts/{billing_acc"
+          + "ount}/locations/{location}/buckets/{buck"
+          + "et}/views/{view}\"\205\006\n\007LogSink\022\021\n\004name\030\001 \001"
+          + "(\tB\003\340A\002\022\036\n\013destination\030\003 \001(\tB\t\340A\002\372A\003\n\001*\022"
+          + "\023\n\006filter\030\005 \001(\tB\003\340A\001\022\030\n\013description\030\022 \001("
+          + "\tB\003\340A\001\022\025\n\010disabled\030\023 \001(\010B\003\340A\001\0228\n\nexclusi"
+          + "ons\030\020 \003(\0132\037.google.logging.v2.LogExclusi"
+          + "onB\003\340A\001\022K\n\025output_version_format\030\006 \001(\0162("
+          + ".google.logging.v2.LogSink.VersionFormat"
+          + "B\002\030\001\022\034\n\017writer_identity\030\010 \001(\tB\003\340A\003\022\035\n\020in"
+          + "clude_children\030\t \001(\010B\003\340A\001\022C\n\020bigquery_op"
+          + "tions\030\014 \001(\0132\".google.logging.v2.BigQuery"
+          + "OptionsB\003\340A\001H\000\0224\n\013create_time\030\r \001(\0132\032.go"
+          + "ogle.protobuf.TimestampB\003\340A\003\0224\n\013update_t"
+          + "ime\030\016 \001(\0132\032.google.protobuf.TimestampB\003\340"
+          + "A\003\"?\n\rVersionFormat\022\036\n\032VERSION_FORMAT_UN"
+          + "SPECIFIED\020\000\022\006\n\002V2\020\001\022\006\n\002V1\020\002:\277\001\352A\273\001\n\036logg"
+          + "ing.googleapis.com/LogSink\022\037projects/{pr"
+          + "oject}/sinks/{sink}\022)organizations/{orga"
+          + "nization}/sinks/{sink}\022\035folders/{folder}"
+          + "/sinks/{sink}\022.billingAccounts/{billing_"
+          + "account}/sinks/{sink}B\t\n\007options\"*\n\017BigQ"
+          + "ueryDataset\022\027\n\ndataset_id\030\001 \001(\tB\003\340A\003\"\265\004\n"
+          + "\004Link\022\014\n\004name\030\001 \001(\t\022\023\n\013description\030\002 \001(\t"
+          + "\0224\n\013create_time\030\003 \001(\0132\032.google.protobuf."
+          + "TimestampB\003\340A\003\022?\n\017lifecycle_state\030\004 \001(\0162"
+          + "!.google.logging.v2.LifecycleStateB\003\340A\003\022"
+          + "<\n\020bigquery_dataset\030\005 \001(\0132\".google.loggi"
+          + "ng.v2.BigQueryDataset:\324\002\352A\320\002\n\033logging.go"
+          + "ogleapis.com/Link\022Eprojects/{project}/lo"
+          + "cations/{location}/buckets/{bucket}/link"
+          + "s/{link}\022Oorganizations/{organization}/l"
+          + "ocations/{location}/buckets/{bucket}/lin"
+          + "ks/{link}\022Cfolders/{folder}/locations/{l"
+          + "ocation}/buckets/{bucket}/links/{link}\022T"
+          + "billingAccounts/{billing_account}/locati"
+          + "ons/{location}/buckets/{bucket}/links/{l"
+          + "ink}\"g\n\017BigQueryOptions\022#\n\026use_partition"
+          + "ed_tables\030\001 \001(\010B\003\340A\001\022/\n\"uses_timestamp_c"
+          + "olumn_partitioning\030\003 \001(\010B\003\340A\003\"\177\n\022ListBuc"
+          + "ketsRequest\0228\n\006parent\030\001 \001(\tB(\340A\002\372A\"\022 log"
+          + "ging.googleapis.com/LogBucket\022\027\n\npage_to"
+          + "ken\030\002 \001(\tB\003\340A\001\022\026\n\tpage_size\030\003 \001(\005B\003\340A\001\"]"
+          + "\n\023ListBucketsResponse\022-\n\007buckets\030\001 \003(\0132\034"
+          + ".google.logging.v2.LogBucket\022\027\n\017next_pag"
+          + "e_token\030\002 \001(\t\"\232\001\n\023CreateBucketRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\022 logging.googleapi"
+          + "s.com/LogBucket\022\026\n\tbucket_id\030\002 \001(\tB\003\340A\002\022"
+          + "1\n\006bucket\030\003 \001(\0132\034.google.logging.v2.LogB"
+          + "ucketB\003\340A\002\"\266\001\n\023UpdateBucketRequest\0226\n\004na"
+          + "me\030\001 \001(\tB(\340A\002\372A\"\n logging.googleapis.com"
+          + "/LogBucket\0221\n\006bucket\030\002 \001(\0132\034.google.logg"
+          + "ing.v2.LogBucketB\003\340A\002\0224\n\013update_mask\030\004 \001"
+          + "(\0132\032.google.protobuf.FieldMaskB\003\340A\002\"J\n\020G"
+          + "etBucketRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n l"
+          + "ogging.googleapis.com/LogBucket\"M\n\023Delet"
+          + "eBucketRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n lo"
+          + "gging.googleapis.com/LogBucket\"O\n\025Undele"
+          + "teBucketRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n l"
+          + "ogging.googleapis.com/LogBucket\"X\n\020ListV"
+          + "iewsRequest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022\027\n\npage"
+          + "_token\030\002 \001(\tB\003\340A\001\022\026\n\tpage_size\030\003 \001(\005B\003\340A"
+          + "\001\"W\n\021ListViewsResponse\022)\n\005views\030\001 \003(\0132\032."
+          + "google.logging.v2.LogView\022\027\n\017next_page_t"
+          + "oken\030\002 \001(\t\"m\n\021CreateViewRequest\022\023\n\006paren"
+          + "t\030\001 \001(\tB\003\340A\002\022\024\n\007view_id\030\002 \001(\tB\003\340A\002\022-\n\004vi"
+          + "ew\030\003 \001(\0132\032.google.logging.v2.LogViewB\003\340A"
+          + "\002\"\213\001\n\021UpdateViewRequest\022\021\n\004name\030\001 \001(\tB\003\340"
+          + "A\002\022-\n\004view\030\002 \001(\0132\032.google.logging.v2.Log"
+          + "ViewB\003\340A\002\0224\n\013update_mask\030\004 \001(\0132\032.google."
+          + "protobuf.FieldMaskB\003\340A\001\"F\n\016GetViewReques"
+          + "t\0224\n\004name\030\001 \001(\tB&\340A\002\372A \n\036logging.googlea"
+          + "pis.com/LogView\"I\n\021DeleteViewRequest\0224\n\004"
+          + "name\030\001 \001(\tB&\340A\002\372A \n\036logging.googleapis.c"
+          + "om/LogView\"{\n\020ListSinksRequest\0226\n\006parent"
+          + "\030\001 \001(\tB&\340A\002\372A \022\036logging.googleapis.com/L"
+          + "ogSink\022\027\n\npage_token\030\002 \001(\tB\003\340A\001\022\026\n\tpage_"
+          + "size\030\003 \001(\005B\003\340A\001\"W\n\021ListSinksResponse\022)\n\005"
+          + "sinks\030\001 \003(\0132\032.google.logging.v2.LogSink\022"
+          + "\027\n\017next_page_token\030\002 \001(\t\"K\n\016GetSinkReque"
+          + "st\0229\n\tsink_name\030\001 \001(\tB&\340A\002\372A \n\036logging.g"
+          + "oogleapis.com/LogSink\"\237\001\n\021CreateSinkRequ"
+          + "est\0226\n\006parent\030\001 \001(\tB&\340A\002\372A \022\036logging.goo"
+          + "gleapis.com/LogSink\022-\n\004sink\030\002 \001(\0132\032.goog"
+          + "le.logging.v2.LogSinkB\003\340A\002\022#\n\026unique_wri"
+          + "ter_identity\030\003 \001(\010B\003\340A\001\"\330\001\n\021UpdateSinkRe"
+          + "quest\0229\n\tsink_name\030\001 \001(\tB&\340A\002\372A \n\036loggin"
+          + "g.googleapis.com/LogSink\022-\n\004sink\030\002 \001(\0132\032"
+          + ".google.logging.v2.LogSinkB\003\340A\002\022#\n\026uniqu"
+          + "e_writer_identity\030\003 \001(\010B\003\340A\001\0224\n\013update_m"
+          + "ask\030\004 \001(\0132\032.google.protobuf.FieldMaskB\003\340"
+          + "A\001\"N\n\021DeleteSinkRequest\0229\n\tsink_name\030\001 \001"
+          + "(\tB&\340A\002\372A \n\036logging.googleapis.com/LogSi"
+          + "nk\"\212\001\n\021CreateLinkRequest\0223\n\006parent\030\001 \001(\t"
+          + "B#\340A\002\372A\035\022\033logging.googleapis.com/Link\022*\n"
+          + "\004link\030\002 \001(\0132\027.google.logging.v2.LinkB\003\340A"
+          + "\002\022\024\n\007link_id\030\003 \001(\tB\003\340A\002\"F\n\021DeleteLinkReq"
+          + "uest\0221\n\004name\030\001 \001(\tB#\340A\002\372A\035\n\033logging.goog"
+          + "leapis.com/Link\"x\n\020ListLinksRequest\0223\n\006p"
+          + "arent\030\001 \001(\tB#\340A\002\372A\035\022\033logging.googleapis."
+          + "com/Link\022\027\n\npage_token\030\002 \001(\tB\003\340A\001\022\026\n\tpag"
+          + "e_size\030\003 \001(\005B\003\340A\001\"T\n\021ListLinksResponse\022&"
+          + "\n\005links\030\001 \003(\0132\027.google.logging.v2.Link\022\027"
+          + "\n\017next_page_token\030\002 \001(\t\"C\n\016GetLinkReques"
+          + "t\0221\n\004name\030\001 \001(\tB#\340A\002\372A\035\n\033logging.googlea"
+          + "pis.com/Link\"\302\003\n\014LogExclusion\022\021\n\004name\030\001 "
+          + "\001(\tB\003\340A\002\022\030\n\013description\030\002 \001(\tB\003\340A\001\022\023\n\006fi"
+          + "lter\030\003 \001(\tB\003\340A\002\022\025\n\010disabled\030\004 \001(\010B\003\340A\001\0224"
+          + "\n\013create_time\030\005 \001(\0132\032.google.protobuf.Ti"
+          + "mestampB\003\340A\003\0224\n\013update_time\030\006 \001(\0132\032.goog"
+          + "le.protobuf.TimestampB\003\340A\003:\354\001\352A\350\001\n#loggi"
+          + "ng.googleapis.com/LogExclusion\022)projects"
+          + "/{project}/exclusions/{exclusion}\0223organ"
+          + "izations/{organization}/exclusions/{excl"
+          + "usion}\022\'folders/{folder}/exclusions/{exc"
+          + "lusion}\0228billingAccounts/{billing_accoun"
+          + "t}/exclusions/{exclusion}\"\205\001\n\025ListExclus"
+          + "ionsRequest\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\022#log"
+          + "ging.googleapis.com/LogExclusion\022\027\n\npage"
+          + "_token\030\002 \001(\tB\003\340A\001\022\026\n\tpage_size\030\003 \001(\005B\003\340A"
+          + "\001\"f\n\026ListExclusionsResponse\0223\n\nexclusion"
+          + "s\030\001 \003(\0132\037.google.logging.v2.LogExclusion"
+          + "\022\027\n\017next_page_token\030\002 \001(\t\"P\n\023GetExclusio"
+          + "nRequest\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#logging."
+          + "googleapis.com/LogExclusion\"\216\001\n\026CreateEx"
+          + "clusionRequest\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\022#"
+          + "logging.googleapis.com/LogExclusion\0227\n\te"
+          + "xclusion\030\002 \001(\0132\037.google.logging.v2.LogEx"
+          + "clusionB\003\340A\002\"\302\001\n\026UpdateExclusionRequest\022"
+          + "9\n\004name\030\001 \001(\tB+\340A\002\372A%\n#logging.googleapi"
+          + "s.com/LogExclusion\0227\n\texclusion\030\002 \001(\0132\037."
+          + "google.logging.v2.LogExclusionB\003\340A\002\0224\n\013u"
+          + "pdate_mask\030\003 \001(\0132\032.google.protobuf.Field"
+          + "MaskB\003\340A\002\"S\n\026DeleteExclusionRequest\0229\n\004n"
+          + "ame\030\001 \001(\tB+\340A\002\372A%\n#logging.googleapis.co"
+          + "m/LogExclusion\"S\n\026GetCmekSettingsRequest"
           + "\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#logging.googleap"
-          + "is.com/LogExclusion\"\216\001\n\026CreateExclusionR"
-          + "equest\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\022#logging."
-          + "googleapis.com/LogExclusion\0227\n\texclusion"
-          + "\030\002 \001(\0132\037.google.logging.v2.LogExclusionB"
-          + "\003\340A\002\"\302\001\n\026UpdateExclusionRequest\0229\n\004name\030"
-          + "\001 \001(\tB+\340A\002\372A%\n#logging.googleapis.com/Lo"
-          + "gExclusion\0227\n\texclusion\030\002 \001(\0132\037.google.l"
-          + "ogging.v2.LogExclusionB\003\340A\002\0224\n\013update_ma"
-          + "sk\030\003 \001(\0132\032.google.protobuf.FieldMaskB\003\340A"
-          + "\002\"S\n\026DeleteExclusionRequest\0229\n\004name\030\001 \001("
-          + "\tB+\340A\002\372A%\n#logging.googleapis.com/LogExc"
-          + "lusion\"S\n\026GetCmekSettingsRequest\0229\n\004name"
-          + "\030\001 \001(\tB+\340A\002\372A%\n#logging.googleapis.com/C"
-          + "mekSettings\"\241\001\n\031UpdateCmekSettingsReques"
-          + "t\022\021\n\004name\030\001 \001(\tB\003\340A\002\022;\n\rcmek_settings\030\002 "
-          + "\001(\0132\037.google.logging.v2.CmekSettingsB\003\340A"
-          + "\002\0224\n\013update_mask\030\003 \001(\0132\032.google.protobuf"
-          + ".FieldMaskB\003\340A\001\"\237\002\n\014CmekSettings\022\021\n\004name"
-          + "\030\001 \001(\tB\003\340A\003\022\024\n\014kms_key_name\030\002 \001(\t\022\037\n\022ser"
-          + "vice_account_id\030\003 \001(\tB\003\340A\003:\304\001\352A\300\001\n#loggi"
-          + "ng.googleapis.com/CmekSettings\022\037projects"
-          + "/{project}/cmekSettings\022)organizations/{"
-          + "organization}/cmekSettings\022\035folders/{fol"
-          + "der}/cmekSettings\022.billingAccounts/{bill"
-          + "ing_account}/cmekSettings\"K\n\022GetSettings"
-          + "Request\0225\n\004name\030\001 \001(\tB\'\340A\002\372A!\n\037logging.g"
-          + "oogleapis.com/Settings\"\224\001\n\025UpdateSetting"
-          + "sRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\0222\n\010settings\030"
-          + "\002 \001(\0132\033.google.logging.v2.SettingsB\003\340A\002\022"
-          + "4\n\013update_mask\030\003 \001(\0132\032.google.protobuf.F"
-          + "ieldMaskB\003\340A\001\"\322\002\n\010Settings\022\021\n\004name\030\001 \001(\t"
-          + "B\003\340A\003\022\031\n\014kms_key_name\030\002 \001(\tB\003\340A\001\022#\n\026kms_"
-          + "service_account_id\030\003 \001(\tB\003\340A\003\022\035\n\020storage"
-          + "_location\030\004 \001(\tB\003\340A\001\022!\n\024disable_default_"
-          + "sink\030\005 \001(\010B\003\340A\001:\260\001\352A\254\001\n\037logging.googleap"
-          + "is.com/Settings\022\033projects/{project}/sett"
-          + "ings\022%organizations/{organization}/setti"
-          + "ngs\022\031folders/{folder}/settings\022*billingA"
-          + "ccounts/{billing_account}/settings\"Y\n\025Co"
-          + "pyLogEntriesRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\023"
-          + "\n\006filter\030\003 \001(\tB\003\340A\001\022\030\n\013destination\030\004 \001(\t"
-          + "B\003\340A\002\"\256\002\n\026CopyLogEntriesMetadata\022.\n\nstar"
-          + "t_time\030\001 \001(\0132\032.google.protobuf.Timestamp"
-          + "\022,\n\010end_time\030\002 \001(\0132\032.google.protobuf.Tim"
-          + "estamp\0220\n\005state\030\003 \001(\0162!.google.logging.v"
-          + "2.OperationState\022\036\n\026cancellation_request"
-          + "ed\030\004 \001(\010\0229\n\007request\030\005 \001(\0132(.google.loggi"
-          + "ng.v2.CopyLogEntriesRequest\022\020\n\010progress\030"
-          + "\006 \001(\005\022\027\n\017writer_identity\030\007 \001(\t\":\n\026CopyLo"
-          + "gEntriesResponse\022 \n\030log_entries_copied_c"
-          + "ount\030\001 \001(\003*S\n\016LifecycleState\022\037\n\033LIFECYCL"
-          + "E_STATE_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\024\n\020DEL"
-          + "ETE_REQUESTED\020\002*\364\001\n\016OperationState\022\037\n\033OP"
-          + "ERATION_STATE_UNSPECIFIED\020\000\022\035\n\031OPERATION"
-          + "_STATE_SCHEDULED\020\001\022+\n\'OPERATION_STATE_WA"
-          + "ITING_FOR_PERMISSIONS\020\002\022\033\n\027OPERATION_STA"
-          + "TE_RUNNING\020\003\022\035\n\031OPERATION_STATE_SUCCEEDE"
-          + "D\020\004\022\032\n\026OPERATION_STATE_FAILED\020\005\022\035\n\031OPERA"
-          + "TION_STATE_CANCELLED\020\0062\214E\n\017ConfigService"
-          + "V2\022\334\002\n\013ListBuckets\022%.google.logging.v2.L"
-          + "istBucketsRequest\032&.google.logging.v2.Li"
-          + "stBucketsResponse\"\375\001\202\323\344\223\002\355\001\022$/v2/{parent"
-          + "=*/*/locations/*}/bucketsZ-\022+/v2/{parent"
-          + "=projects/*/locations/*}/bucketsZ2\0220/v2/"
-          + "{parent=organizations/*/locations/*}/buc"
-          + "ketsZ,\022*/v2/{parent=folders/*/locations/"
-          + "*}/bucketsZ4\0222/v2/{parent=billingAccount"
-          + "s/*/locations/*}/buckets\332A\006parent\022\271\002\n\tGe"
-          + "tBucket\022#.google.logging.v2.GetBucketReq"
-          + "uest\032\034.google.logging.v2.LogBucket\"\350\001\202\323\344"
-          + "\223\002\341\001\022$/v2/{name=*/*/locations/*/buckets/"
-          + "*}Z-\022+/v2/{name=projects/*/locations/*/b"
-          + "uckets/*}Z2\0220/v2/{name=organizations/*/l"
-          + "ocations/*/buckets/*}Z,\022*/v2/{name=folde"
-          + "rs/*/locations/*/buckets/*}Z(\022&/v2/{name"
-          + "=billingAccounts/*/buckets/*}\022\363\002\n\014Create"
-          + "Bucket\022&.google.logging.v2.CreateBucketR"
-          + "equest\032\034.google.logging.v2.LogBucket\"\234\002\202"
-          + "\323\344\223\002\225\002\"$/v2/{parent=*/*/locations/*}/buc"
-          + "kets:\006bucketZ5\"+/v2/{parent=projects/*/l"
-          + "ocations/*}/buckets:\006bucketZ:\"0/v2/{pare"
-          + "nt=organizations/*/locations/*}/buckets:"
-          + "\006bucketZ4\"*/v2/{parent=folders/*/locatio"
-          + "ns/*}/buckets:\006bucketZ<\"2/v2/{parent=bil"
-          + "lingAccounts/*/locations/*}/buckets:\006buc"
-          + "ket\022\363\002\n\014UpdateBucket\022&.google.logging.v2"
-          + ".UpdateBucketRequest\032\034.google.logging.v2"
-          + ".LogBucket\"\234\002\202\323\344\223\002\225\0022$/v2/{name=*/*/loca"
-          + "tions/*/buckets/*}:\006bucketZ52+/v2/{name="
-          + "projects/*/locations/*/buckets/*}:\006bucke"
-          + "tZ:20/v2/{name=organizations/*/locations"
-          + "/*/buckets/*}:\006bucketZ42*/v2/{name=folde"
-          + "rs/*/locations/*/buckets/*}:\006bucketZ<22/"
-          + "v2/{name=billingAccounts/*/locations/*/b"
-          + "uckets/*}:\006bucket\022\305\002\n\014DeleteBucket\022&.goo"
-          + "gle.logging.v2.DeleteBucketRequest\032\026.goo"
-          + "gle.protobuf.Empty\"\364\001\202\323\344\223\002\355\001*$/v2/{name="
-          + "*/*/locations/*/buckets/*}Z-*+/v2/{name="
-          + "projects/*/locations/*/buckets/*}Z2*0/v2"
-          + "/{name=organizations/*/locations/*/bucke"
-          + "ts/*}Z,**/v2/{name=folders/*/locations/*"
-          + "/buckets/*}Z4*2/v2/{name=billingAccounts"
-          + "/*/locations/*/buckets/*}\022\205\003\n\016UndeleteBu"
-          + "cket\022(.google.logging.v2.UndeleteBucketR"
-          + "equest\032\026.google.protobuf.Empty\"\260\002\202\323\344\223\002\251\002"
-          + "\"-/v2/{name=*/*/locations/*/buckets/*}:u"
-          + "ndelete:\001*Z9\"4/v2/{name=projects/*/locat"
-          + "ions/*/buckets/*}:undelete:\001*Z>\"9/v2/{na"
-          + "me=organizations/*/locations/*/buckets/*"
-          + "}:undelete:\001*Z8\"3/v2/{name=folders/*/loc"
-          + "ations/*/buckets/*}:undelete:\001*Z@\";/v2/{"
-          + "name=billingAccounts/*/locations/*/bucke"
-          + "ts/*}:undelete:\001*\022\376\002\n\tListViews\022#.google"
-          + ".logging.v2.ListViewsRequest\032$.google.lo"
-          + "gging.v2.ListViewsResponse\"\245\002\202\323\344\223\002\225\002\022,/v"
-          + "2/{parent=*/*/locations/*/buckets/*}/vie"
-          + "wsZ5\0223/v2/{parent=projects/*/locations/*"
-          + "/buckets/*}/viewsZ:\0228/v2/{parent=organiz"
-          + "ations/*/locations/*/buckets/*}/viewsZ4\022"
-          + "2/v2/{parent=folders/*/locations/*/bucke"
-          + "ts/*}/viewsZ<\022:/v2/{parent=billingAccoun"
-          + "ts/*/locations/*/buckets/*}/views\332A\006pare"
-          + "nt\022\333\002\n\007GetView\022!.google.logging.v2.GetVi"
-          + "ewRequest\032\032.google.logging.v2.LogView\"\220\002"
-          + "\202\323\344\223\002\211\002\022,/v2/{name=*/*/locations/*/bucke"
-          + "ts/*/views/*}Z5\0223/v2/{name=projects/*/lo"
-          + "cations/*/buckets/*/views/*}Z:\0228/v2/{nam"
-          + "e=organizations/*/locations/*/buckets/*/"
-          + "views/*}Z4\0222/v2/{name=folders/*/location"
-          + "s/*/buckets/*/views/*}Z0\022./v2/{name=bill"
-          + "ingAccounts/*/buckets/*/views/*}\022\213\003\n\nCre"
-          + "ateView\022$.google.logging.v2.CreateViewRe"
-          + "quest\032\032.google.logging.v2.LogView\"\272\002\202\323\344\223"
-          + "\002\263\002\",/v2/{parent=*/*/locations/*/buckets"
-          + "/*}/views:\004viewZ;\"3/v2/{parent=projects/"
-          + "*/locations/*/buckets/*}/views:\004viewZ@\"8"
-          + "/v2/{parent=organizations/*/locations/*/"
-          + "buckets/*}/views:\004viewZ:\"2/v2/{parent=fo"
-          + "lders/*/locations/*/buckets/*}/views:\004vi"
-          + "ewZB\":/v2/{parent=billingAccounts/*/loca"
-          + "tions/*/buckets/*}/views:\004view\022\213\003\n\nUpdat"
-          + "eView\022$.google.logging.v2.UpdateViewRequ"
-          + "est\032\032.google.logging.v2.LogView\"\272\002\202\323\344\223\002\263"
-          + "\0022,/v2/{name=*/*/locations/*/buckets/*/v"
-          + "iews/*}:\004viewZ;23/v2/{name=projects/*/lo"
-          + "cations/*/buckets/*/views/*}:\004viewZ@28/v"
-          + "2/{name=organizations/*/locations/*/buck"
-          + "ets/*/views/*}:\004viewZ:22/v2/{name=folder"
-          + "s/*/locations/*/buckets/*/views/*}:\004view"
-          + "ZB2:/v2/{name=billingAccounts/*/location"
-          + "s/*/buckets/*/views/*}:\004view\022\351\002\n\nDeleteV"
-          + "iew\022$.google.logging.v2.DeleteViewReques"
-          + "t\032\026.google.protobuf.Empty\"\234\002\202\323\344\223\002\225\002*,/v2"
-          + "/{name=*/*/locations/*/buckets/*/views/*"
-          + "}Z5*3/v2/{name=projects/*/locations/*/bu"
-          + "ckets/*/views/*}Z:*8/v2/{name=organizati"
-          + "ons/*/locations/*/buckets/*/views/*}Z4*2"
-          + "/v2/{name=folders/*/locations/*/buckets/"
-          + "*/views/*}Z<*:/v2/{name=billingAccounts/"
-          + "*/locations/*/buckets/*/views/*}\022\220\002\n\tLis"
-          + "tSinks\022#.google.logging.v2.ListSinksRequ"
-          + "est\032$.google.logging.v2.ListSinksRespons"
-          + "e\"\267\001\202\323\344\223\002\247\001\022\026/v2/{parent=*/*}/sinksZ\037\022\035/"
-          + "v2/{parent=projects/*}/sinksZ$\022\"/v2/{par"
-          + "ent=organizations/*}/sinksZ\036\022\034/v2/{paren"
-          + "t=folders/*}/sinksZ&\022$/v2/{parent=billin"
-          + "gAccounts/*}/sinks\332A\006parent\022\236\002\n\007GetSink\022"
-          + "!.google.logging.v2.GetSinkRequest\032\032.goo"
-          + "gle.logging.v2.LogSink\"\323\001\202\323\344\223\002\300\001\022\033/v2/{s"
-          + "ink_name=*/*/sinks/*}Z$\022\"/v2/{sink_name="
-          + "projects/*/sinks/*}Z)\022\'/v2/{sink_name=or"
-          + "ganizations/*/sinks/*}Z#\022!/v2/{sink_name"
-          + "=folders/*/sinks/*}Z+\022)/v2/{sink_name=bi"
-          + "llingAccounts/*/sinks/*}\332A\tsink_name\022\253\002\n"
-          + "\nCreateSink\022$.google.logging.v2.CreateSi"
-          + "nkRequest\032\032.google.logging.v2.LogSink\"\332\001"
-          + "\202\323\344\223\002\305\001\"\026/v2/{parent=*/*}/sinks:\004sinkZ%\""
-          + "\035/v2/{parent=projects/*}/sinks:\004sinkZ*\"\""
-          + "/v2/{parent=organizations/*}/sinks:\004sink"
-          + "Z$\"\034/v2/{parent=folders/*}/sinks:\004sinkZ,"
-          + "\"$/v2/{parent=billingAccounts/*}/sinks:\004"
-          + "sink\332A\013parent,sink\022\237\004\n\nUpdateSink\022$.goog"
-          + "le.logging.v2.UpdateSinkRequest\032\032.google"
-          + ".logging.v2.LogSink\"\316\003\202\323\344\223\002\231\003\032\033/v2/{sink"
-          + "_name=*/*/sinks/*}:\004sinkZ*\032\"/v2/{sink_na"
-          + "me=projects/*/sinks/*}:\004sinkZ/\032\'/v2/{sin"
-          + "k_name=organizations/*/sinks/*}:\004sinkZ)\032"
-          + "!/v2/{sink_name=folders/*/sinks/*}:\004sink"
-          + "Z1\032)/v2/{sink_name=billingAccounts/*/sin"
-          + "ks/*}:\004sinkZ*2\"/v2/{sink_name=projects/*"
-          + "/sinks/*}:\004sinkZ/2\'/v2/{sink_name=organi"
-          + "zations/*/sinks/*}:\004sinkZ)2!/v2/{sink_na"
-          + "me=folders/*/sinks/*}:\004sinkZ12)/v2/{sink"
-          + "_name=billingAccounts/*/sinks/*}:\004sink\332A"
-          + "\032sink_name,sink,update_mask\332A\016sink_name,"
-          + "sink\022\240\002\n\nDeleteSink\022$.google.logging.v2."
-          + "DeleteSinkRequest\032\026.google.protobuf.Empt"
-          + "y\"\323\001\202\323\344\223\002\300\001*\033/v2/{sink_name=*/*/sinks/*}"
-          + "Z$*\"/v2/{sink_name=projects/*/sinks/*}Z)"
-          + "*\'/v2/{sink_name=organizations/*/sinks/*"
-          + "}Z#*!/v2/{sink_name=folders/*/sinks/*}Z+"
-          + "*)/v2/{sink_name=billingAccounts/*/sinks"
-          + "/*}\332A\tsink_name\022\270\002\n\016ListExclusions\022(.goo"
-          + "gle.logging.v2.ListExclusionsRequest\032).g"
-          + "oogle.logging.v2.ListExclusionsResponse\""
-          + "\320\001\202\323\344\223\002\300\001\022\033/v2/{parent=*/*}/exclusionsZ$"
-          + "\022\"/v2/{parent=projects/*}/exclusionsZ)\022\'"
-          + "/v2/{parent=organizations/*}/exclusionsZ"
-          + "#\022!/v2/{parent=folders/*}/exclusionsZ+\022)"
-          + "/v2/{parent=billingAccounts/*}/exclusion"
-          + "s\332A\006parent\022\250\002\n\014GetExclusion\022&.google.log"
-          + "ging.v2.GetExclusionRequest\032\037.google.log"
-          + "ging.v2.LogExclusion\"\316\001\202\323\344\223\002\300\001\022\033/v2/{nam"
-          + "e=*/*/exclusions/*}Z$\022\"/v2/{name=project"
-          + "s/*/exclusions/*}Z)\022\'/v2/{name=organizat"
-          + "ions/*/exclusions/*}Z#\022!/v2/{name=folder"
-          + "s/*/exclusions/*}Z+\022)/v2/{name=billingAc"
-          + "counts/*/exclusions/*}\332A\004name\022\361\002\n\017Create"
-          + "Exclusion\022).google.logging.v2.CreateExcl"
-          + "usionRequest\032\037.google.logging.v2.LogExcl"
-          + "usion\"\221\002\202\323\344\223\002\367\001\"\033/v2/{parent=*/*}/exclus"
-          + "ions:\texclusionZ/\"\"/v2/{parent=projects/"
-          + "*}/exclusions:\texclusionZ4\"\'/v2/{parent="
-          + "organizations/*}/exclusions:\texclusionZ."
-          + "\"!/v2/{parent=folders/*}/exclusions:\texc"
-          + "lusionZ6\")/v2/{parent=billingAccounts/*}"
-          + "/exclusions:\texclusion\332A\020parent,exclusio"
-          + "n\022\373\002\n\017UpdateExclusion\022).google.logging.v"
-          + "2.UpdateExclusionRequest\032\037.google.loggin"
-          + "g.v2.LogExclusion\"\233\002\202\323\344\223\002\367\0012\033/v2/{name=*"
-          + "/*/exclusions/*}:\texclusionZ/2\"/v2/{name"
-          + "=projects/*/exclusions/*}:\texclusionZ42\'"
-          + "/v2/{name=organizations/*/exclusions/*}:"
-          + "\texclusionZ.2!/v2/{name=folders/*/exclus"
-          + "ions/*}:\texclusionZ62)/v2/{name=billingA"
-          + "ccounts/*/exclusions/*}:\texclusion\332A\032nam"
-          + "e,exclusion,update_mask\022\245\002\n\017DeleteExclus"
-          + "ion\022).google.logging.v2.DeleteExclusionR"
-          + "equest\032\026.google.protobuf.Empty\"\316\001\202\323\344\223\002\300\001"
-          + "*\033/v2/{name=*/*/exclusions/*}Z$*\"/v2/{na"
-          + "me=projects/*/exclusions/*}Z)*\'/v2/{name"
-          + "=organizations/*/exclusions/*}Z#*!/v2/{n"
-          + "ame=folders/*/exclusions/*}Z+*)/v2/{name"
-          + "=billingAccounts/*/exclusions/*}\332A\004name\022"
-          + "\247\002\n\017GetCmekSettings\022).google.logging.v2."
-          + "GetCmekSettingsRequest\032\037.google.logging."
-          + "v2.CmekSettings\"\307\001\202\323\344\223\002\300\001\022\033/v2/{name=*/*"
-          + "}/cmekSettingsZ$\022\"/v2/{name=projects/*}/"
-          + "cmekSettingsZ)\022\'/v2/{name=organizations/"
-          + "*}/cmekSettingsZ#\022!/v2/{name=folders/*}/"
-          + "cmekSettingsZ+\022)/v2/{name=billingAccount"
-          + "s/*}/cmekSettings\022\321\001\n\022UpdateCmekSettings"
-          + "\022,.google.logging.v2.UpdateCmekSettingsR"
-          + "equest\032\037.google.logging.v2.CmekSettings\""
-          + "l\202\323\344\223\002f2\033/v2/{name=*/*}/cmekSettings:\rcm"
-          + "ek_settingsZ82\'/v2/{name=organizations/*"
-          + "}/cmekSettings:\rcmek_settings\022\216\002\n\013GetSet"
-          + "tings\022%.google.logging.v2.GetSettingsReq"
-          + "uest\032\033.google.logging.v2.Settings\"\272\001\202\323\344\223"
-          + "\002\254\001\022\027/v2/{name=*/*}/settingsZ \022\036/v2/{nam"
-          + "e=projects/*}/settingsZ%\022#/v2/{name=orga"
-          + "nizations/*}/settingsZ\037\022\035/v2/{name=folde"
-          + "rs/*}/settingsZ\'\022%/v2/{name=billingAccou"
-          + "nts/*}/settings\332A\004name\022\366\001\n\016UpdateSetting"
-          + "s\022(.google.logging.v2.UpdateSettingsRequ"
-          + "est\032\033.google.logging.v2.Settings\"\234\001\202\323\344\223\002"
-          + "\1772\027/v2/{name=*/*}/settings:\010settingsZ/2#"
-          + "/v2/{name=organizations/*}/settings:\010set"
-          + "tingsZ)2\035/v2/{name=folders/*}/settings:\010",
-      "settings\332A\024settings,update_mask\022\251\001\n\016Copy"
-          + "LogEntries\022(.google.logging.v2.CopyLogEn"
-          + "triesRequest\032\035.google.longrunning.Operat"
-          + "ion\"N\202\323\344\223\002\025\"\020/v2/entries:copy:\001*\312A0\n\026Cop"
-          + "yLogEntriesResponse\022\026CopyLogEntriesMetad"
-          + "ata\032\337\001\312A\026logging.googleapis.com\322A\302\001https"
-          + "://www.googleapis.com/auth/cloud-platfor"
-          + "m,https://www.googleapis.com/auth/cloud-"
-          + "platform.read-only,https://www.googleapi"
-          + "s.com/auth/logging.admin,https://www.goo"
-          + "gleapis.com/auth/logging.readB\326\003\n\025com.go"
-          + "ogle.logging.v2B\022LoggingConfigProtoP\001Z5c"
-          + "loud.google.com/go/logging/apiv2/logging"
-          + "pb;loggingpb\370\001\001\252\002\027Google.Cloud.Logging.V"
-          + "2\312\002\027Google\\Cloud\\Logging\\V2\352\002\032Google::Cl"
-          + "oud::Logging::V2\352A`\n+logging.googleapis."
-          + "com/OrganizationLocation\0221organizations/"
-          + "{organization}/locations/{location}\352AN\n%"
-          + "logging.googleapis.com/FolderLocation\022%f"
-          + "olders/{folder}/locations/{location}\352Ag\n"
-          + "-logging.googleapis.com/BillingAccountLo"
-          + "cation\0226billingAccounts/{billing_account"
-          + "}/locations/{location}b\006proto3"
+          + "is.com/CmekSettings\"\241\001\n\031UpdateCmekSettin"
+          + "gsRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\022;\n\rcmek_set"
+          + "tings\030\002 \001(\0132\037.google.logging.v2.CmekSett"
+          + "ingsB\003\340A\002\0224\n\013update_mask\030\003 \001(\0132\032.google."
+          + "protobuf.FieldMaskB\003\340A\001\"\275\002\n\014CmekSettings"
+          + "\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\024\n\014kms_key_name\030\002 \001("
+          + "\t\022\034\n\024kms_key_version_name\030\004 \001(\t\022\037\n\022servi"
+          + "ce_account_id\030\003 \001(\tB\003\340A\003:\304\001\352A\300\001\n#logging"
+          + ".googleapis.com/CmekSettings\022\037projects/{"
+          + "project}/cmekSettings\022)organizations/{or"
+          + "ganization}/cmekSettings\022\035folders/{folde"
+          + "r}/cmekSettings\022.billingAccounts/{billin"
+          + "g_account}/cmekSettings\"K\n\022GetSettingsRe"
+          + "quest\0225\n\004name\030\001 \001(\tB\'\340A\002\372A!\n\037logging.goo"
+          + "gleapis.com/Settings\"\224\001\n\025UpdateSettingsR"
+          + "equest\022\021\n\004name\030\001 \001(\tB\003\340A\002\0222\n\010settings\030\002 "
+          + "\001(\0132\033.google.logging.v2.SettingsB\003\340A\002\0224\n"
+          + "\013update_mask\030\003 \001(\0132\032.google.protobuf.Fie"
+          + "ldMaskB\003\340A\001\"\322\002\n\010Settings\022\021\n\004name\030\001 \001(\tB\003"
+          + "\340A\003\022\031\n\014kms_key_name\030\002 \001(\tB\003\340A\001\022#\n\026kms_se"
+          + "rvice_account_id\030\003 \001(\tB\003\340A\003\022\035\n\020storage_l"
+          + "ocation\030\004 \001(\tB\003\340A\001\022!\n\024disable_default_si"
+          + "nk\030\005 \001(\010B\003\340A\001:\260\001\352A\254\001\n\037logging.googleapis"
+          + ".com/Settings\022\033projects/{project}/settin"
+          + "gs\022%organizations/{organization}/setting"
+          + "s\022\031folders/{folder}/settings\022*billingAcc"
+          + "ounts/{billing_account}/settings\"Y\n\025Copy"
+          + "LogEntriesRequest\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\023\n\006"
+          + "filter\030\003 \001(\tB\003\340A\001\022\030\n\013destination\030\004 \001(\tB\003"
+          + "\340A\002\"\256\002\n\026CopyLogEntriesMetadata\022.\n\nstart_"
+          + "time\030\001 \001(\0132\032.google.protobuf.Timestamp\022,"
+          + "\n\010end_time\030\002 \001(\0132\032.google.protobuf.Times"
+          + "tamp\0220\n\005state\030\003 \001(\0162!.google.logging.v2."
+          + "OperationState\022\036\n\026cancellation_requested"
+          + "\030\004 \001(\010\0229\n\007request\030\005 \001(\0132(.google.logging"
+          + ".v2.CopyLogEntriesRequest\022\020\n\010progress\030\006 "
+          + "\001(\005\022\027\n\017writer_identity\030\007 \001(\t\":\n\026CopyLogE"
+          + "ntriesResponse\022 \n\030log_entries_copied_cou"
+          + "nt\030\001 \001(\003\"\275\002\n\016BucketMetadata\022.\n\nstart_tim"
+          + "e\030\001 \001(\0132\032.google.protobuf.Timestamp\022,\n\010e"
+          + "nd_time\030\002 \001(\0132\032.google.protobuf.Timestam"
+          + "p\0220\n\005state\030\003 \001(\0162!.google.logging.v2.Ope"
+          + "rationState\022G\n\025create_bucket_request\030\004 \001"
+          + "(\0132&.google.logging.v2.CreateBucketReque"
+          + "stH\000\022G\n\025update_bucket_request\030\005 \001(\0132&.go"
+          + "ogle.logging.v2.UpdateBucketRequestH\000B\t\n"
+          + "\007request\"\263\002\n\014LinkMetadata\022.\n\nstart_time\030"
+          + "\001 \001(\0132\032.google.protobuf.Timestamp\022,\n\010end"
+          + "_time\030\002 \001(\0132\032.google.protobuf.Timestamp\022"
+          + "0\n\005state\030\003 \001(\0162!.google.logging.v2.Opera"
+          + "tionState\022C\n\023create_link_request\030\004 \001(\0132$"
+          + ".google.logging.v2.CreateLinkRequestH\000\022C"
+          + "\n\023delete_link_request\030\005 \001(\0132$.google.log"
+          + "ging.v2.DeleteLinkRequestH\000B\t\n\007request\"1"
+          + "\n\020LocationMetadata\022\035\n\025log_analytics_enab"
+          + "led\030\001 \001(\010*\364\001\n\016OperationState\022\037\n\033OPERATIO"
+          + "N_STATE_UNSPECIFIED\020\000\022\035\n\031OPERATION_STATE"
+          + "_SCHEDULED\020\001\022+\n\'OPERATION_STATE_WAITING_"
+          + "FOR_PERMISSIONS\020\002\022\033\n\027OPERATION_STATE_RUN"
+          + "NING\020\003\022\035\n\031OPERATION_STATE_SUCCEEDED\020\004\022\032\n"
+          + "\026OPERATION_STATE_FAILED\020\005\022\035\n\031OPERATION_S"
+          + "TATE_CANCELLED\020\006*{\n\016LifecycleState\022\037\n\033LI"
+          + "FECYCLE_STATE_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022"
+          + "\024\n\020DELETE_REQUESTED\020\002\022\014\n\010UPDATING\020\003\022\014\n\010C"
+          + "REATING\020\004\022\n\n\006FAILED\020\005*V\n\tIndexType\022\032\n\026IN"
+          + "DEX_TYPE_UNSPECIFIED\020\000\022\025\n\021INDEX_TYPE_STR"
+          + "ING\020\001\022\026\n\022INDEX_TYPE_INTEGER\020\0022\237Y\n\017Config"
+          + "ServiceV2\022\334\002\n\013ListBuckets\022%.google.loggi"
+          + "ng.v2.ListBucketsRequest\032&.google.loggin"
+          + "g.v2.ListBucketsResponse\"\375\001\202\323\344\223\002\355\001\022$/v2/"
+          + "{parent=*/*/locations/*}/bucketsZ-\022+/v2/"
+          + "{parent=projects/*/locations/*}/bucketsZ"
+          + "2\0220/v2/{parent=organizations/*/locations"
+          + "/*}/bucketsZ,\022*/v2/{parent=folders/*/loc"
+          + "ations/*}/bucketsZ4\0222/v2/{parent=billing"
+          + "Accounts/*/locations/*}/buckets\332A\006parent"
+          + "\022\305\002\n\tGetBucket\022#.google.logging.v2.GetBu"
+          + "cketRequest\032\034.google.logging.v2.LogBucke"
+          + "t\"\364\001\202\323\344\223\002\355\001\022$/v2/{name=*/*/locations/*/b"
+          + "uckets/*}Z-\022+/v2/{name=projects/*/locati"
+          + "ons/*/buckets/*}Z2\0220/v2/{name=organizati"
+          + "ons/*/locations/*/buckets/*}Z,\022*/v2/{nam"
+          + "e=folders/*/locations/*/buckets/*}Z4\0222/v"
+          + "2/{name=billingAccounts/*/locations/*/bu"
+          + "ckets/*}\022\323\003\n\021CreateBucketAsync\022&.google."
+          + "logging.v2.CreateBucketRequest\032\035.google."
+          + "longrunning.Operation\"\366\002\202\323\344\223\002\321\002\"0/v2/{pa"
+          + "rent=*/*/locations/*}/buckets:createAsyn"
+          + "c:\006bucketZA\"7/v2/{parent=projects/*/loca"
+          + "tions/*}/buckets:createAsync:\006bucketZF\"<"
+          + "/v2/{parent=organizations/*/locations/*}"
+          + "/buckets:createAsync:\006bucketZ@\"6/v2/{par"
+          + "ent=folders/*/locations/*}/buckets:creat"
+          + "eAsync:\006bucketZH\">/v2/{parent=billingAcc"
+          + "ounts/*/locations/*}/buckets:createAsync"
+          + ":\006bucket\312A\033\n\tLogBucket\022\016BucketMetadata\022\323"
+          + "\003\n\021UpdateBucketAsync\022&.google.logging.v2"
+          + ".UpdateBucketRequest\032\035.google.longrunnin"
+          + "g.Operation\"\366\002\202\323\344\223\002\321\002\"0/v2/{name=*/*/loc"
+          + "ations/*/buckets/*}:updateAsync:\006bucketZ"
+          + "A\"7/v2/{name=projects/*/locations/*/buck"
+          + "ets/*}:updateAsync:\006bucketZF\"</v2/{name="
+          + "organizations/*/locations/*/buckets/*}:u"
+          + "pdateAsync:\006bucketZ@\"6/v2/{name=folders/"
+          + "*/locations/*/buckets/*}:updateAsync:\006bu"
+          + "cketZH\">/v2/{name=billingAccounts/*/loca"
+          + "tions/*/buckets/*}:updateAsync:\006bucket\312A"
+          + "\033\n\tLogBucket\022\016BucketMetadata\022\363\002\n\014CreateB"
+          + "ucket\022&.google.logging.v2.CreateBucketRe"
+          + "quest\032\034.google.logging.v2.LogBucket\"\234\002\202\323"
+          + "\344\223\002\225\002\"$/v2/{parent=*/*/locations/*}/buck"
+          + "ets:\006bucketZ5\"+/v2/{parent=projects/*/lo"
+          + "cations/*}/buckets:\006bucketZ:\"0/v2/{paren"
+          + "t=organizations/*/locations/*}/buckets:\006"
+          + "bucketZ4\"*/v2/{parent=folders/*/location"
+          + "s/*}/buckets:\006bucketZ<\"2/v2/{parent=bill"
+          + "ingAccounts/*/locations/*}/buckets:\006buck"
+          + "et\022\363\002\n\014UpdateBucket\022&.google.logging.v2."
+          + "UpdateBucketRequest\032\034.google.logging.v2."
+          + "LogBucket\"\234\002\202\323\344\223\002\225\0022$/v2/{name=*/*/locat"
+          + "ions/*/buckets/*}:\006bucketZ52+/v2/{name=p"
+          + "rojects/*/locations/*/buckets/*}:\006bucket"
+          + "Z:20/v2/{name=organizations/*/locations/"
+          + "*/buckets/*}:\006bucketZ42*/v2/{name=folder"
+          + "s/*/locations/*/buckets/*}:\006bucketZ<22/v"
+          + "2/{name=billingAccounts/*/locations/*/bu"
+          + "ckets/*}:\006bucket\022\305\002\n\014DeleteBucket\022&.goog"
+          + "le.logging.v2.DeleteBucketRequest\032\026.goog"
+          + "le.protobuf.Empty\"\364\001\202\323\344\223\002\355\001*$/v2/{name=*"
+          + "/*/locations/*/buckets/*}Z-*+/v2/{name=p"
+          + "rojects/*/locations/*/buckets/*}Z2*0/v2/"
+          + "{name=organizations/*/locations/*/bucket"
+          + "s/*}Z,**/v2/{name=folders/*/locations/*/"
+          + "buckets/*}Z4*2/v2/{name=billingAccounts/"
+          + "*/locations/*/buckets/*}\022\205\003\n\016UndeleteBuc"
+          + "ket\022(.google.logging.v2.UndeleteBucketRe"
+          + "quest\032\026.google.protobuf.Empty\"\260\002\202\323\344\223\002\251\002\""
+          + "-/v2/{name=*/*/locations/*/buckets/*}:un"
+          + "delete:\001*Z9\"4/v2/{name=projects/*/locati"
+          + "ons/*/buckets/*}:undelete:\001*Z>\"9/v2/{nam"
+          + "e=organizations/*/locations/*/buckets/*}"
+          + ":undelete:\001*Z8\"3/v2/{name=folders/*/loca"
+          + "tions/*/buckets/*}:undelete:\001*Z@\";/v2/{n"
+          + "ame=billingAccounts/*/locations/*/bucket"
+          + "s/*}:undelete:\001*\022\376\002\n\tListViews\022#.google."
+          + "logging.v2.ListViewsRequest\032$.google.log"
+          + "ging.v2.ListViewsResponse\"\245\002\202\323\344\223\002\225\002\022,/v2"
+          + "/{parent=*/*/locations/*/buckets/*}/view"
+          + "sZ5\0223/v2/{parent=projects/*/locations/*/"
+          + "buckets/*}/viewsZ:\0228/v2/{parent=organiza"
+          + "tions/*/locations/*/buckets/*}/viewsZ4\0222"
+          + "/v2/{parent=folders/*/locations/*/bucket"
+          + "s/*}/viewsZ<\022:/v2/{parent=billingAccount"
+          + "s/*/locations/*/buckets/*}/views\332A\006paren"
+          + "t\022\347\002\n\007GetView\022!.google.logging.v2.GetVie"
+          + "wRequest\032\032.google.logging.v2.LogView\"\234\002\202"
+          + "\323\344\223\002\225\002\022,/v2/{name=*/*/locations/*/bucket"
+          + "s/*/views/*}Z5\0223/v2/{name=projects/*/loc"
+          + "ations/*/buckets/*/views/*}Z:\0228/v2/{name"
+          + "=organizations/*/locations/*/buckets/*/v"
+          + "iews/*}Z4\0222/v2/{name=folders/*/locations"
+          + "/*/buckets/*/views/*}Z<\022:/v2/{name=billi"
+          + "ngAccounts/*/locations/*/buckets/*/views"
+          + "/*}\022\213\003\n\nCreateView\022$.google.logging.v2.C"
+          + "reateViewRequest\032\032.google.logging.v2.Log"
+          + "View\"\272\002\202\323\344\223\002\263\002\",/v2/{parent=*/*/location"
+          + "s/*/buckets/*}/views:\004viewZ;\"3/v2/{paren"
+          + "t=projects/*/locations/*/buckets/*}/view"
+          + "s:\004viewZ@\"8/v2/{parent=organizations/*/l"
+          + "ocations/*/buckets/*}/views:\004viewZ:\"2/v2"
+          + "/{parent=folders/*/locations/*/buckets/*"
+          + "}/views:\004viewZB\":/v2/{parent=billingAcco"
+          + "unts/*/locations/*/buckets/*}/views:\004vie"
+          + "w\022\213\003\n\nUpdateView\022$.google.logging.v2.Upd"
+          + "ateViewRequest\032\032.google.logging.v2.LogVi"
+          + "ew\"\272\002\202\323\344\223\002\263\0022,/v2/{name=*/*/locations/*/"
+          + "buckets/*/views/*}:\004viewZ;23/v2/{name=pr"
+          + "ojects/*/locations/*/buckets/*/views/*}:"
+          + "\004viewZ@28/v2/{name=organizations/*/locat"
+          + "ions/*/buckets/*/views/*}:\004viewZ:22/v2/{"
+          + "name=folders/*/locations/*/buckets/*/vie"
+          + "ws/*}:\004viewZB2:/v2/{name=billingAccounts"
+          + "/*/locations/*/buckets/*/views/*}:\004view\022"
+          + "\351\002\n\nDeleteView\022$.google.logging.v2.Delet"
+          + "eViewRequest\032\026.google.protobuf.Empty\"\234\002\202"
+          + "\323\344\223\002\225\002*,/v2/{name=*/*/locations/*/bucket"
+          + "s/*/views/*}Z5*3/v2/{name=projects/*/loc"
+          + "ations/*/buckets/*/views/*}Z:*8/v2/{name"
+          + "=organizations/*/locations/*/buckets/*/v"
+          + "iews/*}Z4*2/v2/{name=folders/*/locations"
+          + "/*/buckets/*/views/*}Z<*:/v2/{name=billi"
+          + "ngAccounts/*/locations/*/buckets/*/views"
+          + "/*}\022\220\002\n\tListSinks\022#.google.logging.v2.Li"
+          + "stSinksRequest\032$.google.logging.v2.ListS"
+          + "inksResponse\"\267\001\202\323\344\223\002\247\001\022\026/v2/{parent=*/*}"
+          + "/sinksZ\037\022\035/v2/{parent=projects/*}/sinksZ"
+          + "$\022\"/v2/{parent=organizations/*}/sinksZ\036\022"
+          + "\034/v2/{parent=folders/*}/sinksZ&\022$/v2/{pa"
+          + "rent=billingAccounts/*}/sinks\332A\006parent\022\236"
+          + "\002\n\007GetSink\022!.google.logging.v2.GetSinkRe"
+          + "quest\032\032.google.logging.v2.LogSink\"\323\001\202\323\344\223"
+          + "\002\300\001\022\033/v2/{sink_name=*/*/sinks/*}Z$\022\"/v2/"
+          + "{sink_name=projects/*/sinks/*}Z)\022\'/v2/{s"
+          + "ink_name=organizations/*/sinks/*}Z#\022!/v2"
+          + "/{sink_name=folders/*/sinks/*}Z+\022)/v2/{s"
+          + "ink_name=billingAccounts/*/sinks/*}\332A\tsi"
+          + "nk_name\022\253\002\n\nCreateSink\022$.google.logging."
+          + "v2.CreateSinkRequest\032\032.google.logging.v2"
+          + ".LogSink\"\332\001\202\323\344\223\002\305\001\"\026/v2/{parent=*/*}/sin"
+          + "ks:\004sinkZ%\"\035/v2/{parent=projects/*}/sink"
+          + "s:\004sinkZ*\"\"/v2/{parent=organizations/*}/"
+          + "sinks:\004sinkZ$\"\034/v2/{parent=folders/*}/si"
+          + "nks:\004sinkZ,\"$/v2/{parent=billingAccounts"
+          + "/*}/sinks:\004sink\332A\013parent,sink\022\237\004\n\nUpdate"
+          + "Sink\022$.google.logging.v2.UpdateSinkReque"
+          + "st\032\032.google.logging.v2.LogSink\"\316\003\202\323\344\223\002\231\003"
+          + "\032\033/v2/{sink_name=*/*/sinks/*}:\004sinkZ*\032\"/"
+          + "v2/{sink_name=projects/*/sinks/*}:\004sinkZ"
+          + "/\032\'/v2/{sink_name=organizations/*/sinks/"
+          + "*}:\004sinkZ)\032!/v2/{sink_name=folders/*/sin"
+          + "ks/*}:\004sinkZ1\032)/v2/{sink_name=billingAcc"
+          + "ounts/*/sinks/*}:\004sinkZ*2\"/v2/{sink_name"
+          + "=projects/*/sinks/*}:\004sinkZ/2\'/v2/{sink_",
+      "name=organizations/*/sinks/*}:\004sinkZ)2!/"
+          + "v2/{sink_name=folders/*/sinks/*}:\004sinkZ1"
+          + "2)/v2/{sink_name=billingAccounts/*/sinks"
+          + "/*}:\004sink\332A\032sink_name,sink,update_mask\332A"
+          + "\016sink_name,sink\022\240\002\n\nDeleteSink\022$.google."
+          + "logging.v2.DeleteSinkRequest\032\026.google.pr"
+          + "otobuf.Empty\"\323\001\202\323\344\223\002\300\001*\033/v2/{sink_name=*"
+          + "/*/sinks/*}Z$*\"/v2/{sink_name=projects/*"
+          + "/sinks/*}Z)*\'/v2/{sink_name=organization"
+          + "s/*/sinks/*}Z#*!/v2/{sink_name=folders/*"
+          + "/sinks/*}Z+*)/v2/{sink_name=billingAccou"
+          + "nts/*/sinks/*}\332A\tsink_name\022\273\003\n\nCreateLin"
+          + "k\022$.google.logging.v2.CreateLinkRequest\032"
+          + "\035.google.longrunning.Operation\"\347\002\202\323\344\223\002\263\002"
+          + "\",/v2/{parent=*/*/locations/*/buckets/*}"
+          + "/links:\004linkZ;\"3/v2/{parent=projects/*/l"
+          + "ocations/*/buckets/*}/links:\004linkZ@\"8/v2"
+          + "/{parent=organizations/*/locations/*/buc"
+          + "kets/*}/links:\004linkZ:\"2/v2/{parent=folde"
+          + "rs/*/locations/*/buckets/*}/links:\004linkZ"
+          + "B\":/v2/{parent=billingAccounts/*/locatio"
+          + "ns/*/buckets/*}/links:\004link\332A\023parent,lin"
+          + "k,link_id\312A\024\n\004Link\022\014LinkMetadata\022\237\003\n\nDel"
+          + "eteLink\022$.google.logging.v2.DeleteLinkRe"
+          + "quest\032\035.google.longrunning.Operation\"\313\002\202"
+          + "\323\344\223\002\225\002*,/v2/{name=*/*/locations/*/bucket"
+          + "s/*/links/*}Z5*3/v2/{name=projects/*/loc"
+          + "ations/*/buckets/*/links/*}Z:*8/v2/{name"
+          + "=organizations/*/locations/*/buckets/*/l"
+          + "inks/*}Z4*2/v2/{name=folders/*/locations"
+          + "/*/buckets/*/links/*}Z<*:/v2/{name=billi"
+          + "ngAccounts/*/locations/*/buckets/*/links"
+          + "/*}\332A\004name\312A%\n\025google.protobuf.Empty\022\014Li"
+          + "nkMetadata\022\376\002\n\tListLinks\022#.google.loggin"
+          + "g.v2.ListLinksRequest\032$.google.logging.v"
+          + "2.ListLinksResponse\"\245\002\202\323\344\223\002\225\002\022,/v2/{pare"
+          + "nt=*/*/locations/*/buckets/*}/linksZ5\0223/"
+          + "v2/{parent=projects/*/locations/*/bucket"
+          + "s/*}/linksZ:\0228/v2/{parent=organizations/"
+          + "*/locations/*/buckets/*}/linksZ4\0222/v2/{p"
+          + "arent=folders/*/locations/*/buckets/*}/l"
+          + "inksZ<\022:/v2/{parent=billingAccounts/*/lo"
+          + "cations/*/buckets/*}/links\332A\006parent\022\353\002\n\007"
+          + "GetLink\022!.google.logging.v2.GetLinkReque"
+          + "st\032\027.google.logging.v2.Link\"\243\002\202\323\344\223\002\225\002\022,/"
+          + "v2/{name=*/*/locations/*/buckets/*/links"
+          + "/*}Z5\0223/v2/{name=projects/*/locations/*/"
+          + "buckets/*/links/*}Z:\0228/v2/{name=organiza"
+          + "tions/*/locations/*/buckets/*/links/*}Z4"
+          + "\0222/v2/{name=folders/*/locations/*/bucket"
+          + "s/*/links/*}Z<\022:/v2/{name=billingAccount"
+          + "s/*/locations/*/buckets/*/links/*}\332A\004nam"
+          + "e\022\270\002\n\016ListExclusions\022(.google.logging.v2"
+          + ".ListExclusionsRequest\032).google.logging."
+          + "v2.ListExclusionsResponse\"\320\001\202\323\344\223\002\300\001\022\033/v2"
+          + "/{parent=*/*}/exclusionsZ$\022\"/v2/{parent="
+          + "projects/*}/exclusionsZ)\022\'/v2/{parent=or"
+          + "ganizations/*}/exclusionsZ#\022!/v2/{parent"
+          + "=folders/*}/exclusionsZ+\022)/v2/{parent=bi"
+          + "llingAccounts/*}/exclusions\332A\006parent\022\250\002\n"
+          + "\014GetExclusion\022&.google.logging.v2.GetExc"
+          + "lusionRequest\032\037.google.logging.v2.LogExc"
+          + "lusion\"\316\001\202\323\344\223\002\300\001\022\033/v2/{name=*/*/exclusio"
+          + "ns/*}Z$\022\"/v2/{name=projects/*/exclusions"
+          + "/*}Z)\022\'/v2/{name=organizations/*/exclusi"
+          + "ons/*}Z#\022!/v2/{name=folders/*/exclusions"
+          + "/*}Z+\022)/v2/{name=billingAccounts/*/exclu"
+          + "sions/*}\332A\004name\022\361\002\n\017CreateExclusion\022).go"
+          + "ogle.logging.v2.CreateExclusionRequest\032\037"
+          + ".google.logging.v2.LogExclusion\"\221\002\202\323\344\223\002\367"
+          + "\001\"\033/v2/{parent=*/*}/exclusions:\texclusio"
+          + "nZ/\"\"/v2/{parent=projects/*}/exclusions:"
+          + "\texclusionZ4\"\'/v2/{parent=organizations/"
+          + "*}/exclusions:\texclusionZ.\"!/v2/{parent="
+          + "folders/*}/exclusions:\texclusionZ6\")/v2/"
+          + "{parent=billingAccounts/*}/exclusions:\te"
+          + "xclusion\332A\020parent,exclusion\022\373\002\n\017UpdateEx"
+          + "clusion\022).google.logging.v2.UpdateExclus"
+          + "ionRequest\032\037.google.logging.v2.LogExclus"
+          + "ion\"\233\002\202\323\344\223\002\367\0012\033/v2/{name=*/*/exclusions/"
+          + "*}:\texclusionZ/2\"/v2/{name=projects/*/ex"
+          + "clusions/*}:\texclusionZ42\'/v2/{name=orga"
+          + "nizations/*/exclusions/*}:\texclusionZ.2!"
+          + "/v2/{name=folders/*/exclusions/*}:\texclu"
+          + "sionZ62)/v2/{name=billingAccounts/*/excl"
+          + "usions/*}:\texclusion\332A\032name,exclusion,up"
+          + "date_mask\022\245\002\n\017DeleteExclusion\022).google.l"
+          + "ogging.v2.DeleteExclusionRequest\032\026.googl"
+          + "e.protobuf.Empty\"\316\001\202\323\344\223\002\300\001*\033/v2/{name=*/"
+          + "*/exclusions/*}Z$*\"/v2/{name=projects/*/"
+          + "exclusions/*}Z)*\'/v2/{name=organizations"
+          + "/*/exclusions/*}Z#*!/v2/{name=folders/*/"
+          + "exclusions/*}Z+*)/v2/{name=billingAccoun"
+          + "ts/*/exclusions/*}\332A\004name\022\247\002\n\017GetCmekSet"
+          + "tings\022).google.logging.v2.GetCmekSetting"
+          + "sRequest\032\037.google.logging.v2.CmekSetting"
+          + "s\"\307\001\202\323\344\223\002\300\001\022\033/v2/{name=*/*}/cmekSettings"
+          + "Z$\022\"/v2/{name=projects/*}/cmekSettingsZ)"
+          + "\022\'/v2/{name=organizations/*}/cmekSetting"
+          + "sZ#\022!/v2/{name=folders/*}/cmekSettingsZ+"
+          + "\022)/v2/{name=billingAccounts/*}/cmekSetti"
+          + "ngs\022\321\001\n\022UpdateCmekSettings\022,.google.logg"
+          + "ing.v2.UpdateCmekSettingsRequest\032\037.googl"
+          + "e.logging.v2.CmekSettings\"l\202\323\344\223\002f2\033/v2/{"
+          + "name=*/*}/cmekSettings:\rcmek_settingsZ82"
+          + "\'/v2/{name=organizations/*}/cmekSettings"
+          + ":\rcmek_settings\022\216\002\n\013GetSettings\022%.google"
+          + ".logging.v2.GetSettingsRequest\032\033.google."
+          + "logging.v2.Settings\"\272\001\202\323\344\223\002\254\001\022\027/v2/{name"
+          + "=*/*}/settingsZ \022\036/v2/{name=projects/*}/"
+          + "settingsZ%\022#/v2/{name=organizations/*}/s"
+          + "ettingsZ\037\022\035/v2/{name=folders/*}/settings"
+          + "Z\'\022%/v2/{name=billingAccounts/*}/setting"
+          + "s\332A\004name\022\366\001\n\016UpdateSettings\022(.google.log"
+          + "ging.v2.UpdateSettingsRequest\032\033.google.l"
+          + "ogging.v2.Settings\"\234\001\202\323\344\223\002\1772\027/v2/{name=*"
+          + "/*}/settings:\010settingsZ/2#/v2/{name=orga"
+          + "nizations/*}/settings:\010settingsZ)2\035/v2/{"
+          + "name=folders/*}/settings:\010settings\332A\024set"
+          + "tings,update_mask\022\251\001\n\016CopyLogEntries\022(.g"
+          + "oogle.logging.v2.CopyLogEntriesRequest\032\035"
+          + ".google.longrunning.Operation\"N\202\323\344\223\002\025\"\020/"
+          + "v2/entries:copy:\001*\312A0\n\026CopyLogEntriesRes"
+          + "ponse\022\026CopyLogEntriesMetadata\032\337\001\312A\026loggi"
+          + "ng.googleapis.com\322A\302\001https://www.googlea"
+          + "pis.com/auth/cloud-platform,https://www."
+          + "googleapis.com/auth/cloud-platform.read-"
+          + "only,https://www.googleapis.com/auth/log"
+          + "ging.admin,https://www.googleapis.com/au"
+          + "th/logging.readB\326\003\n\025com.google.logging.v"
+          + "2B\022LoggingConfigProtoP\001Z5cloud.google.co"
+          + "m/go/logging/apiv2/loggingpb;loggingpb\370\001"
+          + "\001\252\002\027Google.Cloud.Logging.V2\312\002\027Google\\Clo"
+          + "ud\\Logging\\V2\352\002\032Google::Cloud::Logging::"
+          + "V2\352A`\n+logging.googleapis.com/Organizati"
+          + "onLocation\0221organizations/{organization}"
+          + "/locations/{location}\352AN\n%logging.google"
+          + "apis.com/FolderLocation\022%folders/{folder"
+          + "}/locations/{location}\352Ag\n-logging.googl"
+          + "eapis.com/BillingAccountLocation\0226billin"
+          + "gAccounts/{billing_account}/locations/{l"
+          + "ocation}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -629,8 +792,16 @@ public final class LoggingConfigProto {
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
-    internal_static_google_logging_v2_LogBucket_descriptor =
+    internal_static_google_logging_v2_IndexConfig_descriptor =
         getDescriptor().getMessageTypes().get(0);
+    internal_static_google_logging_v2_IndexConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_logging_v2_IndexConfig_descriptor,
+            new java.lang.String[] {
+              "FieldPath", "Type", "CreateTime",
+            });
+    internal_static_google_logging_v2_LogBucket_descriptor =
+        getDescriptor().getMessageTypes().get(1);
     internal_static_google_logging_v2_LogBucket_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_LogBucket_descriptor,
@@ -642,17 +813,19 @@ public final class LoggingConfigProto {
               "RetentionDays",
               "Locked",
               "LifecycleState",
+              "AnalyticsEnabled",
               "RestrictedFields",
+              "IndexConfigs",
               "CmekSettings",
             });
-    internal_static_google_logging_v2_LogView_descriptor = getDescriptor().getMessageTypes().get(1);
+    internal_static_google_logging_v2_LogView_descriptor = getDescriptor().getMessageTypes().get(2);
     internal_static_google_logging_v2_LogView_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_LogView_descriptor,
             new java.lang.String[] {
               "Name", "Description", "CreateTime", "UpdateTime", "Filter",
             });
-    internal_static_google_logging_v2_LogSink_descriptor = getDescriptor().getMessageTypes().get(2);
+    internal_static_google_logging_v2_LogSink_descriptor = getDescriptor().getMessageTypes().get(3);
     internal_static_google_logging_v2_LogSink_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_LogSink_descriptor,
@@ -671,8 +844,23 @@ public final class LoggingConfigProto {
               "UpdateTime",
               "Options",
             });
+    internal_static_google_logging_v2_BigQueryDataset_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_logging_v2_BigQueryDataset_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_logging_v2_BigQueryDataset_descriptor,
+            new java.lang.String[] {
+              "DatasetId",
+            });
+    internal_static_google_logging_v2_Link_descriptor = getDescriptor().getMessageTypes().get(5);
+    internal_static_google_logging_v2_Link_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_logging_v2_Link_descriptor,
+            new java.lang.String[] {
+              "Name", "Description", "CreateTime", "LifecycleState", "BigqueryDataset",
+            });
     internal_static_google_logging_v2_BigQueryOptions_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_logging_v2_BigQueryOptions_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_BigQueryOptions_descriptor,
@@ -680,7 +868,7 @@ public final class LoggingConfigProto {
               "UsePartitionedTables", "UsesTimestampColumnPartitioning",
             });
     internal_static_google_logging_v2_ListBucketsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_logging_v2_ListBucketsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_ListBucketsRequest_descriptor,
@@ -688,7 +876,7 @@ public final class LoggingConfigProto {
               "Parent", "PageToken", "PageSize",
             });
     internal_static_google_logging_v2_ListBucketsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_logging_v2_ListBucketsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_ListBucketsResponse_descriptor,
@@ -696,7 +884,7 @@ public final class LoggingConfigProto {
               "Buckets", "NextPageToken",
             });
     internal_static_google_logging_v2_CreateBucketRequest_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_logging_v2_CreateBucketRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_CreateBucketRequest_descriptor,
@@ -704,7 +892,7 @@ public final class LoggingConfigProto {
               "Parent", "BucketId", "Bucket",
             });
     internal_static_google_logging_v2_UpdateBucketRequest_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_logging_v2_UpdateBucketRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_UpdateBucketRequest_descriptor,
@@ -712,7 +900,7 @@ public final class LoggingConfigProto {
               "Name", "Bucket", "UpdateMask",
             });
     internal_static_google_logging_v2_GetBucketRequest_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_logging_v2_GetBucketRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_GetBucketRequest_descriptor,
@@ -720,7 +908,7 @@ public final class LoggingConfigProto {
               "Name",
             });
     internal_static_google_logging_v2_DeleteBucketRequest_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_logging_v2_DeleteBucketRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_DeleteBucketRequest_descriptor,
@@ -728,7 +916,7 @@ public final class LoggingConfigProto {
               "Name",
             });
     internal_static_google_logging_v2_UndeleteBucketRequest_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_logging_v2_UndeleteBucketRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_UndeleteBucketRequest_descriptor,
@@ -736,7 +924,7 @@ public final class LoggingConfigProto {
               "Name",
             });
     internal_static_google_logging_v2_ListViewsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_logging_v2_ListViewsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_ListViewsRequest_descriptor,
@@ -744,7 +932,7 @@ public final class LoggingConfigProto {
               "Parent", "PageToken", "PageSize",
             });
     internal_static_google_logging_v2_ListViewsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_logging_v2_ListViewsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_ListViewsResponse_descriptor,
@@ -752,7 +940,7 @@ public final class LoggingConfigProto {
               "Views", "NextPageToken",
             });
     internal_static_google_logging_v2_CreateViewRequest_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_logging_v2_CreateViewRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_CreateViewRequest_descriptor,
@@ -760,7 +948,7 @@ public final class LoggingConfigProto {
               "Parent", "ViewId", "View",
             });
     internal_static_google_logging_v2_UpdateViewRequest_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_logging_v2_UpdateViewRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_UpdateViewRequest_descriptor,
@@ -768,7 +956,7 @@ public final class LoggingConfigProto {
               "Name", "View", "UpdateMask",
             });
     internal_static_google_logging_v2_GetViewRequest_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_logging_v2_GetViewRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_GetViewRequest_descriptor,
@@ -776,7 +964,7 @@ public final class LoggingConfigProto {
               "Name",
             });
     internal_static_google_logging_v2_DeleteViewRequest_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_logging_v2_DeleteViewRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_DeleteViewRequest_descriptor,
@@ -784,7 +972,7 @@ public final class LoggingConfigProto {
               "Name",
             });
     internal_static_google_logging_v2_ListSinksRequest_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_logging_v2_ListSinksRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_ListSinksRequest_descriptor,
@@ -792,7 +980,7 @@ public final class LoggingConfigProto {
               "Parent", "PageToken", "PageSize",
             });
     internal_static_google_logging_v2_ListSinksResponse_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_logging_v2_ListSinksResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_ListSinksResponse_descriptor,
@@ -800,7 +988,7 @@ public final class LoggingConfigProto {
               "Sinks", "NextPageToken",
             });
     internal_static_google_logging_v2_GetSinkRequest_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_logging_v2_GetSinkRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_GetSinkRequest_descriptor,
@@ -808,7 +996,7 @@ public final class LoggingConfigProto {
               "SinkName",
             });
     internal_static_google_logging_v2_CreateSinkRequest_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_logging_v2_CreateSinkRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_CreateSinkRequest_descriptor,
@@ -816,7 +1004,7 @@ public final class LoggingConfigProto {
               "Parent", "Sink", "UniqueWriterIdentity",
             });
     internal_static_google_logging_v2_UpdateSinkRequest_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_logging_v2_UpdateSinkRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_UpdateSinkRequest_descriptor,
@@ -824,15 +1012,55 @@ public final class LoggingConfigProto {
               "SinkName", "Sink", "UniqueWriterIdentity", "UpdateMask",
             });
     internal_static_google_logging_v2_DeleteSinkRequest_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_logging_v2_DeleteSinkRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_DeleteSinkRequest_descriptor,
             new java.lang.String[] {
               "SinkName",
             });
+    internal_static_google_logging_v2_CreateLinkRequest_descriptor =
+        getDescriptor().getMessageTypes().get(26);
+    internal_static_google_logging_v2_CreateLinkRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_logging_v2_CreateLinkRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Link", "LinkId",
+            });
+    internal_static_google_logging_v2_DeleteLinkRequest_descriptor =
+        getDescriptor().getMessageTypes().get(27);
+    internal_static_google_logging_v2_DeleteLinkRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_logging_v2_DeleteLinkRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_logging_v2_ListLinksRequest_descriptor =
+        getDescriptor().getMessageTypes().get(28);
+    internal_static_google_logging_v2_ListLinksRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_logging_v2_ListLinksRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageToken", "PageSize",
+            });
+    internal_static_google_logging_v2_ListLinksResponse_descriptor =
+        getDescriptor().getMessageTypes().get(29);
+    internal_static_google_logging_v2_ListLinksResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_logging_v2_ListLinksResponse_descriptor,
+            new java.lang.String[] {
+              "Links", "NextPageToken",
+            });
+    internal_static_google_logging_v2_GetLinkRequest_descriptor =
+        getDescriptor().getMessageTypes().get(30);
+    internal_static_google_logging_v2_GetLinkRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_logging_v2_GetLinkRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
     internal_static_google_logging_v2_LogExclusion_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_logging_v2_LogExclusion_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_LogExclusion_descriptor,
@@ -840,7 +1068,7 @@ public final class LoggingConfigProto {
               "Name", "Description", "Filter", "Disabled", "CreateTime", "UpdateTime",
             });
     internal_static_google_logging_v2_ListExclusionsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_logging_v2_ListExclusionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_ListExclusionsRequest_descriptor,
@@ -848,7 +1076,7 @@ public final class LoggingConfigProto {
               "Parent", "PageToken", "PageSize",
             });
     internal_static_google_logging_v2_ListExclusionsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_logging_v2_ListExclusionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_ListExclusionsResponse_descriptor,
@@ -856,7 +1084,7 @@ public final class LoggingConfigProto {
               "Exclusions", "NextPageToken",
             });
     internal_static_google_logging_v2_GetExclusionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_logging_v2_GetExclusionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_GetExclusionRequest_descriptor,
@@ -864,7 +1092,7 @@ public final class LoggingConfigProto {
               "Name",
             });
     internal_static_google_logging_v2_CreateExclusionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_logging_v2_CreateExclusionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_CreateExclusionRequest_descriptor,
@@ -872,7 +1100,7 @@ public final class LoggingConfigProto {
               "Parent", "Exclusion",
             });
     internal_static_google_logging_v2_UpdateExclusionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_logging_v2_UpdateExclusionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_UpdateExclusionRequest_descriptor,
@@ -880,7 +1108,7 @@ public final class LoggingConfigProto {
               "Name", "Exclusion", "UpdateMask",
             });
     internal_static_google_logging_v2_DeleteExclusionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_logging_v2_DeleteExclusionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_DeleteExclusionRequest_descriptor,
@@ -888,7 +1116,7 @@ public final class LoggingConfigProto {
               "Name",
             });
     internal_static_google_logging_v2_GetCmekSettingsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_logging_v2_GetCmekSettingsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_GetCmekSettingsRequest_descriptor,
@@ -896,7 +1124,7 @@ public final class LoggingConfigProto {
               "Name",
             });
     internal_static_google_logging_v2_UpdateCmekSettingsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(39);
     internal_static_google_logging_v2_UpdateCmekSettingsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_UpdateCmekSettingsRequest_descriptor,
@@ -904,15 +1132,15 @@ public final class LoggingConfigProto {
               "Name", "CmekSettings", "UpdateMask",
             });
     internal_static_google_logging_v2_CmekSettings_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(40);
     internal_static_google_logging_v2_CmekSettings_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_CmekSettings_descriptor,
             new java.lang.String[] {
-              "Name", "KmsKeyName", "ServiceAccountId",
+              "Name", "KmsKeyName", "KmsKeyVersionName", "ServiceAccountId",
             });
     internal_static_google_logging_v2_GetSettingsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(41);
     internal_static_google_logging_v2_GetSettingsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_GetSettingsRequest_descriptor,
@@ -920,7 +1148,7 @@ public final class LoggingConfigProto {
               "Name",
             });
     internal_static_google_logging_v2_UpdateSettingsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(42);
     internal_static_google_logging_v2_UpdateSettingsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_UpdateSettingsRequest_descriptor,
@@ -928,7 +1156,7 @@ public final class LoggingConfigProto {
               "Name", "Settings", "UpdateMask",
             });
     internal_static_google_logging_v2_Settings_descriptor =
-        getDescriptor().getMessageTypes().get(35);
+        getDescriptor().getMessageTypes().get(43);
     internal_static_google_logging_v2_Settings_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_Settings_descriptor,
@@ -936,7 +1164,7 @@ public final class LoggingConfigProto {
               "Name", "KmsKeyName", "KmsServiceAccountId", "StorageLocation", "DisableDefaultSink",
             });
     internal_static_google_logging_v2_CopyLogEntriesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(36);
+        getDescriptor().getMessageTypes().get(44);
     internal_static_google_logging_v2_CopyLogEntriesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_CopyLogEntriesRequest_descriptor,
@@ -944,7 +1172,7 @@ public final class LoggingConfigProto {
               "Name", "Filter", "Destination",
             });
     internal_static_google_logging_v2_CopyLogEntriesMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(37);
+        getDescriptor().getMessageTypes().get(45);
     internal_static_google_logging_v2_CopyLogEntriesMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_CopyLogEntriesMetadata_descriptor,
@@ -958,12 +1186,41 @@ public final class LoggingConfigProto {
               "WriterIdentity",
             });
     internal_static_google_logging_v2_CopyLogEntriesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(38);
+        getDescriptor().getMessageTypes().get(46);
     internal_static_google_logging_v2_CopyLogEntriesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_logging_v2_CopyLogEntriesResponse_descriptor,
             new java.lang.String[] {
               "LogEntriesCopiedCount",
+            });
+    internal_static_google_logging_v2_BucketMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(47);
+    internal_static_google_logging_v2_BucketMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_logging_v2_BucketMetadata_descriptor,
+            new java.lang.String[] {
+              "StartTime",
+              "EndTime",
+              "State",
+              "CreateBucketRequest",
+              "UpdateBucketRequest",
+              "Request",
+            });
+    internal_static_google_logging_v2_LinkMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(48);
+    internal_static_google_logging_v2_LinkMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_logging_v2_LinkMetadata_descriptor,
+            new java.lang.String[] {
+              "StartTime", "EndTime", "State", "CreateLinkRequest", "DeleteLinkRequest", "Request",
+            });
+    internal_static_google_logging_v2_LocationMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(49);
+    internal_static_google_logging_v2_LocationMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_logging_v2_LocationMetadata_descriptor,
+            new java.lang.String[] {
+              "LogAnalyticsEnabled",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

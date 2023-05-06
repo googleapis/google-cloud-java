@@ -60,6 +60,38 @@ public enum LifecycleState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DELETE_REQUESTED = 2;</code>
    */
   DELETE_REQUESTED(2),
+  /**
+   *
+   *
+   * <pre>
+   * The resource has been marked for an update by the user. It will remain in
+   * this state until the update is complete.
+   * </pre>
+   *
+   * <code>UPDATING = 3;</code>
+   */
+  UPDATING(3),
+  /**
+   *
+   *
+   * <pre>
+   * The resource has been marked for creation by the user. It will remain in
+   * this state until the creation is complete.
+   * </pre>
+   *
+   * <code>CREATING = 4;</code>
+   */
+  CREATING(4),
+  /**
+   *
+   *
+   * <pre>
+   * The resource is in an INTERNAL error state.
+   * </pre>
+   *
+   * <code>FAILED = 5;</code>
+   */
+  FAILED(5),
   UNRECOGNIZED(-1),
   ;
 
@@ -95,6 +127,38 @@ public enum LifecycleState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DELETE_REQUESTED = 2;</code>
    */
   public static final int DELETE_REQUESTED_VALUE = 2;
+  /**
+   *
+   *
+   * <pre>
+   * The resource has been marked for an update by the user. It will remain in
+   * this state until the update is complete.
+   * </pre>
+   *
+   * <code>UPDATING = 3;</code>
+   */
+  public static final int UPDATING_VALUE = 3;
+  /**
+   *
+   *
+   * <pre>
+   * The resource has been marked for creation by the user. It will remain in
+   * this state until the creation is complete.
+   * </pre>
+   *
+   * <code>CREATING = 4;</code>
+   */
+  public static final int CREATING_VALUE = 4;
+  /**
+   *
+   *
+   * <pre>
+   * The resource is in an INTERNAL error state.
+   * </pre>
+   *
+   * <code>FAILED = 5;</code>
+   */
+  public static final int FAILED_VALUE = 5;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -126,6 +190,12 @@ public enum LifecycleState implements com.google.protobuf.ProtocolMessageEnum {
         return ACTIVE;
       case 2:
         return DELETE_REQUESTED;
+      case 3:
+        return UPDATING;
+      case 4:
+        return CREATING;
+      case 5:
+        return FAILED;
       default:
         return null;
     }
@@ -155,7 +225,7 @@ public enum LifecycleState implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.logging.v2.LoggingConfigProto.getDescriptor().getEnumTypes().get(0);
+    return com.google.logging.v2.LoggingConfigProto.getDescriptor().getEnumTypes().get(1);
   }
 
   private static final LifecycleState[] VALUES = values();

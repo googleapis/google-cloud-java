@@ -118,6 +118,88 @@ public final class ConfigServiceV2Grpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.logging.v2.CreateBucketRequest, com.google.longrunning.Operation>
+      getCreateBucketAsyncMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateBucketAsync",
+      requestType = com.google.logging.v2.CreateBucketRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.logging.v2.CreateBucketRequest, com.google.longrunning.Operation>
+      getCreateBucketAsyncMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.logging.v2.CreateBucketRequest, com.google.longrunning.Operation>
+        getCreateBucketAsyncMethod;
+    if ((getCreateBucketAsyncMethod = ConfigServiceV2Grpc.getCreateBucketAsyncMethod) == null) {
+      synchronized (ConfigServiceV2Grpc.class) {
+        if ((getCreateBucketAsyncMethod = ConfigServiceV2Grpc.getCreateBucketAsyncMethod) == null) {
+          ConfigServiceV2Grpc.getCreateBucketAsyncMethod =
+              getCreateBucketAsyncMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.logging.v2.CreateBucketRequest, com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateBucketAsync"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.CreateBucketRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigServiceV2MethodDescriptorSupplier("CreateBucketAsync"))
+                      .build();
+        }
+      }
+    }
+    return getCreateBucketAsyncMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.logging.v2.UpdateBucketRequest, com.google.longrunning.Operation>
+      getUpdateBucketAsyncMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateBucketAsync",
+      requestType = com.google.logging.v2.UpdateBucketRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.logging.v2.UpdateBucketRequest, com.google.longrunning.Operation>
+      getUpdateBucketAsyncMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.logging.v2.UpdateBucketRequest, com.google.longrunning.Operation>
+        getUpdateBucketAsyncMethod;
+    if ((getUpdateBucketAsyncMethod = ConfigServiceV2Grpc.getUpdateBucketAsyncMethod) == null) {
+      synchronized (ConfigServiceV2Grpc.class) {
+        if ((getUpdateBucketAsyncMethod = ConfigServiceV2Grpc.getUpdateBucketAsyncMethod) == null) {
+          ConfigServiceV2Grpc.getUpdateBucketAsyncMethod =
+              getUpdateBucketAsyncMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.logging.v2.UpdateBucketRequest, com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateBucketAsync"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.UpdateBucketRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigServiceV2MethodDescriptorSupplier("UpdateBucketAsync"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateBucketAsyncMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.logging.v2.CreateBucketRequest, com.google.logging.v2.LogBucket>
       getCreateBucketMethod;
 
@@ -680,6 +762,168 @@ public final class ConfigServiceV2Grpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.logging.v2.CreateLinkRequest, com.google.longrunning.Operation>
+      getCreateLinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateLink",
+      requestType = com.google.logging.v2.CreateLinkRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.logging.v2.CreateLinkRequest, com.google.longrunning.Operation>
+      getCreateLinkMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.logging.v2.CreateLinkRequest, com.google.longrunning.Operation>
+        getCreateLinkMethod;
+    if ((getCreateLinkMethod = ConfigServiceV2Grpc.getCreateLinkMethod) == null) {
+      synchronized (ConfigServiceV2Grpc.class) {
+        if ((getCreateLinkMethod = ConfigServiceV2Grpc.getCreateLinkMethod) == null) {
+          ConfigServiceV2Grpc.getCreateLinkMethod =
+              getCreateLinkMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.logging.v2.CreateLinkRequest, com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateLink"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.CreateLinkRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigServiceV2MethodDescriptorSupplier("CreateLink"))
+                      .build();
+        }
+      }
+    }
+    return getCreateLinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.logging.v2.DeleteLinkRequest, com.google.longrunning.Operation>
+      getDeleteLinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteLink",
+      requestType = com.google.logging.v2.DeleteLinkRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.logging.v2.DeleteLinkRequest, com.google.longrunning.Operation>
+      getDeleteLinkMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.logging.v2.DeleteLinkRequest, com.google.longrunning.Operation>
+        getDeleteLinkMethod;
+    if ((getDeleteLinkMethod = ConfigServiceV2Grpc.getDeleteLinkMethod) == null) {
+      synchronized (ConfigServiceV2Grpc.class) {
+        if ((getDeleteLinkMethod = ConfigServiceV2Grpc.getDeleteLinkMethod) == null) {
+          ConfigServiceV2Grpc.getDeleteLinkMethod =
+              getDeleteLinkMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.logging.v2.DeleteLinkRequest, com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteLink"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.DeleteLinkRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigServiceV2MethodDescriptorSupplier("DeleteLink"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteLinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.logging.v2.ListLinksRequest, com.google.logging.v2.ListLinksResponse>
+      getListLinksMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListLinks",
+      requestType = com.google.logging.v2.ListLinksRequest.class,
+      responseType = com.google.logging.v2.ListLinksResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.logging.v2.ListLinksRequest, com.google.logging.v2.ListLinksResponse>
+      getListLinksMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.logging.v2.ListLinksRequest, com.google.logging.v2.ListLinksResponse>
+        getListLinksMethod;
+    if ((getListLinksMethod = ConfigServiceV2Grpc.getListLinksMethod) == null) {
+      synchronized (ConfigServiceV2Grpc.class) {
+        if ((getListLinksMethod = ConfigServiceV2Grpc.getListLinksMethod) == null) {
+          ConfigServiceV2Grpc.getListLinksMethod =
+              getListLinksMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.logging.v2.ListLinksRequest,
+                          com.google.logging.v2.ListLinksResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListLinks"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.ListLinksRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.ListLinksResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(new ConfigServiceV2MethodDescriptorSupplier("ListLinks"))
+                      .build();
+        }
+      }
+    }
+    return getListLinksMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.logging.v2.GetLinkRequest, com.google.logging.v2.Link>
+      getGetLinkMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetLink",
+      requestType = com.google.logging.v2.GetLinkRequest.class,
+      responseType = com.google.logging.v2.Link.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.logging.v2.GetLinkRequest, com.google.logging.v2.Link>
+      getGetLinkMethod() {
+    io.grpc.MethodDescriptor<com.google.logging.v2.GetLinkRequest, com.google.logging.v2.Link>
+        getGetLinkMethod;
+    if ((getGetLinkMethod = ConfigServiceV2Grpc.getGetLinkMethod) == null) {
+      synchronized (ConfigServiceV2Grpc.class) {
+        if ((getGetLinkMethod = ConfigServiceV2Grpc.getGetLinkMethod) == null) {
+          ConfigServiceV2Grpc.getGetLinkMethod =
+              getGetLinkMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.logging.v2.GetLinkRequest, com.google.logging.v2.Link>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetLink"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.GetLinkRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.logging.v2.Link.getDefaultInstance()))
+                      .setSchemaDescriptor(new ConfigServiceV2MethodDescriptorSupplier("GetLink"))
+                      .build();
+        }
+      }
+    }
+    return getGetLinkMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.logging.v2.ListExclusionsRequest, com.google.logging.v2.ListExclusionsResponse>
       getListExclusionsMethod;
 
@@ -1179,6 +1423,38 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
+     * Creates a log bucket asynchronously that can be used to store log entries.
+     * After a bucket has been created, the bucket's location cannot be changed.
+     * </pre>
+     */
+    default void createBucketAsync(
+        com.google.logging.v2.CreateBucketRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateBucketAsyncMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a log bucket asynchronously.
+     * If the bucket has a `lifecycle_state` of `DELETE_REQUESTED`, then
+     * `FAILED_PRECONDITION` will be returned.
+     * After a bucket has been created, the bucket's location cannot be changed.
+     * </pre>
+     */
+    default void updateBucketAsync(
+        com.google.logging.v2.UpdateBucketRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateBucketAsyncMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a log bucket that can be used to store log entries. After a bucket
      * has been created, the bucket's location cannot be changed.
      * </pre>
@@ -1194,10 +1470,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Updates a log bucket. This method replaces the following fields in the
-     * existing bucket with values from the new bucket: `retention_period`
-     * If the retention period is decreased and the bucket is locked,
-     * `FAILED_PRECONDITION` will be returned.
+     * Updates a log bucket.
      * If the bucket has a `lifecycle_state` of `DELETE_REQUESTED`, then
      * `FAILED_PRECONDITION` will be returned.
      * After a bucket has been created, the bucket's location cannot be changed.
@@ -1385,6 +1658,61 @@ public final class ConfigServiceV2Grpc {
         com.google.logging.v2.DeleteSinkRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteSinkMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Asynchronously creates a linked dataset in BigQuery which makes it possible
+     * to use BigQuery to read the logs stored in the log bucket. A log bucket may
+     * currently only contain one link.
+     * </pre>
+     */
+    default void createLink(
+        com.google.logging.v2.CreateLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateLinkMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a link. This will also delete the corresponding BigQuery linked
+     * dataset.
+     * </pre>
+     */
+    default void deleteLink(
+        com.google.logging.v2.DeleteLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteLinkMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists links.
+     * </pre>
+     */
+    default void listLinks(
+        com.google.logging.v2.ListLinksRequest request,
+        io.grpc.stub.StreamObserver<com.google.logging.v2.ListLinksResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListLinksMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a link.
+     * </pre>
+     */
+    default void getLink(
+        com.google.logging.v2.GetLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.logging.v2.Link> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetLinkMethod(), responseObserver);
     }
 
     /**
@@ -1637,6 +1965,42 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
+     * Creates a log bucket asynchronously that can be used to store log entries.
+     * After a bucket has been created, the bucket's location cannot be changed.
+     * </pre>
+     */
+    public void createBucketAsync(
+        com.google.logging.v2.CreateBucketRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateBucketAsyncMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a log bucket asynchronously.
+     * If the bucket has a `lifecycle_state` of `DELETE_REQUESTED`, then
+     * `FAILED_PRECONDITION` will be returned.
+     * After a bucket has been created, the bucket's location cannot be changed.
+     * </pre>
+     */
+    public void updateBucketAsync(
+        com.google.logging.v2.UpdateBucketRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateBucketAsyncMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a log bucket that can be used to store log entries. After a bucket
      * has been created, the bucket's location cannot be changed.
      * </pre>
@@ -1654,10 +2018,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Updates a log bucket. This method replaces the following fields in the
-     * existing bucket with values from the new bucket: `retention_period`
-     * If the retention period is decreased and the bucket is locked,
-     * `FAILED_PRECONDITION` will be returned.
+     * Updates a log bucket.
      * If the bucket has a `lifecycle_state` of `DELETE_REQUESTED`, then
      * `FAILED_PRECONDITION` will be returned.
      * After a bucket has been created, the bucket's location cannot be changed.
@@ -1861,6 +2222,65 @@ public final class ConfigServiceV2Grpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteSinkMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Asynchronously creates a linked dataset in BigQuery which makes it possible
+     * to use BigQuery to read the logs stored in the log bucket. A log bucket may
+     * currently only contain one link.
+     * </pre>
+     */
+    public void createLink(
+        com.google.logging.v2.CreateLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateLinkMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a link. This will also delete the corresponding BigQuery linked
+     * dataset.
+     * </pre>
+     */
+    public void deleteLink(
+        com.google.logging.v2.DeleteLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteLinkMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists links.
+     * </pre>
+     */
+    public void listLinks(
+        com.google.logging.v2.ListLinksRequest request,
+        io.grpc.stub.StreamObserver<com.google.logging.v2.ListLinksResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListLinksMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a link.
+     * </pre>
+     */
+    public void getLink(
+        com.google.logging.v2.GetLinkRequest request,
+        io.grpc.stub.StreamObserver<com.google.logging.v2.Link> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetLinkMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -2114,6 +2534,36 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
+     * Creates a log bucket asynchronously that can be used to store log entries.
+     * After a bucket has been created, the bucket's location cannot be changed.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createBucketAsync(
+        com.google.logging.v2.CreateBucketRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBucketAsyncMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a log bucket asynchronously.
+     * If the bucket has a `lifecycle_state` of `DELETE_REQUESTED`, then
+     * `FAILED_PRECONDITION` will be returned.
+     * After a bucket has been created, the bucket's location cannot be changed.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateBucketAsync(
+        com.google.logging.v2.UpdateBucketRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBucketAsyncMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a log bucket that can be used to store log entries. After a bucket
      * has been created, the bucket's location cannot be changed.
      * </pre>
@@ -2128,10 +2578,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Updates a log bucket. This method replaces the following fields in the
-     * existing bucket with values from the new bucket: `retention_period`
-     * If the retention period is decreased and the bucket is locked,
-     * `FAILED_PRECONDITION` will be returned.
+     * Updates a log bucket.
      * If the bucket has a `lifecycle_state` of `DELETE_REQUESTED`, then
      * `FAILED_PRECONDITION` will be returned.
      * After a bucket has been created, the bucket's location cannot be changed.
@@ -2312,6 +2759,60 @@ public final class ConfigServiceV2Grpc {
     public com.google.protobuf.Empty deleteSink(com.google.logging.v2.DeleteSinkRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteSinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Asynchronously creates a linked dataset in BigQuery which makes it possible
+     * to use BigQuery to read the logs stored in the log bucket. A log bucket may
+     * currently only contain one link.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createLink(
+        com.google.logging.v2.CreateLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a link. This will also delete the corresponding BigQuery linked
+     * dataset.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteLink(
+        com.google.logging.v2.DeleteLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists links.
+     * </pre>
+     */
+    public com.google.logging.v2.ListLinksResponse listLinks(
+        com.google.logging.v2.ListLinksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListLinksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a link.
+     * </pre>
+     */
+    public com.google.logging.v2.Link getLink(com.google.logging.v2.GetLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetLinkMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2535,6 +3036,36 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
+     * Creates a log bucket asynchronously that can be used to store log entries.
+     * After a bucket has been created, the bucket's location cannot be changed.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createBucketAsync(com.google.logging.v2.CreateBucketRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateBucketAsyncMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a log bucket asynchronously.
+     * If the bucket has a `lifecycle_state` of `DELETE_REQUESTED`, then
+     * `FAILED_PRECONDITION` will be returned.
+     * After a bucket has been created, the bucket's location cannot be changed.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateBucketAsync(com.google.logging.v2.UpdateBucketRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateBucketAsyncMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a log bucket that can be used to store log entries. After a bucket
      * has been created, the bucket's location cannot be changed.
      * </pre>
@@ -2549,10 +3080,7 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
-     * Updates a log bucket. This method replaces the following fields in the
-     * existing bucket with values from the new bucket: `retention_period`
-     * If the retention period is decreased and the bucket is locked,
-     * `FAILED_PRECONDITION` will be returned.
+     * Updates a log bucket.
      * If the bucket has a `lifecycle_state` of `DELETE_REQUESTED`, then
      * `FAILED_PRECONDITION` will be returned.
      * After a bucket has been created, the bucket's location cannot be changed.
@@ -2745,6 +3273,62 @@ public final class ConfigServiceV2Grpc {
      *
      *
      * <pre>
+     * Asynchronously creates a linked dataset in BigQuery which makes it possible
+     * to use BigQuery to read the logs stored in the log bucket. A log bucket may
+     * currently only contain one link.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createLink(com.google.logging.v2.CreateLinkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateLinkMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a link. This will also delete the corresponding BigQuery linked
+     * dataset.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteLink(com.google.logging.v2.DeleteLinkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteLinkMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists links.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.logging.v2.ListLinksResponse>
+        listLinks(com.google.logging.v2.ListLinksRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListLinksMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a link.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.logging.v2.Link> getLink(
+        com.google.logging.v2.GetLinkRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetLinkMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists all the exclusions on the _Default sink in a parent resource.
      * </pre>
      */
@@ -2915,30 +3499,36 @@ public final class ConfigServiceV2Grpc {
 
   private static final int METHODID_LIST_BUCKETS = 0;
   private static final int METHODID_GET_BUCKET = 1;
-  private static final int METHODID_CREATE_BUCKET = 2;
-  private static final int METHODID_UPDATE_BUCKET = 3;
-  private static final int METHODID_DELETE_BUCKET = 4;
-  private static final int METHODID_UNDELETE_BUCKET = 5;
-  private static final int METHODID_LIST_VIEWS = 6;
-  private static final int METHODID_GET_VIEW = 7;
-  private static final int METHODID_CREATE_VIEW = 8;
-  private static final int METHODID_UPDATE_VIEW = 9;
-  private static final int METHODID_DELETE_VIEW = 10;
-  private static final int METHODID_LIST_SINKS = 11;
-  private static final int METHODID_GET_SINK = 12;
-  private static final int METHODID_CREATE_SINK = 13;
-  private static final int METHODID_UPDATE_SINK = 14;
-  private static final int METHODID_DELETE_SINK = 15;
-  private static final int METHODID_LIST_EXCLUSIONS = 16;
-  private static final int METHODID_GET_EXCLUSION = 17;
-  private static final int METHODID_CREATE_EXCLUSION = 18;
-  private static final int METHODID_UPDATE_EXCLUSION = 19;
-  private static final int METHODID_DELETE_EXCLUSION = 20;
-  private static final int METHODID_GET_CMEK_SETTINGS = 21;
-  private static final int METHODID_UPDATE_CMEK_SETTINGS = 22;
-  private static final int METHODID_GET_SETTINGS = 23;
-  private static final int METHODID_UPDATE_SETTINGS = 24;
-  private static final int METHODID_COPY_LOG_ENTRIES = 25;
+  private static final int METHODID_CREATE_BUCKET_ASYNC = 2;
+  private static final int METHODID_UPDATE_BUCKET_ASYNC = 3;
+  private static final int METHODID_CREATE_BUCKET = 4;
+  private static final int METHODID_UPDATE_BUCKET = 5;
+  private static final int METHODID_DELETE_BUCKET = 6;
+  private static final int METHODID_UNDELETE_BUCKET = 7;
+  private static final int METHODID_LIST_VIEWS = 8;
+  private static final int METHODID_GET_VIEW = 9;
+  private static final int METHODID_CREATE_VIEW = 10;
+  private static final int METHODID_UPDATE_VIEW = 11;
+  private static final int METHODID_DELETE_VIEW = 12;
+  private static final int METHODID_LIST_SINKS = 13;
+  private static final int METHODID_GET_SINK = 14;
+  private static final int METHODID_CREATE_SINK = 15;
+  private static final int METHODID_UPDATE_SINK = 16;
+  private static final int METHODID_DELETE_SINK = 17;
+  private static final int METHODID_CREATE_LINK = 18;
+  private static final int METHODID_DELETE_LINK = 19;
+  private static final int METHODID_LIST_LINKS = 20;
+  private static final int METHODID_GET_LINK = 21;
+  private static final int METHODID_LIST_EXCLUSIONS = 22;
+  private static final int METHODID_GET_EXCLUSION = 23;
+  private static final int METHODID_CREATE_EXCLUSION = 24;
+  private static final int METHODID_UPDATE_EXCLUSION = 25;
+  private static final int METHODID_DELETE_EXCLUSION = 26;
+  private static final int METHODID_GET_CMEK_SETTINGS = 27;
+  private static final int METHODID_UPDATE_CMEK_SETTINGS = 28;
+  private static final int METHODID_GET_SETTINGS = 29;
+  private static final int METHODID_UPDATE_SETTINGS = 30;
+  private static final int METHODID_COPY_LOG_ENTRIES = 31;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2967,6 +3557,16 @@ public final class ConfigServiceV2Grpc {
           serviceImpl.getBucket(
               (com.google.logging.v2.GetBucketRequest) request,
               (io.grpc.stub.StreamObserver<com.google.logging.v2.LogBucket>) responseObserver);
+          break;
+        case METHODID_CREATE_BUCKET_ASYNC:
+          serviceImpl.createBucketAsync(
+              (com.google.logging.v2.CreateBucketRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_BUCKET_ASYNC:
+          serviceImpl.updateBucketAsync(
+              (com.google.logging.v2.UpdateBucketRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_CREATE_BUCKET:
           serviceImpl.createBucket(
@@ -3039,6 +3639,27 @@ public final class ConfigServiceV2Grpc {
           serviceImpl.deleteSink(
               (com.google.logging.v2.DeleteSinkRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_CREATE_LINK:
+          serviceImpl.createLink(
+              (com.google.logging.v2.CreateLinkRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_LINK:
+          serviceImpl.deleteLink(
+              (com.google.logging.v2.DeleteLinkRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_LINKS:
+          serviceImpl.listLinks(
+              (com.google.logging.v2.ListLinksRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.logging.v2.ListLinksResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_LINK:
+          serviceImpl.getLink(
+              (com.google.logging.v2.GetLinkRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.logging.v2.Link>) responseObserver);
           break;
         case METHODID_LIST_EXCLUSIONS:
           serviceImpl.listExclusions(
@@ -3121,6 +3742,18 @@ public final class ConfigServiceV2Grpc {
                 new MethodHandlers<
                     com.google.logging.v2.GetBucketRequest, com.google.logging.v2.LogBucket>(
                     service, METHODID_GET_BUCKET)))
+        .addMethod(
+            getCreateBucketAsyncMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.logging.v2.CreateBucketRequest, com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_BUCKET_ASYNC)))
+        .addMethod(
+            getUpdateBucketAsyncMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.logging.v2.UpdateBucketRequest, com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_BUCKET_ASYNC)))
         .addMethod(
             getCreateBucketMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -3205,6 +3838,30 @@ public final class ConfigServiceV2Grpc {
                 new MethodHandlers<
                     com.google.logging.v2.DeleteSinkRequest, com.google.protobuf.Empty>(
                     service, METHODID_DELETE_SINK)))
+        .addMethod(
+            getCreateLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.logging.v2.CreateLinkRequest, com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_LINK)))
+        .addMethod(
+            getDeleteLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.logging.v2.DeleteLinkRequest, com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_LINK)))
+        .addMethod(
+            getListLinksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.logging.v2.ListLinksRequest,
+                    com.google.logging.v2.ListLinksResponse>(service, METHODID_LIST_LINKS)))
+        .addMethod(
+            getGetLinkMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.logging.v2.GetLinkRequest, com.google.logging.v2.Link>(
+                    service, METHODID_GET_LINK)))
         .addMethod(
             getListExclusionsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -3319,6 +3976,8 @@ public final class ConfigServiceV2Grpc {
                       .setSchemaDescriptor(new ConfigServiceV2FileDescriptorSupplier())
                       .addMethod(getListBucketsMethod())
                       .addMethod(getGetBucketMethod())
+                      .addMethod(getCreateBucketAsyncMethod())
+                      .addMethod(getUpdateBucketAsyncMethod())
                       .addMethod(getCreateBucketMethod())
                       .addMethod(getUpdateBucketMethod())
                       .addMethod(getDeleteBucketMethod())
@@ -3333,6 +3992,10 @@ public final class ConfigServiceV2Grpc {
                       .addMethod(getCreateSinkMethod())
                       .addMethod(getUpdateSinkMethod())
                       .addMethod(getDeleteSinkMethod())
+                      .addMethod(getCreateLinkMethod())
+                      .addMethod(getDeleteLinkMethod())
+                      .addMethod(getListLinksMethod())
+                      .addMethod(getGetLinkMethod())
                       .addMethod(getListExclusionsMethod())
                       .addMethod(getGetExclusionMethod())
                       .addMethod(getCreateExclusionMethod())

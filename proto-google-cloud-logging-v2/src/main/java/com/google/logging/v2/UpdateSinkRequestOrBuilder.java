@@ -27,8 +27,8 @@ public interface UpdateSinkRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The full resource name of the sink to update, including the parent
-   * resource and the sink identifier:
+   * Required. The full resource name of the sink to update, including the
+   * parent resource and the sink identifier:
    *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
    *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
@@ -48,8 +48,8 @@ public interface UpdateSinkRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The full resource name of the sink to update, including the parent
-   * resource and the sink identifier:
+   * Required. The full resource name of the sink to update, including the
+   * parent resource and the sink identifier:
    *     "projects/[PROJECT_ID]/sinks/[SINK_ID]"
    *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]"
@@ -70,8 +70,8 @@ public interface UpdateSinkRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The updated sink, whose name is the same identifier that appears as part
-   * of `sink_name`.
+   * Required. The updated sink, whose name is the same identifier that appears
+   * as part of `sink_name`.
    * </pre>
    *
    * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -83,8 +83,8 @@ public interface UpdateSinkRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The updated sink, whose name is the same identifier that appears as part
-   * of `sink_name`.
+   * Required. The updated sink, whose name is the same identifier that appears
+   * as part of `sink_name`.
    * </pre>
    *
    * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -96,8 +96,8 @@ public interface UpdateSinkRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The updated sink, whose name is the same identifier that appears as part
-   * of `sink_name`.
+   * Required. The updated sink, whose name is the same identifier that appears
+   * as part of `sink_name`.
    * </pre>
    *
    * <code>.google.logging.v2.LogSink sink = 2 [(.google.api.field_behavior) = REQUIRED];</code>

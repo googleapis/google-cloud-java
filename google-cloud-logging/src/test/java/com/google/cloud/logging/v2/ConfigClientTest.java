@@ -18,6 +18,7 @@ package com.google.cloud.logging.v2;
 
 import static com.google.cloud.logging.v2.ConfigClient.ListBucketsPagedResponse;
 import static com.google.cloud.logging.v2.ConfigClient.ListExclusionsPagedResponse;
+import static com.google.cloud.logging.v2.ConfigClient.ListLinksPagedResponse;
 import static com.google.cloud.logging.v2.ConfigClient.ListSinksPagedResponse;
 import static com.google.cloud.logging.v2.ConfigClient.ListViewsPagedResponse;
 
@@ -30,6 +31,7 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.common.collect.Lists;
+import com.google.logging.v2.BigQueryDataset;
 import com.google.logging.v2.BillingAccountLocationName;
 import com.google.logging.v2.BillingAccountName;
 import com.google.logging.v2.CmekSettings;
@@ -38,10 +40,12 @@ import com.google.logging.v2.CopyLogEntriesRequest;
 import com.google.logging.v2.CopyLogEntriesResponse;
 import com.google.logging.v2.CreateBucketRequest;
 import com.google.logging.v2.CreateExclusionRequest;
+import com.google.logging.v2.CreateLinkRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.CreateViewRequest;
 import com.google.logging.v2.DeleteBucketRequest;
 import com.google.logging.v2.DeleteExclusionRequest;
+import com.google.logging.v2.DeleteLinkRequest;
 import com.google.logging.v2.DeleteSinkRequest;
 import com.google.logging.v2.DeleteViewRequest;
 import com.google.logging.v2.FolderLocationName;
@@ -49,14 +53,20 @@ import com.google.logging.v2.FolderName;
 import com.google.logging.v2.GetBucketRequest;
 import com.google.logging.v2.GetCmekSettingsRequest;
 import com.google.logging.v2.GetExclusionRequest;
+import com.google.logging.v2.GetLinkRequest;
 import com.google.logging.v2.GetSettingsRequest;
 import com.google.logging.v2.GetSinkRequest;
 import com.google.logging.v2.GetViewRequest;
+import com.google.logging.v2.IndexConfig;
 import com.google.logging.v2.LifecycleState;
+import com.google.logging.v2.Link;
+import com.google.logging.v2.LinkName;
 import com.google.logging.v2.ListBucketsRequest;
 import com.google.logging.v2.ListBucketsResponse;
 import com.google.logging.v2.ListExclusionsRequest;
 import com.google.logging.v2.ListExclusionsResponse;
+import com.google.logging.v2.ListLinksRequest;
+import com.google.logging.v2.ListLinksResponse;
 import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
 import com.google.logging.v2.ListViewsRequest;
@@ -376,7 +386,9 @@ public class ConfigClientTest {
             .setRetentionDays(1544391896)
             .setLocked(true)
             .setLifecycleState(LifecycleState.forNumber(0))
+            .setAnalyticsEnabled(true)
             .addAllRestrictedFields(new ArrayList<String>())
+            .addAllIndexConfigs(new ArrayList<IndexConfig>())
             .setCmekSettings(CmekSettings.newBuilder().build())
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
@@ -422,6 +434,150 @@ public class ConfigClientTest {
   }
 
   @Test
+  public void createBucketAsyncTest() throws Exception {
+    LogBucket expectedResponse =
+        LogBucket.newBuilder()
+            .setName(
+                LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setRetentionDays(1544391896)
+            .setLocked(true)
+            .setLifecycleState(LifecycleState.forNumber(0))
+            .setAnalyticsEnabled(true)
+            .addAllRestrictedFields(new ArrayList<String>())
+            .addAllIndexConfigs(new ArrayList<IndexConfig>())
+            .setCmekSettings(CmekSettings.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createBucketAsyncTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockConfigServiceV2.addResponse(resultOperation);
+
+    CreateBucketRequest request =
+        CreateBucketRequest.newBuilder()
+            .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setBucketId("bucketId-1603305307")
+            .setBucket(LogBucket.newBuilder().build())
+            .build();
+
+    LogBucket actualResponse = client.createBucketAsyncAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfigServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateBucketRequest actualRequest = ((CreateBucketRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getBucketId(), actualRequest.getBucketId());
+    Assert.assertEquals(request.getBucket(), actualRequest.getBucket());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createBucketAsyncExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      CreateBucketRequest request =
+          CreateBucketRequest.newBuilder()
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setBucketId("bucketId-1603305307")
+              .setBucket(LogBucket.newBuilder().build())
+              .build();
+      client.createBucketAsyncAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateBucketAsyncTest() throws Exception {
+    LogBucket expectedResponse =
+        LogBucket.newBuilder()
+            .setName(
+                LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setRetentionDays(1544391896)
+            .setLocked(true)
+            .setLifecycleState(LifecycleState.forNumber(0))
+            .setAnalyticsEnabled(true)
+            .addAllRestrictedFields(new ArrayList<String>())
+            .addAllIndexConfigs(new ArrayList<IndexConfig>())
+            .setCmekSettings(CmekSettings.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateBucketAsyncTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockConfigServiceV2.addResponse(resultOperation);
+
+    UpdateBucketRequest request =
+        UpdateBucketRequest.newBuilder()
+            .setName(
+                LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]")
+                    .toString())
+            .setBucket(LogBucket.newBuilder().build())
+            .setUpdateMask(FieldMask.newBuilder().build())
+            .build();
+
+    LogBucket actualResponse = client.updateBucketAsyncAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfigServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateBucketRequest actualRequest = ((UpdateBucketRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getBucket(), actualRequest.getBucket());
+    Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateBucketAsyncExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      UpdateBucketRequest request =
+          UpdateBucketRequest.newBuilder()
+              .setName(
+                  LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]")
+                      .toString())
+              .setBucket(LogBucket.newBuilder().build())
+              .setUpdateMask(FieldMask.newBuilder().build())
+              .build();
+      client.updateBucketAsyncAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void createBucketTest() throws Exception {
     LogBucket expectedResponse =
         LogBucket.newBuilder()
@@ -434,7 +590,9 @@ public class ConfigClientTest {
             .setRetentionDays(1544391896)
             .setLocked(true)
             .setLifecycleState(LifecycleState.forNumber(0))
+            .setAnalyticsEnabled(true)
             .addAllRestrictedFields(new ArrayList<String>())
+            .addAllIndexConfigs(new ArrayList<IndexConfig>())
             .setCmekSettings(CmekSettings.newBuilder().build())
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
@@ -494,7 +652,9 @@ public class ConfigClientTest {
             .setRetentionDays(1544391896)
             .setLocked(true)
             .setLifecycleState(LifecycleState.forNumber(0))
+            .setAnalyticsEnabled(true)
             .addAllRestrictedFields(new ArrayList<String>())
+            .addAllIndexConfigs(new ArrayList<IndexConfig>())
             .setCmekSettings(CmekSettings.newBuilder().build())
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
@@ -1733,6 +1893,394 @@ public class ConfigClientTest {
   }
 
   @Test
+  public void createLinkTest() throws Exception {
+    Link expectedResponse =
+        Link.newBuilder()
+            .setName(
+                LinkName.ofProjectLocationBucketLinkName(
+                        "[PROJECT]", "[LOCATION]", "[BUCKET]", "[LINK]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setLifecycleState(LifecycleState.forNumber(0))
+            .setBigqueryDataset(BigQueryDataset.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createLinkTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockConfigServiceV2.addResponse(resultOperation);
+
+    LogBucketName parent =
+        LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]");
+    Link link = Link.newBuilder().build();
+    String linkId = "linkId-1102667083";
+
+    Link actualResponse = client.createLinkAsync(parent, link, linkId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfigServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateLinkRequest actualRequest = ((CreateLinkRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(link, actualRequest.getLink());
+    Assert.assertEquals(linkId, actualRequest.getLinkId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createLinkExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      LogBucketName parent =
+          LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]");
+      Link link = Link.newBuilder().build();
+      String linkId = "linkId-1102667083";
+      client.createLinkAsync(parent, link, linkId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createLinkTest2() throws Exception {
+    Link expectedResponse =
+        Link.newBuilder()
+            .setName(
+                LinkName.ofProjectLocationBucketLinkName(
+                        "[PROJECT]", "[LOCATION]", "[BUCKET]", "[LINK]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setLifecycleState(LifecycleState.forNumber(0))
+            .setBigqueryDataset(BigQueryDataset.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createLinkTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockConfigServiceV2.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    Link link = Link.newBuilder().build();
+    String linkId = "linkId-1102667083";
+
+    Link actualResponse = client.createLinkAsync(parent, link, linkId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfigServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateLinkRequest actualRequest = ((CreateLinkRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(link, actualRequest.getLink());
+    Assert.assertEquals(linkId, actualRequest.getLinkId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createLinkExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Link link = Link.newBuilder().build();
+      String linkId = "linkId-1102667083";
+      client.createLinkAsync(parent, link, linkId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteLinkTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteLinkTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockConfigServiceV2.addResponse(resultOperation);
+
+    LinkName name =
+        LinkName.ofProjectLocationBucketLinkName("[PROJECT]", "[LOCATION]", "[BUCKET]", "[LINK]");
+
+    client.deleteLinkAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockConfigServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteLinkRequest actualRequest = ((DeleteLinkRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteLinkExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      LinkName name =
+          LinkName.ofProjectLocationBucketLinkName("[PROJECT]", "[LOCATION]", "[BUCKET]", "[LINK]");
+      client.deleteLinkAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteLinkTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteLinkTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockConfigServiceV2.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteLinkAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockConfigServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteLinkRequest actualRequest = ((DeleteLinkRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteLinkExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteLinkAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listLinksTest() throws Exception {
+    Link responsesElement = Link.newBuilder().build();
+    ListLinksResponse expectedResponse =
+        ListLinksResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllLinks(Arrays.asList(responsesElement))
+            .build();
+    mockConfigServiceV2.addResponse(expectedResponse);
+
+    LogBucketName parent =
+        LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]");
+
+    ListLinksPagedResponse pagedListResponse = client.listLinks(parent);
+
+    List<Link> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getLinksList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockConfigServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListLinksRequest actualRequest = ((ListLinksRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listLinksExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      LogBucketName parent =
+          LogBucketName.ofProjectLocationBucketName("[PROJECT]", "[LOCATION]", "[BUCKET]");
+      client.listLinks(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listLinksTest2() throws Exception {
+    Link responsesElement = Link.newBuilder().build();
+    ListLinksResponse expectedResponse =
+        ListLinksResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllLinks(Arrays.asList(responsesElement))
+            .build();
+    mockConfigServiceV2.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListLinksPagedResponse pagedListResponse = client.listLinks(parent);
+
+    List<Link> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getLinksList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockConfigServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListLinksRequest actualRequest = ((ListLinksRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listLinksExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listLinks(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getLinkTest() throws Exception {
+    Link expectedResponse =
+        Link.newBuilder()
+            .setName(
+                LinkName.ofProjectLocationBucketLinkName(
+                        "[PROJECT]", "[LOCATION]", "[BUCKET]", "[LINK]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setLifecycleState(LifecycleState.forNumber(0))
+            .setBigqueryDataset(BigQueryDataset.newBuilder().build())
+            .build();
+    mockConfigServiceV2.addResponse(expectedResponse);
+
+    LinkName name =
+        LinkName.ofProjectLocationBucketLinkName("[PROJECT]", "[LOCATION]", "[BUCKET]", "[LINK]");
+
+    Link actualResponse = client.getLink(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfigServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetLinkRequest actualRequest = ((GetLinkRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getLinkExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      LinkName name =
+          LinkName.ofProjectLocationBucketLinkName("[PROJECT]", "[LOCATION]", "[BUCKET]", "[LINK]");
+      client.getLink(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getLinkTest2() throws Exception {
+    Link expectedResponse =
+        Link.newBuilder()
+            .setName(
+                LinkName.ofProjectLocationBucketLinkName(
+                        "[PROJECT]", "[LOCATION]", "[BUCKET]", "[LINK]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setLifecycleState(LifecycleState.forNumber(0))
+            .setBigqueryDataset(BigQueryDataset.newBuilder().build())
+            .build();
+    mockConfigServiceV2.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Link actualResponse = client.getLink(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfigServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetLinkRequest actualRequest = ((GetLinkRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getLinkExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getLink(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listExclusionsTest() throws Exception {
     LogExclusion responsesElement = LogExclusion.newBuilder().build();
     ListExclusionsResponse expectedResponse =
@@ -2440,6 +2988,7 @@ public class ConfigClientTest {
         CmekSettings.newBuilder()
             .setName(CmekSettingsName.ofProjectCmekSettingsName("[PROJECT]").toString())
             .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
             .setServiceAccountId("serviceAccountId1964232947")
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
@@ -2486,6 +3035,7 @@ public class ConfigClientTest {
         CmekSettings.newBuilder()
             .setName(CmekSettingsName.ofProjectCmekSettingsName("[PROJECT]").toString())
             .setKmsKeyName("kmsKeyName412586233")
+            .setKmsKeyVersionName("kmsKeyVersionName-1798811307")
             .setServiceAccountId("serviceAccountId1964232947")
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);

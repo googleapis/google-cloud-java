@@ -27,10 +27,10 @@ public interface LogExclusionOrBuilder
    *
    *
    * <pre>
-   * Required. A client-assigned identifier, such as `"load-balancer-exclusion"`.
-   * Identifiers are limited to 100 characters and can include only letters,
-   * digits, underscores, hyphens, and periods. First character has to be
-   * alphanumeric.
+   * Required. A client-assigned identifier, such as
+   * `"load-balancer-exclusion"`. Identifiers are limited to 100 characters and
+   * can include only letters, digits, underscores, hyphens, and periods. First
+   * character has to be alphanumeric.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -42,10 +42,10 @@ public interface LogExclusionOrBuilder
    *
    *
    * <pre>
-   * Required. A client-assigned identifier, such as `"load-balancer-exclusion"`.
-   * Identifiers are limited to 100 characters and can include only letters,
-   * digits, underscores, hyphens, and periods. First character has to be
-   * alphanumeric.
+   * Required. A client-assigned identifier, such as
+   * `"load-balancer-exclusion"`. Identifiers are limited to 100 characters and
+   * can include only letters, digits, underscores, hyphens, and periods. First
+   * character has to be alphanumeric.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>

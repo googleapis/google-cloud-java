@@ -91,8 +91,8 @@ public interface LogBucketOrBuilder
    *
    *
    * <pre>
-   * Output only. The creation timestamp of the bucket. This is not set for any of the
-   * default buckets.
+   * Output only. The creation timestamp of the bucket. This is not set for any
+   * of the default buckets.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -105,8 +105,8 @@ public interface LogBucketOrBuilder
    *
    *
    * <pre>
-   * Output only. The creation timestamp of the bucket. This is not set for any of the
-   * default buckets.
+   * Output only. The creation timestamp of the bucket. This is not set for any
+   * of the default buckets.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -119,8 +119,8 @@ public interface LogBucketOrBuilder
    *
    *
    * <pre>
-   * Output only. The creation timestamp of the bucket. This is not set for any of the
-   * default buckets.
+   * Output only. The creation timestamp of the bucket. This is not set for any
+   * of the default buckets.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -230,6 +230,20 @@ public interface LogBucketOrBuilder
    *
    *
    * <pre>
+   * Whether log analytics is enabled for this bucket.
+   * Once enabled, log analytics features cannot be disabled.
+   * </pre>
+   *
+   * <code>bool analytics_enabled = 14;</code>
+   *
+   * @return The analyticsEnabled.
+   */
+  boolean getAnalyticsEnabled();
+
+  /**
+   *
+   *
+   * <pre>
    * Log entry field paths that are denied access in this bucket.
    * The following fields and their children are eligible: `textPayload`,
    * `jsonPayload`, `protoPayload`, `httpRequest`, `labels`, `sourceLocation`.
@@ -292,6 +306,58 @@ public interface LogBucketOrBuilder
    * @return The bytes of the restrictedFields at the given index.
    */
   com.google.protobuf.ByteString getRestrictedFieldsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of indexed fields and related configuration data.
+   * </pre>
+   *
+   * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
+   */
+  java.util.List<com.google.logging.v2.IndexConfig> getIndexConfigsList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of indexed fields and related configuration data.
+   * </pre>
+   *
+   * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
+   */
+  com.google.logging.v2.IndexConfig getIndexConfigs(int index);
+  /**
+   *
+   *
+   * <pre>
+   * A list of indexed fields and related configuration data.
+   * </pre>
+   *
+   * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
+   */
+  int getIndexConfigsCount();
+  /**
+   *
+   *
+   * <pre>
+   * A list of indexed fields and related configuration data.
+   * </pre>
+   *
+   * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
+   */
+  java.util.List<? extends com.google.logging.v2.IndexConfigOrBuilder>
+      getIndexConfigsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * A list of indexed fields and related configuration data.
+   * </pre>
+   *
+   * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
+   */
+  com.google.logging.v2.IndexConfigOrBuilder getIndexConfigsOrBuilder(int index);
 
   /**
    *

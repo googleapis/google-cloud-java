@@ -18,6 +18,7 @@ package com.google.cloud.logging.v2.stub;
 
 import static com.google.cloud.logging.v2.ConfigClient.ListBucketsPagedResponse;
 import static com.google.cloud.logging.v2.ConfigClient.ListExclusionsPagedResponse;
+import static com.google.cloud.logging.v2.ConfigClient.ListLinksPagedResponse;
 import static com.google.cloud.logging.v2.ConfigClient.ListSinksPagedResponse;
 import static com.google.cloud.logging.v2.ConfigClient.ListViewsPagedResponse;
 
@@ -51,28 +52,36 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.logging.v2.BucketMetadata;
 import com.google.logging.v2.CmekSettings;
 import com.google.logging.v2.CopyLogEntriesMetadata;
 import com.google.logging.v2.CopyLogEntriesRequest;
 import com.google.logging.v2.CopyLogEntriesResponse;
 import com.google.logging.v2.CreateBucketRequest;
 import com.google.logging.v2.CreateExclusionRequest;
+import com.google.logging.v2.CreateLinkRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.CreateViewRequest;
 import com.google.logging.v2.DeleteBucketRequest;
 import com.google.logging.v2.DeleteExclusionRequest;
+import com.google.logging.v2.DeleteLinkRequest;
 import com.google.logging.v2.DeleteSinkRequest;
 import com.google.logging.v2.DeleteViewRequest;
 import com.google.logging.v2.GetBucketRequest;
 import com.google.logging.v2.GetCmekSettingsRequest;
 import com.google.logging.v2.GetExclusionRequest;
+import com.google.logging.v2.GetLinkRequest;
 import com.google.logging.v2.GetSettingsRequest;
 import com.google.logging.v2.GetSinkRequest;
 import com.google.logging.v2.GetViewRequest;
+import com.google.logging.v2.Link;
+import com.google.logging.v2.LinkMetadata;
 import com.google.logging.v2.ListBucketsRequest;
 import com.google.logging.v2.ListBucketsResponse;
 import com.google.logging.v2.ListExclusionsRequest;
 import com.google.logging.v2.ListExclusionsResponse;
+import com.google.logging.v2.ListLinksRequest;
+import com.google.logging.v2.ListLinksResponse;
 import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
 import com.google.logging.v2.ListViewsRequest;
@@ -147,6 +156,12 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
   private final PagedCallSettings<ListBucketsRequest, ListBucketsResponse, ListBucketsPagedResponse>
       listBucketsSettings;
   private final UnaryCallSettings<GetBucketRequest, LogBucket> getBucketSettings;
+  private final UnaryCallSettings<CreateBucketRequest, Operation> createBucketAsyncSettings;
+  private final OperationCallSettings<CreateBucketRequest, LogBucket, BucketMetadata>
+      createBucketAsyncOperationSettings;
+  private final UnaryCallSettings<UpdateBucketRequest, Operation> updateBucketAsyncSettings;
+  private final OperationCallSettings<UpdateBucketRequest, LogBucket, BucketMetadata>
+      updateBucketAsyncOperationSettings;
   private final UnaryCallSettings<CreateBucketRequest, LogBucket> createBucketSettings;
   private final UnaryCallSettings<UpdateBucketRequest, LogBucket> updateBucketSettings;
   private final UnaryCallSettings<DeleteBucketRequest, Empty> deleteBucketSettings;
@@ -163,6 +178,15 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
   private final UnaryCallSettings<CreateSinkRequest, LogSink> createSinkSettings;
   private final UnaryCallSettings<UpdateSinkRequest, LogSink> updateSinkSettings;
   private final UnaryCallSettings<DeleteSinkRequest, Empty> deleteSinkSettings;
+  private final UnaryCallSettings<CreateLinkRequest, Operation> createLinkSettings;
+  private final OperationCallSettings<CreateLinkRequest, Link, LinkMetadata>
+      createLinkOperationSettings;
+  private final UnaryCallSettings<DeleteLinkRequest, Operation> deleteLinkSettings;
+  private final OperationCallSettings<DeleteLinkRequest, Empty, LinkMetadata>
+      deleteLinkOperationSettings;
+  private final PagedCallSettings<ListLinksRequest, ListLinksResponse, ListLinksPagedResponse>
+      listLinksSettings;
+  private final UnaryCallSettings<GetLinkRequest, Link> getLinkSettings;
   private final PagedCallSettings<
           ListExclusionsRequest, ListExclusionsResponse, ListExclusionsPagedResponse>
       listExclusionsSettings;
@@ -288,6 +312,42 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
             }
           };
 
+  private static final PagedListDescriptor<ListLinksRequest, ListLinksResponse, Link>
+      LIST_LINKS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLinksRequest, ListLinksResponse, Link>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLinksRequest injectToken(ListLinksRequest payload, String token) {
+              return ListLinksRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLinksRequest injectPageSize(ListLinksRequest payload, int pageSize) {
+              return ListLinksRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLinksRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLinksResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Link> extractResources(ListLinksResponse payload) {
+              return payload.getLinksList() == null
+                  ? ImmutableList.<Link>of()
+                  : payload.getLinksList();
+            }
+          };
+
   private static final PagedListDescriptor<
           ListExclusionsRequest, ListExclusionsResponse, LogExclusion>
       LIST_EXCLUSIONS_PAGE_STR_DESC =
@@ -378,6 +438,23 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
           };
 
   private static final PagedListResponseFactory<
+          ListLinksRequest, ListLinksResponse, ListLinksPagedResponse>
+      LIST_LINKS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLinksRequest, ListLinksResponse, ListLinksPagedResponse>() {
+            @Override
+            public ApiFuture<ListLinksPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLinksRequest, ListLinksResponse> callable,
+                ListLinksRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLinksResponse> futureResponse) {
+              PageContext<ListLinksRequest, ListLinksResponse, Link> pageContext =
+                  PageContext.create(callable, LIST_LINKS_PAGE_STR_DESC, request, context);
+              return ListLinksPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListExclusionsRequest, ListExclusionsResponse, ListExclusionsPagedResponse>
       LIST_EXCLUSIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -403,6 +480,28 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
   /** Returns the object with the settings used for calls to getBucket. */
   public UnaryCallSettings<GetBucketRequest, LogBucket> getBucketSettings() {
     return getBucketSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createBucketAsync. */
+  public UnaryCallSettings<CreateBucketRequest, Operation> createBucketAsyncSettings() {
+    return createBucketAsyncSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createBucketAsync. */
+  public OperationCallSettings<CreateBucketRequest, LogBucket, BucketMetadata>
+      createBucketAsyncOperationSettings() {
+    return createBucketAsyncOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateBucketAsync. */
+  public UnaryCallSettings<UpdateBucketRequest, Operation> updateBucketAsyncSettings() {
+    return updateBucketAsyncSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateBucketAsync. */
+  public OperationCallSettings<UpdateBucketRequest, LogBucket, BucketMetadata>
+      updateBucketAsyncOperationSettings() {
+    return updateBucketAsyncOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to createBucket. */
@@ -475,6 +574,39 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
   /** Returns the object with the settings used for calls to deleteSink. */
   public UnaryCallSettings<DeleteSinkRequest, Empty> deleteSinkSettings() {
     return deleteSinkSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createLink. */
+  public UnaryCallSettings<CreateLinkRequest, Operation> createLinkSettings() {
+    return createLinkSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createLink. */
+  public OperationCallSettings<CreateLinkRequest, Link, LinkMetadata>
+      createLinkOperationSettings() {
+    return createLinkOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteLink. */
+  public UnaryCallSettings<DeleteLinkRequest, Operation> deleteLinkSettings() {
+    return deleteLinkSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteLink. */
+  public OperationCallSettings<DeleteLinkRequest, Empty, LinkMetadata>
+      deleteLinkOperationSettings() {
+    return deleteLinkOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listLinks. */
+  public PagedCallSettings<ListLinksRequest, ListLinksResponse, ListLinksPagedResponse>
+      listLinksSettings() {
+    return listLinksSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLink. */
+  public UnaryCallSettings<GetLinkRequest, Link> getLinkSettings() {
+    return getLinkSettings;
   }
 
   /** Returns the object with the settings used for calls to listExclusions. */
@@ -613,6 +745,12 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
 
     listBucketsSettings = settingsBuilder.listBucketsSettings().build();
     getBucketSettings = settingsBuilder.getBucketSettings().build();
+    createBucketAsyncSettings = settingsBuilder.createBucketAsyncSettings().build();
+    createBucketAsyncOperationSettings =
+        settingsBuilder.createBucketAsyncOperationSettings().build();
+    updateBucketAsyncSettings = settingsBuilder.updateBucketAsyncSettings().build();
+    updateBucketAsyncOperationSettings =
+        settingsBuilder.updateBucketAsyncOperationSettings().build();
     createBucketSettings = settingsBuilder.createBucketSettings().build();
     updateBucketSettings = settingsBuilder.updateBucketSettings().build();
     deleteBucketSettings = settingsBuilder.deleteBucketSettings().build();
@@ -627,6 +765,12 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
     createSinkSettings = settingsBuilder.createSinkSettings().build();
     updateSinkSettings = settingsBuilder.updateSinkSettings().build();
     deleteSinkSettings = settingsBuilder.deleteSinkSettings().build();
+    createLinkSettings = settingsBuilder.createLinkSettings().build();
+    createLinkOperationSettings = settingsBuilder.createLinkOperationSettings().build();
+    deleteLinkSettings = settingsBuilder.deleteLinkSettings().build();
+    deleteLinkOperationSettings = settingsBuilder.deleteLinkOperationSettings().build();
+    listLinksSettings = settingsBuilder.listLinksSettings().build();
+    getLinkSettings = settingsBuilder.getLinkSettings().build();
     listExclusionsSettings = settingsBuilder.listExclusionsSettings().build();
     getExclusionSettings = settingsBuilder.getExclusionSettings().build();
     createExclusionSettings = settingsBuilder.createExclusionSettings().build();
@@ -647,6 +791,14 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
             ListBucketsRequest, ListBucketsResponse, ListBucketsPagedResponse>
         listBucketsSettings;
     private final UnaryCallSettings.Builder<GetBucketRequest, LogBucket> getBucketSettings;
+    private final UnaryCallSettings.Builder<CreateBucketRequest, Operation>
+        createBucketAsyncSettings;
+    private final OperationCallSettings.Builder<CreateBucketRequest, LogBucket, BucketMetadata>
+        createBucketAsyncOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateBucketRequest, Operation>
+        updateBucketAsyncSettings;
+    private final OperationCallSettings.Builder<UpdateBucketRequest, LogBucket, BucketMetadata>
+        updateBucketAsyncOperationSettings;
     private final UnaryCallSettings.Builder<CreateBucketRequest, LogBucket> createBucketSettings;
     private final UnaryCallSettings.Builder<UpdateBucketRequest, LogBucket> updateBucketSettings;
     private final UnaryCallSettings.Builder<DeleteBucketRequest, Empty> deleteBucketSettings;
@@ -665,6 +817,16 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
     private final UnaryCallSettings.Builder<CreateSinkRequest, LogSink> createSinkSettings;
     private final UnaryCallSettings.Builder<UpdateSinkRequest, LogSink> updateSinkSettings;
     private final UnaryCallSettings.Builder<DeleteSinkRequest, Empty> deleteSinkSettings;
+    private final UnaryCallSettings.Builder<CreateLinkRequest, Operation> createLinkSettings;
+    private final OperationCallSettings.Builder<CreateLinkRequest, Link, LinkMetadata>
+        createLinkOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteLinkRequest, Operation> deleteLinkSettings;
+    private final OperationCallSettings.Builder<DeleteLinkRequest, Empty, LinkMetadata>
+        deleteLinkOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListLinksRequest, ListLinksResponse, ListLinksPagedResponse>
+        listLinksSettings;
+    private final UnaryCallSettings.Builder<GetLinkRequest, Link> getLinkSettings;
     private final PagedCallSettings.Builder<
             ListExclusionsRequest, ListExclusionsResponse, ListExclusionsPagedResponse>
         listExclusionsSettings;
@@ -742,6 +904,10 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
 
       listBucketsSettings = PagedCallSettings.newBuilder(LIST_BUCKETS_PAGE_STR_FACT);
       getBucketSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createBucketAsyncSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createBucketAsyncOperationSettings = OperationCallSettings.newBuilder();
+      updateBucketAsyncSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateBucketAsyncOperationSettings = OperationCallSettings.newBuilder();
       createBucketSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateBucketSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteBucketSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -756,6 +922,12 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
       createSinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteSinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createLinkOperationSettings = OperationCallSettings.newBuilder();
+      deleteLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteLinkOperationSettings = OperationCallSettings.newBuilder();
+      listLinksSettings = PagedCallSettings.newBuilder(LIST_LINKS_PAGE_STR_FACT);
+      getLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listExclusionsSettings = PagedCallSettings.newBuilder(LIST_EXCLUSIONS_PAGE_STR_FACT);
       getExclusionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createExclusionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -772,6 +944,8 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listBucketsSettings,
               getBucketSettings,
+              createBucketAsyncSettings,
+              updateBucketAsyncSettings,
               createBucketSettings,
               updateBucketSettings,
               deleteBucketSettings,
@@ -786,6 +960,10 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
               createSinkSettings,
               updateSinkSettings,
               deleteSinkSettings,
+              createLinkSettings,
+              deleteLinkSettings,
+              listLinksSettings,
+              getLinkSettings,
               listExclusionsSettings,
               getExclusionSettings,
               createExclusionSettings,
@@ -804,6 +982,10 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
 
       listBucketsSettings = settings.listBucketsSettings.toBuilder();
       getBucketSettings = settings.getBucketSettings.toBuilder();
+      createBucketAsyncSettings = settings.createBucketAsyncSettings.toBuilder();
+      createBucketAsyncOperationSettings = settings.createBucketAsyncOperationSettings.toBuilder();
+      updateBucketAsyncSettings = settings.updateBucketAsyncSettings.toBuilder();
+      updateBucketAsyncOperationSettings = settings.updateBucketAsyncOperationSettings.toBuilder();
       createBucketSettings = settings.createBucketSettings.toBuilder();
       updateBucketSettings = settings.updateBucketSettings.toBuilder();
       deleteBucketSettings = settings.deleteBucketSettings.toBuilder();
@@ -818,6 +1000,12 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
       createSinkSettings = settings.createSinkSettings.toBuilder();
       updateSinkSettings = settings.updateSinkSettings.toBuilder();
       deleteSinkSettings = settings.deleteSinkSettings.toBuilder();
+      createLinkSettings = settings.createLinkSettings.toBuilder();
+      createLinkOperationSettings = settings.createLinkOperationSettings.toBuilder();
+      deleteLinkSettings = settings.deleteLinkSettings.toBuilder();
+      deleteLinkOperationSettings = settings.deleteLinkOperationSettings.toBuilder();
+      listLinksSettings = settings.listLinksSettings.toBuilder();
+      getLinkSettings = settings.getLinkSettings.toBuilder();
       listExclusionsSettings = settings.listExclusionsSettings.toBuilder();
       getExclusionSettings = settings.getExclusionSettings.toBuilder();
       createExclusionSettings = settings.createExclusionSettings.toBuilder();
@@ -834,6 +1022,8 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listBucketsSettings,
               getBucketSettings,
+              createBucketAsyncSettings,
+              updateBucketAsyncSettings,
               createBucketSettings,
               updateBucketSettings,
               deleteBucketSettings,
@@ -848,6 +1038,10 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
               createSinkSettings,
               updateSinkSettings,
               deleteSinkSettings,
+              createLinkSettings,
+              deleteLinkSettings,
+              listLinksSettings,
+              getLinkSettings,
               listExclusionsSettings,
               getExclusionSettings,
               createExclusionSettings,
@@ -881,6 +1075,16 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
 
       builder
           .getBucketSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createBucketAsyncSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateBucketAsyncSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -955,6 +1159,26 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
 
       builder
+          .createLinkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteLinkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listLinksSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getLinkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .listExclusionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
@@ -1003,6 +1227,99 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
           .copyLogEntriesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createBucketAsyncOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateBucketRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(LogBucket.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(BucketMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateBucketAsyncOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateBucketRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(LogBucket.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(BucketMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createLinkOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<CreateLinkRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(ProtoOperationTransformers.ResponseTransformer.create(Link.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(LinkMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteLinkOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<DeleteLinkRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(LinkMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
 
       builder
           .copyLogEntriesOperationSettings()
@@ -1056,6 +1373,32 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
     /** Returns the builder for the settings used for calls to getBucket. */
     public UnaryCallSettings.Builder<GetBucketRequest, LogBucket> getBucketSettings() {
       return getBucketSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createBucketAsync. */
+    public UnaryCallSettings.Builder<CreateBucketRequest, Operation> createBucketAsyncSettings() {
+      return createBucketAsyncSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createBucketAsync. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<CreateBucketRequest, LogBucket, BucketMetadata>
+        createBucketAsyncOperationSettings() {
+      return createBucketAsyncOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateBucketAsync. */
+    public UnaryCallSettings.Builder<UpdateBucketRequest, Operation> updateBucketAsyncSettings() {
+      return updateBucketAsyncSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateBucketAsync. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<UpdateBucketRequest, LogBucket, BucketMetadata>
+        updateBucketAsyncOperationSettings() {
+      return updateBucketAsyncOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to createBucket. */
@@ -1128,6 +1471,43 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
     /** Returns the builder for the settings used for calls to deleteSink. */
     public UnaryCallSettings.Builder<DeleteSinkRequest, Empty> deleteSinkSettings() {
       return deleteSinkSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createLink. */
+    public UnaryCallSettings.Builder<CreateLinkRequest, Operation> createLinkSettings() {
+      return createLinkSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createLink. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<CreateLinkRequest, Link, LinkMetadata>
+        createLinkOperationSettings() {
+      return createLinkOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteLink. */
+    public UnaryCallSettings.Builder<DeleteLinkRequest, Operation> deleteLinkSettings() {
+      return deleteLinkSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteLink. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<DeleteLinkRequest, Empty, LinkMetadata>
+        deleteLinkOperationSettings() {
+      return deleteLinkOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLinks. */
+    public PagedCallSettings.Builder<ListLinksRequest, ListLinksResponse, ListLinksPagedResponse>
+        listLinksSettings() {
+      return listLinksSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLink. */
+    public UnaryCallSettings.Builder<GetLinkRequest, Link> getLinkSettings() {
+      return getLinkSettings;
     }
 
     /** Returns the builder for the settings used for calls to listExclusions. */

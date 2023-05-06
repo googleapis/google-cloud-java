@@ -523,11 +523,13 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. Whether valid entries should be written even if some other
-   * entries fail due to INVALID_ARGUMENT or PERMISSION_DENIED errors. If any
-   * entry is not written, then the response status is the error associated
-   * with one of the failed entries and the response includes error details
-   * keyed by the entries' zero-based index in the `entries.write` method.
+   * Optional. Whether a batch's valid entries should be written even if some
+   * other entry failed due to a permanent error such as INVALID_ARGUMENT or
+   * PERMISSION_DENIED. If any entry failed, then the response status is the
+   * response status of one of the failed entries. The response will include
+   * error details in `WriteLogEntriesPartialErrors.log_entry_errors` keyed by
+   * the entries' zero-based index in the `entries`. Failed requests for which
+   * no entries are written will not include per-entry errors.
    * </pre>
    *
    * <code>bool partial_success = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2445,11 +2447,13 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Whether valid entries should be written even if some other
-     * entries fail due to INVALID_ARGUMENT or PERMISSION_DENIED errors. If any
-     * entry is not written, then the response status is the error associated
-     * with one of the failed entries and the response includes error details
-     * keyed by the entries' zero-based index in the `entries.write` method.
+     * Optional. Whether a batch's valid entries should be written even if some
+     * other entry failed due to a permanent error such as INVALID_ARGUMENT or
+     * PERMISSION_DENIED. If any entry failed, then the response status is the
+     * response status of one of the failed entries. The response will include
+     * error details in `WriteLogEntriesPartialErrors.log_entry_errors` keyed by
+     * the entries' zero-based index in the `entries`. Failed requests for which
+     * no entries are written will not include per-entry errors.
      * </pre>
      *
      * <code>bool partial_success = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2464,11 +2468,13 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Whether valid entries should be written even if some other
-     * entries fail due to INVALID_ARGUMENT or PERMISSION_DENIED errors. If any
-     * entry is not written, then the response status is the error associated
-     * with one of the failed entries and the response includes error details
-     * keyed by the entries' zero-based index in the `entries.write` method.
+     * Optional. Whether a batch's valid entries should be written even if some
+     * other entry failed due to a permanent error such as INVALID_ARGUMENT or
+     * PERMISSION_DENIED. If any entry failed, then the response status is the
+     * response status of one of the failed entries. The response will include
+     * error details in `WriteLogEntriesPartialErrors.log_entry_errors` keyed by
+     * the entries' zero-based index in the `entries`. Failed requests for which
+     * no entries are written will not include per-entry errors.
      * </pre>
      *
      * <code>bool partial_success = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2487,11 +2493,13 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. Whether valid entries should be written even if some other
-     * entries fail due to INVALID_ARGUMENT or PERMISSION_DENIED errors. If any
-     * entry is not written, then the response status is the error associated
-     * with one of the failed entries and the response includes error details
-     * keyed by the entries' zero-based index in the `entries.write` method.
+     * Optional. Whether a batch's valid entries should be written even if some
+     * other entry failed due to a permanent error such as INVALID_ARGUMENT or
+     * PERMISSION_DENIED. If any entry failed, then the response status is the
+     * response status of one of the failed entries. The response will include
+     * error details in `WriteLogEntriesPartialErrors.log_entry_errors` keyed by
+     * the entries' zero-based index in the `entries`. Failed requests for which
+     * no entries are written will not include per-entry errors.
      * </pre>
      *
      * <code>bool partial_success = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

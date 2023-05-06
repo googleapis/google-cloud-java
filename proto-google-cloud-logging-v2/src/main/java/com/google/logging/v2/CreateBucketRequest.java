@@ -137,9 +137,9 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. A client-assigned identifier such as `"my-bucket"`. Identifiers are limited
-   * to 100 characters and can include only letters, digits, underscores,
-   * hyphens, and periods.
+   * Required. A client-assigned identifier such as `"my-bucket"`. Identifiers
+   * are limited to 100 characters and can include only letters, digits,
+   * underscores, hyphens, and periods.
    * </pre>
    *
    * <code>string bucket_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -162,9 +162,9 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. A client-assigned identifier such as `"my-bucket"`. Identifiers are limited
-   * to 100 characters and can include only letters, digits, underscores,
-   * hyphens, and periods.
+   * Required. A client-assigned identifier such as `"my-bucket"`. Identifiers
+   * are limited to 100 characters and can include only letters, digits,
+   * underscores, hyphens, and periods.
    * </pre>
    *
    * <code>string bucket_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -190,9 +190,9 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The new bucket. The region specified in the new bucket must be compliant
-   * with any Location Restriction Org Policy. The name field in the bucket is
-   * ignored.
+   * Required. The new bucket. The region specified in the new bucket must be
+   * compliant with any Location Restriction Org Policy. The name field in the
+   * bucket is ignored.
    * </pre>
    *
    * <code>.google.logging.v2.LogBucket bucket = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -207,9 +207,9 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The new bucket. The region specified in the new bucket must be compliant
-   * with any Location Restriction Org Policy. The name field in the bucket is
-   * ignored.
+   * Required. The new bucket. The region specified in the new bucket must be
+   * compliant with any Location Restriction Org Policy. The name field in the
+   * bucket is ignored.
    * </pre>
    *
    * <code>.google.logging.v2.LogBucket bucket = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -224,9 +224,9 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The new bucket. The region specified in the new bucket must be compliant
-   * with any Location Restriction Org Policy. The name field in the bucket is
-   * ignored.
+   * Required. The new bucket. The region specified in the new bucket must be
+   * compliant with any Location Restriction Org Policy. The name field in the
+   * bucket is ignored.
    * </pre>
    *
    * <code>.google.logging.v2.LogBucket bucket = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -768,9 +768,9 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. A client-assigned identifier such as `"my-bucket"`. Identifiers are limited
-     * to 100 characters and can include only letters, digits, underscores,
-     * hyphens, and periods.
+     * Required. A client-assigned identifier such as `"my-bucket"`. Identifiers
+     * are limited to 100 characters and can include only letters, digits,
+     * underscores, hyphens, and periods.
      * </pre>
      *
      * <code>string bucket_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -792,9 +792,9 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. A client-assigned identifier such as `"my-bucket"`. Identifiers are limited
-     * to 100 characters and can include only letters, digits, underscores,
-     * hyphens, and periods.
+     * Required. A client-assigned identifier such as `"my-bucket"`. Identifiers
+     * are limited to 100 characters and can include only letters, digits,
+     * underscores, hyphens, and periods.
      * </pre>
      *
      * <code>string bucket_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -816,9 +816,9 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. A client-assigned identifier such as `"my-bucket"`. Identifiers are limited
-     * to 100 characters and can include only letters, digits, underscores,
-     * hyphens, and periods.
+     * Required. A client-assigned identifier such as `"my-bucket"`. Identifiers
+     * are limited to 100 characters and can include only letters, digits,
+     * underscores, hyphens, and periods.
      * </pre>
      *
      * <code>string bucket_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -839,9 +839,9 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. A client-assigned identifier such as `"my-bucket"`. Identifiers are limited
-     * to 100 characters and can include only letters, digits, underscores,
-     * hyphens, and periods.
+     * Required. A client-assigned identifier such as `"my-bucket"`. Identifiers
+     * are limited to 100 characters and can include only letters, digits,
+     * underscores, hyphens, and periods.
      * </pre>
      *
      * <code>string bucket_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -858,9 +858,9 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. A client-assigned identifier such as `"my-bucket"`. Identifiers are limited
-     * to 100 characters and can include only letters, digits, underscores,
-     * hyphens, and periods.
+     * Required. A client-assigned identifier such as `"my-bucket"`. Identifiers
+     * are limited to 100 characters and can include only letters, digits,
+     * underscores, hyphens, and periods.
      * </pre>
      *
      * <code>string bucket_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -889,9 +889,9 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The new bucket. The region specified in the new bucket must be compliant
-     * with any Location Restriction Org Policy. The name field in the bucket is
-     * ignored.
+     * Required. The new bucket. The region specified in the new bucket must be
+     * compliant with any Location Restriction Org Policy. The name field in the
+     * bucket is ignored.
      * </pre>
      *
      * <code>.google.logging.v2.LogBucket bucket = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -906,9 +906,9 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The new bucket. The region specified in the new bucket must be compliant
-     * with any Location Restriction Org Policy. The name field in the bucket is
-     * ignored.
+     * Required. The new bucket. The region specified in the new bucket must be
+     * compliant with any Location Restriction Org Policy. The name field in the
+     * bucket is ignored.
      * </pre>
      *
      * <code>.google.logging.v2.LogBucket bucket = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -927,9 +927,9 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The new bucket. The region specified in the new bucket must be compliant
-     * with any Location Restriction Org Policy. The name field in the bucket is
-     * ignored.
+     * Required. The new bucket. The region specified in the new bucket must be
+     * compliant with any Location Restriction Org Policy. The name field in the
+     * bucket is ignored.
      * </pre>
      *
      * <code>.google.logging.v2.LogBucket bucket = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -952,9 +952,9 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The new bucket. The region specified in the new bucket must be compliant
-     * with any Location Restriction Org Policy. The name field in the bucket is
-     * ignored.
+     * Required. The new bucket. The region specified in the new bucket must be
+     * compliant with any Location Restriction Org Policy. The name field in the
+     * bucket is ignored.
      * </pre>
      *
      * <code>.google.logging.v2.LogBucket bucket = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -974,9 +974,9 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The new bucket. The region specified in the new bucket must be compliant
-     * with any Location Restriction Org Policy. The name field in the bucket is
-     * ignored.
+     * Required. The new bucket. The region specified in the new bucket must be
+     * compliant with any Location Restriction Org Policy. The name field in the
+     * bucket is ignored.
      * </pre>
      *
      * <code>.google.logging.v2.LogBucket bucket = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1002,9 +1002,9 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The new bucket. The region specified in the new bucket must be compliant
-     * with any Location Restriction Org Policy. The name field in the bucket is
-     * ignored.
+     * Required. The new bucket. The region specified in the new bucket must be
+     * compliant with any Location Restriction Org Policy. The name field in the
+     * bucket is ignored.
      * </pre>
      *
      * <code>.google.logging.v2.LogBucket bucket = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1024,9 +1024,9 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The new bucket. The region specified in the new bucket must be compliant
-     * with any Location Restriction Org Policy. The name field in the bucket is
-     * ignored.
+     * Required. The new bucket. The region specified in the new bucket must be
+     * compliant with any Location Restriction Org Policy. The name field in the
+     * bucket is ignored.
      * </pre>
      *
      * <code>.google.logging.v2.LogBucket bucket = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1041,9 +1041,9 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The new bucket. The region specified in the new bucket must be compliant
-     * with any Location Restriction Org Policy. The name field in the bucket is
-     * ignored.
+     * Required. The new bucket. The region specified in the new bucket must be
+     * compliant with any Location Restriction Org Policy. The name field in the
+     * bucket is ignored.
      * </pre>
      *
      * <code>.google.logging.v2.LogBucket bucket = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1060,9 +1060,9 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The new bucket. The region specified in the new bucket must be compliant
-     * with any Location Restriction Org Policy. The name field in the bucket is
-     * ignored.
+     * Required. The new bucket. The region specified in the new bucket must be
+     * compliant with any Location Restriction Org Policy. The name field in the
+     * bucket is ignored.
      * </pre>
      *
      * <code>.google.logging.v2.LogBucket bucket = 3 [(.google.api.field_behavior) = REQUIRED];
