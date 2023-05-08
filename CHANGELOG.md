@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.15.0](https://github.com/googleapis/java-logging/compare/v3.14.9...v3.15.0) (2023-05-06)
+
+
+### Features
+
+* Log Analytics features of the Cloud Logging API ([#1335](https://github.com/googleapis/java-logging/issues/1335)) ([7d43b80](https://github.com/googleapis/java-logging/commit/7d43b8049c71187fffcde39274db38ebb54cddfa))
+
+
+### Dependencies
+
+* Update dependency org.junit.vintage:junit-vintage-engine to v5.9.3 ([#1329](https://github.com/googleapis/java-logging/issues/1329)) ([dfb98f4](https://github.com/googleapis/java-logging/commit/dfb98f47098d4560fc3ef93f126af1770ae4faf6))
+
 ## [3.14.9](https://github.com/googleapis/java-logging/compare/v3.14.8...v3.14.9) (2023-04-25)
 
 
