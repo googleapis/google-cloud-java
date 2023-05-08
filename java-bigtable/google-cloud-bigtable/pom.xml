@@ -39,7 +39,7 @@
 
     <!-- These are needed to compile the protobuf used by Changestream merging acceptance test. -->
     <test-protoc-grpc.version>1.54.1</test-protoc-grpc.version>
-    <test-protoc.version>3.22.3</test-protoc.version>
+    <test-protoc.version>3.22.4</test-protoc.version>
   </properties>
 
   <dependencyManagement>
