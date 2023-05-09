@@ -27,7 +27,7 @@ public interface DeploymentJobsOrBuilder
    *
    *
    * <pre>
-   * Output only. The deploy Job. This is the first job run in the phase.
+   * Output only. The deploy Job. This is the deploy job in the phase.
    * </pre>
    *
    * <code>.google.cloud.deploy.v1.Job deploy_job = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -40,7 +40,7 @@ public interface DeploymentJobsOrBuilder
    *
    *
    * <pre>
-   * Output only. The deploy Job. This is the first job run in the phase.
+   * Output only. The deploy Job. This is the deploy job in the phase.
    * </pre>
    *
    * <code>.google.cloud.deploy.v1.Job deploy_job = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -53,7 +53,7 @@ public interface DeploymentJobsOrBuilder
    *
    *
    * <pre>
-   * Output only. The deploy Job. This is the first job run in the phase.
+   * Output only. The deploy Job. This is the deploy job in the phase.
    * </pre>
    *
    * <code>.google.cloud.deploy.v1.Job deploy_job = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];

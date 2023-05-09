@@ -511,6 +511,62 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
         : metadata_;
   }
 
+  public static final int ARTIFACT_FIELD_NUMBER = 5;
+  private com.google.cloud.deploy.v1.DeployArtifact artifact_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The artifact of a deploy job run, if available.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.DeployArtifact artifact = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the artifact field is set.
+   */
+  @java.lang.Override
+  public boolean hasArtifact() {
+    return artifact_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The artifact of a deploy job run, if available.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.DeployArtifact artifact = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The artifact.
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.DeployArtifact getArtifact() {
+    return artifact_ == null
+        ? com.google.cloud.deploy.v1.DeployArtifact.getDefaultInstance()
+        : artifact_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The artifact of a deploy job run, if available.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.DeployArtifact artifact = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.deploy.v1.DeployArtifactOrBuilder getArtifactOrBuilder() {
+    return artifact_ == null
+        ? com.google.cloud.deploy.v1.DeployArtifact.getDefaultInstance()
+        : artifact_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -539,6 +595,9 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
     if (metadata_ != null) {
       output.writeMessage(4, getMetadata());
     }
+    if (artifact_ != null) {
+      output.writeMessage(5, getArtifact());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -562,6 +621,9 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
     if (metadata_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getMetadata());
     }
+    if (artifact_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getArtifact());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -584,6 +646,10 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
     if (hasMetadata()) {
       if (!getMetadata().equals(other.getMetadata())) return false;
     }
+    if (hasArtifact() != other.hasArtifact()) return false;
+    if (hasArtifact()) {
+      if (!getArtifact().equals(other.getArtifact())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -604,6 +670,10 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
     if (hasMetadata()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMetadata().hashCode();
+    }
+    if (hasArtifact()) {
+      hash = (37 * hash) + ARTIFACT_FIELD_NUMBER;
+      hash = (53 * hash) + getArtifact().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -752,6 +822,11 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
         metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
+      artifact_ = null;
+      if (artifactBuilder_ != null) {
+        artifactBuilder_.dispose();
+        artifactBuilder_ = null;
+      }
       return this;
     }
 
@@ -799,6 +874,9 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.artifact_ = artifactBuilder_ == null ? artifact_ : artifactBuilder_.build();
       }
     }
 
@@ -863,6 +941,9 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
       if (other.hasMetadata()) {
         mergeMetadata(other.getMetadata());
       }
+      if (other.hasArtifact()) {
+        mergeArtifact(other.getArtifact());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -913,6 +994,12 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(getArtifactFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1471,6 +1558,207 @@ public final class DeployJobRun extends com.google.protobuf.GeneratedMessageV3
         metadata_ = null;
       }
       return metadataBuilder_;
+    }
+
+    private com.google.cloud.deploy.v1.DeployArtifact artifact_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.DeployArtifact,
+            com.google.cloud.deploy.v1.DeployArtifact.Builder,
+            com.google.cloud.deploy.v1.DeployArtifactOrBuilder>
+        artifactBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The artifact of a deploy job run, if available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.DeployArtifact artifact = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the artifact field is set.
+     */
+    public boolean hasArtifact() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The artifact of a deploy job run, if available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.DeployArtifact artifact = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The artifact.
+     */
+    public com.google.cloud.deploy.v1.DeployArtifact getArtifact() {
+      if (artifactBuilder_ == null) {
+        return artifact_ == null
+            ? com.google.cloud.deploy.v1.DeployArtifact.getDefaultInstance()
+            : artifact_;
+      } else {
+        return artifactBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The artifact of a deploy job run, if available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.DeployArtifact artifact = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setArtifact(com.google.cloud.deploy.v1.DeployArtifact value) {
+      if (artifactBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        artifact_ = value;
+      } else {
+        artifactBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The artifact of a deploy job run, if available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.DeployArtifact artifact = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setArtifact(com.google.cloud.deploy.v1.DeployArtifact.Builder builderForValue) {
+      if (artifactBuilder_ == null) {
+        artifact_ = builderForValue.build();
+      } else {
+        artifactBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The artifact of a deploy job run, if available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.DeployArtifact artifact = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeArtifact(com.google.cloud.deploy.v1.DeployArtifact value) {
+      if (artifactBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && artifact_ != null
+            && artifact_ != com.google.cloud.deploy.v1.DeployArtifact.getDefaultInstance()) {
+          getArtifactBuilder().mergeFrom(value);
+        } else {
+          artifact_ = value;
+        }
+      } else {
+        artifactBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The artifact of a deploy job run, if available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.DeployArtifact artifact = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearArtifact() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      artifact_ = null;
+      if (artifactBuilder_ != null) {
+        artifactBuilder_.dispose();
+        artifactBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The artifact of a deploy job run, if available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.DeployArtifact artifact = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.DeployArtifact.Builder getArtifactBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getArtifactFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The artifact of a deploy job run, if available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.DeployArtifact artifact = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.deploy.v1.DeployArtifactOrBuilder getArtifactOrBuilder() {
+      if (artifactBuilder_ != null) {
+        return artifactBuilder_.getMessageOrBuilder();
+      } else {
+        return artifact_ == null
+            ? com.google.cloud.deploy.v1.DeployArtifact.getDefaultInstance()
+            : artifact_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The artifact of a deploy job run, if available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.deploy.v1.DeployArtifact artifact = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.deploy.v1.DeployArtifact,
+            com.google.cloud.deploy.v1.DeployArtifact.Builder,
+            com.google.cloud.deploy.v1.DeployArtifactOrBuilder>
+        getArtifactFieldBuilder() {
+      if (artifactBuilder_ == null) {
+        artifactBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.deploy.v1.DeployArtifact,
+                com.google.cloud.deploy.v1.DeployArtifact.Builder,
+                com.google.cloud.deploy.v1.DeployArtifactOrBuilder>(
+                getArtifact(), getParentForChildren(), isClean());
+        artifact_ = null;
+      }
+      return artifactBuilder_;
     }
 
     @java.lang.Override
