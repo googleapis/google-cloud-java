@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.14.6](https://github.com/googleapis/java-datastore/compare/v2.14.5...v2.14.6) (2023-05-09)
+
+
+### Documentation
+
+* Minor comment update for Entity message ([#1063](https://github.com/googleapis/java-datastore/issues/1063)) ([52f8c27](https://github.com/googleapis/java-datastore/commit/52f8c274b9972fd0e672ee05bebd5b17543fca85))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.9.0 ([#1071](https://github.com/googleapis/java-datastore/issues/1071)) ([6bd4dfe](https://github.com/googleapis/java-datastore/commit/6bd4dfeeecfa0ce9ee9e705f4390c7686e233bd8))
+
 ## [2.14.5](https://github.com/googleapis/java-datastore/compare/v2.14.4...v2.14.5) (2023-04-27)
 
 
