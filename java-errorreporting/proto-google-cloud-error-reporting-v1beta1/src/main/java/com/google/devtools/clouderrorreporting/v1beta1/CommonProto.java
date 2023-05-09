@@ -97,15 +97,14 @@ public final class CommonProto {
           + "\023\n\013line_number\030\002 \001(\005\022\025\n\rfunction_name\030\004 "
           + "\001(\t*j\n\020ResolutionStatus\022!\n\035RESOLUTION_ST"
           + "ATUS_UNSPECIFIED\020\000\022\010\n\004OPEN\020\001\022\020\n\014ACKNOWLE"
-          + "DGED\020\002\022\014\n\010RESOLVED\020\003\022\t\n\005MUTED\020\004B\230\002\n/com."
+          + "DGED\020\002\022\014\n\010RESOLVED\020\003\022\t\n\005MUTED\020\004B\211\002\n/com."
           + "google.devtools.clouderrorreporting.v1be"
-          + "ta1B\013CommonProtoP\001Z^google.golang.org/ge"
-          + "nproto/googleapis/devtools/clouderrorrep"
-          + "orting/v1beta1;clouderrorreporting\370\001\001\252\002#"
-          + "Google.Cloud.ErrorReporting.V1Beta1\312\002#Go"
-          + "ogle\\Cloud\\ErrorReporting\\V1beta1\352\002&Goog"
-          + "le::Cloud::ErrorReporting::V1beta1b\006prot"
-          + "o3"
+          + "ta1B\013CommonProtoP\001ZOcloud.google.com/go/"
+          + "errorreporting/apiv1beta1/errorreporting"
+          + "pb;errorreportingpb\370\001\001\252\002#Google.Cloud.Er"
+          + "rorReporting.V1Beta1\312\002#Google\\Cloud\\Erro"
+          + "rReporting\\V1beta1\352\002&Google::Cloud::Erro"
+          + "rReporting::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
