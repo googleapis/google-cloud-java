@@ -104,4 +104,18 @@ public interface UpdateDataScanRequestOrBuilder
    * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only validate the request, but do not perform mutations.
+   * The default is `false`.
+   * </pre>
+   *
+   * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The validateOnly.
+   */
+  boolean getValidateOnly();
 }

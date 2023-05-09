@@ -27,8 +27,7 @@ public interface DataProfileResultOrBuilder
    *
    *
    * <pre>
-   * The count of all rows in the sampled data.
-   * Return 0, if zero rows.
+   * The count of rows scanned.
    * </pre>
    *
    * <code>int64 row_count = 3;</code>
@@ -41,7 +40,7 @@ public interface DataProfileResultOrBuilder
    *
    *
    * <pre>
-   * This represents the profile information per field.
+   * The profile information per field.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4;</code>
@@ -53,7 +52,7 @@ public interface DataProfileResultOrBuilder
    *
    *
    * <pre>
-   * This represents the profile information per field.
+   * The profile information per field.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4;</code>
@@ -65,7 +64,7 @@ public interface DataProfileResultOrBuilder
    *
    *
    * <pre>
-   * This represents the profile information per field.
+   * The profile information per field.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4;</code>
@@ -76,7 +75,7 @@ public interface DataProfileResultOrBuilder
    *
    *
    * <pre>
-   * The data scanned for this profile.
+   * The data scanned for this result.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 5;</code>
@@ -88,7 +87,7 @@ public interface DataProfileResultOrBuilder
    *
    *
    * <pre>
-   * The data scanned for this profile.
+   * The data scanned for this result.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 5;</code>
@@ -100,7 +99,7 @@ public interface DataProfileResultOrBuilder
    *
    *
    * <pre>
-   * The data scanned for this profile.
+   * The data scanned for this result.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 5;</code>

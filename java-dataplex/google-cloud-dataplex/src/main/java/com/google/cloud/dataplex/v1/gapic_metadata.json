@@ -217,6 +217,9 @@
             "ListZones": {
               "methods": ["listZones", "listZones", "listZones", "listZonesPagedCallable", "listZonesCallable"]
             },
+            "RunTask": {
+              "methods": ["runTask", "runTask", "runTask", "runTaskCallable"]
+            },
             "UpdateAsset": {
               "methods": ["updateAssetAsync", "updateAssetAsync", "updateAssetOperationCallable", "updateAssetCallable"]
             },

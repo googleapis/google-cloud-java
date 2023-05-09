@@ -98,6 +98,8 @@ import com.google.cloud.dataplex.v1.ListZoneActionsRequest;
 import com.google.cloud.dataplex.v1.ListZonesRequest;
 import com.google.cloud.dataplex.v1.ListZonesResponse;
 import com.google.cloud.dataplex.v1.OperationMetadata;
+import com.google.cloud.dataplex.v1.RunTaskRequest;
+import com.google.cloud.dataplex.v1.RunTaskResponse;
 import com.google.cloud.dataplex.v1.Session;
 import com.google.cloud.dataplex.v1.Task;
 import com.google.cloud.dataplex.v1.UpdateAssetRequest;
@@ -223,6 +225,7 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
   private final UnaryCallSettings<GetTaskRequest, Task> getTaskSettings;
   private final PagedCallSettings<ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
       listJobsSettings;
+  private final UnaryCallSettings<RunTaskRequest, RunTaskResponse> runTaskSettings;
   private final UnaryCallSettings<GetJobRequest, Job> getJobSettings;
   private final UnaryCallSettings<CancelJobRequest, Empty> cancelJobSettings;
   private final UnaryCallSettings<CreateEnvironmentRequest, Operation> createEnvironmentSettings;
@@ -1043,6 +1046,11 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
     return listJobsSettings;
   }
 
+  /** Returns the object with the settings used for calls to runTask. */
+  public UnaryCallSettings<RunTaskRequest, RunTaskResponse> runTaskSettings() {
+    return runTaskSettings;
+  }
+
   /** Returns the object with the settings used for calls to getJob. */
   public UnaryCallSettings<GetJobRequest, Job> getJobSettings() {
     return getJobSettings;
@@ -1257,6 +1265,7 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
     listTasksSettings = settingsBuilder.listTasksSettings().build();
     getTaskSettings = settingsBuilder.getTaskSettings().build();
     listJobsSettings = settingsBuilder.listJobsSettings().build();
+    runTaskSettings = settingsBuilder.runTaskSettings().build();
     getJobSettings = settingsBuilder.getJobSettings().build();
     cancelJobSettings = settingsBuilder.cancelJobSettings().build();
     createEnvironmentSettings = settingsBuilder.createEnvironmentSettings().build();
@@ -1342,6 +1351,7 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
     private final PagedCallSettings.Builder<
             ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
         listJobsSettings;
+    private final UnaryCallSettings.Builder<RunTaskRequest, RunTaskResponse> runTaskSettings;
     private final UnaryCallSettings.Builder<GetJobRequest, Job> getJobSettings;
     private final UnaryCallSettings.Builder<CancelJobRequest, Empty> cancelJobSettings;
     private final UnaryCallSettings.Builder<CreateEnvironmentRequest, Operation>
@@ -1471,6 +1481,7 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
       listTasksSettings = PagedCallSettings.newBuilder(LIST_TASKS_PAGE_STR_FACT);
       getTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listJobsSettings = PagedCallSettings.newBuilder(LIST_JOBS_PAGE_STR_FACT);
+      runTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       cancelJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createEnvironmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1511,6 +1522,7 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
               listTasksSettings,
               getTaskSettings,
               listJobsSettings,
+              runTaskSettings,
               getJobSettings,
               cancelJobSettings,
               createEnvironmentSettings,
@@ -1563,6 +1575,7 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
       listTasksSettings = settings.listTasksSettings.toBuilder();
       getTaskSettings = settings.getTaskSettings.toBuilder();
       listJobsSettings = settings.listJobsSettings.toBuilder();
+      runTaskSettings = settings.runTaskSettings.toBuilder();
       getJobSettings = settings.getJobSettings.toBuilder();
       cancelJobSettings = settings.cancelJobSettings.toBuilder();
       createEnvironmentSettings = settings.createEnvironmentSettings.toBuilder();
@@ -1603,6 +1616,7 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
               listTasksSettings,
               getTaskSettings,
               listJobsSettings,
+              runTaskSettings,
               getJobSettings,
               cancelJobSettings,
               createEnvironmentSettings,
@@ -1761,6 +1775,11 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
           .listJobsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .runTaskSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .getJobSettings()
@@ -2397,6 +2416,11 @@ public class DataplexServiceStubSettings extends StubSettings<DataplexServiceStu
     public PagedCallSettings.Builder<ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
         listJobsSettings() {
       return listJobsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to runTask. */
+    public UnaryCallSettings.Builder<RunTaskRequest, RunTaskResponse> runTaskSettings() {
+      return runTaskSettings;
     }
 
     /** Returns the builder for the settings used for calls to getJob. */

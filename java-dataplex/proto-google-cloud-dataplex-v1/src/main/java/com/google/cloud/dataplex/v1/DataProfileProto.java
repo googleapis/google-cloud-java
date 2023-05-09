@@ -73,48 +73,50 @@ public final class DataProfileProto {
   static {
     java.lang.String[] descriptorData = {
       "\n+google/cloud/dataplex/v1/data_profile."
-          + "proto\022\030google.cloud.dataplex.v1\032)google/"
-          + "cloud/dataplex/v1/processing.proto\"\021\n\017Da"
-          + "taProfileSpec\"\353\t\n\021DataProfileResult\022\021\n\tr"
-          + "ow_count\030\003 \001(\003\022D\n\007profile\030\004 \001(\01323.google"
-          + ".cloud.dataplex.v1.DataProfileResult.Pro"
-          + "file\022;\n\014scanned_data\030\005 \001(\0132%.google.clou"
-          + "d.dataplex.v1.ScannedData\032\277\010\n\007Profile\022I\n"
-          + "\006fields\030\002 \003(\01329.google.cloud.dataplex.v1"
-          + ".DataProfileResult.Profile.Field\032\350\007\n\005Fie"
-          + "ld\022\014\n\004name\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\022\014\n\004mode\030\003"
-          + " \001(\t\022V\n\007profile\030\004 \001(\0132E.google.cloud.dat"
-          + "aplex.v1.DataProfileResult.Profile.Field"
-          + ".ProfileInfo\032\334\006\n\013ProfileInfo\022\022\n\nnull_rat"
-          + "io\030\002 \001(\001\022\026\n\016distinct_ratio\030\003 \001(\001\022e\n\014top_"
-          + "n_values\030\004 \003(\0132O.google.cloud.dataplex.v"
+          + "proto\022\030google.cloud.dataplex.v1\032\037google/"
+          + "api/field_behavior.proto\032)google/cloud/d"
+          + "ataplex/v1/processing.proto\"\021\n\017DataProfi"
+          + "leSpec\"\353\t\n\021DataProfileResult\022\021\n\trow_coun"
+          + "t\030\003 \001(\003\022D\n\007profile\030\004 \001(\01323.google.cloud."
+          + "dataplex.v1.DataProfileResult.Profile\022;\n"
+          + "\014scanned_data\030\005 \001(\0132%.google.cloud.datap"
+          + "lex.v1.ScannedData\032\277\010\n\007Profile\022I\n\006fields"
+          + "\030\002 \003(\01329.google.cloud.dataplex.v1.DataPr"
+          + "ofileResult.Profile.Field\032\350\007\n\005Field\022\014\n\004n"
+          + "ame\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\022\014\n\004mode\030\003 \001(\t\022V\n"
+          + "\007profile\030\004 \001(\0132E.google.cloud.dataplex.v"
           + "1.DataProfileResult.Profile.Field.Profil"
-          + "eInfo.TopNValue\022o\n\016string_profile\030e \001(\0132"
-          + "U.google.cloud.dataplex.v1.DataProfileRe"
-          + "sult.Profile.Field.ProfileInfo.StringFie"
-          + "ldInfoH\000\022q\n\017integer_profile\030f \001(\0132V.goog"
-          + "le.cloud.dataplex.v1.DataProfileResult.P"
-          + "rofile.Field.ProfileInfo.IntegerFieldInf"
-          + "oH\000\022o\n\016double_profile\030g \001(\0132U.google.clo"
-          + "ud.dataplex.v1.DataProfileResult.Profile"
-          + ".Field.ProfileInfo.DoubleFieldInfoH\000\032Q\n\017"
-          + "StringFieldInfo\022\022\n\nmin_length\030\001 \001(\003\022\022\n\nm"
-          + "ax_length\030\002 \001(\003\022\026\n\016average_length\030\003 \001(\001\032"
-          + "l\n\020IntegerFieldInfo\022\017\n\007average\030\001 \001(\001\022\032\n\022"
-          + "standard_deviation\030\003 \001(\001\022\013\n\003min\030\004 \001(\003\022\021\n"
-          + "\tquartiles\030\006 \003(\003\022\013\n\003max\030\005 \001(\003\032k\n\017DoubleF"
-          + "ieldInfo\022\017\n\007average\030\001 \001(\001\022\032\n\022standard_de"
-          + "viation\030\003 \001(\001\022\013\n\003min\030\004 \001(\001\022\021\n\tquartiles\030"
-          + "\006 \003(\001\022\013\n\003max\030\005 \001(\001\032)\n\tTopNValue\022\r\n\005value"
-          + "\030\001 \001(\t\022\r\n\005count\030\002 \001(\003B\014\n\nfield_infoBl\n\034c"
-          + "om.google.cloud.dataplex.v1B\020DataProfile"
-          + "ProtoP\001Z8cloud.google.com/go/dataplex/ap"
-          + "iv1/dataplexpb;dataplexpbb\006proto3"
+          + "eInfo\032\334\006\n\013ProfileInfo\022\022\n\nnull_ratio\030\002 \001("
+          + "\001\022\026\n\016distinct_ratio\030\003 \001(\001\022e\n\014top_n_value"
+          + "s\030\004 \003(\0132O.google.cloud.dataplex.v1.DataP"
+          + "rofileResult.Profile.Field.ProfileInfo.T"
+          + "opNValue\022o\n\016string_profile\030e \001(\0132U.googl"
+          + "e.cloud.dataplex.v1.DataProfileResult.Pr"
+          + "ofile.Field.ProfileInfo.StringFieldInfoH"
+          + "\000\022q\n\017integer_profile\030f \001(\0132V.google.clou"
+          + "d.dataplex.v1.DataProfileResult.Profile."
+          + "Field.ProfileInfo.IntegerFieldInfoH\000\022o\n\016"
+          + "double_profile\030g \001(\0132U.google.cloud.data"
+          + "plex.v1.DataProfileResult.Profile.Field."
+          + "ProfileInfo.DoubleFieldInfoH\000\032Q\n\017StringF"
+          + "ieldInfo\022\022\n\nmin_length\030\001 \001(\003\022\022\n\nmax_leng"
+          + "th\030\002 \001(\003\022\026\n\016average_length\030\003 \001(\001\032l\n\020Inte"
+          + "gerFieldInfo\022\017\n\007average\030\001 \001(\001\022\032\n\022standar"
+          + "d_deviation\030\003 \001(\001\022\013\n\003min\030\004 \001(\003\022\021\n\tquarti"
+          + "les\030\006 \003(\003\022\013\n\003max\030\005 \001(\003\032k\n\017DoubleFieldInf"
+          + "o\022\017\n\007average\030\001 \001(\001\022\032\n\022standard_deviation"
+          + "\030\003 \001(\001\022\013\n\003min\030\004 \001(\001\022\021\n\tquartiles\030\006 \003(\001\022\013"
+          + "\n\003max\030\005 \001(\001\032)\n\tTopNValue\022\r\n\005value\030\001 \001(\t\022"
+          + "\r\n\005count\030\002 \001(\003B\014\n\nfield_infoBl\n\034com.goog"
+          + "le.cloud.dataplex.v1B\020DataProfileProtoP\001"
+          + "Z8cloud.google.com/go/dataplex/apiv1/dat"
+          + "aplexpb;dataplexpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.cloud.dataplex.v1.ProcessingProto.getDescriptor(),
             });
     internal_static_google_cloud_dataplex_v1_DataProfileSpec_descriptor =
@@ -207,6 +209,7 @@ public final class DataProfileProto {
             new java.lang.String[] {
               "Value", "Count",
             });
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.cloud.dataplex.v1.ProcessingProto.getDescriptor();
   }
 

@@ -1642,9 +1642,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * discovery every 60 minutes. To explicitly set a timezone to the cron
      * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
      * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
-     * from IANA time zone database. For example,
-     * `CRON_TZ=America/New_York 1 * * * *`,
-     * or `TZ=America/New_York 1 * * * *`.
+     * from IANA time zone database. For example, `CRON_TZ=America/New_York 1
+     * * * * *`, or `TZ=America/New_York 1 * * * *`.
      * </pre>
      *
      * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1662,9 +1661,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * discovery every 60 minutes. To explicitly set a timezone to the cron
      * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
      * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
-     * from IANA time zone database. For example,
-     * `CRON_TZ=America/New_York 1 * * * *`,
-     * or `TZ=America/New_York 1 * * * *`.
+     * from IANA time zone database. For example, `CRON_TZ=America/New_York 1
+     * * * * *`, or `TZ=America/New_York 1 * * * *`.
      * </pre>
      *
      * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1682,9 +1680,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * discovery every 60 minutes. To explicitly set a timezone to the cron
      * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
      * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
-     * from IANA time zone database. For example,
-     * `CRON_TZ=America/New_York 1 * * * *`,
-     * or `TZ=America/New_York 1 * * * *`.
+     * from IANA time zone database. For example, `CRON_TZ=America/New_York 1
+     * * * * *`, or `TZ=America/New_York 1 * * * *`.
      * </pre>
      *
      * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3948,9 +3945,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * discovery every 60 minutes. To explicitly set a timezone to the cron
      * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
      * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
-     * from IANA time zone database. For example,
-     * `CRON_TZ=America/New_York 1 * * * *`,
-     * or `TZ=America/New_York 1 * * * *`.
+     * from IANA time zone database. For example, `CRON_TZ=America/New_York 1
+     * * * * *`, or `TZ=America/New_York 1 * * * *`.
      * </pre>
      *
      * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3970,9 +3966,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * discovery every 60 minutes. To explicitly set a timezone to the cron
      * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
      * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
-     * from IANA time zone database. For example,
-     * `CRON_TZ=America/New_York 1 * * * *`,
-     * or `TZ=America/New_York 1 * * * *`.
+     * from IANA time zone database. For example, `CRON_TZ=America/New_York 1
+     * * * * *`, or `TZ=America/New_York 1 * * * *`.
      * </pre>
      *
      * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4005,9 +4000,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * discovery every 60 minutes. To explicitly set a timezone to the cron
      * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
      * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
-     * from IANA time zone database. For example,
-     * `CRON_TZ=America/New_York 1 * * * *`,
-     * or `TZ=America/New_York 1 * * * *`.
+     * from IANA time zone database. For example, `CRON_TZ=America/New_York 1
+     * * * * *`, or `TZ=America/New_York 1 * * * *`.
      * </pre>
      *
      * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5484,9 +5478,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * discovery every 60 minutes. To explicitly set a timezone to the cron
        * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
        * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
-       * from IANA time zone database. For example,
-       * `CRON_TZ=America/New_York 1 * * * *`,
-       * or `TZ=America/New_York 1 * * * *`.
+       * from IANA time zone database. For example, `CRON_TZ=America/New_York 1
+       * * * * *`, or `TZ=America/New_York 1 * * * *`.
        * </pre>
        *
        * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5507,9 +5500,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * discovery every 60 minutes. To explicitly set a timezone to the cron
        * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
        * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
-       * from IANA time zone database. For example,
-       * `CRON_TZ=America/New_York 1 * * * *`,
-       * or `TZ=America/New_York 1 * * * *`.
+       * from IANA time zone database. For example, `CRON_TZ=America/New_York 1
+       * * * * *`, or `TZ=America/New_York 1 * * * *`.
        * </pre>
        *
        * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5543,9 +5535,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * discovery every 60 minutes. To explicitly set a timezone to the cron
        * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
        * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
-       * from IANA time zone database. For example,
-       * `CRON_TZ=America/New_York 1 * * * *`,
-       * or `TZ=America/New_York 1 * * * *`.
+       * from IANA time zone database. For example, `CRON_TZ=America/New_York 1
+       * * * * *`, or `TZ=America/New_York 1 * * * *`.
        * </pre>
        *
        * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5579,9 +5570,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * discovery every 60 minutes. To explicitly set a timezone to the cron
        * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
        * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
-       * from IANA time zone database. For example,
-       * `CRON_TZ=America/New_York 1 * * * *`,
-       * or `TZ=America/New_York 1 * * * *`.
+       * from IANA time zone database. For example, `CRON_TZ=America/New_York 1
+       * * * * *`, or `TZ=America/New_York 1 * * * *`.
        * </pre>
        *
        * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5608,9 +5598,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * discovery every 60 minutes. To explicitly set a timezone to the cron
        * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
        * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
-       * from IANA time zone database. For example,
-       * `CRON_TZ=America/New_York 1 * * * *`,
-       * or `TZ=America/New_York 1 * * * *`.
+       * from IANA time zone database. For example, `CRON_TZ=America/New_York 1
+       * * * * *`, or `TZ=America/New_York 1 * * * *`.
        * </pre>
        *
        * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5635,9 +5624,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
        * discovery every 60 minutes. To explicitly set a timezone to the cron
        * tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or
        * TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string
-       * from IANA time zone database. For example,
-       * `CRON_TZ=America/New_York 1 * * * *`,
-       * or `TZ=America/New_York 1 * * * *`.
+       * from IANA time zone database. For example, `CRON_TZ=America/New_York 1
+       * * * * *`, or `TZ=America/New_York 1 * * * *`.
        * </pre>
        *
        * <code>string schedule = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5784,6 +5772,37 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * @return The type.
      */
     com.google.cloud.dataplex.v1.Asset.ResourceSpec.Type getType();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines how read permissions are handled for each asset and
+     * their associated tables. Only available to storage buckets assets.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Asset.ResourceSpec.AccessMode read_access_mode = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for readAccessMode.
+     */
+    int getReadAccessModeValue();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines how read permissions are handled for each asset and
+     * their associated tables. Only available to storage buckets assets.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Asset.ResourceSpec.AccessMode read_access_mode = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The readAccessMode.
+     */
+    com.google.cloud.dataplex.v1.Asset.ResourceSpec.AccessMode getReadAccessMode();
   }
   /**
    *
@@ -5807,6 +5826,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     private ResourceSpec() {
       name_ = "";
       type_ = 0;
+      readAccessMode_ = 0;
     }
 
     @java.lang.Override
@@ -5994,6 +6014,166 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(enum_scope:google.cloud.dataplex.v1.Asset.ResourceSpec.Type)
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Access Mode determines how data stored within the resource is read. This
+     * is only applicable to storage bucket assets.
+     * </pre>
+     *
+     * Protobuf enum {@code google.cloud.dataplex.v1.Asset.ResourceSpec.AccessMode}
+     */
+    public enum AccessMode implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Access mode unspecified.
+       * </pre>
+       *
+       * <code>ACCESS_MODE_UNSPECIFIED = 0;</code>
+       */
+      ACCESS_MODE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Default. Data is accessed directly using storage APIs.
+       * </pre>
+       *
+       * <code>DIRECT = 1;</code>
+       */
+      DIRECT(1),
+      /**
+       *
+       *
+       * <pre>
+       * Data is accessed through a managed interface using BigQuery APIs.
+       * </pre>
+       *
+       * <code>MANAGED = 2;</code>
+       */
+      MANAGED(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Access mode unspecified.
+       * </pre>
+       *
+       * <code>ACCESS_MODE_UNSPECIFIED = 0;</code>
+       */
+      public static final int ACCESS_MODE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Default. Data is accessed directly using storage APIs.
+       * </pre>
+       *
+       * <code>DIRECT = 1;</code>
+       */
+      public static final int DIRECT_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Data is accessed through a managed interface using BigQuery APIs.
+       * </pre>
+       *
+       * <code>MANAGED = 2;</code>
+       */
+      public static final int MANAGED_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static AccessMode valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static AccessMode forNumber(int value) {
+        switch (value) {
+          case 0:
+            return ACCESS_MODE_UNSPECIFIED;
+          case 1:
+            return DIRECT;
+          case 2:
+            return MANAGED;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<AccessMode> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<AccessMode> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<AccessMode>() {
+            public AccessMode findValueByNumber(int number) {
+              return AccessMode.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.Asset.ResourceSpec.getDescriptor()
+            .getEnumTypes()
+            .get(1);
+      }
+
+      private static final AccessMode[] VALUES = values();
+
+      public static AccessMode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private AccessMode(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.dataplex.v1.Asset.ResourceSpec.AccessMode)
+    }
+
     public static final int NAME_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
@@ -6092,6 +6272,49 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           : result;
     }
 
+    public static final int READ_ACCESS_MODE_FIELD_NUMBER = 5;
+    private int readAccessMode_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines how read permissions are handled for each asset and
+     * their associated tables. Only available to storage buckets assets.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Asset.ResourceSpec.AccessMode read_access_mode = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for readAccessMode.
+     */
+    @java.lang.Override
+    public int getReadAccessModeValue() {
+      return readAccessMode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines how read permissions are handled for each asset and
+     * their associated tables. Only available to storage buckets assets.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Asset.ResourceSpec.AccessMode read_access_mode = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The readAccessMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.Asset.ResourceSpec.AccessMode getReadAccessMode() {
+      com.google.cloud.dataplex.v1.Asset.ResourceSpec.AccessMode result =
+          com.google.cloud.dataplex.v1.Asset.ResourceSpec.AccessMode.forNumber(readAccessMode_);
+      return result == null
+          ? com.google.cloud.dataplex.v1.Asset.ResourceSpec.AccessMode.UNRECOGNIZED
+          : result;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -6113,6 +6336,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           != com.google.cloud.dataplex.v1.Asset.ResourceSpec.Type.TYPE_UNSPECIFIED.getNumber()) {
         output.writeEnum(2, type_);
       }
+      if (readAccessMode_
+          != com.google.cloud.dataplex.v1.Asset.ResourceSpec.AccessMode.ACCESS_MODE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(5, readAccessMode_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -6128,6 +6356,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       if (type_
           != com.google.cloud.dataplex.v1.Asset.ResourceSpec.Type.TYPE_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, type_);
+      }
+      if (readAccessMode_
+          != com.google.cloud.dataplex.v1.Asset.ResourceSpec.AccessMode.ACCESS_MODE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, readAccessMode_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -6147,6 +6380,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
 
       if (!getName().equals(other.getName())) return false;
       if (type_ != other.type_) return false;
+      if (readAccessMode_ != other.readAccessMode_) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -6162,6 +6396,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + type_;
+      hash = (37 * hash) + READ_ACCESS_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + readAccessMode_;
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6305,6 +6541,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = 0;
         name_ = "";
         type_ = 0;
+        readAccessMode_ = 0;
         return this;
       }
 
@@ -6346,6 +6583,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.readAccessMode_ = readAccessMode_;
         }
       }
 
@@ -6405,6 +6645,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
         }
+        if (other.readAccessMode_ != 0) {
+          setReadAccessModeValue(other.getReadAccessModeValue());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -6443,6 +6686,12 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 16
+              case 40:
+                {
+                  readAccessMode_ = input.readEnum();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 40
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6685,6 +6934,114 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private int readAccessMode_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Determines how read permissions are handled for each asset and
+       * their associated tables. Only available to storage buckets assets.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.Asset.ResourceSpec.AccessMode read_access_mode = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for readAccessMode.
+       */
+      @java.lang.Override
+      public int getReadAccessModeValue() {
+        return readAccessMode_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Determines how read permissions are handled for each asset and
+       * their associated tables. Only available to storage buckets assets.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.Asset.ResourceSpec.AccessMode read_access_mode = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for readAccessMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReadAccessModeValue(int value) {
+        readAccessMode_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Determines how read permissions are handled for each asset and
+       * their associated tables. Only available to storage buckets assets.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.Asset.ResourceSpec.AccessMode read_access_mode = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The readAccessMode.
+       */
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.Asset.ResourceSpec.AccessMode getReadAccessMode() {
+        com.google.cloud.dataplex.v1.Asset.ResourceSpec.AccessMode result =
+            com.google.cloud.dataplex.v1.Asset.ResourceSpec.AccessMode.forNumber(readAccessMode_);
+        return result == null
+            ? com.google.cloud.dataplex.v1.Asset.ResourceSpec.AccessMode.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Determines how read permissions are handled for each asset and
+       * their associated tables. Only available to storage buckets assets.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.Asset.ResourceSpec.AccessMode read_access_mode = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The readAccessMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReadAccessMode(
+          com.google.cloud.dataplex.v1.Asset.ResourceSpec.AccessMode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000004;
+        readAccessMode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Determines how read permissions are handled for each asset and
+       * their associated tables. Only available to storage buckets assets.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.Asset.ResourceSpec.AccessMode read_access_mode = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearReadAccessMode() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        readAccessMode_ = 0;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -6838,6 +7195,31 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp update_time = 3;</code>
      */
     com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service account associated with the BigQuery Connection.
+     * </pre>
+     *
+     * <code>string managed_access_identity = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The managedAccessIdentity.
+     */
+    java.lang.String getManagedAccessIdentity();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service account associated with the BigQuery Connection.
+     * </pre>
+     *
+     * <code>string managed_access_identity = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for managedAccessIdentity.
+     */
+    com.google.protobuf.ByteString getManagedAccessIdentityBytes();
   }
   /**
    *
@@ -6861,6 +7243,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
     private ResourceStatus() {
       state_ = 0;
       message_ = "";
+      managedAccessIdentity_ = "";
     }
 
     @java.lang.Override
@@ -7182,6 +7565,57 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
     }
 
+    public static final int MANAGED_ACCESS_IDENTITY_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object managedAccessIdentity_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service account associated with the BigQuery Connection.
+     * </pre>
+     *
+     * <code>string managed_access_identity = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The managedAccessIdentity.
+     */
+    @java.lang.Override
+    public java.lang.String getManagedAccessIdentity() {
+      java.lang.Object ref = managedAccessIdentity_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        managedAccessIdentity_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Service account associated with the BigQuery Connection.
+     * </pre>
+     *
+     * <code>string managed_access_identity = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for managedAccessIdentity.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getManagedAccessIdentityBytes() {
+      java.lang.Object ref = managedAccessIdentity_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        managedAccessIdentity_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -7207,6 +7641,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       if (updateTime_ != null) {
         output.writeMessage(3, getUpdateTime());
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(managedAccessIdentity_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, managedAccessIdentity_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -7226,6 +7663,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       }
       if (updateTime_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getUpdateTime());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(managedAccessIdentity_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, managedAccessIdentity_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -7249,6 +7689,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
       if (hasUpdateTime()) {
         if (!getUpdateTime().equals(other.getUpdateTime())) return false;
       }
+      if (!getManagedAccessIdentity().equals(other.getManagedAccessIdentity())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -7268,6 +7709,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getUpdateTime().hashCode();
       }
+      hash = (37 * hash) + MANAGED_ACCESS_IDENTITY_FIELD_NUMBER;
+      hash = (53 * hash) + getManagedAccessIdentity().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -7416,6 +7859,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           updateTimeBuilder_.dispose();
           updateTimeBuilder_ = null;
         }
+        managedAccessIdentity_ = "";
         return this;
       }
 
@@ -7461,6 +7905,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.updateTime_ =
               updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.managedAccessIdentity_ = managedAccessIdentity_;
         }
       }
 
@@ -7523,6 +7970,11 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
         if (other.hasUpdateTime()) {
           mergeUpdateTime(other.getUpdateTime());
         }
+        if (!other.getManagedAccessIdentity().isEmpty()) {
+          managedAccessIdentity_ = other.managedAccessIdentity_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -7567,6 +8019,12 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 26
+              case 34:
+                {
+                  managedAccessIdentity_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7965,6 +8423,117 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
           updateTime_ = null;
         }
         return updateTimeBuilder_;
+      }
+
+      private java.lang.Object managedAccessIdentity_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Service account associated with the BigQuery Connection.
+       * </pre>
+       *
+       * <code>string managed_access_identity = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The managedAccessIdentity.
+       */
+      public java.lang.String getManagedAccessIdentity() {
+        java.lang.Object ref = managedAccessIdentity_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          managedAccessIdentity_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Service account associated with the BigQuery Connection.
+       * </pre>
+       *
+       * <code>string managed_access_identity = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The bytes for managedAccessIdentity.
+       */
+      public com.google.protobuf.ByteString getManagedAccessIdentityBytes() {
+        java.lang.Object ref = managedAccessIdentity_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          managedAccessIdentity_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Service account associated with the BigQuery Connection.
+       * </pre>
+       *
+       * <code>string managed_access_identity = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The managedAccessIdentity to set.
+       * @return This builder for chaining.
+       */
+      public Builder setManagedAccessIdentity(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        managedAccessIdentity_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Service account associated with the BigQuery Connection.
+       * </pre>
+       *
+       * <code>string managed_access_identity = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearManagedAccessIdentity() {
+        managedAccessIdentity_ = getDefaultInstance().getManagedAccessIdentity();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Service account associated with the BigQuery Connection.
+       * </pre>
+       *
+       * <code>string managed_access_identity = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The bytes for managedAccessIdentity to set.
+       * @return This builder for chaining.
+       */
+      public Builder setManagedAccessIdentityBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        managedAccessIdentity_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
       }
 
       @java.lang.Override

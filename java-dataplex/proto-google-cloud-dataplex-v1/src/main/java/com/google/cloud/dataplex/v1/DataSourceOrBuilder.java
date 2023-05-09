@@ -27,8 +27,8 @@ public interface DataSourceOrBuilder
    *
    *
    * <pre>
-   * Immutable. The dataplex entity that contains the data for DataScan, of
-   * the form:
+   * Immutable. The Dataplex entity that represents the data source (e.g.
+   * BigQuery table) for DataScan, of the form:
    * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}`.
    * </pre>
    *
@@ -43,8 +43,8 @@ public interface DataSourceOrBuilder
    *
    *
    * <pre>
-   * Immutable. The dataplex entity that contains the data for DataScan, of
-   * the form:
+   * Immutable. The Dataplex entity that represents the data source (e.g.
+   * BigQuery table) for DataScan, of the form:
    * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}`.
    * </pre>
    *
@@ -59,8 +59,8 @@ public interface DataSourceOrBuilder
    *
    *
    * <pre>
-   * Immutable. The dataplex entity that contains the data for DataScan, of
-   * the form:
+   * Immutable. The Dataplex entity that represents the data source (e.g.
+   * BigQuery table) for DataScan, of the form:
    * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}`.
    * </pre>
    *
@@ -71,6 +71,52 @@ public interface DataSourceOrBuilder
    * @return The bytes for entity.
    */
   com.google.protobuf.ByteString getEntityBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The service-qualified full resource name of the cloud resource
+   * for a DataScan job to scan against. The field could be: BigQuery table of
+   * type "TABLE" for DataProfileScan/DataQualityScan Format:
+   * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+   * </pre>
+   *
+   * <code>string resource = 101 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return Whether the resource field is set.
+   */
+  boolean hasResource();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The service-qualified full resource name of the cloud resource
+   * for a DataScan job to scan against. The field could be: BigQuery table of
+   * type "TABLE" for DataProfileScan/DataQualityScan Format:
+   * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+   * </pre>
+   *
+   * <code>string resource = 101 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The resource.
+   */
+  java.lang.String getResource();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The service-qualified full resource name of the cloud resource
+   * for a DataScan job to scan against. The field could be: BigQuery table of
+   * type "TABLE" for DataProfileScan/DataQualityScan Format:
+   * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+   * </pre>
+   *
+   * <code>string resource = 101 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The bytes for resource.
+   */
+  com.google.protobuf.ByteString getResourceBytes();
 
   public com.google.cloud.dataplex.v1.DataSource.SourceCase getSourceCase();
 }

@@ -68,16 +68,17 @@ public final class ProcessingProto {
           + "mandH\000\022>\n\010schedule\030e \001(\0132*.google.cloud."
           + "dataplex.v1.Trigger.ScheduleH\000\032\n\n\010OnDema"
           + "nd\032\035\n\010Schedule\022\021\n\004cron\030\001 \001(\tB\003\340A\002B\006\n\004mod"
-          + "e\"P\n\nDataSource\0228\n\006entity\030d \001(\tB&\340A\005\372A \n"
-          + "\036dataplex.googleapis.com/EntityH\000B\010\n\006sou"
-          + "rce\"\257\001\n\013ScannedData\022S\n\021incremental_field"
-          + "\030\001 \001(\01326.google.cloud.dataplex.v1.Scanne"
-          + "dData.IncrementalFieldH\000\032=\n\020IncrementalF"
-          + "ield\022\r\n\005field\030\001 \001(\t\022\r\n\005start\030\002 \001(\t\022\013\n\003en"
-          + "d\030\003 \001(\tB\014\n\ndata_rangeBk\n\034com.google.clou"
-          + "d.dataplex.v1B\017ProcessingProtoP\001Z8cloud."
-          + "google.com/go/dataplex/apiv1/dataplexpb;"
-          + "dataplexpbb\006proto3"
+          + "e\"i\n\nDataSource\0228\n\006entity\030d \001(\tB&\340A\005\372A \n"
+          + "\036dataplex.googleapis.com/EntityH\000\022\027\n\010res"
+          + "ource\030e \001(\tB\003\340A\005H\000B\010\n\006source\"\257\001\n\013Scanned"
+          + "Data\022S\n\021incremental_field\030\001 \001(\01326.google"
+          + ".cloud.dataplex.v1.ScannedData.Increment"
+          + "alFieldH\000\032=\n\020IncrementalField\022\r\n\005field\030\001"
+          + " \001(\t\022\r\n\005start\030\002 \001(\t\022\013\n\003end\030\003 \001(\tB\014\n\ndata"
+          + "_rangeBk\n\034com.google.cloud.dataplex.v1B\017"
+          + "ProcessingProtoP\001Z8cloud.google.com/go/d"
+          + "ataplex/apiv1/dataplexpb;dataplexpbb\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -114,7 +115,7 @@ public final class ProcessingProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_DataSource_descriptor,
             new java.lang.String[] {
-              "Entity", "Source",
+              "Entity", "Resource", "Source",
             });
     internal_static_google_cloud_dataplex_v1_ScannedData_descriptor =
         getDescriptor().getMessageTypes().get(2);

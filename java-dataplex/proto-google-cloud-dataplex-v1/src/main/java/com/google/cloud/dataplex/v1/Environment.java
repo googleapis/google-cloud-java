@@ -4221,7 +4221,15 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      */
     boolean getEnableFastStartup();
   }
-  /** Protobuf type {@code google.cloud.dataplex.v1.Environment.SessionSpec} */
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for sessions created for this environment.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dataplex.v1.Environment.SessionSpec}
+   */
   public static final class SessionSpec extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Environment.SessionSpec)
@@ -4516,7 +4524,15 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-    /** Protobuf type {@code google.cloud.dataplex.v1.Environment.SessionSpec} */
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for sessions created for this environment.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataplex.v1.Environment.SessionSpec}
+     */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
         implements
@@ -5069,7 +5085,15 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      */
     boolean getActive();
   }
-  /** Protobuf type {@code google.cloud.dataplex.v1.Environment.SessionStatus} */
+  /**
+   *
+   *
+   * <pre>
+   * Status of sessions created for this environment.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dataplex.v1.Environment.SessionStatus}
+   */
   public static final class SessionStatus extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Environment.SessionStatus)
@@ -5288,7 +5312,15 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-    /** Protobuf type {@code google.cloud.dataplex.v1.Environment.SessionStatus} */
+    /**
+     *
+     *
+     * <pre>
+     * Status of sessions created for this environment.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataplex.v1.Environment.SessionStatus}
+     */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
         implements
@@ -5639,7 +5671,15 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getSqlBytes();
   }
-  /** Protobuf type {@code google.cloud.dataplex.v1.Environment.Endpoints} */
+  /**
+   *
+   *
+   * <pre>
+   * URI Endpoints to access sessions associated with the Environment.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dataplex.v1.Environment.Endpoints}
+   */
   public static final class Endpoints extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.Environment.Endpoints)
@@ -5952,7 +5992,15 @@ public final class Environment extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
-    /** Protobuf type {@code google.cloud.dataplex.v1.Environment.Endpoints} */
+    /**
+     *
+     *
+     * <pre>
+     * URI Endpoints to access sessions associated with the Environment.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataplex.v1.Environment.Endpoints}
+     */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
         implements

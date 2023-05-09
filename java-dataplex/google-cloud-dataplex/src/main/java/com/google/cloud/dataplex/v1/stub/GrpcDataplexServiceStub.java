@@ -75,6 +75,8 @@ import com.google.cloud.dataplex.v1.ListZoneActionsRequest;
 import com.google.cloud.dataplex.v1.ListZonesRequest;
 import com.google.cloud.dataplex.v1.ListZonesResponse;
 import com.google.cloud.dataplex.v1.OperationMetadata;
+import com.google.cloud.dataplex.v1.RunTaskRequest;
+import com.google.cloud.dataplex.v1.RunTaskResponse;
 import com.google.cloud.dataplex.v1.Task;
 import com.google.cloud.dataplex.v1.UpdateAssetRequest;
 import com.google.cloud.dataplex.v1.UpdateEnvironmentRequest;
@@ -310,6 +312,14 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(ListJobsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<RunTaskRequest, RunTaskResponse> runTaskMethodDescriptor =
+      MethodDescriptor.<RunTaskRequest, RunTaskResponse>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.dataplex.v1.DataplexService/RunTask")
+          .setRequestMarshaller(ProtoUtils.marshaller(RunTaskRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(RunTaskResponse.getDefaultInstance()))
+          .build();
+
   private static final MethodDescriptor<GetJobRequest, Job> getJobMethodDescriptor =
       MethodDescriptor.<GetJobRequest, Job>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -466,6 +476,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
   private final UnaryCallable<GetTaskRequest, Task> getTaskCallable;
   private final UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable;
   private final UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable;
+  private final UnaryCallable<RunTaskRequest, RunTaskResponse> runTaskCallable;
   private final UnaryCallable<GetJobRequest, Job> getJobCallable;
   private final UnaryCallable<CancelJobRequest, Empty> cancelJobCallable;
   private final UnaryCallable<CreateEnvironmentRequest, Operation> createEnvironmentCallable;
@@ -775,6 +786,16 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<RunTaskRequest, RunTaskResponse> runTaskTransportSettings =
+        GrpcCallSettings.<RunTaskRequest, RunTaskResponse>newBuilder()
+            .setMethodDescriptor(runTaskMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
     GrpcCallSettings<GetJobRequest, Job> getJobTransportSettings =
         GrpcCallSettings.<GetJobRequest, Job>newBuilder()
             .setMethodDescriptor(getJobMethodDescriptor)
@@ -1046,6 +1067,9 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
     this.listJobsPagedCallable =
         callableFactory.createPagedCallable(
             listJobsTransportSettings, settings.listJobsSettings(), clientContext);
+    this.runTaskCallable =
+        callableFactory.createUnaryCallable(
+            runTaskTransportSettings, settings.runTaskSettings(), clientContext);
     this.getJobCallable =
         callableFactory.createUnaryCallable(
             getJobTransportSettings, settings.getJobSettings(), clientContext);
@@ -1351,6 +1375,11 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
   @Override
   public UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable() {
     return listJobsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<RunTaskRequest, RunTaskResponse> runTaskCallable() {
+    return runTaskCallable;
   }
 
   @Override

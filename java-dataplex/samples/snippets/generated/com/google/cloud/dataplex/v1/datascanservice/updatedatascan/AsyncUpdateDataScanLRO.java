@@ -41,6 +41,7 @@ public class AsyncUpdateDataScanLRO {
           UpdateDataScanRequest.newBuilder()
               .setDataScan(DataScan.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
+              .setValidateOnly(true)
               .build();
       OperationFuture<DataScan, OperationMetadata> future =
           dataScanServiceClient.updateDataScanOperationCallable().futureCall(request);

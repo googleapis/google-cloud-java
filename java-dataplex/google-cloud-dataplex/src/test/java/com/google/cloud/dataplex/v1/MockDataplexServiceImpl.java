@@ -548,6 +548,26 @@ public class MockDataplexServiceImpl extends DataplexServiceImplBase {
   }
 
   @Override
+  public void runTask(RunTaskRequest request, StreamObserver<RunTaskResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RunTaskResponse) {
+      requests.add(request);
+      responseObserver.onNext(((RunTaskResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RunTask, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RunTaskResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getJob(GetJobRequest request, StreamObserver<Job> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Job) {

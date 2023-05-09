@@ -113,6 +113,8 @@ public class MetadataServiceClientTest {
             .setSystem(StorageSystem.forNumber(0))
             .setFormat(StorageFormat.newBuilder().build())
             .setCompatibility(Entity.CompatibilityStatus.newBuilder().build())
+            .setAccess(StorageAccess.newBuilder().build())
+            .setUid("uid115792")
             .setSchema(Schema.newBuilder().build())
             .build();
     mockMetadataService.addResponse(expectedResponse);
@@ -169,6 +171,8 @@ public class MetadataServiceClientTest {
             .setSystem(StorageSystem.forNumber(0))
             .setFormat(StorageFormat.newBuilder().build())
             .setCompatibility(Entity.CompatibilityStatus.newBuilder().build())
+            .setAccess(StorageAccess.newBuilder().build())
+            .setUid("uid115792")
             .setSchema(Schema.newBuilder().build())
             .build();
     mockMetadataService.addResponse(expectedResponse);
@@ -225,6 +229,8 @@ public class MetadataServiceClientTest {
             .setSystem(StorageSystem.forNumber(0))
             .setFormat(StorageFormat.newBuilder().build())
             .setCompatibility(Entity.CompatibilityStatus.newBuilder().build())
+            .setAccess(StorageAccess.newBuilder().build())
+            .setUid("uid115792")
             .setSchema(Schema.newBuilder().build())
             .build();
     mockMetadataService.addResponse(expectedResponse);
@@ -355,6 +361,8 @@ public class MetadataServiceClientTest {
             .setSystem(StorageSystem.forNumber(0))
             .setFormat(StorageFormat.newBuilder().build())
             .setCompatibility(Entity.CompatibilityStatus.newBuilder().build())
+            .setAccess(StorageAccess.newBuilder().build())
+            .setUid("uid115792")
             .setSchema(Schema.newBuilder().build())
             .build();
     mockMetadataService.addResponse(expectedResponse);
@@ -408,6 +416,8 @@ public class MetadataServiceClientTest {
             .setSystem(StorageSystem.forNumber(0))
             .setFormat(StorageFormat.newBuilder().build())
             .setCompatibility(Entity.CompatibilityStatus.newBuilder().build())
+            .setAccess(StorageAccess.newBuilder().build())
+            .setUid("uid115792")
             .setSchema(Schema.newBuilder().build())
             .build();
     mockMetadataService.addResponse(expectedResponse);
