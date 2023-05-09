@@ -2572,6 +2572,56 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         : desiredNodePoolLoggingConfig_;
   }
 
+  public static final int DESIRED_FLEET_FIELD_NUMBER = 117;
+  private com.google.container.v1beta1.Fleet desiredFleet_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired fleet configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.Fleet desired_fleet = 117;</code>
+   *
+   * @return Whether the desiredFleet field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredFleet() {
+    return desiredFleet_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired fleet configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.Fleet desired_fleet = 117;</code>
+   *
+   * @return The desiredFleet.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.Fleet getDesiredFleet() {
+    return desiredFleet_ == null
+        ? com.google.container.v1beta1.Fleet.getDefaultInstance()
+        : desiredFleet_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired fleet configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.Fleet desired_fleet = 117;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.FleetOrBuilder getDesiredFleetOrBuilder() {
+    return desiredFleet_ == null
+        ? com.google.container.v1beta1.Fleet.getDefaultInstance()
+        : desiredFleet_;
+  }
+
   public static final int DESIRED_STACK_TYPE_FIELD_NUMBER = 119;
   private int desiredStackType_ = 0;
   /**
@@ -2889,6 +2939,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (desiredNodePoolLoggingConfig_ != null) {
       output.writeMessage(116, getDesiredNodePoolLoggingConfig());
     }
+    if (desiredFleet_ != null) {
+      output.writeMessage(117, getDesiredFleet());
+    }
     if (desiredStackType_
         != com.google.container.v1beta1.StackType.STACK_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(119, desiredStackType_);
@@ -3116,6 +3169,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               116, getDesiredNodePoolLoggingConfig());
     }
+    if (desiredFleet_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(117, getDesiredFleet());
+    }
     if (desiredStackType_
         != com.google.container.v1beta1.StackType.STACK_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(119, desiredStackType_);
@@ -3331,6 +3387,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (!getDesiredNodePoolLoggingConfig().equals(other.getDesiredNodePoolLoggingConfig()))
         return false;
     }
+    if (hasDesiredFleet() != other.hasDesiredFleet()) return false;
+    if (hasDesiredFleet()) {
+      if (!getDesiredFleet().equals(other.getDesiredFleet())) return false;
+    }
     if (desiredStackType_ != other.desiredStackType_) return false;
     if (hasAdditionalPodRangesConfig() != other.hasAdditionalPodRangesConfig()) return false;
     if (hasAdditionalPodRangesConfig()) {
@@ -3521,6 +3581,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DESIRED_NODE_POOL_LOGGING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredNodePoolLoggingConfig().hashCode();
     }
+    if (hasDesiredFleet()) {
+      hash = (37 * hash) + DESIRED_FLEET_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredFleet().hashCode();
+    }
     hash = (37 * hash) + DESIRED_STACK_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + desiredStackType_;
     if (hasAdditionalPodRangesConfig()) {
@@ -3708,6 +3772,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         getDesiredProtectConfigFieldBuilder();
         getDesiredGatewayApiConfigFieldBuilder();
         getDesiredNodePoolLoggingConfigFieldBuilder();
+        getDesiredFleetFieldBuilder();
         getAdditionalPodRangesConfigFieldBuilder();
         getRemovedAdditionalPodRangesConfigFieldBuilder();
       }
@@ -3904,6 +3969,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (desiredNodePoolLoggingConfigBuilder_ != null) {
         desiredNodePoolLoggingConfigBuilder_.dispose();
         desiredNodePoolLoggingConfigBuilder_ = null;
+      }
+      desiredFleet_ = null;
+      if (desiredFleetBuilder_ != null) {
+        desiredFleetBuilder_.dispose();
+        desiredFleetBuilder_ = null;
       }
       desiredStackType_ = 0;
       additionalPodRangesConfig_ = null;
@@ -4206,15 +4276,19 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
                 : desiredNodePoolLoggingConfigBuilder_.build();
       }
       if (((from_bitField1_ & 0x00004000) != 0)) {
-        result.desiredStackType_ = desiredStackType_;
+        result.desiredFleet_ =
+            desiredFleetBuilder_ == null ? desiredFleet_ : desiredFleetBuilder_.build();
       }
       if (((from_bitField1_ & 0x00008000) != 0)) {
+        result.desiredStackType_ = desiredStackType_;
+      }
+      if (((from_bitField1_ & 0x00010000) != 0)) {
         result.additionalPodRangesConfig_ =
             additionalPodRangesConfigBuilder_ == null
                 ? additionalPodRangesConfig_
                 : additionalPodRangesConfigBuilder_.build();
       }
-      if (((from_bitField1_ & 0x00010000) != 0)) {
+      if (((from_bitField1_ & 0x00020000) != 0)) {
         result.removedAdditionalPodRangesConfig_ =
             removedAdditionalPodRangesConfigBuilder_ == null
                 ? removedAdditionalPodRangesConfig_
@@ -4427,6 +4501,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasDesiredNodePoolLoggingConfig()) {
         mergeDesiredNodePoolLoggingConfig(other.getDesiredNodePoolLoggingConfig());
+      }
+      if (other.hasDesiredFleet()) {
+        mergeDesiredFleet(other.getDesiredFleet());
       }
       if (other.desiredStackType_ != 0) {
         setDesiredStackTypeValue(other.getDesiredStackTypeValue());
@@ -4781,17 +4858,23 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x00002000;
                 break;
               } // case 930
+            case 938:
+              {
+                input.readMessage(getDesiredFleetFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00004000;
+                break;
+              } // case 938
             case 952:
               {
                 desiredStackType_ = input.readEnum();
-                bitField1_ |= 0x00004000;
+                bitField1_ |= 0x00008000;
                 break;
               } // case 952
             case 962:
               {
                 input.readMessage(
                     getAdditionalPodRangesConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00008000;
+                bitField1_ |= 0x00010000;
                 break;
               } // case 962
             case 970:
@@ -4799,7 +4882,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
                 input.readMessage(
                     getRemovedAdditionalPodRangesConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField1_ |= 0x00010000;
+                bitField1_ |= 0x00020000;
                 break;
               } // case 970
             default:
@@ -13073,6 +13156,189 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       return desiredNodePoolLoggingConfigBuilder_;
     }
 
+    private com.google.container.v1beta1.Fleet desiredFleet_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.Fleet,
+            com.google.container.v1beta1.Fleet.Builder,
+            com.google.container.v1beta1.FleetOrBuilder>
+        desiredFleetBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The desired fleet configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.Fleet desired_fleet = 117;</code>
+     *
+     * @return Whether the desiredFleet field is set.
+     */
+    public boolean hasDesiredFleet() {
+      return ((bitField1_ & 0x00004000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired fleet configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.Fleet desired_fleet = 117;</code>
+     *
+     * @return The desiredFleet.
+     */
+    public com.google.container.v1beta1.Fleet getDesiredFleet() {
+      if (desiredFleetBuilder_ == null) {
+        return desiredFleet_ == null
+            ? com.google.container.v1beta1.Fleet.getDefaultInstance()
+            : desiredFleet_;
+      } else {
+        return desiredFleetBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired fleet configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.Fleet desired_fleet = 117;</code>
+     */
+    public Builder setDesiredFleet(com.google.container.v1beta1.Fleet value) {
+      if (desiredFleetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredFleet_ = value;
+      } else {
+        desiredFleetBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired fleet configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.Fleet desired_fleet = 117;</code>
+     */
+    public Builder setDesiredFleet(com.google.container.v1beta1.Fleet.Builder builderForValue) {
+      if (desiredFleetBuilder_ == null) {
+        desiredFleet_ = builderForValue.build();
+      } else {
+        desiredFleetBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired fleet configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.Fleet desired_fleet = 117;</code>
+     */
+    public Builder mergeDesiredFleet(com.google.container.v1beta1.Fleet value) {
+      if (desiredFleetBuilder_ == null) {
+        if (((bitField1_ & 0x00004000) != 0)
+            && desiredFleet_ != null
+            && desiredFleet_ != com.google.container.v1beta1.Fleet.getDefaultInstance()) {
+          getDesiredFleetBuilder().mergeFrom(value);
+        } else {
+          desiredFleet_ = value;
+        }
+      } else {
+        desiredFleetBuilder_.mergeFrom(value);
+      }
+      bitField1_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired fleet configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.Fleet desired_fleet = 117;</code>
+     */
+    public Builder clearDesiredFleet() {
+      bitField1_ = (bitField1_ & ~0x00004000);
+      desiredFleet_ = null;
+      if (desiredFleetBuilder_ != null) {
+        desiredFleetBuilder_.dispose();
+        desiredFleetBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired fleet configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.Fleet desired_fleet = 117;</code>
+     */
+    public com.google.container.v1beta1.Fleet.Builder getDesiredFleetBuilder() {
+      bitField1_ |= 0x00004000;
+      onChanged();
+      return getDesiredFleetFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired fleet configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.Fleet desired_fleet = 117;</code>
+     */
+    public com.google.container.v1beta1.FleetOrBuilder getDesiredFleetOrBuilder() {
+      if (desiredFleetBuilder_ != null) {
+        return desiredFleetBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredFleet_ == null
+            ? com.google.container.v1beta1.Fleet.getDefaultInstance()
+            : desiredFleet_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired fleet configuration for the cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.Fleet desired_fleet = 117;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.Fleet,
+            com.google.container.v1beta1.Fleet.Builder,
+            com.google.container.v1beta1.FleetOrBuilder>
+        getDesiredFleetFieldBuilder() {
+      if (desiredFleetBuilder_ == null) {
+        desiredFleetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.Fleet,
+                com.google.container.v1beta1.Fleet.Builder,
+                com.google.container.v1beta1.FleetOrBuilder>(
+                getDesiredFleet(), getParentForChildren(), isClean());
+        desiredFleet_ = null;
+      }
+      return desiredFleetBuilder_;
+    }
+
     private int desiredStackType_ = 0;
     /**
      *
@@ -13107,7 +13373,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setDesiredStackTypeValue(int value) {
       desiredStackType_ = value;
-      bitField1_ |= 0x00004000;
+      bitField1_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -13148,7 +13414,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField1_ |= 0x00004000;
+      bitField1_ |= 0x00008000;
       desiredStackType_ = value.getNumber();
       onChanged();
       return this;
@@ -13167,7 +13433,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDesiredStackType() {
-      bitField1_ = (bitField1_ & ~0x00004000);
+      bitField1_ = (bitField1_ & ~0x00008000);
       desiredStackType_ = 0;
       onChanged();
       return this;
@@ -13193,7 +13459,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the additionalPodRangesConfig field is set.
      */
     public boolean hasAdditionalPodRangesConfig() {
-      return ((bitField1_ & 0x00008000) != 0);
+      return ((bitField1_ & 0x00010000) != 0);
     }
     /**
      *
@@ -13238,7 +13504,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       } else {
         additionalPodRangesConfigBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00008000;
+      bitField1_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -13260,7 +13526,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       } else {
         additionalPodRangesConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00008000;
+      bitField1_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -13278,7 +13544,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeAdditionalPodRangesConfig(
         com.google.container.v1beta1.AdditionalPodRangesConfig value) {
       if (additionalPodRangesConfigBuilder_ == null) {
-        if (((bitField1_ & 0x00008000) != 0)
+        if (((bitField1_ & 0x00010000) != 0)
             && additionalPodRangesConfig_ != null
             && additionalPodRangesConfig_
                 != com.google.container.v1beta1.AdditionalPodRangesConfig.getDefaultInstance()) {
@@ -13289,7 +13555,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       } else {
         additionalPodRangesConfigBuilder_.mergeFrom(value);
       }
-      bitField1_ |= 0x00008000;
+      bitField1_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -13305,7 +13571,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearAdditionalPodRangesConfig() {
-      bitField1_ = (bitField1_ & ~0x00008000);
+      bitField1_ = (bitField1_ & ~0x00010000);
       additionalPodRangesConfig_ = null;
       if (additionalPodRangesConfigBuilder_ != null) {
         additionalPodRangesConfigBuilder_.dispose();
@@ -13327,7 +13593,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.container.v1beta1.AdditionalPodRangesConfig.Builder
         getAdditionalPodRangesConfigBuilder() {
-      bitField1_ |= 0x00008000;
+      bitField1_ |= 0x00010000;
       onChanged();
       return getAdditionalPodRangesConfigFieldBuilder().getBuilder();
     }
@@ -13403,7 +13669,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the removedAdditionalPodRangesConfig field is set.
      */
     public boolean hasRemovedAdditionalPodRangesConfig() {
-      return ((bitField1_ & 0x00010000) != 0);
+      return ((bitField1_ & 0x00020000) != 0);
     }
     /**
      *
@@ -13453,7 +13719,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       } else {
         removedAdditionalPodRangesConfigBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00010000;
+      bitField1_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -13477,7 +13743,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       } else {
         removedAdditionalPodRangesConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00010000;
+      bitField1_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -13497,7 +13763,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeRemovedAdditionalPodRangesConfig(
         com.google.container.v1beta1.AdditionalPodRangesConfig value) {
       if (removedAdditionalPodRangesConfigBuilder_ == null) {
-        if (((bitField1_ & 0x00010000) != 0)
+        if (((bitField1_ & 0x00020000) != 0)
             && removedAdditionalPodRangesConfig_ != null
             && removedAdditionalPodRangesConfig_
                 != com.google.container.v1beta1.AdditionalPodRangesConfig.getDefaultInstance()) {
@@ -13508,7 +13774,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       } else {
         removedAdditionalPodRangesConfigBuilder_.mergeFrom(value);
       }
-      bitField1_ |= 0x00010000;
+      bitField1_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -13526,7 +13792,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearRemovedAdditionalPodRangesConfig() {
-      bitField1_ = (bitField1_ & ~0x00010000);
+      bitField1_ = (bitField1_ & ~0x00020000);
       removedAdditionalPodRangesConfig_ = null;
       if (removedAdditionalPodRangesConfigBuilder_ != null) {
         removedAdditionalPodRangesConfigBuilder_.dispose();
@@ -13550,7 +13816,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.container.v1beta1.AdditionalPodRangesConfig.Builder
         getRemovedAdditionalPodRangesConfigBuilder() {
-      bitField1_ |= 0x00010000;
+      bitField1_ |= 0x00020000;
       onChanged();
       return getRemovedAdditionalPodRangesConfigFieldBuilder().getBuilder();
     }

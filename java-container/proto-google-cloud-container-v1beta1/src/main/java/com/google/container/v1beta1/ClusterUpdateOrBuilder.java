@@ -1755,6 +1755,41 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * The desired fleet configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.Fleet desired_fleet = 117;</code>
+   *
+   * @return Whether the desiredFleet field is set.
+   */
+  boolean hasDesiredFleet();
+  /**
+   *
+   *
+   * <pre>
+   * The desired fleet configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.Fleet desired_fleet = 117;</code>
+   *
+   * @return The desiredFleet.
+   */
+  com.google.container.v1beta1.Fleet getDesiredFleet();
+  /**
+   *
+   *
+   * <pre>
+   * The desired fleet configuration for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.Fleet desired_fleet = 117;</code>
+   */
+  com.google.container.v1beta1.FleetOrBuilder getDesiredFleetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The desired stack type of the cluster.
    * If a stack type is provided and does not match the current stack type of
    * the cluster, update will attempt to change the stack type to the new type.
