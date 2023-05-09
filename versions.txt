@@ -643,3 +643,6 @@ grpc-google-cloud-storageinsights-v1:0.1.0:0.2.0-SNAPSHOT
 google-cloud-cloudsupport:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-cloudsupport-v2:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-cloudsupport-v2:0.0.0:0.0.1-SNAPSHOT
+google-maps-places:0.0.0:0.0.1-SNAPSHOT
+proto-google-maps-places-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-maps-places-v1:0.0.0:0.0.1-SNAPSHOT
