@@ -75,4 +75,4 @@ jobs:
           grep -q ${API_SHORT_NAME} pom.xml
           grep -q ${API_SHORT_NAME} gapic-libraries-bom/pom.xml
       - name: Test
-        run: mvn -B -ntp test -T C1
+        run: mvn -B -ntp test -T 1C

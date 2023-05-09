@@ -24,7 +24,7 @@ jobs:
           USERNAME: ${{ github.actor }}
       - name: Compile
         working-directory: generation/monorepo/google-cloud-java-merged
-        run: mvn compile -T C1 -B
+        run: mvn compile -T 1C -B
       - name: Unit Tests
         working-directory: generation/monorepo/google-cloud-java-merged
         run: mvn test -T C1 -B
