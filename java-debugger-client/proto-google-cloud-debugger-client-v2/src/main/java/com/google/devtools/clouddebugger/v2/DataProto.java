@@ -135,12 +135,12 @@ public final class DataProto {
           + "ContextB\002\030\001\022F\n\006labels\030\013 \003(\01326.google.dev"
           + "tools.clouddebugger.v2.Debuggee.LabelsEn"
           + "try\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value"
-          + "\030\002 \001(\t:\0028\001B\331\001\n$com.google.devtools.cloud"
-          + "debugger.v2B\tDataProtoP\001ZMgoogle.golang."
-          + "org/genproto/googleapis/devtools/cloudde"
-          + "bugger/v2;clouddebugger\370\001\001\252\002\030Google.Clou"
-          + "d.Debugger.V2\312\002\030Google\\Cloud\\Debugger\\V2"
-          + "\352\002\033Google::Cloud::Debugger::V2b\006proto3"
+          + "\030\002 \001(\t:\0028\001B\304\001\n$com.google.devtools.cloud"
+          + "debugger.v2B\tDataProtoP\001Z8cloud.google.c"
+          + "om/go/debugger/apiv2/debuggerpb;debugger"
+          + "pb\370\001\001\252\002\030Google.Cloud.Debugger.V2\312\002\030Googl"
+          + "e\\Cloud\\Debugger\\V2\352\002\033Google::Cloud::Deb"
+          + "ugger::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
