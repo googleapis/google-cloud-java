@@ -248,4 +248,60 @@ public interface AnnotatorSelectorOrBuilder
    * @return The bytes of the issueModels at the given index.
    */
   com.google.protobuf.ByteString getIssueModelsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether to run the summarization annotator.
+   * </pre>
+   *
+   * <code>bool run_summarization_annotator = 9;</code>
+   *
+   * @return The runSummarizationAnnotator.
+   */
+  boolean getRunSummarizationAnnotator();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the summarization annotator.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig summarization_config = 11;
+   * </code>
+   *
+   * @return Whether the summarizationConfig field is set.
+   */
+  boolean hasSummarizationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the summarization annotator.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig summarization_config = 11;
+   * </code>
+   *
+   * @return The summarizationConfig.
+   */
+  com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+      getSummarizationConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the summarization annotator.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig summarization_config = 11;
+   * </code>
+   */
+  com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfigOrBuilder
+      getSummarizationConfigOrBuilder();
 }

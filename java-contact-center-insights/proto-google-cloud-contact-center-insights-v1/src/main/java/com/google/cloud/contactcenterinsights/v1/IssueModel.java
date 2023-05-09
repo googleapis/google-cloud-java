@@ -315,7 +315,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=611
+     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=619
      * @return The enum numeric value on the wire for medium.
      */
     @java.lang.Deprecated
@@ -334,7 +334,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=611
+     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=619
      * @return The medium.
      */
     @java.lang.Deprecated
@@ -447,7 +447,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=611
+     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=619
      * @return The enum numeric value on the wire for medium.
      */
     @java.lang.Override
@@ -469,7 +469,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=611
+     *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=619
      * @return The medium.
      */
     @java.lang.Override
@@ -974,7 +974,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=611
+       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=619
        * @return The enum numeric value on the wire for medium.
        */
       @java.lang.Override
@@ -996,7 +996,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=611
+       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=619
        * @param value The enum numeric value on the wire for medium to set.
        * @return This builder for chaining.
        */
@@ -1021,7 +1021,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=611
+       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=619
        * @return The medium.
        */
       @java.lang.Override
@@ -1047,7 +1047,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=611
+       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=619
        * @param value The medium to set.
        * @return This builder for chaining.
        */
@@ -1076,7 +1076,7 @@ public final class IssueModel extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig.medium is
-       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=611
+       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=619
        * @return This builder for chaining.
        */
       @java.lang.Deprecated

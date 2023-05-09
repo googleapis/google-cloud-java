@@ -598,6 +598,49 @@ public interface ConversationOrBuilder
    *
    *
    * <pre>
+   * Output only. Latest summary of the conversation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData latest_summary = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the latestSummary field is set.
+   */
+  boolean hasLatestSummary();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Latest summary of the conversation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData latest_summary = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The latestSummary.
+   */
+  com.google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData
+      getLatestSummary();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Latest summary of the conversation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData latest_summary = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionDataOrBuilder
+      getLatestSummaryOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The annotations that were generated during the customer and
    * agent interaction.
    * </pre>
