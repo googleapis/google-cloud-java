@@ -50,4 +50,5 @@
     <module>proto-google-maps-places-v1</module>
     <module>google-maps-places-bom</module>
   </modules>
-</project>
+
+  </project>
