@@ -27,7 +27,8 @@ public interface StopBackfillJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the stream object resource to stop the backfill job for.
+   * Required. The name of the stream object resource to stop the backfill job
+   * for.
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface StopBackfillJobRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the stream object resource to stop the backfill job for.
+   * Required. The name of the stream object resource to stop the backfill job
+   * for.
    * </pre>
    *
    * <code>

@@ -97,8 +97,8 @@ public interface OracleSourceConfigOrBuilder
    *
    *
    * <pre>
-   * Maximum number of concurrent CDC tasks. The number should be non negative.
-   * If not set (or set to 0), the system's default value will be used.
+   * Maximum number of concurrent CDC tasks. The number should be non-negative.
+   * If not set (or set to 0), the system's default value is used.
    * </pre>
    *
    * <code>int32 max_concurrent_cdc_tasks = 3;</code>
@@ -106,6 +106,20 @@ public interface OracleSourceConfigOrBuilder
    * @return The maxConcurrentCdcTasks.
    */
   int getMaxConcurrentCdcTasks();
+
+  /**
+   *
+   *
+   * <pre>
+   * Maximum number of concurrent backfill tasks. The number should be
+   * non-negative. If not set (or set to 0), the system's default value is used.
+   * </pre>
+   *
+   * <code>int32 max_concurrent_backfill_tasks = 4;</code>
+   *
+   * @return The maxConcurrentBackfillTasks.
+   */
+  int getMaxConcurrentBackfillTasks();
 
   /**
    *
@@ -150,7 +164,7 @@ public interface OracleSourceConfigOrBuilder
    *
    *
    * <pre>
-   * Stream large object values.
+   * Stream large object values. NOTE: This feature is currently experimental.
    * </pre>
    *
    * <code>
@@ -164,7 +178,7 @@ public interface OracleSourceConfigOrBuilder
    *
    *
    * <pre>
-   * Stream large object values.
+   * Stream large object values. NOTE: This feature is currently experimental.
    * </pre>
    *
    * <code>
@@ -178,7 +192,7 @@ public interface OracleSourceConfigOrBuilder
    *
    *
    * <pre>
-   * Stream large object values.
+   * Stream large object values. NOTE: This feature is currently experimental.
    * </pre>
    *
    * <code>

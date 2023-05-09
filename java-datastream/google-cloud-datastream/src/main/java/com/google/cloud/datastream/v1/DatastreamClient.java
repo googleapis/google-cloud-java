@@ -2581,6 +2581,7 @@ public class DatastreamClient implements BackgroundResource {
    *           .setPrivateConnectionId("privateConnectionId-1926654532")
    *           .setPrivateConnection(PrivateConnection.newBuilder().build())
    *           .setRequestId("requestId693933066")
+   *           .setForce(true)
    *           .build();
    *   PrivateConnection response = datastreamClient.createPrivateConnectionAsync(request).get();
    * }
@@ -2613,6 +2614,7 @@ public class DatastreamClient implements BackgroundResource {
    *           .setPrivateConnectionId("privateConnectionId-1926654532")
    *           .setPrivateConnection(PrivateConnection.newBuilder().build())
    *           .setRequestId("requestId693933066")
+   *           .setForce(true)
    *           .build();
    *   OperationFuture<PrivateConnection, OperationMetadata> future =
    *       datastreamClient.createPrivateConnectionOperationCallable().futureCall(request);
@@ -2646,6 +2648,7 @@ public class DatastreamClient implements BackgroundResource {
    *           .setPrivateConnectionId("privateConnectionId-1926654532")
    *           .setPrivateConnection(PrivateConnection.newBuilder().build())
    *           .setRequestId("requestId693933066")
+   *           .setForce(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       datastreamClient.createPrivateConnectionCallable().futureCall(request);

@@ -801,6 +801,7 @@ public class HttpJsonDatastreamStub extends DatastreamStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CreatePrivateConnectionRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "force", request.getForce());
                             serializer.putQueryParam(
                                 fields, "privateConnectionId", request.getPrivateConnectionId());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());

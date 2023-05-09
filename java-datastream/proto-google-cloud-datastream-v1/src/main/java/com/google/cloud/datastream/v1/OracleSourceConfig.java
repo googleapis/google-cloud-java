@@ -1095,8 +1095,8 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Maximum number of concurrent CDC tasks. The number should be non negative.
-   * If not set (or set to 0), the system's default value will be used.
+   * Maximum number of concurrent CDC tasks. The number should be non-negative.
+   * If not set (or set to 0), the system's default value is used.
    * </pre>
    *
    * <code>int32 max_concurrent_cdc_tasks = 3;</code>
@@ -1106,6 +1106,25 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public int getMaxConcurrentCdcTasks() {
     return maxConcurrentCdcTasks_;
+  }
+
+  public static final int MAX_CONCURRENT_BACKFILL_TASKS_FIELD_NUMBER = 4;
+  private int maxConcurrentBackfillTasks_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Maximum number of concurrent backfill tasks. The number should be
+   * non-negative. If not set (or set to 0), the system's default value is used.
+   * </pre>
+   *
+   * <code>int32 max_concurrent_backfill_tasks = 4;</code>
+   *
+   * @return The maxConcurrentBackfillTasks.
+   */
+  @java.lang.Override
+  public int getMaxConcurrentBackfillTasks() {
+    return maxConcurrentBackfillTasks_;
   }
 
   public static final int DROP_LARGE_OBJECTS_FIELD_NUMBER = 100;
@@ -1170,7 +1189,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Stream large object values.
+   * Stream large object values. NOTE: This feature is currently experimental.
    * </pre>
    *
    * <code>
@@ -1187,7 +1206,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Stream large object values.
+   * Stream large object values. NOTE: This feature is currently experimental.
    * </pre>
    *
    * <code>
@@ -1210,7 +1229,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Stream large object values.
+   * Stream large object values. NOTE: This feature is currently experimental.
    * </pre>
    *
    * <code>
@@ -1251,6 +1270,9 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     if (maxConcurrentCdcTasks_ != 0) {
       output.writeInt32(3, maxConcurrentCdcTasks_);
     }
+    if (maxConcurrentBackfillTasks_ != 0) {
+      output.writeInt32(4, maxConcurrentBackfillTasks_);
+    }
     if (largeObjectsHandlingCase_ == 100) {
       output.writeMessage(
           100,
@@ -1280,6 +1302,10 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     }
     if (maxConcurrentCdcTasks_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, maxConcurrentCdcTasks_);
+    }
+    if (maxConcurrentBackfillTasks_ != 0) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(4, maxConcurrentBackfillTasks_);
     }
     if (largeObjectsHandlingCase_ == 100) {
       size +=
@@ -1320,6 +1346,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       if (!getExcludeObjects().equals(other.getExcludeObjects())) return false;
     }
     if (getMaxConcurrentCdcTasks() != other.getMaxConcurrentCdcTasks()) return false;
+    if (getMaxConcurrentBackfillTasks() != other.getMaxConcurrentBackfillTasks()) return false;
     if (!getLargeObjectsHandlingCase().equals(other.getLargeObjectsHandlingCase())) return false;
     switch (largeObjectsHandlingCase_) {
       case 100:
@@ -1352,6 +1379,8 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     }
     hash = (37 * hash) + MAX_CONCURRENT_CDC_TASKS_FIELD_NUMBER;
     hash = (53 * hash) + getMaxConcurrentCdcTasks();
+    hash = (37 * hash) + MAX_CONCURRENT_BACKFILL_TASKS_FIELD_NUMBER;
+    hash = (53 * hash) + getMaxConcurrentBackfillTasks();
     switch (largeObjectsHandlingCase_) {
       case 100:
         hash = (37 * hash) + DROP_LARGE_OBJECTS_FIELD_NUMBER;
@@ -1514,6 +1543,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         excludeObjectsBuilder_ = null;
       }
       maxConcurrentCdcTasks_ = 0;
+      maxConcurrentBackfillTasks_ = 0;
       if (dropLargeObjectsBuilder_ != null) {
         dropLargeObjectsBuilder_.clear();
       }
@@ -1569,6 +1599,9 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.maxConcurrentCdcTasks_ = maxConcurrentCdcTasks_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.maxConcurrentBackfillTasks_ = maxConcurrentBackfillTasks_;
       }
     }
 
@@ -1638,6 +1671,9 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       if (other.getMaxConcurrentCdcTasks() != 0) {
         setMaxConcurrentCdcTasks(other.getMaxConcurrentCdcTasks());
       }
+      if (other.getMaxConcurrentBackfillTasks() != 0) {
+        setMaxConcurrentBackfillTasks(other.getMaxConcurrentBackfillTasks());
+      }
       switch (other.getLargeObjectsHandlingCase()) {
         case DROP_LARGE_OBJECTS:
           {
@@ -1698,6 +1734,12 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
+            case 32:
+              {
+                maxConcurrentBackfillTasks_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
             case 802:
               {
                 input.readMessage(
@@ -2118,8 +2160,8 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Maximum number of concurrent CDC tasks. The number should be non negative.
-     * If not set (or set to 0), the system's default value will be used.
+     * Maximum number of concurrent CDC tasks. The number should be non-negative.
+     * If not set (or set to 0), the system's default value is used.
      * </pre>
      *
      * <code>int32 max_concurrent_cdc_tasks = 3;</code>
@@ -2134,8 +2176,8 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Maximum number of concurrent CDC tasks. The number should be non negative.
-     * If not set (or set to 0), the system's default value will be used.
+     * Maximum number of concurrent CDC tasks. The number should be non-negative.
+     * If not set (or set to 0), the system's default value is used.
      * </pre>
      *
      * <code>int32 max_concurrent_cdc_tasks = 3;</code>
@@ -2154,8 +2196,8 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Maximum number of concurrent CDC tasks. The number should be non negative.
-     * If not set (or set to 0), the system's default value will be used.
+     * Maximum number of concurrent CDC tasks. The number should be non-negative.
+     * If not set (or set to 0), the system's default value is used.
      * </pre>
      *
      * <code>int32 max_concurrent_cdc_tasks = 3;</code>
@@ -2165,6 +2207,62 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     public Builder clearMaxConcurrentCdcTasks() {
       bitField0_ = (bitField0_ & ~0x00000004);
       maxConcurrentCdcTasks_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int maxConcurrentBackfillTasks_;
+    /**
+     *
+     *
+     * <pre>
+     * Maximum number of concurrent backfill tasks. The number should be
+     * non-negative. If not set (or set to 0), the system's default value is used.
+     * </pre>
+     *
+     * <code>int32 max_concurrent_backfill_tasks = 4;</code>
+     *
+     * @return The maxConcurrentBackfillTasks.
+     */
+    @java.lang.Override
+    public int getMaxConcurrentBackfillTasks() {
+      return maxConcurrentBackfillTasks_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maximum number of concurrent backfill tasks. The number should be
+     * non-negative. If not set (or set to 0), the system's default value is used.
+     * </pre>
+     *
+     * <code>int32 max_concurrent_backfill_tasks = 4;</code>
+     *
+     * @param value The maxConcurrentBackfillTasks to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxConcurrentBackfillTasks(int value) {
+
+      maxConcurrentBackfillTasks_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maximum number of concurrent backfill tasks. The number should be
+     * non-negative. If not set (or set to 0), the system's default value is used.
+     * </pre>
+     *
+     * <code>int32 max_concurrent_backfill_tasks = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxConcurrentBackfillTasks() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      maxConcurrentBackfillTasks_ = 0;
       onChanged();
       return this;
     }
@@ -2422,7 +2520,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Stream large object values.
+     * Stream large object values. NOTE: This feature is currently experimental.
      * </pre>
      *
      * <code>
@@ -2439,7 +2537,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Stream large object values.
+     * Stream large object values. NOTE: This feature is currently experimental.
      * </pre>
      *
      * <code>
@@ -2470,7 +2568,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Stream large object values.
+     * Stream large object values. NOTE: This feature is currently experimental.
      * </pre>
      *
      * <code>
@@ -2495,7 +2593,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Stream large object values.
+     * Stream large object values. NOTE: This feature is currently experimental.
      * </pre>
      *
      * <code>
@@ -2518,7 +2616,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Stream large object values.
+     * Stream large object values. NOTE: This feature is currently experimental.
      * </pre>
      *
      * <code>
@@ -2556,7 +2654,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Stream large object values.
+     * Stream large object values. NOTE: This feature is currently experimental.
      * </pre>
      *
      * <code>
@@ -2583,7 +2681,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Stream large object values.
+     * Stream large object values. NOTE: This feature is currently experimental.
      * </pre>
      *
      * <code>
@@ -2598,7 +2696,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Stream large object values.
+     * Stream large object values. NOTE: This feature is currently experimental.
      * </pre>
      *
      * <code>
@@ -2623,7 +2721,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Stream large object values.
+     * Stream large object values. NOTE: This feature is currently experimental.
      * </pre>
      *
      * <code>

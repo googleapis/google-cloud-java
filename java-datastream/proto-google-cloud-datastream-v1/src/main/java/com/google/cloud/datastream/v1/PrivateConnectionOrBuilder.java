@@ -240,7 +240,8 @@ public interface PrivateConnectionOrBuilder
    *
    *
    * <pre>
-   * Output only. In case of error, the details of the error in a user-friendly format.
+   * Output only. In case of error, the details of the error in a user-friendly
+   * format.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.Error error = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -253,7 +254,8 @@ public interface PrivateConnectionOrBuilder
    *
    *
    * <pre>
-   * Output only. In case of error, the details of the error in a user-friendly format.
+   * Output only. In case of error, the details of the error in a user-friendly
+   * format.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.Error error = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -266,7 +268,8 @@ public interface PrivateConnectionOrBuilder
    *
    *
    * <pre>
-   * Output only. In case of error, the details of the error in a user-friendly format.
+   * Output only. In case of error, the details of the error in a user-friendly
+   * format.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.Error error = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];

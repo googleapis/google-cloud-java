@@ -78,7 +78,8 @@ public final class ListPrivateConnectionsRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The parent that owns the collection of private connectivity configurations.
+   * Required. The parent that owns the collection of private connectivity
+   * configurations.
    * </pre>
    *
    * <code>
@@ -103,7 +104,8 @@ public final class ListPrivateConnectionsRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Required. The parent that owns the collection of private connectivity configurations.
+   * Required. The parent that owns the collection of private connectivity
+   * configurations.
    * </pre>
    *
    * <code>
@@ -752,7 +754,8 @@ public final class ListPrivateConnectionsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The parent that owns the collection of private connectivity configurations.
+     * Required. The parent that owns the collection of private connectivity
+     * configurations.
      * </pre>
      *
      * <code>
@@ -776,7 +779,8 @@ public final class ListPrivateConnectionsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The parent that owns the collection of private connectivity configurations.
+     * Required. The parent that owns the collection of private connectivity
+     * configurations.
      * </pre>
      *
      * <code>
@@ -800,7 +804,8 @@ public final class ListPrivateConnectionsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The parent that owns the collection of private connectivity configurations.
+     * Required. The parent that owns the collection of private connectivity
+     * configurations.
      * </pre>
      *
      * <code>
@@ -823,7 +828,8 @@ public final class ListPrivateConnectionsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The parent that owns the collection of private connectivity configurations.
+     * Required. The parent that owns the collection of private connectivity
+     * configurations.
      * </pre>
      *
      * <code>
@@ -842,7 +848,8 @@ public final class ListPrivateConnectionsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Required. The parent that owns the collection of private connectivity configurations.
+     * Required. The parent that owns the collection of private connectivity
+     * configurations.
      * </pre>
      *
      * <code>

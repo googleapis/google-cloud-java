@@ -27,8 +27,8 @@ public interface FetchStaticIpsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name for the location for which static IPs should be returned.
-   * Must be in the format `projects/&#42;&#47;locations/&#42;`.
+   * Required. The resource name for the location for which static IPs should be
+   * returned. Must be in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface FetchStaticIpsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name for the location for which static IPs should be returned.
-   * Must be in the format `projects/&#42;&#47;locations/&#42;`.
+   * Required. The resource name for the location for which static IPs should be
+   * returned. Must be in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>

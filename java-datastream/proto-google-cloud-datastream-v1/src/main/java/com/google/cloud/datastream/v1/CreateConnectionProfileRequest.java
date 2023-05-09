@@ -309,8 +309,8 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. Only validate the connection profile, but don't create any resources.
-   * The default is false.
+   * Optional. Only validate the connection profile, but don't create any
+   * resources. The default is false.
    * </pre>
    *
    * <code>bool validate_only = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1400,8 +1400,8 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Only validate the connection profile, but don't create any resources.
-     * The default is false.
+     * Optional. Only validate the connection profile, but don't create any
+     * resources. The default is false.
      * </pre>
      *
      * <code>bool validate_only = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1416,8 +1416,8 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Only validate the connection profile, but don't create any resources.
-     * The default is false.
+     * Optional. Only validate the connection profile, but don't create any
+     * resources. The default is false.
      * </pre>
      *
      * <code>bool validate_only = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1436,8 +1436,8 @@ public final class CreateConnectionProfileRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Only validate the connection profile, but don't create any resources.
-     * The default is false.
+     * Optional. Only validate the connection profile, but don't create any
+     * resources. The default is false.
      * </pre>
      *
      * <code>bool validate_only = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
