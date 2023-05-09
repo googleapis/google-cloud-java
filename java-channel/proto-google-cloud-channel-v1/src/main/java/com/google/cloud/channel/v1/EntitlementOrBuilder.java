@@ -559,4 +559,31 @@ public interface EntitlementOrBuilder
    * <code>repeated .google.cloud.channel.v1.Parameter parameters = 26;</code>
    */
   com.google.cloud.channel.v1.ParameterOrBuilder getParametersOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The billing account resource name that is used to pay for this
+   * entitlement.
+   * </pre>
+   *
+   * <code>string billing_account = 28 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The billingAccount.
+   */
+  java.lang.String getBillingAccount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The billing account resource name that is used to pay for this
+   * entitlement.
+   * </pre>
+   *
+   * <code>string billing_account = 28 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for billingAccount.
+   */
+  com.google.protobuf.ByteString getBillingAccountBytes();
 }
