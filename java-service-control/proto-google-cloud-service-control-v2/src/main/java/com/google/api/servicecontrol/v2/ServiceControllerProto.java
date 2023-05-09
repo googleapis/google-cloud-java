@@ -51,6 +51,10 @@ public final class ServiceControllerProto {
       internal_static_google_api_servicecontrol_v2_ReportResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_api_servicecontrol_v2_ReportResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_api_servicecontrol_v2_ResourceInfoList_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_api_servicecontrol_v2_ResourceInfoList_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -80,25 +84,27 @@ public final class ServiceControllerProto {
           + "\002 \001(\t:\0028\001\"z\n\rReportRequest\022\024\n\014service_na"
           + "me\030\001 \001(\t\022\031\n\021service_config_id\030\002 \001(\t\0228\n\no"
           + "perations\030\003 \003(\0132$.google.rpc.context.Att"
-          + "ributeContext\"\020\n\016ReportResponse2\274\003\n\021Serv"
-          + "iceController\022\216\001\n\005Check\022*.google.api.ser"
-          + "vicecontrol.v2.CheckRequest\032+.google.api"
-          + ".servicecontrol.v2.CheckResponse\",\202\323\344\223\002&"
-          + "\"!/v2/services/{service_name}:check:\001*\022\222"
-          + "\001\n\006Report\022+.google.api.servicecontrol.v2"
-          + ".ReportRequest\032,.google.api.servicecontr"
-          + "ol.v2.ReportResponse\"-\202\323\344\223\002\'\"\"/v2/servic"
-          + "es/{service_name}:report:\001*\032\200\001\312A\035service"
-          + "control.googleapis.com\322A]https://www.goo"
-          + "gleapis.com/auth/cloud-platform,https://"
-          + "www.googleapis.com/auth/servicecontrolB\370"
-          + "\001\n com.google.api.servicecontrol.v2B\026Ser"
-          + "viceControllerProtoP\001ZJgoogle.golang.org"
-          + "/genproto/googleapis/api/servicecontrol/"
-          + "v2;servicecontrol\370\001\001\242\002\004GASC\252\002\036Google.Clo"
-          + "ud.ServiceControl.V2\312\002\036Google\\Cloud\\Serv"
-          + "iceControl\\V2\352\002!Google::Cloud::ServiceCo"
-          + "ntrol::V2b\006proto3"
+          + "ributeContext\"\020\n\016ReportResponse\"Q\n\020Resou"
+          + "rceInfoList\022=\n\tresources\030\001 \003(\0132*.google."
+          + "api.servicecontrol.v2.ResourceInfo2\274\003\n\021S"
+          + "erviceController\022\216\001\n\005Check\022*.google.api."
+          + "servicecontrol.v2.CheckRequest\032+.google."
+          + "api.servicecontrol.v2.CheckResponse\",\202\323\344"
+          + "\223\002&\"!/v2/services/{service_name}:check:\001"
+          + "*\022\222\001\n\006Report\022+.google.api.servicecontrol"
+          + ".v2.ReportRequest\032,.google.api.serviceco"
+          + "ntrol.v2.ReportResponse\"-\202\323\344\223\002\'\"\"/v2/ser"
+          + "vices/{service_name}:report:\001*\032\200\001\312A\035serv"
+          + "icecontrol.googleapis.com\322A]https://www."
+          + "googleapis.com/auth/cloud-platform,https"
+          + "://www.googleapis.com/auth/servicecontro"
+          + "lB\370\001\n com.google.api.servicecontrol.v2B\026"
+          + "ServiceControllerProtoP\001ZJgoogle.golang."
+          + "org/genproto/googleapis/api/servicecontr"
+          + "ol/v2;servicecontrol\370\001\001\242\002\004GASC\252\002\036Google."
+          + "Cloud.ServiceControl.V2\312\002\036Google\\Cloud\\S"
+          + "erviceControl\\V2\352\002!Google::Cloud::Servic"
+          + "eControl::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -157,6 +163,14 @@ public final class ServiceControllerProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_api_servicecontrol_v2_ReportResponse_descriptor,
             new java.lang.String[] {});
+    internal_static_google_api_servicecontrol_v2_ResourceInfoList_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_api_servicecontrol_v2_ResourceInfoList_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_api_servicecontrol_v2_ResourceInfoList_descriptor,
+            new java.lang.String[] {
+              "Resources",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
