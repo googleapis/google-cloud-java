@@ -76,7 +76,6 @@ import com.google.cloud.tpu.v2alpha1.ListRuntimeVersionsResponse;
 import com.google.cloud.tpu.v2alpha1.Node;
 import com.google.cloud.tpu.v2alpha1.OperationMetadata;
 import com.google.cloud.tpu.v2alpha1.QueuedResource;
-import com.google.cloud.tpu.v2alpha1.ResetQueuedResourceRequest;
 import com.google.cloud.tpu.v2alpha1.RuntimeVersion;
 import com.google.cloud.tpu.v2alpha1.SimulateMaintenanceEventRequest;
 import com.google.cloud.tpu.v2alpha1.StartNodeRequest;
@@ -169,10 +168,6 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
   private final OperationCallSettings<
           DeleteQueuedResourceRequest, QueuedResource, OperationMetadata>
       deleteQueuedResourceOperationSettings;
-  private final UnaryCallSettings<ResetQueuedResourceRequest, Operation>
-      resetQueuedResourceSettings;
-  private final OperationCallSettings<ResetQueuedResourceRequest, QueuedResource, OperationMetadata>
-      resetQueuedResourceOperationSettings;
   private final UnaryCallSettings<GenerateServiceIdentityRequest, GenerateServiceIdentityResponse>
       generateServiceIdentitySettings;
   private final PagedCallSettings<
@@ -591,17 +586,6 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
     return deleteQueuedResourceOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to resetQueuedResource. */
-  public UnaryCallSettings<ResetQueuedResourceRequest, Operation> resetQueuedResourceSettings() {
-    return resetQueuedResourceSettings;
-  }
-
-  /** Returns the object with the settings used for calls to resetQueuedResource. */
-  public OperationCallSettings<ResetQueuedResourceRequest, QueuedResource, OperationMetadata>
-      resetQueuedResourceOperationSettings() {
-    return resetQueuedResourceOperationSettings;
-  }
-
   /** Returns the object with the settings used for calls to generateServiceIdentity. */
   public UnaryCallSettings<GenerateServiceIdentityRequest, GenerateServiceIdentityResponse>
       generateServiceIdentitySettings() {
@@ -758,9 +742,6 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
     deleteQueuedResourceSettings = settingsBuilder.deleteQueuedResourceSettings().build();
     deleteQueuedResourceOperationSettings =
         settingsBuilder.deleteQueuedResourceOperationSettings().build();
-    resetQueuedResourceSettings = settingsBuilder.resetQueuedResourceSettings().build();
-    resetQueuedResourceOperationSettings =
-        settingsBuilder.resetQueuedResourceOperationSettings().build();
     generateServiceIdentitySettings = settingsBuilder.generateServiceIdentitySettings().build();
     listAcceleratorTypesSettings = settingsBuilder.listAcceleratorTypesSettings().build();
     getAcceleratorTypeSettings = settingsBuilder.getAcceleratorTypeSettings().build();
@@ -813,11 +794,6 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
     private final OperationCallSettings.Builder<
             DeleteQueuedResourceRequest, QueuedResource, OperationMetadata>
         deleteQueuedResourceOperationSettings;
-    private final UnaryCallSettings.Builder<ResetQueuedResourceRequest, Operation>
-        resetQueuedResourceSettings;
-    private final OperationCallSettings.Builder<
-            ResetQueuedResourceRequest, QueuedResource, OperationMetadata>
-        resetQueuedResourceOperationSettings;
     private final UnaryCallSettings.Builder<
             GenerateServiceIdentityRequest, GenerateServiceIdentityResponse>
         generateServiceIdentitySettings;
@@ -899,8 +875,6 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
       createQueuedResourceOperationSettings = OperationCallSettings.newBuilder();
       deleteQueuedResourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteQueuedResourceOperationSettings = OperationCallSettings.newBuilder();
-      resetQueuedResourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      resetQueuedResourceOperationSettings = OperationCallSettings.newBuilder();
       generateServiceIdentitySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listAcceleratorTypesSettings =
           PagedCallSettings.newBuilder(LIST_ACCELERATOR_TYPES_PAGE_STR_FACT);
@@ -927,7 +901,6 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
               getQueuedResourceSettings,
               createQueuedResourceSettings,
               deleteQueuedResourceSettings,
-              resetQueuedResourceSettings,
               generateServiceIdentitySettings,
               listAcceleratorTypesSettings,
               getAcceleratorTypeSettings,
@@ -963,9 +936,6 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
       deleteQueuedResourceSettings = settings.deleteQueuedResourceSettings.toBuilder();
       deleteQueuedResourceOperationSettings =
           settings.deleteQueuedResourceOperationSettings.toBuilder();
-      resetQueuedResourceSettings = settings.resetQueuedResourceSettings.toBuilder();
-      resetQueuedResourceOperationSettings =
-          settings.resetQueuedResourceOperationSettings.toBuilder();
       generateServiceIdentitySettings = settings.generateServiceIdentitySettings.toBuilder();
       listAcceleratorTypesSettings = settings.listAcceleratorTypesSettings.toBuilder();
       getAcceleratorTypeSettings = settings.getAcceleratorTypeSettings.toBuilder();
@@ -991,7 +961,6 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
               getQueuedResourceSettings,
               createQueuedResourceSettings,
               deleteQueuedResourceSettings,
-              resetQueuedResourceSettings,
               generateServiceIdentitySettings,
               listAcceleratorTypesSettings,
               getAcceleratorTypeSettings,
@@ -1069,11 +1038,6 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
 
       builder
           .deleteQueuedResourceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
-
-      builder
-          .resetQueuedResourceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -1282,30 +1246,6 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
                       .build()));
 
       builder
-          .resetQueuedResourceOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<ResetQueuedResourceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(QueuedResource.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(5000L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(45000L))
-                      .setInitialRpcTimeout(Duration.ZERO)
-                      .setRpcTimeoutMultiplier(1.0)
-                      .setMaxRpcTimeout(Duration.ZERO)
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-
-      builder
           .simulateMaintenanceEventOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -1465,21 +1405,6 @@ public class TpuStubSettings extends StubSettings<TpuStubSettings> {
             DeleteQueuedResourceRequest, QueuedResource, OperationMetadata>
         deleteQueuedResourceOperationSettings() {
       return deleteQueuedResourceOperationSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to resetQueuedResource. */
-    public UnaryCallSettings.Builder<ResetQueuedResourceRequest, Operation>
-        resetQueuedResourceSettings() {
-      return resetQueuedResourceSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to resetQueuedResource. */
-    @BetaApi(
-        "The surface for use by generated code is not stable yet and may change in the future.")
-    public OperationCallSettings.Builder<
-            ResetQueuedResourceRequest, QueuedResource, OperationMetadata>
-        resetQueuedResourceOperationSettings() {
-      return resetQueuedResourceOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to generateServiceIdentity. */

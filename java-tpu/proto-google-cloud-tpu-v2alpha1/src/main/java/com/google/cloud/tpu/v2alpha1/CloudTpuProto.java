@@ -188,10 +188,6 @@ public final class CloudTpuProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_tpu_v2alpha1_DeleteQueuedResourceRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_tpu_v2alpha1_ResetQueuedResourceRequest_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_tpu_v2alpha1_ResetQueuedResourceRequest_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_tpu_v2alpha1_ServiceIdentity_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_tpu_v2alpha1_ServiceIdentity_fieldAccessorTable;
@@ -441,175 +437,167 @@ public final class CloudTpuProto {
           + "a1.QueuedResourceB\003\340A\002\022\022\n\nrequest_id\030\004 \001"
           + "(\t\"j\n\033DeleteQueuedResourceRequest\0227\n\004nam"
           + "e\030\001 \001(\tB)\340A\002\372A#\n!tpu.googleapis.com/Queu"
-          + "edResource\022\022\n\nrequest_id\030\002 \001(\t\"U\n\032ResetQ"
-          + "ueuedResourceRequest\0227\n\004name\030\001 \001(\tB)\340A\002\372"
-          + "A#\n!tpu.googleapis.com/QueuedResource\" \n"
-          + "\017ServiceIdentity\022\r\n\005email\030\001 \001(\t\"[\n\036Gener"
-          + "ateServiceIdentityRequest\0229\n\006parent\030\001 \001("
-          + "\tB)\340A\002\372A#\n!locations.googleapis.com/Loca"
-          + "tion\"_\n\037GenerateServiceIdentityResponse\022"
-          + "<\n\010identity\030\001 \001(\0132*.google.cloud.tpu.v2a"
-          + "lpha1.ServiceIdentity\"\356\001\n\017AcceleratorTyp"
-          + "e\022\014\n\004name\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\022I\n\023acceler"
-          + "ator_configs\030\003 \003(\0132,.google.cloud.tpu.v2"
-          + "alpha1.AcceleratorConfig:t\352Aq\n\"tpu.googl"
-          + "eapis.com/AcceleratorType\022Kprojects/{pro"
-          + "ject}/locations/{location}/acceleratorTy"
-          + "pes/{accelerator_type}\"U\n\031GetAccelerator"
-          + "TypeRequest\0228\n\004name\030\001 \001(\tB*\340A\002\372A$\n\"tpu.g"
-          + "oogleapis.com/AcceleratorType\"\242\001\n\033ListAc"
-          + "celeratorTypesRequest\022:\n\006parent\030\001 \001(\tB*\340"
-          + "A\002\372A$\022\"tpu.googleapis.com/AcceleratorTyp"
-          + "e\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t"
-          + "\022\016\n\006filter\030\005 \001(\t\022\020\n\010order_by\030\006 \001(\t\"\223\001\n\034L"
-          + "istAcceleratorTypesResponse\022E\n\021accelerat"
-          + "or_types\030\001 \003(\0132*.google.cloud.tpu.v2alph"
-          + "a1.AcceleratorType\022\027\n\017next_page_token\030\002 "
-          + "\001(\t\022\023\n\013unreachable\030\003 \003(\t\"\242\001\n\016RuntimeVers"
-          + "ion\022\014\n\004name\030\001 \001(\t\022\017\n\007version\030\002 \001(\t:q\352An\n"
-          + "!tpu.googleapis.com/RuntimeVersion\022Iproj"
-          + "ects/{project}/locations/{location}/runt"
-          + "imeVersions/{runtime_version}\"S\n\030GetRunt"
-          + "imeVersionRequest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n"
-          + "!tpu.googleapis.com/RuntimeVersion\"\240\001\n\032L"
-          + "istRuntimeVersionsRequest\0229\n\006parent\030\001 \001("
-          + "\tB)\340A\002\372A#\022!tpu.googleapis.com/RuntimeVer"
-          + "sion\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 "
-          + "\001(\t\022\016\n\006filter\030\005 \001(\t\022\020\n\010order_by\030\006 \001(\t\"\220\001"
-          + "\n\033ListRuntimeVersionsResponse\022C\n\020runtime"
-          + "_versions\030\001 \003(\0132).google.cloud.tpu.v2alp"
-          + "ha1.RuntimeVersion\022\027\n\017next_page_token\030\002 "
-          + "\001(\t\022\023\n\013unreachable\030\003 \003(\t\"\326\001\n\021OperationMe"
-          + "tadata\022/\n\013create_time\030\001 \001(\0132\032.google.pro"
-          + "tobuf.Timestamp\022,\n\010end_time\030\002 \001(\0132\032.goog"
-          + "le.protobuf.Timestamp\022\016\n\006target\030\003 \001(\t\022\014\n"
-          + "\004verb\030\004 \001(\t\022\025\n\rstatus_detail\030\005 \001(\t\022\030\n\020ca"
-          + "ncel_requested\030\006 \001(\010\022\023\n\013api_version\030\007 \001("
-          + "\t\"\313\002\n\007Symptom\022/\n\013create_time\030\001 \001(\0132\032.goo"
-          + "gle.protobuf.Timestamp\022D\n\014symptom_type\030\002"
-          + " \001(\0162..google.cloud.tpu.v2alpha1.Symptom"
-          + ".SymptomType\022\017\n\007details\030\003 \001(\t\022\021\n\tworker_"
-          + "id\030\004 \001(\t\"\244\001\n\013SymptomType\022\034\n\030SYMPTOM_TYPE"
-          + "_UNSPECIFIED\020\000\022\016\n\nLOW_MEMORY\020\001\022\021\n\rOUT_OF"
-          + "_MEMORY\020\002\022\025\n\021EXECUTE_TIMED_OUT\020\003\022\023\n\017MESH"
-          + "_BUILD_FAIL\020\004\022\025\n\021HBM_OUT_OF_MEMORY\020\005\022\021\n\r"
-          + "PROJECT_ABUSE\020\006\"r\n\031GetGuestAttributesReq"
-          + "uest\022-\n\004name\030\001 \001(\tB\037\340A\002\372A\031\n\027tpu.googleap"
-          + "is.com/Node\022\022\n\nquery_path\030\002 \001(\t\022\022\n\nworke"
-          + "r_ids\030\003 \003(\t\"b\n\032GetGuestAttributesRespons"
-          + "e\022D\n\020guest_attributes\030\001 \003(\0132*.google.clo"
-          + "ud.tpu.v2alpha1.GuestAttributes\"d\n\037Simul"
-          + "ateMaintenanceEventRequest\022-\n\004name\030\001 \001(\t"
-          + "B\037\340A\002\372A\031\n\027tpu.googleapis.com/Node\022\022\n\nwor"
-          + "ker_ids\030\002 \003(\t\"\246\001\n\021AcceleratorConfig\022D\n\004t"
-          + "ype\030\001 \001(\01621.google.cloud.tpu.v2alpha1.Ac"
-          + "celeratorConfig.TypeB\003\340A\002\022\025\n\010topology\030\002 "
-          + "\001(\tB\003\340A\002\"4\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\006"
-          + "\n\002V2\020\002\022\006\n\002V3\020\004\022\006\n\002V4\020\007\"4\n\026ShieldedInstan"
-          + "ceConfig\022\032\n\022enable_secure_boot\030\001 \001(\0102\236\037\n"
-          + "\003Tpu\022\250\001\n\tListNodes\022+.google.cloud.tpu.v2"
-          + "alpha1.ListNodesRequest\032,.google.cloud.t"
-          + "pu.v2alpha1.ListNodesResponse\"@\202\323\344\223\0021\022//"
-          + "v2alpha1/{parent=projects/*/locations/*}"
-          + "/nodes\332A\006parent\022\225\001\n\007GetNode\022).google.clo"
-          + "ud.tpu.v2alpha1.GetNodeRequest\032\037.google."
-          + "cloud.tpu.v2alpha1.Node\">\202\323\344\223\0021\022//v2alph"
-          + "a1/{name=projects/*/locations/*/nodes/*}"
-          + "\332A\004name\022\312\001\n\nCreateNode\022,.google.cloud.tp"
-          + "u.v2alpha1.CreateNodeRequest\032\035.google.lo"
-          + "ngrunning.Operation\"o\202\323\344\223\0027\"//v2alpha1/{"
-          + "parent=projects/*/locations/*}/nodes:\004no"
-          + "de\332A\023parent,node,node_id\312A\031\n\004Node\022\021Opera"
-          + "tionMetadata\022\306\001\n\nDeleteNode\022,.google.clo"
-          + "ud.tpu.v2alpha1.DeleteNodeRequest\032\035.goog"
-          + "le.longrunning.Operation\"k\202\323\344\223\0021*//v2alp"
-          + "ha1/{name=projects/*/locations/*/nodes/*"
-          + "}\332A\004name\312A*\n\025google.protobuf.Empty\022\021Oper"
-          + "ationMetadata\022\262\001\n\010StopNode\022*.google.clou"
-          + "d.tpu.v2alpha1.StopNodeRequest\032\035.google."
-          + "longrunning.Operation\"[\202\323\344\223\0029\"4/v2alpha1"
-          + "/{name=projects/*/locations/*/nodes/*}:s"
-          + "top:\001*\312A\031\n\004Node\022\021OperationMetadata\022\265\001\n\tS"
-          + "tartNode\022+.google.cloud.tpu.v2alpha1.Sta"
-          + "rtNodeRequest\032\035.google.longrunning.Opera"
-          + "tion\"\\\202\323\344\223\002:\"5/v2alpha1/{name=projects/*"
-          + "/locations/*/nodes/*}:start:\001*\312A\031\n\004Node\022"
-          + "\021OperationMetadata\022\314\001\n\nUpdateNode\022,.goog"
-          + "le.cloud.tpu.v2alpha1.UpdateNodeRequest\032"
-          + "\035.google.longrunning.Operation\"q\202\323\344\223\002<24"
-          + "/v2alpha1/{node.name=projects/*/location"
-          + "s/*/nodes/*}:\004node\332A\020node,update_mask\312A\031"
-          + "\n\004Node\022\021OperationMetadata\022\320\001\n\023ListQueued"
-          + "Resources\0225.google.cloud.tpu.v2alpha1.Li"
-          + "stQueuedResourcesRequest\0326.google.cloud."
-          + "tpu.v2alpha1.ListQueuedResourcesResponse"
-          + "\"J\202\323\344\223\002;\0229/v2alpha1/{parent=projects/*/l"
-          + "ocations/*}/queuedResources\332A\006parent\022\275\001\n"
-          + "\021GetQueuedResource\0223.google.cloud.tpu.v2"
-          + "alpha1.GetQueuedResourceRequest\032).google"
-          + ".cloud.tpu.v2alpha1.QueuedResource\"H\202\323\344\223"
-          + "\002;\0229/v2alpha1/{name=projects/*/locations"
-          + "/*/queuedResources/*}\332A\004name\022\224\002\n\024CreateQ"
-          + "ueuedResource\0226.google.cloud.tpu.v2alpha"
-          + "1.CreateQueuedResourceRequest\032\035.google.l"
-          + "ongrunning.Operation\"\244\001\202\323\344\223\002L\"9/v2alpha1"
-          + "/{parent=projects/*/locations/*}/queuedR"
-          + "esources:\017queued_resource\332A)parent,queue"
-          + "d_resource,queued_resource_id\312A#\n\016Queued"
-          + "Resource\022\021OperationMetadata\022\335\001\n\024DeleteQu"
-          + "euedResource\0226.google.cloud.tpu.v2alpha1"
-          + ".DeleteQueuedResourceRequest\032\035.google.lo"
-          + "ngrunning.Operation\"n\202\323\344\223\002;*9/v2alpha1/{"
-          + "name=projects/*/locations/*/queuedResour"
-          + "ces/*}\332A\004name\312A#\n\016QueuedResource\022\021Operat"
-          + "ionMetadata\022\344\001\n\023ResetQueuedResource\0225.go"
-          + "ogle.cloud.tpu.v2alpha1.ResetQueuedResou"
-          + "rceRequest\032\035.google.longrunning.Operatio"
-          + "n\"w\202\323\344\223\002D\"?/v2alpha1/{name=projects/*/lo"
-          + "cations/*/queuedResources/*}:reset:\001*\332A\004"
-          + "name\312A#\n\016QueuedResource\022\021OperationMetada"
-          + "ta\022\336\001\n\027GenerateServiceIdentity\0229.google."
-          + "cloud.tpu.v2alpha1.GenerateServiceIdenti"
-          + "tyRequest\032:.google.cloud.tpu.v2alpha1.Ge"
-          + "nerateServiceIdentityResponse\"L\202\323\344\223\002F\"A/"
-          + "v2alpha1/{parent=projects/*/locations/*}"
-          + ":generateServiceIdentity:\001*\022\324\001\n\024ListAcce"
-          + "leratorTypes\0226.google.cloud.tpu.v2alpha1"
-          + ".ListAcceleratorTypesRequest\0327.google.cl"
-          + "oud.tpu.v2alpha1.ListAcceleratorTypesRes"
-          + "ponse\"K\202\323\344\223\002<\022:/v2alpha1/{parent=project"
-          + "s/*/locations/*}/acceleratorTypes\332A\006pare"
-          + "nt\022\301\001\n\022GetAcceleratorType\0224.google.cloud"
-          + ".tpu.v2alpha1.GetAcceleratorTypeRequest\032"
-          + "*.google.cloud.tpu.v2alpha1.AcceleratorT"
-          + "ype\"I\202\323\344\223\002<\022:/v2alpha1/{name=projects/*/"
-          + "locations/*/acceleratorTypes/*}\332A\004name\022\320"
-          + "\001\n\023ListRuntimeVersions\0225.google.cloud.tp"
-          + "u.v2alpha1.ListRuntimeVersionsRequest\0326."
-          + "google.cloud.tpu.v2alpha1.ListRuntimeVer"
-          + "sionsResponse\"J\202\323\344\223\002;\0229/v2alpha1/{parent"
-          + "=projects/*/locations/*}/runtimeVersions"
-          + "\332A\006parent\022\275\001\n\021GetRuntimeVersion\0223.google"
-          + ".cloud.tpu.v2alpha1.GetRuntimeVersionReq"
-          + "uest\032).google.cloud.tpu.v2alpha1.Runtime"
-          + "Version\"H\202\323\344\223\002;\0229/v2alpha1/{name=project"
-          + "s/*/locations/*/runtimeVersions/*}\332A\004nam"
-          + "e\022\320\001\n\022GetGuestAttributes\0224.google.cloud."
-          + "tpu.v2alpha1.GetGuestAttributesRequest\0325"
-          + ".google.cloud.tpu.v2alpha1.GetGuestAttri"
-          + "butesResponse\"M\202\323\344\223\002G\"B/v2alpha1/{name=p"
-          + "rojects/*/locations/*/nodes/*}:getGuestA"
-          + "ttributes:\001*\022\346\001\n\030SimulateMaintenanceEven"
-          + "t\022:.google.cloud.tpu.v2alpha1.SimulateMa"
-          + "intenanceEventRequest\032\035.google.longrunni"
-          + "ng.Operation\"o\202\323\344\223\002M\"H/v2alpha1/{name=pr"
-          + "ojects/*/locations/*/nodes/*}:simulateMa"
-          + "intenanceEvent:\001*\312A\031\n\004Node\022\021OperationMet"
-          + "adata\032F\312A\022tpu.googleapis.com\322A.https://w"
-          + "ww.googleapis.com/auth/cloud-platformBa\n"
-          + "\035com.google.cloud.tpu.v2alpha1B\rCloudTpu"
-          + "ProtoP\001Z/cloud.google.com/go/tpu/apiv2al"
-          + "pha1/tpupb;tpupbb\006proto3"
+          + "edResource\022\022\n\nrequest_id\030\002 \001(\t\" \n\017Servic"
+          + "eIdentity\022\r\n\005email\030\001 \001(\t\"[\n\036GenerateServ"
+          + "iceIdentityRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372"
+          + "A#\n!locations.googleapis.com/Location\"_\n"
+          + "\037GenerateServiceIdentityResponse\022<\n\010iden"
+          + "tity\030\001 \001(\0132*.google.cloud.tpu.v2alpha1.S"
+          + "erviceIdentity\"\356\001\n\017AcceleratorType\022\014\n\004na"
+          + "me\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\022I\n\023accelerator_co"
+          + "nfigs\030\003 \003(\0132,.google.cloud.tpu.v2alpha1."
+          + "AcceleratorConfig:t\352Aq\n\"tpu.googleapis.c"
+          + "om/AcceleratorType\022Kprojects/{project}/l"
+          + "ocations/{location}/acceleratorTypes/{ac"
+          + "celerator_type}\"U\n\031GetAcceleratorTypeReq"
+          + "uest\0228\n\004name\030\001 \001(\tB*\340A\002\372A$\n\"tpu.googleap"
+          + "is.com/AcceleratorType\"\242\001\n\033ListAccelerat"
+          + "orTypesRequest\022:\n\006parent\030\001 \001(\tB*\340A\002\372A$\022\""
+          + "tpu.googleapis.com/AcceleratorType\022\021\n\tpa"
+          + "ge_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006fil"
+          + "ter\030\005 \001(\t\022\020\n\010order_by\030\006 \001(\t\"\223\001\n\034ListAcce"
+          + "leratorTypesResponse\022E\n\021accelerator_type"
+          + "s\030\001 \003(\0132*.google.cloud.tpu.v2alpha1.Acce"
+          + "leratorType\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013"
+          + "unreachable\030\003 \003(\t\"\242\001\n\016RuntimeVersion\022\014\n\004"
+          + "name\030\001 \001(\t\022\017\n\007version\030\002 \001(\t:q\352An\n!tpu.go"
+          + "ogleapis.com/RuntimeVersion\022Iprojects/{p"
+          + "roject}/locations/{location}/runtimeVers"
+          + "ions/{runtime_version}\"S\n\030GetRuntimeVers"
+          + "ionRequest\0227\n\004name\030\001 \001(\tB)\340A\002\372A#\n!tpu.go"
+          + "ogleapis.com/RuntimeVersion\"\240\001\n\032ListRunt"
+          + "imeVersionsRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372"
+          + "A#\022!tpu.googleapis.com/RuntimeVersion\022\021\n"
+          + "\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006"
+          + "filter\030\005 \001(\t\022\020\n\010order_by\030\006 \001(\t\"\220\001\n\033ListR"
+          + "untimeVersionsResponse\022C\n\020runtime_versio"
+          + "ns\030\001 \003(\0132).google.cloud.tpu.v2alpha1.Run"
+          + "timeVersion\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013"
+          + "unreachable\030\003 \003(\t\"\326\001\n\021OperationMetadata\022"
+          + "/\n\013create_time\030\001 \001(\0132\032.google.protobuf.T"
+          + "imestamp\022,\n\010end_time\030\002 \001(\0132\032.google.prot"
+          + "obuf.Timestamp\022\016\n\006target\030\003 \001(\t\022\014\n\004verb\030\004"
+          + " \001(\t\022\025\n\rstatus_detail\030\005 \001(\t\022\030\n\020cancel_re"
+          + "quested\030\006 \001(\010\022\023\n\013api_version\030\007 \001(\t\"\313\002\n\007S"
+          + "ymptom\022/\n\013create_time\030\001 \001(\0132\032.google.pro"
+          + "tobuf.Timestamp\022D\n\014symptom_type\030\002 \001(\0162.."
+          + "google.cloud.tpu.v2alpha1.Symptom.Sympto"
+          + "mType\022\017\n\007details\030\003 \001(\t\022\021\n\tworker_id\030\004 \001("
+          + "\t\"\244\001\n\013SymptomType\022\034\n\030SYMPTOM_TYPE_UNSPEC"
+          + "IFIED\020\000\022\016\n\nLOW_MEMORY\020\001\022\021\n\rOUT_OF_MEMORY"
+          + "\020\002\022\025\n\021EXECUTE_TIMED_OUT\020\003\022\023\n\017MESH_BUILD_"
+          + "FAIL\020\004\022\025\n\021HBM_OUT_OF_MEMORY\020\005\022\021\n\rPROJECT"
+          + "_ABUSE\020\006\"r\n\031GetGuestAttributesRequest\022-\n"
+          + "\004name\030\001 \001(\tB\037\340A\002\372A\031\n\027tpu.googleapis.com/"
+          + "Node\022\022\n\nquery_path\030\002 \001(\t\022\022\n\nworker_ids\030\003"
+          + " \003(\t\"b\n\032GetGuestAttributesResponse\022D\n\020gu"
+          + "est_attributes\030\001 \003(\0132*.google.cloud.tpu."
+          + "v2alpha1.GuestAttributes\"d\n\037SimulateMain"
+          + "tenanceEventRequest\022-\n\004name\030\001 \001(\tB\037\340A\002\372A"
+          + "\031\n\027tpu.googleapis.com/Node\022\022\n\nworker_ids"
+          + "\030\002 \003(\t\"\246\001\n\021AcceleratorConfig\022D\n\004type\030\001 \001"
+          + "(\01621.google.cloud.tpu.v2alpha1.Accelerat"
+          + "orConfig.TypeB\003\340A\002\022\025\n\010topology\030\002 \001(\tB\003\340A"
+          + "\002\"4\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\006\n\002V2\020\002\022"
+          + "\006\n\002V3\020\004\022\006\n\002V4\020\007\"4\n\026ShieldedInstanceConfi"
+          + "g\022\032\n\022enable_secure_boot\030\001 \001(\0102\267\035\n\003Tpu\022\250\001"
+          + "\n\tListNodes\022+.google.cloud.tpu.v2alpha1."
+          + "ListNodesRequest\032,.google.cloud.tpu.v2al"
+          + "pha1.ListNodesResponse\"@\202\323\344\223\0021\022//v2alpha"
+          + "1/{parent=projects/*/locations/*}/nodes\332"
+          + "A\006parent\022\225\001\n\007GetNode\022).google.cloud.tpu."
+          + "v2alpha1.GetNodeRequest\032\037.google.cloud.t"
+          + "pu.v2alpha1.Node\">\202\323\344\223\0021\022//v2alpha1/{nam"
+          + "e=projects/*/locations/*/nodes/*}\332A\004name"
+          + "\022\312\001\n\nCreateNode\022,.google.cloud.tpu.v2alp"
+          + "ha1.CreateNodeRequest\032\035.google.longrunni"
+          + "ng.Operation\"o\202\323\344\223\0027\"//v2alpha1/{parent="
+          + "projects/*/locations/*}/nodes:\004node\332A\023pa"
+          + "rent,node,node_id\312A\031\n\004Node\022\021OperationMet"
+          + "adata\022\306\001\n\nDeleteNode\022,.google.cloud.tpu."
+          + "v2alpha1.DeleteNodeRequest\032\035.google.long"
+          + "running.Operation\"k\202\323\344\223\0021*//v2alpha1/{na"
+          + "me=projects/*/locations/*/nodes/*}\332A\004nam"
+          + "e\312A*\n\025google.protobuf.Empty\022\021OperationMe"
+          + "tadata\022\262\001\n\010StopNode\022*.google.cloud.tpu.v"
+          + "2alpha1.StopNodeRequest\032\035.google.longrun"
+          + "ning.Operation\"[\202\323\344\223\0029\"4/v2alpha1/{name="
+          + "projects/*/locations/*/nodes/*}:stop:\001*\312"
+          + "A\031\n\004Node\022\021OperationMetadata\022\265\001\n\tStartNod"
+          + "e\022+.google.cloud.tpu.v2alpha1.StartNodeR"
+          + "equest\032\035.google.longrunning.Operation\"\\\202"
+          + "\323\344\223\002:\"5/v2alpha1/{name=projects/*/locati"
+          + "ons/*/nodes/*}:start:\001*\312A\031\n\004Node\022\021Operat"
+          + "ionMetadata\022\314\001\n\nUpdateNode\022,.google.clou"
+          + "d.tpu.v2alpha1.UpdateNodeRequest\032\035.googl"
+          + "e.longrunning.Operation\"q\202\323\344\223\002<24/v2alph"
+          + "a1/{node.name=projects/*/locations/*/nod"
+          + "es/*}:\004node\332A\020node,update_mask\312A\031\n\004Node\022"
+          + "\021OperationMetadata\022\320\001\n\023ListQueuedResourc"
+          + "es\0225.google.cloud.tpu.v2alpha1.ListQueue"
+          + "dResourcesRequest\0326.google.cloud.tpu.v2a"
+          + "lpha1.ListQueuedResourcesResponse\"J\202\323\344\223\002"
+          + ";\0229/v2alpha1/{parent=projects/*/location"
+          + "s/*}/queuedResources\332A\006parent\022\275\001\n\021GetQue"
+          + "uedResource\0223.google.cloud.tpu.v2alpha1."
+          + "GetQueuedResourceRequest\032).google.cloud."
+          + "tpu.v2alpha1.QueuedResource\"H\202\323\344\223\002;\0229/v2"
+          + "alpha1/{name=projects/*/locations/*/queu"
+          + "edResources/*}\332A\004name\022\224\002\n\024CreateQueuedRe"
+          + "source\0226.google.cloud.tpu.v2alpha1.Creat"
+          + "eQueuedResourceRequest\032\035.google.longrunn"
+          + "ing.Operation\"\244\001\202\323\344\223\002L\"9/v2alpha1/{paren"
+          + "t=projects/*/locations/*}/queuedResource"
+          + "s:\017queued_resource\332A)parent,queued_resou"
+          + "rce,queued_resource_id\312A#\n\016QueuedResourc"
+          + "e\022\021OperationMetadata\022\335\001\n\024DeleteQueuedRes"
+          + "ource\0226.google.cloud.tpu.v2alpha1.Delete"
+          + "QueuedResourceRequest\032\035.google.longrunni"
+          + "ng.Operation\"n\202\323\344\223\002;*9/v2alpha1/{name=pr"
+          + "ojects/*/locations/*/queuedResources/*}\332"
+          + "A\004name\312A#\n\016QueuedResource\022\021OperationMeta"
+          + "data\022\336\001\n\027GenerateServiceIdentity\0229.googl"
+          + "e.cloud.tpu.v2alpha1.GenerateServiceIden"
+          + "tityRequest\032:.google.cloud.tpu.v2alpha1."
+          + "GenerateServiceIdentityResponse\"L\202\323\344\223\002F\""
+          + "A/v2alpha1/{parent=projects/*/locations/"
+          + "*}:generateServiceIdentity:\001*\022\324\001\n\024ListAc"
+          + "celeratorTypes\0226.google.cloud.tpu.v2alph"
+          + "a1.ListAcceleratorTypesRequest\0327.google."
+          + "cloud.tpu.v2alpha1.ListAcceleratorTypesR"
+          + "esponse\"K\202\323\344\223\002<\022:/v2alpha1/{parent=proje"
+          + "cts/*/locations/*}/acceleratorTypes\332A\006pa"
+          + "rent\022\301\001\n\022GetAcceleratorType\0224.google.clo"
+          + "ud.tpu.v2alpha1.GetAcceleratorTypeReques"
+          + "t\032*.google.cloud.tpu.v2alpha1.Accelerato"
+          + "rType\"I\202\323\344\223\002<\022:/v2alpha1/{name=projects/"
+          + "*/locations/*/acceleratorTypes/*}\332A\004name"
+          + "\022\320\001\n\023ListRuntimeVersions\0225.google.cloud."
+          + "tpu.v2alpha1.ListRuntimeVersionsRequest\032"
+          + "6.google.cloud.tpu.v2alpha1.ListRuntimeV"
+          + "ersionsResponse\"J\202\323\344\223\002;\0229/v2alpha1/{pare"
+          + "nt=projects/*/locations/*}/runtimeVersio"
+          + "ns\332A\006parent\022\275\001\n\021GetRuntimeVersion\0223.goog"
+          + "le.cloud.tpu.v2alpha1.GetRuntimeVersionR"
+          + "equest\032).google.cloud.tpu.v2alpha1.Runti"
+          + "meVersion\"H\202\323\344\223\002;\0229/v2alpha1/{name=proje"
+          + "cts/*/locations/*/runtimeVersions/*}\332A\004n"
+          + "ame\022\320\001\n\022GetGuestAttributes\0224.google.clou"
+          + "d.tpu.v2alpha1.GetGuestAttributesRequest"
+          + "\0325.google.cloud.tpu.v2alpha1.GetGuestAtt"
+          + "ributesResponse\"M\202\323\344\223\002G\"B/v2alpha1/{name"
+          + "=projects/*/locations/*/nodes/*}:getGues"
+          + "tAttributes:\001*\022\346\001\n\030SimulateMaintenanceEv"
+          + "ent\022:.google.cloud.tpu.v2alpha1.Simulate"
+          + "MaintenanceEventRequest\032\035.google.longrun"
+          + "ning.Operation\"o\202\323\344\223\002M\"H/v2alpha1/{name="
+          + "projects/*/locations/*/nodes/*}:simulate"
+          + "MaintenanceEvent:\001*\312A\031\n\004Node\022\021OperationM"
+          + "etadata\032F\312A\022tpu.googleapis.com\322A.https:/"
+          + "/www.googleapis.com/auth/cloud-platformB"
+          + "a\n\035com.google.cloud.tpu.v2alpha1B\rCloudT"
+          + "puProtoP\001Z/cloud.google.com/go/tpu/apiv2"
+          + "alpha1/tpupb;tpupbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -993,16 +981,8 @@ public final class CloudTpuProto {
             new java.lang.String[] {
               "Name", "RequestId",
             });
-    internal_static_google_cloud_tpu_v2alpha1_ResetQueuedResourceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(25);
-    internal_static_google_cloud_tpu_v2alpha1_ResetQueuedResourceRequest_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_tpu_v2alpha1_ResetQueuedResourceRequest_descriptor,
-            new java.lang.String[] {
-              "Name",
-            });
     internal_static_google_cloud_tpu_v2alpha1_ServiceIdentity_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_tpu_v2alpha1_ServiceIdentity_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tpu_v2alpha1_ServiceIdentity_descriptor,
@@ -1010,7 +990,7 @@ public final class CloudTpuProto {
               "Email",
             });
     internal_static_google_cloud_tpu_v2alpha1_GenerateServiceIdentityRequest_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_tpu_v2alpha1_GenerateServiceIdentityRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tpu_v2alpha1_GenerateServiceIdentityRequest_descriptor,
@@ -1018,7 +998,7 @@ public final class CloudTpuProto {
               "Parent",
             });
     internal_static_google_cloud_tpu_v2alpha1_GenerateServiceIdentityResponse_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_tpu_v2alpha1_GenerateServiceIdentityResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tpu_v2alpha1_GenerateServiceIdentityResponse_descriptor,
@@ -1026,7 +1006,7 @@ public final class CloudTpuProto {
               "Identity",
             });
     internal_static_google_cloud_tpu_v2alpha1_AcceleratorType_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_tpu_v2alpha1_AcceleratorType_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tpu_v2alpha1_AcceleratorType_descriptor,
@@ -1034,7 +1014,7 @@ public final class CloudTpuProto {
               "Name", "Type", "AcceleratorConfigs",
             });
     internal_static_google_cloud_tpu_v2alpha1_GetAcceleratorTypeRequest_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_tpu_v2alpha1_GetAcceleratorTypeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tpu_v2alpha1_GetAcceleratorTypeRequest_descriptor,
@@ -1042,7 +1022,7 @@ public final class CloudTpuProto {
               "Name",
             });
     internal_static_google_cloud_tpu_v2alpha1_ListAcceleratorTypesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_tpu_v2alpha1_ListAcceleratorTypesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tpu_v2alpha1_ListAcceleratorTypesRequest_descriptor,
@@ -1050,7 +1030,7 @@ public final class CloudTpuProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_tpu_v2alpha1_ListAcceleratorTypesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_tpu_v2alpha1_ListAcceleratorTypesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tpu_v2alpha1_ListAcceleratorTypesResponse_descriptor,
@@ -1058,7 +1038,7 @@ public final class CloudTpuProto {
               "AcceleratorTypes", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_tpu_v2alpha1_RuntimeVersion_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_tpu_v2alpha1_RuntimeVersion_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tpu_v2alpha1_RuntimeVersion_descriptor,
@@ -1066,7 +1046,7 @@ public final class CloudTpuProto {
               "Name", "Version",
             });
     internal_static_google_cloud_tpu_v2alpha1_GetRuntimeVersionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_cloud_tpu_v2alpha1_GetRuntimeVersionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tpu_v2alpha1_GetRuntimeVersionRequest_descriptor,
@@ -1074,7 +1054,7 @@ public final class CloudTpuProto {
               "Name",
             });
     internal_static_google_cloud_tpu_v2alpha1_ListRuntimeVersionsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(35);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_cloud_tpu_v2alpha1_ListRuntimeVersionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tpu_v2alpha1_ListRuntimeVersionsRequest_descriptor,
@@ -1082,7 +1062,7 @@ public final class CloudTpuProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_tpu_v2alpha1_ListRuntimeVersionsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(36);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_cloud_tpu_v2alpha1_ListRuntimeVersionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tpu_v2alpha1_ListRuntimeVersionsResponse_descriptor,
@@ -1090,7 +1070,7 @@ public final class CloudTpuProto {
               "RuntimeVersions", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_tpu_v2alpha1_OperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(37);
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_cloud_tpu_v2alpha1_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tpu_v2alpha1_OperationMetadata_descriptor,
@@ -1104,7 +1084,7 @@ public final class CloudTpuProto {
               "ApiVersion",
             });
     internal_static_google_cloud_tpu_v2alpha1_Symptom_descriptor =
-        getDescriptor().getMessageTypes().get(38);
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_cloud_tpu_v2alpha1_Symptom_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tpu_v2alpha1_Symptom_descriptor,
@@ -1112,7 +1092,7 @@ public final class CloudTpuProto {
               "CreateTime", "SymptomType", "Details", "WorkerId",
             });
     internal_static_google_cloud_tpu_v2alpha1_GetGuestAttributesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(39);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_cloud_tpu_v2alpha1_GetGuestAttributesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tpu_v2alpha1_GetGuestAttributesRequest_descriptor,
@@ -1120,7 +1100,7 @@ public final class CloudTpuProto {
               "Name", "QueryPath", "WorkerIds",
             });
     internal_static_google_cloud_tpu_v2alpha1_GetGuestAttributesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(40);
+        getDescriptor().getMessageTypes().get(39);
     internal_static_google_cloud_tpu_v2alpha1_GetGuestAttributesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tpu_v2alpha1_GetGuestAttributesResponse_descriptor,
@@ -1128,7 +1108,7 @@ public final class CloudTpuProto {
               "GuestAttributes",
             });
     internal_static_google_cloud_tpu_v2alpha1_SimulateMaintenanceEventRequest_descriptor =
-        getDescriptor().getMessageTypes().get(41);
+        getDescriptor().getMessageTypes().get(40);
     internal_static_google_cloud_tpu_v2alpha1_SimulateMaintenanceEventRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tpu_v2alpha1_SimulateMaintenanceEventRequest_descriptor,
@@ -1136,7 +1116,7 @@ public final class CloudTpuProto {
               "Name", "WorkerIds",
             });
     internal_static_google_cloud_tpu_v2alpha1_AcceleratorConfig_descriptor =
-        getDescriptor().getMessageTypes().get(42);
+        getDescriptor().getMessageTypes().get(41);
     internal_static_google_cloud_tpu_v2alpha1_AcceleratorConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tpu_v2alpha1_AcceleratorConfig_descriptor,
@@ -1144,7 +1124,7 @@ public final class CloudTpuProto {
               "Type", "Topology",
             });
     internal_static_google_cloud_tpu_v2alpha1_ShieldedInstanceConfig_descriptor =
-        getDescriptor().getMessageTypes().get(43);
+        getDescriptor().getMessageTypes().get(42);
     internal_static_google_cloud_tpu_v2alpha1_ShieldedInstanceConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tpu_v2alpha1_ShieldedInstanceConfig_descriptor,
