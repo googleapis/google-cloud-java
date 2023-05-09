@@ -492,15 +492,17 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Token to attribute an API response to user action(s) to trigger the event.
    * Highly recommended for user events that are the result of
-   * [PredictionService.Predict][]. This field enables accurate attribution of
-   * recommendation model performance.
+   * [RecommendationService.Recommend][google.cloud.discoveryengine.v1beta.RecommendationService.Recommend].
+   * This field enables accurate attribution of recommendation model
+   * performance.
    * The value must be one of:
    * * [PredictResponse.attribution_token][] for events that are the result of
-   * [PredictionService.Predict][].
+   * [RecommendationService.Recommend][google.cloud.discoveryengine.v1beta.RecommendationService.Recommend].
    * * [SearchResponse.attribution_token][google.cloud.discoveryengine.v1beta.SearchResponse.attribution_token] for events that are the result of
    * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search].
    * * [CompleteQueryResponse.attribution_token][] for events that are the
-   * result of [SearchService.CompleteQuery][].
+   * result of
+   * [CompletionService.CompleteQuery][google.cloud.discoveryengine.v1beta.CompletionService.CompleteQuery].
    * This token enables us to accurately attribute page view or conversion
    * completion back to the event and the particular predict response containing
    * this clicked/purchased product. If user clicks on product K in the
@@ -531,15 +533,17 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Token to attribute an API response to user action(s) to trigger the event.
    * Highly recommended for user events that are the result of
-   * [PredictionService.Predict][]. This field enables accurate attribution of
-   * recommendation model performance.
+   * [RecommendationService.Recommend][google.cloud.discoveryengine.v1beta.RecommendationService.Recommend].
+   * This field enables accurate attribution of recommendation model
+   * performance.
    * The value must be one of:
    * * [PredictResponse.attribution_token][] for events that are the result of
-   * [PredictionService.Predict][].
+   * [RecommendationService.Recommend][google.cloud.discoveryengine.v1beta.RecommendationService.Recommend].
    * * [SearchResponse.attribution_token][google.cloud.discoveryengine.v1beta.SearchResponse.attribution_token] for events that are the result of
    * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search].
    * * [CompleteQueryResponse.attribution_token][] for events that are the
-   * result of [SearchService.CompleteQuery][].
+   * result of
+   * [CompletionService.CompleteQuery][google.cloud.discoveryengine.v1beta.CompletionService.CompleteQuery].
    * This token enables us to accurately attribute page view or conversion
    * completion back to the event and the particular predict response containing
    * this clicked/purchased product. If user clicks on product K in the
@@ -576,13 +580,14 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * The filter syntax consists of an expression language for constructing a
    * predicate from one or more fields of the documents being filtered.
    * One example is for `search` events, the associated
-   * [SearchService.SearchRequest][] may contain a filter expression in
-   * [SearchService.SearchRequest.filter][] conforming to
-   * https://google.aip.dev/160#filtering.
+   * [SearchRequest][google.cloud.discoveryengine.v1beta.SearchRequest] may
+   * contain a filter expression in
+   * [SearchRequest.filter][google.cloud.discoveryengine.v1beta.SearchRequest.filter]
+   * conforming to https://google.aip.dev/160#filtering.
    * Similarly, for `view-item-list` events that are generated from a
-   * [PredictionService.PredictRequest][], this field may be populated directly
-   * from [PredictionService.PredictRequest.filter][] conforming to
-   * https://google.aip.dev/160#filtering.
+   * [RecommendationService.RecommendRequest][], this field may be populated
+   * directly from [RecommendationService.RecommendRequest.filter][] conforming
+   * to https://google.aip.dev/160#filtering.
    * The value must be a UTF-8 encoded string with a length limit of 1,000
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -610,13 +615,14 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * The filter syntax consists of an expression language for constructing a
    * predicate from one or more fields of the documents being filtered.
    * One example is for `search` events, the associated
-   * [SearchService.SearchRequest][] may contain a filter expression in
-   * [SearchService.SearchRequest.filter][] conforming to
-   * https://google.aip.dev/160#filtering.
+   * [SearchRequest][google.cloud.discoveryengine.v1beta.SearchRequest] may
+   * contain a filter expression in
+   * [SearchRequest.filter][google.cloud.discoveryengine.v1beta.SearchRequest.filter]
+   * conforming to https://google.aip.dev/160#filtering.
    * Similarly, for `view-item-list` events that are generated from a
-   * [PredictionService.PredictRequest][], this field may be populated directly
-   * from [PredictionService.PredictRequest.filter][] conforming to
-   * https://google.aip.dev/160#filtering.
+   * [RecommendationService.RecommendRequest][], this field may be populated
+   * directly from [RecommendationService.RecommendRequest.filter][] conforming
+   * to https://google.aip.dev/160#filtering.
    * The value must be a UTF-8 encoded string with a length limit of 1,000
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -3435,15 +3441,17 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Token to attribute an API response to user action(s) to trigger the event.
      * Highly recommended for user events that are the result of
-     * [PredictionService.Predict][]. This field enables accurate attribution of
-     * recommendation model performance.
+     * [RecommendationService.Recommend][google.cloud.discoveryengine.v1beta.RecommendationService.Recommend].
+     * This field enables accurate attribution of recommendation model
+     * performance.
      * The value must be one of:
      * * [PredictResponse.attribution_token][] for events that are the result of
-     * [PredictionService.Predict][].
+     * [RecommendationService.Recommend][google.cloud.discoveryengine.v1beta.RecommendationService.Recommend].
      * * [SearchResponse.attribution_token][google.cloud.discoveryengine.v1beta.SearchResponse.attribution_token] for events that are the result of
      * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search].
      * * [CompleteQueryResponse.attribution_token][] for events that are the
-     * result of [SearchService.CompleteQuery][].
+     * result of
+     * [CompletionService.CompleteQuery][google.cloud.discoveryengine.v1beta.CompletionService.CompleteQuery].
      * This token enables us to accurately attribute page view or conversion
      * completion back to the event and the particular predict response containing
      * this clicked/purchased product. If user clicks on product K in the
@@ -3473,15 +3481,17 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Token to attribute an API response to user action(s) to trigger the event.
      * Highly recommended for user events that are the result of
-     * [PredictionService.Predict][]. This field enables accurate attribution of
-     * recommendation model performance.
+     * [RecommendationService.Recommend][google.cloud.discoveryengine.v1beta.RecommendationService.Recommend].
+     * This field enables accurate attribution of recommendation model
+     * performance.
      * The value must be one of:
      * * [PredictResponse.attribution_token][] for events that are the result of
-     * [PredictionService.Predict][].
+     * [RecommendationService.Recommend][google.cloud.discoveryengine.v1beta.RecommendationService.Recommend].
      * * [SearchResponse.attribution_token][google.cloud.discoveryengine.v1beta.SearchResponse.attribution_token] for events that are the result of
      * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search].
      * * [CompleteQueryResponse.attribution_token][] for events that are the
-     * result of [SearchService.CompleteQuery][].
+     * result of
+     * [CompletionService.CompleteQuery][google.cloud.discoveryengine.v1beta.CompletionService.CompleteQuery].
      * This token enables us to accurately attribute page view or conversion
      * completion back to the event and the particular predict response containing
      * this clicked/purchased product. If user clicks on product K in the
@@ -3511,15 +3521,17 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Token to attribute an API response to user action(s) to trigger the event.
      * Highly recommended for user events that are the result of
-     * [PredictionService.Predict][]. This field enables accurate attribution of
-     * recommendation model performance.
+     * [RecommendationService.Recommend][google.cloud.discoveryengine.v1beta.RecommendationService.Recommend].
+     * This field enables accurate attribution of recommendation model
+     * performance.
      * The value must be one of:
      * * [PredictResponse.attribution_token][] for events that are the result of
-     * [PredictionService.Predict][].
+     * [RecommendationService.Recommend][google.cloud.discoveryengine.v1beta.RecommendationService.Recommend].
      * * [SearchResponse.attribution_token][google.cloud.discoveryengine.v1beta.SearchResponse.attribution_token] for events that are the result of
      * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search].
      * * [CompleteQueryResponse.attribution_token][] for events that are the
-     * result of [SearchService.CompleteQuery][].
+     * result of
+     * [CompletionService.CompleteQuery][google.cloud.discoveryengine.v1beta.CompletionService.CompleteQuery].
      * This token enables us to accurately attribute page view or conversion
      * completion back to the event and the particular predict response containing
      * this clicked/purchased product. If user clicks on product K in the
@@ -3548,15 +3560,17 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Token to attribute an API response to user action(s) to trigger the event.
      * Highly recommended for user events that are the result of
-     * [PredictionService.Predict][]. This field enables accurate attribution of
-     * recommendation model performance.
+     * [RecommendationService.Recommend][google.cloud.discoveryengine.v1beta.RecommendationService.Recommend].
+     * This field enables accurate attribution of recommendation model
+     * performance.
      * The value must be one of:
      * * [PredictResponse.attribution_token][] for events that are the result of
-     * [PredictionService.Predict][].
+     * [RecommendationService.Recommend][google.cloud.discoveryengine.v1beta.RecommendationService.Recommend].
      * * [SearchResponse.attribution_token][google.cloud.discoveryengine.v1beta.SearchResponse.attribution_token] for events that are the result of
      * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search].
      * * [CompleteQueryResponse.attribution_token][] for events that are the
-     * result of [SearchService.CompleteQuery][].
+     * result of
+     * [CompletionService.CompleteQuery][google.cloud.discoveryengine.v1beta.CompletionService.CompleteQuery].
      * This token enables us to accurately attribute page view or conversion
      * completion back to the event and the particular predict response containing
      * this clicked/purchased product. If user clicks on product K in the
@@ -3581,15 +3595,17 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Token to attribute an API response to user action(s) to trigger the event.
      * Highly recommended for user events that are the result of
-     * [PredictionService.Predict][]. This field enables accurate attribution of
-     * recommendation model performance.
+     * [RecommendationService.Recommend][google.cloud.discoveryengine.v1beta.RecommendationService.Recommend].
+     * This field enables accurate attribution of recommendation model
+     * performance.
      * The value must be one of:
      * * [PredictResponse.attribution_token][] for events that are the result of
-     * [PredictionService.Predict][].
+     * [RecommendationService.Recommend][google.cloud.discoveryengine.v1beta.RecommendationService.Recommend].
      * * [SearchResponse.attribution_token][google.cloud.discoveryengine.v1beta.SearchResponse.attribution_token] for events that are the result of
      * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search].
      * * [CompleteQueryResponse.attribution_token][] for events that are the
-     * result of [SearchService.CompleteQuery][].
+     * result of
+     * [CompletionService.CompleteQuery][google.cloud.discoveryengine.v1beta.CompletionService.CompleteQuery].
      * This token enables us to accurately attribute page view or conversion
      * completion back to the event and the particular predict response containing
      * this clicked/purchased product. If user clicks on product K in the
@@ -3622,13 +3638,14 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * The filter syntax consists of an expression language for constructing a
      * predicate from one or more fields of the documents being filtered.
      * One example is for `search` events, the associated
-     * [SearchService.SearchRequest][] may contain a filter expression in
-     * [SearchService.SearchRequest.filter][] conforming to
-     * https://google.aip.dev/160#filtering.
+     * [SearchRequest][google.cloud.discoveryengine.v1beta.SearchRequest] may
+     * contain a filter expression in
+     * [SearchRequest.filter][google.cloud.discoveryengine.v1beta.SearchRequest.filter]
+     * conforming to https://google.aip.dev/160#filtering.
      * Similarly, for `view-item-list` events that are generated from a
-     * [PredictionService.PredictRequest][], this field may be populated directly
-     * from [PredictionService.PredictRequest.filter][] conforming to
-     * https://google.aip.dev/160#filtering.
+     * [RecommendationService.RecommendRequest][], this field may be populated
+     * directly from [RecommendationService.RecommendRequest.filter][] conforming
+     * to https://google.aip.dev/160#filtering.
      * The value must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -3655,13 +3672,14 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * The filter syntax consists of an expression language for constructing a
      * predicate from one or more fields of the documents being filtered.
      * One example is for `search` events, the associated
-     * [SearchService.SearchRequest][] may contain a filter expression in
-     * [SearchService.SearchRequest.filter][] conforming to
-     * https://google.aip.dev/160#filtering.
+     * [SearchRequest][google.cloud.discoveryengine.v1beta.SearchRequest] may
+     * contain a filter expression in
+     * [SearchRequest.filter][google.cloud.discoveryengine.v1beta.SearchRequest.filter]
+     * conforming to https://google.aip.dev/160#filtering.
      * Similarly, for `view-item-list` events that are generated from a
-     * [PredictionService.PredictRequest][], this field may be populated directly
-     * from [PredictionService.PredictRequest.filter][] conforming to
-     * https://google.aip.dev/160#filtering.
+     * [RecommendationService.RecommendRequest][], this field may be populated
+     * directly from [RecommendationService.RecommendRequest.filter][] conforming
+     * to https://google.aip.dev/160#filtering.
      * The value must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -3688,13 +3706,14 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * The filter syntax consists of an expression language for constructing a
      * predicate from one or more fields of the documents being filtered.
      * One example is for `search` events, the associated
-     * [SearchService.SearchRequest][] may contain a filter expression in
-     * [SearchService.SearchRequest.filter][] conforming to
-     * https://google.aip.dev/160#filtering.
+     * [SearchRequest][google.cloud.discoveryengine.v1beta.SearchRequest] may
+     * contain a filter expression in
+     * [SearchRequest.filter][google.cloud.discoveryengine.v1beta.SearchRequest.filter]
+     * conforming to https://google.aip.dev/160#filtering.
      * Similarly, for `view-item-list` events that are generated from a
-     * [PredictionService.PredictRequest][], this field may be populated directly
-     * from [PredictionService.PredictRequest.filter][] conforming to
-     * https://google.aip.dev/160#filtering.
+     * [RecommendationService.RecommendRequest][], this field may be populated
+     * directly from [RecommendationService.RecommendRequest.filter][] conforming
+     * to https://google.aip.dev/160#filtering.
      * The value must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -3720,13 +3739,14 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * The filter syntax consists of an expression language for constructing a
      * predicate from one or more fields of the documents being filtered.
      * One example is for `search` events, the associated
-     * [SearchService.SearchRequest][] may contain a filter expression in
-     * [SearchService.SearchRequest.filter][] conforming to
-     * https://google.aip.dev/160#filtering.
+     * [SearchRequest][google.cloud.discoveryengine.v1beta.SearchRequest] may
+     * contain a filter expression in
+     * [SearchRequest.filter][google.cloud.discoveryengine.v1beta.SearchRequest.filter]
+     * conforming to https://google.aip.dev/160#filtering.
      * Similarly, for `view-item-list` events that are generated from a
-     * [PredictionService.PredictRequest][], this field may be populated directly
-     * from [PredictionService.PredictRequest.filter][] conforming to
-     * https://google.aip.dev/160#filtering.
+     * [RecommendationService.RecommendRequest][], this field may be populated
+     * directly from [RecommendationService.RecommendRequest.filter][] conforming
+     * to https://google.aip.dev/160#filtering.
      * The value must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -3748,13 +3768,14 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * The filter syntax consists of an expression language for constructing a
      * predicate from one or more fields of the documents being filtered.
      * One example is for `search` events, the associated
-     * [SearchService.SearchRequest][] may contain a filter expression in
-     * [SearchService.SearchRequest.filter][] conforming to
-     * https://google.aip.dev/160#filtering.
+     * [SearchRequest][google.cloud.discoveryengine.v1beta.SearchRequest] may
+     * contain a filter expression in
+     * [SearchRequest.filter][google.cloud.discoveryengine.v1beta.SearchRequest.filter]
+     * conforming to https://google.aip.dev/160#filtering.
      * Similarly, for `view-item-list` events that are generated from a
-     * [PredictionService.PredictRequest][], this field may be populated directly
-     * from [PredictionService.PredictRequest.filter][] conforming to
-     * https://google.aip.dev/160#filtering.
+     * [RecommendationService.RecommendRequest][], this field may be populated
+     * directly from [RecommendationService.RecommendRequest.filter][] conforming
+     * to https://google.aip.dev/160#filtering.
      * The value must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>

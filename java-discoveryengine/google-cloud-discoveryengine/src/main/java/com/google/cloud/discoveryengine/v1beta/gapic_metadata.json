@@ -37,6 +37,9 @@
             "ListDocuments": {
               "methods": ["listDocuments", "listDocuments", "listDocuments", "listDocumentsPagedCallable", "listDocumentsCallable"]
             },
+            "PurgeDocuments": {
+              "methods": ["purgeDocumentsAsync", "purgeDocumentsOperationCallable", "purgeDocumentsCallable"]
+            },
             "UpdateDocument": {
               "methods": ["updateDocument", "updateDocumentCallable"]
             }

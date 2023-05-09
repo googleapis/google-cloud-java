@@ -651,4 +651,70 @@ public class DocumentServiceClientHttpJsonTest {
     } catch (ExecutionException e) {
     }
   }
+
+  @Test
+  public void purgeDocumentsTest() throws Exception {
+    PurgeDocumentsResponse expectedResponse =
+        PurgeDocumentsResponse.newBuilder()
+            .setPurgeCount(575305851)
+            .addAllPurgeSample(new ArrayList<String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("purgeDocumentsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    PurgeDocumentsRequest request =
+        PurgeDocumentsRequest.newBuilder()
+            .setParent(
+                BranchName.ofProjectLocationDataStoreBranchName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+                    .toString())
+            .setFilter("filter-1274492040")
+            .setForce(true)
+            .build();
+
+    PurgeDocumentsResponse actualResponse = client.purgeDocumentsAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void purgeDocumentsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PurgeDocumentsRequest request =
+          PurgeDocumentsRequest.newBuilder()
+              .setParent(
+                  BranchName.ofProjectLocationDataStoreBranchName(
+                          "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+                      .toString())
+              .setFilter("filter-1274492040")
+              .setForce(true)
+              .build();
+      client.purgeDocumentsAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
 }

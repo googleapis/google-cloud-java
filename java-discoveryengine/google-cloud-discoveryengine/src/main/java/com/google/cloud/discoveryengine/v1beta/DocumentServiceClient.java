@@ -997,6 +997,150 @@ public class DocumentServiceClient implements BackgroundResource {
     return stub.importDocumentsCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Permanently deletes all selected [Document][google.cloud.discoveryengine.v1beta.Document]s in a
+   * branch.
+   *
+   * <p>This process is asynchronous. Depending on the number of
+   * [Document][google.cloud.discoveryengine.v1beta.Document]s to be deleted, this operation can
+   * take hours to complete. Before the delete operation completes, some
+   * [Document][google.cloud.discoveryengine.v1beta.Document]s might still be returned by
+   * [DocumentService.GetDocument][google.cloud.discoveryengine.v1beta.DocumentService.GetDocument]
+   * or
+   * [DocumentService.ListDocuments][google.cloud.discoveryengine.v1beta.DocumentService.ListDocuments].
+   *
+   * <p>To get a list of the [Document][google.cloud.discoveryengine.v1beta.Document]s to be
+   * deleted, set
+   * [PurgeDocumentsRequest.force][google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.force]
+   * to false.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   PurgeDocumentsRequest request =
+   *       PurgeDocumentsRequest.newBuilder()
+   *           .setParent(
+   *               BranchName.ofProjectLocationDataStoreBranchName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setForce(true)
+   *           .build();
+   *   PurgeDocumentsResponse response = documentServiceClient.purgeDocumentsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<PurgeDocumentsResponse, PurgeDocumentsMetadata> purgeDocumentsAsync(
+      PurgeDocumentsRequest request) {
+    return purgeDocumentsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Permanently deletes all selected [Document][google.cloud.discoveryengine.v1beta.Document]s in a
+   * branch.
+   *
+   * <p>This process is asynchronous. Depending on the number of
+   * [Document][google.cloud.discoveryengine.v1beta.Document]s to be deleted, this operation can
+   * take hours to complete. Before the delete operation completes, some
+   * [Document][google.cloud.discoveryengine.v1beta.Document]s might still be returned by
+   * [DocumentService.GetDocument][google.cloud.discoveryengine.v1beta.DocumentService.GetDocument]
+   * or
+   * [DocumentService.ListDocuments][google.cloud.discoveryengine.v1beta.DocumentService.ListDocuments].
+   *
+   * <p>To get a list of the [Document][google.cloud.discoveryengine.v1beta.Document]s to be
+   * deleted, set
+   * [PurgeDocumentsRequest.force][google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.force]
+   * to false.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   PurgeDocumentsRequest request =
+   *       PurgeDocumentsRequest.newBuilder()
+   *           .setParent(
+   *               BranchName.ofProjectLocationDataStoreBranchName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setForce(true)
+   *           .build();
+   *   OperationFuture<PurgeDocumentsResponse, PurgeDocumentsMetadata> future =
+   *       documentServiceClient.purgeDocumentsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   PurgeDocumentsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          PurgeDocumentsRequest, PurgeDocumentsResponse, PurgeDocumentsMetadata>
+      purgeDocumentsOperationCallable() {
+    return stub.purgeDocumentsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Permanently deletes all selected [Document][google.cloud.discoveryengine.v1beta.Document]s in a
+   * branch.
+   *
+   * <p>This process is asynchronous. Depending on the number of
+   * [Document][google.cloud.discoveryengine.v1beta.Document]s to be deleted, this operation can
+   * take hours to complete. Before the delete operation completes, some
+   * [Document][google.cloud.discoveryengine.v1beta.Document]s might still be returned by
+   * [DocumentService.GetDocument][google.cloud.discoveryengine.v1beta.DocumentService.GetDocument]
+   * or
+   * [DocumentService.ListDocuments][google.cloud.discoveryengine.v1beta.DocumentService.ListDocuments].
+   *
+   * <p>To get a list of the [Document][google.cloud.discoveryengine.v1beta.Document]s to be
+   * deleted, set
+   * [PurgeDocumentsRequest.force][google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.force]
+   * to false.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   PurgeDocumentsRequest request =
+   *       PurgeDocumentsRequest.newBuilder()
+   *           .setParent(
+   *               BranchName.ofProjectLocationDataStoreBranchName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       documentServiceClient.purgeDocumentsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PurgeDocumentsRequest, Operation> purgeDocumentsCallable() {
+    return stub.purgeDocumentsCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();

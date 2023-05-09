@@ -43,6 +43,9 @@ import com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest;
 import com.google.cloud.discoveryengine.v1beta.ImportDocumentsResponse;
 import com.google.cloud.discoveryengine.v1beta.ListDocumentsRequest;
 import com.google.cloud.discoveryengine.v1beta.ListDocumentsResponse;
+import com.google.cloud.discoveryengine.v1beta.PurgeDocumentsMetadata;
+import com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest;
+import com.google.cloud.discoveryengine.v1beta.PurgeDocumentsResponse;
 import com.google.cloud.discoveryengine.v1beta.UpdateDocumentRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
@@ -68,6 +71,8 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
           .add(ImportDocumentsMetadata.getDescriptor())
+          .add(PurgeDocumentsMetadata.getDescriptor())
+          .add(PurgeDocumentsResponse.getDescriptor())
           .add(ImportDocumentsResponse.getDescriptor())
           .build();
 
@@ -310,6 +315,49 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<PurgeDocumentsRequest, Operation>
+      purgeDocumentsMethodDescriptor =
+          ApiMethodDescriptor.<PurgeDocumentsRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1beta.DocumentService/PurgeDocuments")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<PurgeDocumentsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{parent=projects/*/locations/*/dataStores/*/branches/*}/documents:purge",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PurgeDocumentsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1beta/{parent=projects/*/locations/*/collections/*/dataStores/*/branches/*}/documents:purge")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PurgeDocumentsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (PurgeDocumentsRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private final UnaryCallable<GetDocumentRequest, Document> getDocumentCallable;
   private final UnaryCallable<ListDocumentsRequest, ListDocumentsResponse> listDocumentsCallable;
   private final UnaryCallable<ListDocumentsRequest, ListDocumentsPagedResponse>
@@ -321,6 +369,10 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
   private final OperationCallable<
           ImportDocumentsRequest, ImportDocumentsResponse, ImportDocumentsMetadata>
       importDocumentsOperationCallable;
+  private final UnaryCallable<PurgeDocumentsRequest, Operation> purgeDocumentsCallable;
+  private final OperationCallable<
+          PurgeDocumentsRequest, PurgeDocumentsResponse, PurgeDocumentsMetadata>
+      purgeDocumentsOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -491,6 +543,11 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
             .setMethodDescriptor(importDocumentsMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<PurgeDocumentsRequest, Operation> purgeDocumentsTransportSettings =
+        HttpJsonCallSettings.<PurgeDocumentsRequest, Operation>newBuilder()
+            .setMethodDescriptor(purgeDocumentsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
 
     this.getDocumentCallable =
         callableFactory.createUnaryCallable(
@@ -519,6 +576,15 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
             settings.importDocumentsOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.purgeDocumentsCallable =
+        callableFactory.createUnaryCallable(
+            purgeDocumentsTransportSettings, settings.purgeDocumentsSettings(), clientContext);
+    this.purgeDocumentsOperationCallable =
+        callableFactory.createOperationCallable(
+            purgeDocumentsTransportSettings,
+            settings.purgeDocumentsOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -533,6 +599,7 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
     methodDescriptors.add(updateDocumentMethodDescriptor);
     methodDescriptors.add(deleteDocumentMethodDescriptor);
     methodDescriptors.add(importDocumentsMethodDescriptor);
+    methodDescriptors.add(purgeDocumentsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -580,6 +647,17 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
   public OperationCallable<ImportDocumentsRequest, ImportDocumentsResponse, ImportDocumentsMetadata>
       importDocumentsOperationCallable() {
     return importDocumentsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<PurgeDocumentsRequest, Operation> purgeDocumentsCallable() {
+    return purgeDocumentsCallable;
+  }
+
+  @Override
+  public OperationCallable<PurgeDocumentsRequest, PurgeDocumentsResponse, PurgeDocumentsMetadata>
+      purgeDocumentsOperationCallable() {
+    return purgeDocumentsOperationCallable;
   }
 
   @Override

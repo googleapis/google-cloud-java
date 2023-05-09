@@ -118,6 +118,18 @@ public class DocumentServiceSettings extends ClientSettings<DocumentServiceSetti
     return ((DocumentServiceStubSettings) getStubSettings()).importDocumentsOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to purgeDocuments. */
+  public UnaryCallSettings<PurgeDocumentsRequest, Operation> purgeDocumentsSettings() {
+    return ((DocumentServiceStubSettings) getStubSettings()).purgeDocumentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to purgeDocuments. */
+  public OperationCallSettings<
+          PurgeDocumentsRequest, PurgeDocumentsResponse, PurgeDocumentsMetadata>
+      purgeDocumentsOperationSettings() {
+    return ((DocumentServiceStubSettings) getStubSettings()).purgeDocumentsOperationSettings();
+  }
+
   public static final DocumentServiceSettings create(DocumentServiceStubSettings stub)
       throws IOException {
     return new DocumentServiceSettings.Builder(stub.toBuilder()).build();
@@ -270,6 +282,18 @@ public class DocumentServiceSettings extends ClientSettings<DocumentServiceSetti
             ImportDocumentsRequest, ImportDocumentsResponse, ImportDocumentsMetadata>
         importDocumentsOperationSettings() {
       return getStubSettingsBuilder().importDocumentsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to purgeDocuments. */
+    public UnaryCallSettings.Builder<PurgeDocumentsRequest, Operation> purgeDocumentsSettings() {
+      return getStubSettingsBuilder().purgeDocumentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to purgeDocuments. */
+    public OperationCallSettings.Builder<
+            PurgeDocumentsRequest, PurgeDocumentsResponse, PurgeDocumentsMetadata>
+        purgeDocumentsOperationSettings() {
+      return getStubSettingsBuilder().purgeDocumentsOperationSettings();
     }
 
     @Override

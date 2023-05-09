@@ -85,9 +85,10 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * At least one of
    * [search_query][google.cloud.discoveryengine.v1beta.SearchInfo.search_query]
-   * or [page_categories][] is required for `search` events. Other event types
-   * should not set this field. Otherwise, an INVALID_ARGUMENT error is
-   * returned.
+   * or
+   * [PageInfo.page_category][google.cloud.discoveryengine.v1beta.PageInfo.page_category]
+   * is required for `search` events. Other event types should not set this
+   * field. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
    *
    * <code>string search_query = 1;</code>
@@ -118,9 +119,10 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * At least one of
    * [search_query][google.cloud.discoveryengine.v1beta.SearchInfo.search_query]
-   * or [page_categories][] is required for `search` events. Other event types
-   * should not set this field. Otherwise, an INVALID_ARGUMENT error is
-   * returned.
+   * or
+   * [PageInfo.page_category][google.cloud.discoveryengine.v1beta.PageInfo.page_category]
+   * is required for `search` events. Other event types should not set this
+   * field. Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
    *
    * <code>string search_query = 1;</code>
@@ -661,9 +663,10 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * At least one of
      * [search_query][google.cloud.discoveryengine.v1beta.SearchInfo.search_query]
-     * or [page_categories][] is required for `search` events. Other event types
-     * should not set this field. Otherwise, an INVALID_ARGUMENT error is
-     * returned.
+     * or
+     * [PageInfo.page_category][google.cloud.discoveryengine.v1beta.PageInfo.page_category]
+     * is required for `search` events. Other event types should not set this
+     * field. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
      * <code>string search_query = 1;</code>
@@ -693,9 +696,10 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * At least one of
      * [search_query][google.cloud.discoveryengine.v1beta.SearchInfo.search_query]
-     * or [page_categories][] is required for `search` events. Other event types
-     * should not set this field. Otherwise, an INVALID_ARGUMENT error is
-     * returned.
+     * or
+     * [PageInfo.page_category][google.cloud.discoveryengine.v1beta.PageInfo.page_category]
+     * is required for `search` events. Other event types should not set this
+     * field. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
      * <code>string search_query = 1;</code>
@@ -725,9 +729,10 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * At least one of
      * [search_query][google.cloud.discoveryengine.v1beta.SearchInfo.search_query]
-     * or [page_categories][] is required for `search` events. Other event types
-     * should not set this field. Otherwise, an INVALID_ARGUMENT error is
-     * returned.
+     * or
+     * [PageInfo.page_category][google.cloud.discoveryengine.v1beta.PageInfo.page_category]
+     * is required for `search` events. Other event types should not set this
+     * field. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
      * <code>string search_query = 1;</code>
@@ -756,9 +761,10 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * At least one of
      * [search_query][google.cloud.discoveryengine.v1beta.SearchInfo.search_query]
-     * or [page_categories][] is required for `search` events. Other event types
-     * should not set this field. Otherwise, an INVALID_ARGUMENT error is
-     * returned.
+     * or
+     * [PageInfo.page_category][google.cloud.discoveryengine.v1beta.PageInfo.page_category]
+     * is required for `search` events. Other event types should not set this
+     * field. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
      * <code>string search_query = 1;</code>
@@ -783,9 +789,10 @@ public final class SearchInfo extends com.google.protobuf.GeneratedMessageV3
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * At least one of
      * [search_query][google.cloud.discoveryengine.v1beta.SearchInfo.search_query]
-     * or [page_categories][] is required for `search` events. Other event types
-     * should not set this field. Otherwise, an INVALID_ARGUMENT error is
-     * returned.
+     * or
+     * [PageInfo.page_category][google.cloud.discoveryengine.v1beta.PageInfo.page_category]
+     * is required for `search` events. Other event types should not set this
+     * field. Otherwise, an INVALID_ARGUMENT error is returned.
      * </pre>
      *
      * <code>string search_query = 1;</code>

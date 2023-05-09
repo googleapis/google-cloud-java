@@ -315,6 +315,52 @@ public final class DocumentServiceGrpc {
     return getImportDocumentsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest,
+          com.google.longrunning.Operation>
+      getPurgeDocumentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PurgeDocuments",
+      requestType = com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest,
+          com.google.longrunning.Operation>
+      getPurgeDocumentsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest,
+            com.google.longrunning.Operation>
+        getPurgeDocumentsMethod;
+    if ((getPurgeDocumentsMethod = DocumentServiceGrpc.getPurgeDocumentsMethod) == null) {
+      synchronized (DocumentServiceGrpc.class) {
+        if ((getPurgeDocumentsMethod = DocumentServiceGrpc.getPurgeDocumentsMethod) == null) {
+          DocumentServiceGrpc.getPurgeDocumentsMethod =
+              getPurgeDocumentsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PurgeDocuments"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DocumentServiceMethodDescriptorSupplier("PurgeDocuments"))
+                      .build();
+        }
+      }
+    }
+    return getPurgeDocumentsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static DocumentServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<DocumentServiceStub> factory =
@@ -458,6 +504,34 @@ public final class DocumentServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getImportDocumentsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Permanently deletes all selected
+     * [Document][google.cloud.discoveryengine.v1beta.Document]s in a branch.
+     * This process is asynchronous. Depending on the number of
+     * [Document][google.cloud.discoveryengine.v1beta.Document]s to be deleted,
+     * this operation can take hours to complete. Before the delete operation
+     * completes, some [Document][google.cloud.discoveryengine.v1beta.Document]s
+     * might still be returned by
+     * [DocumentService.GetDocument][google.cloud.discoveryengine.v1beta.DocumentService.GetDocument]
+     * or
+     * [DocumentService.ListDocuments][google.cloud.discoveryengine.v1beta.DocumentService.ListDocuments].
+     * To get a list of the
+     * [Document][google.cloud.discoveryengine.v1beta.Document]s to be deleted,
+     * set
+     * [PurgeDocumentsRequest.force][google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.force]
+     * to false.
+     * </pre>
+     */
+    default void purgeDocuments(
+        com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getPurgeDocumentsMethod(), responseObserver);
     }
   }
 
@@ -603,6 +677,36 @@ public final class DocumentServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Permanently deletes all selected
+     * [Document][google.cloud.discoveryengine.v1beta.Document]s in a branch.
+     * This process is asynchronous. Depending on the number of
+     * [Document][google.cloud.discoveryengine.v1beta.Document]s to be deleted,
+     * this operation can take hours to complete. Before the delete operation
+     * completes, some [Document][google.cloud.discoveryengine.v1beta.Document]s
+     * might still be returned by
+     * [DocumentService.GetDocument][google.cloud.discoveryengine.v1beta.DocumentService.GetDocument]
+     * or
+     * [DocumentService.ListDocuments][google.cloud.discoveryengine.v1beta.DocumentService.ListDocuments].
+     * To get a list of the
+     * [Document][google.cloud.discoveryengine.v1beta.Document]s to be deleted,
+     * set
+     * [PurgeDocumentsRequest.force][google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.force]
+     * to false.
+     * </pre>
+     */
+    public void purgeDocuments(
+        com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPurgeDocumentsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -707,6 +811,33 @@ public final class DocumentServiceGrpc {
         com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getImportDocumentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Permanently deletes all selected
+     * [Document][google.cloud.discoveryengine.v1beta.Document]s in a branch.
+     * This process is asynchronous. Depending on the number of
+     * [Document][google.cloud.discoveryengine.v1beta.Document]s to be deleted,
+     * this operation can take hours to complete. Before the delete operation
+     * completes, some [Document][google.cloud.discoveryengine.v1beta.Document]s
+     * might still be returned by
+     * [DocumentService.GetDocument][google.cloud.discoveryengine.v1beta.DocumentService.GetDocument]
+     * or
+     * [DocumentService.ListDocuments][google.cloud.discoveryengine.v1beta.DocumentService.ListDocuments].
+     * To get a list of the
+     * [Document][google.cloud.discoveryengine.v1beta.Document]s to be deleted,
+     * set
+     * [PurgeDocumentsRequest.force][google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.force]
+     * to false.
+     * </pre>
+     */
+    public com.google.longrunning.Operation purgeDocuments(
+        com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPurgeDocumentsMethod(), getCallOptions(), request);
     }
   }
 
@@ -817,6 +948,33 @@ public final class DocumentServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getImportDocumentsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Permanently deletes all selected
+     * [Document][google.cloud.discoveryengine.v1beta.Document]s in a branch.
+     * This process is asynchronous. Depending on the number of
+     * [Document][google.cloud.discoveryengine.v1beta.Document]s to be deleted,
+     * this operation can take hours to complete. Before the delete operation
+     * completes, some [Document][google.cloud.discoveryengine.v1beta.Document]s
+     * might still be returned by
+     * [DocumentService.GetDocument][google.cloud.discoveryengine.v1beta.DocumentService.GetDocument]
+     * or
+     * [DocumentService.ListDocuments][google.cloud.discoveryengine.v1beta.DocumentService.ListDocuments].
+     * To get a list of the
+     * [Document][google.cloud.discoveryengine.v1beta.Document]s to be deleted,
+     * set
+     * [PurgeDocumentsRequest.force][google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest.force]
+     * to false.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        purgeDocuments(com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPurgeDocumentsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_DOCUMENT = 0;
@@ -825,6 +983,7 @@ public final class DocumentServiceGrpc {
   private static final int METHODID_UPDATE_DOCUMENT = 3;
   private static final int METHODID_DELETE_DOCUMENT = 4;
   private static final int METHODID_IMPORT_DOCUMENTS = 5;
+  private static final int METHODID_PURGE_DOCUMENTS = 6;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -876,6 +1035,11 @@ public final class DocumentServiceGrpc {
         case METHODID_IMPORT_DOCUMENTS:
           serviceImpl.importDocuments(
               (com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_PURGE_DOCUMENTS:
+          serviceImpl.purgeDocuments(
+              (com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -936,6 +1100,12 @@ public final class DocumentServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.discoveryengine.v1beta.ImportDocumentsRequest,
                     com.google.longrunning.Operation>(service, METHODID_IMPORT_DOCUMENTS)))
+        .addMethod(
+            getPurgeDocumentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1beta.PurgeDocumentsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_PURGE_DOCUMENTS)))
         .build();
   }
 
@@ -993,6 +1163,7 @@ public final class DocumentServiceGrpc {
                       .addMethod(getUpdateDocumentMethod())
                       .addMethod(getDeleteDocumentMethod())
                       .addMethod(getImportDocumentsMethod())
+                      .addMethod(getPurgeDocumentsMethod())
                       .build();
         }
       }
