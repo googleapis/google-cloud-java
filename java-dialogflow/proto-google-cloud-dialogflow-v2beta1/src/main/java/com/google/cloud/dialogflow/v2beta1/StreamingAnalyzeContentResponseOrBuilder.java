@@ -426,4 +426,46 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    * <code>.google.cloud.dialogflow.v2beta1.DtmfParameters dtmf_parameters = 10;</code>
    */
   com.google.cloud.dialogflow.v2beta1.DtmfParametersOrBuilder getDtmfParametersOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Debugging info that would get populated when
+   * `StreamingAnalyzeContentRequest.enable_debugging_info` is set to true.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.CloudConversationDebuggingInfo debugging_info = 11;
+   * </code>
+   *
+   * @return Whether the debuggingInfo field is set.
+   */
+  boolean hasDebuggingInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Debugging info that would get populated when
+   * `StreamingAnalyzeContentRequest.enable_debugging_info` is set to true.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.CloudConversationDebuggingInfo debugging_info = 11;
+   * </code>
+   *
+   * @return The debuggingInfo.
+   */
+  com.google.cloud.dialogflow.v2beta1.CloudConversationDebuggingInfo getDebuggingInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Debugging info that would get populated when
+   * `StreamingAnalyzeContentRequest.enable_debugging_info` is set to true.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2beta1.CloudConversationDebuggingInfo debugging_info = 11;
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2beta1.CloudConversationDebuggingInfoOrBuilder
+      getDebuggingInfoOrBuilder();
 }

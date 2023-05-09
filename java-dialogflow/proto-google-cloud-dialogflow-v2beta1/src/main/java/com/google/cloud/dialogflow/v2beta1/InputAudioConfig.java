@@ -232,7 +232,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=256
+   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=266
    * @return A list containing the phraseHints.
    */
   @java.lang.Deprecated
@@ -256,7 +256,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=256
+   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=266
    * @return The count of phraseHints.
    */
   @java.lang.Deprecated
@@ -280,7 +280,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=256
+   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=266
    * @param index The index of the element to return.
    * @return The phraseHints at the given index.
    */
@@ -305,7 +305,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=256
+   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=266
    * @param index The index of the value to return.
    * @return The bytes of the phraseHints at the given index.
    */
@@ -420,6 +420,11 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * [Cloud Speech API
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
    * for more details.
+   * If you specify a model, the following models typically have the best
+   * performance:
+   * - phone_call (best for Agent Assist and telephony)
+   * - latest_short (best for Dialogflow non-telephony)
+   * - command_and_search (best for very short utterances and commands)
    * </pre>
    *
    * <code>string model = 7;</code>
@@ -453,6 +458,11 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * [Cloud Speech API
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
    * for more details.
+   * If you specify a model, the following models typically have the best
+   * performance:
+   * - phone_call (best for Agent Assist and telephony)
+   * - latest_short (best for Dialogflow non-telephony)
+   * - command_and_search (best for very short utterances and commands)
    * </pre>
    *
    * <code>string model = 7;</code>
@@ -611,6 +621,24 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
         : bargeInConfig_;
   }
 
+  public static final int ENABLE_AUTOMATIC_PUNCTUATION_FIELD_NUMBER = 17;
+  private boolean enableAutomaticPunctuation_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Enable automatic punctuation option at the speech backend.
+   * </pre>
+   *
+   * <code>bool enable_automatic_punctuation = 17;</code>
+   *
+   * @return The enableAutomaticPunctuation.
+   */
+  @java.lang.Override
+  public boolean getEnableAutomaticPunctuation() {
+    return enableAutomaticPunctuation_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -661,6 +689,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     }
     if (bargeInConfig_ != null) {
       output.writeMessage(15, getBargeInConfig());
+    }
+    if (enableAutomaticPunctuation_ != false) {
+      output.writeBool(17, enableAutomaticPunctuation_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -715,6 +746,10 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     if (bargeInConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getBargeInConfig());
     }
+    if (enableAutomaticPunctuation_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(17, enableAutomaticPunctuation_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -746,6 +781,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     if (hasBargeInConfig()) {
       if (!getBargeInConfig().equals(other.getBargeInConfig())) return false;
     }
+    if (getEnableAutomaticPunctuation() != other.getEnableAutomaticPunctuation()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -786,6 +822,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + BARGE_IN_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getBargeInConfig().hashCode();
     }
+    hash = (37 * hash) + ENABLE_AUTOMATIC_PUNCTUATION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableAutomaticPunctuation());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -947,6 +985,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
         bargeInConfigBuilder_.dispose();
         bargeInConfigBuilder_ = null;
       }
+      enableAutomaticPunctuation_ = false;
       return this;
     }
 
@@ -1029,6 +1068,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.bargeInConfig_ =
             bargeInConfigBuilder_ == null ? bargeInConfig_ : bargeInConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.enableAutomaticPunctuation_ = enableAutomaticPunctuation_;
       }
     }
 
@@ -1146,6 +1188,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       if (other.hasBargeInConfig()) {
         mergeBargeInConfig(other.getBargeInConfig());
       }
+      if (other.getEnableAutomaticPunctuation() != false) {
+        setEnableAutomaticPunctuation(other.getEnableAutomaticPunctuation());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1247,6 +1292,12 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000400;
                 break;
               } // case 122
+            case 136:
+              {
+                enableAutomaticPunctuation_ = input.readBool();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 136
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1643,7 +1694,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=256
+     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=266
      * @return A list containing the phraseHints.
      */
     @java.lang.Deprecated
@@ -1667,7 +1718,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=256
+     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=266
      * @return The count of phraseHints.
      */
     @java.lang.Deprecated
@@ -1691,7 +1742,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=256
+     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=266
      * @param index The index of the element to return.
      * @return The phraseHints at the given index.
      */
@@ -1716,7 +1767,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=256
+     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=266
      * @param index The index of the value to return.
      * @return The bytes of the phraseHints at the given index.
      */
@@ -1741,7 +1792,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=256
+     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=266
      * @param index The index to set the value at.
      * @param value The phraseHints to set.
      * @return This builder for chaining.
@@ -1773,7 +1824,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=256
+     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=266
      * @param value The phraseHints to add.
      * @return This builder for chaining.
      */
@@ -1804,7 +1855,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=256
+     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=266
      * @param values The phraseHints to add.
      * @return This builder for chaining.
      */
@@ -1832,7 +1883,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=256
+     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=266
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1859,7 +1910,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=256
+     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=266
      * @param value The bytes of the phraseHints to add.
      * @return This builder for chaining.
      */
@@ -2307,6 +2358,11 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * [Cloud Speech API
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
      * for more details.
+     * If you specify a model, the following models typically have the best
+     * performance:
+     * - phone_call (best for Agent Assist and telephony)
+     * - latest_short (best for Dialogflow non-telephony)
+     * - command_and_search (best for very short utterances and commands)
      * </pre>
      *
      * <code>string model = 7;</code>
@@ -2339,6 +2395,11 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * [Cloud Speech API
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
      * for more details.
+     * If you specify a model, the following models typically have the best
+     * performance:
+     * - phone_call (best for Agent Assist and telephony)
+     * - latest_short (best for Dialogflow non-telephony)
+     * - command_and_search (best for very short utterances and commands)
      * </pre>
      *
      * <code>string model = 7;</code>
@@ -2371,6 +2432,11 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * [Cloud Speech API
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
      * for more details.
+     * If you specify a model, the following models typically have the best
+     * performance:
+     * - phone_call (best for Agent Assist and telephony)
+     * - latest_short (best for Dialogflow non-telephony)
+     * - command_and_search (best for very short utterances and commands)
      * </pre>
      *
      * <code>string model = 7;</code>
@@ -2402,6 +2468,11 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * [Cloud Speech API
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
      * for more details.
+     * If you specify a model, the following models typically have the best
+     * performance:
+     * - phone_call (best for Agent Assist and telephony)
+     * - latest_short (best for Dialogflow non-telephony)
+     * - command_and_search (best for very short utterances and commands)
      * </pre>
      *
      * <code>string model = 7;</code>
@@ -2429,6 +2500,11 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * [Cloud Speech API
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
      * for more details.
+     * If you specify a model, the following models typically have the best
+     * performance:
+     * - phone_call (best for Agent Assist and telephony)
+     * - latest_short (best for Dialogflow non-telephony)
+     * - command_and_search (best for very short utterances and commands)
      * </pre>
      *
      * <code>string model = 7;</code>
@@ -2875,6 +2951,59 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
         bargeInConfig_ = null;
       }
       return bargeInConfigBuilder_;
+    }
+
+    private boolean enableAutomaticPunctuation_;
+    /**
+     *
+     *
+     * <pre>
+     * Enable automatic punctuation option at the speech backend.
+     * </pre>
+     *
+     * <code>bool enable_automatic_punctuation = 17;</code>
+     *
+     * @return The enableAutomaticPunctuation.
+     */
+    @java.lang.Override
+    public boolean getEnableAutomaticPunctuation() {
+      return enableAutomaticPunctuation_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable automatic punctuation option at the speech backend.
+     * </pre>
+     *
+     * <code>bool enable_automatic_punctuation = 17;</code>
+     *
+     * @param value The enableAutomaticPunctuation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableAutomaticPunctuation(boolean value) {
+
+      enableAutomaticPunctuation_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable automatic punctuation option at the speech backend.
+     * </pre>
+     *
+     * <code>bool enable_automatic_punctuation = 17;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableAutomaticPunctuation() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      enableAutomaticPunctuation_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

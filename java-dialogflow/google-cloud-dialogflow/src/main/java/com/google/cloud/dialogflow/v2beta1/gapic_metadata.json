@@ -118,6 +118,9 @@
             "CreateConversation": {
               "methods": ["createConversation", "createConversation", "createConversation", "createConversation", "createConversationCallable"]
             },
+            "GenerateStatelessSummary": {
+              "methods": ["generateStatelessSummary", "generateStatelessSummaryCallable"]
+            },
             "GetConversation": {
               "methods": ["getConversation", "getConversation", "getConversation", "getConversationCallable"]
             },

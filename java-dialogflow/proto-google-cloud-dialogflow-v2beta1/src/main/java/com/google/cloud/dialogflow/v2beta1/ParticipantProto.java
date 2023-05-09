@@ -360,7 +360,7 @@ public final class ParticipantProto {
           + "ionResult\022H\n\017dtmf_parameters\030\t \001(\0132/.goo"
           + "gle.cloud.dialogflow.v2beta1.DtmfParamet"
           + "ers\"(\n\017InputTextConfig\022\025\n\rlanguage_code\030"
-          + "\001 \001(\t\"\350\005\n\036StreamingAnalyzeContentRequest"
+          + "\001 \001(\t\"\207\006\n\036StreamingAnalyzeContentRequest"
           + "\022B\n\013participant\030\001 \001(\tB-\340A\002\372A\'\n%dialogflo"
           + "w.googleapis.com/Participant\022I\n\014audio_co"
           + "nfig\030\002 \001(\01321.google.cloud.dialogflow.v2b"
@@ -378,23 +378,26 @@ public final class ParticipantProto {
           + "ueryParameters\022.\n\rcx_parameters\030\r \001(\0132\027."
           + "google.protobuf.Struct\022\027\n\017cx_current_pag"
           + "e\030\017 \001(\t\022,\n$enable_partial_automated_agen"
-          + "t_reply\030\014 \001(\010B\010\n\006configB\007\n\005input\"\336\004\n\037Str"
-          + "eamingAnalyzeContentResponse\022W\n\022recognit"
-          + "ion_result\030\001 \001(\0132;.google.cloud.dialogfl"
-          + "ow.v2beta1.StreamingRecognitionResult\022\022\n"
-          + "\nreply_text\030\002 \001(\t\022A\n\013reply_audio\030\003 \001(\0132,"
-          + ".google.cloud.dialogflow.v2beta1.OutputA"
-          + "udio\022S\n\025automated_agent_reply\030\004 \001(\01324.go"
-          + "ogle.cloud.dialogflow.v2beta1.AutomatedA"
-          + "gentReply\0229\n\007message\030\006 \001(\0132(.google.clou"
-          + "d.dialogflow.v2beta1.Message\022Y\n\036human_ag"
-          + "ent_suggestion_results\030\007 \003(\01321.google.cl"
-          + "oud.dialogflow.v2beta1.SuggestionResult\022"
-          + "V\n\033end_user_suggestion_results\030\010 \003(\01321.g"
-          + "oogle.cloud.dialogflow.v2beta1.Suggestio"
-          + "nResult\022H\n\017dtmf_parameters\030\n \001(\0132/.googl"
-          + "e.cloud.dialogflow.v2beta1.DtmfParameter"
-          + "s\"j\n\024AnnotatedMessagePart\022\014\n\004text\030\001 \001(\t\022"
+          + "t_reply\030\014 \001(\010\022\035\n\025enable_debugging_info\030\023"
+          + " \001(\010B\010\n\006configB\007\n\005input\"\267\005\n\037StreamingAna"
+          + "lyzeContentResponse\022W\n\022recognition_resul"
+          + "t\030\001 \001(\0132;.google.cloud.dialogflow.v2beta"
+          + "1.StreamingRecognitionResult\022\022\n\nreply_te"
+          + "xt\030\002 \001(\t\022A\n\013reply_audio\030\003 \001(\0132,.google.c"
+          + "loud.dialogflow.v2beta1.OutputAudio\022S\n\025a"
+          + "utomated_agent_reply\030\004 \001(\01324.google.clou"
+          + "d.dialogflow.v2beta1.AutomatedAgentReply"
+          + "\0229\n\007message\030\006 \001(\0132(.google.cloud.dialogf"
+          + "low.v2beta1.Message\022Y\n\036human_agent_sugge"
+          + "stion_results\030\007 \003(\01321.google.cloud.dialo"
+          + "gflow.v2beta1.SuggestionResult\022V\n\033end_us"
+          + "er_suggestion_results\030\010 \003(\01321.google.clo"
+          + "ud.dialogflow.v2beta1.SuggestionResult\022H"
+          + "\n\017dtmf_parameters\030\n \001(\0132/.google.cloud.d"
+          + "ialogflow.v2beta1.DtmfParameters\022W\n\016debu"
+          + "gging_info\030\013 \001(\0132?.google.cloud.dialogfl"
+          + "ow.v2beta1.CloudConversationDebuggingInf"
+          + "o\"j\n\024AnnotatedMessagePart\022\014\n\004text\030\001 \001(\t\022"
           + "\023\n\013entity_type\030\002 \001(\t\022/\n\017formatted_value\030"
           + "\003 \001(\0132\026.google.protobuf.Value\"s\n\021Message"
           + "Annotation\022D\n\005parts\030\001 \003(\01325.google.cloud"
@@ -817,6 +820,7 @@ public final class ParticipantProto {
               "CxParameters",
               "CxCurrentPage",
               "EnablePartialAutomatedAgentReply",
+              "EnableDebuggingInfo",
               "Config",
               "Input",
             });
@@ -834,6 +838,7 @@ public final class ParticipantProto {
               "HumanAgentSuggestionResults",
               "EndUserSuggestionResults",
               "DtmfParameters",
+              "DebuggingInfo",
             });
     internal_static_google_cloud_dialogflow_v2beta1_AnnotatedMessagePart_descriptor =
         getDescriptor().getMessageTypes().get(18);

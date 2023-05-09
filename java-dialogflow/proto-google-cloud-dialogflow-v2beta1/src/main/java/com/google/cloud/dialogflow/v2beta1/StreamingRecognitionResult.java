@@ -134,10 +134,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Message contains DTMF digits. When the client gets the message, it
-     * should stop sending additional data, half-close the gRPC connection, and
-     * wait for any additional results until the server closes the gRPC.
-     * connection.
+     * Message contains DTMF digits.
      * </pre>
      *
      * <code>DTMF_DIGITS = 3;</code>
@@ -198,10 +195,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Message contains DTMF digits. When the client gets the message, it
-     * should stop sending additional data, half-close the gRPC connection, and
-     * wait for any additional results until the server closes the gRPC.
-     * connection.
+     * Message contains DTMF digits.
      * </pre>
      *
      * <code>DTMF_DIGITS = 3;</code>

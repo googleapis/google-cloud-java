@@ -1331,6 +1331,81 @@ public class ConversationsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Generates and returns a summary for a conversation that does not have a resource created for
+   * it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
+   *   GenerateStatelessSummaryRequest request =
+   *       GenerateStatelessSummaryRequest.newBuilder()
+   *           .setStatelessConversation(
+   *               GenerateStatelessSummaryRequest.MinimalConversation.newBuilder().build())
+   *           .setConversationProfile(ConversationProfile.newBuilder().build())
+   *           .setLatestMessage(
+   *               MessageName.ofProjectConversationMessageName(
+   *                       "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+   *                   .toString())
+   *           .setMaxContextSize(-1134084212)
+   *           .build();
+   *   GenerateStatelessSummaryResponse response =
+   *       conversationsClient.generateStatelessSummary(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GenerateStatelessSummaryResponse generateStatelessSummary(
+      GenerateStatelessSummaryRequest request) {
+    return generateStatelessSummaryCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates and returns a summary for a conversation that does not have a resource created for
+   * it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConversationsClient conversationsClient = ConversationsClient.create()) {
+   *   GenerateStatelessSummaryRequest request =
+   *       GenerateStatelessSummaryRequest.newBuilder()
+   *           .setStatelessConversation(
+   *               GenerateStatelessSummaryRequest.MinimalConversation.newBuilder().build())
+   *           .setConversationProfile(ConversationProfile.newBuilder().build())
+   *           .setLatestMessage(
+   *               MessageName.ofProjectConversationMessageName(
+   *                       "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+   *                   .toString())
+   *           .setMaxContextSize(-1134084212)
+   *           .build();
+   *   ApiFuture<GenerateStatelessSummaryResponse> future =
+   *       conversationsClient.generateStatelessSummaryCallable().futureCall(request);
+   *   // Do something.
+   *   GenerateStatelessSummaryResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GenerateStatelessSummaryRequest, GenerateStatelessSummaryResponse>
+      generateStatelessSummaryCallable() {
+    return stub.generateStatelessSummaryCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:

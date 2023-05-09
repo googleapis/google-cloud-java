@@ -53,6 +53,7 @@ public class AsyncStreamingAnalyzeContent {
               .setAssistQueryParams(AssistQueryParameters.newBuilder().build())
               .setCxParameters(Struct.newBuilder().build())
               .setEnablePartialAutomatedAgentReply(true)
+              .setEnableDebuggingInfo(true)
               .build();
       bidiStream.send(request);
       for (StreamingAnalyzeContentResponse response : bidiStream) {
