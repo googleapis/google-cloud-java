@@ -220,8 +220,8 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Required. The parent resource of the connection profile type. Must be in the
-   * format `projects/&#42;&#47;locations/&#42;`.
+   * Required. The parent resource of the connection profile type. Must be in
+   * the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -246,8 +246,8 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Required. The parent resource of the connection profile type. Must be in the
-   * format `projects/&#42;&#47;locations/&#42;`.
+   * Required. The parent resource of the connection profile type. Must be in
+   * the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -1279,8 +1279,8 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The parent resource of the connection profile type. Must be in the
-     * format `projects/&#42;&#47;locations/&#42;`.
+     * Required. The parent resource of the connection profile type. Must be in
+     * the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -1304,8 +1304,8 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The parent resource of the connection profile type. Must be in the
-     * format `projects/&#42;&#47;locations/&#42;`.
+     * Required. The parent resource of the connection profile type. Must be in
+     * the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -1329,8 +1329,8 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The parent resource of the connection profile type. Must be in the
-     * format `projects/&#42;&#47;locations/&#42;`.
+     * Required. The parent resource of the connection profile type. Must be in
+     * the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -1353,8 +1353,8 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The parent resource of the connection profile type. Must be in the
-     * format `projects/&#42;&#47;locations/&#42;`.
+     * Required. The parent resource of the connection profile type. Must be in
+     * the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -1373,8 +1373,8 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. The parent resource of the connection profile type. Must be in the
-     * format `projects/&#42;&#47;locations/&#42;`.
+     * Required. The parent resource of the connection profile type. Must be in
+     * the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>

@@ -76,8 +76,8 @@ public final class FetchStaticIpsRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The resource name for the location for which static IPs should be returned.
-   * Must be in the format `projects/&#42;&#47;locations/&#42;`.
+   * Required. The resource name for the location for which static IPs should be
+   * returned. Must be in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -102,8 +102,8 @@ public final class FetchStaticIpsRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The resource name for the location for which static IPs should be returned.
-   * Must be in the format `projects/&#42;&#47;locations/&#42;`.
+   * Required. The resource name for the location for which static IPs should be
+   * returned. Must be in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -589,8 +589,8 @@ public final class FetchStaticIpsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name for the location for which static IPs should be returned.
-     * Must be in the format `projects/&#42;&#47;locations/&#42;`.
+     * Required. The resource name for the location for which static IPs should be
+     * returned. Must be in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -614,8 +614,8 @@ public final class FetchStaticIpsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name for the location for which static IPs should be returned.
-     * Must be in the format `projects/&#42;&#47;locations/&#42;`.
+     * Required. The resource name for the location for which static IPs should be
+     * returned. Must be in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -639,8 +639,8 @@ public final class FetchStaticIpsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name for the location for which static IPs should be returned.
-     * Must be in the format `projects/&#42;&#47;locations/&#42;`.
+     * Required. The resource name for the location for which static IPs should be
+     * returned. Must be in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -663,8 +663,8 @@ public final class FetchStaticIpsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name for the location for which static IPs should be returned.
-     * Must be in the format `projects/&#42;&#47;locations/&#42;`.
+     * Required. The resource name for the location for which static IPs should be
+     * returned. Must be in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -683,8 +683,8 @@ public final class FetchStaticIpsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name for the location for which static IPs should be returned.
-     * Must be in the format `projects/&#42;&#47;locations/&#42;`.
+     * Required. The resource name for the location for which static IPs should be
+     * returned. Must be in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>

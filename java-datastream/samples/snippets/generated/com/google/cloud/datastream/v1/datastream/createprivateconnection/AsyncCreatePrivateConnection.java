@@ -43,6 +43,7 @@ public class AsyncCreatePrivateConnection {
               .setPrivateConnectionId("privateConnectionId-1926654532")
               .setPrivateConnection(PrivateConnection.newBuilder().build())
               .setRequestId("requestId693933066")
+              .setForce(true)
               .build();
       ApiFuture<Operation> future =
           datastreamClient.createPrivateConnectionCallable().futureCall(request);

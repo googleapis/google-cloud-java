@@ -27,7 +27,8 @@ public interface ListPrivateConnectionsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent that owns the collection of private connectivity configurations.
+   * Required. The parent that owns the collection of private connectivity
+   * configurations.
    * </pre>
    *
    * <code>
@@ -41,7 +42,8 @@ public interface ListPrivateConnectionsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent that owns the collection of private connectivity configurations.
+   * Required. The parent that owns the collection of private connectivity
+   * configurations.
    * </pre>
    *
    * <code>

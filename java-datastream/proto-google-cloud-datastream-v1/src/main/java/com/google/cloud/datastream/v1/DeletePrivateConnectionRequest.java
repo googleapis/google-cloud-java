@@ -201,8 +201,8 @@ public final class DeletePrivateConnectionRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. If set to true, any child routes that belong to this PrivateConnection will
-   * also be deleted.
+   * Optional. If set to true, any child routes that belong to this
+   * PrivateConnection will also be deleted.
    * </pre>
    *
    * <code>bool force = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -883,8 +883,8 @@ public final class DeletePrivateConnectionRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If set to true, any child routes that belong to this PrivateConnection will
-     * also be deleted.
+     * Optional. If set to true, any child routes that belong to this
+     * PrivateConnection will also be deleted.
      * </pre>
      *
      * <code>bool force = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -899,8 +899,8 @@ public final class DeletePrivateConnectionRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If set to true, any child routes that belong to this PrivateConnection will
-     * also be deleted.
+     * Optional. If set to true, any child routes that belong to this
+     * PrivateConnection will also be deleted.
      * </pre>
      *
      * <code>bool force = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -919,8 +919,8 @@ public final class DeletePrivateConnectionRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If set to true, any child routes that belong to this PrivateConnection will
-     * also be deleted.
+     * Optional. If set to true, any child routes that belong to this
+     * PrivateConnection will also be deleted.
      * </pre>
      *
      * <code>bool force = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

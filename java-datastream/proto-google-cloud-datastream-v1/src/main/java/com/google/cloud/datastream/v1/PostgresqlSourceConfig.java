@@ -176,11 +176,13 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The name of the logical replication slot that's configured with the
-   * pgoutput plugin.
+   * Required. Immutable. The name of the logical replication slot that's
+   * configured with the pgoutput plugin.
    * </pre>
    *
-   * <code>string replication_slot = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string replication_slot = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The replicationSlot.
    */
@@ -200,11 +202,13 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The name of the logical replication slot that's configured with the
-   * pgoutput plugin.
+   * Required. Immutable. The name of the logical replication slot that's
+   * configured with the pgoutput plugin.
    * </pre>
    *
-   * <code>string replication_slot = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string replication_slot = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for replicationSlot.
    */
@@ -229,8 +233,8 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The name of the publication that includes the set of all tables that are
-   * defined in the stream's include_objects.
+   * Required. The name of the publication that includes the set of all tables
+   * that are defined in the stream's include_objects.
    * </pre>
    *
    * <code>string publication = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -253,8 +257,8 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The name of the publication that includes the set of all tables that are
-   * defined in the stream's include_objects.
+   * Required. The name of the publication that includes the set of all tables
+   * that are defined in the stream's include_objects.
    * </pre>
    *
    * <code>string publication = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -272,6 +276,26 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int MAX_CONCURRENT_BACKFILL_TASKS_FIELD_NUMBER = 5;
+  private int maxConcurrentBackfillTasks_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Maximum number of concurrent backfill tasks. The number should be non
+   * negative. If not set (or set to 0), the system's default value will be
+   * used.
+   * </pre>
+   *
+   * <code>int32 max_concurrent_backfill_tasks = 5;</code>
+   *
+   * @return The maxConcurrentBackfillTasks.
+   */
+  @java.lang.Override
+  public int getMaxConcurrentBackfillTasks() {
+    return maxConcurrentBackfillTasks_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -300,6 +324,9 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publication_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, publication_);
     }
+    if (maxConcurrentBackfillTasks_ != 0) {
+      output.writeInt32(5, maxConcurrentBackfillTasks_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -320,6 +347,10 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publication_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, publication_);
+    }
+    if (maxConcurrentBackfillTasks_ != 0) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(5, maxConcurrentBackfillTasks_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -347,6 +378,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
     }
     if (!getReplicationSlot().equals(other.getReplicationSlot())) return false;
     if (!getPublication().equals(other.getPublication())) return false;
+    if (getMaxConcurrentBackfillTasks() != other.getMaxConcurrentBackfillTasks()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -370,6 +402,8 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
     hash = (53 * hash) + getReplicationSlot().hashCode();
     hash = (37 * hash) + PUBLICATION_FIELD_NUMBER;
     hash = (53 * hash) + getPublication().hashCode();
+    hash = (37 * hash) + MAX_CONCURRENT_BACKFILL_TASKS_FIELD_NUMBER;
+    hash = (53 * hash) + getMaxConcurrentBackfillTasks();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -522,6 +556,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
       }
       replicationSlot_ = "";
       publication_ = "";
+      maxConcurrentBackfillTasks_ = 0;
       return this;
     }
 
@@ -571,6 +606,9 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.publication_ = publication_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.maxConcurrentBackfillTasks_ = maxConcurrentBackfillTasks_;
       }
     }
 
@@ -636,6 +674,9 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (other.getMaxConcurrentBackfillTasks() != 0) {
+        setMaxConcurrentBackfillTasks(other.getMaxConcurrentBackfillTasks());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -686,6 +727,12 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 40:
+              {
+                maxConcurrentBackfillTasks_ = input.readInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1080,11 +1127,13 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the logical replication slot that's configured with the
-     * pgoutput plugin.
+     * Required. Immutable. The name of the logical replication slot that's
+     * configured with the pgoutput plugin.
      * </pre>
      *
-     * <code>string replication_slot = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string replication_slot = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The replicationSlot.
      */
@@ -1103,11 +1152,13 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the logical replication slot that's configured with the
-     * pgoutput plugin.
+     * Required. Immutable. The name of the logical replication slot that's
+     * configured with the pgoutput plugin.
      * </pre>
      *
-     * <code>string replication_slot = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string replication_slot = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for replicationSlot.
      */
@@ -1126,11 +1177,13 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the logical replication slot that's configured with the
-     * pgoutput plugin.
+     * Required. Immutable. The name of the logical replication slot that's
+     * configured with the pgoutput plugin.
      * </pre>
      *
-     * <code>string replication_slot = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string replication_slot = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The replicationSlot to set.
      * @return This builder for chaining.
@@ -1148,11 +1201,13 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the logical replication slot that's configured with the
-     * pgoutput plugin.
+     * Required. Immutable. The name of the logical replication slot that's
+     * configured with the pgoutput plugin.
      * </pre>
      *
-     * <code>string replication_slot = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string replication_slot = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1166,11 +1221,13 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the logical replication slot that's configured with the
-     * pgoutput plugin.
+     * Required. Immutable. The name of the logical replication slot that's
+     * configured with the pgoutput plugin.
      * </pre>
      *
-     * <code>string replication_slot = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string replication_slot = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for replicationSlot to set.
      * @return This builder for chaining.
@@ -1191,8 +1248,8 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the publication that includes the set of all tables that are
-     * defined in the stream's include_objects.
+     * Required. The name of the publication that includes the set of all tables
+     * that are defined in the stream's include_objects.
      * </pre>
      *
      * <code>string publication = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1214,8 +1271,8 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the publication that includes the set of all tables that are
-     * defined in the stream's include_objects.
+     * Required. The name of the publication that includes the set of all tables
+     * that are defined in the stream's include_objects.
      * </pre>
      *
      * <code>string publication = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1237,8 +1294,8 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the publication that includes the set of all tables that are
-     * defined in the stream's include_objects.
+     * Required. The name of the publication that includes the set of all tables
+     * that are defined in the stream's include_objects.
      * </pre>
      *
      * <code>string publication = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1259,8 +1316,8 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the publication that includes the set of all tables that are
-     * defined in the stream's include_objects.
+     * Required. The name of the publication that includes the set of all tables
+     * that are defined in the stream's include_objects.
      * </pre>
      *
      * <code>string publication = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1277,8 +1334,8 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the publication that includes the set of all tables that are
-     * defined in the stream's include_objects.
+     * Required. The name of the publication that includes the set of all tables
+     * that are defined in the stream's include_objects.
      * </pre>
      *
      * <code>string publication = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1293,6 +1350,65 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       publication_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private int maxConcurrentBackfillTasks_;
+    /**
+     *
+     *
+     * <pre>
+     * Maximum number of concurrent backfill tasks. The number should be non
+     * negative. If not set (or set to 0), the system's default value will be
+     * used.
+     * </pre>
+     *
+     * <code>int32 max_concurrent_backfill_tasks = 5;</code>
+     *
+     * @return The maxConcurrentBackfillTasks.
+     */
+    @java.lang.Override
+    public int getMaxConcurrentBackfillTasks() {
+      return maxConcurrentBackfillTasks_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maximum number of concurrent backfill tasks. The number should be non
+     * negative. If not set (or set to 0), the system's default value will be
+     * used.
+     * </pre>
+     *
+     * <code>int32 max_concurrent_backfill_tasks = 5;</code>
+     *
+     * @param value The maxConcurrentBackfillTasks to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxConcurrentBackfillTasks(int value) {
+
+      maxConcurrentBackfillTasks_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maximum number of concurrent backfill tasks. The number should be non
+     * negative. If not set (or set to 0), the system's default value will be
+     * used.
+     * </pre>
+     *
+     * <code>int32 max_concurrent_backfill_tasks = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxConcurrentBackfillTasks() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      maxConcurrentBackfillTasks_ = 0;
       onChanged();
       return this;
     }

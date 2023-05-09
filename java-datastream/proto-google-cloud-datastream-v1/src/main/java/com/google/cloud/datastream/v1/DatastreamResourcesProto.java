@@ -377,51 +377,54 @@ public final class DatastreamResourcesProto {
           + ">\n\roracle_tables\030\002 \003(\0132\'.google.cloud.da"
           + "tastream.v1.OracleTable\"O\n\013OracleRdbms\022@"
           + "\n\016oracle_schemas\030\001 \003(\0132(.google.cloud.da"
-          + "tastream.v1.OracleSchema\"\300\003\n\022OracleSourc"
+          + "tastream.v1.OracleSchema\"\347\003\n\022OracleSourc"
           + "eConfig\022@\n\017include_objects\030\001 \001(\0132\'.googl"
           + "e.cloud.datastream.v1.OracleRdbms\022@\n\017exc"
           + "lude_objects\030\002 \001(\0132\'.google.cloud.datast"
           + "ream.v1.OracleRdbms\022 \n\030max_concurrent_cd"
-          + "c_tasks\030\003 \001(\005\022]\n\022drop_large_objects\030d \001("
-          + "\0132?.google.cloud.datastream.v1.OracleSou"
-          + "rceConfig.DropLargeObjectsH\000\022a\n\024stream_l"
-          + "arge_objects\030f \001(\0132A.google.cloud.datast"
-          + "ream.v1.OracleSourceConfig.StreamLargeOb"
-          + "jectsH\000\032\022\n\020DropLargeObjects\032\024\n\022StreamLar"
-          + "geObjectsB\030\n\026large_objects_handling\"\250\001\n\020"
-          + "PostgresqlColumn\022\016\n\006column\030\001 \001(\t\022\021\n\tdata"
-          + "_type\030\002 \001(\t\022\016\n\006length\030\003 \001(\005\022\021\n\tprecision"
-          + "\030\004 \001(\005\022\r\n\005scale\030\005 \001(\005\022\023\n\013primary_key\030\007 \001"
-          + "(\010\022\020\n\010nullable\030\010 \001(\010\022\030\n\020ordinal_position"
-          + "\030\t \001(\005\"j\n\017PostgresqlTable\022\r\n\005table\030\001 \001(\t"
-          + "\022H\n\022postgresql_columns\030\002 \003(\0132,.google.cl"
-          + "oud.datastream.v1.PostgresqlColumn\"j\n\020Po"
-          + "stgresqlSchema\022\016\n\006schema\030\001 \001(\t\022F\n\021postgr"
-          + "esql_tables\030\002 \003(\0132+.google.cloud.datastr"
-          + "eam.v1.PostgresqlTable\"[\n\017PostgresqlRdbm"
-          + "s\022H\n\022postgresql_schemas\030\001 \003(\0132,.google.c"
-          + "loud.datastream.v1.PostgresqlSchema\"\335\001\n\026"
-          + "PostgresqlSourceConfig\022D\n\017include_object"
-          + "s\030\001 \001(\0132+.google.cloud.datastream.v1.Pos"
-          + "tgresqlRdbms\022D\n\017exclude_objects\030\002 \001(\0132+."
-          + "google.cloud.datastream.v1.PostgresqlRdb"
-          + "ms\022\035\n\020replication_slot\030\003 \001(\tB\003\340A\002\022\030\n\013pub"
-          + "lication\030\004 \001(\tB\003\340A\002\"\224\001\n\013MysqlColumn\022\016\n\006c"
-          + "olumn\030\001 \001(\t\022\021\n\tdata_type\030\002 \001(\t\022\016\n\006length"
-          + "\030\003 \001(\005\022\021\n\tcollation\030\004 \001(\t\022\023\n\013primary_key"
-          + "\030\005 \001(\010\022\020\n\010nullable\030\006 \001(\010\022\030\n\020ordinal_posi"
-          + "tion\030\007 \001(\005\"[\n\nMysqlTable\022\r\n\005table\030\001 \001(\t\022"
-          + ">\n\rmysql_columns\030\002 \003(\0132\'.google.cloud.da"
-          + "tastream.v1.MysqlColumn\"_\n\rMysqlDatabase"
-          + "\022\020\n\010database\030\001 \001(\t\022<\n\014mysql_tables\030\002 \003(\013"
-          + "2&.google.cloud.datastream.v1.MysqlTable"
-          + "\"P\n\nMysqlRdbms\022B\n\017mysql_databases\030\001 \003(\0132"
-          + ").google.cloud.datastream.v1.MysqlDataba"
-          + "se\"\267\001\n\021MysqlSourceConfig\022?\n\017include_obje"
-          + "cts\030\001 \001(\0132&.google.cloud.datastream.v1.M"
-          + "ysqlRdbms\022?\n\017exclude_objects\030\002 \001(\0132&.goo"
-          + "gle.cloud.datastream.v1.MysqlRdbms\022 \n\030ma"
-          + "x_concurrent_cdc_tasks\030\003 \001(\005\"\364\002\n\014SourceC"
+          + "c_tasks\030\003 \001(\005\022%\n\035max_concurrent_backfill"
+          + "_tasks\030\004 \001(\005\022]\n\022drop_large_objects\030d \001(\013"
+          + "2?.google.cloud.datastream.v1.OracleSour"
+          + "ceConfig.DropLargeObjectsH\000\022a\n\024stream_la"
+          + "rge_objects\030f \001(\0132A.google.cloud.datastr"
+          + "eam.v1.OracleSourceConfig.StreamLargeObj"
+          + "ectsH\000\032\022\n\020DropLargeObjects\032\024\n\022StreamLarg"
+          + "eObjectsB\030\n\026large_objects_handling\"\250\001\n\020P"
+          + "ostgresqlColumn\022\016\n\006column\030\001 \001(\t\022\021\n\tdata_"
+          + "type\030\002 \001(\t\022\016\n\006length\030\003 \001(\005\022\021\n\tprecision\030"
+          + "\004 \001(\005\022\r\n\005scale\030\005 \001(\005\022\023\n\013primary_key\030\007 \001("
+          + "\010\022\020\n\010nullable\030\010 \001(\010\022\030\n\020ordinal_position\030"
+          + "\t \001(\005\"j\n\017PostgresqlTable\022\r\n\005table\030\001 \001(\t\022"
+          + "H\n\022postgresql_columns\030\002 \003(\0132,.google.clo"
+          + "ud.datastream.v1.PostgresqlColumn\"j\n\020Pos"
+          + "tgresqlSchema\022\016\n\006schema\030\001 \001(\t\022F\n\021postgre"
+          + "sql_tables\030\002 \003(\0132+.google.cloud.datastre"
+          + "am.v1.PostgresqlTable\"[\n\017PostgresqlRdbms"
+          + "\022H\n\022postgresql_schemas\030\001 \003(\0132,.google.cl"
+          + "oud.datastream.v1.PostgresqlSchema\"\207\002\n\026P"
+          + "ostgresqlSourceConfig\022D\n\017include_objects"
+          + "\030\001 \001(\0132+.google.cloud.datastream.v1.Post"
+          + "gresqlRdbms\022D\n\017exclude_objects\030\002 \001(\0132+.g"
+          + "oogle.cloud.datastream.v1.PostgresqlRdbm"
+          + "s\022 \n\020replication_slot\030\003 \001(\tB\006\340A\002\340A\005\022\030\n\013p"
+          + "ublication\030\004 \001(\tB\003\340A\002\022%\n\035max_concurrent_"
+          + "backfill_tasks\030\005 \001(\005\"\224\001\n\013MysqlColumn\022\016\n\006"
+          + "column\030\001 \001(\t\022\021\n\tdata_type\030\002 \001(\t\022\016\n\006lengt"
+          + "h\030\003 \001(\005\022\021\n\tcollation\030\004 \001(\t\022\023\n\013primary_ke"
+          + "y\030\005 \001(\010\022\020\n\010nullable\030\006 \001(\010\022\030\n\020ordinal_pos"
+          + "ition\030\007 \001(\005\"[\n\nMysqlTable\022\r\n\005table\030\001 \001(\t"
+          + "\022>\n\rmysql_columns\030\002 \003(\0132\'.google.cloud.d"
+          + "atastream.v1.MysqlColumn\"_\n\rMysqlDatabas"
+          + "e\022\020\n\010database\030\001 \001(\t\022<\n\014mysql_tables\030\002 \003("
+          + "\0132&.google.cloud.datastream.v1.MysqlTabl"
+          + "e\"P\n\nMysqlRdbms\022B\n\017mysql_databases\030\001 \003(\013"
+          + "2).google.cloud.datastream.v1.MysqlDatab"
+          + "ase\"\336\001\n\021MysqlSourceConfig\022?\n\017include_obj"
+          + "ects\030\001 \001(\0132&.google.cloud.datastream.v1."
+          + "MysqlRdbms\022?\n\017exclude_objects\030\002 \001(\0132&.go"
+          + "ogle.cloud.datastream.v1.MysqlRdbms\022 \n\030m"
+          + "ax_concurrent_cdc_tasks\030\003 \001(\005\022%\n\035max_con"
+          + "current_backfill_tasks\030\004 \001(\005\"\364\002\n\014SourceC"
           + "onfig\022V\n\031source_connection_profile\030\001 \001(\t"
           + "B3\340A\002\372A-\n+datastream.googleapis.com/Conn"
           + "ectionProfile\022N\n\024oracle_source_config\030d "
@@ -801,6 +804,7 @@ public final class DatastreamResourcesProto {
               "IncludeObjects",
               "ExcludeObjects",
               "MaxConcurrentCdcTasks",
+              "MaxConcurrentBackfillTasks",
               "DropLargeObjects",
               "StreamLargeObjects",
               "LargeObjectsHandling",
@@ -866,7 +870,11 @@ public final class DatastreamResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_PostgresqlSourceConfig_descriptor,
             new java.lang.String[] {
-              "IncludeObjects", "ExcludeObjects", "ReplicationSlot", "Publication",
+              "IncludeObjects",
+              "ExcludeObjects",
+              "ReplicationSlot",
+              "Publication",
+              "MaxConcurrentBackfillTasks",
             });
     internal_static_google_cloud_datastream_v1_MysqlColumn_descriptor =
         getDescriptor().getMessageTypes().get(23);
@@ -912,7 +920,10 @@ public final class DatastreamResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datastream_v1_MysqlSourceConfig_descriptor,
             new java.lang.String[] {
-              "IncludeObjects", "ExcludeObjects", "MaxConcurrentCdcTasks",
+              "IncludeObjects",
+              "ExcludeObjects",
+              "MaxConcurrentCdcTasks",
+              "MaxConcurrentBackfillTasks",
             });
     internal_static_google_cloud_datastream_v1_SourceConfig_descriptor =
         getDescriptor().getMessageTypes().get(28);
