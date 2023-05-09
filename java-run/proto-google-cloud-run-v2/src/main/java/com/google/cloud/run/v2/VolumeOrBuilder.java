@@ -53,7 +53,6 @@ public interface VolumeOrBuilder
    *
    * <pre>
    * Secret represents a secret that should populate this volume.
-   * More info: https://kubernetes.io/docs/concepts/storage/volumes#secret
    * </pre>
    *
    * <code>.google.cloud.run.v2.SecretVolumeSource secret = 2;</code>
@@ -66,7 +65,6 @@ public interface VolumeOrBuilder
    *
    * <pre>
    * Secret represents a secret that should populate this volume.
-   * More info: https://kubernetes.io/docs/concepts/storage/volumes#secret
    * </pre>
    *
    * <code>.google.cloud.run.v2.SecretVolumeSource secret = 2;</code>
@@ -79,7 +77,6 @@ public interface VolumeOrBuilder
    *
    * <pre>
    * Secret represents a secret that should populate this volume.
-   * More info: https://kubernetes.io/docs/concepts/storage/volumes#secret
    * </pre>
    *
    * <code>.google.cloud.run.v2.SecretVolumeSource secret = 2;</code>

@@ -190,6 +190,26 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
     return httpHeaders_.get(index);
   }
 
+  public static final int PORT_FIELD_NUMBER = 5;
+  private int port_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Port number to access on the container. Must be in the range 1 to 65535.
+   * If not specified, defaults to the exposed port of the container, which is
+   * the value of container.ports[0].containerPort.
+   * </pre>
+   *
+   * <code>int32 port = 5;</code>
+   *
+   * @return The port.
+   */
+  @java.lang.Override
+  public int getPort() {
+    return port_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -210,6 +230,9 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < httpHeaders_.size(); i++) {
       output.writeMessage(4, httpHeaders_.get(i));
     }
+    if (port_ != 0) {
+      output.writeInt32(5, port_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -224,6 +247,9 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < httpHeaders_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, httpHeaders_.get(i));
+    }
+    if (port_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, port_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -242,6 +268,7 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
 
     if (!getPath().equals(other.getPath())) return false;
     if (!getHttpHeadersList().equals(other.getHttpHeadersList())) return false;
+    if (getPort() != other.getPort()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -259,6 +286,8 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + HTTP_HEADERS_FIELD_NUMBER;
       hash = (53 * hash) + getHttpHeadersList().hashCode();
     }
+    hash = (37 * hash) + PORT_FIELD_NUMBER;
+    hash = (53 * hash) + getPort();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -405,6 +434,7 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
         httpHeadersBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
+      port_ = 0;
       return this;
     }
 
@@ -456,6 +486,9 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.path_ = path_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.port_ = port_;
       }
     }
 
@@ -536,6 +569,9 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.getPort() != 0) {
+        setPort(other.getPort());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -581,6 +617,12 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 34
+            case 40:
+              {
+                port_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1052,6 +1094,65 @@ public final class HTTPGetAction extends com.google.protobuf.GeneratedMessageV3
         httpHeaders_ = null;
       }
       return httpHeadersBuilder_;
+    }
+
+    private int port_;
+    /**
+     *
+     *
+     * <pre>
+     * Port number to access on the container. Must be in the range 1 to 65535.
+     * If not specified, defaults to the exposed port of the container, which is
+     * the value of container.ports[0].containerPort.
+     * </pre>
+     *
+     * <code>int32 port = 5;</code>
+     *
+     * @return The port.
+     */
+    @java.lang.Override
+    public int getPort() {
+      return port_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Port number to access on the container. Must be in the range 1 to 65535.
+     * If not specified, defaults to the exposed port of the container, which is
+     * the value of container.ports[0].containerPort.
+     * </pre>
+     *
+     * <code>int32 port = 5;</code>
+     *
+     * @param value The port to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPort(int value) {
+
+      port_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Port number to access on the container. Must be in the range 1 to 65535.
+     * If not specified, defaults to the exposed port of the container, which is
+     * the value of container.ports[0].containerPort.
+     * </pre>
+     *
+     * <code>int32 port = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPort() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      port_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

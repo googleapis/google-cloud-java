@@ -74,7 +74,8 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Port number of the gRPC service. Number must be in the range 1 to 65535.
-   * If not specified, defaults to 8080.
+   * If not specified, defaults to the exposed port of the container, which is
+   * the value of container.ports[0].containerPort.
    * </pre>
    *
    * <code>int32 port = 1;</code>
@@ -507,7 +508,8 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Port number of the gRPC service. Number must be in the range 1 to 65535.
-     * If not specified, defaults to 8080.
+     * If not specified, defaults to the exposed port of the container, which is
+     * the value of container.ports[0].containerPort.
      * </pre>
      *
      * <code>int32 port = 1;</code>
@@ -523,7 +525,8 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Port number of the gRPC service. Number must be in the range 1 to 65535.
-     * If not specified, defaults to 8080.
+     * If not specified, defaults to the exposed port of the container, which is
+     * the value of container.ports[0].containerPort.
      * </pre>
      *
      * <code>int32 port = 1;</code>
@@ -543,7 +546,8 @@ public final class GRPCAction extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Port number of the gRPC service. Number must be in the range 1 to 65535.
-     * If not specified, defaults to 8080.
+     * If not specified, defaults to the exposed port of the container, which is
+     * the value of container.ports[0].containerPort.
      * </pre>
      *
      * <code>int32 port = 1;</code>

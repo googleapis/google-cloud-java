@@ -106,11 +106,13 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Only memory and CPU are supported. Note: The only
-   * supported values for CPU are '1', '2',  '4', and '8'. Setting 4 CPU
-   * requires at least 2Gi of memory. The values of the map is string form of
-   * the 'quantity' k8s type:
-   * https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go
+   * Only ´memory´ and 'cpu' are supported.
+   * &lt;p&gt;Notes:
+   *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
+   * CPU requires at least 2Gi of memory. For more information, go to
+   * https://cloud.google.com/run/docs/configuring/cpu.
+   *   * For supported 'memory' values and syntax, go to
+   *  https://cloud.google.com/run/docs/configuring/memory-limits
    * </pre>
    *
    * <code>map&lt;string, string&gt; limits = 1;</code>
@@ -132,11 +134,13 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Only memory and CPU are supported. Note: The only
-   * supported values for CPU are '1', '2',  '4', and '8'. Setting 4 CPU
-   * requires at least 2Gi of memory. The values of the map is string form of
-   * the 'quantity' k8s type:
-   * https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go
+   * Only ´memory´ and 'cpu' are supported.
+   * &lt;p&gt;Notes:
+   *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
+   * CPU requires at least 2Gi of memory. For more information, go to
+   * https://cloud.google.com/run/docs/configuring/cpu.
+   *   * For supported 'memory' values and syntax, go to
+   *  https://cloud.google.com/run/docs/configuring/memory-limits
    * </pre>
    *
    * <code>map&lt;string, string&gt; limits = 1;</code>
@@ -149,11 +153,13 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Only memory and CPU are supported. Note: The only
-   * supported values for CPU are '1', '2',  '4', and '8'. Setting 4 CPU
-   * requires at least 2Gi of memory. The values of the map is string form of
-   * the 'quantity' k8s type:
-   * https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go
+   * Only ´memory´ and 'cpu' are supported.
+   * &lt;p&gt;Notes:
+   *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
+   * CPU requires at least 2Gi of memory. For more information, go to
+   * https://cloud.google.com/run/docs/configuring/cpu.
+   *   * For supported 'memory' values and syntax, go to
+   *  https://cloud.google.com/run/docs/configuring/memory-limits
    * </pre>
    *
    * <code>map&lt;string, string&gt; limits = 1;</code>
@@ -173,11 +179,13 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Only memory and CPU are supported. Note: The only
-   * supported values for CPU are '1', '2',  '4', and '8'. Setting 4 CPU
-   * requires at least 2Gi of memory. The values of the map is string form of
-   * the 'quantity' k8s type:
-   * https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go
+   * Only ´memory´ and 'cpu' are supported.
+   * &lt;p&gt;Notes:
+   *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
+   * CPU requires at least 2Gi of memory. For more information, go to
+   * https://cloud.google.com/run/docs/configuring/cpu.
+   *   * For supported 'memory' values and syntax, go to
+   *  https://cloud.google.com/run/docs/configuring/memory-limits
    * </pre>
    *
    * <code>map&lt;string, string&gt; limits = 1;</code>
@@ -212,6 +220,26 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
     return cpuIdle_;
   }
 
+  public static final int STARTUP_CPU_BOOST_FIELD_NUMBER = 3;
+  private boolean startupCpuBoost_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Determines whether CPU should be boosted on startup of a new container
+   * instance above the requested CPU threshold, this can help reduce cold-start
+   * latency.
+   * </pre>
+   *
+   * <code>bool startup_cpu_boost = 3;</code>
+   *
+   * @return The startupCpuBoost.
+   */
+  @java.lang.Override
+  public boolean getStartupCpuBoost() {
+    return startupCpuBoost_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -230,6 +258,9 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
         output, internalGetLimits(), LimitsDefaultEntryHolder.defaultEntry, 1);
     if (cpuIdle_ != false) {
       output.writeBool(2, cpuIdle_);
+    }
+    if (startupCpuBoost_ != false) {
+      output.writeBool(3, startupCpuBoost_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -253,6 +284,9 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
     if (cpuIdle_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, cpuIdle_);
     }
+    if (startupCpuBoost_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, startupCpuBoost_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -271,6 +305,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
 
     if (!internalGetLimits().equals(other.internalGetLimits())) return false;
     if (getCpuIdle() != other.getCpuIdle()) return false;
+    if (getStartupCpuBoost() != other.getStartupCpuBoost()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -288,6 +323,8 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
     }
     hash = (37 * hash) + CPU_IDLE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCpuIdle());
+    hash = (37 * hash) + STARTUP_CPU_BOOST_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getStartupCpuBoost());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -449,6 +486,7 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
       bitField0_ = 0;
       internalGetMutableLimits().clear();
       cpuIdle_ = false;
+      startupCpuBoost_ = false;
       return this;
     }
 
@@ -491,6 +529,9 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.cpuIdle_ = cpuIdle_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.startupCpuBoost_ = startupCpuBoost_;
       }
     }
 
@@ -544,6 +585,9 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
       if (other.getCpuIdle() != false) {
         setCpuIdle(other.getCpuIdle());
       }
+      if (other.getStartupCpuBoost() != false) {
+        setStartupCpuBoost(other.getStartupCpuBoost());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -588,6 +632,12 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 24:
+              {
+                startupCpuBoost_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -636,11 +686,13 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only memory and CPU are supported. Note: The only
-     * supported values for CPU are '1', '2',  '4', and '8'. Setting 4 CPU
-     * requires at least 2Gi of memory. The values of the map is string form of
-     * the 'quantity' k8s type:
-     * https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go
+     * Only ´memory´ and 'cpu' are supported.
+     * &lt;p&gt;Notes:
+     *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
+     * CPU requires at least 2Gi of memory. For more information, go to
+     * https://cloud.google.com/run/docs/configuring/cpu.
+     *   * For supported 'memory' values and syntax, go to
+     *  https://cloud.google.com/run/docs/configuring/memory-limits
      * </pre>
      *
      * <code>map&lt;string, string&gt; limits = 1;</code>
@@ -662,11 +714,13 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only memory and CPU are supported. Note: The only
-     * supported values for CPU are '1', '2',  '4', and '8'. Setting 4 CPU
-     * requires at least 2Gi of memory. The values of the map is string form of
-     * the 'quantity' k8s type:
-     * https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go
+     * Only ´memory´ and 'cpu' are supported.
+     * &lt;p&gt;Notes:
+     *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
+     * CPU requires at least 2Gi of memory. For more information, go to
+     * https://cloud.google.com/run/docs/configuring/cpu.
+     *   * For supported 'memory' values and syntax, go to
+     *  https://cloud.google.com/run/docs/configuring/memory-limits
      * </pre>
      *
      * <code>map&lt;string, string&gt; limits = 1;</code>
@@ -679,11 +733,13 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only memory and CPU are supported. Note: The only
-     * supported values for CPU are '1', '2',  '4', and '8'. Setting 4 CPU
-     * requires at least 2Gi of memory. The values of the map is string form of
-     * the 'quantity' k8s type:
-     * https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go
+     * Only ´memory´ and 'cpu' are supported.
+     * &lt;p&gt;Notes:
+     *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
+     * CPU requires at least 2Gi of memory. For more information, go to
+     * https://cloud.google.com/run/docs/configuring/cpu.
+     *   * For supported 'memory' values and syntax, go to
+     *  https://cloud.google.com/run/docs/configuring/memory-limits
      * </pre>
      *
      * <code>map&lt;string, string&gt; limits = 1;</code>
@@ -703,11 +759,13 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only memory and CPU are supported. Note: The only
-     * supported values for CPU are '1', '2',  '4', and '8'. Setting 4 CPU
-     * requires at least 2Gi of memory. The values of the map is string form of
-     * the 'quantity' k8s type:
-     * https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go
+     * Only ´memory´ and 'cpu' are supported.
+     * &lt;p&gt;Notes:
+     *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
+     * CPU requires at least 2Gi of memory. For more information, go to
+     * https://cloud.google.com/run/docs/configuring/cpu.
+     *   * For supported 'memory' values and syntax, go to
+     *  https://cloud.google.com/run/docs/configuring/memory-limits
      * </pre>
      *
      * <code>map&lt;string, string&gt; limits = 1;</code>
@@ -733,11 +791,13 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only memory and CPU are supported. Note: The only
-     * supported values for CPU are '1', '2',  '4', and '8'. Setting 4 CPU
-     * requires at least 2Gi of memory. The values of the map is string form of
-     * the 'quantity' k8s type:
-     * https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go
+     * Only ´memory´ and 'cpu' are supported.
+     * &lt;p&gt;Notes:
+     *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
+     * CPU requires at least 2Gi of memory. For more information, go to
+     * https://cloud.google.com/run/docs/configuring/cpu.
+     *   * For supported 'memory' values and syntax, go to
+     *  https://cloud.google.com/run/docs/configuring/memory-limits
      * </pre>
      *
      * <code>map&lt;string, string&gt; limits = 1;</code>
@@ -759,11 +819,13 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only memory and CPU are supported. Note: The only
-     * supported values for CPU are '1', '2',  '4', and '8'. Setting 4 CPU
-     * requires at least 2Gi of memory. The values of the map is string form of
-     * the 'quantity' k8s type:
-     * https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go
+     * Only ´memory´ and 'cpu' are supported.
+     * &lt;p&gt;Notes:
+     *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
+     * CPU requires at least 2Gi of memory. For more information, go to
+     * https://cloud.google.com/run/docs/configuring/cpu.
+     *   * For supported 'memory' values and syntax, go to
+     *  https://cloud.google.com/run/docs/configuring/memory-limits
      * </pre>
      *
      * <code>map&lt;string, string&gt; limits = 1;</code>
@@ -783,11 +845,13 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Only memory and CPU are supported. Note: The only
-     * supported values for CPU are '1', '2',  '4', and '8'. Setting 4 CPU
-     * requires at least 2Gi of memory. The values of the map is string form of
-     * the 'quantity' k8s type:
-     * https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go
+     * Only ´memory´ and 'cpu' are supported.
+     * &lt;p&gt;Notes:
+     *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
+     * CPU requires at least 2Gi of memory. For more information, go to
+     * https://cloud.google.com/run/docs/configuring/cpu.
+     *   * For supported 'memory' values and syntax, go to
+     *  https://cloud.google.com/run/docs/configuring/memory-limits
      * </pre>
      *
      * <code>map&lt;string, string&gt; limits = 1;</code>
@@ -847,6 +911,65 @@ public final class ResourceRequirements extends com.google.protobuf.GeneratedMes
     public Builder clearCpuIdle() {
       bitField0_ = (bitField0_ & ~0x00000002);
       cpuIdle_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean startupCpuBoost_;
+    /**
+     *
+     *
+     * <pre>
+     * Determines whether CPU should be boosted on startup of a new container
+     * instance above the requested CPU threshold, this can help reduce cold-start
+     * latency.
+     * </pre>
+     *
+     * <code>bool startup_cpu_boost = 3;</code>
+     *
+     * @return The startupCpuBoost.
+     */
+    @java.lang.Override
+    public boolean getStartupCpuBoost() {
+      return startupCpuBoost_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Determines whether CPU should be boosted on startup of a new container
+     * instance above the requested CPU threshold, this can help reduce cold-start
+     * latency.
+     * </pre>
+     *
+     * <code>bool startup_cpu_boost = 3;</code>
+     *
+     * @param value The startupCpuBoost to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStartupCpuBoost(boolean value) {
+
+      startupCpuBoost_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Determines whether CPU should be boosted on startup of a new container
+     * instance above the requested CPU threshold, this can help reduce cold-start
+     * latency.
+     * </pre>
+     *
+     * <code>bool startup_cpu_boost = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStartupCpuBoost() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      startupCpuBoost_ = false;
       onChanged();
       return this;
     }

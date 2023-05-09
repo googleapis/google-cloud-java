@@ -244,15 +244,15 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * KRM-style labels for the resource.
-   * User-provided labels are shared with Google's billing system, so they can
-   * be used to filter, or break down billing charges by team, component,
-   * environment, state, etc. For more information, visit
+   * Output only. Unstructured key value map that can be used to organize and
+   * categorize objects. User-provided labels are shared with Google's billing
+   * system, so they can be used to filter, or break down billing charges by
+   * team, component, environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
@@ -271,15 +271,15 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * KRM-style labels for the resource.
-   * User-provided labels are shared with Google's billing system, so they can
-   * be used to filter, or break down billing charges by team, component,
-   * environment, state, etc. For more information, visit
+   * Output only. Unstructured key value map that can be used to organize and
+   * categorize objects. User-provided labels are shared with Google's billing
+   * system, so they can be used to filter, or break down billing charges by
+   * team, component, environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -289,15 +289,15 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * KRM-style labels for the resource.
-   * User-provided labels are shared with Google's billing system, so they can
-   * be used to filter, or break down billing charges by team, component,
-   * environment, state, etc. For more information, visit
+   * Output only. Unstructured key value map that can be used to organize and
+   * categorize objects. User-provided labels are shared with Google's billing
+   * system, so they can be used to filter, or break down billing charges by
+   * team, component, environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -314,15 +314,15 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * KRM-style labels for the resource.
-   * User-provided labels are shared with Google's billing system, so they can
-   * be used to filter, or break down billing charges by team, component,
-   * environment, state, etc. For more information, visit
+   * Output only. Unstructured key value map that can be used to organize and
+   * categorize objects. User-provided labels are shared with Google's billing
+   * system, so they can be used to filter, or break down billing charges by
+   * team, component, environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -367,10 +367,14 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * KRM-style annotations for the resource.
+   * Output only. Unstructured key value map that may
+   * be set by external tools to store and arbitrary metadata.
+   * They are not queryable and should be preserved
+   * when modifying objects.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public boolean containsAnnotations(java.lang.String key) {
@@ -389,10 +393,14 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * KRM-style annotations for the resource.
+   * Output only. Unstructured key value map that may
+   * be set by external tools to store and arbitrary metadata.
+   * They are not queryable and should be preserved
+   * when modifying objects.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
@@ -402,10 +410,14 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * KRM-style annotations for the resource.
+   * Output only. Unstructured key value map that may
+   * be set by external tools to store and arbitrary metadata.
+   * They are not queryable and should be preserved
+   * when modifying objects.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getAnnotationsOrDefault(
@@ -422,10 +434,14 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * KRM-style annotations for the resource.
+   * Output only. Unstructured key value map that may
+   * be set by external tools to store and arbitrary metadata.
+   * They are not queryable and should be preserved
+   * when modifying objects.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
@@ -1571,6 +1587,24 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 33;
+  private boolean satisfiesPzs_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
   public static final int ETAG_FIELD_NUMBER = 99;
 
   @SuppressWarnings("serial")
@@ -1722,6 +1756,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(logUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 32, logUri_);
     }
+    if (satisfiesPzs_ != false) {
+      output.writeBool(33, satisfiesPzs_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 99, etag_);
     }
@@ -1834,6 +1871,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(logUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(32, logUri_);
     }
+    if (satisfiesPzs_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(33, satisfiesPzs_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(99, etag_);
     }
@@ -1907,6 +1947,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       if (!getVpcAccess().equals(other.getVpcAccess())) return false;
     }
     if (!getLogUri().equals(other.getLogUri())) return false;
+    if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
     if (!getEtag().equals(other.getEtag())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -2003,6 +2044,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + LOG_URI_FIELD_NUMBER;
     hash = (53 * hash) + getLogUri().hashCode();
+    hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -2247,6 +2290,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         vpcAccessBuilder_ = null;
       }
       logUri_ = "";
+      satisfiesPzs_ = false;
       etag_ = "";
       return this;
     }
@@ -2395,6 +2439,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         result.logUri_ = logUri_;
       }
       if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
         result.etag_ = etag_;
       }
     }
@@ -2612,9 +2659,12 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x08000000;
         onChanged();
       }
+      if (other.getSatisfiesPzs() != false) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x10000000;
+        bitField0_ |= 0x20000000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2844,10 +2894,16 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x08000000;
                 break;
               } // case 258
+            case 264:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x10000000;
+                break;
+              } // case 264
             case 794:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 794
             default:
@@ -3176,15 +3232,16 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * KRM-style labels for the resource.
-     * User-provided labels are shared with Google's billing system, so they can
-     * be used to filter, or break down billing charges by team, component,
-     * environment, state, etc. For more information, visit
+     * Output only. Unstructured key value map that can be used to organize and
+     * categorize objects. User-provided labels are shared with Google's billing
+     * system, so they can be used to filter, or break down billing charges by
+     * team, component, environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
@@ -3203,15 +3260,16 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * KRM-style labels for the resource.
-     * User-provided labels are shared with Google's billing system, so they can
-     * be used to filter, or break down billing charges by team, component,
-     * environment, state, etc. For more information, visit
+     * Output only. Unstructured key value map that can be used to organize and
+     * categorize objects. User-provided labels are shared with Google's billing
+     * system, so they can be used to filter, or break down billing charges by
+     * team, component, environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -3221,15 +3279,16 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * KRM-style labels for the resource.
-     * User-provided labels are shared with Google's billing system, so they can
-     * be used to filter, or break down billing charges by team, component,
-     * environment, state, etc. For more information, visit
+     * Output only. Unstructured key value map that can be used to organize and
+     * categorize objects. User-provided labels are shared with Google's billing
+     * system, so they can be used to filter, or break down billing charges by
+     * team, component, environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -3246,15 +3305,16 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * KRM-style labels for the resource.
-     * User-provided labels are shared with Google's billing system, so they can
-     * be used to filter, or break down billing charges by team, component,
-     * environment, state, etc. For more information, visit
+     * Output only. Unstructured key value map that can be used to organize and
+     * categorize objects. User-provided labels are shared with Google's billing
+     * system, so they can be used to filter, or break down billing charges by
+     * team, component, environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -3277,15 +3337,16 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * KRM-style labels for the resource.
-     * User-provided labels are shared with Google's billing system, so they can
-     * be used to filter, or break down billing charges by team, component,
-     * environment, state, etc. For more information, visit
+     * Output only. Unstructured key value map that can be used to organize and
+     * categorize objects. User-provided labels are shared with Google's billing
+     * system, so they can be used to filter, or break down billing charges by
+     * team, component, environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -3304,15 +3365,16 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * KRM-style labels for the resource.
-     * User-provided labels are shared with Google's billing system, so they can
-     * be used to filter, or break down billing charges by team, component,
-     * environment, state, etc. For more information, visit
+     * Output only. Unstructured key value map that can be used to organize and
+     * categorize objects. User-provided labels are shared with Google's billing
+     * system, so they can be used to filter, or break down billing charges by
+     * team, component, environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -3329,15 +3391,16 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * KRM-style labels for the resource.
-     * User-provided labels are shared with Google's billing system, so they can
-     * be used to filter, or break down billing charges by team, component,
-     * environment, state, etc. For more information, visit
+     * Output only. Unstructured key value map that can be used to organize and
+     * categorize objects. User-provided labels are shared with Google's billing
+     * system, so they can be used to filter, or break down billing charges by
+     * team, component, environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
      * https://cloud.google.com/run/docs/configuring/labels
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
@@ -3377,10 +3440,14 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * KRM-style annotations for the resource.
+     * Output only. Unstructured key value map that may
+     * be set by external tools to store and arbitrary metadata.
+     * They are not queryable and should be preserved
+     * when modifying objects.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     @java.lang.Override
     public boolean containsAnnotations(java.lang.String key) {
@@ -3399,10 +3466,14 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * KRM-style annotations for the resource.
+     * Output only. Unstructured key value map that may
+     * be set by external tools to store and arbitrary metadata.
+     * They are not queryable and should be preserved
+     * when modifying objects.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
@@ -3412,10 +3483,14 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * KRM-style annotations for the resource.
+     * Output only. Unstructured key value map that may
+     * be set by external tools to store and arbitrary metadata.
+     * They are not queryable and should be preserved
+     * when modifying objects.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getAnnotationsOrDefault(
@@ -3432,10 +3507,14 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * KRM-style annotations for the resource.
+     * Output only. Unstructured key value map that may
+     * be set by external tools to store and arbitrary metadata.
+     * They are not queryable and should be preserved
+     * when modifying objects.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     @java.lang.Override
     public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
@@ -3458,10 +3537,14 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * KRM-style annotations for the resource.
+     * Output only. Unstructured key value map that may
+     * be set by external tools to store and arbitrary metadata.
+     * They are not queryable and should be preserved
+     * when modifying objects.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder removeAnnotations(java.lang.String key) {
       if (key == null) {
@@ -3480,10 +3563,14 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * KRM-style annotations for the resource.
+     * Output only. Unstructured key value map that may
+     * be set by external tools to store and arbitrary metadata.
+     * They are not queryable and should be preserved
+     * when modifying objects.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder putAnnotations(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -3500,10 +3587,14 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * KRM-style annotations for the resource.
+     * Output only. Unstructured key value map that may
+     * be set by external tools to store and arbitrary metadata.
+     * They are not queryable and should be preserved
+     * when modifying objects.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
@@ -7475,6 +7566,59 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private boolean satisfiesPzs_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x10000000);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object etag_ = "";
     /**
      *
@@ -7540,7 +7684,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -7558,7 +7702,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       onChanged();
       return this;
     }
@@ -7581,7 +7725,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }

@@ -53,7 +53,7 @@ public final class RevisionTemplateProto {
           + "esource.proto\032!google/cloud/run/v2/k8s.m"
           + "in.proto\032)google/cloud/run/v2/vendor_set"
           + "tings.proto\032\036google/protobuf/duration.pr"
-          + "oto\"\377\005\n\020RevisionTemplate\0222\n\010revision\030\001 \001"
+          + "oto\"\231\006\n\020RevisionTemplate\0222\n\010revision\030\001 \001"
           + "(\tB \372A\035\n\033run.googleapis.com/Revision\022A\n\006"
           + "labels\030\002 \003(\01321.google.cloud.run.v2.Revis"
           + "ionTemplate.LabelsEntry\022K\n\013annotations\030\003"
@@ -69,12 +69,13 @@ public final class RevisionTemplateProto {
           + "\r \001(\0162).google.cloud.run.v2.ExecutionEnv"
           + "ironment\022>\n\016encryption_key\030\016 \001(\tB&\372A#\n!c"
           + "loudkms.googleapis.com/CryptoKey\022(\n max_"
-          + "instance_request_concurrency\030\017 \001(\005\032-\n\013La"
-          + "belsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028"
-          + "\001\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va"
-          + "lue\030\002 \001(\t:\0028\001B]\n\027com.google.cloud.run.v2"
-          + "B\025RevisionTemplateProtoP\001Z)cloud.google."
-          + "com/go/run/apiv2/runpb;runpbb\006proto3"
+          + "instance_request_concurrency\030\017 \001(\005\022\030\n\020se"
+          + "ssion_affinity\030\023 \001(\010\032-\n\013LabelsEntry\022\013\n\003k"
+          + "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0322\n\020Annotatio"
+          + "nsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B"
+          + "]\n\027com.google.cloud.run.v2B\025RevisionTemp"
+          + "lateProtoP\001Z)cloud.google.com/go/run/api"
+          + "v2/runpb;runpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -103,6 +104,7 @@ public final class RevisionTemplateProto {
               "ExecutionEnvironment",
               "EncryptionKey",
               "MaxInstanceRequestConcurrency",
+              "SessionAffinity",
             });
     internal_static_google_cloud_run_v2_RevisionTemplate_LabelsEntry_descriptor =
         internal_static_google_cloud_run_v2_RevisionTemplate_descriptor.getNestedTypes().get(0);

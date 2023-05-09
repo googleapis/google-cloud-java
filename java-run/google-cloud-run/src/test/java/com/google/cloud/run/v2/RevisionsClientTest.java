@@ -121,6 +121,8 @@ public class RevisionsClientTest {
             .addAllConditions(new ArrayList<Condition>())
             .setObservedGeneration(900833007)
             .setLogUri("logUri-1097354360")
+            .setSatisfiesPzs(true)
+            .setSessionAffinity(true)
             .setEtag("etag3123477")
             .build();
     mockRevisions.addResponse(expectedResponse);
@@ -186,6 +188,8 @@ public class RevisionsClientTest {
             .addAllConditions(new ArrayList<Condition>())
             .setObservedGeneration(900833007)
             .setLogUri("logUri-1097354360")
+            .setSatisfiesPzs(true)
+            .setSessionAffinity(true)
             .setEtag("etag3123477")
             .build();
     mockRevisions.addResponse(expectedResponse);
@@ -339,6 +343,8 @@ public class RevisionsClientTest {
             .addAllConditions(new ArrayList<Condition>())
             .setObservedGeneration(900833007)
             .setLogUri("logUri-1097354360")
+            .setSatisfiesPzs(true)
+            .setSessionAffinity(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -412,6 +418,8 @@ public class RevisionsClientTest {
             .addAllConditions(new ArrayList<Condition>())
             .setObservedGeneration(900833007)
             .setLogUri("logUri-1097354360")
+            .setSatisfiesPzs(true)
+            .setSessionAffinity(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =

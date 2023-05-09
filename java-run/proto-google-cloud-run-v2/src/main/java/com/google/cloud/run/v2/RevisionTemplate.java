@@ -169,7 +169,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * KRM-style labels for the resource.
+   * Unstructured key value map that can be used to organize and categorize
+   * objects.
+   * User-provided labels are shared with Google's billing system, so they can
+   * be used to filter, or break down billing charges by team, component,
+   * environment, state, etc. For more information, visit
+   * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
+   * https://cloud.google.com/run/docs/configuring/labels.
    * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -195,7 +201,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * KRM-style labels for the resource.
+   * Unstructured key value map that can be used to organize and categorize
+   * objects.
+   * User-provided labels are shared with Google's billing system, so they can
+   * be used to filter, or break down billing charges by team, component,
+   * environment, state, etc. For more information, visit
+   * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
+   * https://cloud.google.com/run/docs/configuring/labels.
    * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -212,7 +224,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * KRM-style labels for the resource.
+   * Unstructured key value map that can be used to organize and categorize
+   * objects.
+   * User-provided labels are shared with Google's billing system, so they can
+   * be used to filter, or break down billing charges by team, component,
+   * environment, state, etc. For more information, visit
+   * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
+   * https://cloud.google.com/run/docs/configuring/labels.
    * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -236,7 +254,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * KRM-style labels for the resource.
+   * Unstructured key value map that can be used to organize and categorize
+   * objects.
+   * User-provided labels are shared with Google's billing system, so they can
+   * be used to filter, or break down billing charges by team, component,
+   * environment, state, etc. For more information, visit
+   * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
+   * https://cloud.google.com/run/docs/configuring/labels.
    * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -288,11 +312,15 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * KRM-style annotations for the resource.
+   * Unstructured key value map that may be set by external tools to store and
+   * arbitrary metadata. They are not queryable and should be preserved
+   * when modifying objects.
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system annotations in v1 now
    * have a corresponding field in v2 RevisionTemplate.
+   * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
+   * rules.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 3;</code>
@@ -314,11 +342,15 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * KRM-style annotations for the resource.
+   * Unstructured key value map that may be set by external tools to store and
+   * arbitrary metadata. They are not queryable and should be preserved
+   * when modifying objects.
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system annotations in v1 now
    * have a corresponding field in v2 RevisionTemplate.
+   * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
+   * rules.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 3;</code>
@@ -331,11 +363,15 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * KRM-style annotations for the resource.
+   * Unstructured key value map that may be set by external tools to store and
+   * arbitrary metadata. They are not queryable and should be preserved
+   * when modifying objects.
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system annotations in v1 now
    * have a corresponding field in v2 RevisionTemplate.
+   * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
+   * rules.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 3;</code>
@@ -355,11 +391,15 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * KRM-style annotations for the resource.
+   * Unstructured key value map that may be set by external tools to store and
+   * arbitrary metadata. They are not queryable and should be preserved
+   * when modifying objects.
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system annotations in v1 now
    * have a corresponding field in v2 RevisionTemplate.
+   * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
+   * rules.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 3;</code>
@@ -833,6 +873,24 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     return maxInstanceRequestConcurrency_;
   }
 
+  public static final int SESSION_AFFINITY_FIELD_NUMBER = 19;
+  private boolean sessionAffinity_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Enable session affinity.
+   * </pre>
+   *
+   * <code>bool session_affinity = 19;</code>
+   *
+   * @return The sessionAffinity.
+   */
+  @java.lang.Override
+  public boolean getSessionAffinity() {
+    return sessionAffinity_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -882,6 +940,9 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     }
     if (maxInstanceRequestConcurrency_ != 0) {
       output.writeInt32(15, maxInstanceRequestConcurrency_);
+    }
+    if (sessionAffinity_ != false) {
+      output.writeBool(19, sessionAffinity_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -946,6 +1007,9 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeInt32Size(
               15, maxInstanceRequestConcurrency_);
     }
+    if (sessionAffinity_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(19, sessionAffinity_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -983,6 +1047,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     if (!getEncryptionKey().equals(other.getEncryptionKey())) return false;
     if (getMaxInstanceRequestConcurrency() != other.getMaxInstanceRequestConcurrency())
       return false;
+    if (getSessionAffinity() != other.getSessionAffinity()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1032,6 +1097,8 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getEncryptionKey().hashCode();
     hash = (37 * hash) + MAX_INSTANCE_REQUEST_CONCURRENCY_FIELD_NUMBER;
     hash = (53 * hash) + getMaxInstanceRequestConcurrency();
+    hash = (37 * hash) + SESSION_AFFINITY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSessionAffinity());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1232,6 +1299,7 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       executionEnvironment_ = 0;
       encryptionKey_ = "";
       maxInstanceRequestConcurrency_ = 0;
+      sessionAffinity_ = false;
       return this;
     }
 
@@ -1321,6 +1389,9 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.maxInstanceRequestConcurrency_ = maxInstanceRequestConcurrency_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.sessionAffinity_ = sessionAffinity_;
       }
     }
 
@@ -1457,6 +1528,9 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
       if (other.getMaxInstanceRequestConcurrency() != 0) {
         setMaxInstanceRequestConcurrency(other.getMaxInstanceRequestConcurrency());
       }
+      if (other.getSessionAffinity() != false) {
+        setSessionAffinity(other.getSessionAffinity());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1580,6 +1654,12 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000800;
                 break;
               } // case 120
+            case 152:
+              {
+                sessionAffinity_ = input.readBool();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 152
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1739,7 +1819,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * KRM-style labels for the resource.
+     * Unstructured key value map that can be used to organize and categorize
+     * objects.
+     * User-provided labels are shared with Google's billing system, so they can
+     * be used to filter, or break down billing charges by team, component,
+     * environment, state, etc. For more information, visit
+     * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
+     * https://cloud.google.com/run/docs/configuring/labels.
      * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -1765,7 +1851,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * KRM-style labels for the resource.
+     * Unstructured key value map that can be used to organize and categorize
+     * objects.
+     * User-provided labels are shared with Google's billing system, so they can
+     * be used to filter, or break down billing charges by team, component,
+     * environment, state, etc. For more information, visit
+     * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
+     * https://cloud.google.com/run/docs/configuring/labels.
      * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -1782,7 +1874,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * KRM-style labels for the resource.
+     * Unstructured key value map that can be used to organize and categorize
+     * objects.
+     * User-provided labels are shared with Google's billing system, so they can
+     * be used to filter, or break down billing charges by team, component,
+     * environment, state, etc. For more information, visit
+     * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
+     * https://cloud.google.com/run/docs/configuring/labels.
      * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -1806,7 +1904,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * KRM-style labels for the resource.
+     * Unstructured key value map that can be used to organize and categorize
+     * objects.
+     * User-provided labels are shared with Google's billing system, so they can
+     * be used to filter, or break down billing charges by team, component,
+     * environment, state, etc. For more information, visit
+     * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
+     * https://cloud.google.com/run/docs/configuring/labels.
      * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -1836,7 +1940,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * KRM-style labels for the resource.
+     * Unstructured key value map that can be used to organize and categorize
+     * objects.
+     * User-provided labels are shared with Google's billing system, so they can
+     * be used to filter, or break down billing charges by team, component,
+     * environment, state, etc. For more information, visit
+     * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
+     * https://cloud.google.com/run/docs/configuring/labels.
      * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -1862,7 +1972,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * KRM-style labels for the resource.
+     * Unstructured key value map that can be used to organize and categorize
+     * objects.
+     * User-provided labels are shared with Google's billing system, so they can
+     * be used to filter, or break down billing charges by team, component,
+     * environment, state, etc. For more information, visit
+     * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
+     * https://cloud.google.com/run/docs/configuring/labels.
      * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -1886,7 +2002,13 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * KRM-style labels for the resource.
+     * Unstructured key value map that can be used to organize and categorize
+     * objects.
+     * User-provided labels are shared with Google's billing system, so they can
+     * be used to filter, or break down billing charges by team, component,
+     * environment, state, etc. For more information, visit
+     * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
+     * https://cloud.google.com/run/docs/configuring/labels.
      * &lt;p&gt;Cloud Run API v2 does not support labels with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -1933,11 +2055,15 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * KRM-style annotations for the resource.
+     * Unstructured key value map that may be set by external tools to store and
+     * arbitrary metadata. They are not queryable and should be preserved
+     * when modifying objects.
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system annotations in v1 now
      * have a corresponding field in v2 RevisionTemplate.
+     * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
+     * rules.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 3;</code>
@@ -1959,11 +2085,15 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * KRM-style annotations for the resource.
+     * Unstructured key value map that may be set by external tools to store and
+     * arbitrary metadata. They are not queryable and should be preserved
+     * when modifying objects.
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system annotations in v1 now
      * have a corresponding field in v2 RevisionTemplate.
+     * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
+     * rules.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 3;</code>
@@ -1976,11 +2106,15 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * KRM-style annotations for the resource.
+     * Unstructured key value map that may be set by external tools to store and
+     * arbitrary metadata. They are not queryable and should be preserved
+     * when modifying objects.
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system annotations in v1 now
      * have a corresponding field in v2 RevisionTemplate.
+     * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
+     * rules.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 3;</code>
@@ -2000,11 +2134,15 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * KRM-style annotations for the resource.
+     * Unstructured key value map that may be set by external tools to store and
+     * arbitrary metadata. They are not queryable and should be preserved
+     * when modifying objects.
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system annotations in v1 now
      * have a corresponding field in v2 RevisionTemplate.
+     * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
+     * rules.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 3;</code>
@@ -2030,11 +2168,15 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * KRM-style annotations for the resource.
+     * Unstructured key value map that may be set by external tools to store and
+     * arbitrary metadata. They are not queryable and should be preserved
+     * when modifying objects.
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system annotations in v1 now
      * have a corresponding field in v2 RevisionTemplate.
+     * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
+     * rules.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 3;</code>
@@ -2056,11 +2198,15 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * KRM-style annotations for the resource.
+     * Unstructured key value map that may be set by external tools to store and
+     * arbitrary metadata. They are not queryable and should be preserved
+     * when modifying objects.
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system annotations in v1 now
      * have a corresponding field in v2 RevisionTemplate.
+     * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
+     * rules.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 3;</code>
@@ -2080,11 +2226,15 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * KRM-style annotations for the resource.
+     * Unstructured key value map that may be set by external tools to store and
+     * arbitrary metadata. They are not queryable and should be preserved
+     * when modifying objects.
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system annotations in v1 now
      * have a corresponding field in v2 RevisionTemplate.
+     * &lt;p&gt;This field follows Kubernetes annotations' namespacing, limits, and
+     * rules.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 3;</code>
@@ -3737,6 +3887,59 @@ public final class RevisionTemplate extends com.google.protobuf.GeneratedMessage
     public Builder clearMaxInstanceRequestConcurrency() {
       bitField0_ = (bitField0_ & ~0x00000800);
       maxInstanceRequestConcurrency_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean sessionAffinity_;
+    /**
+     *
+     *
+     * <pre>
+     * Enable session affinity.
+     * </pre>
+     *
+     * <code>bool session_affinity = 19;</code>
+     *
+     * @return The sessionAffinity.
+     */
+    @java.lang.Override
+    public boolean getSessionAffinity() {
+      return sessionAffinity_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable session affinity.
+     * </pre>
+     *
+     * <code>bool session_affinity = 19;</code>
+     *
+     * @param value The sessionAffinity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSessionAffinity(boolean value) {
+
+      sessionAffinity_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Enable session affinity.
+     * </pre>
+     *
+     * <code>bool session_affinity = 19;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSessionAffinity() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      sessionAffinity_ = false;
       onChanged();
       return this;
     }

@@ -316,13 +316,13 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Map of string keys and values that can be used to organize and categorize
+   * Unstructured key value map that can be used to organize and categorize
    * objects.
    * User-provided labels are shared with Google's billing system, so they can
    * be used to filter, or break down billing charges by team, component,
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
-   * https://cloud.google.com/run/docs/configuring/labels
+   * https://cloud.google.com/run/docs/configuring/labels.
    * &lt;p&gt;Cloud Run API v2 does not support labels with  `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -348,13 +348,13 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Map of string keys and values that can be used to organize and categorize
+   * Unstructured key value map that can be used to organize and categorize
    * objects.
    * User-provided labels are shared with Google's billing system, so they can
    * be used to filter, or break down billing charges by team, component,
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
-   * https://cloud.google.com/run/docs/configuring/labels
+   * https://cloud.google.com/run/docs/configuring/labels.
    * &lt;p&gt;Cloud Run API v2 does not support labels with  `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -371,13 +371,13 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Map of string keys and values that can be used to organize and categorize
+   * Unstructured key value map that can be used to organize and categorize
    * objects.
    * User-provided labels are shared with Google's billing system, so they can
    * be used to filter, or break down billing charges by team, component,
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
-   * https://cloud.google.com/run/docs/configuring/labels
+   * https://cloud.google.com/run/docs/configuring/labels.
    * &lt;p&gt;Cloud Run API v2 does not support labels with  `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -401,13 +401,13 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Map of string keys and values that can be used to organize and categorize
+   * Unstructured key value map that can be used to organize and categorize
    * objects.
    * User-provided labels are shared with Google's billing system, so they can
    * be used to filter, or break down billing charges by team, component,
    * environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
-   * https://cloud.google.com/run/docs/configuring/labels
+   * https://cloud.google.com/run/docs/configuring/labels.
    * &lt;p&gt;Cloud Run API v2 does not support labels with  `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
    * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -464,11 +464,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * when modifying objects.
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
-   * namespaces, and they will be rejected. All system annotations in v1 now
-   * have a corresponding field in v2 Service.
+   * namespaces, and they will be rejected in new resources. All system
+   * annotations in v1 now have a corresponding field in v2 Service.
    * &lt;p&gt;This field follows Kubernetes
-   * annotations' namespacing, limits, and rules. More info:
-   * https://kubernetes.io/docs/user-guide/annotations
+   * annotations' namespacing, limits, and rules.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 6;</code>
@@ -495,11 +494,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * when modifying objects.
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
-   * namespaces, and they will be rejected. All system annotations in v1 now
-   * have a corresponding field in v2 Service.
+   * namespaces, and they will be rejected in new resources. All system
+   * annotations in v1 now have a corresponding field in v2 Service.
    * &lt;p&gt;This field follows Kubernetes
-   * annotations' namespacing, limits, and rules. More info:
-   * https://kubernetes.io/docs/user-guide/annotations
+   * annotations' namespacing, limits, and rules.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 6;</code>
@@ -517,11 +515,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * when modifying objects.
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
-   * namespaces, and they will be rejected. All system annotations in v1 now
-   * have a corresponding field in v2 Service.
+   * namespaces, and they will be rejected in new resources. All system
+   * annotations in v1 now have a corresponding field in v2 Service.
    * &lt;p&gt;This field follows Kubernetes
-   * annotations' namespacing, limits, and rules. More info:
-   * https://kubernetes.io/docs/user-guide/annotations
+   * annotations' namespacing, limits, and rules.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 6;</code>
@@ -546,11 +543,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * when modifying objects.
    * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
    * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
-   * namespaces, and they will be rejected. All system annotations in v1 now
-   * have a corresponding field in v2 Service.
+   * namespaces, and they will be rejected in new resources. All system
+   * annotations in v1 now have a corresponding field in v2 Service.
    * &lt;p&gt;This field follows Kubernetes
-   * annotations' namespacing, limits, and rules. More info:
-   * https://kubernetes.io/docs/user-guide/annotations
+   * annotations' namespacing, limits, and rules.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 6;</code>
@@ -1019,6 +1015,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * Launch Stages](https://cloud.google.com/terms/launch-stages).
    * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA
    * is assumed.
+   * Set the launch stage to a preview stage on input to allow use of preview
+   * features in that stage. On read (or output), describes whether the resource
+   * uses preview features.
+   * &lt;p&gt;
+   * For example, if ALPHA is provided as input, but only BETA and GA-level
+   * features are used, this field will be BETA on output.
    * </pre>
    *
    * <code>.google.api.LaunchStage launch_stage = 16;</code>
@@ -1037,6 +1039,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
    * Launch Stages](https://cloud.google.com/terms/launch-stages).
    * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA
    * is assumed.
+   * Set the launch stage to a preview stage on input to allow use of preview
+   * features in that stage. On read (or output), describes whether the resource
+   * uses preview features.
+   * &lt;p&gt;
+   * For example, if ALPHA is provided as input, but only BETA and GA-level
+   * features are used, this field will be BETA on output.
    * </pre>
    *
    * <code>.google.api.LaunchStage launch_stage = 16;</code>
@@ -1680,6 +1688,24 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 38;
+  private boolean satisfiesPzs_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
   public static final int RECONCILING_FIELD_NUMBER = 98;
   private boolean reconciling_ = false;
   /**
@@ -1860,6 +1886,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 36, uri_);
     }
+    if (satisfiesPzs_ != false) {
+      output.writeBool(38, satisfiesPzs_);
+    }
     if (reconciling_ != false) {
       output.writeBool(98, reconciling_);
     }
@@ -1969,6 +1998,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(36, uri_);
     }
+    if (satisfiesPzs_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(38, satisfiesPzs_);
+    }
     if (reconciling_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(98, reconciling_);
     }
@@ -2037,6 +2069,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (!getLatestCreatedRevision().equals(other.getLatestCreatedRevision())) return false;
     if (!getTrafficStatusesList().equals(other.getTrafficStatusesList())) return false;
     if (!getUri().equals(other.getUri())) return false;
+    if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
     if (getReconciling() != other.getReconciling()) return false;
     if (!getEtag().equals(other.getEtag())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -2126,6 +2159,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + URI_FIELD_NUMBER;
     hash = (53 * hash) + getUri().hashCode();
+    hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
     hash = (37 * hash) + RECONCILING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReconciling());
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
@@ -2367,6 +2402,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x01000000);
       uri_ = "";
+      satisfiesPzs_ = false;
       reconciling_ = false;
       etag_ = "";
       return this;
@@ -2513,9 +2549,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         result.uri_ = uri_;
       }
       if (((from_bitField0_ & 0x04000000) != 0)) {
-        result.reconciling_ = reconciling_;
+        result.satisfiesPzs_ = satisfiesPzs_;
       }
       if (((from_bitField0_ & 0x08000000) != 0)) {
+        result.reconciling_ = reconciling_;
+      }
+      if (((from_bitField0_ & 0x10000000) != 0)) {
         result.etag_ = etag_;
       }
     }
@@ -2733,12 +2772,15 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x02000000;
         onChanged();
       }
+      if (other.getSatisfiesPzs() != false) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
       if (other.getReconciling() != false) {
         setReconciling(other.getReconciling());
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x10000000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2958,16 +3000,22 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x02000000;
                 break;
               } // case 290
+            case 304:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x04000000;
+                break;
+              } // case 304
             case 784:
               {
                 reconciling_ = input.readBool();
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case 784
             case 794:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x10000000;
                 break;
               } // case 794
             default:
@@ -3433,13 +3481,13 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Map of string keys and values that can be used to organize and categorize
+     * Unstructured key value map that can be used to organize and categorize
      * objects.
      * User-provided labels are shared with Google's billing system, so they can
      * be used to filter, or break down billing charges by team, component,
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
-     * https://cloud.google.com/run/docs/configuring/labels
+     * https://cloud.google.com/run/docs/configuring/labels.
      * &lt;p&gt;Cloud Run API v2 does not support labels with  `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -3465,13 +3513,13 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Map of string keys and values that can be used to organize and categorize
+     * Unstructured key value map that can be used to organize and categorize
      * objects.
      * User-provided labels are shared with Google's billing system, so they can
      * be used to filter, or break down billing charges by team, component,
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
-     * https://cloud.google.com/run/docs/configuring/labels
+     * https://cloud.google.com/run/docs/configuring/labels.
      * &lt;p&gt;Cloud Run API v2 does not support labels with  `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -3488,13 +3536,13 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Map of string keys and values that can be used to organize and categorize
+     * Unstructured key value map that can be used to organize and categorize
      * objects.
      * User-provided labels are shared with Google's billing system, so they can
      * be used to filter, or break down billing charges by team, component,
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
-     * https://cloud.google.com/run/docs/configuring/labels
+     * https://cloud.google.com/run/docs/configuring/labels.
      * &lt;p&gt;Cloud Run API v2 does not support labels with  `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -3518,13 +3566,13 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Map of string keys and values that can be used to organize and categorize
+     * Unstructured key value map that can be used to organize and categorize
      * objects.
      * User-provided labels are shared with Google's billing system, so they can
      * be used to filter, or break down billing charges by team, component,
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
-     * https://cloud.google.com/run/docs/configuring/labels
+     * https://cloud.google.com/run/docs/configuring/labels.
      * &lt;p&gt;Cloud Run API v2 does not support labels with  `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -3554,13 +3602,13 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Map of string keys and values that can be used to organize and categorize
+     * Unstructured key value map that can be used to organize and categorize
      * objects.
      * User-provided labels are shared with Google's billing system, so they can
      * be used to filter, or break down billing charges by team, component,
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
-     * https://cloud.google.com/run/docs/configuring/labels
+     * https://cloud.google.com/run/docs/configuring/labels.
      * &lt;p&gt;Cloud Run API v2 does not support labels with  `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -3586,13 +3634,13 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Map of string keys and values that can be used to organize and categorize
+     * Unstructured key value map that can be used to organize and categorize
      * objects.
      * User-provided labels are shared with Google's billing system, so they can
      * be used to filter, or break down billing charges by team, component,
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
-     * https://cloud.google.com/run/docs/configuring/labels
+     * https://cloud.google.com/run/docs/configuring/labels.
      * &lt;p&gt;Cloud Run API v2 does not support labels with  `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -3616,13 +3664,13 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Map of string keys and values that can be used to organize and categorize
+     * Unstructured key value map that can be used to organize and categorize
      * objects.
      * User-provided labels are shared with Google's billing system, so they can
      * be used to filter, or break down billing charges by team, component,
      * environment, state, etc. For more information, visit
      * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
-     * https://cloud.google.com/run/docs/configuring/labels
+     * https://cloud.google.com/run/docs/configuring/labels.
      * &lt;p&gt;Cloud Run API v2 does not support labels with  `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
      * namespaces, and they will be rejected. All system labels in v1 now have a
@@ -3674,11 +3722,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * when modifying objects.
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
-     * namespaces, and they will be rejected. All system annotations in v1 now
-     * have a corresponding field in v2 Service.
+     * namespaces, and they will be rejected in new resources. All system
+     * annotations in v1 now have a corresponding field in v2 Service.
      * &lt;p&gt;This field follows Kubernetes
-     * annotations' namespacing, limits, and rules. More info:
-     * https://kubernetes.io/docs/user-guide/annotations
+     * annotations' namespacing, limits, and rules.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 6;</code>
@@ -3705,11 +3752,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * when modifying objects.
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
-     * namespaces, and they will be rejected. All system annotations in v1 now
-     * have a corresponding field in v2 Service.
+     * namespaces, and they will be rejected in new resources. All system
+     * annotations in v1 now have a corresponding field in v2 Service.
      * &lt;p&gt;This field follows Kubernetes
-     * annotations' namespacing, limits, and rules. More info:
-     * https://kubernetes.io/docs/user-guide/annotations
+     * annotations' namespacing, limits, and rules.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 6;</code>
@@ -3727,11 +3773,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * when modifying objects.
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
-     * namespaces, and they will be rejected. All system annotations in v1 now
-     * have a corresponding field in v2 Service.
+     * namespaces, and they will be rejected in new resources. All system
+     * annotations in v1 now have a corresponding field in v2 Service.
      * &lt;p&gt;This field follows Kubernetes
-     * annotations' namespacing, limits, and rules. More info:
-     * https://kubernetes.io/docs/user-guide/annotations
+     * annotations' namespacing, limits, and rules.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 6;</code>
@@ -3756,11 +3801,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * when modifying objects.
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
-     * namespaces, and they will be rejected. All system annotations in v1 now
-     * have a corresponding field in v2 Service.
+     * namespaces, and they will be rejected in new resources. All system
+     * annotations in v1 now have a corresponding field in v2 Service.
      * &lt;p&gt;This field follows Kubernetes
-     * annotations' namespacing, limits, and rules. More info:
-     * https://kubernetes.io/docs/user-guide/annotations
+     * annotations' namespacing, limits, and rules.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 6;</code>
@@ -3791,11 +3835,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * when modifying objects.
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
-     * namespaces, and they will be rejected. All system annotations in v1 now
-     * have a corresponding field in v2 Service.
+     * namespaces, and they will be rejected in new resources. All system
+     * annotations in v1 now have a corresponding field in v2 Service.
      * &lt;p&gt;This field follows Kubernetes
-     * annotations' namespacing, limits, and rules. More info:
-     * https://kubernetes.io/docs/user-guide/annotations
+     * annotations' namespacing, limits, and rules.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 6;</code>
@@ -3822,11 +3865,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * when modifying objects.
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
-     * namespaces, and they will be rejected. All system annotations in v1 now
-     * have a corresponding field in v2 Service.
+     * namespaces, and they will be rejected in new resources. All system
+     * annotations in v1 now have a corresponding field in v2 Service.
      * &lt;p&gt;This field follows Kubernetes
-     * annotations' namespacing, limits, and rules. More info:
-     * https://kubernetes.io/docs/user-guide/annotations
+     * annotations' namespacing, limits, and rules.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 6;</code>
@@ -3851,11 +3893,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * when modifying objects.
      * &lt;p&gt;Cloud Run API v2 does not support annotations with `run.googleapis.com`,
      * `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev`
-     * namespaces, and they will be rejected. All system annotations in v1 now
-     * have a corresponding field in v2 Service.
+     * namespaces, and they will be rejected in new resources. All system
+     * annotations in v1 now have a corresponding field in v2 Service.
      * &lt;p&gt;This field follows Kubernetes
-     * annotations' namespacing, limits, and rules. More info:
-     * https://kubernetes.io/docs/user-guide/annotations
+     * annotations' namespacing, limits, and rules.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 6;</code>
@@ -5212,6 +5253,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * Launch Stages](https://cloud.google.com/terms/launch-stages).
      * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA
      * is assumed.
+     * Set the launch stage to a preview stage on input to allow use of preview
+     * features in that stage. On read (or output), describes whether the resource
+     * uses preview features.
+     * &lt;p&gt;
+     * For example, if ALPHA is provided as input, but only BETA and GA-level
+     * features are used, this field will be BETA on output.
      * </pre>
      *
      * <code>.google.api.LaunchStage launch_stage = 16;</code>
@@ -5230,6 +5277,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * Launch Stages](https://cloud.google.com/terms/launch-stages).
      * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA
      * is assumed.
+     * Set the launch stage to a preview stage on input to allow use of preview
+     * features in that stage. On read (or output), describes whether the resource
+     * uses preview features.
+     * &lt;p&gt;
+     * For example, if ALPHA is provided as input, but only BETA and GA-level
+     * features are used, this field will be BETA on output.
      * </pre>
      *
      * <code>.google.api.LaunchStage launch_stage = 16;</code>
@@ -5251,6 +5304,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * Launch Stages](https://cloud.google.com/terms/launch-stages).
      * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA
      * is assumed.
+     * Set the launch stage to a preview stage on input to allow use of preview
+     * features in that stage. On read (or output), describes whether the resource
+     * uses preview features.
+     * &lt;p&gt;
+     * For example, if ALPHA is provided as input, but only BETA and GA-level
+     * features are used, this field will be BETA on output.
      * </pre>
      *
      * <code>.google.api.LaunchStage launch_stage = 16;</code>
@@ -5270,6 +5329,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * Launch Stages](https://cloud.google.com/terms/launch-stages).
      * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA
      * is assumed.
+     * Set the launch stage to a preview stage on input to allow use of preview
+     * features in that stage. On read (or output), describes whether the resource
+     * uses preview features.
+     * &lt;p&gt;
+     * For example, if ALPHA is provided as input, but only BETA and GA-level
+     * features are used, this field will be BETA on output.
      * </pre>
      *
      * <code>.google.api.LaunchStage launch_stage = 16;</code>
@@ -5294,6 +5359,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * Launch Stages](https://cloud.google.com/terms/launch-stages).
      * Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA
      * is assumed.
+     * Set the launch stage to a preview stage on input to allow use of preview
+     * features in that stage. On read (or output), describes whether the resource
+     * uses preview features.
+     * &lt;p&gt;
+     * For example, if ALPHA is provided as input, but only BETA and GA-level
+     * features are used, this field will be BETA on output.
      * </pre>
      *
      * <code>.google.api.LaunchStage launch_stage = 16;</code>
@@ -7597,6 +7668,59 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private boolean satisfiesPzs_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x04000000);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
     private boolean reconciling_;
     /**
      *
@@ -7664,7 +7788,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public Builder setReconciling(boolean value) {
 
       reconciling_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -7698,7 +7822,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReconciling() {
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       reconciling_ = false;
       onChanged();
       return this;
@@ -7769,7 +7893,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -7787,7 +7911,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       onChanged();
       return this;
     }
@@ -7810,7 +7934,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
