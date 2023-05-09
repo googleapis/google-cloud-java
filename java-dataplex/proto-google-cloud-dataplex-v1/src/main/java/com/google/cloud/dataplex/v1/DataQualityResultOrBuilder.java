@@ -40,7 +40,7 @@ public interface DataQualityResultOrBuilder
    *
    *
    * <pre>
-   * A list of results at the dimension-level.
+   * A list of results at the dimension level.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
@@ -50,7 +50,7 @@ public interface DataQualityResultOrBuilder
    *
    *
    * <pre>
-   * A list of results at the dimension-level.
+   * A list of results at the dimension level.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
@@ -60,7 +60,7 @@ public interface DataQualityResultOrBuilder
    *
    *
    * <pre>
-   * A list of results at the dimension-level.
+   * A list of results at the dimension level.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
@@ -70,7 +70,7 @@ public interface DataQualityResultOrBuilder
    *
    *
    * <pre>
-   * A list of results at the dimension-level.
+   * A list of results at the dimension level.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>
@@ -81,7 +81,7 @@ public interface DataQualityResultOrBuilder
    *
    *
    * <pre>
-   * A list of results at the dimension-level.
+   * A list of results at the dimension level.
    * </pre>
    *
    * <code>repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 2;</code>

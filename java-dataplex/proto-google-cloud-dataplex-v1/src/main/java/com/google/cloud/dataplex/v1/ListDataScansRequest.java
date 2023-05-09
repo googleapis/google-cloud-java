@@ -138,7 +138,7 @@ public final class ListDataScansRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Optional. Maximum number of dataScans to return. The service may return
-   * fewer than this value. If unspecified, at most 10 scans will be returned.
+   * fewer than this value. If unspecified, at most 500 scans will be returned.
    * The maximum value is 1000; values above 1000 will be coerced to 1000.
    * </pre>
    *
@@ -885,7 +885,7 @@ public final class ListDataScansRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Maximum number of dataScans to return. The service may return
-     * fewer than this value. If unspecified, at most 10 scans will be returned.
+     * fewer than this value. If unspecified, at most 500 scans will be returned.
      * The maximum value is 1000; values above 1000 will be coerced to 1000.
      * </pre>
      *
@@ -902,7 +902,7 @@ public final class ListDataScansRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Maximum number of dataScans to return. The service may return
-     * fewer than this value. If unspecified, at most 10 scans will be returned.
+     * fewer than this value. If unspecified, at most 500 scans will be returned.
      * The maximum value is 1000; values above 1000 will be coerced to 1000.
      * </pre>
      *
@@ -923,7 +923,7 @@ public final class ListDataScansRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Optional. Maximum number of dataScans to return. The service may return
-     * fewer than this value. If unspecified, at most 10 scans will be returned.
+     * fewer than this value. If unspecified, at most 500 scans will be returned.
      * The maximum value is 1000; values above 1000 will be coerced to 1000.
      * </pre>
      *

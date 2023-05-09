@@ -148,6 +148,14 @@ public final class ServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_GetJobRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_RunTaskRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_RunTaskRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_RunTaskResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_RunTaskResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dataplex_v1_ListJobsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_ListJobsRequest_fieldAccessorTable;
@@ -307,201 +315,208 @@ public final class ServiceProto {
           + "t\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034dataplex.google"
           + "apis.com/Task\"B\n\rGetJobRequest\0221\n\004name\030\001"
           + " \001(\tB#\340A\002\372A\035\n\033dataplex.googleapis.com/Jo"
-          + "b\"x\n\017ListJobsRequest\0224\n\006parent\030\001 \001(\tB$\340A"
-          + "\002\372A\036\n\034dataplex.googleapis.com/Task\022\026\n\tpa"
-          + "ge_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003"
-          + "\340A\001\"X\n\020ListJobsResponse\022+\n\004jobs\030\001 \003(\0132\035."
-          + "google.cloud.dataplex.v1.Job\022\027\n\017next_pag"
-          + "e_token\030\002 \001(\t\"E\n\020CancelJobRequest\0221\n\004nam"
-          + "e\030\001 \001(\tB#\340A\002\372A\035\n\033dataplex.googleapis.com"
-          + "/Job\"\312\001\n\030CreateEnvironmentRequest\0224\n\006par"
+          + "b\"D\n\016RunTaskRequest\0222\n\004name\030\001 \001(\tB$\340A\002\372A"
+          + "\036\n\034dataplex.googleapis.com/Task\"=\n\017RunTa"
+          + "skResponse\022*\n\003job\030\001 \001(\0132\035.google.cloud.d"
+          + "ataplex.v1.Job\"x\n\017ListJobsRequest\0224\n\006par"
           + "ent\030\001 \001(\tB$\340A\002\372A\036\n\034dataplex.googleapis.c"
-          + "om/Lake\022\033\n\016environment_id\030\002 \001(\tB\003\340A\002\022?\n\013"
-          + "environment\030\003 \001(\0132%.google.cloud.dataple"
-          + "x.v1.EnvironmentB\003\340A\002\022\032\n\rvalidate_only\030\004"
-          + " \001(\010B\003\340A\001\"\255\001\n\030UpdateEnvironmentRequest\0224"
-          + "\n\013update_mask\030\001 \001(\0132\032.google.protobuf.Fi"
-          + "eldMaskB\003\340A\002\022?\n\013environment\030\002 \001(\0132%.goog"
-          + "le.cloud.dataplex.v1.EnvironmentB\003\340A\002\022\032\n"
-          + "\rvalidate_only\030\003 \001(\010B\003\340A\001\"U\n\030DeleteEnvir"
-          + "onmentRequest\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#dat"
-          + "aplex.googleapis.com/Environment\"\254\001\n\027Lis"
-          + "tEnvironmentsRequest\0224\n\006parent\030\001 \001(\tB$\340A"
-          + "\002\372A\036\n\034dataplex.googleapis.com/Lake\022\026\n\tpa"
-          + "ge_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003"
-          + "\340A\001\022\023\n\006filter\030\004 \001(\tB\003\340A\001\022\025\n\010order_by\030\005 \001"
-          + "(\tB\003\340A\001\"p\n\030ListEnvironmentsResponse\022;\n\014e"
-          + "nvironments\030\001 \003(\0132%.google.cloud.dataple"
-          + "x.v1.Environment\022\027\n\017next_page_token\030\002 \001("
-          + "\t\"R\n\025GetEnvironmentRequest\0229\n\004name\030\001 \001(\t"
+          + "om/Task\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_"
+          + "token\030\003 \001(\tB\003\340A\001\"X\n\020ListJobsResponse\022+\n\004"
+          + "jobs\030\001 \003(\0132\035.google.cloud.dataplex.v1.Jo"
+          + "b\022\027\n\017next_page_token\030\002 \001(\t\"E\n\020CancelJobR"
+          + "equest\0221\n\004name\030\001 \001(\tB#\340A\002\372A\035\n\033dataplex.g"
+          + "oogleapis.com/Job\"\312\001\n\030CreateEnvironmentR"
+          + "equest\0224\n\006parent\030\001 \001(\tB$\340A\002\372A\036\n\034dataplex"
+          + ".googleapis.com/Lake\022\033\n\016environment_id\030\002"
+          + " \001(\tB\003\340A\002\022?\n\013environment\030\003 \001(\0132%.google."
+          + "cloud.dataplex.v1.EnvironmentB\003\340A\002\022\032\n\rva"
+          + "lidate_only\030\004 \001(\010B\003\340A\001\"\255\001\n\030UpdateEnviron"
+          + "mentRequest\0224\n\013update_mask\030\001 \001(\0132\032.googl"
+          + "e.protobuf.FieldMaskB\003\340A\002\022?\n\013environment"
+          + "\030\002 \001(\0132%.google.cloud.dataplex.v1.Enviro"
+          + "nmentB\003\340A\002\022\032\n\rvalidate_only\030\003 \001(\010B\003\340A\001\"U"
+          + "\n\030DeleteEnvironmentRequest\0229\n\004name\030\001 \001(\t"
           + "B+\340A\002\372A%\n#dataplex.googleapis.com/Enviro"
-          + "nment\"\230\001\n\023ListSessionsRequest\022;\n\006parent\030"
-          + "\001 \001(\tB+\340A\002\372A%\n#dataplex.googleapis.com/E"
-          + "nvironment\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npa"
-          + "ge_token\030\003 \001(\tB\003\340A\001\022\023\n\006filter\030\004 \001(\tB\003\340A\001"
-          + "\"d\n\024ListSessionsResponse\0223\n\010sessions\030\001 \003"
-          + "(\0132!.google.cloud.dataplex.v1.Session\022\027\n"
-          + "\017next_page_token\030\002 \001(\t2\2021\n\017DataplexServi"
-          + "ce\022\303\001\n\nCreateLake\022+.google.cloud.dataple"
-          + "x.v1.CreateLakeRequest\032\035.google.longrunn"
-          + "ing.Operation\"i\202\323\344\223\0021\")/v1/{parent=proje"
-          + "cts/*/locations/*}/lakes:\004lake\332A\023parent,"
-          + "lake,lake_id\312A\031\n\004Lake\022\021OperationMetadata"
-          + "\022\305\001\n\nUpdateLake\022+.google.cloud.dataplex."
-          + "v1.UpdateLakeRequest\032\035.google.longrunnin"
-          + "g.Operation\"k\202\323\344\223\00262./v1/{lake.name=proj"
-          + "ects/*/locations/*/lakes/*}:\004lake\332A\020lake"
-          + ",update_mask\312A\031\n\004Lake\022\021OperationMetadata"
-          + "\022\277\001\n\nDeleteLake\022+.google.cloud.dataplex."
-          + "v1.DeleteLakeRequest\032\035.google.longrunnin"
-          + "g.Operation\"e\202\323\344\223\002+*)/v1/{name=projects/"
-          + "*/locations/*/lakes/*}\332A\004name\312A*\n\025google"
-          + ".protobuf.Empty\022\021OperationMetadata\022\240\001\n\tL"
-          + "istLakes\022*.google.cloud.dataplex.v1.List"
-          + "LakesRequest\032+.google.cloud.dataplex.v1."
-          + "ListLakesResponse\":\202\323\344\223\002+\022)/v1/{parent=p"
-          + "rojects/*/locations/*}/lakes\332A\006parent\022\215\001"
-          + "\n\007GetLake\022(.google.cloud.dataplex.v1.Get"
-          + "LakeRequest\032\036.google.cloud.dataplex.v1.L"
-          + "ake\"8\202\323\344\223\002+\022)/v1/{name=projects/*/locati"
-          + "ons/*/lakes/*}\332A\004name\022\270\001\n\017ListLakeAction"
-          + "s\0220.google.cloud.dataplex.v1.ListLakeAct"
-          + "ionsRequest\032-.google.cloud.dataplex.v1.L"
-          + "istActionsResponse\"D\202\323\344\223\0025\0223/v1/{parent="
-          + "projects/*/locations/*/lakes/*}/actions\332"
-          + "A\006parent\022\313\001\n\nCreateZone\022+.google.cloud.d"
-          + "ataplex.v1.CreateZoneRequest\032\035.google.lo"
-          + "ngrunning.Operation\"q\202\323\344\223\0029\"1/v1/{parent"
-          + "=projects/*/locations/*/lakes/*}/zones:\004"
-          + "zone\332A\023parent,zone,zone_id\312A\031\n\004Zone\022\021Ope"
-          + "rationMetadata\022\315\001\n\nUpdateZone\022+.google.c"
-          + "loud.dataplex.v1.UpdateZoneRequest\032\035.goo"
-          + "gle.longrunning.Operation\"s\202\323\344\223\002>26/v1/{"
-          + "zone.name=projects/*/locations/*/lakes/*"
-          + "/zones/*}:\004zone\332A\020zone,update_mask\312A\031\n\004Z"
-          + "one\022\021OperationMetadata\022\307\001\n\nDeleteZone\022+."
-          + "google.cloud.dataplex.v1.DeleteZoneReque"
-          + "st\032\035.google.longrunning.Operation\"m\202\323\344\223\002"
-          + "3*1/v1/{name=projects/*/locations/*/lake"
-          + "s/*/zones/*}\332A\004name\312A*\n\025google.protobuf."
-          + "Empty\022\021OperationMetadata\022\250\001\n\tListZones\022*"
-          + ".google.cloud.dataplex.v1.ListZonesReque"
-          + "st\032+.google.cloud.dataplex.v1.ListZonesR"
-          + "esponse\"B\202\323\344\223\0023\0221/v1/{parent=projects/*/"
-          + "locations/*/lakes/*}/zones\332A\006parent\022\225\001\n\007"
-          + "GetZone\022(.google.cloud.dataplex.v1.GetZo"
-          + "neRequest\032\036.google.cloud.dataplex.v1.Zon"
-          + "e\"@\202\323\344\223\0023\0221/v1/{name=projects/*/location"
-          + "s/*/lakes/*/zones/*}\332A\004name\022\300\001\n\017ListZone"
-          + "Actions\0220.google.cloud.dataplex.v1.ListZ"
-          + "oneActionsRequest\032-.google.cloud.dataple"
-          + "x.v1.ListActionsResponse\"L\202\323\344\223\002=\022;/v1/{p"
-          + "arent=projects/*/locations/*/lakes/*/zon"
-          + "es/*}/actions\332A\006parent\022\332\001\n\013CreateAsset\022,"
-          + ".google.cloud.dataplex.v1.CreateAssetReq"
-          + "uest\032\035.google.longrunning.Operation\"~\202\323\344"
-          + "\223\002C\":/v1/{parent=projects/*/locations/*/"
-          + "lakes/*/zones/*}/assets:\005asset\332A\025parent,"
-          + "asset,asset_id\312A\032\n\005Asset\022\021OperationMetad"
-          + "ata\022\335\001\n\013UpdateAsset\022,.google.cloud.datap"
-          + "lex.v1.UpdateAssetRequest\032\035.google.longr"
-          + "unning.Operation\"\200\001\202\323\344\223\002I2@/v1/{asset.na"
-          + "me=projects/*/locations/*/lakes/*/zones/"
-          + "*/assets/*}:\005asset\332A\021asset,update_mask\312A"
-          + "\032\n\005Asset\022\021OperationMetadata\022\322\001\n\013DeleteAs"
-          + "set\022,.google.cloud.dataplex.v1.DeleteAss"
-          + "etRequest\032\035.google.longrunning.Operation"
-          + "\"v\202\323\344\223\002<*:/v1/{name=projects/*/locations"
-          + "/*/lakes/*/zones/*/assets/*}\332A\004name\312A*\n\025"
-          + "google.protobuf.Empty\022\021OperationMetadata"
-          + "\022\264\001\n\nListAssets\022+.google.cloud.dataplex."
-          + "v1.ListAssetsRequest\032,.google.cloud.data"
-          + "plex.v1.ListAssetsResponse\"K\202\323\344\223\002<\022:/v1/"
-          + "{parent=projects/*/locations/*/lakes/*/z"
-          + "ones/*}/assets\332A\006parent\022\241\001\n\010GetAsset\022).g"
-          + "oogle.cloud.dataplex.v1.GetAssetRequest\032"
-          + "\037.google.cloud.dataplex.v1.Asset\"I\202\323\344\223\002<"
-          + "\022:/v1/{name=projects/*/locations/*/lakes"
-          + "/*/zones/*/assets/*}\332A\004name\022\313\001\n\020ListAsse"
-          + "tActions\0221.google.cloud.dataplex.v1.List"
-          + "AssetActionsRequest\032-.google.cloud.datap"
-          + "lex.v1.ListActionsResponse\"U\202\323\344\223\002F\022D/v1/"
-          + "{parent=projects/*/locations/*/lakes/*/z"
-          + "ones/*/assets/*}/actions\332A\006parent\022\313\001\n\nCr"
-          + "eateTask\022+.google.cloud.dataplex.v1.Crea"
-          + "teTaskRequest\032\035.google.longrunning.Opera"
-          + "tion\"q\202\323\344\223\0029\"1/v1/{parent=projects/*/loc"
-          + "ations/*/lakes/*}/tasks:\004task\332A\023parent,t"
-          + "ask,task_id\312A\031\n\004Task\022\021OperationMetadata\022"
-          + "\315\001\n\nUpdateTask\022+.google.cloud.dataplex.v"
-          + "1.UpdateTaskRequest\032\035.google.longrunning"
-          + ".Operation\"s\202\323\344\223\002>26/v1/{task.name=proje"
-          + "cts/*/locations/*/lakes/*/tasks/*}:\004task"
-          + "\332A\020task,update_mask\312A\031\n\004Task\022\021OperationM"
-          + "etadata\022\307\001\n\nDeleteTask\022+.google.cloud.da"
-          + "taplex.v1.DeleteTaskRequest\032\035.google.lon"
-          + "grunning.Operation\"m\202\323\344\223\0023*1/v1/{name=pr"
-          + "ojects/*/locations/*/lakes/*/tasks/*}\332A\004"
-          + "name\312A*\n\025google.protobuf.Empty\022\021Operatio"
-          + "nMetadata\022\250\001\n\tListTasks\022*.google.cloud.d"
-          + "ataplex.v1.ListTasksRequest\032+.google.clo"
-          + "ud.dataplex.v1.ListTasksResponse\"B\202\323\344\223\0023"
-          + "\0221/v1/{parent=projects/*/locations/*/lak"
-          + "es/*}/tasks\332A\006parent\022\225\001\n\007GetTask\022(.googl"
-          + "e.cloud.dataplex.v1.GetTaskRequest\032\036.goo"
-          + "gle.cloud.dataplex.v1.Task\"@\202\323\344\223\0023\0221/v1/"
-          + "{name=projects/*/locations/*/lakes/*/tas"
-          + "ks/*}\332A\004name\022\254\001\n\010ListJobs\022).google.cloud"
-          + ".dataplex.v1.ListJobsRequest\032*.google.cl"
-          + "oud.dataplex.v1.ListJobsResponse\"I\202\323\344\223\002:"
-          + "\0228/v1/{parent=projects/*/locations/*/lak"
-          + "es/*/tasks/*}/jobs\332A\006parent\022\231\001\n\006GetJob\022\'"
-          + ".google.cloud.dataplex.v1.GetJobRequest\032"
-          + "\035.google.cloud.dataplex.v1.Job\"G\202\323\344\223\002:\0228"
+          + "nment\"\254\001\n\027ListEnvironmentsRequest\0224\n\006par"
+          + "ent\030\001 \001(\tB$\340A\002\372A\036\n\034dataplex.googleapis.c"
+          + "om/Lake\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_"
+          + "token\030\003 \001(\tB\003\340A\001\022\023\n\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
+          + "\010order_by\030\005 \001(\tB\003\340A\001\"p\n\030ListEnvironments"
+          + "Response\022;\n\014environments\030\001 \003(\0132%.google."
+          + "cloud.dataplex.v1.Environment\022\027\n\017next_pa"
+          + "ge_token\030\002 \001(\t\"R\n\025GetEnvironmentRequest\022"
+          + "9\n\004name\030\001 \001(\tB+\340A\002\372A%\n#dataplex.googleap"
+          + "is.com/Environment\"\230\001\n\023ListSessionsReque"
+          + "st\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\n#dataplex.goo"
+          + "gleapis.com/Environment\022\026\n\tpage_size\030\002 \001"
+          + "(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\022\023\n\006filt"
+          + "er\030\004 \001(\tB\003\340A\001\"d\n\024ListSessionsResponse\0223\n"
+          + "\010sessions\030\001 \003(\0132!.google.cloud.dataplex."
+          + "v1.Session\022\027\n\017next_page_token\030\002 \001(\t2\2542\n\017"
+          + "DataplexService\022\303\001\n\nCreateLake\022+.google."
+          + "cloud.dataplex.v1.CreateLakeRequest\032\035.go"
+          + "ogle.longrunning.Operation\"i\202\323\344\223\0021\")/v1/"
+          + "{parent=projects/*/locations/*}/lakes:\004l"
+          + "ake\332A\023parent,lake,lake_id\312A\031\n\004Lake\022\021Oper"
+          + "ationMetadata\022\305\001\n\nUpdateLake\022+.google.cl"
+          + "oud.dataplex.v1.UpdateLakeRequest\032\035.goog"
+          + "le.longrunning.Operation\"k\202\323\344\223\00262./v1/{l"
+          + "ake.name=projects/*/locations/*/lakes/*}"
+          + ":\004lake\332A\020lake,update_mask\312A\031\n\004Lake\022\021Oper"
+          + "ationMetadata\022\277\001\n\nDeleteLake\022+.google.cl"
+          + "oud.dataplex.v1.DeleteLakeRequest\032\035.goog"
+          + "le.longrunning.Operation\"e\202\323\344\223\002+*)/v1/{n"
+          + "ame=projects/*/locations/*/lakes/*}\332A\004na"
+          + "me\312A*\n\025google.protobuf.Empty\022\021OperationM"
+          + "etadata\022\240\001\n\tListLakes\022*.google.cloud.dat"
+          + "aplex.v1.ListLakesRequest\032+.google.cloud"
+          + ".dataplex.v1.ListLakesResponse\":\202\323\344\223\002+\022)"
+          + "/v1/{parent=projects/*/locations/*}/lake"
+          + "s\332A\006parent\022\215\001\n\007GetLake\022(.google.cloud.da"
+          + "taplex.v1.GetLakeRequest\032\036.google.cloud."
+          + "dataplex.v1.Lake\"8\202\323\344\223\002+\022)/v1/{name=proj"
+          + "ects/*/locations/*/lakes/*}\332A\004name\022\270\001\n\017L"
+          + "istLakeActions\0220.google.cloud.dataplex.v"
+          + "1.ListLakeActionsRequest\032-.google.cloud."
+          + "dataplex.v1.ListActionsResponse\"D\202\323\344\223\0025\022"
+          + "3/v1/{parent=projects/*/locations/*/lake"
+          + "s/*}/actions\332A\006parent\022\313\001\n\nCreateZone\022+.g"
+          + "oogle.cloud.dataplex.v1.CreateZoneReques"
+          + "t\032\035.google.longrunning.Operation\"q\202\323\344\223\0029"
+          + "\"1/v1/{parent=projects/*/locations/*/lak"
+          + "es/*}/zones:\004zone\332A\023parent,zone,zone_id\312"
+          + "A\031\n\004Zone\022\021OperationMetadata\022\315\001\n\nUpdateZo"
+          + "ne\022+.google.cloud.dataplex.v1.UpdateZone"
+          + "Request\032\035.google.longrunning.Operation\"s"
+          + "\202\323\344\223\002>26/v1/{zone.name=projects/*/locati"
+          + "ons/*/lakes/*/zones/*}:\004zone\332A\020zone,upda"
+          + "te_mask\312A\031\n\004Zone\022\021OperationMetadata\022\307\001\n\n"
+          + "DeleteZone\022+.google.cloud.dataplex.v1.De"
+          + "leteZoneRequest\032\035.google.longrunning.Ope"
+          + "ration\"m\202\323\344\223\0023*1/v1/{name=projects/*/loc"
+          + "ations/*/lakes/*/zones/*}\332A\004name\312A*\n\025goo"
+          + "gle.protobuf.Empty\022\021OperationMetadata\022\250\001"
+          + "\n\tListZones\022*.google.cloud.dataplex.v1.L"
+          + "istZonesRequest\032+.google.cloud.dataplex."
+          + "v1.ListZonesResponse\"B\202\323\344\223\0023\0221/v1/{paren"
+          + "t=projects/*/locations/*/lakes/*}/zones\332"
+          + "A\006parent\022\225\001\n\007GetZone\022(.google.cloud.data"
+          + "plex.v1.GetZoneRequest\032\036.google.cloud.da"
+          + "taplex.v1.Zone\"@\202\323\344\223\0023\0221/v1/{name=projec"
+          + "ts/*/locations/*/lakes/*/zones/*}\332A\004name"
+          + "\022\300\001\n\017ListZoneActions\0220.google.cloud.data"
+          + "plex.v1.ListZoneActionsRequest\032-.google."
+          + "cloud.dataplex.v1.ListActionsResponse\"L\202"
+          + "\323\344\223\002=\022;/v1/{parent=projects/*/locations/"
+          + "*/lakes/*/zones/*}/actions\332A\006parent\022\332\001\n\013"
+          + "CreateAsset\022,.google.cloud.dataplex.v1.C"
+          + "reateAssetRequest\032\035.google.longrunning.O"
+          + "peration\"~\202\323\344\223\002C\":/v1/{parent=projects/*"
+          + "/locations/*/lakes/*/zones/*}/assets:\005as"
+          + "set\332A\025parent,asset,asset_id\312A\032\n\005Asset\022\021O"
+          + "perationMetadata\022\335\001\n\013UpdateAsset\022,.googl"
+          + "e.cloud.dataplex.v1.UpdateAssetRequest\032\035"
+          + ".google.longrunning.Operation\"\200\001\202\323\344\223\002I2@"
+          + "/v1/{asset.name=projects/*/locations/*/l"
+          + "akes/*/zones/*/assets/*}:\005asset\332A\021asset,"
+          + "update_mask\312A\032\n\005Asset\022\021OperationMetadata"
+          + "\022\322\001\n\013DeleteAsset\022,.google.cloud.dataplex"
+          + ".v1.DeleteAssetRequest\032\035.google.longrunn"
+          + "ing.Operation\"v\202\323\344\223\002<*:/v1/{name=project"
+          + "s/*/locations/*/lakes/*/zones/*/assets/*"
+          + "}\332A\004name\312A*\n\025google.protobuf.Empty\022\021Oper"
+          + "ationMetadata\022\264\001\n\nListAssets\022+.google.cl"
+          + "oud.dataplex.v1.ListAssetsRequest\032,.goog"
+          + "le.cloud.dataplex.v1.ListAssetsResponse\""
+          + "K\202\323\344\223\002<\022:/v1/{parent=projects/*/location"
+          + "s/*/lakes/*/zones/*}/assets\332A\006parent\022\241\001\n"
+          + "\010GetAsset\022).google.cloud.dataplex.v1.Get"
+          + "AssetRequest\032\037.google.cloud.dataplex.v1."
+          + "Asset\"I\202\323\344\223\002<\022:/v1/{name=projects/*/loca"
+          + "tions/*/lakes/*/zones/*/assets/*}\332A\004name"
+          + "\022\313\001\n\020ListAssetActions\0221.google.cloud.dat"
+          + "aplex.v1.ListAssetActionsRequest\032-.googl"
+          + "e.cloud.dataplex.v1.ListActionsResponse\""
+          + "U\202\323\344\223\002F\022D/v1/{parent=projects/*/location"
+          + "s/*/lakes/*/zones/*/assets/*}/actions\332A\006"
+          + "parent\022\313\001\n\nCreateTask\022+.google.cloud.dat"
+          + "aplex.v1.CreateTaskRequest\032\035.google.long"
+          + "running.Operation\"q\202\323\344\223\0029\"1/v1/{parent=p"
+          + "rojects/*/locations/*/lakes/*}/tasks:\004ta"
+          + "sk\332A\023parent,task,task_id\312A\031\n\004Task\022\021Opera"
+          + "tionMetadata\022\315\001\n\nUpdateTask\022+.google.clo"
+          + "ud.dataplex.v1.UpdateTaskRequest\032\035.googl"
+          + "e.longrunning.Operation\"s\202\323\344\223\002>26/v1/{ta"
+          + "sk.name=projects/*/locations/*/lakes/*/t"
+          + "asks/*}:\004task\332A\020task,update_mask\312A\031\n\004Tas"
+          + "k\022\021OperationMetadata\022\307\001\n\nDeleteTask\022+.go"
+          + "ogle.cloud.dataplex.v1.DeleteTaskRequest"
+          + "\032\035.google.longrunning.Operation\"m\202\323\344\223\0023*"
+          + "1/v1/{name=projects/*/locations/*/lakes/"
+          + "*/tasks/*}\332A\004name\312A*\n\025google.protobuf.Em"
+          + "pty\022\021OperationMetadata\022\250\001\n\tListTasks\022*.g"
+          + "oogle.cloud.dataplex.v1.ListTasksRequest"
+          + "\032+.google.cloud.dataplex.v1.ListTasksRes"
+          + "ponse\"B\202\323\344\223\0023\0221/v1/{parent=projects/*/lo"
+          + "cations/*/lakes/*}/tasks\332A\006parent\022\225\001\n\007Ge"
+          + "tTask\022(.google.cloud.dataplex.v1.GetTask"
+          + "Request\032\036.google.cloud.dataplex.v1.Task\""
+          + "@\202\323\344\223\0023\0221/v1/{name=projects/*/locations/"
+          + "*/lakes/*/tasks/*}\332A\004name\022\254\001\n\010ListJobs\022)"
+          + ".google.cloud.dataplex.v1.ListJobsReques"
+          + "t\032*.google.cloud.dataplex.v1.ListJobsRes"
+          + "ponse\"I\202\323\344\223\002:\0228/v1/{parent=projects/*/lo"
+          + "cations/*/lakes/*/tasks/*}/jobs\332A\006parent"
+          + "\022\247\001\n\007RunTask\022(.google.cloud.dataplex.v1."
+          + "RunTaskRequest\032).google.cloud.dataplex.v"
+          + "1.RunTaskResponse\"G\202\323\344\223\002:\"5/v1/{name=pro"
+          + "jects/*/locations/*/lakes/*/tasks/*}:run"
+          + ":\001*\332A\004name\022\231\001\n\006GetJob\022\'.google.cloud.dat"
+          + "aplex.v1.GetJobRequest\032\035.google.cloud.da"
+          + "taplex.v1.Job\"G\202\323\344\223\002:\0228/v1/{name=project"
+          + "s/*/locations/*/lakes/*/tasks/*/jobs/*}\332"
+          + "A\004name\022\242\001\n\tCancelJob\022*.google.cloud.data"
+          + "plex.v1.CancelJobRequest\032\026.google.protob"
+          + "uf.Empty\"Q\202\323\344\223\002D\"?/v1/{name=projects/*/l"
+          + "ocations/*/lakes/*/tasks/*/jobs/*}:cance"
+          + "l:\001*\332A\004name\022\375\001\n\021CreateEnvironment\0222.goog"
+          + "le.cloud.dataplex.v1.CreateEnvironmentRe"
+          + "quest\032\035.google.longrunning.Operation\"\224\001\202"
+          + "\323\344\223\002G\"8/v1/{parent=projects/*/locations/"
+          + "*/lakes/*}/environments:\013environment\332A!p"
+          + "arent,environment,environment_id\312A \n\013Env"
+          + "ironment\022\021OperationMetadata\022\377\001\n\021UpdateEn"
+          + "vironment\0222.google.cloud.dataplex.v1.Upd"
+          + "ateEnvironmentRequest\032\035.google.longrunni"
+          + "ng.Operation\"\226\001\202\323\344\223\002S2D/v1/{environment."
+          + "name=projects/*/locations/*/lakes/*/envi"
+          + "ronments/*}:\013environment\332A\027environment,u"
+          + "pdate_mask\312A \n\013Environment\022\021OperationMet"
+          + "adata\022\334\001\n\021DeleteEnvironment\0222.google.clo"
+          + "ud.dataplex.v1.DeleteEnvironmentRequest\032"
+          + "\035.google.longrunning.Operation\"t\202\323\344\223\002:*8"
           + "/v1/{name=projects/*/locations/*/lakes/*"
-          + "/tasks/*/jobs/*}\332A\004name\022\242\001\n\tCancelJob\022*."
-          + "google.cloud.dataplex.v1.CancelJobReques"
-          + "t\032\026.google.protobuf.Empty\"Q\202\323\344\223\002D\"?/v1/{"
-          + "name=projects/*/locations/*/lakes/*/task"
-          + "s/*/jobs/*}:cancel:\001*\332A\004name\022\375\001\n\021CreateE"
-          + "nvironment\0222.google.cloud.dataplex.v1.Cr"
-          + "eateEnvironmentRequest\032\035.google.longrunn"
-          + "ing.Operation\"\224\001\202\323\344\223\002G\"8/v1/{parent=proj"
-          + "ects/*/locations/*/lakes/*}/environments"
-          + ":\013environment\332A!parent,environment,envir"
-          + "onment_id\312A \n\013Environment\022\021OperationMeta"
-          + "data\022\377\001\n\021UpdateEnvironment\0222.google.clou"
-          + "d.dataplex.v1.UpdateEnvironmentRequest\032\035"
-          + ".google.longrunning.Operation\"\226\001\202\323\344\223\002S2D"
-          + "/v1/{environment.name=projects/*/locatio"
-          + "ns/*/lakes/*/environments/*}:\013environmen"
-          + "t\332A\027environment,update_mask\312A \n\013Environm"
-          + "ent\022\021OperationMetadata\022\334\001\n\021DeleteEnviron"
-          + "ment\0222.google.cloud.dataplex.v1.DeleteEn"
-          + "vironmentRequest\032\035.google.longrunning.Op"
-          + "eration\"t\202\323\344\223\002:*8/v1/{name=projects/*/lo"
-          + "cations/*/lakes/*/environments/*}\332A\004name"
-          + "\312A*\n\025google.protobuf.Empty\022\021OperationMet"
-          + "adata\022\304\001\n\020ListEnvironments\0221.google.clou"
-          + "d.dataplex.v1.ListEnvironmentsRequest\0322."
-          + "google.cloud.dataplex.v1.ListEnvironment"
-          + "sResponse\"I\202\323\344\223\002:\0228/v1/{parent=projects/"
-          + "*/locations/*/lakes/*}/environments\332A\006pa"
-          + "rent\022\261\001\n\016GetEnvironment\022/.google.cloud.d"
-          + "ataplex.v1.GetEnvironmentRequest\032%.googl"
-          + "e.cloud.dataplex.v1.Environment\"G\202\323\344\223\002:\022"
-          + "8/v1/{name=projects/*/locations/*/lakes/"
-          + "*/environments/*}\332A\004name\022\303\001\n\014ListSession"
-          + "s\022-.google.cloud.dataplex.v1.ListSession"
-          + "sRequest\032..google.cloud.dataplex.v1.List"
-          + "SessionsResponse\"T\202\323\344\223\002E\022C/v1/{parent=pr"
-          + "ojects/*/locations/*/lakes/*/environment"
-          + "s/*}/sessions\332A\006parent\032K\312A\027dataplex.goog"
-          + "leapis.com\322A.https://www.googleapis.com/"
-          + "auth/cloud-platformBh\n\034com.google.cloud."
-          + "dataplex.v1B\014ServiceProtoP\001Z8cloud.googl"
-          + "e.com/go/dataplex/apiv1/dataplexpb;datap"
-          + "lexpbb\006proto3"
+          + "/environments/*}\332A\004name\312A*\n\025google.proto"
+          + "buf.Empty\022\021OperationMetadata\022\304\001\n\020ListEnv"
+          + "ironments\0221.google.cloud.dataplex.v1.Lis"
+          + "tEnvironmentsRequest\0322.google.cloud.data"
+          + "plex.v1.ListEnvironmentsResponse\"I\202\323\344\223\002:"
+          + "\0228/v1/{parent=projects/*/locations/*/lak"
+          + "es/*}/environments\332A\006parent\022\261\001\n\016GetEnvir"
+          + "onment\022/.google.cloud.dataplex.v1.GetEnv"
+          + "ironmentRequest\032%.google.cloud.dataplex."
+          + "v1.Environment\"G\202\323\344\223\002:\0228/v1/{name=projec"
+          + "ts/*/locations/*/lakes/*/environments/*}"
+          + "\332A\004name\022\303\001\n\014ListSessions\022-.google.cloud."
+          + "dataplex.v1.ListSessionsRequest\032..google"
+          + ".cloud.dataplex.v1.ListSessionsResponse\""
+          + "T\202\323\344\223\002E\022C/v1/{parent=projects/*/location"
+          + "s/*/lakes/*/environments/*}/sessions\332A\006p"
+          + "arent\032K\312A\027dataplex.googleapis.com\322A.http"
+          + "s://www.googleapis.com/auth/cloud-platfo"
+          + "rmBh\n\034com.google.cloud.dataplex.v1B\014Serv"
+          + "iceProtoP\001Z8cloud.google.com/go/dataplex"
+          + "/apiv1/dataplexpb;dataplexpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -765,8 +780,24 @@ public final class ServiceProto {
             new java.lang.String[] {
               "Name",
             });
-    internal_static_google_cloud_dataplex_v1_ListJobsRequest_descriptor =
+    internal_static_google_cloud_dataplex_v1_RunTaskRequest_descriptor =
         getDescriptor().getMessageTypes().get(30);
+    internal_static_google_cloud_dataplex_v1_RunTaskRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_RunTaskRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_dataplex_v1_RunTaskResponse_descriptor =
+        getDescriptor().getMessageTypes().get(31);
+    internal_static_google_cloud_dataplex_v1_RunTaskResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_RunTaskResponse_descriptor,
+            new java.lang.String[] {
+              "Job",
+            });
+    internal_static_google_cloud_dataplex_v1_ListJobsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_dataplex_v1_ListJobsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_ListJobsRequest_descriptor,
@@ -774,7 +805,7 @@ public final class ServiceProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_dataplex_v1_ListJobsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_cloud_dataplex_v1_ListJobsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_ListJobsResponse_descriptor,
@@ -782,7 +813,7 @@ public final class ServiceProto {
               "Jobs", "NextPageToken",
             });
     internal_static_google_cloud_dataplex_v1_CancelJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_cloud_dataplex_v1_CancelJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_CancelJobRequest_descriptor,
@@ -790,7 +821,7 @@ public final class ServiceProto {
               "Name",
             });
     internal_static_google_cloud_dataplex_v1_CreateEnvironmentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_cloud_dataplex_v1_CreateEnvironmentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_CreateEnvironmentRequest_descriptor,
@@ -798,7 +829,7 @@ public final class ServiceProto {
               "Parent", "EnvironmentId", "Environment", "ValidateOnly",
             });
     internal_static_google_cloud_dataplex_v1_UpdateEnvironmentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_cloud_dataplex_v1_UpdateEnvironmentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_UpdateEnvironmentRequest_descriptor,
@@ -806,7 +837,7 @@ public final class ServiceProto {
               "UpdateMask", "Environment", "ValidateOnly",
             });
     internal_static_google_cloud_dataplex_v1_DeleteEnvironmentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(35);
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_cloud_dataplex_v1_DeleteEnvironmentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_DeleteEnvironmentRequest_descriptor,
@@ -814,7 +845,7 @@ public final class ServiceProto {
               "Name",
             });
     internal_static_google_cloud_dataplex_v1_ListEnvironmentsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(36);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_cloud_dataplex_v1_ListEnvironmentsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_ListEnvironmentsRequest_descriptor,
@@ -822,7 +853,7 @@ public final class ServiceProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_dataplex_v1_ListEnvironmentsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(37);
+        getDescriptor().getMessageTypes().get(39);
     internal_static_google_cloud_dataplex_v1_ListEnvironmentsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_ListEnvironmentsResponse_descriptor,
@@ -830,7 +861,7 @@ public final class ServiceProto {
               "Environments", "NextPageToken",
             });
     internal_static_google_cloud_dataplex_v1_GetEnvironmentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(38);
+        getDescriptor().getMessageTypes().get(40);
     internal_static_google_cloud_dataplex_v1_GetEnvironmentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_GetEnvironmentRequest_descriptor,
@@ -838,7 +869,7 @@ public final class ServiceProto {
               "Name",
             });
     internal_static_google_cloud_dataplex_v1_ListSessionsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(39);
+        getDescriptor().getMessageTypes().get(41);
     internal_static_google_cloud_dataplex_v1_ListSessionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_ListSessionsRequest_descriptor,
@@ -846,7 +877,7 @@ public final class ServiceProto {
               "Parent", "PageSize", "PageToken", "Filter",
             });
     internal_static_google_cloud_dataplex_v1_ListSessionsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(40);
+        getDescriptor().getMessageTypes().get(42);
     internal_static_google_cloud_dataplex_v1_ListSessionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_ListSessionsResponse_descriptor,

@@ -40,6 +40,7 @@ public class SyncCreateDataScan {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setDataScan(DataScan.newBuilder().build())
               .setDataScanId("dataScanId1260787906")
+              .setValidateOnly(true)
               .build();
       DataScan response = dataScanServiceClient.createDataScanAsync(request).get();
     }

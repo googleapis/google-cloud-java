@@ -1070,6 +1070,48 @@ public final class DataplexServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.RunTaskRequest, com.google.cloud.dataplex.v1.RunTaskResponse>
+      getRunTaskMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RunTask",
+      requestType = com.google.cloud.dataplex.v1.RunTaskRequest.class,
+      responseType = com.google.cloud.dataplex.v1.RunTaskResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataplex.v1.RunTaskRequest, com.google.cloud.dataplex.v1.RunTaskResponse>
+      getRunTaskMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataplex.v1.RunTaskRequest,
+            com.google.cloud.dataplex.v1.RunTaskResponse>
+        getRunTaskMethod;
+    if ((getRunTaskMethod = DataplexServiceGrpc.getRunTaskMethod) == null) {
+      synchronized (DataplexServiceGrpc.class) {
+        if ((getRunTaskMethod = DataplexServiceGrpc.getRunTaskMethod) == null) {
+          DataplexServiceGrpc.getRunTaskMethod =
+              getRunTaskMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataplex.v1.RunTaskRequest,
+                          com.google.cloud.dataplex.v1.RunTaskResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RunTask"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.RunTaskRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataplex.v1.RunTaskResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(new DataplexServiceMethodDescriptorSupplier("RunTask"))
+                      .build();
+        }
+      }
+    }
+    return getRunTaskMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dataplex.v1.GetJobRequest, com.google.cloud.dataplex.v1.Job>
       getGetJobMethod;
 
@@ -1806,6 +1848,20 @@ public final class DataplexServiceGrpc {
      *
      *
      * <pre>
+     * Run an on demand execution of a Task.
+     * </pre>
+     */
+    default void runTask(
+        com.google.cloud.dataplex.v1.RunTaskRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.RunTaskResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRunTaskMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Get job resource.
      * </pre>
      */
@@ -2321,6 +2377,21 @@ public final class DataplexServiceGrpc {
      *
      *
      * <pre>
+     * Run an on demand execution of a Task.
+     * </pre>
+     */
+    public void runTask(
+        com.google.cloud.dataplex.v1.RunTaskRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.RunTaskResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRunTaskMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Get job resource.
      * </pre>
      */
@@ -2787,6 +2858,19 @@ public final class DataplexServiceGrpc {
      *
      *
      * <pre>
+     * Run an on demand execution of a Task.
+     * </pre>
+     */
+    public com.google.cloud.dataplex.v1.RunTaskResponse runTask(
+        com.google.cloud.dataplex.v1.RunTaskRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRunTaskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Get job resource.
      * </pre>
      */
@@ -3239,6 +3323,20 @@ public final class DataplexServiceGrpc {
      *
      *
      * <pre>
+     * Run an on demand execution of a Task.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataplex.v1.RunTaskResponse>
+        runTask(com.google.cloud.dataplex.v1.RunTaskRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRunTaskMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Get job resource.
      * </pre>
      */
@@ -3368,14 +3466,15 @@ public final class DataplexServiceGrpc {
   private static final int METHODID_LIST_TASKS = 21;
   private static final int METHODID_GET_TASK = 22;
   private static final int METHODID_LIST_JOBS = 23;
-  private static final int METHODID_GET_JOB = 24;
-  private static final int METHODID_CANCEL_JOB = 25;
-  private static final int METHODID_CREATE_ENVIRONMENT = 26;
-  private static final int METHODID_UPDATE_ENVIRONMENT = 27;
-  private static final int METHODID_DELETE_ENVIRONMENT = 28;
-  private static final int METHODID_LIST_ENVIRONMENTS = 29;
-  private static final int METHODID_GET_ENVIRONMENT = 30;
-  private static final int METHODID_LIST_SESSIONS = 31;
+  private static final int METHODID_RUN_TASK = 24;
+  private static final int METHODID_GET_JOB = 25;
+  private static final int METHODID_CANCEL_JOB = 26;
+  private static final int METHODID_CREATE_ENVIRONMENT = 27;
+  private static final int METHODID_UPDATE_ENVIRONMENT = 28;
+  private static final int METHODID_DELETE_ENVIRONMENT = 29;
+  private static final int METHODID_LIST_ENVIRONMENTS = 30;
+  private static final int METHODID_GET_ENVIRONMENT = 31;
+  private static final int METHODID_LIST_SESSIONS = 32;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3520,6 +3619,12 @@ public final class DataplexServiceGrpc {
           serviceImpl.listJobs(
               (com.google.cloud.dataplex.v1.ListJobsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.ListJobsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_RUN_TASK:
+          serviceImpl.runTask(
+              (com.google.cloud.dataplex.v1.RunTaskRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dataplex.v1.RunTaskResponse>)
                   responseObserver);
           break;
         case METHODID_GET_JOB:
@@ -3732,6 +3837,12 @@ public final class DataplexServiceGrpc {
                     com.google.cloud.dataplex.v1.ListJobsRequest,
                     com.google.cloud.dataplex.v1.ListJobsResponse>(service, METHODID_LIST_JOBS)))
         .addMethod(
+            getRunTaskMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataplex.v1.RunTaskRequest,
+                    com.google.cloud.dataplex.v1.RunTaskResponse>(service, METHODID_RUN_TASK)))
+        .addMethod(
             getGetJobMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -3856,6 +3967,7 @@ public final class DataplexServiceGrpc {
                       .addMethod(getListTasksMethod())
                       .addMethod(getGetTaskMethod())
                       .addMethod(getListJobsMethod())
+                      .addMethod(getRunTaskMethod())
                       .addMethod(getGetJobMethod())
                       .addMethod(getCancelJobMethod())
                       .addMethod(getCreateEnvironmentMethod())

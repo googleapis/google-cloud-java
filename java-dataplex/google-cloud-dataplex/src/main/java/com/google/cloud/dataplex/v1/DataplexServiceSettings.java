@@ -295,6 +295,11 @@ public class DataplexServiceSettings extends ClientSettings<DataplexServiceSetti
     return ((DataplexServiceStubSettings) getStubSettings()).listJobsSettings();
   }
 
+  /** Returns the object with the settings used for calls to runTask. */
+  public UnaryCallSettings<RunTaskRequest, RunTaskResponse> runTaskSettings() {
+    return ((DataplexServiceStubSettings) getStubSettings()).runTaskSettings();
+  }
+
   /** Returns the object with the settings used for calls to getJob. */
   public UnaryCallSettings<GetJobRequest, Job> getJobSettings() {
     return ((DataplexServiceStubSettings) getStubSettings()).getJobSettings();
@@ -683,6 +688,11 @@ public class DataplexServiceSettings extends ClientSettings<DataplexServiceSetti
     public PagedCallSettings.Builder<ListJobsRequest, ListJobsResponse, ListJobsPagedResponse>
         listJobsSettings() {
       return getStubSettingsBuilder().listJobsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to runTask. */
+    public UnaryCallSettings.Builder<RunTaskRequest, RunTaskResponse> runTaskSettings() {
+      return getStubSettingsBuilder().runTaskSettings();
     }
 
     /** Returns the builder for the settings used for calls to getJob. */

@@ -84,6 +84,8 @@ import com.google.cloud.dataplex.v1.ListZoneActionsRequest;
 import com.google.cloud.dataplex.v1.ListZonesRequest;
 import com.google.cloud.dataplex.v1.ListZonesResponse;
 import com.google.cloud.dataplex.v1.OperationMetadata;
+import com.google.cloud.dataplex.v1.RunTaskRequest;
+import com.google.cloud.dataplex.v1.RunTaskResponse;
 import com.google.cloud.dataplex.v1.Task;
 import com.google.cloud.dataplex.v1.UpdateAssetRequest;
 import com.google.cloud.dataplex.v1.UpdateEnvironmentRequest;
@@ -1045,6 +1047,43 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<RunTaskRequest, RunTaskResponse>
+      runTaskMethodDescriptor =
+          ApiMethodDescriptor.<RunTaskRequest, RunTaskResponse>newBuilder()
+              .setFullMethodName("google.cloud.dataplex.v1.DataplexService/RunTask")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RunTaskRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/lakes/*/tasks/*}:run",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RunTaskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RunTaskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RunTaskResponse>newBuilder()
+                      .setDefaultInstance(RunTaskResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<GetJobRequest, Job> getJobMethodDescriptor =
       ApiMethodDescriptor.<GetJobRequest, Job>newBuilder()
           .setFullMethodName("google.cloud.dataplex.v1.DataplexService/GetJob")
@@ -1476,6 +1515,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
   private final UnaryCallable<GetTaskRequest, Task> getTaskCallable;
   private final UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable;
   private final UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable;
+  private final UnaryCallable<RunTaskRequest, RunTaskResponse> runTaskCallable;
   private final UnaryCallable<GetJobRequest, Job> getJobCallable;
   private final UnaryCallable<CancelJobRequest, Empty> cancelJobCallable;
   private final UnaryCallable<CreateEnvironmentRequest, Operation> createEnvironmentCallable;
@@ -1691,6 +1731,11 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
     HttpJsonCallSettings<ListJobsRequest, ListJobsResponse> listJobsTransportSettings =
         HttpJsonCallSettings.<ListJobsRequest, ListJobsResponse>newBuilder()
             .setMethodDescriptor(listJobsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    HttpJsonCallSettings<RunTaskRequest, RunTaskResponse> runTaskTransportSettings =
+        HttpJsonCallSettings.<RunTaskRequest, RunTaskResponse>newBuilder()
+            .setMethodDescriptor(runTaskMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
     HttpJsonCallSettings<GetJobRequest, Job> getJobTransportSettings =
@@ -1914,6 +1959,9 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
     this.listJobsPagedCallable =
         callableFactory.createPagedCallable(
             listJobsTransportSettings, settings.listJobsSettings(), clientContext);
+    this.runTaskCallable =
+        callableFactory.createUnaryCallable(
+            runTaskTransportSettings, settings.runTaskSettings(), clientContext);
     this.getJobCallable =
         callableFactory.createUnaryCallable(
             getJobTransportSettings, settings.getJobSettings(), clientContext);
@@ -2009,6 +2057,7 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
     methodDescriptors.add(listTasksMethodDescriptor);
     methodDescriptors.add(getTaskMethodDescriptor);
     methodDescriptors.add(listJobsMethodDescriptor);
+    methodDescriptors.add(runTaskMethodDescriptor);
     methodDescriptors.add(getJobMethodDescriptor);
     methodDescriptors.add(cancelJobMethodDescriptor);
     methodDescriptors.add(createEnvironmentMethodDescriptor);
@@ -2259,6 +2308,11 @@ public class HttpJsonDataplexServiceStub extends DataplexServiceStub {
   @Override
   public UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable() {
     return listJobsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<RunTaskRequest, RunTaskResponse> runTaskCallable() {
+    return runTaskCallable;
   }
 
   @Override

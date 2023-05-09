@@ -27,7 +27,7 @@ public interface TriggerOrBuilder
    *
    *
    * <pre>
-   * The scan runs one-time shortly after DataScan Creation.
+   * The scan runs once via `RunDataScan` API.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.Trigger.OnDemand on_demand = 100;</code>
@@ -39,7 +39,7 @@ public interface TriggerOrBuilder
    *
    *
    * <pre>
-   * The scan runs one-time shortly after DataScan Creation.
+   * The scan runs once via `RunDataScan` API.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.Trigger.OnDemand on_demand = 100;</code>
@@ -51,7 +51,7 @@ public interface TriggerOrBuilder
    *
    *
    * <pre>
-   * The scan runs one-time shortly after DataScan Creation.
+   * The scan runs once via `RunDataScan` API.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.Trigger.OnDemand on_demand = 100;</code>

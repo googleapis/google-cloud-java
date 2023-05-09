@@ -42,6 +42,7 @@ public class AsyncCreateDataScanLRO {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setDataScan(DataScan.newBuilder().build())
               .setDataScanId("dataScanId1260787906")
+              .setValidateOnly(true)
               .build();
       OperationFuture<DataScan, OperationMetadata> future =
           dataScanServiceClient.createDataScanOperationCallable().futureCall(request);

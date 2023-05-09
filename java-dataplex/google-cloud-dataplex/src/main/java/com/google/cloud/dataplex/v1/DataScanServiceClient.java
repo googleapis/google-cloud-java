@@ -325,6 +325,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setDataScan(DataScan.newBuilder().build())
    *           .setDataScanId("dataScanId1260787906")
+   *           .setValidateOnly(true)
    *           .build();
    *   DataScan response = dataScanServiceClient.createDataScanAsync(request).get();
    * }
@@ -356,6 +357,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setDataScan(DataScan.newBuilder().build())
    *           .setDataScanId("dataScanId1260787906")
+   *           .setValidateOnly(true)
    *           .build();
    *   OperationFuture<DataScan, OperationMetadata> future =
    *       dataScanServiceClient.createDataScanOperationCallable().futureCall(request);
@@ -387,6 +389,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setDataScan(DataScan.newBuilder().build())
    *           .setDataScanId("dataScanId1260787906")
+   *           .setValidateOnly(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       dataScanServiceClient.createDataScanCallable().futureCall(request);
@@ -447,6 +450,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *       UpdateDataScanRequest.newBuilder()
    *           .setDataScan(DataScan.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setValidateOnly(true)
    *           .build();
    *   DataScan response = dataScanServiceClient.updateDataScanAsync(request).get();
    * }
@@ -477,6 +481,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *       UpdateDataScanRequest.newBuilder()
    *           .setDataScan(DataScan.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setValidateOnly(true)
    *           .build();
    *   OperationFuture<DataScan, OperationMetadata> future =
    *       dataScanServiceClient.updateDataScanOperationCallable().futureCall(request);
@@ -507,6 +512,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *       UpdateDataScanRequest.newBuilder()
    *           .setDataScan(DataScan.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setValidateOnly(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       dataScanServiceClient.updateDataScanCallable().futureCall(request);
@@ -1087,7 +1093,7 @@ public class DataScanServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the DataScanJob:
-   *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/dataScanJobs/{data_scan_job_id}`
+   *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/jobs/{data_scan_job_id}`
    *     where `project` refers to a &#42;project_id&#42; or &#42;project_number&#42; and
    *     `location_id` refers to a GCP region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1117,7 +1123,7 @@ public class DataScanServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the DataScanJob:
-   *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/dataScanJobs/{data_scan_job_id}`
+   *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/jobs/{data_scan_job_id}`
    *     where `project` refers to a &#42;project_id&#42; or &#42;project_number&#42; and
    *     `location_id` refers to a GCP region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

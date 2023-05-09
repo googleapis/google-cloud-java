@@ -75,12 +75,13 @@ public interface DataQualityRuleResultOrBuilder
    *
    *
    * <pre>
-   * The number of rows a rule was evaluated against.
-   * This field is only valid for ColumnMap type rules.
+   * The number of rows a rule was evaluated against. This field is only valid
+   * for ColumnMap type rules.
    * Evaluated count can be configured to either
-   * (1) include all rows (default) - with null rows automatically failing rule
-   * evaluation  OR (2) exclude null rows from the evaluated_count, by setting
-   * ignore_nulls = true
+   * * include all rows (default) - with `null` rows automatically failing rule
+   * evaluation, or
+   * * exclude `null` rows from the `evaluated_count`, by setting
+   * `ignore_nulls = true`.
    * </pre>
    *
    * <code>int64 evaluated_count = 9;</code>
@@ -120,7 +121,7 @@ public interface DataQualityRuleResultOrBuilder
    *
    *
    * <pre>
-   * The ratio of passed_count / evaluated_count.
+   * The ratio of **passed_count / evaluated_count**.
    * This field is only valid for ColumnMap type rules.
    * </pre>
    *

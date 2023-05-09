@@ -173,6 +173,25 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
 
+  public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
+  private boolean validateOnly_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only validate the request, but do not perform mutations.
+   * The default is `false`.
+   * </pre>
+   *
+   * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The validateOnly.
+   */
+  @java.lang.Override
+  public boolean getValidateOnly() {
+    return validateOnly_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -193,6 +212,9 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
     if (updateMask_ != null) {
       output.writeMessage(2, getUpdateMask());
     }
+    if (validateOnly_ != false) {
+      output.writeBool(3, validateOnly_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -207,6 +229,9 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
     }
     if (updateMask_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getUpdateMask());
+    }
+    if (validateOnly_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, validateOnly_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -232,6 +257,7 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
     if (hasUpdateMask()) {
       if (!getUpdateMask().equals(other.getUpdateMask())) return false;
     }
+    if (getValidateOnly() != other.getValidateOnly()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -251,6 +277,8 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateMask().hashCode();
     }
+    hash = (37 * hash) + VALIDATE_ONLY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getValidateOnly());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -400,6 +428,7 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
         updateMaskBuilder_.dispose();
         updateMaskBuilder_ = null;
       }
+      validateOnly_ = false;
       return this;
     }
 
@@ -441,6 +470,9 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.updateMask_ = updateMaskBuilder_ == null ? updateMask_ : updateMaskBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.validateOnly_ = validateOnly_;
       }
     }
 
@@ -496,6 +528,9 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
       if (other.hasUpdateMask()) {
         mergeUpdateMask(other.getUpdateMask());
       }
+      if (other.getValidateOnly() != false) {
+        setValidateOnly(other.getValidateOnly());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -534,6 +569,12 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 24:
+              {
+                validateOnly_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -953,6 +994,62 @@ public final class UpdateDataScanRequest extends com.google.protobuf.GeneratedMe
         updateMask_ = null;
       }
       return updateMaskBuilder_;
+    }
+
+    private boolean validateOnly_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only validate the request, but do not perform mutations.
+     * The default is `false`.
+     * </pre>
+     *
+     * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The validateOnly.
+     */
+    @java.lang.Override
+    public boolean getValidateOnly() {
+      return validateOnly_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only validate the request, but do not perform mutations.
+     * The default is `false`.
+     * </pre>
+     *
+     * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The validateOnly to set.
+     * @return This builder for chaining.
+     */
+    public Builder setValidateOnly(boolean value) {
+
+      validateOnly_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only validate the request, but do not perform mutations.
+     * The default is `false`.
+     * </pre>
+     *
+     * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearValidateOnly() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      validateOnly_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

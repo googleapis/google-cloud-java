@@ -190,8 +190,7 @@ public interface EntityOrBuilder
    * published table name. Specifying a new ID in an update entity
    * request will override the existing value.
    * The ID must contain only letters (a-z, A-Z), numbers (0-9), and
-   * underscores. Must begin with a letter and consist of 256 or fewer
-   * characters.
+   * underscores, and consist of 256 or fewer characters.
    * </pre>
    *
    * <code>string id = 7 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -207,8 +206,7 @@ public interface EntityOrBuilder
    * published table name. Specifying a new ID in an update entity
    * request will override the existing value.
    * The ID must contain only letters (a-z, A-Z), numbers (0-9), and
-   * underscores. Must begin with a letter and consist of 256 or fewer
-   * characters.
+   * underscores, and consist of 256 or fewer characters.
    * </pre>
    *
    * <code>string id = 7 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -510,6 +508,77 @@ public interface EntityOrBuilder
    * </code>
    */
   com.google.cloud.dataplex.v1.Entity.CompatibilityStatusOrBuilder getCompatibilityOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Identifies the access mechanism to the entity. Not user
+   * settable.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.StorageAccess access = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the access field is set.
+   */
+  boolean hasAccess();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Identifies the access mechanism to the entity. Not user
+   * settable.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.StorageAccess access = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The access.
+   */
+  com.google.cloud.dataplex.v1.StorageAccess getAccess();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Identifies the access mechanism to the entity. Not user
+   * settable.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.StorageAccess access = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.StorageAccessOrBuilder getAccessOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. System generated unique ID for the Entity. This ID will be
+   * different if the Entity is deleted and re-created with the same name.
+   * </pre>
+   *
+   * <code>string uid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The uid.
+   */
+  java.lang.String getUid();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. System generated unique ID for the Entity. This ID will be
+   * different if the Entity is deleted and re-created with the same name.
+   * </pre>
+   *
+   * <code>string uid = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for uid.
+   */
+  com.google.protobuf.ByteString getUidBytes();
 
   /**
    *

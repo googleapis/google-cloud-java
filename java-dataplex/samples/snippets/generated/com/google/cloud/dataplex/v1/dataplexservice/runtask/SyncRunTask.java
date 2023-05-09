@@ -16,39 +16,31 @@
 
 package com.google.cloud.dataplex.v1.samples;
 
-// [START dataplex_v1_generated_DataScanService_CreateDataScan_async]
-import com.google.api.core.ApiFuture;
-import com.google.cloud.dataplex.v1.CreateDataScanRequest;
-import com.google.cloud.dataplex.v1.DataScan;
-import com.google.cloud.dataplex.v1.DataScanServiceClient;
-import com.google.cloud.dataplex.v1.LocationName;
-import com.google.longrunning.Operation;
+// [START dataplex_v1_generated_DataplexService_RunTask_sync]
+import com.google.cloud.dataplex.v1.DataplexServiceClient;
+import com.google.cloud.dataplex.v1.RunTaskRequest;
+import com.google.cloud.dataplex.v1.RunTaskResponse;
+import com.google.cloud.dataplex.v1.TaskName;
 
-public class AsyncCreateDataScan {
+public class SyncRunTask {
 
   public static void main(String[] args) throws Exception {
-    asyncCreateDataScan();
+    syncRunTask();
   }
 
-  public static void asyncCreateDataScan() throws Exception {
+  public static void syncRunTask() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    try (DataScanServiceClient dataScanServiceClient = DataScanServiceClient.create()) {
-      CreateDataScanRequest request =
-          CreateDataScanRequest.newBuilder()
-              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
-              .setDataScan(DataScan.newBuilder().build())
-              .setDataScanId("dataScanId1260787906")
-              .setValidateOnly(true)
+    try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
+      RunTaskRequest request =
+          RunTaskRequest.newBuilder()
+              .setName(TaskName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[TASK]").toString())
               .build();
-      ApiFuture<Operation> future =
-          dataScanServiceClient.createDataScanCallable().futureCall(request);
-      // Do something.
-      Operation response = future.get();
+      RunTaskResponse response = dataplexServiceClient.runTask(request);
     }
   }
 }
-// [END dataplex_v1_generated_DataScanService_CreateDataScan_async]
+// [END dataplex_v1_generated_DataplexService_RunTask_sync]

@@ -71,6 +71,8 @@ import com.google.cloud.dataplex.v1.ListZoneActionsRequest;
 import com.google.cloud.dataplex.v1.ListZonesRequest;
 import com.google.cloud.dataplex.v1.ListZonesResponse;
 import com.google.cloud.dataplex.v1.OperationMetadata;
+import com.google.cloud.dataplex.v1.RunTaskRequest;
+import com.google.cloud.dataplex.v1.RunTaskResponse;
 import com.google.cloud.dataplex.v1.Task;
 import com.google.cloud.dataplex.v1.UpdateAssetRequest;
 import com.google.cloud.dataplex.v1.UpdateEnvironmentRequest;
@@ -293,6 +295,10 @@ public abstract class DataplexServiceStub implements BackgroundResource {
 
   public UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable() {
     throw new UnsupportedOperationException("Not implemented: listJobsCallable()");
+  }
+
+  public UnaryCallable<RunTaskRequest, RunTaskResponse> runTaskCallable() {
+    throw new UnsupportedOperationException("Not implemented: runTaskCallable()");
   }
 
   public UnaryCallable<GetJobRequest, Job> getJobCallable() {

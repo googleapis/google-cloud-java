@@ -16,33 +16,27 @@
 
 package com.google.cloud.dataplex.v1.samples;
 
-// [START dataplex_v1_generated_DataScanService_UpdateDataScan_sync]
-import com.google.cloud.dataplex.v1.DataScan;
-import com.google.cloud.dataplex.v1.DataScanServiceClient;
-import com.google.cloud.dataplex.v1.UpdateDataScanRequest;
-import com.google.protobuf.FieldMask;
+// [START dataplex_v1_generated_DataplexService_RunTask_String_sync]
+import com.google.cloud.dataplex.v1.DataplexServiceClient;
+import com.google.cloud.dataplex.v1.RunTaskResponse;
+import com.google.cloud.dataplex.v1.TaskName;
 
-public class SyncUpdateDataScan {
+public class SyncRunTaskString {
 
   public static void main(String[] args) throws Exception {
-    syncUpdateDataScan();
+    syncRunTaskString();
   }
 
-  public static void syncUpdateDataScan() throws Exception {
+  public static void syncRunTaskString() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    try (DataScanServiceClient dataScanServiceClient = DataScanServiceClient.create()) {
-      UpdateDataScanRequest request =
-          UpdateDataScanRequest.newBuilder()
-              .setDataScan(DataScan.newBuilder().build())
-              .setUpdateMask(FieldMask.newBuilder().build())
-              .setValidateOnly(true)
-              .build();
-      DataScan response = dataScanServiceClient.updateDataScanAsync(request).get();
+    try (DataplexServiceClient dataplexServiceClient = DataplexServiceClient.create()) {
+      String name = TaskName.of("[PROJECT]", "[LOCATION]", "[LAKE]", "[TASK]").toString();
+      RunTaskResponse response = dataplexServiceClient.runTask(name);
     }
   }
 }
-// [END dataplex_v1_generated_DataScanService_UpdateDataScan_sync]
+// [END dataplex_v1_generated_DataplexService_RunTask_String_sync]

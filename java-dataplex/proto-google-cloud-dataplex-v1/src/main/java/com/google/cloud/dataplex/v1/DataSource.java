@@ -73,6 +73,7 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     ENTITY(100),
+    RESOURCE(101),
     SOURCE_NOT_SET(0);
     private final int value;
 
@@ -93,6 +94,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 100:
           return ENTITY;
+        case 101:
+          return RESOURCE;
         case 0:
           return SOURCE_NOT_SET;
         default:
@@ -114,8 +117,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The dataplex entity that contains the data for DataScan, of
-   * the form:
+   * Immutable. The Dataplex entity that represents the data source (e.g.
+   * BigQuery table) for DataScan, of the form:
    * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}`.
    * </pre>
    *
@@ -132,8 +135,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The dataplex entity that contains the data for DataScan, of
-   * the form:
+   * Immutable. The Dataplex entity that represents the data source (e.g.
+   * BigQuery table) for DataScan, of the form:
    * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}`.
    * </pre>
    *
@@ -163,8 +166,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The dataplex entity that contains the data for DataScan, of
-   * the form:
+   * Immutable. The Dataplex entity that represents the data source (e.g.
+   * BigQuery table) for DataScan, of the form:
    * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}`.
    * </pre>
    *
@@ -191,6 +194,85 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int RESOURCE_FIELD_NUMBER = 101;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The service-qualified full resource name of the cloud resource
+   * for a DataScan job to scan against. The field could be: BigQuery table of
+   * type "TABLE" for DataProfileScan/DataQualityScan Format:
+   * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+   * </pre>
+   *
+   * <code>string resource = 101 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return Whether the resource field is set.
+   */
+  public boolean hasResource() {
+    return sourceCase_ == 101;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The service-qualified full resource name of the cloud resource
+   * for a DataScan job to scan against. The field could be: BigQuery table of
+   * type "TABLE" for DataProfileScan/DataQualityScan Format:
+   * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+   * </pre>
+   *
+   * <code>string resource = 101 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The resource.
+   */
+  public java.lang.String getResource() {
+    java.lang.Object ref = "";
+    if (sourceCase_ == 101) {
+      ref = source_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (sourceCase_ == 101) {
+        source_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The service-qualified full resource name of the cloud resource
+   * for a DataScan job to scan against. The field could be: BigQuery table of
+   * type "TABLE" for DataProfileScan/DataQualityScan Format:
+   * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+   * </pre>
+   *
+   * <code>string resource = 101 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The bytes for resource.
+   */
+  public com.google.protobuf.ByteString getResourceBytes() {
+    java.lang.Object ref = "";
+    if (sourceCase_ == 101) {
+      ref = source_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (sourceCase_ == 101) {
+        source_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -208,6 +290,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     if (sourceCase_ == 100) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 100, source_);
     }
+    if (sourceCase_ == 101) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 101, source_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -219,6 +304,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (sourceCase_ == 100) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(100, source_);
+    }
+    if (sourceCase_ == 101) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(101, source_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -240,6 +328,9 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       case 100:
         if (!getEntity().equals(other.getEntity())) return false;
         break;
+      case 101:
+        if (!getResource().equals(other.getResource())) return false;
+        break;
       case 0:
       default:
     }
@@ -258,6 +349,10 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       case 100:
         hash = (37 * hash) + ENTITY_FIELD_NUMBER;
         hash = (53 * hash) + getEntity().hashCode();
+        break;
+      case 101:
+        hash = (37 * hash) + RESOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getResource().hashCode();
         break;
       case 0:
       default:
@@ -500,6 +595,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             break;
           }
+        case RESOURCE:
+          {
+            sourceCase_ = 101;
+            source_ = other.source_;
+            onChanged();
+            break;
+          }
         case SOURCE_NOT_SET:
           {
             break;
@@ -538,6 +640,13 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
                 source_ = s;
                 break;
               } // case 802
+            case 810:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                sourceCase_ = 101;
+                source_ = s;
+                break;
+              } // case 810
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -575,8 +684,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The dataplex entity that contains the data for DataScan, of
-     * the form:
+     * Immutable. The Dataplex entity that represents the data source (e.g.
+     * BigQuery table) for DataScan, of the form:
      * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}`.
      * </pre>
      *
@@ -594,8 +703,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The dataplex entity that contains the data for DataScan, of
-     * the form:
+     * Immutable. The Dataplex entity that represents the data source (e.g.
+     * BigQuery table) for DataScan, of the form:
      * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}`.
      * </pre>
      *
@@ -626,8 +735,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The dataplex entity that contains the data for DataScan, of
-     * the form:
+     * Immutable. The Dataplex entity that represents the data source (e.g.
+     * BigQuery table) for DataScan, of the form:
      * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}`.
      * </pre>
      *
@@ -658,8 +767,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The dataplex entity that contains the data for DataScan, of
-     * the form:
+     * Immutable. The Dataplex entity that represents the data source (e.g.
+     * BigQuery table) for DataScan, of the form:
      * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}`.
      * </pre>
      *
@@ -683,8 +792,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The dataplex entity that contains the data for DataScan, of
-     * the form:
+     * Immutable. The Dataplex entity that represents the data source (e.g.
+     * BigQuery table) for DataScan, of the form:
      * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}`.
      * </pre>
      *
@@ -706,8 +815,8 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The dataplex entity that contains the data for DataScan, of
-     * the form:
+     * Immutable. The Dataplex entity that represents the data source (e.g.
+     * BigQuery table) for DataScan, of the form:
      * `projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}`.
      * </pre>
      *
@@ -724,6 +833,158 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       sourceCase_ = 100;
+      source_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The service-qualified full resource name of the cloud resource
+     * for a DataScan job to scan against. The field could be: BigQuery table of
+     * type "TABLE" for DataProfileScan/DataQualityScan Format:
+     * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+     * </pre>
+     *
+     * <code>string resource = 101 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return Whether the resource field is set.
+     */
+    @java.lang.Override
+    public boolean hasResource() {
+      return sourceCase_ == 101;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The service-qualified full resource name of the cloud resource
+     * for a DataScan job to scan against. The field could be: BigQuery table of
+     * type "TABLE" for DataProfileScan/DataQualityScan Format:
+     * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+     * </pre>
+     *
+     * <code>string resource = 101 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The resource.
+     */
+    @java.lang.Override
+    public java.lang.String getResource() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 101) {
+        ref = source_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (sourceCase_ == 101) {
+          source_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The service-qualified full resource name of the cloud resource
+     * for a DataScan job to scan against. The field could be: BigQuery table of
+     * type "TABLE" for DataProfileScan/DataQualityScan Format:
+     * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+     * </pre>
+     *
+     * <code>string resource = 101 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The bytes for resource.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getResourceBytes() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 101) {
+        ref = source_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (sourceCase_ == 101) {
+          source_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The service-qualified full resource name of the cloud resource
+     * for a DataScan job to scan against. The field could be: BigQuery table of
+     * type "TABLE" for DataProfileScan/DataQualityScan Format:
+     * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+     * </pre>
+     *
+     * <code>string resource = 101 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @param value The resource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResource(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sourceCase_ = 101;
+      source_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The service-qualified full resource name of the cloud resource
+     * for a DataScan job to scan against. The field could be: BigQuery table of
+     * type "TABLE" for DataProfileScan/DataQualityScan Format:
+     * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+     * </pre>
+     *
+     * <code>string resource = 101 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearResource() {
+      if (sourceCase_ == 101) {
+        sourceCase_ = 0;
+        source_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The service-qualified full resource name of the cloud resource
+     * for a DataScan job to scan against. The field could be: BigQuery table of
+     * type "TABLE" for DataProfileScan/DataQualityScan Format:
+     * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+     * </pre>
+     *
+     * <code>string resource = 101 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @param value The bytes for resource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      sourceCase_ = 101;
       source_ = value;
       onChanged();
       return this;

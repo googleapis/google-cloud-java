@@ -41,6 +41,7 @@ public class AsyncUpdateDataScan {
           UpdateDataScanRequest.newBuilder()
               .setDataScan(DataScan.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
+              .setValidateOnly(true)
               .build();
       ApiFuture<Operation> future =
           dataScanServiceClient.updateDataScanCallable().futureCall(request);
