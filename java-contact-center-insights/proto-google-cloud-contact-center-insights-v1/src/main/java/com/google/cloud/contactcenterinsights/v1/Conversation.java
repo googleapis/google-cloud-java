@@ -8249,6 +8249,67 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         : latestAnalysis_;
   }
 
+  public static final int LATEST_SUMMARY_FIELD_NUMBER = 20;
+  private com.google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData
+      latestSummary_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Latest summary of the conversation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData latest_summary = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the latestSummary field is set.
+   */
+  @java.lang.Override
+  public boolean hasLatestSummary() {
+    return latestSummary_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Latest summary of the conversation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData latest_summary = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The latestSummary.
+   */
+  @java.lang.Override
+  public com.google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData
+      getLatestSummary() {
+    return latestSummary_ == null
+        ? com.google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData
+            .getDefaultInstance()
+        : latestSummary_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Latest summary of the conversation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData latest_summary = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionDataOrBuilder
+      getLatestSummaryOrBuilder() {
+    return latestSummary_ == null
+        ? com.google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData
+            .getDefaultInstance()
+        : latestSummary_;
+  }
+
   public static final int RUNTIME_ANNOTATIONS_FIELD_NUMBER = 13;
 
   @SuppressWarnings("serial")
@@ -8597,6 +8658,9 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         internalGetDialogflowIntents(),
         DialogflowIntentsDefaultEntryHolder.defaultEntry,
         18);
+    if (latestSummary_ != null) {
+      output.writeMessage(20, getLatestSummary());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(obfuscatedUserId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 21, obfuscatedUserId_);
     }
@@ -8689,6 +8753,9 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, dialogflowIntents__);
     }
+    if (latestSummary_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getLatestSummary());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(obfuscatedUserId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, obfuscatedUserId_);
     }
@@ -8741,6 +8808,10 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     if (hasLatestAnalysis() != other.hasLatestAnalysis()) return false;
     if (hasLatestAnalysis()) {
       if (!getLatestAnalysis().equals(other.getLatestAnalysis())) return false;
+    }
+    if (hasLatestSummary() != other.hasLatestSummary()) return false;
+    if (hasLatestSummary()) {
+      if (!getLatestSummary().equals(other.getLatestSummary())) return false;
     }
     if (!getRuntimeAnnotationsList().equals(other.getRuntimeAnnotationsList())) return false;
     if (!internalGetDialogflowIntents().equals(other.internalGetDialogflowIntents())) return false;
@@ -8816,6 +8887,10 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     if (hasLatestAnalysis()) {
       hash = (37 * hash) + LATEST_ANALYSIS_FIELD_NUMBER;
       hash = (53 * hash) + getLatestAnalysis().hashCode();
+    }
+    if (hasLatestSummary()) {
+      hash = (37 * hash) + LATEST_SUMMARY_FIELD_NUMBER;
+      hash = (53 * hash) + getLatestSummary().hashCode();
     }
     if (getRuntimeAnnotationsCount() > 0) {
       hash = (37 * hash) + RUNTIME_ANNOTATIONS_FIELD_NUMBER;
@@ -9061,13 +9136,18 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         latestAnalysisBuilder_.dispose();
         latestAnalysisBuilder_ = null;
       }
+      latestSummary_ = null;
+      if (latestSummaryBuilder_ != null) {
+        latestSummaryBuilder_.dispose();
+        latestSummaryBuilder_ = null;
+      }
       if (runtimeAnnotationsBuilder_ == null) {
         runtimeAnnotations_ = java.util.Collections.emptyList();
       } else {
         runtimeAnnotations_ = null;
         runtimeAnnotationsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       internalGetMutableDialogflowIntents().clear();
       obfuscatedUserId_ = "";
       metadataCase_ = 0;
@@ -9113,9 +9193,9 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     private void buildPartialRepeatedFields(
         com.google.cloud.contactcenterinsights.v1.Conversation result) {
       if (runtimeAnnotationsBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)) {
+        if (((bitField0_ & 0x00020000) != 0)) {
           runtimeAnnotations_ = java.util.Collections.unmodifiableList(runtimeAnnotations_);
-          bitField0_ = (bitField0_ & ~0x00010000);
+          bitField0_ = (bitField0_ & ~0x00020000);
         }
         result.runtimeAnnotations_ = runtimeAnnotations_;
       } else {
@@ -9166,11 +9246,15 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         result.latestAnalysis_ =
             latestAnalysisBuilder_ == null ? latestAnalysis_ : latestAnalysisBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.latestSummary_ =
+            latestSummaryBuilder_ == null ? latestSummary_ : latestSummaryBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.dialogflowIntents_ = internalGetDialogflowIntents();
         result.dialogflowIntents_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.obfuscatedUserId_ = obfuscatedUserId_;
       }
     }
@@ -9281,11 +9365,14 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       if (other.hasLatestAnalysis()) {
         mergeLatestAnalysis(other.getLatestAnalysis());
       }
+      if (other.hasLatestSummary()) {
+        mergeLatestSummary(other.getLatestSummary());
+      }
       if (runtimeAnnotationsBuilder_ == null) {
         if (!other.runtimeAnnotations_.isEmpty()) {
           if (runtimeAnnotations_.isEmpty()) {
             runtimeAnnotations_ = other.runtimeAnnotations_;
-            bitField0_ = (bitField0_ & ~0x00010000);
+            bitField0_ = (bitField0_ & ~0x00020000);
           } else {
             ensureRuntimeAnnotationsIsMutable();
             runtimeAnnotations_.addAll(other.runtimeAnnotations_);
@@ -9298,7 +9385,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
             runtimeAnnotationsBuilder_.dispose();
             runtimeAnnotationsBuilder_ = null;
             runtimeAnnotations_ = other.runtimeAnnotations_;
-            bitField0_ = (bitField0_ & ~0x00010000);
+            bitField0_ = (bitField0_ & ~0x00020000);
             runtimeAnnotationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRuntimeAnnotationsFieldBuilder()
@@ -9309,10 +9396,10 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         }
       }
       internalGetMutableDialogflowIntents().mergeFrom(other.internalGetDialogflowIntents());
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       if (!other.getObfuscatedUserId().isEmpty()) {
         obfuscatedUserId_ = other.obfuscatedUserId_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       switch (other.getMetadataCase()) {
@@ -9496,13 +9583,19 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableDialogflowIntents()
                     .getMutableMap()
                     .put(dialogflowIntents__.getKey(), dialogflowIntents__.getValue());
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 146
+            case 162:
+              {
+                input.readMessage(getLatestSummaryFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 162
             case 170:
               {
                 obfuscatedUserId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 170
             default:
@@ -12245,15 +12338,235 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       return latestAnalysisBuilder_;
     }
 
+    private com.google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData
+        latestSummary_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData,
+            com.google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData
+                .Builder,
+            com.google.cloud.contactcenterinsights.v1
+                .ConversationSummarizationSuggestionDataOrBuilder>
+        latestSummaryBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Latest summary of the conversation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData latest_summary = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the latestSummary field is set.
+     */
+    public boolean hasLatestSummary() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Latest summary of the conversation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData latest_summary = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The latestSummary.
+     */
+    public com.google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData
+        getLatestSummary() {
+      if (latestSummaryBuilder_ == null) {
+        return latestSummary_ == null
+            ? com.google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData
+                .getDefaultInstance()
+            : latestSummary_;
+      } else {
+        return latestSummaryBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Latest summary of the conversation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData latest_summary = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setLatestSummary(
+        com.google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData value) {
+      if (latestSummaryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        latestSummary_ = value;
+      } else {
+        latestSummaryBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Latest summary of the conversation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData latest_summary = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setLatestSummary(
+        com.google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData.Builder
+            builderForValue) {
+      if (latestSummaryBuilder_ == null) {
+        latestSummary_ = builderForValue.build();
+      } else {
+        latestSummaryBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Latest summary of the conversation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData latest_summary = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeLatestSummary(
+        com.google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData value) {
+      if (latestSummaryBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0)
+            && latestSummary_ != null
+            && latestSummary_
+                != com.google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData
+                    .getDefaultInstance()) {
+          getLatestSummaryBuilder().mergeFrom(value);
+        } else {
+          latestSummary_ = value;
+        }
+      } else {
+        latestSummaryBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Latest summary of the conversation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData latest_summary = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearLatestSummary() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      latestSummary_ = null;
+      if (latestSummaryBuilder_ != null) {
+        latestSummaryBuilder_.dispose();
+        latestSummaryBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Latest summary of the conversation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData latest_summary = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData.Builder
+        getLatestSummaryBuilder() {
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return getLatestSummaryFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Latest summary of the conversation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData latest_summary = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.contactcenterinsights.v1
+            .ConversationSummarizationSuggestionDataOrBuilder
+        getLatestSummaryOrBuilder() {
+      if (latestSummaryBuilder_ != null) {
+        return latestSummaryBuilder_.getMessageOrBuilder();
+      } else {
+        return latestSummary_ == null
+            ? com.google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData
+                .getDefaultInstance()
+            : latestSummary_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Latest summary of the conversation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData latest_summary = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData,
+            com.google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData
+                .Builder,
+            com.google.cloud.contactcenterinsights.v1
+                .ConversationSummarizationSuggestionDataOrBuilder>
+        getLatestSummaryFieldBuilder() {
+      if (latestSummaryBuilder_ == null) {
+        latestSummaryBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData,
+                com.google.cloud.contactcenterinsights.v1.ConversationSummarizationSuggestionData
+                    .Builder,
+                com.google.cloud.contactcenterinsights.v1
+                    .ConversationSummarizationSuggestionDataOrBuilder>(
+                getLatestSummary(), getParentForChildren(), isClean());
+        latestSummary_ = null;
+      }
+      return latestSummaryBuilder_;
+    }
+
     private java.util.List<com.google.cloud.contactcenterinsights.v1.RuntimeAnnotation>
         runtimeAnnotations_ = java.util.Collections.emptyList();
 
     private void ensureRuntimeAnnotationsIsMutable() {
-      if (!((bitField0_ & 0x00010000) != 0)) {
+      if (!((bitField0_ & 0x00020000) != 0)) {
         runtimeAnnotations_ =
             new java.util.ArrayList<com.google.cloud.contactcenterinsights.v1.RuntimeAnnotation>(
                 runtimeAnnotations_);
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
       }
     }
 
@@ -12510,7 +12823,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     public Builder clearRuntimeAnnotations() {
       if (runtimeAnnotationsBuilder_ == null) {
         runtimeAnnotations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00020000);
         onChanged();
       } else {
         runtimeAnnotationsBuilder_.clear();
@@ -12662,7 +12975,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.contactcenterinsights.v1.RuntimeAnnotation.Builder,
                 com.google.cloud.contactcenterinsights.v1.RuntimeAnnotationOrBuilder>(
                 runtimeAnnotations_,
-                ((bitField0_ & 0x00010000) != 0),
+                ((bitField0_ & 0x00020000) != 0),
                 getParentForChildren(),
                 isClean());
         runtimeAnnotations_ = null;
@@ -12695,7 +13008,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       if (!dialogflowIntents_.isMutable()) {
         dialogflowIntents_ = dialogflowIntents_.copy();
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return dialogflowIntents_;
     }
@@ -12804,7 +13117,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearDialogflowIntents() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       internalGetMutableDialogflowIntents().getMutableMap().clear();
       return this;
     }
@@ -12833,7 +13146,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<
             java.lang.String, com.google.cloud.contactcenterinsights.v1.DialogflowIntent>
         getMutableDialogflowIntents() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       return internalGetMutableDialogflowIntents().getMutableMap();
     }
     /**
@@ -12858,7 +13171,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableDialogflowIntents().getMutableMap().put(key, value);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       return this;
     }
     /**
@@ -12878,7 +13191,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, com.google.cloud.contactcenterinsights.v1.DialogflowIntent>
             values) {
       internalGetMutableDialogflowIntents().getMutableMap().putAll(values);
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       return this;
     }
 
@@ -12944,7 +13257,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       obfuscatedUserId_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -12961,7 +13274,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearObfuscatedUserId() {
       obfuscatedUserId_ = getDefaultInstance().getObfuscatedUserId();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -12983,7 +13296,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       obfuscatedUserId_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }

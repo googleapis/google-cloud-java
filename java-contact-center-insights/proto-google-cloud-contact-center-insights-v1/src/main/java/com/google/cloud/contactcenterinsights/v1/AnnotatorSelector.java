@@ -68,6 +68,1275 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
             com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.Builder.class);
   }
 
+  public interface SummarizationConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of the Dialogflow conversation profile.
+     * Format:
+     * projects/{project}/locations/{location}/conversationProfiles/{conversation_profile}
+     * </pre>
+     *
+     * <code>string conversation_profile = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return Whether the conversationProfile field is set.
+     */
+    boolean hasConversationProfile();
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of the Dialogflow conversation profile.
+     * Format:
+     * projects/{project}/locations/{location}/conversationProfiles/{conversation_profile}
+     * </pre>
+     *
+     * <code>string conversation_profile = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The conversationProfile.
+     */
+    java.lang.String getConversationProfile();
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of the Dialogflow conversation profile.
+     * Format:
+     * projects/{project}/locations/{location}/conversationProfiles/{conversation_profile}
+     * </pre>
+     *
+     * <code>string conversation_profile = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for conversationProfile.
+     */
+    com.google.protobuf.ByteString getConversationProfileBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Default summarization model to be used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig.SummarizationModel summarization_model = 2;
+     * </code>
+     *
+     * @return Whether the summarizationModel field is set.
+     */
+    boolean hasSummarizationModel();
+    /**
+     *
+     *
+     * <pre>
+     * Default summarization model to be used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig.SummarizationModel summarization_model = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for summarizationModel.
+     */
+    int getSummarizationModelValue();
+    /**
+     *
+     *
+     * <pre>
+     * Default summarization model to be used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig.SummarizationModel summarization_model = 2;
+     * </code>
+     *
+     * @return The summarizationModel.
+     */
+    com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+            .SummarizationModel
+        getSummarizationModel();
+
+    public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+            .ModelSourceCase
+        getModelSourceCase();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for summarization.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig}
+   */
+  public static final class SummarizationConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig)
+      SummarizationConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use SummarizationConfig.newBuilder() to construct.
+    private SummarizationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SummarizationConfig() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SummarizationConfig();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.contactcenterinsights.v1.ResourcesProto
+          .internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_SummarizationConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.contactcenterinsights.v1.ResourcesProto
+          .internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_SummarizationConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig.class,
+              com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+                  .Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Summarization model to use, if `conversation_profile` is not used.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig.SummarizationModel}
+     */
+    public enum SummarizationModel implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified summarization model.
+       * </pre>
+       *
+       * <code>SUMMARIZATION_MODEL_UNSPECIFIED = 0;</code>
+       */
+      SUMMARIZATION_MODEL_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * The Insights baseline model.
+       * </pre>
+       *
+       * <code>BASELINE_MODEL = 1;</code>
+       */
+      BASELINE_MODEL(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified summarization model.
+       * </pre>
+       *
+       * <code>SUMMARIZATION_MODEL_UNSPECIFIED = 0;</code>
+       */
+      public static final int SUMMARIZATION_MODEL_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The Insights baseline model.
+       * </pre>
+       *
+       * <code>BASELINE_MODEL = 1;</code>
+       */
+      public static final int BASELINE_MODEL_VALUE = 1;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static SummarizationModel valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static SummarizationModel forNumber(int value) {
+        switch (value) {
+          case 0:
+            return SUMMARIZATION_MODEL_UNSPECIFIED;
+          case 1:
+            return BASELINE_MODEL;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<SummarizationModel>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<SummarizationModel>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<SummarizationModel>() {
+                public SummarizationModel findValueByNumber(int number) {
+                  return SummarizationModel.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+            .getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final SummarizationModel[] VALUES = values();
+
+      public static SummarizationModel valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private SummarizationModel(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig.SummarizationModel)
+    }
+
+    private int modelSourceCase_ = 0;
+    private java.lang.Object modelSource_;
+
+    public enum ModelSourceCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      CONVERSATION_PROFILE(1),
+      SUMMARIZATION_MODEL(2),
+      MODELSOURCE_NOT_SET(0);
+      private final int value;
+
+      private ModelSourceCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ModelSourceCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ModelSourceCase forNumber(int value) {
+        switch (value) {
+          case 1:
+            return CONVERSATION_PROFILE;
+          case 2:
+            return SUMMARIZATION_MODEL;
+          case 0:
+            return MODELSOURCE_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ModelSourceCase getModelSourceCase() {
+      return ModelSourceCase.forNumber(modelSourceCase_);
+    }
+
+    public static final int CONVERSATION_PROFILE_FIELD_NUMBER = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of the Dialogflow conversation profile.
+     * Format:
+     * projects/{project}/locations/{location}/conversationProfiles/{conversation_profile}
+     * </pre>
+     *
+     * <code>string conversation_profile = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return Whether the conversationProfile field is set.
+     */
+    public boolean hasConversationProfile() {
+      return modelSourceCase_ == 1;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of the Dialogflow conversation profile.
+     * Format:
+     * projects/{project}/locations/{location}/conversationProfiles/{conversation_profile}
+     * </pre>
+     *
+     * <code>string conversation_profile = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The conversationProfile.
+     */
+    public java.lang.String getConversationProfile() {
+      java.lang.Object ref = "";
+      if (modelSourceCase_ == 1) {
+        ref = modelSource_;
+      }
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (modelSourceCase_ == 1) {
+          modelSource_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Resource name of the Dialogflow conversation profile.
+     * Format:
+     * projects/{project}/locations/{location}/conversationProfiles/{conversation_profile}
+     * </pre>
+     *
+     * <code>string conversation_profile = 1 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for conversationProfile.
+     */
+    public com.google.protobuf.ByteString getConversationProfileBytes() {
+      java.lang.Object ref = "";
+      if (modelSourceCase_ == 1) {
+        ref = modelSource_;
+      }
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (modelSourceCase_ == 1) {
+          modelSource_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SUMMARIZATION_MODEL_FIELD_NUMBER = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Default summarization model to be used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig.SummarizationModel summarization_model = 2;
+     * </code>
+     *
+     * @return Whether the summarizationModel field is set.
+     */
+    public boolean hasSummarizationModel() {
+      return modelSourceCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Default summarization model to be used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig.SummarizationModel summarization_model = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for summarizationModel.
+     */
+    public int getSummarizationModelValue() {
+      if (modelSourceCase_ == 2) {
+        return (java.lang.Integer) modelSource_;
+      }
+      return 0;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Default summarization model to be used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig.SummarizationModel summarization_model = 2;
+     * </code>
+     *
+     * @return The summarizationModel.
+     */
+    public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+            .SummarizationModel
+        getSummarizationModel() {
+      if (modelSourceCase_ == 2) {
+        com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+                .SummarizationModel
+            result =
+                com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+                    .SummarizationModel.forNumber((java.lang.Integer) modelSource_);
+        return result == null
+            ? com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+                .SummarizationModel.UNRECOGNIZED
+            : result;
+      }
+      return com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+          .SummarizationModel.SUMMARIZATION_MODEL_UNSPECIFIED;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (modelSourceCase_ == 1) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, modelSource_);
+      }
+      if (modelSourceCase_ == 2) {
+        output.writeEnum(2, ((java.lang.Integer) modelSource_));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (modelSourceCase_ == 1) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, modelSource_);
+      }
+      if (modelSourceCase_ == 2) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeEnumSize(
+                2, ((java.lang.Integer) modelSource_));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig other =
+          (com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig) obj;
+
+      if (!getModelSourceCase().equals(other.getModelSourceCase())) return false;
+      switch (modelSourceCase_) {
+        case 1:
+          if (!getConversationProfile().equals(other.getConversationProfile())) return false;
+          break;
+        case 2:
+          if (getSummarizationModelValue() != other.getSummarizationModelValue()) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (modelSourceCase_) {
+        case 1:
+          hash = (37 * hash) + CONVERSATION_PROFILE_FIELD_NUMBER;
+          hash = (53 * hash) + getConversationProfile().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + SUMMARIZATION_MODEL_FIELD_NUMBER;
+          hash = (53 * hash) + getSummarizationModelValue();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for summarization.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig)
+        com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.contactcenterinsights.v1.ResourcesProto
+            .internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_SummarizationConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.contactcenterinsights.v1.ResourcesProto
+            .internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_SummarizationConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+                    .class,
+                com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        modelSourceCase_ = 0;
+        modelSource_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.contactcenterinsights.v1.ResourcesProto
+            .internal_static_google_cloud_contactcenterinsights_v1_AnnotatorSelector_SummarizationConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+          build() {
+        com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+          buildPartial() {
+        com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig result =
+            new com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig(
+                this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig result) {
+        result.modelSourceCase_ = modelSourceCase_;
+        result.modelSource_ = this.modelSource_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig) {
+          return mergeFrom(
+              (com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig other) {
+        if (other
+            == com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+                .getDefaultInstance()) return this;
+        switch (other.getModelSourceCase()) {
+          case CONVERSATION_PROFILE:
+            {
+              modelSourceCase_ = 1;
+              modelSource_ = other.modelSource_;
+              onChanged();
+              break;
+            }
+          case SUMMARIZATION_MODEL:
+            {
+              setSummarizationModelValue(other.getSummarizationModelValue());
+              break;
+            }
+          case MODELSOURCE_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  modelSourceCase_ = 1;
+                  modelSource_ = s;
+                  break;
+                } // case 10
+              case 16:
+                {
+                  int rawValue = input.readEnum();
+                  modelSourceCase_ = 2;
+                  modelSource_ = rawValue;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int modelSourceCase_ = 0;
+      private java.lang.Object modelSource_;
+
+      public ModelSourceCase getModelSourceCase() {
+        return ModelSourceCase.forNumber(modelSourceCase_);
+      }
+
+      public Builder clearModelSource() {
+        modelSourceCase_ = 0;
+        modelSource_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Resource name of the Dialogflow conversation profile.
+       * Format:
+       * projects/{project}/locations/{location}/conversationProfiles/{conversation_profile}
+       * </pre>
+       *
+       * <code>string conversation_profile = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return Whether the conversationProfile field is set.
+       */
+      @java.lang.Override
+      public boolean hasConversationProfile() {
+        return modelSourceCase_ == 1;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Resource name of the Dialogflow conversation profile.
+       * Format:
+       * projects/{project}/locations/{location}/conversationProfiles/{conversation_profile}
+       * </pre>
+       *
+       * <code>string conversation_profile = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The conversationProfile.
+       */
+      @java.lang.Override
+      public java.lang.String getConversationProfile() {
+        java.lang.Object ref = "";
+        if (modelSourceCase_ == 1) {
+          ref = modelSource_;
+        }
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (modelSourceCase_ == 1) {
+            modelSource_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Resource name of the Dialogflow conversation profile.
+       * Format:
+       * projects/{project}/locations/{location}/conversationProfiles/{conversation_profile}
+       * </pre>
+       *
+       * <code>string conversation_profile = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return The bytes for conversationProfile.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getConversationProfileBytes() {
+        java.lang.Object ref = "";
+        if (modelSourceCase_ == 1) {
+          ref = modelSource_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          if (modelSourceCase_ == 1) {
+            modelSource_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Resource name of the Dialogflow conversation profile.
+       * Format:
+       * projects/{project}/locations/{location}/conversationProfiles/{conversation_profile}
+       * </pre>
+       *
+       * <code>string conversation_profile = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param value The conversationProfile to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConversationProfile(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelSourceCase_ = 1;
+        modelSource_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Resource name of the Dialogflow conversation profile.
+       * Format:
+       * projects/{project}/locations/{location}/conversationProfiles/{conversation_profile}
+       * </pre>
+       *
+       * <code>string conversation_profile = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearConversationProfile() {
+        if (modelSourceCase_ == 1) {
+          modelSourceCase_ = 0;
+          modelSource_ = null;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Resource name of the Dialogflow conversation profile.
+       * Format:
+       * projects/{project}/locations/{location}/conversationProfiles/{conversation_profile}
+       * </pre>
+       *
+       * <code>string conversation_profile = 1 [(.google.api.resource_reference) = { ... }</code>
+       *
+       * @param value The bytes for conversationProfile to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConversationProfileBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        modelSourceCase_ = 1;
+        modelSource_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Default summarization model to be used.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig.SummarizationModel summarization_model = 2;
+       * </code>
+       *
+       * @return Whether the summarizationModel field is set.
+       */
+      @java.lang.Override
+      public boolean hasSummarizationModel() {
+        return modelSourceCase_ == 2;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Default summarization model to be used.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig.SummarizationModel summarization_model = 2;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for summarizationModel.
+       */
+      @java.lang.Override
+      public int getSummarizationModelValue() {
+        if (modelSourceCase_ == 2) {
+          return ((java.lang.Integer) modelSource_).intValue();
+        }
+        return 0;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Default summarization model to be used.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig.SummarizationModel summarization_model = 2;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for summarizationModel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSummarizationModelValue(int value) {
+        modelSourceCase_ = 2;
+        modelSource_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Default summarization model to be used.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig.SummarizationModel summarization_model = 2;
+       * </code>
+       *
+       * @return The summarizationModel.
+       */
+      @java.lang.Override
+      public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+              .SummarizationModel
+          getSummarizationModel() {
+        if (modelSourceCase_ == 2) {
+          com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+                  .SummarizationModel
+              result =
+                  com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+                      .SummarizationModel.forNumber((java.lang.Integer) modelSource_);
+          return result == null
+              ? com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+                  .SummarizationModel.UNRECOGNIZED
+              : result;
+        }
+        return com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+            .SummarizationModel.SUMMARIZATION_MODEL_UNSPECIFIED;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Default summarization model to be used.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig.SummarizationModel summarization_model = 2;
+       * </code>
+       *
+       * @param value The summarizationModel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSummarizationModel(
+          com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+                  .SummarizationModel
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelSourceCase_ = 2;
+        modelSource_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Default summarization model to be used.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig.SummarizationModel summarization_model = 2;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSummarizationModel() {
+        if (modelSourceCase_ == 2) {
+          modelSourceCase_ = 0;
+          modelSource_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig)
+    private static final com.google.cloud.contactcenterinsights.v1.AnnotatorSelector
+            .SummarizationConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig();
+    }
+
+    public static com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SummarizationConfig> PARSER =
+        new com.google.protobuf.AbstractParser<SummarizationConfig>() {
+          @java.lang.Override
+          public SummarizationConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SummarizationConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SummarizationConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int RUN_INTERRUPTION_ANNOTATOR_FIELD_NUMBER = 1;
   private boolean runInterruptionAnnotator_ = false;
   /**
@@ -353,6 +1622,85 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
     return issueModels_.getByteString(index);
   }
 
+  public static final int RUN_SUMMARIZATION_ANNOTATOR_FIELD_NUMBER = 9;
+  private boolean runSummarizationAnnotator_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Whether to run the summarization annotator.
+   * </pre>
+   *
+   * <code>bool run_summarization_annotator = 9;</code>
+   *
+   * @return The runSummarizationAnnotator.
+   */
+  @java.lang.Override
+  public boolean getRunSummarizationAnnotator() {
+    return runSummarizationAnnotator_;
+  }
+
+  public static final int SUMMARIZATION_CONFIG_FIELD_NUMBER = 11;
+  private com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+      summarizationConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the summarization annotator.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig summarization_config = 11;
+   * </code>
+   *
+   * @return Whether the summarizationConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSummarizationConfig() {
+    return summarizationConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the summarization annotator.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig summarization_config = 11;
+   * </code>
+   *
+   * @return The summarizationConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+      getSummarizationConfig() {
+    return summarizationConfig_ == null
+        ? com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+            .getDefaultInstance()
+        : summarizationConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the summarization annotator.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig summarization_config = 11;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfigOrBuilder
+      getSummarizationConfigOrBuilder() {
+    return summarizationConfig_ == null
+        ? com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+            .getDefaultInstance()
+        : summarizationConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -391,8 +1739,14 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
     if (runIssueModelAnnotator_ != false) {
       output.writeBool(8, runIssueModelAnnotator_);
     }
+    if (runSummarizationAnnotator_ != false) {
+      output.writeBool(9, runSummarizationAnnotator_);
+    }
     for (int i = 0; i < issueModels_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, issueModels_.getRaw(i));
+    }
+    if (summarizationConfig_ != null) {
+      output.writeMessage(11, getSummarizationConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -432,6 +1786,9 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
     if (runIssueModelAnnotator_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, runIssueModelAnnotator_);
     }
+    if (runSummarizationAnnotator_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, runSummarizationAnnotator_);
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < issueModels_.size(); i++) {
@@ -439,6 +1796,10 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
       }
       size += dataSize;
       size += 1 * getIssueModelsList().size();
+    }
+    if (summarizationConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(11, getSummarizationConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -465,6 +1826,11 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
     if (getRunIntentAnnotator() != other.getRunIntentAnnotator()) return false;
     if (getRunIssueModelAnnotator() != other.getRunIssueModelAnnotator()) return false;
     if (!getIssueModelsList().equals(other.getIssueModelsList())) return false;
+    if (getRunSummarizationAnnotator() != other.getRunSummarizationAnnotator()) return false;
+    if (hasSummarizationConfig() != other.hasSummarizationConfig()) return false;
+    if (hasSummarizationConfig()) {
+      if (!getSummarizationConfig().equals(other.getSummarizationConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -497,6 +1863,12 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
     if (getIssueModelsCount() > 0) {
       hash = (37 * hash) + ISSUE_MODELS_FIELD_NUMBER;
       hash = (53 * hash) + getIssueModelsList().hashCode();
+    }
+    hash = (37 * hash) + RUN_SUMMARIZATION_ANNOTATOR_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRunSummarizationAnnotator());
+    if (hasSummarizationConfig()) {
+      hash = (37 * hash) + SUMMARIZATION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSummarizationConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -649,6 +2021,12 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
       runIssueModelAnnotator_ = false;
       issueModels_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000100);
+      runSummarizationAnnotator_ = false;
+      summarizationConfig_ = null;
+      if (summarizationConfigBuilder_ != null) {
+        summarizationConfigBuilder_.dispose();
+        summarizationConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -720,6 +2098,15 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.runIssueModelAnnotator_ = runIssueModelAnnotator_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.runSummarizationAnnotator_ = runSummarizationAnnotator_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.summarizationConfig_ =
+            summarizationConfigBuilder_ == null
+                ? summarizationConfig_
+                : summarizationConfigBuilder_.build();
       }
     }
 
@@ -810,6 +2197,12 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
         }
         onChanged();
       }
+      if (other.getRunSummarizationAnnotator() != false) {
+        setRunSummarizationAnnotator(other.getRunSummarizationAnnotator());
+      }
+      if (other.hasSummarizationConfig()) {
+        mergeSummarizationConfig(other.getSummarizationConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -885,6 +2278,12 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000080;
                 break;
               } // case 64
+            case 72:
+              {
+                runSummarizationAnnotator_ = input.readBool();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 72
             case 82:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -892,6 +2291,13 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
                 issueModels_.add(s);
                 break;
               } // case 82
+            case 90:
+              {
+                input.readMessage(
+                    getSummarizationConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1691,6 +3097,276 @@ public final class AnnotatorSelector extends com.google.protobuf.GeneratedMessag
       issueModels_.add(value);
       onChanged();
       return this;
+    }
+
+    private boolean runSummarizationAnnotator_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether to run the summarization annotator.
+     * </pre>
+     *
+     * <code>bool run_summarization_annotator = 9;</code>
+     *
+     * @return The runSummarizationAnnotator.
+     */
+    @java.lang.Override
+    public boolean getRunSummarizationAnnotator() {
+      return runSummarizationAnnotator_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether to run the summarization annotator.
+     * </pre>
+     *
+     * <code>bool run_summarization_annotator = 9;</code>
+     *
+     * @param value The runSummarizationAnnotator to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRunSummarizationAnnotator(boolean value) {
+
+      runSummarizationAnnotator_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether to run the summarization annotator.
+     * </pre>
+     *
+     * <code>bool run_summarization_annotator = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRunSummarizationAnnotator() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      runSummarizationAnnotator_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+        summarizationConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig,
+            com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig.Builder,
+            com.google.cloud.contactcenterinsights.v1.AnnotatorSelector
+                .SummarizationConfigOrBuilder>
+        summarizationConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the summarization annotator.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig summarization_config = 11;
+     * </code>
+     *
+     * @return Whether the summarizationConfig field is set.
+     */
+    public boolean hasSummarizationConfig() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the summarization annotator.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig summarization_config = 11;
+     * </code>
+     *
+     * @return The summarizationConfig.
+     */
+    public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+        getSummarizationConfig() {
+      if (summarizationConfigBuilder_ == null) {
+        return summarizationConfig_ == null
+            ? com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+                .getDefaultInstance()
+            : summarizationConfig_;
+      } else {
+        return summarizationConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the summarization annotator.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig summarization_config = 11;
+     * </code>
+     */
+    public Builder setSummarizationConfig(
+        com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig value) {
+      if (summarizationConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        summarizationConfig_ = value;
+      } else {
+        summarizationConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the summarization annotator.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig summarization_config = 11;
+     * </code>
+     */
+    public Builder setSummarizationConfig(
+        com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig.Builder
+            builderForValue) {
+      if (summarizationConfigBuilder_ == null) {
+        summarizationConfig_ = builderForValue.build();
+      } else {
+        summarizationConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the summarization annotator.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig summarization_config = 11;
+     * </code>
+     */
+    public Builder mergeSummarizationConfig(
+        com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig value) {
+      if (summarizationConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && summarizationConfig_ != null
+            && summarizationConfig_
+                != com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+                    .getDefaultInstance()) {
+          getSummarizationConfigBuilder().mergeFrom(value);
+        } else {
+          summarizationConfig_ = value;
+        }
+      } else {
+        summarizationConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the summarization annotator.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig summarization_config = 11;
+     * </code>
+     */
+    public Builder clearSummarizationConfig() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      summarizationConfig_ = null;
+      if (summarizationConfigBuilder_ != null) {
+        summarizationConfigBuilder_.dispose();
+        summarizationConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the summarization annotator.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig summarization_config = 11;
+     * </code>
+     */
+    public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig.Builder
+        getSummarizationConfigBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return getSummarizationConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the summarization annotator.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig summarization_config = 11;
+     * </code>
+     */
+    public com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfigOrBuilder
+        getSummarizationConfigOrBuilder() {
+      if (summarizationConfigBuilder_ != null) {
+        return summarizationConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return summarizationConfig_ == null
+            ? com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+                .getDefaultInstance()
+            : summarizationConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for the summarization annotator.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig summarization_config = 11;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig,
+            com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig.Builder,
+            com.google.cloud.contactcenterinsights.v1.AnnotatorSelector
+                .SummarizationConfigOrBuilder>
+        getSummarizationConfigFieldBuilder() {
+      if (summarizationConfigBuilder_ == null) {
+        summarizationConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig,
+                com.google.cloud.contactcenterinsights.v1.AnnotatorSelector.SummarizationConfig
+                    .Builder,
+                com.google.cloud.contactcenterinsights.v1.AnnotatorSelector
+                    .SummarizationConfigOrBuilder>(
+                getSummarizationConfig(), getParentForChildren(), isClean());
+        summarizationConfig_ = null;
+      }
+      return summarizationConfigBuilder_;
     }
 
     @java.lang.Override
