@@ -99,4 +99,19 @@ public interface HTTPGetActionOrBuilder
    * <code>repeated .google.cloud.run.v2.HTTPHeader http_headers = 4;</code>
    */
   com.google.cloud.run.v2.HTTPHeaderOrBuilder getHttpHeadersOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Port number to access on the container. Must be in the range 1 to 65535.
+   * If not specified, defaults to the exposed port of the container, which is
+   * the value of container.ports[0].containerPort.
+   * </pre>
+   *
+   * <code>int32 port = 5;</code>
+   *
+   * @return The port.
+   */
+  int getPort();
 }

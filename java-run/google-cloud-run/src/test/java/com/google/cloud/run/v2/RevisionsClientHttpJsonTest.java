@@ -113,6 +113,8 @@ public class RevisionsClientHttpJsonTest {
             .addAllConditions(new ArrayList<Condition>())
             .setObservedGeneration(900833007)
             .setLogUri("logUri-1097354360")
+            .setSatisfiesPzs(true)
+            .setSessionAffinity(true)
             .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
@@ -184,6 +186,8 @@ public class RevisionsClientHttpJsonTest {
             .addAllConditions(new ArrayList<Condition>())
             .setObservedGeneration(900833007)
             .setLogUri("logUri-1097354360")
+            .setSatisfiesPzs(true)
+            .setSessionAffinity(true)
             .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
@@ -357,6 +361,8 @@ public class RevisionsClientHttpJsonTest {
             .addAllConditions(new ArrayList<Condition>())
             .setObservedGeneration(900833007)
             .setLogUri("logUri-1097354360")
+            .setSatisfiesPzs(true)
+            .setSessionAffinity(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -433,6 +439,8 @@ public class RevisionsClientHttpJsonTest {
             .addAllConditions(new ArrayList<Condition>())
             .setObservedGeneration(900833007)
             .setLogUri("logUri-1097354360")
+            .setSatisfiesPzs(true)
+            .setSessionAffinity(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =

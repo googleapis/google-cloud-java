@@ -95,30 +95,30 @@ public interface ExecutionOrBuilder
    *
    *
    * <pre>
-   * KRM-style labels for the resource.
-   * User-provided labels are shared with Google's billing system, so they can
-   * be used to filter, or break down billing charges by team, component,
-   * environment, state, etc. For more information, visit
+   * Output only. Unstructured key value map that can be used to organize and
+   * categorize objects. User-provided labels are shared with Google's billing
+   * system, so they can be used to filter, or break down billing charges by
+   * team, component, environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   int getLabelsCount();
   /**
    *
    *
    * <pre>
-   * KRM-style labels for the resource.
-   * User-provided labels are shared with Google's billing system, so they can
-   * be used to filter, or break down billing charges by team, component,
-   * environment, state, etc. For more information, visit
+   * Output only. Unstructured key value map that can be used to organize and
+   * categorize objects. User-provided labels are shared with Google's billing
+   * system, so they can be used to filter, or break down billing charges by
+   * team, component, environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -128,30 +128,30 @@ public interface ExecutionOrBuilder
    *
    *
    * <pre>
-   * KRM-style labels for the resource.
-   * User-provided labels are shared with Google's billing system, so they can
-   * be used to filter, or break down billing charges by team, component,
-   * environment, state, etc. For more information, visit
+   * Output only. Unstructured key value map that can be used to organize and
+   * categorize objects. User-provided labels are shared with Google's billing
+   * system, so they can be used to filter, or break down billing charges by
+   * team, component, environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
    *
    *
    * <pre>
-   * KRM-style labels for the resource.
-   * User-provided labels are shared with Google's billing system, so they can
-   * be used to filter, or break down billing charges by team, component,
-   * environment, state, etc. For more information, visit
+   * Output only. Unstructured key value map that can be used to organize and
+   * categorize objects. User-provided labels are shared with Google's billing
+   * system, so they can be used to filter, or break down billing charges by
+   * team, component, environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   /* nullable */
   java.lang.String getLabelsOrDefault(
@@ -162,15 +162,15 @@ public interface ExecutionOrBuilder
    *
    *
    * <pre>
-   * KRM-style labels for the resource.
-   * User-provided labels are shared with Google's billing system, so they can
-   * be used to filter, or break down billing charges by team, component,
-   * environment, state, etc. For more information, visit
+   * Output only. Unstructured key value map that can be used to organize and
+   * categorize objects. User-provided labels are shared with Google's billing
+   * system, so they can be used to filter, or break down billing charges by
+   * team, component, environment, state, etc. For more information, visit
    * https://cloud.google.com/resource-manager/docs/creating-managing-labels or
    * https://cloud.google.com/run/docs/configuring/labels
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -178,20 +178,28 @@ public interface ExecutionOrBuilder
    *
    *
    * <pre>
-   * KRM-style annotations for the resource.
+   * Output only. Unstructured key value map that may
+   * be set by external tools to store and arbitrary metadata.
+   * They are not queryable and should be preserved
+   * when modifying objects.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getAnnotationsCount();
   /**
    *
    *
    * <pre>
-   * KRM-style annotations for the resource.
+   * Output only. Unstructured key value map that may
+   * be set by external tools to store and arbitrary metadata.
+   * They are not queryable and should be preserved
+   * when modifying objects.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   boolean containsAnnotations(java.lang.String key);
   /** Use {@link #getAnnotationsMap()} instead. */
@@ -201,20 +209,28 @@ public interface ExecutionOrBuilder
    *
    *
    * <pre>
-   * KRM-style annotations for the resource.
+   * Output only. Unstructured key value map that may
+   * be set by external tools to store and arbitrary metadata.
+   * They are not queryable and should be preserved
+   * when modifying objects.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
   /**
    *
    *
    * <pre>
-   * KRM-style annotations for the resource.
+   * Output only. Unstructured key value map that may
+   * be set by external tools to store and arbitrary metadata.
+   * They are not queryable and should be preserved
+   * when modifying objects.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   /* nullable */
   java.lang.String getAnnotationsOrDefault(
@@ -225,10 +241,14 @@ public interface ExecutionOrBuilder
    *
    *
    * <pre>
-   * KRM-style annotations for the resource.
+   * Output only. Unstructured key value map that may
+   * be set by external tools to store and arbitrary metadata.
+   * They are not queryable and should be preserved
+   * when modifying objects.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.lang.String getAnnotationsOrThrow(java.lang.String key);
 
@@ -491,10 +511,14 @@ public interface ExecutionOrBuilder
    *
    *
    * <pre>
-   * Set the launch stage to a preview stage on write to allow use of preview
-   * features in that stage. On read, describes whether the resource uses
-   * preview features. Launch Stages are defined at [Google Cloud Platform
-   * Launch Stages](https://cloud.google.com/terms/launch-stages).
+   * The least stable launch stage needed to create this resource, as defined by
+   * [Google Cloud Platform Launch
+   * Stages](https://cloud.google.com/terms/launch-stages). Cloud Run supports
+   * `ALPHA`, `BETA`, and `GA`.
+   * &lt;p&gt;Note that this value might not be what was used
+   * as input. For example, if ALPHA was provided as input in the parent
+   * resource, but only BETA and GA-level features are were, this field will be
+   * BETA.
    * </pre>
    *
    * <code>.google.api.LaunchStage launch_stage = 11;</code>
@@ -506,10 +530,14 @@ public interface ExecutionOrBuilder
    *
    *
    * <pre>
-   * Set the launch stage to a preview stage on write to allow use of preview
-   * features in that stage. On read, describes whether the resource uses
-   * preview features. Launch Stages are defined at [Google Cloud Platform
-   * Launch Stages](https://cloud.google.com/terms/launch-stages).
+   * The least stable launch stage needed to create this resource, as defined by
+   * [Google Cloud Platform Launch
+   * Stages](https://cloud.google.com/terms/launch-stages). Cloud Run supports
+   * `ALPHA`, `BETA`, and `GA`.
+   * &lt;p&gt;Note that this value might not be what was used
+   * as input. For example, if ALPHA was provided as input in the parent
+   * resource, but only BETA and GA-level features are were, this field will be
+   * BETA.
    * </pre>
    *
    * <code>.google.api.LaunchStage launch_stage = 11;</code>
@@ -555,8 +583,7 @@ public interface ExecutionOrBuilder
    * should run at any given time. Must be &lt;= task_count. The actual number of
    * tasks running in steady state will be less than this number when
    * ((.spec.task_count - .status.successful) &lt; .spec.parallelism), i.e. when
-   * the work left to do is less than max parallelism. More info:
-   * https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
+   * the work left to do is less than max parallelism.
    * </pre>
    *
    * <code>int32 parallelism = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -572,8 +599,6 @@ public interface ExecutionOrBuilder
    * Output only. Specifies the desired number of tasks the execution should
    * run. Setting to 1 means that parallelism is limited to 1 and the success of
    * that task signals the success of the execution.
-   * More info:
-   * https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
    * </pre>
    *
    * <code>int32 task_count = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -815,6 +840,19 @@ public interface ExecutionOrBuilder
    * @return The bytes for logUri.
    */
   com.google.protobuf.ByteString getLogUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
 
   /**
    *

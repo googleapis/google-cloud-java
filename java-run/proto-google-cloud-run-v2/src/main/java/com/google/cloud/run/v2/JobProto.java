@@ -81,12 +81,12 @@ public final class JobProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\035google/cloud/run/v2/job.proto\022\023google."
-          + "cloud.run.v2\032#google/cloud/run/v2/execut"
-          + "ion.proto\032\034google/api/annotations.proto\032"
-          + "\027google/api/client.proto\032\037google/api/fie"
-          + "ld_behavior.proto\032\035google/api/launch_sta"
-          + "ge.proto\032\031google/api/resource.proto\032#goo"
-          + "gle/cloud/run/v2/condition.proto\032,google"
+          + "cloud.run.v2\032\034google/api/annotations.pro"
+          + "to\032\027google/api/client.proto\032\037google/api/"
+          + "field_behavior.proto\032\035google/api/launch_"
+          + "stage.proto\032\031google/api/resource.proto\032#"
+          + "google/cloud/run/v2/condition.proto\032#goo"
+          + "gle/cloud/run/v2/execution.proto\032,google"
           + "/cloud/run/v2/execution_template.proto\032)"
           + "google/cloud/run/v2/vendor_settings.prot"
           + "o\032\036google/iam/v1/iam_policy.proto\032\032googl"
@@ -110,7 +110,7 @@ public final class JobProto {
           + "n.googleapis.com/Job\022\025\n\rvalidate_only\030\003 "
           + "\001(\010\022\014\n\004etag\030\004 \001(\t\"b\n\rRunJobRequest\022,\n\004na"
           + "me\030\001 \001(\tB\036\340A\002\372A\030\n\026run.googleapis.com/Job"
-          + "\022\025\n\rvalidate_only\030\002 \001(\010\022\014\n\004etag\030\003 \001(\t\"\212\t"
+          + "\022\025\n\rvalidate_only\030\002 \001(\010\022\014\n\004etag\030\003 \001(\t\"\246\t"
           + "\n\003Job\022\014\n\004name\030\001 \001(\t\022\020\n\003uid\030\002 \001(\tB\003\340A\003\022\027\n"
           + "\ngeneration\030\003 \001(\003B\003\340A\003\0224\n\006labels\030\004 \003(\0132$"
           + ".google.cloud.run.v2.Job.LabelsEntry\022>\n\013"
@@ -135,67 +135,68 @@ public final class JobProto {
           + "unt\030\024 \001(\005B\003\340A\003\022N\n\030latest_created_executi"
           + "on\030\026 \001(\0132\'.google.cloud.run.v2.Execution"
           + "ReferenceB\003\340A\003\022\030\n\013reconciling\030\027 \001(\010B\003\340A\003"
-          + "\022\021\n\004etag\030c \001(\tB\003\340A\003\032-\n\013LabelsEntry\022\013\n\003ke"
-          + "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0322\n\020Annotation"
-          + "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:R"
-          + "\352AO\n\026run.googleapis.com/Job\0222projects/{p"
-          + "roject}/locations/{location}/jobs/{job}R"
-          + "\001\001\"\253\001\n\022ExecutionReference\022/\n\004name\030\001 \001(\tB"
-          + "!\372A\036\n\034run.googleapis.com/Execution\022/\n\013cr"
-          + "eate_time\030\002 \001(\0132\032.google.protobuf.Timest"
-          + "amp\0223\n\017completion_time\030\003 \001(\0132\032.google.pr"
-          + "otobuf.Timestamp2\314\013\n\004Jobs\022\251\001\n\tCreateJob\022"
-          + "%.google.cloud.run.v2.CreateJobRequest\032\035"
-          + ".google.longrunning.Operation\"V\202\323\344\223\002/\"(/"
-          + "v2/{parent=projects/*/locations/*}/jobs:"
-          + "\003job\332A\021parent,job,job_id\312A\n\n\003Job\022\003Job\022\177\n"
-          + "\006GetJob\022\".google.cloud.run.v2.GetJobRequ"
-          + "est\032\030.google.cloud.run.v2.Job\"7\202\323\344\223\002*\022(/"
+          + "\022\032\n\rsatisfies_pzs\030\031 \001(\010B\003\340A\003\022\021\n\004etag\030c \001"
+          + "(\tB\003\340A\003\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v"
+          + "alue\030\002 \001(\t:\0028\001\0322\n\020AnnotationsEntry\022\013\n\003ke"
+          + "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:R\352AO\n\026run.goo"
+          + "gleapis.com/Job\0222projects/{project}/loca"
+          + "tions/{location}/jobs/{job}R\001\001\"\253\001\n\022Execu"
+          + "tionReference\022/\n\004name\030\001 \001(\tB!\372A\036\n\034run.go"
+          + "ogleapis.com/Execution\022/\n\013create_time\030\002 "
+          + "\001(\0132\032.google.protobuf.Timestamp\0223\n\017compl"
+          + "etion_time\030\003 \001(\0132\032.google.protobuf.Times"
+          + "tamp2\314\013\n\004Jobs\022\251\001\n\tCreateJob\022%.google.clo"
+          + "ud.run.v2.CreateJobRequest\032\035.google.long"
+          + "running.Operation\"V\202\323\344\223\002/\"(/v2/{parent=p"
+          + "rojects/*/locations/*}/jobs:\003job\332A\021paren"
+          + "t,job,job_id\312A\n\n\003Job\022\003Job\022\177\n\006GetJob\022\".go"
+          + "ogle.cloud.run.v2.GetJobRequest\032\030.google"
+          + ".cloud.run.v2.Job\"7\202\323\344\223\002*\022(/v2/{name=pro"
+          + "jects/*/locations/*/jobs/*}\332A\004name\022\222\001\n\010L"
+          + "istJobs\022$.google.cloud.run.v2.ListJobsRe"
+          + "quest\032%.google.cloud.run.v2.ListJobsResp"
+          + "onse\"9\202\323\344\223\002*\022(/v2/{parent=projects/*/loc"
+          + "ations/*}/jobs\332A\006parent\022\237\001\n\tUpdateJob\022%."
+          + "google.cloud.run.v2.UpdateJobRequest\032\035.g"
+          + "oogle.longrunning.Operation\"L\202\323\344\223\00232,/v2"
+          + "/{job.name=projects/*/locations/*/jobs/*"
+          + "}:\003job\332A\003job\312A\n\n\003Job\022\003Job\022\227\001\n\tDeleteJob\022"
+          + "%.google.cloud.run.v2.DeleteJobRequest\032\035"
+          + ".google.longrunning.Operation\"D\202\323\344\223\002**(/"
           + "v2/{name=projects/*/locations/*/jobs/*}\332"
-          + "A\004name\022\222\001\n\010ListJobs\022$.google.cloud.run.v"
-          + "2.ListJobsRequest\032%.google.cloud.run.v2."
-          + "ListJobsResponse\"9\202\323\344\223\002*\022(/v2/{parent=pr"
-          + "ojects/*/locations/*}/jobs\332A\006parent\022\237\001\n\t"
-          + "UpdateJob\022%.google.cloud.run.v2.UpdateJo"
-          + "bRequest\032\035.google.longrunning.Operation\""
-          + "L\202\323\344\223\00232,/v2/{job.name=projects/*/locati"
-          + "ons/*/jobs/*}:\003job\332A\003job\312A\n\n\003Job\022\003Job\022\227\001"
-          + "\n\tDeleteJob\022%.google.cloud.run.v2.Delete"
-          + "JobRequest\032\035.google.longrunning.Operatio"
-          + "n\"D\202\323\344\223\002**(/v2/{name=projects/*/location"
-          + "s/*/jobs/*}\332A\004name\312A\n\n\003Job\022\003Job\022\244\001\n\006RunJ"
-          + "ob\022\".google.cloud.run.v2.RunJobRequest\032\035"
-          + ".google.longrunning.Operation\"W\202\323\344\223\0021\",/"
-          + "v2/{name=projects/*/locations/*/jobs/*}:"
-          + "run:\001*\332A\004name\312A\026\n\tExecution\022\tExecution\022\214"
-          + "\001\n\014GetIamPolicy\022\".google.iam.v1.GetIamPo"
-          + "licyRequest\032\025.google.iam.v1.Policy\"A\202\323\344\223"
-          + "\002;\0229/v2/{resource=projects/*/locations/*"
-          + "/jobs/*}:getIamPolicy\022\217\001\n\014SetIamPolicy\022\""
-          + ".google.iam.v1.SetIamPolicyRequest\032\025.goo"
-          + "gle.iam.v1.Policy\"D\202\323\344\223\002>\"9/v2/{resource"
-          + "=projects/*/locations/*/jobs/*}:setIamPo"
-          + "licy:\001*\022\265\001\n\022TestIamPermissions\022(.google."
-          + "iam.v1.TestIamPermissionsRequest\032).googl"
-          + "e.iam.v1.TestIamPermissionsResponse\"J\202\323\344"
-          + "\223\002D\"?/v2/{resource=projects/*/locations/"
-          + "*/jobs/*}:testIamPermissions:\001*\032F\312A\022run."
-          + "googleapis.com\322A.https://www.googleapis."
-          + "com/auth/cloud-platformBP\n\027com.google.cl"
-          + "oud.run.v2B\010JobProtoP\001Z)cloud.google.com"
-          + "/go/run/apiv2/runpb;runpbP\000b\006proto3"
+          + "A\004name\312A\n\n\003Job\022\003Job\022\244\001\n\006RunJob\022\".google."
+          + "cloud.run.v2.RunJobRequest\032\035.google.long"
+          + "running.Operation\"W\202\323\344\223\0021\",/v2/{name=pro"
+          + "jects/*/locations/*/jobs/*}:run:\001*\332A\004nam"
+          + "e\312A\026\n\tExecution\022\tExecution\022\214\001\n\014GetIamPol"
+          + "icy\022\".google.iam.v1.GetIamPolicyRequest\032"
+          + "\025.google.iam.v1.Policy\"A\202\323\344\223\002;\0229/v2/{res"
+          + "ource=projects/*/locations/*/jobs/*}:get"
+          + "IamPolicy\022\217\001\n\014SetIamPolicy\022\".google.iam."
+          + "v1.SetIamPolicyRequest\032\025.google.iam.v1.P"
+          + "olicy\"D\202\323\344\223\002>\"9/v2/{resource=projects/*/"
+          + "locations/*/jobs/*}:setIamPolicy:\001*\022\265\001\n\022"
+          + "TestIamPermissions\022(.google.iam.v1.TestI"
+          + "amPermissionsRequest\032).google.iam.v1.Tes"
+          + "tIamPermissionsResponse\"J\202\323\344\223\002D\"?/v2/{re"
+          + "source=projects/*/locations/*/jobs/*}:te"
+          + "stIamPermissions:\001*\032F\312A\022run.googleapis.c"
+          + "om\322A.https://www.googleapis.com/auth/clo"
+          + "ud-platformBP\n\027com.google.cloud.run.v2B\010"
+          + "JobProtoP\001Z)cloud.google.com/go/run/apiv"
+          + "2/runpb;runpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
-              com.google.cloud.run.v2.ExecutionProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.LaunchStageProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.run.v2.ConditionProto.getDescriptor(),
+              com.google.cloud.run.v2.ExecutionProto.getDescriptor(),
               com.google.cloud.run.v2.ExecutionTemplateProto.getDescriptor(),
               com.google.cloud.run.v2.VendorSettingsProto.getDescriptor(),
               com.google.iam.v1.IamPolicyProto.getDescriptor(),
@@ -286,6 +287,7 @@ public final class JobProto {
               "ExecutionCount",
               "LatestCreatedExecution",
               "Reconciling",
+              "SatisfiesPzs",
               "Etag",
             });
     internal_static_google_cloud_run_v2_Job_LabelsEntry_descriptor =
@@ -324,13 +326,13 @@ public final class JobProto {
     registry.add(com.google.longrunning.OperationsProto.operationInfo);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
-    com.google.cloud.run.v2.ExecutionProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.LaunchStageProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.run.v2.ConditionProto.getDescriptor();
+    com.google.cloud.run.v2.ExecutionProto.getDescriptor();
     com.google.cloud.run.v2.ExecutionTemplateProto.getDescriptor();
     com.google.cloud.run.v2.VendorSettingsProto.getDescriptor();
     com.google.iam.v1.IamPolicyProto.getDescriptor();

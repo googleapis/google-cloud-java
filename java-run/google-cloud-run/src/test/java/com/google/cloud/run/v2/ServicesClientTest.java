@@ -131,6 +131,7 @@ public class ServicesClientTest {
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
+            .setSatisfiesPzs(true)
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -212,6 +213,7 @@ public class ServicesClientTest {
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
+            .setSatisfiesPzs(true)
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -293,6 +295,7 @@ public class ServicesClientTest {
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
+            .setSatisfiesPzs(true)
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -360,6 +363,7 @@ public class ServicesClientTest {
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
+            .setSatisfiesPzs(true)
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -515,6 +519,7 @@ public class ServicesClientTest {
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
+            .setSatisfiesPzs(true)
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -590,6 +595,7 @@ public class ServicesClientTest {
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
+            .setSatisfiesPzs(true)
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -665,6 +671,7 @@ public class ServicesClientTest {
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllTrafficStatuses(new ArrayList<TrafficTargetStatus>())
             .setUri("uri116076")
+            .setSatisfiesPzs(true)
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();

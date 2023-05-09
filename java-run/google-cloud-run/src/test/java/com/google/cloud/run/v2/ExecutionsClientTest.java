@@ -118,6 +118,7 @@ public class ExecutionsClientTest {
             .setCancelledCount(1921113249)
             .setRetriedCount(-1654679545)
             .setLogUri("logUri-1097354360")
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     mockExecutions.addResponse(expectedResponse);
@@ -181,6 +182,7 @@ public class ExecutionsClientTest {
             .setCancelledCount(1921113249)
             .setRetriedCount(-1654679545)
             .setLogUri("logUri-1097354360")
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     mockExecutions.addResponse(expectedResponse);
@@ -332,6 +334,7 @@ public class ExecutionsClientTest {
             .setCancelledCount(1921113249)
             .setRetriedCount(-1654679545)
             .setLogUri("logUri-1097354360")
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -403,6 +406,7 @@ public class ExecutionsClientTest {
             .setCancelledCount(1921113249)
             .setRetriedCount(-1654679545)
             .setLogUri("logUri-1097354360")
+            .setSatisfiesPzs(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
