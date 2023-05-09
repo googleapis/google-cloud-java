@@ -225,6 +225,46 @@ public interface WebhookRequestOrBuilder
    *
    *
    * <pre>
+   * If [DTMF][google.cloud.dialogflow.cx.v3.DtmfInput] was provided as input,
+   * this field will contain the DTMF digits.
+   * </pre>
+   *
+   * <code>string dtmf_digits = 17;</code>
+   *
+   * @return Whether the dtmfDigits field is set.
+   */
+  boolean hasDtmfDigits();
+  /**
+   *
+   *
+   * <pre>
+   * If [DTMF][google.cloud.dialogflow.cx.v3.DtmfInput] was provided as input,
+   * this field will contain the DTMF digits.
+   * </pre>
+   *
+   * <code>string dtmf_digits = 17;</code>
+   *
+   * @return The dtmfDigits.
+   */
+  java.lang.String getDtmfDigits();
+  /**
+   *
+   *
+   * <pre>
+   * If [DTMF][google.cloud.dialogflow.cx.v3.DtmfInput] was provided as input,
+   * this field will contain the DTMF digits.
+   * </pre>
+   *
+   * <code>string dtmf_digits = 17;</code>
+   *
+   * @return The bytes for dtmfDigits.
+   */
+  com.google.protobuf.ByteString getDtmfDigitsBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The language code specified in the [original
    * request][QueryInput.language_code].
    * </pre>

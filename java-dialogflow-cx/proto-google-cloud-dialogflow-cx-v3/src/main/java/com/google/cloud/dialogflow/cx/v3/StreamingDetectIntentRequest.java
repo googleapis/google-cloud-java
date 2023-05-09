@@ -350,6 +350,24 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
     return enablePartialResponse_;
   }
 
+  public static final int ENABLE_DEBUGGING_INFO_FIELD_NUMBER = 8;
+  private boolean enableDebuggingInfo_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * If true, `StreamingDetectIntentResponse.debugging_info` will get populated.
+   * </pre>
+   *
+   * <code>bool enable_debugging_info = 8;</code>
+   *
+   * @return The enableDebuggingInfo.
+   */
+  @java.lang.Override
+  public boolean getEnableDebuggingInfo() {
+    return enableDebuggingInfo_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -379,6 +397,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
     if (enablePartialResponse_ != false) {
       output.writeBool(5, enablePartialResponse_);
     }
+    if (enableDebuggingInfo_ != false) {
+      output.writeBool(8, enableDebuggingInfo_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -402,6 +423,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
     }
     if (enablePartialResponse_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, enablePartialResponse_);
+    }
+    if (enableDebuggingInfo_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, enableDebuggingInfo_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -433,6 +457,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
       if (!getOutputAudioConfig().equals(other.getOutputAudioConfig())) return false;
     }
     if (getEnablePartialResponse() != other.getEnablePartialResponse()) return false;
+    if (getEnableDebuggingInfo() != other.getEnableDebuggingInfo()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -460,6 +485,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
     }
     hash = (37 * hash) + ENABLE_PARTIAL_RESPONSE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnablePartialResponse());
+    hash = (37 * hash) + ENABLE_DEBUGGING_INFO_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableDebuggingInfo());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -643,6 +670,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
         outputAudioConfigBuilder_ = null;
       }
       enablePartialResponse_ = false;
+      enableDebuggingInfo_ = false;
       return this;
     }
 
@@ -699,6 +727,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.enablePartialResponse_ = enablePartialResponse_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.enableDebuggingInfo_ = enableDebuggingInfo_;
       }
     }
 
@@ -766,6 +797,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
       if (other.getEnablePartialResponse() != false) {
         setEnablePartialResponse(other.getEnablePartialResponse());
       }
+      if (other.getEnableDebuggingInfo() != false) {
+        setEnableDebuggingInfo(other.getEnableDebuggingInfo());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -823,6 +857,12 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
                 bitField0_ |= 0x00000010;
                 break;
               } // case 40
+            case 64:
+              {
+                enableDebuggingInfo_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 64
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1651,6 +1691,59 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
     public Builder clearEnablePartialResponse() {
       bitField0_ = (bitField0_ & ~0x00000010);
       enablePartialResponse_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableDebuggingInfo_;
+    /**
+     *
+     *
+     * <pre>
+     * If true, `StreamingDetectIntentResponse.debugging_info` will get populated.
+     * </pre>
+     *
+     * <code>bool enable_debugging_info = 8;</code>
+     *
+     * @return The enableDebuggingInfo.
+     */
+    @java.lang.Override
+    public boolean getEnableDebuggingInfo() {
+      return enableDebuggingInfo_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, `StreamingDetectIntentResponse.debugging_info` will get populated.
+     * </pre>
+     *
+     * <code>bool enable_debugging_info = 8;</code>
+     *
+     * @param value The enableDebuggingInfo to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableDebuggingInfo(boolean value) {
+
+      enableDebuggingInfo_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If true, `StreamingDetectIntentResponse.debugging_info` will get populated.
+     * </pre>
+     *
+     * <code>bool enable_debugging_info = 8;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableDebuggingInfo() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      enableDebuggingInfo_ = false;
       onChanged();
       return this;
     }

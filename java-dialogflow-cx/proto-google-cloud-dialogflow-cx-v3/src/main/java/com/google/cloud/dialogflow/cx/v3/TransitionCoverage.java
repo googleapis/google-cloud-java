@@ -1383,7 +1383,7 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Whether or not the transition is covered by at least one of the
+     * Whether the transition is covered by at least one of the
      * agent's test cases.
      * </pre>
      *
@@ -1686,7 +1686,7 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Whether or not the transition is covered by at least one of the
+     * Whether the transition is covered by at least one of the
      * agent's test cases.
      * </pre>
      *
@@ -2784,7 +2784,7 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Whether or not the transition is covered by at least one of the
+       * Whether the transition is covered by at least one of the
        * agent's test cases.
        * </pre>
        *
@@ -2800,7 +2800,7 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Whether or not the transition is covered by at least one of the
+       * Whether the transition is covered by at least one of the
        * agent's test cases.
        * </pre>
        *
@@ -2820,7 +2820,7 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Whether or not the transition is covered by at least one of the
+       * Whether the transition is covered by at least one of the
        * agent's test cases.
        * </pre>
        *

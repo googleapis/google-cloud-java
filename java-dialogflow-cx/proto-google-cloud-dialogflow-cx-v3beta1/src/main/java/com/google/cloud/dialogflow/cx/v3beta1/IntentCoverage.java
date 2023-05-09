@@ -102,7 +102,7 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether or not the intent is covered by at least one of the agent's
+     * Whether the intent is covered by at least one of the agent's
      * test cases.
      * </pre>
      *
@@ -218,7 +218,7 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether or not the intent is covered by at least one of the agent's
+     * Whether the intent is covered by at least one of the agent's
      * test cases.
      * </pre>
      *
@@ -714,7 +714,7 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Whether or not the intent is covered by at least one of the agent's
+       * Whether the intent is covered by at least one of the agent's
        * test cases.
        * </pre>
        *
@@ -730,7 +730,7 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Whether or not the intent is covered by at least one of the agent's
+       * Whether the intent is covered by at least one of the agent's
        * test cases.
        * </pre>
        *
@@ -750,7 +750,7 @@ public final class IntentCoverage extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Whether or not the intent is covered by at least one of the agent's
+       * Whether the intent is covered by at least one of the agent's
        * test cases.
        * </pre>
        *

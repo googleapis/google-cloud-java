@@ -286,7 +286,7 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Whether or not the transition route is covered by at least one of the
+       * Whether the transition route is covered by at least one of the
        * agent's test cases.
        * </pre>
        *
@@ -403,7 +403,7 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
        *
        *
        * <pre>
-       * Whether or not the transition route is covered by at least one of the
+       * Whether the transition route is covered by at least one of the
        * agent's test cases.
        * </pre>
        *
@@ -1034,7 +1034,7 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
          *
          *
          * <pre>
-         * Whether or not the transition route is covered by at least one of the
+         * Whether the transition route is covered by at least one of the
          * agent's test cases.
          * </pre>
          *
@@ -1050,7 +1050,7 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
          *
          *
          * <pre>
-         * Whether or not the transition route is covered by at least one of the
+         * Whether the transition route is covered by at least one of the
          * agent's test cases.
          * </pre>
          *
@@ -1070,7 +1070,7 @@ public final class TransitionRouteGroupCoverage extends com.google.protobuf.Gene
          *
          *
          * <pre>
-         * Whether or not the transition route is covered by at least one of the
+         * Whether the transition route is covered by at least one of the
          * agent's test cases.
          * </pre>
          *

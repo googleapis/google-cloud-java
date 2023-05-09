@@ -169,6 +169,11 @@ public interface InputAudioConfigOrBuilder
    * [Cloud Speech API
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
    * for more details.
+   * If you specify a model, the following models typically have the best
+   * performance:
+   * - phone_call (best for Agent Assist and telephony)
+   * - latest_short (best for Dialogflow non-telephony)
+   * - command_and_search (best for very short utterances and commands)
    * </pre>
    *
    * <code>string model = 7;</code>
@@ -191,6 +196,11 @@ public interface InputAudioConfigOrBuilder
    * [Cloud Speech API
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model)
    * for more details.
+   * If you specify a model, the following models typically have the best
+   * performance:
+   * - phone_call (best for Agent Assist and telephony)
+   * - latest_short (best for Dialogflow non-telephony)
+   * - command_and_search (best for very short utterances and commands)
    * </pre>
    *
    * <code>string model = 7;</code>

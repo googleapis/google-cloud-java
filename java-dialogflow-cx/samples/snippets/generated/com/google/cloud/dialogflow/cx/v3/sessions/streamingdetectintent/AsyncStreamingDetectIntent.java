@@ -51,6 +51,7 @@ public class AsyncStreamingDetectIntent {
               .setQueryInput(QueryInput.newBuilder().build())
               .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
               .setEnablePartialResponse(true)
+              .setEnableDebuggingInfo(true)
               .build();
       bidiStream.send(request);
       for (StreamingDetectIntentResponse response : bidiStream) {

@@ -22,7 +22,7 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * Settings related to speech generating.
+ * Settings related to speech synthesizing.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.TextToSpeechSettings}
@@ -116,9 +116,16 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Configuration of how speech should be synthesized, mapping from
-   * language (https://dialogflow.com/docs/reference/language) to
+   * Configuration of how speech should be synthesized, mapping from language
+   * (https://cloud.google.com/dialogflow/cx/docs/reference/language) to
    * SynthesizeSpeechConfig.
+   * These settings affect:
+   *  - The synthesize configuration used in [phone
+   *    gateway](https://cloud.google.com/dialogflow/cx/docs/concept/integration/phone-gateway).
+   *  - You no longer need to specify
+   *    [OutputAudioConfig.synthesize_speech_config][google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig.synthesize_speech_config]
+   *    when invoking API calls. Your agent will use the pre-configured options
+   *    for speech synthesizing.
    * </pre>
    *
    * <code>
@@ -144,9 +151,16 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Configuration of how speech should be synthesized, mapping from
-   * language (https://dialogflow.com/docs/reference/language) to
+   * Configuration of how speech should be synthesized, mapping from language
+   * (https://cloud.google.com/dialogflow/cx/docs/reference/language) to
    * SynthesizeSpeechConfig.
+   * These settings affect:
+   *  - The synthesize configuration used in [phone
+   *    gateway](https://cloud.google.com/dialogflow/cx/docs/concept/integration/phone-gateway).
+   *  - You no longer need to specify
+   *    [OutputAudioConfig.synthesize_speech_config][google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig.synthesize_speech_config]
+   *    when invoking API calls. Your agent will use the pre-configured options
+   *    for speech synthesizing.
    * </pre>
    *
    * <code>
@@ -163,9 +177,16 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Configuration of how speech should be synthesized, mapping from
-   * language (https://dialogflow.com/docs/reference/language) to
+   * Configuration of how speech should be synthesized, mapping from language
+   * (https://cloud.google.com/dialogflow/cx/docs/reference/language) to
    * SynthesizeSpeechConfig.
+   * These settings affect:
+   *  - The synthesize configuration used in [phone
+   *    gateway](https://cloud.google.com/dialogflow/cx/docs/concept/integration/phone-gateway).
+   *  - You no longer need to specify
+   *    [OutputAudioConfig.synthesize_speech_config][google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig.synthesize_speech_config]
+   *    when invoking API calls. Your agent will use the pre-configured options
+   *    for speech synthesizing.
    * </pre>
    *
    * <code>
@@ -189,9 +210,16 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Configuration of how speech should be synthesized, mapping from
-   * language (https://dialogflow.com/docs/reference/language) to
+   * Configuration of how speech should be synthesized, mapping from language
+   * (https://cloud.google.com/dialogflow/cx/docs/reference/language) to
    * SynthesizeSpeechConfig.
+   * These settings affect:
+   *  - The synthesize configuration used in [phone
+   *    gateway](https://cloud.google.com/dialogflow/cx/docs/concept/integration/phone-gateway).
+   *  - You no longer need to specify
+   *    [OutputAudioConfig.synthesize_speech_config][google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig.synthesize_speech_config]
+   *    when invoking API calls. Your agent will use the pre-configured options
+   *    for speech synthesizing.
    * </pre>
    *
    * <code>
@@ -392,7 +420,7 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Settings related to speech generating.
+   * Settings related to speech synthesizing.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.TextToSpeechSettings}
@@ -637,9 +665,16 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Configuration of how speech should be synthesized, mapping from
-     * language (https://dialogflow.com/docs/reference/language) to
+     * Configuration of how speech should be synthesized, mapping from language
+     * (https://cloud.google.com/dialogflow/cx/docs/reference/language) to
      * SynthesizeSpeechConfig.
+     * These settings affect:
+     *  - The synthesize configuration used in [phone
+     *    gateway](https://cloud.google.com/dialogflow/cx/docs/concept/integration/phone-gateway).
+     *  - You no longer need to specify
+     *    [OutputAudioConfig.synthesize_speech_config][google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig.synthesize_speech_config]
+     *    when invoking API calls. Your agent will use the pre-configured options
+     *    for speech synthesizing.
      * </pre>
      *
      * <code>
@@ -665,9 +700,16 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Configuration of how speech should be synthesized, mapping from
-     * language (https://dialogflow.com/docs/reference/language) to
+     * Configuration of how speech should be synthesized, mapping from language
+     * (https://cloud.google.com/dialogflow/cx/docs/reference/language) to
      * SynthesizeSpeechConfig.
+     * These settings affect:
+     *  - The synthesize configuration used in [phone
+     *    gateway](https://cloud.google.com/dialogflow/cx/docs/concept/integration/phone-gateway).
+     *  - You no longer need to specify
+     *    [OutputAudioConfig.synthesize_speech_config][google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig.synthesize_speech_config]
+     *    when invoking API calls. Your agent will use the pre-configured options
+     *    for speech synthesizing.
      * </pre>
      *
      * <code>
@@ -684,9 +726,16 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Configuration of how speech should be synthesized, mapping from
-     * language (https://dialogflow.com/docs/reference/language) to
+     * Configuration of how speech should be synthesized, mapping from language
+     * (https://cloud.google.com/dialogflow/cx/docs/reference/language) to
      * SynthesizeSpeechConfig.
+     * These settings affect:
+     *  - The synthesize configuration used in [phone
+     *    gateway](https://cloud.google.com/dialogflow/cx/docs/concept/integration/phone-gateway).
+     *  - You no longer need to specify
+     *    [OutputAudioConfig.synthesize_speech_config][google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig.synthesize_speech_config]
+     *    when invoking API calls. Your agent will use the pre-configured options
+     *    for speech synthesizing.
      * </pre>
      *
      * <code>
@@ -710,9 +759,16 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Configuration of how speech should be synthesized, mapping from
-     * language (https://dialogflow.com/docs/reference/language) to
+     * Configuration of how speech should be synthesized, mapping from language
+     * (https://cloud.google.com/dialogflow/cx/docs/reference/language) to
      * SynthesizeSpeechConfig.
+     * These settings affect:
+     *  - The synthesize configuration used in [phone
+     *    gateway](https://cloud.google.com/dialogflow/cx/docs/concept/integration/phone-gateway).
+     *  - You no longer need to specify
+     *    [OutputAudioConfig.synthesize_speech_config][google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig.synthesize_speech_config]
+     *    when invoking API calls. Your agent will use the pre-configured options
+     *    for speech synthesizing.
      * </pre>
      *
      * <code>
@@ -742,9 +798,16 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Configuration of how speech should be synthesized, mapping from
-     * language (https://dialogflow.com/docs/reference/language) to
+     * Configuration of how speech should be synthesized, mapping from language
+     * (https://cloud.google.com/dialogflow/cx/docs/reference/language) to
      * SynthesizeSpeechConfig.
+     * These settings affect:
+     *  - The synthesize configuration used in [phone
+     *    gateway](https://cloud.google.com/dialogflow/cx/docs/concept/integration/phone-gateway).
+     *  - You no longer need to specify
+     *    [OutputAudioConfig.synthesize_speech_config][google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig.synthesize_speech_config]
+     *    when invoking API calls. Your agent will use the pre-configured options
+     *    for speech synthesizing.
      * </pre>
      *
      * <code>
@@ -770,9 +833,16 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Configuration of how speech should be synthesized, mapping from
-     * language (https://dialogflow.com/docs/reference/language) to
+     * Configuration of how speech should be synthesized, mapping from language
+     * (https://cloud.google.com/dialogflow/cx/docs/reference/language) to
      * SynthesizeSpeechConfig.
+     * These settings affect:
+     *  - The synthesize configuration used in [phone
+     *    gateway](https://cloud.google.com/dialogflow/cx/docs/concept/integration/phone-gateway).
+     *  - You no longer need to specify
+     *    [OutputAudioConfig.synthesize_speech_config][google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig.synthesize_speech_config]
+     *    when invoking API calls. Your agent will use the pre-configured options
+     *    for speech synthesizing.
      * </pre>
      *
      * <code>
@@ -795,9 +865,16 @@ public final class TextToSpeechSettings extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Configuration of how speech should be synthesized, mapping from
-     * language (https://dialogflow.com/docs/reference/language) to
+     * Configuration of how speech should be synthesized, mapping from language
+     * (https://cloud.google.com/dialogflow/cx/docs/reference/language) to
      * SynthesizeSpeechConfig.
+     * These settings affect:
+     *  - The synthesize configuration used in [phone
+     *    gateway](https://cloud.google.com/dialogflow/cx/docs/concept/integration/phone-gateway).
+     *  - You no longer need to specify
+     *    [OutputAudioConfig.synthesize_speech_config][google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig.synthesize_speech_config]
+     *    when invoking API calls. Your agent will use the pre-configured options
+     *    for speech synthesizing.
      * </pre>
      *
      * <code>

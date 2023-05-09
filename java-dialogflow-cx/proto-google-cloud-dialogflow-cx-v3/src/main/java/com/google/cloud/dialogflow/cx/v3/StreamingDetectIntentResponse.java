@@ -238,6 +238,60 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     return com.google.cloud.dialogflow.cx.v3.DetectIntentResponse.getDefaultInstance();
   }
 
+  public static final int DEBUGGING_INFO_FIELD_NUMBER = 4;
+  private com.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo debuggingInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Debugging info that would get populated when
+   * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo debugging_info = 4;</code>
+   *
+   * @return Whether the debuggingInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasDebuggingInfo() {
+    return debuggingInfo_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Debugging info that would get populated when
+   * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo debugging_info = 4;</code>
+   *
+   * @return The debuggingInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo getDebuggingInfo() {
+    return debuggingInfo_ == null
+        ? com.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo.getDefaultInstance()
+        : debuggingInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Debugging info that would get populated when
+   * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo debugging_info = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfoOrBuilder
+      getDebuggingInfoOrBuilder() {
+    return debuggingInfo_ == null
+        ? com.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo.getDefaultInstance()
+        : debuggingInfo_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -259,6 +313,9 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     if (responseCase_ == 2) {
       output.writeMessage(2, (com.google.cloud.dialogflow.cx.v3.DetectIntentResponse) response_);
     }
+    if (debuggingInfo_ != null) {
+      output.writeMessage(4, getDebuggingInfo());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -278,6 +335,9 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, (com.google.cloud.dialogflow.cx.v3.DetectIntentResponse) response_);
     }
+    if (debuggingInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getDebuggingInfo());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -294,6 +354,10 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     com.google.cloud.dialogflow.cx.v3.StreamingDetectIntentResponse other =
         (com.google.cloud.dialogflow.cx.v3.StreamingDetectIntentResponse) obj;
 
+    if (hasDebuggingInfo() != other.hasDebuggingInfo()) return false;
+    if (hasDebuggingInfo()) {
+      if (!getDebuggingInfo().equals(other.getDebuggingInfo())) return false;
+    }
     if (!getResponseCase().equals(other.getResponseCase())) return false;
     switch (responseCase_) {
       case 1:
@@ -316,6 +380,10 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasDebuggingInfo()) {
+      hash = (37 * hash) + DEBUGGING_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getDebuggingInfo().hashCode();
+    }
     switch (responseCase_) {
       case 1:
         hash = (37 * hash) + RECOGNITION_RESULT_FIELD_NUMBER;
@@ -496,6 +564,11 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       if (detectIntentResponseBuilder_ != null) {
         detectIntentResponseBuilder_.clear();
       }
+      debuggingInfo_ = null;
+      if (debuggingInfoBuilder_ != null) {
+        debuggingInfoBuilder_.dispose();
+        debuggingInfoBuilder_ = null;
+      }
       responseCase_ = 0;
       response_ = null;
       return this;
@@ -537,6 +610,10 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
     private void buildPartial0(
         com.google.cloud.dialogflow.cx.v3.StreamingDetectIntentResponse result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.debuggingInfo_ =
+            debuggingInfoBuilder_ == null ? debuggingInfo_ : debuggingInfoBuilder_.build();
+      }
     }
 
     private void buildPartialOneofs(
@@ -599,6 +676,9 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       if (other
           == com.google.cloud.dialogflow.cx.v3.StreamingDetectIntentResponse.getDefaultInstance())
         return this;
+      if (other.hasDebuggingInfo()) {
+        mergeDebuggingInfo(other.getDebuggingInfo());
+      }
       switch (other.getResponseCase()) {
         case RECOGNITION_RESULT:
           {
@@ -655,6 +735,12 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
                 responseCase_ = 2;
                 break;
               } // case 18
+            case 34:
+              {
+                input.readMessage(getDebuggingInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1125,6 +1211,214 @@ public final class StreamingDetectIntentResponse extends com.google.protobuf.Gen
       responseCase_ = 2;
       onChanged();
       return detectIntentResponseBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo debuggingInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo,
+            com.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo.Builder,
+            com.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfoOrBuilder>
+        debuggingInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Debugging info that would get populated when
+     * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo debugging_info = 4;
+     * </code>
+     *
+     * @return Whether the debuggingInfo field is set.
+     */
+    public boolean hasDebuggingInfo() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Debugging info that would get populated when
+     * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo debugging_info = 4;
+     * </code>
+     *
+     * @return The debuggingInfo.
+     */
+    public com.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo getDebuggingInfo() {
+      if (debuggingInfoBuilder_ == null) {
+        return debuggingInfo_ == null
+            ? com.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo.getDefaultInstance()
+            : debuggingInfo_;
+      } else {
+        return debuggingInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Debugging info that would get populated when
+     * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo debugging_info = 4;
+     * </code>
+     */
+    public Builder setDebuggingInfo(
+        com.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo value) {
+      if (debuggingInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        debuggingInfo_ = value;
+      } else {
+        debuggingInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Debugging info that would get populated when
+     * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo debugging_info = 4;
+     * </code>
+     */
+    public Builder setDebuggingInfo(
+        com.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo.Builder builderForValue) {
+      if (debuggingInfoBuilder_ == null) {
+        debuggingInfo_ = builderForValue.build();
+      } else {
+        debuggingInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Debugging info that would get populated when
+     * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo debugging_info = 4;
+     * </code>
+     */
+    public Builder mergeDebuggingInfo(
+        com.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo value) {
+      if (debuggingInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && debuggingInfo_ != null
+            && debuggingInfo_
+                != com.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo
+                    .getDefaultInstance()) {
+          getDebuggingInfoBuilder().mergeFrom(value);
+        } else {
+          debuggingInfo_ = value;
+        }
+      } else {
+        debuggingInfoBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Debugging info that would get populated when
+     * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo debugging_info = 4;
+     * </code>
+     */
+    public Builder clearDebuggingInfo() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      debuggingInfo_ = null;
+      if (debuggingInfoBuilder_ != null) {
+        debuggingInfoBuilder_.dispose();
+        debuggingInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Debugging info that would get populated when
+     * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo debugging_info = 4;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo.Builder
+        getDebuggingInfoBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getDebuggingInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Debugging info that would get populated when
+     * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo debugging_info = 4;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfoOrBuilder
+        getDebuggingInfoOrBuilder() {
+      if (debuggingInfoBuilder_ != null) {
+        return debuggingInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return debuggingInfo_ == null
+            ? com.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo.getDefaultInstance()
+            : debuggingInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Debugging info that would get populated when
+     * `StreamingDetectIntentRequest.enable_debugging_info` is set to true.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo debugging_info = 4;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo,
+            com.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo.Builder,
+            com.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfoOrBuilder>
+        getDebuggingInfoFieldBuilder() {
+      if (debuggingInfoBuilder_ == null) {
+        debuggingInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo,
+                com.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfo.Builder,
+                com.google.cloud.dialogflow.cx.v3.CloudConversationDebuggingInfoOrBuilder>(
+                getDebuggingInfo(), getParentForChildren(), isClean());
+        debuggingInfo_ = null;
+      }
+      return debuggingInfoBuilder_;
     }
 
     @java.lang.Override
