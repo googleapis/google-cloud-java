@@ -31,6 +31,10 @@ public final class ScheduleProto {
       internal_static_google_cloud_aiplatform_v1beta1_Schedule_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_Schedule_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_Schedule_RunResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_Schedule_RunResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -45,7 +49,7 @@ public final class ScheduleProto {
           + "1\032\037google/api/field_behavior.proto\032\031goog"
           + "le/api/resource.proto\0326google/cloud/aipl"
           + "atform/v1beta1/pipeline_service.proto\032\037g"
-          + "oogle/protobuf/timestamp.proto\"\240\007\n\010Sched"
+          + "oogle/protobuf/timestamp.proto\"\224\t\n\010Sched"
           + "ule\022\016\n\004cron\030\n \001(\tH\000\022`\n\033create_pipeline_j"
           + "ob_request\030\016 \001(\01329.google.cloud.aiplatfo"
           + "rm.v1beta1.CreatePipelineJobRequestH\001\022\021\n"
@@ -57,24 +61,31 @@ public final class ScheduleProto {
           + "(\003B\003\340A\003\022C\n\005state\030\005 \001(\0162/.google.cloud.ai"
           + "platform.v1beta1.Schedule.StateB\003\340A\003\0224\n\013"
           + "create_time\030\006 \001(\0132\032.google.protobuf.Time"
-          + "stampB\003\340A\003\0226\n\rnext_run_time\030\007 \001(\0132\032.goog"
-          + "le.protobuf.TimestampB\003\340A\003\0228\n\017last_pause"
-          + "_time\030\010 \001(\0132\032.google.protobuf.TimestampB"
-          + "\003\340A\003\0229\n\020last_resume_time\030\t \001(\0132\032.google."
-          + "protobuf.TimestampB\003\340A\003\022%\n\030max_concurren"
-          + "t_run_count\030\013 \001(\003B\003\340A\002\022\033\n\016allow_queueing"
-          + "\030\014 \001(\010B\003\340A\001\022\025\n\010catch_up\030\r \001(\010B\003\340A\003\"E\n\005St"
-          + "ate\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\n"
-          + "\n\006PAUSED\020\002\022\r\n\tCOMPLETED\020\003:e\352Ab\n\"aiplatfo"
-          + "rm.googleapis.com/Schedule\022<projects/{pr"
-          + "oject}/locations/{location}/schedules/{s"
-          + "chedule}B\024\n\022time_specificationB\t\n\007reques"
-          + "tB\344\001\n#com.google.cloud.aiplatform.v1beta"
-          + "1B\rScheduleProtoP\001ZCcloud.google.com/go/"
-          + "aiplatform/apiv1beta1/aiplatformpb;aipla"
-          + "tformpb\252\002\037Google.Cloud.AIPlatform.V1Beta"
-          + "1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Go"
-          + "ogle::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "stampB\003\340A\003\0224\n\013update_time\030\023 \001(\0132\032.google"
+          + ".protobuf.TimestampB\003\340A\003\0226\n\rnext_run_tim"
+          + "e\030\007 \001(\0132\032.google.protobuf.TimestampB\003\340A\003"
+          + "\0228\n\017last_pause_time\030\010 \001(\0132\032.google.proto"
+          + "buf.TimestampB\003\340A\003\0229\n\020last_resume_time\030\t"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022%\n"
+          + "\030max_concurrent_run_count\030\013 \001(\003B\003\340A\002\022\033\n\016"
+          + "allow_queueing\030\014 \001(\010B\003\340A\001\022\025\n\010catch_up\030\r "
+          + "\001(\010B\003\340A\003\022_\n\033last_scheduled_run_response\030"
+          + "\022 \001(\01325.google.cloud.aiplatform.v1beta1."
+          + "Schedule.RunResponseB\003\340A\003\032[\n\013RunResponse"
+          + "\0226\n\022scheduled_run_time\030\001 \001(\0132\032.google.pr"
+          + "otobuf.Timestamp\022\024\n\014run_response\030\002 \001(\t\"E"
+          + "\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006ACTIVE"
+          + "\020\001\022\n\n\006PAUSED\020\002\022\r\n\tCOMPLETED\020\003:e\352Ab\n\"aipl"
+          + "atform.googleapis.com/Schedule\022<projects"
+          + "/{project}/locations/{location}/schedule"
+          + "s/{schedule}B\024\n\022time_specificationB\t\n\007re"
+          + "questB\344\001\n#com.google.cloud.aiplatform.v1"
+          + "beta1B\rScheduleProtoP\001ZCcloud.google.com"
+          + "/go/aiplatform/apiv1beta1/aiplatformpb;a"
+          + "iplatformpb\252\002\037Google.Cloud.AIPlatform.V1"
+          + "Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352"
+          + "\002\"Google::Cloud::AIPlatform::V1beta1b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -101,14 +112,24 @@ public final class ScheduleProto {
               "StartedRunCount",
               "State",
               "CreateTime",
+              "UpdateTime",
               "NextRunTime",
               "LastPauseTime",
               "LastResumeTime",
               "MaxConcurrentRunCount",
               "AllowQueueing",
               "CatchUp",
+              "LastScheduledRunResponse",
               "TimeSpecification",
               "Request",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_Schedule_RunResponse_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_Schedule_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_aiplatform_v1beta1_Schedule_RunResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_Schedule_RunResponse_descriptor,
+            new java.lang.String[] {
+              "ScheduledRunTime", "RunResponse",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

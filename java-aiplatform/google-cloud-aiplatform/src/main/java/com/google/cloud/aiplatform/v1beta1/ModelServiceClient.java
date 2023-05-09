@@ -3156,7 +3156,8 @@ public class ModelServiceClient implements BackgroundResource {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
    *                   .toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
@@ -3190,7 +3191,8 @@ public class ModelServiceClient implements BackgroundResource {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
    *                   .toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
@@ -3222,7 +3224,8 @@ public class ModelServiceClient implements BackgroundResource {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
    *                   .toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
@@ -3254,7 +3257,8 @@ public class ModelServiceClient implements BackgroundResource {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
    *                   .toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
@@ -3289,7 +3293,8 @@ public class ModelServiceClient implements BackgroundResource {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
    *           .setResource(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
    *                   .toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
@@ -3325,7 +3330,8 @@ public class ModelServiceClient implements BackgroundResource {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
    *           .setResource(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
    *                   .toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();

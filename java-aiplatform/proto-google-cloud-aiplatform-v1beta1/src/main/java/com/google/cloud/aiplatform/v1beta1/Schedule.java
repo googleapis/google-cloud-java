@@ -257,6 +257,956 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1beta1.Schedule.State)
   }
 
+  public interface RunResponseOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.Schedule.RunResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The scheduled run time based on the user-specified schedule.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp scheduled_run_time = 1;</code>
+     *
+     * @return Whether the scheduledRunTime field is set.
+     */
+    boolean hasScheduledRunTime();
+    /**
+     *
+     *
+     * <pre>
+     * The scheduled run time based on the user-specified schedule.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp scheduled_run_time = 1;</code>
+     *
+     * @return The scheduledRunTime.
+     */
+    com.google.protobuf.Timestamp getScheduledRunTime();
+    /**
+     *
+     *
+     * <pre>
+     * The scheduled run time based on the user-specified schedule.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp scheduled_run_time = 1;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getScheduledRunTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * The response of the scheduled run.
+     * </pre>
+     *
+     * <code>string run_response = 2;</code>
+     *
+     * @return The runResponse.
+     */
+    java.lang.String getRunResponse();
+    /**
+     *
+     *
+     * <pre>
+     * The response of the scheduled run.
+     * </pre>
+     *
+     * <code>string run_response = 2;</code>
+     *
+     * @return The bytes for runResponse.
+     */
+    com.google.protobuf.ByteString getRunResponseBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Status of a scheduled run.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.Schedule.RunResponse}
+   */
+  public static final class RunResponse extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.Schedule.RunResponse)
+      RunResponseOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use RunResponse.newBuilder() to construct.
+    private RunResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private RunResponse() {
+      runResponse_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new RunResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.ScheduleProto
+          .internal_static_google_cloud_aiplatform_v1beta1_Schedule_RunResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.ScheduleProto
+          .internal_static_google_cloud_aiplatform_v1beta1_Schedule_RunResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse.class,
+              com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse.Builder.class);
+    }
+
+    public static final int SCHEDULED_RUN_TIME_FIELD_NUMBER = 1;
+    private com.google.protobuf.Timestamp scheduledRunTime_;
+    /**
+     *
+     *
+     * <pre>
+     * The scheduled run time based on the user-specified schedule.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp scheduled_run_time = 1;</code>
+     *
+     * @return Whether the scheduledRunTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasScheduledRunTime() {
+      return scheduledRunTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The scheduled run time based on the user-specified schedule.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp scheduled_run_time = 1;</code>
+     *
+     * @return The scheduledRunTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getScheduledRunTime() {
+      return scheduledRunTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : scheduledRunTime_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The scheduled run time based on the user-specified schedule.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp scheduled_run_time = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getScheduledRunTimeOrBuilder() {
+      return scheduledRunTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : scheduledRunTime_;
+    }
+
+    public static final int RUN_RESPONSE_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object runResponse_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The response of the scheduled run.
+     * </pre>
+     *
+     * <code>string run_response = 2;</code>
+     *
+     * @return The runResponse.
+     */
+    @java.lang.Override
+    public java.lang.String getRunResponse() {
+      java.lang.Object ref = runResponse_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        runResponse_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The response of the scheduled run.
+     * </pre>
+     *
+     * <code>string run_response = 2;</code>
+     *
+     * @return The bytes for runResponse.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getRunResponseBytes() {
+      java.lang.Object ref = runResponse_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        runResponse_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (scheduledRunTime_ != null) {
+        output.writeMessage(1, getScheduledRunTime());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(runResponse_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, runResponse_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (scheduledRunTime_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getScheduledRunTime());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(runResponse_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, runResponse_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse other =
+          (com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse) obj;
+
+      if (hasScheduledRunTime() != other.hasScheduledRunTime()) return false;
+      if (hasScheduledRunTime()) {
+        if (!getScheduledRunTime().equals(other.getScheduledRunTime())) return false;
+      }
+      if (!getRunResponse().equals(other.getRunResponse())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasScheduledRunTime()) {
+        hash = (37 * hash) + SCHEDULED_RUN_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getScheduledRunTime().hashCode();
+      }
+      hash = (37 * hash) + RUN_RESPONSE_FIELD_NUMBER;
+      hash = (53 * hash) + getRunResponse().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Status of a scheduled run.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.Schedule.RunResponse}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.Schedule.RunResponse)
+        com.google.cloud.aiplatform.v1beta1.Schedule.RunResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.ScheduleProto
+            .internal_static_google_cloud_aiplatform_v1beta1_Schedule_RunResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.ScheduleProto
+            .internal_static_google_cloud_aiplatform_v1beta1_Schedule_RunResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse.class,
+                com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse.Builder.class);
+      }
+
+      // Construct using com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        scheduledRunTime_ = null;
+        if (scheduledRunTimeBuilder_ != null) {
+          scheduledRunTimeBuilder_.dispose();
+          scheduledRunTimeBuilder_ = null;
+        }
+        runResponse_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.ScheduleProto
+            .internal_static_google_cloud_aiplatform_v1beta1_Schedule_RunResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse build() {
+        com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse result =
+            new com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.scheduledRunTime_ =
+              scheduledRunTimeBuilder_ == null
+                  ? scheduledRunTime_
+                  : scheduledRunTimeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.runResponse_ = runResponse_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse) {
+          return mergeFrom((com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse other) {
+        if (other == com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse.getDefaultInstance())
+          return this;
+        if (other.hasScheduledRunTime()) {
+          mergeScheduledRunTime(other.getScheduledRunTime());
+        }
+        if (!other.getRunResponse().isEmpty()) {
+          runResponse_ = other.runResponse_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getScheduledRunTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  runResponse_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.Timestamp scheduledRunTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          scheduledRunTimeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The scheduled run time based on the user-specified schedule.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp scheduled_run_time = 1;</code>
+       *
+       * @return Whether the scheduledRunTime field is set.
+       */
+      public boolean hasScheduledRunTime() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The scheduled run time based on the user-specified schedule.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp scheduled_run_time = 1;</code>
+       *
+       * @return The scheduledRunTime.
+       */
+      public com.google.protobuf.Timestamp getScheduledRunTime() {
+        if (scheduledRunTimeBuilder_ == null) {
+          return scheduledRunTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : scheduledRunTime_;
+        } else {
+          return scheduledRunTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The scheduled run time based on the user-specified schedule.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp scheduled_run_time = 1;</code>
+       */
+      public Builder setScheduledRunTime(com.google.protobuf.Timestamp value) {
+        if (scheduledRunTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          scheduledRunTime_ = value;
+        } else {
+          scheduledRunTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The scheduled run time based on the user-specified schedule.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp scheduled_run_time = 1;</code>
+       */
+      public Builder setScheduledRunTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (scheduledRunTimeBuilder_ == null) {
+          scheduledRunTime_ = builderForValue.build();
+        } else {
+          scheduledRunTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The scheduled run time based on the user-specified schedule.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp scheduled_run_time = 1;</code>
+       */
+      public Builder mergeScheduledRunTime(com.google.protobuf.Timestamp value) {
+        if (scheduledRunTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && scheduledRunTime_ != null
+              && scheduledRunTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getScheduledRunTimeBuilder().mergeFrom(value);
+          } else {
+            scheduledRunTime_ = value;
+          }
+        } else {
+          scheduledRunTimeBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The scheduled run time based on the user-specified schedule.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp scheduled_run_time = 1;</code>
+       */
+      public Builder clearScheduledRunTime() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        scheduledRunTime_ = null;
+        if (scheduledRunTimeBuilder_ != null) {
+          scheduledRunTimeBuilder_.dispose();
+          scheduledRunTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The scheduled run time based on the user-specified schedule.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp scheduled_run_time = 1;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getScheduledRunTimeBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getScheduledRunTimeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The scheduled run time based on the user-specified schedule.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp scheduled_run_time = 1;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getScheduledRunTimeOrBuilder() {
+        if (scheduledRunTimeBuilder_ != null) {
+          return scheduledRunTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return scheduledRunTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : scheduledRunTime_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The scheduled run time based on the user-specified schedule.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp scheduled_run_time = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getScheduledRunTimeFieldBuilder() {
+        if (scheduledRunTimeBuilder_ == null) {
+          scheduledRunTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getScheduledRunTime(), getParentForChildren(), isClean());
+          scheduledRunTime_ = null;
+        }
+        return scheduledRunTimeBuilder_;
+      }
+
+      private java.lang.Object runResponse_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The response of the scheduled run.
+       * </pre>
+       *
+       * <code>string run_response = 2;</code>
+       *
+       * @return The runResponse.
+       */
+      public java.lang.String getRunResponse() {
+        java.lang.Object ref = runResponse_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          runResponse_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The response of the scheduled run.
+       * </pre>
+       *
+       * <code>string run_response = 2;</code>
+       *
+       * @return The bytes for runResponse.
+       */
+      public com.google.protobuf.ByteString getRunResponseBytes() {
+        java.lang.Object ref = runResponse_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          runResponse_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The response of the scheduled run.
+       * </pre>
+       *
+       * <code>string run_response = 2;</code>
+       *
+       * @param value The runResponse to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRunResponse(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        runResponse_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The response of the scheduled run.
+       * </pre>
+       *
+       * <code>string run_response = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRunResponse() {
+        runResponse_ = getDefaultInstance().getRunResponse();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The response of the scheduled run.
+       * </pre>
+       *
+       * <code>string run_response = 2;</code>
+       *
+       * @param value The bytes for runResponse to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRunResponseBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        runResponse_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.Schedule.RunResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.Schedule.RunResponse)
+    private static final com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RunResponse> PARSER =
+        new com.google.protobuf.AbstractParser<RunResponse>() {
+          @java.lang.Override
+          public RunResponse parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<RunResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RunResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int timeSpecificationCase_ = 0;
   private java.lang.Object timeSpecification_;
 
@@ -848,6 +1798,55 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
+  public static final int UPDATE_TIME_FIELD_NUMBER = 19;
+  private com.google.protobuf.Timestamp updateTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when this Schedule was updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateTime() {
+    return updateTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when this Schedule was updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getUpdateTime() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when this Schedule was updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+
   public static final int NEXT_RUN_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp nextRunTime_;
   /**
@@ -1030,8 +2029,9 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Maximum number of runs that can be executed concurrently for this
-   * Schedule.
+   * Required. Maximum number of runs that can be started concurrently for this
+   * Schedule. This is the limit for starting the scheduled requests and not the
+   * execution of the operations/jobs created by the requests (if applicable).
    * </pre>
    *
    * <code>int64 max_concurrent_run_count = 11 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1081,6 +2081,72 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean getCatchUp() {
     return catchUp_;
+  }
+
+  public static final int LAST_SCHEDULED_RUN_RESPONSE_FIELD_NUMBER = 18;
+  private com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse lastScheduledRunResponse_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Response of the last scheduled run.
+   * This is the response for starting the scheduled requests and not the
+   * execution of the operations/jobs created by the requests (if applicable).
+   * Unset if no run has been scheduled yet.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Schedule.RunResponse last_scheduled_run_response = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the lastScheduledRunResponse field is set.
+   */
+  @java.lang.Override
+  public boolean hasLastScheduledRunResponse() {
+    return lastScheduledRunResponse_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Response of the last scheduled run.
+   * This is the response for starting the scheduled requests and not the
+   * execution of the operations/jobs created by the requests (if applicable).
+   * Unset if no run has been scheduled yet.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Schedule.RunResponse last_scheduled_run_response = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The lastScheduledRunResponse.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse getLastScheduledRunResponse() {
+    return lastScheduledRunResponse_ == null
+        ? com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse.getDefaultInstance()
+        : lastScheduledRunResponse_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Response of the last scheduled run.
+   * This is the response for starting the scheduled requests and not the
+   * execution of the operations/jobs created by the requests (if applicable).
+   * Unset if no run has been scheduled yet.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Schedule.RunResponse last_scheduled_run_response = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Schedule.RunResponseOrBuilder
+      getLastScheduledRunResponseOrBuilder() {
+    return lastScheduledRunResponse_ == null
+        ? com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse.getDefaultInstance()
+        : lastScheduledRunResponse_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1147,6 +2213,12 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     if (startedRunCount_ != 0L) {
       output.writeInt64(17, startedRunCount_);
     }
+    if (lastScheduledRunResponse_ != null) {
+      output.writeMessage(18, getLastScheduledRunResponse());
+    }
+    if (updateTime_ != null) {
+      output.writeMessage(19, getUpdateTime());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1207,6 +2279,14 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     if (startedRunCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(17, startedRunCount_);
     }
+    if (lastScheduledRunResponse_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              18, getLastScheduledRunResponse());
+    }
+    if (updateTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getUpdateTime());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1240,6 +2320,10 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
+    if (hasUpdateTime()) {
+      if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+    }
     if (hasNextRunTime() != other.hasNextRunTime()) return false;
     if (hasNextRunTime()) {
       if (!getNextRunTime().equals(other.getNextRunTime())) return false;
@@ -1255,6 +2339,10 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     if (getMaxConcurrentRunCount() != other.getMaxConcurrentRunCount()) return false;
     if (getAllowQueueing() != other.getAllowQueueing()) return false;
     if (getCatchUp() != other.getCatchUp()) return false;
+    if (hasLastScheduledRunResponse() != other.hasLastScheduledRunResponse()) return false;
+    if (hasLastScheduledRunResponse()) {
+      if (!getLastScheduledRunResponse().equals(other.getLastScheduledRunResponse())) return false;
+    }
     if (!getTimeSpecificationCase().equals(other.getTimeSpecificationCase())) return false;
     switch (timeSpecificationCase_) {
       case 10:
@@ -1305,6 +2393,10 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
     }
+    if (hasUpdateTime()) {
+      hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateTime().hashCode();
+    }
     if (hasNextRunTime()) {
       hash = (37 * hash) + NEXT_RUN_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getNextRunTime().hashCode();
@@ -1323,6 +2415,10 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowQueueing());
     hash = (37 * hash) + CATCH_UP_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCatchUp());
+    if (hasLastScheduledRunResponse()) {
+      hash = (37 * hash) + LAST_SCHEDULED_RUN_RESPONSE_FIELD_NUMBER;
+      hash = (53 * hash) + getLastScheduledRunResponse().hashCode();
+    }
     switch (timeSpecificationCase_) {
       case 10:
         hash = (37 * hash) + CRON_FIELD_NUMBER;
@@ -1502,6 +2598,11 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
       }
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
+        updateTimeBuilder_ = null;
+      }
       nextRunTime_ = null;
       if (nextRunTimeBuilder_ != null) {
         nextRunTimeBuilder_.dispose();
@@ -1520,6 +2621,11 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       maxConcurrentRunCount_ = 0L;
       allowQueueing_ = false;
       catchUp_ = false;
+      lastScheduledRunResponse_ = null;
+      if (lastScheduledRunResponseBuilder_ != null) {
+        lastScheduledRunResponseBuilder_.dispose();
+        lastScheduledRunResponseBuilder_ = null;
+      }
       timeSpecificationCase_ = 0;
       timeSpecification_ = null;
       requestCase_ = 0;
@@ -1586,25 +2692,34 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.nextRunTime_ =
             nextRunTimeBuilder_ == null ? nextRunTime_ : nextRunTimeBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.lastPauseTime_ =
             lastPauseTimeBuilder_ == null ? lastPauseTime_ : lastPauseTimeBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.lastResumeTime_ =
             lastResumeTimeBuilder_ == null ? lastResumeTime_ : lastResumeTimeBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.maxConcurrentRunCount_ = maxConcurrentRunCount_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.allowQueueing_ = allowQueueing_;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.catchUp_ = catchUp_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.lastScheduledRunResponse_ =
+            lastScheduledRunResponseBuilder_ == null
+                ? lastScheduledRunResponse_
+                : lastScheduledRunResponseBuilder_.build();
       }
     }
 
@@ -1691,6 +2806,9 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
+      if (other.hasUpdateTime()) {
+        mergeUpdateTime(other.getUpdateTime());
+      }
       if (other.hasNextRunTime()) {
         mergeNextRunTime(other.getNextRunTime());
       }
@@ -1708,6 +2826,9 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getCatchUp() != false) {
         setCatchUp(other.getCatchUp());
+      }
+      if (other.hasLastScheduledRunResponse()) {
+        mergeLastScheduledRunResponse(other.getLastScheduledRunResponse());
       }
       switch (other.getTimeSpecificationCase()) {
         case CRON:
@@ -1798,19 +2919,19 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
             case 58:
               {
                 input.readMessage(getNextRunTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getLastPauseTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getLastResumeTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 74
             case 82:
@@ -1823,19 +2944,19 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
             case 88:
               {
                 maxConcurrentRunCount_ = input.readInt64();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 88
             case 96:
               {
                 allowQueueing_ = input.readBool();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 96
             case 104:
               {
                 catchUp_ = input.readBool();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 104
             case 114:
@@ -1857,6 +2978,19 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000080;
                 break;
               } // case 136
+            case 146:
+              {
+                input.readMessage(
+                    getLastScheduledRunResponseFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 146
+            case 154:
+              {
+                input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 154
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3406,6 +4540,207 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       return createTimeBuilder_;
     }
 
+    private com.google.protobuf.Timestamp updateTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when this Schedule was updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the updateTime field is set.
+     */
+    public boolean hasUpdateTime() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when this Schedule was updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The updateTime.
+     */
+    public com.google.protobuf.Timestamp getUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      } else {
+        return updateTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when this Schedule was updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateTime_ = value;
+      } else {
+        updateTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when this Schedule was updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = builderForValue.build();
+      } else {
+        updateTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when this Schedule was updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
+        } else {
+          updateTime_ = value;
+        }
+      } else {
+        updateTimeBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when this Schedule was updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearUpdateTime() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
+        updateTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when this Schedule was updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return getUpdateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when this Schedule was updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+      if (updateTimeBuilder_ != null) {
+        return updateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when this Schedule was updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getUpdateTimeFieldBuilder() {
+      if (updateTimeBuilder_ == null) {
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
+        updateTime_ = null;
+      }
+      return updateTimeBuilder_;
+    }
+
     private com.google.protobuf.Timestamp nextRunTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -3428,7 +4763,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the nextRunTime field is set.
      */
     public boolean hasNextRunTime() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3476,7 +4811,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       } else {
         nextRunTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3499,7 +4834,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       } else {
         nextRunTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3518,7 +4853,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeNextRunTime(com.google.protobuf.Timestamp value) {
       if (nextRunTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && nextRunTime_ != null
             && nextRunTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getNextRunTimeBuilder().mergeFrom(value);
@@ -3528,7 +4863,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       } else {
         nextRunTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3546,7 +4881,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearNextRunTime() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       nextRunTime_ = null;
       if (nextRunTimeBuilder_ != null) {
         nextRunTimeBuilder_.dispose();
@@ -3569,7 +4904,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getNextRunTimeBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getNextRunTimeFieldBuilder().getBuilder();
     }
@@ -3646,7 +4981,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastPauseTime field is set.
      */
     public boolean hasLastPauseTime() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -3692,7 +5027,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       } else {
         lastPauseTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3714,7 +5049,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       } else {
         lastPauseTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3732,7 +5067,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLastPauseTime(com.google.protobuf.Timestamp value) {
       if (lastPauseTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && lastPauseTime_ != null
             && lastPauseTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getLastPauseTimeBuilder().mergeFrom(value);
@@ -3742,7 +5077,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       } else {
         lastPauseTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3759,7 +5094,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearLastPauseTime() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       lastPauseTime_ = null;
       if (lastPauseTimeBuilder_ != null) {
         lastPauseTimeBuilder_.dispose();
@@ -3781,7 +5116,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getLastPauseTimeBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return getLastPauseTimeFieldBuilder().getBuilder();
     }
@@ -3856,7 +5191,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastResumeTime field is set.
      */
     public boolean hasLastResumeTime() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      *
@@ -3902,7 +5237,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       } else {
         lastResumeTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3924,7 +5259,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       } else {
         lastResumeTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3942,7 +5277,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLastResumeTime(com.google.protobuf.Timestamp value) {
       if (lastResumeTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && lastResumeTime_ != null
             && lastResumeTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getLastResumeTimeBuilder().mergeFrom(value);
@@ -3952,7 +5287,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
       } else {
         lastResumeTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3969,7 +5304,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearLastResumeTime() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       lastResumeTime_ = null;
       if (lastResumeTimeBuilder_ != null) {
         lastResumeTimeBuilder_.dispose();
@@ -3991,7 +5326,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getLastResumeTimeBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getLastResumeTimeFieldBuilder().getBuilder();
     }
@@ -4050,8 +5385,9 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Maximum number of runs that can be executed concurrently for this
-     * Schedule.
+     * Required. Maximum number of runs that can be started concurrently for this
+     * Schedule. This is the limit for starting the scheduled requests and not the
+     * execution of the operations/jobs created by the requests (if applicable).
      * </pre>
      *
      * <code>int64 max_concurrent_run_count = 11 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4066,8 +5402,9 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Maximum number of runs that can be executed concurrently for this
-     * Schedule.
+     * Required. Maximum number of runs that can be started concurrently for this
+     * Schedule. This is the limit for starting the scheduled requests and not the
+     * execution of the operations/jobs created by the requests (if applicable).
      * </pre>
      *
      * <code>int64 max_concurrent_run_count = 11 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4078,7 +5415,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     public Builder setMaxConcurrentRunCount(long value) {
 
       maxConcurrentRunCount_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4086,8 +5423,9 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Maximum number of runs that can be executed concurrently for this
-     * Schedule.
+     * Required. Maximum number of runs that can be started concurrently for this
+     * Schedule. This is the limit for starting the scheduled requests and not the
+     * execution of the operations/jobs created by the requests (if applicable).
      * </pre>
      *
      * <code>int64 max_concurrent_run_count = 11 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4095,7 +5433,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMaxConcurrentRunCount() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       maxConcurrentRunCount_ = 0L;
       onChanged();
       return this;
@@ -4136,7 +5474,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     public Builder setAllowQueueing(boolean value) {
 
       allowQueueing_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4154,7 +5492,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAllowQueueing() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       allowQueueing_ = false;
       onChanged();
       return this;
@@ -4195,7 +5533,7 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
     public Builder setCatchUp(boolean value) {
 
       catchUp_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4213,10 +5551,244 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCatchUp() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       catchUp_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse lastScheduledRunResponse_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse,
+            com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse.Builder,
+            com.google.cloud.aiplatform.v1beta1.Schedule.RunResponseOrBuilder>
+        lastScheduledRunResponseBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Response of the last scheduled run.
+     * This is the response for starting the scheduled requests and not the
+     * execution of the operations/jobs created by the requests (if applicable).
+     * Unset if no run has been scheduled yet.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Schedule.RunResponse last_scheduled_run_response = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the lastScheduledRunResponse field is set.
+     */
+    public boolean hasLastScheduledRunResponse() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Response of the last scheduled run.
+     * This is the response for starting the scheduled requests and not the
+     * execution of the operations/jobs created by the requests (if applicable).
+     * Unset if no run has been scheduled yet.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Schedule.RunResponse last_scheduled_run_response = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The lastScheduledRunResponse.
+     */
+    public com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse getLastScheduledRunResponse() {
+      if (lastScheduledRunResponseBuilder_ == null) {
+        return lastScheduledRunResponse_ == null
+            ? com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse.getDefaultInstance()
+            : lastScheduledRunResponse_;
+      } else {
+        return lastScheduledRunResponseBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Response of the last scheduled run.
+     * This is the response for starting the scheduled requests and not the
+     * execution of the operations/jobs created by the requests (if applicable).
+     * Unset if no run has been scheduled yet.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Schedule.RunResponse last_scheduled_run_response = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setLastScheduledRunResponse(
+        com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse value) {
+      if (lastScheduledRunResponseBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        lastScheduledRunResponse_ = value;
+      } else {
+        lastScheduledRunResponseBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Response of the last scheduled run.
+     * This is the response for starting the scheduled requests and not the
+     * execution of the operations/jobs created by the requests (if applicable).
+     * Unset if no run has been scheduled yet.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Schedule.RunResponse last_scheduled_run_response = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setLastScheduledRunResponse(
+        com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse.Builder builderForValue) {
+      if (lastScheduledRunResponseBuilder_ == null) {
+        lastScheduledRunResponse_ = builderForValue.build();
+      } else {
+        lastScheduledRunResponseBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Response of the last scheduled run.
+     * This is the response for starting the scheduled requests and not the
+     * execution of the operations/jobs created by the requests (if applicable).
+     * Unset if no run has been scheduled yet.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Schedule.RunResponse last_scheduled_run_response = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeLastScheduledRunResponse(
+        com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse value) {
+      if (lastScheduledRunResponseBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0)
+            && lastScheduledRunResponse_ != null
+            && lastScheduledRunResponse_
+                != com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse.getDefaultInstance()) {
+          getLastScheduledRunResponseBuilder().mergeFrom(value);
+        } else {
+          lastScheduledRunResponse_ = value;
+        }
+      } else {
+        lastScheduledRunResponseBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Response of the last scheduled run.
+     * This is the response for starting the scheduled requests and not the
+     * execution of the operations/jobs created by the requests (if applicable).
+     * Unset if no run has been scheduled yet.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Schedule.RunResponse last_scheduled_run_response = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearLastScheduledRunResponse() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      lastScheduledRunResponse_ = null;
+      if (lastScheduledRunResponseBuilder_ != null) {
+        lastScheduledRunResponseBuilder_.dispose();
+        lastScheduledRunResponseBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Response of the last scheduled run.
+     * This is the response for starting the scheduled requests and not the
+     * execution of the operations/jobs created by the requests (if applicable).
+     * Unset if no run has been scheduled yet.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Schedule.RunResponse last_scheduled_run_response = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse.Builder
+        getLastScheduledRunResponseBuilder() {
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return getLastScheduledRunResponseFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Response of the last scheduled run.
+     * This is the response for starting the scheduled requests and not the
+     * execution of the operations/jobs created by the requests (if applicable).
+     * Unset if no run has been scheduled yet.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Schedule.RunResponse last_scheduled_run_response = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Schedule.RunResponseOrBuilder
+        getLastScheduledRunResponseOrBuilder() {
+      if (lastScheduledRunResponseBuilder_ != null) {
+        return lastScheduledRunResponseBuilder_.getMessageOrBuilder();
+      } else {
+        return lastScheduledRunResponse_ == null
+            ? com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse.getDefaultInstance()
+            : lastScheduledRunResponse_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Response of the last scheduled run.
+     * This is the response for starting the scheduled requests and not the
+     * execution of the operations/jobs created by the requests (if applicable).
+     * Unset if no run has been scheduled yet.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Schedule.RunResponse last_scheduled_run_response = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse,
+            com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse.Builder,
+            com.google.cloud.aiplatform.v1beta1.Schedule.RunResponseOrBuilder>
+        getLastScheduledRunResponseFieldBuilder() {
+      if (lastScheduledRunResponseBuilder_ == null) {
+        lastScheduledRunResponseBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse,
+                com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse.Builder,
+                com.google.cloud.aiplatform.v1beta1.Schedule.RunResponseOrBuilder>(
+                getLastScheduledRunResponse(), getParentForChildren(), isClean());
+        lastScheduledRunResponse_ = null;
+      }
+      return lastScheduledRunResponseBuilder_;
     }
 
     @java.lang.Override

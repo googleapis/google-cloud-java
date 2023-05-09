@@ -94,6 +94,9 @@
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
+            "MutateDeployedModel": {
+              "methods": ["mutateDeployedModelAsync", "mutateDeployedModelAsync", "mutateDeployedModelAsync", "mutateDeployedModelOperationCallable", "mutateDeployedModelCallable"]
+            },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },

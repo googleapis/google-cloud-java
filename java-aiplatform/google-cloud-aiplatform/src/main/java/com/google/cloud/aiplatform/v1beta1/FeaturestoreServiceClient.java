@@ -758,7 +758,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *     be overwritten. Set the update_mask to `&#42;` to override all fields.
    *     <p>Updatable fields:
    *     <p>&#42; `labels` &#42; `online_serving_config.fixed_node_count` &#42;
-   *     `online_serving_config.scaling` &#42; `online_storage_ttl_days` (available in Preview)
+   *     `online_serving_config.scaling` &#42; `online_storage_ttl_days`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Featurestore, UpdateFeaturestoreOperationMetadata>
@@ -1662,7 +1662,6 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *     `monitoring_config.import_features_analysis.anomaly_detection_baseline` &#42;
    *     `monitoring_config.numerical_threshold_config.value` &#42;
    *     `monitoring_config.categorical_threshold_config.value` &#42; `offline_storage_ttl_days`
-   *     (available in Preview)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType updateEntityType(EntityType entityType, FieldMask updateMask) {
@@ -4294,7 +4293,8 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
    *                   .toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
@@ -4328,7 +4328,8 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
    *                   .toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
@@ -4361,7 +4362,8 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
    *                   .toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
@@ -4393,7 +4395,8 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
    *                   .toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
@@ -4429,7 +4432,8 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
    *           .setResource(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
    *                   .toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
@@ -4465,7 +4469,8 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
    *           .setResource(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
    *                   .toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();

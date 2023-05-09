@@ -2463,6 +2463,29 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.aiplatform.v1.Featurestore.State.UNRECOGNIZED : result;
   }
 
+  public static final int ONLINE_STORAGE_TTL_DAYS_FIELD_NUMBER = 13;
+  private int onlineStorageTtlDays_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. TTL in days for feature values that will be stored in online
+   * serving storage. The Feature Store online storage periodically removes
+   * obsolete feature values older than `online_storage_ttl_days` since the
+   * feature generation time. Note that `online_storage_ttl_days` should be less
+   * than or equal to `offline_storage_ttl_days` for each EntityType under a
+   * featurestore. If not set, default to 4000 days
+   * </pre>
+   *
+   * <code>int32 online_storage_ttl_days = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The onlineStorageTtlDays.
+   */
+  @java.lang.Override
+  public int getOnlineStorageTtlDays() {
+    return onlineStorageTtlDays_;
+  }
+
   public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 10;
   private com.google.cloud.aiplatform.v1.EncryptionSpec encryptionSpec_;
   /**
@@ -2559,6 +2582,9 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
     if (encryptionSpec_ != null) {
       output.writeMessage(10, getEncryptionSpec());
     }
+    if (onlineStorageTtlDays_ != 0) {
+      output.writeInt32(13, onlineStorageTtlDays_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2599,6 +2625,9 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
     if (encryptionSpec_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getEncryptionSpec());
     }
+    if (onlineStorageTtlDays_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(13, onlineStorageTtlDays_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2631,6 +2660,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
       if (!getOnlineServingConfig().equals(other.getOnlineServingConfig())) return false;
     }
     if (state_ != other.state_) return false;
+    if (getOnlineStorageTtlDays() != other.getOnlineStorageTtlDays()) return false;
     if (hasEncryptionSpec() != other.hasEncryptionSpec()) return false;
     if (hasEncryptionSpec()) {
       if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
@@ -2668,6 +2698,8 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
+    hash = (37 * hash) + ONLINE_STORAGE_TTL_DAYS_FIELD_NUMBER;
+    hash = (53 * hash) + getOnlineStorageTtlDays();
     if (hasEncryptionSpec()) {
       hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getEncryptionSpec().hashCode();
@@ -2852,6 +2884,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
         onlineServingConfigBuilder_ = null;
       }
       state_ = 0;
+      onlineStorageTtlDays_ = 0;
       encryptionSpec_ = null;
       if (encryptionSpecBuilder_ != null) {
         encryptionSpecBuilder_.dispose();
@@ -2919,6 +2952,9 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
         result.state_ = state_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.onlineStorageTtlDays_ = onlineStorageTtlDays_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.encryptionSpec_ =
             encryptionSpecBuilder_ == null ? encryptionSpec_ : encryptionSpecBuilder_.build();
       }
@@ -2992,6 +3028,9 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
+      }
+      if (other.getOnlineStorageTtlDays() != 0) {
+        setOnlineStorageTtlDays(other.getOnlineStorageTtlDays());
       }
       if (other.hasEncryptionSpec()) {
         mergeEncryptionSpec(other.getEncryptionSpec());
@@ -3074,9 +3113,15 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
             case 82:
               {
                 input.readMessage(getEncryptionSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 82
+            case 104:
+              {
+                onlineStorageTtlDays_ = input.readInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 104
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4284,6 +4329,74 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int onlineStorageTtlDays_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. TTL in days for feature values that will be stored in online
+     * serving storage. The Feature Store online storage periodically removes
+     * obsolete feature values older than `online_storage_ttl_days` since the
+     * feature generation time. Note that `online_storage_ttl_days` should be less
+     * than or equal to `offline_storage_ttl_days` for each EntityType under a
+     * featurestore. If not set, default to 4000 days
+     * </pre>
+     *
+     * <code>int32 online_storage_ttl_days = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The onlineStorageTtlDays.
+     */
+    @java.lang.Override
+    public int getOnlineStorageTtlDays() {
+      return onlineStorageTtlDays_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. TTL in days for feature values that will be stored in online
+     * serving storage. The Feature Store online storage periodically removes
+     * obsolete feature values older than `online_storage_ttl_days` since the
+     * feature generation time. Note that `online_storage_ttl_days` should be less
+     * than or equal to `offline_storage_ttl_days` for each EntityType under a
+     * featurestore. If not set, default to 4000 days
+     * </pre>
+     *
+     * <code>int32 online_storage_ttl_days = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The onlineStorageTtlDays to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOnlineStorageTtlDays(int value) {
+
+      onlineStorageTtlDays_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. TTL in days for feature values that will be stored in online
+     * serving storage. The Feature Store online storage periodically removes
+     * obsolete feature values older than `online_storage_ttl_days` since the
+     * feature generation time. Note that `online_storage_ttl_days` should be less
+     * than or equal to `offline_storage_ttl_days` for each EntityType under a
+     * featurestore. If not set, default to 4000 days
+     * </pre>
+     *
+     * <code>int32 online_storage_ttl_days = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOnlineStorageTtlDays() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onlineStorageTtlDays_ = 0;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.aiplatform.v1.EncryptionSpec encryptionSpec_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1.EncryptionSpec,
@@ -4305,7 +4418,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the encryptionSpec field is set.
      */
     public boolean hasEncryptionSpec() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -4351,7 +4464,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
       } else {
         encryptionSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4374,7 +4487,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
       } else {
         encryptionSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4392,7 +4505,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEncryptionSpec(com.google.cloud.aiplatform.v1.EncryptionSpec value) {
       if (encryptionSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && encryptionSpec_ != null
             && encryptionSpec_
                 != com.google.cloud.aiplatform.v1.EncryptionSpec.getDefaultInstance()) {
@@ -4403,7 +4516,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
       } else {
         encryptionSpecBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4420,7 +4533,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearEncryptionSpec() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       encryptionSpec_ = null;
       if (encryptionSpecBuilder_ != null) {
         encryptionSpecBuilder_.dispose();
@@ -4442,7 +4555,7 @@ public final class Featurestore extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.aiplatform.v1.EncryptionSpec.Builder getEncryptionSpecBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getEncryptionSpecFieldBuilder().getBuilder();
     }

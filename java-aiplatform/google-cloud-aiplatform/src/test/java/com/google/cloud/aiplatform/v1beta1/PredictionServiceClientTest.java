@@ -114,7 +114,8 @@ public class PredictionServiceClientTest {
             .build();
     mockPredictionService.addResponse(expectedResponse);
 
-    EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+    EndpointName endpoint =
+        EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
     List<Value> instances = new ArrayList<>();
     Value parameters = Value.newBuilder().setBoolValue(true).build();
 
@@ -140,7 +141,8 @@ public class PredictionServiceClientTest {
     mockPredictionService.addException(exception);
 
     try {
-      EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+      EndpointName endpoint =
+          EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
       List<Value> instances = new ArrayList<>();
       Value parameters = Value.newBuilder().setBoolValue(true).build();
       client.predict(endpoint, instances, parameters);
@@ -208,7 +210,8 @@ public class PredictionServiceClientTest {
             .build();
     mockPredictionService.addResponse(expectedResponse);
 
-    EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+    EndpointName endpoint =
+        EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
     HttpBody httpBody = HttpBody.newBuilder().build();
 
     HttpBody actualResponse = client.rawPredict(endpoint, httpBody);
@@ -232,7 +235,8 @@ public class PredictionServiceClientTest {
     mockPredictionService.addException(exception);
 
     try {
-      EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+      EndpointName endpoint =
+          EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
       HttpBody httpBody = HttpBody.newBuilder().build();
       client.rawPredict(endpoint, httpBody);
       Assert.fail("No exception raised");
@@ -294,7 +298,8 @@ public class PredictionServiceClientTest {
             .build();
     mockPredictionService.addResponse(expectedResponse);
 
-    EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+    EndpointName endpoint =
+        EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
     List<Value> instances = new ArrayList<>();
     Value parameters = Value.newBuilder().setBoolValue(true).build();
     String deployedModelId = "deployedModelId-1817547906";
@@ -323,7 +328,8 @@ public class PredictionServiceClientTest {
     mockPredictionService.addException(exception);
 
     try {
-      EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+      EndpointName endpoint =
+          EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
       List<Value> instances = new ArrayList<>();
       Value parameters = Value.newBuilder().setBoolValue(true).build();
       String deployedModelId = "deployedModelId-1817547906";
@@ -499,7 +505,7 @@ public class PredictionServiceClientTest {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(
-                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                     .toString())
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
@@ -530,7 +536,8 @@ public class PredictionServiceClientTest {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
               .setResource(
-                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                  EndpointName.ofProjectLocationEndpointName(
+                          "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                       .toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
@@ -556,7 +563,7 @@ public class PredictionServiceClientTest {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(
-                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                     .toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
@@ -585,7 +592,8 @@ public class PredictionServiceClientTest {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
               .setResource(
-                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                  EndpointName.ofProjectLocationEndpointName(
+                          "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                       .toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
@@ -605,7 +613,7 @@ public class PredictionServiceClientTest {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(
-                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                     .toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
@@ -634,7 +642,8 @@ public class PredictionServiceClientTest {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
               .setResource(
-                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                  EndpointName.ofProjectLocationEndpointName(
+                          "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                       .toString())
               .addAllPermissions(new ArrayList<String>())
               .build();

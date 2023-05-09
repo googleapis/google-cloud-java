@@ -151,7 +151,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
    *   * `monitoring_config.numerical_threshold_config.value`
    *   * `monitoring_config.categorical_threshold_config.value`
-   *   * `offline_storage_ttl_days` (available in Preview)
+   *   * `offline_storage_ttl_days`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -183,7 +183,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
    *   * `monitoring_config.numerical_threshold_config.value`
    *   * `monitoring_config.categorical_threshold_config.value`
-   *   * `offline_storage_ttl_days` (available in Preview)
+   *   * `offline_storage_ttl_days`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -215,7 +215,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
    *   * `monitoring_config.numerical_threshold_config.value`
    *   * `monitoring_config.categorical_threshold_config.value`
-   *   * `offline_storage_ttl_days` (available in Preview)
+   *   * `offline_storage_ttl_days`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -854,7 +854,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
      *   * `monitoring_config.numerical_threshold_config.value`
      *   * `monitoring_config.categorical_threshold_config.value`
-     *   * `offline_storage_ttl_days` (available in Preview)
+     *   * `offline_storage_ttl_days`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -885,7 +885,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
      *   * `monitoring_config.numerical_threshold_config.value`
      *   * `monitoring_config.categorical_threshold_config.value`
-     *   * `offline_storage_ttl_days` (available in Preview)
+     *   * `offline_storage_ttl_days`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -922,7 +922,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
      *   * `monitoring_config.numerical_threshold_config.value`
      *   * `monitoring_config.categorical_threshold_config.value`
-     *   * `offline_storage_ttl_days` (available in Preview)
+     *   * `offline_storage_ttl_days`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -961,7 +961,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
      *   * `monitoring_config.numerical_threshold_config.value`
      *   * `monitoring_config.categorical_threshold_config.value`
-     *   * `offline_storage_ttl_days` (available in Preview)
+     *   * `offline_storage_ttl_days`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -997,7 +997,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
      *   * `monitoring_config.numerical_threshold_config.value`
      *   * `monitoring_config.categorical_threshold_config.value`
-     *   * `offline_storage_ttl_days` (available in Preview)
+     *   * `offline_storage_ttl_days`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1039,7 +1039,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
      *   * `monitoring_config.numerical_threshold_config.value`
      *   * `monitoring_config.categorical_threshold_config.value`
-     *   * `offline_storage_ttl_days` (available in Preview)
+     *   * `offline_storage_ttl_days`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1075,7 +1075,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
      *   * `monitoring_config.numerical_threshold_config.value`
      *   * `monitoring_config.categorical_threshold_config.value`
-     *   * `offline_storage_ttl_days` (available in Preview)
+     *   * `offline_storage_ttl_days`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1106,7 +1106,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
      *   * `monitoring_config.numerical_threshold_config.value`
      *   * `monitoring_config.categorical_threshold_config.value`
-     *   * `offline_storage_ttl_days` (available in Preview)
+     *   * `offline_storage_ttl_days`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1141,7 +1141,7 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
      *   * `monitoring_config.import_features_analysis.anomaly_detection_baseline`
      *   * `monitoring_config.numerical_threshold_config.value`
      *   * `monitoring_config.categorical_threshold_config.value`
-     *   * `offline_storage_ttl_days` (available in Preview)
+     *   * `offline_storage_ttl_days`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

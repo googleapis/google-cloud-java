@@ -557,7 +557,7 @@ public interface EndpointOrBuilder
    * <code>bool enable_private_service_connect = 17 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect is deprecated.
-   *     See google/cloud/aiplatform/v1/endpoint.proto;l=125
+   *     See google/cloud/aiplatform/v1/endpoint.proto;l=126
    * @return The enablePrivateServiceConnect.
    */
   @java.lang.Deprecated
@@ -569,7 +569,8 @@ public interface EndpointOrBuilder
    * <pre>
    * Output only. Resource name of the Model Monitoring job associated with this
    * Endpoint if monitoring is enabled by
-   * [CreateModelDeploymentMonitoringJob][]. Format:
+   * [JobService.CreateModelDeploymentMonitoringJob][google.cloud.aiplatform.v1.JobService.CreateModelDeploymentMonitoringJob].
+   * Format:
    * `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
    * </pre>
    *
@@ -586,7 +587,8 @@ public interface EndpointOrBuilder
    * <pre>
    * Output only. Resource name of the Model Monitoring job associated with this
    * Endpoint if monitoring is enabled by
-   * [CreateModelDeploymentMonitoringJob][]. Format:
+   * [JobService.CreateModelDeploymentMonitoringJob][google.cloud.aiplatform.v1.JobService.CreateModelDeploymentMonitoringJob].
+   * Format:
    * `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
    * </pre>
    *

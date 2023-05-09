@@ -443,7 +443,7 @@ public interface DeployedModelOrBuilder
    *
    * <pre>
    * If true, the container of the DeployedModel instances will send `stderr`
-   * and `stdout` streams to Stackdriver Logging.
+   * and `stdout` streams to Cloud Logging.
    * Only supported for custom-trained Models and AutoML Tabular Models.
    * </pre>
    *
@@ -457,11 +457,11 @@ public interface DeployedModelOrBuilder
    *
    *
    * <pre>
-   * If true, online prediction access logs are sent to StackDriver
+   * If true, online prediction access logs are sent to Cloud
    * Logging.
    * These logs are like standard server access logs, containing
    * information like timestamp and latency for each prediction request.
-   * Note that Stackdriver logs may incur a cost, especially if your project
+   * Note that logs may incur a cost, especially if your project
    * receives prediction requests at a high queries per second rate (QPS).
    * Estimate your costs before enabling this option.
    * </pre>

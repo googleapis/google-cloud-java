@@ -51,7 +51,8 @@
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
- *   EndpointName name = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+ *   EndpointName name =
+ *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
  *   Endpoint response = endpointServiceClient.getEndpoint(name);
  * }
  * }</pre>
@@ -241,7 +242,8 @@
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
- *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+ *   EndpointName endpoint =
+ *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
  *   List<Value> instances = new ArrayList<>();
  *   Value parameters = Value.newBuilder().setBoolValue(true).build();
  *   PredictResponse response = predictionServiceClient.predict(endpoint, instances, parameters);

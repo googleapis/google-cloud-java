@@ -968,7 +968,7 @@ public class IndexEndpointServiceClientTest {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(
-                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                     .toString())
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
@@ -999,7 +999,8 @@ public class IndexEndpointServiceClientTest {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
               .setResource(
-                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                  EndpointName.ofProjectLocationEndpointName(
+                          "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                       .toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
@@ -1025,7 +1026,7 @@ public class IndexEndpointServiceClientTest {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(
-                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                     .toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
@@ -1054,7 +1055,8 @@ public class IndexEndpointServiceClientTest {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
               .setResource(
-                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                  EndpointName.ofProjectLocationEndpointName(
+                          "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                       .toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
@@ -1074,7 +1076,7 @@ public class IndexEndpointServiceClientTest {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(
-                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                     .toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
@@ -1103,7 +1105,8 @@ public class IndexEndpointServiceClientTest {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
               .setResource(
-                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                  EndpointName.ofProjectLocationEndpointName(
+                          "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                       .toString())
               .addAllPermissions(new ArrayList<String>())
               .build();

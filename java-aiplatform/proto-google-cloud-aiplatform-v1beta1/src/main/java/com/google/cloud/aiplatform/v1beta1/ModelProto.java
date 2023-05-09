@@ -44,6 +44,10 @@ public final class ModelProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_Model_LabelsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_LargeModelReference_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_LargeModelReference_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_PredictSchemata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_PredictSchemata_fieldAccessorTable;
@@ -131,29 +135,31 @@ public final class ModelProto {
           + "S\020\001\022\027\n\023AUTOMATIC_RESOURCES\020\002\022\024\n\020SHARED_R"
           + "ESOURCES\020\003:\\\352AY\n\037aiplatform.googleapis.c"
           + "om/Model\0226projects/{project}/locations/{"
-          + "location}/models/{model}\"{\n\017PredictSchem"
-          + "ata\022 \n\023instance_schema_uri\030\001 \001(\tB\003\340A\005\022\"\n"
-          + "\025parameters_schema_uri\030\002 \001(\tB\003\340A\005\022\"\n\025pre"
-          + "diction_schema_uri\030\003 \001(\tB\003\340A\005\"\205\002\n\022ModelC"
-          + "ontainerSpec\022\031\n\timage_uri\030\001 \001(\tB\006\340A\002\340A\005\022"
-          + "\024\n\007command\030\002 \003(\tB\003\340A\005\022\021\n\004args\030\003 \003(\tB\003\340A\005"
-          + "\0229\n\003env\030\004 \003(\0132\'.google.cloud.aiplatform."
-          + "v1beta1.EnvVarB\003\340A\005\0229\n\005ports\030\005 \003(\0132%.goo"
-          + "gle.cloud.aiplatform.v1beta1.PortB\003\340A\005\022\032"
-          + "\n\rpredict_route\030\006 \001(\tB\003\340A\005\022\031\n\014health_rou"
-          + "te\030\007 \001(\tB\003\340A\005\"\036\n\004Port\022\026\n\016container_port\030"
-          + "\003 \001(\005\"\340\001\n\017ModelSourceInfo\022U\n\013source_type"
-          + "\030\001 \001(\0162@.google.cloud.aiplatform.v1beta1"
-          + ".ModelSourceInfo.ModelSourceType\022\014\n\004copy"
-          + "\030\002 \001(\010\"h\n\017ModelSourceType\022!\n\035MODEL_SOURC"
-          + "E_TYPE_UNSPECIFIED\020\000\022\n\n\006AUTOML\020\001\022\n\n\006CUST"
-          + "OM\020\002\022\010\n\004BQML\020\003\022\020\n\014MODEL_GARDEN\020\004B\341\001\n#com"
-          + ".google.cloud.aiplatform.v1beta1B\nModelP"
-          + "rotoP\001ZCcloud.google.com/go/aiplatform/a"
-          + "piv1beta1/aiplatformpb;aiplatformpb\252\002\037Go"
-          + "ogle.Cloud.AIPlatform.V1Beta1\312\002\037Google\\C"
-          + "loud\\AIPlatform\\V1beta1\352\002\"Google::Cloud:"
-          + ":AIPlatform::V1beta1b\006proto3"
+          + "location}/models/{model}\"(\n\023LargeModelRe"
+          + "ference\022\021\n\004name\030\001 \001(\tB\003\340A\002\"{\n\017PredictSch"
+          + "emata\022 \n\023instance_schema_uri\030\001 \001(\tB\003\340A\005\022"
+          + "\"\n\025parameters_schema_uri\030\002 \001(\tB\003\340A\005\022\"\n\025p"
+          + "rediction_schema_uri\030\003 \001(\tB\003\340A\005\"\205\002\n\022Mode"
+          + "lContainerSpec\022\031\n\timage_uri\030\001 \001(\tB\006\340A\002\340A"
+          + "\005\022\024\n\007command\030\002 \003(\tB\003\340A\005\022\021\n\004args\030\003 \003(\tB\003\340"
+          + "A\005\0229\n\003env\030\004 \003(\0132\'.google.cloud.aiplatfor"
+          + "m.v1beta1.EnvVarB\003\340A\005\0229\n\005ports\030\005 \003(\0132%.g"
+          + "oogle.cloud.aiplatform.v1beta1.PortB\003\340A\005"
+          + "\022\032\n\rpredict_route\030\006 \001(\tB\003\340A\005\022\031\n\014health_r"
+          + "oute\030\007 \001(\tB\003\340A\005\"\036\n\004Port\022\026\n\016container_por"
+          + "t\030\003 \001(\005\"\353\001\n\017ModelSourceInfo\022U\n\013source_ty"
+          + "pe\030\001 \001(\0162@.google.cloud.aiplatform.v1bet"
+          + "a1.ModelSourceInfo.ModelSourceType\022\014\n\004co"
+          + "py\030\002 \001(\010\"s\n\017ModelSourceType\022!\n\035MODEL_SOU"
+          + "RCE_TYPE_UNSPECIFIED\020\000\022\n\n\006AUTOML\020\001\022\n\n\006CU"
+          + "STOM\020\002\022\010\n\004BQML\020\003\022\020\n\014MODEL_GARDEN\020\004\022\t\n\005GE"
+          + "NIE\020\005B\341\001\n#com.google.cloud.aiplatform.v1"
+          + "beta1B\nModelProtoP\001ZCcloud.google.com/go"
+          + "/aiplatform/apiv1beta1/aiplatformpb;aipl"
+          + "atformpb\252\002\037Google.Cloud.AIPlatform.V1Bet"
+          + "a1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"G"
+          + "oogle::Cloud::AIPlatform::V1beta1b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -227,8 +233,16 @@ public final class ModelProto {
             new java.lang.String[] {
               "Key", "Value",
             });
-    internal_static_google_cloud_aiplatform_v1beta1_PredictSchemata_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_LargeModelReference_descriptor =
         getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_aiplatform_v1beta1_LargeModelReference_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_LargeModelReference_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_PredictSchemata_descriptor =
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_aiplatform_v1beta1_PredictSchemata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_PredictSchemata_descriptor,
@@ -236,7 +250,7 @@ public final class ModelProto {
               "InstanceSchemaUri", "ParametersSchemaUri", "PredictionSchemaUri",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ModelContainerSpec_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_cloud_aiplatform_v1beta1_ModelContainerSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ModelContainerSpec_descriptor,
@@ -244,7 +258,7 @@ public final class ModelProto {
               "ImageUri", "Command", "Args", "Env", "Ports", "PredictRoute", "HealthRoute",
             });
     internal_static_google_cloud_aiplatform_v1beta1_Port_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_aiplatform_v1beta1_Port_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_Port_descriptor,
@@ -252,7 +266,7 @@ public final class ModelProto {
               "ContainerPort",
             });
     internal_static_google_cloud_aiplatform_v1beta1_ModelSourceInfo_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_aiplatform_v1beta1_ModelSourceInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_ModelSourceInfo_descriptor,

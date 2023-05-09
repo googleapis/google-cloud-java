@@ -373,6 +373,44 @@ public interface ScheduleOrBuilder
    *
    *
    * <pre>
+   * Output only. Timestamp when this Schedule was updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  boolean hasUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when this Schedule was updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  com.google.protobuf.Timestamp getUpdateTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when this Schedule was updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Timestamp when this Schedule should schedule the next run.
    * Having a next_run_time in the past means the runs are being started
    * behind schedule.
@@ -508,8 +546,9 @@ public interface ScheduleOrBuilder
    *
    *
    * <pre>
-   * Required. Maximum number of runs that can be executed concurrently for this
-   * Schedule.
+   * Required. Maximum number of runs that can be started concurrently for this
+   * Schedule. This is the limit for starting the scheduled requests and not the
+   * execution of the operations/jobs created by the requests (if applicable).
    * </pre>
    *
    * <code>int64 max_concurrent_run_count = 11 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -547,6 +586,57 @@ public interface ScheduleOrBuilder
    * @return The catchUp.
    */
   boolean getCatchUp();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Response of the last scheduled run.
+   * This is the response for starting the scheduled requests and not the
+   * execution of the operations/jobs created by the requests (if applicable).
+   * Unset if no run has been scheduled yet.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Schedule.RunResponse last_scheduled_run_response = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the lastScheduledRunResponse field is set.
+   */
+  boolean hasLastScheduledRunResponse();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Response of the last scheduled run.
+   * This is the response for starting the scheduled requests and not the
+   * execution of the operations/jobs created by the requests (if applicable).
+   * Unset if no run has been scheduled yet.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Schedule.RunResponse last_scheduled_run_response = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The lastScheduledRunResponse.
+   */
+  com.google.cloud.aiplatform.v1beta1.Schedule.RunResponse getLastScheduledRunResponse();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Response of the last scheduled run.
+   * This is the response for starting the scheduled requests and not the
+   * execution of the operations/jobs created by the requests (if applicable).
+   * Unset if no run has been scheduled yet.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Schedule.RunResponse last_scheduled_run_response = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.Schedule.RunResponseOrBuilder
+      getLastScheduledRunResponseOrBuilder();
 
   public com.google.cloud.aiplatform.v1beta1.Schedule.TimeSpecificationCase
       getTimeSpecificationCase();
