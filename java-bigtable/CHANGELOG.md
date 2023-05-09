@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.23.0](https://github.com/googleapis/java-bigtable/compare/v2.22.0...v2.23.0) (2023-05-09)
+
+
+### Features
+
+* Resizing channel pool size based on the work load ([#1271](https://github.com/googleapis/java-bigtable/issues/1271)) ([7fb1a09](https://github.com/googleapis/java-bigtable/commit/7fb1a09224e1ea05cfec6eb35deaba670d1d82d2))
+
+
+### Documentation
+
+* Clean up BetaApi annotations from built in metrics API ([#1741](https://github.com/googleapis/java-bigtable/issues/1741)) ([c2fbd04](https://github.com/googleapis/java-bigtable/commit/c2fbd04eb64ddcfe7ea0f234f22d0691094646a4))
+
 ## [2.22.0](https://github.com/googleapis/java-bigtable/compare/v2.21.0...v2.22.0) (2023-05-02)
 
 
