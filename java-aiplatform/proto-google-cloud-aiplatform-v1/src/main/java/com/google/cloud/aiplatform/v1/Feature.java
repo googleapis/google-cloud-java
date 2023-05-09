@@ -474,10 +474,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of historical [Snapshot
-   * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis] or [Import Feature
-   * Analysis] [FeaturestoreMonitoringConfig.ImportFeatureAnalysis] stats
-   * requested by user, sorted by
+   * A list of historical
+   * [SnapshotAnalysis][google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
+   * or
+   * [ImportFeaturesAnalysis][google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig.ImportFeaturesAnalysis]
+   * stats requested by user, sorted by
    * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1.FeatureStatsAnomaly.start_time]
    * descending.
    * </pre>
@@ -971,10 +972,11 @@ public final class Feature extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of historical [Snapshot
-     * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis] or [Import Feature
-     * Analysis] [FeaturestoreMonitoringConfig.ImportFeatureAnalysis] stats
-     * requested by user, sorted by
+     * A list of historical
+     * [SnapshotAnalysis][google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig.SnapshotAnalysis]
+     * or
+     * [ImportFeaturesAnalysis][google.cloud.aiplatform.v1.FeaturestoreMonitoringConfig.ImportFeaturesAnalysis]
+     * stats requested by user, sorted by
      * [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1.FeatureStatsAnomaly.start_time]
      * descending.
      * </pre>

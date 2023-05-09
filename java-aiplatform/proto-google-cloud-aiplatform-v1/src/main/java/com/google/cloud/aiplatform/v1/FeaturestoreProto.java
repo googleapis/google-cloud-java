@@ -57,7 +57,7 @@ public final class FeaturestoreProto {
           + "gle/api/field_behavior.proto\032\031google/api"
           + "/resource.proto\0320google/cloud/aiplatform"
           + "/v1/encryption_spec.proto\032\037google/protob"
-          + "uf/timestamp.proto\"\245\007\n\014Featurestore\022\021\n\004n"
+          + "uf/timestamp.proto\"\313\007\n\014Featurestore\022\021\n\004n"
           + "ame\030\001 \001(\tB\003\340A\003\0224\n\013create_time\030\003 \001(\0132\032.go"
           + "ogle.protobuf.TimestampB\003\340A\003\0224\n\013update_t"
           + "ime\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340"
@@ -67,26 +67,27 @@ public final class FeaturestoreProto {
           + "g\030\007 \001(\0132<.google.cloud.aiplatform.v1.Fea"
           + "turestore.OnlineServingConfigB\003\340A\001\022B\n\005st"
           + "ate\030\010 \001(\0162..google.cloud.aiplatform.v1.F"
-          + "eaturestore.StateB\003\340A\003\022H\n\017encryption_spe"
-          + "c\030\n \001(\0132*.google.cloud.aiplatform.v1.Enc"
-          + "ryptionSpecB\003\340A\001\032\353\001\n\023OnlineServingConfig"
-          + "\022\030\n\020fixed_node_count\030\002 \001(\005\022U\n\007scaling\030\004 "
-          + "\001(\0132D.google.cloud.aiplatform.v1.Feature"
-          + "store.OnlineServingConfig.Scaling\032c\n\007Sca"
-          + "ling\022\033\n\016min_node_count\030\001 \001(\005B\003\340A\002\022\026\n\016max"
-          + "_node_count\030\002 \001(\005\022#\n\026cpu_utilization_tar"
-          + "get\030\003 \001(\005B\003\340A\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001"
-          + "(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"8\n\005State\022\025\n\021STATE_"
-          + "UNSPECIFIED\020\000\022\n\n\006STABLE\020\001\022\014\n\010UPDATING\020\002:"
-          + "q\352An\n&aiplatform.googleapis.com/Features"
-          + "tore\022Dprojects/{project}/locations/{loca"
-          + "tion}/featurestores/{featurestore}B\317\001\n\036c"
-          + "om.google.cloud.aiplatform.v1B\021Featurest"
-          + "oreProtoP\001Z>cloud.google.com/go/aiplatfo"
-          + "rm/apiv1/aiplatformpb;aiplatformpb\252\002\032Goo"
-          + "gle.Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\A"
-          + "IPlatform\\V1\352\002\035Google::Cloud::AIPlatform"
-          + "::V1b\006proto3"
+          + "eaturestore.StateB\003\340A\003\022$\n\027online_storage"
+          + "_ttl_days\030\r \001(\005B\003\340A\001\022H\n\017encryption_spec\030"
+          + "\n \001(\0132*.google.cloud.aiplatform.v1.Encry"
+          + "ptionSpecB\003\340A\001\032\353\001\n\023OnlineServingConfig\022\030"
+          + "\n\020fixed_node_count\030\002 \001(\005\022U\n\007scaling\030\004 \001("
+          + "\0132D.google.cloud.aiplatform.v1.Featurest"
+          + "ore.OnlineServingConfig.Scaling\032c\n\007Scali"
+          + "ng\022\033\n\016min_node_count\030\001 \001(\005B\003\340A\002\022\026\n\016max_n"
+          + "ode_count\030\002 \001(\005\022#\n\026cpu_utilization_targe"
+          + "t\030\003 \001(\005B\003\340A\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t"
+          + "\022\r\n\005value\030\002 \001(\t:\0028\001\"8\n\005State\022\025\n\021STATE_UN"
+          + "SPECIFIED\020\000\022\n\n\006STABLE\020\001\022\014\n\010UPDATING\020\002:q\352"
+          + "An\n&aiplatform.googleapis.com/Featuresto"
+          + "re\022Dprojects/{project}/locations/{locati"
+          + "on}/featurestores/{featurestore}B\317\001\n\036com"
+          + ".google.cloud.aiplatform.v1B\021Featurestor"
+          + "eProtoP\001Z>cloud.google.com/go/aiplatform"
+          + "/apiv1/aiplatformpb;aiplatformpb\252\002\032Googl"
+          + "e.Cloud.AIPlatform.V1\312\002\032Google\\Cloud\\AIP"
+          + "latform\\V1\352\002\035Google::Cloud::AIPlatform::"
+          + "V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -110,6 +111,7 @@ public final class FeaturestoreProto {
               "Labels",
               "OnlineServingConfig",
               "State",
+              "OnlineStorageTtlDays",
               "EncryptionSpec",
             });
     internal_static_google_cloud_aiplatform_v1_Featurestore_OnlineServingConfig_descriptor =

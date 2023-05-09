@@ -661,9 +661,6 @@ public final class EvaluatedAnnotation extends com.google.protobuf.GeneratedMess
    * ModelEvaluation. The EvaluatedDataItemView consists of all ground truths
    * and predictions on
    * [data_item_payload][google.cloud.aiplatform.v1beta1.EvaluatedAnnotation.data_item_payload].
-   * Can be passed in
-   * [GetEvaluatedDataItemView's][ModelService.GetEvaluatedDataItemView][]
-   * [id][GetEvaluatedDataItemViewRequest.id].
    * </pre>
    *
    * <code>string evaluated_data_item_view_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -691,9 +688,6 @@ public final class EvaluatedAnnotation extends com.google.protobuf.GeneratedMess
    * ModelEvaluation. The EvaluatedDataItemView consists of all ground truths
    * and predictions on
    * [data_item_payload][google.cloud.aiplatform.v1beta1.EvaluatedAnnotation.data_item_payload].
-   * Can be passed in
-   * [GetEvaluatedDataItemView's][ModelService.GetEvaluatedDataItemView][]
-   * [id][GetEvaluatedDataItemViewRequest.id].
    * </pre>
    *
    * <code>string evaluated_data_item_view_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3134,9 +3128,6 @@ public final class EvaluatedAnnotation extends com.google.protobuf.GeneratedMess
      * ModelEvaluation. The EvaluatedDataItemView consists of all ground truths
      * and predictions on
      * [data_item_payload][google.cloud.aiplatform.v1beta1.EvaluatedAnnotation.data_item_payload].
-     * Can be passed in
-     * [GetEvaluatedDataItemView's][ModelService.GetEvaluatedDataItemView][]
-     * [id][GetEvaluatedDataItemViewRequest.id].
      * </pre>
      *
      * <code>string evaluated_data_item_view_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3163,9 +3154,6 @@ public final class EvaluatedAnnotation extends com.google.protobuf.GeneratedMess
      * ModelEvaluation. The EvaluatedDataItemView consists of all ground truths
      * and predictions on
      * [data_item_payload][google.cloud.aiplatform.v1beta1.EvaluatedAnnotation.data_item_payload].
-     * Can be passed in
-     * [GetEvaluatedDataItemView's][ModelService.GetEvaluatedDataItemView][]
-     * [id][GetEvaluatedDataItemViewRequest.id].
      * </pre>
      *
      * <code>string evaluated_data_item_view_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3192,9 +3180,6 @@ public final class EvaluatedAnnotation extends com.google.protobuf.GeneratedMess
      * ModelEvaluation. The EvaluatedDataItemView consists of all ground truths
      * and predictions on
      * [data_item_payload][google.cloud.aiplatform.v1beta1.EvaluatedAnnotation.data_item_payload].
-     * Can be passed in
-     * [GetEvaluatedDataItemView's][ModelService.GetEvaluatedDataItemView][]
-     * [id][GetEvaluatedDataItemViewRequest.id].
      * </pre>
      *
      * <code>string evaluated_data_item_view_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3220,9 +3205,6 @@ public final class EvaluatedAnnotation extends com.google.protobuf.GeneratedMess
      * ModelEvaluation. The EvaluatedDataItemView consists of all ground truths
      * and predictions on
      * [data_item_payload][google.cloud.aiplatform.v1beta1.EvaluatedAnnotation.data_item_payload].
-     * Can be passed in
-     * [GetEvaluatedDataItemView's][ModelService.GetEvaluatedDataItemView][]
-     * [id][GetEvaluatedDataItemViewRequest.id].
      * </pre>
      *
      * <code>string evaluated_data_item_view_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -3244,9 +3226,6 @@ public final class EvaluatedAnnotation extends com.google.protobuf.GeneratedMess
      * ModelEvaluation. The EvaluatedDataItemView consists of all ground truths
      * and predictions on
      * [data_item_payload][google.cloud.aiplatform.v1beta1.EvaluatedAnnotation.data_item_payload].
-     * Can be passed in
-     * [GetEvaluatedDataItemView's][ModelService.GetEvaluatedDataItemView][]
-     * [id][GetEvaluatedDataItemViewRequest.id].
      * </pre>
      *
      * <code>string evaluated_data_item_view_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];

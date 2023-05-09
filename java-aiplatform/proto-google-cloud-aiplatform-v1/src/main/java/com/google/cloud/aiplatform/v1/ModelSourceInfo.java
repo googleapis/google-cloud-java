@@ -127,6 +127,16 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
      * <code>MODEL_GARDEN = 4;</code>
      */
     MODEL_GARDEN(4),
+    /**
+     *
+     *
+     * <pre>
+     * The Model is saved or tuned from Genie.
+     * </pre>
+     *
+     * <code>GENIE = 5;</code>
+     */
+    GENIE(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -180,6 +190,16 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
      * <code>MODEL_GARDEN = 4;</code>
      */
     public static final int MODEL_GARDEN_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * The Model is saved or tuned from Genie.
+     * </pre>
+     *
+     * <code>GENIE = 5;</code>
+     */
+    public static final int GENIE_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -215,6 +235,8 @@ public final class ModelSourceInfo extends com.google.protobuf.GeneratedMessageV
           return BQML;
         case 4:
           return MODEL_GARDEN;
+        case 5:
+          return GENIE;
         default:
           return null;
       }

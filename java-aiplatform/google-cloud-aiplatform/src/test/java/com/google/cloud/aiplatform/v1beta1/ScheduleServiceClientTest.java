@@ -117,12 +117,14 @@ public class ScheduleServiceClientTest {
             .setMaxRunCount(-845001408)
             .setStartedRunCount(-479303651)
             .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .setNextRunTime(Timestamp.newBuilder().build())
             .setLastPauseTime(Timestamp.newBuilder().build())
             .setLastResumeTime(Timestamp.newBuilder().build())
             .setMaxConcurrentRunCount(-1478623794)
             .setAllowQueueing(true)
             .setCatchUp(true)
+            .setLastScheduledRunResponse(Schedule.RunResponse.newBuilder().build())
             .build();
     mockScheduleService.addResponse(expectedResponse);
 
@@ -170,12 +172,14 @@ public class ScheduleServiceClientTest {
             .setMaxRunCount(-845001408)
             .setStartedRunCount(-479303651)
             .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .setNextRunTime(Timestamp.newBuilder().build())
             .setLastPauseTime(Timestamp.newBuilder().build())
             .setLastResumeTime(Timestamp.newBuilder().build())
             .setMaxConcurrentRunCount(-1478623794)
             .setAllowQueueing(true)
             .setCatchUp(true)
+            .setLastScheduledRunResponse(Schedule.RunResponse.newBuilder().build())
             .build();
     mockScheduleService.addResponse(expectedResponse);
 
@@ -307,12 +311,14 @@ public class ScheduleServiceClientTest {
             .setMaxRunCount(-845001408)
             .setStartedRunCount(-479303651)
             .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .setNextRunTime(Timestamp.newBuilder().build())
             .setLastPauseTime(Timestamp.newBuilder().build())
             .setLastResumeTime(Timestamp.newBuilder().build())
             .setMaxConcurrentRunCount(-1478623794)
             .setAllowQueueing(true)
             .setCatchUp(true)
+            .setLastScheduledRunResponse(Schedule.RunResponse.newBuilder().build())
             .build();
     mockScheduleService.addResponse(expectedResponse);
 
@@ -357,12 +363,14 @@ public class ScheduleServiceClientTest {
             .setMaxRunCount(-845001408)
             .setStartedRunCount(-479303651)
             .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .setNextRunTime(Timestamp.newBuilder().build())
             .setLastPauseTime(Timestamp.newBuilder().build())
             .setLastResumeTime(Timestamp.newBuilder().build())
             .setMaxConcurrentRunCount(-1478623794)
             .setAllowQueueing(true)
             .setCatchUp(true)
+            .setLastScheduledRunResponse(Schedule.RunResponse.newBuilder().build())
             .build();
     mockScheduleService.addResponse(expectedResponse);
 
@@ -621,6 +629,80 @@ public class ScheduleServiceClientTest {
   }
 
   @Test
+  public void resumeScheduleTest3() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockScheduleService.addResponse(expectedResponse);
+
+    ScheduleName name = ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]");
+    boolean catchUp = true;
+
+    client.resumeSchedule(name, catchUp);
+
+    List<AbstractMessage> actualRequests = mockScheduleService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ResumeScheduleRequest actualRequest = ((ResumeScheduleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(catchUp, actualRequest.getCatchUp());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void resumeScheduleExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockScheduleService.addException(exception);
+
+    try {
+      ScheduleName name = ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]");
+      boolean catchUp = true;
+      client.resumeSchedule(name, catchUp);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void resumeScheduleTest4() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockScheduleService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    boolean catchUp = true;
+
+    client.resumeSchedule(name, catchUp);
+
+    List<AbstractMessage> actualRequests = mockScheduleService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ResumeScheduleRequest actualRequest = ((ResumeScheduleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(catchUp, actualRequest.getCatchUp());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void resumeScheduleExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockScheduleService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      boolean catchUp = true;
+      client.resumeSchedule(name, catchUp);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listLocationsTest() throws Exception {
     Location responsesElement = Location.newBuilder().build();
     ListLocationsResponse expectedResponse =
@@ -735,7 +817,7 @@ public class ScheduleServiceClientTest {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(
-                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                     .toString())
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
@@ -766,7 +848,8 @@ public class ScheduleServiceClientTest {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
               .setResource(
-                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                  EndpointName.ofProjectLocationEndpointName(
+                          "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                       .toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
@@ -792,7 +875,7 @@ public class ScheduleServiceClientTest {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(
-                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                     .toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
@@ -821,7 +904,8 @@ public class ScheduleServiceClientTest {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
               .setResource(
-                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                  EndpointName.ofProjectLocationEndpointName(
+                          "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                       .toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
@@ -841,7 +925,7 @@ public class ScheduleServiceClientTest {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(
-                EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                     .toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
@@ -870,7 +954,8 @@ public class ScheduleServiceClientTest {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
               .setResource(
-                  EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+                  EndpointName.ofProjectLocationEndpointName(
+                          "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
                       .toString())
               .addAllPermissions(new ArrayList<String>())
               .build();

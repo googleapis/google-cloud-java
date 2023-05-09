@@ -183,17 +183,18 @@ public interface TensorboardExperimentOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize your Datasets.
-   * Label keys and values can be no longer than 64 characters
+   * Label keys and values cannot be longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * No more than 64 user labels can be associated with one Dataset (System
    * labels are excluded).
    * See https://goo.gl/xmQnxf for more information and examples of labels.
-   * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
-   * and are immutable. Following system labels exist for each Dataset:
-   * * "aiplatform.googleapis.com/dataset_metadata_schema":
-   *   - output only, its value is the
-   *   [metadata_schema's][metadata_schema_uri] title.
+   * System reserved label keys are prefixed with `aiplatform.googleapis.com/`
+   * and are immutable. The following system labels exist for each Dataset:
+   * * `aiplatform.googleapis.com/dataset_metadata_schema`: output only. Its
+   *    value is the
+   *    [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri]
+   *    title.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -204,17 +205,18 @@ public interface TensorboardExperimentOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize your Datasets.
-   * Label keys and values can be no longer than 64 characters
+   * Label keys and values cannot be longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * No more than 64 user labels can be associated with one Dataset (System
    * labels are excluded).
    * See https://goo.gl/xmQnxf for more information and examples of labels.
-   * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
-   * and are immutable. Following system labels exist for each Dataset:
-   * * "aiplatform.googleapis.com/dataset_metadata_schema":
-   *   - output only, its value is the
-   *   [metadata_schema's][metadata_schema_uri] title.
+   * System reserved label keys are prefixed with `aiplatform.googleapis.com/`
+   * and are immutable. The following system labels exist for each Dataset:
+   * * `aiplatform.googleapis.com/dataset_metadata_schema`: output only. Its
+   *    value is the
+   *    [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri]
+   *    title.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -228,17 +230,18 @@ public interface TensorboardExperimentOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize your Datasets.
-   * Label keys and values can be no longer than 64 characters
+   * Label keys and values cannot be longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * No more than 64 user labels can be associated with one Dataset (System
    * labels are excluded).
    * See https://goo.gl/xmQnxf for more information and examples of labels.
-   * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
-   * and are immutable. Following system labels exist for each Dataset:
-   * * "aiplatform.googleapis.com/dataset_metadata_schema":
-   *   - output only, its value is the
-   *   [metadata_schema's][metadata_schema_uri] title.
+   * System reserved label keys are prefixed with `aiplatform.googleapis.com/`
+   * and are immutable. The following system labels exist for each Dataset:
+   * * `aiplatform.googleapis.com/dataset_metadata_schema`: output only. Its
+   *    value is the
+   *    [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri]
+   *    title.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -249,17 +252,18 @@ public interface TensorboardExperimentOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize your Datasets.
-   * Label keys and values can be no longer than 64 characters
+   * Label keys and values cannot be longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * No more than 64 user labels can be associated with one Dataset (System
    * labels are excluded).
    * See https://goo.gl/xmQnxf for more information and examples of labels.
-   * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
-   * and are immutable. Following system labels exist for each Dataset:
-   * * "aiplatform.googleapis.com/dataset_metadata_schema":
-   *   - output only, its value is the
-   *   [metadata_schema's][metadata_schema_uri] title.
+   * System reserved label keys are prefixed with `aiplatform.googleapis.com/`
+   * and are immutable. The following system labels exist for each Dataset:
+   * * `aiplatform.googleapis.com/dataset_metadata_schema`: output only. Its
+   *    value is the
+   *    [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri]
+   *    title.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
@@ -274,17 +278,18 @@ public interface TensorboardExperimentOrBuilder
    *
    * <pre>
    * The labels with user-defined metadata to organize your Datasets.
-   * Label keys and values can be no longer than 64 characters
+   * Label keys and values cannot be longer than 64 characters
    * (Unicode codepoints), can only contain lowercase letters, numeric
    * characters, underscores and dashes. International characters are allowed.
    * No more than 64 user labels can be associated with one Dataset (System
    * labels are excluded).
    * See https://goo.gl/xmQnxf for more information and examples of labels.
-   * System reserved label keys are prefixed with "aiplatform.googleapis.com/"
-   * and are immutable. Following system labels exist for each Dataset:
-   * * "aiplatform.googleapis.com/dataset_metadata_schema":
-   *   - output only, its value is the
-   *   [metadata_schema's][metadata_schema_uri] title.
+   * System reserved label keys are prefixed with `aiplatform.googleapis.com/`
+   * and are immutable. The following system labels exist for each Dataset:
+   * * `aiplatform.googleapis.com/dataset_metadata_schema`: output only. Its
+   *    value is the
+   *    [metadata_schema's][google.cloud.aiplatform.v1.Dataset.metadata_schema_uri]
+   *    title.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>

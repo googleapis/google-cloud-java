@@ -56,6 +56,9 @@ import com.google.cloud.aiplatform.v1.Endpoint;
 import com.google.cloud.aiplatform.v1.GetEndpointRequest;
 import com.google.cloud.aiplatform.v1.ListEndpointsRequest;
 import com.google.cloud.aiplatform.v1.ListEndpointsResponse;
+import com.google.cloud.aiplatform.v1.MutateDeployedModelOperationMetadata;
+import com.google.cloud.aiplatform.v1.MutateDeployedModelRequest;
+import com.google.cloud.aiplatform.v1.MutateDeployedModelResponse;
 import com.google.cloud.aiplatform.v1.UndeployModelOperationMetadata;
 import com.google.cloud.aiplatform.v1.UndeployModelRequest;
 import com.google.cloud.aiplatform.v1.UndeployModelResponse;
@@ -143,6 +146,13 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
   private final OperationCallSettings<
           UndeployModelRequest, UndeployModelResponse, UndeployModelOperationMetadata>
       undeployModelOperationSettings;
+  private final UnaryCallSettings<MutateDeployedModelRequest, Operation>
+      mutateDeployedModelSettings;
+  private final OperationCallSettings<
+          MutateDeployedModelRequest,
+          MutateDeployedModelResponse,
+          MutateDeployedModelOperationMetadata>
+      mutateDeployedModelOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -320,6 +330,20 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
     return undeployModelOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to mutateDeployedModel. */
+  public UnaryCallSettings<MutateDeployedModelRequest, Operation> mutateDeployedModelSettings() {
+    return mutateDeployedModelSettings;
+  }
+
+  /** Returns the object with the settings used for calls to mutateDeployedModel. */
+  public OperationCallSettings<
+          MutateDeployedModelRequest,
+          MutateDeployedModelResponse,
+          MutateDeployedModelOperationMetadata>
+      mutateDeployedModelOperationSettings() {
+    return mutateDeployedModelOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -433,6 +457,9 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
     deployModelOperationSettings = settingsBuilder.deployModelOperationSettings().build();
     undeployModelSettings = settingsBuilder.undeployModelSettings().build();
     undeployModelOperationSettings = settingsBuilder.undeployModelOperationSettings().build();
+    mutateDeployedModelSettings = settingsBuilder.mutateDeployedModelSettings().build();
+    mutateDeployedModelOperationSettings =
+        settingsBuilder.mutateDeployedModelOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -466,6 +493,13 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
     private final OperationCallSettings.Builder<
             UndeployModelRequest, UndeployModelResponse, UndeployModelOperationMetadata>
         undeployModelOperationSettings;
+    private final UnaryCallSettings.Builder<MutateDeployedModelRequest, Operation>
+        mutateDeployedModelSettings;
+    private final OperationCallSettings.Builder<
+            MutateDeployedModelRequest,
+            MutateDeployedModelResponse,
+            MutateDeployedModelOperationMetadata>
+        mutateDeployedModelOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -512,6 +546,8 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
       deployModelOperationSettings = OperationCallSettings.newBuilder();
       undeployModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       undeployModelOperationSettings = OperationCallSettings.newBuilder();
+      mutateDeployedModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      mutateDeployedModelOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -527,6 +563,7 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
               deleteEndpointSettings,
               deployModelSettings,
               undeployModelSettings,
+              mutateDeployedModelSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -549,6 +586,9 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
       deployModelOperationSettings = settings.deployModelOperationSettings.toBuilder();
       undeployModelSettings = settings.undeployModelSettings.toBuilder();
       undeployModelOperationSettings = settings.undeployModelOperationSettings.toBuilder();
+      mutateDeployedModelSettings = settings.mutateDeployedModelSettings.toBuilder();
+      mutateDeployedModelOperationSettings =
+          settings.mutateDeployedModelOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -564,6 +604,7 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
               deleteEndpointSettings,
               deployModelSettings,
               undeployModelSettings,
+              mutateDeployedModelSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -617,6 +658,11 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
 
       builder
           .undeployModelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .mutateDeployedModelSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -743,6 +789,32 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .mutateDeployedModelOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<MutateDeployedModelRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  MutateDeployedModelResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  MutateDeployedModelOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -831,6 +903,23 @@ public class EndpointServiceStubSettings extends StubSettings<EndpointServiceStu
             UndeployModelRequest, UndeployModelResponse, UndeployModelOperationMetadata>
         undeployModelOperationSettings() {
       return undeployModelOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to mutateDeployedModel. */
+    public UnaryCallSettings.Builder<MutateDeployedModelRequest, Operation>
+        mutateDeployedModelSettings() {
+      return mutateDeployedModelSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to mutateDeployedModel. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            MutateDeployedModelRequest,
+            MutateDeployedModelResponse,
+            MutateDeployedModelOperationMetadata>
+        mutateDeployedModelOperationSettings() {
+      return mutateDeployedModelOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

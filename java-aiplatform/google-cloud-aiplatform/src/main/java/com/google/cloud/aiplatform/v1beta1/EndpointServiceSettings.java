@@ -150,6 +150,20 @@ public class EndpointServiceSettings extends ClientSettings<EndpointServiceSetti
     return ((EndpointServiceStubSettings) getStubSettings()).undeployModelOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to mutateDeployedModel. */
+  public UnaryCallSettings<MutateDeployedModelRequest, Operation> mutateDeployedModelSettings() {
+    return ((EndpointServiceStubSettings) getStubSettings()).mutateDeployedModelSettings();
+  }
+
+  /** Returns the object with the settings used for calls to mutateDeployedModel. */
+  public OperationCallSettings<
+          MutateDeployedModelRequest,
+          MutateDeployedModelResponse,
+          MutateDeployedModelOperationMetadata>
+      mutateDeployedModelOperationSettings() {
+    return ((EndpointServiceStubSettings) getStubSettings()).mutateDeployedModelOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -336,6 +350,21 @@ public class EndpointServiceSettings extends ClientSettings<EndpointServiceSetti
             UndeployModelRequest, UndeployModelResponse, UndeployModelOperationMetadata>
         undeployModelOperationSettings() {
       return getStubSettingsBuilder().undeployModelOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to mutateDeployedModel. */
+    public UnaryCallSettings.Builder<MutateDeployedModelRequest, Operation>
+        mutateDeployedModelSettings() {
+      return getStubSettingsBuilder().mutateDeployedModelSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to mutateDeployedModel. */
+    public OperationCallSettings.Builder<
+            MutateDeployedModelRequest,
+            MutateDeployedModelResponse,
+            MutateDeployedModelOperationMetadata>
+        mutateDeployedModelOperationSettings() {
+      return getStubSettingsBuilder().mutateDeployedModelOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

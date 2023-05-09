@@ -66,6 +66,1145 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.Examples.Builder.class);
   }
 
+  public interface ExampleGcsSourceOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The format in which instances are given, if not specified, assume it's
+     * JSONL format. Currently only JSONL format is supported.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.DataFormat data_format = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for dataFormat.
+     */
+    int getDataFormatValue();
+    /**
+     *
+     *
+     * <pre>
+     * The format in which instances are given, if not specified, assume it's
+     * JSONL format. Currently only JSONL format is supported.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.DataFormat data_format = 1;
+     * </code>
+     *
+     * @return The dataFormat.
+     */
+    com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.DataFormat getDataFormat();
+
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage location for the input instances.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 2;</code>
+     *
+     * @return Whether the gcsSource field is set.
+     */
+    boolean hasGcsSource();
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage location for the input instances.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 2;</code>
+     *
+     * @return The gcsSource.
+     */
+    com.google.cloud.aiplatform.v1beta1.GcsSource getGcsSource();
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage location for the input instances.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 2;</code>
+     */
+    com.google.cloud.aiplatform.v1beta1.GcsSourceOrBuilder getGcsSourceOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage input instances.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource}
+   */
+  public static final class ExampleGcsSource extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource)
+      ExampleGcsSourceOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ExampleGcsSource.newBuilder() to construct.
+    private ExampleGcsSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ExampleGcsSource() {
+      dataFormat_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ExampleGcsSource();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.ExplanationProto
+          .internal_static_google_cloud_aiplatform_v1beta1_Examples_ExampleGcsSource_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.ExplanationProto
+          .internal_static_google_cloud_aiplatform_v1beta1_Examples_ExampleGcsSource_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.class,
+              com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The format of the input example instances.
+     * </pre>
+     *
+     * Protobuf enum {@code google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.DataFormat}
+     */
+    public enum DataFormat implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Format unspecified, used when unset.
+       * </pre>
+       *
+       * <code>DATA_FORMAT_UNSPECIFIED = 0;</code>
+       */
+      DATA_FORMAT_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Examples are stored in JSONL files.
+       * </pre>
+       *
+       * <code>JSONL = 1;</code>
+       */
+      JSONL(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Format unspecified, used when unset.
+       * </pre>
+       *
+       * <code>DATA_FORMAT_UNSPECIFIED = 0;</code>
+       */
+      public static final int DATA_FORMAT_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Examples are stored in JSONL files.
+       * </pre>
+       *
+       * <code>JSONL = 1;</code>
+       */
+      public static final int JSONL_VALUE = 1;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static DataFormat valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static DataFormat forNumber(int value) {
+        switch (value) {
+          case 0:
+            return DATA_FORMAT_UNSPECIFIED;
+          case 1:
+            return JSONL;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<DataFormat> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<DataFormat> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<DataFormat>() {
+            public DataFormat findValueByNumber(int number) {
+              return DataFormat.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final DataFormat[] VALUES = values();
+
+      public static DataFormat valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private DataFormat(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.DataFormat)
+    }
+
+    public static final int DATA_FORMAT_FIELD_NUMBER = 1;
+    private int dataFormat_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The format in which instances are given, if not specified, assume it's
+     * JSONL format. Currently only JSONL format is supported.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.DataFormat data_format = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for dataFormat.
+     */
+    @java.lang.Override
+    public int getDataFormatValue() {
+      return dataFormat_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The format in which instances are given, if not specified, assume it's
+     * JSONL format. Currently only JSONL format is supported.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.DataFormat data_format = 1;
+     * </code>
+     *
+     * @return The dataFormat.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.DataFormat
+        getDataFormat() {
+      com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.DataFormat result =
+          com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.DataFormat.forNumber(
+              dataFormat_);
+      return result == null
+          ? com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.DataFormat.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int GCS_SOURCE_FIELD_NUMBER = 2;
+    private com.google.cloud.aiplatform.v1beta1.GcsSource gcsSource_;
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage location for the input instances.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 2;</code>
+     *
+     * @return Whether the gcsSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasGcsSource() {
+      return gcsSource_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage location for the input instances.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 2;</code>
+     *
+     * @return The gcsSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.GcsSource getGcsSource() {
+      return gcsSource_ == null
+          ? com.google.cloud.aiplatform.v1beta1.GcsSource.getDefaultInstance()
+          : gcsSource_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage location for the input instances.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.GcsSourceOrBuilder getGcsSourceOrBuilder() {
+      return gcsSource_ == null
+          ? com.google.cloud.aiplatform.v1beta1.GcsSource.getDefaultInstance()
+          : gcsSource_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (dataFormat_
+          != com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.DataFormat
+              .DATA_FORMAT_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, dataFormat_);
+      }
+      if (gcsSource_ != null) {
+        output.writeMessage(2, getGcsSource());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (dataFormat_
+          != com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.DataFormat
+              .DATA_FORMAT_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, dataFormat_);
+      }
+      if (gcsSource_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getGcsSource());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource other =
+          (com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource) obj;
+
+      if (dataFormat_ != other.dataFormat_) return false;
+      if (hasGcsSource() != other.hasGcsSource()) return false;
+      if (hasGcsSource()) {
+        if (!getGcsSource().equals(other.getGcsSource())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DATA_FORMAT_FIELD_NUMBER;
+      hash = (53 * hash) + dataFormat_;
+      if (hasGcsSource()) {
+        hash = (37 * hash) + GCS_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getGcsSource().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage input instances.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource)
+        com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSourceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.ExplanationProto
+            .internal_static_google_cloud_aiplatform_v1beta1_Examples_ExampleGcsSource_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.ExplanationProto
+            .internal_static_google_cloud_aiplatform_v1beta1_Examples_ExampleGcsSource_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.class,
+                com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.Builder.class);
+      }
+
+      // Construct using com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        dataFormat_ = 0;
+        gcsSource_ = null;
+        if (gcsSourceBuilder_ != null) {
+          gcsSourceBuilder_.dispose();
+          gcsSourceBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.ExplanationProto
+            .internal_static_google_cloud_aiplatform_v1beta1_Examples_ExampleGcsSource_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource build() {
+        com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource result =
+            new com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.dataFormat_ = dataFormat_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.gcsSource_ = gcsSourceBuilder_ == null ? gcsSource_ : gcsSourceBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource) {
+          return mergeFrom((com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.getDefaultInstance())
+          return this;
+        if (other.dataFormat_ != 0) {
+          setDataFormatValue(other.getDataFormatValue());
+        }
+        if (other.hasGcsSource()) {
+          mergeGcsSource(other.getGcsSource());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  dataFormat_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  input.readMessage(getGcsSourceFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int dataFormat_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The format in which instances are given, if not specified, assume it's
+       * JSONL format. Currently only JSONL format is supported.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.DataFormat data_format = 1;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for dataFormat.
+       */
+      @java.lang.Override
+      public int getDataFormatValue() {
+        return dataFormat_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The format in which instances are given, if not specified, assume it's
+       * JSONL format. Currently only JSONL format is supported.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.DataFormat data_format = 1;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for dataFormat to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDataFormatValue(int value) {
+        dataFormat_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The format in which instances are given, if not specified, assume it's
+       * JSONL format. Currently only JSONL format is supported.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.DataFormat data_format = 1;
+       * </code>
+       *
+       * @return The dataFormat.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.DataFormat
+          getDataFormat() {
+        com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.DataFormat result =
+            com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.DataFormat.forNumber(
+                dataFormat_);
+        return result == null
+            ? com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.DataFormat.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The format in which instances are given, if not specified, assume it's
+       * JSONL format. Currently only JSONL format is supported.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.DataFormat data_format = 1;
+       * </code>
+       *
+       * @param value The dataFormat to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDataFormat(
+          com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.DataFormat value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        dataFormat_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The format in which instances are given, if not specified, assume it's
+       * JSONL format. Currently only JSONL format is supported.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.DataFormat data_format = 1;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDataFormat() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        dataFormat_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.cloud.aiplatform.v1beta1.GcsSource gcsSource_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.GcsSource,
+              com.google.cloud.aiplatform.v1beta1.GcsSource.Builder,
+              com.google.cloud.aiplatform.v1beta1.GcsSourceOrBuilder>
+          gcsSourceBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The Cloud Storage location for the input instances.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 2;</code>
+       *
+       * @return Whether the gcsSource field is set.
+       */
+      public boolean hasGcsSource() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The Cloud Storage location for the input instances.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 2;</code>
+       *
+       * @return The gcsSource.
+       */
+      public com.google.cloud.aiplatform.v1beta1.GcsSource getGcsSource() {
+        if (gcsSourceBuilder_ == null) {
+          return gcsSource_ == null
+              ? com.google.cloud.aiplatform.v1beta1.GcsSource.getDefaultInstance()
+              : gcsSource_;
+        } else {
+          return gcsSourceBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The Cloud Storage location for the input instances.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 2;</code>
+       */
+      public Builder setGcsSource(com.google.cloud.aiplatform.v1beta1.GcsSource value) {
+        if (gcsSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          gcsSource_ = value;
+        } else {
+          gcsSourceBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The Cloud Storage location for the input instances.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 2;</code>
+       */
+      public Builder setGcsSource(
+          com.google.cloud.aiplatform.v1beta1.GcsSource.Builder builderForValue) {
+        if (gcsSourceBuilder_ == null) {
+          gcsSource_ = builderForValue.build();
+        } else {
+          gcsSourceBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The Cloud Storage location for the input instances.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 2;</code>
+       */
+      public Builder mergeGcsSource(com.google.cloud.aiplatform.v1beta1.GcsSource value) {
+        if (gcsSourceBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && gcsSource_ != null
+              && gcsSource_ != com.google.cloud.aiplatform.v1beta1.GcsSource.getDefaultInstance()) {
+            getGcsSourceBuilder().mergeFrom(value);
+          } else {
+            gcsSource_ = value;
+          }
+        } else {
+          gcsSourceBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The Cloud Storage location for the input instances.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 2;</code>
+       */
+      public Builder clearGcsSource() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        gcsSource_ = null;
+        if (gcsSourceBuilder_ != null) {
+          gcsSourceBuilder_.dispose();
+          gcsSourceBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The Cloud Storage location for the input instances.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 2;</code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.GcsSource.Builder getGcsSourceBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getGcsSourceFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The Cloud Storage location for the input instances.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 2;</code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.GcsSourceOrBuilder getGcsSourceOrBuilder() {
+        if (gcsSourceBuilder_ != null) {
+          return gcsSourceBuilder_.getMessageOrBuilder();
+        } else {
+          return gcsSource_ == null
+              ? com.google.cloud.aiplatform.v1beta1.GcsSource.getDefaultInstance()
+              : gcsSource_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The Cloud Storage location for the input instances.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.GcsSource,
+              com.google.cloud.aiplatform.v1beta1.GcsSource.Builder,
+              com.google.cloud.aiplatform.v1beta1.GcsSourceOrBuilder>
+          getGcsSourceFieldBuilder() {
+        if (gcsSourceBuilder_ == null) {
+          gcsSourceBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.GcsSource,
+                  com.google.cloud.aiplatform.v1beta1.GcsSource.Builder,
+                  com.google.cloud.aiplatform.v1beta1.GcsSourceOrBuilder>(
+                  getGcsSource(), getParentForChildren(), isClean());
+          gcsSource_ = null;
+        }
+        return gcsSourceBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource)
+    private static final com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ExampleGcsSource> PARSER =
+        new com.google.protobuf.AbstractParser<ExampleGcsSource>() {
+          @java.lang.Override
+          public ExampleGcsSource parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ExampleGcsSource> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ExampleGcsSource> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int sourceCase_ = 0;
+  private java.lang.Object source_;
+
+  public enum SourceCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    EXAMPLE_GCS_SOURCE(5),
+    SOURCE_NOT_SET(0);
+    private final int value;
+
+    private SourceCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SourceCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static SourceCase forNumber(int value) {
+      switch (value) {
+        case 5:
+          return EXAMPLE_GCS_SOURCE;
+        case 0:
+          return SOURCE_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public SourceCase getSourceCase() {
+    return SourceCase.forNumber(sourceCase_);
+  }
+
   private int configCase_ = 0;
   private java.lang.Object config_;
 
@@ -113,14 +1252,67 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     return ConfigCase.forNumber(configCase_);
   }
 
+  public static final int EXAMPLE_GCS_SOURCE_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage input instances.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource example_gcs_source = 5;</code>
+   *
+   * @return Whether the exampleGcsSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasExampleGcsSource() {
+    return sourceCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage input instances.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource example_gcs_source = 5;</code>
+   *
+   * @return The exampleGcsSource.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource getExampleGcsSource() {
+    if (sourceCase_ == 5) {
+      return (com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource) source_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage input instances.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource example_gcs_source = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSourceOrBuilder
+      getExampleGcsSourceOrBuilder() {
+    if (sourceCase_ == 5) {
+      return (com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource) source_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.getDefaultInstance();
+  }
+
   public static final int NEAREST_NEIGHBOR_SEARCH_CONFIG_FIELD_NUMBER = 2;
   /**
    *
    *
    * <pre>
-   * The configuration for the generated index, the semantics are the same as
-   * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should
-   * match NearestNeighborSearchConfig.
+   * The full configuration for the generated index, the semantics are the
+   * same as [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and
+   * should match
+   * [NearestNeighborSearchConfig](https://cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-example-based#nearest-neighbor-search-config).
    * </pre>
    *
    * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
@@ -135,9 +1327,10 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The configuration for the generated index, the semantics are the same as
-   * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should
-   * match NearestNeighborSearchConfig.
+   * The full configuration for the generated index, the semantics are the
+   * same as [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and
+   * should match
+   * [NearestNeighborSearchConfig](https://cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-example-based#nearest-neighbor-search-config).
    * </pre>
    *
    * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
@@ -155,9 +1348,10 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The configuration for the generated index, the semantics are the same as
-   * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should
-   * match NearestNeighborSearchConfig.
+   * The full configuration for the generated index, the semantics are the
+   * same as [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and
+   * should match
+   * [NearestNeighborSearchConfig](https://cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-example-based#nearest-neighbor-search-config).
    * </pre>
    *
    * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
@@ -175,8 +1369,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Preset config based on the desired query speed-precision trade-off
-   * and modality
+   * Simplified preset configuration, which automatically sets configuration
+   * values based on the desired query speed-precision trade-off and modality.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.Presets presets = 4;</code>
@@ -191,8 +1385,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Preset config based on the desired query speed-precision trade-off
-   * and modality
+   * Simplified preset configuration, which automatically sets configuration
+   * values based on the desired query speed-precision trade-off and modality.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.Presets presets = 4;</code>
@@ -210,8 +1404,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Preset config based on the desired query speed-precision trade-off
-   * and modality
+   * Simplified preset configuration, which automatically sets configuration
+   * values based on the desired query speed-precision trade-off and modality.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.Presets presets = 4;</code>
@@ -230,7 +1424,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Cloud Storage location for the input instances.
+   * The Cloud Storage locations that contain the instances to be
+   * indexed for approximate nearest neighbor search.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 1;</code>
@@ -245,7 +1440,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Cloud Storage location for the input instances.
+   * The Cloud Storage locations that contain the instances to be
+   * indexed for approximate nearest neighbor search.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 1;</code>
@@ -262,7 +1458,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Cloud Storage location for the input instances.
+   * The Cloud Storage locations that contain the instances to be
+   * indexed for approximate nearest neighbor search.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 1;</code>
@@ -280,7 +1477,7 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The number of neighbors to return.
+   * The number of neighbors to return when querying for examples.
    * </pre>
    *
    * <code>int32 neighbor_count = 3;</code>
@@ -318,6 +1515,10 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     if (configCase_ == 4) {
       output.writeMessage(4, (com.google.cloud.aiplatform.v1beta1.Presets) config_);
     }
+    if (sourceCase_ == 5) {
+      output.writeMessage(
+          5, (com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource) source_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -343,6 +1544,11 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, (com.google.cloud.aiplatform.v1beta1.Presets) config_);
     }
+    if (sourceCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource) source_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -364,6 +1570,14 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
       if (!getGcsSource().equals(other.getGcsSource())) return false;
     }
     if (getNeighborCount() != other.getNeighborCount()) return false;
+    if (!getSourceCase().equals(other.getSourceCase())) return false;
+    switch (sourceCase_) {
+      case 5:
+        if (!getExampleGcsSource().equals(other.getExampleGcsSource())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getConfigCase().equals(other.getConfigCase())) return false;
     switch (configCase_) {
       case 2:
@@ -393,6 +1607,14 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + NEIGHBOR_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getNeighborCount();
+    switch (sourceCase_) {
+      case 5:
+        hash = (37 * hash) + EXAMPLE_GCS_SOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getExampleGcsSource().hashCode();
+        break;
+      case 0:
+      default:
+    }
     switch (configCase_) {
       case 2:
         hash = (37 * hash) + NEAREST_NEIGHBOR_SEARCH_CONFIG_FIELD_NUMBER;
@@ -545,6 +1767,9 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (exampleGcsSourceBuilder_ != null) {
+        exampleGcsSourceBuilder_.clear();
+      }
       if (nearestNeighborSearchConfigBuilder_ != null) {
         nearestNeighborSearchConfigBuilder_.clear();
       }
@@ -557,6 +1782,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
         gcsSourceBuilder_ = null;
       }
       neighborCount_ = 0;
+      sourceCase_ = 0;
+      source_ = null;
       configCase_ = 0;
       config_ = null;
       return this;
@@ -596,15 +1823,20 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.Examples result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.gcsSource_ = gcsSourceBuilder_ == null ? gcsSource_ : gcsSourceBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.neighborCount_ = neighborCount_;
       }
     }
 
     private void buildPartialOneofs(com.google.cloud.aiplatform.v1beta1.Examples result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 5 && exampleGcsSourceBuilder_ != null) {
+        result.source_ = exampleGcsSourceBuilder_.build();
+      }
       result.configCase_ = configCase_;
       result.config_ = this.config_;
       if (configCase_ == 2 && nearestNeighborSearchConfigBuilder_ != null) {
@@ -666,6 +1898,17 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
       if (other.getNeighborCount() != 0) {
         setNeighborCount(other.getNeighborCount());
       }
+      switch (other.getSourceCase()) {
+        case EXAMPLE_GCS_SOURCE:
+          {
+            mergeExampleGcsSource(other.getExampleGcsSource());
+            break;
+          }
+        case SOURCE_NOT_SET:
+          {
+            break;
+          }
+      }
       switch (other.getConfigCase()) {
         case NEAREST_NEIGHBOR_SEARCH_CONFIG:
           {
@@ -711,7 +1954,7 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 input.readMessage(getGcsSourceFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 10
             case 18:
@@ -724,7 +1967,7 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
             case 24:
               {
                 neighborCount_ = input.readInt32();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 24
             case 34:
@@ -733,6 +1976,13 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
                 configCase_ = 4;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getExampleGcsSourceFieldBuilder().getBuilder(), extensionRegistry);
+                sourceCase_ = 5;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -747,6 +1997,20 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+
+    private int sourceCase_ = 0;
+    private java.lang.Object source_;
+
+    public SourceCase getSourceCase() {
+      return SourceCase.forNumber(sourceCase_);
+    }
+
+    public Builder clearSource() {
+      sourceCase_ = 0;
+      source_ = null;
+      onChanged();
       return this;
     }
 
@@ -767,6 +2031,231 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource,
+            com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.Builder,
+            com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSourceOrBuilder>
+        exampleGcsSourceBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage input instances.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource example_gcs_source = 5;
+     * </code>
+     *
+     * @return Whether the exampleGcsSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasExampleGcsSource() {
+      return sourceCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage input instances.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource example_gcs_source = 5;
+     * </code>
+     *
+     * @return The exampleGcsSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource getExampleGcsSource() {
+      if (exampleGcsSourceBuilder_ == null) {
+        if (sourceCase_ == 5) {
+          return (com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource) source_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.getDefaultInstance();
+      } else {
+        if (sourceCase_ == 5) {
+          return exampleGcsSourceBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage input instances.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource example_gcs_source = 5;
+     * </code>
+     */
+    public Builder setExampleGcsSource(
+        com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource value) {
+      if (exampleGcsSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
+        onChanged();
+      } else {
+        exampleGcsSourceBuilder_.setMessage(value);
+      }
+      sourceCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage input instances.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource example_gcs_source = 5;
+     * </code>
+     */
+    public Builder setExampleGcsSource(
+        com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.Builder builderForValue) {
+      if (exampleGcsSourceBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        exampleGcsSourceBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage input instances.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource example_gcs_source = 5;
+     * </code>
+     */
+    public Builder mergeExampleGcsSource(
+        com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource value) {
+      if (exampleGcsSourceBuilder_ == null) {
+        if (sourceCase_ == 5
+            && source_
+                != com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource
+                    .getDefaultInstance()) {
+          source_ =
+              com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 5) {
+          exampleGcsSourceBuilder_.mergeFrom(value);
+        } else {
+          exampleGcsSourceBuilder_.setMessage(value);
+        }
+      }
+      sourceCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage input instances.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource example_gcs_source = 5;
+     * </code>
+     */
+    public Builder clearExampleGcsSource() {
+      if (exampleGcsSourceBuilder_ == null) {
+        if (sourceCase_ == 5) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 5) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        exampleGcsSourceBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage input instances.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource example_gcs_source = 5;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.Builder
+        getExampleGcsSourceBuilder() {
+      return getExampleGcsSourceFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage input instances.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource example_gcs_source = 5;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSourceOrBuilder
+        getExampleGcsSourceOrBuilder() {
+      if ((sourceCase_ == 5) && (exampleGcsSourceBuilder_ != null)) {
+        return exampleGcsSourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 5) {
+          return (com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource) source_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage input instances.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource example_gcs_source = 5;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource,
+            com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.Builder,
+            com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSourceOrBuilder>
+        getExampleGcsSourceFieldBuilder() {
+      if (exampleGcsSourceBuilder_ == null) {
+        if (!(sourceCase_ == 5)) {
+          source_ =
+              com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.getDefaultInstance();
+        }
+        exampleGcsSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource,
+                com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource.Builder,
+                com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSourceOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource) source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
+      }
+      sourceCase_ = 5;
+      onChanged();
+      return exampleGcsSourceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Value,
             com.google.protobuf.Value.Builder,
             com.google.protobuf.ValueOrBuilder>
@@ -775,9 +2264,10 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration for the generated index, the semantics are the same as
-     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should
-     * match NearestNeighborSearchConfig.
+     * The full configuration for the generated index, the semantics are the
+     * same as [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and
+     * should match
+     * [NearestNeighborSearchConfig](https://cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-example-based#nearest-neighbor-search-config).
      * </pre>
      *
      * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
@@ -792,9 +2282,10 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration for the generated index, the semantics are the same as
-     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should
-     * match NearestNeighborSearchConfig.
+     * The full configuration for the generated index, the semantics are the
+     * same as [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and
+     * should match
+     * [NearestNeighborSearchConfig](https://cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-example-based#nearest-neighbor-search-config).
      * </pre>
      *
      * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
@@ -819,9 +2310,10 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration for the generated index, the semantics are the same as
-     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should
-     * match NearestNeighborSearchConfig.
+     * The full configuration for the generated index, the semantics are the
+     * same as [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and
+     * should match
+     * [NearestNeighborSearchConfig](https://cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-example-based#nearest-neighbor-search-config).
      * </pre>
      *
      * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
@@ -843,9 +2335,10 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration for the generated index, the semantics are the same as
-     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should
-     * match NearestNeighborSearchConfig.
+     * The full configuration for the generated index, the semantics are the
+     * same as [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and
+     * should match
+     * [NearestNeighborSearchConfig](https://cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-example-based#nearest-neighbor-search-config).
      * </pre>
      *
      * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
@@ -865,9 +2358,10 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration for the generated index, the semantics are the same as
-     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should
-     * match NearestNeighborSearchConfig.
+     * The full configuration for the generated index, the semantics are the
+     * same as [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and
+     * should match
+     * [NearestNeighborSearchConfig](https://cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-example-based#nearest-neighbor-search-config).
      * </pre>
      *
      * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
@@ -897,9 +2391,10 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration for the generated index, the semantics are the same as
-     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should
-     * match NearestNeighborSearchConfig.
+     * The full configuration for the generated index, the semantics are the
+     * same as [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and
+     * should match
+     * [NearestNeighborSearchConfig](https://cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-example-based#nearest-neighbor-search-config).
      * </pre>
      *
      * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
@@ -924,9 +2419,10 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration for the generated index, the semantics are the same as
-     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should
-     * match NearestNeighborSearchConfig.
+     * The full configuration for the generated index, the semantics are the
+     * same as [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and
+     * should match
+     * [NearestNeighborSearchConfig](https://cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-example-based#nearest-neighbor-search-config).
      * </pre>
      *
      * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
@@ -938,9 +2434,10 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration for the generated index, the semantics are the same as
-     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should
-     * match NearestNeighborSearchConfig.
+     * The full configuration for the generated index, the semantics are the
+     * same as [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and
+     * should match
+     * [NearestNeighborSearchConfig](https://cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-example-based#nearest-neighbor-search-config).
      * </pre>
      *
      * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
@@ -960,9 +2457,10 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration for the generated index, the semantics are the same as
-     * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should
-     * match NearestNeighborSearchConfig.
+     * The full configuration for the generated index, the semantics are the
+     * same as [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and
+     * should match
+     * [NearestNeighborSearchConfig](https://cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-example-based#nearest-neighbor-search-config).
      * </pre>
      *
      * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
@@ -998,8 +2496,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preset config based on the desired query speed-precision trade-off
-     * and modality
+     * Simplified preset configuration, which automatically sets configuration
+     * values based on the desired query speed-precision trade-off and modality.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.Presets presets = 4;</code>
@@ -1014,8 +2512,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preset config based on the desired query speed-precision trade-off
-     * and modality
+     * Simplified preset configuration, which automatically sets configuration
+     * values based on the desired query speed-precision trade-off and modality.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.Presets presets = 4;</code>
@@ -1040,8 +2538,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preset config based on the desired query speed-precision trade-off
-     * and modality
+     * Simplified preset configuration, which automatically sets configuration
+     * values based on the desired query speed-precision trade-off and modality.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.Presets presets = 4;</code>
@@ -1063,8 +2561,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preset config based on the desired query speed-precision trade-off
-     * and modality
+     * Simplified preset configuration, which automatically sets configuration
+     * values based on the desired query speed-precision trade-off and modality.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.Presets presets = 4;</code>
@@ -1083,8 +2581,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preset config based on the desired query speed-precision trade-off
-     * and modality
+     * Simplified preset configuration, which automatically sets configuration
+     * values based on the desired query speed-precision trade-off and modality.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.Presets presets = 4;</code>
@@ -1116,8 +2614,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preset config based on the desired query speed-precision trade-off
-     * and modality
+     * Simplified preset configuration, which automatically sets configuration
+     * values based on the desired query speed-precision trade-off and modality.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.Presets presets = 4;</code>
@@ -1142,8 +2640,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preset config based on the desired query speed-precision trade-off
-     * and modality
+     * Simplified preset configuration, which automatically sets configuration
+     * values based on the desired query speed-precision trade-off and modality.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.Presets presets = 4;</code>
@@ -1155,8 +2653,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preset config based on the desired query speed-precision trade-off
-     * and modality
+     * Simplified preset configuration, which automatically sets configuration
+     * values based on the desired query speed-precision trade-off and modality.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.Presets presets = 4;</code>
@@ -1176,8 +2674,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Preset config based on the desired query speed-precision trade-off
-     * and modality
+     * Simplified preset configuration, which automatically sets configuration
+     * values based on the desired query speed-precision trade-off and modality.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.Presets presets = 4;</code>
@@ -1216,7 +2714,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Cloud Storage location for the input instances.
+     * The Cloud Storage locations that contain the instances to be
+     * indexed for approximate nearest neighbor search.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 1;</code>
@@ -1224,13 +2723,14 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the gcsSource field is set.
      */
     public boolean hasGcsSource() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
      *
      * <pre>
-     * The Cloud Storage location for the input instances.
+     * The Cloud Storage locations that contain the instances to be
+     * indexed for approximate nearest neighbor search.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 1;</code>
@@ -1250,7 +2750,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Cloud Storage location for the input instances.
+     * The Cloud Storage locations that contain the instances to be
+     * indexed for approximate nearest neighbor search.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 1;</code>
@@ -1264,7 +2765,7 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
       } else {
         gcsSourceBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1272,7 +2773,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Cloud Storage location for the input instances.
+     * The Cloud Storage locations that contain the instances to be
+     * indexed for approximate nearest neighbor search.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 1;</code>
@@ -1284,7 +2786,7 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
       } else {
         gcsSourceBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1292,14 +2794,15 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Cloud Storage location for the input instances.
+     * The Cloud Storage locations that contain the instances to be
+     * indexed for approximate nearest neighbor search.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 1;</code>
      */
     public Builder mergeGcsSource(com.google.cloud.aiplatform.v1beta1.GcsSource value) {
       if (gcsSourceBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && gcsSource_ != null
             && gcsSource_ != com.google.cloud.aiplatform.v1beta1.GcsSource.getDefaultInstance()) {
           getGcsSourceBuilder().mergeFrom(value);
@@ -1309,7 +2812,7 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
       } else {
         gcsSourceBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1317,13 +2820,14 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Cloud Storage location for the input instances.
+     * The Cloud Storage locations that contain the instances to be
+     * indexed for approximate nearest neighbor search.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 1;</code>
      */
     public Builder clearGcsSource() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       gcsSource_ = null;
       if (gcsSourceBuilder_ != null) {
         gcsSourceBuilder_.dispose();
@@ -1336,13 +2840,14 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Cloud Storage location for the input instances.
+     * The Cloud Storage locations that contain the instances to be
+     * indexed for approximate nearest neighbor search.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 1;</code>
      */
     public com.google.cloud.aiplatform.v1beta1.GcsSource.Builder getGcsSourceBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getGcsSourceFieldBuilder().getBuilder();
     }
@@ -1350,7 +2855,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Cloud Storage location for the input instances.
+     * The Cloud Storage locations that contain the instances to be
+     * indexed for approximate nearest neighbor search.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 1;</code>
@@ -1368,7 +2874,8 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Cloud Storage location for the input instances.
+     * The Cloud Storage locations that contain the instances to be
+     * indexed for approximate nearest neighbor search.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 1;</code>
@@ -1395,7 +2902,7 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The number of neighbors to return.
+     * The number of neighbors to return when querying for examples.
      * </pre>
      *
      * <code>int32 neighbor_count = 3;</code>
@@ -1410,7 +2917,7 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The number of neighbors to return.
+     * The number of neighbors to return when querying for examples.
      * </pre>
      *
      * <code>int32 neighbor_count = 3;</code>
@@ -1421,7 +2928,7 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
     public Builder setNeighborCount(int value) {
 
       neighborCount_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1429,7 +2936,7 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The number of neighbors to return.
+     * The number of neighbors to return when querying for examples.
      * </pre>
      *
      * <code>int32 neighbor_count = 3;</code>
@@ -1437,7 +2944,7 @@ public final class Examples extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNeighborCount() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       neighborCount_ = 0;
       onChanged();
       return this;

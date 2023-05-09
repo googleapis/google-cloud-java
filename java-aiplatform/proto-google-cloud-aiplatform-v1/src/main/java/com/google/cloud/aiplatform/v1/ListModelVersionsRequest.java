@@ -154,8 +154,10 @@ public final class ListModelVersionsRequest extends com.google.protobuf.Generate
    * <pre>
    * The standard list page token.
    * Typically obtained via
-   * [ListModelVersionsResponse.next_page_token][google.cloud.aiplatform.v1.ListModelVersionsResponse.next_page_token]
-   * of the previous [ModelService.ListModelversions][] call.
+   * [next_page_token][google.cloud.aiplatform.v1.ListModelVersionsResponse.next_page_token]
+   * of the previous
+   * [ListModelVersions][google.cloud.aiplatform.v1.ModelService.ListModelVersions]
+   * call.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -180,8 +182,10 @@ public final class ListModelVersionsRequest extends com.google.protobuf.Generate
    * <pre>
    * The standard list page token.
    * Typically obtained via
-   * [ListModelVersionsResponse.next_page_token][google.cloud.aiplatform.v1.ListModelVersionsResponse.next_page_token]
-   * of the previous [ModelService.ListModelversions][] call.
+   * [next_page_token][google.cloud.aiplatform.v1.ListModelVersionsResponse.next_page_token]
+   * of the previous
+   * [ListModelVersions][google.cloud.aiplatform.v1.ModelService.ListModelVersions]
+   * call.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -1018,8 +1022,10 @@ public final class ListModelVersionsRequest extends com.google.protobuf.Generate
      * <pre>
      * The standard list page token.
      * Typically obtained via
-     * [ListModelVersionsResponse.next_page_token][google.cloud.aiplatform.v1.ListModelVersionsResponse.next_page_token]
-     * of the previous [ModelService.ListModelversions][] call.
+     * [next_page_token][google.cloud.aiplatform.v1.ListModelVersionsResponse.next_page_token]
+     * of the previous
+     * [ListModelVersions][google.cloud.aiplatform.v1.ModelService.ListModelVersions]
+     * call.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -1043,8 +1049,10 @@ public final class ListModelVersionsRequest extends com.google.protobuf.Generate
      * <pre>
      * The standard list page token.
      * Typically obtained via
-     * [ListModelVersionsResponse.next_page_token][google.cloud.aiplatform.v1.ListModelVersionsResponse.next_page_token]
-     * of the previous [ModelService.ListModelversions][] call.
+     * [next_page_token][google.cloud.aiplatform.v1.ListModelVersionsResponse.next_page_token]
+     * of the previous
+     * [ListModelVersions][google.cloud.aiplatform.v1.ModelService.ListModelVersions]
+     * call.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -1068,8 +1076,10 @@ public final class ListModelVersionsRequest extends com.google.protobuf.Generate
      * <pre>
      * The standard list page token.
      * Typically obtained via
-     * [ListModelVersionsResponse.next_page_token][google.cloud.aiplatform.v1.ListModelVersionsResponse.next_page_token]
-     * of the previous [ModelService.ListModelversions][] call.
+     * [next_page_token][google.cloud.aiplatform.v1.ListModelVersionsResponse.next_page_token]
+     * of the previous
+     * [ListModelVersions][google.cloud.aiplatform.v1.ModelService.ListModelVersions]
+     * call.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -1092,8 +1102,10 @@ public final class ListModelVersionsRequest extends com.google.protobuf.Generate
      * <pre>
      * The standard list page token.
      * Typically obtained via
-     * [ListModelVersionsResponse.next_page_token][google.cloud.aiplatform.v1.ListModelVersionsResponse.next_page_token]
-     * of the previous [ModelService.ListModelversions][] call.
+     * [next_page_token][google.cloud.aiplatform.v1.ListModelVersionsResponse.next_page_token]
+     * of the previous
+     * [ListModelVersions][google.cloud.aiplatform.v1.ModelService.ListModelVersions]
+     * call.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -1112,8 +1124,10 @@ public final class ListModelVersionsRequest extends com.google.protobuf.Generate
      * <pre>
      * The standard list page token.
      * Typically obtained via
-     * [ListModelVersionsResponse.next_page_token][google.cloud.aiplatform.v1.ListModelVersionsResponse.next_page_token]
-     * of the previous [ModelService.ListModelversions][] call.
+     * [next_page_token][google.cloud.aiplatform.v1.ListModelVersionsResponse.next_page_token]
+     * of the previous
+     * [ListModelVersions][google.cloud.aiplatform.v1.ModelService.ListModelVersions]
+     * call.
      * </pre>
      *
      * <code>string page_token = 3;</code>

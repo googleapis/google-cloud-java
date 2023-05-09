@@ -937,6 +937,89 @@ public class ScheduleServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ScheduleServiceClient scheduleServiceClient = ScheduleServiceClient.create()) {
+   *   ScheduleName name = ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]");
+   *   boolean catchUp = true;
+   *   scheduleServiceClient.resumeSchedule(name, catchUp);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Schedule resource to be resumed. Format:
+   *     `projects/{project}/locations/{location}/schedules/{schedule}`
+   * @param catchUp Optional. Whether to backfill missed runs when the schedule is resumed from
+   *     PAUSED state. If set to true, all missed runs will be scheduled. New runs will be scheduled
+   *     after the backfill is complete. This will also update
+   *     [Schedule.catch_up][google.cloud.aiplatform.v1beta1.Schedule.catch_up] field. Default to
+   *     false.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void resumeSchedule(ScheduleName name, boolean catchUp) {
+    ResumeScheduleRequest request =
+        ResumeScheduleRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setCatchUp(catchUp)
+            .build();
+    resumeSchedule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resumes a paused Schedule to start scheduling new runs. Will mark
+   * [Schedule.state][google.cloud.aiplatform.v1beta1.Schedule.state] to 'ACTIVE'. Only paused
+   * Schedule can be resumed.
+   *
+   * <p>When the Schedule is resumed, new runs will be scheduled starting from the next execution
+   * time after the current time based on the time_specification in the Schedule. If
+   * [Schedule.catchUp][] is set up true, all missed runs will be scheduled for backfill first.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ScheduleServiceClient scheduleServiceClient = ScheduleServiceClient.create()) {
+   *   String name = ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString();
+   *   boolean catchUp = true;
+   *   scheduleServiceClient.resumeSchedule(name, catchUp);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Schedule resource to be resumed. Format:
+   *     `projects/{project}/locations/{location}/schedules/{schedule}`
+   * @param catchUp Optional. Whether to backfill missed runs when the schedule is resumed from
+   *     PAUSED state. If set to true, all missed runs will be scheduled. New runs will be scheduled
+   *     after the backfill is complete. This will also update
+   *     [Schedule.catch_up][google.cloud.aiplatform.v1beta1.Schedule.catch_up] field. Default to
+   *     false.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void resumeSchedule(String name, boolean catchUp) {
+    ResumeScheduleRequest request =
+        ResumeScheduleRequest.newBuilder().setName(name).setCatchUp(catchUp).build();
+    resumeSchedule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resumes a paused Schedule to start scheduling new runs. Will mark
+   * [Schedule.state][google.cloud.aiplatform.v1beta1.Schedule.state] to 'ACTIVE'. Only paused
+   * Schedule can be resumed.
+   *
+   * <p>When the Schedule is resumed, new runs will be scheduled starting from the next execution
+   * time after the current time based on the time_specification in the Schedule. If
+   * [Schedule.catchUp][] is set up true, all missed runs will be scheduled for backfill first.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ScheduleServiceClient scheduleServiceClient = ScheduleServiceClient.create()) {
    *   ResumeScheduleRequest request =
    *       ResumeScheduleRequest.newBuilder()
    *           .setName(ScheduleName.of("[PROJECT]", "[LOCATION]", "[SCHEDULE]").toString())
@@ -1161,7 +1244,8 @@ public class ScheduleServiceClient implements BackgroundResource {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
    *                   .toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
@@ -1195,7 +1279,8 @@ public class ScheduleServiceClient implements BackgroundResource {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
    *                   .toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
@@ -1227,7 +1312,8 @@ public class ScheduleServiceClient implements BackgroundResource {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
    *                   .toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
@@ -1259,7 +1345,8 @@ public class ScheduleServiceClient implements BackgroundResource {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
    *                   .toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
@@ -1294,7 +1381,8 @@ public class ScheduleServiceClient implements BackgroundResource {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
    *           .setResource(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
    *                   .toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
@@ -1330,7 +1418,8 @@ public class ScheduleServiceClient implements BackgroundResource {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
    *           .setResource(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
    *                   .toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();

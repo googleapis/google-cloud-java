@@ -2836,7 +2836,7 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Output only. The user specified name of the task that is defined in
-   * [PipelineJob.spec][].
+   * [pipeline_spec][google.cloud.aiplatform.v1beta1.PipelineJob.pipeline_spec].
    * </pre>
    *
    * <code>string task_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2860,7 +2860,7 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Output only. The user specified name of the task that is defined in
-   * [PipelineJob.spec][].
+   * [pipeline_spec][google.cloud.aiplatform.v1beta1.PipelineJob.pipeline_spec].
    * </pre>
    *
    * <code>string task_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4480,7 +4480,7 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. The user specified name of the task that is defined in
-     * [PipelineJob.spec][].
+     * [pipeline_spec][google.cloud.aiplatform.v1beta1.PipelineJob.pipeline_spec].
      * </pre>
      *
      * <code>string task_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4503,7 +4503,7 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. The user specified name of the task that is defined in
-     * [PipelineJob.spec][].
+     * [pipeline_spec][google.cloud.aiplatform.v1beta1.PipelineJob.pipeline_spec].
      * </pre>
      *
      * <code>string task_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4526,7 +4526,7 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. The user specified name of the task that is defined in
-     * [PipelineJob.spec][].
+     * [pipeline_spec][google.cloud.aiplatform.v1beta1.PipelineJob.pipeline_spec].
      * </pre>
      *
      * <code>string task_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4548,7 +4548,7 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. The user specified name of the task that is defined in
-     * [PipelineJob.spec][].
+     * [pipeline_spec][google.cloud.aiplatform.v1beta1.PipelineJob.pipeline_spec].
      * </pre>
      *
      * <code>string task_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4566,7 +4566,7 @@ public final class PipelineTaskDetail extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. The user specified name of the task that is defined in
-     * [PipelineJob.spec][].
+     * [pipeline_spec][google.cloud.aiplatform.v1beta1.PipelineJob.pipeline_spec].
      * </pre>
      *
      * <code>string task_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

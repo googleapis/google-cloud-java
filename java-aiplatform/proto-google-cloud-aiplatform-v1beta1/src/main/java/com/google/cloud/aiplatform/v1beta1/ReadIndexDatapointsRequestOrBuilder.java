@@ -60,7 +60,7 @@ public interface ReadIndexDatapointsRequestOrBuilder
    *
    *
    * <pre>
-   * The ID of the DeploydIndex that will serve the request.
+   * The ID of the DeployedIndex that will serve the request.
    * </pre>
    *
    * <code>string deployed_index_id = 2;</code>
@@ -72,7 +72,7 @@ public interface ReadIndexDatapointsRequestOrBuilder
    *
    *
    * <pre>
-   * The ID of the DeploydIndex that will serve the request.
+   * The ID of the DeployedIndex that will serve the request.
    * </pre>
    *
    * <code>string deployed_index_id = 2;</code>

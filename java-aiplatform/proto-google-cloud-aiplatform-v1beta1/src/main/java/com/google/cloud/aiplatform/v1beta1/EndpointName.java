@@ -16,7 +16,9 @@
 
 package com.google.cloud.aiplatform.v1beta1;
 
+import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -32,22 +34,43 @@ public class EndpointName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_ENDPOINT =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/endpoints/{endpoint}");
+  private static final PathTemplate PROJECT_LOCATION_PUBLISHER_MODEL =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/publishers/{publisher}/models/{model}");
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
   private final String project;
   private final String location;
   private final String endpoint;
+  private final String publisher;
+  private final String model;
 
   @Deprecated
   protected EndpointName() {
     project = null;
     location = null;
     endpoint = null;
+    publisher = null;
+    model = null;
   }
 
   private EndpointName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
     location = Preconditions.checkNotNull(builder.getLocation());
     endpoint = Preconditions.checkNotNull(builder.getEndpoint());
+    publisher = null;
+    model = null;
+    pathTemplate = PROJECT_LOCATION_ENDPOINT;
+  }
+
+  private EndpointName(ProjectLocationPublisherModelBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    publisher = Preconditions.checkNotNull(builder.getPublisher());
+    model = Preconditions.checkNotNull(builder.getModel());
+    endpoint = null;
+    pathTemplate = PROJECT_LOCATION_PUBLISHER_MODEL;
   }
 
   public String getProject() {
@@ -62,8 +85,26 @@ public class EndpointName implements ResourceName {
     return endpoint;
   }
 
+  public String getPublisher() {
+    return publisher;
+  }
+
+  public String getModel() {
+    return model;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static Builder newProjectLocationEndpointBuilder() {
+    return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static ProjectLocationPublisherModelBuilder newProjectLocationPublisherModelBuilder() {
+    return new ProjectLocationPublisherModelBuilder();
   }
 
   public Builder toBuilder() {
@@ -72,6 +113,23 @@ public class EndpointName implements ResourceName {
 
   public static EndpointName of(String project, String location, String endpoint) {
     return newBuilder().setProject(project).setLocation(location).setEndpoint(endpoint).build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static EndpointName ofProjectLocationEndpointName(
+      String project, String location, String endpoint) {
+    return newBuilder().setProject(project).setLocation(location).setEndpoint(endpoint).build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static EndpointName ofProjectLocationPublisherModelName(
+      String project, String location, String publisher, String model) {
+    return newProjectLocationPublisherModelBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setPublisher(publisher)
+        .setModel(model)
+        .build();
   }
 
   public static String format(String project, String location, String endpoint) {
@@ -83,14 +141,46 @@ public class EndpointName implements ResourceName {
         .toString();
   }
 
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectLocationEndpointName(
+      String project, String location, String endpoint) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setEndpoint(endpoint)
+        .build()
+        .toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectLocationPublisherModelName(
+      String project, String location, String publisher, String model) {
+    return newProjectLocationPublisherModelBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setPublisher(publisher)
+        .setModel(model)
+        .build()
+        .toString();
+  }
+
   public static EndpointName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        PROJECT_LOCATION_ENDPOINT.validatedMatch(
-            formattedString, "EndpointName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("endpoint"));
+    if (PROJECT_LOCATION_ENDPOINT.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_ENDPOINT.match(formattedString);
+      return ofProjectLocationEndpointName(
+          matchMap.get("project"), matchMap.get("location"), matchMap.get("endpoint"));
+    } else if (PROJECT_LOCATION_PUBLISHER_MODEL.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_PUBLISHER_MODEL.match(formattedString);
+      return ofProjectLocationPublisherModelName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("publisher"),
+          matchMap.get("model"));
+    }
+    throw new ValidationException("EndpointName.parse: formattedString not in valid format");
   }
 
   public static List<EndpointName> parseList(List<String> formattedStrings) {
@@ -114,7 +204,8 @@ public class EndpointName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_LOCATION_ENDPOINT.matches(formattedString);
+    return PROJECT_LOCATION_ENDPOINT.matches(formattedString)
+        || PROJECT_LOCATION_PUBLISHER_MODEL.matches(formattedString);
   }
 
   @Override
@@ -132,6 +223,12 @@ public class EndpointName implements ResourceName {
           if (endpoint != null) {
             fieldMapBuilder.put("endpoint", endpoint);
           }
+          if (publisher != null) {
+            fieldMapBuilder.put("publisher", publisher);
+          }
+          if (model != null) {
+            fieldMapBuilder.put("model", model);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -145,8 +242,7 @@ public class EndpointName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_LOCATION_ENDPOINT.instantiate(
-        "project", project, "location", location, "endpoint", endpoint);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override
@@ -158,7 +254,9 @@ public class EndpointName implements ResourceName {
       EndpointName that = ((EndpointName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)
-          && Objects.equals(this.endpoint, that.endpoint);
+          && Objects.equals(this.endpoint, that.endpoint)
+          && Objects.equals(this.publisher, that.publisher)
+          && Objects.equals(this.model, that.model);
     }
     return false;
   }
@@ -167,11 +265,17 @@ public class EndpointName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
     h ^= Objects.hashCode(project);
     h *= 1000003;
     h ^= Objects.hashCode(location);
     h *= 1000003;
     h ^= Objects.hashCode(endpoint);
+    h *= 1000003;
+    h ^= Objects.hashCode(publisher);
+    h *= 1000003;
+    h ^= Objects.hashCode(model);
     return h;
   }
 
@@ -211,9 +315,63 @@ public class EndpointName implements ResourceName {
     }
 
     private Builder(EndpointName endpointName) {
+      Preconditions.checkArgument(
+          Objects.equals(endpointName.pathTemplate, PROJECT_LOCATION_ENDPOINT),
+          "toBuilder is only supported when EndpointName has the pattern of projects/{project}/locations/{location}/endpoints/{endpoint}");
       this.project = endpointName.project;
       this.location = endpointName.location;
       this.endpoint = endpointName.endpoint;
+    }
+
+    public EndpointName build() {
+      return new EndpointName(this);
+    }
+  }
+
+  /** Builder for projects/{project}/locations/{location}/publishers/{publisher}/models/{model}. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class ProjectLocationPublisherModelBuilder {
+    private String project;
+    private String location;
+    private String publisher;
+    private String model;
+
+    protected ProjectLocationPublisherModelBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getPublisher() {
+      return publisher;
+    }
+
+    public String getModel() {
+      return model;
+    }
+
+    public ProjectLocationPublisherModelBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationPublisherModelBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public ProjectLocationPublisherModelBuilder setPublisher(String publisher) {
+      this.publisher = publisher;
+      return this;
+    }
+
+    public ProjectLocationPublisherModelBuilder setModel(String model) {
+      this.model = model;
+      return this;
     }
 
     public EndpointName build() {

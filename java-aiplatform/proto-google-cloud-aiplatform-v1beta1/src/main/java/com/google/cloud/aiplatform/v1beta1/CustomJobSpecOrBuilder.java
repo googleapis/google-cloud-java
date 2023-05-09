@@ -441,4 +441,70 @@ public interface CustomJobSpecOrBuilder
    * @return The enableDashboardAccess.
    */
   boolean getEnableDashboardAccess();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Experiment associated with this job.
+   * Format:
+   * `projects/{project}/locations/{location}/metadataStores/{metadataStores}/contexts/{experiment-name}`
+   * </pre>
+   *
+   * <code>
+   * string experiment = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The experiment.
+   */
+  java.lang.String getExperiment();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Experiment associated with this job.
+   * Format:
+   * `projects/{project}/locations/{location}/metadataStores/{metadataStores}/contexts/{experiment-name}`
+   * </pre>
+   *
+   * <code>
+   * string experiment = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for experiment.
+   */
+  com.google.protobuf.ByteString getExperimentBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Experiment Run associated with this job.
+   * Format:
+   * `projects/{project}/locations/{location}/metadataStores/{metadataStores}/contexts/{experiment-name}-{experiment-run-name}`
+   * </pre>
+   *
+   * <code>
+   * string experiment_run = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The experimentRun.
+   */
+  java.lang.String getExperimentRun();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Experiment Run associated with this job.
+   * Format:
+   * `projects/{project}/locations/{location}/metadataStores/{metadataStores}/contexts/{experiment-name}-{experiment-run-name}`
+   * </pre>
+   *
+   * <code>
+   * string experiment_run = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for experimentRun.
+   */
+  com.google.protobuf.ByteString getExperimentRunBytes();
 }

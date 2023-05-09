@@ -63,7 +63,8 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
- *   EndpointName name = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+ *   EndpointName name =
+ *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
  *   Endpoint response = endpointServiceClient.getEndpoint(name);
  * }
  * }</pre>
@@ -453,7 +454,8 @@ public class EndpointServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   EndpointName name = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+   *   EndpointName name =
+   *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
    *   Endpoint response = endpointServiceClient.getEndpoint(name);
    * }
    * }</pre>
@@ -481,7 +483,9 @@ public class EndpointServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   String name = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString();
+   *   String name =
+   *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *           .toString();
    *   Endpoint response = endpointServiceClient.getEndpoint(name);
    * }
    * }</pre>
@@ -510,7 +514,10 @@ public class EndpointServiceClient implements BackgroundResource {
    * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
    *   GetEndpointRequest request =
    *       GetEndpointRequest.newBuilder()
-   *           .setName(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+   *           .setName(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
    *           .build();
    *   Endpoint response = endpointServiceClient.getEndpoint(request);
    * }
@@ -538,7 +545,10 @@ public class EndpointServiceClient implements BackgroundResource {
    * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
    *   GetEndpointRequest request =
    *       GetEndpointRequest.newBuilder()
-   *           .setName(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+   *           .setName(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
    *           .build();
    *   ApiFuture<Endpoint> future = endpointServiceClient.getEndpointCallable().futureCall(request);
    *   // Do something.
@@ -822,7 +832,8 @@ public class EndpointServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   EndpointName name = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+   *   EndpointName name =
+   *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
    *   endpointServiceClient.deleteEndpointAsync(name).get();
    * }
    * }</pre>
@@ -851,7 +862,9 @@ public class EndpointServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   String name = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString();
+   *   String name =
+   *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *           .toString();
    *   endpointServiceClient.deleteEndpointAsync(name).get();
    * }
    * }</pre>
@@ -880,7 +893,10 @@ public class EndpointServiceClient implements BackgroundResource {
    * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
    *   DeleteEndpointRequest request =
    *       DeleteEndpointRequest.newBuilder()
-   *           .setName(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+   *           .setName(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
    *           .build();
    *   endpointServiceClient.deleteEndpointAsync(request).get();
    * }
@@ -909,7 +925,10 @@ public class EndpointServiceClient implements BackgroundResource {
    * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
    *   DeleteEndpointRequest request =
    *       DeleteEndpointRequest.newBuilder()
-   *           .setName(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+   *           .setName(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
    *           .build();
    *   OperationFuture<Empty, DeleteOperationMetadata> future =
    *       endpointServiceClient.deleteEndpointOperationCallable().futureCall(request);
@@ -938,7 +957,10 @@ public class EndpointServiceClient implements BackgroundResource {
    * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
    *   DeleteEndpointRequest request =
    *       DeleteEndpointRequest.newBuilder()
-   *           .setName(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+   *           .setName(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
    *           .build();
    *   ApiFuture<Operation> future =
    *       endpointServiceClient.deleteEndpointCallable().futureCall(request);
@@ -964,7 +986,8 @@ public class EndpointServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+   *   EndpointName endpoint =
+   *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
    *   DeployedModel deployedModel = DeployedModel.newBuilder().build();
    *   Map<String, Integer> trafficSplit = new HashMap<>();
    *   DeployModelResponse response =
@@ -1014,7 +1037,9 @@ public class EndpointServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   String endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString();
+   *   String endpoint =
+   *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *           .toString();
    *   DeployedModel deployedModel = DeployedModel.newBuilder().build();
    *   Map<String, Integer> trafficSplit = new HashMap<>();
    *   DeployModelResponse response =
@@ -1066,7 +1091,10 @@ public class EndpointServiceClient implements BackgroundResource {
    * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
    *   DeployModelRequest request =
    *       DeployModelRequest.newBuilder()
-   *           .setEndpoint(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+   *           .setEndpoint(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
    *           .setDeployedModel(DeployedModel.newBuilder().build())
    *           .putAllTrafficSplit(new HashMap<String, Integer>())
    *           .build();
@@ -1097,7 +1125,10 @@ public class EndpointServiceClient implements BackgroundResource {
    * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
    *   DeployModelRequest request =
    *       DeployModelRequest.newBuilder()
-   *           .setEndpoint(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+   *           .setEndpoint(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
    *           .setDeployedModel(DeployedModel.newBuilder().build())
    *           .putAllTrafficSplit(new HashMap<String, Integer>())
    *           .build();
@@ -1129,7 +1160,10 @@ public class EndpointServiceClient implements BackgroundResource {
    * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
    *   DeployModelRequest request =
    *       DeployModelRequest.newBuilder()
-   *           .setEndpoint(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+   *           .setEndpoint(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
    *           .setDeployedModel(DeployedModel.newBuilder().build())
    *           .putAllTrafficSplit(new HashMap<String, Integer>())
    *           .build();
@@ -1157,7 +1191,8 @@ public class EndpointServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+   *   EndpointName endpoint =
+   *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
    *   String deployedModelId = "deployedModelId-1817547906";
    *   Map<String, Integer> trafficSplit = new HashMap<>();
    *   UndeployModelResponse response =
@@ -1203,7 +1238,9 @@ public class EndpointServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
-   *   String endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString();
+   *   String endpoint =
+   *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *           .toString();
    *   String deployedModelId = "deployedModelId-1817547906";
    *   Map<String, Integer> trafficSplit = new HashMap<>();
    *   UndeployModelResponse response =
@@ -1251,7 +1288,10 @@ public class EndpointServiceClient implements BackgroundResource {
    * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
    *   UndeployModelRequest request =
    *       UndeployModelRequest.newBuilder()
-   *           .setEndpoint(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+   *           .setEndpoint(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
    *           .setDeployedModelId("deployedModelId-1817547906")
    *           .putAllTrafficSplit(new HashMap<String, Integer>())
    *           .build();
@@ -1283,7 +1323,10 @@ public class EndpointServiceClient implements BackgroundResource {
    * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
    *   UndeployModelRequest request =
    *       UndeployModelRequest.newBuilder()
-   *           .setEndpoint(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+   *           .setEndpoint(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
    *           .setDeployedModelId("deployedModelId-1817547906")
    *           .putAllTrafficSplit(new HashMap<String, Integer>())
    *           .build();
@@ -1316,7 +1359,10 @@ public class EndpointServiceClient implements BackgroundResource {
    * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
    *   UndeployModelRequest request =
    *       UndeployModelRequest.newBuilder()
-   *           .setEndpoint(EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]").toString())
+   *           .setEndpoint(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
    *           .setDeployedModelId("deployedModelId-1817547906")
    *           .putAllTrafficSplit(new HashMap<String, Integer>())
    *           .build();
@@ -1329,6 +1375,229 @@ public class EndpointServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<UndeployModelRequest, Operation> undeployModelCallable() {
     return stub.undeployModelCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing deployed model. Updatable fields include `min_replica_count`,
+   * `max_replica_count`, `autoscaling_metric_specs`, `disable_container_logging` (v1 only), and
+   * `enable_container_logging` (v1beta1 only).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
+   *   EndpointName endpoint =
+   *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+   *   DeployedModel deployedModel = DeployedModel.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   MutateDeployedModelResponse response =
+   *       endpointServiceClient.mutateDeployedModelAsync(endpoint, deployedModel, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param endpoint Required. The name of the Endpoint resource into which to mutate a
+   *     DeployedModel. Format: `projects/{project}/locations/{location}/endpoints/{endpoint}`
+   * @param deployedModel Required. The DeployedModel to be mutated within the Endpoint. Only the
+   *     following fields can be mutated:
+   *     <ul>
+   *       <li>`min_replica_count` in either
+   *           [DedicatedResources][google.cloud.aiplatform.v1beta1.DedicatedResources] or
+   *           [AutomaticResources][google.cloud.aiplatform.v1beta1.AutomaticResources]
+   *       <li>`max_replica_count` in either
+   *           [DedicatedResources][google.cloud.aiplatform.v1beta1.DedicatedResources] or
+   *           [AutomaticResources][google.cloud.aiplatform.v1beta1.AutomaticResources]
+   *       <li>[autoscaling_metric_specs][google.cloud.aiplatform.v1beta1.DedicatedResources.autoscaling_metric_specs]
+   *       <li>`disable_container_logging` (v1 only)
+   *       <li>`enable_container_logging` (v1beta1 only)
+   *     </ul>
+   *
+   * @param updateMask Required. The update mask applies to the resource. See
+   *     [google.protobuf.FieldMask][google.protobuf.FieldMask].
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<MutateDeployedModelResponse, MutateDeployedModelOperationMetadata>
+      mutateDeployedModelAsync(
+          EndpointName endpoint, DeployedModel deployedModel, FieldMask updateMask) {
+    MutateDeployedModelRequest request =
+        MutateDeployedModelRequest.newBuilder()
+            .setEndpoint(endpoint == null ? null : endpoint.toString())
+            .setDeployedModel(deployedModel)
+            .setUpdateMask(updateMask)
+            .build();
+    return mutateDeployedModelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing deployed model. Updatable fields include `min_replica_count`,
+   * `max_replica_count`, `autoscaling_metric_specs`, `disable_container_logging` (v1 only), and
+   * `enable_container_logging` (v1beta1 only).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
+   *   String endpoint =
+   *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *           .toString();
+   *   DeployedModel deployedModel = DeployedModel.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   MutateDeployedModelResponse response =
+   *       endpointServiceClient.mutateDeployedModelAsync(endpoint, deployedModel, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param endpoint Required. The name of the Endpoint resource into which to mutate a
+   *     DeployedModel. Format: `projects/{project}/locations/{location}/endpoints/{endpoint}`
+   * @param deployedModel Required. The DeployedModel to be mutated within the Endpoint. Only the
+   *     following fields can be mutated:
+   *     <ul>
+   *       <li>`min_replica_count` in either
+   *           [DedicatedResources][google.cloud.aiplatform.v1beta1.DedicatedResources] or
+   *           [AutomaticResources][google.cloud.aiplatform.v1beta1.AutomaticResources]
+   *       <li>`max_replica_count` in either
+   *           [DedicatedResources][google.cloud.aiplatform.v1beta1.DedicatedResources] or
+   *           [AutomaticResources][google.cloud.aiplatform.v1beta1.AutomaticResources]
+   *       <li>[autoscaling_metric_specs][google.cloud.aiplatform.v1beta1.DedicatedResources.autoscaling_metric_specs]
+   *       <li>`disable_container_logging` (v1 only)
+   *       <li>`enable_container_logging` (v1beta1 only)
+   *     </ul>
+   *
+   * @param updateMask Required. The update mask applies to the resource. See
+   *     [google.protobuf.FieldMask][google.protobuf.FieldMask].
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<MutateDeployedModelResponse, MutateDeployedModelOperationMetadata>
+      mutateDeployedModelAsync(String endpoint, DeployedModel deployedModel, FieldMask updateMask) {
+    MutateDeployedModelRequest request =
+        MutateDeployedModelRequest.newBuilder()
+            .setEndpoint(endpoint)
+            .setDeployedModel(deployedModel)
+            .setUpdateMask(updateMask)
+            .build();
+    return mutateDeployedModelAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing deployed model. Updatable fields include `min_replica_count`,
+   * `max_replica_count`, `autoscaling_metric_specs`, `disable_container_logging` (v1 only), and
+   * `enable_container_logging` (v1beta1 only).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
+   *   MutateDeployedModelRequest request =
+   *       MutateDeployedModelRequest.newBuilder()
+   *           .setEndpoint(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
+   *           .setDeployedModel(DeployedModel.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   MutateDeployedModelResponse response =
+   *       endpointServiceClient.mutateDeployedModelAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<MutateDeployedModelResponse, MutateDeployedModelOperationMetadata>
+      mutateDeployedModelAsync(MutateDeployedModelRequest request) {
+    return mutateDeployedModelOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing deployed model. Updatable fields include `min_replica_count`,
+   * `max_replica_count`, `autoscaling_metric_specs`, `disable_container_logging` (v1 only), and
+   * `enable_container_logging` (v1beta1 only).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
+   *   MutateDeployedModelRequest request =
+   *       MutateDeployedModelRequest.newBuilder()
+   *           .setEndpoint(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
+   *           .setDeployedModel(DeployedModel.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<MutateDeployedModelResponse, MutateDeployedModelOperationMetadata> future =
+   *       endpointServiceClient.mutateDeployedModelOperationCallable().futureCall(request);
+   *   // Do something.
+   *   MutateDeployedModelResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          MutateDeployedModelRequest,
+          MutateDeployedModelResponse,
+          MutateDeployedModelOperationMetadata>
+      mutateDeployedModelOperationCallable() {
+    return stub.mutateDeployedModelOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing deployed model. Updatable fields include `min_replica_count`,
+   * `max_replica_count`, `autoscaling_metric_specs`, `disable_container_logging` (v1 only), and
+   * `enable_container_logging` (v1beta1 only).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EndpointServiceClient endpointServiceClient = EndpointServiceClient.create()) {
+   *   MutateDeployedModelRequest request =
+   *       MutateDeployedModelRequest.newBuilder()
+   *           .setEndpoint(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
+   *           .setDeployedModel(DeployedModel.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       endpointServiceClient.mutateDeployedModelCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<MutateDeployedModelRequest, Operation> mutateDeployedModelCallable() {
+    return stub.mutateDeployedModelCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1505,7 +1774,8 @@ public class EndpointServiceClient implements BackgroundResource {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
    *                   .toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
@@ -1539,7 +1809,8 @@ public class EndpointServiceClient implements BackgroundResource {
    *   SetIamPolicyRequest request =
    *       SetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
    *                   .toString())
    *           .setPolicy(Policy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
@@ -1571,7 +1842,8 @@ public class EndpointServiceClient implements BackgroundResource {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
    *                   .toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
@@ -1603,7 +1875,8 @@ public class EndpointServiceClient implements BackgroundResource {
    *   GetIamPolicyRequest request =
    *       GetIamPolicyRequest.newBuilder()
    *           .setResource(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
    *                   .toString())
    *           .setOptions(GetPolicyOptions.newBuilder().build())
    *           .build();
@@ -1638,7 +1911,8 @@ public class EndpointServiceClient implements BackgroundResource {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
    *           .setResource(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
    *                   .toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();
@@ -1674,7 +1948,8 @@ public class EndpointServiceClient implements BackgroundResource {
    *   TestIamPermissionsRequest request =
    *       TestIamPermissionsRequest.newBuilder()
    *           .setResource(
-   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]")
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
    *                   .toString())
    *           .addAllPermissions(new ArrayList<String>())
    *           .build();

@@ -27,9 +27,46 @@ public interface ExamplesOrBuilder
    *
    *
    * <pre>
-   * The configuration for the generated index, the semantics are the same as
-   * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should
-   * match NearestNeighborSearchConfig.
+   * The Cloud Storage input instances.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource example_gcs_source = 5;</code>
+   *
+   * @return Whether the exampleGcsSource field is set.
+   */
+  boolean hasExampleGcsSource();
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage input instances.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource example_gcs_source = 5;</code>
+   *
+   * @return The exampleGcsSource.
+   */
+  com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource getExampleGcsSource();
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage input instances.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSource example_gcs_source = 5;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.Examples.ExampleGcsSourceOrBuilder
+      getExampleGcsSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The full configuration for the generated index, the semantics are the
+   * same as [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and
+   * should match
+   * [NearestNeighborSearchConfig](https://cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-example-based#nearest-neighbor-search-config).
    * </pre>
    *
    * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
@@ -41,9 +78,10 @@ public interface ExamplesOrBuilder
    *
    *
    * <pre>
-   * The configuration for the generated index, the semantics are the same as
-   * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should
-   * match NearestNeighborSearchConfig.
+   * The full configuration for the generated index, the semantics are the
+   * same as [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and
+   * should match
+   * [NearestNeighborSearchConfig](https://cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-example-based#nearest-neighbor-search-config).
    * </pre>
    *
    * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
@@ -55,9 +93,10 @@ public interface ExamplesOrBuilder
    *
    *
    * <pre>
-   * The configuration for the generated index, the semantics are the same as
-   * [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and should
-   * match NearestNeighborSearchConfig.
+   * The full configuration for the generated index, the semantics are the
+   * same as [metadata][google.cloud.aiplatform.v1beta1.Index.metadata] and
+   * should match
+   * [NearestNeighborSearchConfig](https://cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-example-based#nearest-neighbor-search-config).
    * </pre>
    *
    * <code>.google.protobuf.Value nearest_neighbor_search_config = 2;</code>
@@ -68,8 +107,8 @@ public interface ExamplesOrBuilder
    *
    *
    * <pre>
-   * Preset config based on the desired query speed-precision trade-off
-   * and modality
+   * Simplified preset configuration, which automatically sets configuration
+   * values based on the desired query speed-precision trade-off and modality.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.Presets presets = 4;</code>
@@ -81,8 +120,8 @@ public interface ExamplesOrBuilder
    *
    *
    * <pre>
-   * Preset config based on the desired query speed-precision trade-off
-   * and modality
+   * Simplified preset configuration, which automatically sets configuration
+   * values based on the desired query speed-precision trade-off and modality.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.Presets presets = 4;</code>
@@ -94,8 +133,8 @@ public interface ExamplesOrBuilder
    *
    *
    * <pre>
-   * Preset config based on the desired query speed-precision trade-off
-   * and modality
+   * Simplified preset configuration, which automatically sets configuration
+   * values based on the desired query speed-precision trade-off and modality.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.Presets presets = 4;</code>
@@ -106,7 +145,8 @@ public interface ExamplesOrBuilder
    *
    *
    * <pre>
-   * The Cloud Storage location for the input instances.
+   * The Cloud Storage locations that contain the instances to be
+   * indexed for approximate nearest neighbor search.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 1;</code>
@@ -118,7 +158,8 @@ public interface ExamplesOrBuilder
    *
    *
    * <pre>
-   * The Cloud Storage location for the input instances.
+   * The Cloud Storage locations that contain the instances to be
+   * indexed for approximate nearest neighbor search.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 1;</code>
@@ -130,7 +171,8 @@ public interface ExamplesOrBuilder
    *
    *
    * <pre>
-   * The Cloud Storage location for the input instances.
+   * The Cloud Storage locations that contain the instances to be
+   * indexed for approximate nearest neighbor search.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.GcsSource gcs_source = 1;</code>
@@ -141,7 +183,7 @@ public interface ExamplesOrBuilder
    *
    *
    * <pre>
-   * The number of neighbors to return.
+   * The number of neighbors to return when querying for examples.
    * </pre>
    *
    * <code>int32 neighbor_count = 3;</code>
@@ -149,6 +191,8 @@ public interface ExamplesOrBuilder
    * @return The neighborCount.
    */
   int getNeighborCount();
+
+  public com.google.cloud.aiplatform.v1beta1.Examples.SourceCase getSourceCase();
 
   public com.google.cloud.aiplatform.v1beta1.Examples.ConfigCase getConfigCase();
 }
