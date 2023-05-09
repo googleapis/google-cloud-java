@@ -197,13 +197,7 @@ public final class BigtableDataSettings {
     com.google.cloud.bigtable.data.v2.stub.metrics.RpcViews.registerBigtableClientGfeViews();
   }
 
-  /**
-   * Register built in metrics.
-   *
-   * <p>This is an experimental feature. Please fill up this form to have your project allow listed
-   * for the private preview: https://forms.gle/xuhu6vCunn2MjV2m9
-   */
-  @BetaApi("Built in metric is not currently stable and may change in the future")
+  /** Register built in metrics. */
   public static void enableBuiltinMetrics() throws IOException {
     if (BUILTIN_METRICS_REGISTERED.compareAndSet(false, true)) {
       BuiltinViews.registerBigtableBuiltinViews();
@@ -214,11 +208,7 @@ public final class BigtableDataSettings {
   /**
    * Register built in metrics with credentials. The credentials need to have metric write access
    * for all the projects you're publishing to.
-   *
-   * <p>This is an experimental feature. Please fill up this form to have your project allow listed
-   * for the private preview: https://forms.gle/xuhu6vCunn2MjV2m9
    */
-  @BetaApi("Built in metric is not currently stable and may change in the future")
   public static void enableBuiltinMetrics(Credentials credentials) throws IOException {
     if (BUILTIN_METRICS_REGISTERED.compareAndSet(false, true)) {
       BuiltinViews.registerBigtableBuiltinViews();
