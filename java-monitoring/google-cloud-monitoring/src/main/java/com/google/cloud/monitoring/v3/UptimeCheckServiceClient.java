@@ -50,11 +50,11 @@ import javax.annotation.Generated;
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The UptimeCheckService API is used to manage (list, create, delete, edit)
- * Uptime check configurations in the Stackdriver Monitoring product. An Uptime check is a piece of
+ * Uptime check configurations in the Cloud Monitoring product. An Uptime check is a piece of
  * configuration that determines which resources and services to monitor for availability. These
- * configurations can also be configured interactively by navigating to the [Cloud Console]
- * (http://console.cloud.google.com), selecting the appropriate project, clicking on "Monitoring" on
- * the left-hand side to navigate to Stackdriver, and then clicking on "Uptime".
+ * configurations can also be configured interactively by navigating to the [Cloud console]
+ * (https://console.cloud.google.com), selecting the appropriate project, clicking on "Monitoring"
+ * on the left-hand side to navigate to Cloud Monitoring, and then clicking on "Uptime".
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -337,6 +337,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    *   ListUptimeCheckConfigsRequest request =
    *       ListUptimeCheckConfigsRequest.newBuilder()
    *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -372,6 +373,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    *   ListUptimeCheckConfigsRequest request =
    *       ListUptimeCheckConfigsRequest.newBuilder()
    *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -406,6 +408,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    *   ListUptimeCheckConfigsRequest request =
    *       ListUptimeCheckConfigsRequest.newBuilder()
    *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -782,7 +785,7 @@ public class UptimeCheckServiceClient implements BackgroundResource {
    * @param uptimeCheckConfig Required. If an `updateMask` has been specified, this field gives the
    *     values for the set of fields mentioned in the `updateMask`. If an `updateMask` has not been
    *     given, this Uptime check configuration replaces the current configuration. If a field is
-   *     mentioned in `updateMask` but the corresonding field is omitted in this partial Uptime
+   *     mentioned in `updateMask` but the corresponding field is omitted in this partial Uptime
    *     check configuration, it has the effect of deleting/clearing the field from the
    *     configuration on the server.
    *     <p>The following fields can be updated: `display_name`, `http_check`, `tcp_check`,

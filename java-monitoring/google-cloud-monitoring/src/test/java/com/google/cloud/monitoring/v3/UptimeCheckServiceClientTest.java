@@ -50,6 +50,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import javax.annotation.Generated;
@@ -293,6 +294,7 @@ public class UptimeCheckServiceClientTest {
             .addAllSelectedRegions(new ArrayList<UptimeCheckRegion>())
             .setIsInternal(true)
             .addAllInternalCheckers(new ArrayList<InternalChecker>())
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
     mockUptimeCheckService.addResponse(expectedResponse);
 
@@ -345,6 +347,7 @@ public class UptimeCheckServiceClientTest {
             .addAllSelectedRegions(new ArrayList<UptimeCheckRegion>())
             .setIsInternal(true)
             .addAllInternalCheckers(new ArrayList<InternalChecker>())
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
     mockUptimeCheckService.addResponse(expectedResponse);
 
@@ -394,6 +397,7 @@ public class UptimeCheckServiceClientTest {
             .addAllSelectedRegions(new ArrayList<UptimeCheckRegion>())
             .setIsInternal(true)
             .addAllInternalCheckers(new ArrayList<InternalChecker>())
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
     mockUptimeCheckService.addResponse(expectedResponse);
 
@@ -446,6 +450,7 @@ public class UptimeCheckServiceClientTest {
             .addAllSelectedRegions(new ArrayList<UptimeCheckRegion>())
             .setIsInternal(true)
             .addAllInternalCheckers(new ArrayList<InternalChecker>())
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
     mockUptimeCheckService.addResponse(expectedResponse);
 
@@ -498,6 +503,7 @@ public class UptimeCheckServiceClientTest {
             .addAllSelectedRegions(new ArrayList<UptimeCheckRegion>())
             .setIsInternal(true)
             .addAllInternalCheckers(new ArrayList<InternalChecker>())
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
     mockUptimeCheckService.addResponse(expectedResponse);
 
@@ -550,6 +556,7 @@ public class UptimeCheckServiceClientTest {
             .addAllSelectedRegions(new ArrayList<UptimeCheckRegion>())
             .setIsInternal(true)
             .addAllInternalCheckers(new ArrayList<InternalChecker>())
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
     mockUptimeCheckService.addResponse(expectedResponse);
 
@@ -602,6 +609,7 @@ public class UptimeCheckServiceClientTest {
             .addAllSelectedRegions(new ArrayList<UptimeCheckRegion>())
             .setIsInternal(true)
             .addAllInternalCheckers(new ArrayList<InternalChecker>())
+            .putAllUserLabels(new HashMap<String, String>())
             .build();
     mockUptimeCheckService.addResponse(expectedResponse);
 

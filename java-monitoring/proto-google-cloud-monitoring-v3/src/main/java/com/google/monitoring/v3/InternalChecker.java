@@ -261,8 +261,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * A unique resource name for this InternalChecker. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]/internalCheckers/[INTERNAL_CHECKER_ID]
-   * `[PROJECT_ID_OR_NUMBER]` is the Stackdriver Workspace project for the
-   * Uptime check config associated with the internal checker.
+   * `[PROJECT_ID_OR_NUMBER]` is the Cloud Monitoring Metrics Scope project for
+   * the Uptime check config associated with the internal checker.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -287,8 +287,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * A unique resource name for this InternalChecker. The format is:
    *     projects/[PROJECT_ID_OR_NUMBER]/internalCheckers/[INTERNAL_CHECKER_ID]
-   * `[PROJECT_ID_OR_NUMBER]` is the Stackdriver Workspace project for the
-   * Uptime check config associated with the internal checker.
+   * `[PROJECT_ID_OR_NUMBER]` is the Cloud Monitoring Metrics Scope project for
+   * the Uptime check config associated with the internal checker.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -317,8 +317,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The checker's human-readable name. The display name
-   * should be unique within a Stackdriver Workspace in order to make it easier
-   * to identify; however, uniqueness is not enforced.
+   * should be unique within a Cloud Monitoring Metrics Scope in order to make
+   * it easier to identify; however, uniqueness is not enforced.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -342,8 +342,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The checker's human-readable name. The display name
-   * should be unique within a Stackdriver Workspace in order to make it easier
-   * to identify; however, uniqueness is not enforced.
+   * should be unique within a Cloud Monitoring Metrics Scope in order to make
+   * it easier to identify; however, uniqueness is not enforced.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -478,7 +478,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The GCP project ID where the internal checker lives. Not necessary
-   * the same as the Workspace project.
+   * the same as the Metrics Scope project.
    * </pre>
    *
    * <code>string peer_project_id = 6;</code>
@@ -502,7 +502,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * The GCP project ID where the internal checker lives. Not necessary
-   * the same as the Workspace project.
+   * the same as the Metrics Scope project.
    * </pre>
    *
    * <code>string peer_project_id = 6;</code>
@@ -1023,8 +1023,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * A unique resource name for this InternalChecker. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]/internalCheckers/[INTERNAL_CHECKER_ID]
-     * `[PROJECT_ID_OR_NUMBER]` is the Stackdriver Workspace project for the
-     * Uptime check config associated with the internal checker.
+     * `[PROJECT_ID_OR_NUMBER]` is the Cloud Monitoring Metrics Scope project for
+     * the Uptime check config associated with the internal checker.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1048,8 +1048,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * A unique resource name for this InternalChecker. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]/internalCheckers/[INTERNAL_CHECKER_ID]
-     * `[PROJECT_ID_OR_NUMBER]` is the Stackdriver Workspace project for the
-     * Uptime check config associated with the internal checker.
+     * `[PROJECT_ID_OR_NUMBER]` is the Cloud Monitoring Metrics Scope project for
+     * the Uptime check config associated with the internal checker.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1073,8 +1073,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * A unique resource name for this InternalChecker. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]/internalCheckers/[INTERNAL_CHECKER_ID]
-     * `[PROJECT_ID_OR_NUMBER]` is the Stackdriver Workspace project for the
-     * Uptime check config associated with the internal checker.
+     * `[PROJECT_ID_OR_NUMBER]` is the Cloud Monitoring Metrics Scope project for
+     * the Uptime check config associated with the internal checker.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1097,8 +1097,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * A unique resource name for this InternalChecker. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]/internalCheckers/[INTERNAL_CHECKER_ID]
-     * `[PROJECT_ID_OR_NUMBER]` is the Stackdriver Workspace project for the
-     * Uptime check config associated with the internal checker.
+     * `[PROJECT_ID_OR_NUMBER]` is the Cloud Monitoring Metrics Scope project for
+     * the Uptime check config associated with the internal checker.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1117,8 +1117,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * A unique resource name for this InternalChecker. The format is:
      *     projects/[PROJECT_ID_OR_NUMBER]/internalCheckers/[INTERNAL_CHECKER_ID]
-     * `[PROJECT_ID_OR_NUMBER]` is the Stackdriver Workspace project for the
-     * Uptime check config associated with the internal checker.
+     * `[PROJECT_ID_OR_NUMBER]` is the Cloud Monitoring Metrics Scope project for
+     * the Uptime check config associated with the internal checker.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1143,8 +1143,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The checker's human-readable name. The display name
-     * should be unique within a Stackdriver Workspace in order to make it easier
-     * to identify; however, uniqueness is not enforced.
+     * should be unique within a Cloud Monitoring Metrics Scope in order to make
+     * it easier to identify; however, uniqueness is not enforced.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -1167,8 +1167,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The checker's human-readable name. The display name
-     * should be unique within a Stackdriver Workspace in order to make it easier
-     * to identify; however, uniqueness is not enforced.
+     * should be unique within a Cloud Monitoring Metrics Scope in order to make
+     * it easier to identify; however, uniqueness is not enforced.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -1191,8 +1191,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The checker's human-readable name. The display name
-     * should be unique within a Stackdriver Workspace in order to make it easier
-     * to identify; however, uniqueness is not enforced.
+     * should be unique within a Cloud Monitoring Metrics Scope in order to make
+     * it easier to identify; however, uniqueness is not enforced.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -1214,8 +1214,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The checker's human-readable name. The display name
-     * should be unique within a Stackdriver Workspace in order to make it easier
-     * to identify; however, uniqueness is not enforced.
+     * should be unique within a Cloud Monitoring Metrics Scope in order to make
+     * it easier to identify; however, uniqueness is not enforced.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -1233,8 +1233,8 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The checker's human-readable name. The display name
-     * should be unique within a Stackdriver Workspace in order to make it easier
-     * to identify; however, uniqueness is not enforced.
+     * should be unique within a Cloud Monitoring Metrics Scope in order to make
+     * it easier to identify; however, uniqueness is not enforced.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -1481,7 +1481,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The GCP project ID where the internal checker lives. Not necessary
-     * the same as the Workspace project.
+     * the same as the Metrics Scope project.
      * </pre>
      *
      * <code>string peer_project_id = 6;</code>
@@ -1504,7 +1504,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The GCP project ID where the internal checker lives. Not necessary
-     * the same as the Workspace project.
+     * the same as the Metrics Scope project.
      * </pre>
      *
      * <code>string peer_project_id = 6;</code>
@@ -1527,7 +1527,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The GCP project ID where the internal checker lives. Not necessary
-     * the same as the Workspace project.
+     * the same as the Metrics Scope project.
      * </pre>
      *
      * <code>string peer_project_id = 6;</code>
@@ -1549,7 +1549,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The GCP project ID where the internal checker lives. Not necessary
-     * the same as the Workspace project.
+     * the same as the Metrics Scope project.
      * </pre>
      *
      * <code>string peer_project_id = 6;</code>
@@ -1567,7 +1567,7 @@ public final class InternalChecker extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * The GCP project ID where the internal checker lives. Not necessary
-     * the same as the Workspace project.
+     * the same as the Metrics Scope project.
      * </pre>
      *
      * <code>string peer_project_id = 6;</code>

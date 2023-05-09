@@ -62,6 +62,37 @@ public interface ListUptimeCheckConfigsRequestOrBuilder
    *
    *
    * <pre>
+   * If provided, this field specifies the criteria that must be met by
+   * uptime checks to be included in the response.
+   * For more details, see [Filtering
+   * syntax](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering#filter_syntax).
+   * </pre>
+   *
+   * <code>string filter = 2;</code>
+   *
+   * @return The filter.
+   */
+  java.lang.String getFilter();
+  /**
+   *
+   *
+   * <pre>
+   * If provided, this field specifies the criteria that must be met by
+   * uptime checks to be included in the response.
+   * For more details, see [Filtering
+   * syntax](https://cloud.google.com/monitoring/api/v3/sorting-and-filtering#filter_syntax).
+   * </pre>
+   *
+   * <code>string filter = 2;</code>
+   *
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString getFilterBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The maximum number of results to return in a single response. The server
    * may further constrain the maximum number of results returned in a single
    * page. If the page_size is &lt;=0, the server will decide the number of results
