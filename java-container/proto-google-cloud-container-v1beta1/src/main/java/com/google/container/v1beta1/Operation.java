@@ -956,7 +956,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Operation.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2489
+   *     google/container/v1beta1/cluster_service.proto;l=2501
    * @return The zone.
    */
   @java.lang.Override
@@ -984,7 +984,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.Operation.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2489
+   *     google/container/v1beta1/cluster_service.proto;l=2501
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -1139,7 +1139,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.Operation.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2502
+   *     google/container/v1beta1/cluster_service.proto;l=2514
    * @return The statusMessage.
    */
   @java.lang.Override
@@ -1168,7 +1168,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.Operation.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2502
+   *     google/container/v1beta1/cluster_service.proto;l=2514
    * @return The bytes for statusMessage.
    */
   @java.lang.Override
@@ -2660,7 +2660,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Operation.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2489
+     *     google/container/v1beta1/cluster_service.proto;l=2501
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -2687,7 +2687,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Operation.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2489
+     *     google/container/v1beta1/cluster_service.proto;l=2501
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -2714,7 +2714,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Operation.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2489
+     *     google/container/v1beta1/cluster_service.proto;l=2501
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -2740,7 +2740,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Operation.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2489
+     *     google/container/v1beta1/cluster_service.proto;l=2501
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2762,7 +2762,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.Operation.zone is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2489
+     *     google/container/v1beta1/cluster_service.proto;l=2501
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -3078,7 +3078,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.Operation.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2502
+     *     google/container/v1beta1/cluster_service.proto;l=2514
      * @return The statusMessage.
      */
     @java.lang.Deprecated
@@ -3106,7 +3106,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.Operation.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2502
+     *     google/container/v1beta1/cluster_service.proto;l=2514
      * @return The bytes for statusMessage.
      */
     @java.lang.Deprecated
@@ -3134,7 +3134,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.Operation.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2502
+     *     google/container/v1beta1/cluster_service.proto;l=2514
      * @param value The statusMessage to set.
      * @return This builder for chaining.
      */
@@ -3161,7 +3161,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.Operation.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2502
+     *     google/container/v1beta1/cluster_service.proto;l=2514
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3184,7 +3184,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.Operation.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2502
+     *     google/container/v1beta1/cluster_service.proto;l=2514
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.
      */

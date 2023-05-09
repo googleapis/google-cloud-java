@@ -527,4 +527,39 @@ public interface AddonsConfigOrBuilder
    * <code>.google.container.v1beta1.GkeBackupAgentConfig gke_backup_agent_config = 16;</code>
    */
   com.google.container.v1beta1.GkeBackupAgentConfigOrBuilder getGkeBackupAgentConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Cloud Storage Fuse CSI driver.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GcsFuseCsiDriverConfig gcs_fuse_csi_driver_config = 17;</code>
+   *
+   * @return Whether the gcsFuseCsiDriverConfig field is set.
+   */
+  boolean hasGcsFuseCsiDriverConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Cloud Storage Fuse CSI driver.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GcsFuseCsiDriverConfig gcs_fuse_csi_driver_config = 17;</code>
+   *
+   * @return The gcsFuseCsiDriverConfig.
+   */
+  com.google.container.v1beta1.GcsFuseCsiDriverConfig getGcsFuseCsiDriverConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for the Cloud Storage Fuse CSI driver.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.GcsFuseCsiDriverConfig gcs_fuse_csi_driver_config = 17;</code>
+   */
+  com.google.container.v1beta1.GcsFuseCsiDriverConfigOrBuilder getGcsFuseCsiDriverConfigOrBuilder();
 }

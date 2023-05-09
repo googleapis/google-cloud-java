@@ -22,27 +22,27 @@ package com.google.container.v1beta1;
  *
  *
  * <pre>
- * Configuration options for the KALM addon.
+ * Configuration for the Cloud Storage Fuse CSI driver.
  * </pre>
  *
- * Protobuf type {@code google.container.v1beta1.KalmConfig}
+ * Protobuf type {@code google.container.v1beta1.GcsFuseCsiDriverConfig}
  */
-public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
+public final class GcsFuseCsiDriverConfig extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.container.v1beta1.KalmConfig)
-    KalmConfigOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.container.v1beta1.GcsFuseCsiDriverConfig)
+    GcsFuseCsiDriverConfigOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use KalmConfig.newBuilder() to construct.
-  private KalmConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use GcsFuseCsiDriverConfig.newBuilder() to construct.
+  private GcsFuseCsiDriverConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private KalmConfig() {}
+  private GcsFuseCsiDriverConfig() {}
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new KalmConfig();
+    return new GcsFuseCsiDriverConfig();
   }
 
   @java.lang.Override
@@ -52,17 +52,17 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.container.v1beta1.ClusterServiceProto
-        .internal_static_google_container_v1beta1_KalmConfig_descriptor;
+        .internal_static_google_container_v1beta1_GcsFuseCsiDriverConfig_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.container.v1beta1.ClusterServiceProto
-        .internal_static_google_container_v1beta1_KalmConfig_fieldAccessorTable
+        .internal_static_google_container_v1beta1_GcsFuseCsiDriverConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.container.v1beta1.KalmConfig.class,
-            com.google.container.v1beta1.KalmConfig.Builder.class);
+            com.google.container.v1beta1.GcsFuseCsiDriverConfig.class,
+            com.google.container.v1beta1.GcsFuseCsiDriverConfig.Builder.class);
   }
 
   public static final int ENABLED_FIELD_NUMBER = 1;
@@ -71,17 +71,14 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Whether KALM is enabled for this cluster.
+   * Whether the Cloud Storage Fuse CSI driver is enabled for this cluster.
    * </pre>
    *
-   * <code>bool enabled = 1 [deprecated = true];</code>
+   * <code>bool enabled = 1;</code>
    *
-   * @deprecated google.container.v1beta1.KalmConfig.enabled is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1227
    * @return The enabled.
    */
   @java.lang.Override
-  @java.lang.Deprecated
   public boolean getEnabled() {
     return enabled_;
   }
@@ -125,10 +122,11 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.container.v1beta1.KalmConfig)) {
+    if (!(obj instanceof com.google.container.v1beta1.GcsFuseCsiDriverConfig)) {
       return super.equals(obj);
     }
-    com.google.container.v1beta1.KalmConfig other = (com.google.container.v1beta1.KalmConfig) obj;
+    com.google.container.v1beta1.GcsFuseCsiDriverConfig other =
+        (com.google.container.v1beta1.GcsFuseCsiDriverConfig) obj;
 
     if (getEnabled() != other.getEnabled()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -149,71 +147,71 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
     return hash;
   }
 
-  public static com.google.container.v1beta1.KalmConfig parseFrom(java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.container.v1beta1.GcsFuseCsiDriverConfig parseFrom(
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.container.v1beta1.KalmConfig parseFrom(
+  public static com.google.container.v1beta1.GcsFuseCsiDriverConfig parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.container.v1beta1.KalmConfig parseFrom(
+  public static com.google.container.v1beta1.GcsFuseCsiDriverConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.container.v1beta1.KalmConfig parseFrom(
+  public static com.google.container.v1beta1.GcsFuseCsiDriverConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.container.v1beta1.KalmConfig parseFrom(byte[] data)
+  public static com.google.container.v1beta1.GcsFuseCsiDriverConfig parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.container.v1beta1.KalmConfig parseFrom(
+  public static com.google.container.v1beta1.GcsFuseCsiDriverConfig parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.container.v1beta1.KalmConfig parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
+  public static com.google.container.v1beta1.GcsFuseCsiDriverConfig parseFrom(
+      java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.container.v1beta1.KalmConfig parseFrom(
+  public static com.google.container.v1beta1.GcsFuseCsiDriverConfig parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.container.v1beta1.KalmConfig parseDelimitedFrom(
+  public static com.google.container.v1beta1.GcsFuseCsiDriverConfig parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.container.v1beta1.KalmConfig parseDelimitedFrom(
+  public static com.google.container.v1beta1.GcsFuseCsiDriverConfig parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.container.v1beta1.KalmConfig parseFrom(
+  public static com.google.container.v1beta1.GcsFuseCsiDriverConfig parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.container.v1beta1.KalmConfig parseFrom(
+  public static com.google.container.v1beta1.GcsFuseCsiDriverConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -230,7 +228,7 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.container.v1beta1.KalmConfig prototype) {
+  public static Builder newBuilder(com.google.container.v1beta1.GcsFuseCsiDriverConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -248,31 +246,31 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration options for the KALM addon.
+   * Configuration for the Cloud Storage Fuse CSI driver.
    * </pre>
    *
-   * Protobuf type {@code google.container.v1beta1.KalmConfig}
+   * Protobuf type {@code google.container.v1beta1.GcsFuseCsiDriverConfig}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.container.v1beta1.KalmConfig)
-      com.google.container.v1beta1.KalmConfigOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.container.v1beta1.GcsFuseCsiDriverConfig)
+      com.google.container.v1beta1.GcsFuseCsiDriverConfigOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.container.v1beta1.ClusterServiceProto
-          .internal_static_google_container_v1beta1_KalmConfig_descriptor;
+          .internal_static_google_container_v1beta1_GcsFuseCsiDriverConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.container.v1beta1.ClusterServiceProto
-          .internal_static_google_container_v1beta1_KalmConfig_fieldAccessorTable
+          .internal_static_google_container_v1beta1_GcsFuseCsiDriverConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.container.v1beta1.KalmConfig.class,
-              com.google.container.v1beta1.KalmConfig.Builder.class);
+              com.google.container.v1beta1.GcsFuseCsiDriverConfig.class,
+              com.google.container.v1beta1.GcsFuseCsiDriverConfig.Builder.class);
     }
 
-    // Construct using com.google.container.v1beta1.KalmConfig.newBuilder()
+    // Construct using com.google.container.v1beta1.GcsFuseCsiDriverConfig.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -290,17 +288,17 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.container.v1beta1.ClusterServiceProto
-          .internal_static_google_container_v1beta1_KalmConfig_descriptor;
+          .internal_static_google_container_v1beta1_GcsFuseCsiDriverConfig_descriptor;
     }
 
     @java.lang.Override
-    public com.google.container.v1beta1.KalmConfig getDefaultInstanceForType() {
-      return com.google.container.v1beta1.KalmConfig.getDefaultInstance();
+    public com.google.container.v1beta1.GcsFuseCsiDriverConfig getDefaultInstanceForType() {
+      return com.google.container.v1beta1.GcsFuseCsiDriverConfig.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.container.v1beta1.KalmConfig build() {
-      com.google.container.v1beta1.KalmConfig result = buildPartial();
+    public com.google.container.v1beta1.GcsFuseCsiDriverConfig build() {
+      com.google.container.v1beta1.GcsFuseCsiDriverConfig result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -308,9 +306,9 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.container.v1beta1.KalmConfig buildPartial() {
-      com.google.container.v1beta1.KalmConfig result =
-          new com.google.container.v1beta1.KalmConfig(this);
+    public com.google.container.v1beta1.GcsFuseCsiDriverConfig buildPartial() {
+      com.google.container.v1beta1.GcsFuseCsiDriverConfig result =
+          new com.google.container.v1beta1.GcsFuseCsiDriverConfig(this);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -318,7 +316,7 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
-    private void buildPartial0(com.google.container.v1beta1.KalmConfig result) {
+    private void buildPartial0(com.google.container.v1beta1.GcsFuseCsiDriverConfig result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.enabled_ = enabled_;
@@ -360,16 +358,17 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.container.v1beta1.KalmConfig) {
-        return mergeFrom((com.google.container.v1beta1.KalmConfig) other);
+      if (other instanceof com.google.container.v1beta1.GcsFuseCsiDriverConfig) {
+        return mergeFrom((com.google.container.v1beta1.GcsFuseCsiDriverConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.container.v1beta1.KalmConfig other) {
-      if (other == com.google.container.v1beta1.KalmConfig.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.container.v1beta1.GcsFuseCsiDriverConfig other) {
+      if (other == com.google.container.v1beta1.GcsFuseCsiDriverConfig.getDefaultInstance())
+        return this;
       if (other.getEnabled() != false) {
         setEnabled(other.getEnabled());
       }
@@ -429,17 +428,14 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether KALM is enabled for this cluster.
+     * Whether the Cloud Storage Fuse CSI driver is enabled for this cluster.
      * </pre>
      *
-     * <code>bool enabled = 1 [deprecated = true];</code>
+     * <code>bool enabled = 1;</code>
      *
-     * @deprecated google.container.v1beta1.KalmConfig.enabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1227
      * @return The enabled.
      */
     @java.lang.Override
-    @java.lang.Deprecated
     public boolean getEnabled() {
       return enabled_;
     }
@@ -447,17 +443,14 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether KALM is enabled for this cluster.
+     * Whether the Cloud Storage Fuse CSI driver is enabled for this cluster.
      * </pre>
      *
-     * <code>bool enabled = 1 [deprecated = true];</code>
+     * <code>bool enabled = 1;</code>
      *
-     * @deprecated google.container.v1beta1.KalmConfig.enabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1227
      * @param value The enabled to set.
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated
     public Builder setEnabled(boolean value) {
 
       enabled_ = value;
@@ -469,16 +462,13 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether KALM is enabled for this cluster.
+     * Whether the Cloud Storage Fuse CSI driver is enabled for this cluster.
      * </pre>
      *
-     * <code>bool enabled = 1 [deprecated = true];</code>
+     * <code>bool enabled = 1;</code>
      *
-     * @deprecated google.container.v1beta1.KalmConfig.enabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1227
      * @return This builder for chaining.
      */
-    @java.lang.Deprecated
     public Builder clearEnabled() {
       bitField0_ = (bitField0_ & ~0x00000001);
       enabled_ = false;
@@ -497,24 +487,24 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.container.v1beta1.KalmConfig)
+    // @@protoc_insertion_point(builder_scope:google.container.v1beta1.GcsFuseCsiDriverConfig)
   }
 
-  // @@protoc_insertion_point(class_scope:google.container.v1beta1.KalmConfig)
-  private static final com.google.container.v1beta1.KalmConfig DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.container.v1beta1.GcsFuseCsiDriverConfig)
+  private static final com.google.container.v1beta1.GcsFuseCsiDriverConfig DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.container.v1beta1.KalmConfig();
+    DEFAULT_INSTANCE = new com.google.container.v1beta1.GcsFuseCsiDriverConfig();
   }
 
-  public static com.google.container.v1beta1.KalmConfig getDefaultInstance() {
+  public static com.google.container.v1beta1.GcsFuseCsiDriverConfig getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<KalmConfig> PARSER =
-      new com.google.protobuf.AbstractParser<KalmConfig>() {
+  private static final com.google.protobuf.Parser<GcsFuseCsiDriverConfig> PARSER =
+      new com.google.protobuf.AbstractParser<GcsFuseCsiDriverConfig>() {
         @java.lang.Override
-        public KalmConfig parsePartialFrom(
+        public GcsFuseCsiDriverConfig parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -533,17 +523,17 @@ public final class KalmConfig extends com.google.protobuf.GeneratedMessageV3
         }
       };
 
-  public static com.google.protobuf.Parser<KalmConfig> parser() {
+  public static com.google.protobuf.Parser<GcsFuseCsiDriverConfig> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<KalmConfig> getParserForType() {
+  public com.google.protobuf.Parser<GcsFuseCsiDriverConfig> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.container.v1beta1.KalmConfig getDefaultInstanceForType() {
+  public com.google.container.v1beta1.GcsFuseCsiDriverConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }
