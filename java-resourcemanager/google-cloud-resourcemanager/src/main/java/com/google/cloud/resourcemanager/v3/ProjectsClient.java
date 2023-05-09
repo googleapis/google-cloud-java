@@ -542,23 +542,24 @@ public class ProjectsClient implements BackgroundResource {
    * @param query Optional. A query string for searching for projects that the caller has
    *     `resourcemanager.projects.get` permission to. If multiple fields are included in the query,
    *     then it will return results that match any of the fields. Some eligible fields are:
-   *     <p>``` | Field | Description |
-   *     |-------------------------|----------------------------------------------| | displayName,
-   *     name | Filters by displayName. | | parent | Project's parent (for example: folders/123,
-   *     organizations/&#42;). Prefer parent field over parent.type and parent.id.| | parent.type |
-   *     Parent's type: `folder` or `organization`. | | parent.id | Parent's id number (for example:
-   *     123) | | id, projectId | Filters by projectId. | | state, lifecycleState | Filters by
-   *     state. | | labels | Filters by label name or value. | | labels.\\&lt;key\\&gt; (where
-   *     &#42;key&#42; is the name of a label) | Filters by label name.| ```
+   *     <p>- &#42;&#42;`displayName`, `name`&#42;&#42;: Filters by displayName. -
+   *     &#42;&#42;`parent`&#42;&#42;: Project's parent (for example: `folders/123`,
+   *     `organizations/&#42;`). Prefer `parent` field over `parent.type` and `parent.id`. -
+   *     &#42;&#42;`parent.type`&#42;&#42;: Parent's type: `folder` or `organization`. -
+   *     &#42;&#42;`parent.id`&#42;&#42;: Parent's id number (for example: `123`). - &#42;&#42;`id`,
+   *     `projectId`&#42;&#42;: Filters by projectId. - &#42;&#42;`state`,
+   *     `lifecycleState`&#42;&#42;: Filters by state. - &#42;&#42;`labels`&#42;&#42;: Filters by
+   *     label name or value. - &#42;&#42;`labels.&lt;key&gt;` (where `&lt;key&gt;` is the name of a
+   *     label)&#42;&#42;: Filters by label name.
    *     <p>Search expressions are case insensitive.
    *     <p>Some examples queries:
-   *     <p>``` | Query | Description |
-   *     |------------------|-----------------------------------------------------| | name:how&#42;
-   *     | The project's name starts with "how". | | name:Howl | The project's name is `Howl` or
-   *     `howl`. | | name:HOWL | Equivalent to above. | | NAME:howl | Equivalent to above. | |
-   *     labels.color:&#42; | The project has the label `color`. | | labels.color:red | The
-   *     project's label `color` has the value `red`. | | labels.color:red labels.size:big | The
-   *     project's label `color` has the value `red` or its label `size` has the value `big`. | ```
+   *     <p>- &#42;&#42;`name:how&#42;`&#42;&#42;: The project's name starts with "how". -
+   *     &#42;&#42;`name:Howl`&#42;&#42;: The project's name is `Howl` or `howl`. -
+   *     &#42;&#42;`name:HOWL`&#42;&#42;: Equivalent to above. - &#42;&#42;`NAME:howl`&#42;&#42;:
+   *     Equivalent to above. - &#42;&#42;`labels.color:&#42;`&#42;&#42;: The project has the label
+   *     `color`. - &#42;&#42;`labels.color:red`&#42;&#42;: The project's label `color` has the
+   *     value `red`. - &#42;&#42;`labels.color:red labels.size:big`&#42;&#42;: The project's label
+   *     `color` has the value `red` or its label `size` has the value `big`.
    *     <p>If no query is specified, the call will return projects for which the user has the
    *     `resourcemanager.projects.get` permission.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

@@ -76,8 +76,9 @@ public final class ListTagKeysRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The resource name of the new TagKey's parent.
-   * Must be of the form `folders/{folder_id}` or `organizations/{org_id}`.
+   * Required. The resource name of the TagKey's parent.
+   * Must be of the form `organizations/{org_id}` or `projects/{project_id}` or
+   * `projects/{project_number}`
    * </pre>
    *
    * <code>
@@ -102,8 +103,9 @@ public final class ListTagKeysRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The resource name of the new TagKey's parent.
-   * Must be of the form `folders/{folder_id}` or `organizations/{org_id}`.
+   * Required. The resource name of the TagKey's parent.
+   * Must be of the form `organizations/{org_id}` or `projects/{project_id}` or
+   * `projects/{project_number}`
    * </pre>
    *
    * <code>
@@ -592,8 +594,9 @@ public final class ListTagKeysRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The resource name of the new TagKey's parent.
-     * Must be of the form `folders/{folder_id}` or `organizations/{org_id}`.
+     * Required. The resource name of the TagKey's parent.
+     * Must be of the form `organizations/{org_id}` or `projects/{project_id}` or
+     * `projects/{project_number}`
      * </pre>
      *
      * <code>
@@ -617,8 +620,9 @@ public final class ListTagKeysRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The resource name of the new TagKey's parent.
-     * Must be of the form `folders/{folder_id}` or `organizations/{org_id}`.
+     * Required. The resource name of the TagKey's parent.
+     * Must be of the form `organizations/{org_id}` or `projects/{project_id}` or
+     * `projects/{project_number}`
      * </pre>
      *
      * <code>
@@ -642,8 +646,9 @@ public final class ListTagKeysRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The resource name of the new TagKey's parent.
-     * Must be of the form `folders/{folder_id}` or `organizations/{org_id}`.
+     * Required. The resource name of the TagKey's parent.
+     * Must be of the form `organizations/{org_id}` or `projects/{project_id}` or
+     * `projects/{project_number}`
      * </pre>
      *
      * <code>
@@ -666,8 +671,9 @@ public final class ListTagKeysRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The resource name of the new TagKey's parent.
-     * Must be of the form `folders/{folder_id}` or `organizations/{org_id}`.
+     * Required. The resource name of the TagKey's parent.
+     * Must be of the form `organizations/{org_id}` or `projects/{project_id}` or
+     * `projects/{project_number}`
      * </pre>
      *
      * <code>
@@ -686,8 +692,9 @@ public final class ListTagKeysRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The resource name of the new TagKey's parent.
-     * Must be of the form `folders/{folder_id}` or `organizations/{org_id}`.
+     * Required. The resource name of the TagKey's parent.
+     * Must be of the form `organizations/{org_id}` or `projects/{project_id}` or
+     * `projects/{project_number}`
      * </pre>
      *
      * <code>

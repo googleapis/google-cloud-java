@@ -224,8 +224,8 @@ public class TagKeysClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the new TagKey's parent. Must be of the form
-   *     `folders/{folder_id}` or `organizations/{org_id}`.
+   * @param parent Required. The resource name of the TagKey's parent. Must be of the form
+   *     `organizations/{org_id}` or `projects/{project_id}` or `projects/{project_number}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTagKeysPagedResponse listTagKeys(ResourceName parent) {
@@ -256,8 +256,8 @@ public class TagKeysClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The resource name of the new TagKey's parent. Must be of the form
-   *     `folders/{folder_id}` or `organizations/{org_id}`.
+   * @param parent Required. The resource name of the TagKey's parent. Must be of the form
+   *     `organizations/{org_id}` or `projects/{project_id}` or `projects/{project_number}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTagKeysPagedResponse listTagKeys(String parent) {

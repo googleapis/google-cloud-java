@@ -248,10 +248,10 @@ public final class TagValue extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Namespaced name of the TagValue. Now only supported in the
-   * format
-   * `{organization_id}/{tag_key_short_name}/{short_name}`. Other
-   * formats will be supported when we add non-org parented tags.
+   * Output only. The namespaced name of the TagValue. Can be in the form
+   * `{organization_id}/{tag_key_short_name}/{tag_value_short_name}` or
+   * `{project_id}/{tag_key_short_name}/{tag_value_short_name}` or
+   * `{project_number}/{tag_key_short_name}/{tag_value_short_name}`.
    * </pre>
    *
    * <code>string namespaced_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -274,10 +274,10 @@ public final class TagValue extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Namespaced name of the TagValue. Now only supported in the
-   * format
-   * `{organization_id}/{tag_key_short_name}/{short_name}`. Other
-   * formats will be supported when we add non-org parented tags.
+   * Output only. The namespaced name of the TagValue. Can be in the form
+   * `{organization_id}/{tag_key_short_name}/{tag_value_short_name}` or
+   * `{project_id}/{tag_key_short_name}/{tag_value_short_name}` or
+   * `{project_number}/{tag_key_short_name}/{tag_value_short_name}`.
    * </pre>
    *
    * <code>string namespaced_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1387,10 +1387,10 @@ public final class TagValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Namespaced name of the TagValue. Now only supported in the
-     * format
-     * `{organization_id}/{tag_key_short_name}/{short_name}`. Other
-     * formats will be supported when we add non-org parented tags.
+     * Output only. The namespaced name of the TagValue. Can be in the form
+     * `{organization_id}/{tag_key_short_name}/{tag_value_short_name}` or
+     * `{project_id}/{tag_key_short_name}/{tag_value_short_name}` or
+     * `{project_number}/{tag_key_short_name}/{tag_value_short_name}`.
      * </pre>
      *
      * <code>string namespaced_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1412,10 +1412,10 @@ public final class TagValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Namespaced name of the TagValue. Now only supported in the
-     * format
-     * `{organization_id}/{tag_key_short_name}/{short_name}`. Other
-     * formats will be supported when we add non-org parented tags.
+     * Output only. The namespaced name of the TagValue. Can be in the form
+     * `{organization_id}/{tag_key_short_name}/{tag_value_short_name}` or
+     * `{project_id}/{tag_key_short_name}/{tag_value_short_name}` or
+     * `{project_number}/{tag_key_short_name}/{tag_value_short_name}`.
      * </pre>
      *
      * <code>string namespaced_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1437,10 +1437,10 @@ public final class TagValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Namespaced name of the TagValue. Now only supported in the
-     * format
-     * `{organization_id}/{tag_key_short_name}/{short_name}`. Other
-     * formats will be supported when we add non-org parented tags.
+     * Output only. The namespaced name of the TagValue. Can be in the form
+     * `{organization_id}/{tag_key_short_name}/{tag_value_short_name}` or
+     * `{project_id}/{tag_key_short_name}/{tag_value_short_name}` or
+     * `{project_number}/{tag_key_short_name}/{tag_value_short_name}`.
      * </pre>
      *
      * <code>string namespaced_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1461,10 +1461,10 @@ public final class TagValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Namespaced name of the TagValue. Now only supported in the
-     * format
-     * `{organization_id}/{tag_key_short_name}/{short_name}`. Other
-     * formats will be supported when we add non-org parented tags.
+     * Output only. The namespaced name of the TagValue. Can be in the form
+     * `{organization_id}/{tag_key_short_name}/{tag_value_short_name}` or
+     * `{project_id}/{tag_key_short_name}/{tag_value_short_name}` or
+     * `{project_number}/{tag_key_short_name}/{tag_value_short_name}`.
      * </pre>
      *
      * <code>string namespaced_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1481,10 +1481,10 @@ public final class TagValue extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Namespaced name of the TagValue. Now only supported in the
-     * format
-     * `{organization_id}/{tag_key_short_name}/{short_name}`. Other
-     * formats will be supported when we add non-org parented tags.
+     * Output only. The namespaced name of the TagValue. Can be in the form
+     * `{organization_id}/{tag_key_short_name}/{tag_value_short_name}` or
+     * `{project_id}/{tag_key_short_name}/{tag_value_short_name}` or
+     * `{project_number}/{tag_key_short_name}/{tag_value_short_name}`.
      * </pre>
      *
      * <code>string namespaced_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
