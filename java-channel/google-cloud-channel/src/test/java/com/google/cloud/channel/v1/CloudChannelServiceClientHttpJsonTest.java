@@ -907,6 +907,7 @@ public class CloudChannelServiceClientHttpJsonTest {
             .setTrialSettings(TrialSettings.newBuilder().build())
             .setAssociationInfo(AssociationInfo.newBuilder().build())
             .addAllParameters(new ArrayList<Parameter>())
+            .setBillingAccount("billingAccount708726578")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -967,6 +968,7 @@ public class CloudChannelServiceClientHttpJsonTest {
             .setTrialSettings(TrialSettings.newBuilder().build())
             .setAssociationInfo(AssociationInfo.newBuilder().build())
             .addAllParameters(new ArrayList<Parameter>())
+            .setBillingAccount("billingAccount708726578")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1036,6 +1038,7 @@ public class CloudChannelServiceClientHttpJsonTest {
             .setTrialSettings(TrialSettings.newBuilder().build())
             .setAssociationInfo(AssociationInfo.newBuilder().build())
             .addAllParameters(new ArrayList<Parameter>())
+            .setBillingAccount("billingAccount708726578")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1108,6 +1111,7 @@ public class CloudChannelServiceClientHttpJsonTest {
             .setTrialSettings(TrialSettings.newBuilder().build())
             .setAssociationInfo(AssociationInfo.newBuilder().build())
             .addAllParameters(new ArrayList<Parameter>())
+            .setBillingAccount("billingAccount708726578")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1178,6 +1182,7 @@ public class CloudChannelServiceClientHttpJsonTest {
             .setTrialSettings(TrialSettings.newBuilder().build())
             .setAssociationInfo(AssociationInfo.newBuilder().build())
             .addAllParameters(new ArrayList<Parameter>())
+            .setBillingAccount("billingAccount708726578")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1252,6 +1257,7 @@ public class CloudChannelServiceClientHttpJsonTest {
             .setTrialSettings(TrialSettings.newBuilder().build())
             .setAssociationInfo(AssociationInfo.newBuilder().build())
             .addAllParameters(new ArrayList<Parameter>())
+            .setBillingAccount("billingAccount708726578")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1320,6 +1326,7 @@ public class CloudChannelServiceClientHttpJsonTest {
             .setTrialSettings(TrialSettings.newBuilder().build())
             .setAssociationInfo(AssociationInfo.newBuilder().build())
             .addAllParameters(new ArrayList<Parameter>())
+            .setBillingAccount("billingAccount708726578")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1442,6 +1449,7 @@ public class CloudChannelServiceClientHttpJsonTest {
             .setTrialSettings(TrialSettings.newBuilder().build())
             .setAssociationInfo(AssociationInfo.newBuilder().build())
             .addAllParameters(new ArrayList<Parameter>())
+            .setBillingAccount("billingAccount708726578")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
