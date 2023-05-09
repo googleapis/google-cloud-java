@@ -32,6 +32,8 @@ import com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesResponse;
 import com.google.cloud.dialogflow.v2beta1.CompleteConversationRequest;
 import com.google.cloud.dialogflow.v2beta1.Conversation;
 import com.google.cloud.dialogflow.v2beta1.CreateConversationRequest;
+import com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryRequest;
+import com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryResponse;
 import com.google.cloud.dialogflow.v2beta1.GetConversationRequest;
 import com.google.cloud.dialogflow.v2beta1.ListConversationsRequest;
 import com.google.cloud.dialogflow.v2beta1.ListConversationsResponse;
@@ -138,6 +140,20 @@ public class GrpcConversationsStub extends ConversationsStub {
                   ProtoUtils.marshaller(SuggestConversationSummaryResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          GenerateStatelessSummaryRequest, GenerateStatelessSummaryResponse>
+      generateStatelessSummaryMethodDescriptor =
+          MethodDescriptor
+              .<GenerateStatelessSummaryRequest, GenerateStatelessSummaryResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.dialogflow.v2beta1.Conversations/GenerateStatelessSummary")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GenerateStatelessSummaryRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(GenerateStatelessSummaryResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -172,6 +188,8 @@ public class GrpcConversationsStub extends ConversationsStub {
       listMessagesPagedCallable;
   private final UnaryCallable<SuggestConversationSummaryRequest, SuggestConversationSummaryResponse>
       suggestConversationSummaryCallable;
+  private final UnaryCallable<GenerateStatelessSummaryRequest, GenerateStatelessSummaryResponse>
+      generateStatelessSummaryCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -294,6 +312,20 @@ public class GrpcConversationsStub extends ConversationsStub {
                       return params.build();
                     })
                 .build();
+    GrpcCallSettings<GenerateStatelessSummaryRequest, GenerateStatelessSummaryResponse>
+        generateStatelessSummaryTransportSettings =
+            GrpcCallSettings
+                .<GenerateStatelessSummaryRequest, GenerateStatelessSummaryResponse>newBuilder()
+                .setMethodDescriptor(generateStatelessSummaryMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "stateless_conversation.parent",
+                          String.valueOf(request.getStatelessConversation().getParent()));
+                      return params.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -353,6 +385,11 @@ public class GrpcConversationsStub extends ConversationsStub {
         callableFactory.createUnaryCallable(
             suggestConversationSummaryTransportSettings,
             settings.suggestConversationSummarySettings(),
+            clientContext);
+    this.generateStatelessSummaryCallable =
+        callableFactory.createUnaryCallable(
+            generateStatelessSummaryTransportSettings,
+            settings.generateStatelessSummarySettings(),
             clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
@@ -419,6 +456,12 @@ public class GrpcConversationsStub extends ConversationsStub {
   public UnaryCallable<SuggestConversationSummaryRequest, SuggestConversationSummaryResponse>
       suggestConversationSummaryCallable() {
     return suggestConversationSummaryCallable;
+  }
+
+  @Override
+  public UnaryCallable<GenerateStatelessSummaryRequest, GenerateStatelessSummaryResponse>
+      generateStatelessSummaryCallable() {
+    return generateStatelessSummaryCallable;
   }
 
   @Override

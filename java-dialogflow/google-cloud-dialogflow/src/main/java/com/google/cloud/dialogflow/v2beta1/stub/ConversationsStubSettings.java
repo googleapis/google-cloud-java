@@ -50,6 +50,8 @@ import com.google.cloud.dialogflow.v2beta1.BatchCreateMessagesResponse;
 import com.google.cloud.dialogflow.v2beta1.CompleteConversationRequest;
 import com.google.cloud.dialogflow.v2beta1.Conversation;
 import com.google.cloud.dialogflow.v2beta1.CreateConversationRequest;
+import com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryRequest;
+import com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryResponse;
 import com.google.cloud.dialogflow.v2beta1.GetConversationRequest;
 import com.google.cloud.dialogflow.v2beta1.ListConversationsRequest;
 import com.google.cloud.dialogflow.v2beta1.ListConversationsResponse;
@@ -134,6 +136,8 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
   private final UnaryCallSettings<
           SuggestConversationSummaryRequest, SuggestConversationSummaryResponse>
       suggestConversationSummarySettings;
+  private final UnaryCallSettings<GenerateStatelessSummaryRequest, GenerateStatelessSummaryResponse>
+      generateStatelessSummarySettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -347,6 +351,12 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
     return suggestConversationSummarySettings;
   }
 
+  /** Returns the object with the settings used for calls to generateStatelessSummary. */
+  public UnaryCallSettings<GenerateStatelessSummaryRequest, GenerateStatelessSummaryResponse>
+      generateStatelessSummarySettings() {
+    return generateStatelessSummarySettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -472,6 +482,7 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
     listMessagesSettings = settingsBuilder.listMessagesSettings().build();
     suggestConversationSummarySettings =
         settingsBuilder.suggestConversationSummarySettings().build();
+    generateStatelessSummarySettings = settingsBuilder.generateStatelessSummarySettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -496,6 +507,9 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
     private final UnaryCallSettings.Builder<
             SuggestConversationSummaryRequest, SuggestConversationSummaryResponse>
         suggestConversationSummarySettings;
+    private final UnaryCallSettings.Builder<
+            GenerateStatelessSummaryRequest, GenerateStatelessSummaryResponse>
+        generateStatelessSummarySettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -545,6 +559,7 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
       batchCreateMessagesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listMessagesSettings = PagedCallSettings.newBuilder(LIST_MESSAGES_PAGE_STR_FACT);
       suggestConversationSummarySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      generateStatelessSummarySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -557,6 +572,7 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
               batchCreateMessagesSettings,
               listMessagesSettings,
               suggestConversationSummarySettings,
+              generateStatelessSummarySettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -572,6 +588,7 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
       batchCreateMessagesSettings = settings.batchCreateMessagesSettings.toBuilder();
       listMessagesSettings = settings.listMessagesSettings.toBuilder();
       suggestConversationSummarySettings = settings.suggestConversationSummarySettings.toBuilder();
+      generateStatelessSummarySettings = settings.generateStatelessSummarySettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -584,6 +601,7 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
               batchCreateMessagesSettings,
               listMessagesSettings,
               suggestConversationSummarySettings,
+              generateStatelessSummarySettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -647,6 +665,11 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
 
       builder
           .suggestConversationSummarySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .generateStatelessSummarySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -721,6 +744,13 @@ public class ConversationsStubSettings extends StubSettings<ConversationsStubSet
             SuggestConversationSummaryRequest, SuggestConversationSummaryResponse>
         suggestConversationSummarySettings() {
       return suggestConversationSummarySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to generateStatelessSummary. */
+    public UnaryCallSettings.Builder<
+            GenerateStatelessSummaryRequest, GenerateStatelessSummaryResponse>
+        generateStatelessSummarySettings() {
+      return generateStatelessSummarySettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

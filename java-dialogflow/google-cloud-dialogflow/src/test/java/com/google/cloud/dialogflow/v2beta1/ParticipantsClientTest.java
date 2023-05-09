@@ -723,6 +723,7 @@ public class ParticipantsClientTest {
             .addAllHumanAgentSuggestionResults(new ArrayList<SuggestionResult>())
             .addAllEndUserSuggestionResults(new ArrayList<SuggestionResult>())
             .setDtmfParameters(DtmfParameters.newBuilder().build())
+            .setDebuggingInfo(CloudConversationDebuggingInfo.newBuilder().build())
             .build();
     mockParticipants.addResponse(expectedResponse);
     StreamingAnalyzeContentRequest request =
@@ -737,6 +738,7 @@ public class ParticipantsClientTest {
             .setCxParameters(Struct.newBuilder().build())
             .setCxCurrentPage("cxCurrentPage1596907507")
             .setEnablePartialAutomatedAgentReply(true)
+            .setEnableDebuggingInfo(true)
             .build();
 
     MockStreamObserver<StreamingAnalyzeContentResponse> responseObserver =
@@ -771,6 +773,7 @@ public class ParticipantsClientTest {
             .setCxParameters(Struct.newBuilder().build())
             .setCxCurrentPage("cxCurrentPage1596907507")
             .setEnablePartialAutomatedAgentReply(true)
+            .setEnableDebuggingInfo(true)
             .build();
 
     MockStreamObserver<StreamingAnalyzeContentResponse> responseObserver =

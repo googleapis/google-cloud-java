@@ -749,6 +749,74 @@ public class ConversationsClientTest {
   }
 
   @Test
+  public void generateStatelessSummaryTest() throws Exception {
+    GenerateStatelessSummaryResponse expectedResponse =
+        GenerateStatelessSummaryResponse.newBuilder()
+            .setSummary(GenerateStatelessSummaryResponse.Summary.newBuilder().build())
+            .setLatestMessage(
+                MessageName.ofProjectConversationMessageName(
+                        "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+                    .toString())
+            .setContextSize(1116903569)
+            .build();
+    mockConversations.addResponse(expectedResponse);
+
+    GenerateStatelessSummaryRequest request =
+        GenerateStatelessSummaryRequest.newBuilder()
+            .setStatelessConversation(
+                GenerateStatelessSummaryRequest.MinimalConversation.newBuilder().build())
+            .setConversationProfile(ConversationProfile.newBuilder().build())
+            .setLatestMessage(
+                MessageName.ofProjectConversationMessageName(
+                        "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+                    .toString())
+            .setMaxContextSize(-1134084212)
+            .build();
+
+    GenerateStatelessSummaryResponse actualResponse = client.generateStatelessSummary(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConversations.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GenerateStatelessSummaryRequest actualRequest =
+        ((GenerateStatelessSummaryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(
+        request.getStatelessConversation(), actualRequest.getStatelessConversation());
+    Assert.assertEquals(request.getConversationProfile(), actualRequest.getConversationProfile());
+    Assert.assertEquals(request.getLatestMessage(), actualRequest.getLatestMessage());
+    Assert.assertEquals(request.getMaxContextSize(), actualRequest.getMaxContextSize());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void generateStatelessSummaryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConversations.addException(exception);
+
+    try {
+      GenerateStatelessSummaryRequest request =
+          GenerateStatelessSummaryRequest.newBuilder()
+              .setStatelessConversation(
+                  GenerateStatelessSummaryRequest.MinimalConversation.newBuilder().build())
+              .setConversationProfile(ConversationProfile.newBuilder().build())
+              .setLatestMessage(
+                  MessageName.ofProjectConversationMessageName(
+                          "[PROJECT]", "[CONVERSATION]", "[MESSAGE]")
+                      .toString())
+              .setMaxContextSize(-1134084212)
+              .build();
+      client.generateStatelessSummary(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listLocationsTest() throws Exception {
     Location responsesElement = Location.newBuilder().build();
     ListLocationsResponse expectedResponse =

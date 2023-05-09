@@ -300,4 +300,17 @@ public interface StreamingDetectIntentRequestOrBuilder
    * @return The inputAudio.
    */
   com.google.protobuf.ByteString getInputAudio();
+
+  /**
+   *
+   *
+   * <pre>
+   * if true, `StreamingDetectIntentResponse.debugging_info` will get populated.
+   * </pre>
+   *
+   * <code>bool enable_debugging_info = 8;</code>
+   *
+   * @return The enableDebuggingInfo.
+   */
+  boolean getEnableDebuggingInfo();
 }

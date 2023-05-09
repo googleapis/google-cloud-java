@@ -25,6 +25,8 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2.CompleteConversationRequest;
 import com.google.cloud.dialogflow.v2.Conversation;
 import com.google.cloud.dialogflow.v2.CreateConversationRequest;
+import com.google.cloud.dialogflow.v2.GenerateStatelessSummaryRequest;
+import com.google.cloud.dialogflow.v2.GenerateStatelessSummaryResponse;
 import com.google.cloud.dialogflow.v2.GetConversationRequest;
 import com.google.cloud.dialogflow.v2.ListConversationsRequest;
 import com.google.cloud.dialogflow.v2.ListConversationsResponse;
@@ -81,6 +83,11 @@ public abstract class ConversationsStub implements BackgroundResource {
       suggestConversationSummaryCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: suggestConversationSummaryCallable()");
+  }
+
+  public UnaryCallable<GenerateStatelessSummaryRequest, GenerateStatelessSummaryResponse>
+      generateStatelessSummaryCallable() {
+    throw new UnsupportedOperationException("Not implemented: generateStatelessSummaryCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

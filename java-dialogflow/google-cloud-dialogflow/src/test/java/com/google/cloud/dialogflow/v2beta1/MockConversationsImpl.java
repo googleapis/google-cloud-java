@@ -207,4 +207,26 @@ public class MockConversationsImpl extends ConversationsImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void generateStatelessSummary(
+      GenerateStatelessSummaryRequest request,
+      StreamObserver<GenerateStatelessSummaryResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GenerateStatelessSummaryResponse) {
+      requests.add(request);
+      responseObserver.onNext(((GenerateStatelessSummaryResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateStatelessSummary, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GenerateStatelessSummaryResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

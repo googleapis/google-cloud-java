@@ -470,6 +470,20 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    */
   boolean getEnablePartialAutomatedAgentReply();
 
+  /**
+   *
+   *
+   * <pre>
+   * if true, `StreamingAnalyzeContentResponse.debugging_info` will get
+   * populated.
+   * </pre>
+   *
+   * <code>bool enable_debugging_info = 19;</code>
+   *
+   * @return The enableDebuggingInfo.
+   */
+  boolean getEnableDebuggingInfo();
+
   public com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.ConfigCase
       getConfigCase();
 

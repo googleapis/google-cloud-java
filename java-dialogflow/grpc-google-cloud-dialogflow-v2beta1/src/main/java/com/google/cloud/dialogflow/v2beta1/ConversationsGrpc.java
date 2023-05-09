@@ -374,6 +374,57 @@ public final class ConversationsGrpc {
     return getSuggestConversationSummaryMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryRequest,
+          com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryResponse>
+      getGenerateStatelessSummaryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GenerateStatelessSummary",
+      requestType = com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryRequest.class,
+      responseType = com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryRequest,
+          com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryResponse>
+      getGenerateStatelessSummaryMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryRequest,
+            com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryResponse>
+        getGenerateStatelessSummaryMethod;
+    if ((getGenerateStatelessSummaryMethod = ConversationsGrpc.getGenerateStatelessSummaryMethod)
+        == null) {
+      synchronized (ConversationsGrpc.class) {
+        if ((getGenerateStatelessSummaryMethod =
+                ConversationsGrpc.getGenerateStatelessSummaryMethod)
+            == null) {
+          ConversationsGrpc.getGenerateStatelessSummaryMethod =
+              getGenerateStatelessSummaryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryRequest,
+                          com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GenerateStatelessSummary"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConversationsMethodDescriptorSupplier("GenerateStatelessSummary"))
+                      .build();
+        }
+      }
+    }
+    return getGenerateStatelessSummaryMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ConversationsStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ConversationsStub> factory =
@@ -553,6 +604,23 @@ public final class ConversationsGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSuggestConversationSummaryMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates and returns a summary for a conversation that does not have a
+     * resource created for it.
+     * </pre>
+     */
+    default void generateStatelessSummary(
+        com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGenerateStatelessSummaryMethod(), responseObserver);
     }
   }
 
@@ -735,6 +803,25 @@ public final class ConversationsGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates and returns a summary for a conversation that does not have a
+     * resource created for it.
+     * </pre>
+     */
+    public void generateStatelessSummary(
+        com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGenerateStatelessSummaryMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -871,6 +958,21 @@ public final class ConversationsGrpc {
             com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSuggestConversationSummaryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates and returns a summary for a conversation that does not have a
+     * resource created for it.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryResponse
+        generateStatelessSummary(
+            com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateStatelessSummaryMethod(), getCallOptions(), request);
     }
   }
 
@@ -1018,6 +1120,22 @@ public final class ConversationsGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSuggestConversationSummaryMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates and returns a summary for a conversation that does not have a
+     * resource created for it.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryResponse>
+        generateStatelessSummary(
+            com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGenerateStatelessSummaryMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_CONVERSATION = 0;
@@ -1027,6 +1145,7 @@ public final class ConversationsGrpc {
   private static final int METHODID_BATCH_CREATE_MESSAGES = 4;
   private static final int METHODID_LIST_MESSAGES = 5;
   private static final int METHODID_SUGGEST_CONVERSATION_SUMMARY = 6;
+  private static final int METHODID_GENERATE_STATELESS_SUMMARY = 7;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1089,6 +1208,13 @@ public final class ConversationsGrpc {
               (com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GENERATE_STATELESS_SUMMARY:
+          serviceImpl.generateStatelessSummary(
+              (com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryResponse>)
                   responseObserver);
           break;
         default:
@@ -1158,6 +1284,13 @@ public final class ConversationsGrpc {
                     com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryRequest,
                     com.google.cloud.dialogflow.v2beta1.SuggestConversationSummaryResponse>(
                     service, METHODID_SUGGEST_CONVERSATION_SUMMARY)))
+        .addMethod(
+            getGenerateStatelessSummaryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryRequest,
+                    com.google.cloud.dialogflow.v2beta1.GenerateStatelessSummaryResponse>(
+                    service, METHODID_GENERATE_STATELESS_SUMMARY)))
         .build();
   }
 
@@ -1216,6 +1349,7 @@ public final class ConversationsGrpc {
                       .addMethod(getBatchCreateMessagesMethod())
                       .addMethod(getListMessagesMethod())
                       .addMethod(getSuggestConversationSummaryMethod())
+                      .addMethod(getGenerateStatelessSummaryMethod())
                       .build();
         }
       }

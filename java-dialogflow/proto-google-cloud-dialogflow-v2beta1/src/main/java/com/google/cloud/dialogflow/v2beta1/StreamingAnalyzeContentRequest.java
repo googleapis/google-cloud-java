@@ -854,6 +854,25 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     return enablePartialAutomatedAgentReply_;
   }
 
+  public static final int ENABLE_DEBUGGING_INFO_FIELD_NUMBER = 19;
+  private boolean enableDebuggingInfo_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * if true, `StreamingAnalyzeContentResponse.debugging_info` will get
+   * populated.
+   * </pre>
+   *
+   * <code>bool enable_debugging_info = 19;</code>
+   *
+   * @return The enableDebuggingInfo.
+   */
+  @java.lang.Override
+  public boolean getEnableDebuggingInfo() {
+    return enableDebuggingInfo_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -903,6 +922,9 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cxCurrentPage_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, cxCurrentPage_);
+    }
+    if (enableDebuggingInfo_ != false) {
+      output.writeBool(19, enableDebuggingInfo_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -959,6 +981,9 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cxCurrentPage_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, cxCurrentPage_);
     }
+    if (enableDebuggingInfo_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(19, enableDebuggingInfo_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -995,6 +1020,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     if (!getCxCurrentPage().equals(other.getCxCurrentPage())) return false;
     if (getEnablePartialAutomatedAgentReply() != other.getEnablePartialAutomatedAgentReply())
       return false;
+    if (getEnableDebuggingInfo() != other.getEnableDebuggingInfo()) return false;
     if (!getConfigCase().equals(other.getConfigCase())) return false;
     switch (configCase_) {
       case 2:
@@ -1055,6 +1081,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     hash =
         (53 * hash)
             + com.google.protobuf.Internal.hashBoolean(getEnablePartialAutomatedAgentReply());
+    hash = (37 * hash) + ENABLE_DEBUGGING_INFO_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableDebuggingInfo());
     switch (configCase_) {
       case 2:
         hash = (37 * hash) + AUDIO_CONFIG_FIELD_NUMBER;
@@ -1293,6 +1321,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       }
       cxCurrentPage_ = "";
       enablePartialAutomatedAgentReply_ = false;
+      enableDebuggingInfo_ = false;
       configCase_ = 0;
       config_ = null;
       inputCase_ = 0;
@@ -1363,6 +1392,9 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.enablePartialAutomatedAgentReply_ = enablePartialAutomatedAgentReply_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.enableDebuggingInfo_ = enableDebuggingInfo_;
       }
     }
 
@@ -1456,6 +1488,9 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       }
       if (other.getEnablePartialAutomatedAgentReply() != false) {
         setEnablePartialAutomatedAgentReply(other.getEnablePartialAutomatedAgentReply());
+      }
+      if (other.getEnableDebuggingInfo() != false) {
+        setEnableDebuggingInfo(other.getEnableDebuggingInfo());
       }
       switch (other.getConfigCase()) {
         case AUDIO_CONFIG:
@@ -1597,6 +1632,12 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
                 bitField0_ |= 0x00000400;
                 break;
               } // case 122
+            case 152:
+              {
+                enableDebuggingInfo_ = input.readBool();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 152
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3688,6 +3729,62 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     public Builder clearEnablePartialAutomatedAgentReply() {
       bitField0_ = (bitField0_ & ~0x00000800);
       enablePartialAutomatedAgentReply_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableDebuggingInfo_;
+    /**
+     *
+     *
+     * <pre>
+     * if true, `StreamingAnalyzeContentResponse.debugging_info` will get
+     * populated.
+     * </pre>
+     *
+     * <code>bool enable_debugging_info = 19;</code>
+     *
+     * @return The enableDebuggingInfo.
+     */
+    @java.lang.Override
+    public boolean getEnableDebuggingInfo() {
+      return enableDebuggingInfo_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * if true, `StreamingAnalyzeContentResponse.debugging_info` will get
+     * populated.
+     * </pre>
+     *
+     * <code>bool enable_debugging_info = 19;</code>
+     *
+     * @param value The enableDebuggingInfo to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableDebuggingInfo(boolean value) {
+
+      enableDebuggingInfo_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * if true, `StreamingAnalyzeContentResponse.debugging_info` will get
+     * populated.
+     * </pre>
+     *
+     * <code>bool enable_debugging_info = 19;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableDebuggingInfo() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      enableDebuggingInfo_ = false;
       onChanged();
       return this;
     }
