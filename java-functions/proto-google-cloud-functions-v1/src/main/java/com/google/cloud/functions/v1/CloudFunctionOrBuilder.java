@@ -157,7 +157,7 @@ public interface CloudFunctionOrBuilder
    *
    *
    * <pre>
-   * The Google Cloud Storage signed URL used for source uploading, generated
+   * The Google Cloud Storage-signed URL used for source uploading, generated
    * by calling [google.cloud.functions.v1.GenerateUploadUrl].
    * The signature is validated on write methods (Create, Update)
    * The signature is stripped from the Function object on read methods (Get,
@@ -173,7 +173,7 @@ public interface CloudFunctionOrBuilder
    *
    *
    * <pre>
-   * The Google Cloud Storage signed URL used for source uploading, generated
+   * The Google Cloud Storage-signed URL used for source uploading, generated
    * by calling [google.cloud.functions.v1.GenerateUploadUrl].
    * The signature is validated on write methods (Create, Update)
    * The signature is stripped from the Function object on read methods (Get,
@@ -189,7 +189,7 @@ public interface CloudFunctionOrBuilder
    *
    *
    * <pre>
-   * The Google Cloud Storage signed URL used for source uploading, generated
+   * The Google Cloud Storage-signed URL used for source uploading, generated
    * by calling [google.cloud.functions.v1.GenerateUploadUrl].
    * The signature is validated on write methods (Create, Update)
    * The signature is stripped from the Function object on read methods (Get,
@@ -305,12 +305,12 @@ public interface CloudFunctionOrBuilder
    *
    *
    * <pre>
-   * The name of the function (as defined in source code) that will be
-   * executed. Defaults to the resource name suffix, if not specified. For
-   * backward compatibility, if function with given name is not found, then the
-   * system will try to use function named "function".
-   * For Node.js this is name of a function exported by the module specified
-   * in `source_location`.
+   * The name of the function (as defined in source code) that is executed.
+   * Defaults to the resource name suffix, if not specified. For
+   * backward compatibility, if function with given name is not found, the
+   * system tries to use the function named "function".
+   * For Node.js, this is the name of a function exported by the module
+   * as specified in `source_location`.
    * </pre>
    *
    * <code>string entry_point = 8;</code>
@@ -322,12 +322,12 @@ public interface CloudFunctionOrBuilder
    *
    *
    * <pre>
-   * The name of the function (as defined in source code) that will be
-   * executed. Defaults to the resource name suffix, if not specified. For
-   * backward compatibility, if function with given name is not found, then the
-   * system will try to use function named "function".
-   * For Node.js this is name of a function exported by the module specified
-   * in `source_location`.
+   * The name of the function (as defined in source code) that is executed.
+   * Defaults to the resource name suffix, if not specified. For
+   * backward compatibility, if function with given name is not found, the
+   * system tries to use the function named "function".
+   * For Node.js, this is the name of a function exported by the module
+   * as specified in `source_location`.
    * </pre>
    *
    * <code>string entry_point = 8;</code>
@@ -493,8 +493,8 @@ public interface CloudFunctionOrBuilder
    *
    *
    * <pre>
-   * Output only. The version identifier of the Cloud Function. Each deployment attempt
-   * results in a new version of a function being created.
+   * Output only. The version identifier of the Cloud Function. Each deployment
+   * attempt results in a new version of a function being created.
    * </pre>
    *
    * <code>int64 version_id = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -681,11 +681,11 @@ public interface CloudFunctionOrBuilder
    *
    *
    * <pre>
-   * The VPC Network that this cloud function can connect to. It can be
-   * either the fully-qualified URI, or the short name of the network resource.
-   * If the short network name is used, the network must belong to the same
-   * project. Otherwise, it must belong to a project within the same
-   * organization. The format of this field is either
+   * The Serverless VPC Access connector that this cloud function can connect
+   * to. It can be either the fully qualified URI, or the short name of the
+   * connector resource. If the connector name is used, the connector must
+   * belong to the same project as the function. Otherwise, it must belong to a
+   * project within the same organization. The format of this field is either
    * `projects/{project}/global/networks/{network}` or `{network}`, where
    * `{project}` is a project id where the network is defined, and `{network}`
    * is the short name of the network.
@@ -704,11 +704,11 @@ public interface CloudFunctionOrBuilder
    *
    *
    * <pre>
-   * The VPC Network that this cloud function can connect to. It can be
-   * either the fully-qualified URI, or the short name of the network resource.
-   * If the short network name is used, the network must belong to the same
-   * project. Otherwise, it must belong to a project within the same
-   * organization. The format of this field is either
+   * The Serverless VPC Access connector that this cloud function can connect
+   * to. It can be either the fully qualified URI, or the short name of the
+   * connector resource. If the connector name is used, the connector must
+   * belong to the same project as the function. Otherwise, it must belong to a
+   * project within the same organization. The format of this field is either
    * `projects/{project}/global/networks/{network}` or `{network}`, where
    * `{project}` is a project id where the network is defined, and `{network}`
    * is the short name of the network.
@@ -728,12 +728,12 @@ public interface CloudFunctionOrBuilder
    *
    *
    * <pre>
-   * The limit on the maximum number of function instances that may coexist at a
+   * The limit on the maximum number of function instances that can coexist at a
    * given time.
-   * In some cases, such as rapid traffic surges, Cloud Functions may, for a
-   * short period of time, create more instances than the specified max
+   * In some cases, such as rapid traffic surges, Cloud Functions can for a
+   * short period of time create more instances than the specified max
    * instances limit. If your function cannot tolerate this temporary behavior,
-   * you may want to factor in a safety margin and set a lower max instances
+   * you might want to factor in a safety margin and set a lower max instances
    * value than your function can tolerate.
    * See the [Max
    * Instances](https://cloud.google.com/functions/docs/max-instances) Guide for
@@ -750,7 +750,7 @@ public interface CloudFunctionOrBuilder
    *
    *
    * <pre>
-   * A lower bound for the number function instances that may coexist at a
+   * A lower bound for the number function instances that can coexist at a
    * given time.
    * </pre>
    *
@@ -765,7 +765,7 @@ public interface CloudFunctionOrBuilder
    *
    * <pre>
    * The VPC Network Connector that this cloud function can connect to. It can
-   * be either the fully-qualified URI, or the short name of the network
+   * be either the fully qualified URI, or the short name of the network
    * connector resource. The format of this field is
    * `projects/&#42;&#47;locations/&#42;&#47;connectors/&#42;`
    * This field is mutually exclusive with `network` field and will eventually
@@ -784,7 +784,7 @@ public interface CloudFunctionOrBuilder
    *
    * <pre>
    * The VPC Network Connector that this cloud function can connect to. It can
-   * be either the fully-qualified URI, or the short name of the network
+   * be either the fully qualified URI, or the short name of the network
    * connector resource. The format of this field is
    * `projects/&#42;&#47;locations/&#42;&#47;connectors/&#42;`
    * This field is mutually exclusive with `network` field and will eventually
@@ -1142,8 +1142,8 @@ public interface CloudFunctionOrBuilder
    *
    *
    * <pre>
-   * Input only. An identifier for Firebase function sources. Disclaimer: This field is only
-   * supported for Firebase function deployments.
+   * Input only. An identifier for Firebase function sources. Disclaimer: This
+   * field is only supported for Firebase function deployments.
    * </pre>
    *
    * <code>string source_token = 31 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1155,8 +1155,8 @@ public interface CloudFunctionOrBuilder
    *
    *
    * <pre>
-   * Input only. An identifier for Firebase function sources. Disclaimer: This field is only
-   * supported for Firebase function deployments.
+   * Input only. An identifier for Firebase function sources. Disclaimer: This
+   * field is only supported for Firebase function deployments.
    * </pre>
    *
    * <code>string source_token = 31 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1174,7 +1174,7 @@ public interface CloudFunctionOrBuilder
    * Artifact Registry. If unspecified and the deployment is eligible to use
    * Artifact Registry, GCF will create and use a repository named
    * 'gcf-artifacts' for every deployed region. This is the repository to which
-   * the function docker image will be pushed after it is built by Cloud Build.
+   * the function docker image is pushed after it is built by Cloud Build.
    * It must match the pattern
    * `projects/{project}/locations/{location}/repositories/{repository}`.
    * Cross-project repositories are not supported.
@@ -1196,7 +1196,7 @@ public interface CloudFunctionOrBuilder
    * Artifact Registry. If unspecified and the deployment is eligible to use
    * Artifact Registry, GCF will create and use a repository named
    * 'gcf-artifacts' for every deployed region. This is the repository to which
-   * the function docker image will be pushed after it is built by Cloud Build.
+   * the function docker image is pushed after it is built by Cloud Build.
    * It must match the pattern
    * `projects/{project}/locations/{location}/repositories/{repository}`.
    * Cross-project repositories are not supported.
@@ -1215,7 +1215,7 @@ public interface CloudFunctionOrBuilder
    *
    * <pre>
    * Docker Registry to use for this deployment.
-   * If `docker_repository` field is specified, this field will be automatically
+   * If `docker_repository` field is specified, this field is automatically
    * set as `ARTIFACT_REGISTRY`.
    * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
    * This field may be overridden by the backend for eligible deployments.
@@ -1231,7 +1231,7 @@ public interface CloudFunctionOrBuilder
    *
    * <pre>
    * Docker Registry to use for this deployment.
-   * If `docker_repository` field is specified, this field will be automatically
+   * If `docker_repository` field is specified, this field is automatically
    * set as `ARTIFACT_REGISTRY`.
    * If unspecified, it currently defaults to `CONTAINER_REGISTRY`.
    * This field may be overridden by the backend for eligible deployments.

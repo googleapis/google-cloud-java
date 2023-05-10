@@ -23,7 +23,7 @@ package com.google.cloud.functions.v1;
  *
  * <pre>
  * Describes the policy in case of function's execution failure.
- * If empty, then defaults to ignoring failures (i.e. not retrying them).
+ * If empty, then defaults to ignoring failures (i.e., not retrying them).
  * </pre>
  *
  * Protobuf type {@code google.cloud.functions.v1.FailurePolicy}
@@ -75,8 +75,8 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Describes the retry policy in case of function's execution failure.
-   * A function execution will be retried on any failure.
-   * A failed execution will be retried up to 7 days with an exponential backoff
+   * A function execution is retried on any failure.
+   * A failed execution is retried up to 7 days with an exponential backoff
    * (capped at 10 seconds).
    * Retried execution is charged as any other execution.
    * </pre>
@@ -277,8 +277,8 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Describes the retry policy in case of function's execution failure.
-     * A function execution will be retried on any failure.
-     * A failed execution will be retried up to 7 days with an exponential backoff
+     * A function execution is retried on any failure.
+     * A failed execution is retried up to 7 days with an exponential backoff
      * (capped at 10 seconds).
      * Retried execution is charged as any other execution.
      * </pre>
@@ -550,7 +550,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If specified, then the function will be retried in case of a failure.
+   * If specified, the function is retried in case of a failure.
    * </pre>
    *
    * <code>.google.cloud.functions.v1.FailurePolicy.Retry retry = 1;</code>
@@ -565,7 +565,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If specified, then the function will be retried in case of a failure.
+   * If specified, the function is retried in case of a failure.
    * </pre>
    *
    * <code>.google.cloud.functions.v1.FailurePolicy.Retry retry = 1;</code>
@@ -583,7 +583,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If specified, then the function will be retried in case of a failure.
+   * If specified, the function is retried in case of a failure.
    * </pre>
    *
    * <code>.google.cloud.functions.v1.FailurePolicy.Retry retry = 1;</code>
@@ -775,7 +775,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Describes the policy in case of function's execution failure.
-   * If empty, then defaults to ignoring failures (i.e. not retrying them).
+   * If empty, then defaults to ignoring failures (i.e., not retrying them).
    * </pre>
    *
    * Protobuf type {@code google.cloud.functions.v1.FailurePolicy}
@@ -992,7 +992,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If specified, then the function will be retried in case of a failure.
+     * If specified, the function is retried in case of a failure.
      * </pre>
      *
      * <code>.google.cloud.functions.v1.FailurePolicy.Retry retry = 1;</code>
@@ -1007,7 +1007,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If specified, then the function will be retried in case of a failure.
+     * If specified, the function is retried in case of a failure.
      * </pre>
      *
      * <code>.google.cloud.functions.v1.FailurePolicy.Retry retry = 1;</code>
@@ -1032,7 +1032,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If specified, then the function will be retried in case of a failure.
+     * If specified, the function is retried in case of a failure.
      * </pre>
      *
      * <code>.google.cloud.functions.v1.FailurePolicy.Retry retry = 1;</code>
@@ -1054,7 +1054,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If specified, then the function will be retried in case of a failure.
+     * If specified, the function is retried in case of a failure.
      * </pre>
      *
      * <code>.google.cloud.functions.v1.FailurePolicy.Retry retry = 1;</code>
@@ -1074,7 +1074,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If specified, then the function will be retried in case of a failure.
+     * If specified, the function is retried in case of a failure.
      * </pre>
      *
      * <code>.google.cloud.functions.v1.FailurePolicy.Retry retry = 1;</code>
@@ -1106,7 +1106,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If specified, then the function will be retried in case of a failure.
+     * If specified, the function is retried in case of a failure.
      * </pre>
      *
      * <code>.google.cloud.functions.v1.FailurePolicy.Retry retry = 1;</code>
@@ -1131,7 +1131,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If specified, then the function will be retried in case of a failure.
+     * If specified, the function is retried in case of a failure.
      * </pre>
      *
      * <code>.google.cloud.functions.v1.FailurePolicy.Retry retry = 1;</code>
@@ -1143,7 +1143,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If specified, then the function will be retried in case of a failure.
+     * If specified, the function is retried in case of a failure.
      * </pre>
      *
      * <code>.google.cloud.functions.v1.FailurePolicy.Retry retry = 1;</code>
@@ -1163,7 +1163,7 @@ public final class FailurePolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If specified, then the function will be retried in case of a failure.
+     * If specified, the function is retried in case of a failure.
      * </pre>
      *
      * <code>.google.cloud.functions.v1.FailurePolicy.Retry retry = 1;</code>

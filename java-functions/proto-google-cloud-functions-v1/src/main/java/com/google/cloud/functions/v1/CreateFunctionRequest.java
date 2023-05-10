@@ -75,8 +75,8 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The project and location in which the function should be created, specified
-   * in the format `projects/&#42;&#47;locations/&#42;`
+   * Required. The project and location in which the function should be created,
+   * specified in the format `projects/&#42;&#47;locations/&#42;`
    * </pre>
    *
    * <code>
@@ -101,8 +101,8 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The project and location in which the function should be created, specified
-   * in the format `projects/&#42;&#47;locations/&#42;`
+   * Required. The project and location in which the function should be created,
+   * specified in the format `projects/&#42;&#47;locations/&#42;`
    * </pre>
    *
    * <code>
@@ -558,8 +558,8 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The project and location in which the function should be created, specified
-     * in the format `projects/&#42;&#47;locations/&#42;`
+     * Required. The project and location in which the function should be created,
+     * specified in the format `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -583,8 +583,8 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The project and location in which the function should be created, specified
-     * in the format `projects/&#42;&#47;locations/&#42;`
+     * Required. The project and location in which the function should be created,
+     * specified in the format `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -608,8 +608,8 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The project and location in which the function should be created, specified
-     * in the format `projects/&#42;&#47;locations/&#42;`
+     * Required. The project and location in which the function should be created,
+     * specified in the format `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -632,8 +632,8 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The project and location in which the function should be created, specified
-     * in the format `projects/&#42;&#47;locations/&#42;`
+     * Required. The project and location in which the function should be created,
+     * specified in the format `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>
@@ -652,8 +652,8 @@ public final class CreateFunctionRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The project and location in which the function should be created, specified
-     * in the format `projects/&#42;&#47;locations/&#42;`
+     * Required. The project and location in which the function should be created,
+     * specified in the format `projects/&#42;&#47;locations/&#42;`
      * </pre>
      *
      * <code>

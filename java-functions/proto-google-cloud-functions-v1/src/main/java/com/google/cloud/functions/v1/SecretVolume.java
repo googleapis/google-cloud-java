@@ -23,10 +23,10 @@ package com.google.cloud.functions.v1;
  *
  * <pre>
  * Configuration for a secret volume. It has the information necessary to fetch
- * the secret value from secret manager and make it available as files mounted
+ * the secret value from Secret Manager and make it available as files mounted
  * at the requested paths within the application container. Secret value is not
- * a part of the configuration. Every filesystem read operation performs a
- * lookup in secret manager to retrieve the secret value.
+ * a part of the configuration. Every file system read operation performs a
+ * lookup in Secret Manager to retrieve the secret value.
  * </pre>
  *
  * Protobuf type {@code google.cloud.functions.v1.SecretVolume}
@@ -84,7 +84,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Version of the secret (version number or the string 'latest'). It is
-     * preferrable to use `latest` version with secret volumes as secret value
+     * preferable to use `latest` version with secret volumes as secret value
      * changes are reflected immediately.
      * </pre>
      *
@@ -98,7 +98,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Version of the secret (version number or the string 'latest'). It is
-     * preferrable to use `latest` version with secret volumes as secret value
+     * preferable to use `latest` version with secret volumes as secret value
      * changes are reflected immediately.
      * </pre>
      *
@@ -113,8 +113,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Relative path of the file under the mount path where the secret value for
-     * this version will be fetched and made available. For example, setting the
-     * mount_path as '/etc/secrets' and path as `/secret_foo` would mount the
+     * this version is fetched and made available. For example, setting the
+     * mount_path as '/etc/secrets' and path as `/secret_foo` mounts the
      * secret value file at `/etc/secrets/secret_foo`.
      * </pre>
      *
@@ -128,8 +128,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Relative path of the file under the mount path where the secret value for
-     * this version will be fetched and made available. For example, setting the
-     * mount_path as '/etc/secrets' and path as `/secret_foo` would mount the
+     * this version is fetched and made available. For example, setting the
+     * mount_path as '/etc/secrets' and path as `/secret_foo` mounts the
      * secret value file at `/etc/secrets/secret_foo`.
      * </pre>
      *
@@ -198,7 +198,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Version of the secret (version number or the string 'latest'). It is
-     * preferrable to use `latest` version with secret volumes as secret value
+     * preferable to use `latest` version with secret volumes as secret value
      * changes are reflected immediately.
      * </pre>
      *
@@ -223,7 +223,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Version of the secret (version number or the string 'latest'). It is
-     * preferrable to use `latest` version with secret volumes as secret value
+     * preferable to use `latest` version with secret volumes as secret value
      * changes are reflected immediately.
      * </pre>
      *
@@ -253,8 +253,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Relative path of the file under the mount path where the secret value for
-     * this version will be fetched and made available. For example, setting the
-     * mount_path as '/etc/secrets' and path as `/secret_foo` would mount the
+     * this version is fetched and made available. For example, setting the
+     * mount_path as '/etc/secrets' and path as `/secret_foo` mounts the
      * secret value file at `/etc/secrets/secret_foo`.
      * </pre>
      *
@@ -279,8 +279,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Relative path of the file under the mount path where the secret value for
-     * this version will be fetched and made available. For example, setting the
-     * mount_path as '/etc/secrets' and path as `/secret_foo` would mount the
+     * this version is fetched and made available. For example, setting the
+     * mount_path as '/etc/secrets' and path as `/secret_foo` mounts the
      * secret value file at `/etc/secrets/secret_foo`.
      * </pre>
      *
@@ -678,7 +678,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Version of the secret (version number or the string 'latest'). It is
-       * preferrable to use `latest` version with secret volumes as secret value
+       * preferable to use `latest` version with secret volumes as secret value
        * changes are reflected immediately.
        * </pre>
        *
@@ -702,7 +702,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Version of the secret (version number or the string 'latest'). It is
-       * preferrable to use `latest` version with secret volumes as secret value
+       * preferable to use `latest` version with secret volumes as secret value
        * changes are reflected immediately.
        * </pre>
        *
@@ -726,7 +726,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Version of the secret (version number or the string 'latest'). It is
-       * preferrable to use `latest` version with secret volumes as secret value
+       * preferable to use `latest` version with secret volumes as secret value
        * changes are reflected immediately.
        * </pre>
        *
@@ -749,7 +749,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Version of the secret (version number or the string 'latest'). It is
-       * preferrable to use `latest` version with secret volumes as secret value
+       * preferable to use `latest` version with secret volumes as secret value
        * changes are reflected immediately.
        * </pre>
        *
@@ -768,7 +768,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Version of the secret (version number or the string 'latest'). It is
-       * preferrable to use `latest` version with secret volumes as secret value
+       * preferable to use `latest` version with secret volumes as secret value
        * changes are reflected immediately.
        * </pre>
        *
@@ -794,8 +794,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Relative path of the file under the mount path where the secret value for
-       * this version will be fetched and made available. For example, setting the
-       * mount_path as '/etc/secrets' and path as `/secret_foo` would mount the
+       * this version is fetched and made available. For example, setting the
+       * mount_path as '/etc/secrets' and path as `/secret_foo` mounts the
        * secret value file at `/etc/secrets/secret_foo`.
        * </pre>
        *
@@ -819,8 +819,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Relative path of the file under the mount path where the secret value for
-       * this version will be fetched and made available. For example, setting the
-       * mount_path as '/etc/secrets' and path as `/secret_foo` would mount the
+       * this version is fetched and made available. For example, setting the
+       * mount_path as '/etc/secrets' and path as `/secret_foo` mounts the
        * secret value file at `/etc/secrets/secret_foo`.
        * </pre>
        *
@@ -844,8 +844,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Relative path of the file under the mount path where the secret value for
-       * this version will be fetched and made available. For example, setting the
-       * mount_path as '/etc/secrets' and path as `/secret_foo` would mount the
+       * this version is fetched and made available. For example, setting the
+       * mount_path as '/etc/secrets' and path as `/secret_foo` mounts the
        * secret value file at `/etc/secrets/secret_foo`.
        * </pre>
        *
@@ -868,8 +868,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Relative path of the file under the mount path where the secret value for
-       * this version will be fetched and made available. For example, setting the
-       * mount_path as '/etc/secrets' and path as `/secret_foo` would mount the
+       * this version is fetched and made available. For example, setting the
+       * mount_path as '/etc/secrets' and path as `/secret_foo` mounts the
        * secret value file at `/etc/secrets/secret_foo`.
        * </pre>
        *
@@ -888,8 +888,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Relative path of the file under the mount path where the secret value for
-       * this version will be fetched and made available. For example, setting the
-       * mount_path as '/etc/secrets' and path as `/secret_foo` would mount the
+       * this version is fetched and made available. For example, setting the
+       * mount_path as '/etc/secrets' and path as `/secret_foo` mounts the
        * secret value file at `/etc/secrets/secret_foo`.
        * </pre>
        *
@@ -982,8 +982,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The path within the container to mount the secret volume. For example,
-   * setting the mount_path as `/etc/secrets` would mount the secret value files
-   * under the `/etc/secrets` directory. This directory will also be completely
+   * setting the mount_path as `/etc/secrets` mounts the secret value files
+   * under the `/etc/secrets` directory. This directory is also completely
    * shadowed and unavailable to mount any other secrets.
    * Recommended mount paths: /etc/secrets
    * Restricted mount paths: /cloudsql, /dev/log, /pod, /proc, /var/log
@@ -1010,8 +1010,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The path within the container to mount the secret volume. For example,
-   * setting the mount_path as `/etc/secrets` would mount the secret value files
-   * under the `/etc/secrets` directory. This directory will also be completely
+   * setting the mount_path as `/etc/secrets` mounts the secret value files
+   * under the `/etc/secrets` directory. This directory is also completely
    * shadowed and unavailable to mount any other secrets.
    * Recommended mount paths: /etc/secrets
    * Restricted mount paths: /cloudsql, /dev/log, /pod, /proc, /var/log
@@ -1043,9 +1043,9 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Project identifier (preferrably project number but can also be the project
-   * ID) of the project that contains the secret. If not set, it will be
-   * populated with the function's project assuming that the secret exists in
-   * the same project as of the function.
+   * ID) of the project that contains the secret. If not set, it is
+   * populated with the function's project, assuming that the secret exists in
+   * the same project as the function.
    * </pre>
    *
    * <code>string project_id = 2;</code>
@@ -1069,9 +1069,9 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Project identifier (preferrably project number but can also be the project
-   * ID) of the project that contains the secret. If not set, it will be
-   * populated with the function's project assuming that the secret exists in
-   * the same project as of the function.
+   * ID) of the project that contains the secret. If not set, it is
+   * populated with the function's project, assuming that the secret exists in
+   * the same project as the function.
    * </pre>
    *
    * <code>string project_id = 2;</code>
@@ -1099,7 +1099,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the secret in secret manager (not the full resource name).
+   * Name of the secret in Secret Manager (not the full resource name).
    * </pre>
    *
    * <code>string secret = 3;</code>
@@ -1122,7 +1122,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the secret in secret manager (not the full resource name).
+   * Name of the secret in Secret Manager (not the full resource name).
    * </pre>
    *
    * <code>string secret = 3;</code>
@@ -1151,7 +1151,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * List of secret versions to mount for this secret. If empty, the `latest`
-   * version of the secret will be made available in a file named after the
+   * version of the secret is made available in a file named after the
    * secret under the mount point.
    * </pre>
    *
@@ -1167,7 +1167,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * List of secret versions to mount for this secret. If empty, the `latest`
-   * version of the secret will be made available in a file named after the
+   * version of the secret is made available in a file named after the
    * secret under the mount point.
    * </pre>
    *
@@ -1183,7 +1183,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * List of secret versions to mount for this secret. If empty, the `latest`
-   * version of the secret will be made available in a file named after the
+   * version of the secret is made available in a file named after the
    * secret under the mount point.
    * </pre>
    *
@@ -1198,7 +1198,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * List of secret versions to mount for this secret. If empty, the `latest`
-   * version of the secret will be made available in a file named after the
+   * version of the secret is made available in a file named after the
    * secret under the mount point.
    * </pre>
    *
@@ -1213,7 +1213,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * List of secret versions to mount for this secret. If empty, the `latest`
-   * version of the secret will be made available in a file named after the
+   * version of the secret is made available in a file named after the
    * secret under the mount point.
    * </pre>
    *
@@ -1418,10 +1418,10 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Configuration for a secret volume. It has the information necessary to fetch
-   * the secret value from secret manager and make it available as files mounted
+   * the secret value from Secret Manager and make it available as files mounted
    * at the requested paths within the application container. Secret value is not
-   * a part of the configuration. Every filesystem read operation performs a
-   * lookup in secret manager to retrieve the secret value.
+   * a part of the configuration. Every file system read operation performs a
+   * lookup in Secret Manager to retrieve the secret value.
    * </pre>
    *
    * Protobuf type {@code google.cloud.functions.v1.SecretVolume}
@@ -1696,8 +1696,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The path within the container to mount the secret volume. For example,
-     * setting the mount_path as `/etc/secrets` would mount the secret value files
-     * under the `/etc/secrets` directory. This directory will also be completely
+     * setting the mount_path as `/etc/secrets` mounts the secret value files
+     * under the `/etc/secrets` directory. This directory is also completely
      * shadowed and unavailable to mount any other secrets.
      * Recommended mount paths: /etc/secrets
      * Restricted mount paths: /cloudsql, /dev/log, /pod, /proc, /var/log
@@ -1723,8 +1723,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The path within the container to mount the secret volume. For example,
-     * setting the mount_path as `/etc/secrets` would mount the secret value files
-     * under the `/etc/secrets` directory. This directory will also be completely
+     * setting the mount_path as `/etc/secrets` mounts the secret value files
+     * under the `/etc/secrets` directory. This directory is also completely
      * shadowed and unavailable to mount any other secrets.
      * Recommended mount paths: /etc/secrets
      * Restricted mount paths: /cloudsql, /dev/log, /pod, /proc, /var/log
@@ -1750,8 +1750,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The path within the container to mount the secret volume. For example,
-     * setting the mount_path as `/etc/secrets` would mount the secret value files
-     * under the `/etc/secrets` directory. This directory will also be completely
+     * setting the mount_path as `/etc/secrets` mounts the secret value files
+     * under the `/etc/secrets` directory. This directory is also completely
      * shadowed and unavailable to mount any other secrets.
      * Recommended mount paths: /etc/secrets
      * Restricted mount paths: /cloudsql, /dev/log, /pod, /proc, /var/log
@@ -1776,8 +1776,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The path within the container to mount the secret volume. For example,
-     * setting the mount_path as `/etc/secrets` would mount the secret value files
-     * under the `/etc/secrets` directory. This directory will also be completely
+     * setting the mount_path as `/etc/secrets` mounts the secret value files
+     * under the `/etc/secrets` directory. This directory is also completely
      * shadowed and unavailable to mount any other secrets.
      * Recommended mount paths: /etc/secrets
      * Restricted mount paths: /cloudsql, /dev/log, /pod, /proc, /var/log
@@ -1798,8 +1798,8 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The path within the container to mount the secret volume. For example,
-     * setting the mount_path as `/etc/secrets` would mount the secret value files
-     * under the `/etc/secrets` directory. This directory will also be completely
+     * setting the mount_path as `/etc/secrets` mounts the secret value files
+     * under the `/etc/secrets` directory. This directory is also completely
      * shadowed and unavailable to mount any other secrets.
      * Recommended mount paths: /etc/secrets
      * Restricted mount paths: /cloudsql, /dev/log, /pod, /proc, /var/log
@@ -1827,9 +1827,9 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Project identifier (preferrably project number but can also be the project
-     * ID) of the project that contains the secret. If not set, it will be
-     * populated with the function's project assuming that the secret exists in
-     * the same project as of the function.
+     * ID) of the project that contains the secret. If not set, it is
+     * populated with the function's project, assuming that the secret exists in
+     * the same project as the function.
      * </pre>
      *
      * <code>string project_id = 2;</code>
@@ -1852,9 +1852,9 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Project identifier (preferrably project number but can also be the project
-     * ID) of the project that contains the secret. If not set, it will be
-     * populated with the function's project assuming that the secret exists in
-     * the same project as of the function.
+     * ID) of the project that contains the secret. If not set, it is
+     * populated with the function's project, assuming that the secret exists in
+     * the same project as the function.
      * </pre>
      *
      * <code>string project_id = 2;</code>
@@ -1877,9 +1877,9 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Project identifier (preferrably project number but can also be the project
-     * ID) of the project that contains the secret. If not set, it will be
-     * populated with the function's project assuming that the secret exists in
-     * the same project as of the function.
+     * ID) of the project that contains the secret. If not set, it is
+     * populated with the function's project, assuming that the secret exists in
+     * the same project as the function.
      * </pre>
      *
      * <code>string project_id = 2;</code>
@@ -1901,9 +1901,9 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Project identifier (preferrably project number but can also be the project
-     * ID) of the project that contains the secret. If not set, it will be
-     * populated with the function's project assuming that the secret exists in
-     * the same project as of the function.
+     * ID) of the project that contains the secret. If not set, it is
+     * populated with the function's project, assuming that the secret exists in
+     * the same project as the function.
      * </pre>
      *
      * <code>string project_id = 2;</code>
@@ -1921,9 +1921,9 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Project identifier (preferrably project number but can also be the project
-     * ID) of the project that contains the secret. If not set, it will be
-     * populated with the function's project assuming that the secret exists in
-     * the same project as of the function.
+     * ID) of the project that contains the secret. If not set, it is
+     * populated with the function's project, assuming that the secret exists in
+     * the same project as the function.
      * </pre>
      *
      * <code>string project_id = 2;</code>
@@ -1947,7 +1947,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the secret in secret manager (not the full resource name).
+     * Name of the secret in Secret Manager (not the full resource name).
      * </pre>
      *
      * <code>string secret = 3;</code>
@@ -1969,7 +1969,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the secret in secret manager (not the full resource name).
+     * Name of the secret in Secret Manager (not the full resource name).
      * </pre>
      *
      * <code>string secret = 3;</code>
@@ -1991,7 +1991,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the secret in secret manager (not the full resource name).
+     * Name of the secret in Secret Manager (not the full resource name).
      * </pre>
      *
      * <code>string secret = 3;</code>
@@ -2012,7 +2012,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the secret in secret manager (not the full resource name).
+     * Name of the secret in Secret Manager (not the full resource name).
      * </pre>
      *
      * <code>string secret = 3;</code>
@@ -2029,7 +2029,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the secret in secret manager (not the full resource name).
+     * Name of the secret in Secret Manager (not the full resource name).
      * </pre>
      *
      * <code>string secret = 3;</code>
@@ -2071,7 +2071,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of secret versions to mount for this secret. If empty, the `latest`
-     * version of the secret will be made available in a file named after the
+     * version of the secret is made available in a file named after the
      * secret under the mount point.
      * </pre>
      *
@@ -2090,7 +2090,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of secret versions to mount for this secret. If empty, the `latest`
-     * version of the secret will be made available in a file named after the
+     * version of the secret is made available in a file named after the
      * secret under the mount point.
      * </pre>
      *
@@ -2108,7 +2108,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of secret versions to mount for this secret. If empty, the `latest`
-     * version of the secret will be made available in a file named after the
+     * version of the secret is made available in a file named after the
      * secret under the mount point.
      * </pre>
      *
@@ -2126,7 +2126,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of secret versions to mount for this secret. If empty, the `latest`
-     * version of the secret will be made available in a file named after the
+     * version of the secret is made available in a file named after the
      * secret under the mount point.
      * </pre>
      *
@@ -2151,7 +2151,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of secret versions to mount for this secret. If empty, the `latest`
-     * version of the secret will be made available in a file named after the
+     * version of the secret is made available in a file named after the
      * secret under the mount point.
      * </pre>
      *
@@ -2174,7 +2174,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of secret versions to mount for this secret. If empty, the `latest`
-     * version of the secret will be made available in a file named after the
+     * version of the secret is made available in a file named after the
      * secret under the mount point.
      * </pre>
      *
@@ -2198,7 +2198,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of secret versions to mount for this secret. If empty, the `latest`
-     * version of the secret will be made available in a file named after the
+     * version of the secret is made available in a file named after the
      * secret under the mount point.
      * </pre>
      *
@@ -2223,7 +2223,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of secret versions to mount for this secret. If empty, the `latest`
-     * version of the secret will be made available in a file named after the
+     * version of the secret is made available in a file named after the
      * secret under the mount point.
      * </pre>
      *
@@ -2245,7 +2245,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of secret versions to mount for this secret. If empty, the `latest`
-     * version of the secret will be made available in a file named after the
+     * version of the secret is made available in a file named after the
      * secret under the mount point.
      * </pre>
      *
@@ -2268,7 +2268,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of secret versions to mount for this secret. If empty, the `latest`
-     * version of the secret will be made available in a file named after the
+     * version of the secret is made available in a file named after the
      * secret under the mount point.
      * </pre>
      *
@@ -2291,7 +2291,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of secret versions to mount for this secret. If empty, the `latest`
-     * version of the secret will be made available in a file named after the
+     * version of the secret is made available in a file named after the
      * secret under the mount point.
      * </pre>
      *
@@ -2312,7 +2312,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of secret versions to mount for this secret. If empty, the `latest`
-     * version of the secret will be made available in a file named after the
+     * version of the secret is made available in a file named after the
      * secret under the mount point.
      * </pre>
      *
@@ -2333,7 +2333,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of secret versions to mount for this secret. If empty, the `latest`
-     * version of the secret will be made available in a file named after the
+     * version of the secret is made available in a file named after the
      * secret under the mount point.
      * </pre>
      *
@@ -2348,7 +2348,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of secret versions to mount for this secret. If empty, the `latest`
-     * version of the secret will be made available in a file named after the
+     * version of the secret is made available in a file named after the
      * secret under the mount point.
      * </pre>
      *
@@ -2367,7 +2367,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of secret versions to mount for this secret. If empty, the `latest`
-     * version of the secret will be made available in a file named after the
+     * version of the secret is made available in a file named after the
      * secret under the mount point.
      * </pre>
      *
@@ -2387,7 +2387,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of secret versions to mount for this secret. If empty, the `latest`
-     * version of the secret will be made available in a file named after the
+     * version of the secret is made available in a file named after the
      * secret under the mount point.
      * </pre>
      *
@@ -2403,7 +2403,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of secret versions to mount for this secret. If empty, the `latest`
-     * version of the secret will be made available in a file named after the
+     * version of the secret is made available in a file named after the
      * secret under the mount point.
      * </pre>
      *
@@ -2420,7 +2420,7 @@ public final class SecretVolume extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of secret versions to mount for this secret. If empty, the `latest`
-     * version of the secret will be made available in a file named after the
+     * version of the secret is made available in a file named after the
      * secret under the mount point.
      * </pre>
      *

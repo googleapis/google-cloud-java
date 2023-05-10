@@ -27,7 +27,7 @@ public interface FailurePolicyOrBuilder
    *
    *
    * <pre>
-   * If specified, then the function will be retried in case of a failure.
+   * If specified, the function is retried in case of a failure.
    * </pre>
    *
    * <code>.google.cloud.functions.v1.FailurePolicy.Retry retry = 1;</code>
@@ -39,7 +39,7 @@ public interface FailurePolicyOrBuilder
    *
    *
    * <pre>
-   * If specified, then the function will be retried in case of a failure.
+   * If specified, the function is retried in case of a failure.
    * </pre>
    *
    * <code>.google.cloud.functions.v1.FailurePolicy.Retry retry = 1;</code>
@@ -51,7 +51,7 @@ public interface FailurePolicyOrBuilder
    *
    *
    * <pre>
-   * If specified, then the function will be retried in case of a failure.
+   * If specified, the function is retried in case of a failure.
    * </pre>
    *
    * <code>.google.cloud.functions.v1.FailurePolicy.Retry retry = 1;</code>
