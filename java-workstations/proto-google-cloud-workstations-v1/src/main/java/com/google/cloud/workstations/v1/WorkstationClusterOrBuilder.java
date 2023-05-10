@@ -352,7 +352,7 @@ public interface WorkstationClusterOrBuilder
    *
    * <pre>
    * Checksum computed by the server. May be sent on update and delete requests
-   * to ensure that the client has an up-to-date value before proceeding.
+   * to make sure that the client has an up-to-date value before proceeding.
    * </pre>
    *
    * <code>string etag = 9;</code>
@@ -365,7 +365,7 @@ public interface WorkstationClusterOrBuilder
    *
    * <pre>
    * Checksum computed by the server. May be sent on update and delete requests
-   * to ensure that the client has an up-to-date value before proceeding.
+   * to make sure that the client has an up-to-date value before proceeding.
    * </pre>
    *
    * <code>string etag = 9;</code>
@@ -429,6 +429,37 @@ public interface WorkstationClusterOrBuilder
    * @return The bytes for subnetwork.
    */
   com.google.protobuf.ByteString getSubnetworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The private IP address of the control plane for this cluster.
+   * Workstation VMs need access to this IP address to work with the service, so
+   * make sure that your firewall rules allow egress from the workstation VMs to
+   * this address.
+   * </pre>
+   *
+   * <code>string control_plane_ip = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The controlPlaneIp.
+   */
+  java.lang.String getControlPlaneIp();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The private IP address of the control plane for this cluster.
+   * Workstation VMs need access to this IP address to work with the service, so
+   * make sure that your firewall rules allow egress from the workstation VMs to
+   * this address.
+   * </pre>
+   *
+   * <code>string control_plane_ip = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for controlPlaneIp.
+   */
+  com.google.protobuf.ByteString getControlPlaneIpBytes();
 
   /**
    *

@@ -352,7 +352,7 @@ public interface WorkstationConfigOrBuilder
    *
    * <pre>
    * Checksum computed by the server. May be sent on update and delete requests
-   * to ensure that the client has an up-to-date value before proceeding.
+   * to make sure that the client has an up-to-date value before proceeding.
    * </pre>
    *
    * <code>string etag = 9;</code>
@@ -365,7 +365,7 @@ public interface WorkstationConfigOrBuilder
    *
    * <pre>
    * Checksum computed by the server. May be sent on update and delete requests
-   * to ensure that the client has an up-to-date value before proceeding.
+   * to make sure that the client has an up-to-date value before proceeding.
    * </pre>
    *
    * <code>string etag = 9;</code>
@@ -602,7 +602,7 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Encrypts resources of this workstation configuration using a
+   * Immutable. Encrypts resources of this workstation configuration using a
    * customer-managed encryption key.
    * If specified, the boot disk of the Compute Engine instance and the
    * persistent disk are encrypted using this encryption key. If
@@ -615,10 +615,11 @@ public interface WorkstationConfigOrBuilder
    * Otherwise, data on the persistent disk will be lost.
    * If the encryption key is revoked, the workstation session will
    * automatically be stopped within 7 hours.
+   * Immutable after the workstation configuration is created.
    * </pre>
    *
    * <code>
-   * .google.cloud.workstations.v1.WorkstationConfig.CustomerEncryptionKey encryption_key = 17;
+   * .google.cloud.workstations.v1.WorkstationConfig.CustomerEncryptionKey encryption_key = 17 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return Whether the encryptionKey field is set.
@@ -628,7 +629,7 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Encrypts resources of this workstation configuration using a
+   * Immutable. Encrypts resources of this workstation configuration using a
    * customer-managed encryption key.
    * If specified, the boot disk of the Compute Engine instance and the
    * persistent disk are encrypted using this encryption key. If
@@ -641,10 +642,11 @@ public interface WorkstationConfigOrBuilder
    * Otherwise, data on the persistent disk will be lost.
    * If the encryption key is revoked, the workstation session will
    * automatically be stopped within 7 hours.
+   * Immutable after the workstation configuration is created.
    * </pre>
    *
    * <code>
-   * .google.cloud.workstations.v1.WorkstationConfig.CustomerEncryptionKey encryption_key = 17;
+   * .google.cloud.workstations.v1.WorkstationConfig.CustomerEncryptionKey encryption_key = 17 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The encryptionKey.
@@ -654,7 +656,7 @@ public interface WorkstationConfigOrBuilder
    *
    *
    * <pre>
-   * Encrypts resources of this workstation configuration using a
+   * Immutable. Encrypts resources of this workstation configuration using a
    * customer-managed encryption key.
    * If specified, the boot disk of the Compute Engine instance and the
    * persistent disk are encrypted using this encryption key. If
@@ -667,10 +669,11 @@ public interface WorkstationConfigOrBuilder
    * Otherwise, data on the persistent disk will be lost.
    * If the encryption key is revoked, the workstation session will
    * automatically be stopped within 7 hours.
+   * Immutable after the workstation configuration is created.
    * </pre>
    *
    * <code>
-   * .google.cloud.workstations.v1.WorkstationConfig.CustomerEncryptionKey encryption_key = 17;
+   * .google.cloud.workstations.v1.WorkstationConfig.CustomerEncryptionKey encryption_key = 17 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   com.google.cloud.workstations.v1.WorkstationConfig.CustomerEncryptionKeyOrBuilder

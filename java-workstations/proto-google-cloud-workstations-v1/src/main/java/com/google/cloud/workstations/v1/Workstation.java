@@ -827,7 +827,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Checksum computed by the server. May be sent on update and delete requests
-   * to ensure that the client has an up-to-date value before proceeding.
+   * to make sure that the client has an up-to-date value before proceeding.
    * </pre>
    *
    * <code>string etag = 9;</code>
@@ -851,7 +851,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Checksum computed by the server. May be sent on update and delete requests
-   * to ensure that the client has an up-to-date value before proceeding.
+   * to make sure that the client has an up-to-date value before proceeding.
    * </pre>
    *
    * <code>string etag = 9;</code>
@@ -2962,7 +2962,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Checksum computed by the server. May be sent on update and delete requests
-     * to ensure that the client has an up-to-date value before proceeding.
+     * to make sure that the client has an up-to-date value before proceeding.
      * </pre>
      *
      * <code>string etag = 9;</code>
@@ -2985,7 +2985,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Checksum computed by the server. May be sent on update and delete requests
-     * to ensure that the client has an up-to-date value before proceeding.
+     * to make sure that the client has an up-to-date value before proceeding.
      * </pre>
      *
      * <code>string etag = 9;</code>
@@ -3008,7 +3008,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Checksum computed by the server. May be sent on update and delete requests
-     * to ensure that the client has an up-to-date value before proceeding.
+     * to make sure that the client has an up-to-date value before proceeding.
      * </pre>
      *
      * <code>string etag = 9;</code>
@@ -3030,7 +3030,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Checksum computed by the server. May be sent on update and delete requests
-     * to ensure that the client has an up-to-date value before proceeding.
+     * to make sure that the client has an up-to-date value before proceeding.
      * </pre>
      *
      * <code>string etag = 9;</code>
@@ -3048,7 +3048,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Checksum computed by the server. May be sent on update and delete requests
-     * to ensure that the client has an up-to-date value before proceeding.
+     * to make sure that the client has an up-to-date value before proceeding.
      * </pre>
      *
      * <code>string etag = 9;</code>

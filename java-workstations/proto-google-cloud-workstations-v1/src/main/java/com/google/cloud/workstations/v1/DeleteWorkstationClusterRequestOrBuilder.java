@@ -70,7 +70,7 @@ public interface DeleteWorkstationClusterRequestOrBuilder
    *
    * <pre>
    * If set, the request will be rejected if the latest version of the
-   * workstation cluster on the server does not have this etag.
+   * workstation cluster on the server does not have this ETag.
    * </pre>
    *
    * <code>string etag = 3;</code>
@@ -83,7 +83,7 @@ public interface DeleteWorkstationClusterRequestOrBuilder
    *
    * <pre>
    * If set, the request will be rejected if the latest version of the
-   * workstation cluster on the server does not have this etag.
+   * workstation cluster on the server does not have this ETag.
    * </pre>
    *
    * <code>string etag = 3;</code>

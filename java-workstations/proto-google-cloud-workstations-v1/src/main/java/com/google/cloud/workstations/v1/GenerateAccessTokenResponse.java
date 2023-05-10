@@ -77,7 +77,7 @@ public final class GenerateAccessTokenResponse extends com.google.protobuf.Gener
    * <pre>
    * The generated bearer access token. To use this token, include it in an
    * Authorization header of an HTTP request sent to the associated
-   * workstation's hostname, for example, `Authorization: Bearer
+   * workstation's hostname—for example, `Authorization: Bearer
    * &lt;access_token&gt;`.
    * </pre>
    *
@@ -103,7 +103,7 @@ public final class GenerateAccessTokenResponse extends com.google.protobuf.Gener
    * <pre>
    * The generated bearer access token. To use this token, include it in an
    * Authorization header of an HTTP request sent to the associated
-   * workstation's hostname, for example, `Authorization: Bearer
+   * workstation's hostname—for example, `Authorization: Bearer
    * &lt;access_token&gt;`.
    * </pre>
    *
@@ -554,7 +554,7 @@ public final class GenerateAccessTokenResponse extends com.google.protobuf.Gener
      * <pre>
      * The generated bearer access token. To use this token, include it in an
      * Authorization header of an HTTP request sent to the associated
-     * workstation's hostname, for example, `Authorization: Bearer
+     * workstation's hostname—for example, `Authorization: Bearer
      * &lt;access_token&gt;`.
      * </pre>
      *
@@ -579,7 +579,7 @@ public final class GenerateAccessTokenResponse extends com.google.protobuf.Gener
      * <pre>
      * The generated bearer access token. To use this token, include it in an
      * Authorization header of an HTTP request sent to the associated
-     * workstation's hostname, for example, `Authorization: Bearer
+     * workstation's hostname—for example, `Authorization: Bearer
      * &lt;access_token&gt;`.
      * </pre>
      *
@@ -604,7 +604,7 @@ public final class GenerateAccessTokenResponse extends com.google.protobuf.Gener
      * <pre>
      * The generated bearer access token. To use this token, include it in an
      * Authorization header of an HTTP request sent to the associated
-     * workstation's hostname, for example, `Authorization: Bearer
+     * workstation's hostname—for example, `Authorization: Bearer
      * &lt;access_token&gt;`.
      * </pre>
      *
@@ -628,7 +628,7 @@ public final class GenerateAccessTokenResponse extends com.google.protobuf.Gener
      * <pre>
      * The generated bearer access token. To use this token, include it in an
      * Authorization header of an HTTP request sent to the associated
-     * workstation's hostname, for example, `Authorization: Bearer
+     * workstation's hostname—for example, `Authorization: Bearer
      * &lt;access_token&gt;`.
      * </pre>
      *
@@ -648,7 +648,7 @@ public final class GenerateAccessTokenResponse extends com.google.protobuf.Gener
      * <pre>
      * The generated bearer access token. To use this token, include it in an
      * Authorization header of an HTTP request sent to the associated
-     * workstation's hostname, for example, `Authorization: Bearer
+     * workstation's hostname—for example, `Authorization: Bearer
      * &lt;access_token&gt;`.
      * </pre>
      *
