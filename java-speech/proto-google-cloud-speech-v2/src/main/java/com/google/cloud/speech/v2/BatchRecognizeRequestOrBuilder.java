@@ -264,4 +264,31 @@ public interface BatchRecognizeRequestOrBuilder
    * <code>.google.cloud.speech.v2.RecognitionOutputConfig recognition_output_config = 6;</code>
    */
   com.google.cloud.speech.v2.RecognitionOutputConfigOrBuilder getRecognitionOutputConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Processing strategy to use for this request.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v2.BatchRecognizeRequest.ProcessingStrategy processing_strategy = 7;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for processingStrategy.
+   */
+  int getProcessingStrategyValue();
+  /**
+   *
+   *
+   * <pre>
+   * Processing strategy to use for this request.
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v2.BatchRecognizeRequest.ProcessingStrategy processing_strategy = 7;
+   * </code>
+   *
+   * @return The processingStrategy.
+   */
+  com.google.cloud.speech.v2.BatchRecognizeRequest.ProcessingStrategy getProcessingStrategy();
 }
