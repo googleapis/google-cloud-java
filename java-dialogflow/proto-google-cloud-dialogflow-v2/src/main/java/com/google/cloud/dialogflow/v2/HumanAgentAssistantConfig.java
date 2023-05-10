@@ -10436,6 +10436,45 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * @return The bytes for model.
      */
     com.google.protobuf.ByteString getModelBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Version of current baseline model. It will be ignored if
+     * [model][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.ConversationModelConfig.model]
+     * is set. Valid versions are:
+     *   Article Suggestion baseline model:
+     *     - 0.9
+     *     - 1.0 (default)
+     *   Summarization baseline model:
+     *     - 1.0
+     * </pre>
+     *
+     * <code>string baseline_model_version = 8;</code>
+     *
+     * @return The baselineModelVersion.
+     */
+    java.lang.String getBaselineModelVersion();
+    /**
+     *
+     *
+     * <pre>
+     * Version of current baseline model. It will be ignored if
+     * [model][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.ConversationModelConfig.model]
+     * is set. Valid versions are:
+     *   Article Suggestion baseline model:
+     *     - 0.9
+     *     - 1.0 (default)
+     *   Summarization baseline model:
+     *     - 1.0
+     * </pre>
+     *
+     * <code>string baseline_model_version = 8;</code>
+     *
+     * @return The bytes for baselineModelVersion.
+     */
+    com.google.protobuf.ByteString getBaselineModelVersionBytes();
   }
   /**
    *
@@ -10461,6 +10500,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
 
     private ConversationModelConfig() {
       model_ = "";
+      baselineModelVersion_ = "";
     }
 
     @java.lang.Override
@@ -10544,6 +10584,71 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       }
     }
 
+    public static final int BASELINE_MODEL_VERSION_FIELD_NUMBER = 8;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object baselineModelVersion_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Version of current baseline model. It will be ignored if
+     * [model][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.ConversationModelConfig.model]
+     * is set. Valid versions are:
+     *   Article Suggestion baseline model:
+     *     - 0.9
+     *     - 1.0 (default)
+     *   Summarization baseline model:
+     *     - 1.0
+     * </pre>
+     *
+     * <code>string baseline_model_version = 8;</code>
+     *
+     * @return The baselineModelVersion.
+     */
+    @java.lang.Override
+    public java.lang.String getBaselineModelVersion() {
+      java.lang.Object ref = baselineModelVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        baselineModelVersion_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Version of current baseline model. It will be ignored if
+     * [model][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.ConversationModelConfig.model]
+     * is set. Valid versions are:
+     *   Article Suggestion baseline model:
+     *     - 0.9
+     *     - 1.0 (default)
+     *   Summarization baseline model:
+     *     - 1.0
+     * </pre>
+     *
+     * <code>string baseline_model_version = 8;</code>
+     *
+     * @return The bytes for baselineModelVersion.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getBaselineModelVersionBytes() {
+      java.lang.Object ref = baselineModelVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        baselineModelVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -10561,6 +10666,9 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, model_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baselineModelVersion_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, baselineModelVersion_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -10572,6 +10680,9 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, model_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(baselineModelVersion_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, baselineModelVersion_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -10592,6 +10703,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           (com.google.cloud.dialogflow.v2.HumanAgentAssistantConfig.ConversationModelConfig) obj;
 
       if (!getModel().equals(other.getModel())) return false;
+      if (!getBaselineModelVersion().equals(other.getBaselineModelVersion())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -10605,6 +10717,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MODEL_FIELD_NUMBER;
       hash = (53 * hash) + getModel().hashCode();
+      hash = (37 * hash) + BASELINE_MODEL_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getBaselineModelVersion().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -10761,6 +10875,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         super.clear();
         bitField0_ = 0;
         model_ = "";
+        baselineModelVersion_ = "";
         return this;
       }
 
@@ -10806,6 +10921,9 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.model_ = model_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.baselineModelVersion_ = baselineModelVersion_;
         }
       }
 
@@ -10868,6 +10986,11 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           bitField0_ |= 0x00000001;
           onChanged();
         }
+        if (!other.getBaselineModelVersion().isEmpty()) {
+          baselineModelVersion_ = other.baselineModelVersion_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -10900,6 +11023,12 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 66:
+                {
+                  baselineModelVersion_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 66
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11026,6 +11155,147 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         checkByteStringIsUtf8(value);
         model_ = value;
         bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object baselineModelVersion_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Version of current baseline model. It will be ignored if
+       * [model][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.ConversationModelConfig.model]
+       * is set. Valid versions are:
+       *   Article Suggestion baseline model:
+       *     - 0.9
+       *     - 1.0 (default)
+       *   Summarization baseline model:
+       *     - 1.0
+       * </pre>
+       *
+       * <code>string baseline_model_version = 8;</code>
+       *
+       * @return The baselineModelVersion.
+       */
+      public java.lang.String getBaselineModelVersion() {
+        java.lang.Object ref = baselineModelVersion_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          baselineModelVersion_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Version of current baseline model. It will be ignored if
+       * [model][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.ConversationModelConfig.model]
+       * is set. Valid versions are:
+       *   Article Suggestion baseline model:
+       *     - 0.9
+       *     - 1.0 (default)
+       *   Summarization baseline model:
+       *     - 1.0
+       * </pre>
+       *
+       * <code>string baseline_model_version = 8;</code>
+       *
+       * @return The bytes for baselineModelVersion.
+       */
+      public com.google.protobuf.ByteString getBaselineModelVersionBytes() {
+        java.lang.Object ref = baselineModelVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          baselineModelVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Version of current baseline model. It will be ignored if
+       * [model][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.ConversationModelConfig.model]
+       * is set. Valid versions are:
+       *   Article Suggestion baseline model:
+       *     - 0.9
+       *     - 1.0 (default)
+       *   Summarization baseline model:
+       *     - 1.0
+       * </pre>
+       *
+       * <code>string baseline_model_version = 8;</code>
+       *
+       * @param value The baselineModelVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBaselineModelVersion(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        baselineModelVersion_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Version of current baseline model. It will be ignored if
+       * [model][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.ConversationModelConfig.model]
+       * is set. Valid versions are:
+       *   Article Suggestion baseline model:
+       *     - 0.9
+       *     - 1.0 (default)
+       *   Summarization baseline model:
+       *     - 1.0
+       * </pre>
+       *
+       * <code>string baseline_model_version = 8;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearBaselineModelVersion() {
+        baselineModelVersion_ = getDefaultInstance().getBaselineModelVersion();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Version of current baseline model. It will be ignored if
+       * [model][google.cloud.dialogflow.v2.HumanAgentAssistantConfig.ConversationModelConfig.model]
+       * is set. Valid versions are:
+       *   Article Suggestion baseline model:
+       *     - 0.9
+       *     - 1.0 (default)
+       *   Summarization baseline model:
+       *     - 1.0
+       * </pre>
+       *
+       * <code>string baseline_model_version = 8;</code>
+       *
+       * @param value The bytes for baselineModelVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBaselineModelVersionBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        baselineModelVersion_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
