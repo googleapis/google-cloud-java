@@ -87,7 +87,7 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
    * In particular, to refer to HEAD use `master` moveable alias.
    * To refer to a specific fixed alias (tag):
    * `https://source.developers.google.com/projects/&#42;&#47;repos/&#42;&#47;fixed-aliases/&#42;&#47;paths/&#42;`
-   * You may omit `paths/&#42;` if you want to use the main directory.
+   * You can omit `paths/&#42;` if you want to use the main directory.
    * </pre>
    *
    * <code>string url = 1;</code>
@@ -120,7 +120,7 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
    * In particular, to refer to HEAD use `master` moveable alias.
    * To refer to a specific fixed alias (tag):
    * `https://source.developers.google.com/projects/&#42;&#47;repos/&#42;&#47;fixed-aliases/&#42;&#47;paths/&#42;`
-   * You may omit `paths/&#42;` if you want to use the main directory.
+   * You can omit `paths/&#42;` if you want to use the main directory.
    * </pre>
    *
    * <code>string url = 1;</code>
@@ -576,7 +576,7 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
      * In particular, to refer to HEAD use `master` moveable alias.
      * To refer to a specific fixed alias (tag):
      * `https://source.developers.google.com/projects/&#42;&#47;repos/&#42;&#47;fixed-aliases/&#42;&#47;paths/&#42;`
-     * You may omit `paths/&#42;` if you want to use the main directory.
+     * You can omit `paths/&#42;` if you want to use the main directory.
      * </pre>
      *
      * <code>string url = 1;</code>
@@ -608,7 +608,7 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
      * In particular, to refer to HEAD use `master` moveable alias.
      * To refer to a specific fixed alias (tag):
      * `https://source.developers.google.com/projects/&#42;&#47;repos/&#42;&#47;fixed-aliases/&#42;&#47;paths/&#42;`
-     * You may omit `paths/&#42;` if you want to use the main directory.
+     * You can omit `paths/&#42;` if you want to use the main directory.
      * </pre>
      *
      * <code>string url = 1;</code>
@@ -640,7 +640,7 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
      * In particular, to refer to HEAD use `master` moveable alias.
      * To refer to a specific fixed alias (tag):
      * `https://source.developers.google.com/projects/&#42;&#47;repos/&#42;&#47;fixed-aliases/&#42;&#47;paths/&#42;`
-     * You may omit `paths/&#42;` if you want to use the main directory.
+     * You can omit `paths/&#42;` if you want to use the main directory.
      * </pre>
      *
      * <code>string url = 1;</code>
@@ -671,7 +671,7 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
      * In particular, to refer to HEAD use `master` moveable alias.
      * To refer to a specific fixed alias (tag):
      * `https://source.developers.google.com/projects/&#42;&#47;repos/&#42;&#47;fixed-aliases/&#42;&#47;paths/&#42;`
-     * You may omit `paths/&#42;` if you want to use the main directory.
+     * You can omit `paths/&#42;` if you want to use the main directory.
      * </pre>
      *
      * <code>string url = 1;</code>
@@ -698,7 +698,7 @@ public final class SourceRepository extends com.google.protobuf.GeneratedMessage
      * In particular, to refer to HEAD use `master` moveable alias.
      * To refer to a specific fixed alias (tag):
      * `https://source.developers.google.com/projects/&#42;&#47;repos/&#42;&#47;fixed-aliases/&#42;&#47;paths/&#42;`
-     * You may omit `paths/&#42;` if you want to use the main directory.
+     * You can omit `paths/&#42;` if you want to use the main directory.
      * </pre>
      *
      * <code>string url = 1;</code>
