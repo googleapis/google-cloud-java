@@ -70,13 +70,13 @@ integration)
     RETURN_CODE=$?
     ;;
 graalvm)
-    # Run Unit and Integration Tests with Native Image
-    mvn -B ${INTEGRATION_TEST_ARGS} -ntp -Pnative test
+    # Run Unit and Integration Tests with Native Image. Skip tests that use mocking libs
+    mvn -B ${INTEGRATION_TEST_ARGS} -ntp -Pnative test "-Dtest=!LoggingAppenderTest"
     RETURN_CODE=$?
     ;;
 graalvm17)
     # Run Unit and Integration Tests with Native Image
-    mvn -B ${INTEGRATION_TEST_ARGS} -ntp -Pnative test
+    mvn -B ${INTEGRATION_TEST_ARGS} -ntp -Pnative test "-Dtest=!LoggingAppenderTest"
     RETURN_CODE=$?
     ;;
 samples)

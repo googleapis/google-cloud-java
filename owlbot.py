@@ -25,6 +25,7 @@ java.common_templates(excludes=[
     'CONTRIBUTING.md',
     '.github/auto-label.yaml',
     ".github/release-please.yml",
+    ".kokoro/build.sh"
 ])
 
 # --------------------------------------------------------------------------
