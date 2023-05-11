@@ -4,6 +4,611 @@
     {
       "changes": [
         {
+          "type": "feat",
+          "sha": "531cf24c1ca1a3e5a63106f732ae1329aac30620",
+          "message": "[cloudsupport] new module for cloudsupport",
+          "issues": [
+            "9399"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-cloudsupport",
+      "id": "a1a27028-b96d-4d0a-8948-3811d4139d24",
+      "createTime": "2023-05-10T18:30:04.129Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "270cc239a39a488084255711c8a62d9ec0f7f6bd",
+          "message": "[texttospeech] update documentation to require certain fields",
+          "issues": [
+            "9417"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-texttospeech",
+      "id": "26c2fac5-d89f-4ef9-9d1b-0aac72fe0ea3",
+      "createTime": "2023-05-10T18:30:04.126Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "94d50327fd5d07f7aa234285cbdf8587d9172714",
+          "message": "Add basic http authentication",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "94d50327fd5d07f7aa234285cbdf8587d9172714",
+          "message": "Add json path matching capabilities",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "94d50327fd5d07f7aa234285cbdf8587d9172714",
+          "message": "Add httpStatusCode",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "94d50327fd5d07f7aa234285cbdf8587d9172714",
+          "message": "Add individual USA regions",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "94d50327fd5d07f7aa234285cbdf8587d9172714",
+          "message": "[monitoring] Add ICMP pings",
+          "issues": [
+            "9409"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-monitoring",
+      "id": "c6c50838-995d-4226-9bf2-7915c4081b4d",
+      "createTime": "2023-05-10T18:30:04.124Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "253ad50f1e08461cee744ea276f601ec184ded33",
+          "message": "[datastream] Max concurrent backfill tasks",
+          "issues": [
+            "9414"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-datastream",
+      "id": "5ba6ca8a-b4bc-4772-a785-6dfd6d252795",
+      "createTime": "2023-05-10T18:30:04.122Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "27d613374dcf2a0fd858adc7f9b61b6e16bdc04c",
+          "message": "[jobs] change timeout settings for SearchJobsForAlert",
+          "issues": [
+            "9401"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-talent",
+      "id": "dd57a377-63ce-4cf7-9718-d2a3059b06c6",
+      "createTime": "2023-05-10T18:30:04.119Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "20ddfda9258bbe089a978a17b37eca682f9d4a54",
+          "message": "added debug info to StreamingDetectIntent",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "20ddfda9258bbe089a978a17b37eca682f9d4a54",
+          "message": "added dtmf digits to WebhookRequest",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "20ddfda9258bbe089a978a17b37eca682f9d4a54",
+          "message": "added FLOW as a new DiffType in TestRunDifference",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "20ddfda9258bbe089a978a17b37eca682f9d4a54",
+          "message": "[dialogflow-cx] extended CreateAgent timeout to 180 seconds",
+          "issues": [
+            "9412"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "20ddfda9258bbe089a978a17b37eca682f9d4a54",
+          "message": "added debug info to StreamingDetectIntent",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "20ddfda9258bbe089a978a17b37eca682f9d4a54",
+          "message": "added dtmf digits to WebhookRequest",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "20ddfda9258bbe089a978a17b37eca682f9d4a54",
+          "message": "added FLOW as a new DiffType in TestRunDifference",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "20ddfda9258bbe089a978a17b37eca682f9d4a54",
+          "message": "[dialogflow-cx] extended CreateAgent timeout to 180 seconds",
+          "issues": []
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dialogflow-cx",
+      "id": "7668e47e-4389-45b6-bf4a-ab3317b553f8",
+      "createTime": "2023-05-10T18:30:04.116Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "eeea875d7a13920aef5ec3be6a30d9891bbf6677",
+          "message": "[container] add a new feature for fleet registration via cluster update in v1alpha1, v1beta1, v1",
+          "issues": [
+            "9408"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "eeea875d7a13920aef5ec3be6a30d9891bbf6677",
+          "message": "[container] support fleet registration via cluster update",
+          "issues": []
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-container",
+      "id": "a6269c61-aa4c-403d-a1be-500dbd651177",
+      "createTime": "2023-05-10T18:30:04.114Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "a980e4dd693ed75c403329a52dcc8190e5f6237a",
+          "message": "[run] Adds support for Startup CPU Boost (GA)",
+          "issues": [
+            "9397"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-run",
+      "id": "c8b25d98-b11f-441a-b58f-bb63f7f363e0",
+      "createTime": "2023-05-10T18:30:04.111Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "3c9e001fd1619a8af96269d0e5084b73c4c1c726",
+          "message": "[tpu] restrict the visibility of an API",
+          "issues": [
+            "9406"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-tpu",
+      "id": "63036999-7424-420b-9a91-1aec64671095",
+      "createTime": "2023-05-10T18:30:04.109Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "9cf11de74686dff35e78cdce4e74d1444e4097c0",
+          "message": "Add documentation for additional acceptable formats for `namespaced_tag_key` and `namespaced_tag_value`in `EffectiveTag`, `parent` in `ListTagKeysRequest`, `parent` in `TagKey`, and `namespaced_name` in `TagValue`",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "9cf11de74686dff35e78cdce4e74d1444e4097c0",
+          "message": "[cloudresourcemanager] Update formatting for `Purpose` class documentation",
+          "issues": [
+            "9395"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "9cf11de74686dff35e78cdce4e74d1444e4097c0",
+          "message": "[cloudresourcemanager] Update the table format in SearchProjects docs",
+          "issues": []
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-resourcemanager",
+      "id": "e3b789fd-83e2-4414-8387-02b6b1d1734b",
+      "createTime": "2023-05-10T18:30:04.107Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "78e1e172b763673fee873971d6ebc7d53bd40002",
+          "message": "[servicecontrol] add a proto message used for batch mode resource info for ServiceController V2",
+          "issues": [
+            "9387"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-service-control",
+      "id": "4ab9bda5-6890-4451-a42d-8696f235f7c2",
+      "createTime": "2023-05-10T18:30:04.104Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "b7c785a6e7552e75697536a4d9a100de38d856b1",
+          "message": "updated comments for multiple Dataplex APIs",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "b7c785a6e7552e75697536a4d9a100de38d856b1",
+          "message": "[dataplex] added new Dataplex APIs and new features for existing APIs (e.g. DataScans)",
+          "issues": [
+            "9402"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataplex",
+      "id": "b0d174c9-14cf-4ac3-bbd6-62fb5ddf063b",
+      "createTime": "2023-05-10T18:30:04.102Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "bc3cddf37545cc4ccca589ac4f1c7710294503c1",
+          "message": "added support for in cluster verification",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "bc3cddf37545cc4ccca589ac4f1c7710294503c1",
+          "message": "[clouddeploy] added support for DeployArtifacts",
+          "issues": [
+            "9398"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-deploy",
+      "id": "1958ffc8-18a6-4b04-9ab3-de2cdb1c47ee",
+      "createTime": "2023-05-10T18:30:04.100Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d8410942f9461ce2d6cd86450310afed0031a2aa",
+          "message": "[cloudchannel] Add billing account to entitlement definitions for Cloud Channel API",
+          "issues": [
+            "9410"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-channel",
+      "id": "3f715760-5092-44b3-9b91-f857943c01a7",
+      "createTime": "2023-05-10T18:30:04.097Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "bc46b1b3f34dd721a322fded47107fde331dee4c",
+          "message": "[contactcenterinsights] support for generating summaries during conversation analysis",
+          "issues": [
+            "9391"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-contact-center-insights",
+      "id": "7ef9c375-0ea1-4844-a1e0-d0bb3544801e",
+      "createTime": "2023-05-10T18:30:04.093Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "23b1396e8b3efe2df7b6687277f10551cd41975d",
+          "message": "keep the API doc up-to-date with recent changes",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "23b1396e8b3efe2df7b6687277f10551cd41975d",
+          "message": "[discoveryengine] add document purge API",
+          "issues": [
+            "9396"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-discoveryengine",
+      "id": "25757f16-8e66-4016-9736-4ffc7f59effd",
+      "createTime": "2023-05-10T18:30:04.091Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "78ea6c83dac8d5ba68a8ecfe3438570c757c577d",
+          "message": "[aiplatform] add example_gcs_source to Examples in aiplatform v1beta1 explanation.proto",
+          "issues": [
+            "9392"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "78ea6c83dac8d5ba68a8ecfe3438570c757c577d",
+          "message": "[aiplatform] add model_garden_service.proto and publisher_model.proto to BUILD.bazel",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "78ea6c83dac8d5ba68a8ecfe3438570c757c577d",
+          "message": "[aiplatform] support for Model Garden -- A single place to search, discover, and interact with a wide variety of foundation models from Google and Google partners, available on Vertex AI",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "78ea6c83dac8d5ba68a8ecfe3438570c757c577d",
+          "message": "add experiment and experiment_run to CustomJobSpec",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "78ea6c83dac8d5ba68a8ecfe3438570c757c577d",
+          "message": "add MutateDeployedModel RPC to endpoint_service",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "78ea6c83dac8d5ba68a8ecfe3438570c757c577d",
+          "message": "add GENIE to ModelSourceType",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "78ea6c83dac8d5ba68a8ecfe3438570c757c577d",
+          "message": "add last_scheduled_run_response to Schedule",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "78ea6c83dac8d5ba68a8ecfe3438570c757c577d",
+          "message": "[aiplatform] add NVIDIA_L4 to AcceleratorType",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "78ea6c83dac8d5ba68a8ecfe3438570c757c577d",
+          "message": "add experiment and experiment_run to CustomJobSpec",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "78ea6c83dac8d5ba68a8ecfe3438570c757c577d",
+          "message": "add MutateDeployedModel RPC to endpoint_service",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "78ea6c83dac8d5ba68a8ecfe3438570c757c577d",
+          "message": "add offline_storage_ttl_days to EntityType",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "78ea6c83dac8d5ba68a8ecfe3438570c757c577d",
+          "message": "add online_storage_ttl_days to FeatureStore",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "78ea6c83dac8d5ba68a8ecfe3438570c757c577d",
+          "message": "add GENIE to ModelSourceType",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "78ea6c83dac8d5ba68a8ecfe3438570c757c577d",
+          "message": "[aiplatform] add NVIDIA_L4 to AcceleratorType",
+          "issues": []
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-aiplatform",
+      "id": "5874a6e1-933b-45ba-9459-0868c63686cc",
+      "createTime": "2023-05-10T18:30:04.089Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "5e425bc3949df8ac94f28442b166f611372490c8",
+          "message": "[speech] add processing strategy to batch recognition requests",
+          "issues": [
+            "9424"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-speech",
+      "id": "3b40816f-64af-4ac5-896e-50328e2e360b",
+      "createTime": "2023-05-10T18:30:04.086Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "0ebf4af22c0f4269cfe5fa9cfc5a10005389b1f5",
+          "message": "clarified that vpcConnector shortname is only returned if the connector is in the same project as the function",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "0ebf4af22c0f4269cfe5fa9cfc5a10005389b1f5",
+          "message": "applied general style guide updates to descriptions",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "0ebf4af22c0f4269cfe5fa9cfc5a10005389b1f5",
+          "message": "[cloudfunctions] added helper methods for long running operations, IAM, and locations",
+          "issues": [
+            "9421"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-functions",
+      "id": "62c28c26-b804-44c1-ac43-7d91253834d3",
+      "createTime": "2023-05-10T18:30:04.084Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "e9944c5ded6890e6b97f3bce90740b19623e42b2",
+          "message": "[dialogflow] add baseline model configuration for conversation summarization",
+          "issues": [
+            "9423"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "e9944c5ded6890e6b97f3bce90740b19623e42b2",
+          "message": "[dialogflow] add baseline model configuration for conversation summarization",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "01db33038b1aeafd984f7cc174daee193a58915b",
+          "message": "added debug info for StreamingDetectIntent",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "01db33038b1aeafd984f7cc174daee193a58915b",
+          "message": "added GenerateStatelessSummary method",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "01db33038b1aeafd984f7cc174daee193a58915b",
+          "message": "[dialogflow] extended StreamingListCallCompanionEvents timeout to 600 seconds",
+          "issues": [
+            "9415"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "01db33038b1aeafd984f7cc174daee193a58915b",
+          "message": "added debug info for StreamingDetectIntent",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "01db33038b1aeafd984f7cc174daee193a58915b",
+          "message": "added GenerateStatelessSummary method",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "01db33038b1aeafd984f7cc174daee193a58915b",
+          "message": "[dialogflow] extended StreamingListCallCompanionEvents timeout to 600 seconds",
+          "issues": []
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dialogflow",
+      "id": "1dca0205-8a04-4482-9756-1cb69c6c042b",
+      "createTime": "2023-05-10T18:30:04.082Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "487e38d8c4184c98fa714618274a295f677a3b98",
+          "message": "add output field for the number of pooled instances",
+          "issues": []
+        },
+        {
+          "type": "docs",
+          "sha": "487e38d8c4184c98fa714618274a295f677a3b98",
+          "message": "adjust documentation wording",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "487e38d8c4184c98fa714618274a295f677a3b98",
+          "message": "[workstations] add output field for the control plane IP address",
+          "issues": [
+            "9422"
+          ]
+        }
+      ],
+      "version": "1.11.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-workstations",
+      "id": "52a12ef7-8dee-4d1c-a44e-cf24039a6c81",
+      "createTime": "2023-05-10T18:30:04.079Z"
+    },
+    {
+      "changes": [
+        {
           "type": "docs",
           "sha": "6bec5191f4b4af615f1c94f4d047c3e46b62068c",
           "message": "[container] Operation.Type is now documented in detail",
@@ -6447,5 +7052,5 @@
       "createTime": "2023-02-03T16:27:23.198Z"
     }
   ],
-  "updateTime": "2023-04-26T17:10:14.314Z"
+  "updateTime": "2023-05-10T18:30:04.129Z"
 }
