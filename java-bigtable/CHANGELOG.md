@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.23.1](https://github.com/googleapis/java-bigtable/compare/v2.23.0...v2.23.1) (2023-05-11)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-monitoring-bom to v3.18.0 ([#1749](https://github.com/googleapis/java-bigtable/issues/1749)) ([1d7d391](https://github.com/googleapis/java-bigtable/commit/1d7d39145eefc5cbf6d015fd60a4d49441f88d1f))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.9.0 ([#1744](https://github.com/googleapis/java-bigtable/issues/1744)) ([60df07f](https://github.com/googleapis/java-bigtable/commit/60df07fcfa653291d9e5882cf3386f13813e2883))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.22 ([#1746](https://github.com/googleapis/java-bigtable/issues/1746)) ([86ea9db](https://github.com/googleapis/java-bigtable/commit/86ea9db830f6d5f7dc0b08886bce084b4650d281))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.22 ([#1747](https://github.com/googleapis/java-bigtable/issues/1747)) ([caa4462](https://github.com/googleapis/java-bigtable/commit/caa44627d6a124d1a58d85a510962c8a7caee69b))
+
 ## [2.23.0](https://github.com/googleapis/java-bigtable/compare/v2.22.0...v2.23.0) (2023-05-09)
 
 
