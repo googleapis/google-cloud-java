@@ -91,6 +91,10 @@
       <artifactId>grpc-google-cloud-redis-v1</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-common-protos</artifactId>
+    </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>

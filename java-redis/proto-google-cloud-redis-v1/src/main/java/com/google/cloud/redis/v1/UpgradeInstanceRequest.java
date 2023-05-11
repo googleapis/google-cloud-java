@@ -22,7 +22,8 @@ package com.google.cloud.redis.v1;
  *
  *
  * <pre>
- * Request for [UpgradeInstance][google.cloud.redis.v1.CloudRedis.UpgradeInstance].
+ * Request for
+ * [UpgradeInstance][google.cloud.redis.v1.CloudRedis.UpgradeInstance].
  * </pre>
  *
  * Protobuf type {@code google.cloud.redis.v1.UpgradeInstanceRequest}
@@ -350,7 +351,8 @@ public final class UpgradeInstanceRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Request for [UpgradeInstance][google.cloud.redis.v1.CloudRedis.UpgradeInstance].
+   * Request for
+   * [UpgradeInstance][google.cloud.redis.v1.CloudRedis.UpgradeInstance].
    * </pre>
    *
    * Protobuf type {@code google.cloud.redis.v1.UpgradeInstanceRequest}
